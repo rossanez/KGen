@@ -41,7 +41,7 @@ class CorefResolver:
             simplified_mentions = ''
             for m in mentions:
 #                simplified_mentions(m['sentNum'], m['startIndex'], m['endIndex'], m['text']))
-                simplified_mentions += '{}:{};'.format(m['sentNum'] -1, m['text'])
+                simplified_mentions += '{}:{};'.format(m['sentNum'] -1, m['text']) # Sentence numbers are one-based
 
             if verbose:
                 print(simplified_mentions)
