@@ -33,4 +33,4 @@ class BabelfyWrapper:
         return value.strip()
 
     def disambiguate(self, text):
-        return self.__babelapi.disambiguate(text, self.__lang, self.__key, match="PARTIAL_MATCHING",cands="TOP",mcs="ON",anntype="ALL")
+        return self.__babelapi.disambiguate(text, self.__lang, self.__key, match="EXACT_MATCHING",cands="TOP",mcs="ON",anntype="ALL")
