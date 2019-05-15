@@ -13,7 +13,7 @@ class FactsExtractor:
 
     def extract_triples(self, input_filename, verbose=False):
         if not input_filename.startswith('/'):
-            input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + filename
+            input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
         print('Processing text from {} \nPlease wait, as it may take a while ...'.format(input_filename))
 
