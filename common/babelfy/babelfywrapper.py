@@ -9,6 +9,13 @@ class BabelfyWrapper:
     __lang = None
     __key = None
 
+    @staticmethod
+    def frag(semantic_annotation, input_text):
+        start = semantic_annotation.char_fragment_start()
+        end = semantic_annotation.char_fragment_end()
+
+        return input_text[start:end+1]
+
     def __init__(self, language='EN'):
         self.__lang = language
         self.__key = self.__getKey()
@@ -26,4 +33,4 @@ class BabelfyWrapper:
         return value.strip()
 
     def disambiguate(self, text):
-        return self.__babelapi.disambiguate(text, self.__lang, self.__key)
+        return self.__babelapi.disambiguate(text, self.__lang, self.__key, match="EXACT_MATCHING",cands="TOP",mcs="ON",anntype="ALL")
