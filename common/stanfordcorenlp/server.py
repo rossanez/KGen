@@ -89,8 +89,8 @@ class Server:
 
 def main(argv):
     arg_p = ArgumentParser('python server.py', description='Starts the Stanford CoreNLP Server.')
-    arg_p.add_argument('-c', '--check', action='store_true', help='Checks if there is an active server running.')
-    arg_p.add_argument('-k', '--kill', action='store_true', help='Stops the server, if already started.')
+    arg_p.add_argument('-c', '--check', action='store_true', help='Checks if the server is running')
+    arg_p.add_argument('-k', '--kill', action='store_true', help='Stops the server')
 
     args = arg_p.parse_args(argv[1:])
     check = args.check

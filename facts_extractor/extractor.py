@@ -49,9 +49,9 @@ class FactsExtractor:
         return output
 
 def main(args):
-    arg_p = ArgumentParser('python extractor.py')
-    arg_p.add_argument('-f', '--filename', type=str, default=None)
-    arg_p.add_argument('-v', '--verbose', action='store_true')
+    arg_p = ArgumentParser('python extractor.py', description='Extracts facts from an unstructured text.')
+    arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
+    arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.filename
