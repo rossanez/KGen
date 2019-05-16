@@ -7,17 +7,17 @@ from subprocess import Popen
 from sys import argv
 from sys import stderr
 
-port = 9000
-base_url = 'http://localhost'
-url = base_url + ':{}'.format(port)
+PORT = 9000
+BASE_URL = 'http://localhost'
+URL = BASE_URL + ':{}'.format(PORT)
 
-timeout = 15000
+TIMEOUT = 15000
 
-shutdown_url = url + '/shutdown'
+SHUTDOWN_URL = URL + '/shutdown'
 
-tmpdir_prop = 'java.io.tmpdir'
-tmpdir = '/tmp/'
-shutdown_key_file = tmpdir + 'corenlp.shutdown'
+TMPDIR_PROP = 'java.io.tmpdir'
+TMPDIR = '/tmp/'
+SHUTDOWN_KEY_FILE = TMPDIR + 'corenlp.shutdown'
 
 class Server:
     # Singleton
@@ -32,7 +32,7 @@ class Server:
 
     @staticmethod
     def getURLParams():
-        return base_url, port, timeout
+        return BASE_URL, PORT, TIMEOUT
 
     def __init__(self):
         """ Virtually private constructor. """
@@ -47,7 +47,7 @@ class Server:
 
     def isServerStarted(self):
         # There might be a better way...
-        return os.path.isfile(shutdown_key_file)
+        return os.path.isfile(SHUTDOWN_KEY_FILE)
 
     def startServer(self, verbose=False, wait_for_subprocess=False):
     	assert not self.isServerStarted(), 'ERROR: Server already started.'
@@ -58,9 +58,9 @@ class Server:
 
         jars = '{0}/stanford-corenlp.jar:{0}/stanford-corenlp-models.jar'.format(source_dir)
 
-        command = 'java -D' + tmpdir_prop + '="' + tmpdir + '" -mx4g' + \
+        command = 'java -D' + TMPDIR_PROP + '="' + TMPDIR + '" -mx4g' + \
                   ' -cp "' + jars + '" edu.stanford.nlp.pipeline.StanfordCoreNLPServer' + \
-                  ' -port {} -timeout {}'.format(port, timeout)
+                  ' -port {} -timeout {}'.format(PORT, TIMEOUT)
 
         if verbose:
             print('Stanford CoreNLP Server startup command: {}'.format(command))
@@ -76,11 +76,11 @@ class Server:
     def stopServer(self, verbose=False):
     	assert self.isServerStarted(), 'ERROR: Server not running.'
 
-        shutdown_key = getoutput('cat ' + shutdown_key_file)
+        shutdown_key = getoutput('cat ' + SHUTDOWN_KEY_FILE)
         if verbose:
-            print('Stopping Stanford CoreNLP Server with {}?key={}'.format(shutdown_url, shutdown_key))
+            print('Stopping Stanford CoreNLP Server with {}?key={}'.format(SHUTDOWN_URL, shutdown_key))
 
-        response = requests.post(shutdown_url, data="", params={"key": shutdown_key})
+        response = requests.post(SHUTDOWN_URL, data="", params={"key": shutdown_key})
         if response:
             print('Stop request issued successfully.')
         else:
