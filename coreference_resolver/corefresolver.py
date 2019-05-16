@@ -37,17 +37,24 @@ class CorefResolver:
 
         json_output = json.loads(annotated)
 
-        for k, mentions in json_output['corefs'].items():
-            simplified_mentions = ''
-            for m in mentions:
-#                simplified_mentions(m['sentNum'], m['startIndex'], m['endIndex'], m['text']))
-                simplified_mentions += '{}:{};'.format(m['sentNum'] -1, m['text']) # Sentence numbers are one-based
+        for k, chain in json_output['corefs'].items():
+            if (len(chain) > 1):
+                for r in chain:
+                    if r['isRepresentativeMention']:
+                        representative = r['text'] # Sentence numbers are one-based
 
-            if verbose:
-                print(simplified_mentions)
-            with open(output, 'a') as output_file:
-                output_file.write(simplified_mentions + '\n')
-                output_file.close()
+                simplified_mention = ''
+                for m in chain:
+                    if not m['isRepresentativeMention']:
+                        #simplified_mentions(m['sentNum'], m['startIndex'], m['endIndex'], m['text']))
+                        simplified_mention = '{}:{};'.format(m['sentNum'] -1, m['text']) # Sentence numbers are one-based
+                        simplified_mention += representative
+
+                        if verbose:
+                            print(simplified_mention)
+                        with open(output, 'a') as output_file:
+                            output_file.write(simplified_mention + '\n')
+                            output_file.close()
 
         return output
 
