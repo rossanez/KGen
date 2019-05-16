@@ -47,11 +47,16 @@ class GraphGenerator:
 
         out_png = filename_base + '_kg.png'
         command = 'dot -Tpng {} -o {}'.format(out_dot, out_png)
-        print('Executing command = {}'.format(command), verbose)
+
+        if verbose:
+            print('Executing dot command: {}'.format(command))
         dot_process = Popen(command, stdout=stderr, shell=True)
         dot_process.wait()
+
+        print(dot_process.returncode)
         assert not dot_process.returncode, 'ERROR: Call to dot exited with a non-zero code status.'
-        print('Wrote graph to {} and {}'.format(out_dot, out_png))
+
+        print('KG generated and stored in: {} and {}'.format(out_dot, out_png))
 
 def main(args):
     arg_p = ArgumentParser('python graphgen.py', description='Generates a graph from a set of triples.')
