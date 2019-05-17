@@ -33,7 +33,7 @@ class CorefResolver:
             input_file.close()
 
         nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse, dcoref', 'outputFormat': 'json'})
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse, coref', 'coref.algorithm': 'statistical', 'outputFormat': 'json'})
 
         json_output = json.loads(annotated)
 
@@ -41,7 +41,7 @@ class CorefResolver:
             if (len(chain) > 1):
                 for r in chain:
                     if r['isRepresentativeMention']:
-                        representative = r['text'] # Sentence numbers are one-based
+                        representative = r['text']
 
                 simplified_mention = ''
                 for m in chain:
@@ -55,6 +55,15 @@ class CorefResolver:
                         with open(output, 'a') as output_file:
                             output_file.write(simplified_mention + '\n')
                             output_file.close()
+
+            else:
+                for m in chain:
+                    simplified_mention = '{}:{};'.format(m['sentNum'] -1, m['text']) # Sentence numbers are one-based
+                    if verbose:
+                        print(simplified_mention)
+                    with open(output, 'a') as output_file:
+                        output_file.write(simplified_mention + '\n')
+                        output_file.close()
 
         return output
 
