@@ -35,7 +35,7 @@ class Linker:
 
         for annotation in annotated:
             entity = BabelfyWrapper.frag(annotation, contents)
-            uri = annotation.babel_synset_id()
+            uri = annotation.babelnet_url()#annotation.babel_synset_id()#
 
             if verbose:
                 print('Mapped "{}" to {}'.format(entity, uri))
