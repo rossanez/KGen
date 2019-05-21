@@ -58,7 +58,7 @@ class Server:
 
         jars = '{0}/stanford-corenlp.jar:{0}/stanford-corenlp-models.jar'.format(source_dir)
 
-        command = 'java -D' + TMPDIR_PROP + '="' + TMPDIR + '" -mx4g' + \
+        command = 'java -D' + TMPDIR_PROP + '="' + TMPDIR + '" -mx5g' + \
                   ' -cp "' + jars + '" edu.stanford.nlp.pipeline.StanfordCoreNLPServer' + \
                   ' -port {} -timeout {}'.format(PORT, TIMEOUT)
 

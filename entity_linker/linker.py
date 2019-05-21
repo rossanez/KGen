@@ -1,6 +1,7 @@
 import os
 
 from argparse import ArgumentParser
+from sets import Set
 from sys import argv
 from sys import path
 
@@ -15,36 +16,42 @@ class Linker:
 
         print('Processing text from {} \nPlease wait, as it may take a while ...'.format(input_filename))
 
-        output_filename = os.path.splitext(input_filename)[0] + '_annotated_entities.txt'
-        open(output_filename, 'w').close()
-
-        if verbose:
-            print('Searching for entities ...')
-        output = self.__babelfy(input_filename, output_filename, verbose)
-        print('Extracted entities were stored at {}'.format(output))
-
-        return output
-
-    def __babelfy(self, input, output, verbose=False):
-        with open(input, 'r') as input_file:
+        with open(input_filename, 'r') as input_file:
             contents = input_file.read()
             input_file.close()
 
-        babelfy = BabelfyWrapper()
-        annotated = babelfy.disambiguate(contents)
+        if verbose:
+            print('Searching for entities, concepts and their links ...')
 
-        for annotation in annotated:
-            entity = BabelfyWrapper.frag(annotation, contents)
-            uri = annotation.babelnet_url()#annotation.babel_synset_id()#
+        linked = {}
+        linked.update(self.__babelfy(contents, verbose))
+
+        output_filename = os.path.splitext(input_filename)[0] + '_linked.txt'
+        open(output_filename, 'w').close() # Clean the file in case it exists
+
+        with open(output_filename, 'a') as output_file:
+            for key in linked.keys():
+                output_file.write(key + ';' + linked[key] + '\n')
+            output_file.close()
+        print('Linked entities and concepts were stored at {}'.format(output_filename))
+
+        return output_filename
+
+    def __babelfy(self, contents, verbose=False):
+        babelfy = BabelfyWrapper()
+        disambiguated = babelfy.disambiguate(contents)
+
+        linked = {}
+        for disambiguation in disambiguated:
+            entity = BabelfyWrapper.frag(disambiguation, contents)
+            uri = disambiguation.babelnet_url()#disambiguation.babel_synset_id()#
 
             if verbose:
                 print('Mapped "{}" to {}'.format(entity, uri))
-                annotation.pprint()
-            with open(output, 'a') as output_file:
-                output_file.write(entity + ';' + uri + '\n')
-                output_file.close()
+                disambiguation.pprint()
+            linked[entity] = uri
 
-        return output
+        return linked
 
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
