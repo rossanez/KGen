@@ -19,7 +19,7 @@ class CorefResolver:
 
         resolved_contents = self.__coref(input_filename, verbose)
 
-        output_filename = os.path.splitext(input_filename)[0] + '_resolved_corefs.txt'
+        output_filename = os.path.splitext(input_filename)[0] + '_resolved.txt'
         with open(output_filename, 'w') as output_file:
             output_file.write(resolved_contents)
             output_file.close()

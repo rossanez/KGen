@@ -1,7 +1,6 @@
 import os
 
 from argparse import ArgumentParser
-from sets import Set
 from sys import argv
 from sys import path
 
@@ -26,7 +25,7 @@ class Linker:
         linked = {}
         linked.update(self.__babelfy(contents, verbose))
 
-        output_filename = os.path.splitext(input_filename)[0] + '_linked.txt'
+        output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
