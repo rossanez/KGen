@@ -57,11 +57,11 @@ class FactsExtractor:
                 t_sentnum = sentence['index']
 
                 t_subject = self.__replace_uri(openie['subject'])
+                t_relation = self.__replace_uri(openie['relation'])
                 t_object = self.__replace_uri(openie['object'])
-                t_entity = self.__replace_uri(openie['relation'])
 
                 with open(output, 'a') as output_file:
-                    triple = '{}:({};{};{})'.format(t_sentnum, t_subject, t_entity, t_object)
+                    triple = '{}:({};{};{})'.format(t_sentnum, t_subject, t_relation, t_object)
                     if verbose:
                        print(triple)
                     output_file.write(triple + '\n')
