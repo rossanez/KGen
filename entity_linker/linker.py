@@ -53,7 +53,7 @@ class Linker:
 
         links = {}
         for disambiguation in disambiguated:
-            entity = BabelfyWrapper.frag(disambiguation, contents)
+            entity = BabelfyWrapper.frag(disambiguation, contents).upper()
             uri = disambiguation.babelnet_url()#disambiguation.babel_synset_id()#
 
             if verbose:
@@ -76,7 +76,7 @@ class Linker:
             if not ('prefLabel' in annotated_class and '@id' in annotated_class):
                 continue
 
-            entity = annotated_class['prefLabel']
+            entity = annotated_class['prefLabel'].upper()
             uri = annotated_class['@id']
 
             try:

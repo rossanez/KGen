@@ -37,8 +37,8 @@ class FactsExtractor:
         return output
 
     def __replace_uri(self, term):
-        if term in self.__linkedens:
-            return term + ' <' + self.__linkedens[term] + '>'
+        if term.upper() in self.__linkedens:
+            return term + ' <' + self.__linkedens[term.upper()] + '>'
 
         return term
 
