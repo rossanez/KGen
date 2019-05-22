@@ -4,6 +4,7 @@ import urllib2
 
 KEY_FILE = 'ncbo.key'
 REST_URL = "http://data.bioontology.org"
+REST_URL_BASE_ANNOTATOR_PARAMS = "/annotator?"
 
 
 class NCBOWrapper:
@@ -23,8 +24,15 @@ class NCBOWrapper:
 
         return value.strip()
 
-    def annotate(self, contents):
-    	url = REST_URL + "/annotator?text=" + urllib2.quote(contents)
+    def annotate(self, contents, max_level=0, include=None):
+        params = REST_URL_BASE_ANNOTATOR_PARAMS
+        if max_level > 0:
+            params += "max_level=" + max_level + "&"
+        if not include is None:
+            params += "include=" + include + "&" # include should be a comma-separated list (e.g. 'prefLabel,synonym,definition')
+        params += "text=" + urllib2.quote(contents)
+        url = REST_URL + params
+
         opener = urllib2.build_opener()
         opener.addheaders = [('Authorization', 'apikey token=' + self.__key)]
         return json.loads(opener.open(url).read())
