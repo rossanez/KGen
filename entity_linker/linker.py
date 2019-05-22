@@ -20,32 +20,34 @@ class Linker:
             contents = input_file.read()
             input_file.close()
 
-        if verbose:
-            print('Searching for entities, concepts and their links, using the {} base'.format(k_base))
-
         linked = {}
-        if k_base == 'babelfy':
-            links = self.__babelfy(contents, verbose)
-        elif k_base == 'ncbo':
-            links = self.__ncbo(contents, verbose)
-        elif k_base is None:
-            links = self.__babelfy(contents, verbose)
+        if k_base is None:
+            linked.update(self.__babelfy(contents, verbose))
         else:
-            raise Exception("Unknown knowledge base!")
-        linked.update(links)
+            k_bases = k_base.split(',')
+            for base in k_bases:
+                if base == 'babelfy':
+                    linked.update(self.__babelfy(contents, verbose))
+                elif base == 'ncbo':
+                    linked.update(self.__ncbo(contents, verbose))
+                else:
+                    raise Exception("Unknown knowledge base!")
 
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
             for key in linked.keys():
-                output_file.write(key + ';' + linked[key] + '\n')
+                output_file.write(key.encode('utf-8') + ';' + linked[key] + '\n')
             output_file.close()
         print('Linked entities and concepts were stored at {}'.format(output_filename))
 
         return output_filename
 
     def __babelfy(self, contents, verbose=False):
+        if verbose:
+            print('Searching for entities, concepts and their links, using the Babelfy base')
+
         babelfy = BabelfyWrapper()
         disambiguated = babelfy.disambiguate(contents)
 
@@ -62,18 +64,28 @@ class Linker:
         return links
 
     def __ncbo(self, contents, verbose=False):
+        if verbose:
+            print('Searching for entities, concepts and their links, using the NCBO base')
+
         ncbo = NCBOWrapper()
         annotated = ncbo.annotate(contents)
 
         links = {}
         for annotation in annotated:
             annotated_class = annotation['annotatedClass']
+            if not ('prefLabel' in annotated_class and '@id' in annotated_class):
+                continue
 
             entity = annotated_class['prefLabel']
             uri = annotated_class['@id']
 
+            try:
+                map_str = 'Mapped "{}" to {}'.format(entity, uri)
+            except UnicodeEncodeError:
+                continue # NCBO may present some Chinese characters. We will ignore them.
+
             if verbose:
-                print('Mapped "{}" to {}'.format(entity, uri))
+                print(map_str)
             links[entity] = uri
 
         return links
