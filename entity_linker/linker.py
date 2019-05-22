@@ -10,7 +10,7 @@ from common.ncbo.ncbowrapper import NCBOWrapper
 
 class Linker:
 
-    def link(self, input_filename, verbose=False):
+    def link(self, input_filename, k_base=None, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -21,10 +21,18 @@ class Linker:
             input_file.close()
 
         if verbose:
-            print('Searching for entities, concepts and their links ...')
+            print('Searching for entities, concepts and their links, using the {} base'.format(k_base))
 
         linked = {}
-        linked.update(self.__babelfy(contents, verbose))
+        if k_base == 'babelfy':
+            links = self.__babelfy(contents, verbose)
+        elif k_base == 'ncbo':
+            links = self.__ncbo(contents, verbose)
+        elif k_base is None:
+            links = self.__babelfy(contents, verbose)
+        else:
+            raise Exception("Unknown knowledge base!")
+        linked.update(links)
 
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
@@ -57,17 +65,28 @@ class Linker:
         ncbo = NCBOWrapper()
         annotated = ncbo.annotate(contents)
 
-        print(annotated)
+        links = {}
+        for annotation in annotated:
+            annotated_class = annotation['annotatedClass']
 
-        return None
+            entity = annotated_class['prefLabel']
+            uri = annotated_class['@id']
+
+            if verbose:
+                print('Mapped "{}" to {}'.format(entity, uri))
+            links[entity] = uri
+
+        return links
 
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
+    arg_p.add_argument('-k', '--kgbase', type=str, default=None, help='Knowledge base to be used, e.g. babelfy (default) or ncbo')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.filename
+    kg_base = args.kgbase
     verbose = args.verbose
 
     if filename is None:
@@ -75,7 +94,7 @@ def main(args):
         exit(1)
 
     linker = Linker()
-    linker.link(filename, verbose)
+    linker.link(filename, kg_base, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))

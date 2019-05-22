@@ -28,8 +28,11 @@ class NCBOWrapper:
         params = REST_URL_BASE_ANNOTATOR_PARAMS
         if max_level > 0:
             params += "max_level=" + max_level + "&"
-        if not include is None:
-            params += "include=" + include + "&" # include should be a comma-separated list (e.g. 'prefLabel,synonym,definition')
+
+        if include is None:
+            include = "prefLabel,synonym,definition" # include should be a comma-separated list
+        params += "include=" + include + "&"
+
         params += "text=" + urllib2.quote(contents)
         url = REST_URL + params
 
