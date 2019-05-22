@@ -6,6 +6,7 @@ from sys import path
 
 path.insert(0, '../')
 from common.babelfy.babelfywrapper import BabelfyWrapper
+from common.ncbo.ncbowrapper import NCBOWrapper
 
 class Linker:
 
@@ -40,7 +41,7 @@ class Linker:
         babelfy = BabelfyWrapper()
         disambiguated = babelfy.disambiguate(contents)
 
-        linked = {}
+        links = {}
         for disambiguation in disambiguated:
             entity = BabelfyWrapper.frag(disambiguation, contents)
             uri = disambiguation.babelnet_url()#disambiguation.babel_synset_id()#
@@ -48,9 +49,17 @@ class Linker:
             if verbose:
                 print('Mapped "{}" to {}'.format(entity, uri))
                 disambiguation.pprint()
-            linked[entity] = uri
+            links[entity] = uri
 
-        return linked
+        return links
+
+    def __ncbo(self, contents, verbose=False):
+        ncbo = NCBOWrapper()
+        annotated = ncbo.annotate(contents)
+
+        print(annotated)
+
+        return None
 
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
