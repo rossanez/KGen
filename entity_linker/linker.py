@@ -78,18 +78,23 @@ class Linker:
 
             pref_label = annotated_class['prefLabel']
             uri = annotated_class['@id']
+            ontology = annotated_class['links']['ontology']
 
             try:
-                pref_map_str = '{}. PrefLabel: {}'.format(uri, pref_label)
+                pref_map_str = '{} \n--Ontology: {} \n--PrefLabel: {}'.format(uri, ontology, pref_label)
             except UnicodeEncodeError:
                 continue # NCBO may present some Chinese characters. We will ignore them.
 
             for class_annotation in annotation['annotations']:
                 entity = class_annotation['text'].upper()
+                preferable_match = class_annotation['matchType'].upper() == 'PREF'
 
-                if verbose:
-                    print('Mapped "{}" to {}'.format(entity, pref_map_str))
-                links[entity] = uri
+                if preferable_match or not entity in links:
+                    if verbose:
+                        print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
+
+                    links[entity] = uri
+                    if preferable_match: break
 
         return links
 
