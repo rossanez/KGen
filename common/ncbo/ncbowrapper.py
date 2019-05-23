@@ -24,13 +24,16 @@ class NCBOWrapper:
 
         return value.strip()
 
-    def annotate(self, contents, max_level=0, include=None):
+    def annotate(self, contents, ontologies=None, max_level=0, include=None):
         params = REST_URL_BASE_ANNOTATOR_PARAMS
+        if not ontologies is None:
+            params += "ontologies=" + ontologies + "&" # ontologies must be a comma-separated list
+
         if max_level > 0:
             params += "max_level=" + max_level + "&"
 
         if include is None:
-            include = "prefLabel,synonym,definition" # include should be a comma-separated list
+            include = "prefLabel,synonym,definition" # include must also be a comma-separated list
         params += "include=" + include + "&"
 
         params += "text=" + urllib2.quote(contents)

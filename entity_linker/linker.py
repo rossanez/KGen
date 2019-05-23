@@ -68,7 +68,7 @@ class Linker:
             print('Searching for entities, concepts and their links, using the NCBO base')
 
         ncbo = NCBOWrapper()
-        annotated = ncbo.annotate(contents)
+        annotated = ncbo.annotate(contents, ontologies='NCIT')
 
         links = {}
         for annotation in annotated:
@@ -76,17 +76,20 @@ class Linker:
             if not ('prefLabel' in annotated_class and '@id' in annotated_class):
                 continue
 
-            entity = annotated_class['prefLabel'].upper()
+            pref_label = annotated_class['prefLabel']
             uri = annotated_class['@id']
 
             try:
-                map_str = 'Mapped "{}" to {}'.format(entity, uri)
+                pref_map_str = '{}. PrefLabel: {}'.format(uri, pref_label)
             except UnicodeEncodeError:
                 continue # NCBO may present some Chinese characters. We will ignore them.
 
-            if verbose:
-                print(map_str)
-            links[entity] = uri
+            for class_annotation in annotation['annotations']:
+                entity = class_annotation['text'].upper()
+
+                if verbose:
+                    print('Mapped "{}" to {}'.format(entity, pref_map_str))
+                links[entity] = uri
 
         return links
 

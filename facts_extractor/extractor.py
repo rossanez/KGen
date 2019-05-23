@@ -17,7 +17,7 @@ class FactsExtractor:
 
         print('Processing text from {} \nPlease wait, as it may take a while ...'.format(input_filename))
 
-        output_filename = os.path.splitext(input_filename)[0] + '_extracted_triples.txt'
+        output_filename = os.path.splitext(input_filename)[0] + '_triples.txt'
         open(output_filename, 'w').close()
 
         self.__linkedens = {}
