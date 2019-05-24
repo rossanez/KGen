@@ -38,7 +38,7 @@ class CorefResolver:
         print('Please wait, as it may take a while ...')
 
         nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse, coref', 'coref.algorithm': 'statistical', 'outputFormat': 'json'})
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, depparse, coref', 'coref.algorithm': 'statistical', 'outputFormat': 'json'})
 
         json_output = json.loads(annotated)
 
