@@ -49,17 +49,22 @@ class Linker:
             print('Searching for entities, concepts and their links, using the Babelfy base')
 
         babelfy = BabelfyWrapper()
-        disambiguated = babelfy.disambiguate(contents)
 
         links = {}
-        for disambiguation in disambiguated:
-            entity = BabelfyWrapper.frag(disambiguation, contents).upper()
-            uri = disambiguation.babelnet_url()#disambiguation.babel_synset_id()#
+        for annType in ['NAMED_ENTITIES', 'CONCEPTS']:
+            disambiguated = babelfy.disambiguate(contents, annType)
 
-            if verbose:
-                print('Mapped "{}" to {}'.format(entity, uri))
-                disambiguation.pprint()
-            links[entity] = uri
+            for disambiguation in disambiguated:
+                entity = BabelfyWrapper.frag(disambiguation, contents).upper()
+                uri = disambiguation.babelnet_url()#disambiguation.babel_synset_id()#
+
+                if verbose:
+                    print('Mapped "{}" to {}'.format(entity, uri))
+                    disambiguation.pprint()
+                if annType == 'NAMED_ENTITIES':
+                    links[entity.upper()] = uri
+                else:
+                    links[entity.lower()] = uri
 
         return links
 
@@ -93,8 +98,13 @@ class Linker:
                     if verbose:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
 
-                    links[entity] = uri
-                    if preferable_match: break
+                    links[entity.lower()] = uri
+                    if preferable_match:
+                        if entity.lower() in links:
+                            del links[entity.lower()]
+
+                        links[entity.upper()] = uri
+                        break
 
         return links
 

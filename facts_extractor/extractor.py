@@ -25,7 +25,7 @@ class FactsExtractor:
             with open(linkeden_filename, 'r') as linkeden_file:
                 for line in linkeden_file:
                     reference, uri = line.strip().split(';', 1)
-                    self.__linkedens[reference] = uri.strip()
+                    self.__linkedens[reference.upper()] = uri.strip()
 
                 linkeden_file.close()
 
