@@ -48,7 +48,8 @@ class FactsExtractor:
             input_file.close()
 
         nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, ner, depparse, parse, openie', 'outputFormat': 'json'})
+        ner_models = CoreNLPFactory.getNERModels()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, ner, depparse, parse, openie', 'ner.model': ner_models, 'outputFormat': 'json'})
 
         json_output = json.loads(annotated)
 
