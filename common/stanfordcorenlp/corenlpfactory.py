@@ -1,5 +1,7 @@
+import glob
+
 from os import listdir
-from os.path import abspath, dirname, isfile, join
+from os.path import abspath, dirname
 from stanfordcorenlp import StanfordCoreNLP
 from server import Server
 
@@ -21,13 +23,12 @@ class CoreNLPFactory:
         default_model = 'edu/stanford/nlp/models/ner/english.all.3class.distsim.crf.ser.gz'
 
         models = list()
-        models.append(default_model)
 
         current_dir = dirname(abspath(__file__))
-        models_dir = current_dir + '/ner_models/'
+        models_path = current_dir + '/ner_models/*.gz'
 
-        for model in listdir(models_dir):
-            if isfile(join(models_dir, model)):
-                models.append(model)
+        for model in glob.glob(models_path):
+            models.append(model)
 
+        models.append(default_model)
         return ','.join(models)
