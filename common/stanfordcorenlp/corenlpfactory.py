@@ -25,7 +25,7 @@ class CoreNLPFactory:
         models = list()
 
         current_dir = dirname(abspath(__file__))
-        models_path = current_dir + '/ner_models/*.gz'
+        models_path = current_dir + '/ner_models/*.ser.gz'
 
         for model in glob.glob(models_path):
             models.append(model)
