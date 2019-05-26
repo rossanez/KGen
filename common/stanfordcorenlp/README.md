@@ -4,4 +4,6 @@ e.g.:
 or
  'curl https://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip --output stanford-corenlp-full-2018-10-05.zip'
 
-Once downloaded, run ./config.sh to extract and create the symlinks to the required jars. 
+Once downloaded, run ./config.sh to extract and create the symlinks to the required jars.
+
+With all that set, please install the python wrapper (e.g. 'sudo pip install stanfordcorenlp')
