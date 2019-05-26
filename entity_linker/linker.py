@@ -1,3 +1,4 @@
+import json
 import os
 
 from argparse import ArgumentParser
@@ -7,10 +8,11 @@ from sys import path
 path.insert(0, '../')
 from common.babelfy.babelfywrapper import BabelfyWrapper
 from common.ncbo.ncbowrapper import NCBOWrapper
+from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
 
 class Linker:
 
-    def link(self, input_filename, k_base=None, verbose=False):
+    def link(self, input_filename, k_base=None, tsv_file=False, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -41,6 +43,9 @@ class Linker:
                 output_file.write(key.encode('utf-8') + ';' + linked[key] + '\n')
             output_file.close()
         print('Linked entities and concepts were stored at {}'.format(output_filename))
+
+        if tsv_file:
+            self.__gen_tsv_file(contents, linked, input_filename)
 
         return output_filename
 
@@ -108,15 +113,37 @@ class Linker:
 
         return links
 
+    def __gen_tsv_file(self, contents, linked, input_filename):
+        nlp = CoreNLPFactory.createCoreNLP()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner', 'ner.model': 'edu/stanford/nlp/models/ner/english.all.3class.distsim.crf.ser.gz', 'outputFormat': 'json'})
+
+        json_output = json.loads(annotated)
+        tsv_filename = os.path.splitext(input_filename)[0] + '_ner.tsv'
+        open(tsv_filename, 'w').close() # Clean the file in case it exists
+
+        with open(tsv_filename, 'a') as tsv_file:
+            for sentence in json_output['sentences']:
+                for token in sentence['tokens']:
+                   tk = token['ner']
+                   if tk == 'O' and token['word'].upper() in linked:
+                       tk = 'CUSTOM_NE'
+                   tsv_file.write(token['word'] + '	' + tk + '\n')
+        tsv_file.close()
+        print('TSV file has been stored at {}'.format(tsv_filename))
+
+        return tsv_filename
+
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-k', '--kgbase', type=str, default=None, help='Knowledge base to be used, e.g. babelfy (default) or ncbo')
+    arg_p.add_argument('-t', '--tsv', action='store_true', help='Generates *.tsv file for NER model training')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.filename
     kg_base = args.kgbase
+    tsv_file = args.tsv
     verbose = args.verbose
 
     if filename is None:
@@ -124,7 +151,7 @@ def main(args):
         exit(1)
 
     linker = Linker()
-    linker.link(filename, kg_base, verbose)
+    linker.link(filename, kg_base, tsv_file, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))
