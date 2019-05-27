@@ -115,7 +115,7 @@ class Linker:
 
     def __gen_tsv_file(self, contents, linked, input_filename):
         nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner', 'ner.model': CoreNLPFactory.getNERModels(), 'outputFormat': 'json'})
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner', 'outputFormat': 'json'})
 
         json_output = json.loads(annotated)
         tsv_filename = os.path.splitext(input_filename)[0] + '_ner.tsv'
