@@ -20,7 +20,7 @@ class CoreNLPFactory:
 
     @staticmethod
     def getNERModels():
-        default_model = 'edu/stanford/nlp/models/ner/english.all.3class.distsim.crf.ser.gz'
+        default_model = 'edu/stanford/nlp/models/ner/english.conll.4class.distsim.crf.ser.gz'
 
         models = list()
 

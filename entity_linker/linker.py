@@ -126,8 +126,8 @@ class Linker:
                 for token in sentence['tokens']:
                    tk = token['ner']
                    if tk == 'O' and token['word'].upper() in linked:
-                       tk = 'CUSTOM_NE'
-                   tsv_file.write(token['word'] + '	' + tk + '\n')
+                       tk = 'MISC'
+                   tsv_file.write(token['word'] + '\t' + tk + '\n')
         tsv_file.close()
         print('TSV file has been stored at {}'.format(tsv_filename))
 
