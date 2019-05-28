@@ -57,15 +57,15 @@ class Linker:
 
         links = {}
         for annType in ['NAMED_ENTITIES', 'CONCEPTS']:
-            disambiguated = babelfy.disambiguate(contents, annType)
+            annotated = babelfy.annotate(contents, annType)
 
-            for disambiguation in disambiguated:
-                entity = BabelfyWrapper.frag(disambiguation, contents).upper()
-                uri = disambiguation.babelnet_url()#disambiguation.babel_synset_id()#
+            for annotation in annotated:
+                entity = BabelfyWrapper.frag(annotation, contents).upper()
+                uri = annotation.babelnet_url()#annotation.babel_synset_id()#
 
                 if verbose:
                     print('Mapped "{}" to {}'.format(entity, uri))
-                    disambiguation.pprint()
+                    annotation.pprint()
                 if annType == 'NAMED_ENTITIES':
                     links[entity.upper()] = uri
                 else:
