@@ -6,6 +6,8 @@ KEY_FILE = 'ncbo.key'
 REST_URL = "http://data.bioontology.org"
 REST_URL_BASE_ANNOTATOR_PARAMS = "/annotator?"
 
+SPARQL_ENDPOINT_URL = "http://sparql.bioontology.org"
+SPARQL_BASE_ANNOTATOR_PARAMS = "/sparql?"
 
 class NCBOWrapper:
 
@@ -41,4 +43,17 @@ class NCBOWrapper:
 
         opener = urllib2.build_opener()
         opener.addheaders = [('Authorization', 'apikey token=' + self.__key)]
+        return json.loads(opener.open(url).read())
+
+    def query(self, query_str=None):
+        if query_str is None:
+            query_str = 'SELECT ?s ?p ?o WHERE { ?s ?p ?o . } LIMIT 10'
+
+        params = SPARQL_BASE_ANNOTATOR_PARAMS
+        params += "apikey=" + self.__key + "&"
+        params += "query=" + urllib2.quote(query_str) + "&"
+        params += "outputformat=" + "json"
+
+        url = SPARQL_ENDPOINT_URL + params
+        opener = urllib2.build_opener()
         return json.loads(opener.open(url).read())

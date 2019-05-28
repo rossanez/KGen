@@ -1,8 +1,13 @@
+import json
 import os
+import urllib2
 
 from pybabelfy.babelfy import *
 
 KEY_FILE = 'babelfy.key'
+
+SPARQL_ENDPOINT_URL = "https://babelnet.org"
+SPARQL_BASE_ANNOTATOR_PARAMS = "/sparql/?"
 
 class BabelfyWrapper:
 
@@ -34,3 +39,16 @@ class BabelfyWrapper:
 
     def disambiguate(self, text, annType="ALL"):
         return self.__babelapi.disambiguate(text, self.__lang, self.__key, match="EXACT_MATCHING", cands="TOP", mcs="ON", anntype=annType)
+
+    def query(self, query_str=None):
+        if query_str is None:
+            query_str = 'SELECT ?s ?p ?o WHERE { ?s ?p ?o . } LIMIT 10'
+
+        params = SPARQL_BASE_ANNOTATOR_PARAMS
+        params += "query=" + urllib2.quote(query_str) + "&"
+        params += "key=" + urllib2.quote(self.__key) + "&"
+        params += "format=" + urllib2.quote("application/sparql-results+json")
+
+        url = SPARQL_ENDPOINT_URL + params
+        opener = urllib2.build_opener()
+        return json.loads(opener.open(url).read())
