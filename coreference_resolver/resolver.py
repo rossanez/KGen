@@ -2,7 +2,6 @@ import json
 import os
 
 from argparse import ArgumentParser
-from stanfordcorenlp import StanfordCoreNLP
 from sys import argv
 from sys import path
 
