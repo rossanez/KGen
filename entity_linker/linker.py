@@ -13,7 +13,7 @@ from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
 
 class Linker:
 
-    def link(self, input_filename, k_base=None, tsv_file=False, verbose=False):
+    def link(self, input_filename, k_base='babelfy', tsv_file=False, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -24,17 +24,14 @@ class Linker:
             input_file.close()
 
         linked = {}
-        if k_base is None:
-            linked.update(self.__babelfy(contents, verbose))
-        else:
-            k_bases = k_base.split(',')
-            for base in k_bases:
-                if base == 'babelfy':
-                    linked.update(self.__babelfy(contents, verbose))
-                elif base == 'ncbo':
-                    linked.update(self.__ncbo(contents, verbose))
-                else:
-                    raise Exception("Unknown knowledge base!")
+        k_bases = k_base.split(',')
+        for base in k_bases:
+            if base == 'babelfy':
+                linked.update(self.__babelfy(contents, verbose))
+            elif base == 'ncbo':
+                linked.update(self.__ncbo(contents, verbose))
+            else:
+                raise Exception("Unknown knowledge base!")
 
         entities_linked = self.__associate_entities_to_links(self.__extract_np_entities(contents), linked)
 
@@ -176,7 +173,7 @@ class Linker:
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
-    arg_p.add_argument('-k', '--kgbase', type=str, default=None, help='Knowledge base to be used, e.g. babelfy (default) or ncbo')
+    arg_p.add_argument('-k', '--kgbase', type=str, default='babelfy', help='Knowledge base to be used, e.g. babelfy (default) or ncbo')
     arg_p.add_argument('-t', '--tsv', action='store_true', help='Generates *.tsv file for NER model training')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
