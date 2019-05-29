@@ -41,7 +41,7 @@ class CorefResolver:
 
         json_output = json.loads(annotated)
 
-        return self.__rebuild_contents(json_output['sentences'], self.__eval_corefs(json_output['corefs'], verbose))
+        return self.__resolve_possessives(self.__rebuild_contents(json_output['sentences'], self.__eval_corefs(json_output['corefs'], verbose)))
 
     def __eval_corefs(self, json_corefs, verbose=False):
         corefs = {}
@@ -96,6 +96,22 @@ class CorefResolver:
                     resolved += token['word'] + ' '
                 elif not replacement is '':
                     resolved += replacement + ' '
+
+        return resolved
+
+    def __resolve_possessives(self, contents):
+        # This is a major overhead (and kinda dumb...). Must be reworked!
+        nlp = CoreNLPFactory.createCoreNLP()
+        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
+        json_output = json.loads(annotated)
+
+        resolved = ''
+        for sentence in json_output['sentences']:
+            for token in sentence['tokens']:
+                if token['pos'] == 'POS' or token['pos'] == '.' or token['pos'] == ',':
+                     resolved = resolved.strip()
+
+                resolved += token['word'] + ' '
 
         return resolved
 
