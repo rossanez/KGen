@@ -2,6 +2,7 @@ import json
 import os
 
 from argparse import ArgumentParser
+from nltk.tree import Tree
 from sys import argv
 from sys import path
 
@@ -16,7 +17,7 @@ class Linker:
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
-        print('Processing text from {} \nPlease wait, as it may take a while ...'.format(input_filename))
+        print('Processing text from {}'.format(input_filename))
 
         with open(input_filename, 'r') as input_file:
             contents = input_file.read()
@@ -35,14 +36,16 @@ class Linker:
                 else:
                     raise Exception("Unknown knowledge base!")
 
+        entities_linked = self.__associate_entities_to_links(self.__extract_np_entities(contents), linked)
+
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
-            for key in linked.keys():
-                output_file.write(key.encode('utf-8') + ';' + linked[key] + '\n')
+            for key in entities_linked.keys():
+                output_file.write(key.encode('utf-8') + ';' + entities_linked[key] + '\n')
             output_file.close()
-        print('Linked entities and concepts were stored at {}'.format(output_filename))
+        print('Linked entities were stored at {}'.format(output_filename))
 
         if tsv_file:
             self.__gen_tsv_file(contents, linked, input_filename)
@@ -56,20 +59,17 @@ class Linker:
         babelfy = BabelfyWrapper()
 
         links = {}
-        for annType in ['NAMED_ENTITIES', 'CONCEPTS']:
-            annotated = babelfy.annotate(contents, annType)
+        annotated = babelfy.annotate(contents)
 
-            for annotation in annotated:
-                entity = BabelfyWrapper.frag(annotation, contents).upper()
-                uri = annotation.babelnet_url()#annotation.babel_synset_id()#
+        for annotation in annotated:
+            entity = BabelfyWrapper.frag(annotation, contents).upper()
+            uri = annotation.babelnet_url()#annotation.babel_synset_id()#
 
-                if verbose:
-                    print('Mapped "{}" to {}'.format(entity, uri))
-                    annotation.pprint()
-                if annType == 'NAMED_ENTITIES':
-                    links[entity.upper()] = uri
-                else:
-                    links[entity.lower()] = uri
+            if verbose:
+                print('Mapped "{}" to {}'.format(entity, uri))
+                annotation.pprint()
+
+            links[entity.lower()] = uri
 
         return links
 
@@ -96,22 +96,62 @@ class Linker:
                 continue # NCBO may present some Chinese characters. We will ignore them.
 
             for class_annotation in annotation['annotations']:
-                entity = class_annotation['text'].upper()
+                entity = class_annotation['text']
                 preferable_match = class_annotation['matchType'].upper() == 'PREF'
 
                 if preferable_match or not entity in links:
                     if verbose:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
 
-                    links[entity.lower()] = uri
-                    if preferable_match:
-                        if entity.lower() in links:
-                            del links[entity.lower()]
-
-                        links[entity.upper()] = uri
-                        break
+                    links[entity] = uri
+                    if preferable_match: break
 
         return links
+
+    def __extract_np_entities(self, contents):
+        print('Determining the ultimate entities. \n Please wait, as it may take a while ...')
+        nlp = CoreNLPFactory.createCoreNLP()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse', 'outputFormat': 'json'})
+
+        entity_set = set()
+        json_output = json.loads(annotated)
+        for sentence in json_output['sentences']:
+            parsed_sentence = sentence['parse'].replace('\n', '')
+            parse_tree = Tree.fromstring(parsed_sentence)
+            for sub_tree in parse_tree.subtrees():
+                if sub_tree.label() == 'NP':
+                    np_entity = self.__resolve_possessives_and_determiners(' '.join(sub_tree.leaves()))
+                    entity_set.add(np_entity)
+
+        return entity_set
+
+    def __resolve_possessives_and_determiners(self, contents):
+        # This is a major overhead (and kinda dumb...). Must be reworked!
+        nlp = CoreNLPFactory.createCoreNLP()
+        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
+        json_output = json.loads(annotated)
+
+        resolved = ''
+        for sentence in json_output['sentences']:
+            for token in sentence['tokens']:
+                if token['pos'] == 'POS':
+                     resolved = resolved.strip()
+
+                resolved += token['word'] + ' '
+
+        return resolved.strip()
+
+    def __associate_entities_to_links(self, entities, links):
+        entity_links = {}
+        for entity in entities:
+            link_list = list()
+            for key in links:
+                if key.lower() in entity.lower():
+                    link_list.append(links[key])
+
+            entity_links[entity.lower()] = ','.join(link_list)
+
+        return entity_links
 
     def __gen_tsv_file(self, contents, linked, input_filename):
         nlp = CoreNLPFactory.createCoreNLP()
