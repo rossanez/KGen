@@ -20,7 +20,7 @@ class CorefResolver:
             contents = input_file.read()
             input_file.close()
 
-        resolved_contents = self.__resolve_possessives(self.__resolve_abbrevs(self.__coref(contents, verbose), verbose))
+        resolved_contents = self.__resolve_possessives_punctuation_line(self.__resolve_abbrevs(self.__coref(contents, verbose), verbose))
 
         output_filename = os.path.splitext(input_filename)[0] + '_resolved.txt'
         with open(output_filename, 'w') as output_file:
@@ -142,7 +142,7 @@ class CorefResolver:
 
         return resolved
 
-    def __resolve_possessives(self, contents):
+    def __resolve_possessives_punctuation_line(self, contents):
         # This is a major overhead (and kinda dumb...). Must be reworked!
         nlp = CoreNLPFactory.createCoreNLP()
         annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
@@ -151,12 +151,15 @@ class CorefResolver:
         resolved = ''
         for sentence in json_output['sentences']:
             for token in sentence['tokens']:
-                if token['pos'] == 'POS' or token['pos'] == '.' or token['pos'] == ',':
-                     resolved = resolved.strip()
+                if token['pos'] == 'POS' or token['pos'] == '.' or token['pos'] == ',' or token['pos'] == ':':
+                    resolved = resolved.strip()
 
                 resolved += token['word'] + ' '
 
-        return resolved
+            resolved = resolved.strip()
+            resolved += '\n'
+
+        return resolved.strip()
 
 def main(args):
     arg_p = ArgumentParser('python resolver.py', description='Resolve coreferences from an unstructured text.')

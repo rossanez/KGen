@@ -131,8 +131,8 @@ class Linker:
         resolved = ''
         for sentence in json_output['sentences']:
             for token in sentence['tokens']:
-                if token['pos'] == 'POS':
-                     resolved = resolved.strip()
+                if token['pos'] == '.' or token['pos'] == ',' or token['pos'] == ':':
+                    continue
 
                 resolved += token['word'] + ' '
 
