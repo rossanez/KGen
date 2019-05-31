@@ -23,7 +23,8 @@ class GraphGenerator:
         entity_relations = list()
 
         for string in entity_relations_str:
-            str = string[string.find("(") + 1:string.find(")")].split(';')
+            str = string[string.find('\t') + 1:].replace('\n', '').replace('\"', '').split('\t')
+            print str
             entity_relations.append(str)
 
         return entity_relations
