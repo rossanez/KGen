@@ -1,3 +1,4 @@
+import difflib
 import json
 import os
 
@@ -8,10 +9,11 @@ from sys import path
 path.insert(0, '../')
 from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
 from common.clausie.clausiewrapper import ClausIEWrapper
+from common.senna.sennawrapper import SennaWrapper
 
 class FactsExtractor:
 
-    def extract_triples(self, input_filename, openie='stanford', verbose=False):
+    def extract_triples(self, input_filename, openie='stanford', srl=False, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -26,6 +28,9 @@ class FactsExtractor:
             output = self.__stanford_openie(input_filename, output_filename, verbose)
         else:
             raise Exception("Unknown openie system!")
+
+        if srl:
+            output = self.__semantic_role_labeling(output_filename, verbose)
 
         print('Extracted triples were stored at {}'.format(output))
 
@@ -87,15 +92,75 @@ class FactsExtractor:
 
         return ClausIEWrapper.run_clausie(input_clausie, output, verbose)
 
+    def __semantic_role_labeling(self, input, verbose=False):
+        if verbose:
+            print('Performing Sentence Role Labeling with SENNA...')
+
+        senna = SennaWrapper()
+
+        out_contents = ''
+        with open(input, 'r') as input_file:
+            for line in input_file.readlines():
+                if len(line) < 1: continue
+
+                cont_list = line.replace('\"', '').replace('\n','').split('\t')
+
+                sentence_number = cont_list[0]
+
+                openie_subject = cont_list[1]
+                openie_predicate = cont_list[2]
+                openie_object = cont_list[3]
+
+                senna_contents = senna.srl(' '.join(cont_list[1:]), verbose=False)
+                closest_matches = difflib.get_close_matches(openie_predicate, senna_contents.keys())
+
+                if len(closest_matches) < 1: continue
+
+                predicate = closest_matches[0]
+                dict_contents = senna_contents[predicate]
+
+                if 'A0' in dict_contents and 'A1' in dict_contents:
+                    agent = dict_contents['A0']
+                    patient = dict_contents['A1']
+
+                elif 'A0' in dict_contents:
+                    agent = dict_contents['A0']
+                    for key in dict_contents.keys():
+                        if not key == 'A0':
+                            patient = dict_contents[key]
+
+                elif 'A1' in dict_contents:
+                    patient = dict_contents['A1']
+                    for key in dict_contents.keys():
+                        if not key == 'A1':
+                            agent = dict_contents[key]
+
+                else:
+                    agent = openie_subject
+                    patient = openie_object
+
+                triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence_number, agent, predicate, patient)
+                out_contents += triple + '\n'
+
+            input_file.close()
+
+            with open(input, 'w') as output_file: # now, overwrite the input to the new contents
+                output_file.write(out_contents)
+                output_file.close()
+
+        return input # return the overwitten input
+
 def main(args):
     arg_p = ArgumentParser('python extractor.py', description='Extracts facts from an unstructured text.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-o', '--openie', type=str, default='stanford', help='Specify the openie system, e.g. stanford (default), clausie')
+    arg_p.add_argument('-s', '--srl', action='store_true', help='Perform Semantic Role Labeling (SRL)')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.filename
     openie = args.openie
+    srl = args.srl
     verbose = args.verbose
 
     if filename is None:
@@ -103,7 +168,7 @@ def main(args):
         exit(1)
 
     extractor = FactsExtractor()
-    extractor.extract_triples(filename, openie, verbose)
+    extractor.extract_triples(filename, openie, srl, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))
