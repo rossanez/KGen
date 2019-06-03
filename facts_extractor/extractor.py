@@ -90,7 +90,11 @@ class FactsExtractor:
                 clausie_file.write(str(sentence['index']) + '\t' + sent_str.strip() + '\n')
                 clausie_file.close()
 
-        return ClausIEWrapper.run_clausie(input_clausie, output, verbose)
+        clausie_out =  ClausIEWrapper.run_clausie(input_clausie, output, verbose)
+
+        os.remove(input_clausie)
+
+        return clausie_out
 
     def __semantic_role_labeling(self, input, verbose=False):
         if verbose:
