@@ -11,6 +11,8 @@ from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
 
 class CorefResolver:
 
+    __PUNCTUATION_LIST = ['.', ',', ':', ';']
+
     def resolve(self, input_filename, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
@@ -143,7 +145,7 @@ class CorefResolver:
         return resolved
 
     def __resolve_possessives_punctuation_line(self, contents):
-        # This is a major overhead (and kinda dumb...). Must be reworked!
+        # This seems like a major overhead, maybe there is a better way...
         nlp = CoreNLPFactory.createCoreNLP()
         annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
         json_output = json.loads(annotated)
@@ -151,7 +153,7 @@ class CorefResolver:
         resolved = ''
         for sentence in json_output['sentences']:
             for token in sentence['tokens']:
-                if token['pos'] == 'POS' or token['pos'] == '.' or token['pos'] == ',' or token['pos'] == ':':
+                if token['pos'] in self.__PUNCTUATION_LIST or token['pos'] == 'POS':
                     resolved = resolved.strip()
 
                 resolved += token['word'] + ' '

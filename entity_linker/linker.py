@@ -13,6 +13,8 @@ from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
 
 class Linker:
 
+    __PUNCTUATION_LIST = ['.', ',', ':', ';']
+
     def link(self, input_filename, k_base='babelfy', tsv_file=False, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
@@ -117,13 +119,13 @@ class Linker:
             parse_tree = Tree.fromstring(parsed_sentence)
             for sub_tree in parse_tree.subtrees():
                 if sub_tree.label() == 'NP':
-                    np_entity = self.__resolve_possessives_and_determiners(' '.join(sub_tree.leaves()))
+                    np_entity = self.__resolve_punctuation_and_determiners(' '.join(sub_tree.leaves()))
                     entity_set.add(np_entity)
 
         return entity_set
 
-    def __resolve_possessives_and_determiners(self, contents):
-        # This is a major overhead (and kinda dumb...). Must be reworked!
+    def __resolve_punctuation_and_determiners(self, contents):
+        # This seems like a major overhead, maybe there is a better way...
         nlp = CoreNLPFactory.createCoreNLP()
         annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
         json_output = json.loads(annotated)
@@ -131,7 +133,7 @@ class Linker:
         resolved = ''
         for sentence in json_output['sentences']:
             for token in sentence['tokens']:
-                if token['pos'] == '.' or token['pos'] == ',' or token['pos'] == ':':
+                if token['pos'] in self.__PUNCTUATION_LIST or (token['index'] == 1 and token['pos'] == 'DT'):
                     continue
 
                 resolved += token['word'] + ' '
