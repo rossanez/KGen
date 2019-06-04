@@ -94,7 +94,7 @@ class Linker:
         ncbo = NCBOWrapper()
         annotated = ncbo.annotate(contents, ontologies='NCIT')
 
-        prefixes = {'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl': 'nci'}
+        prefixes = {'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#': 'nci'}
         links = {}
         for annotation in annotated:
             annotated_class = annotation['annotatedClass']
@@ -104,12 +104,11 @@ class Linker:
             pref_label = annotated_class['prefLabel']
             uri = annotated_class['@id']
             ontology = annotated_class['links']['ontology']
-            url_lst = uri.split('#')
-            if not url_lst[0] in prefixes.keys():
-                raise Exception('Unknown prefix: {}'.format(url_lst[0]))
-            else:
-                prefix = prefixes[url_lst[0]]
-                suffix = url_lst[1]
+
+            prefix = uri[:uri.rfind('#') + 1]
+            suffix = uri[uri.rfind('#') + 1:]
+            if not prefix in prefixes.keys():
+                raise Exception('Unknown prefix: {}'.format(prefix))
 
             try:
                 pref_map_str = '{} \n--Ontology: {} \n--PrefLabel: {}'.format(uri, ontology, pref_label)
@@ -124,7 +123,7 @@ class Linker:
                     if verbose:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
 
-                    links[entity] = '{}:{}'.format(prefix, suffix)
+                    links[entity] = '{}:{}'.format(prefixes[prefix], suffix)
                     if preferable_match: break
 
         return prefixes, links
