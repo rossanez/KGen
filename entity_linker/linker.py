@@ -26,21 +26,30 @@ class Linker:
             input_file.close()
 
         linked = {}
+        prefixed = {}
         k_bases = k_base.split(',')
         for base in k_bases:
             if base == 'babelfy':
-                linked.update(self.__babelfy(contents, verbose))
+                prefixes, links = self.__babelfy(contents, verbose)
+                prefixed.update(prefixes)
+                linked.update(links)
             elif base == 'ncbo':
-                linked.update(self.__ncbo(contents, verbose))
+                prefixes, links = self.__ncbo(contents, verbose)
+                prefixed.update(prefixes)
+                linked.update(links)
             else:
                 raise Exception("Unknown knowledge base!")
 
-        entities_linked = self.__associate_entities_to_links(self.__extract_np_entities(contents), linked)
+        entities_linked = self.__associate_np_to_entities(self.__extract_np(contents), linked)
 
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
+            for key in prefixed.keys():
+                output_file.write('@prefix {}: <{}> .\n'.format(prefixed[key], key))
+            output_file.write('\n\n')
+
             for key in entities_linked.keys():
                 output_file.write(key.encode('utf-8') + ';' + entities_linked[key] + '\n')
             output_file.close()
@@ -57,6 +66,7 @@ class Linker:
 
         babelfy = BabelfyWrapper()
 
+        prefixes = {'http://babelnet.org/rdf/': 'bn'}
         links = {}
         annotated = babelfy.annotate(contents)
 
@@ -64,13 +74,18 @@ class Linker:
             entity = BabelfyWrapper.frag(annotation, contents).upper()
             uri = annotation.babelnet_url()#annotation.babel_synset_id()#
 
+            prefix = uri[:uri.rfind('/') + 1]
+            suffix = uri[uri.rfind('/') + 1:]
+            if not prefix in prefixes.keys():
+                raise Exception('Unknown prefix: {}'.format(prefix))
+
             if verbose:
                 print('Mapped "{}" to {}'.format(entity, uri))
                 annotation.pprint()
 
-            links[entity.lower()] = uri
+            links[entity.lower()] = '{}:{}'.format(prefixes[prefix], suffix)
 
-        return links
+        return prefixes, links
 
     def __ncbo(self, contents, verbose=False):
         if verbose:
@@ -79,6 +94,7 @@ class Linker:
         ncbo = NCBOWrapper()
         annotated = ncbo.annotate(contents, ontologies='NCIT')
 
+        prefixes = {'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl': 'nci'}
         links = {}
         for annotation in annotated:
             annotated_class = annotation['annotatedClass']
@@ -88,6 +104,12 @@ class Linker:
             pref_label = annotated_class['prefLabel']
             uri = annotated_class['@id']
             ontology = annotated_class['links']['ontology']
+            url_lst = uri.split('#')
+            if not url_lst[0] in prefixes.keys():
+                raise Exception('Unknown prefix: {}'.format(url_lst[0]))
+            else:
+                prefix = prefixes[url_lst[0]]
+                suffix = url_lst[1]
 
             try:
                 pref_map_str = '{} \n--Ontology: {} \n--PrefLabel: {}'.format(uri, ontology, pref_label)
@@ -102,13 +124,13 @@ class Linker:
                     if verbose:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
 
-                    links[entity] = uri
+                    links[entity] = '{}:{}'.format(prefix, suffix)
                     if preferable_match: break
 
-        return links
+        return prefixes, links
 
-    def __extract_np_entities(self, contents):
-        print('Determining the ultimate entities. \n Please wait, as it may take a while ...')
+    def __extract_np(self, contents):
+        print('Determining the noun-phrases. \n Please wait, as it may take a while ...')
         nlp = CoreNLPFactory.createCoreNLP()
         annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse', 'outputFormat': 'json'})
 
@@ -140,17 +162,18 @@ class Linker:
 
         return resolved.strip()
 
-    def __associate_entities_to_links(self, entities, links):
-        entity_links = {}
-        for entity in entities:
+    def __associate_np_to_entities(self, nps, links):
+        np_entities = {}
+        for np in nps:
             link_list = list()
             for key in links:
-                if key.lower() in entity.lower():
+                if key.lower() in np.lower():
                     link_list.append(links[key])
 
-            entity_links[entity.lower()] = ','.join(link_list)
+            if link_list:
+                np_entities[np.lower()] = ','.join(link_list)
 
-        return entity_links
+        return np_entities
 
     def __gen_tsv_file(self, contents, linked, input_filename):
         nlp = CoreNLPFactory.createCoreNLP()
