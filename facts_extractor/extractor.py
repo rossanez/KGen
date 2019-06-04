@@ -13,6 +13,8 @@ from common.senna.sennawrapper import SennaWrapper
 
 class FactsExtractor:
 
+    __PUNCTUATION_LIST = ['.', ',', ':', ';']
+
     def extract_triples(self, input_filename, openie='stanford', srl=False, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
@@ -143,7 +145,7 @@ class FactsExtractor:
                     agent = openie_subject
                     patient = openie_object
 
-                triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence_number, agent, predicate, patient)
+                triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence_number, self.__resolve_punctuation_possessives_and_determiners(agent), predicate, self.__resolve_punctuation_possessives_and_determiners(patient))
                 out_contents += triple + '\n'
 
             input_file.close()
@@ -153,6 +155,24 @@ class FactsExtractor:
                 output_file.close()
 
         return input # return the overwitten input
+
+    def __resolve_punctuation_possessives_and_determiners(self, contents):
+        # This seems like a major overhead, maybe there is a better way...
+        nlp = CoreNLPFactory.createCoreNLP()
+        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
+        json_output = json.loads(annotated)
+
+        resolved = ''
+        for sentence in json_output['sentences']:
+            for token in sentence['tokens']:
+                if token['pos'] in self.__PUNCTUATION_LIST or (token['index'] == 1 and token['pos'] == 'DT'):
+                    continue
+                if token['pos'] == 'POS':
+                    resolved = resolved.strip()
+
+                resolved += token['word'] + ' '
+
+        return resolved.strip()
 
 def main(args):
     arg_p = ArgumentParser('python extractor.py', description='Extracts facts from an unstructured text.')

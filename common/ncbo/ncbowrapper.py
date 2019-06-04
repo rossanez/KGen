@@ -5,6 +5,7 @@ import urllib2
 KEY_FILE = 'ncbo.key'
 REST_URL = "http://data.bioontology.org"
 REST_URL_BASE_ANNOTATOR_PARAMS = "/annotator?"
+REST_URL_BASE_PROPERTY_SEARCH_PARAMS = "/property_search?"
 
 SPARQL_ENDPOINT_URL = "http://sparql.bioontology.org"
 SPARQL_BASE_ANNOTATOR_PARAMS = "/sparql?"
@@ -39,6 +40,18 @@ class NCBOWrapper:
         params += "include=" + include + "&"
 
         params += "text=" + urllib2.quote(contents)
+        url = REST_URL + params
+
+        opener = urllib2.build_opener()
+        opener.addheaders = [('Authorization', 'apikey token=' + self.__key)]
+        return json.loads(opener.open(url).read())
+
+    def property_search(self, contents, ontologies=None):
+        params = REST_URL_BASE_PROPERTY_SEARCH_PARAMS
+        if not ontologies is None:
+            params += "ontologies=" + ontologies + "&"
+
+        params += "q=" + urllib2.quote(contents)
         url = REST_URL + params
 
         opener = urllib2.build_opener()
