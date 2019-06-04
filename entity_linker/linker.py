@@ -140,12 +140,13 @@ class Linker:
             parse_tree = Tree.fromstring(parsed_sentence)
             for sub_tree in parse_tree.subtrees():
                 if sub_tree.label() == 'NP':
-                    np_entity = self.__resolve_punctuation_and_determiners(' '.join(sub_tree.leaves()))
-                    entity_set.add(np_entity)
+                    np_entity = self.__resolve_punctuation_possessives_and_determiners(' '.join(sub_tree.leaves()))
+                    if np_entity: # not empty
+                        entity_set.add(np_entity)
 
         return entity_set
 
-    def __resolve_punctuation_and_determiners(self, contents):
+    def __resolve_punctuation_possessives_and_determiners(self, contents):
         # This seems like a major overhead, maybe there is a better way...
         nlp = CoreNLPFactory.createCoreNLP()
         annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
@@ -156,20 +157,30 @@ class Linker:
             for token in sentence['tokens']:
                 if token['pos'] in self.__PUNCTUATION_LIST or (token['index'] == 1 and token['pos'] == 'DT'):
                     continue
+                if token['pos'] == 'POS':
+                    resolved = resolved.strip()
 
                 resolved += token['word'] + ' '
 
         return resolved.strip()
 
     def __associate_np_to_entities(self, nps, links):
+        nps_list = list(nps)
+        nps_list.sort(key = len) # sort by string length
+
         np_entities = {}
-        for np in nps:
+        for np in nps_list:
             link_list = list()
             for key in links:
-                if key.lower() in np.lower():
+                if key.lower() == np.lower(): # exact match
+                    link_list = [links[key]]
+                    break;
+                elif key.lower() in np.lower(): # composite
                     link_list.append(links[key])
 
-            if link_list:
+            if len(link_list) == 0:
+                np_entities[np.lower()] = 'notfound'
+            else:
                 np_entities[np.lower()] = ','.join(link_list)
 
         return np_entities
