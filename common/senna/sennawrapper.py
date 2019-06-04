@@ -47,7 +47,7 @@ class SennaWrapper:
         tmp_out_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), TMP_OUT_FILENAME)
 
         if verbose:
-            print('Senna temporary files: {}, {}'.format(tmp_filename, tmp_out_filename))
+            print('SENNA temporary files: {}, {}'.format(tmp_filename, tmp_out_filename))
 
         with open(tmp_filename, 'w') as tmp:
             tmp.write(sentence)
@@ -62,7 +62,7 @@ class SennaWrapper:
         os.chdir(self.__senna_location)
 
         if verbose:
-            print('Senna command: {}'.format(command))
+            print('SENNA command: {}'.format(command))
             process = Popen(command, stdin=tmp_file, stdout=tmp_out_file, shell=True)
         else:
             process = Popen(command, stdin=tmp_file, stdout=tmp_out_file, stderr=open(os.devnull, 'w'), shell=True)
@@ -73,13 +73,13 @@ class SennaWrapper:
         os.chdir(current_dir)
 
         if verbose:
-            print('Removing Senna temporary files...')
+            print('Removing SENNA temporary files...')
 
         tmp_file.close()
         os.remove(tmp_filename)
         tmp_out_file.close()
 
-        assert not process.returncode, 'ERROR: Senna exited with a non-zero code status.'
+        assert not process.returncode, 'ERROR: SENNA exited with a non-zero code status.'
 
         with open(tmp_out_filename, 'r') as out_file:
             pred_list = list()
