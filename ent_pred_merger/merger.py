@@ -1,3 +1,4 @@
+import difflib
 import json
 import os
 
@@ -24,29 +25,6 @@ class Merger:
 
         predicated = {}
         prefixed = {}
-        with open(triples_filename, 'r') as triples_file:
-            for line in triples_file.readlines():
-                line_lst = line.replace('\"', '').split('\t')
-                sentence_number = line_lst[0]
-                subject = line_lst[1]
-                predicate = line_lst[2]
-                object = line_lst[3]
-
-                k_bases = k_base.split(',')
-                for base in k_bases:
-                    if base == 'babelfy':
-                        prefixes, predicates = self.__babelfy(self.__get_lemma(predicate), verbose)
-                        prefixed.update(prefixes)
-                        predicated.update(predicates)
-                    elif base == 'ncbo':
-                        prefixes, predicates = self.__ncbo(self.__get_lemma(predicate), verbose)
-                        prefixed.update(prefixes)
-                        predicated.update(predicates)
-                    else:
-                        raise Exception("Unknown knowledge base!")
-
-            triples_file.close()
-
         entities = {}
         with open(links_filename, 'r') as links_file:
             for line in links_file.readlines():
@@ -69,6 +47,36 @@ class Merger:
                     entities.update({entity: links})
 
             links_file.close()
+
+        with open(triples_filename, 'r') as triples_file:
+            for line in triples_file.readlines():
+                line_lst = line.replace('\"', '').split('\t')
+                sentence_number = line_lst[0]
+                subject = line_lst[1]
+                predicate = line_lst[2]
+                object = line_lst[3]
+
+                # First deal with the predicate
+                k_bases = k_base.split(',')
+                for base in k_bases:
+                    if base == 'babelfy':
+                        prefixes, predicates = self.__babelfy(self.__get_lemma(predicate), verbose)
+                        prefixed.update(prefixes)
+                        predicated.update(predicates)
+                    elif base == 'ncbo':
+                        prefixes, predicates = self.__ncbo(self.__get_lemma(predicate), verbose)
+                        prefixed.update(prefixes)
+                        predicated.update(predicates)
+                    else:
+                        raise Exception("Unknown knowledge base!")
+
+                # Then, let us deal with the subject and object
+                all_entities = entities.keys()
+                subj_closest_matches = difflib.get_close_matches(subject, all_entities)
+                obj_closest_matches = difflib.get_close_matches(object, all_entities)
+                print('{} pred {}'.format(subj_closest_matches, obj_closest_matches))
+
+            triples_file.close()
 
         linked_triples = []
 
