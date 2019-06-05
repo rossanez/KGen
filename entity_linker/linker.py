@@ -108,7 +108,7 @@ class Linker:
             prefix = uri[:uri.rfind('#') + 1]
             suffix = uri[uri.rfind('#') + 1:]
             if not prefix in prefixes.keys():
-                raise Exception('Unknown prefix: {}'.format(prefix))
+                prefixes[prefix] = prefix[prefix.rfind('/') + 1:prefix.rfind('#')]
 
             try:
                 pref_map_str = '{} \n--Ontology: {} \n--PrefLabel: {}'.format(uri, ontology, pref_label)
