@@ -178,9 +178,7 @@ class Linker:
                 elif key.lower() in np.lower(): # composite
                     link_list.append(links[key])
 
-            if len(link_list) == 0:
-                np_entities[np.lower()] = 'notfound'
-            else:
+            if not len(link_list) == 0:
                 np_entities[np.lower()] = ','.join(link_list)
 
         return np_entities
