@@ -174,7 +174,7 @@ class FactsExtractor:
         resolved = ''
         for sentence in json_output['sentences']:
             for token in sentence['tokens']:
-                if token['pos'] == 'POS':
+                if token['pos'] == 'POS' or token['pos'] == '.':
                     resolved = resolved.strip()
 
                 resolved += token['word'] + ' '
