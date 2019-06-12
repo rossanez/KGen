@@ -145,7 +145,7 @@ class Linker:
         for sentence in json_output['sentences']:
             for token in sentence['tokens']:
                 if token['pos'].startswith('VB'):
-                    verb_set.add(token['lemma'])
+                    verb_set.add(token['word'])
 
             parsed_sentence = sentence['parse'].replace('\n', '')
             parse_tree = Tree.fromstring(parsed_sentence)
