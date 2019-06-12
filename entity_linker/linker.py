@@ -49,7 +49,7 @@ class Linker:
 
         with open(output_filename, 'a') as output_file:
             for key in prefixed.keys():
-                output_file.write('@prefix {}: <{}> .\n'.format(prefixed[key], key))
+                output_file.write('@PREFIX {}: <{}> .\n'.format(prefixed[key], key))
 
             output_file.write('\n@predicates\n')
             for key in verbs_linked.keys():
