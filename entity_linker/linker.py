@@ -40,7 +40,9 @@ class Linker:
             else:
                 raise Exception("Unknown knowledge base!")
 
-        entities_linked = self.__associate_np_to_entities(self.__extract_np(contents), linked)
+        np_entities, verbs = self.__extract_np_and_verbs(contents)
+        entities_linked = self.__associate_np_to_entities(np_entities, linked)
+        verbs_linked = self.__associate_verbs_to_entities(verbs, linked)
 
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
@@ -48,8 +50,12 @@ class Linker:
         with open(output_filename, 'a') as output_file:
             for key in prefixed.keys():
                 output_file.write('@prefix {}: <{}> .\n'.format(prefixed[key], key))
-            output_file.write('\n\n')
 
+            output_file.write('\n@predicates\n')
+            for key in verbs_linked.keys():
+                output_file.write(key.encode('utf-8') + ';' + verbs_linked[key] + '\n')
+
+            output_file.write('\n@entities\n')
             for key in entities_linked.keys():
                 output_file.write(key.encode('utf-8') + ';' + entities_linked[key] + '\n')
             output_file.close()
@@ -128,14 +134,19 @@ class Linker:
 
         return prefixes, links
 
-    def __extract_np(self, contents):
-        print('Determining the noun-phrases. \n Please wait, as it may take a while ...')
+    def __extract_np_and_verbs(self, contents):
+        print('Determining the noun-phrases (possible entities) and verbs (possible predicates). \n Please wait, as it may take a while ...')
         nlp = CoreNLPFactory.createCoreNLP()
         annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse', 'outputFormat': 'json'})
 
+        verb_set = set()
         entity_set = set()
         json_output = json.loads(annotated)
         for sentence in json_output['sentences']:
+            for token in sentence['tokens']:
+                if token['pos'].startswith('VB'):
+                    verb_set.add(token['lemma'])
+
             parsed_sentence = sentence['parse'].replace('\n', '')
             parse_tree = Tree.fromstring(parsed_sentence)
             for sub_tree in parse_tree.subtrees():
@@ -144,7 +155,7 @@ class Linker:
                     if np_entity: # not empty
                         entity_set.add(np_entity)
 
-        return entity_set
+        return entity_set, verb_set
 
     def __resolve_punctuation_possessives_and_determiners(self, contents):
         # This seems like a major overhead, maybe there is a better way...
@@ -181,7 +192,27 @@ class Linker:
             if not len(link_list) == 0:
                 np_entities[np.lower()] = ','.join(link_list)
 
+        for np in nps_list:
+            if not np.lower() in np_entities.keys():
+                np_entities[np.lower()] = 'notfound:' + np.lower().replace(' ', '_')
+
         return np_entities
+
+    def __associate_verbs_to_entities(self, verbs, links):
+        verbs_list = list(verbs)
+
+        verbs_entities = {}
+        for verb in verbs_list:
+            for key in links:
+                if verb.lower() in key.lower():
+                    verbs_entities[verb.lower()] = links[key]
+                    break
+
+        for verb in verbs_list:
+            if not verb.lower() in verbs_entities.keys():
+                verbs_entities[verb.lower()] = 'notfound:' + verb.lower()
+
+        return verbs_entities
 
     def __gen_tsv_file(self, contents, linked, input_filename):
         nlp = CoreNLPFactory.createCoreNLP()
