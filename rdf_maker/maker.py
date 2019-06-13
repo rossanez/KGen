@@ -58,6 +58,7 @@ class RDFMaker:
 
             links_file.close()
 
+        linked_triples = set()
         with open(triples_filename, 'r') as triples_file:
             for line in triples_file.readlines():
                 line_lst = line.replace('\"', '').split('\t')
@@ -66,22 +67,28 @@ class RDFMaker:
                 predicate = line_lst[2]
                 object = line_lst[3]
 
-                #TODO implement!
+                predicate_link = predicates[predicate]
+
+                closest_subject = difflib.get_close_matches(subject, entities)
+                subject_link = entities[closest_subject[0]]
+
+                closest_object = difflib.get_close_matches(object, entities)
+                object_link = entities[closest_object[0]]
+
+                linked_triples.add('{}\t{}\t{}\t.'.format(subject_link, predicate_link, object_link))
                 
             triples_file.close()
-
-        linked_triples = []
 
         output_filename = os.path.splitext(triples_filename)[0] + '_linked.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
             for key in prefixed.keys():
-                output_file.write('@prefix {}: <{}> .\n'.format(prefixed[key], key))
+                output_file.write('@PREFIX\t{}:\t<{}>\t.\n'.format(prefixed[key], key))
             output_file.write('\n\n')
 
             for triple in linked_triples:
-                output_file.write(triple + '\n')
+                output_file.write('{}\n'.format(triple))
             output_file.close()
         print('Linked entities were stored at {}'.format(output_filename))
 
