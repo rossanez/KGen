@@ -6,13 +6,12 @@ from sys import argv
 from sys import path
 
 path.insert(0, '../')
-from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 from common.clausie.clausiewrapper import ClausIEWrapper
 from common.senna.sennawrapper import SennaWrapper
+from common.utils import Utils
 
 class FactsExtractor:
-
-    __PUNCTUATION_LIST = ['.', ',', ':', ';']
 
     def extract_triples(self, input_filename, openie='stanford', srl=False, verbose=False):
         if not input_filename.startswith('/'):
@@ -45,12 +44,10 @@ class FactsExtractor:
         if verbose:
             print('Searching for triples using Stanford OpenIE ...')
 
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, ner, depparse, parse, openie', 'outputFormat': 'json'})
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, ner, depparse, parse, openie'})
 
-        json_output = json.loads(annotated)
-
-        for sentence in json_output['sentences']:
+        for sentence in annotated['sentences']:
             for openie in sentence['openie']:
                 with open(output, 'a') as output_file:
                     triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence['index'], openie['subject'], openie['relation'], openie['object'])
@@ -69,17 +66,15 @@ class FactsExtractor:
         if verbose:
             print('Searching for triples using ClausIE ...')
 
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
-
-        json_output = json.loads(annotated)
-
         input_clausie = os.path.splitext(input)[0] + '_clausie_input.txt'
         open(input_clausie, 'w').close()
 
         print('Preparing contents to be processed by ClausIE at {}'.format(input_clausie))
+        
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos'})
 
-        for sentence in json_output['sentences']:
+        for sentence in annotated['sentences']:
             sent_str = ''
             for token in sentence['tokens']:
                 if token['pos'] == 'POS':
@@ -109,7 +104,7 @@ class FactsExtractor:
             for line in input_file.readlines():
                 if len(line) < 1: continue
 
-                senna_output = senna.srl(self.__resolve_possessives(line), verbose=False)
+                senna_output = senna.srl(Utils.adjust_tokens(line), verbose=False)
                 for predicate in senna_output.keys():
                     dict_contents = senna_output[predicate]
 
@@ -163,22 +158,6 @@ class FactsExtractor:
             output_file.close()
 
         return output_filename
-
-    def __resolve_possessives(self, contents):
-        # This seems like a major overhead, maybe there is a better way...
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
-        json_output = json.loads(annotated)
-
-        resolved = ''
-        for sentence in json_output['sentences']:
-            for token in sentence['tokens']:
-                if token['pos'] == 'POS' or token['pos'] == '.':
-                    resolved = resolved.strip()
-
-                resolved += token['word'] + ' '
-
-        return resolved.strip()
 
 def main(args):
     arg_p = ArgumentParser('python extractor.py', description='Extracts facts from an unstructured text.')
