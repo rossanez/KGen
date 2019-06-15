@@ -1,5 +1,4 @@
 import difflib
-import json
 import os
 
 from argparse import ArgumentParser

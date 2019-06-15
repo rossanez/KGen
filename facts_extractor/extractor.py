@@ -1,15 +1,11 @@
-import json
 import os
 
 from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-path.insert(0, '../')
-from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
-from common.clausie.clausiewrapper import ClausIEWrapper
-from common.senna.sennawrapper import SennaWrapper
-from common.nlputils import NLPUtils
+from openie import OpenIE
+from srl import SemanticRoleLabeler
 
 class FactsExtractor:
 
@@ -23,141 +19,13 @@ class FactsExtractor:
         open(output_filename, 'w').close()
 
         if srl:
-            output = self.__semantic_role_labeling(input_filename, output_filename, verbose)
+            output = SemanticRoleLabeler().extract(input_filename, output_filename, verbose)
         else:
-            if openie == 'clausie':
-                output = self.__clausie(input_filename, output_filename, verbose)
-            elif openie == 'stanford':
-                output = self.__stanford_openie(input_filename, output_filename, verbose)
-            else:
-                raise Exception("Unknown openie system!")
+            output = OpenIE(openie).extract(input_filename, output_filename, verbose)
 
         print('Extracted triples were stored at {}'.format(output))
 
         return output
-
-    def __stanford_openie(self, input, output, verbose=False):
-        with open(input, 'r') as input_file:
-            contents = input_file.read()
-            input_file.close()
-
-        if verbose:
-            print('Searching for triples using Stanford OpenIE ...')
-
-        nlp = CoreNLPWrapper()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, ner, depparse, parse, openie'})
-
-        for sentence in annotated['sentences']:
-            for openie in sentence['openie']:
-                with open(output, 'a') as output_file:
-                    triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence['index'], openie['subject'], openie['relation'], openie['object'])
-                    if verbose:
-                       print(triple)
-                    output_file.write(triple + '\n')
-                    output_file.close()
-
-        return output
-
-    def __clausie(self, input, output, verbose=False):
-        with open(input, 'r') as input_file:
-            contents = input_file.read()
-            input_file.close()
-
-        if verbose:
-            print('Searching for triples using ClausIE ...')
-
-        input_clausie = os.path.splitext(input)[0] + '_clausie_input.txt'
-        open(input_clausie, 'w').close()
-
-        print('Preparing contents to be processed by ClausIE at {}'.format(input_clausie))
-        
-        nlp = CoreNLPWrapper()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos'})
-
-        for sentence in annotated['sentences']:
-            sent_str = ''
-            for token in sentence['tokens']:
-                if token['pos'] == 'POS':
-                    sent_str.strip()
-
-                sent_str += token['word'] + ' '
-
-            with open(input_clausie, 'a') as clausie_file:
-                clausie_file.write(str(sentence['index']) + '\t' + sent_str.strip() + '\n')
-                clausie_file.close()
-
-        clausie_out =  ClausIEWrapper.run_clausie(input_clausie, output, verbose)
-
-        os.remove(input_clausie)
-
-        return clausie_out
-
-    def __semantic_role_labeling(self, input_filename, output_filename, verbose=False):
-        if verbose:
-            print('Performing Sentence Role Labeling with SENNA...')
-
-        senna = SennaWrapper()
-
-        out_contents = ''
-        with open(input_filename, 'r') as input_file:
-            sentence_number = 0
-            for line in input_file.readlines():
-                if len(line) < 1: continue
-
-                senna_output = senna.srl(NLPUtils.adjust_tokens(line), verbose=False)
-                for predicate in senna_output.keys():
-                    dict_contents = senna_output[predicate]
-
-                    if 'A0' in dict_contents and 'A1' in dict_contents:
-                        agent = dict_contents['A0']
-                        patient = dict_contents['A1']
-
-                    elif 'A0' in dict_contents: # No A1
-                        agent = dict_contents['A0']
-                        if 'A2' in dict_contents:
-                            patient = dict_contents['A2']
-                        else:
-                            for key in dict_contents.keys():
-                                if not key == 'A0':
-                                    patient = dict_contents
-
-                    elif 'A1' in dict_contents: # No A0
-                        patient = dict_contents['A1']
-                        if 'A2' in dict_contents:
-                            agent = dict_contents['A2']
-                        else:
-                            for key in dict_contents.keys():
-                                if not key == 'A1':
-                                    agent = dict_contents[key]
-
-                    else: # Neither A0 nor A1
-                        if 'A2' in dict_contents:
-                            agent = dict_contents['A2']
-                            for key in dict_contents.keys():
-                               if not key == 'A2':
-                                   patient = dict_contents[key]
-                        else: # Very unlikely
-                            key_lst = dict_contents.keys()
-                            key_lst.sort(key = len) # sort by string length
-                            agent = dict_contents[key_lst[0]]
-                            patient = dict_contents[key_lst[1]]
-
-                    triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence_number, agent, predicate, patient)
-
-                    if verbose:
-                        print(triple)
-
-                    out_contents += triple + '\n'
-
-                sentence_number += 1
-
-            input_file.close()
-
-        with open(output_filename, 'w') as output_file:
-            output_file.write(out_contents)
-            output_file.close()
-
-        return output_filename
 
 def main(args):
     arg_p = ArgumentParser('python extractor.py', description='Extracts facts from an unstructured text.')
@@ -181,3 +49,4 @@ def main(args):
 
 if __name__ == '__main__':
     exit(main(argv))
+
