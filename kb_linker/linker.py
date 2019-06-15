@@ -1,4 +1,3 @@
-import json
 import os
 
 from argparse import ArgumentParser
@@ -9,13 +8,12 @@ from sys import path
 path.insert(0, '../')
 from common.babelfy.babelfywrapper import BabelfyWrapper
 from common.ncbo.ncbowrapper import NCBOWrapper
-from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
+from common.utils import Utils
 
 class Linker:
 
-    __PUNCTUATION_LIST = ['.', ',', ':', ';']
-
-    def link(self, input_filename, k_base='babelfy', tsv_file=False, verbose=False):
+    def link(self, input_filename, k_base='babelfy', verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -58,9 +56,6 @@ class Linker:
                 output_file.write('@ENTITY\t{};{}\n'.format(key.encode('utf-8'), entities_linked[key]))
             output_file.close()
         print('Linked entities were stored at {}'.format(output_filename))
-
-        if tsv_file:
-            self.__gen_tsv_file(contents, linked, input_filename)
 
         return output_filename
 
@@ -134,13 +129,12 @@ class Linker:
 
     def __extract_np_and_verbs(self, contents):
         print('Determining the noun-phrases (possible entities) and verbs (possible predicates). \n Please wait, as it may take a while ...')
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse', 'outputFormat': 'json'})
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse'})
 
         verb_set = set()
         entity_set = set()
-        json_output = json.loads(annotated)
-        for sentence in json_output['sentences']:
+        for sentence in annotated['sentences']:
             for token in sentence['tokens']:
                 if token['pos'].startswith('VB'):
                     verb_set.add(token['word'])
@@ -149,29 +143,11 @@ class Linker:
             parse_tree = Tree.fromstring(parsed_sentence)
             for sub_tree in parse_tree.subtrees():
                 if sub_tree.label() == 'NP':
-                    np_entity = self.__resolve_punctuation_possessives_and_determiners(' '.join(sub_tree.leaves()))
+                    np_entity = Utils.adjust_tokens(' '.join(sub_tree.leaves()), remove_punctuation=True)
                     if np_entity: # not empty
                         entity_set.add(np_entity)
 
         return entity_set, verb_set
-
-    def __resolve_punctuation_possessives_and_determiners(self, contents):
-        # This seems like a major overhead, maybe there is a better way...
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
-        json_output = json.loads(annotated)
-
-        resolved = ''
-        for sentence in json_output['sentences']:
-            for token in sentence['tokens']:
-                if token['pos'] in self.__PUNCTUATION_LIST or (token['index'] == 1 and token['pos'] == 'DT'):
-                    continue
-                if token['pos'] == 'POS':
-                    resolved = resolved.strip()
-
-                resolved += token['word'] + ' '
-
-        return resolved.strip()
 
     def __associate_np_to_entities(self, nps, links):
         nps_list = list(nps)
@@ -212,37 +188,15 @@ class Linker:
 
         return verbs_entities
 
-    def __gen_tsv_file(self, contents, linked, input_filename):
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner', 'outputFormat': 'json'})
-
-        json_output = json.loads(annotated)
-        tsv_filename = os.path.splitext(input_filename)[0] + '_ner.tsv'
-        open(tsv_filename, 'w').close() # Clean the file in case it exists
-
-        with open(tsv_filename, 'a') as tsv_file:
-            for sentence in json_output['sentences']:
-                for token in sentence['tokens']:
-                   tk = token['ner']
-                   if tk == 'O' and token['word'].upper() in linked:
-                       tk = 'MISC'
-                   tsv_file.write(token['word'] + '\t' + tk + '\n')
-        tsv_file.close()
-        print('TSV file has been stored at {}'.format(tsv_filename))
-
-        return tsv_filename
-
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-k', '--kgbase', type=str, default='babelfy', help='Knowledge base to be used, e.g. babelfy (default) or ncbo')
-    arg_p.add_argument('-t', '--tsv', action='store_true', help='Generates *.tsv file for NER model training')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.filename
     kg_base = args.kgbase
-    tsv_file = args.tsv
     verbose = args.verbose
 
     if filename is None:
@@ -250,7 +204,7 @@ def main(args):
         exit(1)
 
     linker = Linker()
-    linker.link(filename, kg_base, tsv_file, verbose)
+    linker.link(filename, kg_base, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))

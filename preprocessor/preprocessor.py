@@ -23,7 +23,7 @@ class Preprocessor:
 
         coref_resolver = CorefResolver(contents)
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
-        resolved_contents = Utils.remove_punctuation(abbrev_resolver.resolve(verbose))
+        resolved_contents = Utils.adjust_tokens(abbrev_resolver.resolve(verbose))
 
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:
