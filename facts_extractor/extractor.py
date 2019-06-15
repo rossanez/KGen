@@ -9,7 +9,7 @@ path.insert(0, '../')
 from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 from common.clausie.clausiewrapper import ClausIEWrapper
 from common.senna.sennawrapper import SennaWrapper
-from common.utils import Utils
+from common.nlputils import NLPUtils
 
 class FactsExtractor:
 
@@ -104,7 +104,7 @@ class FactsExtractor:
             for line in input_file.readlines():
                 if len(line) < 1: continue
 
-                senna_output = senna.srl(Utils.adjust_tokens(line), verbose=False)
+                senna_output = senna.srl(NLPUtils.adjust_tokens(line), verbose=False)
                 for predicate in senna_output.keys():
                     dict_contents = senna_output[predicate]
 

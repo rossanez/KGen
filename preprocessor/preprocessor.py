@@ -8,7 +8,7 @@ from corefresolver import CorefResolver
 from abbrevresolver import AbbrevResolver
 
 path.insert(0, '../')
-from common.utils import Utils
+from common.nlputils import NLPUtils
 
 class Preprocessor:
 
@@ -23,7 +23,7 @@ class Preprocessor:
 
         coref_resolver = CorefResolver(contents)
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
-        resolved_contents = Utils.adjust_tokens(abbrev_resolver.resolve(verbose))
+        resolved_contents = NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))
 
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:
