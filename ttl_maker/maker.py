@@ -8,9 +8,17 @@ from sys import path
 
 path.insert(0, '../')
 from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from common.triple import Triple
 
 class RDFMaker:
 
+    __predicates = {}
+    __prefixed = {}
+    __entities = {}
+
+    __classes = {}
+    __properties = {}
+    __relations = set()
 
     def make(self, triples_filename, links_filename, verbose=False):
         if not triples_filename.startswith('/'):
@@ -21,9 +29,9 @@ class RDFMaker:
 
         print('Processing predicates from {}'.format(triples_filename))
 
-        predicates = {}
-        prefixed = {}
-        entities = {}
+        self.__predicates = {}
+        self.__prefixed = {'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local'}
+        self.__entities = {}
         with open(links_filename, 'r') as links_file:
             for line in links_file.readlines():
                 if len(line) < 2: continue
@@ -36,7 +44,7 @@ class RDFMaker:
                     uri = line_list[2]
                     uri = uri[uri.find('<') + 1:uri.find('>')]
 
-                    prefixed.update({uri: prefix})
+                    self.__prefixed.update({uri: prefix})
 
                 elif line.startswith('@PREDICATE'):
                     line_list = line.split()
@@ -45,7 +53,7 @@ class RDFMaker:
                     line_list = line.split(';')
                     predicate = line_list[0]
                     link = line_list[1]
-                    predicates.update({predicate: link})
+                    self.__predicates.update({predicate: link})
 
                 elif line.startswith('@ENTITY'):
                     line_list = line.split()
@@ -54,11 +62,10 @@ class RDFMaker:
                     line_list = line.split(';')
                     entity = line_list[0]
                     links = line_list[1].split(',')
-                    entities.update({entity: links})
+                    self.__entities.update({entity: links})
 
             links_file.close()
 
-        linked_triples = set()
         with open(triples_filename, 'r') as triples_file:
             for line in triples_file.readlines():
                 line_lst = line.replace('\"', '').split('\t')
@@ -67,32 +74,59 @@ class RDFMaker:
                 predicate = line_lst[2]
                 object = line_lst[3]
 
-                predicate_link = predicates[predicate]
+                triple = Triple(subject, predicate, object)
 
-                closest_subject = difflib.get_close_matches(subject, entities)
-                subject_link = entities[closest_subject[0]]
+                predicate_link = self.__predicates[predicate]
 
-                closest_object = difflib.get_close_matches(object, entities)
-                object_link = entities[closest_object[0]]
+                closest_subject = difflib.get_close_matches(subject, self.__entities)
+                closest_object = difflib.get_close_matches(object, self.__entities)
 
-                linked_triples.add('{}\t{}\t{}\t.'.format(subject_link, predicate_link, object_link))
+                if len(closest_subject) < 1 or len(closest_object) < 1:
+                    continue
+
+                subject_link = self.__entities[closest_subject[0]]
+                object_link = self.__entities[closest_object[0]]
+
+                triple = Triple(closest_subject[0], predicate, closest_object[0])
+                prefixes, classes, properties, relation = triple.get_turtle()
+                self.__prefixed.update(prefixes)
+                self.__classes.update(classes)
+                self.__properties.update(properties)
+                self.__relations.add(relation)
                 
             triples_file.close()
 
-        output_filename = os.path.splitext(triples_filename)[0] + '_linked.txt'
+        output_filename = os.path.splitext(triples_filename)[0] + '.ttl'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
-            for key in prefixed.keys():
-                output_file.write('@PREFIX\t{}:\t<{}>\t.\n'.format(prefixed[key], key))
-            output_file.write('\n\n')
+            for key in self.__prefixed.keys():
+                output_file.write('@PREFIX\t{}:\t<{}>\t.\n'.format(self.__prefixed[key], key))
 
-            for triple in linked_triples:
-                output_file.write('{}\n'.format(triple))
+            output_file.write('\n#### Classes ####\n\n')
+            for key in self.__classes.keys():
+                output_file.write('{}\n\n'.format(self.__classes[key]))
+
+            output_file.write('#### Properties ####\n\n')
+            for key in self.__properties.keys():
+                output_file.write('{}\n\n'.format(self.__properties[key]))
+
+            output_file.write('#### Relations ####\n\n')
+            for relation in self.__relations:
+                output_file.write('{}\n'.format(relation))
+
             output_file.close()
         print('Linked entities were stored at {}'.format(output_filename))
 
         return output_filename
+
+    def __create_class(self, subject, predicate, object):
+        name = subject.replace(' ', '_') + '_'
+        uri = 'local:' + name
+
+        content = uri + ' a rdfs:Class ;\n rdfs:label ' + entity + ' .\n'
+
+        return content
 
 def main(args):
     arg_p = ArgumentParser('python maker.py', description='Merges the unlinked triples with the corresponding entities and predicates.')
