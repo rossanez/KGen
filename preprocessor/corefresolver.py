@@ -1,9 +1,7 @@
-import json
-
 from sys import path
 
 path.insert(0, '../')
-from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 
 class CorefResolver:
 
@@ -18,14 +16,12 @@ class CorefResolver:
 
     def __stanford_coref(self, verbose=False):
         if verbose:
-            print('Using Stanford corefs annotator.')
+            print('Using Stanford corefs')
 
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(self.__contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse, coref', 'coref.algorithm': 'neural', 'coref.neural.greedyness': '0.51', 'outputFormat': 'json'})
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(self.__contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse, coref', 'coref.algorithm': 'neural', 'coref.neural.greedyness': '0.51'})
 
-        json_output = json.loads(annotated)
-
-        return self.__rebuild_contents(json_output['sentences'], self.__eval_corefs(json_output['corefs'], verbose))
+        return self.__rebuild_contents(annotated['sentences'], self.__eval_corefs(annotated['corefs'], verbose))
 
     def __eval_corefs(self, json_corefs, verbose=False):
         corefs = {}

@@ -1,6 +1,4 @@
-import json
-
-from stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 
 class Utils:
 
@@ -9,12 +7,11 @@ class Utils:
     @staticmethod
     def remove_punctuation(contents):
         # This seems like a major overhead, maybe there is a better way...
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos', 'outputFormat': 'json'})
-        json_output = json.loads(annotated)
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(contents,  properties={'annotators': 'tokenize, ssplit, pos'})
 
         resolved = ''
-        for sentence in json_output['sentences']:
+        for sentence in annotated['sentences']:
             for token in sentence['tokens']:
                 if token['pos'] in Utils.PUNCTUATION or token['pos'] == 'POS':
                     resolved = resolved.strip()

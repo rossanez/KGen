@@ -1,10 +1,8 @@
-import json
-
 from nltk.tree import ParentedTree
 from sys import path
 
 path.insert(0, '../')
-from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 
 class AbbrevResolver:
 
@@ -19,15 +17,13 @@ class AbbrevResolver:
 
     def __stanford_resolve_abbrevs(self, verbose=False):
         if verbose:
-            print('Using Stanford Parser')
+            print('Using Stanford parser')
 
-        nlp = CoreNLPFactory.createCoreNLP()
-        annotated = nlp.annotate(self.__contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse', 'outputFormat': 'json'})
-
-        json_output = json.loads(annotated)
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(self.__contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse'})
 
         abbrev_refs = {}
-        for sentence in json_output['sentences']:
+        for sentence in annotated['sentences']:
             parsed = sentence['parse'].replace('\n', '')
             parse_tree = ParentedTree.fromstring(parsed)
             for sub_tree in parse_tree.subtrees():
@@ -47,7 +43,7 @@ class AbbrevResolver:
                             abbrev_refs[abbrev[:-1]] = reference[:-1]
 
         resolved_contents = ''
-        for sentence in json_output['sentences']:
+        for sentence in annotated['sentences']:
             for token in sentence['tokens']:
                 if token['word'] in abbrev_refs:
                     resolved_contents += abbrev_refs[token['word']] + ' '
