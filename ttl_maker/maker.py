@@ -100,7 +100,7 @@ class RDFMaker:
 
         with open(output_filename, 'a') as output_file:
             for key in self.__prefixed.keys():
-                output_file.write('@PREFIX\t{}:\t<{}>\t.\n'.format(self.__prefixed[key], key))
+                output_file.write('@prefix\t{}:\t<{}>\t.\n'.format(self.__prefixed[key], key))
 
             output_file.write('\n#### Classes ####\n\n')
             for key in self.__classes.keys():
