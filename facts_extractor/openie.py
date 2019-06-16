@@ -3,8 +3,9 @@ import os
 from sys import path
 
 path.insert(0, '../')
-from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 from common.clausie.clausiewrapper import ClausIEWrapper
+from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
+from common.triple import Triple
 
 class OpenIE:
 
@@ -22,10 +23,10 @@ class OpenIE:
         for sentence in annotated['sentences']:
             for openie in sentence['openie']:
                 with open(output, 'a') as output_file:
-                    triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence['index'], openie['subject'], openie['relation'], openie['object'])
+                    triple = Triple(sentence['index'], openie['subject'], openie['relation'], openie['object'])
                     if verbose:
-                       print(triple)
-                    output_file.write(triple + '\n')
+                       print(triple.to_string())
+                    output_file.write(triple.to_string() + '\n')
                     output_file.close()
 
         return output

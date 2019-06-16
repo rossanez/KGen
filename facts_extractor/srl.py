@@ -3,6 +3,7 @@ from sys import path
 path.insert(0, '../')
 from common.nlputils import NLPUtils
 from common.senna.sennawrapper import SennaWrapper
+from common.triple import Triple
 
 class SemanticRoleLabeler:
 
@@ -59,12 +60,12 @@ class SemanticRoleLabeler:
                             agent = dict_contents[key_lst[0]]
                             patient = dict_contents[key_lst[1]]
 
-                    triple = '{}\t"{}"\t"{}"\t"{}"'.format(sentence_number, agent, predicate, patient)
+                    triple = Triple(sentence_number, agent, predicate, patient)
 
                     if verbose:
-                        print(triple)
+                        print(triple.to_string())
 
-                    out_contents += triple + '\n'
+                    out_contents += triple.to_string() + '\n'
 
                 sentence_number += 1
 

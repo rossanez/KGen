@@ -73,8 +73,6 @@ class RDFMaker:
                 predicate = line_lst[2]
                 object = line_lst[3]
 
-                triple = Triple(subject, predicate, object)
-
                 predicate_link = self.__predicates[predicate]
 
                 closest_subject = difflib.get_close_matches(subject, self.__entities)
@@ -86,8 +84,8 @@ class RDFMaker:
                 subject_link = self.__entities[closest_subject[0]]
                 object_link = self.__entities[closest_object[0]]
 
-                triple = Triple(closest_subject[0], predicate, closest_object[0])
-                prefixes, classes, properties, relation = triple.get_turtle()
+                triple = Triple(sentence_number, closest_subject[0], predicate, closest_object[0])
+                prefixes, classes, properties, relation = triple.to_turtle()
                 self.__prefixed.update(prefixes)
                 self.__classes.update(classes)
                 self.__properties.update(properties)
@@ -119,14 +117,6 @@ class RDFMaker:
 
         return output_filename
 
-    def __create_class(self, subject, predicate, object):
-        name = subject.replace(' ', '_') + '_'
-        uri = 'local:' + name
-
-        content = uri + ' a rdfs:Class ;\n rdfs:label ' + entity + ' .\n'
-
-        return content
-
 def main(args):
     arg_p = ArgumentParser('python maker.py', description='Merges the unlinked triples with the corresponding entities and predicates.')
     arg_p.add_argument('-t', '--triples', type=str, default=None, help='Triples file')
@@ -150,3 +140,4 @@ def main(args):
 
 if __name__ == '__main__':
     exit(main(argv))
+

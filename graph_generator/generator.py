@@ -12,9 +12,11 @@ class GraphGenerator:
             turtle_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + turtle_filename
 
         print('Processing turtle file: {} '.format(turtle_filename))
-        self.__generate_graphviz_graph(turtle_filename, verbose)
+        self.__generate_graph(turtle_filename, verbose)
 
-    def __generate_graphviz_graph(self, turtle_filename, verbose=False):
+    def __generate_graph(self, turtle_filename, verbose=False):
+        if verbose:
+            print('Generating graph with Raptor and Graphviz ...')
 
         filename_base = os.path.splitext(turtle_filename)[0]
 
@@ -22,14 +24,14 @@ class GraphGenerator:
         command = 'rapper -i turtle -o dot {} | dot -Tpng -o{}'.format(turtle_filename, out_png)
 
         if verbose:
-            print('Executing dot command: {}'.format(command))
+            print('rapper | dot commands: {}'.format(command))
         dot_process = Popen(command, stdout=stderr, shell=True)
         dot_process.wait()
 
         print(dot_process.returncode)
-        assert not dot_process.returncode, 'ERROR: Call to rapper/graphviz exited with a non-zero code status.'
+        assert not dot_process.returncode, 'ERROR: Call to rapper | graphviz exited with a non-zero code status.'
 
-        print('KG generated and stored in: {}'.format(out_png))
+        print('Graph generated and stored in: {}'.format(out_png))
 
 def main(args):
     arg_p = ArgumentParser('python generator.py', description='Generates a graph from a turtle file.')
