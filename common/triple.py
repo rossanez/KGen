@@ -1,47 +1,79 @@
 
 class Triple:
 
-   __subject = None
-   __predicate = None
-   __object = None
+    __subject = None
+    __predicate = None
+    __object = None
 
-   __sentence_number = -1
+    __sentence_number = -1
 
-   def __init__(self, sn, s, p, o):
-       self.__sentence_number = sn
+    __subject_links = []
+    __predicate_link = None
+    __object_links = []
 
-       self.__subject = s
-       self.__predicate = p
-       self.__object = o
+    def __init__(self, sn, s, p, o, sl=[], pl=None, ol=[]):
+        self.__sentence_number = sn
 
-   def to_string(self):
-       return '{}\t"{}"\t"{}"\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
+        self.__subject = s
+        self.__predicate = p
+        self.__object = o
 
-   def __format_name(self, name):
-       return name.replace(' ', '_').replace('\'', '')
+        self.__subject_links = sl
+        self.__predicate_link = pl
+        self.__object_link = ol
 
-   def to_turtle(self):
-       prefixes = {'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf', 'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local'}
-       classes = {}
-       properties = {}
+    def to_string(self):
+        return '{}\t"{}"\t"{}"\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
 
-       s = 'local:{}'.format(self.__format_name(self.__subject))
-       s_class = '{}\ta\trdfs:Class'.format(s)
-       s_label = 'rdfs:label\t"{}"'.format(self.__subject)
-       classes.update({s: '{}\t;\n\t{}\t.'.format(s_class, s_label)})
+    def __format_name(self, name):
+        return name.replace(' ', '_').replace('\'', '')
 
-       o = 'local:{}'.format(self.__format_name(self.__object))
-       o_class = '{}\ta\trdfs:Class'.format(o)
-       o_label = 'rdfs:label\t"{}"'.format(self.__object)
-       classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
+    def to_turtle(self):
+        prefixes = {'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf', 'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local'}
+        classes = {}
+        properties = {}
+        part_relations = set()
 
-       p = 'local:{}'.format(self.__format_name(self.__predicate))
-       p_class = '{}\ta\trdf:Property'.format(p)
-       p_domain = 'rdfs:domain\t{}'.format(s)
-       p_range = 'rdfs:range\t{}'.format(o)
-       p_label = 'rdfs:label\t"{}"'.format(self.__predicate)
-       properties.update({p: '{}\t;\n\t{}\t;\n\t{}\t;\n\t{}\t.'.format(p_class, p_domain, p_range, p_label)})
+        s = 'local:{}'.format(self.__format_name(self.__subject))
+        s_class = '{}\ta\trdfs:Class'.format(s)
+        s_label = 'rdfs:label\t"{}"'.format(self.__subject)
+        classes.update({s: '{}\t;\n\t{}\t.'.format(s_class, s_label)})
 
-       relation = '{}\t{}\t{}\t.'.format(s, p, o)
+        part_relations.update(self.__get_parts(self.__subject_links, s))
 
-       return prefixes, classes, properties, relation
+        o = 'local:{}'.format(self.__format_name(self.__object))
+        o_class = '{}\ta\trdfs:Class'.format(o)
+        o_label = 'rdfs:label\t"{}"'.format(self.__object)
+        classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
+
+        part_relations.update(self.__get_parts(self.__object_links, s))
+
+        p = 'local:{}'.format(self.__format_name(self.__predicate))
+        p_class = '{}\ta\trdf:Property'.format(p)
+        p_domain = 'rdfs:domain\t{}'.format(s)
+        p_range = 'rdfs:range\t{}'.format(o)
+        p_label = 'rdfs:label\t"{}"'.format(self.__predicate)
+        properties.update({p+p_range+p_label: '{}\t;\n\t{}\t;\n\t{}\t;\n\t{}\t.'.format(p_class, p_domain, p_range, p_label)})
+
+        part_relations.update(self.__get_parts([self.__predicate_link], p))
+
+        relation = '{}\t{}\t{}\t.'.format(s, p, o)
+
+        return prefixes, classes, properties, part_relations, relation
+
+    def __get_typeof(self, type, target):
+        return {'{}\trdf:type\t{}\t.'.format(target, type)}
+
+    def __get_parts(self, parts, full):
+        if len(parts) == 0: return {}
+        elif len(parts) == 1 and not parts[0].startswith('notfound:'): return self.__get_typeof(parts[0], full)
+        else:
+            part_relations = set()
+            for part in parts:
+                if not part.startswith('notfound'):
+                    part_relations.add('{}\tlocal:partOf\t{}\t.'.format(part, full))
+
+            part_relations.add('local:partof\trdf:type\tnci:C43743\t.')
+
+            return part_relations
+

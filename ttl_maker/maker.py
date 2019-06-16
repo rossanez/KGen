@@ -17,6 +17,7 @@ class RDFMaker:
 
     __classes = {}
     __properties = {}
+    __mapped_relations = set()
     __relations = set()
 
     def make(self, triples_filename, links_filename, verbose=False):
@@ -84,10 +85,11 @@ class RDFMaker:
                 subject_link = self.__entities[closest_subject[0]]
                 object_link = self.__entities[closest_object[0]]
 
-                triple = Triple(sentence_number, closest_subject[0], predicate, closest_object[0])
-                prefixes, classes, properties, relation = triple.to_turtle()
+                triple = Triple(sentence_number, closest_subject[0], predicate, closest_object[0], subject_link, predicate_link, object_link)
+                prefixes, classes, properties, mapped, relation = triple.to_turtle()
                 self.__prefixed.update(prefixes)
                 self.__classes.update(classes)
+                self.__mapped_relations.update(mapped)
                 self.__properties.update(properties)
                 self.__relations.add(relation)
                 
@@ -108,7 +110,11 @@ class RDFMaker:
             for key in self.__properties.keys():
                 output_file.write('{}\n\n'.format(self.__properties[key]))
 
-            output_file.write('#### Relations ####\n\n')
+            output_file.write('#### Mapped Relations ####\n\n')
+            for mapping in self.__mapped_relations:
+                output_file.write('{}\n'.format(mapping))
+
+            output_file.write('\n#### Relations ####\n\n')
             for relation in self.__relations:
                 output_file.write('{}\n'.format(relation))
 
