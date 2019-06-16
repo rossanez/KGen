@@ -30,3 +30,4 @@ class ClausIEWrapper:
             print(out_contents)
 
         return output_filename
+

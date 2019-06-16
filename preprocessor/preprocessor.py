@@ -4,8 +4,9 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from corefresolver import CorefResolver
 from abbrevresolver import AbbrevResolver
+from corefresolver import CorefResolver
+from simplifier import Simplifier
 
 path.insert(0, '../')
 from common.nlputils import NLPUtils
@@ -23,11 +24,12 @@ class Preprocessor:
 
         coref_resolver = CorefResolver(contents)
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
-        resolved_contents = NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))
+        #simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
+        simplified_contents = NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))
 
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:
-            output_file.write(resolved_contents)
+            output_file.write(simplified_contents)
             output_file.close()
 
         print('Preprocessed text stored at {}'.format(output_filename))
