@@ -1,2 +1,2 @@
-# knowledgegraph
-Creates knowledge graphs from unstructured text.
+# KGen
+Knowledge graphs generation from unstructured text
