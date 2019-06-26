@@ -50,8 +50,8 @@ class Triple:
 
         p = 'local:{}'.format(self.__format_name(self.__predicate))
         p_class = '{}\ta\trdf:Property'.format(p)
-        p_domain = 'rdfs:domain\t{}'.format(s)
-        p_range = 'rdfs:range\t{}'.format(o)
+        p_domain = 'rdf:subject\t{}'.format(s)
+        p_range = 'rdf:object\t{}'.format(o)
         p_label = 'rdfs:label\t"{}"'.format(self.__predicate)
         properties.update({p+p_range+p_label: '{}\t;\n\t{}\t;\n\t{}\t;\n\t{}\t.'.format(p_class, p_domain, p_range, p_label)})
 
@@ -62,18 +62,29 @@ class Triple:
         return prefixes, classes, properties, part_relations, relation
 
     def __get_typeof(self, type, target):
-        return {'{}\trdf:type\t{}\t.'.format(target, type)}
+        match_type = type[type.find('_') + 1: type.rfind('_')]
+        if not match_type: # not found
+            link = type
+        else:
+            link = type[:type.find(match_type)-1]
+        matched = type[type.find('\"') + 1:-1]
+        return match_type, link, matched
 
     def __get_parts(self, parts, full):
         if len(parts) == 0: return {}
-        elif len(parts) == 1 and not parts[0].startswith('notfound:'): return self.__get_typeof(parts[0], full)
+        elif len(parts) == 1 and not parts[0].startswith('notfound:'):
+            match_type, link, matched = self.__get_typeof(parts[0], full)
+            return {'{}\trdf:type\t{}\t.'.format(full, link), '{}\trdfs:label\t"{}"\t.'.format(link, matched)}
         else:
             part_relations = set()
             for part in parts:
                 if not part.startswith('notfound'):
-                    part_relations.add('{}\tlocal:partOf\t{}\t.'.format(part, full))
+                    match_type, link, matched = self.__get_typeof(part, full)
+                    part_relations.add('{}\tlocal:partOf\t{}\t.'.format(link, full))
+                    part_relations.add('{}\trdfs:label\t"{}"\t.'.format(link, matched))
 
             part_relations.add('local:partof\trdf:type\tnci:C43743\t.')
+            part_relations.add('nci:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
 
             return part_relations
 

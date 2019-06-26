@@ -29,6 +29,8 @@ class KnowledgeBases:
                 print('Mapped "{}" to {}'.format(entity, uri))
                 annotation.pprint()
 
+            suffix += '_exact_"{}"'.format(entity).replace(',', '')
+
             links[entity.lower()] = '{}:{}'.format(prefixes[prefix], suffix)
 
         return prefixes, links
@@ -67,6 +69,11 @@ class KnowledgeBases:
                 if preferable_match or not entity in links:
                     if verbose:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
+
+                    if preferable_match:
+                        suffix += '_exact_"{}"'.format(pref_label).replace(',', '')
+                    else:
+                        suffix += '_synonym_"{}"'.format(pref_label).replace(',', '')
 
                     links[entity] = '{}:{}'.format(prefixes[prefix], suffix)
                     if preferable_match: break
