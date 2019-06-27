@@ -95,7 +95,8 @@ class RDFMaker:
                 
             triples_file.close()
 
-        output_filename = os.path.splitext(triples_filename)[0] + '.ttl'
+        output_filename = os.path.splitext(triples_filename)[0]
+        output_filename = output_filename[:output_filename.rfind('_')] + '_kg.ttl'
         open(output_filename, 'w').close() # Clean the file in case it exists
 
         with open(output_filename, 'a') as output_file:
