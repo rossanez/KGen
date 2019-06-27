@@ -1,0 +1,118 @@
+@prefix	nci:	<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>	.
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	local:	<http://local/local.owl#>	.
+
+#### Classes ####
+
+local:immuno-sensor	a	rdfs:Class	;
+	rdfs:label	"immuno-sensor"	.
+
+local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	a	rdfs:Class	;
+	rdfs:label	"more specific binding of the antibody via the antibody via its fc region instead of the conventional nhs coupling fc region instead of the conventional nhs coupling"	.
+
+local:antibody_that_binds_to_protein_a_or_protein_g	a	rdfs:Class	;
+	rdfs:label	"antibody that binds to protein a or protein g"	.
+
+local:biomarker	a	rdfs:Class	;
+	rdfs:label	"biomarker"	.
+
+local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	a	rdfs:Class	;
+	rdfs:label	"non-covalent immobilization of antibodies and the subsequent immobilization and analysis of the immunoglobulin binding proteins protein a or protein g antigens"	.
+
+local:atr-crystals	a	rdfs:Class	;
+	rdfs:label	"atr-crystals"	.
+
+local:antibody	a	rdfs:Class	;
+	rdfs:label	"antibody"	.
+
+local:protein_a_or_protein_g	a	rdfs:Class	;
+	rdfs:label	"protein a or protein g"	.
+
+local:immunoglobulin_binding_proteins_protein_a_or_protein_g	a	rdfs:Class	;
+	rdfs:label	"immunoglobulin binding proteins protein a or protein g"	.
+
+local:3-4-fold_higher_antigen_binding_capacity	a	rdfs:Class	;
+	rdfs:label	"3-4-fold higher antigen binding capacity"	.
+
+#### Properties ####
+
+local:catch	a	rdf:Property	;
+	rdf:subject	local:atr-crystals	;
+	rdf:object	local:biomarker	;
+	rdfs:label	"catch"	.
+
+local:leads	a	rdf:Property	;
+	rdf:subject	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	;
+	rdf:object	local:3-4-fold_higher_antigen_binding_capacity	;
+	rdfs:label	"leads"	.
+
+local:binds	a	rdf:Property	;
+	rdf:subject	local:protein_a_or_protein_g	;
+	rdf:object	local:antibody	;
+	rdfs:label	"binds"	.
+
+local:employed	a	rdf:Property	;
+	rdf:subject	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	;
+	rdf:object	local:immunoglobulin_binding_proteins_protein_a_or_protein_g	;
+	rdfs:label	"employed"	.
+
+local:used	a	rdf:Property	;
+	rdf:subject	local:antibody_that_binds_to_protein_a_or_protein_g	;
+	rdf:object	local:immuno-sensor	;
+	rdfs:label	"used"	.
+
+#### Mapped Relations ####
+
+nci:C82888	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+local:protein_a_or_protein_g	rdf:type	nci:C17021	.
+nci:C53286	rdfs:label	"Next"	.
+nci:C13041	local:partOf	local:antibody_that_binds_to_protein_a_or_protein_g	.
+nci:C41573	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C17021	rdfs:label	"Protein"	.
+nci:C149409	rdfs:label	"Conventional Release Mechanism of Action"	.
+nci:C268	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C82888	rdfs:label	"Binding"	.
+nci:C82888	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C53286	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+local:partof	rdf:type	nci:C43743	.
+nci:C61302	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+nci:C17021	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C16295	rdfs:label	"Antibody"	.
+nci:C142778	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+local:employed	rdf:type	nci:C25172	.
+nci:C41129	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+nci:C13041	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+nci:C61303	rdfs:label	"Crystal"	.
+nci:C25594	rdfs:label	"Negation"	.
+nci:C16295	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+nci:C43743	rdfs:label	"Part Of"	.
+nci:C38024	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+nci:C25391	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C61302	rdfs:label	"Couple"	.
+nci:C16295	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C142778	rdfs:label	"Immobilization"	.
+nci:C17021	local:partOf	local:antibody_that_binds_to_protein_a_or_protein_g	.
+nci:C41573	rdfs:label	"Covalent Interaction"	.
+nci:C21430	local:partOf	local:atr-crystals	.
+nci:C41129	rdfs:label	"Region"	.
+nci:C25594	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C149409	local:partOf	local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	.
+nci:C572	rdfs:label	"Immunoglobulin"	.
+nci:C16295	local:partOf	local:antibody_that_binds_to_protein_a_or_protein_g	.
+nci:C61303	local:partOf	local:atr-crystals	.
+nci:C13041	rdfs:label	"Body"	.
+nci:C572	local:partOf	local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	.
+nci:C25391	rdfs:label	"Analysis"	.
+nci:C38024	rdfs:label	"Specified"	.
+nci:C268	rdfs:label	"Antigen"	.
+nci:C21430	rdfs:label	"Serine/Threonine-Protein Kinase ATR"	.
+nci:C25172	rdfs:label	"Employment"	.
+
+#### Relations ####
+
+local:atr-crystals	local:catch	local:biomarker	.
+local:non-covalent_immobilization_of_antibodies_and_the_subsequent_immobilization_and_analysis_of_the_immunoglobulin_binding_proteins_protein_a_or_protein_g_antigens	local:employed	local:immunoglobulin_binding_proteins_protein_a_or_protein_g	.
+local:more_specific_binding_of_the_antibody_via_the_antibody_via_its_fc_region_instead_of_the_conventional_nhs_coupling_fc_region_instead_of_the_conventional_nhs_coupling	local:leads	local:3-4-fold_higher_antigen_binding_capacity	.
+local:protein_a_or_protein_g	local:binds	local:antibody	.
+local:antibody_that_binds_to_protein_a_or_protein_g	local:used	local:immuno-sensor	.
