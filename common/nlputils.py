@@ -49,6 +49,8 @@ class NLPUtils:
                 if sub_tree.label() == 'NP':
                     np_entity = NLPUtils.adjust_tokens(' '.join(sub_tree.leaves()), remove_punctuation=True)
                     if np_entity: # not empty
+                        if np_entity.endswith('.'):
+                            np_entity = np_entity.replace('.', '') # needed due to a tokenizer bug
                         entity_set.add(np_entity)
 
         return entity_set, verb_set

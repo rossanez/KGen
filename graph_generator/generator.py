@@ -12,7 +12,7 @@ class GraphGenerator:
             turtle_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + turtle_filename
 
         print('Processing turtle file: {} '.format(turtle_filename))
-        self.__generate_graph(turtle_filename, verbose)
+        return self.__generate_graph(turtle_filename, verbose)
 
     def __generate_graph(self, turtle_filename, verbose=False):
         if verbose:
@@ -32,6 +32,7 @@ class GraphGenerator:
         assert not dot_process.returncode, 'ERROR: Call to rapper | graphviz exited with a non-zero code status.'
 
         print('Graph generated and stored in: {}'.format(out_png))
+        return out_png
 
 def main(args):
     arg_p = ArgumentParser('python generator.py', description='Generates a graph from a turtle file.')

@@ -71,11 +71,11 @@ class KnowledgeBases:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
 
                     if preferable_match:
-                        suffix += '_exact_"{}"'.format(pref_label).replace(',', '')
+                        store_suffix = suffix + '_exact_"{}"'.format(pref_label).replace(',', '').replace('.', '')
                     else:
-                        suffix += '_synonym_"{}"'.format(pref_label).replace(',', '')
+                        store_suffix = suffix + '_synonym_"{}"'.format(pref_label).replace(',', '').replace('.', '')
 
-                    links[entity] = '{}:{}'.format(prefixes[prefix], suffix)
+                    links[entity] = '{}:{}'.format(prefixes[prefix], store_suffix)
                     if preferable_match: break
 
         return prefixes, links

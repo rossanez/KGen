@@ -25,6 +25,8 @@ class SemanticRoleLabeler:
                 senna_output = senna.srl(NLPUtils.adjust_tokens(line), verbose=False)
                 for predicate in senna_output.keys():
                     dict_contents = senna_output[predicate]
+                    agent = None
+                    patient = None
 
                     if 'A0' in dict_contents and 'A1' in dict_contents:
                         agent = dict_contents['A0']
@@ -59,6 +61,12 @@ class SemanticRoleLabeler:
                             key_lst.sort(key = len) # sort by string length
                             agent = dict_contents[key_lst[0]]
                             patient = dict_contents[key_lst[1]]
+
+                    if agent is None or patient is None:
+                        print('-Warning: No agent or patient determined for predicate {}'.format(predicate))
+                        print('-- agent: {}'.format(agent))
+                        print('-- patient: {}'.format(patient))
+                        continue
 
                     triple = Triple(sentence_number, agent, predicate, patient)
 

@@ -74,6 +74,10 @@ class RDFMaker:
                 predicate = line_lst[2]
                 object = line_lst[3]
 
+                if not predicate in self.__predicates:
+                    print('Warning: predicate "{}" not found in links!'.format(predicate))
+                    continue
+
                 predicate_link = self.__predicates[predicate]
 
                 closest_subject = difflib.get_close_matches(subject, self.__entities)
