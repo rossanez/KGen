@@ -82,8 +82,8 @@ class Triple:
                     match_type, link, matched = self.__get_typeof(part, full)
                     part_relations.add('{}\tlocal:partOf\t{}\t.'.format(link, full))
                     part_relations.add('{}\trdfs:label\t"{}"\t.'.format(link, matched))
-                else: # notfound:
-                    ent = 'local:{}'.format(part[part.find(':')+1:])
+                elif not len(parts) == 1: # notfound:
+                    ent = 'local:{}'.format(self.__format_name(part[part.find(':')+1:]))
                     part_relations.add('{}\tlocal:partOf\t{}\t.'.format(ent, full))
 
             part_relations.add('local:partof\trdf:type\tnci:C43743\t.')

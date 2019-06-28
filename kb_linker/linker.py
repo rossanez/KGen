@@ -66,6 +66,18 @@ class Linker:
             if not np.lower() in np_entities.keys():
                 np_entities[np.lower()] = 'notfound:' + np.lower().replace(' ', '_')
 
+        for np in nps_list:
+            pos = nps_list.index(np)
+            sub_nps_list = nps_list[pos + 1:]
+            for sub_np in sub_nps_list:
+                if np in sub_np and not np == sub_np:
+                    # merge both links lists
+                    tmp_set = set()
+                    tmp_set.update(np_entities[np.lower()].split(','))
+                    tmp_set.update(np_entities[sub_np.lower()].split(','))
+
+                    np_entities[sub_np.lower()] = ','.join(list(tmp_set))
+
         return np_entities
 
     def __associate_verbs_to_entities(self, verbs, links):
