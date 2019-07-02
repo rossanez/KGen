@@ -50,10 +50,11 @@ class Triple:
 
         p = 'local:{}'.format(self.__format_name(self.__predicate))
         p_class = '{}\ta\trdf:Property'.format(p)
-        p_domain = 'rdf:subject\t{}'.format(s)
-        p_range = 'rdf:object\t{}'.format(o)
+        #p_domain = 'rdf:subject\t{}'.format(s)
+        #p_range = 'rdf:object\t{}'.format(o)
         p_label = 'rdfs:label\t"{}"'.format(self.__predicate)
-        properties.update({p+p_range+p_label: '{}\t;\n\t{}\t;\n\t{}\t;\n\t{}\t.'.format(p_class, p_domain, p_range, p_label)})
+        #properties.update({p+p_range+p_label: '{}\t;\n\t{}\t;\n\t{}\t;\n\t{}\t.'.format(p_class, p_domain, p_range, p_label)})
+        properties.update({p: '{}\t;\n\t{}\t.'.format(p_class, p_label)})
 
         part_relations.update(self.__get_parts([self.__predicate_link], p))
 

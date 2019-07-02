@@ -24,8 +24,7 @@ class Preprocessor:
 
         coref_resolver = CorefResolver(contents)
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
-        #simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
-        simplified_contents = NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))
+        simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
 
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:

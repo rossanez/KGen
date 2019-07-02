@@ -5,14 +5,17 @@
 
 #### Classes ####
 
-local:triggering_receptor	a	rdfs:Class	;
-	rdfs:label	"triggering receptor"	.
-
-local:variants_in_the_triggering_receptor_expressed_on_myeloid_cells_2	a	rdfs:Class	;
-	rdfs:label	"variants in the triggering receptor expressed on myeloid cells 2"	.
+local:we	a	rdfs:Class	;
+	rdfs:label	"we"	.
 
 local:findings	a	rdfs:Class	;
 	rdfs:label	"findings"	.
+
+local:germline_knockout_of_the_trem2r47h_variant	a	rdfs:Class	;
+	rdfs:label	"germline knockout of the trem2r47h variant"	.
+
+local:variants_in_expressed_on_myeloid_cells_2	a	rdfs:Class	;
+	rdfs:label	"variants in expressed on myeloid cells 2"	.
 
 local:seeding_and_spreading_of_neuritic_plaque_tau_aggregates	a	rdfs:Class	;
 	rdfs:label	"seeding and spreading of neuritic plaque tau aggregates"	.
@@ -23,84 +26,86 @@ local:increased_risk_for_sporadic_late-onset_alzheimers_disease	a	rdfs:Class	;
 local:myeloid_cells_2	a	rdfs:Class	;
 	rdfs:label	"myeloid cells 2"	.
 
+local:variants	a	rdfs:Class	;
+	rdfs:label	"variants"	.
+
 local:development_of_peri-plaque_tau_pathologies	a	rdfs:Class	;
 	rdfs:label	"development of peri-plaque tau pathologies"	.
 
-local:germline_knockout_of_trem2_or_the_trem2r47h_variant	a	rdfs:Class	;
-	rdfs:label	"germline knockout of trem2 or the trem2r47h variant"	.
+local:germline_knockout_of_trem2	a	rdfs:Class	;
+	rdfs:label	"germline knockout of trem2"	.
 
 local:microgliosis	a	rdfs:Class	;
 	rdfs:label	"microgliosis"	.
 
 #### Properties ####
 
-local:expressed	a	rdf:Property	;
-	rdf:subject	local:myeloid_cells_2	;
-	rdf:object	local:triggering_receptor	;
-	rdfs:label	"expressed"	.
-
-local:demonstrate	a	rdf:Property	;
-	rdf:subject	local:findings	;
-	rdf:object	local:development_of_peri-plaque_tau_pathologies	;
-	rdfs:label	"demonstrate"	.
-
-local:facilitates	a	rdf:Property	;
-	rdf:subject	local:germline_knockout_of_trem2_or_the_trem2r47h_variant	;
-	rdf:object	local:seeding_and_spreading_of_neuritic_plaque_tau_aggregates	;
-	rdfs:label	"facilitates"	.
+local:associated	a	rdf:Property	;
+	rdfs:label	"associated"	.
 
 local:reduces	a	rdf:Property	;
-	rdf:subject	local:germline_knockout_of_trem2_or_the_trem2r47h_variant	;
-	rdf:object	local:microgliosis	;
 	rdfs:label	"reduces"	.
 
-local:associated	a	rdf:Property	;
-	rdf:subject	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	;
-	rdf:object	local:variants_in_the_triggering_receptor_expressed_on_myeloid_cells_2	;
-	rdfs:label	"associated"	.
+local:expressed	a	rdf:Property	;
+	rdfs:label	"expressed"	.
+
+local:show	a	rdf:Property	;
+	rdfs:label	"show"	.
+
+local:facilitates	a	rdf:Property	;
+	rdfs:label	"facilitates"	.
+
+local:demonstrate	a	rdf:Property	;
+	rdfs:label	"demonstrate"	.
 
 #### Mapped Relations ####
 
 nci:C17102	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
+nci:C125468	rdfs:label	"TREM2 Gene"	.
 nci:C13349	rdfs:label	"Myeloid"	.
-nci:C12549	rdfs:label	"Myeloid Cell"	.
-nci:C103373	rdfs:label	"CDISC Findings Class"	.
-nci:C2866	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
-local:2	local:partOf	local:germline_knockout_of_trem2_or_the_trem2r47h_variant	.
+nci:C48938	local:partOf	local:myeloid_cells_2	.
 nci:C2866	rdfs:label	"Alzheimer's Disease"	.
-nci:C22491	local:partOf	local:germline_knockout_of_trem2_or_the_trem2r47h_variant	.
 nci:C12549	local:partOf	local:myeloid_cells_2	.
-nci:C25713	rdfs:label	"Variation"	.
 nci:C2991	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
 nci:C64998	rdfs:label	"Late"	.
-nci:C48938	local:partOf	local:myeloid_cells_2	.
-nci:C25281	rdfs:label	"Associated"	.
 local:2	local:partOf	local:myeloid_cells_2	.
 local:partof	rdf:type	nci:C43743	.
-nci:C16608	rdfs:label	"Gene Expression"	.
-nci:C25533	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
-nci:C13349	local:partOf	local:myeloid_cells_2	.
+nci:C103373	rdfs:label	"CDISC Findings Class"	.
 local:sporadic	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
-nci:C25713	local:partOf	local:germline_knockout_of_trem2_or_the_trem2r47h_variant	.
-nci:C125468	rdfs:label	"TREM2 Gene"	.
 local:findings	rdf:type	nci:C103373	.
 nci:C25533	rdfs:label	"Increase"	.
 nci:C48938	rdfs:label	"Cell Count"	.
-nci:C17102	rdfs:label	"Risk"	.
-nci:C125468	local:partOf	local:germline_knockout_of_trem2_or_the_trem2r47h_variant	.
-nci:C2991	rdfs:label	"Disease or Disorder"	.
-local:expressed	rdf:type	nci:C16608	.
-nci:C25279	rdfs:label	"Onset"	.
-local:associated	rdf:type	nci:C25281	.
+nci:C12549	rdfs:label	"Myeloid Cell"	.
+nci:C25713	local:partOf	local:germline_knockout_of_the_trem2r47h_variant	.
 nci:C64998	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
-nci:C25279	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
+local:expressed	rdf:type	nci:C16608	.
 nci:C22491	rdfs:label	"Knock-out"	.
 nci:C43743	rdfs:label	"Part Of"	.
+nci:C22491	local:partOf	local:germline_knockout_of_the_trem2r47h_variant	.
+nci:C25279	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
+nci:C2866	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
+nci:C125468	local:partOf	local:germline_knockout_of_the_trem2r47h_variant	.
+nci:C16608	rdfs:label	"Gene Expression"	.
+nci:C25533	local:partOf	local:increased_risk_for_sporadic_late-onset_alzheimers_disease	.
+nci:C25713	rdfs:label	"Variation"	.
+local:2	local:partOf	local:germline_knockout_of_the_trem2r47h_variant	.
+nci:C22491	local:partOf	local:germline_knockout_of_trem2	.
+nci:C25281	rdfs:label	"Associated"	.
+nci:C17102	rdfs:label	"Risk"	.
+nci:C2991	rdfs:label	"Disease or Disorder"	.
+local:2	local:partOf	local:germline_knockout_of_trem2	.
+nci:C25279	rdfs:label	"Onset"	.
+local:associated	rdf:type	nci:C25281	.
+nci:C13349	local:partOf	local:myeloid_cells_2	.
+nci:C125468	local:partOf	local:germline_knockout_of_trem2	.
 
 #### Relations ####
 
-local:myeloid_cells_2	local:expressed	local:triggering_receptor	.
+local:germline_knockout_of_trem2	local:facilitates	local:seeding_and_spreading_of_neuritic_plaque_tau_aggregates	.
+local:germline_knockout_of_the_trem2r47h_variant	local:reduces	local:microgliosis	.
+local:increased_risk_for_sporadic_late-onset_alzheimers_disease	local:associated	local:variants_in_expressed_on_myeloid_cells_2	.
+local:germline_knockout_of_the_trem2r47h_variant	local:facilitates	local:seeding_and_spreading_of_neuritic_plaque_tau_aggregates	.
+local:we	local:show	local:seeding_and_spreading_of_neuritic_plaque_tau_aggregates	.
 local:findings	local:demonstrate	local:development_of_peri-plaque_tau_pathologies	.
-local:increased_risk_for_sporadic_late-onset_alzheimers_disease	local:associated	local:variants_in_the_triggering_receptor_expressed_on_myeloid_cells_2	.
-local:germline_knockout_of_trem2_or_the_trem2r47h_variant	local:reduces	local:microgliosis	.
-local:germline_knockout_of_trem2_or_the_trem2r47h_variant	local:facilitates	local:seeding_and_spreading_of_neuritic_plaque_tau_aggregates	.
+local:myeloid_cells_2	local:expressed	local:variants	.
+local:germline_knockout_of_trem2	local:reduces	local:microgliosis	.
