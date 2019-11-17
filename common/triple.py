@@ -29,7 +29,7 @@ class Triple:
         return name.replace(' ', '_').replace('\'', '')
 
     def to_turtle(self):
-        prefixes = {'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf', 'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local'}
+        prefixes = {'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf', 'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://www.w3.org/2002/07/owl#': 'owl', 'http://local/local.owl#': 'local'}
         classes = {}
         properties = {}
         part_relations = set()
@@ -75,7 +75,7 @@ class Triple:
         if len(parts) == 0: return {}
         elif len(parts) == 1 and not parts[0].startswith('notfound:'):
             match_type, link, matched = self.__get_typeof(parts[0], full)
-            return {'{}\trdf:type\t{}\t.'.format(full, link), '{}\trdfs:label\t"{}"\t.'.format(link, matched)}
+            return {'{}\towl:sameAs\t{}\t.'.format(full, link), '{}\trdfs:label\t"{}"\t.'.format(link, matched)}
         else:
             part_relations = set()
             for part in parts:
@@ -87,7 +87,7 @@ class Triple:
                     ent = 'local:{}'.format(self.__format_name(part[part.find(':')+1:]))
                     part_relations.add('{}\tlocal:partOf\t{}\t.'.format(ent, full))
 
-            part_relations.add('local:partof\trdf:type\tnci:C43743\t.')
+            part_relations.add('local:partof\towl:sameAs\tnci:C43743\t.')
             part_relations.add('nci:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
 
             return part_relations
