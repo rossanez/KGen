@@ -2,7 +2,7 @@ import os
 import requests
 
 from argparse import ArgumentParser
-from commands import getoutput
+from commands import getoutput #for python3, it should be 'from subprocess import getoutput'
 from subprocess import Popen
 from sys import argv
 from sys import stderr
@@ -50,7 +50,7 @@ class Server:
         return os.path.isfile(SHUTDOWN_KEY_FILE)
 
     def startServer(self, verbose=False, wait_for_subprocess=False):
-    	assert not self.isServerStarted(), 'ERROR: Server already started.'
+        assert not self.isServerStarted(), 'ERROR: Server already started.'
 
         source_dir = os.path.dirname(os.path.abspath(__file__))
         if verbose:
@@ -74,7 +74,7 @@ class Server:
         assert not java_process.returncode, 'ERROR: Stanford CoreNLP Server exited with a non-zero code status.'
 
     def stopServer(self, verbose=False):
-    	assert self.isServerStarted(), 'ERROR: Server not running.'
+        assert self.isServerStarted(), 'ERROR: Server not running.'
 
         shutdown_key = getoutput('cat ' + SHUTDOWN_KEY_FILE)
         if verbose:
