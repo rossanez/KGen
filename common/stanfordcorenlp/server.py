@@ -1,11 +1,18 @@
 import os
 import requests
+import sys
 
 from argparse import ArgumentParser
-from commands import getoutput #for python3, it should be 'from subprocess import getoutput'
 from subprocess import Popen
 from sys import argv
 from sys import stderr
+from sys import version_info
+
+# Python version-specific import:
+if version_info[0] < 3:
+    from commands import getoutput
+else:
+    from subprocess import getoutput
 
 PORT = 9000
 BASE_URL = 'http://localhost'
