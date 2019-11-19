@@ -3,7 +3,7 @@ import glob
 from os import listdir
 from os.path import abspath, dirname
 from stanfordcorenlp import StanfordCoreNLP
-from server import Server
+from .server import Server
 
 class CoreNLPFactory:
 

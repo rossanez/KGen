@@ -2,7 +2,7 @@ import os
 
 from nltk.tree import Tree
 
-from stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
+from .stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 
 class NLPUtils:
 

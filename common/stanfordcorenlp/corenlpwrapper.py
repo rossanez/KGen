@@ -1,6 +1,6 @@
 import json
 
-from corenlpfactory import CoreNLPFactory
+from .corenlpfactory import CoreNLPFactory
 
 class CoreNLPWrapper:
 
