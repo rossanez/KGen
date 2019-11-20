@@ -119,4 +119,4 @@ class SennaWrapper:
             out_file.close()
             os.remove(tmp_out_filename)
 
-    	return predicates
+        return predicates

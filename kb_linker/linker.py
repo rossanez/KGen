@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from kb import KnowledgeBases
+from .kb import KnowledgeBases
 
 path.insert(0, '../')
 from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper

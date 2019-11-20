@@ -1,6 +1,7 @@
 import json
 import os
-import urllib2
+import urllib.parse
+import urllib.request
 
 from pybabelfy.babelfy import *
 
@@ -45,10 +46,10 @@ class BabelfyWrapper:
             query_str = 'SELECT ?s ?p ?o WHERE { ?s ?p ?o . } LIMIT 10'
 
         params = SPARQL_BASE_ANNOTATOR_PARAMS
-        params += "query=" + urllib2.quote(query_str) + "&"
-        params += "key=" + urllib2.quote(self.__key) + "&"
-        params += "format=" + urllib2.quote("application/sparql-results+json")
+        params += "query=" + urllib.parse.quote(query_str) + "&"
+        params += "key=" + urllib.parse.quote(self.__key) + "&"
+        params += "format=" + urllib.parse.quote("application/sparql-results+json")
 
         url = SPARQL_ENDPOINT_URL + params
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         return json.loads(opener.open(url).read())

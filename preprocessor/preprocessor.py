@@ -4,9 +4,9 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from abbrevresolver import AbbrevResolver
-from corefresolver import CorefResolver
-from simplifier import Simplifier
+from .abbrevresolver import AbbrevResolver
+from .corefresolver import CorefResolver
+from .simplifier import Simplifier
 
 path.insert(0, '../')
 from common.nlputils import NLPUtils

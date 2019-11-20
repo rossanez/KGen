@@ -1,5 +1,5 @@
 # KGen
 Knowledge graphs generation from unstructured text
 
-usage: python pipeline.py -f text.txt
+usage: python3 pipeline.py -f text.txt
 

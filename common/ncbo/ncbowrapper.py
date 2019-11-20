@@ -1,6 +1,7 @@
 import json
 import os
-import urllib2
+import urllib.parse
+import urllib.request
 
 KEY_FILE = 'ncbo.key'
 REST_URL = "http://data.bioontology.org"
@@ -39,10 +40,10 @@ class NCBOWrapper:
             include = "prefLabel,synonym,definition" # include must also be a comma-separated list
         params += "include=" + include + "&"
 
-        params += "text=" + urllib2.quote(contents)
+        params += "text=" + urllib.parse.quote(contents)
         url = REST_URL + params
 
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         opener.addheaders = [('Authorization', 'apikey token=' + self.__key)]
         return json.loads(opener.open(url).read())
 
@@ -51,10 +52,10 @@ class NCBOWrapper:
         if not ontologies is None:
             params += "ontologies=" + ontologies + "&"
 
-        params += "q=" + urllib2.quote(contents)
+        params += "q=" + urllib.parse.quote(contents)
         url = REST_URL + params
 
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         opener.addheaders = [('Authorization', 'apikey token=' + self.__key)]
         return json.loads(opener.open(url).read())
 
@@ -64,9 +65,9 @@ class NCBOWrapper:
 
         params = SPARQL_BASE_ANNOTATOR_PARAMS
         params += "apikey=" + self.__key + "&"
-        params += "query=" + urllib2.quote(query_str) + "&"
+        params += "query=" + urllib.parse.quote(query_str) + "&"
         params += "outputformat=" + "json"
 
         url = SPARQL_ENDPOINT_URL + params
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         return json.loads(opener.open(url).read())
