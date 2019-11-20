@@ -6,6 +6,8 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from scispacy.abbreviation import AbbreviationDetector
 from scispacy.umls_linking import UmlsEntityLinker
 from spacy import displacy
+from spacy.matcher import Matcher
+from spacy.tokens import Span
 
 class ScispaCyWrapper:
 
@@ -23,7 +25,31 @@ class ScispaCyWrapper:
 
         return set([(X.text, X.label_) for X in doc.ents])
 
-    def link_entities_with_umls(self, text, verbose=False)
+    def detect_relations(self, text, verbose=False):
+        if verbose:
+            print('Detecting relations using scispaCy.')
+
+        nlp = spacy.load(self.__model)
+
+        matcher = Matcher(nlp.vocab)
+        pattern = [{'DEP':'ROOT'}, 
+                   {'DEP':'prep','OP':"?"},
+                   {'DEP':'agent','OP':"?"},  
+                   {'POS':'ADJ','OP':"?"}] 
+        matcher.add("matching_1", None, pattern)
+
+        relations = set()
+        for sentence in sent_tokenize(text):
+            doc = nlp(sentence)
+            matches = matcher(doc)
+            k = len(matches) - 1
+            span = doc[matches[k][1]:matches[k][2]]
+
+            relations.add(span.text)
+
+        return relations        
+
+    def link_with_umls(self, text, verbose=False):
         if verbose:
             print('Detecting named entities and linking them with UMLS, using scispaCy.')
 
@@ -42,7 +68,7 @@ class ScispaCyWrapper:
                     print("Entity Name:" ,entity)
                     Concept_Id, Score = umls_ent
                     print('Concept_Id = {} Score = {}'.format(Concept_Id,Score))
-                    print(linker.umls.cui_to_entity[umls_ent[0]])
+                    print(umls_linker.umls.cui_to_entity[umls_ent[0]])
 
         return entities
 
