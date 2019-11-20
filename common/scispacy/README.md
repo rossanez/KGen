@@ -2,8 +2,9 @@ Please install NLTK using PIP first:
 
  'pip install nltk'
 
-Then install scispaCy using PIP (Python 3 is required):
+Then install spacy and scispaCy using PIP (Python 3 is required):
 
+ 'pip install spacy'
  'pip install scispacy'
 
 Finally, download and install 'en_core_sci_lg' model from https://allenai.github.io/scispacy/
