@@ -3,6 +3,7 @@ import os
 from argparse import ArgumentParser
 from sys import argv
 from sys import path
+from sys import version_info
 
 from common.stanfordcorenlp.server import Server
 from facts_extractor.extractor import FactsExtractor
@@ -57,6 +58,10 @@ class Pipeline:
         assert not png_filename is None, 'Graph image generation has failed!'
 
 def main(args):
+    if version_info[0] < 3: # Python version check
+        print('Please run the pipeline using Python 3')
+        exit(1)
+
     arg_p = ArgumentParser('python pipeline.py', description='Generates a KG from an unstructured text.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-np', '--nopreprocess', action='store_true', help='Skips preprocessing')
