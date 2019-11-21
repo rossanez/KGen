@@ -23,7 +23,7 @@ class ScispaCyWrapper:
         nlp = spacy.load(self.__model)
         doc = nlp(text)
 
-        return set([(X.text, X.label_) for X in doc.ents])
+        return set([X.text for X in doc.ents])
 
     def detect_relations(self, text, verbose=False):
         if verbose:
@@ -32,10 +32,10 @@ class ScispaCyWrapper:
         nlp = spacy.load(self.__model)
 
         matcher = Matcher(nlp.vocab)
-        pattern = [{'DEP':'ROOT'}, 
-                   {'DEP':'prep','OP':"?"},
-                   {'DEP':'agent','OP':"?"},  
-                   {'POS':'ADJ','OP':"?"}] 
+        pattern = [{'DEP':'ROOT'}]#, 
+#                   {'DEP':'prep','OP':"?"},
+#                   {'DEP':'agent','OP':"?"},  
+#                   {'POS':'ADJ','OP':"?"}] 
         matcher.add("matching_1", None, pattern)
 
         relations = set()
@@ -62,15 +62,20 @@ class ScispaCyWrapper:
         entities = str(OrderedDict.fromkeys(entities))
         entities = nlp(entities).ents
 
-        if verbose:
-            for entity in entities:
-                for umls_ent in entity._.umls_ents:
+        linked = {}
+        for entity in entities:
+            for umls_ent in entity._.umls_ents:
+                Concept_Id, Score = umls_ent
+
+                if not entity.text in linked: # greater scores are shown first, so no need to add smaller scores.
+                    linked[entity.text] = Concept_Id
+
+                if verbose:
                     print("Entity Name:" ,entity)
-                    Concept_Id, Score = umls_ent
-                    print('Concept_Id = {} Score = {}'.format(Concept_Id,Score))
+                    print('Concept_Id = {} Score = {}'.format(Concept_Id, Score))
                     print(umls_linker.umls.cui_to_entity[umls_ent[0]])
 
-        return entities
+        return linked
 
     def resolve_abbreviations(self, text, verbose=False):
         abbrev_refs = self.__detect_abbreviations(text, verbose)
