@@ -5,12 +5,14 @@ from sys import argv
 from sys import path
 from sys import version_info
 
-from common.stanfordcorenlp.server import Server
-from facts_extractor.extractor import FactsExtractor
-from graph_generator.generator import GraphGenerator
-from kb_linker.linker import Linker
-from preprocessor.preprocessor import Preprocessor
-from rdf_maker.maker import RDFMaker
+# Version check
+if not version_info[0] < 3:
+    from common.stanfordcorenlp.server import Server
+    from facts_extractor.extractor import FactsExtractor
+    from graph_generator.generator import GraphGenerator
+    from kb_linker.linker import Linker
+    from preprocessor.preprocessor import Preprocessor
+    from rdf_maker.maker import RDFMaker
 
 class Pipeline:
 

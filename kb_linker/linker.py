@@ -9,6 +9,7 @@ from .kb import KnowledgeBases
 path.insert(0, '../')
 from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 from common.nlputils import NLPUtils
+from common.scispacy.scispacywrapper import ScispaCyWrapper
 
 class Linker:
 
@@ -22,9 +23,17 @@ class Linker:
             contents = input_file.read()
             input_file.close()
 
+        sci = ScispaCyWrapper()
+        np_entities = sci.detect_entities(contents, verbose)
+        print(np_entities)
+        verbs = sci.detect_relations(contents, verbose)
+        print(verbs)
+        umls_links = sci.link_with_umls(contents, verbose)
+        print(umls_links)
+
         prefixes, links = KnowledgeBases(k_base).annotate(contents, verbose)
 
-        np_entities, verbs = NLPUtils.extract_np_and_verbs(contents)
+        #np_entities, verbs = NLPUtils.extract_np_and_verbs(contents)
         entities_linked = self.__associate_np_to_entities(np_entities, links)
         verbs_linked = self.__associate_verbs_to_entities(verbs, links)
 
