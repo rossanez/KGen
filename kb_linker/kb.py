@@ -3,6 +3,7 @@ from sys import path
 path.insert(0, '../')
 from common.babelfy.babelfywrapper import BabelfyWrapper
 from common.ncbo.ncbowrapper import NCBOWrapper
+from common.scispacy.scispacywrapper import ScispaCyWrapper
 from common.uriutils import URIUtils
 
 class KnowledgeBases:
@@ -99,3 +100,15 @@ class KnowledgeBases:
 
         return prefixes, links
 
+    def query(self, contents, verbose):
+        #TODO extend it to other KBs -- currently only NCBO.
+
+        sci = ScispaCyWrapper()
+        np_entities = sci.detect_entities(contents, verbose)
+        print(np_entities)
+        verbs = sci.detect_relations(contents, verbose)
+        print(verbs)
+        umls_links = sci.link_with_umls(contents, verbose)
+        print(umls_links)
+
+        #TODO continue from here!

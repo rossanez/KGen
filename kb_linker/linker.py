@@ -4,16 +4,15 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from .kb import KnowledgeBases
+from kb import KnowledgeBases
 
 path.insert(0, '../')
 from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 from common.nlputils import NLPUtils
-from common.scispacy.scispacywrapper import ScispaCyWrapper
 
 class Linker:
 
-    def link(self, input_filename, k_base='babelfy', verbose=False):
+    def link(self, input_filename, k_base='babelfy', umls=False, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -23,19 +22,13 @@ class Linker:
             contents = input_file.read()
             input_file.close()
 
-        sci = ScispaCyWrapper()
-        np_entities = sci.detect_entities(contents, verbose)
-        print(np_entities)
-        verbs = sci.detect_relations(contents, verbose)
-        print(verbs)
-        umls_links = sci.link_with_umls(contents, verbose)
-        print(umls_links)
-
-        prefixes, links = KnowledgeBases(k_base).annotate(contents, verbose)
-
-        #np_entities, verbs = NLPUtils.extract_np_and_verbs(contents)
-        entities_linked = self.__associate_np_to_entities(np_entities, links)
-        verbs_linked = self.__associate_verbs_to_entities(verbs, links)
+        if umls:
+            prefixes, links = KnowledgeBases(k_base).query(contents, verbose)
+        else:
+            np_entities, verbs = NLPUtils.extract_np_and_verbs(contents)
+            prefixes, links = KnowledgeBases(k_base).annotate(contents, verbose)
+            entities_linked = self.__associate_np_to_entities(np_entities, links)
+            verbs_linked = self.__associate_verbs_to_entities(verbs, links)
 
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
         open(output_filename, 'w').close() # Clean the file in case it exists
@@ -109,11 +102,13 @@ def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-k', '--kgbase', type=str, default='babelfy', help='Knowledge base to be used, e.g. babelfy (default) or ncbo')
+    arg_p.add_argument('-u', '--use_umls', action='store_true', help='Use UMLS as an intermediate link step.')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.filename
     kg_base = args.kgbase
+    umls = args.use_umls
     verbose = args.verbose
 
     if filename is None:
@@ -121,7 +116,7 @@ def main(args):
         exit(1)
 
     linker = Linker()
-    linker.link(filename, kg_base, verbose)
+    linker.link(filename, kg_base, umls, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))
