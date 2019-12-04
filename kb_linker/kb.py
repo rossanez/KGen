@@ -30,9 +30,7 @@ class KnowledgeBases:
                 print('Mapped "{}" to {}'.format(entity, uri))
                 annotation.pprint()
 
-            suffix += '_exact_"{}"'.format(entity).replace(',', '')
-
-            links[entity.lower()] = '{}:{}'.format(prefixes[prefix], suffix)
+            links[entity.lower()] = 'sameas\t{}:{}\t{}'.format(prefixes[prefix], suffix, entity.replace(',', ''))
 
         return prefixes, links
 
@@ -64,7 +62,7 @@ class KnowledgeBases:
                 continue # NCBO may present some Chinese characters. We will ignore them.
 
             for class_annotation in annotation['annotations']:
-                entity = class_annotation['text']
+                entity = contents[class_annotation['from']-1:class_annotation['to']] # class_annotation['text'] is uppercase
                 preferable_match = class_annotation['matchType'].upper() == 'PREF'
 
                 if preferable_match or not entity in links:
@@ -72,11 +70,10 @@ class KnowledgeBases:
                         print('-Mapped "{}" to {} \n--PrefMatch: {}'.format(entity, pref_map_str, preferable_match))
 
                     if preferable_match:
-                        store_suffix = suffix + '_exact_"{}"'.format(pref_label).replace(',', '').replace('.', '')
+                        links[entity] = 'sameas\t{}:{}\t{}'.format(prefixes[prefix], suffix, pref_label.replace(',', '').replace('.', ''))
                     else:
-                        store_suffix = suffix + '_synonym_"{}"'.format(pref_label).replace(',', '').replace('.', '')
+                        links[entity] = 'synonym\t{}:{}\t{}'.format(prefixes[prefix], suffix, pref_label.replace(',', '').replace('.', ''))
 
-                    links[entity] = '{}:{}'.format(prefixes[prefix], store_suffix)
                     if preferable_match: break
 
         return prefixes, links
