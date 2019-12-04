@@ -22,27 +22,48 @@ class Linker:
             contents = input_file.read()
             input_file.close()
 
+        output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
+        open(output_filename, 'w').close() # Clean the file in case it exists
+
         if umls:
-            prefixes, links = KnowledgeBases(k_base).query(contents, verbose)
+            prefixes, entities, relations, links = KnowledgeBases(k_base).query(contents, verbose)
+
+            with open(output_filename, 'a') as output_file:
+                for key in prefixes.keys():
+                    output_file.write('@PREFIX\t{}:\t<{}>\n'.format(prefixes[key], key))
+
+                for key in relations:
+                    if key in links.keys():
+                        output_file.write('@PREDICATE\t{}\tsameas\t{}\n'.format(key.encode('utf-8'), links[key]))
+                    else:
+                        output_file.write('@PREDICATE\t{}\tnotfound\tNone\n'.format(key.encode('utf-8')))
+
+                for key in entities:
+                    if key in links.keys():
+                        output_file.write('@ENTITY\t{}\tsameas\t{}\n'.format(key.encode('utf-8'), links[key]))
+                    else:
+                        output_file.write('@ENTITY\t{}\tnotfound\tNone\n'.format(key.encode('utf-8')))
+
+                output_file.close()
+            
         else:
             np_entities, verbs = NLPUtils.extract_np_and_verbs(contents)
             prefixes, links = KnowledgeBases(k_base).annotate(contents, verbose)
             entities_linked = self.__associate_np_to_entities(np_entities, links)
             verbs_linked = self.__associate_verbs_to_entities(verbs, links)
 
-        output_filename = os.path.splitext(input_filename)[0] + '_links.txt'
-        open(output_filename, 'w').close() # Clean the file in case it exists
+            with open(output_filename, 'a') as output_file:
+                for key in prefixes.keys():
+                    output_file.write('@PREFIX\t{}:\t<{}>\n'.format(prefixes[key], key))
 
-        with open(output_filename, 'a') as output_file:
-            for key in prefixes.keys():
-                output_file.write('@PREFIX\t{}:\t<{}>\n'.format(prefixes[key], key))
+                for key in verbs_linked.keys():
+                    output_file.write('@PREDICATE\t{};{}\n'.format(key.encode('utf-8'), verbs_linked[key]))
 
-            for key in verbs_linked.keys():
-                output_file.write('@PREDICATE\t{};{}\n'.format(key.encode('utf-8'), verbs_linked[key]))
+                for key in entities_linked.keys():
+                    output_file.write('@ENTITY\t{};{}\n'.format(key.encode('utf-8'), entities_linked[key]))
 
-            for key in entities_linked.keys():
-                output_file.write('@ENTITY\t{};{}\n'.format(key.encode('utf-8'), entities_linked[key]))
             output_file.close()
+
         print('Linked entities were stored at {}'.format(output_filename))
 
         return output_filename
@@ -120,4 +141,3 @@ def main(args):
 
 if __name__ == '__main__':
     exit(main(argv))
-

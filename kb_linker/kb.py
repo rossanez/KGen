@@ -104,11 +104,15 @@ class KnowledgeBases:
         #TODO extend it to other KBs -- currently only NCBO.
 
         sci = ScispaCyWrapper()
-        np_entities = sci.detect_entities(contents, verbose)
-        print(np_entities)
-        verbs = sci.detect_relations(contents, verbose)
-        print(verbs)
-        umls_links = sci.link_with_umls(contents, verbose)
-        print(umls_links)
+        entities, relations, umls = sci.detect(contents, detect_relations=True, resolve_abbreviations=False, link_with_umls=True, verbose=verbose)
 
-        #TODO continue from here!
+        if umls:
+            prefixes = {'http://bioportal.bioontology.org/ontologies/umls/': 'umls'}
+
+        links = entities.union(relations)
+
+        ncbo = NCBOWrapper()
+        #TODO continue NCBO linking.
+
+        return prefixes, entities, relations, umls
+        
