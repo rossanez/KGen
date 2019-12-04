@@ -93,7 +93,7 @@ class ScispaCyWrapper:
                         print(umls_entity)
 
                     if not entity.text in linked: # greater scores are shown first, so no need to add smaller scores.
-                        linked[entity.text] = 'umls:{}\t{}'.format(Concept_Id, umls_entity.canonical_name)
+                        linked[entity.text] = 'sameas\tumls:{}\t{}'.format(Concept_Id, umls_entity.canonical_name)
                         break
 
             if verbose:
