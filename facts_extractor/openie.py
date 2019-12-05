@@ -4,6 +4,7 @@ from sys import path
 
 path.insert(0, '../')
 from common.clausie.clausiewrapper import ClausIEWrapper
+from common.nlputils import NLPUtils
 from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 from common.triple import Triple
 
@@ -23,7 +24,7 @@ class OpenIE:
         for sentence in annotated['sentences']:
             for openie in sentence['openie']:
                 with open(output, 'a') as output_file:
-                    triple = Triple(sentence['index'], openie['subject'], openie['relation'], openie['object'])
+                    triple = Triple(sentence['index'], NLPUtils.adjust_tokens(openie['subject']), openie['relation'], NLPUtils.adjust_tokens(openie['object']))
                     if verbose:
                        print(triple.to_string())
                     output_file.write(triple.to_string() + '\n')
@@ -63,7 +64,25 @@ class OpenIE:
 
         os.remove(input_clausie)
 
-        return clausie_out
+        # We need to do some adjustments to the output.
+        final_contents = ""
+        with open(clausie_out, 'r') as clausie_out_file:
+            line = clausie_out_file.readline()
+            while line:
+                line = line.replace('\"', '').split('\t')
+                triple = Triple(line[0].strip(), NLPUtils.adjust_tokens(line[1].strip()), line[2].strip(), NLPUtils.adjust_tokens(line[3].strip()))
+                if verbose:
+                    print(triple.to_string())
+
+                final_contents += triple.to_string() + '\n'
+
+                line = clausie_out_file.readline()
+
+        final_file = open(clausie_out, "w")
+        n = final_file.write(final_contents)
+        final_file.close()
+
+        return final_file
 
     __methods = {'stanford':__stanford_openie, 'clausie':__clausie}
     __systems = None

@@ -4,8 +4,8 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from .openie import OpenIE
-from .srl import SemanticRoleLabeler
+from openie import OpenIE
+from srl import SemanticRoleLabeler
 
 class FactsExtractor:
 
