@@ -73,7 +73,7 @@ class Triple:
 
     def __get_parts(self, parts, full):
         if len(parts) == 0: return {}
-        elif len(parts) == 1 and not parts[0].startswith('notfound:'):
+        elif len(parts) == 1 and not parts[0].startswith('notfound'):
             match_type, link, matched = self.__get_typeof(parts[0], full)
             return {'{}\towl:sameAs\t{}\t.'.format(full, link), '{}\trdfs:label\t"{}"\t.'.format(link, matched)}
         else:

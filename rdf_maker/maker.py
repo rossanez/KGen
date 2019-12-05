@@ -47,21 +47,17 @@ class RDFMaker:
                     self.__prefixed.update({uri: prefix})
 
                 elif line.startswith('@PREDICATE'):
-                    line_list = line.split()
-                    line = ' '.join(line_list[1:])
+                    line_list = line.split('\t')
 
-                    line_list = line.split(';')
-                    predicate = line_list[0]
-                    link = line_list[1]
-                    self.__predicates.update({predicate: link})
+                    predicate = line_list[1]
+                    links = '\t'.join(line_list[2:])
+                    self.__predicates.update({predicate: links})
 
                 elif line.startswith('@ENTITY'):
-                    line_list = line.split()
-                    line = ' '.join(line_list[1:])
+                    line_list = line.split('\t')
 
-                    line_list = line.split(';')
-                    entity = line_list[0]
-                    links = line_list[1].split(',')
+                    entity = line_list[1]
+                    links = '\t'.join(line_list[2:])
                     self.__entities.update({entity: links})
 
             links_file.close()
@@ -80,16 +76,21 @@ class RDFMaker:
 
                 predicate_link = self.__predicates[predicate]
 
-                closest_subject = difflib.get_close_matches(subject, self.__entities)
-                closest_object = difflib.get_close_matches(object, self.__entities)
+                entities = set([str(X) for X in self.__entities.keys()])
+                closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=0.5)
+                closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=0.5)
 
-                if len(closest_subject) < 1 or len(closest_object) < 1:
+                if len(closest_subjects) < 1 or len(closest_objects) < 1:
                     continue
 
-                subject_link = self.__entities[closest_subject[0]]
-                object_link = self.__entities[closest_object[0]]
+                subject_links = []
+                for subj in closest_subjects:
+                    subject_links += [self.__entities[subj]]
+                object_links = []
+                for obj in closest_objects:
+                    object_links += [self.__entities[obj]]
 
-                triple = Triple(sentence_number, closest_subject[0], predicate, closest_object[0], subject_link, predicate_link, object_link)
+                triple = Triple(sentence_number, subject, predicate, object, subject_links, predicate_link, object_links)
                 prefixes, classes, properties, mapped, relation = triple.to_turtle()
                 self.__prefixed.update(prefixes)
                 self.__classes.update(classes)
