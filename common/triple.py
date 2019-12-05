@@ -20,7 +20,7 @@ class Triple:
 
         self.__subject_links = sl
         self.__predicate_link = pl
-        self.__object_link = ol
+        self.__object_links = ol
 
     def to_string(self):
         return '{}\t"{}"\t"{}"\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
@@ -46,7 +46,7 @@ class Triple:
         o_label = 'rdfs:label\t"{}"'.format(self.__object)
         classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
 
-        part_relations.update(self.__get_parts(self.__object_links, s))
+        part_relations.update(self.__get_parts(self.__object_links, o))
 
         p = 'local:{}'.format(self.__format_name(self.__predicate))
         p_class = '{}\ta\trdf:Property'.format(p)
@@ -63,32 +63,58 @@ class Triple:
         return prefixes, classes, properties, part_relations, relation
 
     def __get_typeof(self, type, target):
-        match_type = type[type.find('_') + 1: type.rfind('_')]
-        if not match_type: # not found
-            link = type
-        else:
-            link = type[:type.find(match_type)-1]
-        matched = type[type.find('\"') + 1:-1]
-        return match_type, link, matched
+        line = type.split('\t')
+        num_links = len(line) // 3 # Result as integer
+
+        matched_types = []
+        links = []
+        matches = []
+        for i in range(num_links):
+            match_type = line[0 + 3*i]
+            link = line[1 + 3*i]
+            matched = line[2 + 3*i]
+
+            if match_type == 'sameas' or match_type == 'synonym':
+                match_type = 'owl:sameAs'
+            # if match_type == 'no_match': will remain 'no_match'
+
+            if link == 'not_found': # not_found
+                link = type
+
+            matched_types += [match_type]
+            links += [link]
+            matches += [matched]
+
+        return matched_types, links, matches
 
     def __get_parts(self, parts, full):
         if len(parts) == 0: return {}
-        elif len(parts) == 1 and not parts[0].startswith('notfound'):
-            match_type, link, matched = self.__get_typeof(parts[0], full)
-            return {'{}\towl:sameAs\t{}\t.'.format(full, link), '{}\trdfs:label\t"{}"\t.'.format(link, matched)}
+        elif len(parts) == 1:
+            match_types, links, matches = self.__get_typeof(parts[0], full)
+            parts = set()
+            for i in range(len(links)):
+                if match_types[i] == 'no_match':
+                    continue
+
+                parts.add('{}\t{}\t{}\t.'.format(full, match_types[i], links[i]))
+                parts.add('{}\trdfs:label\t"{}"\t.'.format(links[i], matches[i]))
+            return parts
         else:
             part_relations = set()
             for part in parts:
-                if not part.startswith('notfound'):
-                    match_type, link, matched = self.__get_typeof(part, full)
-                    part_relations.add('{}\tlocal:partOf\t{}\t.'.format(link, full))
-                    part_relations.add('{}\trdfs:label\t"{}"\t.'.format(link, matched))
-                elif not len(parts) == 1: # notfound:
-                    ent = 'local:{}'.format(self.__format_name(part[part.find(':')+1:]))
-                    part_relations.add('{}\tlocal:partOf\t{}\t.'.format(ent, full))
+                match_types, links, matches = self.__get_typeof(part, full)
+                for i in range(len(links)):
+                    if match_types[i] == 'no_match':
+                        part_relations.add('local:{0}\trdfs:label\t"{0}"\t.'.format(matches[i]))
+                        part_relations.add('local:{}\tlocal:partOf\t{}\t.'.format(matches[i], full))
+                    else:
+                        part_relations.add('{}\trdfs:label\t"{}"\t.'.format(links[i], matches[i]))
+                        part_relations.add('{}\tlocal:partOf\t{}\t.'.format(links[i], full))
+                    part_added = True
 
-            part_relations.add('local:partof\towl:sameAs\tnci:C43743\t.')
-            part_relations.add('nci:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
+            if part_added:
+                part_relations.add('local:partof\towl:sameAs\tnci:C43743\t.')
+                part_relations.add('nci:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
 
             return part_relations
 

@@ -34,19 +34,19 @@ class Linker:
 
         with open(output_filename, 'a') as output_file:
             for key in prefixes.keys():
-                output_file.write('@PREFIX\t{}:\t<{}>\n'.format(prefixes[key], key))
+                output_file.write('@PREFIX\t{}:\t<{}>\t\n'.format(prefixes[key], key))
 
             for key in relations:
                 if key in links.keys():
-                    output_file.write('@PREDICATE\t{}\t{}\n'.format(key.encode('utf-8'), links[key]))
+                    output_file.write('@PREDICATE\t{}\t{}\t\n'.format(key, links[key]))
                 else:
-                    output_file.write('@PREDICATE\t{}\tnotfound\tNone\n'.format(key.encode('utf-8')))
+                    output_file.write('@PREDICATE\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
 
             for key in entities:
                 if key in links.keys():
-                    output_file.write('@ENTITY\t{}\t{}\n'.format(key.encode('utf-8'), links[key]))
+                    output_file.write('@ENTITY\t{}\t{}\t\n'.format(key, links[key]))
                 else:
-                    output_file.write('@ENTITY\t{}\tnotfound\tNone\n'.format(key.encode('utf-8')))
+                    output_file.write('@ENTITY\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
 
             output_file.close()
 
