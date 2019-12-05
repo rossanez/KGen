@@ -71,7 +71,7 @@ class RDFMaker:
                 object = line_lst[3].strip()
 
                 if not predicate in self.__predicates:
-                    print('Warning: predicate "{}" not found in links!'.format(predicate))
+                    print('Warning: no match for predicate "{}" was found in the links! Skipping triple ...'.format(predicate))
                     continue
 
                 predicate_link = self.__predicates[predicate]
@@ -80,7 +80,12 @@ class RDFMaker:
                 closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=0.5)
                 closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=0.5)
 
-                if len(closest_subjects) < 1 or len(closest_objects) < 1:
+                if len(closest_subjects) < 1:
+                    print('Warning: no match for subject "{}" was found in the links! Skipping triple ...'.format(subject))
+                    continue
+
+                if len(closest_objects) < 1:
+                    print('Warning: no match for object "{}" was found in the links! Skipping triple ...'.format(object))
                     continue
 
                 # Check for exact matches and discard the others
