@@ -98,7 +98,7 @@ class KnowledgeBases:
         return prefixes, links
 
     def query(self, contents, verbose):
-        #TODO extend it to other KBs -- currently only NCBO.
+        #TODO evaluate if it'd be possible to extend it to other KBs. Currently only NCBO.
 
         sci = ScispaCyWrapper()
         entities, relations, umls = sci.detect(contents, detect_relations=True, resolve_abbreviations=False, link_with_umls=True, verbose=verbose)
@@ -109,7 +109,22 @@ class KnowledgeBases:
         links = entities.union(relations)
 
         ncbo = NCBOWrapper()
-        #TODO continue NCBO linking.
+        for key in umls.keys():
+            umls_cui = umls[key].split('\t')[1]
+            umls_cui = umls_cui[umls_cui.index(':')+1:]
+
+            query_str = """\
+             PREFIX umls: <http://bioportal.bioontology.org/ontologies/umls/>
+             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+             SELECT *
+             FROM <http://bioportal.bioontology.org/ontologies/SNOMEDCT>
+             WHERE {{
+                 ?s umls:cui "{cui}"^^xsd:string .
+                 ?s ?p ?l .
+             }} ORDER BY ?s """
+            result = ncbo.query(query_str=query_str.format(cui=umls_cui))
+
+            print(result)
 
         return prefixes, entities, relations, umls
         
