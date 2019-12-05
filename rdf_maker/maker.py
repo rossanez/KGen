@@ -65,10 +65,10 @@ class RDFMaker:
         with open(triples_filename, 'r') as triples_file:
             for line in triples_file.readlines():
                 line_lst = line.replace('\"', '').split('\t')
-                sentence_number = line_lst[0]
-                subject = line_lst[1]
-                predicate = line_lst[2]
-                object = line_lst[3]
+                sentence_number = line_lst[0].strip()
+                subject = line_lst[1].strip()
+                predicate = line_lst[2].strip()
+                object = line_lst[3].strip()
 
                 if not predicate in self.__predicates:
                     print('Warning: predicate "{}" not found in links!'.format(predicate))
@@ -82,6 +82,16 @@ class RDFMaker:
 
                 if len(closest_subjects) < 1 or len(closest_objects) < 1:
                     continue
+
+                # Check for exact matches and discard the others
+                for sub in closest_subjects:
+                    if subject == sub:
+                        closest_subjects = [sub]
+                        break
+                for ob in closest_objects:
+                    if object == ob:
+                        closest_objects = [ob]
+                        break
 
                 subject_links = []
                 for subj in closest_subjects:
