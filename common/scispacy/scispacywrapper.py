@@ -1,7 +1,9 @@
 import scispacy
 import spacy
 
+from nltk import pos_tag, RegexpParser
 from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tree import Tree
 from scispacy.abbreviation import AbbreviationDetector
 from scispacy.umls_linking import UmlsEntityLinker
 from spacy import displacy
@@ -55,6 +57,24 @@ class ScispaCyWrapper:
                 span = doc[matches[k][1]:matches[k][2]]
 
                 relations.add(span.text)
+
+                tokens = word_tokenize(sentence)
+                pos_tags = pos_tag(tokens)
+
+                chunkGram = r"""Chunk: {<RB.?>?<VB.?><RB.?>?}"""
+                chunkParser = RegexpParser(chunkGram)
+                chunked = chunkParser.parse(pos_tags)
+
+                for sub_tree in chunked.subtrees():
+                    if sub_tree.label() == 'Chunk':
+                        candidate = ''
+                        for leaf in sub_tree.leaves():
+                            if candidate == '':
+                                candidate = leaf[0]
+                            else:
+                                candidate = '{} {}'.format(candidate, leaf[0])
+
+                        relations.add(candidate)
 
             if verbose:
                 print('Relations detected: {}'.format(relations))
