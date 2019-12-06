@@ -109,6 +109,7 @@ class KnowledgeBases:
 
         links = entities.union(relations)
 
+        # Now we link the obtained UMLS entities with the desired ontology
         ncbo = NCBOWrapper()
         for key in umls.keys():
             umls_cui = umls[key].split('\t')[1]
@@ -142,6 +143,5 @@ class KnowledgeBases:
                 umls_string += 'sameas\t{}:{}\t{}\t'.format(abbrev, res_class_suffix, res_label)
                 umls[key] = umls_string
 
-        print(umls)
         return prefixes, entities, relations, umls
         
