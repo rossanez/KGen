@@ -3,7 +3,6 @@ import spacy
 
 from nltk import pos_tag, RegexpParser
 from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.tree import Tree
 from scispacy.abbreviation import AbbreviationDetector
 from scispacy.umls_linking import UmlsEntityLinker
 from spacy import displacy
@@ -99,7 +98,7 @@ class ScispaCyWrapper:
             if verbose:
                 print('Serching for UMLS entities...')
 
-            entities = str(ner.union(relations))
+            entities = str(ner.union(relations)) # Evaluate on both entities and relations
             entities = nlp(entities).ents
 
             for entity in entities:

@@ -114,8 +114,8 @@ class Triple:
                     part_added = True
 
             if part_added:
-                part_relations.add('local:partof\towl:sameAs\tnci:C43743\t.')
-                part_relations.add('nci:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
+                part_relations.add('local:partof\towl:sameAs\tncit:C43743\t.')
+                part_relations.add('ncit:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
 
             return part_relations
 

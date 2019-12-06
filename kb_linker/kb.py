@@ -1,3 +1,4 @@
+from nltk.stem import WordNetLemmatizer 
 from sys import path
 
 path.insert(0, '../')
@@ -107,8 +108,6 @@ class KnowledgeBases:
         if umls:
             prefixes = {'http://bioportal.bioontology.org/ontologies/umls/': 'umls'}
 
-        links = entities.union(relations)
-
         # Now we link the obtained UMLS entities with the desired ontology
         ncbo = NCBOWrapper()
         for key in umls.keys():
@@ -142,6 +141,47 @@ class KnowledgeBases:
                 umls_string = umls[key]
                 umls_string += 'sameas\t{}:{}\t{}\t'.format(abbrev, res_class_suffix, res_label)
                 umls[key] = umls_string
+
+        # And then the relations
+        rel_links = {}
+        for relation in relations:
+            if relation in umls.keys():
+                result = umls[relation].split('\t')
+                if len(result) > 4: # It should be 3, but there is a misterious space character...
+                    continue # Already found a link through UMLS
+
+            lemmatizer = WordNetLemmatizer()
+            lemmatized_relation = lemmatizer.lemmatize(relation).capitalize()
+            print(lemmatized_relation)
+
+            query_str = """\
+             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+             SELECT *
+             FROM <http://bioportal.bioontology.org/ontologies/{ont}>
+             WHERE {{
+                 ?class ?property "{rel}"^^xsd:string ;
+                     rdfs:label ?label .
+             }} ORDER BY ?class """
+            query_result = ncbo.query(query_str=query_str.format(ont=ontology, rel=lemmatized_relation))
+            
+            for result in query_result['results']['bindings']:
+                res_class = result['class']['value']
+                res_label = result['label']['value']
+
+                separator_index = res_class.find('#')
+                if separator_index < 0:
+                    separator_index = res_class.rfind('/')
+                res_class_prefix = res_class[:separator_index+1]
+                abbrev = ontology.lower()
+                prefixes.update({res_class_prefix: abbrev})
+
+                res_class_suffix = res_class[separator_index+1:]
+
+                rel_link_string = 'sameas\t{}:{}\t{}\t'.format(abbrev, res_class_suffix, res_label)
+                rel_links[relation] = rel_link_string
+
+        umls.update(rel_links)
 
         return prefixes, entities, relations, umls
         
