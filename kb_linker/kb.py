@@ -34,14 +34,14 @@ class KnowledgeBases:
 
         return prefixes, links
 
-    def __ncbo(self, contents, verbose=False):
+    def __ncbo(self, contents, ontologies='NCIT', verbose=False):
         if verbose:
             print('Searching for entities, concepts and their links, using the NCBO base')
 
         ncbo = NCBOWrapper()
-        annotated = ncbo.annotate(contents, ontologies='NCIT')
+        annotated = ncbo.annotate(contents, ontologies=ontologies)
 
-        prefixes = {'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#': 'nci'}
+        prefixes = {'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#': 'ncit'}
         links = {}
         for annotation in annotated:
             annotated_class = annotation['annotatedClass']
@@ -99,6 +99,7 @@ class KnowledgeBases:
 
     def query(self, contents, verbose):
         #TODO evaluate if it'd be possible to extend it to other KBs. Currently only NCBO.
+        ontology = 'NCIT'
 
         sci = ScispaCyWrapper()
         entities, relations, umls = sci.detect(contents, detect_relations=True, resolve_abbreviations=False, link_with_umls=True, verbose=verbose)
@@ -114,17 +115,33 @@ class KnowledgeBases:
             umls_cui = umls_cui[umls_cui.index(':')+1:]
 
             query_str = """\
-             PREFIX umls: <http://bioportal.bioontology.org/ontologies/umls/>
+             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
              PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
              SELECT *
-             FROM <http://bioportal.bioontology.org/ontologies/SNOMEDCT>
+             FROM <http://bioportal.bioontology.org/ontologies/{ont}>
              WHERE {{
-                 ?s umls:cui "{cui}"^^xsd:string .
-                 ?s ?p ?l .
-             }} ORDER BY ?s """
-            result = ncbo.query(query_str=query_str.format(cui=umls_cui))
+                 ?class ?property "{cui}"^^xsd:string ;
+                     rdfs:label ?label .
+             }} ORDER BY ?class """
+            query_result = ncbo.query(query_str=query_str.format(ont=ontology, cui=umls_cui))
 
-            print(result)
+            for result in query_result['results']['bindings']:
+                res_class = result['class']['value']
+                res_label = result['label']['value']
 
+                separator_index = res_class.find('#')
+                if separator_index < 0:
+                    separator_index = res_class.rfind('/')
+                res_class_prefix = res_class[:separator_index+1]
+                abbrev = ontology.lower()
+                prefixes.update({res_class_prefix: abbrev})
+
+                res_class_suffix = res_class[separator_index+1:]
+
+                umls_string = umls[key]
+                umls_string += 'sameas\t{}:{}\t{}\t'.format(abbrev, res_class_suffix, res_label)
+                umls[key] = umls_string
+
+        print(umls)
         return prefixes, entities, relations, umls
         
