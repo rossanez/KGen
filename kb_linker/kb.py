@@ -35,7 +35,7 @@ class KnowledgeBases:
 
         return prefixes, links
 
-    def __ncbo(self, contents, ontologies='NCIT', verbose=False):
+    def __ncbo(self, contents, verbose=False, ontologies='NCIT'):
         if verbose:
             print('Searching for entities, concepts and their links, using the NCBO base')
 
