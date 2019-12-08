@@ -106,14 +106,15 @@ class Triple:
                 match_types, links, matches = self.__get_typeof(part, full)
                 for i in range(len(links)):
                     if match_types[i] == 'no_match':
-                        part_relations.add('local:{0}\trdfs:label\t"{0}"\t.'.format(matches[i]))
-                        part_relations.add('local:{}\tlocal:partOf\t{}\t.'.format(matches[i], full))
+                        part_relations.add('local:{}\trdfs:label\t"{}"\t.'.format(self.__format_name(matches[i]), matches[i]))
+                        part_relations.add('local:{}\tlocal:partOf\t{}\t.'.format(self.__format_name(matches[i]), full))
                     else:
                         part_relations.add('{}\trdfs:label\t"{}"\t.'.format(links[i], matches[i]))
                         part_relations.add('{}\tlocal:partOf\t{}\t.'.format(links[i], full))
                     part_added = True
 
             if part_added:
+                part_relations.add('local:partof\trdfs:label\t"{}"\t.'.format('Part Of'))
                 part_relations.add('local:partof\towl:sameAs\tncit:C43743\t.')
                 part_relations.add('ncit:C43743\trdfs:label\t"{}"\t.'.format('Part Of'))
 
