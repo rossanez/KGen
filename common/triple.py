@@ -27,7 +27,7 @@ class Triple:
         return '{}\t"{}"\t"{}"\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
 
     def __format_name(self, name):
-        return name.replace(' ', '_').replace('\'', '')
+        return name.replace(' ', '_').replace('\'', '').replace(',', '').replace(';', '').replace(':', '')
 
     def to_turtle(self):
         prefixes = {'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf', 'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://www.w3.org/2002/07/owl#': 'owl', 'http://local/local.owl#': 'local'}
