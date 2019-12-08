@@ -119,4 +119,3 @@ class ScispaCyWrapper:
                 print('UMLS concepts: {}'.format(linked))
 
         return ner, relations, linked
-

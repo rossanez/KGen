@@ -152,7 +152,6 @@ class KnowledgeBases:
 
             lemmatizer = WordNetLemmatizer()
             lemmatized_relation = lemmatizer.lemmatize(relation).capitalize()
-            print(lemmatized_relation)
 
             query_str = """\
              PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -164,7 +163,7 @@ class KnowledgeBases:
                      rdfs:label ?label .
              }} ORDER BY ?class """
             query_result = ncbo.query(query_str=query_str.format(ont=ontology, rel=lemmatized_relation))
-            
+
             for result in query_result['results']['bindings']:
                 res_class = result['class']['value']
                 res_label = result['label']['value']
@@ -184,4 +183,3 @@ class KnowledgeBases:
         umls.update(rel_links)
 
         return prefixes, entities, relations, umls
-        
