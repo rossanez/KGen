@@ -20,9 +20,9 @@ class ScispaCyWrapper:
         if verbose:
             print('-- Will detect named entities using scispaCy.')
             if detect_relations:
-                print('-- Will search for relations.')
+                print('-- Will detect relations.')
             if resolve_abbreviations:
-                print('-- Will search for abbreviations.')
+                print('-- Will detect abbreviations.')
             if link_with_umls:
                 print('-- Will search for UMLS matches.')
 
@@ -96,7 +96,7 @@ class ScispaCyWrapper:
         linked = {}
         if link_with_umls:
             if verbose:
-                print('Serching for UMLS entities...')
+                print('Serching for UMLS matches...')
 
             entities = str(ner.union(relations)) # Evaluate on both entities and relations
             entities = nlp(entities).ents
@@ -106,7 +106,7 @@ class ScispaCyWrapper:
                     Concept_Id, Score = umls_ent
 
                     if verbose:
-                        print("Entity Name:" ,entity)
+                        print("Name:" ,entity)
                         print('Concept_Id = {} Score = {}'.format(Concept_Id, Score))
                         umls_entity = umls_linker.umls.cui_to_entity[Concept_Id]
                         print(umls_entity)
@@ -116,6 +116,6 @@ class ScispaCyWrapper:
                         break
 
             if verbose:
-                print('UMLS concepts: {}'.format(linked))
+                print('UMLS matches: {}'.format(linked))
 
         return ner, relations, linked

@@ -1,4 +1,4 @@
-from nltk.stem import WordNetLemmatizer 
+from nltk.stem import WordNetLemmatizer
 from sys import path
 
 path.insert(0, '../')
@@ -151,7 +151,7 @@ class KnowledgeBases:
                     continue # Already found a link through UMLS
 
             lemmatizer = WordNetLemmatizer()
-            lemmatized_relation = lemmatizer.lemmatize(relation).capitalize()
+            lemmatized_relation = lemmatizer.lemmatize(relation, 'v').capitalize()
 
             query_str = """\
              PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
