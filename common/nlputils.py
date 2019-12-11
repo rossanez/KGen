@@ -1,5 +1,7 @@
 import os
 
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 from nltk.tree import Tree
 
 from .stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
@@ -29,6 +31,15 @@ class NLPUtils:
             resolved += '\n'
 
         return resolved.strip()
+
+    @staticmethod
+    def remove_stopwords(sentence):
+        stop_words = set(stopwords.words('english'))
+        word_tokens = word_tokenize(sentence)
+
+        filtered_sentence = [w for w in word_tokens if not w.lower() in stop_words]
+
+        return ' '.join(filtered_sentence)
 
     @staticmethod
     def extract_np_and_verbs(contents):
