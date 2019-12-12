@@ -6,6 +6,7 @@ from sys import argv
 from sys import path
 
 path.insert(0, '../')
+from common.nlputils import NLPUtils
 from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
 from common.triple import Triple
 
@@ -71,24 +72,53 @@ class RDFMaker:
                 object = line_lst[3].strip()
 
                 if not predicate in self.__predicates:
-                    print('Warning: no match for predicate "{}" was found in the links! Skipping triple ...'.format(predicate))
+                    if verbose:
+                        print('Warning: no match for predicate "{}" was found in the links! Skipping triple ...'.format(predicate))
                     continue
 
                 predicate_link = self.__predicates[predicate]
 
                 entities = set([str(X) for X in self.__entities.keys()])
-                closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=0.5)
-                closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=0.5)
+                closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=0.6)
+                closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=0.6)
 
                 if len(closest_subjects) < 1:
-                    print('Warning: no match for subject "{}" was found in the links! Skipping triple ...'.format(subject))
-                    continue
+                    if verbose:
+                        print('Warning: no match for subject "{}" was found in the links! Attempting partials ...'.format(subject))
+                    subj = subject
+                    # Reverse sorted list of entities by string length
+                    lst_entities = sorted(list(entities), key=len, reverse=True)
+                    for elem in lst_entities:
+                        if elem in subj:
+                            if verbose:
+                                print('-- Found: {}'.format(elem))
+                            closest_subjects.append(elem)
+                            subj = subj.replace(elem, '')
+
+                    if len(closest_subjects) < 1:
+                        if verbose:
+                            print('WARNING: not even partial matches were found for subject "{}" in the links. Skipping triple ...'.format(subject))
+                        continue
 
                 if len(closest_objects) < 1:
-                    print('Warning: no match for object "{}" was found in the links! Skipping triple ...'.format(object))
-                    continue
+                    if verbose:
+                        print('Warning: no match for object "{}" was found in the links! Atempting partials ...'.format(object))
+                    obj = object
+                    # Reverse sorted list of entities by string length
+                    lst_entities = sorted(list(entities), key=len, reverse=True)
+                    for elem in lst_entities:
+                        if elem in obj:
+                            if verbose:
+                                print('-- Found: {}'.format(elem))
+                            closest_objects.append(elem)
+                            obj = obj.replace(elem, '')
 
-                # Check for exact matches and discard the others
+                    if len(closest_objects) < 1:
+                        if verbose:
+                            print('WARNING: not even partial matches were found for object "{}" in the links. Skipping triple ...'.format(object))
+                        continue
+
+                # Check for exact matches and discard the others if that's the case
                 for sub in closest_subjects:
                     if subject == sub:
                         closest_subjects = [sub]
@@ -104,6 +134,10 @@ class RDFMaker:
                 object_links = []
                 for obj in closest_objects:
                     object_links += [self.__entities[obj]]
+
+                # After all matches were checked, remove stopwords
+                subject = NLPUtils.remove_stopwords(subject)
+                object = NLPUtils.remove_stopwords(object)
 
                 triple = Triple(sentence_number, subject, predicate, object, subject_links, predicate_link, object_links)
                 prefixes, classes, properties, mapped, relation = triple.to_turtle()

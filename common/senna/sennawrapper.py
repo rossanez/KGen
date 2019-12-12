@@ -56,7 +56,7 @@ class SennaWrapper:
 
         tmp_out_file = open(tmp_out_filename, 'w')
 
-        command = self.__senna_executable + ' -srl -usrtokens'
+        command = self.__senna_executable + ' -srl'
 
         current_dir = os.getcwd()
         os.chdir(self.__senna_location)
