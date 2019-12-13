@@ -42,6 +42,21 @@ class NLPUtils:
         return ' '.join(filtered_sentence)
 
     @staticmethod
+    def dependency_parse(contents):
+        nlp = CoreNLPWrapper()
+        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, depparse'})
+
+        for sentence in annotated['sentences']:
+            for dependency in sentence['basicDependencies']:
+                dep_label = dependency['dep']
+                governor = dependency['governorGloss']
+                dependent = dependency['dependentGloss']
+                print('{} --{}--> {}'.format(governor, dep_label, dependent))
+
+        #TODO Decide what to return here!
+        return None
+
+    @staticmethod
     def extract_np_and_verbs(contents):
         print('Determining the noun-phrases (possible entities) and verbs (possible predicates). \n Please wait, as it may take a while ...')
         nlp = CoreNLPWrapper()

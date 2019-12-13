@@ -8,7 +8,7 @@ from common.triple import Triple
 class SemanticRoleLabeler:
 
     def extract(self, input_filename, output_filename, verbose=False):
-      return self.__senna(input_filename, output_filename, verbose)
+        return self.__senna(input_filename, output_filename, verbose)
 
     def __senna(self, input_filename, output_filename, verbose=False):
         if verbose:
