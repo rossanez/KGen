@@ -28,6 +28,11 @@ class SemanticRoleLabeler:
                     agent = None
                     patient = None
 
+                    if 'AM-NEG' in dict_contents:
+                        predicate = 'not ' + predicate
+                    if 'AM-MOD' in dict_contents:
+                        predicate = dict_contents['AM-MOD'] + ' ' + predicate
+
                     if 'A0' in dict_contents and 'A1' in dict_contents:
                         agent = dict_contents['A0']
                         patient = dict_contents['A1']
