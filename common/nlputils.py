@@ -42,19 +42,20 @@ class NLPUtils:
         return ' '.join(filtered_sentence)
 
     @staticmethod
-    def dependency_parse(contents):
+    def dependency_parse(contents, verbose=False):
         nlp = CoreNLPWrapper()
         annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, depparse'})
 
+        dependencies = list()
         for sentence in annotated['sentences']:
             for dependency in sentence['basicDependencies']:
-                dep_label = dependency['dep']
-                governor = dependency['governorGloss']
-                dependent = dependency['dependentGloss']
-                print('{} --{}--> {}'.format(governor, dep_label, dependent))
+                dep_tuple = (dependency['governorGloss'], dependency['dep'], dependency['dependentGloss'])
+                if verbose:
+                    print('{} --{}--> {}'.format(dep_tuple[0], dep_tuple[1], dep_tuple[2]))
 
-        #TODO Decide what to return here!
-        return None
+                dependencies.append(dep_tuple)
+
+        return dependencies
 
     @staticmethod
     def extract_np_and_verbs(contents):
