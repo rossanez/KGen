@@ -22,63 +22,60 @@ class SemanticRoleLabeler:
             for line in input_file.readlines():
                 if len(line) < 1: continue
 
-                senna_output = senna.srl(NLPUtils.adjust_tokens(line), verbose=False)
-                for predicate in senna_output.keys():
-                    dict_contents = senna_output[predicate]
-                    agent = None
-                    patient = None
+                dependency_list = NLPUtils.dependency_parse(line, deps_key='enhancedPlusPlusDependencies', verbose=False)
 
-                    if 'AM-NEG' in dict_contents:
-                        predicate = 'not ' + predicate
-                    if 'AM-MOD' in dict_contents:
-                        predicate = dict_contents['AM-MOD'] + ' ' + predicate
+                previous_term = ''
+                previous_compound = ''
+                while len(dependency_list) > 0:
+                    elem = dependency_list.pop()
 
-                    if 'A0' in dict_contents and 'A1' in dict_contents:
-                        agent = dict_contents['A0']
-                        patient = dict_contents['A1']
-
-                    elif 'A0' in dict_contents: # No A1
-                        agent = dict_contents['A0']
-                        if 'A2' in dict_contents:
-                            patient = dict_contents['A2']
-                        else:
-                            for key in dict_contents.keys():
-                                if not key == 'A0':
-                                    patient = dict_contents
-
-                    elif 'A1' in dict_contents: # No A0
-                        patient = dict_contents['A1']
-                        if 'A2' in dict_contents:
-                            agent = dict_contents['A2']
-                        else:
-                            for key in dict_contents.keys():
-                                if not key == 'A1':
-                                    agent = dict_contents[key]
-
-                    else: # Neither A0 nor A1
-                        if 'A2' in dict_contents:
-                            agent = dict_contents['A2']
-                            for key in dict_contents.keys():
-                               if not key == 'A2':
-                                   patient = dict_contents[key]
-                        else: # Very unlikely
-                            key_lst = dict_contents.keys()
-                            key_lst.sort(key = len) # sort by string length
-                            agent = dict_contents[key_lst[0]]
-                            patient = dict_contents[key_lst[1]]
-
-                    if agent is None or patient is None:
-                        print('-Warning: No agent or patient determined for predicate {}'.format(predicate))
-                        print('-- agent: {}'.format(agent))
-                        print('-- patient: {}'.format(patient))
+                    if elem[1] in ['ROOT', 'punct', 'det'] or 'subj' in elem[1] or 'obj' in elem[1]:
                         continue
 
-                    triple = Triple(sentence_number, agent, predicate, patient)
+                    if elem[1] in ['compound', 'aux', 'neg'] or 'mod' in elem[1]:
+                        if previous_term == elem[0]:
+                            updated_term = '{} {}'.format(elem[2], previous_compound)
+                        else:
+                            updated_term = '{} {}'.format(elem[2], elem[0])
+                            previous_compound = elem[0]
+
+                        triple = Triple(sentence_number, updated_term, 'rdfs:subClassOf', previous_compound)
+
+                        previous_compound = updated_term
+                        previous_term = elem[0]
+
+                        if verbose:
+                            print(triple.to_string())
+
+                        out_contents += triple.to_string() + '\n'
+
+                senna_output = senna.srl(line, verbose=False)
+                for predicate in senna_output.keys():
+                    pred_args = senna_output[predicate]
+                    pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose=verbose)
 
                     if verbose:
-                        print(triple.to_string())
+                        print('predicate: {}, args: {}'.format(predicate, pred_args))
 
-                    out_contents += triple.to_string() + '\n'
+                    if 'AM-NEG' in pred_args:
+                        predicate = 'not ' + predicate
+                    if 'AM-MOD' in pred_args:
+                        predicate = pred_args['AM-MOD'] + ' ' + predicate
+                    if 'AM-LOC' in pred_args:
+                        triple = Triple(sentence_number, predicate, ':LOC', pred_args['AM-LOC'])
+                        if verbose:
+                            print(triple.to_string())
+
+                        out_contents += triple.to_string() + '\n'
+
+                    for i in range(len(pred_arg_names)):
+                        pred_args_index = 'A{}'.format(i)
+                        if pred_args_index in pred_args:
+                            triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), pred_args[pred_args_index])
+                            if verbose:
+                                print(triple.to_string())
+
+                            out_contents += triple.to_string() + '\n'
 
                 sentence_number += 1
 

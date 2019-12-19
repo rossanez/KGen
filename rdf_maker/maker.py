@@ -12,9 +12,10 @@ from common.triple import Triple
 
 class RDFMaker:
 
-    __predicates = {}
     __prefixed = {}
     __entities = {}
+    __predicates = {}
+    __links = {}
 
     __classes = {}
     __properties = {}
@@ -31,7 +32,7 @@ class RDFMaker:
         print('Processing predicates from {}'.format(triples_filename))
 
         self.__predicates = {}
-        self.__prefixed = {'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local'}
+        self.__prefixed = {'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local', 'http://local/verbnet_roles.owl#': 'vn.role'}
         self.__entities = {}
         with open(links_filename, 'r') as links_file:
             for line in links_file.readlines():
@@ -63,6 +64,9 @@ class RDFMaker:
 
             links_file.close()
 
+            self.__links.update(self.__predicates)
+            self.__links.update(self.__entities)
+
         with open(triples_filename, 'r') as triples_file:
             for line in triples_file.readlines():
                 line_lst = line.replace('\"', '').split('\t')
@@ -71,14 +75,16 @@ class RDFMaker:
                 predicate = line_lst[2].strip()
                 object = line_lst[3].strip()
 
-                if not predicate in self.__predicates:
+                if not predicate in self.__links and predicate.find(':') < 0:
                     if verbose:
                         print('Warning: no match for predicate "{}" was found in the links! Skipping triple ...'.format(predicate))
                     continue
 
-                predicate_link = self.__predicates[predicate]
+                predicate_link = ''
+                if predicate.find(':') < 0: #Predicates that are already resources/links
+                    predicate_link = self.__links[predicate]
 
-                entities = set([str(X) for X in self.__entities.keys()])
+                entities = set([str(X) for X in self.__links.keys()])
                 closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=0.6)
                 closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=0.6)
 
@@ -130,10 +136,10 @@ class RDFMaker:
 
                 subject_links = []
                 for subj in closest_subjects:
-                    subject_links += [self.__entities[subj]]
+                    subject_links += [self.__links[subj]]
                 object_links = []
                 for obj in closest_objects:
-                    object_links += [self.__entities[obj]]
+                    object_links += [self.__links[obj]]
 
                 # After all matches were checked, remove stopwords
                 subject = NLPUtils.remove_stopwords(subject)

@@ -50,7 +50,7 @@ class NLPUtils:
 
         classids = verbnet.classids(lemmatized_verb)
         if verbose:
-            print('Class IDs for {}: {}'.format(lemmatized_verb, classids))
+            print('Class IDs for "{}": {}'.format(lemmatized_verb, classids))
 
         if len(classids) < 1:
             return None
@@ -73,6 +73,8 @@ class NLPUtils:
                     print('Roles found: {}'.format(roles))
 
                 return roles
+
+        return None
 
     @staticmethod
     def dependency_parse(contents, deps_key='basicDependencies', verbose=False):
