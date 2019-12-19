@@ -1,6 +1,8 @@
 import os
 
 from nltk.corpus import stopwords
+from nltk.corpus import verbnet
+from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.tree import Tree
 
@@ -42,13 +44,44 @@ class NLPUtils:
         return ' '.join(filtered_sentence)
 
     @staticmethod
-    def dependency_parse(contents, verbose=False):
+    def get_verbnet_args(verb, verbose=False):
+        lemmatizer = WordNetLemmatizer()
+        lemmatized_verb = lemmatizer.lemmatize(verb.lower(), 'v')
+
+        classids = verbnet.classids(lemmatized_verb)
+        if verbose:
+            print('Class IDs for {}: {}'.format(lemmatized_verb, classids))
+
+        if len(classids) < 1:
+            return None
+
+        for id in classids:
+            class_number = id[id.find('-')+1:]
+            v = verbnet.vnclass(class_number)
+            roles = [t.attrib['type'] for t in v.findall('THEMROLES/THEMROLE')]
+
+            while len(roles) < 1 and len(v) > 0:
+                fallback_class_number = class_number[:class_number.rfind('-')]
+                if verbose:
+                    print('No roles found for class {}, falling back to {}.'.format(class_number, fallback_class_number))
+                class_number = fallback_class_number
+                v = verbnet.vnclass(class_number)
+                roles = [t.attrib['type'] for t in v.findall('THEMROLES/THEMROLE')]
+
+            if len(roles) > 0:
+                if verbose:
+                    print('Roles found: {}'.format(roles))
+
+                return roles
+
+    @staticmethod
+    def dependency_parse(contents, deps_key='basicDependencies', verbose=False):
         nlp = CoreNLPWrapper()
         annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, depparse'})
 
         dependencies = list()
         for sentence in annotated['sentences']:
-            for dependency in sentence['basicDependencies']:
+            for dependency in sentence[deps_key]:
                 dep_tuple = (dependency['governorGloss'], dependency['dep'], dependency['dependentGloss'])
                 if verbose:
                     print('{} --{}--> {}'.format(dep_tuple[0], dep_tuple[1], dep_tuple[2]))
