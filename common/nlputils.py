@@ -99,7 +99,7 @@ class NLPUtils:
         return dependencies
 
     @staticmethod
-    def extract_np_and_verbs(contents):
+    def extract_entities_and_relations(contents):
         print('Determining the noun-phrases (possible entities) and verbs (possible predicates). \n Please wait, as it may take a while ...')
         nlp = CoreNLPWrapper()
         annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner, parse'})
@@ -122,24 +122,4 @@ class NLPUtils:
                         entity_set.add(np_entity)
 
         return entity_set, verb_set
-
-    @staticmethod
-    def generate_tsv_file(self, contents, linked, input_filename):
-        nlp = CoreNLPWrapper()
-        annotated = nlp.annotate(contents, properties={'annotators': 'tokenize, ssplit, pos, lemma, ner'})
-
-        tsv_filename = os.path.splitext(input_filename)[0] + '_ner.tsv'
-        open(tsv_filename, 'w').close() # Clean the file in case it exists
-
-        with open(tsv_filename, 'a') as tsv_file:
-            for sentence in annotated['sentences']:
-                for token in sentence['tokens']:
-                   tk = token['ner']
-                   if tk == 'O' and token['word'].upper() in linked:
-                       tk = 'MISC'
-                   tsv_file.write(token['word'] + '\t' + tk + '\n')
-        tsv_file.close()
-        print('TSV file has been stored at {}'.format(tsv_filename))
-
-        return tsv_filename
 

@@ -20,6 +20,7 @@ class Linker:
 
         with open(input_filename, 'r') as input_file:
             contents = input_file.read()
+
             input_file.close()
 
         if umls:
@@ -38,15 +39,15 @@ class Linker:
 
             for key in relations:
                 if key in links.keys():
-                    output_file.write('@PREDICATE\t{}\t{}\t\n'.format(key, links[key]))
+                    output_file.write('@LINK\t{}\t{}\t\n'.format(key, links[key]))
                 else:
-                    output_file.write('@PREDICATE\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
+                    output_file.write('@LINK\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
 
             for key in entities:
                 if key in links.keys():
-                    output_file.write('@ENTITY\t{}\t{}\t\n'.format(key, links[key]))
+                    output_file.write('@LINK\t{}\t{}\t\n'.format(key, links[key]))
                 else:
-                    output_file.write('@ENTITY\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
+                    output_file.write('@LINK\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
 
             output_file.close()
 

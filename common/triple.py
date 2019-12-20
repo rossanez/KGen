@@ -17,7 +17,7 @@ class Triple:
 
         self.__subject = s.strip()
         self.__predicate = p.strip()
-        self.__object = o.strip().translate(str.maketrans('', '', string.punctuation))
+        self.__object = o.strip()#.translate(str.maketrans('', '', string.punctuation))
 
         self.__subject_links = sl
         self.__predicate_link = pl

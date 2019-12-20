@@ -20,7 +20,8 @@ class SemanticRoleLabeler:
         with open(input_filename, 'r') as input_file:
             sentence_number = 0
             for line in input_file.readlines():
-                if len(line) < 1: continue
+                if len(line) < 1:
+                    continue
 
                 dependency_list = NLPUtils.dependency_parse(line, deps_key='enhancedPlusPlusDependencies', verbose=False)
 

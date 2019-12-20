@@ -13,8 +13,6 @@ from common.triple import Triple
 class RDFMaker:
 
     __prefixed = {}
-    __entities = {}
-    __predicates = {}
     __links = {}
 
     __classes = {}
@@ -26,46 +24,35 @@ class RDFMaker:
         if not triples_filename.startswith('/'):
             triples_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + triples_filename
 
-        if not links_filename.startswith('/'):
+        if not links_filename == None and not links_filename.startswith('/'):
             links_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + links_filename
 
-        print('Processing predicates from {}'.format(triples_filename))
+        print('Processing triples from {}'.format(triples_filename))
 
-        self.__predicates = {}
         self.__prefixed = {'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local', 'http://local/verbnet_roles.owl#': 'vn.role'}
-        self.__entities = {}
-        with open(links_filename, 'r') as links_file:
-            for line in links_file.readlines():
-                if len(line) < 2: continue
+        if not links_filename == None:
+            with open(links_filename, 'r') as links_file:
+                for line in links_file.readlines():
+                    if len(line) < 2: continue
 
-                if line.startswith('@PREFIX'):
-                    line_list = line.split()
-                    prefix = line_list[1]
-                    prefix = prefix[:prefix.rfind(':')]
+                    if line.startswith('@PREFIX'):
+                        line_list = line.split()
+                        prefix = line_list[1]
+                        prefix = prefix[:prefix.rfind(':')]
 
-                    uri = line_list[2]
-                    uri = uri[uri.find('<') + 1:uri.find('>')]
+                        uri = line_list[2]
+                        uri = uri[uri.find('<') + 1:uri.find('>')]
 
-                    self.__prefixed.update({uri: prefix})
+                        self.__prefixed.update({uri: prefix})
 
-                elif line.startswith('@PREDICATE'):
-                    line_list = line.split('\t')
+                    elif line.startswith('@LINK'):
+                        line_list = line.split('\t')
 
-                    predicate = line_list[1]
-                    links = '\t'.join(line_list[2:])
-                    self.__predicates.update({predicate: links})
+                        predicate = line_list[1]
+                        links = '\t'.join(line_list[2:])
+                        self.__links.update({predicate: links})
 
-                elif line.startswith('@ENTITY'):
-                    line_list = line.split('\t')
-
-                    entity = line_list[1]
-                    links = '\t'.join(line_list[2:])
-                    self.__entities.update({entity: links})
-
-            links_file.close()
-
-            self.__links.update(self.__predicates)
-            self.__links.update(self.__entities)
+                links_file.close()
 
         with open(triples_filename, 'r') as triples_file:
             for line in triples_file.readlines():
@@ -78,10 +65,11 @@ class RDFMaker:
                 if not predicate in self.__links and predicate.find(':') < 0:
                     if verbose:
                         print('Warning: no match for predicate "{}" was found in the links! Skipping triple ...'.format(predicate))
-                    continue
+                #    continue
 
                 predicate_link = ''
-                if predicate.find(':') < 0: #Predicates that are already resources/links
+                #if predicate.find(':') < 0: #Predicates that are already resources/links
+                if predicate in self.__links:
                     predicate_link = self.__links[predicate]
 
                 entities = set([str(X) for X in self.__links.keys()])
@@ -103,8 +91,8 @@ class RDFMaker:
 
                     if len(closest_subjects) < 1:
                         if verbose:
-                            print('WARNING: not even partial matches were found for subject "{}" in the links. Skipping triple ...'.format(subject))
-                        continue
+                            print('WARNING: not even partial matches were found for subject "{}" in the links!'.format(subject))
+                    #    continue
 
                 if len(closest_objects) < 1:
                     if verbose:
@@ -121,18 +109,18 @@ class RDFMaker:
 
                     if len(closest_objects) < 1:
                         if verbose:
-                            print('WARNING: not even partial matches were found for object "{}" in the links. Skipping triple ...'.format(object))
-                        continue
+                            print('WARNING: not even partial matches were found for object "{}" in the links!'.format(object))
+                    #    continue
 
                 # Check for exact matches and discard the others if that's the case
-                for sub in closest_subjects:
-                    if subject == sub:
-                        closest_subjects = [sub]
-                        break
-                for ob in closest_objects:
-                    if object == ob:
-                        closest_objects = [ob]
-                        break
+                #for sub in closest_subjects:
+                #    if subject == sub:
+                #        closest_subjects = [sub]
+                #        break
+                #for ob in closest_objects:
+                #    if object == ob:
+                #        closest_objects = [ob]
+                #        break
 
                 subject_links = []
                 for subj in closest_subjects:
@@ -141,11 +129,8 @@ class RDFMaker:
                 for obj in closest_objects:
                     object_links += [self.__links[obj]]
 
-                # After all matches were checked, remove stopwords
-                subject = NLPUtils.remove_stopwords(subject)
-                object = NLPUtils.remove_stopwords(object)
-
                 triple = Triple(sentence_number, subject, predicate, object, subject_links, predicate_link, object_links)
+
                 prefixes, classes, properties, mapped, relation = triple.to_turtle()
                 self.__prefixed.update(prefixes)
                 self.__classes.update(classes)
@@ -197,9 +182,6 @@ def main(args):
 
     if triples is None:
         print('No triples file provided.')
-        exit(1)
-    if links is None:
-        print('No links file provided.')
         exit(1)
 
     maker = RDFMaker()
