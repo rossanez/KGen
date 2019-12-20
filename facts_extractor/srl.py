@@ -58,11 +58,11 @@ class SemanticRoleLabeler:
                         print('predicate: {}, args: {}'.format(predicate, pred_args))
 
                     if 'AM-NEG' in pred_args:
-                        predicate = 'not ' + predicate
+                        predicate = 'not {}'.format(predicate)
                     if 'AM-MOD' in pred_args:
-                        predicate = pred_args['AM-MOD'] + ' ' + predicate
+                        predicate = ' '.join([pred_args['AM-MOD'].strip(), predicate])
                     if 'AM-LOC' in pred_args:
-                        triple = Triple(sentence_number, predicate, ':LOC', pred_args['AM-LOC'])
+                        triple = Triple(sentence_number, predicate, 'local:located', pred_args['AM-LOC'].strip())
                         if verbose:
                             print(triple.to_string())
 
@@ -71,7 +71,13 @@ class SemanticRoleLabeler:
                     for i in range(len(pred_arg_names)):
                         pred_args_index = 'A{}'.format(i)
                         if pred_args_index in pred_args:
-                            triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), pred_args[pred_args_index])
+                            # Remove initial stopwords (e.g. determiners)
+                            s = pred_args[pred_args_index].strip()
+                            split = s.split(' ', 1)
+                            if NLPUtils.is_stopword(split[0]):
+                               s = s.split(' ', 1)[1]
+
+                            triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), s)
                             if verbose:
                                 print(triple.to_string())
 

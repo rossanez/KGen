@@ -44,6 +44,12 @@ class NLPUtils:
         return ' '.join(filtered_sentence)
 
     @staticmethod
+    def is_stopword(word):
+        stop_words = set(stopwords.words('english'))
+
+        return word.lower() in stop_words
+
+    @staticmethod
     def get_verbnet_args(verb, verbose=False):
         lemmatizer = WordNetLemmatizer()
         lemmatized_verb = lemmatizer.lemmatize(verb.lower(), 'v')
