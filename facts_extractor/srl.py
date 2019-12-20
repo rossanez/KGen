@@ -63,7 +63,13 @@ class SemanticRoleLabeler:
                     if 'AM-MOD' in pred_args:
                         predicate = ' '.join([pred_args['AM-MOD'].strip(), predicate])
                     if 'AM-LOC' in pred_args:
-                        triple = Triple(sentence_number, predicate, 'local:located', pred_args['AM-LOC'].strip())
+                        # Remove initial stopwords (e.g. determiners)
+                        s = pred_args['AM-LOC'].strip()
+                        split = s.split(' ', 1)
+                        if NLPUtils.is_stopword(split[0]):
+                           s = s.split(' ', 1)[1]
+
+                        triple = Triple(sentence_number, predicate, 'local:locatedIn', s)
                         if verbose:
                             print(triple.to_string())
 
