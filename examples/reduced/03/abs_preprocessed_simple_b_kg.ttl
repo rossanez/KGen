@@ -1,0 +1,77 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:decline_rate	rdfs:label	"decline rate"	.
+
+local:rate	rdfs:label	"rate"	.
+
+local:cognitive_decline	rdfs:label	"cognitive decline"	.
+
+local:decline	rdfs:label	"decline"	.
+
+local:rate_associated	rdfs:label	"rate associated"	.
+
+local:associated	rdfs:label	"associated"	.
+
+local:rapid_rate	rdfs:label	"rapid rate"	.
+
+local:more_rapid	rdfs:label	"more rapid"	.
+
+local:rapid	rdfs:label	"rapid"	.
+
+local:not_rate	rdfs:label	"not rate"	.
+
+local:dementia_risk	rdfs:label	"dementia risk"	.
+
+local:risk	rdfs:label	"risk"	.
+
+local:prevalent_dementia	rdfs:label	"prevalent dementia"	.
+
+local:dementia	rdfs:label	"dementia"	.
+
+local:risk_associated	rdfs:label	"risk associated"	.
+
+local:higher_risk	rdfs:label	"higher risk"	.
+
+local:independently_associated	rdfs:label	"independently associated"	.
+
+local:found	rdfs:label	"found"	.
+
+local:We	rdfs:label	"We"	.
+
+local:illiteracy_was_independently_associated_with_higher_risk_of_prevalent_dementia_but_not_with_a_more_rapid_rate_of_cognitive_decline	rdfs:label	"illiteracy was independently associated with higher risk of prevalent dementia, but not with a more rapid rate of cognitive decline."	.
+
+local:independently	rdfs:label	"independently"	.
+
+local:illiteracy	rdfs:label	"illiteracy"	.
+
+local:higher_risk_of_prevalent_dementia_but_not_with_a_more_rapid_rate_of_cognitive_decline	rdfs:label	"higher risk of prevalent dementia, but not with a more rapid rate of cognitive decline."	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:risk_associated	rdfs:subClassOf	local:associated	.
+local:rate_associated	rdfs:subClassOf	local:associated	.
+local:independently_associated	rdfs:subClassOf	local:associated	.
+local:found	vn.role:Agent	local:We	.
+local:associated	local:AM-MNR	local:independently	.
+local:associated	vn.role:Agent	local:higher_risk_of_prevalent_dementia_but_not_with_a_more_rapid_rate_of_cognitive_decline	.
+local:higher_risk	rdfs:subClassOf	local:risk	.
+local:prevalent_dementia	rdfs:subClassOf	local:dementia	.
+local:found	vn.role:Theme	local:illiteracy_was_independently_associated_with_higher_risk_of_prevalent_dementia_but_not_with_a_more_rapid_rate_of_cognitive_decline	.
+local:associated	vn.role:Patient2	local:illiteracy	.
+local:not_rate	rdfs:subClassOf	local:rate	.
+local:cognitive_decline	rdfs:subClassOf	local:decline	.
+local:more_rapid	rdfs:subClassOf	local:rapid	.
+local:decline_rate	rdfs:subClassOf	local:rate	.
+local:rapid_rate	rdfs:subClassOf	local:rate	.
+local:dementia_risk	rdfs:subClassOf	local:risk	.

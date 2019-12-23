@@ -1,0 +1,51 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:trials_confound	rdfs:label	"trials confound"	.
+
+local:confound	rdfs:label	"confound"	.
+
+local:clinical_trials	rdfs:label	"clinical trials"	.
+
+local:trials	rdfs:label	"trials"	.
+
+local:Disease_clinical_trials	rdfs:label	"Disease clinical trials"	.
+
+local:Alzheimers_Disease_clinical_trials	rdfs:label	"Alzheimer's Disease clinical trials"	.
+
+local:biomarker_interpretation	rdfs:label	"biomarker interpretation"	.
+
+local:interpretation	rdfs:label	"interpretation"	.
+
+local:may_confound	rdfs:label	"may confound"	.
+
+local:tight_sulci	rdfs:label	"tight sulci"	.
+
+local:sulci	rdfs:label	"sulci"	.
+
+local:highconvexity_tight_sulci	rdfs:label	"high-convexity tight sulci"	.
+
+local:biomarker_interpretation_in_Alzheimers_Disease_clinical_trials	rdfs:label	"biomarker interpretation in Alzheimer's Disease clinical trials."	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:may_confound	rdfs:subClassOf	local:confound	.
+local:may_confound	vn.role:Experiencer	local:highconvexity_tight_sulci	.
+local:biomarker_interpretation	rdfs:subClassOf	local:interpretation	.
+local:Disease_clinical_trials	rdfs:subClassOf	local:clinical_trials	.
+local:trials_confound	rdfs:subClassOf	local:confound	.
+local:highconvexity_tight_sulci	rdfs:subClassOf	local:tight_sulci	.
+local:Alzheimers_Disease_clinical_trials	rdfs:subClassOf	local:Disease_clinical_trials	.
+local:tight_sulci	rdfs:subClassOf	local:sulci	.
+local:may_confound	vn.role:Cause	local:biomarker_interpretation_in_Alzheimers_Disease_clinical_trials	.
+local:clinical_trials	rdfs:subClassOf	local:trials	.

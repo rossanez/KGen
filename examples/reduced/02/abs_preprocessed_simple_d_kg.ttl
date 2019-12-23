@@ -1,0 +1,61 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:baseline_improvement	rdfs:label	"baseline improvement"	.
+
+local:improvement	rdfs:label	"improvement"	.
+
+local:years_experience	rdfs:label	"years experience"	.
+
+local:experience	rdfs:label	"experience"	.
+
+local:3_years	rdfs:label	"3 years"	.
+
+local:years	rdfs:label	"years"	.
+
+local:metrics_experience	rdfs:label	"metrics experience"	.
+
+local:treatment_metrics	rdfs:label	"treatment metrics"	.
+
+local:metrics	rdfs:label	"metrics"	.
+
+local:mild_degradation	rdfs:label	"mild degradation"	.
+
+local:degradation	rdfs:label	"degradation"	.
+
+local:may_experience	rdfs:label	"may experience"	.
+
+local:some_treatment_metrics	rdfs:label	"some treatment metrics"	.
+
+local:3_years_though_improvement_from_baseline_remains_significant	rdfs:label	"3 years, though improvement from baseline remains significant."	.
+
+local:Patients	rdfs:label	"Patients"	.
+
+local:remains	rdfs:label	"remains"	.
+
+local:improvement_from_baseline	rdfs:label	"improvement from baseline"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:may_experience	vn.role:Experiencer	local:Patients	.
+local:may_experience	local:AM-TMP	local:3_years_though_improvement_from_baseline_remains_significant	.
+local:mild_degradation	rdfs:subClassOf	local:degradation	.
+local:metrics_experience	rdfs:subClassOf	local:experience	.
+local:may_experience	rdfs:subClassOf	local:experience	.
+local:remains	vn.role:Location	local:improvement_from_baseline	.
+local:3_years	rdfs:subClassOf	local:years	.
+local:baseline_improvement	rdfs:subClassOf	local:improvement	.
+local:treatment_metrics	rdfs:subClassOf	local:metrics	.
+local:may_experience	vn.role:Stimulus	local:mild_degradation	.
+local:years_experience	rdfs:subClassOf	local:experience	.
+local:may_experience	local:AM-LOC	local:some_treatment_metrics	.

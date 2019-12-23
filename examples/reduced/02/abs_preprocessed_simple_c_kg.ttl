@@ -1,0 +1,80 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:delayed_complications	rdfs:label	"delayed complications."	.
+
+local:complications	rdfs:label	"complications."	.
+
+local:no_delayed_complications	rdfs:label	"no delayed complications"	.
+
+local:tremor_guided	rdfs:label	"tremor guided"	.
+
+local:guided	rdfs:label	"guided"	.
+
+local:essential_tremor	rdfs:label	"essential tremor"	.
+
+local:tremor	rdfs:label	"tremor"	.
+
+local:ultrasound_thalamotomy	rdfs:label	"ultrasound thalamotomy"	.
+
+local:thalamotomy	rdfs:label	"thalamotomy"	.
+
+local:focused_ultrasound_thalamotomy	rdfs:label	"focused ultrasound thalamotomy"	.
+
+local:resonance_years	rdfs:label	"resonance years"	.
+
+local:years	rdfs:label	"years"	.
+
+local:magnetic_resonance	rdfs:label	"magnetic resonance"	.
+
+local:resonance	rdfs:label	"resonance"	.
+
+local:transcranial_magnetic_resonance	rdfs:label	"transcranial magnetic resonance"	.
+
+local:unilateral_transcranial_magnetic_resonance	rdfs:label	"unilateral transcranial magnetic resonance"	.
+
+local:years_Results	rdfs:label	"years Results"	.
+
+local:Results	rdfs:label	"Results"	.
+
+local:3_years	rdfs:label	"3 years"	.
+
+local:focused	rdfs:label	"focused"	.
+
+local:Results_at_3_years_after_unilateral_transcranial_magnetic_resonance–guided	rdfs:label	"Results at 3 years after unilateral transcranial magnetic resonance–guided"	.
+
+local:show	rdfs:label	"show"	.
+
+local:Results_at_3_years_after_unilateral_transcranial_magnetic_resonance–guided_essential_tremor	rdfs:label	"Results at 3 years after unilateral transcranial magnetic resonance–guided essential tremor"	.
+
+local:delayed	rdfs:label	"delayed"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:tremor_guided	rdfs:subClassOf	local:guided	.
+local:focused_ultrasound_thalamotomy	rdfs:subClassOf	local:ultrasound_thalamotomy	.
+local:essential_tremor	rdfs:subClassOf	local:tremor	.
+local:delayed_complications	rdfs:subClassOf	local:complications	.
+local:show	vn.role:Theme	local:delayed_complications	.
+local:transcranial_magnetic_resonance	rdfs:subClassOf	local:magnetic_resonance	.
+local:focused	vn.role:Theme	local:ultrasound_thalamotomy	.
+local:years_Results	rdfs:subClassOf	local:Results	.
+local:ultrasound_thalamotomy	rdfs:subClassOf	local:thalamotomy	.
+local:magnetic_resonance	rdfs:subClassOf	local:resonance	.
+local:resonance_years	rdfs:subClassOf	local:years	.
+local:focused	vn.role:Experiencer	local:Results_at_3_years_after_unilateral_transcranial_magnetic_resonance–guided	.
+local:no_delayed_complications	rdfs:subClassOf	local:delayed_complications	.
+local:delayed	vn.role:Location	local:complications	.
+local:3_years	rdfs:subClassOf	local:years	.
+local:unilateral_transcranial_magnetic_resonance	rdfs:subClassOf	local:transcranial_magnetic_resonance	.
+local:show	vn.role:Agent	local:Results_at_3_years_after_unilateral_transcranial_magnetic_resonance–guided_essential_tremor	.

@@ -1,0 +1,64 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:prevention_recommended	rdfs:label	"prevention recommended"	.
+
+local:recommended	rdfs:label	"recommended"	.
+
+local:stroke_prevention	rdfs:label	"stroke prevention"	.
+
+local:prevention	rdfs:label	"prevention"	.
+
+local:realworld_stroke_prevention	rdfs:label	"real-world stroke prevention."	.
+
+local:control_gap	rdfs:label	"control gap"	.
+
+local:gap	rdfs:label	"gap"	.
+
+local:factor_control	rdfs:label	"factor control"	.
+
+local:control	rdfs:label	"control"	.
+
+local:risk_factor_control	rdfs:label	"risk factor control"	.
+
+local:gap_existence	rdfs:label	"gap existence"	.
+
+local:existence	rdfs:label	"existence"	.
+
+local:considerable_gap	rdfs:label	"considerable gap"	.
+
+local:Our_study	rdfs:label	"Our study"	.
+
+local:study	rdfs:label	"study"	.
+
+local:confirms	rdfs:label	"confirms"	.
+
+local:existence_of_a_considerable_gap_between_risk_factor_control_recommended_by_realworld_stroke_prevention	rdfs:label	"existence of a considerable gap between risk factor control recommended by real-world stroke prevention."	.
+
+local:considerable_gap_between_risk_factor_control	rdfs:label	"considerable gap between risk factor control"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:risk_factor_control	rdfs:subClassOf	local:factor_control	.
+local:gap_existence	rdfs:subClassOf	local:existence	.
+local:control_gap	rdfs:subClassOf	local:gap	.
+local:recommended	vn.role:Agent	local:realworld_stroke_prevention	.
+local:confirms	vn.role:Recipient	local:study	.
+local:recommended	vn.role:Theme	local:considerable_gap_between_risk_factor_control	.
+local:factor_control	rdfs:subClassOf	local:control	.
+local:prevention_recommended	rdfs:subClassOf	local:recommended	.
+local:considerable_gap	rdfs:subClassOf	local:gap	.
+local:Our_study	rdfs:subClassOf	local:study	.
+local:realworld_stroke_prevention	rdfs:subClassOf	local:stroke_prevention	.
+local:confirms	vn.role:Cause	local:existence_of_a_considerable_gap_between_risk_factor_control_recommended_by_realworld_stroke_prevention	.
+local:stroke_prevention	rdfs:subClassOf	local:prevention	.

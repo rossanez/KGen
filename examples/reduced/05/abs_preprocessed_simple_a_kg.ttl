@@ -1,0 +1,74 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:very_low	rdfs:label	"very low"	.
+
+local:low	rdfs:label	"low"	.
+
+local:dementia_prevalence	rdfs:label	"dementia prevalence"	.
+
+local:prevalence	rdfs:label	"prevalence"	.
+
+local:when_low	rdfs:label	"when low"	.
+
+local:age_detectable	rdfs:label	"age detectable"	.
+
+local:detectable	rdfs:label	"detectable"	.
+
+local:adults_age_detectable	rdfs:label	"adults age detectable"	.
+
+local:older_adults	rdfs:label	"older adults"	.
+
+local:adults	rdfs:label	"adults"	.
+
+local:deposition_associated	rdfs:label	"deposition associated"	.
+
+local:associated	rdfs:label	"associated"	.
+
+local:BetaAmyloid_deposition	rdfs:label	"Beta-Amyloid deposition"	.
+
+local:deposition	rdfs:label	"deposition"	.
+
+local:cognitive_differences	rdfs:label	"cognitive differences"	.
+
+local:differences	rdfs:label	"differences"	.
+
+local:subtle_cognitive_differences	rdfs:label	"subtle cognitive differences"	.
+
+local:adds	rdfs:label	"adds"	.
+
+local:study	rdfs:label	"study"	.
+
+local:emerging_evidence_that_subtle_cognitive_differences_associated_with_BetaAmyloid_deposition_are_detectable_in_older_adults_at_an_age_when_dementia_prevalence_is_very_low	rdfs:label	"emerging evidence that subtle cognitive differences associated with Beta-Amyloid deposition are detectable in older adults, at an age when dementia prevalence is very low."	.
+
+local:emerging	rdfs:label	"emerging"	.
+
+local:evidence	rdfs:label	"evidence"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:deposition_associated	rdfs:subClassOf	local:associated	.
+local:emerging	vn.role:Theme	local:evidence	.
+local:when_low	rdfs:subClassOf	local:low	.
+local:dementia_prevalence	rdfs:subClassOf	local:prevalence	.
+local:very_low	rdfs:subClassOf	local:low	.
+local:age_detectable	rdfs:subClassOf	local:detectable	.
+local:subtle_cognitive_differences	rdfs:subClassOf	local:cognitive_differences	.
+local:BetaAmyloid_deposition	rdfs:subClassOf	local:deposition	.
+local:adds	vn.role:Agent	local:study	.
+local:cognitive_differences	rdfs:subClassOf	local:differences	.
+local:adds	vn.role:Patient1	local:emerging_evidence_that_subtle_cognitive_differences_associated_with_BetaAmyloid_deposition_are_detectable_in_older_adults_at_an_age_when_dementia_prevalence_is_very_low	.
+local:associated	vn.role:Patient2	local:subtle_cognitive_differences	.
+local:older_adults	rdfs:subClassOf	local:adults	.
+local:associated	vn.role:Agent	local:BetaAmyloid_deposition	.
+local:adults_age_detectable	rdfs:subClassOf	local:age_detectable	.

@@ -1,0 +1,60 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:impairment_associated	rdfs:label	"impairment associated"	.
+
+local:associated	rdfs:label	"associated"	.
+
+local:cognitive_impairment	rdfs:label	"cognitive impairment."	.
+
+local:impairment	rdfs:label	"impairment"	.
+
+local:pathophysiology_subgroup	rdfs:label	"pathophysiology subgroup"	.
+
+local:subgroup	rdfs:label	"subgroup"	.
+
+local:Disease_pathophysiology	rdfs:label	"Disease pathophysiology"	.
+
+local:pathophysiology	rdfs:label	"pathophysiology"	.
+
+local:nonAlzheimers_Disease_pathophysiology	rdfs:label	"non-Alzheimer's Disease pathophysiology"	.
+
+local:definable_subgroup	rdfs:label	"definable subgroup"	.
+
+local:sulci_pattern	rdfs:label	"sulci pattern"	.
+
+local:pattern	rdfs:label	"pattern"	.
+
+local:tight_sulci_pattern	rdfs:label	"tight sulci pattern"	.
+
+local:highconvexity_tight_sulci_pattern	rdfs:label	"high-convexity tight sulci pattern"	.
+
+local:represents	rdfs:label	"represents"	.
+
+local:definable_subgroup_of_nonAlzheimers_Disease_pathophysiology_that_is_associated_with_cognitive_impairment	rdfs:label	"definable subgroup of non-Alzheimer's Disease pathophysiology that is associated with cognitive impairment."	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:nonAlzheimers_Disease_pathophysiology	rdfs:subClassOf	local:Disease_pathophysiology	.
+local:impairment_associated	rdfs:subClassOf	local:associated	.
+local:sulci_pattern	rdfs:subClassOf	local:pattern	.
+local:pathophysiology_subgroup	rdfs:subClassOf	local:subgroup	.
+local:associated	vn.role:Patient2	local:nonAlzheimers_Disease_pathophysiology	.
+local:cognitive_impairment	rdfs:subClassOf	local:impairment	.
+local:tight_sulci_pattern	rdfs:subClassOf	local:sulci_pattern	.
+local:Disease_pathophysiology	rdfs:subClassOf	local:pathophysiology	.
+local:represents	vn.role:Agent	local:highconvexity_tight_sulci_pattern	.
+local:associated	vn.role:Agent	local:cognitive_impairment	.
+local:highconvexity_tight_sulci_pattern	rdfs:subClassOf	local:tight_sulci_pattern	.
+local:represents	vn.role:Theme	local:definable_subgroup_of_nonAlzheimers_Disease_pathophysiology_that_is_associated_with_cognitive_impairment	.
+local:definable_subgroup	rdfs:subClassOf	local:subgroup	.

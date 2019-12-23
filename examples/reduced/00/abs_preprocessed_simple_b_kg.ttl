@@ -1,0 +1,43 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:mellitus_factors	rdfs:label	"mellitus factors"	.
+
+local:factors	rdfs:label	"factors"	.
+
+local:diabetes_mellitus	rdfs:label	"diabetes mellitus"	.
+
+local:mellitus	rdfs:label	"mellitus"	.
+
+local:particular_diabetes_mellitus	rdfs:label	"particular diabetes mellitus"	.
+
+local:risk_factors	rdfs:label	"risk factors"	.
+
+local:common_risk_factors	rdfs:label	"common risk factors"	.
+
+local:highlights	rdfs:label	"highlights"	.
+
+local:study	rdfs:label	"study"	.
+
+local:in_particular_diabetes_mellitus	rdfs:label	"in particular diabetes mellitus."	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:highlights	local:AM-LOC	local:in_particular_diabetes_mellitus	.
+local:mellitus_factors	rdfs:subClassOf	local:factors	.
+local:diabetes_mellitus	rdfs:subClassOf	local:mellitus	.
+local:common_risk_factors	rdfs:subClassOf	local:risk_factors	.
+local:risk_factors	rdfs:subClassOf	local:factors	.
+local:highlights	vn.role:Theme	local:common_risk_factors	.
+local:particular_diabetes_mellitus	rdfs:subClassOf	local:diabetes_mellitus	.
+local:highlights	vn.role:Agent	local:study	.

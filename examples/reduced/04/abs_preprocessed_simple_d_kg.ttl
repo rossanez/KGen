@@ -1,0 +1,45 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:preventability_awareness	rdfs:label	"preventability awareness"	.
+
+local:awareness	rdfs:label	"awareness"	.
+
+local:stroke_preventability	rdfs:label	"stroke preventability"	.
+
+local:preventability	rdfs:label	"preventability"	.
+
+local:physicians_awareness	rdfs:label	"physicians awareness"	.
+
+local:Our_study	rdfs:label	"Our study"	.
+
+local:study	rdfs:label	"study"	.
+
+local:intends	rdfs:label	"intends"	.
+
+local:increase_awareness_among_physicians_about_stroke_preventability	rdfs:label	"increase awareness among physicians about stroke preventability."	.
+
+local:increase	rdfs:label	"increase"	.
+
+local:awareness_among_physicians_about_stroke_preventability	rdfs:label	"awareness among physicians about stroke preventability."	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:intends	vn.role:Agent	local:study	.
+local:physicians_awareness	rdfs:subClassOf	local:awareness	.
+local:intends	vn.role:Predicate	local:increase_awareness_among_physicians_about_stroke_preventability	.
+local:increase	vn.role:Patient	local:study	.
+local:stroke_preventability	rdfs:subClassOf	local:preventability	.
+local:preventability_awareness	rdfs:subClassOf	local:awareness	.
+local:Our_study	rdfs:subClassOf	local:study	.
+local:increase	vn.role:Attribute	local:awareness_among_physicians_about_stroke_preventability	.
