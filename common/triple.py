@@ -15,9 +15,9 @@ class Triple:
     def __init__(self, sn, s, p, o, sl=[], pl=None, ol=[]):
         self.__sentence_number = sn
 
-        self.__subject = s.strip().translate(str.maketrans('', '', string.punctuation))
+        self.__subject = s.strip()
         self.__predicate = p.strip()
-        self.__object = o.strip().translate(str.maketrans('', '', string.punctuation))
+        self.__object = o.strip()
 
         self.__subject_links = sl
         self.__predicate_link = pl
@@ -30,7 +30,7 @@ class Triple:
             return '{}\t"{}"\t"{}"\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
 
     def __format_name(self, name):
-        return name.replace(' ', '_').replace('\'', '').replace(',', '').replace(';', '').replace(':', '')
+        return name.translate(str.maketrans('', '', string.punctuation)).replace(' ', '_').replace('\'', '')
 
     def to_turtle(self):
         prefixes = {'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf', 'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://www.w3.org/2002/07/owl#': 'owl', 'http://local/local.owl#': 'local'}
