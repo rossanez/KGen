@@ -53,27 +53,30 @@ class SemanticRoleLabeler:
                 senna_output = senna.srl(line, verbose=False)
                 for predicate in senna_output.keys():
                     pred_args = senna_output[predicate]
-                    pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose=verbose)
+                    pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose=True)
+                    if len(pred_arg_names) < 1:
+                        print('WARNING -- Unable to retrieve predicate arg names for "{}"'.format(predicate))
 
                     if verbose:
                         print('predicate: {}, args: {}'.format(predicate, pred_args))
 
-                    if 'AM-NEG' in pred_args:
-                        predicate = 'not {}'.format(predicate)
-                    if 'AM-MOD' in pred_args:
-                        predicate = ' '.join([pred_args['AM-MOD'].strip(), predicate])
-                    if 'AM-LOC' in pred_args:
-                        # Remove initial stopwords (e.g. determiners)
-                        s = pred_args['AM-LOC'].strip()
-                        split = s.split(' ', 1)
-                        if NLPUtils.is_stopword(split[0]):
-                           s = s.split(' ', 1)[1]
+                    for pred_arg in pred_args:
+                        if 'AM-NEG' == pred_arg:
+                            predicate = 'not {}'.format(predicate)
+                        elif 'AM-MOD' == pred_arg:
+                            predicate = ' '.join([pred_args['AM-MOD'].strip(), predicate])
+                        elif pred_arg.startswith('AM-'):
+                            # Remove initial stopwords (e.g. determiners)
+                            s = pred_args[pred_arg].strip()
+                            split = s.split(' ', 1)
+                            if NLPUtils.is_stopword(split[0]) and len(split) > 1:
+                               s = s.split(' ', 1)[1]
 
-                        triple = Triple(sentence_number, predicate, 'local:locatedIn', s)
-                        if verbose:
-                            print(triple.to_string())
+                            triple = Triple(sentence_number, predicate, 'local:{}'.format(pred_arg), s)
+                            if verbose:
+                                print(triple.to_string())
 
-                        out_contents += triple.to_string() + '\n'
+                            out_contents += triple.to_string() + '\n'
 
                     for i in range(len(pred_arg_names)):
                         pred_args_index = 'A{}'.format(i)
@@ -81,7 +84,7 @@ class SemanticRoleLabeler:
                             # Remove initial stopwords (e.g. determiners)
                             s = pred_args[pred_args_index].strip()
                             split = s.split(' ', 1)
-                            if NLPUtils.is_stopword(split[0]):
+                            if NLPUtils.is_stopword(split[0]) and len(split) > 1:
                                s = s.split(' ', 1)[1]
 
                             triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), s)

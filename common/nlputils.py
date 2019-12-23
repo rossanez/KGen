@@ -2,6 +2,7 @@ import os
 
 from nltk.corpus import stopwords
 from nltk.corpus import verbnet
+from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.tree import Tree
@@ -54,25 +55,71 @@ class NLPUtils:
         lemmatizer = WordNetLemmatizer()
         lemmatized_verb = lemmatizer.lemmatize(verb.lower(), 'v')
 
-        classids = verbnet.classids(lemmatized_verb)
+        classids = verbnet.classids(lemma=lemmatized_verb)
         if verbose:
             print('Class IDs for "{}": {}'.format(lemmatized_verb, classids))
 
         if len(classids) < 1:
-            return None
+            if verbose:
+                print('No entry found on verbnet for "{}". Attempting WordNet synsets!'.format(lemmatized_verb))
+
+            wn_synsets = wordnet.synsets(lemmatized_verb)
+            for synset in wn_synsets:
+                if len(synset.lemmas()) < 1:
+                    continue
+
+                candidate = str(synset.lemmas()[0].name())
+                classids = verbnet.classids(lemma=candidate)
+                if verbose:
+                    print('Class IDs for "{}": {}'.format(candidate, classids))
+
+                if len(classids) > 0:
+                    break
+
+            if len(classids) < 1:
+                if verbose:
+                    print('Unable to find entries on verbnet for neither of the synsets... Will go recursive now (which is not a good thing!)')
+
+                for synset in wn_synsets:
+                    if len(synset.lemmas()) < 1:
+                        continue
+
+                    candidate = str(synset.hypernyms()[0].lemmas()[0].name())
+                    return NLPUtils.get_verbnet_args(candidate, verbose=verbose)
+
+                if verbose:
+                    print('Exhausted attempts... returning an empty list.')
+                return []
 
         for id in classids:
             class_number = id[id.find('-')+1:]
-            v = verbnet.vnclass(class_number)
-            roles = [t.attrib['type'] for t in v.findall('THEMROLES/THEMROLE')]
+            try:
+                v = verbnet.vnclass(class_number)
+                roles = [t.attrib['type'] for t in v.findall('THEMROLES/THEMROLE')]
+                pass
+            except ValueError:
+                print('VN class number not found: {}'.format(class_number))
+
+                # Will handle these both below
+                v = [None]
+                roles = []
+                pass
 
             while len(roles) < 1 and len(v) > 0:
                 fallback_class_number = class_number[:class_number.rfind('-')]
                 if verbose:
                     print('No roles found for class {}, falling back to {}.'.format(class_number, fallback_class_number))
                 class_number = fallback_class_number
-                v = verbnet.vnclass(class_number)
-                roles = [t.attrib['type'] for t in v.findall('THEMROLES/THEMROLE')]
+
+                try:
+                    v = verbnet.vnclass(class_number)
+                    roles = [t.attrib['type'] for t in v.findall('THEMROLES/THEMROLE')]
+                    pass
+                except ValueError:
+                    # Go on with the loop
+                    v = [None]
+                    roles = []
+                    pass
 
             if len(roles) > 0:
                 if verbose:
