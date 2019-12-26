@@ -35,7 +35,7 @@ class SemanticRoleLabeler:
                     if elem[1] in ['ROOT', 'punct', 'det'] or 'subj' in elem[1] or 'obj' in elem[1]:
                         continue
 
-                    if elem[1] in ['compound', 'aux', 'neg'] or elem[1].endswith('mod'):
+                    if elem[1] in ['compound', 'nmod:poss', 'aux', 'neg'] or elem[1].endswith('mod'):
                         if previous_term == elem[0]:
                             updated_term = '{} {}'.format(elem[2], previous_compound)
                         else:
@@ -53,17 +53,18 @@ class SemanticRoleLabeler:
 
                         out_contents += triple.to_string() + '\n'
 
-                    elif elem[1] in ['appos'] or elem[1].startswith('nmod:'):
+                    elif elem[1] in ['acl', 'appos'] or elem[1].startswith('nmod:'):
                         connective_dependencies.append(elem)
 
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
 
                     if elem[1] == 'nmod:poss':
-                    	connector = '\'s'
-                    elif elem[1].find(':') > 0: # e.g. 'nmod:of'
+                        continue
+
+                    if elem[1].find(':') > 0: # e.g. 'nmod:of'
                         connector = elem[1][elem[1].find(':')+1:]
-                    elif elem[1] == 'appos':
+                    elif elem[1] in ['acl', 'appos']:
                         connector = ''
                     else:
                         connector = elem[1]
