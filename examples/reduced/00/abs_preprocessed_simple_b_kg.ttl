@@ -6,25 +6,25 @@
 
 #### Classes ####
 
-local:mellitus_factors	rdfs:label	"mellitus factors"	.
-
-local:factors	rdfs:label	"factors"	.
-
 local:diabetes_mellitus	rdfs:label	"diabetes mellitus"	.
 
 local:mellitus	rdfs:label	"mellitus"	.
 
-local:particular_diabetes_mellitus	rdfs:label	"particular diabetes mellitus"	.
-
 local:risk_factors	rdfs:label	"risk factors"	.
 
+local:factors	rdfs:label	"factors"	.
+
 local:common_risk_factors	rdfs:label	"common risk factors"	.
+
+local:common_risk_factors_in_particular	rdfs:label	"common risk factors in particular"	.
+
+local:particular	rdfs:label	"particular"	.
+
+local:common_risk_factors_in_particular_diabetes_mellitus	rdfs:label	"common risk factors, in particular, diabetes mellitus."	.
 
 local:highlights	rdfs:label	"highlights"	.
 
 local:study	rdfs:label	"study"	.
-
-local:in_particular_diabetes_mellitus	rdfs:label	"in particular diabetes mellitus."	.
 
 #### Properties ####
 
@@ -33,11 +33,12 @@ local:in_particular_diabetes_mellitus	rdfs:label	"in particular diabetes mellitu
 
 #### Relations ####
 
-local:highlights	local:AM-LOC	local:in_particular_diabetes_mellitus	.
-local:mellitus_factors	rdfs:subClassOf	local:factors	.
 local:diabetes_mellitus	rdfs:subClassOf	local:mellitus	.
-local:common_risk_factors	rdfs:subClassOf	local:risk_factors	.
+local:common_risk_factors_in_particular_diabetes_mellitus	local:commonriskfactorsinparticular_	local:diabetes_mellitus	.
+local:common_risk_factors_in_particular	local:in_particular	local:common_risk_factors	.
 local:risk_factors	rdfs:subClassOf	local:factors	.
-local:highlights	vn.role:Theme	local:common_risk_factors	.
-local:particular_diabetes_mellitus	rdfs:subClassOf	local:diabetes_mellitus	.
+local:common_risk_factors	rdfs:subClassOf	local:risk_factors	.
+local:common_risk_factors_in_particular	local:commonriskfactors_in	local:particular	.
+local:common_risk_factors_in_particular_diabetes_mellitus	local:_diabetesmellitus	local:common_risk_factors_in_particular	.
 local:highlights	vn.role:Agent	local:study	.
+local:highlights	vn.role:Theme	local:common_risk_factors_in_particular_diabetes_mellitus	.

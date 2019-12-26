@@ -6,15 +6,9 @@
 
 #### Classes ####
 
-local:populations_prevalence	rdfs:label	"populations prevalence"	.
-
-local:prevalence	rdfs:label	"prevalence"	.
-
 local:diverse_populations	rdfs:label	"diverse populations"	.
 
 local:populations	rdfs:label	"populations"	.
-
-local:impairment_prevalence	rdfs:label	"impairment prevalence"	.
 
 local:cognitive_impairment	rdfs:label	"cognitive impairment"	.
 
@@ -24,13 +18,15 @@ local:poststroke_cognitive_impairment	rdfs:label	"poststroke cognitive impairmen
 
 local:high_prevalence	rdfs:label	"high prevalence"	.
 
-local:confirms	rdfs:label	"confirms"	.
-
-local:study	rdfs:label	"study"	.
+local:prevalence	rdfs:label	"prevalence"	.
 
 local:high_prevalence_of_poststroke_cognitive_impairment	rdfs:label	"high prevalence of poststroke cognitive impairment"	.
 
-local:in_diverse_populations	rdfs:label	"in diverse populations."	.
+local:high_prevalence_of_poststroke_cognitive_impairment_in_diverse_populations	rdfs:label	"high prevalence of poststroke cognitive impairment in diverse populations."	.
+
+local:confirms	rdfs:label	"confirms"	.
+
+local:study	rdfs:label	"study"	.
 
 #### Properties ####
 
@@ -39,12 +35,13 @@ local:in_diverse_populations	rdfs:label	"in diverse populations."	.
 
 #### Relations ####
 
+local:cognitive_impairment	rdfs:subClassOf	local:impairment	.
+local:high_prevalence_of_poststroke_cognitive_impairment_in_diverse_populations	local:highprevalenceofpoststrokecognitiveimpairment_in	local:diverse_populations	.
+local:confirms	vn.role:Recipient	local:study	.
+local:high_prevalence_of_poststroke_cognitive_impairment_in_diverse_populations	local:in_diversepopulations	local:high_prevalence_of_poststroke_cognitive_impairment	.
+local:diverse_populations	rdfs:subClassOf	local:populations	.
+local:high_prevalence_of_poststroke_cognitive_impairment	local:of_poststrokecognitiveimpairment	local:high_prevalence	.
 local:high_prevalence	rdfs:subClassOf	local:prevalence	.
 local:poststroke_cognitive_impairment	rdfs:subClassOf	local:cognitive_impairment	.
-local:cognitive_impairment	rdfs:subClassOf	local:impairment	.
-local:confirms	vn.role:Recipient	local:study	.
-local:confirms	local:AM-MNR	local:in_diverse_populations	.
-local:populations_prevalence	rdfs:subClassOf	local:prevalence	.
-local:diverse_populations	rdfs:subClassOf	local:populations	.
-local:impairment_prevalence	rdfs:subClassOf	local:prevalence	.
-local:confirms	vn.role:Cause	local:high_prevalence_of_poststroke_cognitive_impairment	.
+local:confirms	vn.role:Cause	local:high_prevalence_of_poststroke_cognitive_impairment_in_diverse_populations	.
+local:high_prevalence_of_poststroke_cognitive_impairment	local:highprevalence_of	local:poststroke_cognitive_impairment	.
