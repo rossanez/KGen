@@ -114,7 +114,7 @@ class SemanticRoleLabeler:
                             s = pred_args[pred_arg].strip()
                             split = s.split(' ', 1)
                             if NLPUtils.is_stopword(split[0]) and len(split) > 1:
-                               s = s.split(' ', 1)[1]
+                                s = s.split(' ', 1)[1]
 
                             triple = Triple(sentence_number, predicate, 'local:{}'.format(pred_arg), s)
                             if verbose:
@@ -129,7 +129,7 @@ class SemanticRoleLabeler:
                             s = pred_args[pred_args_index].strip()
                             split = s.split(' ', 1)
                             if NLPUtils.is_stopword(split[0]) and len(split) > 1:
-                               s = s.split(' ', 1)[1]
+                                s = s.split(' ', 1)[1]
 
                             triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), s)
                             if verbose:
