@@ -1,6 +1,7 @@
 This directory contains some examples of generated Knowledge Graphs (KGs).
 
-All KGs were generated from the abstracts of scientific papers.
+All KGs were generated from the conclusion subsections of scientific papers'
+abstracts.
 
 Each subdirectory (e.g. '00') contains the following artifacts:
 
