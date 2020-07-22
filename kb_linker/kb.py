@@ -3,6 +3,7 @@ from sys import path
 
 path.insert(0, '../')
 from common.babelfy.babelfywrapper import BabelfyWrapper
+from common.csontology.csontologywrapper import CSOWrapper
 from common.ncbo.ncbowrapper import NCBOWrapper
 from common.scispacy.scispacywrapper import ScispaCyWrapper
 from common.uriutils import URIUtils
@@ -79,7 +80,17 @@ class KnowledgeBases:
 
         return prefixes, links
 
-    __methods = {'babelfy':__babelfy, 'ncbo':__ncbo}
+    def __cso(self, contents, verbose=False):
+
+        prefixes = {'https://cso.kmi.open.ac.uk/topics/': 'cso'}
+        links = {}
+
+        cso = CSOWrapper()
+        cso.print_links()
+
+        return prefixes, links
+
+    __methods = {'babelfy':__babelfy, 'ncbo':__ncbo, 'cso':__cso}
     __bases = None
 
     def __init__(self, bases):
