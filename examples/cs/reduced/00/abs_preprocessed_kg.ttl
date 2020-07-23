@@ -1,0 +1,76 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:scientific_articles	rdfs:label	"scientific articles"	.
+
+local:articles	rdfs:label	"articles"	.
+
+local:16M_scientific_articles	rdfs:label	"16M scientific articles"	.
+
+local:large_dataset	rdfs:label	"large dataset"	.
+
+local:dataset	rdfs:label	"dataset"	.
+
+local:very_large_dataset	rdfs:label	"very large dataset"	.
+
+local:Klink2_algorithm	rdfs:label	"Klink-2 algorithm"	.
+
+local:algorithm	rdfs:label	"algorithm"	.
+
+local:Science_Ontology	rdfs:label	"Science Ontology"	.
+
+local:Ontology	rdfs:label	"Ontology"	.
+
+local:Computer_Science	rdfs:label	"Computer Science"	.
+
+local:Science	rdfs:label	"Science"	.
+
+local:Computer_Science_Ontology	rdfs:label	"Computer Science Ontology"	.
+
+local:applying_on_very_large_dataset	rdfs:label	"applying on very large dataset"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:large_dataset_of_16M_scientific_articles	rdfs:label	"large dataset of 16M scientific articles"	.
+
+local:created	rdfs:label	"created"	.
+
+local:applying_the_Klink2_algorithm	rdfs:label	"applying the Klink-2 algorithm"	.
+
+local:a_very_large_dataset_of_16M_scientific_articles	rdfs:label	"a very large dataset of 16M scientific articles."	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:computer_science	rdfs:label	"computer science"	.
+local:Computer_Science	owl:sameAs	cso:computer_science	.
+cso:ontology	rdfs:label	"ontology"	.
+local:Ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:Klink2_algorithm	rdfs:subClassOf	local:algorithm	.
+local:large_dataset_of_16M_scientific_articles	local:of_16Mscientificarticles	local:large_dataset	.
+local:Computer_Science	rdfs:subClassOf	local:Science	.
+local:applying	vn.role:Recipient	local:a_very_large_dataset_of_16M_scientific_articles	.
+local:very_large_dataset	rdfs:subClassOf	local:large_dataset	.
+local:16M_scientific_articles	rdfs:subClassOf	local:scientific_articles	.
+local:Computer_Science_Ontology	rdfs:subClassOf	local:Science_Ontology	.
+local:applying_on_very_large_dataset	local:on_verylargedataset	local:applying	.
+local:created	local:AM-LOC	local:a_very_large_dataset_of_16M_scientific_articles	.
+local:created	vn.role:Product	local:Computer_Science_Ontology	.
+local:applying_on_very_large_dataset	local:applying_on	local:very_large_dataset	.
+local:applying	vn.role:Agent	local:Computer_Science_Ontology	.
+local:applying	vn.role:Theme	local:Klink2_algorithm	.
+local:created	local:AM-MNR	local:applying_the_Klink2_algorithm	.
+local:large_dataset	rdfs:subClassOf	local:dataset	.
+local:scientific_articles	rdfs:subClassOf	local:articles	.
+local:Science_Ontology	rdfs:subClassOf	local:Ontology	.
+local:large_dataset_of_16M_scientific_articles	local:largedataset_of	local:16M_scientific_articles	.
