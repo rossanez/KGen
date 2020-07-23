@@ -86,7 +86,15 @@ class KnowledgeBases:
         links = {}
 
         cso = CSOWrapper()
-        cso.print_links()
+        annotated = cso.annotate(contents)
+
+        for annotation in annotated:
+            entity = annotation['instance']
+            uri = annotation['link']
+            prefix, suffix = URIUtils.get_prefix_and_suffix(uri)
+            if not prefix in prefixes.keys():
+                prefixes[prefix] = URIUtils.get_key_for_prefix(prefix)
+            links[entity] = 'sameas\t{}:{}\t{}'.format(prefixes[prefix], suffix, entity.replace(',', '').replace('.', ''))
 
         return prefixes, links
 

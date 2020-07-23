@@ -40,14 +40,19 @@ class Linker:
             for key in relations:
                 if key in links.keys():
                     output_file.write('@LINK\t{}\t{}\t\n'.format(key, links[key]))
+                    del links[key]
                 else:
                     output_file.write('@LINK\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
 
             for key in entities:
                 if key in links.keys():
                     output_file.write('@LINK\t{}\t{}\t\n'.format(key, links[key]))
+                    del links[key]
                 else:
                     output_file.write('@LINK\t{0}\tno_match\tnot_found\t{0}\t\n'.format(key))
+
+            for key in links.keys(): #if there are remaining unmapped keys
+                output_file.write('@LINK\t{}\t{}\t\n'.format(key, links[key]))
 
             output_file.close()
 

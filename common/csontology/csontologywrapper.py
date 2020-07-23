@@ -1,5 +1,13 @@
 import csv
+import itertools
 import os
+
+from nltk import ngrams
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from Levenshtein.StringMatcher import StringMatcher
+
 
 CSO_FILENAME = 'CSO.3.2.csv'
 
@@ -15,6 +23,9 @@ SCHEMA_RELATEDLINK = '<http://schema.org/relatedLink>'
 class CSOWrapper:
 
     def __init__(self):
+        self.min_similarity = 0.94
+        self.key_stems = dict()
+
         self.__load_ontology_from_file__()
 
     def __load_ontology_from_file__(self):
@@ -32,5 +43,77 @@ class CSOWrapper:
 
                     self._links[value] = uri
 
-    def print_links(self):
-        print(self._links)
+            for key in self._links.keys():
+                if key[:4] not in self.key_stems:
+                    self.key_stems[key[:4]] = list()
+                self.key_stems[key[:4]].append(key)
+
+    def __extract_candidates__(self, contents):
+        tokenizer = RegexpTokenizer(r'[\w\-\(\)]*')
+        tokens = tokenizer.tokenize(contents)
+        filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
+        matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
+        return [" ".join(row).lower() for row in matrix_of_tokens]
+
+    def __get_ngrams__(self, concept):
+        for n in range(3, 0, -1):
+            pos = 0
+            for ng in ngrams(word_tokenize(concept, preserve_line=True), n):
+                yield {"position": pos, "size": n, "ngram": ng}
+                pos += 1
+
+    def find_matches(self, candidates):
+        found_topics = dict()
+
+        for candidate in candidates:
+            matched_trigrams = set()
+            matched_bigrams = set()
+            for comprehensive_grams in self.__get_ngrams__(candidate):
+                position = comprehensive_grams["position"]
+                size = comprehensive_grams["size"]
+                grams = comprehensive_grams["ngram"]
+                # if we already matched the current token to a topic, don't reprocess it
+                if size <= 1 and (position in matched_bigrams or position-1 in matched_bigrams):
+                    continue
+                if size <= 2 and (position in matched_trigrams or position-1 in matched_trigrams or position-2 in matched_trigrams):
+                    continue
+                # otherwise unsplit the ngram for matching so ('quick', 'brown') => 'quick brown'
+                gram = " ".join(grams)
+                try:
+                    # if there isn't an exact match on the first 4 characters of the ngram and a topic, move on
+                    #topic_block = [key for key, _ in self.cso.topics.items() if key.startswith(gram[:4])]
+                    topic_block = self.key_stems[gram[:4]]
+                except KeyError:
+                    continue
+
+                for topic in topic_block:
+                    # otherwise look for an inexact match
+                    match_ratio = StringMatcher(None, topic, gram).ratio()
+                    if match_ratio >= self.min_similarity:
+                        #try:
+                        #    # if a 'primary label' exists for the current topic, use it instead of the matched topic
+                        #    topic = self.cso.primary_labels[topic]
+                        #except KeyError:
+                        #    pass
+                        # note the tokens that matched the topic and how closely
+                        if gram in found_topics:
+                            current_similarity = found_topics[gram]['similarity']
+                            if current_similarity >= match_ratio:
+                                continue
+
+                        found_topics[gram] = {'matched': topic, 'similarity': match_ratio}
+                        # don't reprocess the current token
+                        if size == 2: matched_bigrams.add(position)
+                        elif size == 3: matched_trigrams.add(position)
+
+        return found_topics
+
+    def annotate(self, contents):
+        candidates = self.__extract_candidates__(contents)
+
+        matches = self.find_matches(candidates)
+        annotations = list()
+        for match in matches:
+            annotations.append({'instance': match, 'link': self._links[matches[match]['matched']]})
+
+        return annotations
