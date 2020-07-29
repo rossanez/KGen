@@ -53,7 +53,7 @@ class CSOWrapper:
         tokens = tokenizer.tokenize(contents)
         filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
         matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
-        return [" ".join(row).lower() for row in matrix_of_tokens]
+        return [' '.join(row).lower() for row in matrix_of_tokens]
 
     def __get_ngrams__(self, concept):
         for n in range(3, 0, -1):

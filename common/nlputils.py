@@ -1,16 +1,18 @@
+import itertools
 import os
+import re
 
-from nltk.corpus import stopwords
-from nltk.corpus import verbnet
-from nltk.corpus import wordnet
+from nltk import pos_tag, RegexpParser, tree, word_tokenize
+from nltk.corpus import stopwords, verbnet, wordnet
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, RegexpTokenizer
 from nltk.tree import Tree
 
 from .stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
 
 class NLPUtils:
 
+    ENTITY_GRAMMAR = "ENTITY: {<R.*>*<HYPH>*<R.*>*<JJ.*>*<HYPH>*<JJ.*>*<HYPH>*<NN.*>*<HYPH>*<NN.*>+}"
     PUNCTUATION = ['.', ',', ':', ';']
 
     @staticmethod
@@ -169,4 +171,39 @@ class NLPUtils:
                         entity_set.add(np_entity)
 
         return entity_set, verb_set
+
+    @staticmethod
+    def extract_candidate_entities(contents):
+        candidates = NLPUtils.__extract_entity_candidates_using_grammar(contents)
+        #candidates = candidates.union(NLPUtils.__extract_entity_candidates_delimited_by_stopwords(contents))
+        return candidates
+
+    @staticmethod
+    def __extract_entity_candidates_delimited_by_stopwords(contents):
+        tokenizer = RegexpTokenizer(r'[\w\-\(\)]*')
+        tokens = tokenizer.tokenize(contents)
+        filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
+        matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
+        return {" ".join(row).lower() for row in matrix_of_tokens}
+
+    @staticmethod
+    def __extract_entity_candidates_using_grammar(contents):
+        pos_tags = pos_tag(word_tokenize(contents))
+
+        grammar_parser = RegexpParser(NLPUtils.ENTITY_GRAMMAR)
+
+        candidates = set()
+        pos_tags_with_grammar = grammar_parser.parse(pos_tags)
+        for node in pos_tags_with_grammar:
+            if isinstance(node, tree.Tree) and node.label() == 'ENTITY':
+                candidate = ''
+                for leaf in node.leaves():
+                    #part = re.sub('[\=\,\…\’\'\+\-\–\“\”\"\/\‘\[\]\®\™\%]', ' ', leaf[0])
+                    #part = re.sub('\.$|^\.', '', part)
+                    #part = part.lower().strip()
+                    candidate += ' ' + leaf[0]
+                candidate = re.sub('\.+', '.', candidate)
+                candidate = re.sub('\s+', ' ', candidate)
+                candidates.add(candidate.strip())
+        return candidates
 

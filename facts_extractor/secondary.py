@@ -1,48 +1,14 @@
-import itertools
-import re
-
-from nltk import everygrams, pos_tag, RegexpParser, tree, word_tokenize
-from nltk.corpus import stopwords
-from nltk.tokenize import RegexpTokenizer
+from nltk import everygrams
 from sys import path
 
 path.insert(0, '../')
 from common.nlputils import NLPUtils
 from common.triple import Triple
 
-ENTITY_GRAMMAR = "ENTITY: {<R.*>*<HYPH>*<R.*>*<JJ.*>*<HYPH>*<JJ.*>*<HYPH>*<NN.*>*<HYPH>*<NN.*>+}"
-
 class SecondaryFactsExtractor:
 
     def extract(self, input_filename, output_filename, verbose=False):
         return self.__dep_parse(input_filename, output_filename, verbose)
-
-    def __extract_entity_candidates_delimited_by_stopwords(self, contents):
-        tokenizer = RegexpTokenizer(r'[\w\-\(\)]*')
-        tokens = tokenizer.tokenize(contents)
-        filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
-        matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
-        return {" ".join(row) for row in matrix_of_tokens}
-
-    def __extract_entity_candidates_using_grammar(self, contents):
-        pos_tags = pos_tag(word_tokenize(contents))
-
-        grammar_parser = RegexpParser(ENTITY_GRAMMAR)
-
-        candidates = set()
-        pos_tags_with_grammar = grammar_parser.parse(pos_tags)
-        for node in pos_tags_with_grammar:
-            if isinstance(node, tree.Tree) and node.label() == 'ENTITY':
-                candidate = ''
-                for leaf in node.leaves():
-                    #part = re.sub('[\=\,\…\’\'\+\-\–\“\”\"\/\‘\[\]\®\™\%]', ' ', leaf[0])
-                    #part = re.sub('\.$|^\.', '', part)
-                    #part = part.lower().strip()
-                    candidate += ' ' + leaf[0]
-                candidate = re.sub('\.+', '.', candidate)
-                candidate = re.sub('\s+', ' ', candidate)
-                candidates.add(candidate.strip())
-        return candidates
 
     def __compose_subconcepts(self, concepts):
         entity_composites = set()
@@ -65,11 +31,6 @@ class SecondaryFactsExtractor:
 
         return entity_composites
 
-    def __extract_candidate_concepts(self, contents):
-        candidates = self.__extract_entity_candidates_using_grammar(contents)
-        #candidates = candidates.union(self.__extract_entity_candidates_delimited_by_stopwords(contents))
-        return self.__compose_subconcepts(candidates)
-
     def __dep_parse(self, input_filename, output_filename, verbose=False):
         if verbose:
             print('Attempting to extract secondary facts using dependency parsing...')
@@ -81,7 +42,7 @@ class SecondaryFactsExtractor:
                 if len(line) < 1:
                     continue
 
-                entity_composites = self.__extract_candidate_concepts(line)
+                entity_composites = self.__compose_subconcepts(NLPUtils.extract_candidate_entities(line))
                 for entry in entity_composites:
                     triple = Triple(sentence_number, entry[0], entry[1], entry[2])
                     if verbose:
