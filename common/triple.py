@@ -23,6 +23,9 @@ class Triple:
         self.__predicate_link = pl
         self.__object_links = ol
 
+    def to_tuple(self):
+        return (self.__subject, self.__predicate, self.__object)
+
     def to_string(self):
         if self.__predicate.find(':') > 0: #Predicate is not a String, it is a resource/link
             return '{}\t"{}"\t{}\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)

@@ -1,13 +1,74 @@
+import itertools
+import re
+
+from nltk import everygrams, pos_tag, RegexpParser, tree, word_tokenize
+from nltk.corpus import stopwords
+from nltk.tokenize import RegexpTokenizer
 from sys import path
 
 path.insert(0, '../')
 from common.nlputils import NLPUtils
 from common.triple import Triple
 
+CONCEPT_GRAMMAR = "CONCEPT: {<R.*>*<HYPH>*<R.*>*<JJ.*>*<HYPH>*<JJ.*>*<HYPH>*<NN.*>*<HYPH>*<NN.*>+}"
+
 class SecondaryFactsExtractor:
 
     def extract(self, input_filename, output_filename, verbose=False):
         return self.__dep_parse(input_filename, output_filename, verbose)
+
+    def __extract_concept_candidates_delimited_by_stopwords(self, contents):
+        tokenizer = RegexpTokenizer(r'[\w\-\(\)]*')
+        tokens = tokenizer.tokenize(contents)
+        filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
+        matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
+        return {" ".join(row) for row in matrix_of_tokens}
+
+    def __extract_concept_candidates_using_grammar(self, contents):
+        pos_tags = pos_tag(word_tokenize(contents))
+
+        grammar_parser = RegexpParser(CONCEPT_GRAMMAR)
+
+        candidates = set()
+        pos_tags_with_grammar = grammar_parser.parse(pos_tags)
+        for node in pos_tags_with_grammar:
+            if isinstance(node, tree.Tree) and node.label() == 'CONCEPT':
+                candidate = ''
+                for leaf in node.leaves():
+                    #part = re.sub('[\=\,\…\’\'\+\-\–\“\”\"\/\‘\[\]\®\™\%]', ' ', leaf[0])
+                    #part = re.sub('\.$|^\.', '', part)
+                    #part = part.lower().strip()
+                    candidate += ' ' + leaf[0]
+                candidate = re.sub('\.+', '.', candidate)
+                candidate = re.sub('\s+', ' ', candidate)
+                candidates.add(candidate.strip())
+        return candidates
+
+    def __compose_subconcepts(self, concepts):
+        concept_composites = set()
+
+        for concept in concepts:
+            grams = everygrams(concept.split(), 1, len(concept))
+            previous_compounds = []
+            for gram in grams:
+                if len(gram) == 1:
+                    previous_compounds.append(gram[0])
+                    continue
+
+                if (gram[-1] in previous_compounds):
+                    subClass = ' '.join(gram)
+                    klass = gram[-1]
+                    part = ' '.join(gram[:-1])
+
+                    concept_composites.add((subClass, 'rdfs:subClassOf', klass))
+                    concept_composites.add((part, 'local:partOf', subClass))
+
+        return concept_composites
+
+    def __extract_candidate_concepts(self, contents):
+        candidates = self.__extract_concept_candidates_using_grammar(contents)
+        #candidates = candidates.union(self.__extract_concept_candidates_delimited_by_stopwords(contents))
+        return self.__compose_subconcepts(candidates)
 
     def __dep_parse(self, input_filename, output_filename, verbose=False):
         if verbose:
@@ -20,7 +81,15 @@ class SecondaryFactsExtractor:
                 if len(line) < 1:
                     continue
 
-                dependency_list = NLPUtils.dependency_parse(line, deps_key='enhancedPlusPlusDependencies', verbose)
+                concept_composites = self.__extract_candidate_concepts(line)
+                for entry in concept_composites:
+                    triple = Triple(sentence_number, entry[0], entry[1], entry[2])
+                    if verbose:
+                        print(triple.to_string())
+
+                    out_contents += triple.to_string() + '\n'
+
+                dependency_list = NLPUtils.dependency_parse(line, deps_key='enhancedPlusPlusDependencies', verbose=verbose)
 
                 previous_term = ''
                 previous_compound = ''
@@ -44,6 +113,11 @@ class SecondaryFactsExtractor:
 
                         previous_compound = updated_term
                         previous_term = elem[0]
+
+                        if triple.to_tuple() in concept_composites:
+                            if verbose:
+                                print('Skipping repeated triple: {}'.format(triple.to_string()))
+                            continue
 
                         if verbose:
                             print(triple.to_string())
