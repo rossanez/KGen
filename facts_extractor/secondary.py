@@ -10,29 +10,29 @@ path.insert(0, '../')
 from common.nlputils import NLPUtils
 from common.triple import Triple
 
-CONCEPT_GRAMMAR = "CONCEPT: {<R.*>*<HYPH>*<R.*>*<JJ.*>*<HYPH>*<JJ.*>*<HYPH>*<NN.*>*<HYPH>*<NN.*>+}"
+ENTITY_GRAMMAR = "ENTITY: {<R.*>*<HYPH>*<R.*>*<JJ.*>*<HYPH>*<JJ.*>*<HYPH>*<NN.*>*<HYPH>*<NN.*>+}"
 
 class SecondaryFactsExtractor:
 
     def extract(self, input_filename, output_filename, verbose=False):
         return self.__dep_parse(input_filename, output_filename, verbose)
 
-    def __extract_concept_candidates_delimited_by_stopwords(self, contents):
+    def __extract_entity_candidates_delimited_by_stopwords(self, contents):
         tokenizer = RegexpTokenizer(r'[\w\-\(\)]*')
         tokens = tokenizer.tokenize(contents)
         filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
         matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
         return {" ".join(row) for row in matrix_of_tokens}
 
-    def __extract_concept_candidates_using_grammar(self, contents):
+    def __extract_entity_candidates_using_grammar(self, contents):
         pos_tags = pos_tag(word_tokenize(contents))
 
-        grammar_parser = RegexpParser(CONCEPT_GRAMMAR)
+        grammar_parser = RegexpParser(ENTITY_GRAMMAR)
 
         candidates = set()
         pos_tags_with_grammar = grammar_parser.parse(pos_tags)
         for node in pos_tags_with_grammar:
-            if isinstance(node, tree.Tree) and node.label() == 'CONCEPT':
+            if isinstance(node, tree.Tree) and node.label() == 'ENTITY':
                 candidate = ''
                 for leaf in node.leaves():
                     #part = re.sub('[\=\,\…\’\'\+\-\–\“\”\"\/\‘\[\]\®\™\%]', ' ', leaf[0])
@@ -45,7 +45,7 @@ class SecondaryFactsExtractor:
         return candidates
 
     def __compose_subconcepts(self, concepts):
-        concept_composites = set()
+        entity_composites = set()
 
         for concept in concepts:
             grams = everygrams(concept.split(), 1, len(concept))
@@ -60,14 +60,14 @@ class SecondaryFactsExtractor:
                     klass = gram[-1]
                     part = ' '.join(gram[:-1])
 
-                    concept_composites.add((subClass, 'rdfs:subClassOf', klass))
-                    concept_composites.add((part, 'local:partOf', subClass))
+                    entity_composites.add((subClass, 'rdfs:subClassOf', klass))
+                    entity_composites.add((part, 'local:partOf', subClass))
 
-        return concept_composites
+        return entity_composites
 
     def __extract_candidate_concepts(self, contents):
-        candidates = self.__extract_concept_candidates_using_grammar(contents)
-        #candidates = candidates.union(self.__extract_concept_candidates_delimited_by_stopwords(contents))
+        candidates = self.__extract_entity_candidates_using_grammar(contents)
+        #candidates = candidates.union(self.__extract_entity_candidates_delimited_by_stopwords(contents))
         return self.__compose_subconcepts(candidates)
 
     def __dep_parse(self, input_filename, output_filename, verbose=False):
@@ -81,8 +81,8 @@ class SecondaryFactsExtractor:
                 if len(line) < 1:
                     continue
 
-                concept_composites = self.__extract_candidate_concepts(line)
-                for entry in concept_composites:
+                entity_composites = self.__extract_candidate_concepts(line)
+                for entry in entity_composites:
                     triple = Triple(sentence_number, entry[0], entry[1], entry[2])
                     if verbose:
                         print(triple.to_string())
@@ -114,7 +114,7 @@ class SecondaryFactsExtractor:
                         previous_compound = updated_term
                         previous_term = elem[0]
 
-                        if triple.to_tuple() in concept_composites:
+                        if triple.to_tuple() in entity_composites:
                             if verbose:
                                 print('Skipping repeated triple: {}'.format(triple.to_string()))
                             continue
