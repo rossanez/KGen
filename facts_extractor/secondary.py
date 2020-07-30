@@ -42,9 +42,15 @@ class SecondaryFactsExtractor:
                 if len(line) < 1:
                     continue
 
+                dict_basic_to_most_specific = {}
+
                 entity_composites = self.__compose_subconcepts(NLPUtils.extract_candidate_entities(line))
                 for entry in entity_composites:
                     triple = Triple(sentence_number, entry[0], entry[1], entry[2])
+                    if len(entry[2].split()) == 1:
+                        if entry[2] not in dict_basic_to_most_specific.keys() or len(entry[0]) > len(dict_basic_to_most_specific[entry[2]]):
+                            dict_basic_to_most_specific[entry[2]] = entry[0]
+
                     if verbose:
                         print(triple.to_string())
 
@@ -54,7 +60,6 @@ class SecondaryFactsExtractor:
 
                 previous_term = ''
                 previous_compound = ''
-                dict_basic_to_most_specific = {}
                 connective_dependencies = []
                 while len(dependency_list) > 0:
                     elem = dependency_list.pop()
@@ -68,7 +73,10 @@ class SecondaryFactsExtractor:
                         else:
                             updated_term = '{} {}'.format(elem[2], elem[0])
                             previous_compound = elem[0]
-                        dict_basic_to_most_specific[elem[0]] = updated_term
+
+                        if len(elem[0].split()) == 1:
+                            if elem[0] not in dict_basic_to_most_specific.keys() or len(updated_term) > len(dict_basic_to_most_specific[elem[0]]):
+                                dict_basic_to_most_specific[elem[0]] = updated_term
 
                         triple = Triple(sentence_number, updated_term, 'rdfs:subClassOf', previous_compound)
 
@@ -88,6 +96,7 @@ class SecondaryFactsExtractor:
                     elif elem[1] in ['acl', 'appos'] or elem[1].startswith('nmod:'):
                         connective_dependencies.append(elem)
 
+                print(dict_basic_to_most_specific)
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
 
