@@ -15,9 +15,9 @@ class Triple:
     def __init__(self, sn, s, p, o, sl=[], pl=None, ol=[]):
         self.__sentence_number = sn
 
-        self.__subject = s.strip()
-        self.__predicate = p.strip()
-        self.__object = o.strip()
+        self.__subject = s.lower().strip()
+        self.__predicate = p.strip() # no lowering here (e.g. 'rdfs:subClassOf' != 'rdfs:subclassof')
+        self.__object = o.lower().strip()
 
         self.__subject_links = sl
         self.__predicate_link = pl

@@ -27,7 +27,8 @@ class Linker:
             prefixes, entities, relations, links = KnowledgeBases(k_base).query(contents, verbose)
             
         else:
-            entities, relations = NLPUtils.extract_entities_and_relations(contents)
+            entities = NLPUtils.extract_candidate_entities(contents)
+            relations = NLPUtils.extract_candidate_relations(contents)
             prefixes, links = KnowledgeBases(k_base).annotate(contents, verbose)
 
         output_filename = os.path.splitext(input_filename)[0] + '_links.txt'

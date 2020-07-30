@@ -3,11 +3,12 @@ import itertools
 import os
 
 from nltk import ngrams
-from nltk.tokenize import RegexpTokenizer
-from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from sys import path
 from Levenshtein.StringMatcher import StringMatcher
 
+path.insert(0, '../')
+from common.nlputils import NLPUtils
 
 CSO_FILENAME = 'CSO.3.2.csv'
 
@@ -38,7 +39,7 @@ class CSOWrapper:
             self._links = {}
             for triple in ontology:
                 if triple[1] == RDFS_LABEL:
-                    value = triple[2][:-5] # strip the "@en ." finale
+                    value = triple[2][:-5] # strip the "@en ." at the end
                     uri = triple[0].replace('>', '').replace('<', '')
 
                     self._links[value] = uri
@@ -48,13 +49,6 @@ class CSOWrapper:
                     self.key_stems[key[:4]] = list()
                 self.key_stems[key[:4]].append(key)
 
-    def __extract_candidates__(self, contents):
-        tokenizer = RegexpTokenizer(r'[\w\-\(\)]*')
-        tokens = tokenizer.tokenize(contents)
-        filtered_words = [a for a in [w if w not in stopwords.words('english') else ':delimiter:' for w in tokens] if a != '']
-        matrix_of_tokens = [list(g) for k,g in itertools.groupby(filtered_words,lambda x: x == ':delimiter:') if not k]
-        return [' '.join(row).lower() for row in matrix_of_tokens]
-
     def __get_ngrams__(self, concept):
         for n in range(3, 0, -1):
             pos = 0
@@ -62,7 +56,10 @@ class CSOWrapper:
                 yield {"position": pos, "size": n, "ngram": ng}
                 pos += 1
 
-    def find_matches(self, candidates):
+    def find_matches(self, candidates, verbose=False):
+        if verbose:
+            print('Searching for matches')
+
         found_topics = dict()
 
         for candidate in candidates:
@@ -78,7 +75,10 @@ class CSOWrapper:
                 if size <= 2 and (position in matched_trigrams or position-1 in matched_trigrams or position-2 in matched_trigrams):
                     continue
                 # otherwise unsplit the ngram for matching so ('quick', 'brown') => 'quick brown'
-                gram = " ".join(grams)
+                gram = ' '.join(grams)
+                if verbose:
+                    print(gram)
+
                 try:
                     # if there isn't an exact match on the first 4 characters of the ngram and a topic, move on
                     #topic_block = [key for key, _ in self.cso.topics.items() if key.startswith(gram[:4])]
@@ -108,10 +108,10 @@ class CSOWrapper:
 
         return found_topics
 
-    def annotate(self, contents):
-        candidates = self.__extract_candidates__(contents)
+    def annotate(self, contents, verbose=False):
+        candidates = NLPUtils.extract_candidate_entities(contents, grammar=False, stopwords=True).union(NLPUtils.extract_candidate_relations(contents))
 
-        matches = self.find_matches(candidates)
+        matches = self.find_matches(candidates, verbose)
         annotations = list()
         for match in matches:
             annotations.append({'instance': match, 'link': self._links[matches[match]['matched']]})

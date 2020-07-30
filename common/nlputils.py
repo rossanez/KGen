@@ -14,6 +14,7 @@ class NLPUtils:
 
     ENTITY_GRAMMAR = "ENTITY: {<R.*>*<HYPH>*<R.*>*<JJ.*>*<HYPH>*<JJ.*>*<HYPH>*<NN.*>*<HYPH>*<NN.*>+}"
     PUNCTUATION = ['.', ',', ':', ';']
+    RELATION_GRAMMAR = "RELATION: {<V.*>+}"
 
     @staticmethod
     def adjust_tokens(contents, remove_punctuation=False):
@@ -173,9 +174,18 @@ class NLPUtils:
         return entity_set, verb_set
 
     @staticmethod
-    def extract_candidate_entities(contents):
-        candidates = NLPUtils.__extract_entity_candidates_using_grammar(contents)
-        #candidates = candidates.union(NLPUtils.__extract_entity_candidates_delimited_by_stopwords(contents))
+    def extract_candidate_relations(contents):
+        return NLPUtils.__extract_candidates_using_grammar(contents, NLPUtils.RELATION_GRAMMAR, 'RELATION')
+
+    @staticmethod
+    def extract_candidate_entities(contents, grammar=True, stopwords=False):
+        candidates = set()
+
+        if grammar:
+            candidates = NLPUtils.__extract_entity_candidates_using_grammar(contents)
+        if stopwords:
+            candidates = candidates.union(NLPUtils.__extract_entity_candidates_delimited_by_stopwords(contents))
+
         return candidates
 
     @staticmethod
@@ -188,14 +198,18 @@ class NLPUtils:
 
     @staticmethod
     def __extract_entity_candidates_using_grammar(contents):
+        return NLPUtils.__extract_candidates_using_grammar(contents, NLPUtils.ENTITY_GRAMMAR, 'ENTITY')
+
+    @staticmethod
+    def __extract_candidates_using_grammar(contents, grammar, grammar_treebank_id):
         pos_tags = pos_tag(word_tokenize(contents))
 
-        grammar_parser = RegexpParser(NLPUtils.ENTITY_GRAMMAR)
+        grammar_parser = RegexpParser(grammar)
 
         candidates = set()
         pos_tags_with_grammar = grammar_parser.parse(pos_tags)
         for node in pos_tags_with_grammar:
-            if isinstance(node, tree.Tree) and node.label() == 'ENTITY':
+            if isinstance(node, tree.Tree) and node.label() == grammar_treebank_id:
                 candidate = ''
                 for leaf in node.leaves():
                     #part = re.sub('[\=\,\…\’\'\+\-\–\“\”\"\/\‘\[\]\®\™\%]', ' ', leaf[0])
@@ -204,6 +218,5 @@ class NLPUtils:
                     candidate += ' ' + leaf[0]
                 candidate = re.sub('\.+', '.', candidate)
                 candidate = re.sub('\s+', ' ', candidate)
-                candidates.add(candidate.strip())
+                candidates.add(candidate.lower().strip())
         return candidates
-

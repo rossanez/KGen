@@ -81,12 +81,14 @@ class KnowledgeBases:
         return prefixes, links
 
     def __cso(self, contents, verbose=False):
+        if verbose:
+            print('Searching for entities, concepts and their links, using the Computer Science Ontology')
 
         prefixes = {'https://cso.kmi.open.ac.uk/topics/': 'cso'}
         links = {}
 
         cso = CSOWrapper()
-        annotated = cso.annotate(contents)
+        annotated = cso.annotate(contents, verbose)
 
         for annotation in annotated:
             entity = annotation['instance']
