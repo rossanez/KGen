@@ -42,8 +42,10 @@ class SemanticRoleLabeler:
                             # Remove initial stopwords (e.g. determiners)
                             s = pred_args[pred_arg].strip()
                             split = s.split(' ', 1)
-                            if NLPUtils.is_stopword(split[0]) and len(split) > 1:
+
+                            while NLPUtils.is_stopword(split[0]) and len(split) > 1 and len(split[0]) < 3: # last is due to 'very'
                                 s = s.split(' ', 1)[1]
+                                split = s.split(' ')
 
                             triple = Triple(sentence_number, predicate, 'local:{}'.format(pred_arg), s)
                             if verbose:
@@ -57,8 +59,10 @@ class SemanticRoleLabeler:
                             # Remove initial stopwords (e.g. determiners)
                             s = pred_args[pred_args_index].strip()
                             split = s.split(' ', 1)
-                            if NLPUtils.is_stopword(split[0]) and len(split) > 1:
+
+                            while NLPUtils.is_stopword(split[0]) and len(split) > 1 and len(split[0]) < 3: # last is due to 'very'
                                 s = s.split(' ', 1)[1]
+                                split = s.split(' ')
 
                             triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), s)
                             if verbose:

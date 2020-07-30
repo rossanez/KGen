@@ -96,7 +96,6 @@ class SecondaryFactsExtractor:
                     elif elem[1] in ['acl', 'appos'] or elem[1].startswith('nmod:'):
                         connective_dependencies.append(elem)
 
-                print(dict_basic_to_most_specific)
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
 
