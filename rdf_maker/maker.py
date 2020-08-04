@@ -73,8 +73,8 @@ class RDFMaker:
                     predicate_link = self.__links[predicate]
 
                 entities = set([str(X) for X in self.__links.keys()])
-                closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=1.0)
-                closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=1.0)
+                closest_subjects = difflib.get_close_matches(subject, entities, n=3, cutoff=0.94)
+                closest_objects = difflib.get_close_matches(object, entities, n=3, cutoff=0.94)
 
                 if len(closest_subjects) < 1:
                     if verbose:

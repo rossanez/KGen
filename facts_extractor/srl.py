@@ -34,16 +34,17 @@ class SemanticRoleLabeler:
                         print('predicate: {}, args: {}'.format(predicate, pred_args))
 
                     for pred_arg in pred_args:
-                        if 'AM-NEG' == pred_arg:
-                            predicate = 'not {}'.format(predicate)
-                        elif 'AM-MOD' == pred_arg:
-                            predicate = ' '.join([pred_args['AM-MOD'].strip(), predicate])
-                        elif pred_arg.startswith('AM-'):
+                        if pred_arg.startswith('AM-'): # Adjuncts
+                            #if 'AM-NEG' == pred_arg: # Check https://etd.ohiolink.edu/!etd.send_file?accession=osu1430876809&disposition=inline
+                            #    predicate = 'not {}'.format(predicate)
+                            #else:
+                            #    predicate = ' '.join([pred_args[pred_arg].strip(), predicate])
+
                             # Remove initial stopwords (e.g. determiners)
                             s = pred_args[pred_arg].strip()
                             split = s.split(' ', 1)
 
-                            while NLPUtils.is_stopword(split[0]) and len(split) > 1 and len(split[0]) < 3: # last is due to 'very'
+                            while NLPUtils.is_stopword(split[0]) and len(split) > 1:
                                 s = s.split(' ', 1)[1]
                                 split = s.split(' ')
 
@@ -53,18 +54,35 @@ class SemanticRoleLabeler:
 
                             out_contents += triple.to_string() + '\n'
 
-                    for i in range(len(pred_arg_names)):
-                        pred_args_index = 'A{}'.format(i)
-                        if pred_args_index in pred_args:
+                        elif pred_arg.startswith('C-'): # Continuities
+                            print('Ignoring Continuity')
+                        elif pred_arg.startswith('R-'): # References
+                            print('Ignoring Reference')
+                        elif pred_arg.startswith('V'): # Verbs
+                            print('Ignoring Verb')
+                        else: # Arguments (A0, A1, A2, etc.)
                             # Remove initial stopwords (e.g. determiners)
-                            s = pred_args[pred_args_index].strip()
+                            s = pred_args[pred_arg].strip()
                             split = s.split(' ', 1)
 
-                            while NLPUtils.is_stopword(split[0]) and len(split) > 1 and len(split[0]) < 3: # last is due to 'very'
+                            while NLPUtils.is_stopword(split[0]) and len(split) > 1:
                                 s = s.split(' ', 1)[1]
                                 split = s.split(' ')
 
-                            triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(pred_arg_names[i]), s)
+                            role_index = int(pred_arg[-1])
+                            try:
+                                role = pred_arg_names[role_index]
+                            except IndexError:
+                                print('No role index found for {}. Falling back to defaults!'.format(pred_arg))
+                                if role_index == 0:
+                                    role = 'subject'
+                                elif role_index == 1:
+                                    role = 'object'
+                                elif role_index == 2:
+                                    role = 'indirect_object'
+                                else:
+                                    role = 'other'
+                            triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(role), s)
                             if verbose:
                                 print(triple.to_string())
 
