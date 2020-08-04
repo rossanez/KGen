@@ -48,6 +48,26 @@ class NLPUtils:
         return ' '.join(filtered_sentence)
 
     @staticmethod
+    def lemmatize(sentence):
+        word_tokens = word_tokenize(sentence)
+
+        lemmatizer = WordNetLemmatizer()
+
+        lemmatized_sentence = [lemmatizer.lemmatize(w) for w in word_tokens]
+
+        return ' '.join(lemmatized_sentence)
+
+    @staticmethod
+    def infinitize(sentence):
+        word_tokens = word_tokenize(sentence)
+
+        lemmatizer = WordNetLemmatizer()
+
+        lemmatized_sentence = [lemmatizer.lemmatize(w, 'v') for w in word_tokens]
+
+        return ' '.join(lemmatized_sentence)
+
+    @staticmethod
     def is_stopword(word):
         stop_words = set(stopwords.words('english'))
 
