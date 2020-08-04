@@ -7,8 +7,8 @@ from common.triple import Triple
 
 class SecondaryFactsExtractor:
 
-    def extract(self, input_filename, output_filename, verbose=False):
-        return self.__dep_parse(input_filename, output_filename, verbose)
+    def extract(self, main_triples_filename, output_filename, verbose=False):
+        return self.__dep_parse(main_triples_filename, output_filename, verbose)
 
     def __compose_subconcepts(self, concepts):
         entity_composites = set()
@@ -27,36 +27,38 @@ class SecondaryFactsExtractor:
                     part = ' '.join(gram[:-1])
 
                     entity_composites.add((subClass, 'rdfs:subClassOf', klass))
-                    entity_composites.add((part, 'local:partOf', subClass))
+                    #entity_composites.add((part, 'local:partOf', subClass))
 
         return entity_composites
 
-    def __dep_parse(self, input_filename, output_filename, verbose=False):
+    def __dep_parse(self, main_triples_filename, output_filename, verbose=False):
         if verbose:
             print('Attempting to extract secondary facts using dependency parsing...')
 
         out_contents = ''
-        with open(input_filename, 'r') as input_file:
-            sentence_number = 0
+        with open(main_triples_filename, 'r') as input_file:
             for line in input_file.readlines():
-                if len(line) < 1:
+                line_lst = line.split('\t')
+                if len(line) < 4:
                     continue
 
-                dict_basic_to_most_specific = {}
+                sentence_number = int(line_lst[0])
+                verb = line_lst[1].replace('"', '')
+                predicate = line_lst[2]
+                obj = line_lst[3].replace('"', '')
 
-                entity_composites = self.__compose_subconcepts(NLPUtils.extract_candidate_entities(line))
+                replacements = {}
+
+                entity_composites = self.__compose_subconcepts(NLPUtils.extract_candidate_entities(obj))
                 for entry in entity_composites:
                     triple = Triple(sentence_number, entry[0], entry[1], entry[2])
-                    if len(entry[2].split()) == 1:
-                        if entry[2] not in dict_basic_to_most_specific.keys() or len(entry[0]) > len(dict_basic_to_most_specific[entry[2]]):
-                            dict_basic_to_most_specific[entry[2]] = entry[0]
 
                     if verbose:
                         print(triple.to_string())
 
                     out_contents += triple.to_string() + '\n'
 
-                dependency_list = NLPUtils.dependency_parse(line, deps_key='enhancedPlusPlusDependencies', verbose=verbose)
+                dependency_list = NLPUtils.dependency_parse(obj, deps_key='enhancedPlusPlusDependencies', verbose=verbose)
 
                 previous_term = ''
                 previous_compound = ''
@@ -64,24 +66,29 @@ class SecondaryFactsExtractor:
                 while len(dependency_list) > 0:
                     elem = dependency_list.pop()
 
-                    if elem[1] in ['ROOT', 'punct', 'det'] or 'subj' in elem[1] or 'obj' in elem[1]:
+                    if not elem[0] in replacements:
+                        replacements[elem[0]] = elem[0].split(':')[0]
+                    governor = replacements[elem[0]]
+                    if not elem[2] in replacements:
+                        replacements[elem[2]] = elem[2].split(':')[0]
+                    dependent = replacements[elem[2]]
+
+                    if elem[1] in ['punct', 'det'] or 'subj' in elem[1] or 'obj' in elem[1]:
                         continue
 
                     if elem[1] in ['compound', 'nmod:poss', 'aux', 'neg'] or elem[1].endswith('mod'):
-                        if previous_term == elem[0]:
-                            updated_term = '{} {}'.format(elem[2], previous_compound)
+                        if previous_term == governor:
+                            updated_term = '{} {}'.format(dependent, previous_compound)
                         else:
-                            updated_term = '{} {}'.format(elem[2], elem[0])
-                            previous_compound = elem[0]
+                            updated_term = '{} {}'.format(dependent, governor)
+                            previous_compound = governor
 
-                        if len(elem[0].split()) == 1:
-                            if elem[0] not in dict_basic_to_most_specific.keys() or len(updated_term) > len(dict_basic_to_most_specific[elem[0]]):
-                                dict_basic_to_most_specific[elem[0]] = updated_term
+                        replacements[elem[0]] = updated_term
 
                         triple = Triple(sentence_number, updated_term, 'rdfs:subClassOf', previous_compound)
 
                         previous_compound = updated_term
-                        previous_term = elem[0]
+                        previous_term = governor
 
                         if triple.to_tuple() in entity_composites:
                             if verbose:
@@ -95,9 +102,14 @@ class SecondaryFactsExtractor:
 
                     elif elem[1] in ['acl', 'appos'] or elem[1].startswith('nmod:'):
                         connective_dependencies.append(elem)
+                    elif elem[1] == 'ROOT':
+                        connective_dependencies.insert(0, elem) # Should be the last of the stack
 
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
+                    print(elem)
+                    print(replacements[elem[0]])
+                    print(replacements[elem[2]])
 
                     if elem[1] == 'nmod:poss':
                         continue
@@ -110,12 +122,21 @@ class SecondaryFactsExtractor:
                         connector = elem[1]
 
                     first = elem[0]
-                    if first in dict_basic_to_most_specific.keys():
-                        first = dict_basic_to_most_specific[first]
+                    if first in replacements.keys():
+                        first = replacements[first]
 
                     second = elem[2]
-                    if second in dict_basic_to_most_specific.keys():
-                        second = dict_basic_to_most_specific[second]
+                    if second in replacements.keys():
+                        second = replacements[second]
+
+                    if elem[1] == 'ROOT':
+                        triple = Triple(sentence_number, verb, first, second)
+                        if verbose:
+                            print(replacements)
+                            print(triple.to_string())
+
+                        out_contents += triple.to_string() + '\n'
+                        continue
 
                     if connector == '':
                         full = '{} {}'.format(first, second)
@@ -132,13 +153,11 @@ class SecondaryFactsExtractor:
                         print(triple.to_string())
                     out_contents += triple.to_string() + '\n'
 
-                    dict_basic_to_most_specific[elem[0]] = full
-
-                sentence_number += 1
+                    replacements[elem[0]] = full
 
             input_file.close()
 
-        with open(output_filename, 'a') as output_file:
+        with open(output_filename, 'w') as output_file:
             output_file.write(out_contents)
             output_file.close()
 

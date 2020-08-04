@@ -160,7 +160,7 @@ class NLPUtils:
         dependencies = list()
         for sentence in annotated['sentences']:
             for dependency in sentence[deps_key]:
-                dep_tuple = (dependency['governorGloss'], dependency['dep'], dependency['dependentGloss'])
+                dep_tuple = ('{}:{}'.format(dependency['governorGloss'], dependency['governor']), dependency['dep'], '{}:{}'.format(dependency['dependentGloss'], dependency['dependent']))
                 if verbose:
                     print('{} --{}--> {}'.format(dep_tuple[0], dep_tuple[1], dep_tuple[2]))
 

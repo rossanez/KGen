@@ -27,7 +27,7 @@ class FactsExtractor:
             raise Exception("Unknown system/method to extract primary facts!")
 
         if secondary:
-            output = SecondaryFactsExtractor().extract(input_filename, output_filename, verbose)
+            output = SecondaryFactsExtractor().extract(output, output_filename, verbose)
 
         print('Extracted triples were stored at {}'.format(output))
 
