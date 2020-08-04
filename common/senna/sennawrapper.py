@@ -87,7 +87,7 @@ class SennaWrapper:
             for line in out_file.readlines():
                 line_list = line.split()
                 if len(line_list) > 1 and not line_list[1] == '-':
-                    predicates[line_list[1]] = {}
+                    predicates[line_list[1]] = []
                     pred_list.append(line_list[1]) # list to iterate later - dictionary will not keep keys in order
 
             out_file.seek(0)
@@ -107,13 +107,13 @@ class SennaWrapper:
                     if not (srl_tag == 'O' or srl_tag == 'S-V'):
                         srl = '-'.join(srl_tag.split('-')[1:])
 
-                        if srl in pred_dict:
-                            srl_str = pred_dict[srl]
-                        else:
-                            srl_str = ''
-                        srl_str += term + ' '
-                        pred_dict[srl] = srl_str
+                        if srl_tag.startswith('S-') or srl_tag.startswith('B-'): # Single occurrence or beginning of a composite.
+                            pred_dict.append((srl, term))
+                            predicates[key] = pred_dict
+                            continue
 
+                        last_tuple = pred_dict[-1]
+                        pred_dict[-1] = (srl, last_tuple[1] + ' ' + term)
                         predicates[key] = pred_dict
 
             out_file.close()
