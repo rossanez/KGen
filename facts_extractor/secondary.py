@@ -58,7 +58,7 @@ class SecondaryFactsExtractor:
 
                     out_contents += triple.to_string() + '\n'
 
-                dependency_list = NLPUtils.dependency_parse(obj, deps_key='enhancedPlusPlusDependencies', verbose=verbose)
+                dependency_list = NLPUtils.dependency_parse(obj, deps_key='enhancedPlusPlusDependencies', verbose=False)
 
                 previous_term = ''
                 previous_compound = ''
@@ -107,9 +107,6 @@ class SecondaryFactsExtractor:
 
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
-                    print(elem)
-                    print(replacements[elem[0]])
-                    print(replacements[elem[2]])
 
                     if elem[1] == 'nmod:poss':
                         continue
@@ -130,9 +127,8 @@ class SecondaryFactsExtractor:
                         second = replacements[second]
 
                     if elem[1] == 'ROOT':
-                        triple = Triple(sentence_number, verb, first, second)
+                        triple = Triple(sentence_number, verb, predicate, second)
                         if verbose:
-                            print(replacements)
                             print(triple.to_string())
 
                         out_contents += triple.to_string() + '\n'
