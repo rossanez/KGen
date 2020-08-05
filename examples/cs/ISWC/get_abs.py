@@ -1,9 +1,18 @@
 import os
+import re
 import requests
 
 from argparse import ArgumentParser
 from bs4 import BeautifulSoup
 from sys import argv
+
+ENUM_REGEX = re.compile(r"\(\s*(i|v|[0-9])+\s*\)", re.IGNORECASE)
+ENUM_ALPHA_LOWER_REGEX = re.compile(r"\(\s*[a-e]\s*\)")
+BRACKETS_REGEX = re.compile(r"(\{\[\]\})")
+REF_REGEX = re.compile(r"\[\s*[0-9]+\s*\]")
+ETC_REGEX = re.compile(r"\,\s*etc\s*\.")
+CHARS_REGEX = re.compile(r"(\\|\/|\{|\}|\[|\]|\+|\*|\&|\^|\~)")
+
 
 def extract_abstract(base_url, number):
     if number is None:
@@ -33,8 +42,15 @@ def extract_abstract(base_url, number):
     # This format is for the springer front page (as of jul/2020)
     abstract = soup.find('section', class_='Abstract').find('p', class_='Para').text
 
+    out = ENUM_REGEX.sub('', abstract)
+    out = ENUM_ALPHA_LOWER_REGEX.sub('', out)
+    out = REF_REGEX.sub('', out)
+    out = ETC_REGEX.sub('', out)
+    out = CHARS_REGEX.sub('', out)
+    out = out.replace('%', 'percent')
+
     with open(abs_out_file, 'w') as output_abs_file:
-        output_abs_file.write(abstract)
+        output_abs_file.write(out)
         output_abs_file.close()
 
     with open(refs_out_file, 'w') as output_refs_file:
