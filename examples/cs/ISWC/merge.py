@@ -23,6 +23,8 @@ def merge_files(number):
     with open(merged_triples_file, 'a') as out_triples_file:
         with open(current_triples_file) as curr_file:
             for line in curr_file:
+                if '\\' in line:
+                    continue
                 line_contents = line.split('\t')
                 updated_index = '{}.{}'.format(number, line_contents[0])
                 out_triples_file.write('{}\t{}\t{}\t{}'.format(updated_index, line_contents[1], line_contents[2], line_contents[3]))
@@ -30,6 +32,8 @@ def merge_files(number):
     with open(merged_links_file, 'a') as out_links_file:
         with open(current_links_file) as curr_file:
             for line in curr_file:
+                if '\\' in line:
+                    continue
                 out_links_file.write(line)
 
     print('Processed contents of: {}'.format(number))
