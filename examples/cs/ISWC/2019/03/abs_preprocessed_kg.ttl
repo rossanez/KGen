@@ -15,23 +15,29 @@ local:modeling_style	rdfs:label	"modeling style"	.
 
 local:style	rdfs:label	"style"	.
 
+local:modeling	rdfs:label	"modeling"	.
+
 local:aiming	rdfs:label	"aiming"	.
 
 local:understanding	rdfs:label	"understanding"	.
+
+local:overall_semantic	rdfs:label	"overall semantic"	.
+
+local:overall_semantic_structure	rdfs:label	"overall semantic structure"	.
 
 local:open_data	rdfs:label	"open data"	.
 
 local:data	rdfs:label	"data"	.
 
-local:overall_semantic_structure	rdfs:label	"overall semantic structure"	.
-
-local:structure	rdfs:label	"structure"	.
+local:semantic	rdfs:label	"semantic"	.
 
 local:semantic_structure	rdfs:label	"semantic structure"	.
 
-local:overall_semantic	rdfs:label	"overall semantic"	.
+local:overall	rdfs:label	"overall"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:structure	rdfs:label	"structure"	.
+
+local:open	rdfs:label	"open"	.
 
 local:linked_open_data	rdfs:label	"linked open data"	.
 
@@ -61,9 +67,9 @@ local:much_hierarchies	rdfs:label	"much hierarchies"	.
 
 local:hierarchies	rdfs:label	"hierarchies"	.
 
-local:how_much	rdfs:label	"how much"	.
-
 local:much	rdfs:label	"much"	.
+
+local:how_much	rdfs:label	"how much"	.
 
 local:hierarchies_of_concepts	rdfs:label	"hierarchies of concepts"	.
 
@@ -83,41 +89,45 @@ local:contributes	rdfs:label	"contributes"	.
 
 local:lrb	rdfs:label	"-lrb-"	.
 
-local:data_knowledge_graphs	rdfs:label	"data knowledge graphs"	.
+local:paper_application	rdfs:label	"paper application"	.
 
-local:graphs	rdfs:label	"graphs"	.
-
-local:lrb_ii	rdfs:label	"-lrb- ii"	.
-
-local:ii	rdfs:label	"ii"	.
-
-local:open_source_implementation	rdfs:label	"open source implementation"	.
-
-local:implementation	rdfs:label	"implementation"	.
-
-local:observable_constructs	rdfs:label	"observable constructs"	.
-
-local:constructs	rdfs:label	"constructs"	.
-
-local:conceptual_framework	rdfs:label	"conceptual framework"	.
-
-local:framework	rdfs:label	"framework"	.
+local:application	rdfs:label	"application"	.
 
 local:data_knowledge	rdfs:label	"data knowledge"	.
 
 local:knowledge	rdfs:label	"knowledge"	.
 
-local:paper_application	rdfs:label	"paper application"	.
+local:observable	rdfs:label	"observable"	.
 
-local:application	rdfs:label	"application"	.
+local:observable_constructs	rdfs:label	"observable constructs"	.
 
 local:open_source	rdfs:label	"open source"	.
 
 local:source	rdfs:label	"source"	.
 
-local:source_implementation	rdfs:label	"source implementation"	.
+local:lrb_ii	rdfs:label	"-lrb- ii"	.
+
+local:ii	rdfs:label	"ii"	.
+
+local:data_knowledge_graphs	rdfs:label	"data knowledge graphs"	.
 
 local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+
+local:constructs	rdfs:label	"constructs"	.
+
+local:graphs	rdfs:label	"graphs"	.
+
+local:source_implementation	rdfs:label	"source implementation"	.
+
+local:implementation	rdfs:label	"implementation"	.
+
+local:open_source_implementation	rdfs:label	"open source implementation"	.
+
+local:conceptual_framework	rdfs:label	"conceptual framework"	.
+
+local:framework	rdfs:label	"framework"	.
+
+local:conceptual	rdfs:label	"conceptual"	.
 
 local:linked_data_knowledge_graphs	rdfs:label	"linked data knowledge graphs"	.
 
@@ -151,83 +161,99 @@ local:linked	rdfs:label	"linked"	.
 
 #### Mapped Relations ####
 
-local:semantic	owl:sameAs	cso:semantics	.
 local:linked_open_data	owl:sameAs	cso:linked_open_data	.
 cso:linked_open_data	rdfs:label	"linked open data"	.
 cso:semantics	rdfs:label	"semantic"	.
+local:semantic	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:overall_semantic_structure	rdfs:subClassOf	local:semantic_structure	.
-local:hierarchies_of_concepts	local:hierarchies_of	local:concepts	.
-local:observe	vn.role:Agent	local:we	.
-local:much_hierarchies_of_concepts	local:muchhierarchies_of	local:concepts	.
 local:presents	vn.role:Theme	local:aiming	.
-local:facilitates	vn.role:Beneficiary	local:paper_application	.
-local:linked_open_data	rdfs:subClassOf	local:open_data	.
-local:facilitates_to_other_linked_data_knowledge_graphs	local:facilitates_to	local:other_linked_data_knowledge_graphs	.
-local:conceptual_framework	rdfs:subClassOf	local:framework	.
-local:including	vn.role:Location	local:conceptual_framework	.
-local:investigate	vn.role:Agent	local:we	.
-local:paper_application	rdfs:subClassOf	local:application	.
-local:data_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
-local:presents	vn.role:Agent	local:paper	.
-local:aiming	vn.role:Theme	local:understanding	.
-local:generalises	vn.role:Agent	local:conceptual_framework	.
-local:overall_semantic_structure_of_linked_open_data	local:overallsemanticstructure_of	local:linked_open_data	.
-local:generalises_over_observable_constructs	local:over_observableconstructs	local:generalises	.
-local:rrb	vn.role:subject	local:i	.
-local:other_linked_data_knowledge_graphs	rdfs:subClassOf	local:linked_data_knowledge_graphs	.
-local:set_of_metrics	local:set_of	local:metrics	.
-local:contributes	vn.role:Theme1	local:results	.
-local:understanding	vn.role:Agent	local:paper	.
-local:overall_semantic_structure_of_linked_open_data	local:of_linkedopendata	local:overall_semantic_structure	.
-local:understanding	vn.role:Proposition	local:overall_semantic_structure_of_linked_open_data	.
-local:generalises	vn.role:Agent	local:set_of_metrics	.
-local:much_hierarchies	rdfs:subClassOf	local:hierarchies	.
-local:open_source_implementation	rdfs:subClassOf	local:source_implementation	.
-local:investigate	vn.role:Location	local:structured	.
-local:hierarchies_of_concepts	local:of_concepts	local:hierarchies	.
-local:generalises	vn.role:Patient	local:observable_constructs	.
-local:how_much	rdfs:subClassOf	local:much	.
-local:observable_constructs	rdfs:subClassOf	local:constructs	.
-local:semantic_structure	rdfs:subClassOf	local:structure	.
-local:used	local:AM-LOC	local:practice	.
 local:linked_data_knowledge_graphs	rdfs:subClassOf	local:data_knowledge_graphs	.
-local:source_implementation	rdfs:subClassOf	local:implementation	.
-local:conceptual_framework_including_set	local:including_set	local:conceptual_framework	.
+local:hierarchies_of_concepts	local:hierarchies_of	local:concepts	.
+local:used	vn.role:Theme	local:classes	.
+local:generalises	vn.role:Patient	local:observable_constructs	.
 local:much_hierarchies_of_concepts	local:of_concepts	local:much_hierarchies	.
+local:conceptual_framework_including_set	local:including_set	local:conceptual_framework	.
+local:open_data	rdfs:subClassOf	local:data	.
 local:facilitates	vn.role:Agent	local:open_source_implementation	.
-local:linked	vn.role:Patient	local:data_knowledge_graphs	.
-local:understanding	vn.role:Proposition	local:modeling_style	.
+local:knowledge	rdfs:member	local:knowledge_graphs	.
+local:overall_semantic_structure_of_linked_open_data	local:overallsemanticstructure_of	local:linked_open_data	.
+local:generalises	vn.role:Agent	local:set_of_metrics	.
+local:rrb	vn.role:subject	local:i	.
+local:much_hierarchies_of_concepts	local:muchhierarchies_of	local:concepts	.
+local:linked_open_data	rdfs:subClassOf	local:open_data	.
+local:open_source_implementation	rdfs:subClassOf	local:source_implementation	.
+local:discussing	vn.role:Patient1	local:i	.
+local:modeling	rdfs:member	local:modeling_style	.
+local:used	local:AM-LOC	local:practice	.
+local:overall_semantic_structure_of_linked_open_data	local:of_linkedopendata	local:overall_semantic_structure	.
+local:how_much	rdfs:subClassOf	local:much	.
+local:used	vn.role:Theme	local:individuals	.
+local:observable_constructs	rdfs:subClassOf	local:constructs	.
+local:source_implementation	rdfs:subClassOf	local:implementation	.
+local:facilitates_to_other_linked_data_knowledge_graphs	local:to_otherlinkeddataknowledgegraphs	local:facilitates	.
+local:lrb	rdfs:member	local:lrb_ii	.
+local:much	rdfs:member	local:much_hierarchies	.
+local:contributes	vn.role:Theme1	local:results	.
+local:used_in_practice	local:in_practice	local:used	.
+local:discussing	vn.role:Patient1	local:paper	.
+local:aiming	vn.role:Experiencer	local:paper	.
+local:aiming	vn.role:Theme	local:understanding	.
+local:other_linked_data_knowledge_graphs	rdfs:subClassOf	local:linked_data_knowledge_graphs	.
 local:used	vn.role:Theme	local:properties	.
 local:conceptual_framework_including_set	local:conceptualframework_including	local:set	.
-local:open_source	rdfs:subClassOf	local:source	.
-local:used	vn.role:Theme	local:classes	.
-local:discussing	vn.role:Patient1	local:paper	.
-local:generalises_over_observable_constructs	local:generalises_over	local:observable_constructs	.
-local:open_data	rdfs:subClassOf	local:data	.
-local:overall_semantic_structure	rdfs:subClassOf	local:structure	.
-local:rrb_open_source_implementation	rdfs:subClassOf	local:open_source_implementation	.
-local:set_of_metrics	local:of_metrics	local:set	.
-local:facilitates	vn.role:Theme	local:linked_data_knowledge_graphs	.
-local:discussing	vn.role:Patient1	local:i	.
-local:lrb_ii	rdfs:subClassOf	local:ii	.
-local:including	vn.role:Theme	local:set_of_metrics	.
-local:contributes	vn.role:Theme2	local:lrb	.
-local:used_in_practice	local:in_practice	local:used	.
-local:open_source_implementation	rdfs:subClassOf	local:implementation	.
-local:used_in_practice	local:used_in	local:practice	.
-local:observe	vn.role:Theme	local:used_in_practice	.
-local:discussing	vn.role:Patient2	local:results	.
-local:facilitates_to_other_linked_data_knowledge_graphs	local:to_otherlinkeddataknowledgegraphs	local:facilitates	.
-local:data_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:contributes	vn.role:indirect_object	local:rrb	.
-local:overall_semantic	rdfs:subClassOf	local:semantic	.
-local:modeling_style	rdfs:subClassOf	local:style	.
 local:rrb	vn.role:object	local:conceptual_framework_including_set	.
-local:investigate	local:AM-DIS	local:also	.
-local:aiming	vn.role:Experiencer	local:paper	.
+local:source	rdfs:member	local:source_implementation	.
+local:open_source_implementation	rdfs:subClassOf	local:implementation	.
+local:overall_semantic_structure	rdfs:subClassOf	local:structure	.
 local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:modeling_style	rdfs:subClassOf	local:style	.
+local:rrb_open_source_implementation	rdfs:subClassOf	local:open_source_implementation	.
+local:overall	rdfs:member	local:overall_semantic	.
+local:set_of_metrics	local:of_metrics	local:set	.
+local:contributes	vn.role:Theme2	local:lrb	.
+local:data_knowledge	rdfs:member	local:data_knowledge_graphs	.
+local:overall_semantic	rdfs:member	local:overall_semantic_structure	.
+local:paper_application	rdfs:subClassOf	local:application	.
+local:generalises_over_observable_constructs	local:over_observableconstructs	local:generalises	.
+local:understanding	vn.role:Agent	local:paper	.
+local:investigate	vn.role:Agent	local:we	.
+local:generalises_over_observable_constructs	local:generalises_over	local:observable_constructs	.
+local:conceptual	rdfs:member	local:conceptual_framework	.
+local:used_in_practice	local:used_in	local:practice	.
+local:observe	vn.role:Agent	local:we	.
+local:overall_semantic	rdfs:subClassOf	local:semantic	.
+local:understanding	vn.role:Proposition	local:modeling_style	.
+local:discussing	vn.role:Patient2	local:results	.
+local:facilitates_to_other_linked_data_knowledge_graphs	local:facilitates_to	local:other_linked_data_knowledge_graphs	.
+local:lrb_ii	rdfs:subClassOf	local:ii	.
 local:data_knowledge	rdfs:subClassOf	local:knowledge	.
-local:used	vn.role:Theme	local:individuals	.
+local:data	rdfs:member	local:data_knowledge	.
+local:semantic	rdfs:member	local:semantic_structure	.
+local:conceptual_framework	rdfs:subClassOf	local:framework	.
+local:data_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:set_of_metrics	local:set_of	local:metrics	.
+local:including	vn.role:Theme	local:set_of_metrics	.
+local:investigate	local:AM-DIS	local:also	.
+local:much_hierarchies	rdfs:subClassOf	local:hierarchies	.
+local:paper	rdfs:member	local:paper_application	.
+local:contributes	vn.role:indirect_object	local:rrb	.
+local:observe	vn.role:Theme	local:used_in_practice	.
+local:facilitates	vn.role:Beneficiary	local:paper_application	.
+local:investigate	vn.role:Location	local:structured	.
+local:facilitates	vn.role:Theme	local:linked_data_knowledge_graphs	.
+local:open_source	rdfs:subClassOf	local:source	.
+local:semantic_structure	rdfs:subClassOf	local:structure	.
+local:including	vn.role:Location	local:conceptual_framework	.
+local:hierarchies_of_concepts	local:of_concepts	local:hierarchies	.
+local:presents	vn.role:Agent	local:paper	.
+local:observable	rdfs:member	local:observable_constructs	.
+local:generalises	vn.role:Agent	local:conceptual_framework	.
+local:data_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
+local:linked	vn.role:Patient	local:data_knowledge_graphs	.
+local:overall_semantic_structure	rdfs:subClassOf	local:semantic_structure	.
+local:understanding	vn.role:Proposition	local:overall_semantic_structure_of_linked_open_data	.
+local:open	rdfs:member	local:open_source	.
+local:open_source	rdfs:member	local:open_source_implementation	.
+local:open	rdfs:member	local:open_data	.

@@ -7,27 +7,35 @@
 
 #### Classes ####
 
-local:logicbased_knowledge_representation	rdfs:label	"logic-based knowledge representation"	.
-
-local:representation	rdfs:label	"representation"	.
+local:logicbased	rdfs:label	"logic-based"	.
 
 local:logicbased_knowledge	rdfs:label	"logic-based knowledge"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
-
 local:knowledge_representation	rdfs:label	"knowledge representation"	.
+
+local:representation	rdfs:label	"representation"	.
+
+local:logicbased_knowledge_representation	rdfs:label	"logic-based knowledge representation"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
 
 local:formalisms	rdfs:label	"formalisms,"	.
 
-local:instance_data	rdfs:label	"instance data"	.
+local:certain	rdfs:label	"certain"	.
 
-local:data	rdfs:label	"data"	.
+local:certain_ways	rdfs:label	"certain ways"	.
 
 local:description_logics	rdfs:label	"description logics"	.
 
 local:logics	rdfs:label	"logics"	.
 
-local:certain_ways	rdfs:label	"certain ways"	.
+local:description	rdfs:label	"description"	.
+
+local:instance_data	rdfs:label	"instance data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:instance	rdfs:label	"instance"	.
 
 local:ways	rdfs:label	"ways"	.
 
@@ -39,13 +47,15 @@ local:related_in_certain_ways	rdfs:label	"related in certain ways"	.
 
 local:related	rdfs:label	"related"	.
 
-local:many_knowledge_bases	rdfs:label	"many knowledge bases"	.
+local:many	rdfs:label	"many"	.
 
-local:bases	rdfs:label	"bases"	.
+local:many_knowledge	rdfs:label	"many knowledge"	.
 
 local:knowledge_bases	rdfs:label	"knowledge bases"	.
 
-local:many_knowledge	rdfs:label	"many knowledge"	.
+local:bases	rdfs:label	"bases"	.
+
+local:many_knowledge_bases	rdfs:label	"many knowledge bases"	.
 
 local:use	rdfs:label	"use"	.
 
@@ -53,27 +63,31 @@ local:language_features	rdfs:label	"language features"	.
 
 local:features	rdfs:label	"features"	.
 
+local:language	rdfs:label	"language"	.
+
+local:expressive_description_logics	rdfs:label	"expressive description logics"	.
+
+local:full_conjunctive_query	rdfs:label	"full conjunctive query"	.
+
+local:full_conjunctive	rdfs:label	"full conjunctive"	.
+
+local:more_expressive_description	rdfs:label	"more expressive description"	.
+
+local:expressive_description	rdfs:label	"expressive description"	.
+
+local:full	rdfs:label	"full"	.
+
 local:more_expressive_description_logics	rdfs:label	"more expressive description logics"	.
 
 local:more_expressive	rdfs:label	"more expressive"	.
 
 local:expressive	rdfs:label	"expressive"	.
 
-local:expressive_description_logics	rdfs:label	"expressive description logics"	.
-
 local:conjunctive_query	rdfs:label	"conjunctive query"	.
-
-local:expressive_description	rdfs:label	"expressive description"	.
-
-local:description	rdfs:label	"description"	.
-
-local:full_conjunctive	rdfs:label	"full conjunctive"	.
 
 local:conjunctive	rdfs:label	"conjunctive"	.
 
-local:more_expressive_description	rdfs:label	"more expressive description"	.
-
-local:full_conjunctive_query	rdfs:label	"full conjunctive query"	.
+local:more	rdfs:label	"more"	.
 
 local:hardly_systems	rdfs:label	"hardly systems"	.
 
@@ -105,6 +119,8 @@ local:queries	rdfs:label	"queries"	.
 
 local:compute	rdfs:label	"compute"	.
 
+local:incomplete	rdfs:label	"incomplete"	.
+
 local:incomplete_results	rdfs:label	"incomplete results"	.
 
 local:results	rdfs:label	"results"	.
@@ -113,65 +129,84 @@ local:results	rdfs:label	"results"	.
 
 #### Mapped Relations ####
 
-local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
-cso:knowledge_representation	rdfs:label	"knowledge representation"	.
-cso:description_logics	rdfs:label	"description logics"	.
-local:description_logics	owl:sameAs	cso:description_logics	.
 cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+cso:knowledge_representation	rdfs:label	"knowledge representation"	.
 local:knowledge_representation	owl:sameAs	cso:knowledge_representation	.
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+local:description_logics	owl:sameAs	cso:description_logics	.
+cso:description_logics	rdfs:label	"description logics"	.
 
 #### Relations ####
 
-local:use	vn.role:Agent	local:many_knowledge_bases	.
-local:description_logics	rdfs:subClassOf	local:logics	.
-local:instance_data	rdfs:subClassOf	local:data	.
-local:impose	local:AM-LOC	local:fact_existing_systems	.
-local:more_expressive_description_logics	rdfs:subClassOf	local:logics	.
-local:knowledge_representation	rdfs:subClassOf	local:representation	.
-local:certain_ways	rdfs:subClassOf	local:ways	.
-local:hardly_systems	rdfs:subClassOf	local:systems	.
-local:logicbased_knowledge_representation	rdfs:subClassOf	local:knowledge_representation	.
-local:query_for_instance_data	local:for_instancedata	local:query	.
-local:related	vn.role:Topic	local:data	.
-local:incomplete_results	rdfs:subClassOf	local:results	.
-local:many_knowledge	rdfs:subClassOf	local:knowledge	.
-local:expressive_description_logics	rdfs:subClassOf	local:logics	.
 local:logicbased_knowledge_representation	rdfs:subClassOf	local:representation	.
-local:use	vn.role:Recipient	local:are	.
-local:existing_systems	rdfs:subClassOf	local:systems	.
-local:answering	vn.role:Agent	local:full_conjunctive_query	.
-local:answering_for_expressive_description_logics	local:answering_for	local:expressive_description_logics	.
-local:compute	local:AM-LOC	local:fact_existing_systems	.
-local:query	vn.role:Predicate	local:instance_data	.
-local:formalisms	vn.role:object	local:description_logics	.
+local:more	rdfs:member	local:more_expressive	.
+local:expressive	rdfs:member	local:expressive_description	.
+local:instance	rdfs:member	local:instance_data	.
 local:many_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
-local:existing	vn.role:Location	local:systems	.
-local:many_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:full_conjunctive_query_answering	local:_answering	local:full_conjunctive_query	.
-local:answering_for_expressive_description_logics	local:for_expressivedescriptionlogics	local:answering	.
+local:use	vn.role:Theme	local:language_features	.
+local:impose	local:AM-LOC	local:fact_existing_systems	.
+local:query_for_instance_data	local:query_for	local:instance_data	.
+local:many_knowledge	rdfs:subClassOf	local:knowledge	.
 local:expressive_description_logics	rdfs:subClassOf	local:description_logics	.
 local:compute	vn.role:Product	local:incomplete_results	.
-local:impose	vn.role:Theme	local:restrictions	.
-local:conjunctive_query	rdfs:subClassOf	local:query	.
-local:query_for_instance_data	local:query_for	local:instance_data	.
-local:full_conjunctive_query	rdfs:subClassOf	local:query	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:more_expressive	rdfs:subClassOf	local:expressive	.
-local:support	vn.role:Theme	local:systems	.
-local:impose	vn.role:indirect_object	local:queries	.
-local:more_expressive_description	rdfs:subClassOf	local:description	.
-local:logicbased_knowledge	rdfs:subClassOf	local:knowledge	.
-local:use	vn.role:Theme	local:language_features	.
-local:full_conjunctive_query_answering	local:fullconjunctivequery_	local:answering	.
-local:answering	vn.role:Predicate	local:expressive_description_logics	.
+local:full_conjunctive_query_answering	local:_answering	local:full_conjunctive_query	.
+local:hardly_systems	rdfs:subClassOf	local:systems	.
+local:full_conjunctive	rdfs:member	local:full_conjunctive_query	.
+local:use	vn.role:Recipient	local:are	.
+local:conjunctive	rdfs:member	local:conjunctive_query	.
+local:compute	local:AM-LOC	local:fact_existing_systems	.
+local:knowledge_representation	rdfs:subClassOf	local:representation	.
+local:query	vn.role:Predicate	local:instance_data	.
 local:related	vn.role:Recipient	local:certain_ways	.
-local:full_conjunctive_query	rdfs:subClassOf	local:conjunctive_query	.
+local:support	vn.role:Theme	local:systems	.
+local:certain_ways	rdfs:subClassOf	local:ways	.
+local:description_logics	rdfs:subClassOf	local:logics	.
+local:expressive_description	rdfs:member	local:expressive_description_logics	.
 local:related_in_certain_ways	local:in_certainways	local:related	.
+local:full_conjunctive_query	rdfs:subClassOf	local:query	.
+local:incomplete	rdfs:member	local:incomplete_results	.
+local:certain	rdfs:member	local:certain_ways	.
+local:formalisms	vn.role:object	local:description_logics	.
+local:existing_systems	rdfs:subClassOf	local:systems	.
 local:impose	local:AM-TMP	local:usually	.
-local:formalisms	vn.role:subject	local:logicbased_knowledge_representation	.
-local:expressive_description	rdfs:subClassOf	local:description	.
-local:full_conjunctive	rdfs:subClassOf	local:conjunctive	.
-local:fact_existing_systems	rdfs:subClassOf	local:existing_systems	.
-local:support	vn.role:Experiencer	local:full_conjunctive_query_answering	.
 local:related_in_certain_ways	local:related_in	local:certain_ways	.
+local:more_expressive_description	rdfs:member	local:more_expressive_description_logics	.
+local:related	vn.role:Topic	local:data	.
+local:more_expressive_description_logics	rdfs:subClassOf	local:logics	.
+local:answering_for_expressive_description_logics	local:answering_for	local:expressive_description_logics	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:description	rdfs:member	local:description_logics	.
+local:many_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:language	rdfs:member	local:language_features	.
+local:expressive_description	rdfs:subClassOf	local:description	.
+local:answering	vn.role:Predicate	local:expressive_description_logics	.
+local:more_expressive	rdfs:member	local:more_expressive_description	.
+local:many_knowledge	rdfs:member	local:many_knowledge_bases	.
+local:full_conjunctive_query	rdfs:subClassOf	local:conjunctive_query	.
+local:logicbased_knowledge	rdfs:subClassOf	local:knowledge	.
+local:impose	vn.role:indirect_object	local:queries	.
+local:more_expressive	rdfs:subClassOf	local:expressive	.
+local:formalisms	vn.role:subject	local:logicbased_knowledge_representation	.
+local:support	vn.role:Experiencer	local:full_conjunctive_query_answering	.
+local:fact_existing_systems	rdfs:subClassOf	local:existing_systems	.
+local:incomplete_results	rdfs:subClassOf	local:results	.
+local:logicbased	rdfs:member	local:logicbased_knowledge	.
+local:instance_data	rdfs:subClassOf	local:data	.
+local:full_conjunctive	rdfs:subClassOf	local:conjunctive	.
 local:language_features	rdfs:subClassOf	local:features	.
+local:expressive_description_logics	rdfs:subClassOf	local:logics	.
+local:many	rdfs:member	local:many_knowledge	.
+local:full	rdfs:member	local:full_conjunctive	.
+local:answering	vn.role:Agent	local:full_conjunctive_query	.
+local:use	vn.role:Agent	local:many_knowledge_bases	.
+local:knowledge	rdfs:member	local:knowledge_representation	.
+local:full_conjunctive_query_answering	local:fullconjunctivequery_	local:answering	.
+local:logicbased_knowledge	rdfs:member	local:logicbased_knowledge_representation	.
+local:query_for_instance_data	local:for_instancedata	local:query	.
+local:existing	vn.role:Location	local:systems	.
+local:impose	vn.role:Theme	local:restrictions	.
+local:knowledge	rdfs:member	local:knowledge_bases	.
+local:logicbased_knowledge_representation	rdfs:subClassOf	local:knowledge_representation	.
+local:more_expressive_description	rdfs:subClassOf	local:description	.
+local:answering_for_expressive_description_logics	local:for_expressivedescriptionlogics	local:answering	.
+local:conjunctive_query	rdfs:subClassOf	local:query	.

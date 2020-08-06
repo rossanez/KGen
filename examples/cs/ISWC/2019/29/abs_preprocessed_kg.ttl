@@ -7,19 +7,23 @@
 
 #### Classes ####
 
+local:important	rdfs:label	"important"	.
+
+local:important_problem	rdfs:label	"important problem"	.
+
+local:graphbased	rdfs:label	"graph-based"	.
+
+local:graphbased_question	rdfs:label	"graph-based question"	.
+
 local:question_answering	rdfs:label	"question answering"	.
 
 local:answering	rdfs:label	"answering"	.
 
-local:graphbased_question	rdfs:label	"graph-based question"	.
+local:graphbased_question_answering	rdfs:label	"graph-based question answering"	.
 
 local:question	rdfs:label	"question"	.
 
-local:important_problem	rdfs:label	"important problem"	.
-
 local:problem	rdfs:label	"problem"	.
-
-local:graphbased_question_answering	rdfs:label	"graph-based question answering"	.
 
 local:knowledge_graphbased_question_answering	rdfs:label	"knowledge graph-based question answering"	.
 
@@ -27,27 +31,31 @@ local:important_problem_for_knowledge_graphbased_question_answering	rdfs:label	"
 
 local:linking	rdfs:label	"linking"	.
 
+local:natural	rdfs:label	"natural"	.
+
 local:natural_language	rdfs:label	"natural language"	.
 
 local:language	rdfs:label	"language"	.
 
 local:given	rdfs:label	"given"	.
 
+local:relevant_relations	rdfs:label	"relevant relations"	.
+
+local:relations	rdfs:label	"relations"	.
+
 local:knowledge_graph	rdfs:label	"knowledge graph"	.
 
 local:graph	rdfs:label	"graph"	.
 
-local:relevant_relations	rdfs:label	"relevant relations"	.
+local:knowledge	rdfs:label	"knowledge"	.
 
-local:relations	rdfs:label	"relations"	.
+local:relevant	rdfs:label	"relevant"	.
 
 local:given_knowledge_graph	rdfs:label	"given knowledge graph"	.
 
 local:relevant_relations_from_given_knowledge_graph	rdfs:label	"relevant relations from given knowledge graph"	.
 
 local:identify	rdfs:label	"identify"	.
-
-local:knowledge	rdfs:label	"knowledge"	.
 
 local:idea	rdfs:label	"idea"	.
 
@@ -69,13 +77,19 @@ local:paper	rdfs:label	"paper"	.
 
 local:we	rdfs:label	"we"	.
 
+local:novel	rdfs:label	"novel"	.
+
 local:novel_approach	rdfs:label	"novel approach"	.
 
-local:approach	rdfs:label	"approach"	.
+local:relation	rdfs:label	"relation"	.
 
 local:relation_candidates	rdfs:label	"relation candidates"	.
 
+local:approach	rdfs:label	"approach"	.
+
 local:candidates	rdfs:label	"candidates"	.
+
+local:dbpedia	rdfs:label	"dbpedia"	.
 
 local:dbpedia_entities	rdfs:label	"dbpedia entities"	.
 
@@ -95,21 +109,25 @@ local:evaluated	rdfs:label	"evaluated"	.
 
 local:empirically	rdfs:label	"empirically"	.
 
+local:standard_benchmarks	rdfs:label	"standard benchmarks"	.
+
+local:benchmarks	rdfs:label	"benchmarks"	.
+
+local:different	rdfs:label	"different"	.
+
 local:different_standard	rdfs:label	"different standard"	.
 
 local:standard	rdfs:label	"standard"	.
 
 local:different_standard_benchmarks	rdfs:label	"different standard benchmarks"	.
 
-local:benchmarks	rdfs:label	"benchmarks"	.
-
-local:standard_benchmarks	rdfs:label	"standard benchmarks"	.
-
 local:approach_on_different_standard_benchmarks	rdfs:label	"approach on different standard benchmarks"	.
 
 local:shows	rdfs:label	"shows"	.
 
 local:evaluation	rdfs:label	"evaluation"	.
+
+local:baseline	rdfs:label	"baseline"	.
 
 local:baseline_systems	rdfs:label	"baseline systems"	.
 
@@ -139,76 +157,94 @@ local:significantly	rdfs:label	"significantly"	.
 
 #### Mapped Relations ####
 
-cso:question_answering	rdfs:label	"question answering"	.
 local:question_answering	owl:sameAs	cso:question_answering	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
+cso:graph-based	rdfs:label	"graph-based"	.
+local:graphbased	owl:sameAs	cso:graph-based	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
+cso:question_answering	rdfs:label	"question answering"	.
 
 #### Relations ####
 
-local:natural_language	rdfs:subClassOf	local:language	.
-local:knowledge_graphbased_question_answering	rdfs:subClassOf	local:graphbased_question_answering	.
-local:linking	vn.role:Patient	local:important_problem_for_knowledge_graphbased_question_answering	.
-local:dbpedia_entities	rdfs:subClassOf	local:entities	.
-local:baseline_systems	rdfs:subClassOf	local:systems	.
-local:question_answering	rdfs:subClassOf	local:answering	.
+local:different_standard	rdfs:member	local:different_standard_benchmarks	.
+local:identify	vn.role:Theme	local:relevant_relations_from_given_knowledge_graph	.
+local:baseline	rdfs:member	local:baseline_systems	.
 local:computing_relation_candidates	rdfs:subClassOf	local:relation_candidates	.
-local:shows	vn.role:Agent	local:evaluation	.
-local:propose	vn.role:Agent	local:we	.
-local:dbpedia_entities_for_computing_relation_candidates	local:dbpediaentities_for	local:computing_relation_candidates	.
-local:relevant_relations_from_given_knowledge_graph	local:from_givenknowledgegraph	local:relevant_relations	.
-local:existing	vn.role:Location	local:baseline_systems	.
-local:based	vn.role:indirect_object	local:dbpedia_entities_for_computing_relation_candidates	.
-local:novel_approach_basedon_dbpedia_entities_for_computing_relation_candidates	local:novelapproachbased_ondbpediaentities_for	local:computing_relation_candidates	.
+local:question	rdfs:member	local:question_answering	.
+local:novel	rdfs:member	local:novel_approach	.
 local:approach	vn.role:indirect_object	local:different_standard_benchmarks	.
 local:significantly_outperforms	rdfs:subClassOf	local:outperforms	.
-local:important_problem_for_knowledge_graphbased_question_answering	local:for_knowledgegraph-basedquestionanswering	local:important_problem	.
-local:existing_baseline_systems_in_recall_in_precision_in_runtime	local:existingbaselinesystemsinrecallinprecision_in	local:runtime	.
-local:existing_baseline_systems_in_recall	local:existingbaselinesystems_in	local:recall	.
-local:different_standard_benchmarks	rdfs:subClassOf	local:benchmarks	.
-local:relevant_relations	rdfs:subClassOf	local:relations	.
-local:standard_benchmarks	rdfs:subClassOf	local:benchmarks	.
-local:extracted_from_question	local:from_question	local:extracted	.
-local:propose	local:AM-LOC	local:paper	.
-local:existing_baseline_systems	rdfs:subClassOf	local:baseline_systems	.
-local:approach	vn.role:object	local:we	.
-local:extracted	local:AM-PNC	local:linking	.
-local:outperforms	vn.role:Theme1	local:we	.
-local:different_standard	rdfs:subClassOf	local:standard	.
-local:dbpedia_entities_for_computing_relation_candidates	local:for_computingrelationcandidates	local:dbpedia_entities	.
+local:existing	vn.role:Location	local:baseline_systems	.
 local:graphbased_question_answering	rdfs:subClassOf	local:answering	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:extracted_from_question	local:extracted_from	local:question	.
+local:outperforms	local:AM-MNR	local:significantly	.
 local:existing	vn.role:Location	local:techniques	.
-local:identify	vn.role:Theme	local:relevant_relations_from_given_knowledge_graph	.
+local:approach_on_different_standard_benchmarks	local:on_differentstandardbenchmarks	local:approach	.
+local:evaluated	vn.role:Agent	local:we	.
+local:dbpedia_entities_for_computing_relation_candidates	local:for_computingrelationcandidates	local:dbpedia_entities	.
+local:different_standard	rdfs:subClassOf	local:standard	.
+local:graphbased_question	rdfs:subClassOf	local:question	.
+local:relevant_relations_from_given_knowledge_graph	local:from_givenknowledgegraph	local:relevant_relations	.
+local:graphbased	rdfs:member	local:graphbased_question	.
+local:evaluated	local:AM-MNR	local:empirically	.
+local:extracted_from_question	local:from_question	local:extracted	.
+local:linking	vn.role:Patient	local:important_problem_for_knowledge_graphbased_question_answering	.
+local:novel_approach_basedon_dbpedia_entities	local:based_on_dbpediaentities	local:novel_approach	.
+local:relevant	rdfs:member	local:relevant_relations	.
+local:different_standard_benchmarks	rdfs:subClassOf	local:standard_benchmarks	.
+local:existing_baseline_systems	rdfs:subClassOf	local:baseline_systems	.
+local:existing_baseline_systems_in_recall	local:in_recall	local:existing_baseline_systems	.
+local:shows	vn.role:Agent	local:evaluation	.
+local:approach	vn.role:indirect_object	local:significantly_outperforms	.
+local:natural	rdfs:member	local:natural_language	.
 local:given_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
-local:extracted	vn.role:other	local:question	.
+local:relation_candidates	rdfs:subClassOf	local:candidates	.
+local:dbpedia	rdfs:member	local:dbpedia_entities	.
+local:propose	vn.role:Topic	local:novel_approach_basedon_dbpedia_entities_for_computing_relation_candidates	.
+local:relevant_relations_from_given_knowledge_graph	local:relevantrelations_from	local:given_knowledge_graph	.
+local:standard_benchmarks	rdfs:subClassOf	local:benchmarks	.
+local:graphbased_question_answering	rdfs:subClassOf	local:question_answering	.
+local:baseline_systems	rdfs:subClassOf	local:systems	.
+local:given	vn.role:object	local:natural_language	.
+local:natural_language	rdfs:subClassOf	local:language	.
+local:important_problem_for_knowledge_graphbased_question_answering	local:for_knowledgegraph-basedquestionanswering	local:important_problem	.
+local:important_problem_for_knowledge_graphbased_question_answering	local:importantproblem_for	local:knowledge_graphbased_question_answering	.
+local:propose	vn.role:Agent	local:we	.
+local:important	rdfs:member	local:important_problem	.
+local:graphbased_question	rdfs:member	local:graphbased_question_answering	.
+local:relation	rdfs:member	local:relation_candidates	.
+local:dbpedia_entities	rdfs:subClassOf	local:entities	.
+local:different	rdfs:member	local:different_standard	.
+local:dbpedia_entities_for_computing_relation_candidates	local:dbpediaentities_for	local:computing_relation_candidates	.
+local:evaluated	vn.role:Theme	local:approach_on_different_standard_benchmarks	.
+local:existing_baseline_systems_in_recall_in_precision_in_runtime	local:existingbaselinesystemsinrecallinprecision_in	local:runtime	.
+local:outperforms	vn.role:Theme2	local:existing_baseline_systems_in_recall_in_precision_in_runtime	.
+local:existing_baseline_systems_in_recall	local:existingbaselinesystems_in	local:recall	.
+local:exploit	vn.role:Predicate	local:extracted_from_question	.
+local:question_answering	rdfs:subClassOf	local:answering	.
 local:novel_approach_basedon_dbpedia_entities	local:novelapproach_based_on	local:dbpedia_entities	.
 local:based	vn.role:Cause	local:novel_approach	.
+local:based	vn.role:indirect_object	local:dbpedia_entities_for_computing_relation_candidates	.
 local:approach_on_different_standard_benchmarks	local:approach_on	local:different_standard_benchmarks	.
-local:graphbased_question	rdfs:subClassOf	local:question	.
-local:given	vn.role:object	local:natural_language	.
-local:given	vn.role:object	local:knowledge	.
-local:outperforms	vn.role:Theme2	local:existing_baseline_systems_in_recall_in_precision_in_runtime	.
-local:important_problem	rdfs:subClassOf	local:problem	.
-local:novel_approach_basedon_dbpedia_entities	local:based_on_dbpediaentities	local:novel_approach	.
-local:important_problem_for_knowledge_graphbased_question_answering	local:importantproblem_for	local:knowledge_graphbased_question_answering	.
-local:linking	vn.role:object	local:idea	.
-local:support	vn.role:Experiencer	local:linking	.
-local:relation_candidates	rdfs:subClassOf	local:candidates	.
-local:evaluated	vn.role:Agent	local:we	.
-local:existing_baseline_systems_in_recall	local:in_recall	local:existing_baseline_systems	.
-local:exploit	vn.role:Predicate	local:extracted_from_question	.
-local:novel_approach	rdfs:subClassOf	local:approach	.
-local:evaluated	local:AM-MNR	local:empirically	.
-local:existing_baseline_systems_in_recall_in_precision_in_runtime	local:in_runtime	local:existing_baseline_systems_in_recall_in_precision	.
-local:relevant_relations_from_given_knowledge_graph	local:relevantrelations_from	local:given_knowledge_graph	.
-local:approach_on_different_standard_benchmarks	local:on_differentstandardbenchmarks	local:approach	.
-local:evaluated	vn.role:Theme	local:approach_on_different_standard_benchmarks	.
-local:propose	vn.role:Topic	local:novel_approach_basedon_dbpedia_entities_for_computing_relation_candidates	.
-local:different_standard_benchmarks	rdfs:subClassOf	local:standard_benchmarks	.
-local:shows	vn.role:Theme	local:significantly_outperforms	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:novel_approach_basedon_dbpedia_entities_for_computing_relation_candidates	local:for_computingrelationcandidates	local:novel_approach_basedon_dbpedia_entities	.
+local:approach	vn.role:object	local:we	.
 local:existing_baseline_systems_in_recall_in_precision	local:in_precision	local:existing_baseline_systems_in_recall	.
-local:graphbased_question_answering	rdfs:subClassOf	local:question_answering	.
+local:shows	vn.role:Theme	local:significantly_outperforms	.
+local:linking	vn.role:object	local:idea	.
+local:standard	rdfs:member	local:standard_benchmarks	.
+local:existing_baseline_systems_in_recall_in_precision_in_runtime	local:in_runtime	local:existing_baseline_systems_in_recall_in_precision	.
+local:relevant_relations	rdfs:subClassOf	local:relations	.
 local:existing_baseline_systems_in_recall_in_precision	local:existingbaselinesystemsinrecall_in	local:precision	.
-local:outperforms	local:AM-MNR	local:significantly	.
-local:extracted_from_question	local:extracted_from	local:question	.
-local:approach	vn.role:indirect_object	local:significantly_outperforms	.
+local:knowledge	rdfs:member	local:knowledge_graph	.
+local:important_problem	rdfs:subClassOf	local:problem	.
+local:extracted	local:AM-PNC	local:linking	.
+local:novel_approach_basedon_dbpedia_entities_for_computing_relation_candidates	local:for_computingrelationcandidates	local:novel_approach_basedon_dbpedia_entities	.
+local:outperforms	vn.role:Theme1	local:we	.
+local:given	vn.role:object	local:knowledge	.
+local:novel_approach_basedon_dbpedia_entities_for_computing_relation_candidates	local:novelapproachbased_ondbpediaentities_for	local:computing_relation_candidates	.
+local:extracted	vn.role:other	local:question	.
+local:novel_approach	rdfs:subClassOf	local:approach	.
+local:support	vn.role:Experiencer	local:linking	.
+local:different_standard_benchmarks	rdfs:subClassOf	local:benchmarks	.
+local:propose	local:AM-LOC	local:paper	.
+local:knowledge_graphbased_question_answering	rdfs:subClassOf	local:graphbased_question_answering	.
