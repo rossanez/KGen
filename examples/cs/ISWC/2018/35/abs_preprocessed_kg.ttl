@@ -11,6 +11,8 @@ local:many_citizens	rdfs:label	"many citizens"	.
 
 local:citizens	rdfs:label	"citizens"	.
 
+local:many	rdfs:label	"many"	.
+
 local:flock	rdfs:label	"flock"	.
 
 local:nowadays	rdfs:label	"nowadays"	.
@@ -18,6 +20,10 @@ local:nowadays	rdfs:label	"nowadays"	.
 local:social_media	rdfs:label	"social media"	.
 
 local:media	rdfs:label	"media"	.
+
+local:social	rdfs:label	"social"	.
+
+local:latest	rdfs:label	"latest"	.
 
 local:latest_information	rdfs:label	"latest information"	.
 
@@ -33,6 +39,8 @@ local:share	rdfs:label	"share"	.
 
 local:acquire	rdfs:label	"acquire"	.
 
+local:sheer	rdfs:label	"sheer"	.
+
 local:sheer_volume	rdfs:label	"sheer volume"	.
 
 local:volume	rdfs:label	"volume"	.
@@ -46,6 +54,8 @@ local:typically	rdfs:label	"typically"	.
 local:events	rdfs:label	"events"	.
 
 local:such_events	rdfs:label	"such events"	.
+
+local:such	rdfs:label	"such"	.
 
 local:typically_circulated	rdfs:label	"typically circulated"	.
 
@@ -64,6 +74,8 @@ local:efficiently	rdfs:label	"efficiently"	.
 local:irrelevant_posts	rdfs:label	"irrelevant posts"	.
 
 local:posts	rdfs:label	"posts"	.
+
+local:irrelevant	rdfs:label	"irrelevant"	.
 
 local:truly_relevant	rdfs:label	"truly relevant"	.
 
@@ -93,6 +105,8 @@ local:current_methods	rdfs:label	"current methods"	.
 
 local:methods	rdfs:label	"methods"	.
 
+local:current	rdfs:label	"current"	.
+
 local:classifying_to_crisis	rdfs:label	"classifying to crisis"	.
 
 local:classifying_to_crisis_to_set	rdfs:label	"classifying to crisis to set"	.
@@ -100,6 +114,8 @@ local:classifying_to_crisis_to_set	rdfs:label	"classifying to crisis to set"	.
 local:set	rdfs:label	"set"	.
 
 local:crises_crises	rdfs:label	"crises crises"	.
+
+local:different	rdfs:label	"different"	.
 
 local:different_languages	rdfs:label	"different languages"	.
 
@@ -123,6 +139,8 @@ local:crisis_situations	rdfs:label	"crisis situations"	.
 
 local:situations	rdfs:label	"situations"	.
 
+local:new	rdfs:label	"new"	.
+
 local:rapidly_evolving	rdfs:label	"rapidly evolving"	.
 
 local:evolving	rdfs:label	"evolving"	.
@@ -143,6 +161,8 @@ local:paper	rdfs:label	"paper"	.
 
 local:we	rdfs:label	"we"	.
 
+local:semantic	rdfs:label	"semantic"	.
+
 local:semantic_classification	rdfs:label	"semantic classification"	.
 
 local:classification	rdfs:label	"classification"	.
@@ -156,6 +176,8 @@ local:test_statistical	rdfs:label	"test statistical"	.
 local:statistical_semantic_classification	rdfs:label	"statistical semantic classification"	.
 
 local:test_statistical_semantic_classification	rdfs:label	"test statistical semantic classification"	.
+
+local:crosslingual	rdfs:label	"cross-lingual"	.
 
 local:crosslingual_datasets	rdfs:label	"cross-lingual datasets"	.
 
@@ -193,6 +215,8 @@ local:mainly	rdfs:label	"mainly"	.
 
 local:experiment	rdfs:label	"experiment"	.
 
+local:single	rdfs:label	"single"	.
+
 local:single_language	rdfs:label	"single language"	.
 
 local:where_translated	rdfs:label	"where translated"	.
@@ -223,21 +247,25 @@ local:another	rdfs:label	"another"	.
 
 local:show	rdfs:label	"show"	.
 
+local:purely_statistical	rdfs:label	"purely statistical"	.
+
 local:purely_statistical_model	rdfs:label	"purely statistical model"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:purely	rdfs:label	"purely"	.
 
-local:bases	rdfs:label	"bases"	.
+local:statistical_model	rdfs:label	"statistical model"	.
 
 local:external_knowledge	rdfs:label	"external knowledge"	.
 
 local:knowledge	rdfs:label	"knowledge"	.
 
-local:statistical_model	rdfs:label	"statistical model"	.
-
 local:external_knowledge_bases	rdfs:label	"external knowledge bases"	.
 
-local:purely_statistical	rdfs:label	"purely statistical"	.
+local:external	rdfs:label	"external"	.
+
+local:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+local:bases	rdfs:label	"bases"	.
 
 local:extracted_from_external_knowledge_bases	rdfs:label	"extracted from external knowledge bases"	.
 
@@ -257,159 +285,183 @@ local:accuracy	rdfs:label	"accuracy"	.
 
 #### Mapped Relations ####
 
-cso:statistical_model	rdfs:label	"statistical model"	.
-local:statistical_model	owl:sameAs	cso:statistical_model	.
-cso:knowledge_bases	rdfs:label	"knowledge bases"	.
 cso:social_media	rdfs:label	"social media"	.
 local:social_media	owl:sameAs	cso:social_media	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:statistical_model	owl:sameAs	cso:statistical_model	.
+cso:semantics	rdfs:label	"semantic"	.
 local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+cso:statistical_model	rdfs:label	"statistical model"	.
+local:semantic	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:mainly_written_in_english	local:in_english	local:mainly_written	.
-local:flock	vn.role:Agent	local:many_citizens	.
+local:external_knowledge	rdfs:member	local:external_knowledge_bases	.
+local:mainly_written_in_english_in_spanish	local:in_spanish	local:mainly_written_in_english	.
 local:test	vn.role:Agent	local:we	.
-local:improve	vn.role:Patient	local:accuracy_over_statistical_model	.
-local:sheer_volume_of_data	local:of_data	local:sheer_volume	.
-local:semantic_classification	rdfs:subClassOf	local:classification	.
-local:crosslingual_datasets_from_30_crisis_events_of_consisting	local:_ofconsisting	local:crosslingual_datasets_from_30_crisis_events	.
-local:thus_focusing	rdfs:subClassOf	local:focusing	.
-local:typically_circulated_during_such_events	local:typicallycirculated_during	local:such_events	.
-local:tested	local:AM-LOC	local:another	.
-local:experiment	vn.role:Agent	local:we	.
-local:circulated	vn.role:Theme2	local:sheer_volume	.
-local:trained	vn.role:Predicate	local:one_language	.
-local:written	local:AM-MNR	local:mainly	.
-local:test	vn.role:Location	local:statistical	.
 local:circulated	vn.role:Theme2	local:data	.
-local:flock	local:AM-TMP	local:crises	.
-local:external_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:evolving	local:AM-PNC	local:train_for_language	.
-local:evolving	vn.role:Location	local:crisis_situations	.
-local:sheer_volume_of_data_typically_circulated	local:sheervolumeofdata_	local:typically_circulated	.
-local:test_statistical_semantic_classification	rdfs:subClassOf	local:statistical_semantic_classification	.
-local:purely_statistical	rdfs:subClassOf	local:statistical	.
-local:test_statistical	rdfs:subClassOf	local:statistical	.
-local:30_crisis_events	rdfs:subClassOf	local:crisis_events	.
-local:crisis_of_crises	local:crisis_of	local:crises	.
-local:thus_focusing_on_posts	local:thusfocusing_on	local:posts	.
-local:focusing	vn.role:indirect_object	local:posts	.
-local:deal_with_posts	local:deal_with	local:posts	.
-local:approaches	local:AM-LOC	local:paper	.
-local:crosslingual_datasets	rdfs:subClassOf	local:datasets	.
-local:purely_statistical_model	rdfs:subClassOf	local:model	.
-local:filter	local:AM-ADV	local:sheer_volume_of_data_typically_circulated	.
-local:external_knowledge	rdfs:subClassOf	local:knowledge	.
-local:typically_circulated	rdfs:subClassOf	local:circulated	.
-local:truly_relevant_to_crisis	local:trulyrelevant_to	local:crisis	.
-local:filter	vn.role:Theme	local:thus_focusing_on_posts	.
-local:where_tested_on_another	local:wheretested_on	local:another	.
-local:latest_information_about_event	local:about_event	local:latest_information	.
-local:typically_struggle	rdfs:subClassOf	local:struggle	.
-local:rapidly_evolving	rdfs:subClassOf	local:evolving	.
-local:consisting	vn.role:indirect_object	local:mainly_written_in_english_in_spanish_in_italian	.
-local:show	vn.role:Agent	local:we	.
-local:latest_information	rdfs:subClassOf	local:information	.
-local:classifying	vn.role:Theme	local:relevance_of_posts	.
-local:classifying_to_crisis	local:classifying_to	local:crisis	.
-local:crisis_situations	rdfs:subClassOf	local:situations	.
-local:classifying	vn.role:Predicate	local:crisis	.
-local:external_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
-local:accuracy_over_statistical_model	local:over_statisticalmodel	local:accuracy	.
-local:posts_in_different_languages	local:posts_in	local:different_languages	.
-local:sheer_volume_of_data_typically_circulated	local:_typicallycirculated	local:sheer_volume_of_data	.
-local:of_consisting	rdfs:subClassOf	local:consisting	.
-local:social_media	rdfs:subClassOf	local:media	.
-local:mainly_written_in_english_in_spanish_in_italian	local:in_italian	local:mainly_written_in_english_in_spanish	.
-local:acquire	vn.role:Topic	local:latest_information_about_event	.
-local:crosslingual_datasets_from_30_crisis_events	local:from_30crisisevents	local:crosslingual_datasets	.
-local:struggle	vn.role:Actor	local:current_methods	.
-local:consisting	local:AM-LOC	local:paper	.
-local:set	vn.role:indirect_object	local:typically_struggle	.
-local:many_citizens	rdfs:subClassOf	local:citizens	.
-local:truly_relevant_to_crisis	local:to_crisis	local:truly_relevant	.
-local:where_translated_to_single_language	local:wheretranslated_to	local:single_language	.
-local:improve	vn.role:Agent	local:addition	.
-local:thus_focusing_on_posts	local:on_posts	local:thus_focusing	.
-local:focusing	local:AM-DIS	local:thus	.
-local:written	local:AM-LOC	local:english	.
-local:single_language	rdfs:subClassOf	local:language	.
-local:extracted_from_external_knowledge_bases	local:extracted_from	local:external_knowledge_bases	.
-local:share	vn.role:Agent	local:many_citizens	.
-local:evolving	vn.role:Theme	local:crisis_of_crises	.
-local:statistical_semantic_classification	rdfs:subClassOf	local:semantic_classification	.
-local:relevance_of_posts	local:of_posts	local:relevance	.
 local:different_languages	rdfs:subClassOf	local:languages	.
-local:train	vn.role:other	local:language	.
-local:crisis_events	rdfs:subClassOf	local:events	.
-local:posts_in_different_languages	local:in_differentlanguages	local:posts	.
-local:flock	vn.role:Theme	local:social_media	.
-local:translated	vn.role:Product	local:single_language	.
-local:experiment	vn.role:Theme	local:scenarios	.
-local:current_methods	rdfs:subClassOf	local:methods	.
-local:acquire	vn.role:Agent	local:many_citizens	.
-local:consisting	vn.role:Location	local:test_statistical_semantic_classification	.
-local:accuracy_over_statistical_model	local:accuracy_over	local:statistical_model	.
+local:circulated	vn.role:Theme2	local:sheer_volume	.
 local:crises_crises	rdfs:subClassOf	local:crises	.
-local:evolving	local:AM-MNR	local:rapidly	.
-local:typically_circulated_during_such_events	local:during_suchevents	local:typically_circulated	.
-local:improve_over_statistical_model	local:over_statisticalmodel	local:improve	.
-local:struggle	local:AM-TMP	local:typically	.
-local:truly_relevant	rdfs:subClassOf	local:relevant	.
-local:crosslingual_datasets_from_30_crisis_events	local:cross-lingualdatasets_from	local:30_crisis_events	.
-local:where_trained_on_one_language	local:on_onelanguage	local:where_trained	.
-local:train_for_language	local:train_for	local:language	.
-local:where_trained	rdfs:subClassOf	local:trained	.
 local:statistical_model	rdfs:subClassOf	local:model	.
-local:classifying_to_crisis	local:to_crisis	local:classifying	.
-local:struggle	vn.role:Actor1	local:deal_with_posts	.
-local:where_tested_on_another	local:on_another	local:where_tested	.
-local:classifying_to_crisis_to_set	local:classifyingtocrisis_to	local:set	.
-local:extracted	vn.role:Source	local:improve_over_statistical_model	.
-local:deal	vn.role:Theme	local:posts	.
-local:mainly_written_in_english_in_spanish	local:mainlywritteninenglish_in	local:spanish	.
-local:relevance_of_posts	local:relevance_of	local:posts	.
-local:focusing	vn.role:Experiencer	local:irrelevant_posts	.
-local:such_events	rdfs:subClassOf	local:events	.
-local:improve_over_statistical_model	local:improve_over	local:statistical_model	.
-local:extracted_from_external_knowledge_bases	local:from_externalknowledgebases	local:extracted	.
-local:set	vn.role:Agent	local:crises_crises	.
-local:filter	local:AM-MNR	local:efficiently	.
-local:approaches	vn.role:indirect_object	local:crosslingual_datasets_from_30_crisis_events_of_consisting	.
-local:show	vn.role:Theme	local:improve_over_statistical_model	.
-local:latest_information_about_event	local:latestinformation_about	local:event	.
-local:deal_with_posts	local:with_posts	local:deal	.
-local:irrelevant_posts	rdfs:subClassOf	local:posts	.
-local:where_translated	rdfs:subClassOf	local:translated	.
-local:circulated	local:AM-TMP	local:typically	.
-local:where_trained_on_one_language	local:wheretrained_on	local:one_language	.
+local:accuracy_over_statistical_model	local:over_statisticalmodel	local:accuracy	.
+local:flock	vn.role:Theme	local:social_media	.
+local:train_for_language	local:train_for	local:language	.
+local:truly_relevant	rdfs:subClassOf	local:relevant	.
+local:purely_statistical	rdfs:subClassOf	local:statistical	.
+local:thus_focusing_on_posts	local:thusfocusing_on	local:posts	.
 local:consisting	vn.role:Location	local:crosslingual_datasets_from_30_crisis_events	.
-local:mainly_written_in_english_in_spanish_in_italian	local:mainlywritteninenglishinspanish_in	local:italian	.
-local:flock	local:AM-TMP	local:nowadays	.
-local:crisis_of_crises	local:of_crises	local:crisis	.
+local:extracted_from_external_knowledge_bases	local:from_externalknowledgebases	local:extracted	.
+local:latest_information	rdfs:subClassOf	local:information	.
+local:experiment	vn.role:Theme	local:scenarios	.
 local:new_models	rdfs:subClassOf	local:models	.
-local:where_tested	rdfs:subClassOf	local:tested	.
-local:classifying_to_crisis_to_set	local:to_set	local:classifying_to_crisis	.
-local:set	local:AM-TMP	local:rapidly_evolving	.
-local:focusing	vn.role:Theme	local:attention	.
-local:one_language	rdfs:subClassOf	local:language	.
-local:test	local:AM-LOC	local:paper	.
+local:mainly_written_in_english_in_spanish	local:mainlywritteninenglish_in	local:spanish	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
 local:share	vn.role:Patient	local:latest_information_about_event	.
+local:improve_over_statistical_model	local:improve_over	local:statistical_model	.
+local:classifying_to_crisis_to_set	local:classifyingtocrisis_to	local:set	.
+local:acquire	vn.role:Topic	local:latest_information_about_event	.
+local:show	vn.role:Agent	local:we	.
+local:share	vn.role:Agent	local:many_citizens	.
+local:translated	vn.role:Patient	local:data	.
+local:crosslingual_datasets	rdfs:subClassOf	local:datasets	.
+local:crosslingual	rdfs:member	local:crosslingual_datasets	.
+local:typically_circulated	rdfs:subClassOf	local:circulated	.
+local:latest_information_about_event	local:latestinformation_about	local:event	.
+local:different	rdfs:member	local:different_languages	.
+local:statistical_semantic_classification	rdfs:subClassOf	local:semantic_classification	.
+local:test_statistical_semantic_classification	rdfs:subClassOf	local:statistical_semantic_classification	.
+local:semantic_classification	rdfs:subClassOf	local:classification	.
+local:crisis_of_crises	local:crisis_of	local:crises	.
+local:deal_with_posts	local:with_posts	local:deal	.
+local:improve	vn.role:Patient	local:accuracy_over_statistical_model	.
+local:classifying_to_crisis	local:to_crisis	local:classifying	.
+local:crisis_of_crises	local:of_crises	local:crisis	.
+local:irrelevant_posts	rdfs:subClassOf	local:posts	.
+local:purely_statistical_model	rdfs:subClassOf	local:model	.
+local:purely	rdfs:member	local:purely_statistical	.
+local:set	vn.role:Agent	local:crises_crises	.
+local:acquire	vn.role:Agent	local:many_citizens	.
+local:filter	local:AM-ADV	local:sheer_volume_of_data_typically_circulated	.
+local:struggle	vn.role:Actor	local:current_methods	.
+local:crosslingual_datasets_from_30_crisis_events_of_consisting	local:_ofconsisting	local:crosslingual_datasets_from_30_crisis_events	.
+local:struggle	vn.role:Actor1	local:deal_with_posts	.
 local:filter	vn.role:Agent	local:it	.
 local:crosslingual_datasets_from_30_crisis_events_of_consisting	local:cross-lingualdatasetsfrom30crisisevents_	local:of_consisting	.
-local:train_for_language	local:for_language	local:train	.
-local:train	vn.role:Theme	local:new_models	.
-local:where_translated_to_single_language	local:to_singlelanguage	local:where_translated	.
-local:sheer_volume_of_data	local:sheervolume_of	local:data	.
-local:tested	vn.role:Location	local:model	.
-local:trained	vn.role:Theme	local:model	.
-local:set	vn.role:Agent	local:current_methods	.
-local:circulated	local:AM-TMP	local:events	.
+local:consisting	local:AM-LOC	local:paper	.
+local:filter	local:AM-MNR	local:efficiently	.
+local:truly_relevant_to_crisis	local:to_crisis	local:truly_relevant	.
+local:current	rdfs:member	local:current_methods	.
+local:external_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:such	rdfs:member	local:such_events	.
+local:deal	vn.role:Theme	local:posts	.
+local:truly_relevant_to_crisis	local:trulyrelevant_to	local:crisis	.
+local:focusing	vn.role:Theme	local:attention	.
+local:social	rdfs:member	local:social_media	.
+local:show	vn.role:Theme	local:improve_over_statistical_model	.
+local:typically_circulated_during_such_events	local:typicallycirculated_during	local:such_events	.
+local:mainly_written_in_english_in_spanish_in_italian	local:in_italian	local:mainly_written_in_english_in_spanish	.
+local:external	rdfs:member	local:external_knowledge	.
+local:thus_focusing	rdfs:subClassOf	local:focusing	.
+local:flock	local:AM-TMP	local:crises	.
+local:filter	vn.role:Theme	local:thus_focusing_on_posts	.
 local:approaches	vn.role:object	local:test_statistical_semantic_classification	.
-local:mainly_written_in_english_in_spanish	local:in_spanish	local:mainly_written_in_english	.
-local:mainly_written	rdfs:subClassOf	local:written	.
+local:30_crisis_events	rdfs:subClassOf	local:crisis_events	.
+local:written	local:AM-MNR	local:mainly	.
+local:experiment	vn.role:Agent	local:we	.
+local:written	local:AM-LOC	local:english	.
+local:sheer	rdfs:member	local:sheer_volume	.
+local:evolving	vn.role:Location	local:crisis_situations	.
+local:thus_focusing_on_posts	local:on_posts	local:thus_focusing	.
+local:improve	vn.role:Agent	local:addition	.
+local:where_translated_to_single_language	local:wheretranslated_to	local:single_language	.
+local:external_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
+local:tested	local:AM-LOC	local:another	.
+local:many	rdfs:member	local:many_citizens	.
+local:latest_information_about_event	local:about_event	local:latest_information	.
+local:evolving	vn.role:Theme	local:crisis_of_crises	.
+local:approaches	vn.role:indirect_object	local:crosslingual_datasets_from_30_crisis_events_of_consisting	.
+local:consisting	vn.role:Location	local:test_statistical_semantic_classification	.
+local:test	rdfs:member	local:test_statistical	.
+local:set	vn.role:indirect_object	local:typically_struggle	.
+local:deal_with_posts	local:deal_with	local:posts	.
+local:set	local:AM-TMP	local:rapidly_evolving	.
+local:statistical	rdfs:member	local:statistical_model	.
+local:flock	local:AM-TMP	local:nowadays	.
+local:irrelevant	rdfs:member	local:irrelevant_posts	.
+local:sheer_volume_of_data	local:sheervolume_of	local:data	.
+local:relevance_of_posts	local:of_posts	local:relevance	.
+local:approaches	local:AM-LOC	local:paper	.
+local:set	vn.role:Agent	local:current_methods	.
+local:extracted_from_external_knowledge_bases	local:extracted_from	local:external_knowledge_bases	.
+local:one_language	rdfs:subClassOf	local:language	.
+local:focusing	local:AM-DIS	local:thus	.
+local:circulated	local:AM-TMP	local:events	.
 local:sheer_volume	rdfs:subClassOf	local:volume	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:set	vn.role:Patient	local:crises_crises	.
-local:translated	vn.role:Patient	local:data	.
+local:sheer_volume_of_data	local:of_data	local:sheer_volume	.
+local:mainly_written_in_english_in_spanish_in_italian	local:mainlywritteninenglishinspanish_in	local:italian	.
+local:translated	vn.role:Product	local:single_language	.
+local:where_trained_on_one_language	local:wheretrained_on	local:one_language	.
+local:evolving	local:AM-MNR	local:rapidly	.
+local:focusing	vn.role:indirect_object	local:posts	.
+local:classifying_to_crisis_to_set	local:to_set	local:classifying_to_crisis	.
+local:current_methods	rdfs:subClassOf	local:methods	.
+local:classifying_to_crisis	local:classifying_to	local:crisis	.
+local:evolving	local:AM-PNC	local:train_for_language	.
+local:single	rdfs:member	local:single_language	.
+local:crosslingual_datasets_from_30_crisis_events	local:cross-lingualdatasets_from	local:30_crisis_events	.
+local:mainly_written_in_english	local:in_english	local:mainly_written	.
+local:mainly_written	rdfs:subClassOf	local:written	.
+local:where_translated	rdfs:subClassOf	local:translated	.
+local:where_tested_on_another	local:wheretested_on	local:another	.
+local:crosslingual_datasets_from_30_crisis_events	local:from_30crisisevents	local:crosslingual_datasets	.
+local:flock	vn.role:Agent	local:many_citizens	.
+local:where_translated_to_single_language	local:to_singlelanguage	local:where_translated	.
+local:trained	vn.role:Theme	local:model	.
+local:such_events	rdfs:subClassOf	local:events	.
+local:purely_statistical	rdfs:member	local:purely_statistical_model	.
+local:sheer_volume_of_data_typically_circulated	local:_typicallycirculated	local:sheer_volume_of_data	.
+local:tested	vn.role:Location	local:model	.
+local:test	local:AM-LOC	local:paper	.
+local:train_for_language	local:for_language	local:train	.
+local:latest	rdfs:member	local:latest_information	.
+local:posts_in_different_languages	local:in_differentlanguages	local:posts	.
+local:test_statistical	rdfs:subClassOf	local:statistical	.
+local:crisis	rdfs:member	local:crisis_events	.
+local:crisis_situations	rdfs:subClassOf	local:situations	.
+local:single_language	rdfs:subClassOf	local:language	.
+local:of_consisting	rdfs:subClassOf	local:consisting	.
+local:sheer_volume_of_data_typically_circulated	local:sheervolumeofdata_	local:typically_circulated	.
+local:focusing	vn.role:Experiencer	local:irrelevant_posts	.
+local:crises	rdfs:member	local:crises_crises	.
+local:classifying	vn.role:Predicate	local:crisis	.
+local:where_tested	rdfs:subClassOf	local:tested	.
+local:train	vn.role:Theme	local:new_models	.
+local:where_tested_on_another	local:on_another	local:where_tested	.
+local:improve_over_statistical_model	local:over_statisticalmodel	local:improve	.
+local:crisis_events	rdfs:subClassOf	local:events	.
+local:accuracy_over_statistical_model	local:accuracy_over	local:statistical_model	.
+local:rapidly_evolving	rdfs:subClassOf	local:evolving	.
+local:classifying	vn.role:Theme	local:relevance_of_posts	.
+local:many_citizens	rdfs:subClassOf	local:citizens	.
+local:semantic	rdfs:member	local:semantic_classification	.
+local:posts_in_different_languages	local:posts_in	local:different_languages	.
+local:train	vn.role:other	local:language	.
+local:consisting	vn.role:indirect_object	local:mainly_written_in_english_in_spanish_in_italian	.
+local:typically_circulated_during_such_events	local:during_suchevents	local:typically_circulated	.
+local:social_media	rdfs:subClassOf	local:media	.
+local:test	vn.role:Location	local:statistical	.
+local:struggle	local:AM-TMP	local:typically	.
+local:trained	vn.role:Predicate	local:one_language	.
+local:new	rdfs:member	local:new_models	.
+local:where_trained_on_one_language	local:on_onelanguage	local:where_trained	.
+local:external_knowledge	rdfs:subClassOf	local:knowledge	.
 local:mainly_written_in_english	local:mainlywritten_in	local:english	.
+local:relevance_of_posts	local:relevance_of	local:posts	.
+local:set	vn.role:Patient	local:crises_crises	.
+local:circulated	local:AM-TMP	local:typically	.
+local:extracted	vn.role:Source	local:improve_over_statistical_model	.
+local:knowledge	rdfs:member	local:knowledge_bases	.
+local:typically_struggle	rdfs:subClassOf	local:struggle	.
+local:crisis	rdfs:member	local:crisis_situations	.
+local:where_trained	rdfs:subClassOf	local:trained	.

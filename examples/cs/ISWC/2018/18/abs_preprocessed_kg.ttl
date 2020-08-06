@@ -11,11 +11,13 @@ local:independent_data	rdfs:label	"independent data"	.
 
 local:data	rdfs:label	"data"	.
 
-local:data_model	rdfs:label	"data model"	.
+local:independent_data_model	rdfs:label	"independent data model"	.
 
 local:model	rdfs:label	"model"	.
 
-local:independent_data_model	rdfs:label	"independent data model"	.
+local:data_model	rdfs:label	"data model"	.
+
+local:independent	rdfs:label	"independent"	.
 
 local:popularity_of_rdf	rdfs:label	"popularity of rdf"	.
 
@@ -31,11 +33,13 @@ local:independent_data_graphs	rdfs:label	"independent data graphs"	.
 
 local:graphs	rdfs:label	"graphs"	.
 
+local:data_graphs	rdfs:label	"data graphs"	.
+
 local:such_constraints	rdfs:label	"such constraints"	.
 
 local:constraints	rdfs:label	"constraints"	.
 
-local:data_graphs	rdfs:label	"data graphs"	.
+local:such	rdfs:label	"such"	.
 
 local:constraints_on_rdf	rdfs:label	"constraints on rdf"	.
 
@@ -65,6 +69,8 @@ local:unfortunately	rdfs:label	"unfortunately"	.
 
 local:open	rdfs:label	"open"	.
 
+local:recursive	rdfs:label	"recursive"	.
+
 local:recursive_constraints	rdfs:label	"recursive constraints"	.
 
 local:problem_of_validation	rdfs:label	"problem of validation"	.
@@ -85,9 +91,13 @@ local:reference_cycles	rdfs:label	"reference cycles"	.
 
 local:cycles	rdfs:label	"cycles"	.
 
+local:reference	rdfs:label	"reference"	.
+
 local:other_ones	rdfs:label	"other ones"	.
 
 local:ones	rdfs:label	"ones"	.
+
+local:other	rdfs:label	"other"	.
 
 local:easily_yield	rdfs:label	"easily yield"	.
 
@@ -99,11 +109,11 @@ local:may_easily_yield_in_practice	rdfs:label	"may easily yield in practice"	.
 
 local:practice	rdfs:label	"practice"	.
 
+local:design_favors_constraints	rdfs:label	"design favors constraints"	.
+
 local:design_favors	rdfs:label	"design favors"	.
 
 local:favors_constraints	rdfs:label	"favors constraints"	.
-
-local:design_favors_constraints	rdfs:label	"design favors constraints"	.
 
 local:may	rdfs:label	"may"	.
 
@@ -113,60 +123,72 @@ local:easily	rdfs:label	"easily"	.
 
 #### Mapped Relations ####
 
-local:validation	owl:sameAs	cso:validation	.
 cso:validation	rdfs:label	"validation"	.
-cso:rdf	rdfs:label	"rdf"	.
+local:validation	owl:sameAs	cso:validation	.
 local:rdf	owl:sameAs	cso:rdf	.
+cso:rdf	rdfs:label	"rdf"	.
 
 #### Relations ####
 
-local:detect	vn.role:Experiencer	local:mechanisms	.
-local:such_constraints	rdfs:subClassOf	local:constraints	.
-local:data_graphs	rdfs:subClassOf	local:graphs	.
-local:independent_data_graphs	rdfs:subClassOf	local:data_graphs	.
-local:design_favors	rdfs:subClassOf	local:favors	.
-local:may_easily_yield	rdfs:subClassOf	local:easily_yield	.
-local:other_ones	rdfs:subClassOf	local:ones	.
-local:specification_of_shacl	local:of_shacl	local:specification	.
-local:problem_of_validation	local:of_validation	local:problem	.
-local:design_favors_constraints	rdfs:subClassOf	local:constraints	.
-local:favors	vn.role:Theme	local:shacl_by_design	.
-local:favors	vn.role:Experiencer	local:constraints	.
-local:yield	vn.role:Theme	local:reference_cycles	.
-local:leaves	vn.role:Location	local:unfortunately	.
-local:easily_yield	rdfs:subClassOf	local:yield	.
-local:specification_of_shacl	local:specification_of	local:shacl	.
-local:detect	vn.role:Stimulus	local:violations_of_such_constraints	.
-local:problem_of_validation	local:problem_of	local:validation	.
-local:constraints_on_rdf	local:on_rdf	local:constraints	.
-local:problem_of_validation_against_recursive_constraints	local:problemofvalidation_against	local:recursive_constraints	.
-local:constraints_on_rdf	local:constraints_on	local:rdf	.
-local:popularity_of_rdf_as_independent_data_model	local:popularityofrdf_as	local:independent_data_model	.
-local:popularity_of_rdf_as_independent_data_model	local:as_independentdatamodel	local:popularity_of_rdf	.
-local:specifying_as_independent_data_graphs	local:as_independentdatagraphs	local:specifying	.
-local:yield	vn.role:Agent	local:favors	.
-local:shacl_by_design	local:shacl_by	local:design	.
-local:came	vn.role:Location	local:need	.
-local:yield	local:AM-MOD	local:may	.
-local:violations_of_such_constraints	local:of_suchconstraints	local:violations	.
-local:violations_of_such_constraints	local:violations_of	local:such_constraints	.
-local:popularity_of_rdf	local:of_rdf	local:popularity	.
-local:recursive_constraints	rdfs:subClassOf	local:constraints	.
-local:problem_of_validation_against_recursive_constraints	local:against_recursiveconstraints	local:problem_of_validation	.
-local:reference_cycles	rdfs:subClassOf	local:cycles	.
-local:leaves	vn.role:object	local:problem_of_validation_against_recursive_constraints	.
-local:may_easily_yield_in_practice	local:in_practice	local:may_easily_yield	.
-local:popularity_of_rdf	local:popularity_of	local:rdf	.
-local:independent_data_graphs	rdfs:subClassOf	local:graphs	.
-local:independent_data	rdfs:subClassOf	local:data	.
-local:favors_constraints	rdfs:subClassOf	local:constraints	.
-local:independent_data_model	rdfs:subClassOf	local:data_model	.
-local:specifying_as_independent_data_graphs	local:specifying_as	local:independent_data_graphs	.
-local:shacl_by_design	local:by_design	local:shacl	.
-local:yield	local:AM-MNR	local:easily	.
-local:independent_data_model	rdfs:subClassOf	local:model	.
 local:specifying	vn.role:Theme	local:constraints_on_rdf	.
-local:leaves	vn.role:indirect_object	local:open	.
+local:came	vn.role:Location	local:need	.
+local:leaves	vn.role:Location	local:unfortunately	.
+local:violations_of_such_constraints	local:of_suchconstraints	local:violations	.
+local:yield	local:AM-MNR	local:easily	.
+local:constraints_on_rdf	local:constraints_on	local:rdf	.
+local:problem_of_validation	local:problem_of	local:validation	.
+local:easily_yield	rdfs:subClassOf	local:yield	.
+local:leaves	vn.role:object	local:problem_of_validation_against_recursive_constraints	.
+local:popularity_of_rdf	local:of_rdf	local:popularity	.
+local:such_constraints	rdfs:subClassOf	local:constraints	.
+local:detect	vn.role:Experiencer	local:mechanisms	.
+local:problem_of_validation	local:of_validation	local:problem	.
+local:yield	vn.role:Theme	local:reference_cycles	.
+local:may_easily_yield	rdfs:subClassOf	local:easily_yield	.
+local:specifying_as_independent_data_graphs	local:specifying_as	local:independent_data_graphs	.
+local:favors_constraints	rdfs:subClassOf	local:constraints	.
+local:data_graphs	rdfs:subClassOf	local:graphs	.
+local:specifying_as_independent_data_graphs	local:as_independentdatagraphs	local:specifying	.
+local:independent_data	rdfs:member	local:independent_data_model	.
+local:independent_data	rdfs:member	local:independent_data_graphs	.
+local:specification_of_shacl	local:of_shacl	local:specification	.
+local:independent_data_model	rdfs:subClassOf	local:model	.
 local:may_easily_yield_in_practice	local:mayeasilyyield_in	local:practice	.
-local:came	local:AM-MNR	local:popularity_of_rdf_as_independent_data_model	.
+local:recursive_constraints	rdfs:subClassOf	local:constraints	.
+local:independent_data_model	rdfs:subClassOf	local:data_model	.
+local:design	rdfs:member	local:design_favors	.
+local:yield	vn.role:Agent	local:favors	.
+local:favors	vn.role:Theme	local:shacl_by_design	.
+local:problem_of_validation_against_recursive_constraints	local:problemofvalidation_against	local:recursive_constraints	.
+local:independent_data_graphs	rdfs:subClassOf	local:graphs	.
+local:shacl_by_design	local:by_design	local:shacl	.
 local:data_model	rdfs:subClassOf	local:model	.
+local:constraints_on_rdf	local:on_rdf	local:constraints	.
+local:shacl_by_design	local:shacl_by	local:design	.
+local:such	rdfs:member	local:such_constraints	.
+local:popularity_of_rdf	local:popularity_of	local:rdf	.
+local:favors	vn.role:Experiencer	local:constraints	.
+local:independent_data	rdfs:subClassOf	local:data	.
+local:design_favors	rdfs:subClassOf	local:favors	.
+local:came	local:AM-MNR	local:popularity_of_rdf_as_independent_data_model	.
+local:other	rdfs:member	local:other_ones	.
+local:data	rdfs:member	local:data_model	.
+local:popularity_of_rdf_as_independent_data_model	local:popularityofrdf_as	local:independent_data_model	.
+local:problem_of_validation_against_recursive_constraints	local:against_recursiveconstraints	local:problem_of_validation	.
+local:yield	local:AM-MOD	local:may	.
+local:independent	rdfs:member	local:independent_data	.
+local:design_favors_constraints	rdfs:subClassOf	local:constraints	.
+local:reference	rdfs:member	local:reference_cycles	.
+local:may_easily_yield_in_practice	local:in_practice	local:may_easily_yield	.
+local:favors	rdfs:member	local:favors_constraints	.
+local:other_ones	rdfs:subClassOf	local:ones	.
+local:leaves	vn.role:indirect_object	local:open	.
+local:reference_cycles	rdfs:subClassOf	local:cycles	.
+local:detect	vn.role:Stimulus	local:violations_of_such_constraints	.
+local:design_favors	rdfs:member	local:design_favors_constraints	.
+local:recursive	rdfs:member	local:recursive_constraints	.
+local:independent_data_graphs	rdfs:subClassOf	local:data_graphs	.
+local:data	rdfs:member	local:data_graphs	.
+local:violations_of_such_constraints	local:violations_of	local:such_constraints	.
+local:specification_of_shacl	local:specification_of	local:shacl	.
+local:popularity_of_rdf_as_independent_data_model	local:as_independentdatamodel	local:popularity_of_rdf	.

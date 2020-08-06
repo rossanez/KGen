@@ -7,15 +7,17 @@
 
 #### Classes ####
 
-local:tabular_datasets	rdfs:label	"tabular datasets"	.
-
-local:datasets	rdfs:label	"datasets"	.
+local:large_tabular	rdfs:label	"large tabular"	.
 
 local:large_tabular_datasets	rdfs:label	"large tabular datasets"	.
 
-local:large_tabular	rdfs:label	"large tabular"	.
-
 local:tabular	rdfs:label	"tabular"	.
+
+local:tabular_datasets	rdfs:label	"tabular datasets"	.
+
+local:large	rdfs:label	"large"	.
+
+local:datasets	rdfs:label	"datasets"	.
 
 local:dealing	rdfs:label	"dealing"	.
 
@@ -24,6 +26,8 @@ local:dealing_with_large_tabular_datasets	rdfs:label	"dealing with large tabular
 local:requires	rdfs:label	"requires"	.
 
 local:often	rdfs:label	"often"	.
+
+local:extensive	rdfs:label	"extensive"	.
 
 local:extensive_preprocessing	rdfs:label	"extensive preprocessing"	.
 
@@ -53,6 +57,8 @@ local:triple_store	rdfs:label	"triple store"	.
 
 local:store	rdfs:label	"store"	.
 
+local:triple	rdfs:label	"triple"	.
+
 local:data_in_triple_store	rdfs:label	"data in triple store"	.
 
 local:loading_in_triple_store	rdfs:label	"loading in triple store"	.
@@ -63,9 +69,9 @@ local:paper	rdfs:label	"paper"	.
 
 local:we	rdfs:label	"we"	.
 
-local:tabular_data	rdfs:label	"tabular data"	.
-
 local:large_tabular_data	rdfs:label	"large tabular data"	.
+
+local:tabular_data	rdfs:label	"tabular data"	.
 
 local:preprocessing_in_datalog	rdfs:label	"preprocessing in datalog"	.
 
@@ -83,6 +89,8 @@ local:query	rdfs:label	"query"	.
 
 local:translated	rdfs:label	"translated"	.
 
+local:unix	rdfs:label	"unix"	.
+
 local:unix_bash	rdfs:label	"unix bash"	.
 
 local:bash	rdfs:label	"bash"	.
@@ -97,23 +105,29 @@ local:show	rdfs:label	"show"	.
 
 local:experiments	rdfs:label	"experiments"	.
 
-local:unix_system	rdfs:label	"unix system"	.
+local:use	rdfs:label	"use"	.
 
-local:system	rdfs:label	"system"	.
+local:use_case	rdfs:label	"use case"	.
 
-local:bash_shell	rdfs:label	"bash shell"	.
+local:stateoftheart_systems	rdfs:label	"state-of-the-art systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:case	rdfs:label	"case"	.
 
 local:same_time	rdfs:label	"same time"	.
 
 local:time	rdfs:label	"time"	.
 
-local:use_case	rdfs:label	"use case"	.
+local:bash_shell	rdfs:label	"bash shell"	.
 
-local:case	rdfs:label	"case"	.
+local:stateoftheart	rdfs:label	"state-of-the-art"	.
 
-local:stateoftheart_systems	rdfs:label	"state-of-the-art systems"	.
+local:same	rdfs:label	"same"	.
 
-local:systems	rdfs:label	"systems"	.
+local:unix_system	rdfs:label	"unix system"	.
+
+local:system	rdfs:label	"system"	.
 
 local:only_bash_shell	rdfs:label	"only bash shell"	.
 
@@ -157,97 +171,111 @@ local:speed	rdfs:label	"speed"	.
 
 #### Mapped Relations ####
 
+local:database	owl:sameAs	cso:database	.
 local:datalog	owl:sameAs	cso:datalog	.
 cso:datalog	rdfs:label	"datalog"	.
-local:database	owl:sameAs	cso:database	.
 cso:database	rdfs:label	"database"	.
 
 #### Relations ####
 
-local:may_overkill	rdfs:subClassOf	local:overkill	.
-local:preprocessing_in_datalog_without_indexing	local:preprocessingindatalog_without	local:indexing	.
-local:indexing	vn.role:Theme	local:data_in_triple_store	.
-local:while_at_same_time	local:while_at	local:same_time	.
-local:allows	vn.role:Agent	local:approach	.
-local:datalog_query	rdfs:subClassOf	local:query	.
-local:executed	local:AM-MOD	local:can	.
-local:unix_system	rdfs:subClassOf	local:system	.
-local:happens	local:AM-PNC	local:may_overkill	.
-local:indexing_in_database	local:in_database	local:indexing	.
-local:approach	vn.role:object	local:we	.
-local:executed	vn.role:Patient	local:datalog_query	.
-local:data_in_triple_store	local:data_in	local:triple_store	.
-local:loading_in_triple_store	local:in_triplestore	local:loading	.
-local:translated	vn.role:Patient	local:datalog_query	.
-local:use_case	rdfs:subClassOf	local:case	.
-local:large_tabular_data	rdfs:subClassOf	local:tabular_data	.
-local:present	local:AM-LOC	local:paper	.
-local:terms_of_speed	local:terms_of	local:speed	.
-local:loading_in_triple_store	local:loading_in	local:triple_store	.
-local:present	vn.role:Agent	local:we	.
-local:happens	local:AM-PNC	local:once_may_overkill	.
-local:while_competitive_with_stateoftheart_systems_in_terms	local:in_terms	local:while_competitive_with_stateoftheart_systems	.
-local:data_in_triple_store	local:in_triplestore	local:data	.
-local:once_may_overkill	rdfs:subClassOf	local:may_overkill	.
-local:only_bash_shell	rdfs:subClassOf	local:bash_shell	.
-local:show	vn.role:Agent	local:experiments	.
-local:happens	local:AM-PNC	local:indexing	.
-local:requiring_on_unix_system	local:on_unixsystem	local:requiring	.
-local:requires	vn.role:Patient	local:extensive_preprocessing	.
-local:stateoftheart_systems	rdfs:subClassOf	local:systems	.
-local:terms_of_speed	local:of_speed	local:terms	.
-local:bash_shell	rdfs:subClassOf	local:shell	.
 local:while_competitive	rdfs:subClassOf	local:competitive	.
-local:while_competitive_with_stateoftheart_systems_in_terms	local:whilecompetitivewithstate-of-the-artsystems_in	local:terms	.
-local:loading_in_database	local:in_database	local:loading	.
-local:preprocessing_in_datalog	local:preprocessing_in	local:datalog	.
-local:indexing	vn.role:Theme	local:data	.
-local:requiring_on_unix_system	local:requiring_on	local:unix_system	.
-local:tabular_data	rdfs:subClassOf	local:data	.
-local:approach_for_use_case	local:for_usecase	local:approach	.
-local:unix_bash	rdfs:subClassOf	local:bash	.
-local:translated	vn.role:Product	local:unix_bash	.
-local:dealing_with_large_tabular_datasets	local:dealing_with	local:large_tabular_datasets	.
-local:executed	local:AM-MNR	local:shell	.
-local:same_time	rdfs:subClassOf	local:time	.
-local:while_competitive_with_stateoftheart_systems	local:with_state-of-the-artsystems	local:while_competitive	.
-local:requiring	vn.role:Agent	local:stateoftheart_systems	.
-local:large_tabular_data	rdfs:subClassOf	local:data	.
-local:show	vn.role:Theme	local:approach_for_use_case	.
-local:terms_of_scalability	local:terms_of	local:scalability	.
-local:indexing	local:AM-MNR	local:database	.
-local:use_case_of_data_preprocessing	local:of_datapreprocessing	local:use_case	.
-local:dealing	vn.role:Theme	local:large_tabular_datasets	.
-local:approach_for_use_case	local:approach_for	local:use_case	.
-local:requires	local:AM-TMP	local:often	.
-local:large_tabular	rdfs:subClassOf	local:tabular	.
-local:present	local:AM-MNR	local:indexing	.
-local:preprocessing_in_datalog_without_indexing	local:without_indexing	local:preprocessing_in_datalog	.
-local:use_case_of_data_preprocessing	local:usecase_of	local:data_preprocessing	.
-local:while_competitive_with_stateoftheart_systems	local:whilecompetitive_with	local:stateoftheart_systems	.
-local:triple_store	rdfs:subClassOf	local:store	.
-local:extensive_preprocessing	rdfs:subClassOf	local:preprocessing	.
-local:loading	vn.role:object	local:data	.
-local:requiring	vn.role:Proposition	local:bash_shell	.
-local:present	vn.role:Theme	local:approach	.
-local:approach	vn.role:indirect_object	local:stateoftheart_systems_in_terms	.
-local:loading_in_database	local:loading_in	local:database	.
-local:loading	local:AM-MNR	local:database	.
-local:stateoftheart_systems_in_terms	local:state-of-the-artsystems_in	local:terms	.
-local:large_tabular_datasets	rdfs:subClassOf	local:datasets	.
 local:while_at_same_time	local:at_sametime	local:while	.
-local:preprocessing_in_datalog	local:in_datalog	local:preprocessing	.
 local:tabular_datasets	rdfs:subClassOf	local:datasets	.
-local:happens	vn.role:Location	local:preprocessing	.
-local:terms_of_scalability	local:of_scalability	local:terms	.
-local:requires	vn.role:Agent	local:dealing_with_large_tabular_datasets	.
-local:data_preprocessing	rdfs:subClassOf	local:preprocessing	.
-local:dealing_with_large_tabular_datasets	local:with_largetabulardatasets	local:dealing	.
-local:same_time_requiring	local:sametime_	local:requiring	.
-local:requiring	vn.role:Patient	local:unix_system	.
-local:stateoftheart_systems_in_terms	local:in_terms	local:stateoftheart_systems	.
-local:same_time_requiring	local:_requiring	local:same_time	.
-local:indexing_in_database	local:indexing_in	local:database	.
 local:allows	vn.role:Theme	local:preprocessing_in_datalog_without_indexing	.
+local:use_case	rdfs:subClassOf	local:case	.
+local:indexing_in_database	local:in_database	local:indexing	.
+local:loading_in_triple_store	local:in_triplestore	local:loading	.
+local:requiring	vn.role:Proposition	local:bash_shell	.
+local:approach	vn.role:indirect_object	local:stateoftheart_systems_in_terms	.
+local:terms_of_speed	local:terms_of	local:speed	.
+local:requiring_on_unix_system	local:requiring_on	local:unix_system	.
+local:executed	local:AM-MOD	local:can	.
+local:present	vn.role:Theme	local:approach	.
+local:dealing_with_large_tabular_datasets	local:with_largetabulardatasets	local:dealing	.
+local:large_tabular	rdfs:subClassOf	local:tabular	.
+local:dealing	vn.role:Theme	local:large_tabular_datasets	.
+local:only_bash_shell	rdfs:subClassOf	local:bash_shell	.
+local:executed	local:AM-MNR	local:shell	.
+local:approach_for_use_case	local:approach_for	local:use_case	.
+local:indexing	local:AM-MNR	local:database	.
+local:large_tabular	rdfs:member	local:large_tabular_datasets	.
+local:present	vn.role:Agent	local:we	.
+local:datalog_query	rdfs:subClassOf	local:query	.
+local:translated	vn.role:Product	local:unix_bash	.
+local:same_time	rdfs:subClassOf	local:time	.
+local:large_tabular_datasets	rdfs:subClassOf	local:datasets	.
+local:terms_of_scalability	local:terms_of	local:scalability	.
+local:dealing_with_large_tabular_datasets	local:dealing_with	local:large_tabular_datasets	.
+local:preprocessing_in_datalog_without_indexing	local:without_indexing	local:preprocessing_in_datalog	.
+local:requires	local:AM-TMP	local:often	.
+local:use_case_of_data_preprocessing	local:usecase_of	local:data_preprocessing	.
+local:allows	vn.role:Agent	local:approach	.
+local:terms_of_scalability	local:of_scalability	local:terms	.
+local:preprocessing_in_datalog	local:in_datalog	local:preprocessing	.
+local:same_time_requiring	local:_requiring	local:same_time	.
+local:same_time_requiring	local:sametime_	local:requiring	.
+local:unix_bash	rdfs:subClassOf	local:bash	.
+local:terms_of_speed	local:of_speed	local:terms	.
+local:use_case_of_data_preprocessing	local:of_datapreprocessing	local:use_case	.
+local:happens	local:AM-PNC	local:indexing	.
 local:large_tabular_datasets	rdfs:subClassOf	local:tabular_datasets	.
 local:loading	vn.role:object	local:data_in_triple_store	.
+local:loading_in_triple_store	local:loading_in	local:triple_store	.
+local:while_competitive_with_stateoftheart_systems_in_terms	local:whilecompetitivewithstate-of-the-artsystems_in	local:terms	.
+local:loading	local:AM-MNR	local:database	.
+local:show	vn.role:Theme	local:approach_for_use_case	.
+local:happens	local:AM-PNC	local:may_overkill	.
+local:tabular_data	rdfs:subClassOf	local:data	.
+local:data_in_triple_store	local:data_in	local:triple_store	.
+local:requiring	vn.role:Patient	local:unix_system	.
+local:happens	local:AM-PNC	local:once_may_overkill	.
+local:loading_in_database	local:in_database	local:loading	.
+local:present	local:AM-LOC	local:paper	.
+local:large_tabular_data	rdfs:subClassOf	local:tabular_data	.
+local:while_competitive_with_stateoftheart_systems	local:whilecompetitive_with	local:stateoftheart_systems	.
+local:bash	rdfs:member	local:bash_shell	.
+local:requiring_on_unix_system	local:on_unixsystem	local:requiring	.
+local:requires	vn.role:Agent	local:dealing_with_large_tabular_datasets	.
+local:extensive_preprocessing	rdfs:subClassOf	local:preprocessing	.
+local:stateoftheart_systems	rdfs:subClassOf	local:systems	.
+local:bash_shell	rdfs:subClassOf	local:shell	.
+local:requiring	vn.role:Agent	local:stateoftheart_systems	.
+local:indexing_in_database	local:indexing_in	local:database	.
+local:preprocessing_in_datalog_without_indexing	local:preprocessingindatalog_without	local:indexing	.
+local:translated	vn.role:Patient	local:datalog_query	.
+local:stateoftheart_systems_in_terms	local:in_terms	local:stateoftheart_systems	.
+local:stateoftheart_systems_in_terms	local:state-of-the-artsystems_in	local:terms	.
+local:present	local:AM-MNR	local:indexing	.
+local:large_tabular_data	rdfs:subClassOf	local:data	.
+local:while_at_same_time	local:while_at	local:same_time	.
+local:may_overkill	rdfs:subClassOf	local:overkill	.
+local:same	rdfs:member	local:same_time	.
+local:loading	vn.role:object	local:data	.
+local:tabular	rdfs:member	local:tabular_data	.
+local:executed	vn.role:Patient	local:datalog_query	.
+local:extensive	rdfs:member	local:extensive_preprocessing	.
+local:unix_system	rdfs:subClassOf	local:system	.
+local:loading_in_database	local:loading_in	local:database	.
+local:data_in_triple_store	local:in_triplestore	local:data	.
+local:triple_store	rdfs:subClassOf	local:store	.
+local:large_tabular	rdfs:member	local:large_tabular_data	.
+local:happens	vn.role:Location	local:preprocessing	.
+local:unix	rdfs:member	local:unix_bash	.
+local:preprocessing_in_datalog	local:preprocessing_in	local:datalog	.
+local:while_competitive_with_stateoftheart_systems_in_terms	local:in_terms	local:while_competitive_with_stateoftheart_systems	.
+local:triple	rdfs:member	local:triple_store	.
+local:approach_for_use_case	local:for_usecase	local:approach	.
+local:indexing	vn.role:Theme	local:data	.
+local:datalog	rdfs:member	local:datalog_query	.
+local:tabular	rdfs:member	local:tabular_datasets	.
+local:stateoftheart	rdfs:member	local:stateoftheart_systems	.
+local:unix	rdfs:member	local:unix_system	.
+local:indexing	vn.role:Theme	local:data_in_triple_store	.
+local:requires	vn.role:Patient	local:extensive_preprocessing	.
+local:once_may_overkill	rdfs:subClassOf	local:may_overkill	.
+local:use	rdfs:member	local:use_case	.
+local:approach	vn.role:object	local:we	.
+local:large	rdfs:member	local:large_tabular	.
+local:while_competitive_with_stateoftheart_systems	local:with_state-of-the-artsystems	local:while_competitive	.
+local:show	vn.role:Agent	local:experiments	.
+local:data_preprocessing	rdfs:subClassOf	local:preprocessing	.

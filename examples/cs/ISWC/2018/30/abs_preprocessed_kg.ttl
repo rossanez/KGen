@@ -11,21 +11,29 @@ local:develop	rdfs:label	"develop"	.
 
 local:we	rdfs:label	"we"	.
 
-local:utility_policies	rdfs:label	"utility policies"	.
+local:utility	rdfs:label	"utility"	.
 
-local:policies	rdfs:label	"policies"	.
+local:utility_policies	rdfs:label	"utility policies"	.
 
 local:declarative_framework	rdfs:label	"declarative framework"	.
 
 local:framework	rdfs:label	"framework"	.
 
+local:sparql	rdfs:label	"sparql"	.
+
 local:sparql_queries	rdfs:label	"sparql queries"	.
 
-local:queries	rdfs:label	"queries"	.
+local:data	rdfs:label	"data"	.
 
 local:data_publishing	rdfs:label	"data publishing"	.
 
+local:policies	rdfs:label	"policies"	.
+
 local:publishing	rdfs:label	"publishing"	.
+
+local:declarative	rdfs:label	"declarative"	.
+
+local:queries	rdfs:label	"queries"	.
 
 local:linked_data_publishing	rdfs:label	"linked data publishing"	.
 
@@ -43,6 +51,8 @@ local:introduce	rdfs:label	"introduce"	.
 
 local:privacy_policies	rdfs:label	"privacy policies"	.
 
+local:privacy	rdfs:label	"privacy"	.
+
 local:approach	rdfs:label	"approach"	.
 
 local:leads	rdfs:label	"leads"	.
@@ -54,6 +64,10 @@ local:operations	rdfs:label	"operations"	.
 local:graph_instance	rdfs:label	"graph instance"	.
 
 local:instance	rdfs:label	"instance"	.
+
+local:anonymization	rdfs:label	"anonymization"	.
+
+local:graph	rdfs:label	"graph"	.
 
 local:applicable_sequence	rdfs:label	"applicable sequence"	.
 
@@ -69,8 +83,6 @@ local:order	rdfs:label	"order"	.
 
 local:inspect_utility	rdfs:label	"inspect utility"	.
 
-local:utility	rdfs:label	"utility"	.
-
 local:inspect_utility_policies	rdfs:label	"inspect utility policies"	.
 
 local:inspect	rdfs:label	"inspect"	.
@@ -80,8 +92,6 @@ local:determine	rdfs:label	"determine"	.
 local:satisfying	rdfs:label	"satisfying"	.
 
 local:only_privacy	rdfs:label	"only privacy"	.
-
-local:privacy	rdfs:label	"privacy"	.
 
 local:prove	rdfs:label	"prove"	.
 
@@ -93,70 +103,86 @@ local:algorithms_performance	rdfs:label	"algorithms performance"	.
 
 local:performance	rdfs:label	"performance"	.
 
+local:algorithms	rdfs:label	"algorithms"	.
+
 local:experiments	rdfs:label	"experiments"	.
 
 #### Properties ####
 
 #### Mapped Relations ####
 
-cso:sparql_queries	rdfs:label	"sparql queries"	.
-local:privacy	owl:sameAs	cso:privacy	.
-cso:privacy	rdfs:label	"privacy"	.
+cso:privacy_policies	rdfs:label	"privacy policies"	.
+local:data_publishing	owl:sameAs	cso:data_publishing	.
+local:privacy_policies	owl:sameAs	cso:privacy_policies	.
 cso:data_publishing	rdfs:label	"data publishing"	.
 local:sparql_queries	owl:sameAs	cso:sparql_queries	.
-local:privacy_policies	owl:sameAs	cso:privacy_policies	.
-local:data_publishing	owl:sameAs	cso:data_publishing	.
-cso:privacy_policies	rdfs:label	"privacy policies"	.
+cso:privacy	rdfs:label	"privacy"	.
+cso:sparql	rdfs:label	"sparql"	.
+local:sparql	owl:sameAs	cso:sparql	.
+local:privacy	owl:sameAs	cso:privacy	.
+cso:anonymization	rdfs:label	"anonymization"	.
+local:anonymization	owl:sameAs	cso:anonymization	.
+cso:sparql_queries	rdfs:label	"sparql queries"	.
 
 #### Relations ####
 
-local:specified	vn.role:Theme	local:utility_policies	.
-local:approach	vn.role:object	local:we	.
-local:approach	local:AM-PNC	local:order	.
-local:inspect	vn.role:Agent	local:we	.
-local:inspect	vn.role:Location	local:utility_policies	.
-local:specified_in_privacypreserving_linked_data_publishing_as_sparql_queries	local:specifiedinprivacy-preservinglinkeddatapublishing_as	local:sparql_queries	.
-local:approach	vn.role:indirect_object	local:leads	.
-local:gauge	vn.role:Agent	local:we	.
-local:specified	vn.role:Theme	local:privacy_policies	.
-local:graph_instance	rdfs:subClassOf	local:instance	.
-local:privacy_policies	rdfs:subClassOf	local:policies	.
-local:introduce	vn.role:Agent	local:we	.
-local:gauge	vn.role:Theme	local:algorithms_performance	.
-local:introduce	local:AM-PNC	local:privacypreserving_linked_data_publishing	.
-local:specified_in_privacypreserving_linked_data_publishing	local:specified_in	local:privacypreserving_linked_data_publishing	.
-local:applicable_sequence	rdfs:subClassOf	local:sequence	.
-local:satisfying	vn.role:Cause	local:policies	.
-local:algorithms_performance	rdfs:subClassOf	local:performance	.
-local:determine	vn.role:Theme	local:applicable_sequence_of_anonymization_operations	.
-local:develop	vn.role:Theme	local:we	.
-local:utility_policies	rdfs:subClassOf	local:policies	.
-local:linked_data_publishing	rdfs:subClassOf	local:data_publishing	.
-local:only_privacy	rdfs:subClassOf	local:privacy	.
-local:leads	local:AM-PNC	local:inspect	.
-local:leads	vn.role:Agent	local:we	.
-local:data_publishing	rdfs:subClassOf	local:publishing	.
-local:develop	vn.role:Location	local:declarative_framework_for_privacypreserving_linked_data_publishing	.
-local:applicable_to_graph_instance	local:applicable_to	local:graph_instance	.
-local:introduce	vn.role:Patient	local:declarative_framework	.
-local:applicable_to_graph_instance	local:to_graphinstance	local:applicable	.
-local:prove	vn.role:Theme	local:soundness	.
-local:inspect_utility	rdfs:subClassOf	local:utility	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:inspect	vn.role:Location	local:privacy	.
 local:inspect_utility_policies	rdfs:subClassOf	local:policies	.
+local:anonymization_operations	rdfs:subClassOf	local:operations	.
 local:inspect	local:AM-PNC	local:order	.
 local:prove	vn.role:Agent	local:we	.
-local:declarative_framework	rdfs:subClassOf	local:framework	.
-local:gauge	local:AM-MNR	local:experiments	.
-local:inspect	vn.role:Location	local:privacy	.
-local:declarative_framework_for_privacypreserving_linked_data_publishing	local:for_privacy-preservinglinkeddatapublishing	local:declarative_framework	.
-local:applicable_sequence_of_anonymization_operations	local:applicablesequence_of	local:anonymization_operations	.
-local:determine	vn.role:Agent	local:we	.
-local:specified_in_privacypreserving_linked_data_publishing	local:in_privacy-preservinglinkeddatapublishing	local:specified	.
 local:specified	vn.role:Predicate	local:sparql_queries	.
-local:anonymization_operations	rdfs:subClassOf	local:operations	.
+local:introduce	local:AM-PNC	local:privacypreserving_linked_data_publishing	.
+local:applicable_sequence_of_anonymization_operations	local:applicablesequence_of	local:anonymization_operations	.
+local:leads	vn.role:Agent	local:we	.
+local:inspect_utility	rdfs:member	local:inspect_utility_policies	.
+local:algorithms_performance	rdfs:subClassOf	local:performance	.
+local:gauge	vn.role:Agent	local:we	.
+local:approach	vn.role:object	local:we	.
+local:develop	vn.role:Theme	local:we	.
+local:applicable_to_graph_instance	local:to_graphinstance	local:applicable	.
+local:inspect	vn.role:Agent	local:we	.
+local:utility	rdfs:member	local:utility_policies	.
+local:declarative_framework	rdfs:subClassOf	local:framework	.
+local:introduce	vn.role:Agent	local:we	.
+local:gauge	local:AM-MNR	local:experiments	.
 local:applicable_sequence_of_anonymization_operations	local:of_anonymizationoperations	local:applicable_sequence	.
-local:specified_in_privacypreserving_linked_data_publishing_as_sparql_queries	local:as_sparqlqueries	local:specified_in_privacypreserving_linked_data_publishing	.
+local:gauge	vn.role:Theme	local:algorithms_performance	.
+local:data_publishing	rdfs:subClassOf	local:publishing	.
+local:specified	vn.role:Theme	local:utility_policies	.
 local:specified	local:AM-MNR	local:sparql_queries	.
+local:specified_in_privacypreserving_linked_data_publishing	local:in_privacy-preservinglinkeddatapublishing	local:specified	.
+local:utility_policies	rdfs:subClassOf	local:policies	.
+local:anonymization	rdfs:member	local:anonymization_operations	.
+local:leads	local:AM-PNC	local:inspect	.
+local:specified_in_privacypreserving_linked_data_publishing_as_sparql_queries	local:as_sparqlqueries	local:specified_in_privacypreserving_linked_data_publishing	.
+local:applicable_to_graph_instance	local:applicable_to	local:graph_instance	.
+local:specified_in_privacypreserving_linked_data_publishing	local:specified_in	local:privacypreserving_linked_data_publishing	.
+local:inspect	vn.role:Location	local:utility_policies	.
+local:algorithms	rdfs:member	local:algorithms_performance	.
+local:inspect_utility	rdfs:subClassOf	local:utility	.
+local:specified_in_privacypreserving_linked_data_publishing_as_sparql_queries	local:specifiedinprivacy-preservinglinkeddatapublishing_as	local:sparql_queries	.
 local:privacypreserving_linked_data_publishing	rdfs:subClassOf	local:linked_data_publishing	.
+local:specified	vn.role:Theme	local:privacy_policies	.
+local:privacy_policies	rdfs:subClassOf	local:policies	.
+local:declarative	rdfs:member	local:declarative_framework	.
+local:develop	vn.role:Location	local:declarative_framework_for_privacypreserving_linked_data_publishing	.
+local:satisfying	vn.role:Cause	local:policies	.
+local:privacy	rdfs:member	local:privacy_policies	.
+local:applicable_sequence	rdfs:subClassOf	local:sequence	.
+local:sparql	rdfs:member	local:sparql_queries	.
+local:inspect	rdfs:member	local:inspect_utility	.
+local:introduce	vn.role:Patient	local:declarative_framework	.
+local:determine	vn.role:Theme	local:applicable_sequence_of_anonymization_operations	.
+local:approach	local:AM-PNC	local:order	.
+local:graph	rdfs:member	local:graph_instance	.
+local:data	rdfs:member	local:data_publishing	.
+local:approach	vn.role:indirect_object	local:leads	.
 local:declarative_framework_for_privacypreserving_linked_data_publishing	local:declarativeframework_for	local:privacypreserving_linked_data_publishing	.
+local:declarative_framework_for_privacypreserving_linked_data_publishing	local:for_privacy-preservinglinkeddatapublishing	local:declarative_framework	.
+local:only_privacy	rdfs:subClassOf	local:privacy	.
+local:determine	vn.role:Agent	local:we	.
+local:linked_data_publishing	rdfs:subClassOf	local:data_publishing	.
+local:prove	vn.role:Theme	local:soundness	.
+local:graph_instance	rdfs:subClassOf	local:instance	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
