@@ -7,21 +7,29 @@
 
 #### Classes ####
 
-local:vector_space	rdfs:label	"vector space"	.
+local:space_embeddings	rdfs:label	"space embeddings"	.
+
+local:embeddings	rdfs:label	"embeddings"	.
 
 local:space	rdfs:label	"space"	.
 
 local:vector_space_embeddings	rdfs:label	"vector space embeddings"	.
 
-local:embeddings	rdfs:label	"embeddings"	.
+local:vector	rdfs:label	"vector"	.
 
-local:space_embeddings	rdfs:label	"space embeddings"	.
+local:vector_space	rdfs:label	"vector space"	.
 
 local:shown	rdfs:label	"shown"	.
 
+local:data	rdfs:label	"data"	.
+
+local:data_mining	rdfs:label	"data mining"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
 local:rdf_data	rdfs:label	"rdf data"	.
 
-local:data	rdfs:label	"data"	.
+local:mining	rdfs:label	"mining"	.
 
 local:when_using	rdfs:label	"when using"	.
 
@@ -31,17 +39,13 @@ local:well_perform	rdfs:label	"well perform"	.
 
 local:perform	rdfs:label	"perform"	.
 
+local:rdf_data_in_data_mining	rdfs:label	"rdf data in data mining"	.
+
 local:well	rdfs:label	"well"	.
 
 local:learning	rdfs:label	"learning"	.
 
 local:tasks	rdfs:label	"tasks"	.
-
-local:data_mining	rdfs:label	"data mining"	.
-
-local:mining	rdfs:label	"mining"	.
-
-local:rdf_data_in_data_mining	rdfs:label	"rdf data in data mining"	.
 
 local:existing	rdfs:label	"existing"	.
 
@@ -59,15 +63,15 @@ local:such_suchas_rdf2vec	rdfs:label	"such such_as rdf2vec"	.
 
 local:rdf2vec	rdfs:label	"rdf2vec"	.
 
-local:local_information	rdfs:label	"local information"	.
-
-local:information	rdfs:label	"information"	.
-
 local:local_local	rdfs:label	"local local"	.
 
 local:local	rdfs:label	"local"	.
 
 local:local_local_information	rdfs:label	"local local information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:local_information	rdfs:label	"local information"	.
 
 local:such_such	rdfs:label	"such such"	.
 
@@ -87,19 +91,17 @@ local:rely	rdfs:label	"rely"	.
 
 local:ie_ie_rely	rdfs:label	"i.e. i.e. rely"	.
 
-local:nodes_nodes	rdfs:label	"nodes nodes"	.
-
 local:nodes	rdfs:label	"nodes"	.
 
-local:rdf_graph	rdfs:label	"rdf graph"	.
-
-local:graph	rdfs:label	"graph"	.
+local:nodes_nodes	rdfs:label	"nodes nodes"	.
 
 local:rdf_rdf_graph	rdfs:label	"rdf rdf graph"	.
 
+local:graph	rdfs:label	"graph"	.
+
 local:rdf_rdf	rdfs:label	"rdf rdf"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:rdf_graph	rdfs:label	"rdf graph"	.
 
 local:generated_for_nodes_nodes	rdfs:label	"generated for nodes nodes"	.
 
@@ -119,9 +121,13 @@ local:nodes_in_rdf_graph	rdfs:label	"nodes in rdf graph"	.
 
 local:word_embeddings	rdfs:label	"word embeddings"	.
 
+local:global	rdfs:label	"global"	.
+
 local:global_techniques	rdfs:label	"global techniques"	.
 
 local:techniques	rdfs:label	"techniques"	.
+
+local:word	rdfs:label	"word"	.
 
 local:word_embeddings_global_techniques	rdfs:label	"word embeddings global techniques"	.
 
@@ -140,6 +146,8 @@ local:paper	rdfs:label	"paper"	.
 local:we	rdfs:label	"we"	.
 
 local:local_techniques	rdfs:label	"local techniques"	.
+
+local:traditional	rdfs:label	"traditional"	.
 
 local:traditional_local	rdfs:label	"traditional local"	.
 
@@ -171,117 +179,136 @@ local:can	rdfs:label	"can"	.
 
 #### Mapped Relations ####
 
-cso:rdf_graph	rdfs:label	"rdf graph"	.
-local:rdf_data	owl:sameAs	cso:rdf_data	.
-local:data_mining	owl:sameAs	cso:data_mining	.
-cso:data_mining	rdfs:label	"data mining"	.
-local:rdf_graph	owl:sameAs	cso:rdf_graph	.
-cso:rdf_data	rdfs:label	"rdf data"	.
-local:rdf	owl:sameAs	cso:rdf	.
-cso:rdf	rdfs:label	"rdf"	.
-local:word_embeddings	owl:sameAs	cso:word_embeddings	.
 cso:word_embeddings	rdfs:label	"word embeddings"	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+local:rdf_graph	owl:sameAs	cso:rdf_graph	.
+local:word_embeddings	owl:sameAs	cso:word_embeddings	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:rdf_graph	rdfs:label	"rdf graph"	.
+cso:data_mining	rdfs:label	"data mining"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:data_mining	owl:sameAs	cso:data_mining	.
+cso:rdf_data	rdfs:label	"rdf data"	.
 
 #### Relations ####
 
-local:use_local_information	rdfs:subClassOf	local:local_information	.
-local:using	vn.role:Recipient	local:data_mining	.
-local:competitive_with_traditional_local_techniques	local:with_traditionallocaltechniques	local:competitive	.
-local:rdf_data_in_data_mining	local:in_datamining	local:rdf_data	.
-local:vector_space_embeddings	rdfs:subClassOf	local:space_embeddings	.
-local:generated	vn.role:Theme1	local:existing_approaches_suchas_rdf2vec	.
-local:rely	vn.role:Theme	local:generated_for_nodes	.
-local:traditional_local_techniques_like_rdf2vec	local:traditionallocaltechniques_like	local:rdf2vec	.
-local:word_embeddings_global_techniques	local:_globaltechniques	local:word_embeddings	.
-local:well_perform	rdfs:subClassOf	local:perform	.
-local:perform	vn.role:Agent	local:vector_space_embeddings	.
-local:use	vn.role:Recipient	local:graph	.
-local:idea_of_global_embeddings	local:of_globalembeddings	local:idea	.
-local:rely	vn.role:Agent	local:existing_approaches_suchas_rdf2vec	.
-local:proposed	local:AM-MNR	local:alternative	.
 local:existing_approaches_suchas_rdf2vec	local:existingapproaches_such_as	local:rdf2vec	.
-local:rdf_embeddings	rdfs:subClassOf	local:embeddings	.
-local:proposed	vn.role:Topic	local:word_embeddings_global_techniques_suchas_glove	.
-local:space_embeddings	rdfs:subClassOf	local:embeddings	.
-local:can_transferred_to_rdf_embeddings	local:cantransferred_to	local:rdf_embeddings	.
-local:perform	local:AM-MNR	local:well	.
-local:ie_rely	rdfs:subClassOf	local:rely	.
-local:existing_approaches_suchas_rdf2vec	local:such_as_rdf2vec	local:existing_approaches	.
-local:show	local:AM-LOC	local:paper	.
-local:show	vn.role:Agent	local:we	.
-local:rdf2vec_use_local	local:rdf2vec_	local:use_local	.
-local:existing_approaches_such	local:existingapproaches_	local:such	.
-local:ie_ie_rely	rdfs:subClassOf	local:ie_rely	.
-local:show	vn.role:Theme	local:can_transferred_to_rdf_embeddings	.
-local:word_embeddings_global_techniques_suchas_glove	local:such_as_glove	local:word_embeddings_global_techniques	.
-local:local_local_information	rdfs:subClassOf	local:local_information	.
-local:existing_approaches	rdfs:subClassOf	local:approaches	.
-local:learning	vn.role:Agent	local:tasks	.
-local:use	vn.role:Recipient	local:generated	.
-local:data_mining	rdfs:subClassOf	local:mining	.
-local:using	vn.role:Theme	local:rdf_data	.
-local:local_local	rdfs:subClassOf	local:local	.
-local:local_local_information_information	local:_information	local:local_local_information	.
-local:competitive_with_traditional_local_techniques	local:competitive_with	local:traditional_local_techniques	.
-local:rdf_rdf_graph	rdfs:subClassOf	local:graph	.
-local:word_embeddings_global_techniques_suchas_glove	local:wordembeddingsglobaltechniques_such_as	local:glove	.
-local:existing	vn.role:Location	local:approaches	.
-local:local_local_information_information_existing_existing_approaches	local:_existingexistingapproaches	local:local_local_information_information	.
-local:using	vn.role:Agent	local:vector_space_embeddings	.
-local:nodes_in_rdf_graph	local:in_rdfgraph	local:nodes	.
-local:traditional_local_techniques_like_rdf2vec	local:like_rdf2vec	local:traditional_local_techniques	.
-local:transferred	vn.role:Recipient	local:rdf_embeddings	.
-local:such_suchas_rdf2vec	local:such_as_rdf2vec	local:such	.
-local:vector_space_embeddings	rdfs:subClassOf	local:embeddings	.
-local:show	vn.role:Theme	local:competitive_with_traditional_local_techniques	.
-local:use_local	rdfs:subClassOf	local:local	.
-local:generated_for_nodes_nodes	local:for_nodesnodes	local:generated	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:using	vn.role:Recipient	local:learning	.
-local:global_embeddings	rdfs:subClassOf	local:embeddings	.
-local:use	vn.role:Recipient	local:ie_ie_rely	.
-local:transferred	local:AM-MOD	local:can	.
-local:vector_space	rdfs:subClassOf	local:space	.
-local:local_local_information	rdfs:subClassOf	local:information	.
-local:traditional_local	rdfs:subClassOf	local:local	.
-local:perform	local:AM-TMP	local:using	.
-local:generated_for_nodes	local:for_nodes	local:generated	.
-local:shown	local:AM-PNC	local:well_perform	.
-local:existing_approaches_such	local:_such	local:existing_approaches	.
-local:rdf2vec_suchas_rdf2vec	local:rdf2vec_such_as	local:rdf2vec	.
-local:rdf2vec_use_local	local:_uselocal	local:rdf2vec	.
-local:when_using	rdfs:subClassOf	local:using	.
-local:global_techniques	rdfs:subClassOf	local:techniques	.
-local:can_transferred	rdfs:subClassOf	local:transferred	.
-local:existing_existing_approaches	rdfs:subClassOf	local:existing_approaches	.
-local:traditional_local_techniques	rdfs:subClassOf	local:techniques	.
-local:generated_for_nodes	local:generated_for	local:nodes	.
-local:local_local_information_information	local:locallocalinformation_	local:information	.
-local:rdf_rdf	rdfs:subClassOf	local:rdf	.
-local:local_techniques	rdfs:subClassOf	local:techniques	.
-local:idea_of_global_embeddings	local:idea_of	local:global_embeddings	.
-local:rdf2vec_suchas_rdf2vec	local:such_as_rdf2vec	local:rdf2vec	.
-local:local_local_information_information_existing_existing_approaches	local:locallocalinformationinformation_	local:existing_existing_approaches	.
-local:generated	vn.role:other	local:nodes_in_rdf_graph	.
-local:nodes_in_rdf_graph	local:nodes_in	local:rdf_graph	.
-local:use	vn.role:Agent	local:existing	.
-local:use	vn.role:Agent	local:existing_approaches_such	.
-local:traditional_local_techniques	rdfs:subClassOf	local:local_techniques	.
-local:use	vn.role:Agent	local:local_local_information_information_existing_existing_approaches	.
-local:word_embeddings	rdfs:subClassOf	local:embeddings	.
-local:generated_for_nodes_nodes	local:generated_for	local:nodes_nodes	.
-local:nodes_nodes	rdfs:subClassOf	local:nodes	.
-local:rdf_data_in_data_mining	local:rdfdata_in	local:data_mining	.
-local:can_transferred_to_rdf_embeddings	local:to_rdfembeddings	local:can_transferred	.
-local:use	vn.role:Recipient	local:rdf2vec_use_local	.
-local:transferred	local:AM-LOC	local:paper	.
-local:nodes_nodes_in_rdf_rdf_graph	local:nodesnodes_in	local:rdf_rdf_graph	.
-local:shown	vn.role:Theme	local:vector_space_embeddings	.
-local:local_information	rdfs:subClassOf	local:information	.
-local:such_such	rdfs:subClassOf	local:such	.
-local:rdf_rdf_graph	rdfs:subClassOf	local:rdf_graph	.
-local:word_embeddings_global_techniques	local:wordembeddings_	local:global_techniques	.
-local:transferred	vn.role:Theme	local:idea_of_global_embeddings	.
-local:such_suchas_rdf2vec	local:such_such_as	local:rdf2vec	.
-local:nodes_nodes_in_rdf_rdf_graph	local:in_rdfrdfgraph	local:nodes_nodes	.
 local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:show	vn.role:Agent	local:we	.
+local:use	vn.role:Agent	local:local_local_information_information_existing_existing_approaches	.
+local:show	vn.role:Theme	local:can_transferred_to_rdf_embeddings	.
+local:traditional_local_techniques_like_rdf2vec	local:like_rdf2vec	local:traditional_local_techniques	.
+local:rdf_data_in_data_mining	local:in_datamining	local:rdf_data	.
+local:nodes_nodes_in_rdf_rdf_graph	local:nodesnodes_in	local:rdf_rdf_graph	.
+local:existing_approaches_such	local:_such	local:existing_approaches	.
+local:vector_space	rdfs:subClassOf	local:space	.
+local:shown	vn.role:Theme	local:vector_space_embeddings	.
+local:word_embeddings_global_techniques	local:_globaltechniques	local:word_embeddings	.
+local:word_embeddings_global_techniques	local:wordembeddings_	local:global_techniques	.
+local:well_perform	rdfs:subClassOf	local:perform	.
+local:data_mining	rdfs:subClassOf	local:mining	.
+local:existing_existing_approaches	rdfs:subClassOf	local:existing_approaches	.
+local:can_transferred	rdfs:subClassOf	local:transferred	.
+local:using	vn.role:Recipient	local:learning	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:local_local	rdfs:subClassOf	local:local	.
+local:local_local_information_information_existing_existing_approaches	local:_existingexistingapproaches	local:local_local_information_information	.
+local:vector_space_embeddings	rdfs:subClassOf	local:space_embeddings	.
+local:perform	local:AM-TMP	local:using	.
+local:nodes_nodes	rdfs:subClassOf	local:nodes	.
+local:rdf_rdf	rdfs:subClassOf	local:rdf	.
+local:generated_for_nodes_nodes	local:generated_for	local:nodes_nodes	.
+local:rdf	rdfs:member	local:rdf_graph	.
+local:rdf2vec_suchas_rdf2vec	local:rdf2vec_such_as	local:rdf2vec	.
+local:existing_approaches_suchas_rdf2vec	local:such_as_rdf2vec	local:existing_approaches	.
+local:transferred	vn.role:Recipient	local:rdf_embeddings	.
+local:use	vn.role:Recipient	local:generated	.
+local:can_transferred_to_rdf_embeddings	local:to_rdfembeddings	local:can_transferred	.
+local:rdf_rdf	rdfs:member	local:rdf_rdf_graph	.
+local:word_embeddings_global_techniques_suchas_glove	local:such_as_glove	local:word_embeddings_global_techniques	.
+local:traditional	rdfs:member	local:traditional_local	.
+local:rdf_rdf_graph	rdfs:subClassOf	local:graph	.
+local:traditional_local	rdfs:member	local:traditional_local_techniques	.
+local:learning	vn.role:Agent	local:tasks	.
+local:existing_approaches_such	local:existingapproaches_	local:such	.
+local:proposed	local:AM-MNR	local:alternative	.
+local:vector_space_embeddings	rdfs:subClassOf	local:embeddings	.
+local:vector	rdfs:member	local:vector_space	.
+local:use	vn.role:Agent	local:existing_approaches_such	.
+local:rdf_rdf_graph	rdfs:subClassOf	local:rdf_graph	.
+local:rely	vn.role:Theme	local:generated_for_nodes	.
+local:nodes_in_rdf_graph	local:in_rdfgraph	local:nodes	.
+local:local_information	rdfs:subClassOf	local:information	.
+local:transferred	local:AM-MOD	local:can	.
+local:rdf_embeddings	rdfs:subClassOf	local:embeddings	.
+local:vector_space	rdfs:member	local:vector_space_embeddings	.
+local:global	rdfs:member	local:global_embeddings	.
+local:can_transferred_to_rdf_embeddings	local:cantransferred_to	local:rdf_embeddings	.
+local:use	vn.role:Recipient	local:graph	.
+local:space	rdfs:member	local:space_embeddings	.
+local:nodes	rdfs:member	local:nodes_nodes	.
+local:local_techniques	rdfs:subClassOf	local:techniques	.
+local:ie_ie_rely	rdfs:subClassOf	local:ie_rely	.
+local:word_embeddings	rdfs:subClassOf	local:embeddings	.
+local:rdf	rdfs:member	local:rdf_rdf	.
+local:nodes_in_rdf_graph	local:nodes_in	local:rdf_graph	.
+local:global_techniques	rdfs:subClassOf	local:techniques	.
+local:traditional_local_techniques_like_rdf2vec	local:traditionallocaltechniques_like	local:rdf2vec	.
+local:generated_for_nodes	local:for_nodes	local:generated	.
+local:show	local:AM-LOC	local:paper	.
+local:local_local_information_information_existing_existing_approaches	local:locallocalinformationinformation_	local:existing_existing_approaches	.
+local:proposed	vn.role:Topic	local:word_embeddings_global_techniques_suchas_glove	.
+local:word	rdfs:member	local:word_embeddings	.
+local:use_local	rdfs:subClassOf	local:local	.
+local:local	rdfs:member	local:local_information	.
+local:use_local_information	rdfs:subClassOf	local:local_information	.
+local:using	vn.role:Agent	local:vector_space_embeddings	.
+local:generated	vn.role:Theme1	local:existing_approaches_suchas_rdf2vec	.
+local:such_suchas_rdf2vec	local:such_such_as	local:rdf2vec	.
+local:rdf2vec_use_local	local:rdf2vec_	local:use_local	.
+local:generated_for_nodes	local:generated_for	local:nodes	.
+local:local_local	rdfs:member	local:local_local_information	.
+local:nodes_nodes_in_rdf_rdf_graph	local:in_rdfrdfgraph	local:nodes_nodes	.
+local:existing	vn.role:Location	local:approaches	.
+local:perform	local:AM-MNR	local:well	.
+local:idea_of_global_embeddings	local:idea_of	local:global_embeddings	.
+local:global	rdfs:member	local:global_techniques	.
+local:rely	vn.role:Agent	local:existing_approaches_suchas_rdf2vec	.
+local:rdf2vec_suchas_rdf2vec	local:such_as_rdf2vec	local:rdf2vec	.
+local:local_local_information_information	local:locallocalinformation_	local:information	.
+local:idea_of_global_embeddings	local:of_globalembeddings	local:idea	.
+local:transferred	local:AM-LOC	local:paper	.
+local:show	vn.role:Theme	local:competitive_with_traditional_local_techniques	.
+local:perform	vn.role:Agent	local:vector_space_embeddings	.
+local:local_local_information_information	local:_information	local:local_local_information	.
+local:traditional_local_techniques	rdfs:subClassOf	local:techniques	.
+local:traditional_local	rdfs:subClassOf	local:local	.
+local:local_local_information	rdfs:subClassOf	local:local_information	.
+local:use	vn.role:Recipient	local:ie_ie_rely	.
+local:using	vn.role:Recipient	local:data_mining	.
+local:rdf	rdfs:member	local:rdf_embeddings	.
+local:competitive_with_traditional_local_techniques	local:competitive_with	local:traditional_local_techniques	.
+local:space_embeddings	rdfs:subClassOf	local:embeddings	.
+local:rdf	rdfs:member	local:rdf_data	.
+local:using	vn.role:Theme	local:rdf_data	.
+local:shown	local:AM-PNC	local:well_perform	.
+local:generated	vn.role:other	local:nodes_in_rdf_graph	.
+local:local_local_information	rdfs:subClassOf	local:information	.
+local:local	rdfs:member	local:local_local	.
+local:ie_rely	rdfs:subClassOf	local:rely	.
+local:use	vn.role:Agent	local:existing	.
+local:word_embeddings_global_techniques_suchas_glove	local:wordembeddingsglobaltechniques_such_as	local:glove	.
+local:such_suchas_rdf2vec	local:such_as_rdf2vec	local:such	.
+local:competitive_with_traditional_local_techniques	local:with_traditionallocaltechniques	local:competitive	.
+local:rdf_data_in_data_mining	local:rdfdata_in	local:data_mining	.
+local:traditional_local_techniques	rdfs:subClassOf	local:local_techniques	.
+local:use	vn.role:Recipient	local:rdf2vec_use_local	.
+local:such_such	rdfs:subClassOf	local:such	.
+local:global_embeddings	rdfs:subClassOf	local:embeddings	.
+local:existing_approaches	rdfs:subClassOf	local:approaches	.
+local:data	rdfs:member	local:data_mining	.
+local:when_using	rdfs:subClassOf	local:using	.
+local:local	rdfs:member	local:local_techniques	.
+local:transferred	vn.role:Theme	local:idea_of_global_embeddings	.
+local:rdf2vec_use_local	local:_uselocal	local:rdf2vec	.
+local:generated_for_nodes_nodes	local:for_nodesnodes	local:generated	.

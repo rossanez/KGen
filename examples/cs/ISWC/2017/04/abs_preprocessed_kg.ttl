@@ -13,6 +13,8 @@ local:inherently	rdfs:label	"inherently"	.
 
 local:environment	rdfs:label	"environment"	.
 
+local:remote	rdfs:label	"remote"	.
+
 local:remote_locations	rdfs:label	"remote locations"	.
 
 local:locations	rdfs:label	"locations"	.
@@ -31,6 +33,8 @@ local:affected	rdfs:label	"affected"	.
 
 local:reasoning	rdfs:label	"reasoning"	.
 
+local:constant	rdfs:label	"constant"	.
+
 local:constant_changes	rdfs:label	"constant changes"	.
 
 local:changes	rdfs:label	"changes"	.
@@ -40,6 +44,8 @@ local:address	rdfs:label	"address"	.
 local:problem	rdfs:label	"problem"	.
 
 local:paper	rdfs:label	"paper"	.
+
+local:ontological	rdfs:label	"ontological"	.
 
 local:ontological_data	rdfs:label	"ontological data"	.
 
@@ -59,13 +65,15 @@ local:problem_paper	rdfs:label	"problem paper"	.
 
 local:presents	rdfs:label	"presents"	.
 
-local:empirical_study	rdfs:label	"empirical study"	.
+local:empirical	rdfs:label	"empirical"	.
 
-local:study	rdfs:label	"study"	.
+local:empirical_study	rdfs:label	"empirical study"	.
 
 local:data_affects	rdfs:label	"data affects"	.
 
 local:affects	rdfs:label	"affects"	.
+
+local:study	rdfs:label	"study"	.
 
 local:how_affects	rdfs:label	"how affects"	.
 
@@ -75,29 +83,37 @@ local:outcome	rdfs:label	"outcome"	.
 
 local:we	rdfs:label	"we"	.
 
-local:ontological_information	rdfs:label	"ontological information"	.
+local:additional_ontological	rdfs:label	"additional ontological"	.
 
-local:information	rdfs:label	"information"	.
-
-local:degree_datasets	rdfs:label	"degree datasets"	.
-
-local:datasets	rdfs:label	"datasets"	.
-
-local:external_ontologies	rdfs:label	"external ontologies"	.
-
-local:additional_ontological_information	rdfs:label	"additional ontological information"	.
-
-local:iri_dereferencing	rdfs:label	"iri de-referencing"	.
-
-local:dereferencing	rdfs:label	"de-referencing"	.
+local:additional	rdfs:label	"additional"	.
 
 local:new_derivations	rdfs:label	"new derivations"	.
 
 local:derivations	rdfs:label	"derivations"	.
 
-local:additional_ontological	rdfs:label	"additional ontological"	.
+local:iri_dereferencing	rdfs:label	"iri de-referencing"	.
 
-local:ontological	rdfs:label	"ontological"	.
+local:dereferencing	rdfs:label	"de-referencing"	.
+
+local:ontological_information	rdfs:label	"ontological information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:new	rdfs:label	"new"	.
+
+local:additional_ontological_information	rdfs:label	"additional ontological information"	.
+
+local:degree	rdfs:label	"degree"	.
+
+local:degree_datasets	rdfs:label	"degree datasets"	.
+
+local:external	rdfs:label	"external"	.
+
+local:external_ontologies	rdfs:label	"external ontologies"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:iri	rdfs:label	"iri"	.
 
 local:imports_directive	rdfs:label	"imports directive"	.
 
@@ -136,77 +152,90 @@ local:input_datasets	rdfs:label	"input datasets"	.
 #### Mapped Relations ####
 
 cso:owl	rdfs:label	"owl"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:reasoning	rdfs:label	"reasoning"	.
 local:owl	owl:sameAs	cso:owl	.
-cso:ontologies	rdfs:label	"ontologies"	.
 local:reasoning	owl:sameAs	cso:reasoning	.
 local:distributed_environment	owl:sameAs	cso:distributed_environment	.
 cso:distributed_environment	rdfs:label	"distributed environment"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:reasoning	rdfs:label	"reasoning"	.
 
 #### Relations ####
 
-local:presents	vn.role:Theme	local:empirical_study	.
-local:study	vn.role:Agent	local:we	.
-local:affected	vn.role:Experiencer	local:constant_changes	.
-local:outcome_of_reasoning	local:outcome_of	local:reasoning	.
-local:inclusion_of_additional_ontological_information_via_iri_dereferencing	local:via_iride-referencing	local:inclusion_of_additional_ontological_information	.
-local:ontological_data	rdfs:subClassOf	local:data	.
-local:inclusion_of_additional_ontological_information_via_iri_dereferencing_via_owl	local:inclusionofadditionalontologicalinformationviairide-referencing_via	local:owl	.
-local:distribution_of_ontological_data	local:distribution_of	local:ontological_data	.
-local:degree_datasets	rdfs:subClassOf	local:datasets	.
-local:additional_ontological	rdfs:subClassOf	local:ontological	.
-local:imports_directive_to_input	local:importsdirective_to	local:input	.
-local:distribution_of_ontological_data_on_web	local:on_web	local:distribution_of_ontological_data	.
-local:data_affects	rdfs:subClassOf	local:affects	.
-local:iri_dereferencing	rdfs:subClassOf	local:dereferencing	.
-local:distributed	local:AM-LOC	local:located_in_remote_locations	.
-local:affects	vn.role:Experiencer	local:distribution_of_ontological_data_on_web	.
-local:distribution_of_ontological_data	local:of_ontologicaldata	local:distribution	.
-local:presents	vn.role:Agent	local:problem_paper	.
-local:inclusion_of_additional_ontological_information_via_iri_dereferencing	local:inclusionofadditionalontologicalinformation_via	local:iri_dereferencing	.
-local:imports_directive_to_input	local:to_input	local:imports_directive	.
-local:inclusion_of_additional_ontological_information	local:inclusion_of	local:additional_ontological_information	.
-local:leads	vn.role:Agent	local:inclusion_of_additional_ontological_information_via_iri_dereferencing_via_owl	.
-local:depend	vn.role:Location	local:external_ontologies	.
-local:external_ontologies	rdfs:subClassOf	local:ontologies	.
-local:address	vn.role:Agent	local:distribution_of_ontological_data_on_web	.
-local:located_in_remote_locations	local:in_remotelocations	local:located	.
-local:located	local:AM-LOC	local:remote_locations	.
-local:distributed	vn.role:Theme	local:ontologies	.
-local:web_of_data	local:web_of	local:data	.
-local:located_in_remote_locations	local:located_in	local:remote_locations	.
-local:how_affects	rdfs:subClassOf	local:affects	.
-local:distributed	vn.role:Theme	local:environment	.
-local:inherently_distributed	rdfs:subClassOf	local:distributed	.
-local:inclusion_of_additional_ontological_information_via_iri_dereferencing_via_owl	local:via_owl	local:inclusion_of_additional_ontological_information_via_iri_dereferencing	.
-local:depend_on_external_ontologies_to_extent	local:dependonexternalontologies_to	local:extent	.
-local:address	vn.role:Agent	local:paper	.
-local:web_of_data	local:of_data	local:web	.
-local:additional_ontological_information	rdfs:subClassOf	local:information	.
-local:new_derivations	rdfs:subClassOf	local:derivations	.
-local:leads_to_new_derivations	local:to_newderivations	local:leads	.
 local:input_datasets	rdfs:subClassOf	local:datasets	.
-local:distributed	local:AM-MNR	local:inherently	.
-local:constant_changes	rdfs:subClassOf	local:changes	.
-local:inclusion_of_additional_ontological_information	local:of_additionalontologicalinformation	local:inclusion	.
-local:remote_locations	rdfs:subClassOf	local:locations	.
 local:outcome_of_reasoning	local:of_reasoning	local:outcome	.
-local:located	local:AM-LOC	local:distributed_environment	.
-local:affected	vn.role:Cause	local:reasoning	.
-local:ontological_information	rdfs:subClassOf	local:information	.
-local:problem_paper	rdfs:subClassOf	local:paper	.
-local:empirical_study	rdfs:subClassOf	local:study	.
-local:leads_to_new_derivations	local:leads_to	local:new_derivations	.
-local:study	vn.role:Theme	local:depend_on_external_ontologies_to_extent	.
-local:additional_ontological_information	rdfs:subClassOf	local:ontological_information	.
-local:depend_on_external_ontologies	local:on_externalontologies	local:depend	.
-local:affects	vn.role:Cause	local:outcome_of_reasoning	.
-local:imports_directive	rdfs:subClassOf	local:directive	.
-local:address	vn.role:Theme	local:problem	.
-local:depend_on_external_ontologies	local:depend_on	local:external_ontologies	.
-local:distribution_of_ontological_data_on_web	local:distributionofontologicaldata_on	local:web	.
-local:depend_on_external_ontologies_to_extent	local:to_extent	local:depend_on_external_ontologies	.
+local:located_in_remote_locations	local:located_in	local:remote_locations	.
+local:depend_on_external_ontologies_to_extent	local:dependonexternalontologies_to	local:extent	.
 local:leads	vn.role:Destination	local:new_derivations	.
+local:iri	rdfs:member	local:iri_dereferencing	.
+local:leads_to_new_derivations	local:to_newderivations	local:leads	.
+local:empirical	rdfs:member	local:empirical_study	.
+local:iri_dereferencing	rdfs:subClassOf	local:dereferencing	.
+local:constant_changes	rdfs:subClassOf	local:changes	.
+local:inclusion_of_additional_ontological_information_via_iri_dereferencing	local:via_iride-referencing	local:inclusion_of_additional_ontological_information	.
+local:web_of_data	local:of_data	local:web	.
+local:leads_to_new_derivations	local:leads_to	local:new_derivations	.
+local:degree	rdfs:member	local:degree_datasets	.
+local:data	rdfs:member	local:data_affects	.
+local:affected	vn.role:Cause	local:reasoning	.
+local:located	local:AM-LOC	local:remote_locations	.
+local:empirical_study	rdfs:subClassOf	local:study	.
+local:distributed	vn.role:Theme	local:environment	.
+local:new_derivations	rdfs:subClassOf	local:derivations	.
+local:ontological_information	rdfs:subClassOf	local:information	.
+local:distribution_of_ontological_data	local:distribution_of	local:ontological_data	.
+local:inclusion_of_additional_ontological_information_via_iri_dereferencing_via_owl	local:via_owl	local:inclusion_of_additional_ontological_information_via_iri_dereferencing	.
+local:ontological	rdfs:member	local:ontological_information	.
+local:address	vn.role:Theme	local:problem	.
+local:depend_on_external_ontologies_to_extent	local:to_extent	local:depend_on_external_ontologies	.
+local:remote	rdfs:member	local:remote_locations	.
+local:additional_ontological_information	rdfs:subClassOf	local:information	.
+local:remote_locations	rdfs:subClassOf	local:locations	.
+local:address	vn.role:Agent	local:paper	.
+local:distribution_of_ontological_data_on_web	local:on_web	local:distribution_of_ontological_data	.
+local:depend_on_external_ontologies	local:on_externalontologies	local:depend	.
+local:inclusion_of_additional_ontological_information	local:inclusion_of	local:additional_ontological_information	.
+local:external	rdfs:member	local:external_ontologies	.
+local:inclusion_of_additional_ontological_information_via_iri_dereferencing_via_owl	local:inclusionofadditionalontologicalinformationviairide-referencing_via	local:owl	.
+local:inherently_distributed	rdfs:subClassOf	local:distributed	.
+local:web_of_data	local:web_of	local:data	.
+local:affects	vn.role:Cause	local:outcome_of_reasoning	.
+local:outcome_of_reasoning	local:outcome_of	local:reasoning	.
+local:constant	rdfs:member	local:constant_changes	.
+local:additional_ontological_information	rdfs:subClassOf	local:ontological_information	.
+local:inclusion_of_additional_ontological_information	local:of_additionalontologicalinformation	local:inclusion	.
+local:distributed	local:AM-MNR	local:inherently	.
+local:located	local:AM-LOC	local:distributed_environment	.
+local:imports_directive_to_input	local:importsdirective_to	local:input	.
+local:additional	rdfs:member	local:additional_ontological	.
+local:imports_directive_to_input	local:to_input	local:imports_directive	.
+local:data_affects	rdfs:subClassOf	local:affects	.
+local:ontological	rdfs:member	local:ontological_data	.
+local:affected	vn.role:Experiencer	local:constant_changes	.
+local:degree_datasets	rdfs:subClassOf	local:datasets	.
+local:depend	vn.role:Location	local:external_ontologies	.
+local:additional_ontological	rdfs:member	local:additional_ontological_information	.
+local:located_in_remote_locations	local:in_remotelocations	local:located	.
+local:distributed	local:AM-LOC	local:located_in_remote_locations	.
+local:new	rdfs:member	local:new_derivations	.
+local:inclusion_of_additional_ontological_information_via_iri_dereferencing	local:inclusionofadditionalontologicalinformation_via	local:iri_dereferencing	.
+local:address	vn.role:Agent	local:distribution_of_ontological_data_on_web	.
+local:distributed	vn.role:Theme	local:ontologies	.
+local:additional_ontological	rdfs:subClassOf	local:ontological	.
+local:problem_paper	rdfs:subClassOf	local:paper	.
+local:study	vn.role:Theme	local:depend_on_external_ontologies_to_extent	.
 local:distributed_environment	rdfs:subClassOf	local:environment	.
+local:depend_on_external_ontologies	local:depend_on	local:external_ontologies	.
+local:how_affects	rdfs:subClassOf	local:affects	.
+local:presents	vn.role:Theme	local:empirical_study	.
+local:distribution_of_ontological_data	local:of_ontologicaldata	local:distribution	.
 local:located	vn.role:Theme	local:ontologies	.
+local:external_ontologies	rdfs:subClassOf	local:ontologies	.
+local:imports_directive	rdfs:subClassOf	local:directive	.
+local:distribution_of_ontological_data_on_web	local:distributionofontologicaldata_on	local:web	.
+local:leads	vn.role:Agent	local:inclusion_of_additional_ontological_information_via_iri_dereferencing_via_owl	.
+local:input	rdfs:member	local:input_datasets	.
+local:ontological_data	rdfs:subClassOf	local:data	.
+local:study	vn.role:Agent	local:we	.
+local:affects	vn.role:Experiencer	local:distribution_of_ontological_data_on_web	.
+local:presents	vn.role:Agent	local:problem_paper	.

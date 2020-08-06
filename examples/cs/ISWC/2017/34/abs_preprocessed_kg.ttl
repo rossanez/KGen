@@ -27,23 +27,29 @@ local:ecommerce	rdfs:label	"e-commerce"	.
 
 local:allows	rdfs:label	"allows"	.
 
-local:formal_query_languages	rdfs:label	"formal query languages"	.
+local:intuitive_way	rdfs:label	"intuitive way"	.
 
-local:languages	rdfs:label	"languages"	.
+local:way	rdfs:label	"way"	.
 
 local:formal_query	rdfs:label	"formal query"	.
 
 local:query	rdfs:label	"query"	.
 
-local:intuitive_way	rdfs:label	"intuitive way"	.
-
-local:way	rdfs:label	"way"	.
-
-local:query_languages	rdfs:label	"query languages"	.
+local:intuitive	rdfs:label	"intuitive"	.
 
 local:prior_knowledge	rdfs:label	"prior knowledge"	.
 
 local:knowledge	rdfs:label	"knowledge"	.
+
+local:formal_query_languages	rdfs:label	"formal query languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:prior	rdfs:label	"prior"	.
+
+local:formal	rdfs:label	"formal"	.
+
+local:query_languages	rdfs:label	"query languages"	.
 
 local:construct_in_intuitive_way	rdfs:label	"construct in intuitive way"	.
 
@@ -70,6 +76,8 @@ local:rdf	rdfs:label	"rdf"	.
 local:search_systems	rdfs:label	"search systems"	.
 
 local:systems	rdfs:label	"systems"	.
+
+local:search	rdfs:label	"search"	.
 
 local:faceted_search_systems	rdfs:label	"faceted search systems"	.
 
@@ -107,8 +115,6 @@ local:we	rdfs:label	"we"	.
 
 local:faceted_search	rdfs:label	"faceted search"	.
 
-local:search	rdfs:label	"search"	.
-
 local:faceted_search_over_rdf	rdfs:label	"faceted search over rdf"	.
 
 local:functionalities	rdfs:label	"functionalities"	.
@@ -125,15 +131,15 @@ local:investigate	rdfs:label	"investigate"	.
 
 local:particular	rdfs:label	"particular"	.
 
-local:containment_problems	rdfs:label	"containment problems"	.
-
-local:problems	rdfs:label	"problems"	.
+local:query_containment	rdfs:label	"query containment"	.
 
 local:query_containment_problems	rdfs:label	"query containment problems"	.
 
-local:query_containment	rdfs:label	"query containment"	.
+local:problems	rdfs:label	"problems"	.
 
 local:containment	rdfs:label	"containment"	.
+
+local:containment_problems	rdfs:label	"containment problems"	.
 
 local:complexity_of_query_containment_problems	rdfs:label	"complexity of query containment problems"	.
 
@@ -149,92 +155,102 @@ local:complexity_of_query_answering	rdfs:label	"complexity of query answering"	.
 
 #### Mapped Relations ####
 
-cso:e-commerce	rdfs:label	"e-commerce"	.
-local:rdf	owl:sameAs	cso:rdf	.
-cso:query_languages	local:partOf	local:query_language	.
-cso:query_languages	rdfs:label	"query languages"	.
-local:partof	rdfs:label	"Part Of"	.
-local:query_containment	owl:sameAs	cso:query_containment	.
-cso:query_languages	local:partOf	local:query_languages	.
-local:ecommerce	owl:sameAs	cso:e-commerce	.
-local:query_answering	owl:sameAs	cso:query_answering	.
-cso:query_containment	rdfs:label	"query containment"	.
 cso:rdf	rdfs:label	"rdf"	.
-cso:query_answering	rdfs:label	"query answering"	.
+cso:query_containment	rdfs:label	"query containment"	.
+local:ecommerce	owl:sameAs	cso:e-commerce	.
 cso:query_languages	rdfs:label	"query language"	.
+cso:query_languages	rdfs:label	"query languages"	.
+cso:query_languages	rdfs:member	local:query_language	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:query_answering	rdfs:label	"query answering"	.
+cso:e-commerce	rdfs:label	"e-commerce"	.
+local:query_containment	owl:sameAs	cso:query_containment	.
+cso:query_languages	rdfs:member	local:query_languages	.
+local:query_answering	owl:sameAs	cso:query_answering	.
 
 #### Relations ####
 
-local:queries_with_aggregation_with_recursion	local:querieswithaggregation_with	local:recursion	.
-local:investigate	vn.role:Location	local:complexity_of_query_containment_problems	.
-local:exploration_of_data_in_ecommerce	local:explorationofdata_in	local:ecommerce	.
-local:facto_approach	rdfs:subClassOf	local:approach	.
-local:faceted_search_systems	rdfs:subClassOf	local:search_systems	.
-local:poses	vn.role:Predicate	local:limitations	.
-local:construct	vn.role:Product	local:queries_with_aggregation_with_recursion	.
-local:extend	vn.role:Recipient	local:functionalities	.
-local:construct_in_intuitive_way_without_prior_knowledge	local:constructinintuitiveway_without	local:prior_knowledge	.
-local:allow	local:AM-NEG	local:not	.
-local:de_facto_approach	rdfs:subClassOf	local:facto_approach	.
-local:construct	vn.role:Product	local:queries	.
-local:query_languages	rdfs:subClassOf	local:languages	.
-local:adapted	local:AM-TMP	local:recently	.
-local:context_of_rdf	local:of_rdf	local:context	.
-local:extend	vn.role:Agent	local:we	.
-local:prior_knowledge	rdfs:subClassOf	local:knowledge	.
-local:prior_knowledge_of_formal_query_languages	local:of_formalquerylanguages	local:prior_knowledge	.
-local:construct	local:AM-MNR	local:intuitive_way	.
-local:allows	vn.role:Theme	local:users	.
-local:exploration_of_data_in_ecommerce	local:in_e-commerce	local:exploration_of_data	.
-local:queries_with_aggregation	local:queries_with	local:aggregation	.
-local:query_language	rdfs:subClassOf	local:language	.
-local:investigate	vn.role:Location	local:complexity_of_query_answering	.
-local:complexity_of_query_containment_problems	local:complexity_of	local:query_containment_problems	.
-local:construct	local:AM-MNR	local:prior_knowledge_of_formal_query_languages	.
-local:queries_with_aggregation	local:with_aggregation	local:queries	.
-local:adapted	vn.role:indirect_object	local:context_of_rdf	.
-local:study	local:AM-LOC	local:work	.
-local:allows	vn.role:Agent	local:de_facto_approach_for_exploration	.
-local:exploration_of_data	local:of_data	local:exploration	.
-local:existing_faceted_search_systems	rdfs:subClassOf	local:faceted_search_systems	.
-local:construct_in_intuitive_way	local:construct_in	local:intuitive_way	.
-local:investigate	vn.role:Agent	local:we	.
-local:query_answering	rdfs:subClassOf	local:answering	.
-local:search_systems	rdfs:subClassOf	local:systems	.
-local:allow	local:AM-DIS	local:however	.
-local:corresponding_query_language	rdfs:subClassOf	local:query_language	.
-local:faceted_search_over_rdf	local:over_rdf	local:faceted_search	.
-local:complexity_of_query_answering	local:complexity_of	local:query_answering	.
-local:construct	vn.role:Agent	local:users	.
-local:adapted	vn.role:Patient	local:de_facto_approach_for_exploration	.
-local:queries_with_aggregation_with_recursion	local:with_recursion	local:queries_with_aggregation	.
-local:construct_in_intuitive_way	local:in_intuitiveway	local:construct	.
-local:faceted_search	rdfs:subClassOf	local:search	.
-local:exploration_of_data	local:exploration_of	local:data	.
-local:complexity_of_query_answering	local:of_queryanswering	local:complexity	.
-local:poses_in_practice	local:in_practice	local:poses	.
-local:study	vn.role:Agent	local:we	.
-local:extend	local:AM-LOC	local:work	.
 local:context_of_rdf	local:context_of	local:rdf	.
-local:intuitive_way	rdfs:subClassOf	local:way	.
 local:poses_in_practice	local:poses_in	local:practice	.
-local:de_facto_approach_for_exploration	local:defactoapproach_for	local:exploration	.
-local:allow	vn.role:Theme	local:users	.
-local:formal_query_languages	rdfs:subClassOf	local:query_languages	.
 local:formal_query_languages	rdfs:subClassOf	local:languages	.
-local:investigate	local:AM-LOC	local:particular	.
-local:formal_query	rdfs:subClassOf	local:query	.
-local:construct_in_intuitive_way_without_prior_knowledge	local:without_priorknowledge	local:construct_in_intuitive_way	.
-local:query_containment	rdfs:subClassOf	local:containment	.
-local:query_containment_problems	rdfs:subClassOf	local:problems	.
-local:allow	vn.role:Agent	local:existing_faceted_search_systems	.
-local:extend	vn.role:Theme	local:faceted_search_over_rdf	.
-local:prior_knowledge_of_formal_query_languages	local:priorknowledge_of	local:formal_query_languages	.
-local:existing	vn.role:Location	local:faceted_search_systems	.
-local:poses	local:AM-LOC	local:practice	.
-local:faceted_search_over_rdf	local:facetedsearch_over	local:rdf	.
-local:containment_problems	rdfs:subClassOf	local:problems	.
 local:de_facto_approach_for_exploration	local:for_exploration	local:de_facto_approach	.
-local:query_containment_problems	rdfs:subClassOf	local:containment_problems	.
-local:complexity_of_query_containment_problems	local:of_querycontainmentproblems	local:complexity	.
+local:complexity_of_query_answering	local:of_queryanswering	local:complexity	.
+local:facto_approach	rdfs:subClassOf	local:approach	.
+local:construct_in_intuitive_way_without_prior_knowledge	local:constructinintuitiveway_without	local:prior_knowledge	.
+local:query_languages	rdfs:subClassOf	local:languages	.
+local:poses	local:AM-LOC	local:practice	.
+local:prior_knowledge_of_formal_query_languages	local:of_formalquerylanguages	local:prior_knowledge	.
+local:corresponding_query_language	rdfs:subClassOf	local:query_language	.
+local:construct	vn.role:Product	local:queries_with_aggregation_with_recursion	.
+local:allow	vn.role:Agent	local:existing_faceted_search_systems	.
+local:query_containment	rdfs:subClassOf	local:containment	.
+local:query_containment	rdfs:member	local:query_containment_problems	.
+local:investigate	vn.role:Location	local:complexity_of_query_containment_problems	.
+local:investigate	vn.role:Location	local:complexity_of_query_answering	.
 local:study	vn.role:Theme	local:corresponding_query_language	.
+local:extend	vn.role:Recipient	local:functionalities	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:complexity_of_query_answering	local:complexity_of	local:query_answering	.
+local:faceted_search_over_rdf	local:facetedsearch_over	local:rdf	.
+local:investigate	vn.role:Agent	local:we	.
+local:context_of_rdf	local:of_rdf	local:context	.
+local:adapted	vn.role:indirect_object	local:context_of_rdf	.
+local:investigate	local:AM-LOC	local:particular	.
+local:query	rdfs:member	local:query_language	.
+local:study	local:AM-LOC	local:work	.
+local:containment	rdfs:member	local:containment_problems	.
+local:allow	local:AM-DIS	local:however	.
+local:query_containment_problems	rdfs:subClassOf	local:containment_problems	.
+local:poses	vn.role:Predicate	local:limitations	.
+local:faceted_search_over_rdf	local:over_rdf	local:faceted_search	.
+local:query_containment_problems	rdfs:subClassOf	local:problems	.
+local:construct_in_intuitive_way_without_prior_knowledge	local:without_priorknowledge	local:construct_in_intuitive_way	.
+local:allows	vn.role:Theme	local:users	.
+local:prior_knowledge	rdfs:subClassOf	local:knowledge	.
+local:construct	vn.role:Product	local:queries	.
+local:query	rdfs:member	local:query_answering	.
+local:construct_in_intuitive_way	local:in_intuitiveway	local:construct	.
+local:prior	rdfs:member	local:prior_knowledge	.
+local:queries_with_aggregation_with_recursion	local:querieswithaggregation_with	local:recursion	.
+local:formal_query	rdfs:subClassOf	local:query	.
+local:study	vn.role:Agent	local:we	.
+local:allow	local:AM-NEG	local:not	.
+local:query	rdfs:member	local:query_containment	.
+local:queries_with_aggregation	local:with_aggregation	local:queries	.
+local:prior_knowledge_of_formal_query_languages	local:priorknowledge_of	local:formal_query_languages	.
+local:adapted	vn.role:Patient	local:de_facto_approach_for_exploration	.
+local:extend	vn.role:Agent	local:we	.
+local:faceted_search	rdfs:subClassOf	local:search	.
+local:construct_in_intuitive_way	local:construct_in	local:intuitive_way	.
+local:allows	vn.role:Agent	local:de_facto_approach_for_exploration	.
+local:intuitive	rdfs:member	local:intuitive_way	.
+local:exploration_of_data_in_ecommerce	local:in_e-commerce	local:exploration_of_data	.
+local:construct	local:AM-MNR	local:prior_knowledge_of_formal_query_languages	.
+local:search	rdfs:member	local:search_systems	.
+local:de_facto_approach	rdfs:subClassOf	local:facto_approach	.
+local:existing	vn.role:Location	local:faceted_search_systems	.
+local:queries_with_aggregation	local:queries_with	local:aggregation	.
+local:containment_problems	rdfs:subClassOf	local:problems	.
+local:query_language	rdfs:subClassOf	local:language	.
+local:formal_query	rdfs:member	local:formal_query_languages	.
+local:exploration_of_data	local:of_data	local:exploration	.
+local:exploration_of_data_in_ecommerce	local:explorationofdata_in	local:ecommerce	.
+local:intuitive_way	rdfs:subClassOf	local:way	.
+local:construct	local:AM-MNR	local:intuitive_way	.
+local:search_systems	rdfs:subClassOf	local:systems	.
+local:faceted_search_systems	rdfs:subClassOf	local:search_systems	.
+local:allow	vn.role:Theme	local:users	.
+local:complexity_of_query_containment_problems	local:of_querycontainmentproblems	local:complexity	.
+local:query	rdfs:member	local:query_languages	.
+local:extend	vn.role:Theme	local:faceted_search_over_rdf	.
+local:queries_with_aggregation_with_recursion	local:with_recursion	local:queries_with_aggregation	.
+local:existing_faceted_search_systems	rdfs:subClassOf	local:faceted_search_systems	.
+local:formal	rdfs:member	local:formal_query	.
+local:extend	local:AM-LOC	local:work	.
+local:de_facto_approach_for_exploration	local:defactoapproach_for	local:exploration	.
+local:exploration_of_data	local:exploration_of	local:data	.
+local:complexity_of_query_containment_problems	local:complexity_of	local:query_containment_problems	.
+local:construct	vn.role:Agent	local:users	.
+local:poses_in_practice	local:in_practice	local:poses	.
+local:adapted	local:AM-TMP	local:recently	.
+local:formal_query_languages	rdfs:subClassOf	local:query_languages	.

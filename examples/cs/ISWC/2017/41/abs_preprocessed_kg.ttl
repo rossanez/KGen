@@ -13,17 +13,23 @@ local:paper	rdfs:label	"paper"	.
 
 local:we	rdfs:label	"we"	.
 
-local:sparql_language	rdfs:label	"sparql language"	.
+local:main_body	rdfs:label	"main body"	.
 
-local:language	rdfs:label	"language"	.
+local:body	rdfs:label	"body"	.
+
+local:sparql	rdfs:label	"sparql"	.
+
+local:sparql_language	rdfs:label	"sparql language"	.
 
 local:query_results	rdfs:label	"query results"	.
 
 local:results	rdfs:label	"results"	.
 
-local:main_body	rdfs:label	"main body"	.
+local:language	rdfs:label	"language"	.
 
-local:body	rdfs:label	"body"	.
+local:main	rdfs:label	"main"	.
+
+local:query	rdfs:label	"query"	.
 
 local:soft_preferences	rdfs:label	"soft preferences"	.
 
@@ -38,8 +44,6 @@ local:extension	rdfs:label	"extension"	.
 local:extension_of_sparql_language	rdfs:label	"extension of sparql language"	.
 
 local:soft_preferences_over_query	rdfs:label	"soft preferences over query"	.
-
-local:query	rdfs:label	"query"	.
 
 local:results_obtained	rdfs:label	"results obtained"	.
 
@@ -57,23 +61,23 @@ local:clause	rdfs:label	"clause"	.
 
 local:expresses	rdfs:label	"expresses"	.
 
-local:equivalent_standard_sparql	rdfs:label	"equivalent standard sparql"	.
-
-local:sparql	rdfs:label	"sparql"	.
-
-local:sparql_query	rdfs:label	"sparql query"	.
-
-local:equivalent_standard	rdfs:label	"equivalent standard"	.
-
 local:standard	rdfs:label	"standard"	.
-
-local:sprefql_query	rdfs:label	"sprefql query"	.
 
 local:standard_sparql	rdfs:label	"standard sparql"	.
 
-local:equivalent_standard_sparql_query	rdfs:label	"equivalent standard sparql query"	.
+local:equivalent_standard	rdfs:label	"equivalent standard"	.
+
+local:equivalent_standard_sparql	rdfs:label	"equivalent standard sparql"	.
 
 local:standard_sparql_query	rdfs:label	"standard sparql query"	.
+
+local:sprefql_query	rdfs:label	"sprefql query"	.
+
+local:sparql_query	rdfs:label	"sparql query"	.
+
+local:equivalent_standard_sparql_query	rdfs:label	"equivalent standard sparql query"	.
+
+local:equivalent	rdfs:label	"equivalent"	.
 
 local:can_transformed	rdfs:label	"can transformed"	.
 
@@ -137,6 +141,8 @@ local:machine_optimization	rdfs:label	"machine optimization"	.
 
 local:optimization	rdfs:label	"optimization"	.
 
+local:machine	rdfs:label	"machine"	.
+
 local:cleanly_expressed	rdfs:label	"cleanly expressed"	.
 
 local:expressed	rdfs:label	"expressed,"	.
@@ -152,6 +158,8 @@ local:advantage_for_machine_optimization	rdfs:label	"advantage for machine optim
 local:advantage	rdfs:label	"advantage"	.
 
 local:queries	rdfs:label	"queries"	.
+
+local:human	rdfs:label	"human"	.
 
 local:human_readability	rdfs:label	"human readability"	.
 
@@ -169,9 +177,13 @@ local:empirical_evidence	rdfs:label	"empirical evidence"	.
 
 local:evidence	rdfs:label	"evidence"	.
 
+local:runtime	rdfs:label	"run-time"	.
+
 local:runtime_efficiency	rdfs:label	"run-time efficiency"	.
 
 local:efficiency	rdfs:label	"efficiency"	.
+
+local:empirical	rdfs:label	"empirical"	.
 
 local:applied_optimizations	rdfs:label	"applied optimizations"	.
 
@@ -217,137 +229,151 @@ local:usually	rdfs:label	"usually"	.
 
 #### Mapped Relations ####
 
-local:semantics	owl:sameAs	cso:semantics	.
-local:query_results	owl:sameAs	cso:query_results	.
-local:partof	rdfs:label	"Part Of"	.
-cso:optimization	local:partOf	local:optimizations	.
-local:sparql	owl:sameAs	cso:sparql	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:semantics	rdfs:label	"semantics"	.
 cso:query_results	rdfs:label	"query results"	.
-cso:optimization	local:partOf	local:optimization	.
+cso:optimization	rdfs:member	local:optimization	.
 cso:optimization	rdfs:label	"optimization"	.
+local:sparql	owl:sameAs	cso:sparql	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantics"	.
 cso:optimization	rdfs:label	"optimizations"	.
+local:query_results	owl:sameAs	cso:query_results	.
+cso:optimization	rdfs:member	local:optimizations	.
+cso:sparql	rdfs:label	"sparql"	.
 
 #### Relations ####
 
-local:soft_preferences_over_query	local:softpreferences_over	local:query	.
-local:can_transformed	rdfs:subClassOf	local:transformed	.
-local:define	vn.role:Agent	local:we	.
-local:equivalent_standard_sparql	rdfs:subClassOf	local:sparql	.
-local:not_add	rdfs:subClassOf	local:add	.
-local:advantage_for_machine_optimization	local:for_machineoptimization	local:advantage	.
-local:applied_optimizations_on_equivalent_standard_sparql_query	local:on_equivalentstandardsparqlquery	local:applied_optimizations	.
-local:obtained	vn.role:object	local:query_results	.
-local:appending	vn.role:Patient	local:does_not_add	.
-local:results_obtained	local:results_	local:obtained	.
-local:provide	vn.role:Agent	local:empirical_evidence	.
-local:standard_sparql	rdfs:subClassOf	local:sparql	.
-local:query_results	rdfs:subClassOf	local:results	.
 local:runtime_efficiency_by_comparison	local:run-timeefficiency_by	local:comparison	.
-local:separating	vn.role:Agent	local:however	.
-local:semantics_of_extension	local:of_extension	local:semantics	.
-local:hard_patterns_in_where_clause	local:in_whereclause	local:hard_patterns	.
-local:appending	vn.role:Patient	local:clause	.
-local:provide	local:AM-DIS	local:also	.
-local:improve	vn.role:Patient	local:runtime_efficiency_by_comparison	.
-local:improve	vn.role:Agent	local:specific_optimizations	.
-local:main_body	rdfs:subClassOf	local:body	.
-local:runtime_efficiency_by_comparison	local:by_comparison	local:runtime_efficiency	.
-local:where_cleanly_expressed	rdfs:subClassOf	local:cleanly_expressed	.
-local:separating	local:AM-ADV	local:clearly	.
-local:obtained_by_main_body	local:by_mainbody	local:obtained	.
-local:expressed	vn.role:object	local:advantage	.
-local:expressed	vn.role:object	local:advantage_for_human_readability	.
-local:hard_patterns_in_where_clause	local:hardpatterns_in	local:where_clause	.
-local:add	local:AM-NEG	local:not	.
-local:specific_to_sprefql	local:specific_to	local:sprefql	.
-local:can_transformed_to_equivalent_standard_sparql_query	local:cantransformed_to	local:equivalent_standard_sparql_query	.
-local:separating_preferences_from_hard_patterns_from_filters	local:from_filters	local:separating_preferences_from_hard_patterns	.
-local:expressed	vn.role:subject	local:intention_of_client	.
-local:where_gives	rdfs:subClassOf	local:gives	.
-local:expressed	vn.role:subject	local:queries	.
-local:allows	vn.role:Agent	local:sparql_language	.
-local:empirical_evidence	rdfs:subClassOf	local:evidence	.
-local:transformed	vn.role:Patient	local:extension_of_sparql_language	.
-local:intention_of_client	local:intention_of	local:client	.
-local:comparison_to_applied_optimizations	local:to_appliedoptimizations	local:comparison	.
-local:sparql_language	rdfs:subClassOf	local:language	.
-local:semantics_of_extension	local:semantics_of	local:extension	.
-local:preferences_from_hard_patterns	local:preferences_from	local:hard_patterns	.
-local:hard_patterns	rdfs:subClassOf	local:patterns	.
-local:present	vn.role:Theme	local:sprefql	.
-local:define	local:AM-LOC	local:paper	.
-local:improve_by_comparison	local:by_comparison	local:improve	.
-local:extension_of_sparql_language	local:of_sparqllanguage	local:extension	.
-local:sprefql_extension	local:_extension	local:sprefql	.
-local:results_obtained	local:_obtained	local:results	.
-local:provide	vn.role:Recipient	local:we	.
-local:present	vn.role:Theme	local:sprefql_extension	.
-local:also_provide	rdfs:subClassOf	local:provide	.
-local:expresses	vn.role:Agent	local:does_not_add	.
-local:allows	vn.role:Agent	local:extension_of_sparql_language	.
-local:transformed	vn.role:Product	local:equivalent_standard_sparql_query	.
-local:separating_preferences_from_hard_patterns	local:separatingpreferences_from	local:hard_patterns	.
-local:expressed	vn.role:indirect_object	local:machine_optimization	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:define	local:AM-MNR	local:formally	.
-local:obtained_by_main_body	local:obtained_by	local:main_body	.
-local:expresses	vn.role:Theme	local:clause	.
 local:cleanly_expressed	rdfs:subClassOf	local:expressed	.
-local:intention_of_client	local:of_client	local:intention	.
-local:soft_preferences_over_query	local:over_query	local:soft_preferences	.
-local:human_readability	rdfs:subClassOf	local:readability	.
-local:advantage_for_machine_optimization	local:advantage_for	local:machine_optimization	.
-local:gives	vn.role:Asset	local:however	.
-local:obtained	vn.role:Asset	local:main_body_of_query	.
-local:separating	vn.role:Theme	local:preferences_from_hard_patterns_from_filters	.
-local:improve_by_comparison	local:improve_by	local:comparison	.
-local:specific_to_sprefql	local:to_sprefql	local:specific	.
-local:machine_optimization	rdfs:subClassOf	local:optimization	.
-local:sprefql_extension	local:sprefql_	local:extension	.
-local:expressed	local:AM-MNR	local:cleanly	.
-local:specific_optimizations	rdfs:subClassOf	local:optimizations	.
-local:extension_of_sparql_language	local:extension_of	local:sparql_language	.
-local:standard_sparql_query	rdfs:subClassOf	local:query	.
-local:present	vn.role:Agent	local:we	.
-local:hard_patterns_in_	local:hardpatterns_in	local:	.
+local:semantics_of_extension	local:semantics_of	local:extension	.
+local:provide	vn.role:Recipient	local:we	.
 local:equivalent_standard_sparql_query	rdfs:subClassOf	local:standard_sparql_query	.
+local:improve	vn.role:Agent	local:specific_optimizations	.
 local:does_not_add	rdfs:subClassOf	local:not_add	.
-local:standard_sparql_query	rdfs:subClassOf	local:sparql_query	.
-local:can_transformed_to_equivalent_standard_sparql_query	local:to_equivalentstandardsparqlquery	local:can_transformed	.
-local:applied	local:AM-TMP	local:usually	.
-local:gives	vn.role:object	local:queries	.
-local:equivalent_standard	rdfs:subClassOf	local:standard	.
-local:main_body_of_query	local:mainbody_of	local:query	.
-local:more_cleanly	rdfs:subClassOf	local:cleanly	.
-local:where_clause	rdfs:subClassOf	local:clause	.
-local:applied_optimizations	rdfs:subClassOf	local:optimizations	.
-local:present	local:AM-LOC	local:paper	.
-local:expresses	vn.role:Agent	local:soft_preferences_over_query	.
-local:preferences_from_hard_patterns	local:from_hardpatterns	local:preferences	.
-local:preferences_from_hard_patterns_from_filters	local:from_filters	local:preferences_from_hard_patterns	.
-local:advantage_for_human_readability	local:for_humanreadability	local:advantage	.
-local:applied	vn.role:Theme	local:optimizations	.
-local:separating_preferences_from_hard_patterns_from_filters	local:separatingpreferencesfromhardpatterns_from	local:filters	.
-local:soft_preferences	rdfs:subClassOf	local:preferences	.
-local:equivalent_standard_sparql_query	rdfs:subClassOf	local:query	.
-local:add	vn.role:Agent	local:extension_of_sparql_language	.
-local:separating_preferences	rdfs:subClassOf	local:preferences	.
-local:runtime_efficiency	rdfs:subClassOf	local:efficiency	.
-local:allows	vn.role:Theme	local:appending	.
-local:clearly_separating	rdfs:subClassOf	local:separating	.
-local:applied	vn.role:Recipient	local:equivalent_standard_sparql_query	.
 local:preferences_from_hard_patterns_from_filters	local:preferencesfromhardpatterns_from	local:filters	.
-local:applied_optimizations_on_equivalent_standard_sparql_query	local:appliedoptimizations_on	local:equivalent_standard_sparql_query	.
+local:obtained_by_main_body	local:by_mainbody	local:obtained	.
+local:expresses	vn.role:Theme	local:clause	.
+local:clearly_separating	rdfs:subClassOf	local:separating	.
+local:provide	local:AM-DIS	local:also	.
+local:can_transformed	rdfs:subClassOf	local:transformed	.
+local:separating_preferences_from_hard_patterns_from_filters	local:separatingpreferencesfromhardpatterns_from	local:filters	.
+local:present	vn.role:Theme	local:sprefql_extension	.
+local:separating_preferences_from_hard_patterns	local:separatingpreferences_from	local:hard_patterns	.
+local:human_readability	rdfs:subClassOf	local:readability	.
+local:equivalent_standard_sparql_query	rdfs:subClassOf	local:query	.
+local:improve	vn.role:Patient	local:runtime_efficiency_by_comparison	.
+local:add	local:AM-NEG	local:not	.
+local:separating	vn.role:Theme	local:preferences_from_hard_patterns_from_filters	.
+local:allows	vn.role:Agent	local:extension_of_sparql_language	.
+local:expressed	vn.role:indirect_object	local:machine_optimization	.
+local:specific_to_sprefql	local:to_sprefql	local:specific	.
+local:sprefql_extension	local:_extension	local:sprefql	.
 local:sprefql_query	rdfs:subClassOf	local:query	.
-local:define	vn.role:Theme	local:syntax	.
+local:appending	vn.role:Patient	local:clause	.
+local:standard_sparql	rdfs:subClassOf	local:sparql	.
+local:query	rdfs:member	local:query_results	.
+local:runtime_efficiency	rdfs:subClassOf	local:efficiency	.
 local:comparison_to_applied_optimizations	local:comparison_to	local:applied_optimizations	.
+local:transformed	vn.role:Product	local:equivalent_standard_sparql_query	.
+local:advantage_for_machine_optimization	local:advantage_for	local:machine_optimization	.
+local:main	rdfs:member	local:main_body	.
+local:where_gives	rdfs:subClassOf	local:gives	.
+local:specific_optimizations	rdfs:subClassOf	local:optimizations	.
+local:obtained_by_main_body	local:obtained_by	local:main_body	.
+local:results_obtained	local:results_	local:obtained	.
+local:also_provide	rdfs:subClassOf	local:provide	.
+local:advantage_for_machine_optimization	local:for_machineoptimization	local:advantage	.
+local:where_cleanly_expressed	rdfs:subClassOf	local:cleanly_expressed	.
+local:expressed	vn.role:subject	local:intention_of_client	.
+local:intention_of_client	local:of_client	local:intention	.
+local:gives	vn.role:Asset	local:however	.
+local:improve_by_comparison	local:improve_by	local:comparison	.
+local:comparison_to_applied_optimizations	local:to_appliedoptimizations	local:comparison	.
+local:define	local:AM-LOC	local:paper	.
+local:main_body	rdfs:subClassOf	local:body	.
+local:provide	vn.role:Agent	local:empirical_evidence	.
+local:machine	rdfs:member	local:machine_optimization	.
+local:main_body_of_query	local:mainbody_of	local:query	.
+local:obtained	vn.role:object	local:query_results	.
+local:runtime_efficiency_by_comparison	local:by_comparison	local:runtime_efficiency	.
+local:equivalent_standard	rdfs:member	local:equivalent_standard_sparql	.
+local:present	rdfs:member	local:present_sprefql	.
+local:soft_preferences_over_query	local:softpreferences_over	local:query	.
 local:hard_patterns_in_	local:in_``	local:hard_patterns	.
-local:usually_applied	rdfs:subClassOf	local:applied	.
-local:present_sprefql	rdfs:subClassOf	local:sprefql	.
-local:main_body_of_query	local:of_query	local:main_body	.
-local:advantage_for_human_readability	local:advantage_for	local:human_readability	.
-local:add	vn.role:Patient	local:can_transformed_to_equivalent_standard_sparql_query	.
+local:allows	vn.role:Theme	local:appending	.
+local:empirical_evidence	rdfs:subClassOf	local:evidence	.
+local:define	vn.role:Theme	local:syntax	.
+local:hard_patterns_in_where_clause	local:hardpatterns_in	local:where_clause	.
+local:expressed	vn.role:subject	local:queries	.
+local:present	local:AM-LOC	local:paper	.
+local:sparql	rdfs:member	local:sparql_language	.
+local:expresses	vn.role:Agent	local:does_not_add	.
+local:can_transformed_to_equivalent_standard_sparql_query	local:to_equivalentstandardsparqlquery	local:can_transformed	.
+local:define	vn.role:Agent	local:we	.
+local:preferences_from_hard_patterns	local:preferences_from	local:hard_patterns	.
+local:applied_optimizations_on_equivalent_standard_sparql_query	local:on_equivalentstandardsparqlquery	local:applied_optimizations	.
+local:equivalent_standard_sparql	rdfs:member	local:equivalent_standard_sparql_query	.
+local:soft_preferences	rdfs:subClassOf	local:preferences	.
+local:hard_patterns_in_	local:hardpatterns_in	local:	.
 local:separating_preferences_from_hard_patterns	local:from_hardpatterns	local:separating_preferences	.
+local:applied_optimizations_on_equivalent_standard_sparql_query	local:appliedoptimizations_on	local:equivalent_standard_sparql_query	.
+local:equivalent_standard	rdfs:subClassOf	local:standard	.
+local:main_body_of_query	local:of_query	local:main_body	.
+local:sparql_language	rdfs:subClassOf	local:language	.
+local:hard_patterns_in_where_clause	local:in_whereclause	local:hard_patterns	.
+local:add	vn.role:Patient	local:can_transformed_to_equivalent_standard_sparql_query	.
+local:improve_by_comparison	local:by_comparison	local:improve	.
+local:standard_sparql_query	rdfs:subClassOf	local:query	.
+local:transformed	vn.role:Patient	local:extension_of_sparql_language	.
+local:extension_of_sparql_language	local:of_sparqllanguage	local:extension	.
+local:advantage_for_human_readability	local:for_humanreadability	local:advantage	.
+local:standard	rdfs:member	local:standard_sparql	.
+local:preferences_from_hard_patterns	local:from_hardpatterns	local:preferences	.
+local:query_results	rdfs:subClassOf	local:results	.
+local:allows	vn.role:Agent	local:sparql_language	.
+local:human	rdfs:member	local:human_readability	.
+local:present	vn.role:Theme	local:sprefql	.
+local:standard_sparql_query	rdfs:subClassOf	local:sparql_query	.
+local:define	local:AM-MNR	local:formally	.
+local:expressed	local:AM-MNR	local:cleanly	.
+local:extension_of_sparql_language	local:extension_of	local:sparql_language	.
+local:separating	vn.role:Agent	local:however	.
+local:advantage_for_human_readability	local:advantage_for	local:human_readability	.
+local:expresses	vn.role:Agent	local:soft_preferences_over_query	.
+local:separating_preferences	rdfs:subClassOf	local:preferences	.
+local:not_add	rdfs:subClassOf	local:add	.
+local:gives	vn.role:object	local:queries	.
+local:results_obtained	local:_obtained	local:results	.
+local:standard_sparql	rdfs:member	local:standard_sparql_query	.
+local:applied	vn.role:Recipient	local:equivalent_standard_sparql_query	.
+local:semantics_of_extension	local:of_extension	local:semantics	.
+local:expressed	vn.role:object	local:advantage_for_human_readability	.
+local:empirical	rdfs:member	local:empirical_evidence	.
+local:machine_optimization	rdfs:subClassOf	local:optimization	.
+local:where_clause	rdfs:subClassOf	local:clause	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:sprefql	rdfs:member	local:sprefql_query	.
+local:preferences_from_hard_patterns_from_filters	local:from_filters	local:preferences_from_hard_patterns	.
+local:separating	local:AM-ADV	local:clearly	.
+local:expressed	vn.role:object	local:advantage	.
+local:equivalent_standard_sparql	rdfs:subClassOf	local:sparql	.
+local:usually_applied	rdfs:subClassOf	local:applied	.
+local:sprefql_extension	local:sprefql_	local:extension	.
+local:soft_preferences_over_query	local:over_query	local:soft_preferences	.
+local:hard_patterns	rdfs:subClassOf	local:patterns	.
+local:applied	vn.role:Theme	local:optimizations	.
+local:more_cleanly	rdfs:subClassOf	local:cleanly	.
+local:sparql	rdfs:member	local:sparql_query	.
+local:applied	local:AM-TMP	local:usually	.
+local:can_transformed_to_equivalent_standard_sparql_query	local:cantransformed_to	local:equivalent_standard_sparql_query	.
+local:intention_of_client	local:intention_of	local:client	.
+local:obtained	vn.role:Asset	local:main_body_of_query	.
+local:equivalent	rdfs:member	local:equivalent_standard	.
 local:transformed	local:AM-MOD	local:can	.
+local:runtime	rdfs:member	local:runtime_efficiency	.
+local:present	vn.role:Agent	local:we	.
+local:applied_optimizations	rdfs:subClassOf	local:optimizations	.
+local:appending	vn.role:Patient	local:does_not_add	.
+local:specific_to_sprefql	local:specific_to	local:sprefql	.
+local:separating_preferences_from_hard_patterns_from_filters	local:from_filters	local:separating_preferences_from_hard_patterns	.
+local:present_sprefql	rdfs:subClassOf	local:sprefql	.
+local:add	vn.role:Agent	local:extension_of_sparql_language	.
