@@ -27,7 +27,7 @@ class SecondaryFactsExtractor:
                     part = ' '.join(gram[:-1])
 
                     entity_composites.add((subClass, 'rdfs:subClassOf', klass))
-                    #entity_composites.add((part, 'local:partOf', subClass))
+                    entity_composites.add((part, 'rdfs:member', subClass))
 
         return entity_composites
 
@@ -107,6 +107,7 @@ class SecondaryFactsExtractor:
 
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
+                    print(elem)
 
                     if elem[1] == 'nmod:poss':
                         continue
