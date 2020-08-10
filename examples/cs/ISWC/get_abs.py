@@ -44,7 +44,7 @@ def extract_abstract(base_url, number):
     # This format is for the springer front page (as of jul/2020)
     abstract = soup.find('section', class_='Abstract').find('p', class_='Para').text
 
-    command = 'echo "{}" | detex'.format(abstract)
+    command = 'echo "{}" | detex'.format(abstract.replace('%', ' percent'))
     detex_process = Popen([command, '-p'], stdout=PIPE, shell=True)
     detex_out = detex_process.communicate()[0]
 
@@ -53,7 +53,6 @@ def extract_abstract(base_url, number):
     out = REF_REGEX.sub('', out)
     out = ETC_REGEX.sub('', out)
     out = CHARS_REGEX.sub('', out)
-    out = out.replace('%', 'percent')
 
     with open(abs_out_file, 'w') as output_abs_file:
         output_abs_file.write(out)
