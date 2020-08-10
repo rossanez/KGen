@@ -4,7 +4,9 @@ import requests
 
 from argparse import ArgumentParser
 from bs4 import BeautifulSoup
+from subprocess import Popen, PIPE
 from sys import argv
+from sys import stderr
 
 ENUM_REGEX = re.compile(r"\(\s*(i|v|[0-9])+\s*\)", re.IGNORECASE)
 ENUM_ALPHA_LOWER_REGEX = re.compile(r"\(\s*[a-e]\s*\)")
@@ -42,7 +44,11 @@ def extract_abstract(base_url, number):
     # This format is for the springer front page (as of jul/2020)
     abstract = soup.find('section', class_='Abstract').find('p', class_='Para').text
 
-    out = ENUM_REGEX.sub('', abstract)
+    command = 'echo "{}" | detex'.format(abstract)
+    detex_process = Popen([command, '-p'], stdout=PIPE, shell=True)
+    detex_out = detex_process.communicate()[0]
+
+    out = ENUM_REGEX.sub('', detex_out.decode("utf-8"))
     out = ENUM_ALPHA_LOWER_REGEX.sub('', out)
     out = REF_REGEX.sub('', out)
     out = ETC_REGEX.sub('', out)
