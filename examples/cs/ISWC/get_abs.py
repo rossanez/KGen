@@ -39,8 +39,10 @@ def extract_abstract(base_url, number):
     detex_process = Popen([command, '-p'], stdout=PIPE, shell=True)
     detex_out = detex_process.communicate()[0]
 
+    out = detex_out.decode("utf-8")
+
     with open(abs_out_file, 'w') as output_abs_file:
-        output_abs_file.write(detex_out)
+        output_abs_file.write(out)
         output_abs_file.close()
 
     with open(refs_out_file, 'w') as output_refs_file:
