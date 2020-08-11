@@ -1,4 +1,5 @@
 import os
+import re
 
 from argparse import ArgumentParser
 from sys import argv
@@ -11,6 +12,15 @@ from simplifier import Simplifier
 path.insert(0, '../')
 from common.nlputils import NLPUtils
 
+ENUM_REGEX = re.compile(r"\(\s*(i|v|[0-9])+\s*\)", re.IGNORECASE)
+ENUM_ALPHA_LOWER_REGEX = re.compile(r"\(\s*[a-e]\s*\)")
+BRACKETS_REGEX = re.compile(r"(\{\[\]\})")
+REF_REGEX = re.compile(r"\[\s*[0-9]+\s*\]")
+ETC_REGEX = re.compile(r"\,\s*etc\s*\.")
+EG_REGEX = re.compile(r"\,\s*e\.g\.\s*\,")
+IE_REGEX = re.compile(r"\,\s*i\.e\.\s*\,")
+CHARS_REGEX = re.compile(r"(\\|\/|\{|\}|\[|\]|\+|\*|\&|\^|\~)")
+
 class Preprocessor:
 
     def preprocess(self, input_filename, verbose=False):
@@ -22,7 +32,15 @@ class Preprocessor:
             contents = input_file.read()
             input_file.close()
 
-        coref_resolver = CorefResolver(contents)
+        out = ENUM_REGEX.sub('', contents.replace('%', ' percent'))
+        out = ENUM_ALPHA_LOWER_REGEX.sub('', out)
+        out = REF_REGEX.sub('', out)
+        out = ETC_REGEX.sub('', out)
+        out = EG_REGEX.sub(', and', out)
+        out = IE_REGEX.sub(', and', out)
+        out = CHARS_REGEX.sub('', out)
+
+        coref_resolver = CorefResolver(out)
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
         simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
 

@@ -1,5 +1,4 @@
 import os
-import re
 import requests
 
 from argparse import ArgumentParser
@@ -7,14 +6,6 @@ from bs4 import BeautifulSoup
 from subprocess import Popen, PIPE
 from sys import argv
 from sys import stderr
-
-ENUM_REGEX = re.compile(r"\(\s*(i|v|[0-9])+\s*\)", re.IGNORECASE)
-ENUM_ALPHA_LOWER_REGEX = re.compile(r"\(\s*[a-e]\s*\)")
-BRACKETS_REGEX = re.compile(r"(\{\[\]\})")
-REF_REGEX = re.compile(r"\[\s*[0-9]+\s*\]")
-ETC_REGEX = re.compile(r"\,\s*etc\s*\.")
-CHARS_REGEX = re.compile(r"(\\|\/|\{|\}|\[|\]|\+|\*|\&|\^|\~)")
-
 
 def extract_abstract(base_url, number):
     if number is None:
@@ -41,21 +32,15 @@ def extract_abstract(base_url, number):
     html = r.text
 
     soup = BeautifulSoup(html, 'html.parser')
-    # This format is for the springer front page (as of jul/2020)
+    # This format is true for the springer front page (as of jul/2020)
     abstract = soup.find('section', class_='Abstract').find('p', class_='Para').text
 
-    command = 'echo "{}" | detex'.format(abstract.replace('%', ' percent'))
+    command = 'echo "{}" | detex'.format(abstract)
     detex_process = Popen([command, '-p'], stdout=PIPE, shell=True)
     detex_out = detex_process.communicate()[0]
 
-    out = ENUM_REGEX.sub('', detex_out.decode("utf-8"))
-    out = ENUM_ALPHA_LOWER_REGEX.sub('', out)
-    out = REF_REGEX.sub('', out)
-    out = ETC_REGEX.sub('', out)
-    out = CHARS_REGEX.sub('', out)
-
     with open(abs_out_file, 'w') as output_abs_file:
-        output_abs_file.write(out)
+        output_abs_file.write(detex_out)
         output_abs_file.close()
 
     with open(refs_out_file, 'w') as output_refs_file:
