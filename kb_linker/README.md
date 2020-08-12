@@ -7,4 +7,4 @@ linked to Computational Ontologies.
 
 -- usage: python3 linker.py -h
 
-( ex: python3 linker.py -f text.txt -k cso -v )
+( ex: python3 linker.py text.txt -k cso -v )

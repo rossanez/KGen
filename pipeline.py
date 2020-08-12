@@ -32,14 +32,15 @@ class Pipeline:
         if self.__needs_server_shutdown and self.__server_instance.isServerStarted():
             self.__server_instance.stopServer()
         elif self.__server_instance.isServerStarted():
-            print('-Warning: Stanford CoreNLP server instance is still running!')        
+            print('- Warning: Stanford CoreNLP server instance is still running!')
 
-    def run(self, filename, preprocess=True, primary_triples='senna', secondary_triples=False, k_base='cso', umls=False, png=True, verbose=False):
+    def run(self, filename, preprocess=True, primary_triples='senna', secondary_triples=False, k_base=None, umls=False, png=True, verbose=False):
         if preprocess:
             preprocessed_filename = None
             preprocessed_filename = Preprocessor().preprocess(filename, verbose)
             assert not preprocessed_filename is None, 'Preprocessing has failed!'
         else:
+            print('Skipping preprocessing step ...')
             preprocessed_filename = filename
 
         triples_filename = None
@@ -47,8 +48,11 @@ class Pipeline:
         assert not triples_filename is None, 'Facts Extraction has failed!'
 
         links_filename = None
-        links_filename = Linker().link(preprocessed_filename, k_base, umls, verbose)
-        assert not links_filename is None, 'Ontology linking has failed!'
+        if not k_base is None:
+            links_filename = Linker().link(preprocessed_filename, k_base, umls, verbose)
+            assert not links_filename is None, 'Ontology linking has failed!'
+        else:
+            print('No ontology specified. Skipping linking step ...')
 
         rdf_filename = None
         rdf_filename = RDFMaker().make(triples_filename, links_filename, verbose)
@@ -58,6 +62,8 @@ class Pipeline:
             png_filename = None
             png_filename = GraphGenerator().generate(rdf_filename, verbose)
             assert not png_filename is None, 'Graph image generation has failed!'
+        else:
+            print('Skipping graph image (PNG) generation ...')
 
 def main(args):
     if version_info[0] < 3: # Python version check
@@ -65,17 +71,17 @@ def main(args):
         exit(1)
 
     arg_p = ArgumentParser('python pipeline.py', description='Generates a KG from an unstructured text.')
-    arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
+    arg_p.add_argument('Filename', metavar='filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-np', '--nopreprocess', action='store_true', help='Skips preprocessing')
     arg_p.add_argument('-p', '--primary', type=str, default='senna', help='Primary triples extraction method, e.g., senna (default)), openie, clausie')
     arg_p.add_argument('-s', '--secondary', action='store_true', help='Extract secondary triples using dependency parsing')
-    arg_p.add_argument('-k', '--kbase', type=str, default='cso', help='Knowledge base used for linking, e.g., cso (default), ncbo, babelfy')
+    arg_p.add_argument('-k', '--kbase', type=str, default=None, help='Knowledge base used for linking, e.g., cso, ncbo, babelfy')
     arg_p.add_argument('-u', '--umls', action='store_true', help='Use UMLS to improve linking in the biomedical domain')
     arg_p.add_argument('-ng', '--nograph', action='store_true', help='Skips PNG image generation')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
-    filename = args.filename
+    filename = args.Filename
     preprocess = not args.nopreprocess
     primary_triples = args.primary
     secondary_triples = args.secondary

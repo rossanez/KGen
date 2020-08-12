@@ -8,4 +8,4 @@ Facts identification and extraction, in form of subject, predicate, and object t
 
 -- usage: python3 extractor.py -h
 
-( ex: python3 extractor.py -f text.txt -p senna -s -v )
+( ex: python3 extractor.py text.txt -p senna -s -v )

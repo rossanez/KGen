@@ -165,18 +165,18 @@ class RDFMaker:
                 output_file.write('{}\n'.format(relation))
 
             output_file.close()
-        print('Linked entities were stored at {}'.format(output_filename))
+        print('RDF stored at {}'.format(output_filename))
 
         return output_filename
 
 def main(args):
     arg_p = ArgumentParser('python maker.py', description='Merges the unlinked triples with the corresponding entities and predicates.')
-    arg_p.add_argument('-t', '--triples', type=str, default=None, help='Triples file')
+    arg_p.add_argument('Triples', metavar='triples', type=str, default=None, help='Triples file')
     arg_p.add_argument('-l', '--links', type=str, default=None, help='Links file')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
-    triples = args.triples
+    triples = args.Triples
     links = args.links
     verbose = args.verbose
 

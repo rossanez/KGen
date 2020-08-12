@@ -9,4 +9,4 @@ Unstructured text preprocessing.
 
 -- usage: python3 preprocessor.py -h
 
-( ex: python3 preprocessor.py -f text.txt -v )
+( ex: python3 preprocessor.py text.txt -v )

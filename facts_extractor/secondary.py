@@ -107,7 +107,6 @@ class SecondaryFactsExtractor:
 
                 while len(connective_dependencies) > 0:
                     elem = connective_dependencies.pop()
-                    print(elem)
 
                     if elem[1] == 'nmod:poss':
                         continue

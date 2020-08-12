@@ -63,13 +63,13 @@ class Linker:
 
 def main(args):
     arg_p = ArgumentParser('python linker.py', description='Links the text entities to URIs from a knowledge base.')
-    arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
+    arg_p.add_argument('Filename', metavar='filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-k', '--kgbase', type=str, default='babelfy', help='Knowledge base to be used, e.g. babelfy (default), ncbo, or cso')
     arg_p.add_argument('-u', '--use_umls', action='store_true', help='Use UMLS as an intermediate link step.')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
-    filename = args.filename
+    filename = args.Filename
     kg_base = args.kgbase
     umls = args.use_umls
     verbose = args.verbose

@@ -9,4 +9,4 @@ into a Turtle (Terse RDF Triple Language) file format.
 
 -- usage: python3 maker.py -h
 
-( ex: python3 maker.py -t text_triples.txt -l text_links.txt -v )
+( ex: python3 maker.py text_triples.txt -l text_links.txt -v )
