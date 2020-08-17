@@ -62,14 +62,14 @@ class RDFMaker:
                 predicate = line_lst[2].strip()
                 object = line_lst[3].strip()
 
-                if not predicate in self.__links and predicate.find(':') < 0:
+                if not predicate in self.__links.keys() and predicate.find(':') < 0:
                     if verbose:
-                        print('Warning: no match for predicate "{}" was found in the links! Skipping triple ...'.format(predicate))
+                        print('Warning: no match for predicate "{}" was found in the links!'.format(predicate))
                 #    continue
 
                 predicate_link = ''
                 #if predicate.find(':') < 0: #Predicates that are already resources/links
-                if predicate in self.__links:
+                if predicate in self.__links.keys():
                     predicate_link = self.__links[predicate]
 
                 entities = set([str(X) for X in self.__links.keys()])
@@ -78,7 +78,7 @@ class RDFMaker:
 
                 if len(closest_subjects) < 1:
                     if verbose:
-                        print('Warning: no match for subject "{}" was found in the links! Attempting partials ...'.format(subject))
+                        print('Warning: no match for subject "{}" was found in the links! Atempting partials ...'.format(subject))
                     #subj = subject
                     # Reverse sorted list of entities by string length
                     #lst_entities = sorted(list(entities), key=len, reverse=True)
@@ -97,7 +97,7 @@ class RDFMaker:
                 if len(closest_objects) < 1:
                     if verbose:
                         print('Warning: no match for object "{}" was found in the links! Atempting partials ...'.format(object))
-                    obj = object
+                    #obj = object
                     # Reverse sorted list of entities by string length
                     #lst_entities = sorted(list(entities), key=len, reverse=True)
                     #for elem in lst_entities:
@@ -125,9 +125,11 @@ class RDFMaker:
                 subject_links = []
                 for subj in closest_subjects:
                     subject_links += [self.__links[subj]]
+                    break
                 object_links = []
                 for obj in closest_objects:
                     object_links += [self.__links[obj]]
+                    break
 
                 triple = Triple(sentence_number, subject, predicate, object, subject_links, predicate_link, object_links)
 
