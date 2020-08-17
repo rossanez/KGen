@@ -35,6 +35,9 @@ class Pipeline:
             print('- Warning: Stanford CoreNLP server instance is still running!')
 
     def run(self, filename, preprocess=True, primary_triples='senna', secondary_triples=False, k_base=None, umls=False, png=True, verbose=False):
+        if not filename.startswith('/'):
+            filename = os.path.dirname(os.path.realpath(__file__)) + '/' + filename
+
         if preprocess:
             preprocessed_filename = None
             preprocessed_filename = Preprocessor().preprocess(filename, verbose)
