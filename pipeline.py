@@ -38,8 +38,8 @@ class Pipeline:
         if not filename.startswith('/'):
             filename = os.path.dirname(os.path.realpath(__file__)) + '/' + filename
 
+        preprocessed_filename = None
         if preprocess:
-            preprocessed_filename = None
             preprocessed_filename = Preprocessor().preprocess(filename, verbose)
             assert not preprocessed_filename is None, 'Preprocessing has failed!'
         else:
@@ -61,8 +61,8 @@ class Pipeline:
         rdf_filename = RDFMaker().make(triples_filename, links_filename, verbose)
         assert not rdf_filename is None, 'RDF generation has failed!'
 
+        png_filename = None
         if png:
-            png_filename = None
             png_filename = GraphGenerator().generate(rdf_filename, verbose)
             assert not png_filename is None, 'Graph image generation has failed!'
         else:
