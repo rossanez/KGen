@@ -1,0 +1,285 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:entity_navigation	rdfs:label	"entity navigation"	.
+
+local:navigation	rdfs:label	"navigation"	.
+
+local:entity	rdfs:label	"entity"	.
+
+local:linked_data	rdfs:label	"linked data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:entity_navigation_over_linked_data	rdfs:label	"entity navigation over linked data"	.
+
+local:follows	rdfs:label	"follows"	.
+
+local:often	rdfs:label	"often"	.
+
+local:semantic_links	rdfs:label	"semantic links"	.
+
+local:links	rdfs:label	"links"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:data_browsers	rdfs:label	"data browsers"	.
+
+local:browsers	rdfs:label	"browsers"	.
+
+local:linked_data_browsers	rdfs:label	"linked data browsers"	.
+
+local:using	rdfs:label	"using"	.
+
+local:linked	rdfs:label	"linked"	.
+
+local:increasing	rdfs:label	"increasing"	.
+
+local:volume	rdfs:label	"volume"	.
+
+local:diverse_links	rdfs:label	"diverse links"	.
+
+local:diverse	rdfs:label	"diverse"	.
+
+local:increasing_volume	rdfs:label	"increasing volume"	.
+
+local:increasing_volume_of_linked_data	rdfs:label	"increasing volume of linked data"	.
+
+local:increasing_volume_of_linked_data_diverse_links	rdfs:label	"increasing volume of linked data diverse links"	.
+
+local:make	rdfs:label	"make"	.
+
+local:difficult	rdfs:label	"difficult"	.
+
+local:target_entities	rdfs:label	"target entities"	.
+
+local:entities	rdfs:label	"entities"	.
+
+local:target	rdfs:label	"target"	.
+
+local:users	rdfs:label	"users"	.
+
+local:find	rdfs:label	"find"	.
+
+local:link	rdfs:label	"link"	.
+
+local:link_graph	rdfs:label	"link graph"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:traverse	rdfs:label	"traverse"	.
+
+local:rich	rdfs:label	"rich"	.
+
+local:rich_links	rdfs:label	"rich links"	.
+
+local:navigation_paradigm	rdfs:label	"navigation paradigm"	.
+
+local:paradigm	rdfs:label	"paradigm"	.
+
+local:necessity_for_navigation_paradigm	rdfs:label	"necessity for navigation paradigm"	.
+
+local:necessity	rdfs:label	"necessity"	.
+
+local:take	rdfs:label	"take"	.
+
+local:account	rdfs:label	"account"	.
+
+local:facilitate	rdfs:label	"facilitate"	.
+
+local:we	rdfs:label	"we"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:novel_concept	rdfs:label	"novel concept"	.
+
+local:concept	rdfs:label	"concept"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:link_pattern_lattice	rdfs:label	"link pattern lattice"	.
+
+local:lattice	rdfs:label	"lattice"	.
+
+local:pattern	rdfs:label	"pattern"	.
+
+local:pattern_lattice	rdfs:label	"pattern lattice"	.
+
+local:link_pattern	rdfs:label	"link pattern"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:when_browsing	rdfs:label	"when browsing"	.
+
+local:browsing	rdfs:label	"browsing"	.
+
+local:organize	rdfs:label	"organize"	.
+
+local:set_of_entities	rdfs:label	"set of entities"	.
+
+local:set	rdfs:label	"set"	.
+
+local:called	rdfs:label	"called"	.
+
+local:help	rdfs:label	"help"	.
+
+local:furthermore	rdfs:label	"furthermore"	.
+
+local:quickly	rdfs:label	"quickly"	.
+
+local:link_patterns	rdfs:label	"link patterns"	.
+
+local:topk_link	rdfs:label	"top-k link"	.
+
+local:topk_link_patterns	rdfs:label	"top-k link patterns"	.
+
+local:topk	rdfs:label	"top-k"	.
+
+local:patterns	rdfs:label	"patterns"	.
+
+local:target_entities_topk_link_patterns	rdfs:label	"target entities top-k link patterns"	.
+
+local:quickly_find	rdfs:label	"quickly find"	.
+
+local:furthermore_quickly_find	rdfs:label	"furthermore quickly find"	.
+
+local:selected	rdfs:label	"selected"	.
+
+local:proposed	rdfs:label	"proposed"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:proposed_approach	rdfs:label	"proposed approach"	.
+
+local:implemented	rdfs:label	"implemented"	.
+
+local:prototype	rdfs:label	"prototype"	.
+
+local:prototype_system	rdfs:label	"prototype system"	.
+
+local:system	rdfs:label	"system"	.
+
+local:experimental_results	rdfs:label	"experimental results"	.
+
+local:results	rdfs:label	"results"	.
+
+local:experimental	rdfs:label	"experimental"	.
+
+local:show	rdfs:label	"show"	.
+
+local:effective	rdfs:label	"effective"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:linked_data	owl:sameAs	cso:linked_data	.
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:linked_data	rdfs:label	"linked data"	.
+
+#### Relations ####
+
+local:entity_navigation	rdfs:subClassOf	local:navigation	.
+local:propose	vn.role:Topic	local:novel_concept	.
+local:implemented	vn.role:Theme	local:proposed_approach	.
+local:implemented	local:AM-LOC	local:prototype_system	.
+local:target_entities_topk_link_patterns	local:_top-klinkpatterns	local:target_entities	.
+local:navigation	rdfs:member	local:navigation_paradigm	.
+local:make	vn.role:Agent	local:rich_links	.
+local:make	vn.role:Agent	local:increasing_volume_of_linked_data_diverse_links	.
+local:follows	local:AM-TMP	local:often	.
+local:linked_data_browsers	rdfs:subClassOf	local:data_browsers	.
+local:find	local:AM-MNR	local:quickly	.
+local:semantic_links	rdfs:subClassOf	local:links	.
+local:set_of_entities	local:set_of	local:entities	.
+local:data_browsers	rdfs:subClassOf	local:browsers	.
+local:prototype	rdfs:member	local:prototype_system	.
+local:rich	rdfs:member	local:rich_links	.
+local:increasing_volume_of_linked_data_diverse_links	local:_diverselinks	local:increasing_volume_of_linked_data	.
+local:introduce	local:AM-PNC	local:organize	.
+local:help	local:AM-MNR	local:quickly	.
+local:facilitate	vn.role:Beneficiary	local:entity_navigation	.
+local:experimental	rdfs:member	local:experimental_results	.
+local:necessity_for_navigation_paradigm	local:for_navigationparadigm	local:necessity	.
+local:entity_navigation_over_linked_data	local:entitynavigation_over	local:linked_data	.
+local:show	vn.role:Agent	local:experimental_results	.
+local:traverse	vn.role:Theme2	local:link_graph	.
+local:find	vn.role:Agent	local:users	.
+local:link_pattern_lattice	rdfs:subClassOf	local:pattern_lattice	.
+local:target_entities_topk_link_patterns	local:targetentities_	local:topk_link_patterns	.
+local:show	vn.role:Theme	local:effective	.
+local:link	rdfs:member	local:link_pattern	.
+local:link_graph	rdfs:subClassOf	local:graph	.
+local:link_pattern	rdfs:member	local:link_pattern_lattice	.
+local:increasing_volume_of_linked_data	local:of_linkeddata	local:increasing_volume	.
+local:increasing_volume_of_linked_data_diverse_links	local:increasingvolumeoflinkeddata_	local:diverse_links	.
+local:find	vn.role:Theme	local:target_entities_topk_link_patterns	.
+local:introduce	vn.role:Patient	local:link_pattern_lattice	.
+local:link_pattern	rdfs:subClassOf	local:pattern	.
+local:pattern	rdfs:member	local:pattern_lattice	.
+local:entity_navigation_over_linked_data	local:over_linkeddata	local:entity_navigation	.
+local:make	vn.role:Product	local:difficult	.
+local:proposed	vn.role:Topic	local:approach	.
+local:when_browsing	rdfs:subClassOf	local:browsing	.
+local:make	vn.role:Material	local:users	.
+local:increasing_volume_of_linked_data	local:increasingvolume_of	local:linked_data	.
+local:link	rdfs:member	local:link_patterns	.
+local:linked	vn.role:Patient	local:data_browsers	.
+local:follows	vn.role:Theme	local:semantic_links	.
+local:topk_link	rdfs:member	local:topk_link_patterns	.
+local:follows	local:AM-MNR	local:using	.
+local:make	local:AM-MNR	local:increasing_volume_of_linked_data	.
+local:rich_links	rdfs:subClassOf	local:links	.
+local:propose	vn.role:Agent	local:we	.
+local:called	vn.role:Theme	local:link_pattern	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:topk_link_patterns	rdfs:subClassOf	local:link_patterns	.
+local:follows	vn.role:Theme	local:entity_navigation_over_linked_data	.
+local:quickly_find	rdfs:subClassOf	local:find	.
+local:take	vn.role:Agent	local:necessity_for_navigation_paradigm	.
+local:facilitate	vn.role:Agent	local:we	.
+local:link_patterns	rdfs:subClassOf	local:patterns	.
+local:proposed_approach	rdfs:subClassOf	local:approach	.
+local:novel	rdfs:member	local:novel_concept	.
+local:target_entities	rdfs:subClassOf	local:entities	.
+local:pattern_lattice	rdfs:subClassOf	local:lattice	.
+local:necessity_for_navigation_paradigm	local:necessity_for	local:navigation_paradigm	.
+local:data	rdfs:member	local:data_browsers	.
+local:organize	vn.role:Product	local:semantic_links	.
+local:take	vn.role:Source	local:account	.
+local:topk	rdfs:member	local:topk_link	.
+local:navigation_paradigm	rdfs:subClassOf	local:paradigm	.
+local:furthermore_quickly_find	rdfs:subClassOf	local:quickly_find	.
+local:help	vn.role:Beneficiary	local:users	.
+local:set_of_entities	local:of_entities	local:set	.
+local:diverse	rdfs:member	local:diverse_links	.
+local:browsing	vn.role:Location	local:set_of_entities	.
+local:help	vn.role:Agent	local:furthermore	.
+local:traverse	vn.role:Theme1	local:users	.
+local:target	rdfs:member	local:target_entities	.
+local:organize	local:AM-TMP	local:browsing	.
+local:prototype_system	rdfs:subClassOf	local:system	.
+local:increasing	vn.role:Attribute	local:volume	.
+local:find	vn.role:Theme	local:target_entities	.
+local:using	vn.role:Theme	local:linked_data_browsers	.
+local:diverse_links	rdfs:subClassOf	local:links	.
+local:novel_concept	rdfs:subClassOf	local:concept	.
+local:selected	vn.role:other	local:entity_navigation	.
+local:browsing	vn.role:Location	local:entity	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:link	rdfs:member	local:link_graph	.
+local:entity	rdfs:member	local:entity_navigation	.
+local:link_pattern_lattice	rdfs:subClassOf	local:lattice	.
+local:topk_link_patterns	rdfs:subClassOf	local:patterns	.
+local:called	vn.role:Agent	local:novel_concept	.
+local:semantic	rdfs:member	local:semantic_links	.
+local:increasing_volume	rdfs:subClassOf	local:volume	.
+local:selected	vn.role:Theme	local:furthermore_quickly_find	.
+local:topk_link	rdfs:subClassOf	local:link	.

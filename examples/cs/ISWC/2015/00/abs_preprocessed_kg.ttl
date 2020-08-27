@@ -1,0 +1,249 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:original_sparql	rdfs:label	"original sparql"	.
+
+local:original_sparql_proposal	rdfs:label	"original sparql proposal"	.
+
+local:sparql	rdfs:label	"sparql"	.
+
+local:sparql_proposal	rdfs:label	"sparql proposal"	.
+
+local:proposal	rdfs:label	"proposal"	.
+
+local:original	rdfs:label	"original"	.
+
+local:criticized	rdfs:label	"criticized"	.
+
+local:often	rdfs:label	"often"	.
+
+local:original_sparql_proposal_inability	rdfs:label	"original sparql proposal inability"	.
+
+local:inability	rdfs:label	"inability"	.
+
+local:sparql_proposal_inability	rdfs:label	"sparql proposal inability"	.
+
+local:proposal_inability	rdfs:label	"proposal inability"	.
+
+local:navigate_through_rdf	rdfs:label	"navigate through rdf"	.
+
+local:navigate	rdfs:label	"navigate"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:introduced	rdfs:label	"introduced"	.
+
+local:reason	rdfs:label	"reason"	.
+
+local:property	rdfs:label	"property"	.
+
+local:property_paths	rdfs:label	"property paths"	.
+
+local:paths	rdfs:label	"paths"	.
+
+local:11_sparql	rdfs:label	"1.1 sparql"	.
+
+local:theoretical	rdfs:label	"theoretical"	.
+
+local:theoretical_studies	rdfs:label	"theoretical studies"	.
+
+local:studies	rdfs:label	"studies"	.
+
+local:examining	rdfs:label	"examining"	.
+
+local:property_paths_addition	rdfs:label	"property paths addition"	.
+
+local:addition	rdfs:label	"addition"	.
+
+local:paths_addition	rdfs:label	"paths addition"	.
+
+local:property_paths_addition_to_language	rdfs:label	"property paths addition to language"	.
+
+local:language	rdfs:label	"language"	.
+
+local:affects	rdfs:label	"affects"	.
+
+local:computational	rdfs:label	"computational"	.
+
+local:computational_tasks	rdfs:label	"computational tasks"	.
+
+local:query	rdfs:label	"query"	.
+
+local:query_containment	rdfs:label	"query containment"	.
+
+local:main_computational	rdfs:label	"main computational"	.
+
+local:main_computational_tasks	rdfs:label	"main computational tasks"	.
+
+local:tasks	rdfs:label	"tasks"	.
+
+local:containment	rdfs:label	"containment"	.
+
+local:main	rdfs:label	"main"	.
+
+local:main_computational_tasks_suchas_query_containment	rdfs:label	"main computational tasks such_as query containment"	.
+
+local:query_evaluation	rdfs:label	"query evaluation"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+local:main_computational_tasks_suchas_query_evaluation	rdfs:label	"main computational tasks such_as query evaluation"	.
+
+local:query_subsumption	rdfs:label	"query subsumption"	.
+
+local:subsumption	rdfs:label	"subsumption"	.
+
+local:main_computational_tasks_suchas_query_subsumption	rdfs:label	"main computational tasks such_as query subsumption"	.
+
+local:tackle	rdfs:label	"tackle"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:problems	rdfs:label	"problems"	.
+
+local:show	rdfs:label	"show"	.
+
+local:containment_problems	rdfs:label	"containment problems"	.
+
+local:more_difficult	rdfs:label	"more difficult"	.
+
+local:difficult	rdfs:label	"difficult"	.
+
+local:substantially_more_difficult	rdfs:label	"substantially more difficult"	.
+
+local:do_make	rdfs:label	"do make"	.
+
+local:make	rdfs:label	"make"	.
+
+local:no_impact	rdfs:label	"no impact"	.
+
+local:impact	rdfs:label	"impact"	.
+
+local:addition_of_property_paths	rdfs:label	"addition of property paths"	.
+
+local:no_impact_on_query_evaluation	rdfs:label	"no impact on query evaluation"	.
+
+local:query_evaluation_property_paths	rdfs:label	"query evaluation property paths"	.
+
+local:has	rdfs:label	"has"	.
+
+local:impact_on_query_evaluation	rdfs:label	"impact on query evaluation"	.
+
+local:subsumption_problems	rdfs:label	"subsumption problems"	.
+
+local:do	rdfs:label	"do"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:query_containment	owl:sameAs	cso:query_containment	.
+cso:query_evaluation	rdfs:label	"query evaluation"	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:sparql	rdfs:label	"sparql"	.
+local:sparql	owl:sameAs	cso:sparql	.
+local:query_evaluation	owl:sameAs	cso:query_evaluation	.
+cso:query_containment	rdfs:label	"query containment"	.
+local:rdf	owl:sameAs	cso:rdf	.
+
+#### Relations ####
+
+local:original_sparql	rdfs:subClassOf	local:sparql	.
+local:original_sparql_proposal_inability	rdfs:subClassOf	local:sparql_proposal_inability	.
+local:make	vn.role:Material	local:containment_problems	.
+local:proposal	rdfs:member	local:proposal_inability	.
+local:main_computational_tasks	rdfs:subClassOf	local:computational_tasks	.
+local:property_paths_addition	rdfs:subClassOf	local:paths_addition	.
+local:show	vn.role:Theme	local:has	.
+local:sparql_proposal	rdfs:member	local:sparql_proposal_inability	.
+local:introduced	local:AM-LOC	local:11_sparql	.
+local:introduced	vn.role:Patient	local:property_paths	.
+local:no_impact_on_query_evaluation	local:noimpact_on	local:query_evaluation	.
+local:property_paths_addition_to_language	local:propertypathsaddition_to	local:language	.
+local:main_computational_tasks_suchas_query_evaluation	local:maincomputationaltasks_such_as	local:query_evaluation	.
+local:containment_problems	rdfs:subClassOf	local:problems	.
+local:addition_of_property_paths	local:of_propertypaths	local:addition	.
+local:property_paths	rdfs:member	local:property_paths_addition	.
+local:subsumption	rdfs:member	local:subsumption_problems	.
+local:main_computational_tasks_suchas_query_containment	local:such_as_querycontainment	local:main_computational_tasks	.
+local:affects	vn.role:Cause	local:main_computational_tasks_suchas_query_containment	.
+local:computational_tasks	rdfs:subClassOf	local:tasks	.
+local:containment	rdfs:member	local:containment_problems	.
+local:do_make	rdfs:subClassOf	local:make	.
+local:affects	vn.role:Experiencer	local:language	.
+local:no_impact_on_query_evaluation	local:on_queryevaluation	local:no_impact	.
+local:theoretical_studies	rdfs:subClassOf	local:studies	.
+local:query_subsumption	rdfs:subClassOf	local:subsumption	.
+local:original_sparql	rdfs:member	local:original_sparql_proposal	.
+local:make	vn.role:Product	local:substantially_more_difficult	.
+local:11_sparql	rdfs:subClassOf	local:sparql	.
+local:more_difficult	rdfs:subClassOf	local:difficult	.
+local:no_impact	rdfs:subClassOf	local:impact	.
+local:property_paths_addition_to_language	local:to_language	local:property_paths_addition	.
+local:impact_on_query_evaluation	local:on_queryevaluation	local:impact	.
+local:paths	rdfs:member	local:paths_addition	.
+local:query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:main	rdfs:member	local:main_computational	.
+local:sparql_proposal	rdfs:subClassOf	local:proposal	.
+local:make	vn.role:Agent	local:has	.
+local:navigate	vn.role:Agent	local:original_sparql_proposal	.
+local:main_computational_tasks_suchas_query_subsumption	local:such_as_querysubsumption	local:main_computational_tasks	.
+local:property	rdfs:member	local:property_paths	.
+local:examining	vn.role:Agent	local:theoretical_studies	.
+local:main_computational	rdfs:member	local:main_computational_tasks	.
+local:navigate	local:AM-MNR	local:rdf	.
+local:main_computational_tasks	rdfs:subClassOf	local:tasks	.
+local:query	rdfs:member	local:query_subsumption	.
+local:query_containment	rdfs:subClassOf	local:containment	.
+local:tackle	vn.role:Agent	local:we	.
+local:impact_on_query_evaluation	local:impact_on	local:query_evaluation	.
+local:original	rdfs:member	local:original_sparql	.
+local:original_sparql_proposal	rdfs:subClassOf	local:proposal	.
+local:property_paths	rdfs:subClassOf	local:paths	.
+local:main_computational_tasks_suchas_query_subsumption	local:maincomputationaltasks_such_as	local:query_subsumption	.
+local:show	local:AM-LOC	local:paper	.
+local:substantially_more_difficult	rdfs:subClassOf	local:more_difficult	.
+local:sparql	rdfs:member	local:sparql_proposal	.
+local:examining	vn.role:Location	local:property_paths_addition_to_language	.
+local:main_computational_tasks_suchas_query_evaluation	local:such_as_queryevaluation	local:main_computational_tasks	.
+local:addition_of_property_paths	local:addition_of	local:property_paths	.
+local:introduced	local:AM-CAU	local:reason	.
+local:affects	vn.role:Cause	local:main_computational_tasks_suchas_query_subsumption	.
+local:affects	vn.role:Cause	local:main_computational_tasks_suchas_query_evaluation	.
+local:tackle	local:AM-LOC	local:paper	.
+local:make	vn.role:Material	local:subsumption_problems	.
+local:has	vn.role:Stimulus	local:do	.
+local:has	vn.role:Stimulus	local:do_make	.
+local:theoretical	rdfs:member	local:theoretical_studies	.
+local:main_computational_tasks_suchas_query_containment	local:maincomputationaltasks_such_as	local:query_containment	.
+local:navigate_through_rdf	local:navigate_through	local:rdf	.
+local:query_evaluation_property_paths	local:_propertypaths	local:query_evaluation	.
+local:original_sparql_proposal	rdfs:member	local:original_sparql_proposal_inability	.
+local:navigate_through_rdf	local:through_rdf	local:navigate	.
+local:tackle	vn.role:Theme	local:problems	.
+local:query_evaluation_property_paths	local:queryevaluation_	local:property_paths	.
+local:query	rdfs:member	local:query_containment	.
+local:original_sparql_proposal	rdfs:subClassOf	local:sparql_proposal	.
+local:criticized	vn.role:Theme	local:original_sparql_proposal	.
+local:main_computational	rdfs:subClassOf	local:computational	.
+local:paths_addition	rdfs:subClassOf	local:addition	.
+local:show	vn.role:Agent	local:we	.
+local:sparql_proposal_inability	rdfs:subClassOf	local:proposal_inability	.
+local:original_sparql_proposal_inability	rdfs:subClassOf	local:inability	.
+local:subsumption_problems	rdfs:subClassOf	local:problems	.
+local:criticized	local:AM-TMP	local:often	.
+local:proposal_inability	rdfs:subClassOf	local:inability	.
+local:criticized	vn.role:Predicate	local:original_sparql_proposal_inability	.
+local:computational	rdfs:member	local:computational_tasks	.
+local:has	vn.role:Experiencer	local:addition_of_property_paths	.
+local:query	rdfs:member	local:query_evaluation	.
+local:property_paths_addition	rdfs:subClassOf	local:addition	.
+local:sparql_proposal_inability	rdfs:subClassOf	local:inability	.

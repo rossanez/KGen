@@ -1,0 +1,193 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:propose	rdfs:label	"propose"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:recursion_operator	rdfs:label	"recursion operator"	.
+
+local:operator	rdfs:label	"operator"	.
+
+local:sparql	rdfs:label	"sparql"	.
+
+local:sparql_syntax	rdfs:label	"sparql syntax"	.
+
+local:purpose_recursion	rdfs:label	"purpose recursion"	.
+
+local:recursion	rdfs:label	"recursion"	.
+
+local:general_purpose	rdfs:label	"general purpose"	.
+
+local:general_purpose_recursion	rdfs:label	"general purpose recursion"	.
+
+local:purpose	rdfs:label	"purpose"	.
+
+local:purpose_recursion_operator	rdfs:label	"purpose recursion operator"	.
+
+local:general_purpose_recursion_operator	rdfs:label	"general purpose recursion operator"	.
+
+local:general	rdfs:label	"general"	.
+
+local:syntax	rdfs:label	"syntax"	.
+
+local:formalize	rdfs:label	"formalize"	.
+
+local:added_to_sparql	rdfs:label	"added to sparql"	.
+
+local:added	rdfs:label	"added"	.
+
+local:practical	rdfs:label	"practical"	.
+
+local:practical_scenarios	rdfs:label	"practical scenarios"	.
+
+local:scenarios	rdfs:label	"scenarios"	.
+
+local:evaluating_in_practical_scenarios	rdfs:label	"evaluating in practical scenarios"	.
+
+local:evaluating	rdfs:label	"evaluating"	.
+
+local:develop	rdfs:label	"develop"	.
+
+local:algorithms	rdfs:label	"algorithms"	.
+
+local:show	rdfs:label	"show"	.
+
+local:also	rdfs:label	"also"	.
+
+local:implement_recursion	rdfs:label	"implement recursion"	.
+
+local:implement	rdfs:label	"implement"	.
+
+local:existing_systems	rdfs:label	"existing systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:implement_as_plugin	rdfs:label	"implement as plug-in"	.
+
+local:plugin	rdfs:label	"plug-in"	.
+
+local:plugin_ontopof_existing_systems	rdfs:label	"plug-in on_top_of existing systems"	.
+
+local:recursion_as_plugin	rdfs:label	"recursion as plug-in"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:world	rdfs:label	"world"	.
+
+local:world_datasets	rdfs:label	"world datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:real_world_datasets	rdfs:label	"real world datasets"	.
+
+local:several_real_world_datasets	rdfs:label	"several real world datasets"	.
+
+local:several_real_world	rdfs:label	"several real world"	.
+
+local:real	rdfs:label	"real"	.
+
+local:real_world	rdfs:label	"real world"	.
+
+local:plugin_performance	rdfs:label	"plug-in performance"	.
+
+local:several	rdfs:label	"several"	.
+
+local:several_real	rdfs:label	"several real"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:plugin_performance_on_several_real_world_datasets	rdfs:label	"plug-in performance on several real world datasets"	.
+
+local:test	rdfs:label	"test"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:general_purpose	owl:sameAs	cso:general_purpose	.
+cso:sparql	rdfs:label	"sparql"	.
+cso:general_purpose	rdfs:label	"general purpose"	.
+local:sparql	owl:sameAs	cso:sparql	.
+
+#### Relations ####
+
+local:general_purpose_recursion_operator	rdfs:subClassOf	local:operator	.
+local:added_to_sparql	local:to_sparql	local:added	.
+local:world	rdfs:member	local:world_datasets	.
+local:test	vn.role:Agent	local:we	.
+local:several_real	rdfs:member	local:several_real_world	.
+local:several_real_world	rdfs:subClassOf	local:world	.
+local:plugin_performance	rdfs:subClassOf	local:performance	.
+local:recursion_as_plugin	local:recursion_as	local:plugin	.
+local:purpose_recursion	rdfs:subClassOf	local:recursion	.
+local:practical_scenarios	rdfs:subClassOf	local:scenarios	.
+local:develop	vn.role:Location	local:algorithms	.
+local:formalize	vn.role:Theme	local:sparql_syntax	.
+local:existing	vn.role:Location	local:systems	.
+local:added	local:AM-LOC	local:paper	.
+local:plugin_ontopof_existing_systems	local:on_top_of_existingsystems	local:plugin	.
+local:real_world	rdfs:subClassOf	local:world	.
+local:several	rdfs:member	local:several_real	.
+local:real_world_datasets	rdfs:subClassOf	local:world_datasets	.
+local:purpose	rdfs:member	local:purpose_recursion	.
+local:purpose_recursion_operator	rdfs:subClassOf	local:operator	.
+local:practical	rdfs:member	local:practical_scenarios	.
+local:implement_as_plugin	local:as_plug-in	local:implement	.
+local:implement	vn.role:Theme	local:recursion_as_plugin	.
+local:implement	rdfs:member	local:implement_recursion	.
+local:plugin_ontopof_existing_systems	local:plug-in_on_top_of	local:existing_systems	.
+local:evaluating	local:AM-MNR	local:practical_scenarios	.
+local:real_world_datasets	rdfs:subClassOf	local:datasets	.
+local:several_real_world_datasets	rdfs:subClassOf	local:datasets	.
+local:real	rdfs:member	local:real_world	.
+local:evaluating	vn.role:Theme	local:sparql	.
+local:several_real_world_datasets	rdfs:subClassOf	local:real_world_datasets	.
+local:plugin_performance_on_several_real_world_datasets	local:on_severalrealworlddatasets	local:plugin_performance	.
+local:test	vn.role:Location	local:plugin_performance_on_several_real_world_datasets	.
+local:purpose_recursion_operator	rdfs:subClassOf	local:recursion_operator	.
+local:show	vn.role:Theme	local:test	.
+local:general	rdfs:member	local:general_purpose	.
+local:show	vn.role:Theme	local:implement_as_plugin	.
+local:existing_systems	rdfs:subClassOf	local:systems	.
+local:propose	vn.role:Topic	local:general_purpose_recursion_operator	.
+local:develop	vn.role:Theme	local:general_purpose_recursion_operator	.
+local:recursion_as_plugin	local:as_plug-in	local:recursion	.
+local:sparql	rdfs:member	local:sparql_syntax	.
+local:recursion	rdfs:member	local:recursion_operator	.
+local:general_purpose_recursion_operator	rdfs:subClassOf	local:purpose_recursion_operator	.
+local:show	local:AM-DIS	local:also	.
+local:plugin_performance_on_several_real_world_datasets	local:plug-inperformance_on	local:several_real_world_datasets	.
+local:real_world	rdfs:member	local:real_world_datasets	.
+local:propose	local:AM-LOC	local:paper	.
+local:general_purpose	rdfs:subClassOf	local:purpose	.
+local:general_purpose_recursion	rdfs:subClassOf	local:recursion	.
+local:implement_recursion	rdfs:subClassOf	local:recursion	.
+local:several_real_world	rdfs:member	local:several_real_world_datasets	.
+local:show	vn.role:Agent	local:we	.
+local:added	vn.role:Patient	local:general_purpose_recursion_operator	.
+local:world_datasets	rdfs:subClassOf	local:datasets	.
+local:several_real	rdfs:subClassOf	local:real	.
+local:purpose_recursion	rdfs:member	local:purpose_recursion_operator	.
+local:plugin	rdfs:member	local:plugin_performance	.
+local:general_purpose_recursion	rdfs:member	local:general_purpose_recursion_operator	.
+local:added	vn.role:Patient1	local:sparql	.
+local:sparql_syntax	rdfs:subClassOf	local:syntax	.
+local:implement	vn.role:Agent	local:we	.
+local:propose	vn.role:Agent	local:we	.
+local:implement_as_plugin	local:implement_as	local:plugin	.
+local:evaluating_in_practical_scenarios	local:evaluating_in	local:practical_scenarios	.
+local:recursion_operator	rdfs:subClassOf	local:operator	.
+local:added_to_sparql	local:added_to	local:sparql	.
+local:evaluating_in_practical_scenarios	local:in_practicalscenarios	local:evaluating	.
+local:evaluating	vn.role:Agent	local:general_purpose_recursion_operator	.
+local:general_purpose	rdfs:member	local:general_purpose_recursion	.
+local:formalize	vn.role:Agent	local:general_purpose_recursion_operator	.
