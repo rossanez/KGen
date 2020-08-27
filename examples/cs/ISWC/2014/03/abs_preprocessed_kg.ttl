@@ -1,0 +1,280 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:volunteers_efforts	rdfs:label	"volunteers efforts"	.
+
+local:efforts	rdfs:label	"efforts"	.
+
+local:thousands_volunteers	rdfs:label	"thousands volunteers"	.
+
+local:volunteers	rdfs:label	"volunteers"	.
+
+local:produced	rdfs:label	"produced"	.
+
+local:project	rdfs:label	"project"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_base	rdfs:label	"knowledge base"	.
+
+local:many_interesting	rdfs:label	"many interesting"	.
+
+local:interesting	rdfs:label	"interesting"	.
+
+local:interesting_applications	rdfs:label	"interesting applications"	.
+
+local:many	rdfs:label	"many"	.
+
+local:open	rdfs:label	"open"	.
+
+local:open_knowledge	rdfs:label	"open knowledge"	.
+
+local:many_interesting_applications	rdfs:label	"many interesting applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:open_knowledge_base	rdfs:label	"open knowledge base"	.
+
+local:base	rdfs:label	"base"	.
+
+local:large_open_knowledge_base	rdfs:label	"large open knowledge base"	.
+
+local:large_open_knowledge_base_with_many_interesting_applications	rdfs:label	"large open knowledge base with many interesting applications"	.
+
+local:interlinked	rdfs:label	"interlinked"	.
+
+local:data	rdfs:label	"data"	.
+
+local:highly	rdfs:label	"highly"	.
+
+local:connected	rdfs:label	"connected"	.
+
+local:many_other	rdfs:label	"many other"	.
+
+local:other	rdfs:label	"other"	.
+
+local:other_datasets	rdfs:label	"other datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:many_other_datasets	rdfs:label	"many other datasets"	.
+
+local:address	rdfs:label	"address"	.
+
+local:issue	rdfs:label	"issue"	.
+
+local:we	rdfs:label	"we"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:rdf_exports	rdfs:label	"rdf exports"	.
+
+local:exports	rdfs:label	"exports"	.
+
+local:new_rdf	rdfs:label	"new rdf"	.
+
+local:new_rdf_exports	rdfs:label	"new rdf exports"	.
+
+local:new	rdfs:label	"new"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:connect	rdfs:label	"connect"	.
+
+local:wikidata	rdfs:label	"wikidata"	.
+
+local:data_web	rdfs:label	"data web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:linked_data_web	rdfs:label	"linked data web"	.
+
+local:explain	rdfs:label	"explain"	.
+
+local:data_model	rdfs:label	"data model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:data_model_of_wikidata	rdfs:label	"data model of wikidata"	.
+
+local:discuss	rdfs:label	"discuss"	.
+
+local:several	rdfs:label	"several"	.
+
+local:several_partial	rdfs:label	"several partial"	.
+
+local:partial	rdfs:label	"partial"	.
+
+local:partial_exports	rdfs:label	"partial exports"	.
+
+local:several_partial_exports	rdfs:label	"several partial exports"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:selective	rdfs:label	"selective"	.
+
+local:moreover	rdfs:label	"moreover"	.
+
+local:simplified_views	rdfs:label	"simplified views"	.
+
+local:views	rdfs:label	"views"	.
+
+local:simplified_views_on_data	rdfs:label	"simplified views on data"	.
+
+local:includes	rdfs:label	"includes"	.
+
+local:this	rdfs:label	"this"	.
+
+local:class	rdfs:label	"class"	.
+
+local:class_hierarchy	rdfs:label	"class hierarchy"	.
+
+local:hierarchy	rdfs:label	"hierarchy"	.
+
+local:extract_from_site	rdfs:label	"extract from site"	.
+
+local:extract	rdfs:label	"extract"	.
+
+local:site	rdfs:label	"site"	.
+
+local:other_types	rdfs:label	"other types"	.
+
+local:ontological	rdfs:label	"ontological"	.
+
+local:ontological_axioms	rdfs:label	"ontological axioms"	.
+
+local:several_other	rdfs:label	"several other"	.
+
+local:several_other_types	rdfs:label	"several other types"	.
+
+local:types	rdfs:label	"types"	.
+
+local:axioms	rdfs:label	"axioms"	.
+
+local:several_other_types_of_ontological_axioms	rdfs:label	"several other types of ontological axioms"	.
+
+local:here	rdfs:label	"here"	.
+
+local:here_discuss	rdfs:label	"here discuss"	.
+
+local:updated	rdfs:label	"updated"	.
+
+local:regularly	rdfs:label	"regularly"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_base	owl:sameAs	cso:knowledge_base	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:knowledge_base	rdfs:label	"knowledge base"	.
+
+#### Relations ####
+
+local:several	rdfs:member	local:several_partial	.
+local:partial	rdfs:member	local:partial_exports	.
+local:many_interesting	rdfs:subClassOf	local:interesting	.
+local:discuss	vn.role:Patient2	local:wikidata	.
+local:introduce	vn.role:Patient	local:several_partial_exports	.
+local:includes	vn.role:Theme	local:several_other_types_of_ontological_axioms	.
+local:several_other	rdfs:subClassOf	local:other	.
+local:extract	vn.role:Source	local:site	.
+local:large_open_knowledge_base_with_many_interesting_applications	local:largeopenknowledgebase_with	local:many_interesting_applications	.
+local:provide	vn.role:Agent	local:selective	.
+local:interlinked	vn.role:Patient2	local:data	.
+local:includes	vn.role:Theme	local:class_hierarchy	.
+local:large_open_knowledge_base	rdfs:subClassOf	local:open_knowledge_base	.
+local:simplified_views	rdfs:subClassOf	local:views	.
+local:address	vn.role:Agent	local:we	.
+local:several_other_types	rdfs:subClassOf	local:types	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:data_model	rdfs:subClassOf	local:model	.
+local:several_other_types_of_ontological_axioms	local:of_ontologicalaxioms	local:several_other_types	.
+local:data_web	rdfs:subClassOf	local:web	.
+local:introduce	local:AM-PNC	local:address	.
+local:new	rdfs:member	local:new_rdf	.
+local:open_knowledge	rdfs:member	local:open_knowledge_base	.
+local:several_other_types	rdfs:subClassOf	local:other_types	.
+local:connect	vn.role:Agent	local:new_rdf_exports	.
+local:many_interesting_applications	rdfs:subClassOf	local:applications	.
+local:many	rdfs:member	local:many_interesting	.
+local:connect	vn.role:Patient	local:wikidata	.
+local:explain	vn.role:Recipient	local:we	.
+local:explain	vn.role:Cause	local:data_model_of_wikidata	.
+local:extract	vn.role:Theme	local:several_other_types_of_ontological_axioms	.
+local:many_interesting	rdfs:member	local:many_interesting_applications	.
+local:new_rdf_exports	rdfs:subClassOf	local:exports	.
+local:other	rdfs:member	local:other_datasets	.
+local:connected	vn.role:Patient	local:many_other_datasets	.
+local:extract	vn.role:Theme	local:class_hierarchy	.
+local:provide	vn.role:Recipient	local:several_partial_exports	.
+local:introduce	vn.role:Patient	local:new_rdf_exports	.
+local:large_open_knowledge_base_with_many_interesting_applications	local:with_manyinterestingapplications	local:large_open_knowledge_base	.
+local:many_other	rdfs:subClassOf	local:other	.
+local:partial_exports	rdfs:subClassOf	local:exports	.
+local:introduce	vn.role:Patient	local:simplified_views_on_data	.
+local:rdf	rdfs:member	local:rdf_exports	.
+local:data_model_of_wikidata	local:datamodel_of	local:wikidata	.
+local:class	rdfs:member	local:class_hierarchy	.
+local:extract	vn.role:Agent	local:we	.
+local:other	rdfs:member	local:other_types	.
+local:includes	vn.role:Location	local:this	.
+local:ontological_axioms	rdfs:subClassOf	local:axioms	.
+local:many	rdfs:member	local:many_other	.
+local:new_rdf	rdfs:member	local:new_rdf_exports	.
+local:several_partial	rdfs:subClassOf	local:partial	.
+local:extract_from_site	local:extract_from	local:site	.
+local:extract_from_site	local:from_site	local:extract	.
+local:connected	vn.role:Patient	local:data	.
+local:open_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
+local:introduce	vn.role:Agent	local:we	.
+local:ontological	rdfs:member	local:ontological_axioms	.
+local:data	rdfs:member	local:data_web	.
+local:several_other	rdfs:member	local:several_other_types	.
+local:connect	vn.role:other	local:linked_data_web	.
+local:several	rdfs:member	local:several_other	.
+local:produced	vn.role:Product	local:large_open_knowledge_base_with_many_interesting_applications	.
+local:updated	vn.role:Predicate	local:datasets	.
+local:rdf_exports	rdfs:subClassOf	local:exports	.
+local:linked_data_web	rdfs:subClassOf	local:data_web	.
+local:open	rdfs:member	local:open_knowledge	.
+local:interesting	rdfs:member	local:interesting_applications	.
+local:several_partial_exports	rdfs:subClassOf	local:partial_exports	.
+local:discuss	local:AM-ADV	local:datasets	.
+local:discuss	vn.role:Patient1	local:we	.
+local:many_other_datasets	rdfs:subClassOf	local:other_datasets	.
+local:interlinked	local:AM-MNR	local:highly	.
+local:many_interesting_applications	rdfs:subClassOf	local:interesting_applications	.
+local:updated	vn.role:Predicate	local:regularly	.
+local:knowledge	rdfs:member	local:knowledge_base	.
+local:several_partial_exports	rdfs:subClassOf	local:exports	.
+local:many_other_datasets	rdfs:subClassOf	local:datasets	.
+local:open_knowledge_base	rdfs:subClassOf	local:base	.
+local:new_rdf_exports	rdfs:subClassOf	local:rdf_exports	.
+local:simplified_views_on_data	local:simplifiedviews_on	local:data	.
+local:several_other_types_of_ontological_axioms	local:severalothertypes_of	local:ontological_axioms	.
+local:produced	vn.role:Agent	local:project	.
+local:open_knowledge	rdfs:subClassOf	local:knowledge	.
+local:here_discuss	rdfs:subClassOf	local:discuss	.
+local:data_model_of_wikidata	local:of_wikidata	local:data_model	.
+local:class_hierarchy	rdfs:subClassOf	local:hierarchy	.
+local:address	vn.role:Theme	local:issue	.
+local:other_types	rdfs:subClassOf	local:types	.
+local:many_other	rdfs:member	local:many_other_datasets	.
+local:thousands_volunteers	rdfs:subClassOf	local:volunteers	.
+local:volunteers_efforts	rdfs:subClassOf	local:efforts	.
+local:data	rdfs:member	local:data_model	.
+local:several_partial	rdfs:member	local:several_partial_exports	.
+local:interesting_applications	rdfs:subClassOf	local:applications	.
+local:new_rdf	rdfs:subClassOf	local:rdf	.
+local:introduce	vn.role:Patient1	local:moreover	.
+local:other_datasets	rdfs:subClassOf	local:datasets	.
+local:discuss	local:AM-LOC	local:here	.
+local:simplified_views_on_data	local:on_data	local:simplified_views	.

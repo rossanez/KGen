@@ -1,0 +1,149 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:accepted	rdfs:label	"accepted"	.
+
+local:widely	rdfs:label	"widely"	.
+
+local:data_publishing	rdfs:label	"data publishing"	.
+
+local:publishing	rdfs:label	"publishing"	.
+
+local:proper_data_publishing	rdfs:label	"proper data publishing"	.
+
+local:proper_data	rdfs:label	"proper data"	.
+
+local:proper	rdfs:label	"proper"	.
+
+local:data	rdfs:label	"data"	.
+
+local:difficult	rdfs:label	"difficult"	.
+
+local:open_data	rdfs:label	"open data"	.
+
+local:open	rdfs:label	"open"	.
+
+local:linked_open_data	rdfs:label	"linked open data"	.
+
+local:majority_of_linked_open_data	rdfs:label	"majority of linked open data"	.
+
+local:majority	rdfs:label	"majority"	.
+
+local:meet	rdfs:label	"meet"	.
+
+local:not	rdfs:label	"not"	.
+
+local:core_set	rdfs:label	"core set"	.
+
+local:set	rdfs:label	"set"	.
+
+local:core	rdfs:label	"core"	.
+
+local:even_core_set	rdfs:label	"even core set"	.
+
+local:even_core_set_of_data	rdfs:label	"even core set of data"	.
+
+local:guidelines	rdfs:label	"guidelines"	.
+
+local:moreover_datasets	rdfs:label	"moreover datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:get	rdfs:label	"get"	.
+
+local:can	rdfs:label	"can"	.
+
+local:stains	rdfs:label	"stains"	.
+
+local:time	rdfs:label	"time"	.
+
+local:clean	rdfs:label	"clean."	.
+
+local:humans	rdfs:label	"humans"	.
+
+local:data_cloud	rdfs:label	"data cloud"	.
+
+local:open_data_cloud	rdfs:label	"open data cloud"	.
+
+local:cloud	rdfs:label	"cloud"	.
+
+local:linked_open_data_cloud	rdfs:label	"linked open data cloud"	.
+
+local:contains	rdfs:label	"contains"	.
+
+local:now	rdfs:label	"now"	.
+
+local:dirty	rdfs:label	"dirty"	.
+
+local:dirty_data	rdfs:label	"dirty data"	.
+
+local:high_level	rdfs:label	"high level"	.
+
+local:level	rdfs:label	"level"	.
+
+local:high	rdfs:label	"high"	.
+
+local:high_level_of_dirty_data	rdfs:label	"high level of dirty data"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:data_publishing	owl:sameAs	cso:data_publishing	.
+local:linked_open_data	owl:sameAs	cso:linked_open_data	.
+cso:linked_open_data	rdfs:label	"linked open data"	.
+cso:data_publishing	rdfs:label	"data publishing"	.
+
+#### Relations ####
+
+local:open_data_cloud	rdfs:subClassOf	local:cloud	.
+local:open	rdfs:member	local:open_data	.
+local:high_level	rdfs:subClassOf	local:level	.
+local:data	rdfs:member	local:data_cloud	.
+local:proper	rdfs:member	local:proper_data	.
+local:data_publishing	rdfs:subClassOf	local:publishing	.
+local:linked_open_data_cloud	rdfs:subClassOf	local:open_data_cloud	.
+local:majority_of_linked_open_data	local:majority_of	local:linked_open_data	.
+local:open_data	rdfs:member	local:open_data_cloud	.
+local:contains	vn.role:Theme2	local:high_level_of_dirty_data	.
+local:get	local:AM-MOD	local:can	.
+local:core	rdfs:member	local:core_set	.
+local:meet	local:AM-NEG	local:not	.
+local:high	rdfs:member	local:high_level	.
+local:data	rdfs:member	local:data_publishing	.
+local:get	vn.role:Agent	local:moreover_datasets	.
+local:data_cloud	rdfs:subClassOf	local:cloud	.
+local:proper_data_publishing	rdfs:subClassOf	local:publishing	.
+local:open_data_cloud	rdfs:subClassOf	local:data_cloud	.
+local:high_level_of_dirty_data	local:of_dirtydata	local:high_level	.
+local:high_level_of_dirty_data	local:highlevel_of	local:dirty_data	.
+local:contains	local:AM-TMP	local:now	.
+local:publishing	vn.role:Agent	local:guidelines	.
+local:open_data	rdfs:subClassOf	local:data	.
+local:accepted	local:AM-MNR	local:widely	.
+local:even_core_set_of_data	local:of_data	local:even_core_set	.
+local:even_core_set	rdfs:subClassOf	local:core_set	.
+local:clean	vn.role:subject	local:humans	.
+local:core_set	rdfs:subClassOf	local:set	.
+local:get	local:AM-TMP	local:time	.
+local:dirty_data	rdfs:subClassOf	local:data	.
+local:linked_open_data	rdfs:subClassOf	local:open_data	.
+local:proper_data	rdfs:member	local:proper_data_publishing	.
+local:majority_of_linked_open_data	local:of_linkedopendata	local:majority	.
+local:meet	vn.role:Theme2	local:even_core_set_of_data	.
+local:dirty	rdfs:member	local:dirty_data	.
+local:get	vn.role:Patient	local:stains	.
+local:proper_data_publishing	rdfs:subClassOf	local:data_publishing	.
+local:proper_data	rdfs:subClassOf	local:data	.
+local:moreover_datasets	rdfs:subClassOf	local:datasets	.
+local:meet	vn.role:Theme1	local:majority_of_linked_open_data	.
+local:accepted	vn.role:Proposition	local:difficult	.
+local:even_core_set_of_data	local:evencoreset_of	local:data	.
+local:publishing	vn.role:Agent	local:data	.
+local:contains	vn.role:Theme1	local:linked_open_data_cloud	.

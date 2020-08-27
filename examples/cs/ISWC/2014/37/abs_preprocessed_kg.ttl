@@ -1,0 +1,193 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:data	rdfs:label	"data"	.
+
+local:data_access	rdfs:label	"data access"	.
+
+local:data_access_challenge	rdfs:label	"data access challenge"	.
+
+local:access	rdfs:label	"access"	.
+
+local:access_challenge	rdfs:label	"access challenge"	.
+
+local:siemens_energy	rdfs:label	"siemens energy"	.
+
+local:energy	rdfs:label	"energy"	.
+
+local:challenge	rdfs:label	"challenge"	.
+
+local:siemens	rdfs:label	"siemens"	.
+
+local:description_of_data_access_challenge	rdfs:label	"description of data access challenge"	.
+
+local:description	rdfs:label	"description"	.
+
+local:data_access_challenge_in_siemens_energy	rdfs:label	"data access challenge in siemens energy"	.
+
+local:address	rdfs:label	"address"	.
+
+local:derive	rdfs:label	"derive"	.
+
+local:access_systems	rdfs:label	"access systems"	.
+
+local:data_access_systems	rdfs:label	"data access systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:existing_data_access_systems	rdfs:label	"existing data access systems"	.
+
+local:review_existing_data_access_systems	rdfs:label	"review existing data access systems"	.
+
+local:data_access_in_siemens	rdfs:label	"data access in siemens"	.
+
+local:siemens_review_existing_data_access_systems	rdfs:label	"siemens review existing data access systems"	.
+
+local:requirements	rdfs:label	"requirements"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:discuss	rdfs:label	"discuss"	.
+
+local:systems_limitations	rdfs:label	"systems limitations"	.
+
+local:siemens_requirements	rdfs:label	"siemens requirements"	.
+
+local:limitations	rdfs:label	"limitations"	.
+
+local:data_access_systems_limitations	rdfs:label	"data access systems limitations"	.
+
+local:access_systems_limitations	rdfs:label	"access systems limitations"	.
+
+local:data_access_systems_limitations_withrespectto_siemens_requirements	rdfs:label	"data access systems limitations with_respect_to siemens requirements"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:then	rdfs:label	"then"	.
+
+local:optique_platform	rdfs:label	"optique platform"	.
+
+local:platform	rdfs:label	"platform"	.
+
+local:optique	rdfs:label	"optique"	.
+
+local:suitable_data_access	rdfs:label	"suitable data access"	.
+
+local:suitable_data_access_solution	rdfs:label	"suitable data access solution"	.
+
+local:data_access_solution	rdfs:label	"data access solution"	.
+
+local:solution	rdfs:label	"solution"	.
+
+local:suitable	rdfs:label	"suitable"	.
+
+local:suitable_data	rdfs:label	"suitable data"	.
+
+local:access_solution	rdfs:label	"access solution"	.
+
+local:suitable_data_access_solution_for_siemens	rdfs:label	"suitable data access solution for siemens"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:preliminary	rdfs:label	"preliminary"	.
+
+local:preliminary_installation	rdfs:label	"preliminary installation"	.
+
+local:installation	rdfs:label	"installation"	.
+
+local:preliminary_installation_of_platform	rdfs:label	"preliminary installation of platform"	.
+
+local:platform_in_siemens	rdfs:label	"platform in siemens"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:data_access_challenge_in_siemens_energy	local:in_siemensenergy	local:data_access_challenge	.
+local:derive	vn.role:Theme	local:we	.
+local:data_access_in_siemens	local:dataaccess_in	local:siemens	.
+local:preliminary	rdfs:member	local:preliminary_installation	.
+local:access_systems_limitations	rdfs:subClassOf	local:systems_limitations	.
+local:suitable_data_access_solution	rdfs:subClassOf	local:data_access_solution	.
+local:siemens_requirements	rdfs:subClassOf	local:requirements	.
+local:data_access_challenge	rdfs:subClassOf	local:access_challenge	.
+local:data_access_solution	rdfs:subClassOf	local:access_solution	.
+local:data_access_systems_limitations_withrespectto_siemens_requirements	local:with_respect_to_siemensrequirements	local:data_access_systems_limitations	.
+local:describe	vn.role:Theme	local:preliminary_installation_of_platform	.
+local:access_systems	rdfs:subClassOf	local:systems	.
+local:siemens	rdfs:member	local:siemens_requirements	.
+local:data_access_systems	rdfs:subClassOf	local:access_systems	.
+local:applying	vn.role:Theme	local:data_access_in_siemens	.
+local:data_access	rdfs:member	local:data_access_challenge	.
+local:discuss	vn.role:Patient1	local:we	.
+local:data_access_systems_limitations	rdfs:subClassOf	local:access_systems_limitations	.
+local:discuss	vn.role:Patient2	local:data_access_systems_limitations_withrespectto_siemens_requirements	.
+local:data_access_systems_limitations	rdfs:subClassOf	local:limitations	.
+local:optique	rdfs:member	local:optique_platform	.
+local:suitable_data_access	rdfs:member	local:suitable_data_access_solution	.
+local:introduce	local:AM-TMP	local:then	.
+local:present	vn.role:Agent	local:we	.
+local:data_access_in_siemens	local:in_siemens	local:data_access	.
+local:systems_limitations	rdfs:subClassOf	local:limitations	.
+local:data_access_solution	rdfs:subClassOf	local:solution	.
+local:suitable_data_access_solution	rdfs:subClassOf	local:solution	.
+local:suitable_data	rdfs:member	local:suitable_data_access	.
+local:data_access	rdfs:member	local:data_access_systems	.
+local:data_access_systems_limitations_withrespectto_siemens_requirements	local:dataaccesssystemslimitations_with_respect_to	local:siemens_requirements	.
+local:preliminary_installation_of_platform	local:preliminaryinstallation_of	local:platform	.
+local:review_existing_data_access_systems	rdfs:subClassOf	local:existing_data_access_systems	.
+local:suitable_data_access_solution_for_siemens	local:for_siemens	local:suitable_data_access_solution	.
+local:data_access	rdfs:member	local:data_access_solution	.
+local:platform_in_siemens	local:platform_in	local:siemens	.
+local:derive	vn.role:Location	local:requirements	.
+local:data_access	rdfs:subClassOf	local:access	.
+local:data	rdfs:member	local:data_access	.
+local:siemens_energy	rdfs:subClassOf	local:energy	.
+local:address	vn.role:Theme	local:challenge	.
+local:suitable_data_access_solution_for_siemens	local:suitabledataaccesssolution_for	local:siemens	.
+local:systems	rdfs:member	local:systems_limitations	.
+local:existing_data_access_systems	rdfs:subClassOf	local:data_access_systems	.
+local:introduce	vn.role:other	local:suitable_data_access_solution_for_siemens	.
+local:data_access_challenge	rdfs:subClassOf	local:challenge	.
+local:access	rdfs:member	local:access_systems	.
+local:access_systems_limitations	rdfs:subClassOf	local:limitations	.
+local:introduce	vn.role:Agent	local:we	.
+local:siemens	rdfs:member	local:siemens_energy	.
+local:introduce	vn.role:Patient	local:optique_platform	.
+local:suitable	rdfs:member	local:suitable_data	.
+local:existing	vn.role:Location	local:data_access_systems	.
+local:description_of_data_access_challenge	local:description_of	local:data_access_challenge	.
+local:present	vn.role:Theme	local:description_of_data_access_challenge	.
+local:siemens_review_existing_data_access_systems	local:siemens_	local:review_existing_data_access_systems	.
+local:data_access_systems	rdfs:subClassOf	local:systems	.
+local:description_of_data_access_challenge	local:of_dataaccesschallenge	local:description	.
+local:suitable_data	rdfs:subClassOf	local:data	.
+local:data_access_challenge_in_siemens_energy	local:dataaccesschallenge_in	local:siemens_energy	.
+local:preliminary_installation_of_platform	local:of_platform	local:preliminary_installation	.
+local:optique_platform	rdfs:subClassOf	local:platform	.
+local:suitable_data_access	rdfs:subClassOf	local:access	.
+local:access	rdfs:member	local:access_solution	.
+local:data_access_systems	rdfs:member	local:data_access_systems_limitations	.
+local:access_challenge	rdfs:subClassOf	local:challenge	.
+local:platform_in_siemens	local:in_siemens	local:platform	.
+local:access	rdfs:member	local:access_challenge	.
+local:describe	vn.role:Agent	local:we	.
+local:access_systems	rdfs:member	local:access_systems_limitations	.
+local:preliminary_installation	rdfs:subClassOf	local:installation	.
+local:siemens_review_existing_data_access_systems	local:_reviewexistingdataaccesssystems	local:siemens	.
+local:access_solution	rdfs:subClassOf	local:solution	.

@@ -1,0 +1,185 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:add	rdfs:label	"add"	.
+
+local:schemaorg	rdfs:label	"schema.org"	.
+
+local:way	rdfs:label	"way"	.
+
+local:machineunderstandable_information	rdfs:label	"machine-understandable information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:machineunderstandable	rdfs:label	"machine-understandable"	.
+
+local:web_pages	rdfs:label	"web pages"	.
+
+local:pages	rdfs:label	"pages"	.
+
+local:machineunderstandable_information_to_web_pages	rdfs:label	"machine-understandable information to web pages"	.
+
+local:web	rdfs:label	"web"	.
+
+local:processed	rdfs:label	"processed"	.
+
+local:major_search_engines	rdfs:label	"major search engines"	.
+
+local:engines	rdfs:label	"engines"	.
+
+local:major_search	rdfs:label	"major search"	.
+
+local:search	rdfs:label	"search"	.
+
+local:search_engines	rdfs:label	"search engines"	.
+
+local:major	rdfs:label	"major"	.
+
+local:search_performance	rdfs:label	"search performance"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:improve	rdfs:label	"improve"	.
+
+local:definition_of_schemaorg	rdfs:label	"definition of schema.org"	.
+
+local:definition	rdfs:label	"definition"	.
+
+local:provided	rdfs:label	"provided"	.
+
+local:partial_mapping	rdfs:label	"partial mapping"	.
+
+local:mapping	rdfs:label	"mapping"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:rdf_triples	rdfs:label	"rdf triples"	.
+
+local:triples	rdfs:label	"triples"	.
+
+local:partial	rdfs:label	"partial"	.
+
+local:set_of_web_pages	rdfs:label	"set of web pages"	.
+
+local:set	rdfs:label	"set"	.
+
+local:set_of_web_pages_of_partial_mapping	rdfs:label	"set of web pages of partial mapping"	.
+
+local:partial_mapping_into_rdf_triples	rdfs:label	"partial mapping into rdf triples"	.
+
+local:unusual	rdfs:label	"unusual"	.
+
+local:unusual_properties	rdfs:label	"unusual properties"	.
+
+local:properties	rdfs:label	"properties"	.
+
+local:provides	rdfs:label	"provides"	.
+
+local:analysis	rdfs:label	"analysis"	.
+
+local:complete	rdfs:label	"complete"	.
+
+local:complete_basis	rdfs:label	"complete basis"	.
+
+local:plausible	rdfs:label	"plausible"	.
+
+local:plausible_version	rdfs:label	"plausible version"	.
+
+local:version	rdfs:label	"version"	.
+
+local:basis	rdfs:label	"basis"	.
+
+local:should_be	rdfs:label	"should be"	.
+
+local:be	rdfs:label	"be."	.
+
+local:complete_basis_for_plausible_version	rdfs:label	"complete basis for plausible version"	.
+
+local:should	rdfs:label	"should"	.
+
+local:formal	rdfs:label	"formal"	.
+
+local:formal_semantics	rdfs:label	"formal semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:formal_semantics_for_schemaorg	rdfs:label	"formal semantics for schema.org"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:formal_semantics	rdfs:label	"formal semantics"	.
+cso:web_pages	rdfs:label	"web pages"	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:search_engines	rdfs:label	"search engines"	.
+local:search_engines	owl:sameAs	cso:search_engines	.
+local:web_pages	owl:sameAs	cso:web_pages	.
+cso:rdf	rdfs:label	"rdf"	.
+local:formal_semantics	owl:sameAs	cso:formal_semantics	.
+
+#### Relations ####
+
+local:processed	vn.role:Agent	local:major_search_engines	.
+local:rdf	rdfs:member	local:rdf_triples	.
+local:improve	vn.role:Agent	local:major_search_engines	.
+local:plausible_version	rdfs:subClassOf	local:version	.
+local:set_of_web_pages	local:set_of	local:web_pages	.
+local:formal_semantics_for_schemaorg	local:formalsemantics_for	local:schemaorg	.
+local:search	rdfs:member	local:search_engines	.
+local:processed	local:AM-PNC	local:improve	.
+local:provides	vn.role:Recipient	local:analysis	.
+local:provides	vn.role:Agent	local:complete_basis_for_plausible_version	.
+local:web	rdfs:member	local:web_pages	.
+local:partial	rdfs:member	local:partial_mapping	.
+local:major	rdfs:member	local:major_search	.
+local:set_of_web_pages	local:of_webpages	local:set	.
+local:partial_mapping_into_rdf_triples	local:partialmapping_into	local:rdf_triples	.
+local:processed	vn.role:Theme	local:web_pages	.
+local:add	vn.role:Agent	local:schemaorg	.
+local:major_search_engines	rdfs:subClassOf	local:search_engines	.
+local:improve	vn.role:Agent	local:web_pages	.
+local:web_pages	rdfs:subClassOf	local:pages	.
+local:provided	local:AM-MNR	local:unusual_properties	.
+local:search_performance	rdfs:subClassOf	local:performance	.
+local:partial_mapping	rdfs:subClassOf	local:mapping	.
+local:search_engines	rdfs:subClassOf	local:engines	.
+local:provided	vn.role:indirect_object	local:set_of_web_pages_of_partial_mapping	.
+local:complete_basis	rdfs:subClassOf	local:basis	.
+local:partial_mapping_into_rdf_triples	local:into_rdftriples	local:partial_mapping	.
+local:machineunderstandable_information_to_web_pages	local:machine-understandableinformation_to	local:web_pages	.
+local:major_search	rdfs:member	local:major_search_engines	.
+local:formal_semantics_for_schemaorg	local:for_schema.org	local:formal_semantics	.
+local:be	local:AM-MOD	local:should	.
+local:unusual_properties	rdfs:subClassOf	local:properties	.
+local:complete_basis_for_plausible_version	local:for_plausibleversion	local:complete_basis	.
+local:formal	rdfs:member	local:formal_semantics	.
+local:provides	vn.role:Recipient	local:formal_semantics_for_schemaorg	.
+local:should_be	rdfs:subClassOf	local:be	.
+local:machineunderstandable_information_to_web_pages	local:to_webpages	local:machineunderstandable_information	.
+local:search	rdfs:member	local:search_performance	.
+local:complete_basis_for_plausible_version	local:completebasis_for	local:plausible_version	.
+local:definition_of_schemaorg	local:of_schema.org	local:definition	.
+local:plausible	rdfs:member	local:plausible_version	.
+local:set_of_web_pages_of_partial_mapping	local:setofwebpages_of	local:partial_mapping	.
+local:complete	rdfs:member	local:complete_basis	.
+local:machineunderstandable_information	rdfs:subClassOf	local:information	.
+local:add	vn.role:Patient	local:machineunderstandable_information_to_web_pages	.
+local:definition_of_schemaorg	local:definition_of	local:schemaorg	.
+local:unusual	rdfs:member	local:unusual_properties	.
+local:improve	vn.role:Patient	local:search_performance	.
+local:be	vn.role:subject	local:schemaorg	.
+local:add	local:AM-MNR	local:way	.
+local:formal_semantics	rdfs:subClassOf	local:semantics	.
+local:set_of_web_pages_of_partial_mapping	local:of_partialmapping	local:set_of_web_pages	.
+local:provided	vn.role:Agent	local:definition_of_schemaorg	.
+local:major_search_engines	rdfs:subClassOf	local:engines	.
+local:machineunderstandable	rdfs:member	local:machineunderstandable_information	.
+local:rdf_triples	rdfs:subClassOf	local:triples	.
+local:major_search	rdfs:subClassOf	local:search	.

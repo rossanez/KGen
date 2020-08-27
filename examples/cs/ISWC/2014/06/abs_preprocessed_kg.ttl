@@ -1,0 +1,135 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:have	rdfs:label	"have"	.
+
+local:they	rdfs:label	"they"	.
+
+local:chemical_structure	rdfs:label	"chemical structure"	.
+
+local:structure	rdfs:label	"structure"	.
+
+local:chemical	rdfs:label	"chemical"	.
+
+local:drug_name	rdfs:label	"drug name"	.
+
+local:name	rdfs:label	"name"	.
+
+local:drug	rdfs:label	"drug"	.
+
+local:criteria	rdfs:label	"criteria"	.
+
+local:depends	rdfs:label	"depends"	.
+
+local:choice	rdfs:label	"choice"	.
+
+local:will_put	rdfs:label	"will put"	.
+
+local:put	rdfs:label	"put"	.
+
+local:linked_data	rdfs:label	"linked data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:existing_linked_data	rdfs:label	"existing linked data"	.
+
+local:will_put_to_application	rdfs:label	"will put to application"	.
+
+local:application	rdfs:label	"application"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:linked	rdfs:label	"linked"	.
+
+local:data_approaches	rdfs:label	"data approaches"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:linked_data_approaches	rdfs:label	"linked data approaches"	.
+
+local:existing_linked_data_approaches	rdfs:label	"existing linked data approaches"	.
+
+local:however_existing_linked_data_approaches	rdfs:label	"however existing linked data approaches"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:single	rdfs:label	"single"	.
+
+local:single_global	rdfs:label	"single global"	.
+
+local:single_global_view	rdfs:label	"single global view"	.
+
+local:global_view	rdfs:label	"global view"	.
+
+local:view	rdfs:label	"view"	.
+
+local:global	rdfs:label	"global"	.
+
+local:single_global_view_over_existing_linked_data	rdfs:label	"single global view over existing linked data"	.
+
+local:notion_of_equivalence	rdfs:label	"notion of equivalence"	.
+
+local:notion	rdfs:label	"notion"	.
+
+local:equivalence	rdfs:label	"equivalence"	.
+
+local:way	rdfs:label	"way"	.
+
+local:varying	rdfs:label	"varying"	.
+
+local:applied	rdfs:label	"applied"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:linked_data	owl:sameAs	cso:linked_data	.
+cso:linked_data	rdfs:label	"linked data"	.
+
+#### Relations ####
+
+local:depends	local:AM-TMP	local:application	.
+local:existing_linked_data_approaches	rdfs:subClassOf	local:linked_data_approaches	.
+local:will_put_to_application	local:willput_to	local:application	.
+local:drug_name	rdfs:subClassOf	local:name	.
+local:provide	vn.role:Recipient	local:however_existing_linked_data_approaches	.
+local:existing	vn.role:Location	local:linked_data	.
+local:single_global_view	rdfs:subClassOf	local:view	.
+local:chemical_structure	rdfs:subClassOf	local:structure	.
+local:will_put	rdfs:subClassOf	local:put	.
+local:single_global_view	rdfs:subClassOf	local:global_view	.
+local:single_global	rdfs:member	local:single_global_view	.
+local:single_global_view_over_existing_linked_data	local:singleglobalview_over	local:existing_linked_data	.
+local:existing	vn.role:Location	local:linked_data_approaches	.
+local:data	rdfs:member	local:data_approaches	.
+local:global_view	rdfs:subClassOf	local:view	.
+local:single_global_view_over_existing_linked_data	local:over_existinglinkeddata	local:single_global_view	.
+local:will_put_to_application	local:to_application	local:will_put	.
+local:varying	vn.role:Attribute	local:notion_of_equivalence	.
+local:have	vn.role:Stimulus	local:criteria	.
+local:provide	vn.role:Agent	local:single_global_view_over_existing_linked_data	.
+local:linked_data_approaches	rdfs:subClassOf	local:data_approaches	.
+local:drug	rdfs:member	local:drug_name	.
+local:varying	local:AM-PNC	local:applied	.
+local:depends	vn.role:Theme	local:choice	.
+local:data_approaches	rdfs:subClassOf	local:approaches	.
+local:provide	local:AM-MNR	local:way	.
+local:notion_of_equivalence	local:of_equivalence	local:notion	.
+local:single_global	rdfs:subClassOf	local:global	.
+local:have	vn.role:Stimulus	local:chemical_structure	.
+local:notion_of_equivalence	local:notion_of	local:equivalence	.
+local:have	vn.role:Stimulus	local:drug_name	.
+local:have	vn.role:Experiencer	local:they	.
+local:linked	vn.role:Patient	local:data	.
+local:chemical	rdfs:member	local:chemical_structure	.
+local:existing_linked_data	rdfs:subClassOf	local:linked_data	.
+local:single	rdfs:member	local:single_global	.
+local:global	rdfs:member	local:global_view	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:however_existing_linked_data_approaches	rdfs:subClassOf	local:existing_linked_data_approaches	.

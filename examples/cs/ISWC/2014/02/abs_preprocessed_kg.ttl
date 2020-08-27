@@ -1,0 +1,274 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:rdf_resources	rdfs:label	"rdf resources"	.
+
+local:resources	rdfs:label	"resources"	.
+
+local:identity	rdfs:label	"identity"	.
+
+local:identity_links	rdfs:label	"identity links"	.
+
+local:links	rdfs:label	"links"	.
+
+local:identity_links_among_rdf_resources	rdfs:label	"identity links among rdf resources"	.
+
+local:exploiting	rdfs:label	"exploiting"	.
+
+local:allows	rdfs:label	"allows"	.
+
+local:efficiently_integrate	rdfs:label	"efficiently integrate"	.
+
+local:integrate	rdfs:label	"integrate"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:efficiently	rdfs:label	"efficiently"	.
+
+local:data	rdfs:label	"data"	.
+
+local:discover	rdfs:label	"discover"	.
+
+local:set_of_properties	rdfs:label	"set of properties"	.
+
+local:set	rdfs:label	"set"	.
+
+local:properties	rdfs:label	"properties"	.
+
+local:considered	rdfs:label	"considered"	.
+
+local:key	rdfs:label	"key"	.
+
+local:properties_values	rdfs:label	"properties values"	.
+
+local:values	rdfs:label	"values"	.
+
+local:when_values	rdfs:label	"when values"	.
+
+local:identify	rdfs:label	"identify"	.
+
+local:uniquely	rdfs:label	"uniquely"	.
+
+local:require	rdfs:label	"require"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:can	rdfs:label	"can"	.
+
+local:easily	rdfs:label	"easily"	.
+
+local:clean_data	rdfs:label	"clean data"	.
+
+local:clean	rdfs:label	"clean"	.
+
+local:attempt	rdfs:label	"attempt"	.
+
+local:automatically_discover	rdfs:label	"automatically discover"	.
+
+local:automatically	rdfs:label	"automatically"	.
+
+local:discover_keys	rdfs:label	"discover keys"	.
+
+local:keys	rdfs:label	"keys"	.
+
+local:automatically_discover_keys	rdfs:label	"automatically discover keys"	.
+
+local:overwhelmed	rdfs:label	"overwhelmed"	.
+
+local:size_of_data	rdfs:label	"size of data"	.
+
+local:size	rdfs:label	"size"	.
+
+local:discovers	rdfs:label	"discovers"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:rdf_data	rdfs:label	"rdf data"	.
+
+local:keys_in_rdf_data	rdfs:label	"keys in rdf data"	.
+
+local:efficient_way	rdfs:label	"efficient way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:efficient	rdfs:label	"efficient"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:sakey	rdfs:label	"sakey"	.
+
+local:detected	rdfs:label	"detected"	.
+
+local:dynamically	rdfs:label	"dynamically"	.
+
+local:process	rdfs:label	"process"	.
+
+local:search	rdfs:label	"search"	.
+
+local:search_space	rdfs:label	"search space"	.
+
+local:space	rdfs:label	"space"	.
+
+local:search_space_sakey	rdfs:label	"search space sakey"	.
+
+local:prune	rdfs:label	"prune"	.
+
+local:exploits	rdfs:label	"exploits"	.
+
+local:characteristics_of_data	rdfs:label	"characteristics of data"	.
+
+local:characteristics	rdfs:label	"characteristics"	.
+
+local:furthermore_approach	rdfs:label	"furthermore approach"	.
+
+local:almost_keys	rdfs:label	"almost keys"	.
+
+local:almost	rdfs:label	"almost"	.
+
+local:keys_in_datasets	rdfs:label	"keys in datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:evaluated	rdfs:label	"evaluated"	.
+
+local:different	rdfs:label	"different"	.
+
+local:different_synthetic	rdfs:label	"different synthetic"	.
+
+local:synthetic	rdfs:label	"synthetic"	.
+
+local:real_datasets	rdfs:label	"real datasets"	.
+
+local:real	rdfs:label	"real"	.
+
+local:show	rdfs:label	"show"	.
+
+local:results	rdfs:label	"results"	.
+
+local:relevance_of_almost_keys	rdfs:label	"relevance of almost keys"	.
+
+local:relevance	rdfs:label	"relevance"	.
+
+local:relevance_of_efficiency	rdfs:label	"relevance of efficiency"	.
+
+local:efficiency	rdfs:label	"efficiency"	.
+
+local:discovering	rdfs:label	"discovering"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:rdf	rdfs:label	"rdf"	.
+cso:rdf_data	rdfs:label	"rdf data"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:real_datasets	owl:sameAs	cso:real_data_sets	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+cso:real_data_sets	rdfs:label	"real datasets"	.
+
+#### Relations ####
+
+local:overwhelmed	local:AM-MOD	local:can	.
+local:considered	vn.role:Theme	local:set_of_properties	.
+local:search_space	rdfs:subClassOf	local:space	.
+local:rdf	rdfs:member	local:rdf_data	.
+local:clean	rdfs:member	local:clean_data	.
+local:identify	vn.role:Theme	local:resources	.
+local:furthermore_approach	rdfs:subClassOf	local:approach	.
+local:evaluated	local:AM-MNR	local:different_synthetic	.
+local:require	vn.role:Patient	local:clean_data	.
+local:detected	local:AM-MNR	local:dynamically	.
+local:discovers	vn.role:Theme	local:keys_in_rdf_data	.
+local:relevance_of_almost_keys	local:relevance_of	local:almost_keys	.
+local:different	rdfs:member	local:different_synthetic	.
+local:show	vn.role:Theme	local:relevance_of_almost_keys	.
+local:rdf	rdfs:member	local:rdf_resources	.
+local:identity_links_among_rdf_resources	local:identitylinks_among	local:rdf_resources	.
+local:overwhelmed	vn.role:Cause	local:approaches	.
+local:efficiently_integrate	rdfs:subClassOf	local:integrate	.
+local:detected	vn.role:Stimulus	local:data	.
+local:integrate	vn.role:Patient2	local:data	.
+local:when_values	rdfs:subClassOf	local:values	.
+local:search	rdfs:member	local:search_space	.
+local:integrate	local:AM-MNR	local:efficiently	.
+local:search_space_sakey	local:_sakey	local:search_space	.
+local:characteristics_of_data	local:characteristics_of	local:data	.
+local:allows	vn.role:Agent	local:exploiting	.
+local:detected	local:AM-TMP	local:process	.
+local:automatically	rdfs:member	local:automatically_discover	.
+local:present	vn.role:Theme	local:sakey	.
+local:automatically_discover	rdfs:member	local:automatically_discover_keys	.
+local:discovers	vn.role:Agent	local:approach	.
+local:real	rdfs:member	local:real_datasets	.
+local:allows	vn.role:Theme	local:applications	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:relevance_of_almost_keys	local:of_almostkeys	local:relevance	.
+local:discover	vn.role:Agent	local:approaches	.
+local:size_of_data	local:size_of	local:data	.
+local:evaluated	vn.role:Theme	local:approach	.
+local:exploits	vn.role:Agent	local:prune	.
+local:automatically_discover_keys	rdfs:subClassOf	local:keys	.
+local:attempt	vn.role:Agent	local:approaches	.
+local:discover	rdfs:member	local:discover_keys	.
+local:relevance_of_efficiency	local:relevance_of	local:efficiency	.
+local:identity_links	rdfs:subClassOf	local:links	.
+local:keys_in_rdf_data	local:in_rdfdata	local:keys	.
+local:discover	vn.role:Theme	local:keys	.
+local:keys_in_datasets	local:keys_in	local:datasets	.
+local:require	vn.role:Agent	local:approaches	.
+local:identity	rdfs:member	local:identity_links	.
+local:identify	vn.role:Agent	local:key	.
+local:evaluated	vn.role:Theme	local:real_datasets	.
+local:present	vn.role:Theme	local:approach	.
+local:real_datasets	rdfs:subClassOf	local:datasets	.
+local:identity_links_among_rdf_resources	local:among_rdfresources	local:identity_links	.
+local:rdf_resources	rdfs:subClassOf	local:resources	.
+local:discover	local:AM-MOD	local:can	.
+local:efficient_way	rdfs:subClassOf	local:way	.
+local:discover	vn.role:Agent	local:furthermore_approach	.
+local:set_of_properties	local:set_of	local:properties	.
+local:keys_in_rdf_data	local:keys_in	local:rdf_data	.
+local:properties_values	rdfs:subClassOf	local:values	.
+local:discover	vn.role:Theme	local:identity_links	.
+local:keys_in_datasets	local:in_datasets	local:keys	.
+local:identify	local:AM-MNR	local:uniquely	.
+local:exploits	vn.role:Predicate	local:characteristics_of_data	.
+local:present	vn.role:Agent	local:we	.
+local:integrate	vn.role:Patient1	local:applications	.
+local:exploiting	vn.role:Predicate	local:identity_links_among_rdf_resources	.
+local:discover_keys	rdfs:subClassOf	local:keys	.
+local:efficient	rdfs:member	local:efficient_way	.
+local:require	local:AM-MOD	local:can	.
+local:attempt	vn.role:Predicate	local:automatically_discover	.
+local:overwhelmed	vn.role:Experiencer	local:size_of_data	.
+local:show	vn.role:Agent	local:results	.
+local:discovers	local:AM-LOC	local:efficient_way	.
+local:characteristics_of_data	local:of_data	local:characteristics	.
+local:overwhelmed	local:AM-MNR	local:easily	.
+local:discover	vn.role:Theme	local:keys_in_datasets	.
+local:relevance_of_efficiency	local:of_efficiency	local:relevance	.
+local:search_space_sakey	local:searchspace_	local:sakey	.
+local:almost	rdfs:member	local:almost_keys	.
+local:discover	local:AM-MNR	local:automatically	.
+local:prune	vn.role:Patient	local:search_space_sakey	.
+local:discovering	vn.role:Theme	local:almost_keys	.
+local:considered	vn.role:Predicate	local:key	.
+local:different_synthetic	rdfs:subClassOf	local:synthetic	.
+local:automatically_discover	rdfs:subClassOf	local:discover	.
+local:set_of_properties	local:of_properties	local:set	.
+local:require	local:AM-MNR	local:easily	.
+local:size_of_data	local:of_data	local:size	.
+local:show	vn.role:Theme	local:relevance_of_efficiency	.
+local:properties	rdfs:member	local:properties_values	.
+local:clean_data	rdfs:subClassOf	local:data	.
+local:almost_keys	rdfs:subClassOf	local:keys	.
