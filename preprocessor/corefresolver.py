@@ -73,7 +73,7 @@ class CorefResolver:
                 replacement = self.__replace(s_index, token, corefs)
 
                 if replacement is None:
-                    resolved += token['word'] + ' '
+                    resolved += token['originalText'] + ' '
                 elif not replacement is '':
                     resolved += replacement + ' '
 

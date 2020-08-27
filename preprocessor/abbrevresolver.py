@@ -48,10 +48,10 @@ class AbbrevResolver:
                 if token['word'] in abbrev_refs:
                     resolved_contents += abbrev_refs[token['word']] + ' '
                 else:
-                    resolved_contents += token['word'] + ' '
+                    resolved_contents += token['originalText'] + ' '
 
         for key in abbrev_refs:
-            resolved_contents = resolved_contents.replace('{} -LRB- {} -RRB-'.format(abbrev_refs[key], abbrev_refs[key]), abbrev_refs[key])
+            resolved_contents = resolved_contents.replace('{} ( {} )'.format(abbrev_refs[key], abbrev_refs[key]), abbrev_refs[key])
 
         return resolved_contents
 

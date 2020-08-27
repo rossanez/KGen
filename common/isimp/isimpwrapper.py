@@ -1,5 +1,7 @@
+import copy
 import json
 import os
+import re
 
 from subprocess import Popen
 from sys import stderr
@@ -62,3 +64,126 @@ class iSimpWrapper:
 
         return json.loads(out_contents)
 
+############################ Below is highly inspired by the generate_sentences.py script from https://github.com/bionlplab/isimp
+
+    def generate_simpler_sentences(self, sentence):
+        simplified_contents = []
+        total_sentences = []
+        self.__simplify_helper(sentence, total_sentences)
+        sentences_text = set(s['TEXT'] for s in total_sentences)
+        for s in sentences_text:
+            s = re.sub('\\s+', ' ', s)
+            s = re.sub('\\n', ' ', s)
+            s = s.strip()#.capitalize()
+            if len(s) == 0:
+                continue
+            if s[-1] != '.':
+                s += '.'
+            simplified_contents.append(s)
+
+        return '\n'.join(simplified_contents)
+
+    def __simplify_helper(self, sentence, total_simp_sentences):
+        if len(sentence['SIMP']) == 0:
+            total_simp_sentences.append(sentence)
+            return
+        simp_idx = len(sentence['SIMP'])
+        simp = sentence['SIMP'].pop(-1)
+        if simp['TYPE'] == 'parenthesis':
+            ss = self.__process_parenthesis(sentence, simp)
+        elif 'relative' in simp['TYPE']:
+            ss = self.__process_relative(sentence, simp)
+        elif 'coordination' in simp['TYPE']:
+            ss = self.__process_coordination(sentence, simp)
+        elif simp['TYPE'] == 'member-collection':
+            ss = [sentence]
+        elif simp['TYPE'] == 'hypernymy':
+            ss = [sentence]
+        elif simp['TYPE'] == 'apposition':
+            ss = self.__process_apposition(sentence, simp)
+        else:
+            print('Cannot parse type: {}'.format(simp['TYPE']))
+            ss = [sentence]
+        for i, s in enumerate(ss):
+            s['id'] = '{simp_idx}/{i}'
+            self.__simplify_helper(s, total_simp_sentences)
+
+    def __process_parenthesis(self, sentence, simp):
+        sentences = []
+        begin = sentence['FROM']
+        for comp in simp['COMP']:
+            if comp['TYPE'] in ('referred noun phrase', 'parenthesized elements'):
+                s = copy.deepcopy(sentence)
+                text = s['TEXT']
+                text = self.__repl_space(text, simp['FROM'] - begin, simp['TO  '] - begin + 1)
+                text = self.__repl_text(text, sentence['TEXT'], comp['FROM'] - begin, comp['TO  '] - begin)
+                s['TEXT'] = text
+                sentences.append(s)
+            else:
+                raise KeyError(comp['TYPE'])
+        return sentences
+
+
+    def __process_apposition(self, sentence, simp):
+        sentences = []
+        begin = sentence['FROM']
+        for comp in simp['COMP']:
+            if comp['TYPE'] in ('referred noun phrase', 'appositive'):
+                s = copy.deepcopy(sentence)
+                text = s['TEXT']
+                text = self.__repl_space(text, simp['FROM'] - begin, simp['TO  '] - begin)
+                text = self.__repl_text(text, sentence['TEXT'], comp['FROM'] - begin, comp['TO  '] - begin)
+                s['TEXT'] = text
+                sentences.append(s)
+            else:
+                raise KeyError(comp['TYPE'])
+        return sentences
+
+
+    def __process_coordination(self, sentence, simp):
+        sentences = []
+        begin = sentence['FROM']
+        for comp in simp['COMP']:
+            if comp['TYPE'] in ('conjunct', ):
+                s = copy.deepcopy(sentence)
+                text = s['TEXT']
+                text = self.__repl_space(text, simp['FROM'] - begin, simp['TO  '] - begin + 1)
+                text = self.__repl_text(text, sentence['TEXT'], comp['FROM'] - begin, comp['TO  '] - begin)
+                s['TEXT'] = text
+                sentences.append(s)
+            elif comp['TYPE'] in ('conjunction', ):
+                pass
+            else:
+                raise KeyError(comp['TYPE'])
+        return sentences
+
+
+    def __process_relative(self, sentence, simp):
+        sentences = []
+        begin = sentence['FROM']
+        np = None
+        for comp in simp['COMP']:
+            if comp['TYPE'] in ('referred noun phrase', ):
+                np = comp
+                s = copy.deepcopy(sentence)
+                text = s['TEXT']
+                text = self.__repl_space(text, simp['FROM'] - begin, simp['TO  '] - begin + 1)
+                text = self.__repl_text(text, sentence['TEXT'], comp['FROM'] - begin, comp['TO  '] - begin)
+                s['TEXT'] = text
+                sentences.append(s)
+            elif comp['TYPE'] in ('clause', ):
+                s = copy.deepcopy(sentence)
+                text = ' ' * len(s['TEXT'])
+                text = self.__repl_text(text, sentence['TEXT'], comp['FROM'] - begin, comp['TO  '] - begin)
+                text = self.__repl_text(text, sentence['TEXT'], np['FROM'] - begin, np['TO  '] - begin)
+                s['TEXT'] = text
+                sentences.append(s)
+            else:
+                raise KeyError(comp['TYPE'])
+        return sentences
+
+    def __repl_space(self, s, begin, end):
+        return s[:begin] + ' ' * (end - begin) + s[end:]
+
+    def __repl_text(self, s, target, begin, end):
+        return s[: begin] + target[begin: end] + s[end:]

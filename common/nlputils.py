@@ -31,7 +31,7 @@ class NLPUtils:
                 if token['pos'] in NLPUtils.PUNCTUATION or token['pos'] == 'POS':
                     resolved = resolved.strip()
 
-                resolved += token['word'] + ' '
+                resolved += token['originalText'] + ' '
 
             resolved = resolved.strip()
             resolved += '\n'
