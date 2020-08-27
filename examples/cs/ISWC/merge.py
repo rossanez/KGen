@@ -1,6 +1,7 @@
 import os
 
 from argparse import ArgumentParser
+from pathlib import Path
 from sys import argv
 
 def merge_files(number):
@@ -29,12 +30,13 @@ def merge_files(number):
 
 
     all_link_lines = []
-    with open(merged_links_file, 'r') as out_links_file:
-        all_link_lines += out_links_file.readlines()
-        with open(current_links_file, 'r') as curr_file:
-            all_link_lines += curr_file.readlines()
+    if Path(merged_links_file).is_file(): # check if exists
+        with open(merged_links_file, 'r') as out_links_file:
+            all_link_lines += out_links_file.readlines()
+            with open(current_links_file, 'r') as curr_file:
+                all_link_lines += curr_file.readlines()
+        all_link_lines = set(all_link_lines)
 
-    all_link_lines = set(all_link_lines)
     with open(merged_links_file, 'w') as out_links_file:
         out_links_file.write(''.join(all_link_lines))
 

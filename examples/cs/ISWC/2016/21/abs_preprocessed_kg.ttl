@@ -1,0 +1,251 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:numerical_attributes	rdfs:label	"numerical attributes"	.
+
+local:attributes	rdfs:label	"attributes"	.
+
+local:numerical	rdfs:label	"numerical"	.
+
+local:expressing	rdfs:label	"expressing"	.
+
+local:confidence_of_correspondence	rdfs:label	"confidence of correspondence"	.
+
+local:confidence	rdfs:label	"confidence"	.
+
+local:correspondence	rdfs:label	"correspondence"	.
+
+local:alignments_between_ontologies	rdfs:label	"alignments between ontologies"	.
+
+local:alignments	rdfs:label	"alignments"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:come	rdfs:label	"come"	.
+
+local:usually	rdfs:label	"usually"	.
+
+local:generalise	rdfs:label	"generalise"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:must	rdfs:label	"must"	.
+
+local:semantics_of_alignments	rdfs:label	"semantics of alignments"	.
+
+local:supporting	rdfs:label	"supporting"	.
+
+local:confidences	rdfs:label	"confidences"	.
+
+local:exists	rdfs:label	"exists"	.
+
+local:there	rdfs:label	"there"	.
+
+local:satisfies	rdfs:label	"satisfies"	.
+
+local:this	rdfs:label	"this"	.
+
+local:introduces	rdfs:label	"introduces"	.
+
+local:nonweighted_interpretations	rdfs:label	"non-weighted interpretations"	.
+
+local:interpretations	rdfs:label	"interpretations"	.
+
+local:nonweighted	rdfs:label	"non-weighted"	.
+
+local:discontinuity_between_nonweighted_interpretations	rdfs:label	"discontinuity between non-weighted interpretations"	.
+
+local:discontinuity	rdfs:label	"discontinuity"	.
+
+local:weighted_interpretations	rdfs:label	"weighted interpretations"	.
+
+local:weighted	rdfs:label	"weighted"	.
+
+local:discontinuity_between_weighted_interpretations	rdfs:label	"discontinuity between weighted interpretations"	.
+
+local:moreover_this	rdfs:label	"moreover this"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:not	rdfs:label	"not"	.
+
+local:weighted_ontology	rdfs:label	"weighted ontology"	.
+
+local:weighted_ontology_alignments	rdfs:label	"weighted ontology alignments"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:ontology_alignments	rdfs:label	"ontology alignments"	.
+
+local:calculus_for_reasoning	rdfs:label	"calculus for reasoning"	.
+
+local:calculus	rdfs:label	"calculus"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:reasoning_with_weighted_ontology_alignments	rdfs:label	"reasoning with weighted ontology alignments"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:such	rdfs:label	"such"	.
+
+local:such_alignments	rdfs:label	"such alignments"	.
+
+local:calculus_for_such_alignments	rdfs:label	"calculus for such alignments"	.
+
+local:given	rdfs:label	"given"	.
+
+local:weighted_taxonomic	rdfs:label	"weighted taxonomic"	.
+
+local:weighted_taxonomic_relations	rdfs:label	"weighted taxonomic relations"	.
+
+local:taxonomic	rdfs:label	"taxonomic"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:taxonomic_relations	rdfs:label	"taxonomic relations"	.
+
+local:infinite_relationtype_algebra	rdfs:label	"infinite relation-type algebra"	.
+
+local:algebra	rdfs:label	"algebra"	.
+
+local:relationtype_algebra	rdfs:label	"relation-type algebra"	.
+
+local:relationtype	rdfs:label	"relation-type"	.
+
+local:infinite_relationtype	rdfs:label	"infinite relation-type"	.
+
+local:infinite	rdfs:label	"infinite"	.
+
+local:elements_of_infinite_relationtype_algebra	rdfs:label	"elements of infinite relation-type algebra"	.
+
+local:elements	rdfs:label	"elements"	.
+
+local:infinite_relationtype_algebra_elements	rdfs:label	"infinite relation-type algebra elements"	.
+
+local:elements_of_which	rdfs:label	"elements of which"	.
+
+local:which	rdfs:label	"which"	.
+
+local:addition_paper	rdfs:label	"addition paper"	.
+
+local:approximates	rdfs:label	"approximates"	.
+
+local:nonweighted_case	rdfs:label	"non-weighted case"	.
+
+local:case	rdfs:label	"case"	.
+
+local:continuous	rdfs:label	"continuous"	.
+
+local:continuous_manner	rdfs:label	"continuous manner"	.
+
+local:manner	rdfs:label	"manner"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:semantics	rdfs:label	"semantics"	.
+local:ontology_alignments	owl:sameAs	cso:ontology_alignment	.
+cso:reasoning	rdfs:label	"reasoning"	.
+local:semantics	owl:sameAs	cso:semantics	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontology_alignment	rdfs:label	"ontology alignments"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+
+#### Relations ####
+
+local:approximates	vn.role:Theme	local:nonweighted_case	.
+local:weighted_taxonomic_relations	rdfs:subClassOf	local:relations	.
+local:calculus_for_such_alignments	local:calculus_for	local:such_alignments	.
+local:infinite_relationtype_algebra_elements	local:infiniterelation-typealgebra_	local:elements	.
+local:exists	vn.role:Location	local:there	.
+local:infinite	rdfs:member	local:infinite_relationtype	.
+local:alignments_between_ontologies	local:between_ontologies	local:alignments	.
+local:semantics_of_alignments	local:semantics_of	local:alignments	.
+local:nonweighted_case	rdfs:subClassOf	local:case	.
+local:nonweighted	rdfs:member	local:nonweighted_case	.
+local:such	rdfs:member	local:such_alignments	.
+local:nonweighted	rdfs:member	local:nonweighted_interpretations	.
+local:generalise	local:AM-MOD	local:must	.
+local:numerical	rdfs:member	local:numerical_attributes	.
+local:satisfies	vn.role:Cause	local:this	.
+local:generalise	vn.role:Patient	local:semantics_of_alignments	.
+local:come	local:AM-TMP	local:usually	.
+local:weighted_ontology_alignments	rdfs:subClassOf	local:alignments	.
+local:elements_of_which	local:elements_of	local:which	.
+local:weighted_ontology	rdfs:subClassOf	local:ontology	.
+local:provide	local:AM-NEG	local:not	.
+local:discontinuity_between_weighted_interpretations	local:discontinuity_between	local:weighted_interpretations	.
+local:numerical_attributes	rdfs:subClassOf	local:attributes	.
+local:approximates	local:AM-LOC	local:addition_paper	.
+local:weighted_interpretations	rdfs:subClassOf	local:interpretations	.
+local:elements_of_infinite_relationtype_algebra	local:of_infiniterelation-typealgebra	local:elements	.
+local:weighted	vn.role:Theme	local:taxonomic_relations	.
+local:semantics_of_alignments	local:of_alignments	local:semantics	.
+local:satisfies	vn.role:indirect_object	local:semantics	.
+local:confidence_of_correspondence	local:of_correspondence	local:confidence	.
+local:ontology_alignments	rdfs:subClassOf	local:alignments	.
+local:elements_of_infinite_relationtype_algebra	local:elements_of	local:infinite_relationtype_algebra	.
+local:discontinuity_between_weighted_interpretations	local:between_weightedinterpretations	local:discontinuity	.
+local:calculus_for_reasoning	local:for_reasoning	local:calculus	.
+local:weighted_ontology	rdfs:member	local:weighted_ontology_alignments	.
+local:ontology	rdfs:member	local:ontology_alignments	.
+local:discontinuity_between_nonweighted_interpretations	local:discontinuity_between	local:nonweighted_interpretations	.
+local:introduces	vn.role:Patient	local:discontinuity_between_nonweighted_interpretations	.
+local:introduces	vn.role:Patient	local:discontinuity_between_weighted_interpretations	.
+local:continuous_manner	rdfs:subClassOf	local:manner	.
+local:expressing	vn.role:Theme	local:numerical_attributes	.
+local:infinite_relationtype	rdfs:member	local:infinite_relationtype_algebra	.
+local:generalise	vn.role:Agent	local:semantics	.
+local:moreover_this	rdfs:subClassOf	local:this	.
+local:elements_of_which	local:of_which	local:elements	.
+local:expressing	vn.role:Agent	local:confidence_of_correspondence	.
+local:infinite_relationtype_algebra	rdfs:subClassOf	local:algebra	.
+local:addition_paper	rdfs:subClassOf	local:paper	.
+local:continuous	rdfs:member	local:continuous_manner	.
+local:given	vn.role:Asset	local:infinite_relationtype_algebra	.
+local:exists	vn.role:Location	local:semantics	.
+local:weighted	vn.role:Recipient	local:infinite_relationtype_algebra_elements	.
+local:introduces	vn.role:Agent	local:paper	.
+local:reasoning_with_weighted_ontology_alignments	local:with_weightedontologyalignments	local:reasoning	.
+local:relationtype	rdfs:member	local:relationtype_algebra	.
+local:weighted_ontology_alignments	rdfs:subClassOf	local:ontology_alignments	.
+local:weighted_taxonomic	rdfs:member	local:weighted_taxonomic_relations	.
+local:come	local:AM-MNR	local:numerical_attributes	.
+local:discontinuity_between_nonweighted_interpretations	local:between_non-weightedinterpretations	local:discontinuity	.
+local:weighted_taxonomic_relations	rdfs:subClassOf	local:taxonomic_relations	.
+local:nonweighted_interpretations	rdfs:subClassOf	local:interpretations	.
+local:infinite_relationtype_algebra_elements	local:_elements	local:infinite_relationtype_algebra	.
+local:supporting	vn.role:Experiencer	local:confidences	.
+local:such_alignments	rdfs:subClassOf	local:alignments	.
+local:given	vn.role:object	local:paper	.
+local:alignments_between_ontologies	local:alignments_between	local:ontologies	.
+local:supporting	vn.role:Theme	local:semantics	.
+local:weighted	rdfs:member	local:weighted_taxonomic	.
+local:relationtype_algebra	rdfs:subClassOf	local:algebra	.
+local:introduces	vn.role:Agent	local:semantics	.
+local:weighted	rdfs:member	local:weighted_interpretations	.
+local:calculus_for_reasoning	local:calculus_for	local:reasoning	.
+local:generalise	local:AM-MNR	local:confidence	.
+local:provide	vn.role:Recipient	local:moreover_this	.
+local:infinite_relationtype	rdfs:subClassOf	local:relationtype	.
+local:reasoning_with_weighted_ontology_alignments	local:reasoning_with	local:weighted_ontology_alignments	.
+local:taxonomic	rdfs:member	local:taxonomic_relations	.
+local:introduces	vn.role:Patient	local:calculus_for_such_alignments	.
+local:weighted_taxonomic	rdfs:subClassOf	local:taxonomic	.
+local:calculus_for_such_alignments	local:for_suchalignments	local:calculus	.
+local:weighted	rdfs:member	local:weighted_ontology	.
+local:taxonomic_relations	rdfs:subClassOf	local:relations	.
+local:infinite_relationtype_algebra	rdfs:subClassOf	local:relationtype_algebra	.
+local:come	vn.role:Location	local:alignments_between_ontologies	.
+local:confidence_of_correspondence	local:confidence_of	local:correspondence	.
+local:approximates	vn.role:Value	local:continuous_manner	.
+local:provide	vn.role:Agent	local:calculus_for_reasoning	.

@@ -1,0 +1,209 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:recently_rdf	rdfs:label	"recently rdf"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:become	rdfs:label	"become"	.
+
+local:representation_languages	rdfs:label	"representation languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:common	rdfs:label	"common"	.
+
+local:common_knowledge	rdfs:label	"common knowledge"	.
+
+local:common_knowledge_representation	rdfs:label	"common knowledge representation"	.
+
+local:common_knowledge_representation_languages	rdfs:label	"common knowledge representation languages"	.
+
+local:knowledge_representation	rdfs:label	"knowledge representation"	.
+
+local:representation	rdfs:label	"representation"	.
+
+local:knowledge_representation_languages	rdfs:label	"knowledge representation languages"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:common_knowledge_representation_languages_in_use	rdfs:label	"common knowledge representation languages in use"	.
+
+local:use	rdfs:label	"use"	.
+
+local:use_on_web	rdfs:label	"use on web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:recently_owl	rdfs:label	"recently owl"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:propelled	rdfs:label	"propelled"	.
+
+local:recommendation_of_w3c	rdfs:label	"recommendation of w3c"	.
+
+local:recommendation	rdfs:label	"recommendation"	.
+
+local:w3c	rdfs:label	"w3c"	.
+
+local:examine	rdfs:label	"examine"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:alternative_way	rdfs:label	"alternative way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:alternative	rdfs:label	"alternative"	.
+
+local:knowledge_based	rdfs:label	"knowledge based"	.
+
+local:based	rdfs:label	"based"	.
+
+local:based_on_prototypes	rdfs:label	"based on prototypes"	.
+
+local:prototypes	rdfs:label	"prototypes"	.
+
+local:represent	rdfs:label	"represent"	.
+
+local:prototypebased_representation	rdfs:label	"prototype-based representation"	.
+
+local:prototypebased	rdfs:label	"prototype-based"	.
+
+local:has	rdfs:label	"has"	.
+
+local:different	rdfs:label	"different"	.
+
+local:different_properties	rdfs:label	"different properties"	.
+
+local:properties	rdfs:label	"properties"	.
+
+local:argue	rdfs:label	"argue"	.
+
+local:suitable_for_data	rdfs:label	"suitable for data"	.
+
+local:suitable	rdfs:label	"suitable"	.
+
+local:data	rdfs:label	"data"	.
+
+local:avoid	rdfs:label	"avoid"	.
+
+local:distinction_between_instances	rdfs:label	"distinction between instances"	.
+
+local:distinction	rdfs:label	"distinction"	.
+
+local:instances	rdfs:label	"instances"	.
+
+local:distinction_between_classes	rdfs:label	"distinction between classes"	.
+
+local:classes	rdfs:label	"classes"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:means	rdfs:label	"means"	.
+
+local:objectbased_data	rdfs:label	"object-based data"	.
+
+local:objectbased_data_sharing	rdfs:label	"object-based data sharing"	.
+
+local:data_sharing	rdfs:label	"data sharing"	.
+
+local:objectbased	rdfs:label	"object-based"	.
+
+local:sharing	rdfs:label	"sharing"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_based	owl:sameAs	cso:knowledge_base	.
+local:recommendation	owl:sameAs	cso:recommendation	.
+local:owl	owl:sameAs	cso:owl	.
+cso:knowledge_base	rdfs:label	"knowledge based"	.
+local:knowledge_representation	owl:sameAs	cso:knowledge_representation	.
+cso:recommendation	rdfs:label	"recommendation"	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:knowledge_representation	rdfs:label	"knowledge representation"	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:become	vn.role:Patient	local:recently_rdf	.
+local:objectbased_data	rdfs:member	local:objectbased_data_sharing	.
+local:use_on_web	local:use_on	local:web	.
+local:alternative	rdfs:member	local:alternative_way	.
+local:prototypebased	rdfs:member	local:prototypebased_representation	.
+local:propelled	vn.role:Patient	local:web	.
+local:avoid	vn.role:Location	local:distinction_between_classes	.
+local:distinction_between_instances	local:between_instances	local:distinction	.
+local:provide	vn.role:Recipient	local:prototypes	.
+local:data	rdfs:member	local:data_sharing	.
+local:recommendation_of_w3c	local:recommendation_of	local:w3c	.
+local:based_on_prototypes	local:based_on	local:prototypes	.
+local:examine	local:AM-LOC	local:paper	.
+local:common_knowledge_representation	rdfs:subClassOf	local:representation	.
+local:alternative_way	rdfs:subClassOf	local:way	.
+local:knowledge_representation_languages	rdfs:subClassOf	local:representation_languages	.
+local:based_on_prototypes	local:on_prototypes	local:based	.
+local:examine	vn.role:Agent	local:we	.
+local:argue	vn.role:Actor	local:we	.
+local:suitable_for_data	local:suitable_for	local:data	.
+local:common_knowledge_representation_languages_in_use	local:in_use	local:common_knowledge_representation_languages	.
+local:different	rdfs:member	local:different_properties	.
+local:provide	vn.role:Agent	local:means	.
+local:suitable_for_data	local:for_data	local:suitable	.
+local:prototypebased_representation	rdfs:subClassOf	local:representation	.
+local:argue	vn.role:Actor1	local:suitable_for_data	.
+local:common_knowledge_representation	rdfs:member	local:common_knowledge_representation_languages	.
+local:knowledge_representation	rdfs:subClassOf	local:representation	.
+local:knowledge_representation	rdfs:member	local:knowledge_representation_languages	.
+local:has	vn.role:Experiencer	local:prototypebased_representation	.
+local:common_knowledge_representation_languages	rdfs:subClassOf	local:languages	.
+local:sharing	vn.role:Agent	local:objectbased_data	.
+local:represent	vn.role:Theme	local:knowledge	.
+local:represent	vn.role:Agent	local:prototypes	.
+local:avoid	vn.role:Location	local:distinction_between_instances	.
+local:objectbased	rdfs:member	local:objectbased_data	.
+local:knowledge_based	local:_based	local:knowledge	.
+local:different_properties	rdfs:subClassOf	local:properties	.
+local:distinction_between_instances	local:distinction_between	local:instances	.
+local:common_knowledge_representation_languages	rdfs:subClassOf	local:knowledge_representation_languages	.
+local:common_knowledge	rdfs:member	local:common_knowledge_representation	.
+local:propelled	vn.role:Agent	local:recommendation_of_w3c	.
+local:common	rdfs:member	local:common_knowledge	.
+local:has	vn.role:Stimulus	local:different_properties	.
+local:avoid	vn.role:Agent	local:prototypes	.
+local:objectbased_data_sharing	rdfs:subClassOf	local:data_sharing	.
+local:recently_owl	rdfs:subClassOf	local:owl	.
+local:recently_rdf	rdfs:subClassOf	local:rdf	.
+local:based	vn.role:Cause	local:knowledge	.
+local:common_knowledge	rdfs:subClassOf	local:knowledge	.
+local:become	vn.role:indirect_object	local:common_knowledge_representation_languages_in_use	.
+local:representation	rdfs:member	local:representation_languages	.
+local:represent	local:AM-MNR	local:alternative_way	.
+local:provide	vn.role:indirect_object	local:objectbased_data_sharing	.
+local:representation_languages	rdfs:subClassOf	local:languages	.
+local:distinction_between_classes	local:distinction_between	local:classes	.
+local:examine	vn.role:Location	local:alternative_way	.
+local:common_knowledge_representation_languages_in_use	local:commonknowledgerepresentationlanguages_in	local:use	.
+local:use_on_web	local:on_web	local:use	.
+local:data_sharing	rdfs:subClassOf	local:sharing	.
+local:knowledge	rdfs:member	local:knowledge_representation	.
+local:recommendation_of_w3c	local:of_w3c	local:recommendation	.
+local:distinction_between_classes	local:between_classes	local:distinction	.
+local:based	local:AM-LOC	local:prototypes	.
+local:objectbased_data_sharing	rdfs:subClassOf	local:sharing	.
+local:objectbased_data	rdfs:subClassOf	local:data	.
+local:knowledge_based	local:knowledge_	local:based	.
+local:become	vn.role:Patient	local:recently_owl	.
+local:knowledge_representation_languages	rdfs:subClassOf	local:languages	.

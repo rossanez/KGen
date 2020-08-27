@@ -1,0 +1,221 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:combinatorial	rdfs:label	"combinatorial"	.
+
+local:combinatorial_creativity	rdfs:label	"combinatorial creativity"	.
+
+local:creativity	rdfs:label	"creativity"	.
+
+local:combines	rdfs:label	"combines"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:novel_way	rdfs:label	"novel way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:existing_concepts	rdfs:label	"existing concepts"	.
+
+local:concepts	rdfs:label	"concepts"	.
+
+local:existing_concepts_in_novel_way	rdfs:label	"existing concepts in novel way"	.
+
+local:new	rdfs:label	"new"	.
+
+local:new_concepts	rdfs:label	"new concepts"	.
+
+local:order	rdfs:label	"order"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:produce	rdfs:label	"produce"	.
+
+local:imagine	rdfs:label	"imagine"	.
+
+local:example	rdfs:label	"example"	.
+
+local:we	rdfs:label	"we"	.
+
+local:can	rdfs:label	"can"	.
+
+local:jewelry	rdfs:label	"jewelry"	.
+
+local:measures	rdfs:label	"measures"	.
+
+local:blood	rdfs:label	"blood"	.
+
+local:blood_pressure	rdfs:label	"blood pressure"	.
+
+local:pressure	rdfs:label	"pressure"	.
+
+local:combine	rdfs:label	"combine"	.
+
+local:this	rdfs:label	"this"	.
+
+local:would	rdfs:label	"would"	.
+
+local:concept_of_jewelry	rdfs:label	"concept of jewelry"	.
+
+local:concept	rdfs:label	"concept"	.
+
+local:medical	rdfs:label	"medical"	.
+
+local:medical_devices	rdfs:label	"medical devices"	.
+
+local:devices	rdfs:label	"devices"	.
+
+local:capabilities_of_medical_devices	rdfs:label	"capabilities of medical devices"	.
+
+local:capabilities	rdfs:label	"capabilities"	.
+
+local:concentrate	rdfs:label	"concentrate"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:description	rdfs:label	"description"	.
+
+local:description_logic	rdfs:label	"description logic"	.
+
+local:logic_el	rdfs:label	"logic el"	.
+
+local:el	rdfs:label	"el"	.
+
+local:description_logic_el	rdfs:label	"description logic el"	.
+
+local:logic	rdfs:label	"logic"	.
+
+local:creating_in_description_logic_el	rdfs:label	"creating in description logic el"	.
+
+local:creating	rdfs:label	"creating"	.
+
+local:study	rdfs:label	"study"	.
+
+local:novel_language	rdfs:label	"novel language"	.
+
+local:novel_language_properties	rdfs:label	"novel language properties"	.
+
+local:properties	rdfs:label	"properties"	.
+
+local:language	rdfs:label	"language"	.
+
+local:language_properties	rdfs:label	"language properties"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:novel_language_to_effect	rdfs:label	"novel language to effect"	.
+
+local:effect	rdfs:label	"effect"	.
+
+local:show	rdfs:label	"show"	.
+
+local:limited	rdfs:label	"limited"	.
+
+local:limited_degree	rdfs:label	"limited degree"	.
+
+local:degree	rdfs:label	"degree"	.
+
+local:existing_inventions	rdfs:label	"existing inventions"	.
+
+local:inventions	rdfs:label	"inventions"	.
+
+local:can_used	rdfs:label	"can used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:model_existing_inventions	rdfs:label	"model existing inventions"	.
+
+local:generate	rdfs:label	"generate"	.
+
+local:model	rdfs:label	"model"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:description_logic	rdfs:label	"description logic"	.
+local:description_logic	owl:sameAs	cso:description_logic	.
+
+#### Relations ####
+
+local:combinatorial	rdfs:member	local:combinatorial_creativity	.
+local:measures	vn.role:Value	local:jewelry	.
+local:concentrate	local:AM-LOC	local:paper	.
+local:logic	rdfs:member	local:logic_el	.
+local:used	vn.role:Theme	local:language	.
+local:description_logic_el	rdfs:subClassOf	local:logic_el	.
+local:model	vn.role:Agent	local:language	.
+local:concentrate	vn.role:Theme	local:creating_in_description_logic_el	.
+local:produce	vn.role:Product	local:new_concepts	.
+local:model_existing_inventions	rdfs:subClassOf	local:existing_inventions	.
+local:creating	vn.role:Product	local:new_concepts	.
+local:combine	vn.role:Agent	local:we	.
+local:creating_in_description_logic_el	local:creating_in	local:description_logic_el	.
+local:combine	local:AM-ADV	local:this	.
+local:imagine	local:AM-MOD	local:can	.
+local:description_logic	rdfs:member	local:description_logic_el	.
+local:novel	rdfs:member	local:novel_language	.
+local:measures	vn.role:Theme	local:blood_pressure	.
+local:language_properties	rdfs:subClassOf	local:properties	.
+local:limited	rdfs:member	local:limited_degree	.
+local:limited_degree	rdfs:subClassOf	local:degree	.
+local:existing_inventions	rdfs:subClassOf	local:inventions	.
+local:capabilities_of_medical_devices	local:of_medicaldevices	local:capabilities	.
+local:new	rdfs:member	local:new_concepts	.
+local:used	vn.role:Recipient	local:model_existing_inventions	.
+local:existing_concepts	rdfs:subClassOf	local:concepts	.
+local:concept_of_jewelry	local:concept_of	local:jewelry	.
+local:creating	vn.role:Agent	local:we	.
+local:novel_language_properties	rdfs:subClassOf	local:properties	.
+local:existing_concepts_in_novel_way	local:existingconcepts_in	local:novel_way	.
+local:medical	rdfs:member	local:medical_devices	.
+local:description	rdfs:member	local:description_logic	.
+local:description_logic_el	rdfs:subClassOf	local:el	.
+local:study	vn.role:Theme	local:novel_language_properties	.
+local:imagine	vn.role:Agent	local:we	.
+local:capabilities_of_medical_devices	local:capabilities_of	local:medical_devices	.
+local:concept_of_jewelry	local:of_jewelry	local:concept	.
+local:novel_language_to_effect	local:novellanguage_to	local:effect	.
+local:combinatorial_creativity	rdfs:subClassOf	local:creativity	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:imagine	local:AM-PNC	local:example	.
+local:description_logic	rdfs:subClassOf	local:logic	.
+local:novel_language_properties	rdfs:subClassOf	local:language_properties	.
+local:blood_pressure	rdfs:subClassOf	local:pressure	.
+local:logic_el	rdfs:subClassOf	local:el	.
+local:creating_in_description_logic_el	local:in_descriptionlogicel	local:creating	.
+local:novel_language	rdfs:subClassOf	local:language	.
+local:propose	vn.role:Agent	local:we	.
+local:novel	rdfs:member	local:novel_way	.
+local:combine	vn.role:Patient1	local:capabilities_of_medical_devices	.
+local:generate	vn.role:Theme2	local:new_concepts	.
+local:show	vn.role:Theme	local:can_used	.
+local:combines	vn.role:Patient	local:existing_concepts_in_novel_way	.
+local:imagine	vn.role:Theme	local:jewelry	.
+local:combines	local:AM-PNC	local:order	.
+local:study	vn.role:Agent	local:we	.
+local:show	vn.role:Agent	local:we	.
+local:combines	vn.role:Agent	local:combinatorial_creativity	.
+local:existing_concepts_in_novel_way	local:in_novelway	local:existing_concepts	.
+local:existing	vn.role:Location	local:concepts	.
+local:medical_devices	rdfs:subClassOf	local:devices	.
+local:concentrate	vn.role:Experiencer	local:we	.
+local:novel_language	rdfs:member	local:novel_language_properties	.
+local:blood	rdfs:member	local:blood_pressure	.
+local:propose	vn.role:Topic	local:novel_language_to_effect	.
+local:combine	vn.role:Patient	local:concept_of_jewelry	.
+local:model	vn.role:Theme	local:existing_inventions	.
+local:used	local:AM-PNC	local:generate	.
+local:new_concepts	rdfs:subClassOf	local:concepts	.
+local:combine	local:AM-MOD	local:would	.
+local:existing	vn.role:Location	local:inventions	.
+local:used	local:AM-MOD	local:can	.
+local:novel_language_to_effect	local:to_effect	local:novel_language	.
+local:novel_way	rdfs:subClassOf	local:way	.
+local:language	rdfs:member	local:language_properties	.

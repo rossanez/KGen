@@ -1,0 +1,19 @@
+Data stream applications are becoming increasingly popular on the web.
+In Data stream applications, one query pattern is especially prominent: a join between some background data.
+In Data stream applications, one query pattern is especially prominent: a join between a continuous data stream.
+Oftentimes, the target some background data is large, maintained externally, changing slowly.
+Oftentimes, the target some background data is large, maintained externally, costly to query ( both in terms of money ).
+Oftentimes, the target some background data is large, maintained externally, costly to query ( both in terms of time ).
+Hence, practical applications usually maintain a local ( cached ) view of the original some background data.
+stale data leading to wrong answers.
+Given that these caches are not updated as the original some background data, these caches should be refreshed under realistic budget constraints ( in terms of computation time ) to avoid stale data.
+Given that these caches are not updated as the original some background data, these caches should be refreshed under realistic budget constraints ( in terms of latency ) to avoid stale data.
+Given that these caches are not updated as the original some background data, these caches should be refreshed under realistic budget constraints ( in terms of possibly financial cost ) to avoid stale data.
+This paper proposes to model the join between streams as a bipartite graph.
+This paper proposes to model the join between the original some background data as a bipartite graph.
+By exploiting the graph structure, we keep the quality of results good enough without refreshing the entire cache for each evaluation.
+updates that have the longest effect.
+We also introduce two extensions to this method: first, We consider a continuous join between recent portions of a data stream to focus on updates.
+We also introduce two extensions to this method: first, We consider a continuous join between some some background data to focus on updates.
+Second, We consider the future impact of a query to the original some background data by proposing to delay some updates to provide fresher answers in future.
+By extending an existing stream processor with the proposed policies, we empirically show that we can improve result freshness by 93.

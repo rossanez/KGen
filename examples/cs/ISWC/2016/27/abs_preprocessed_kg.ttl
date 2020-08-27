@@ -1,0 +1,35 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:build	rdfs:label	"build"	.
+
+local:we	rdfs:label	"we"	.
+
+local:earlier_finding	rdfs:label	"earlier finding"	.
+
+local:finding	rdfs:label	"finding"	.
+
+local:95	rdfs:label	"95"	.
+
+local:earlier	rdfs:label	"earlier"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:finding	vn.role:Agent	local:we	.
+local:finding	local:AM-TMP	local:earlier	.
+local:build	local:AM-LOC	local:earlier_finding	.
+local:build	vn.role:Agent	local:we	.
+local:earlier_finding	rdfs:subClassOf	local:finding	.
+local:finding	vn.role:Theme	local:95	.
+local:build	local:AM-TMP	local:95	.

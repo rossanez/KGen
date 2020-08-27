@@ -1,0 +1,221 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:capture_navigation	rdfs:label	"capture navigation"	.
+
+local:navigation	rdfs:label	"navigation"	.
+
+local:capture	rdfs:label	"capture"	.
+
+local:capture_navigation_in_graph	rdfs:label	"capture navigation in graph"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:queries	rdfs:label	"queries"	.
+
+local:relational	rdfs:label	"relational"	.
+
+local:relational_queries	rdfs:label	"relational queries"	.
+
+local:cope	rdfs:label	"cope"	.
+
+local:graphstructured	rdfs:label	"graph-structured"	.
+
+local:graphstructured_data	rdfs:label	"graph-structured data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:expressing	rdfs:label	"expressing"	.
+
+local:one	rdfs:label	"one"	.
+
+local:navigational_queries	rdfs:label	"navigational queries"	.
+
+local:navigational	rdfs:label	"navigational"	.
+
+local:called	rdfs:label	"called"	.
+
+local:property_paths	rdfs:label	"property paths"	.
+
+local:paths	rdfs:label	"paths"	.
+
+local:property	rdfs:label	"property"	.
+
+local:extended_property_paths	rdfs:label	"extended property paths"	.
+
+local:contributes	rdfs:label	"contributes"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:study	rdfs:label	"study"	.
+
+local:query	rdfs:label	"query"	.
+
+local:query_containment	rdfs:label	"query containment"	.
+
+local:expressive	rdfs:label	"expressive"	.
+
+local:expressive_class	rdfs:label	"expressive class"	.
+
+local:class	rdfs:label	"class"	.
+
+local:containment	rdfs:label	"containment"	.
+
+local:problem_of_query_containment	rdfs:label	"problem of query containment"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:problem_of_query_containment_for_expressive_class	rdfs:label	"problem of query containment for expressive class"	.
+
+local:expressive_class_of_navigational_queries	rdfs:label	"expressive class of navigational queries"	.
+
+local:extended	rdfs:label	"extended"	.
+
+local:allow	rdfs:label	"allow"	.
+
+local:they	rdfs:label	"they"	.
+
+local:path_negation	rdfs:label	"path negation"	.
+
+local:negation	rdfs:label	"negation"	.
+
+local:express_path	rdfs:label	"express path"	.
+
+local:express_path_negation	rdfs:label	"express path negation"	.
+
+local:path	rdfs:label	"path"	.
+
+local:express	rdfs:label	"express"	.
+
+local:express_among_others	rdfs:label	"express among others"	.
+
+local:others	rdfs:label	"others"	.
+
+local:path_negation_among_others	rdfs:label	"path negation among others"	.
+
+local:path_conjunction	rdfs:label	"path conjunction"	.
+
+local:conjunction	rdfs:label	"conjunction"	.
+
+local:express_path_conjunction	rdfs:label	"express path conjunction"	.
+
+local:path_conjunction_among_others	rdfs:label	"path conjunction among others"	.
+
+local:attack	rdfs:label	"attack"	.
+
+local:we	rdfs:label	"we"	.
+
+local:property_paths_containment	rdfs:label	"property paths containment"	.
+
+local:extended_property_paths_containment	rdfs:label	"extended property paths containment"	.
+
+local:extended_property	rdfs:label	"extended property"	.
+
+local:paths_containment	rdfs:label	"paths containment"	.
+
+local:problem_of_extended_property_paths_containment	rdfs:label	"problem of extended property paths containment"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:complexity	rdfs:label	"complexity"	.
+
+local:complexity_bounds	rdfs:label	"complexity bounds"	.
+
+local:bounds	rdfs:label	"bounds"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:query_containment	rdfs:label	"query containment"	.
+cso:relational_queries	rdfs:label	"relational queries"	.
+local:query_containment	owl:sameAs	cso:query_containment	.
+local:relational_queries	owl:sameAs	cso:relational_queries	.
+
+#### Relations ####
+
+local:extended	vn.role:Theme	local:property_paths	.
+local:allow	vn.role:Theme	local:express_among_others	.
+local:path	rdfs:member	local:path_conjunction	.
+local:attack	vn.role:Agent	local:we	.
+local:cope	vn.role:Theme	local:graphstructured_data	.
+local:property	rdfs:member	local:property_paths	.
+local:capture	local:AM-LOC	local:graph	.
+local:express_path	rdfs:subClassOf	local:path	.
+local:problem_of_query_containment_for_expressive_class	local:problemofquerycontainment_for	local:expressive_class	.
+local:capture	vn.role:Agent	local:queries	.
+local:relational	rdfs:member	local:relational_queries	.
+local:allow	vn.role:Agent	local:they	.
+local:contributes	vn.role:Theme1	local:paper	.
+local:navigational	rdfs:member	local:navigational_queries	.
+local:query	rdfs:member	local:query_containment	.
+local:express_path	rdfs:member	local:express_path_negation	.
+local:called	vn.role:Agent	local:navigational_queries	.
+local:express	rdfs:member	local:express_path	.
+local:express_among_others	local:express_among	local:others	.
+local:queries	vn.role:Theme	local:capture_navigation_in_graph	.
+local:called	vn.role:Cause	local:extended_property_paths	.
+local:express_path	rdfs:member	local:express_path_conjunction	.
+local:path_negation_among_others	local:among_others	local:path_negation	.
+local:problem_of_query_containment_for_expressive_class	local:for_expressiveclass	local:problem_of_query_containment	.
+local:allow	vn.role:Theme	local:express	.
+local:extended_property	rdfs:subClassOf	local:property	.
+local:contributes	vn.role:Theme2	local:study	.
+local:path_conjunction	rdfs:subClassOf	local:conjunction	.
+local:express_path_conjunction	rdfs:subClassOf	local:conjunction	.
+local:complexity	rdfs:member	local:complexity_bounds	.
+local:path_conjunction_among_others	local:among_others	local:path_conjunction	.
+local:provide	vn.role:Agent	local:complexity_bounds	.
+local:extended_property_paths_containment	rdfs:subClassOf	local:property_paths_containment	.
+local:property_paths	rdfs:member	local:property_paths_containment	.
+local:property_paths	rdfs:subClassOf	local:paths	.
+local:extended_property	rdfs:member	local:extended_property_paths	.
+local:problem_of_extended_property_paths_containment	local:of_extendedpropertypathscontainment	local:problem	.
+local:attack	vn.role:Theme	local:problem_of_extended_property_paths_containment	.
+local:expressing	vn.role:Agent	local:queries	.
+local:expressive_class_of_navigational_queries	local:of_navigationalqueries	local:expressive_class	.
+local:contributes	vn.role:indirect_object	local:problem_of_query_containment_for_expressive_class	.
+local:expressive	rdfs:member	local:expressive_class	.
+local:query_containment	rdfs:subClassOf	local:containment	.
+local:graphstructured	rdfs:member	local:graphstructured_data	.
+local:extended_property_paths_containment	rdfs:subClassOf	local:containment	.
+local:capture_navigation_in_graph	local:capturenavigation_in	local:graph	.
+local:graphstructured_data	rdfs:subClassOf	local:data	.
+local:problem_of_query_containment	local:of_querycontainment	local:problem	.
+local:express	vn.role:Agent	local:path_conjunction_among_others	.
+local:relational_queries	rdfs:subClassOf	local:queries	.
+local:problem_of_query_containment	local:problem_of	local:query_containment	.
+local:path	rdfs:member	local:path_negation	.
+local:capture	vn.role:Theme	local:navigation	.
+local:paths	rdfs:member	local:paths_containment	.
+local:problem_of_extended_property_paths_containment	local:problem_of	local:extended_property_paths_containment	.
+local:navigational_queries	rdfs:subClassOf	local:queries	.
+local:capture_navigation_in_graph	local:in_graph	local:capture_navigation	.
+local:capture	rdfs:member	local:capture_navigation	.
+local:express	vn.role:Theme	local:they	.
+local:expressive_class	rdfs:subClassOf	local:class	.
+local:provide	vn.role:Recipient	local:we	.
+local:express_among_others	local:among_others	local:express	.
+local:path_negation_among_others	local:pathnegation_among	local:others	.
+local:paths_containment	rdfs:subClassOf	local:containment	.
+local:expressing	vn.role:Theme	local:one	.
+local:extended_property_paths	rdfs:subClassOf	local:property_paths	.
+local:cope	vn.role:Agent	local:relational_queries	.
+local:express	vn.role:Agent	local:path_negation_among_others	.
+local:express_path_negation	rdfs:subClassOf	local:negation	.
+local:path_conjunction_among_others	local:pathconjunction_among	local:others	.
+local:extended_property_paths	rdfs:subClassOf	local:paths	.
+local:complexity_bounds	rdfs:subClassOf	local:bounds	.
+local:expressive_class_of_navigational_queries	local:expressiveclass_of	local:navigational_queries	.
+local:path_negation	rdfs:subClassOf	local:negation	.
+local:property_paths_containment	rdfs:subClassOf	local:containment	.
+local:extended_property_paths	rdfs:member	local:extended_property_paths_containment	.
+local:extended	rdfs:member	local:extended_property	.
+local:capture_navigation	rdfs:subClassOf	local:navigation	.
+local:property_paths_containment	rdfs:subClassOf	local:paths_containment	.
