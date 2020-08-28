@@ -1,0 +1,215 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:extend	rdfs:label	"extend"	.
+
+local:we	rdfs:label	"we"	.
+
+local:recent	rdfs:label	"recent"	.
+
+local:recent_work	rdfs:label	"recent work"	.
+
+local:work	rdfs:label	"work"	.
+
+local:incomplete	rdfs:label	"incomplete"	.
+
+local:incomplete_reasoners	rdfs:label	"incomplete reasoners"	.
+
+local:reasoners	rdfs:label	"reasoners"	.
+
+local:evaluating	rdfs:label	"evaluating"	.
+
+local:testing_bases	rdfs:label	"testing bases"	.
+
+local:bases	rdfs:label	"bases"	.
+
+local:testing	rdfs:label	"testing"	.
+
+local:strict_testing	rdfs:label	"strict testing"	.
+
+local:strict_testing_bases	rdfs:label	"strict testing bases"	.
+
+local:strict	rdfs:label	"strict"	.
+
+local:introducing	rdfs:label	"introducing"	.
+
+local:show	rdfs:label	"show"	.
+
+local:highly_scalable	rdfs:label	"highly scalable"	.
+
+local:scalable	rdfs:label	"scalable"	.
+
+local:scalable_incomplete	rdfs:label	"scalable incomplete"	.
+
+local:highly_scalable_incomplete	rdfs:label	"highly scalable incomplete"	.
+
+local:highly	rdfs:label	"highly"	.
+
+local:highly_scalable_incomplete_query	rdfs:label	"highly scalable incomplete query"	.
+
+local:scalable_incomplete_query	rdfs:label	"scalable incomplete query"	.
+
+local:incomplete_query	rdfs:label	"incomplete query"	.
+
+local:query	rdfs:label	"query"	.
+
+local:completeness_guarantees	rdfs:label	"completeness guarantees"	.
+
+local:guarantees	rdfs:label	"guarantees"	.
+
+local:completeness	rdfs:label	"completeness"	.
+
+local:reasoning_systems	rdfs:label	"reasoning systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:intensive_reasoning_systems	rdfs:label	"intensive reasoning systems"	.
+
+local:computationally_intensive	rdfs:label	"computationally intensive"	.
+
+local:intensive	rdfs:label	"intensive"	.
+
+local:when_using	rdfs:label	"when using"	.
+
+local:using	rdfs:label	"using"	.
+
+local:only_when	rdfs:label	"only when"	.
+
+local:when	rdfs:label	"when"	.
+
+local:available_guarantees	rdfs:label	"available guarantees"	.
+
+local:normally_available	rdfs:label	"normally available"	.
+
+local:available	rdfs:label	"available"	.
+
+local:completeness_available_guarantees	rdfs:label	"completeness available guarantees"	.
+
+local:answering_systems	rdfs:label	"answering systems"	.
+
+local:query_answering_systems	rdfs:label	"query answering systems"	.
+
+local:incomplete_query_answering_systems	rdfs:label	"incomplete query answering systems"	.
+
+local:scalable_incomplete_query_answering_systems	rdfs:label	"scalable incomplete query answering systems"	.
+
+local:can_exploit	rdfs:label	"can exploit"	.
+
+local:exploit	rdfs:label	"exploit"	.
+
+local:where_can_exploit	rdfs:label	"where can exploit"	.
+
+local:used_in_practice	rdfs:label	"used in practice"	.
+
+local:used	rdfs:label	"used"	.
+
+local:practice	rdfs:label	"practice"	.
+
+local:they	rdfs:label	"they"	.
+
+local:can	rdfs:label	"can"	.
+
+local:identify_queries	rdfs:label	"identify queries"	.
+
+local:queries	rdfs:label	"queries"	.
+
+local:identify	rdfs:label	"identify"	.
+
+local:enjoying	rdfs:label	"enjoying"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:identify_ontologies	rdfs:label	"identify ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:reasoning_systems	owl:sameAs	cso:reasoning_system	.
+cso:reasoner	rdfs:label	"reasoners"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:reasoning_system	rdfs:label	"reasoning systems"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:reasoners	owl:sameAs	cso:reasoner	.
+
+#### Relations ####
+
+local:strict_testing	rdfs:subClassOf	local:testing	.
+local:used	local:AM-TMP	local:enjoying	.
+local:highly_scalable	rdfs:subClassOf	local:scalable	.
+local:extend	vn.role:Theme	local:evaluating	.
+local:incomplete_reasoners	rdfs:subClassOf	local:reasoners	.
+local:scalable_incomplete	rdfs:subClassOf	local:incomplete	.
+local:identify	rdfs:member	local:identify_queries	.
+local:scalable	rdfs:member	local:scalable_incomplete	.
+local:incomplete	rdfs:member	local:incomplete_reasoners	.
+local:computationally_intensive	rdfs:subClassOf	local:intensive	.
+local:answering_systems	rdfs:subClassOf	local:systems	.
+local:extend	vn.role:Theme	local:we	.
+local:testing_bases	rdfs:subClassOf	local:bases	.
+local:identify	vn.role:Theme	local:queries	.
+local:exploit	local:AM-LOC	local:ontologies	.
+local:exploit	local:AM-TMP	local:enjoying	.
+local:enjoying	vn.role:Experiencer	local:normally_available	.
+local:used	vn.role:Theme	local:they	.
+local:identify	vn.role:Agent	local:they	.
+local:normally_available	rdfs:subClassOf	local:available	.
+local:strict_testing_bases	rdfs:subClassOf	local:testing_bases	.
+local:highly_scalable_incomplete	rdfs:member	local:highly_scalable_incomplete_query	.
+local:evaluating	local:AM-MNR	local:introducing	.
+local:completeness_guarantees	rdfs:subClassOf	local:guarantees	.
+local:show	vn.role:Agent	local:we	.
+local:show	vn.role:Theme	local:used_in_practice	.
+local:used_in_practice	local:used_in	local:practice	.
+local:used	local:AM-MOD	local:can	.
+local:identify	local:AM-TMP	local:enjoying	.
+local:completeness	rdfs:member	local:completeness_guarantees	.
+local:strict_testing	rdfs:member	local:strict_testing_bases	.
+local:scalable_incomplete	rdfs:member	local:scalable_incomplete_query	.
+local:exploit	vn.role:Agent	local:applications	.
+local:identify	rdfs:member	local:identify_ontologies	.
+local:testing	rdfs:member	local:testing_bases	.
+local:extend	vn.role:Recipient	local:introducing	.
+local:identify	vn.role:Theme	local:ontologies	.
+local:highly	rdfs:member	local:highly_scalable	.
+local:completeness_available_guarantees	rdfs:subClassOf	local:available_guarantees	.
+local:exploit	vn.role:Predicate	local:scalable_incomplete_query_answering_systems	.
+local:highly_scalable	rdfs:member	local:highly_scalable_incomplete	.
+local:intensive_reasoning_systems	rdfs:subClassOf	local:reasoning_systems	.
+local:highly_scalable_incomplete_query	rdfs:subClassOf	local:query	.
+local:when_using	rdfs:subClassOf	local:using	.
+local:extend	vn.role:Recipient	local:recent_work	.
+local:extend	vn.role:Agent	local:we	.
+local:where_can_exploit	rdfs:subClassOf	local:can_exploit	.
+local:identify_ontologies	rdfs:subClassOf	local:ontologies	.
+local:strict_testing_bases	rdfs:subClassOf	local:bases	.
+local:incomplete_query_answering_systems	rdfs:subClassOf	local:query_answering_systems	.
+local:recent_work	rdfs:subClassOf	local:work	.
+local:highly_scalable_incomplete	rdfs:subClassOf	local:incomplete	.
+local:incomplete	rdfs:member	local:incomplete_query	.
+local:scalable_incomplete_query_answering_systems	rdfs:subClassOf	local:incomplete_query_answering_systems	.
+local:can_exploit	rdfs:subClassOf	local:exploit	.
+local:only_when	rdfs:subClassOf	local:when	.
+local:used_in_practice	local:in_practice	local:used	.
+local:exploit	local:AM-MOD	local:can	.
+local:introducing	vn.role:Patient	local:strict_testing_bases	.
+local:used	local:AM-PNC	local:identify	.
+local:using	vn.role:Theme	local:intensive_reasoning_systems	.
+local:identify_queries	rdfs:subClassOf	local:queries	.
+local:used	local:AM-LOC	local:practice	.
+local:query_answering_systems	rdfs:subClassOf	local:answering_systems	.
+local:recent	rdfs:member	local:recent_work	.
+local:available_guarantees	rdfs:subClassOf	local:guarantees	.
+local:reasoning_systems	rdfs:subClassOf	local:systems	.
+local:strict	rdfs:member	local:strict_testing	.
+local:incomplete_query	rdfs:subClassOf	local:query	.
+local:scalable_incomplete_query	rdfs:subClassOf	local:query	.
+local:evaluating	vn.role:Theme	local:incomplete_reasoners	.

@@ -1,0 +1,234 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:linked	rdfs:label	"linked"	.
+
+local:data	rdfs:label	"data"	.
+
+local:fact_sameas	rdfs:label	"fact sameas"	.
+
+local:sameas	rdfs:label	"sameas"	.
+
+local:viewed	rdfs:label	"viewed"	.
+
+local:can	rdfs:label	"can"	.
+
+local:one_point	rdfs:label	"one point"	.
+
+local:point	rdfs:label	"point"	.
+
+local:only_one	rdfs:label	"only one"	.
+
+local:one	rdfs:label	"one"	.
+
+local:one_point_on_scale	rdfs:label	"one point on scale"	.
+
+local:scale	rdfs:label	"scale"	.
+
+local:scale_of_one	rdfs:label	"scale of one"	.
+
+local:encoding	rdfs:label	"encoding"	.
+
+local:sameas_current	rdfs:label	"sameas current"	.
+
+local:current	rdfs:label	"current"	.
+
+local:sameas_current_uses	rdfs:label	"sameas current uses"	.
+
+local:current_uses	rdfs:label	"current uses"	.
+
+local:uses	rdfs:label	"uses"	.
+
+local:scale_of_sameas_current_uses	rdfs:label	"scale of sameas current uses"	.
+
+local:fact_owl	rdfs:label	"fact owl"	.
+
+local:fact	rdfs:label	"fact"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:scale_of_similarity	rdfs:label	"scale of similarity"	.
+
+local:similarity	rdfs:label	"similarity"	.
+
+local:referentially	rdfs:label	"referentially"	.
+
+local:referentially_opaque	rdfs:label	"referentially opaque"	.
+
+local:opaque	rdfs:label	"opaque"	.
+
+local:opaque_contexts	rdfs:label	"opaque contexts"	.
+
+local:referentially_opaque_contexts	rdfs:label	"referentially opaque contexts"	.
+
+local:contexts	rdfs:label	"contexts"	.
+
+local:allow	rdfs:label	"allow"	.
+
+local:not	rdfs:label	"not"	.
+
+local:inference	rdfs:label	"inference"	.
+
+local:outline	rdfs:label	"outline"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:we	rdfs:label	"we"	.
+
+local:exist	rdfs:label	"exist"	.
+
+local:referentiallyopaque	rdfs:label	"referentially-opaque"	.
+
+local:referentiallyopaque_alternatives	rdfs:label	"referentially-opaque alternatives"	.
+
+local:alternatives	rdfs:label	"alternatives"	.
+
+local:varieties_of_referentiallyopaque_alternatives	rdfs:label	"varieties of referentially-opaque alternatives"	.
+
+local:varieties	rdfs:label	"varieties"	.
+
+local:referentiallyopaque_alternatives_to_owl	rdfs:label	"referentially-opaque alternatives to owl"	.
+
+local:report	rdfs:label	"report"	.
+
+local:empirical_experiment	rdfs:label	"empirical experiment"	.
+
+local:experiment	rdfs:label	"experiment"	.
+
+local:empirical	rdfs:label	"empirical"	.
+
+local:sameas_statements	rdfs:label	"sameas statements"	.
+
+local:statements	rdfs:label	"statements"	.
+
+local:empirical_experiment_over_sameas_statements	rdfs:label	"empirical experiment over sameas statements"	.
+
+local:sameas_statements_from_web	rdfs:label	"sameas statements from web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:web_of_data	rdfs:label	"web of data"	.
+
+local:selected_owl	rdfs:label	"selected owl"	.
+
+local:randomly_selected	rdfs:label	"randomly selected"	.
+
+local:selected	rdfs:label	"selected"	.
+
+local:empirical_experiment_over_selected_owl	rdfs:label	"empirical experiment over selected owl"	.
+
+local:shed	rdfs:label	"shed"	.
+
+local:light	rdfs:label	"light"	.
+
+local:is_used	rdfs:label	"is used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:how_is_used	rdfs:label	"how is used"	.
+
+local:how_is_used_on_web	rdfs:label	"how is used on web"	.
+
+local:theoretical	rdfs:label	"theoretical"	.
+
+local:theoretical_apparatus	rdfs:label	"theoretical apparatus"	.
+
+local:apparatus	rdfs:label	"apparatus"	.
+
+local:misused	rdfs:label	"misused"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:inference	owl:sameAs	cso:inference	.
+cso:inference	rdfs:label	"inference"	.
+
+#### Relations ####
+
+local:one_point	rdfs:subClassOf	local:point	.
+local:allow	vn.role:Theme	local:inference	.
+local:referentiallyopaque_alternatives_to_owl	local:referentially-opaquealternatives_to	local:owl	.
+local:sameas_statements	rdfs:subClassOf	local:statements	.
+local:web_of_data	local:of_data	local:web	.
+local:report	local:AM-LOC	local:empirical_experiment_over_sameas_statements	.
+local:encoding	vn.role:Patient	local:one_point_on_scale	.
+local:referentially_opaque	rdfs:subClassOf	local:opaque	.
+local:scale_of_similarity	local:scale_of	local:similarity	.
+local:referentially	rdfs:member	local:referentially_opaque	.
+local:sameas_statements_from_web	local:sameasstatements_from	local:web	.
+local:encoding	vn.role:Agent	local:fact_sameas	.
+local:empirical_experiment	rdfs:subClassOf	local:experiment	.
+local:report	local:AM-LOC	local:empirical_experiment_over_selected_owl	.
+local:scale_of_one	local:scale_of	local:one	.
+local:sameas_statements_from_web	local:from_web	local:sameas_statements	.
+local:shed	vn.role:Theme	local:experiment	.
+local:viewed	local:AM-PNC	local:scale_of_sameas_current_uses	.
+local:empirical_experiment_over_selected_owl	local:empiricalexperiment_over	local:selected_owl	.
+local:used	vn.role:Theme	local:owl	.
+local:current_uses	rdfs:subClassOf	local:uses	.
+local:theoretical	rdfs:member	local:theoretical_apparatus	.
+local:randomly_selected	rdfs:subClassOf	local:selected	.
+local:varieties_of_referentiallyopaque_alternatives	local:of_referentially-opaquealternatives	local:varieties	.
+local:empirical_experiment_over_sameas_statements	local:over_sameasstatements	local:empirical_experiment	.
+local:opaque	rdfs:member	local:opaque_contexts	.
+local:referentiallyopaque_alternatives_to_owl	local:to_owl	local:referentiallyopaque_alternatives	.
+local:sameas_current_uses	rdfs:subClassOf	local:uses	.
+local:is_used	rdfs:subClassOf	local:used	.
+local:sameas_current_uses	rdfs:subClassOf	local:current_uses	.
+local:how_is_used	rdfs:subClassOf	local:is_used	.
+local:referentially_opaque_contexts	rdfs:subClassOf	local:opaque_contexts	.
+local:fact_sameas	rdfs:subClassOf	local:sameas	.
+local:referentially_opaque_contexts	rdfs:subClassOf	local:contexts	.
+local:web_of_data	local:web_of	local:data	.
+local:used	vn.role:Theme	local:sameas	.
+local:describe	vn.role:Theme	local:exist	.
+local:viewed	local:AM-LOC	local:fact_owl	.
+local:opaque_contexts	rdfs:subClassOf	local:contexts	.
+local:how_is_used_on_web	local:on_web	local:how_is_used	.
+local:viewed	vn.role:Predicate	local:encoding	.
+local:selected_owl	rdfs:subClassOf	local:owl	.
+local:empirical_experiment_over_selected_owl	local:over_selectedowl	local:empirical_experiment	.
+local:viewed	local:AM-LOC	local:fact_sameas	.
+local:scale_of_sameas_current_uses	local:scale_of	local:sameas_current_uses	.
+local:varieties_of_referentiallyopaque_alternatives	local:varieties_of	local:referentiallyopaque_alternatives	.
+local:shed	vn.role:Theme	local:theoretical_apparatus	.
+local:shed	local:AM-TMP	local:how_is_used_on_web	.
+local:scale_of_sameas_current_uses	local:of_sameascurrentuses	local:scale	.
+local:referentiallyopaque_alternatives	rdfs:subClassOf	local:alternatives	.
+local:report	vn.role:Agent	local:we	.
+local:linked	vn.role:Patient	local:data	.
+local:allow	vn.role:Agent	local:opaque_contexts	.
+local:fact_owl	local:_owl	local:fact	.
+local:sameas	rdfs:member	local:sameas_statements	.
+local:shed	vn.role:other	local:how_is_used_on_web	.
+local:current	rdfs:member	local:current_uses	.
+local:sameas	rdfs:member	local:sameas_current	.
+local:one_point_on_scale	local:onepoint_on	local:scale	.
+local:outline	vn.role:Theme	local:varieties_of_referentiallyopaque_alternatives	.
+local:how_is_used_on_web	local:howisused_on	local:web	.
+local:allow	local:AM-NEG	local:not	.
+local:referentiallyopaque	rdfs:member	local:referentiallyopaque_alternatives	.
+local:used	vn.role:Recipient	local:web_of_data	.
+local:referentially_opaque	rdfs:member	local:referentially_opaque_contexts	.
+local:one_point_on_scale	local:on_scale	local:one_point	.
+local:sameas_current	rdfs:subClassOf	local:current	.
+local:misused	vn.role:Agent	local:sameas	.
+local:sameas_current	rdfs:member	local:sameas_current_uses	.
+local:empirical	rdfs:member	local:empirical_experiment	.
+local:scale_of_similarity	local:of_similarity	local:scale	.
+local:empirical_experiment_over_sameas_statements	local:empiricalexperiment_over	local:sameas_statements	.
+local:describe	vn.role:Agent	local:we	.
+local:shed	vn.role:Agent	local:light	.
+local:only_one	rdfs:subClassOf	local:one	.
+local:scale_of_one	local:of_one	local:scale	.
+local:theoretical_apparatus	rdfs:subClassOf	local:apparatus	.
+local:outline	vn.role:Theme	local:sameas	.
+local:viewed	local:AM-MOD	local:can	.
+local:fact_owl	local:fact_	local:owl	.

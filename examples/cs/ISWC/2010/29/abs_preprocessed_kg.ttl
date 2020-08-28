@@ -1,0 +1,201 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:enjoys	rdfs:label	"enjoys"	.
+
+local:twitter	rdfs:label	"twitter"	.
+
+local:enormous	rdfs:label	"enormous"	.
+
+local:enormous_popularity	rdfs:label	"enormous popularity"	.
+
+local:popularity	rdfs:label	"popularity"	.
+
+local:microblogging_service	rdfs:label	"micro-blogging service"	.
+
+local:service	rdfs:label	"service"	.
+
+local:microblogging	rdfs:label	"micro-blogging"	.
+
+local:twitter_simplicity	rdfs:label	"twitter simplicity"	.
+
+local:simplicity	rdfs:label	"simplicity"	.
+
+local:due_popularity	rdfs:label	"due popularity"	.
+
+local:largely_due	rdfs:label	"largely due"	.
+
+local:due	rdfs:label	"due"	.
+
+local:enormous_due_popularity	rdfs:label	"enormous due popularity"	.
+
+local:enormous_due_popularity_as_microblogging_service	rdfs:label	"enormous due popularity as micro-blogging service"	.
+
+local:largely_due_to_twitter_simplicity	rdfs:label	"largely due to twitter simplicity"	.
+
+local:making	rdfs:label	"making"	.
+
+local:sense	rdfs:label	"sense"	.
+
+local:stream_of_messages	rdfs:label	"stream of messages"	.
+
+local:stream	rdfs:label	"stream"	.
+
+local:messages	rdfs:label	"messages"	.
+
+local:sense_of_stream	rdfs:label	"sense of stream"	.
+
+local:become	rdfs:label	"become"	.
+
+local:significant	rdfs:label	"significant"	.
+
+local:significant_challenge	rdfs:label	"significant challenge"	.
+
+local:challenge	rdfs:label	"challenge"	.
+
+local:significant_challenge_for_everyone	rdfs:label	"significant challenge for everyone"	.
+
+local:everyone	rdfs:label	"everyone"	.
+
+local:passing	rdfs:label	"passing"	.
+
+local:system	rdfs:label	"system"	.
+
+local:twitter_users	rdfs:label	"twitter users"	.
+
+local:users	rdfs:label	"users"	.
+
+local:solution_twitter_users	rdfs:label	"solution twitter users"	.
+
+local:adopted	rdfs:label	"adopted"	.
+
+local:adding_at_beginning	rdfs:label	"adding at beginning"	.
+
+local:adding	rdfs:label	"adding"	.
+
+local:beginning	rdfs:label	"beginning"	.
+
+local:beginning_of_word	rdfs:label	"beginning of word"	.
+
+local:word	rdfs:label	"word"	.
+
+local:turn_into_hashtag	rdfs:label	"turn into hashtag"	.
+
+local:turn	rdfs:label	"turn"	.
+
+local:hashtag	rdfs:label	"hashtag"	.
+
+local:convention	rdfs:label	"convention"	.
+
+local:hash_at_beginning	rdfs:label	"hash at beginning"	.
+
+local:hash	rdfs:label	"hash"	.
+
+local:hashtags	rdfs:label	"hashtags"	.
+
+local:means_in_twitter	rdfs:label	"means in twitter"	.
+
+local:means	rdfs:label	"means"	.
+
+local:threads_of_conversation	rdfs:label	"threads of conversation"	.
+
+local:threads	rdfs:label	"threads"	.
+
+local:conversation	rdfs:label	"conversation"	.
+
+local:create	rdfs:label	"create"	.
+
+local:particular	rdfs:label	"particular"	.
+
+local:particular_interests	rdfs:label	"particular interests"	.
+
+local:interests	rdfs:label	"interests"	.
+
+local:build_around_particular_interests	rdfs:label	"build around particular interests"	.
+
+local:build	rdfs:label	"build"	.
+
+local:communities_around_particular_interests	rdfs:label	"communities around particular interests"	.
+
+local:communities	rdfs:label	"communities"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:twitter	rdfs:label	"twitter"	.
+local:microblogging	owl:sameAs	cso:microblogging	.
+cso:hash	rdfs:label	"hash"	.
+local:hash	owl:sameAs	cso:hash	.
+local:twitter	owl:sameAs	cso:twitter	.
+cso:microblogging	rdfs:label	"micro-blogging"	.
+
+#### Relations ####
+
+local:significant	rdfs:member	local:significant_challenge	.
+local:enormous	rdfs:member	local:enormous_popularity	.
+local:stream_of_messages	local:stream_of	local:messages	.
+local:largely_due_to_twitter_simplicity	local:largelydue_to	local:twitter_simplicity	.
+local:sense_of_stream	local:of_stream	local:sense	.
+local:twitter	rdfs:member	local:twitter_users	.
+local:significant_challenge_for_everyone	local:significantchallenge_for	local:everyone	.
+local:passing	local:AM-DIR	local:system	.
+local:create	vn.role:Product	local:threads_of_conversation	.
+local:significant_challenge	rdfs:subClassOf	local:challenge	.
+local:enjoys	vn.role:Experiencer	local:enormous_due_popularity_as_microblogging_service	.
+local:build	vn.role:Agent	local:hashtags	.
+local:become	vn.role:indirect_object	local:means_in_twitter	.
+local:microblogging_service	rdfs:subClassOf	local:service	.
+local:beginning_of_word	local:beginning_of	local:word	.
+local:adding_at_beginning	local:at_beginning	local:adding	.
+local:turn	vn.role:Patient	local:hash	.
+local:adopted	vn.role:Agent	local:solution_twitter_users	.
+local:largely_due	rdfs:subClassOf	local:due	.
+local:particular_interests	rdfs:subClassOf	local:interests	.
+local:communities_around_particular_interests	local:communities_around	local:particular_interests	.
+local:due_popularity	rdfs:subClassOf	local:popularity	.
+local:largely_due_to_twitter_simplicity	local:to_twittersimplicity	local:largely_due	.
+local:turn_into_hashtag	local:into_hashtag	local:turn	.
+local:adding	vn.role:Agent	local:solution_twitter_users	.
+local:become	vn.role:Patient	local:hashtags	.
+local:beginning_of_word	local:of_word	local:beginning	.
+local:become	vn.role:indirect_object	local:significant_challenge_for_everyone	.
+local:threads_of_conversation	local:threads_of	local:conversation	.
+local:turn_into_hashtag	local:turn_into	local:hashtag	.
+local:enormous_due_popularity	rdfs:subClassOf	local:due_popularity	.
+local:adopted	vn.role:Theme	local:convention	.
+local:adding	vn.role:Patient	local:hash_at_beginning	.
+local:twitter_users	rdfs:subClassOf	local:users	.
+local:hash_at_beginning	local:hash_at	local:beginning	.
+local:twitter_simplicity	rdfs:subClassOf	local:simplicity	.
+local:stream_of_messages	local:of_messages	local:stream	.
+local:enormous_due_popularity_as_microblogging_service	local:enormousduepopularity_as	local:microblogging_service	.
+local:threads_of_conversation	local:of_conversation	local:threads	.
+local:making	vn.role:Product	local:stream_of_messages	.
+local:enormous_due_popularity_as_microblogging_service	local:as_micro-bloggingservice	local:enormous_due_popularity	.
+local:means_in_twitter	local:in_twitter	local:means	.
+local:particular	rdfs:member	local:particular_interests	.
+local:create	vn.role:Agent	local:hashtags	.
+local:passing	vn.role:Theme	local:messages	.
+local:enjoys	vn.role:Theme	local:twitter	.
+local:adding_at_beginning	local:adding_at	local:beginning	.
+local:build	vn.role:Material	local:communities_around_particular_interests	.
+local:enormous_popularity	rdfs:subClassOf	local:popularity	.
+local:means_in_twitter	local:means_in	local:twitter	.
+local:build_around_particular_interests	local:around_particularinterests	local:build	.
+local:sense_of_stream	local:sense_of	local:stream	.
+local:turn	vn.role:Source	local:hashtag	.
+local:significant_challenge_for_everyone	local:for_everyone	local:significant_challenge	.
+local:build_around_particular_interests	local:build_around	local:particular_interests	.
+local:become	vn.role:Patient	local:making	.
+local:communities_around_particular_interests	local:around_particularinterests	local:communities	.
+local:solution_twitter_users	rdfs:subClassOf	local:twitter_users	.
+local:hash_at_beginning	local:at_beginning	local:hash	.
+local:microblogging	rdfs:member	local:microblogging_service	.
+local:making	vn.role:Material	local:sense	.

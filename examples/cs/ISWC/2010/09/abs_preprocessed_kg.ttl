@@ -1,0 +1,226 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:sameas_statements	rdfs:label	"sameas statements"	.
+
+local:statements	rdfs:label	"statements"	.
+
+local:sameas	rdfs:label	"sameas"	.
+
+local:millions_owl	rdfs:label	"millions owl"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:published	rdfs:label	"published"	.
+
+local:web_of_data	rdfs:label	"web of data"	.
+
+local:web	rdfs:label	"web"	.
+
+local:data	rdfs:label	"data"	.
+
+local:unique	rdfs:label	"unique"	.
+
+local:unique_role	rdfs:label	"unique role"	.
+
+local:role	rdfs:label	"role"	.
+
+local:data_unique_role	rdfs:label	"data unique role"	.
+
+local:web_of_data_unique_role	rdfs:label	"web of data unique role"	.
+
+local:become	rdfs:label	"become"	.
+
+local:increasing_debate	rdfs:label	"increasing debate"	.
+
+local:debate	rdfs:label	"debate"	.
+
+local:topic_of_increasing_debate	rdfs:label	"topic of increasing debate"	.
+
+local:topic	rdfs:label	"topic"	.
+
+local:increasing	rdfs:label	"increasing"	.
+
+local:role_owl	rdfs:label	"role owl"	.
+
+local:unique_role_owl	rdfs:label	"unique role owl"	.
+
+local:data_integration	rdfs:label	"data integration"	.
+
+local:integration	rdfs:label	"integration"	.
+
+local:data_integration_owl	rdfs:label	"data integration owl"	.
+
+local:integration_owl	rdfs:label	"integration owl"	.
+
+local:heavy	rdfs:label	"heavy"	.
+
+local:heavy_usage	rdfs:label	"heavy usage"	.
+
+local:usage	rdfs:label	"usage"	.
+
+local:linked_data_integration_owl	rdfs:label	"linked data integration owl"	.
+
+local:web_of_heavy_usage	rdfs:label	"web of heavy usage"	.
+
+local:web_of_heavy_usage_in_linked_data_integration_owl	rdfs:label	"web of heavy usage in linked data integration owl"	.
+
+local:increasing_interest	rdfs:label	"increasing interest"	.
+
+local:interest	rdfs:label	"interest"	.
+
+local:topic_of_increasing_interest	rdfs:label	"topic of increasing interest"	.
+
+local:data_integration_sameas	rdfs:label	"data integration sameas"	.
+
+local:integration_sameas	rdfs:label	"integration sameas"	.
+
+local:linked_data_integration_sameas	rdfs:label	"linked data integration sameas"	.
+
+local:web_of_heavy_usage_in_linked_data_integration_sameas	rdfs:label	"web of heavy usage in linked data integration sameas"	.
+
+local:provides	rdfs:label	"provides"	.
+
+local:sameas_deployment	rdfs:label	"sameas deployment"	.
+
+local:sameas_deployment_status	rdfs:label	"sameas deployment status"	.
+
+local:deployment	rdfs:label	"deployment"	.
+
+local:deployment_status	rdfs:label	"deployment status"	.
+
+local:status	rdfs:label	"status"	.
+
+local:uses	rdfs:label	"uses"	.
+
+local:statistics	rdfs:label	"statistics"	.
+
+local:focus_discussion	rdfs:label	"focus discussion"	.
+
+local:discussion	rdfs:label	"discussion"	.
+
+local:focus	rdfs:label	"focus"	.
+
+local:data_usage	rdfs:label	"data usage"	.
+
+local:linked_data	rdfs:label	"linked data"	.
+
+local:focus_discussion_around_web	rdfs:label	"focus discussion around web"	.
+
+local:web_of_data_usage	rdfs:label	"web of data usage"	.
+
+local:web_of_data_usage_in_linked_data	rdfs:label	"web of data usage in linked data"	.
+
+local:quantitative_analysis	rdfs:label	"quantitative analysis"	.
+
+local:analysis	rdfs:label	"analysis"	.
+
+local:quantitative	rdfs:label	"quantitative"	.
+
+local:quantitative_analysis_of_owl	rdfs:label	"quantitative analysis of owl"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:linked_data	owl:sameAs	cso:linked_data	.
+cso:linked_data	rdfs:label	"linked data"	.
+local:statistics	owl:sameAs	cso:statistics	.
+local:data_integration	owl:sameAs	cso:data_integration	.
+cso:owl	rdfs:label	"owl"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:data_integration	rdfs:label	"data integration"	.
+cso:statistics	rdfs:label	"statistics"	.
+
+#### Relations ####
+
+local:focus	rdfs:member	local:focus_discussion	.
+local:web_of_data_unique_role	local:of_datauniquerole	local:web	.
+local:deployment_status	rdfs:subClassOf	local:status	.
+local:sameas	rdfs:member	local:sameas_deployment	.
+local:integration	rdfs:member	local:integration_sameas	.
+local:web_of_heavy_usage_in_linked_data_integration_sameas	local:in_linkeddataintegrationsameas	local:web_of_heavy_usage	.
+local:become	vn.role:Patient	local:web_of_heavy_usage_in_linked_data_integration_sameas	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:quantitative	rdfs:member	local:quantitative_analysis	.
+local:become	vn.role:Patient	local:web_of_data_unique_role	.
+local:web_of_data	local:of_data	local:web	.
+local:data	rdfs:member	local:data_integration	.
+local:heavy	rdfs:member	local:heavy_usage	.
+local:topic_of_increasing_interest	local:of_increasinginterest	local:topic	.
+local:provides	vn.role:Agent	local:sameas_deployment_status	.
+local:data_integration	rdfs:member	local:data_integration_owl	.
+local:focus_discussion	rdfs:subClassOf	local:discussion	.
+local:role_owl	rdfs:subClassOf	local:owl	.
+local:increasing	vn.role:Attribute	local:debate	.
+local:focus_discussion_around_web	local:around_web	local:focus_discussion	.
+local:increasing_debate	rdfs:subClassOf	local:debate	.
+local:become	vn.role:Patient	local:sameas	.
+local:unique_role_owl	rdfs:subClassOf	local:owl	.
+local:data_integration	rdfs:member	local:data_integration_sameas	.
+local:data_integration	rdfs:subClassOf	local:integration	.
+local:provides	vn.role:Recipient	local:web_of_data	.
+local:data_integration_sameas	rdfs:subClassOf	local:integration_sameas	.
+local:sameas_deployment_status	rdfs:subClassOf	local:status	.
+local:data	rdfs:member	local:data_usage	.
+local:web_of_data	local:web_of	local:data	.
+local:sameas_deployment	rdfs:member	local:sameas_deployment_status	.
+local:become	vn.role:indirect_object	local:topic_of_increasing_debate	.
+local:published	local:AM-LOC	local:web_of_data	.
+local:quantitative_analysis	rdfs:subClassOf	local:analysis	.
+local:role	rdfs:member	local:role_owl	.
+local:become	vn.role:indirect_object	local:topic_of_increasing_interest	.
+local:integration	rdfs:member	local:integration_owl	.
+local:focus	vn.role:Experiencer	local:web_of_data	.
+local:quantitative_analysis_of_owl	local:of_owl	local:quantitative_analysis	.
+local:unique	rdfs:member	local:unique_role	.
+local:become	local:AM-ADV	local:web_of_data_unique_role	.
+local:web_of_heavy_usage_in_linked_data_integration_sameas	local:webofheavyusage_in	local:linked_data_integration_sameas	.
+local:sameas_deployment_status	rdfs:subClassOf	local:deployment_status	.
+local:focus	vn.role:Theme	local:discussion	.
+local:focus	vn.role:indirect_object	local:web_of_data_usage_in_linked_data	.
+local:millions_owl	rdfs:subClassOf	local:owl	.
+local:unique_role	rdfs:subClassOf	local:role	.
+local:become	vn.role:Patient	local:web_of_heavy_usage_in_linked_data_integration_owl	.
+local:web_of_data_usage_in_linked_data	local:webofdatausage_in	local:linked_data	.
+local:provides	vn.role:Agent	local:quantitative_analysis_of_owl	.
+local:topic_of_increasing_debate	local:of_increasingdebate	local:topic	.
+local:published	vn.role:Product	local:millions_owl	.
+local:increasing	vn.role:Attribute	local:interest	.
+local:deployment	rdfs:member	local:deployment_status	.
+local:integration_owl	rdfs:subClassOf	local:owl	.
+local:uses	vn.role:Agent	local:web_of_data	.
+local:uses	local:AM-PNC	local:focus_discussion_around_web	.
+local:quantitative_analysis_of_owl	local:quantitativeanalysis_of	local:owl	.
+local:data_integration_sameas	rdfs:subClassOf	local:sameas	.
+local:sameas_statements	rdfs:subClassOf	local:statements	.
+local:heavy_usage	rdfs:subClassOf	local:usage	.
+local:web_of_heavy_usage	local:web_of	local:heavy_usage	.
+local:sameas_deployment	rdfs:subClassOf	local:deployment	.
+local:uses	vn.role:Theme	local:statistics	.
+local:web_of_data_usage	local:web_of	local:data_usage	.
+local:web_of_heavy_usage_in_linked_data_integration_owl	local:webofheavyusage_in	local:linked_data_integration_owl	.
+local:data_integration_owl	rdfs:subClassOf	local:owl	.
+local:integration_sameas	rdfs:subClassOf	local:sameas	.
+local:web_of_data_usage_in_linked_data	local:in_linkeddata	local:web_of_data_usage	.
+local:linked_data_integration_sameas	rdfs:subClassOf	local:data_integration_sameas	.
+local:focus_discussion_around_web	local:focusdiscussion_around	local:web	.
+local:web_of_data_usage	local:of_datausage	local:web	.
+local:data_unique_role	rdfs:subClassOf	local:unique_role	.
+local:linked_data_integration_owl	rdfs:subClassOf	local:data_integration_owl	.
+local:web_of_data_unique_role	local:web_of	local:data_unique_role	.
+local:data_integration_owl	rdfs:subClassOf	local:integration_owl	.
+local:web_of_heavy_usage	local:of_heavyusage	local:web	.
+local:web_of_heavy_usage_in_linked_data_integration_owl	local:in_linkeddataintegrationowl	local:web_of_heavy_usage	.
+local:increasing_interest	rdfs:subClassOf	local:interest	.
+local:unique_role	rdfs:member	local:unique_role_owl	.
+local:topic_of_increasing_debate	local:topic_of	local:increasing_debate	.
+local:data_usage	rdfs:subClassOf	local:usage	.
+local:topic_of_increasing_interest	local:topic_of	local:increasing_interest	.
+local:sameas	rdfs:member	local:sameas_statements	.

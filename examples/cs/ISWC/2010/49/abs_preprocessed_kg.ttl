@@ -1,0 +1,146 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:rule_interchange_format_production_rule	rdfs:label	"rule interchange format production rule"	.
+
+local:rule	rdfs:label	"rule"	.
+
+local:rule_interchange_format_production_rule_dialect	rdfs:label	"rule interchange format production rule dialect"	.
+
+local:rule_interchange_format_production	rdfs:label	"rule interchange format production"	.
+
+local:production	rdfs:label	"production"	.
+
+local:rule_interchange	rdfs:label	"rule interchange"	.
+
+local:rule_interchange_format	rdfs:label	"rule interchange format"	.
+
+local:rule_dialect	rdfs:label	"rule dialect"	.
+
+local:format	rdfs:label	"format"	.
+
+local:format_production	rdfs:label	"format production"	.
+
+local:production_rule	rdfs:label	"production rule"	.
+
+local:production_rule_dialect	rdfs:label	"production rule dialect"	.
+
+local:format_production_rule	rdfs:label	"format production rule"	.
+
+local:interchange_format	rdfs:label	"interchange format"	.
+
+local:interchange_format_production	rdfs:label	"interchange format production"	.
+
+local:interchange_format_production_rule	rdfs:label	"interchange format production rule"	.
+
+local:format_production_rule_dialect	rdfs:label	"format production rule dialect"	.
+
+local:dialect	rdfs:label	"dialect"	.
+
+local:interchange	rdfs:label	"interchange"	.
+
+local:interchange_format_production_rule_dialect	rdfs:label	"interchange format production rule dialect"	.
+
+local:define	rdfs:label	"define"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:production_rules	rdfs:label	"production rules"	.
+
+local:web	rdfs:label	"web"	.
+
+local:rules	rdfs:label	"rules"	.
+
+local:production_rules_for_semantic_web	rdfs:label	"production rules for semantic web"	.
+
+local:defined	rdfs:label	"defined"	.
+
+local:operationally	rdfs:label	"operationally"	.
+
+local:terminal_transition_systems	rdfs:label	"terminal transition systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:transition_systems	rdfs:label	"transition systems"	.
+
+local:terminal_transition	rdfs:label	"terminal transition"	.
+
+local:transition	rdfs:label	"transition"	.
+
+local:terminal	rdfs:label	"terminal"	.
+
+local:labeled_terminal_transition_systems	rdfs:label	"labeled terminal transition systems"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:semantic	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:transition_systems	rdfs:label	"transition systems"	.
+local:transition_systems	owl:sameAs	cso:transition_systems	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+
+#### Relations ####
+
+local:interchange_format_production_rule_dialect	rdfs:subClassOf	local:format_production_rule_dialect	.
+local:labeled_terminal_transition_systems	rdfs:subClassOf	local:terminal_transition_systems	.
+local:interchange_format	rdfs:member	local:interchange_format_production	.
+local:terminal_transition_systems	rdfs:subClassOf	local:systems	.
+local:interchange_format_production_rule_dialect	rdfs:subClassOf	local:dialect	.
+local:production_rules_for_semantic_web	local:productionrules_for	local:semantic_web	.
+local:interchange_format_production_rule	rdfs:subClassOf	local:rule	.
+local:terminal_transition	rdfs:member	local:terminal_transition_systems	.
+local:format_production	rdfs:subClassOf	local:production	.
+local:production_rules	rdfs:subClassOf	local:rules	.
+local:transition_systems	rdfs:subClassOf	local:systems	.
+local:production_rule_dialect	rdfs:subClassOf	local:rule_dialect	.
+local:production_rule_dialect	rdfs:subClassOf	local:dialect	.
+local:format_production	rdfs:member	local:format_production_rule	.
+local:rule_interchange_format_production_rule	rdfs:subClassOf	local:rule	.
+local:interchange_format	rdfs:subClassOf	local:format	.
+local:terminal_transition_systems	rdfs:subClassOf	local:transition_systems	.
+local:production_rule	rdfs:member	local:production_rule_dialect	.
+local:interchange	rdfs:member	local:interchange_format	.
+local:format_production_rule	rdfs:subClassOf	local:rule	.
+local:rule_interchange_format	rdfs:member	local:rule_interchange_format_production	.
+local:defined	local:AM-MNR	local:operationally	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:terminal_transition	rdfs:subClassOf	local:transition	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:rule_interchange_format_production_rule_dialect	rdfs:subClassOf	local:dialect	.
+local:rule_interchange_format	rdfs:subClassOf	local:format	.
+local:rule_interchange_format_production	rdfs:member	local:rule_interchange_format_production_rule	.
+local:rule_dialect	rdfs:subClassOf	local:dialect	.
+local:format_production_rule	rdfs:member	local:format_production_rule_dialect	.
+local:production	rdfs:member	local:production_rule	.
+local:rule_interchange_format_production_rule_dialect	rdfs:subClassOf	local:interchange_format_production_rule_dialect	.
+local:rule_interchange	rdfs:member	local:rule_interchange_format	.
+local:production_rules_for_semantic_web	local:for_semanticweb	local:production_rules	.
+local:production_rule	rdfs:subClassOf	local:rule	.
+local:define	vn.role:Theme	local:production_rules_for_semantic_web	.
+local:rule_interchange	rdfs:subClassOf	local:interchange	.
+local:rule_interchange_format_production	rdfs:subClassOf	local:production	.
+local:rule	rdfs:member	local:rule_dialect	.
+local:production	rdfs:member	local:production_rules	.
+local:terminal	rdfs:member	local:terminal_transition	.
+local:transition	rdfs:member	local:transition_systems	.
+local:format	rdfs:member	local:format_production	.
+local:format_production_rule_dialect	rdfs:subClassOf	local:production_rule_dialect	.
+local:define	vn.role:Agent	local:rule_interchange_format_production_rule_dialect	.
+local:interchange_format_production_rule	rdfs:member	local:interchange_format_production_rule_dialect	.
+local:interchange_format_production	rdfs:subClassOf	local:production	.
+local:format_production_rule_dialect	rdfs:subClassOf	local:dialect	.
+local:rule_interchange_format_production_rule	rdfs:member	local:rule_interchange_format_production_rule_dialect	.
+local:rule	rdfs:member	local:rule_interchange	.
+local:interchange_format_production	rdfs:member	local:interchange_format_production_rule	.
+local:defined	vn.role:Predicate	local:labeled_terminal_transition_systems	.

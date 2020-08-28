@@ -1,0 +1,217 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:used	rdfs:label	"used"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:sharing	rdfs:label	"sharing"	.
+
+local:information	rdfs:label	"information"	.
+
+local:different	rdfs:label	"different"	.
+
+local:different_applications	rdfs:label	"different applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:resulting	rdfs:label	"resulting"	.
+
+local:multiple_versions	rdfs:label	"multiple versions"	.
+
+local:versions	rdfs:label	"versions"	.
+
+local:multiple	rdfs:label	"multiple"	.
+
+local:multiple_versions_of_ontology	rdfs:label	"multiple versions of ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:caused	rdfs:label	"caused"	.
+
+local:refactorings	rdfs:label	"refactorings"	.
+
+local:adapted	rdfs:label	"adapted"	.
+
+local:changes	rdfs:label	"changes"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:work	rdfs:label	"work"	.
+
+local:structural	rdfs:label	"structural"	.
+
+local:structural_changes	rdfs:label	"structural changes"	.
+
+local:there_changes	rdfs:label	"there changes"	.
+
+local:structural_there_changes	rdfs:label	"structural there changes"	.
+
+local:structural_there_changes_in_ontologies	rdfs:label	"structural there changes in ontologies"	.
+
+local:detecting	rdfs:label	"detecting"	.
+
+local:ontology_changes	rdfs:label	"ontology changes"	.
+
+local:ontology_versions	rdfs:label	"ontology versions"	.
+
+local:semantically	rdfs:label	"semantically"	.
+
+local:semantically_comparison	rdfs:label	"semantically comparison"	.
+
+local:comparison	rdfs:label	"comparison"	.
+
+local:ontology_changes_by_semantically_comparison	rdfs:label	"ontology changes by semantically comparison"	.
+
+local:semantically_comparison_of_ontology_versions	rdfs:label	"semantically comparison of ontology versions"	.
+
+local:recognizing	rdfs:label	"recognizing"	.
+
+local:syntactical_changes	rdfs:label	"syntactical changes"	.
+
+local:syntactical	rdfs:label	"syntactical"	.
+
+local:syntactical_there_changes	rdfs:label	"syntactical there changes"	.
+
+local:syntactical_there_changes_in_ontologies	rdfs:label	"syntactical there changes in ontologies"	.
+
+local:analyzing	rdfs:label	"analyzing"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:owl_ontologies	rdfs:label	"owl ontologies"	.
+
+local:using	rdfs:label	"using"	.
+
+local:dl_reasoning	rdfs:label	"dl reasoning"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:such_refactorings	rdfs:label	"such refactorings"	.
+
+local:such	rdfs:label	"such"	.
+
+local:recognize	rdfs:label	"recognize"	.
+
+local:model_refactorings	rdfs:label	"model refactorings"	.
+
+local:model	rdfs:label	"model"	.
+
+local:our_start	rdfs:label	"our start"	.
+
+local:start	rdfs:label	"start"	.
+
+local:our_start_with_classification	rdfs:label	"our start with classification"	.
+
+local:classification	rdfs:label	"classification"	.
+
+local:classification_of_model_refactorings	rdfs:label	"classification of model refactorings"	.
+
+local:found	rdfs:label	"found"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:software	rdfs:label	"software"	.
+
+local:software_engineering	rdfs:label	"software engineering"	.
+
+local:engineering	rdfs:label	"engineering"	.
+
+local:such_refactorings_in_owl_ontologies	rdfs:label	"such refactorings in owl ontologies"	.
+
+local:identifying	rdfs:label	"identifying"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:ontology	owl:sameAs	cso:ontology	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+cso:refactorings	rdfs:label	"refactorings"	.
+cso:owl	rdfs:label	"owl"	.
+local:software_engineering	owl:sameAs	cso:software_engineering	.
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:software_engineering	rdfs:label	"software engineering"	.
+local:owl	owl:sameAs	cso:owl	.
+local:refactorings	owl:sameAs	cso:refactorings	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:ontology	rdfs:label	"ontology"	.
+
+#### Relations ####
+
+local:such_refactorings_in_owl_ontologies	local:in_owlontologies	local:such_refactorings	.
+local:analyzing	vn.role:Theme	local:ontology_changes_by_semantically_comparison	.
+local:sharing	vn.role:Agent	local:ontologies	.
+local:different_applications	rdfs:subClassOf	local:applications	.
+local:different	rdfs:member	local:different_applications	.
+local:ontology_changes_by_semantically_comparison	local:by_semanticallycomparison	local:ontology_changes	.
+local:multiple_versions_of_ontology	local:multipleversions_of	local:ontology	.
+local:syntactical_there_changes	rdfs:subClassOf	local:there_changes	.
+local:semantically	rdfs:member	local:semantically_comparison	.
+local:multiple	rdfs:member	local:multiple_versions	.
+local:such_refactorings_in_owl_ontologies	local:suchrefactorings_in	local:owl_ontologies	.
+local:semantically_comparison_of_ontology_versions	local:semanticallycomparison_of	local:ontology_versions	.
+local:resulting	vn.role:indirect_object	local:multiple_versions_of_ontology	.
+local:ontology	rdfs:member	local:ontology_changes	.
+local:found	vn.role:Agent	local:approach	.
+local:identifying	vn.role:Theme	local:refactorings	.
+local:ontology_changes	rdfs:subClassOf	local:changes	.
+local:syntactical_there_changes_in_ontologies	local:in_ontologies	local:syntactical_there_changes	.
+local:existing	vn.role:Location	local:work	.
+local:found	local:AM-PNC	local:identifying	.
+local:semantically_comparison_of_ontology_versions	local:of_ontologyversions	local:semantically_comparison	.
+local:syntactical	rdfs:member	local:syntactical_changes	.
+local:model	rdfs:member	local:model_refactorings	.
+local:caused	vn.role:Theme2	local:ontology	.
+local:structural_there_changes_in_ontologies	local:structuraltherechanges_in	local:ontologies	.
+local:recognize	vn.role:Theme	local:refactorings	.
+local:software_engineering	rdfs:subClassOf	local:engineering	.
+local:our_start_with_classification	local:with_classification	local:our_start	.
+local:caused	vn.role:Theme1	local:refactorings	.
+local:such_refactorings	rdfs:subClassOf	local:refactorings	.
+local:classification_of_model_refactorings	local:classification_of	local:model_refactorings	.
+local:such	rdfs:member	local:such_refactorings	.
+local:model_refactorings	rdfs:subClassOf	local:refactorings	.
+local:adapted	vn.role:indirect_object	local:different_applications	.
+local:using	vn.role:Agent	local:owl_ontologies	.
+local:caused	vn.role:Theme1	local:changes	.
+local:semantically_comparison	rdfs:subClassOf	local:comparison	.
+local:using	vn.role:Theme	local:dl_reasoning	.
+local:classification_of_model_refactorings	local:of_modelrefactorings	local:classification	.
+local:owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:identifying	vn.role:Agent	local:software	.
+local:resulting	vn.role:Location	local:different_applications	.
+local:our_start_with_classification	local:ourstart_with	local:classification	.
+local:structural_there_changes_in_ontologies	local:in_ontologies	local:structural_there_changes	.
+local:there_changes	rdfs:subClassOf	local:changes	.
+local:software	rdfs:member	local:software_engineering	.
+local:multiple_versions_of_ontology	local:of_ontology	local:multiple_versions	.
+local:syntactical_there_changes_in_ontologies	local:syntacticaltherechanges_in	local:ontologies	.
+local:ontology	rdfs:member	local:ontology_versions	.
+local:multiple_versions	rdfs:subClassOf	local:versions	.
+local:structural	rdfs:member	local:structural_changes	.
+local:owl	rdfs:member	local:owl_ontologies	.
+local:dl_reasoning	rdfs:subClassOf	local:reasoning	.
+local:detecting	vn.role:Stimulus	local:structural_there_changes_in_ontologies	.
+local:found	local:AM-LOC	local:software_engineering	.
+local:ontology_changes_by_semantically_comparison	local:ontologychanges_by	local:semantically_comparison	.
+local:our_start	rdfs:subClassOf	local:start	.
+local:using	vn.role:Recipient	local:recognize	.
+local:identifying	local:AM-LOC	local:owl_ontologies	.
+local:used	vn.role:Theme	local:ontologies	.
+local:structural_there_changes	rdfs:subClassOf	local:there_changes	.
+local:adapted	vn.role:Patient	local:ontologies	.
+local:recognizing	vn.role:Theme	local:ontology_changes_by_semantically_comparison	.
+local:detecting	vn.role:Stimulus	local:syntactical_there_changes_in_ontologies	.
+local:syntactical_changes	rdfs:subClassOf	local:changes	.
+local:used	vn.role:Recipient	local:sharing	.
+local:sharing	vn.role:Patient	local:information	.
+local:ontology_versions	rdfs:subClassOf	local:versions	.
+local:structural_changes	rdfs:subClassOf	local:changes	.

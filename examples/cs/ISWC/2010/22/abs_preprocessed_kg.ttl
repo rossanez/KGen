@@ -1,0 +1,177 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:focused	rdfs:label	"focused"	.
+
+local:those	rdfs:label	"those"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:provided	rdfs:label	"provided"	.
+
+local:explanation	rdfs:label	"explanation"	.
+
+local:ontology_engineering_environments	rdfs:label	"ontology engineering environments"	.
+
+local:environments	rdfs:label	"environments"	.
+
+local:ontology_engineering	rdfs:label	"ontology engineering"	.
+
+local:engineering	rdfs:label	"engineering"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:engineering_environments	rdfs:label	"engineering environments"	.
+
+local:ontology_language	rdfs:label	"ontology language"	.
+
+local:language	rdfs:label	"language"	.
+
+local:web_ontology	rdfs:label	"web ontology"	.
+
+local:web_ontology_language	rdfs:label	"web ontology language"	.
+
+local:web	rdfs:label	"web"	.
+
+local:entailing	rdfs:label	"entailing"	.
+
+local:minimal	rdfs:label	"minimal"	.
+
+local:subsets_of_ontology	rdfs:label	"subsets of ontology"	.
+
+local:subsets	rdfs:label	"subsets"	.
+
+local:there_despite_this	rdfs:label	"there despite this"	.
+
+local:there	rdfs:label	"there"	.
+
+local:this	rdfs:label	"this"	.
+
+local:occurring	rdfs:label	"occurring"	.
+
+local:naturally	rdfs:label	"naturally"	.
+
+local:justifications	rdfs:label	"justifications"	.
+
+local:understand	rdfs:label	"understand."	.
+
+local:premises_of_proof	rdfs:label	"premises of proof"	.
+
+local:premises	rdfs:label	"premises"	.
+
+local:proof	rdfs:label	"proof"	.
+
+local:articulate	rdfs:label	"articulate"	.
+
+local:not	rdfs:label	"not"	.
+
+local:merely_connect	rdfs:label	"merely connect"	.
+
+local:connect	rdfs:label	"connect"	.
+
+local:often_nonobvious	rdfs:label	"often non-obvious"	.
+
+local:nonobvious	rdfs:label	"non-obvious"	.
+
+local:proof_with_conclusion	rdfs:label	"proof with conclusion"	.
+
+local:conclusion	rdfs:label	"conclusion"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:merely	rdfs:label	"merely"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:potential	rdfs:label	"potential"	.
+
+local:potential_solution	rdfs:label	"potential solution"	.
+
+local:solution	rdfs:label	"solution"	.
+
+local:oriented_as_potential_solution	rdfs:label	"oriented as potential solution"	.
+
+local:oriented	rdfs:label	"oriented"	.
+
+local:potential_solution_to_problem	rdfs:label	"potential solution to problem"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:proofs	rdfs:label	"proofs"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:ontology	owl:sameAs	cso:ontology	.
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:ontology_language	rdfs:label	"ontology language )"	.
+local:ontology_engineering	owl:sameAs	cso:ontology_engineering	.
+local:owl	owl:sameAs	cso:owl	.
+cso:ontology	rdfs:label	"ontology"	.
+local:web_ontology_language	owl:sameAs	cso:web_ontology_language	.
+local:ontology_language	owl:sameAs	cso:ontology_language	.
+cso:web_ontology_language	rdfs:label	"web ontology language"	.
+cso:ontology_engineering	rdfs:label	"ontology engineering"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:provided	vn.role:Recipient	local:ontology_engineering_environments	.
+local:occurring	local:AM-ADV	local:there_despite_this	.
+local:merely_connect	rdfs:subClassOf	local:connect	.
+local:articulate	vn.role:Topic	local:reasoning	.
+local:there_despite_this	local:despite_this	local:there	.
+local:oriented_as_potential_solution	local:oriented_as	local:potential_solution	.
+local:web_ontology_language	rdfs:subClassOf	local:ontology_language	.
+local:ontology_engineering_environments	rdfs:subClassOf	local:environments	.
+local:premises_of_proof	local:premises_of	local:proof	.
+local:presents	vn.role:Theme	local:oriented_as_potential_solution	.
+local:provided	vn.role:Agent	local:explanation	.
+local:ontology_language	rdfs:subClassOf	local:language	.
+local:web	rdfs:member	local:web_ontology	.
+local:entailing	vn.role:object	local:subsets_of_ontology	.
+local:ontology	rdfs:member	local:ontology_language	.
+local:articulate	local:AM-NEG	local:not	.
+local:connect	local:AM-ADV	local:merely	.
+local:there_despite_this	local:there_despite	local:this	.
+local:potential	rdfs:member	local:potential_solution	.
+local:subsets_of_ontology	local:subsets_of	local:ontology	.
+local:occurring	vn.role:Location	local:justifications	.
+local:ontology	rdfs:member	local:ontology_engineering	.
+local:proof_with_conclusion	local:proof_with	local:conclusion	.
+local:potential_solution_to_problem	local:potentialsolution_to	local:problem	.
+local:focused	vn.role:Theme	local:those	.
+local:engineering_environments	rdfs:subClassOf	local:environments	.
+local:web_ontology_language	rdfs:subClassOf	local:language	.
+local:potential_solution_to_problem	local:to_problem	local:potential_solution	.
+local:premises_of_proof	local:of_proof	local:premises	.
+local:understand	vn.role:object	local:justifications	.
+local:connect	vn.role:Patient	local:premises_of_proof	.
+local:engineering	rdfs:member	local:engineering_environments	.
+local:potential_solution	rdfs:subClassOf	local:solution	.
+local:oriented_as_potential_solution	local:as_potentialsolution	local:oriented	.
+local:presents	vn.role:Agent	local:paper	.
+local:ontology_engineering	rdfs:subClassOf	local:engineering	.
+local:oriented	vn.role:Theme	local:proofs	.
+local:web_ontology	rdfs:subClassOf	local:ontology	.
+local:articulate	vn.role:Agent	local:premises_of_proof	.
+local:focused	vn.role:indirect_object	local:owl	.
+local:web_ontology	rdfs:member	local:web_ontology_language	.
+local:proof_with_conclusion	local:with_conclusion	local:proof	.
+local:entailing	vn.role:Theme	local:minimal	.
+local:ontology_engineering	rdfs:member	local:ontology_engineering_environments	.
+local:focused	vn.role:indirect_object	local:web_ontology_language	.
+local:occurring	local:AM-MNR	local:naturally	.
+local:often_nonobvious	rdfs:subClassOf	local:nonobvious	.
+local:ontology_engineering_environments	rdfs:subClassOf	local:engineering_environments	.
+local:subsets_of_ontology	local:of_ontology	local:subsets	.

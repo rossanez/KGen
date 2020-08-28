@@ -1,0 +1,225 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:considers	rdfs:label	"considers"	.
+
+local:similarity	rdfs:label	"similarity"	.
+
+local:only	rdfs:label	"only"	.
+
+local:subsumption_relations	rdfs:label	"subsumption relations"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:subsumption	rdfs:label	"subsumption"	.
+
+local:two_objects	rdfs:label	"two objects"	.
+
+local:objects	rdfs:label	"objects"	.
+
+local:assess	rdfs:label	"assess"	.
+
+local:present	rdfs:label	"present"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:proposed_framework	rdfs:label	"proposed framework"	.
+
+local:framework	rdfs:label	"framework"	.
+
+local:proposed	rdfs:label	"proposed"	.
+
+local:ic	rdfs:label	"ic"	.
+
+local:ic_values	rdfs:label	"ic values"	.
+
+local:values	rdfs:label	"values"	.
+
+local:computing	rdfs:label	"computing"	.
+
+local:directly	rdfs:label	"directly"	.
+
+local:new	rdfs:label	"new"	.
+
+local:new_model	rdfs:label	"new model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:called	rdfs:label	"called"	.
+
+local:information	rdfs:label	"information"	.
+
+local:information_content	rdfs:label	"information content"	.
+
+local:content	rdfs:label	"content"	.
+
+local:extended_information_content	rdfs:label	"extended information content"	.
+
+local:semantic_relations	rdfs:label	"semantic relations"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:defined	rdfs:label	"defined"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:takes	rdfs:label	"takes"	.
+
+local:account	rdfs:label	"account"	.
+
+local:whole_set	rdfs:label	"whole set"	.
+
+local:set	rdfs:label	"set"	.
+
+local:whole	rdfs:label	"whole"	.
+
+local:whole_set_of_semantic_relations	rdfs:label	"whole set of semantic relations"	.
+
+local:similarity_measures	rdfs:label	"similarity measures"	.
+
+local:measures	rdfs:label	"measures"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:existing_similarity_measures	rdfs:label	"existing similarity measures"	.
+
+local:augmented	rdfs:label	"augmented"	.
+
+local:can	rdfs:label	"can"	.
+
+local:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+
+local:relatedness	rdfs:label	"relatedness"	.
+
+local:compute	rdfs:label	"compute"	.
+
+local:enables	rdfs:label	"enables"	.
+
+local:rewrite	rdfs:label	"rewrite"	.
+
+local:new_measure	rdfs:label	"new measure"	.
+
+local:measure	rdfs:label	"measure"	.
+
+local:feature	rdfs:label	"feature"	.
+
+local:faith	rdfs:label	"faith"	.
+
+local:information_theoretic	rdfs:label	"information theoretic"	.
+
+local:theoretic	rdfs:label	"theoretic"	.
+
+local:theoretic_information	rdfs:label	"theoretic information"	.
+
+local:extensive_experimental	rdfs:label	"extensive experimental"	.
+
+local:experimental	rdfs:label	"experimental"	.
+
+local:experimental_evaluations	rdfs:label	"experimental evaluations"	.
+
+local:evaluations	rdfs:label	"evaluations"	.
+
+local:extensive_experimental_evaluations	rdfs:label	"extensive experimental evaluations"	.
+
+local:extensive	rdfs:label	"extensive"	.
+
+local:confirmed	rdfs:label	"confirmed"	.
+
+local:suitability_of_proposed_framework	rdfs:label	"suitability of proposed framework"	.
+
+local:suitability	rdfs:label	"suitability"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:information_content	owl:sameAs	cso:information_content	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:information_content	rdfs:label	"information content"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:semantic_relatedness	owl:sameAs	cso:semantic_relatedness	.
+cso:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:semantic_relations	rdfs:label	"semantic relations"	.
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic_relations	owl:sameAs	cso:semantic_relations	.
+
+#### Relations ####
+
+local:takes	vn.role:Source	local:account	.
+local:whole_set	rdfs:subClassOf	local:set	.
+local:extensive_experimental	rdfs:member	local:extensive_experimental_evaluations	.
+local:information_content	rdfs:subClassOf	local:content	.
+local:whole_set_of_semantic_relations	local:of_semanticrelations	local:whole_set	.
+local:proposed	vn.role:Topic	local:framework	.
+local:existing	vn.role:Location	local:similarity_measures	.
+local:extensive	rdfs:member	local:extensive_experimental	.
+local:two_objects	rdfs:subClassOf	local:objects	.
+local:ic	rdfs:member	local:ic_values	.
+local:compute	vn.role:Agent	local:existing_similarity_measures	.
+local:called	vn.role:Agent	local:new_measure	.
+local:assess	vn.role:Theme	local:two_objects	.
+local:present	vn.role:Theme	local:proposed_framework	.
+local:similarity_measures	rdfs:subClassOf	local:measures	.
+local:information	rdfs:member	local:information_content	.
+local:enables	vn.role:Agent	local:proposed_framework	.
+local:defined	vn.role:Predicate	local:ontology	.
+local:confirmed	vn.role:Cause	local:suitability_of_proposed_framework	.
+local:computing	local:AM-MNR	local:directly	.
+local:subsumption_relations	rdfs:subClassOf	local:relations	.
+local:called	vn.role:Agent	local:new_model	.
+local:theoretic_information	rdfs:subClassOf	local:information	.
+local:present	vn.role:Agent	local:we	.
+local:confirmed	vn.role:Recipient	local:extensive_experimental_evaluations	.
+local:whole	rdfs:member	local:whole_set	.
+local:present	local:AM-LOC	local:paper	.
+local:information	rdfs:member	local:information_theoretic	.
+local:considers	vn.role:Predicate	local:similarity	.
+local:existing_similarity_measures	rdfs:subClassOf	local:similarity_measures	.
+local:augmented	local:AM-PNC	local:compute	.
+local:semantic_relatedness	rdfs:subClassOf	local:relatedness	.
+local:extensive_experimental	rdfs:subClassOf	local:experimental	.
+local:called	vn.role:Cause	local:theoretic_information	.
+local:extensive_experimental_evaluations	rdfs:subClassOf	local:experimental_evaluations	.
+local:proposed_framework	rdfs:subClassOf	local:framework	.
+local:defined	vn.role:Theme	local:semantic_relations	.
+local:new_measure	rdfs:subClassOf	local:measure	.
+local:considers	vn.role:Theme	local:subsumption_relations	.
+local:enables	vn.role:Patient	local:rewrite	.
+local:extensive_experimental_evaluations	rdfs:subClassOf	local:evaluations	.
+local:augmented	local:AM-MOD	local:can	.
+local:rewrite	vn.role:Topic	local:existing_similarity_measures	.
+local:experimental	rdfs:member	local:experimental_evaluations	.
+local:semantic	rdfs:member	local:semantic_relatedness	.
+local:new_model	rdfs:subClassOf	local:model	.
+local:new	rdfs:member	local:new_measure	.
+local:called	vn.role:Cause	local:new_measure	.
+local:subsumption	rdfs:member	local:subsumption_relations	.
+local:takes	vn.role:Agent	local:new_model	.
+local:semantic	rdfs:member	local:semantic_relations	.
+local:experimental_evaluations	rdfs:subClassOf	local:evaluations	.
+local:information_theoretic	rdfs:subClassOf	local:theoretic	.
+local:considers	local:AM-ADV	local:only	.
+local:augmented	vn.role:Patient	local:existing_similarity_measures	.
+local:whole_set_of_semantic_relations	local:wholeset_of	local:semantic_relations	.
+local:new	rdfs:member	local:new_model	.
+local:similarity	rdfs:member	local:similarity_measures	.
+local:called	vn.role:Theme	local:feature	.
+local:ic_values	rdfs:subClassOf	local:values	.
+local:computing	vn.role:Product	local:ic_values	.
+local:called	vn.role:Cause	local:extended_information_content	.
+local:called	vn.role:Cause	local:faith	.
+local:takes	vn.role:Theme	local:whole_set_of_semantic_relations	.
+local:compute	vn.role:Product	local:semantic_relatedness	.
+local:suitability_of_proposed_framework	local:suitability_of	local:proposed_framework	.
+local:semantic_relations	rdfs:subClassOf	local:relations	.
+local:extended_information_content	rdfs:subClassOf	local:information_content	.
+local:suitability_of_proposed_framework	local:of_proposedframework	local:suitability	.

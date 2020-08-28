@@ -1,0 +1,207 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:recent	rdfs:label	"recent"	.
+
+local:recent_technology	rdfs:label	"recent technology"	.
+
+local:technology_developments	rdfs:label	"technology developments"	.
+
+local:developments	rdfs:label	"developments"	.
+
+local:recent_technology_developments	rdfs:label	"recent technology developments"	.
+
+local:technology	rdfs:label	"technology"	.
+
+local:recent_technology_developments_in_area	rdfs:label	"recent technology developments in area"	.
+
+local:area	rdfs:label	"area"	.
+
+local:area_of_services	rdfs:label	"area of services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:recent_technology_developments_in_area_on_web	rdfs:label	"recent technology developments in area on web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:marked	rdfs:label	"marked"	.
+
+local:web_applications	rdfs:label	"web applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:proliferation_of_web_applications	rdfs:label	"proliferation of web applications"	.
+
+local:proliferation	rdfs:label	"proliferation"	.
+
+local:proliferation_of_web_applications_of_apis	rdfs:label	"proliferation of web applications of apis"	.
+
+local:apis	rdfs:label	"apis"	.
+
+local:based	rdfs:label	"based"	.
+
+local:web_apis	rdfs:label	"web apis"	.
+
+local:implementation_of_applications	rdfs:label	"implementation of applications"	.
+
+local:implementation	rdfs:label	"implementation"	.
+
+local:hampered	rdfs:label	"hampered"	.
+
+local:lack_of_automation	rdfs:label	"lack of automation"	.
+
+local:lack	rdfs:label	"lack"	.
+
+local:automation	rdfs:label	"automation"	.
+
+local:achieved	rdfs:label	"achieved"	.
+
+local:can	rdfs:label	"can"	.
+
+local:current	rdfs:label	"current"	.
+
+local:current_technologies	rdfs:label	"current technologies"	.
+
+local:technologies	rdfs:label	"technologies"	.
+
+local:semantic_web_services	rdfs:label	"semantic web services"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:research_on_semantic_web_services	rdfs:label	"research on semantic web services"	.
+
+local:research	rdfs:label	"research"	.
+
+local:trying	rdfs:label	"trying"	.
+
+local:therefore	rdfs:label	"therefore"	.
+
+local:adapt	rdfs:label	"adapt"	.
+
+local:principles	rdfs:label	"principles"	.
+
+local:devised	rdfs:label	"devised"	.
+
+local:traditional_web	rdfs:label	"traditional web"	.
+
+local:traditional_web_services	rdfs:label	"traditional web services"	.
+
+local:traditional	rdfs:label	"traditional"	.
+
+local:new	rdfs:label	"new"	.
+
+local:new_kind	rdfs:label	"new kind"	.
+
+local:kind	rdfs:label	"kind"	.
+
+local:deal_with_new_kind	rdfs:label	"deal with new kind"	.
+
+local:deal	rdfs:label	"deal"	.
+
+local:new_kind_of_services	rdfs:label	"new kind of services"	.
+
+local:show	rdfs:label	"show"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:currently	rdfs:label	"currently"	.
+
+local:80	rdfs:label	"80"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:automation	rdfs:label	"automation"	.
+local:web_applications	owl:sameAs	cso:web_applications	.
+cso:web_applications	rdfs:label	"web applications"	.
+cso:semantic_web_services	rdfs:label	"semantic web services"	.
+local:semantic_web_services	owl:sameAs	cso:semantic_web_services	.
+local:automation	owl:sameAs	cso:automation	.
+
+#### Relations ####
+
+local:recent_technology_developments_in_area	local:recenttechnologydevelopments_in	local:area	.
+local:recent_technology_developments	rdfs:subClassOf	local:technology_developments	.
+local:traditional_web	rdfs:member	local:traditional_web_services	.
+local:traditional_web_services	rdfs:subClassOf	local:services	.
+local:adapt	vn.role:Agent	local:research_on_semantic_web_services	.
+local:current_technologies	rdfs:subClassOf	local:technologies	.
+local:hampered	vn.role:Agent	local:lack_of_automation	.
+local:research_on_semantic_web_services	local:research_on	local:semantic_web_services	.
+local:traditional_web_services	rdfs:subClassOf	local:web_services	.
+local:lack_of_automation	local:of_automation	local:lack	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:trying	vn.role:Cause	local:adapt	.
+local:new_kind_of_services	local:newkind_of	local:services	.
+local:technology	rdfs:member	local:technology_developments	.
+local:based	local:AM-LOC	local:web_apis	.
+local:devised	local:AM-PNC	local:deal_with_new_kind	.
+local:new_kind_of_services	local:of_services	local:new_kind	.
+local:web_apis	rdfs:subClassOf	local:apis	.
+local:area_of_services	local:area_of	local:services	.
+local:implementation_of_applications	local:of_applications	local:implementation	.
+local:hampered	vn.role:Patient	local:implementation_of_applications	.
+local:achieved	vn.role:Theme	local:automation	.
+local:research_on_semantic_web_services	local:on_semanticwebservices	local:research	.
+local:new_kind	rdfs:subClassOf	local:kind	.
+local:implementation_of_applications	local:implementation_of	local:applications	.
+local:deal_with_new_kind	local:with_newkind	local:deal	.
+local:technology_developments	rdfs:subClassOf	local:developments	.
+local:web	rdfs:member	local:web_apis	.
+local:show	local:AM-LOC	local:paper	.
+local:proliferation_of_web_applications_of_apis	local:proliferationofwebapplications_of	local:apis	.
+local:deal_with_new_kind	local:deal_with	local:new_kind	.
+local:show	vn.role:Agent	local:we	.
+local:devised	vn.role:Product	local:principles	.
+local:recent_technology_developments_in_area	local:in_area	local:recent_technology_developments	.
+local:marked	vn.role:Theme	local:recent_technology_developments_in_area_on_web	.
+local:recent_technology_developments_in_area_on_web	local:recenttechnologydevelopmentsinarea_on	local:web	.
+local:proliferation_of_web_applications	local:of_webapplications	local:proliferation	.
+local:achieved	local:AM-MNR	local:current_technologies	.
+local:adapt	vn.role:Patient	local:principles	.
+local:proliferation_of_web_applications_of_apis	local:of_apis	local:proliferation_of_web_applications	.
+local:achieved	local:AM-MOD	local:can	.
+local:lack_of_automation	local:lack_of	local:automation	.
+local:deal	vn.role:Agent	local:principles	.
+local:new	rdfs:member	local:new_kind	.
+local:recent_technology	rdfs:member	local:recent_technology_developments	.
+local:traditional_web	rdfs:subClassOf	local:web	.
+local:recent_technology_developments	rdfs:subClassOf	local:developments	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:semantic_web	rdfs:member	local:semantic_web_services	.
+local:recent	rdfs:member	local:recent_technology	.
+local:traditional	rdfs:member	local:traditional_web	.
+local:web	rdfs:member	local:web_applications	.
+local:deal	vn.role:Theme	local:new_kind_of_services	.
+local:trying	local:AM-DIS	local:therefore	.
+local:trying	vn.role:Experiencer	local:research_on_semantic_web_services	.
+local:deal	vn.role:Agent	local:traditional_web_services	.
+local:semantic_web_services	rdfs:subClassOf	local:web_services	.
+local:current	rdfs:member	local:current_technologies	.
+local:show	local:AM-ADV	local:80	.
+local:web	rdfs:member	local:web_services	.
+local:web_applications	rdfs:subClassOf	local:applications	.
+local:semantic_web_services	rdfs:subClassOf	local:services	.
+local:recent_technology_developments_in_area_on_web	local:on_web	local:recent_technology_developments_in_area	.
+local:marked	vn.role:Agent	local:proliferation_of_web_applications_of_apis	.
+local:based	vn.role:Cause	local:applications	.
+local:devised	vn.role:Material	local:traditional_web_services	.
+local:recent_technology	rdfs:subClassOf	local:technology	.
+local:show	local:AM-TMP	local:currently	.
+local:area_of_services	local:of_services	local:area	.
+local:proliferation_of_web_applications	local:proliferation_of	local:web_applications	.
