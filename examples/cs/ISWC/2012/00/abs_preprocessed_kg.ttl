@@ -1,0 +1,222 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:wide_range	rdfs:label	"wide range"	.
+
+local:range	rdfs:label	"range"	.
+
+local:wide	rdfs:label	"wide"	.
+
+local:optimised	rdfs:label	"optimised"	.
+
+local:reasoners	rdfs:label	"reasoners"	.
+
+local:highly	rdfs:label	"highly"	.
+
+local:classification	rdfs:label	"classification"	.
+
+local:restricted	rdfs:label	"restricted"	.
+
+local:restricted_fragments	rdfs:label	"restricted fragments"	.
+
+local:several_reasoners	rdfs:label	"several reasoners"	.
+
+local:several	rdfs:label	"several"	.
+
+local:fragments	rdfs:label	"fragments"	.
+
+local:complete_for_restricted_fragments	rdfs:label	"complete for restricted fragments"	.
+
+local:complete	rdfs:label	"complete"	.
+
+local:restricted_fragments_of_owl	rdfs:label	"restricted fragments of owl"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:2	rdfs:label	"2,"	.
+
+local:el	rdfs:label	"el"	.
+
+local:el_profile	rdfs:label	"el profile"	.
+
+local:profile	rdfs:label	"profile"	.
+
+local:2_el_profile	rdfs:label	"2 el profile"	.
+
+local:owl_2_el_profile	rdfs:label	"owl 2 el profile"	.
+
+local:not_are	rdfs:label	"not are"	.
+
+local:are	rdfs:label	"are"	.
+
+local:containing	rdfs:label	"containing"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:relevant_fragment	rdfs:label	"relevant fragment"	.
+
+local:fragment	rdfs:label	"fragment"	.
+
+local:relevant	rdfs:label	"relevant"	.
+
+local:axioms_outside_relevant_fragment	rdfs:label	"axioms outside relevant fragment"	.
+
+local:axioms	rdfs:label	"axioms"	.
+
+local:novel_classification	rdfs:label	"novel classification"	.
+
+local:novel_classification_technique	rdfs:label	"novel classification technique"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:technique	rdfs:label	"technique"	.
+
+local:classification_technique	rdfs:label	"classification technique"	.
+
+local:combines	rdfs:label	"combines"	.
+
+local:given_fragment	rdfs:label	"given fragment"	.
+
+local:2_reasoner	rdfs:label	"2 reasoner"	.
+
+local:reasoner	rdfs:label	"reasoner"	.
+
+local:owl_2_reasoner	rdfs:label	"owl 2 reasoner"	.
+
+local:owl_2_reasoner_for_given_fragment	rdfs:label	"owl 2 reasoner for given fragment"	.
+
+local:given_fragment_in_way	rdfs:label	"given fragment in way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:bulk_of_workload	rdfs:label	"bulk of workload"	.
+
+local:bulk	rdfs:label	"bulk"	.
+
+local:workload	rdfs:label	"workload"	.
+
+local:assigned_to_latter	rdfs:label	"assigned to latter"	.
+
+local:assigned	rdfs:label	"assigned"	.
+
+local:latter	rdfs:label	"latter"	.
+
+local:given	rdfs:label	"given"	.
+
+local:efficient	rdfs:label	"efficient"	.
+
+local:efficient_reasoner	rdfs:label	"efficient reasoner"	.
+
+local:efficient_reasoner_for_given_fragment	rdfs:label	"efficient reasoner for given fragment"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:combined	rdfs:label	"combined"	.
+
+local:blackbox	rdfs:label	"black-box"	.
+
+local:blackbox_modular	rdfs:label	"black-box modular"	.
+
+local:blackbox_modular_manner	rdfs:label	"black-box modular manner"	.
+
+local:modular_manner	rdfs:label	"modular manner"	.
+
+local:manner	rdfs:label	"manner"	.
+
+local:modular	rdfs:label	"modular"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:reasoner	rdfs:label	"reasoner"	.
+local:reasoner	owl:sameAs	cso:reasoner	.
+local:reasoners	owl:sameAs	cso:reasoner	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:reasoner	rdfs:label	"reasoners"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+local:classification_technique	owl:sameAs	cso:classification_technique	.
+cso:classification_technique	rdfs:label	"classification technique"	.
+
+#### Relations ####
+
+local:2_reasoner	rdfs:subClassOf	local:reasoner	.
+local:optimised	local:AM-MNR	local:highly	.
+local:complete_for_restricted_fragments	local:for_restrictedfragments	local:complete	.
+local:not_are	rdfs:subClassOf	local:are	.
+local:given_fragment	rdfs:subClassOf	local:fragment	.
+local:axioms_outside_relevant_fragment	local:outside_relevantfragment	local:axioms	.
+local:several	rdfs:member	local:several_reasoners	.
+local:bulk_of_workload	local:of_workload	local:bulk	.
+local:containing	vn.role:Theme2	local:axioms_outside_relevant_fragment	.
+local:novel_classification	rdfs:subClassOf	local:classification	.
+local:2	vn.role:subject	local:several_reasoners	.
+local:2	vn.role:object	local:not_are	.
+local:classification_technique	rdfs:subClassOf	local:technique	.
+local:given_fragment_in_way	local:givenfragment_in	local:way	.
+local:blackbox_modular_manner	rdfs:subClassOf	local:modular_manner	.
+local:el	rdfs:member	local:el_profile	.
+local:modular	rdfs:member	local:modular_manner	.
+local:owl_2_reasoner_for_given_fragment	local:owl2reasoner_for	local:given_fragment	.
+local:combines	vn.role:Patient	local:owl_2_reasoner_for_given_fragment	.
+local:assigned	vn.role:Recipient	local:latter	.
+local:restricted_fragments_of_owl	local:of_owl	local:restricted_fragments	.
+local:restricted_fragments	rdfs:subClassOf	local:fragments	.
+local:relevant	rdfs:member	local:relevant_fragment	.
+local:assigned	vn.role:Theme	local:bulk_of_workload	.
+local:optimised	vn.role:Patient	local:classification	.
+local:propose	vn.role:Agent	local:we	.
+local:owl_2_el_profile	rdfs:subClassOf	local:2_el_profile	.
+local:axioms_outside_relevant_fragment	local:axioms_outside	local:relevant_fragment	.
+local:2_el_profile	rdfs:subClassOf	local:el_profile	.
+local:blackbox_modular	rdfs:subClassOf	local:modular	.
+local:containing	vn.role:Theme1	local:ontologies	.
+local:combined	local:AM-LOC	local:blackbox_modular_manner	.
+local:owl_2_reasoner	rdfs:subClassOf	local:2_reasoner	.
+local:relevant_fragment	rdfs:subClassOf	local:fragment	.
+local:novel_classification	rdfs:member	local:novel_classification_technique	.
+local:efficient_reasoner_for_given_fragment	local:for_givenfragment	local:efficient_reasoner	.
+local:efficient_reasoner_for_given_fragment	local:efficientreasoner_for	local:given_fragment	.
+local:restricted	rdfs:member	local:restricted_fragments	.
+local:several_reasoners	rdfs:subClassOf	local:reasoners	.
+local:given_fragment_in_way	local:in_way	local:given_fragment	.
+local:novel	rdfs:member	local:novel_classification	.
+local:bulk_of_workload	local:bulk_of	local:workload	.
+local:efficient_reasoner	rdfs:subClassOf	local:reasoner	.
+local:wide_range	rdfs:subClassOf	local:range	.
+local:novel_classification_technique	rdfs:subClassOf	local:technique	.
+local:novel_classification_technique	rdfs:subClassOf	local:classification_technique	.
+local:propose	vn.role:Topic	local:novel_classification_technique	.
+local:propose	local:AM-LOC	local:paper	.
+local:classification	rdfs:member	local:classification_technique	.
+local:el_profile	rdfs:subClassOf	local:profile	.
+local:assigned_to_latter	local:assigned_to	local:latter	.
+local:restricted_fragments_of_owl	local:restrictedfragments_of	local:owl	.
+local:optimised	vn.role:Patient	local:wide_range	.
+local:optimised	vn.role:Patient	local:reasoners	.
+local:given	vn.role:object	local:fragment	.
+local:wide	rdfs:member	local:wide_range	.
+local:combined	vn.role:Patient	local:reasoners	.
+local:blackbox_modular	rdfs:member	local:blackbox_modular_manner	.
+local:combines	vn.role:Agent	local:novel_classification_technique	.
+local:modular_manner	rdfs:subClassOf	local:manner	.
+local:blackbox_modular_manner	rdfs:subClassOf	local:manner	.
+local:complete_for_restricted_fragments	local:complete_for	local:restricted_fragments	.
+local:2	vn.role:object	local:owl_2_el_profile	.
+local:owl_2_reasoner_for_given_fragment	local:for_givenfragment	local:owl_2_reasoner	.
+local:combines	vn.role:Patient	local:efficient_reasoner_for_given_fragment	.
+local:blackbox	rdfs:member	local:blackbox_modular	.
+local:efficient	rdfs:member	local:efficient_reasoner	.
+local:assigned_to_latter	local:to_latter	local:assigned	.

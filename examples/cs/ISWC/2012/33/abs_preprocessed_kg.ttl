@@ -1,0 +1,217 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:matching	rdfs:label	"matching"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:matching_tools	rdfs:label	"matching tools"	.
+
+local:emerged	rdfs:label	"emerged"	.
+
+local:automate	rdfs:label	"automate"	.
+
+local:task	rdfs:label	"task"	.
+
+local:inherent	rdfs:label	"inherent"	.
+
+local:inherent_heterogeneity	rdfs:label	"inherent heterogeneity"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:heterogeneity	rdfs:label	"heterogeneity"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:inherent_heterogeneity_of_datasets	rdfs:label	"inherent heterogeneity of datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:inherent_heterogeneity_of_datasets_on_semantic_web	rdfs:label	"inherent heterogeneity of datasets on semantic web"	.
+
+local:created	rdfs:label	"created"	.
+
+local:need	rdfs:label	"need"	.
+
+local:interlink	rdfs:label	"interlink"	.
+
+local:enrich	rdfs:label	"enrich"	.
+
+local:we	rdfs:label	"we"	.
+
+local:matching_with_knowledge	rdfs:label	"matching with knowledge"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_of_domain	rdfs:label	"knowledge of domain"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:domain_of_ontologies	rdfs:label	"domain of ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:explore	rdfs:label	"explore"	.
+
+local:matching_tool	rdfs:label	"matching tool"	.
+
+local:tool	rdfs:label	"tool"	.
+
+local:ontology_matching_tool	rdfs:label	"ontology matching tool"	.
+
+local:usable_terms	rdfs:label	"usable terms"	.
+
+local:terms	rdfs:label	"terms"	.
+
+local:notion_of_domain	rdfs:label	"notion of domain"	.
+
+local:notion	rdfs:label	"notion"	.
+
+local:notion_of_domain_in_usable_terms	rdfs:label	"notion of domain in usable terms"	.
+
+local:usable_for_ontology_matching_tool	rdfs:label	"usable for ontology matching tool"	.
+
+local:usable	rdfs:label	"usable"	.
+
+local:express	rdfs:label	"express"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:examine	rdfs:label	"examine"	.
+
+local:various	rdfs:label	"various"	.
+
+local:various_methods	rdfs:label	"various methods"	.
+
+local:methods	rdfs:label	"methods"	.
+
+local:given_dataset	rdfs:label	"given dataset"	.
+
+local:dataset	rdfs:label	"dataset"	.
+
+local:domain_of_given_dataset	rdfs:label	"domain of given dataset"	.
+
+local:determine	rdfs:label	"determine"	.
+
+local:constitutes	rdfs:label	"constitutes"	.
+
+local:given	rdfs:label	"given"	.
+
+local:show	rdfs:label	"show"	.
+
+local:use_in_matching_tool	rdfs:label	"use in matching tool"	.
+
+local:use	rdfs:label	"use"	.
+
+local:this	rdfs:label	"this"	.
+
+local:domain_knowledge	rdfs:label	"domain knowledge"	.
+
+local:effect_of_domain_knowledge	rdfs:label	"effect of domain knowledge"	.
+
+local:effect	rdfs:label	"effect"	.
+
+local:effect_of_domain_knowledge_on_quality	rdfs:label	"effect of domain knowledge on quality"	.
+
+local:quality	rdfs:label	"quality"	.
+
+local:quality_of_alignment	rdfs:label	"quality of alignment"	.
+
+local:alignment	rdfs:label	"alignment"	.
+
+local:study	rdfs:label	"study"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:domain_knowledge	owl:sameAs	cso:domain_knowledge	.
+cso:semantics	rdfs:label	"semantic"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:domain_knowledge	rdfs:label	"domain knowledge"	.
+
+#### Relations ####
+
+local:matching_with_knowledge	local:matching_with	local:knowledge	.
+local:effect_of_domain_knowledge	local:effect_of	local:domain_knowledge	.
+local:matching	vn.role:Patient2	local:tool	.
+local:usable_for_ontology_matching_tool	local:for_ontologymatchingtool	local:usable	.
+local:matching_with_knowledge	local:with_knowledge	local:matching	.
+local:inherent_heterogeneity_of_datasets_on_semantic_web	local:inherentheterogeneityofdatasets_on	local:semantic_web	.
+local:show	vn.role:Agent	local:we	.
+local:created	vn.role:Agent	local:inherent_heterogeneity_of_datasets_on_semantic_web	.
+local:automate	vn.role:Agent	local:matching	.
+local:emerged	vn.role:Location	local:automate	.
+local:study	vn.role:Theme	local:effect_of_domain_knowledge_on_quality	.
+local:examine	vn.role:Agent	local:we	.
+local:enrich	vn.role:Agent	local:we	.
+local:matching_tool	rdfs:subClassOf	local:tool	.
+local:various_methods	rdfs:subClassOf	local:methods	.
+local:determine	vn.role:Theme	local:constitutes	.
+local:emerged	vn.role:Theme	local:matching	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:interlink	vn.role:Patient2	local:inherent_heterogeneity_of_datasets_on_semantic_web	.
+local:automate	vn.role:Patient	local:task	.
+local:quality_of_alignment	local:of_alignment	local:quality	.
+local:effect_of_domain_knowledge	local:of_domainknowledge	local:effect	.
+local:matching_tools	rdfs:subClassOf	local:tools	.
+local:constitutes	vn.role:Theme	local:domain_of_given_dataset	.
+local:interlink	vn.role:Patient1	local:inherent_heterogeneity_of_datasets_on_semantic_web	.
+local:enrich	vn.role:Theme	local:matching_with_knowledge	.
+local:usable_for_ontology_matching_tool	local:usable_for	local:ontology_matching_tool	.
+local:effect_of_domain_knowledge_on_quality	local:on_quality	local:effect_of_domain_knowledge	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:given	vn.role:object	local:dataset	.
+local:notion_of_domain	local:of_domain	local:notion	.
+local:various	rdfs:member	local:various_methods	.
+local:inherent	rdfs:member	local:inherent_heterogeneity	.
+local:domain_of_ontologies	local:of_ontologies	local:domain	.
+local:use_in_matching_tool	local:in_matchingtool	local:use	.
+local:inherent_heterogeneity	rdfs:subClassOf	local:heterogeneity	.
+local:created	vn.role:Product	local:need	.
+local:express	vn.role:Agent	local:notion_of_domain_in_usable_terms	.
+local:show	vn.role:Theme	local:study	.
+local:quality_of_alignment	local:quality_of	local:alignment	.
+local:use	vn.role:Theme	local:this	.
+local:explore	vn.role:Location	local:express	.
+local:usable_terms	rdfs:subClassOf	local:terms	.
+local:domain_of_ontologies	local:domain_of	local:ontologies	.
+local:show	vn.role:Theme	local:use_in_matching_tool	.
+local:use	vn.role:Agent	local:we	.
+local:given_dataset	rdfs:subClassOf	local:dataset	.
+local:domain_knowledge	rdfs:subClassOf	local:knowledge	.
+local:knowledge_of_domain	local:of_domain	local:knowledge	.
+local:use	vn.role:Recipient	local:matching	.
+local:notion_of_domain_in_usable_terms	local:notionofdomain_in	local:usable_terms	.
+local:inherent_heterogeneity_of_datasets	local:of_datasets	local:inherent_heterogeneity	.
+local:domain_of_given_dataset	local:of_givendataset	local:domain	.
+local:matching	vn.role:Patient2	local:ontology	.
+local:domain	rdfs:member	local:domain_knowledge	.
+local:ontology_matching_tool	rdfs:subClassOf	local:matching_tool	.
+local:knowledge_of_domain	local:knowledge_of	local:domain	.
+local:effect_of_domain_knowledge_on_quality	local:effectofdomainknowledge_on	local:quality	.
+local:notion_of_domain_in_usable_terms	local:in_usableterms	local:notion_of_domain	.
+local:use_in_matching_tool	local:use_in	local:matching_tool	.
+local:matching	rdfs:member	local:matching_tool	.
+local:matching	rdfs:member	local:matching_tools	.
+local:inherent_heterogeneity_of_datasets	local:inherentheterogeneity_of	local:datasets	.
+local:express	vn.role:Theme	local:we	.
+local:examine	vn.role:Location	local:various_methods	.
+local:study	vn.role:Agent	local:we	.
+local:matching	vn.role:Patient2	local:tools	.
+local:explore	vn.role:Agent	local:we	.
+local:domain_of_given_dataset	local:domain_of	local:given_dataset	.
+local:inherent_heterogeneity_of_datasets_on_semantic_web	local:on_semanticweb	local:inherent_heterogeneity_of_datasets	.
+local:notion_of_domain	local:notion_of	local:domain	.

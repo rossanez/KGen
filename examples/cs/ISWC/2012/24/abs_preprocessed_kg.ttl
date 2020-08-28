@@ -1,0 +1,218 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:extracted	rdfs:label	"extracted"	.
+
+local:base	rdfs:label	"base"	.
+
+local:conflicting_requirements	rdfs:label	"conflicting requirements"	.
+
+local:requirements	rdfs:label	"requirements"	.
+
+local:conflicting	rdfs:label	"conflicting"	.
+
+local:three_conflicting_requirements	rdfs:label	"three conflicting requirements"	.
+
+local:arise	rdfs:label	"arise"	.
+
+local:extracted_base	rdfs:label	"extracted base"	.
+
+local:knowledge_base	rdfs:label	"knowledge base"	.
+
+local:knowledge_base_extraction	rdfs:label	"knowledge base extraction"	.
+
+local:extraction	rdfs:label	"extraction"	.
+
+local:base_extraction	rdfs:label	"base extraction"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:original	rdfs:label	"original"	.
+
+local:original_one	rdfs:label	"original one"	.
+
+local:one	rdfs:label	"one"	.
+
+local:context_of_knowledge_base_extraction	rdfs:label	"context of knowledge base extraction"	.
+
+local:context	rdfs:label	"context"	.
+
+local:knowledge_base_extraction_of_extracted_base	rdfs:label	"knowledge base extraction of extracted base"	.
+
+local:context_of_knowledge_base_extraction_with_original_one	rdfs:label	"context of knowledge base extraction with original one"	.
+
+local:minimal_module_extraction	rdfs:label	"minimal module extraction"	.
+
+local:minimal_module	rdfs:label	"minimal module"	.
+
+local:module_extraction	rdfs:label	"module extraction"	.
+
+local:minimal	rdfs:label	"minimal"	.
+
+local:module	rdfs:label	"module"	.
+
+local:assign	rdfs:label	"assign"	.
+
+local:absolute_priority	rdfs:label	"absolute priority"	.
+
+local:priority	rdfs:label	"priority"	.
+
+local:absolute	rdfs:label	"absolute"	.
+
+local:other_two	rdfs:label	"other two"	.
+
+local:two	rdfs:label	"two"	.
+
+local:thereby_limiting	rdfs:label	"thereby limiting"	.
+
+local:limiting	rdfs:label	"limiting"	.
+
+local:one_requirements	rdfs:label	"one requirements"	.
+
+local:one_thereby_limiting	rdfs:label	"one thereby limiting"	.
+
+local:possibilities	rdfs:label	"possibilities"	.
+
+local:influence	rdfs:label	"influence"	.
+
+local:uniform_interpolation	rdfs:label	"uniform interpolation"	.
+
+local:interpolation	rdfs:label	"interpolation"	.
+
+local:uniform	rdfs:label	"uniform"	.
+
+local:require	rdfs:label	"require"	.
+
+local:el	rdfs:label	"el"	.
+
+local:not	rdfs:label	"not"	.
+
+local:extreme	rdfs:label	"extreme"	.
+
+local:extreme_prioritization	rdfs:label	"extreme prioritization"	.
+
+local:prioritization	rdfs:label	"prioritization"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:we	rdfs:label	"we"	.
+
+local:novel_technique	rdfs:label	"novel technique"	.
+
+local:technique	rdfs:label	"technique"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:encouraging_results	rdfs:label	"encouraging results"	.
+
+local:results	rdfs:label	"results"	.
+
+local:encouraging	rdfs:label	"encouraging"	.
+
+local:existing_approaches	rdfs:label	"existing approaches"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:extreme_prioritization_with_existing_approaches	rdfs:label	"extreme prioritization with existing approaches"	.
+
+local:existing_approaches_with_encouraging_results	rdfs:label	"existing approaches with encouraging results"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:rewriting_approach	rdfs:label	"rewriting approach"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:tractable_rewriting_approach	rdfs:label	"tractable rewriting approach"	.
+
+local:compare	rdfs:label	"compare"	.
+
+local:empirically	rdfs:label	"empirically"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:knowledge_base	rdfs:label	"knowledge base"	.
+local:knowledge_base	owl:sameAs	cso:knowledge_base	.
+
+#### Relations ####
+
+local:absolute_priority	rdfs:subClassOf	local:priority	.
+local:three_conflicting_requirements	rdfs:subClassOf	local:conflicting_requirements	.
+local:arise	local:AM-LOC	local:context_of_knowledge_base_extraction_with_original_one	.
+local:one_thereby_limiting	local:_therebylimiting	local:one	.
+local:conflicting	rdfs:member	local:conflicting_requirements	.
+local:conflicting_requirements	rdfs:subClassOf	local:requirements	.
+local:assign	vn.role:Recipient	local:one_requirements	.
+local:rewriting_approach	rdfs:subClassOf	local:approach	.
+local:minimal	rdfs:member	local:minimal_module	.
+local:encouraging	rdfs:member	local:encouraging_results	.
+local:require	vn.role:Agent	local:el	.
+local:compare	vn.role:Agent	local:el	.
+local:original_one	rdfs:subClassOf	local:one	.
+local:tractable_rewriting_approach	rdfs:subClassOf	local:rewriting_approach	.
+local:extreme_prioritization_with_existing_approaches	local:extremeprioritization_with	local:existing_approaches	.
+local:assign	vn.role:Agent	local:uniform_interpolation	.
+local:module_extraction	rdfs:subClassOf	local:extraction	.
+local:uniform	rdfs:member	local:uniform_interpolation	.
+local:knowledge_base_extraction	rdfs:subClassOf	local:extraction	.
+local:limiting	vn.role:Cause	local:requirements	.
+local:arise	vn.role:Location	local:three_conflicting_requirements	.
+local:context_of_knowledge_base_extraction	local:of_knowledgebaseextraction	local:context	.
+local:assign	vn.role:Agent	local:minimal_module_extraction	.
+local:limiting	vn.role:Patient	local:possibilities	.
+local:novel_technique	rdfs:subClassOf	local:technique	.
+local:propose	vn.role:Topic	local:novel_technique	.
+local:require	vn.role:Patient	local:extreme_prioritization_with_existing_approaches	.
+local:thereby_limiting	rdfs:subClassOf	local:limiting	.
+local:extreme	rdfs:member	local:extreme_prioritization	.
+local:context_of_knowledge_base_extraction_with_original_one	local:contextofknowledgebaseextraction_with	local:original_one	.
+local:minimal_module	rdfs:subClassOf	local:module	.
+local:base_extraction	rdfs:subClassOf	local:extraction	.
+local:extracted	vn.role:Theme	local:base	.
+local:encouraging_results	rdfs:subClassOf	local:results	.
+local:compare	vn.role:Patient2	local:novel_technique	.
+local:existing_approaches_with_encouraging_results	local:with_encouragingresults	local:existing_approaches	.
+local:limiting	vn.role:Cause	local:minimal_module_extraction	.
+local:base	rdfs:member	local:base_extraction	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:knowledge_base_extraction_of_extracted_base	local:of_extractedbase	local:knowledge_base_extraction	.
+local:absolute	rdfs:member	local:absolute_priority	.
+local:other_two	rdfs:subClassOf	local:two	.
+local:existing	vn.role:Location	local:approaches	.
+local:knowledge_base_extraction	rdfs:subClassOf	local:base_extraction	.
+local:knowledge_base_extraction_of_extracted_base	local:knowledgebaseextraction_of	local:extracted_base	.
+local:original	rdfs:member	local:original_one	.
+local:novel	rdfs:member	local:novel_technique	.
+local:one_requirements	rdfs:subClassOf	local:requirements	.
+local:existing_approaches_with_encouraging_results	local:existingapproaches_with	local:encouraging_results	.
+local:uniform_interpolation	rdfs:subClassOf	local:interpolation	.
+local:minimal_module_extraction	rdfs:subClassOf	local:extraction	.
+local:context_of_knowledge_base_extraction_with_original_one	local:with_originalone	local:context_of_knowledge_base_extraction	.
+local:assign	vn.role:Theme	local:absolute_priority	.
+local:propose	local:AM-TMP	local:el	.
+local:module	rdfs:member	local:module_extraction	.
+local:extreme_prioritization_with_existing_approaches	local:with_existingapproaches	local:extreme_prioritization	.
+local:propose	vn.role:Topic	local:tractable_rewriting_approach	.
+local:context_of_knowledge_base_extraction	local:context_of	local:knowledge_base_extraction	.
+local:influence	vn.role:Cause	local:two	.
+local:extreme_prioritization	rdfs:subClassOf	local:prioritization	.
+local:existing_approaches	rdfs:subClassOf	local:approaches	.
+local:compare	local:AM-MNR	local:empirically	.
+local:extracted_base	rdfs:subClassOf	local:base	.
+local:require	vn.role:Patient	local:extreme_prioritization	.
+local:extracted	rdfs:member	local:extracted_base	.
+local:knowledge_base	rdfs:member	local:knowledge_base_extraction	.
+local:minimal_module_extraction	rdfs:subClassOf	local:module_extraction	.
+local:propose	vn.role:Agent	local:we	.
+local:minimal_module	rdfs:member	local:minimal_module_extraction	.
+local:one_thereby_limiting	local:one_	local:thereby_limiting	.
+local:knowledge	rdfs:member	local:knowledge_base	.
+local:require	local:AM-NEG	local:not	.

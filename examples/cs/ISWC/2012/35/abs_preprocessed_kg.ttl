@@ -1,0 +1,209 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:presents	rdfs:label	"presents"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:textual	rdfs:label	"textual"	.
+
+local:textual_documents	rdfs:label	"textual documents"	.
+
+local:documents	rdfs:label	"documents"	.
+
+local:automatically_extract	rdfs:label	"automatically extract"	.
+
+local:extract	rdfs:label	"extract"	.
+
+local:relationships_from_textual_documents	rdfs:label	"relationships from textual documents"	.
+
+local:relationships	rdfs:label	"relationships"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:automatically	rdfs:label	"automatically"	.
+
+local:automatically_extract_from_textual_documents	rdfs:label	"automatically extract from textual documents"	.
+
+local:entities	rdfs:label	"entities"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_base	rdfs:label	"knowledge base"	.
+
+local:base	rdfs:label	"base"	.
+
+local:hosts	rdfs:label	"hosts"	.
+
+local:domain_entities	rdfs:label	"domain entities"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:structured_information	rdfs:label	"structured information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:structured_information_about_domain_entities	rdfs:label	"structured information about domain entities"	.
+
+local:structured	rdfs:label	"structured"	.
+
+local:populate	rdfs:label	"populate"	.
+
+local:extracted	rdfs:label	"extracted"	.
+
+local:extracted_entities	rdfs:label	"extracted entities"	.
+
+local:expected	rdfs:label	"expected"	.
+
+local:verified	rdfs:label	"verified"	.
+
+local:verified_linking	rdfs:label	"verified linking"	.
+
+local:linking	rdfs:label	"linking"	.
+
+local:using	rdfs:label	"using"	.
+
+local:classification	rdfs:label	"classification"	.
+
+local:based_techniques	rdfs:label	"based techniques"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:two_evidence	rdfs:label	"two evidence"	.
+
+local:evidence	rdfs:label	"evidence"	.
+
+local:based	rdfs:label	"based"	.
+
+local:last	rdfs:label	"last"	.
+
+local:last_process	rdfs:label	"last process"	.
+
+local:process	rdfs:label	"process"	.
+
+local:enables	rdfs:label	"enables"	.
+
+local:also	rdfs:label	"also"	.
+
+local:other	rdfs:label	"other"	.
+
+local:other_sources	rdfs:label	"other sources"	.
+
+local:sources	rdfs:label	"sources"	.
+
+local:our_knowledge_base	rdfs:label	"our knowledge base"	.
+
+local:linking_of_our_knowledge_base	rdfs:label	"linking of our knowledge base"	.
+
+local:our_knowledge_base_to_other_sources	rdfs:label	"our knowledge base to other sources"	.
+
+local:demonstrate	rdfs:label	"demonstrate"	.
+
+local:we	rdfs:label	"we"	.
+
+local:realworld_datasets	rdfs:label	"real-world datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:realworld	rdfs:label	"real-world"	.
+
+local:approach_through_series	rdfs:label	"approach through series"	.
+
+local:series	rdfs:label	"series"	.
+
+local:series_of_experiments	rdfs:label	"series of experiments"	.
+
+local:experiments	rdfs:label	"experiments"	.
+
+local:experiments_with_realworld_datasets	rdfs:label	"experiments with real-world datasets"	.
+
+local:benefit	rdfs:label	"benefit"	.
+
+local:benefit_of_we	rdfs:label	"benefit of we"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_base	owl:sameAs	cso:knowledge_base	.
+cso:knowledge_base	rdfs:label	"knowledge base"	.
+
+#### Relations ####
+
+local:realworld	rdfs:member	local:realworld_datasets	.
+local:based_techniques	rdfs:subClassOf	local:techniques	.
+local:structured	vn.role:Cause	local:information	.
+local:verified	rdfs:member	local:verified_linking	.
+local:experiments_with_realworld_datasets	local:experiments_with	local:realworld_datasets	.
+local:last	rdfs:member	local:last_process	.
+local:approach_through_series	local:through_series	local:approach	.
+local:approach	vn.role:indirect_object	local:series_of_experiments	.
+local:linking	vn.role:Patient	local:knowledge_base	.
+local:extracted	vn.role:Theme	local:entities	.
+local:extract	vn.role:Theme	local:relationships	.
+local:domain	rdfs:member	local:domain_entities	.
+local:verified	local:AM-MNR	local:using	.
+local:structured_information_about_domain_entities	local:about_domainentities	local:structured_information	.
+local:populate	vn.role:Location	local:knowledge_base	.
+local:enables	vn.role:Agent	local:last_process	.
+local:our_knowledge_base_to_other_sources	local:to_othersources	local:our_knowledge_base	.
+local:linking_of_our_knowledge_base	local:of_ourknowledgebase	local:linking	.
+local:series_of_experiments	local:of_experiments	local:series	.
+local:our_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
+local:approach	vn.role:object	local:benefit_of_we	.
+local:two_evidence	rdfs:subClassOf	local:evidence	.
+local:our_knowledge_base_to_other_sources	local:ourknowledgebase_to	local:other_sources	.
+local:relationships_from_textual_documents	local:from_textualdocuments	local:relationships	.
+local:linking_of_our_knowledge_base	local:linking_of	local:our_knowledge_base	.
+local:automatically_extract	rdfs:subClassOf	local:extract	.
+local:verified_linking	rdfs:subClassOf	local:linking	.
+local:experiments_with_realworld_datasets	local:with_real-worlddatasets	local:experiments	.
+local:expected	vn.role:Experiencer	local:extracted_entities	.
+local:automatically_extract_from_textual_documents	local:from_textualdocuments	local:automatically_extract	.
+local:hosts	vn.role:Agent	local:knowledge_base	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:textual	rdfs:member	local:textual_documents	.
+local:benefit_of_we	local:of_we	local:benefit	.
+local:presents	vn.role:Agent	local:paper	.
+local:extract	local:AM-MNR	local:automatically	.
+local:automatically_extract_from_textual_documents	local:automaticallyextract_from	local:textual_documents	.
+local:expected	vn.role:Theme	local:verified	.
+local:benefit_of_we	local:benefit_of	local:we	.
+local:other_sources	rdfs:subClassOf	local:sources	.
+local:presents	vn.role:Theme	local:approach	.
+local:using	vn.role:Theme	local:two_evidence	.
+local:verified	vn.role:Experiencer	local:using	.
+local:extracted	rdfs:member	local:extracted_entities	.
+local:demonstrate	vn.role:Recipient	local:we	.
+local:series_of_experiments	local:series_of	local:experiments	.
+local:verified	vn.role:Experiencer	local:relationships	.
+local:other	rdfs:member	local:other_sources	.
+local:extract	vn.role:Source	local:textual_documents	.
+local:enables	local:AM-DIS	local:also	.
+local:demonstrate	vn.role:Cause	local:benefit	.
+local:extract	vn.role:Agent	local:paper	.
+local:using	vn.role:Theme	local:classification	.
+local:hosts	vn.role:Theme	local:structured_information_about_domain_entities	.
+local:knowledge	rdfs:member	local:knowledge_base	.
+local:relationships_from_textual_documents	local:relationships_from	local:textual_documents	.
+local:enables	vn.role:Patient	local:linking_of_our_knowledge_base	.
+local:structured	vn.role:indirect_object	local:domain_entities	.
+local:verified	vn.role:Experiencer	local:linking	.
+local:extract	vn.role:Theme	local:entities	.
+local:realworld_datasets	rdfs:subClassOf	local:datasets	.
+local:textual_documents	rdfs:subClassOf	local:documents	.
+local:domain_entities	rdfs:subClassOf	local:entities	.
+local:extracted_entities	rdfs:subClassOf	local:entities	.
+local:structured_information	rdfs:subClassOf	local:information	.
+local:based	vn.role:Cause	local:two_evidence	.
+local:based	vn.role:Cause	local:techniques	.
+local:verified	vn.role:Experiencer	local:expected	.
+local:last_process	rdfs:subClassOf	local:process	.
+local:approach_through_series	local:approach_through	local:series	.
+local:structured_information_about_domain_entities	local:structuredinformation_about	local:domain_entities	.

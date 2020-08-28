@@ -1,0 +1,144 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:reallife_provenance	rdfs:label	"real-life provenance"	.
+
+local:reallife_provenance_records	rdfs:label	"real-life provenance records"	.
+
+local:provenance	rdfs:label	"provenance"	.
+
+local:provenance_records	rdfs:label	"provenance records"	.
+
+local:reallife	rdfs:label	"real-life"	.
+
+local:records	rdfs:label	"records"	.
+
+local:cover	rdfs:label	"cover"	.
+
+local:can	rdfs:label	"can"	.
+
+local:likely	rdfs:label	"likely"	.
+
+local:thousands_derivation	rdfs:label	"thousands derivation"	.
+
+local:derivation	rdfs:label	"derivation"	.
+
+local:likely_cover	rdfs:label	"likely cover"	.
+
+local:can_likely_cover	rdfs:label	"can likely cover"	.
+
+local:steps	rdfs:label	"steps"	.
+
+local:one	rdfs:label	"one"	.
+
+local:derivation_steps	rdfs:label	"derivation steps"	.
+
+local:formal	rdfs:label	"formal"	.
+
+local:formal_frameworks	rdfs:label	"formal frameworks"	.
+
+local:becomes_development	rdfs:label	"becomes development"	.
+
+local:development	rdfs:label	"development"	.
+
+local:becomes	rdfs:label	"becomes"	.
+
+local:frameworks	rdfs:label	"frameworks"	.
+
+local:automated_verification	rdfs:label	"automated verification"	.
+
+local:verification	rdfs:label	"verification"	.
+
+local:steps_development	rdfs:label	"steps development"	.
+
+local:thousands_derivation_steps	rdfs:label	"thousands derivation steps"	.
+
+local:pressing_challenges	rdfs:label	"pressing challenges"	.
+
+local:challenges	rdfs:label	"challenges"	.
+
+local:steps_development_of_formal_frameworks	rdfs:label	"steps development of formal frameworks"	.
+
+local:pressing	rdfs:label	"pressing"	.
+
+local:one_pressing_challenges	rdfs:label	"one pressing challenges"	.
+
+local:automated	rdfs:label	"automated"	.
+
+local:data_items	rdfs:label	"data items"	.
+
+local:items	rdfs:label	"items"	.
+
+local:data	rdfs:label	"data"	.
+
+local:items_development	rdfs:label	"items development"	.
+
+local:thousands_data_items	rdfs:label	"thousands data items"	.
+
+local:items_development_of_formal_frameworks	rdfs:label	"items development of formal frameworks"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:verification	rdfs:label	"verification"	.
+local:verification	owl:sameAs	cso:verification	.
+local:formal_frameworks	owl:sameAs	cso:formal_framework	.
+cso:formal_framework	rdfs:label	"formal frameworks"	.
+
+#### Relations ####
+
+local:becomes	vn.role:Patient	local:can_likely_cover	.
+local:automated	vn.role:Patient	local:items	.
+local:derivation	rdfs:member	local:derivation_steps	.
+local:cover	vn.role:indirect_object	local:reallife_provenance_records	.
+local:steps	vn.role:other	local:becomes	.
+local:becomes	vn.role:indirect_object	local:items_development_of_formal_frameworks	.
+local:steps	local:AM-TMP	local:can_likely_cover	.
+local:pressing	rdfs:member	local:pressing_challenges	.
+local:cover	local:AM-MOD	local:can	.
+local:reallife_provenance	rdfs:member	local:reallife_provenance_records	.
+local:cover	vn.role:indirect_object	local:likely	.
+local:becomes_development	rdfs:subClassOf	local:development	.
+local:provenance	rdfs:member	local:provenance_records	.
+local:reallife_provenance_records	rdfs:subClassOf	local:records	.
+local:formal	rdfs:member	local:formal_frameworks	.
+local:formal_frameworks	rdfs:subClassOf	local:frameworks	.
+local:automated	vn.role:Patient	local:verification	.
+local:cover	vn.role:Theme2	local:becomes	.
+local:likely_cover	rdfs:subClassOf	local:cover	.
+local:provenance_records	rdfs:subClassOf	local:records	.
+local:items_development	rdfs:subClassOf	local:development	.
+local:steps_development	rdfs:subClassOf	local:development	.
+local:items_development_of_formal_frameworks	local:of_formalframeworks	local:items_development	.
+local:steps	vn.role:Theme	local:one	.
+local:items_development_of_formal_frameworks	local:itemsdevelopment_of	local:formal_frameworks	.
+local:reallife_provenance_records	rdfs:subClassOf	local:provenance_records	.
+local:pressing_challenges	rdfs:subClassOf	local:challenges	.
+local:one_pressing_challenges	rdfs:subClassOf	local:pressing_challenges	.
+local:reallife	rdfs:member	local:reallife_provenance	.
+local:steps	local:AM-ADV	local:can_likely_cover	.
+local:becomes	vn.role:indirect_object	local:steps_development_of_formal_frameworks	.
+local:thousands_data_items	rdfs:subClassOf	local:data_items	.
+local:automated	vn.role:Patient	local:derivation_steps	.
+local:data	rdfs:member	local:data_items	.
+local:steps	vn.role:Agent	local:thousands_derivation	.
+local:reallife_provenance	rdfs:subClassOf	local:provenance	.
+local:becomes	rdfs:member	local:becomes_development	.
+local:steps_development_of_formal_frameworks	local:stepsdevelopment_of	local:formal_frameworks	.
+local:pressing	vn.role:Patient	local:challenges	.
+local:steps	vn.role:Theme	local:thousands_derivation	.
+local:steps_development_of_formal_frameworks	local:of_formalframeworks	local:steps_development	.
+local:derivation_steps	rdfs:subClassOf	local:steps	.
+local:cover	vn.role:Theme2	local:thousands_derivation	.
+local:automated_verification	rdfs:subClassOf	local:verification	.
+local:thousands_derivation	rdfs:subClassOf	local:derivation	.
+local:thousands_derivation_steps	rdfs:subClassOf	local:derivation_steps	.
+local:can_likely_cover	rdfs:subClassOf	local:likely_cover	.
+local:data_items	rdfs:subClassOf	local:items	.

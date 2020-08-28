@@ -1,0 +1,248 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:semantic_content	rdfs:label	"semantic content"	.
+
+local:content	rdfs:label	"content"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:generated	rdfs:label	"generated"	.
+
+local:available	rdfs:label	"available"	.
+
+local:automatically	rdfs:label	"automatically"	.
+
+local:annotation	rdfs:label	"annotation"	.
+
+local:annotation_services	rdfs:label	"annotation services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:existing_content	rdfs:label	"existing content"	.
+
+local:using_for_existing_content	rdfs:label	"using for existing content"	.
+
+local:using	rdfs:label	"using"	.
+
+local:annotation_services_for_existing_content	rdfs:label	"annotation services for existing content"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:automatic_annotation	rdfs:label	"automatic annotation"	.
+
+local:automatic	rdfs:label	"automatic"	.
+
+local:enable	rdfs:label	"enable"	.
+
+local:focused	rdfs:label	"focused"	.
+
+local:search	rdfs:label	"search"	.
+
+local:userdefined_semantic	rdfs:label	"user-defined semantic"	.
+
+local:userdefined_semantic_enrichment	rdfs:label	"user-defined semantic enrichment"	.
+
+local:semantic_enrichment	rdfs:label	"semantic enrichment"	.
+
+local:enrichment	rdfs:label	"enrichment"	.
+
+local:userdefined	rdfs:label	"user-defined"	.
+
+local:allows	rdfs:label	"allows"	.
+
+local:targeted_approach	rdfs:label	"targeted approach"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:developed	rdfs:label	"developed"	.
+
+local:we	rdfs:label	"we"	.
+
+local:digital_documents	rdfs:label	"digital documents"	.
+
+local:documents	rdfs:label	"documents"	.
+
+local:semantic_annotation	rdfs:label	"semantic annotation"	.
+
+local:digital	rdfs:label	"digital"	.
+
+local:tool_for_semantic_annotation	rdfs:label	"tool for semantic annotation"	.
+
+local:tool	rdfs:label	"tool"	.
+
+local:semantic_annotation_of_digital_documents	rdfs:label	"semantic annotation of digital documents"	.
+
+local:conducted	rdfs:label	"conducted"	.
+
+local:nonexpert_users	rdfs:label	"non-expert users"	.
+
+local:users	rdfs:label	"users"	.
+
+local:nonexpert	rdfs:label	"non-expert"	.
+
+local:usability_for_nonexpert_users	rdfs:label	"usability for non-expert users"	.
+
+local:usability	rdfs:label	"usability"	.
+
+local:enduser_study	rdfs:label	"end-user study"	.
+
+local:study	rdfs:label	"study"	.
+
+local:enduser	rdfs:label	"end-user"	.
+
+local:tool_acceptance	rdfs:label	"tool acceptance"	.
+
+local:acceptance	rdfs:label	"acceptance"	.
+
+local:by_evaluate	rdfs:label	"by evaluate"	.
+
+local:evaluate	rdfs:label	"evaluate"	.
+
+local:by_acceptance	rdfs:label	"by acceptance"	.
+
+local:tool_by_acceptance	rdfs:label	"tool by acceptance"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:results_of_usability	rdfs:label	"results of usability"	.
+
+local:results	rdfs:label	"results"	.
+
+local:results_of_enduser_study	rdfs:label	"results of end-user study"	.
+
+local:its_acceptance	rdfs:label	"its acceptance"	.
+
+local:discusses	rdfs:label	"discusses"	.
+
+local:enrichment_process	rdfs:label	"enrichment process"	.
+
+local:process	rdfs:label	"process"	.
+
+local:semantic_enrichment_process	rdfs:label	"semantic enrichment process"	.
+
+local:learned_about_semantic_enrichment_process	rdfs:label	"learned about semantic enrichment process"	.
+
+local:learned	rdfs:label	"learned"	.
+
+local:exposing_to_semantic_enrichment	rdfs:label	"exposing to semantic enrichment"	.
+
+local:exposing	rdfs:label	"exposing"	.
+
+local:lessons	rdfs:label	"lessons"	.
+
+local:nonexperts	rdfs:label	"non-experts"	.
+
+local:our_methodology	rdfs:label	"our methodology"	.
+
+local:methodology	rdfs:label	"methodology"	.
+
+local:learned_about_our_methodology	rdfs:label	"learned about our methodology"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantic_annotation	rdfs:label	"semantic annotation"	.
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic_annotation	owl:sameAs	cso:semantic_annotation	.
+local:semantic	owl:sameAs	cso:semantics	.
+
+#### Relations ####
+
+local:evaluate	vn.role:Theme	local:acceptance	.
+local:by_acceptance	rdfs:subClassOf	local:acceptance	.
+local:focused	vn.role:Theme	local:search	.
+local:presents	local:AM-PNC	local:by_evaluate	.
+local:semantic_enrichment	rdfs:subClassOf	local:enrichment	.
+local:nonexpert	rdfs:member	local:nonexpert_users	.
+local:semantic_enrichment_process	rdfs:subClassOf	local:process	.
+local:using_for_existing_content	local:for_existingcontent	local:using	.
+local:discusses	vn.role:Patient2	local:learned_about_our_methodology	.
+local:using_for_existing_content	local:using_for	local:existing_content	.
+local:automatic	rdfs:member	local:automatic_annotation	.
+local:results_of_usability	local:of_usability	local:results	.
+local:results_of_enduser_study	local:of_end-userstudy	local:results	.
+local:our_methodology	rdfs:subClassOf	local:methodology	.
+local:semantic_annotation_of_digital_documents	local:semanticannotation_of	local:digital_documents	.
+local:evaluate	vn.role:Agent	local:we	.
+local:existing_content	rdfs:subClassOf	local:content	.
+local:developed	vn.role:Theme	local:we	.
+local:exposing_to_semantic_enrichment	local:to_semanticenrichment	local:exposing	.
+local:conducted	local:AM-PNC	local:by_evaluate	.
+local:semantic_enrichment_process	rdfs:subClassOf	local:enrichment_process	.
+local:exposing	vn.role:Theme	local:lessons	.
+local:exposing_to_semantic_enrichment	local:exposing_to	local:semantic_enrichment	.
+local:discusses	vn.role:Patient1	local:enduser_study	.
+local:conducted	vn.role:Theme	local:usability_for_nonexpert_users	.
+local:userdefined	rdfs:member	local:userdefined_semantic	.
+local:tool	rdfs:member	local:tool_acceptance	.
+local:automatic_annotation	rdfs:subClassOf	local:annotation	.
+local:digital	rdfs:member	local:digital_documents	.
+local:userdefined_semantic	rdfs:subClassOf	local:semantic	.
+local:userdefined_semantic	rdfs:member	local:userdefined_semantic_enrichment	.
+local:enable	vn.role:Patient	local:focused	.
+local:annotation_services	rdfs:subClassOf	local:services	.
+local:tool_for_semantic_annotation	local:for_semanticannotation	local:tool	.
+local:by_evaluate	rdfs:subClassOf	local:evaluate	.
+local:evaluate	vn.role:Agent	local:enduser_study	.
+local:enduser_study	rdfs:subClassOf	local:study	.
+local:learned	vn.role:Agent	local:lessons	.
+local:semantic_content	rdfs:subClassOf	local:content	.
+local:semantic_enrichment	rdfs:member	local:semantic_enrichment_process	.
+local:enduser	rdfs:member	local:enduser_study	.
+local:evaluate	vn.role:Theme	local:tool_by_acceptance	.
+local:exposing	vn.role:Agent	local:nonexperts	.
+local:tool_acceptance	rdfs:subClassOf	local:acceptance	.
+local:tool_by_acceptance	rdfs:subClassOf	local:by_acceptance	.
+local:learned_about_our_methodology	local:about_ourmethodology	local:learned	.
+local:discusses	vn.role:Patient2	local:learned_about_semantic_enrichment_process	.
+local:generated	vn.role:Theme2	local:available	.
+local:its_acceptance	rdfs:subClassOf	local:acceptance	.
+local:nonexpert_users	rdfs:subClassOf	local:users	.
+local:evaluate	vn.role:Theme	local:by_acceptance	.
+local:generated	local:AM-MNR	local:automatically	.
+local:enable	vn.role:Agent	local:automatic_annotation	.
+local:existing	vn.role:Location	local:content	.
+local:discusses	vn.role:Patient1	local:usability_for_nonexpert_users	.
+local:presents	vn.role:Theme	local:results_of_enduser_study	.
+local:digital_documents	rdfs:subClassOf	local:documents	.
+local:semantic	rdfs:member	local:semantic_annotation	.
+local:learned_about_our_methodology	local:learned_about	local:our_methodology	.
+local:learned_about_semantic_enrichment_process	local:learned_about	local:semantic_enrichment_process	.
+local:presents	vn.role:Agent	local:enduser_study	.
+local:presents	vn.role:Theme	local:results_of_usability	.
+local:learned	vn.role:Agent	local:semantic_enrichment_process	.
+local:learned_about_semantic_enrichment_process	local:about_semanticenrichmentprocess	local:learned	.
+local:results_of_usability	local:results_of	local:usability	.
+local:allows	vn.role:Theme	local:targeted_approach	.
+local:results_of_enduser_study	local:results_of	local:enduser_study	.
+local:using	vn.role:Theme	local:annotation_services_for_existing_content	.
+local:usability_for_nonexpert_users	local:for_non-expertusers	local:usability	.
+local:conducted	vn.role:Agent	local:we	.
+local:developed	vn.role:Location	local:tool_for_semantic_annotation	.
+local:semantic_annotation	rdfs:subClassOf	local:annotation	.
+local:semantic	rdfs:member	local:semantic_enrichment	.
+local:enrichment_process	rdfs:subClassOf	local:process	.
+local:annotation	rdfs:member	local:annotation_services	.
+local:allows	vn.role:Agent	local:userdefined_semantic_enrichment	.
+local:targeted_approach	rdfs:subClassOf	local:approach	.
+local:userdefined_semantic_enrichment	rdfs:subClassOf	local:enrichment	.
+local:generated	local:AM-MNR	local:using_for_existing_content	.
+local:conducted	vn.role:Theme	local:enduser_study	.
+local:usability_for_nonexpert_users	local:usability_for	local:nonexpert_users	.
+local:presents	vn.role:Agent	local:usability_for_nonexpert_users	.
+local:userdefined_semantic_enrichment	rdfs:subClassOf	local:semantic_enrichment	.
+local:semantic_annotation_of_digital_documents	local:of_digitaldocuments	local:semantic_annotation	.
+local:annotation_services_for_existing_content	local:annotationservices_for	local:existing_content	.
+local:semantic	rdfs:member	local:semantic_content	.
+local:tool_for_semantic_annotation	local:tool_for	local:semantic_annotation	.
+local:exposing	vn.role:Recipient	local:semantic_enrichment	.
+local:annotation_services_for_existing_content	local:for_existingcontent	local:annotation_services	.
+local:enrichment	rdfs:member	local:enrichment_process	.
