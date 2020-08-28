@@ -1,0 +1,144 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:distance_between_ontologies	rdfs:label	"distance between ontologies"	.
+
+local:distance	rdfs:label	"distance"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:measuring	rdfs:label	"measuring"	.
+
+local:know	rdfs:label	"know"	.
+
+local:quickly	rdfs:label	"quickly"	.
+
+local:two_ontologies	rdfs:label	"two ontologies"	.
+
+local:two_two_ontologies	rdfs:label	"two two ontologies"	.
+
+local:close	rdfs:label	"close"	.
+
+local:determining	rdfs:label	"determining"	.
+
+local:match_two_ontologies	rdfs:label	"match two ontologies"	.
+
+local:match	rdfs:label	"match"	.
+
+local:extent	rdfs:label	"extent,"	.
+
+local:that	rdfs:label	"that"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:constraints	rdfs:label	"constraints"	.
+
+local:possible_ontology_distances	rdfs:label	"possible ontology distances"	.
+
+local:distances	rdfs:label	"distances"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:ontology_distances	rdfs:label	"ontology distances"	.
+
+local:possible_ontology	rdfs:label	"possible ontology"	.
+
+local:several_possible	rdfs:label	"several possible"	.
+
+local:possible	rdfs:label	"possible"	.
+
+local:several_possible_ontology	rdfs:label	"several possible ontology"	.
+
+local:several_possible_ontology_distances	rdfs:label	"several possible ontology distances"	.
+
+local:several	rdfs:label	"several"	.
+
+local:measures	rdfs:label	"measures"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:evaluate	rdfs:label	"evaluate"	.
+
+local:then	rdfs:label	"then"	.
+
+local:experimentally	rdfs:label	"experimentally"	.
+
+local:some_of_speed	rdfs:label	"some of speed"	.
+
+local:some	rdfs:label	"some"	.
+
+local:speed	rdfs:label	"speed"	.
+
+local:order	rdfs:label	"order"	.
+
+local:assess	rdfs:label	"assess"	.
+
+local:some_them	rdfs:label	"some them"	.
+
+local:them	rdfs:label	"them"	.
+
+local:accuracy	rdfs:label	"accuracy"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:extent	vn.role:object	local:distance_between_ontologies	.
+local:several_possible	rdfs:member	local:several_possible_ontology	.
+local:distance_between_ontologies	local:between_ontologies	local:distance	.
+local:determining	vn.role:Theme	local:match_two_ontologies	.
+local:match_two_ontologies	rdfs:subClassOf	local:two_ontologies	.
+local:assess	vn.role:Theme	local:accuracy	.
+local:ontology	rdfs:member	local:ontology_distances	.
+local:several_possible	rdfs:subClassOf	local:possible	.
+local:know	local:AM-ADV	local:close	.
+local:extent	vn.role:subject	local:that	.
+local:two_ontologies	rdfs:subClassOf	local:ontologies	.
+local:some_of_speed	local:of_speed	local:some	.
+local:assess	vn.role:Theme	local:speed	.
+local:measuring	vn.role:Theme	local:distance_between_ontologies	.
+local:assess	vn.role:Agent	local:we	.
+local:determining	vn.role:Agent	local:two_ontologies	.
+local:evaluate	local:AM-DIS	local:then	.
+local:possible_ontology_distances	rdfs:subClassOf	local:ontology_distances	.
+local:several_possible_ontology	rdfs:subClassOf	local:ontology	.
+local:present	vn.role:Agent	local:we	.
+local:possible_ontology_distances	rdfs:subClassOf	local:distances	.
+local:evaluate	vn.role:Theme	local:several_possible_ontology_distances	.
+local:several	rdfs:member	local:several_possible	.
+local:possible	rdfs:member	local:possible_ontology	.
+local:applying	vn.role:Recipient	local:several_possible_ontology_distances	.
+local:two_two_ontologies	rdfs:subClassOf	local:two_ontologies	.
+local:evaluate	local:AM-MNR	local:experimentally	.
+local:some_of_speed	local:some_of	local:speed	.
+local:possible_ontology	rdfs:member	local:possible_ontology_distances	.
+local:several_possible_ontology_distances	rdfs:subClassOf	local:distances	.
+local:evaluate	vn.role:Agent	local:we	.
+local:distance_between_ontologies	local:distance_between	local:ontologies	.
+local:possible_ontology	rdfs:subClassOf	local:ontology	.
+local:evaluate	vn.role:Theme	local:measures	.
+local:match	vn.role:Patient2	local:two_ontologies	.
+local:applying	vn.role:Recipient	local:measures	.
+local:some_them	rdfs:subClassOf	local:them	.
+local:several_possible_ontology_distances	rdfs:subClassOf	local:possible_ontology_distances	.
+local:know	local:AM-MNR	local:quickly	.
+local:applying	vn.role:Agent	local:constraints	.
+local:ontology_distances	rdfs:subClassOf	local:distances	.
+local:present	vn.role:Theme	local:constraints	.
+local:evaluate	local:AM-PNC	local:order	.
+local:several_possible_ontology	rdfs:member	local:several_possible_ontology_distances	.

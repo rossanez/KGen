@@ -1,0 +1,196 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:heterogeneous_services	rdfs:label	"heterogeneous services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:heterogeneous	rdfs:label	"heterogeneous"	.
+
+local:integration_of_heterogeneous_services	rdfs:label	"integration of heterogeneous services"	.
+
+local:integration	rdfs:label	"integration"	.
+
+local:hardwired	rdfs:label	"hard-wired"	.
+
+local:often	rdfs:label	"often"	.
+
+local:service_implementations	rdfs:label	"service implementations"	.
+
+local:implementations	rdfs:label	"implementations"	.
+
+local:service	rdfs:label	"service"	.
+
+local:define	rdfs:label	"define"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_descriptions	rdfs:label	"semantic descriptions"	.
+
+local:execution	rdfs:label	"execution"	.
+
+local:execution_model	rdfs:label	"execution model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:descriptions	rdfs:label	"descriptions"	.
+
+local:model_operating	rdfs:label	"model operating"	.
+
+local:operating	rdfs:label	"operating"	.
+
+local:execution_model_operating	rdfs:label	"execution model operating"	.
+
+local:execution_model_operating_on_semantic_descriptions	rdfs:label	"execution model operating on semantic descriptions"	.
+
+local:semantic_descriptions_of_services	rdfs:label	"semantic descriptions of services"	.
+
+local:allowing	rdfs:label	"allowing"	.
+
+local:flexible_integration	rdfs:label	"flexible integration"	.
+
+local:flexible	rdfs:label	"flexible"	.
+
+local:where_necessary	rdfs:label	"where necessary"	.
+
+local:necessary	rdfs:label	"necessary"	.
+
+local:solving_data	rdfs:label	"solving data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:flexible_integration_of_services	rdfs:label	"flexible integration of services"	.
+
+local:flexible_integration_of_services_with_solving_data	rdfs:label	"flexible integration of services with solving data"	.
+
+local:solving	rdfs:label	"solving"	.
+
+local:process	rdfs:label	"process"	.
+
+local:process_conflicts	rdfs:label	"process conflicts"	.
+
+local:conflicts	rdfs:label	"conflicts"	.
+
+local:using	rdfs:label	"using"	.
+
+local:sws	rdfs:label	"sws"	.
+
+local:sws_challenge	rdfs:label	"sws challenge"	.
+
+local:b2b	rdfs:label	"b2b"	.
+
+local:b2b_domain	rdfs:label	"b2b domain"	.
+
+local:case_scenario	rdfs:label	"case scenario"	.
+
+local:scenario	rdfs:label	"scenario"	.
+
+local:challenge	rdfs:label	"challenge"	.
+
+local:case	rdfs:label	"case"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:wsmo_case_scenario	rdfs:label	"wsmo case scenario"	.
+
+local:wsmo_case_scenario_from_b2b_domain	rdfs:label	"wsmo case scenario from b2b domain"	.
+
+local:b2b_domain_of_sws_challenge	rdfs:label	"b2b domain of sws challenge"	.
+
+local:wsmo	rdfs:label	"wsmo"	.
+
+local:case_scenario_from_b2b_domain	rdfs:label	"case scenario from b2b domain"	.
+
+local:implement	rdfs:label	"implement"	.
+
+local:wsmo_technology	rdfs:label	"wsmo technology"	.
+
+local:technology	rdfs:label	"technology"	.
+
+local:wsmo_technology_from_b2b_domain	rdfs:label	"wsmo technology from b2b domain"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:b2b	rdfs:label	"b2b"	.
+cso:semantic_descriptions	rdfs:label	"semantic descriptions"	.
+local:semantic_descriptions	owl:sameAs	cso:semantic_descriptions	.
+local:b2b	owl:sameAs	cso:b2b	.
+
+#### Relations ####
+
+local:heterogeneous_services	rdfs:subClassOf	local:services	.
+local:case_scenario_from_b2b_domain	local:from_b2bdomain	local:case_scenario	.
+local:allowing	vn.role:Theme	local:flexible_integration_of_services_with_solving_data	.
+local:semantic_descriptions_of_services	local:of_services	local:semantic_descriptions	.
+local:define	vn.role:Theme	local:execution_model_operating_on_semantic_descriptions	.
+local:flexible_integration_of_services	local:flexibleintegration_of	local:services	.
+local:sws	rdfs:member	local:sws_challenge	.
+local:case_scenario	rdfs:subClassOf	local:scenario	.
+local:sws_challenge	rdfs:subClassOf	local:challenge	.
+local:operating	local:AM-MNR	local:semantic_descriptions_of_services	.
+local:using	vn.role:Theme	local:wsmo_case_scenario_from_b2b_domain	.
+local:where_necessary	rdfs:subClassOf	local:necessary	.
+local:define	vn.role:Agent	local:we	.
+local:wsmo	rdfs:member	local:wsmo_technology	.
+local:semantic_descriptions_of_services	local:semanticdescriptions_of	local:services	.
+local:solving_data	rdfs:subClassOf	local:data	.
+local:wsmo_technology	rdfs:subClassOf	local:technology	.
+local:case	rdfs:member	local:case_scenario	.
+local:allowing	vn.role:Theme	local:flexible_integration_of_services	.
+local:hardwired	local:AM-TMP	local:often	.
+local:case_scenario_from_b2b_domain	local:casescenario_from	local:b2b_domain	.
+local:flexible_integration_of_services_with_solving_data	local:flexibleintegrationofservices_with	local:solving_data	.
+local:wsmo	vn.role:subject	local:we	.
+local:solving	vn.role:object	local:process_conflicts	.
+local:hardwired	vn.role:object	local:integration_of_heterogeneous_services	.
+local:flexible	rdfs:member	local:flexible_integration	.
+local:b2b_domain_of_sws_challenge	local:b2bdomain_of	local:sws_challenge	.
+local:integration_of_heterogeneous_services	local:integration_of	local:heterogeneous_services	.
+local:model_operating	rdfs:subClassOf	local:operating	.
+local:wsmo_case_scenario	rdfs:subClassOf	local:case_scenario	.
+local:execution_model_operating_on_semantic_descriptions	local:executionmodeloperating_on	local:semantic_descriptions	.
+local:b2b	rdfs:member	local:b2b_domain	.
+local:semantic	rdfs:member	local:semantic_descriptions	.
+local:execution_model_operating	rdfs:subClassOf	local:model_operating	.
+local:wsmo	vn.role:object	local:case_scenario_from_b2b_domain	.
+local:flexible_integration_of_services	local:of_services	local:flexible_integration	.
+local:solving	vn.role:object	local:data	.
+local:heterogeneous	rdfs:member	local:heterogeneous_services	.
+local:flexible_integration_of_services_with_solving_data	local:with_solvingdata	local:flexible_integration_of_services	.
+local:process_conflicts	rdfs:subClassOf	local:conflicts	.
+local:solving	vn.role:Location	local:flexible_integration	.
+local:service_implementations	rdfs:subClassOf	local:implementations	.
+local:flexible_integration	rdfs:subClassOf	local:integration	.
+local:implement	vn.role:Agent	local:we	.
+local:integration_of_heterogeneous_services	local:of_heterogeneousservices	local:integration	.
+local:execution	rdfs:member	local:execution_model	.
+local:implement	vn.role:Theme	local:model	.
+local:using	vn.role:Agent	local:model	.
+local:b2b_domain_of_sws_challenge	local:of_swschallenge	local:b2b_domain	.
+local:service	rdfs:member	local:service_implementations	.
+local:wsmo_technology_from_b2b_domain	local:from_b2bdomain	local:wsmo_technology	.
+local:wsmo_case_scenario_from_b2b_domain	local:wsmocasescenario_from	local:b2b_domain	.
+local:semantic_descriptions	rdfs:subClassOf	local:descriptions	.
+local:execution_model	rdfs:subClassOf	local:model	.
+local:using	vn.role:Theme	local:wsmo_technology_from_b2b_domain	.
+local:b2b_domain	rdfs:subClassOf	local:domain	.
+local:process	rdfs:member	local:process_conflicts	.
+local:wsmo_technology_from_b2b_domain	local:wsmotechnology_from	local:b2b_domain	.
+local:execution_model_operating_on_semantic_descriptions	local:on_semanticdescriptions	local:execution_model_operating	.
+local:allowing	vn.role:Agent	local:services	.
+local:operating	vn.role:Patient	local:execution_model	.
+local:hardwired	local:AM-MNR	local:service_implementations	.
+local:define	local:AM-LOC	local:paper	.
+local:wsmo_case_scenario_from_b2b_domain	local:from_b2bdomain	local:wsmo_case_scenario	.

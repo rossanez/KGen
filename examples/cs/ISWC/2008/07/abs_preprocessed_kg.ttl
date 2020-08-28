@@ -1,0 +1,157 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:studies	rdfs:label	"studies"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:expressive	rdfs:label	"expressive"	.
+
+local:expressive_power	rdfs:label	"expressive power"	.
+
+local:power	rdfs:label	"power"	.
+
+local:expressive_power_of_sparql	rdfs:label	"expressive power of sparql"	.
+
+local:sparql	rdfs:label	"sparql"	.
+
+local:have	rdfs:label	"have"	.
+
+local:equivalent_expressive	rdfs:label	"equivalent expressive"	.
+
+local:equivalent_expressive_power	rdfs:label	"equivalent expressive power"	.
+
+local:equivalent	rdfs:label	"equivalent"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:explicit_generic	rdfs:label	"explicit generic"	.
+
+local:generic	rdfs:label	"generic"	.
+
+local:generic_rules	rdfs:label	"generic rules"	.
+
+local:rules	rdfs:label	"rules"	.
+
+local:explicit_generic_rules	rdfs:label	"explicit generic rules"	.
+
+local:explicit	rdfs:label	"explicit"	.
+
+local:explicit_generic_rules_of_transformations	rdfs:label	"explicit generic rules of transformations"	.
+
+local:transformations	rdfs:label	"transformations"	.
+
+local:transformations_in_directions	rdfs:label	"transformations in directions"	.
+
+local:directions	rdfs:label	"directions"	.
+
+local:simulated	rdfs:label	"simulated"	.
+
+local:negation	rdfs:label	"negation"	.
+
+local:can	rdfs:label	"can"	.
+
+local:current_sparql_w3c	rdfs:label	"current sparql w3c"	.
+
+local:w3c	rdfs:label	"w3c"	.
+
+local:sparql_w3c	rdfs:label	"sparql w3c"	.
+
+local:current_sparql	rdfs:label	"current sparql"	.
+
+local:current_sparql_w3c_semantics	rdfs:label	"current sparql w3c semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:current	rdfs:label	"current"	.
+
+local:sparql_w3c_semantics	rdfs:label	"sparql w3c semantics"	.
+
+local:w3c_semantics	rdfs:label	"w3c semantics"	.
+
+local:simplified	rdfs:label	"simplified"	.
+
+local:compositional	rdfs:label	"compositional"	.
+
+local:compositional_one	rdfs:label	"compositional one"	.
+
+local:one	rdfs:label	"one"	.
+
+local:standard_compositional	rdfs:label	"standard compositional"	.
+
+local:standard_compositional_one	rdfs:label	"standard compositional one"	.
+
+local:standard	rdfs:label	"standard"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:sparql	rdfs:label	"sparql"	.
+local:sparql	owl:sameAs	cso:sparql	.
+cso:semantics	rdfs:label	"semantics"	.
+local:semantics	owl:sameAs	cso:semantics	.
+
+#### Relations ####
+
+local:simulated	local:AM-LOC	local:sparql	.
+local:simplified	vn.role:indirect_object	local:standard_compositional_one	.
+local:present	vn.role:Agent	local:we	.
+local:compositional_one	rdfs:subClassOf	local:one	.
+local:equivalent_expressive_power	rdfs:subClassOf	local:power	.
+local:simplified	vn.role:Patient	local:current_sparql_w3c_semantics	.
+local:standard	rdfs:member	local:standard_compositional	.
+local:standard_compositional_one	rdfs:subClassOf	local:compositional_one	.
+local:compositional	rdfs:member	local:compositional_one	.
+local:equivalent_expressive_power	rdfs:subClassOf	local:expressive_power	.
+local:explicit	rdfs:member	local:explicit_generic	.
+local:current_sparql_w3c_semantics	rdfs:subClassOf	local:sparql_w3c_semantics	.
+local:explicit_generic_rules	rdfs:subClassOf	local:rules	.
+local:expressive_power_of_sparql	local:of_sparql	local:expressive_power	.
+local:explicit_generic_rules	rdfs:subClassOf	local:generic_rules	.
+local:current_sparql	rdfs:subClassOf	local:sparql	.
+local:sparql	rdfs:member	local:sparql_w3c	.
+local:sparql_w3c	rdfs:subClassOf	local:w3c	.
+local:sparql_w3c_semantics	rdfs:subClassOf	local:semantics	.
+local:explicit_generic	rdfs:subClassOf	local:generic	.
+local:studies	vn.role:Agent	local:paper	.
+local:explicit_generic_rules_of_transformations	local:of_transformations	local:explicit_generic_rules	.
+local:current_sparql_w3c	rdfs:member	local:current_sparql_w3c_semantics	.
+local:expressive_power_of_sparql	local:expressivepower_of	local:sparql	.
+local:simplified	local:AM-MOD	local:can	.
+local:expressive	rdfs:member	local:expressive_power	.
+local:generic	rdfs:member	local:generic_rules	.
+local:standard_compositional	rdfs:subClassOf	local:compositional	.
+local:explicit_generic_rules_of_transformations	local:explicitgenericrules_of	local:transformations	.
+local:current_sparql_w3c	rdfs:subClassOf	local:w3c	.
+local:transformations_in_directions	local:in_directions	local:transformations	.
+local:current_sparql	rdfs:member	local:current_sparql_w3c	.
+local:current	rdfs:member	local:current_sparql	.
+local:simulated	local:AM-MOD	local:can	.
+local:explicit_generic	rdfs:member	local:explicit_generic_rules	.
+local:w3c	rdfs:member	local:w3c_semantics	.
+local:expressive_power	rdfs:subClassOf	local:power	.
+local:standard_compositional_one	rdfs:subClassOf	local:one	.
+local:transformations_in_directions	local:transformations_in	local:directions	.
+local:have	vn.role:Experiencer	local:sparql	.
+local:sparql_w3c	rdfs:member	local:sparql_w3c_semantics	.
+local:standard_compositional	rdfs:member	local:standard_compositional_one	.
+local:equivalent_expressive	rdfs:member	local:equivalent_expressive_power	.
+local:simulated	vn.role:Theme	local:negation	.
+local:w3c_semantics	rdfs:subClassOf	local:semantics	.
+local:sparql_w3c_semantics	rdfs:subClassOf	local:w3c_semantics	.
+local:generic_rules	rdfs:subClassOf	local:rules	.
+local:present	vn.role:Theme	local:explicit_generic_rules_of_transformations	.
+local:studies	vn.role:Theme	local:expressive_power_of_sparql	.
+local:equivalent_expressive	rdfs:subClassOf	local:expressive	.
+local:have	vn.role:Stimulus	local:equivalent_expressive_power	.
+local:current_sparql_w3c_semantics	rdfs:subClassOf	local:semantics	.
+local:equivalent	rdfs:member	local:equivalent_expressive	.

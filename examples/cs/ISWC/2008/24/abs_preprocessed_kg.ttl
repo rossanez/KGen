@@ -1,0 +1,201 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:ontology_alignments	rdfs:label	"ontology alignments"	.
+
+local:alignments	rdfs:label	"alignments"	.
+
+local:correspondences_in_ontology_alignments	rdfs:label	"correspondences in ontology alignments"	.
+
+local:correspondences	rdfs:label	"correspondences"	.
+
+local:relate	rdfs:label	"relate"	.
+
+local:ontology_entities	rdfs:label	"ontology entities"	.
+
+local:entities	rdfs:label	"entities"	.
+
+local:two_ontology_entities	rdfs:label	"two ontology entities"	.
+
+local:two_ontology_entities_with_relation	rdfs:label	"two ontology entities with relation"	.
+
+local:relation	rdfs:label	"relation"	.
+
+local:different	rdfs:label	"different"	.
+
+local:different_systems	rdfs:label	"different systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:however_different_systems	rdfs:label	"however different systems"	.
+
+local:need	rdfs:label	"need"	.
+
+local:may	rdfs:label	"may"	.
+
+local:different_kinds	rdfs:label	"different kinds"	.
+
+local:kinds	rdfs:label	"kinds"	.
+
+local:different_kinds_of_relations	rdfs:label	"different kinds of relations"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:we	rdfs:label	"we"	.
+
+local:concepts_of_algebra	rdfs:label	"concepts of algebra"	.
+
+local:concepts	rdfs:label	"concepts"	.
+
+local:algebra	rdfs:label	"algebra"	.
+
+local:algebra_of_relations	rdfs:label	"algebra of relations"	.
+
+local:use	rdfs:label	"use"	.
+
+local:general	rdfs:label	"general"	.
+
+local:general_way	rdfs:label	"general way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:relations_between_ontology_entities	rdfs:label	"relations between ontology entities"	.
+
+local:express_in_general_way	rdfs:label	"express in general way"	.
+
+local:express	rdfs:label	"express"	.
+
+local:order	rdfs:label	"order"	.
+
+local:show	rdfs:label	"show"	.
+
+local:benefits	rdfs:label	"benefits"	.
+
+local:disjunctive	rdfs:label	"disjunctive"	.
+
+local:disjunctive_relations	rdfs:label	"disjunctive relations"	.
+
+local:expressing	rdfs:label	"expressing"	.
+
+local:doing	rdfs:label	"doing"	.
+
+local:so	rdfs:label	"so"	.
+
+local:different_ways	rdfs:label	"different ways"	.
+
+local:ways	rdfs:label	"ways"	.
+
+local:merging_in_different_ways	rdfs:label	"merging in different ways"	.
+
+local:merging	rdfs:label	"merging"	.
+
+local:different_granularity	rdfs:label	"different granularity"	.
+
+local:granularity	rdfs:label	"granularity"	.
+
+local:amalgamating_with_relations	rdfs:label	"amalgamating with relations"	.
+
+local:amalgamating	rdfs:label	"amalgamating"	.
+
+local:relations_of_different_granularity	rdfs:label	"relations of different granularity"	.
+
+local:alignments_with_relations	rdfs:label	"alignments with relations"	.
+
+local:composing_alignments	rdfs:label	"composing alignments"	.
+
+local:benefits_in_composing_alignments	rdfs:label	"benefits in composing alignments"	.
+
+local:composing	rdfs:label	"composing"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:ontology_alignments	owl:sameAs	cso:ontology_alignment	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+cso:ontology_alignment	rdfs:label	"ontology alignments"	.
+
+#### Relations ####
+
+local:show	vn.role:Theme	local:benefits_in_composing_alignments	.
+local:concepts_of_algebra	local:concepts_of	local:algebra	.
+local:show	vn.role:Agent	local:we	.
+local:relate	vn.role:Recipient	local:two_ontology_entities_with_relation	.
+local:ontology	rdfs:member	local:ontology_alignments	.
+local:ontology_alignments	rdfs:subClassOf	local:alignments	.
+local:different	rdfs:member	local:different_kinds	.
+local:two_ontology_entities_with_relation	local:with_relation	local:two_ontology_entities	.
+local:different_kinds_of_relations	local:differentkinds_of	local:relations	.
+local:relations_between_ontology_entities	local:between_ontologyentities	local:relations	.
+local:disjunctive_relations	rdfs:subClassOf	local:relations	.
+local:relate	vn.role:Agent	local:correspondences_in_ontology_alignments	.
+local:general_way	rdfs:subClassOf	local:way	.
+local:different_kinds	rdfs:subClassOf	local:kinds	.
+local:express	vn.role:Agent	local:relations_between_ontology_entities	.
+local:expressing	vn.role:Agent	local:disjunctive_relations	.
+local:algebra_of_relations	local:algebra_of	local:relations	.
+local:disjunctive	rdfs:member	local:disjunctive_relations	.
+local:composing	vn.role:Product	local:alignments	.
+local:show	vn.role:Theme	local:benefits	.
+local:different_kinds_of_relations	local:of_relations	local:different_kinds	.
+local:relations_between_ontology_entities	local:relations_between	local:ontology_entities	.
+local:two_ontology_entities	rdfs:subClassOf	local:ontology_entities	.
+local:doing	vn.role:Instrument	local:we	.
+local:merging_in_different_ways	local:merging_in	local:different_ways	.
+local:ontology	rdfs:member	local:ontology_entities	.
+local:relations_of_different_granularity	local:of_differentgranularity	local:relations	.
+local:use	vn.role:Theme	local:concepts_of_algebra	.
+local:alignments_with_relations	local:alignments_with	local:relations	.
+local:concepts_of_algebra	local:of_algebra	local:concepts	.
+local:merging_in_different_ways	local:in_differentways	local:merging	.
+local:need	vn.role:Agent	local:however_different_systems	.
+local:need	local:AM-MOD	local:may	.
+local:expressing	vn.role:Theme	local:we	.
+local:use	vn.role:Agent	local:we	.
+local:express	local:AM-LOC	local:general_way	.
+local:merging	vn.role:Patient	local:alignments	.
+local:two_ontology_entities_with_relation	local:twoontologyentities_with	local:relation	.
+local:doing	local:AM-MNR	local:expressing	.
+local:express	vn.role:Theme	local:we	.
+local:different_systems	rdfs:subClassOf	local:systems	.
+local:propose	vn.role:Agent	local:we	.
+local:express_in_general_way	local:in_generalway	local:express	.
+local:general	rdfs:member	local:general_way	.
+local:propose	local:AM-PNC	local:order	.
+local:need	vn.role:Patient	local:different_kinds_of_relations	.
+local:relations_of_different_granularity	local:relations_of	local:different_granularity	.
+local:correspondences_in_ontology_alignments	local:correspondences_in	local:ontology_alignments	.
+local:ontology_entities	rdfs:subClassOf	local:entities	.
+local:however_different_systems	rdfs:subClassOf	local:different_systems	.
+local:composing_alignments	rdfs:subClassOf	local:alignments	.
+local:different_granularity	rdfs:subClassOf	local:granularity	.
+local:different	rdfs:member	local:different_granularity	.
+local:correspondences_in_ontology_alignments	local:in_ontologyalignments	local:correspondences	.
+local:algebra_of_relations	local:of_relations	local:algebra	.
+local:propose	vn.role:Topic	local:use	.
+local:doing	vn.role:object	local:so	.
+local:benefits_in_composing_alignments	local:benefits_in	local:composing_alignments	.
+local:use	local:AM-PNC	local:order	.
+local:amalgamating_with_relations	local:with_relations	local:amalgamating	.
+local:different	rdfs:member	local:different_ways	.
+local:alignments_with_relations	local:with_relations	local:alignments	.
+local:different_ways	rdfs:subClassOf	local:ways	.
+local:show	local:AM-LOC	local:expressing	.
+local:merging	local:AM-LOC	local:different_ways	.
+local:amalgamating	vn.role:Patient2	local:alignments_with_relations	.
+local:benefits_in_composing_alignments	local:in_composingalignments	local:benefits	.
+local:amalgamating_with_relations	local:amalgamating_with	local:relations	.
+local:express_in_general_way	local:express_in	local:general_way	.
+local:composing	vn.role:Agent	local:we	.
+local:different	rdfs:member	local:different_systems	.
