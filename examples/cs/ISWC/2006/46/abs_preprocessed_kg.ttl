@@ -1,0 +1,141 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:developed	rdfs:label	"developed"	.
+
+local:initially	rdfs:label	"initially"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web_owl	rdfs:label	"semantic web owl"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:initially_developed	rdfs:label	"initially developed"	.
+
+local:initially_developed_for_semantic_web	rdfs:label	"initially developed for semantic web"	.
+
+local:become	rdfs:label	"become"	.
+
+local:rapidly	rdfs:label	"rapidly"	.
+
+local:ontology_development	rdfs:label	"ontology development"	.
+
+local:development	rdfs:label	"development"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:facto_standard	rdfs:label	"facto standard"	.
+
+local:standard	rdfs:label	"standard"	.
+
+local:de_facto_standard	rdfs:label	"de facto standard"	.
+
+local:de_facto_standard_for_ontology_development	rdfs:label	"de facto standard for ontology development"	.
+
+local:ontology_development_in_general	rdfs:label	"ontology development in general"	.
+
+local:general	rdfs:label	"general"	.
+
+local:ontology_language	rdfs:label	"ontology language"	.
+
+local:language	rdfs:label	"language"	.
+
+local:w3c	rdfs:label	"w3c"	.
+
+local:design_of_owl	rdfs:label	"design of owl"	.
+
+local:design	rdfs:label	"design"	.
+
+local:influenced	rdfs:label	"influenced"	.
+
+local:heavily	rdfs:label	"heavily"	.
+
+local:description_logics	rdfs:label	"description logics"	.
+
+local:logics	rdfs:label	"logics"	.
+
+local:description	rdfs:label	"description"	.
+
+local:research_in_description_logics	rdfs:label	"research in description logics"	.
+
+local:research	rdfs:label	"research"	.
+
+local:includes	rdfs:label	"includes"	.
+
+local:specification	rdfs:label	"specification"	.
+
+local:formal	rdfs:label	"formal"	.
+
+local:formal_semantics	rdfs:label	"formal semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology	rdfs:label	"ontology"	.
+local:description_logics	owl:sameAs	cso:description_logics	.
+cso:description_logics	rdfs:label	"description logics"	.
+local:ontology_language	owl:sameAs	cso:ontology_language	.
+cso:ontology_development	rdfs:label	"ontology development"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:ontology_language	rdfs:label	"ontology language"	.
+local:ontology_development	owl:sameAs	cso:ontology_development	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:owl	rdfs:label	"owl"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:formal_semantics	owl:sameAs	cso:formal_semantics	.
+cso:formal_semantics	rdfs:label	"formal semantics"	.
+
+#### Relations ####
+
+local:design_of_owl	local:design_of	local:owl	.
+local:de_facto_standard_for_ontology_development	local:for_ontologydevelopment	local:de_facto_standard	.
+local:formal	rdfs:member	local:formal_semantics	.
+local:ontology	rdfs:member	local:ontology_language	.
+local:ontology_language	rdfs:subClassOf	local:language	.
+local:become	local:AM-MNR	local:rapidly	.
+local:influenced	vn.role:Experiencer	local:research_in_description_logics	.
+local:description	rdfs:member	local:description_logics	.
+local:developed	vn.role:Theme	local:w3c	.
+local:ontology_development_in_general	local:ontologydevelopment_in	local:general	.
+local:become	vn.role:Patient	local:owl	.
+local:initially_developed_for_semantic_web	local:for_semanticweb	local:initially_developed	.
+local:ontology_development_in_general	local:in_general	local:ontology_development	.
+local:developed	vn.role:Location	local:ontology_language	.
+local:developed	local:AM-TMP	local:initially	.
+local:de_facto_standard	rdfs:subClassOf	local:facto_standard	.
+local:developed	vn.role:indirect_object	local:semantic_web_owl	.
+local:includes	vn.role:Theme	local:formal_semantics	.
+local:initially_developed	rdfs:subClassOf	local:developed	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:includes	vn.role:Location	local:specification	.
+local:research_in_description_logics	local:research_in	local:description_logics	.
+local:become	vn.role:indirect_object	local:de_facto_standard_for_ontology_development	.
+local:research_in_description_logics	local:in_descriptionlogics	local:research	.
+local:initially_developed_for_semantic_web	local:initiallydeveloped_for	local:semantic_web	.
+local:facto_standard	rdfs:subClassOf	local:standard	.
+local:influenced	local:AM-MNR	local:heavily	.
+local:semantic_web_owl	local:_owl	local:semantic_web	.
+local:formal_semantics	rdfs:subClassOf	local:semantics	.
+local:ontology_development	rdfs:subClassOf	local:development	.
+local:influenced	vn.role:Cause	local:design_of_owl	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:ontology	rdfs:member	local:ontology_development	.
+local:description_logics	rdfs:subClassOf	local:logics	.
+local:semantic_web_owl	local:semanticweb_	local:owl	.
+local:de_facto_standard_for_ontology_development	local:defactostandard_for	local:ontology_development	.
+local:design_of_owl	local:of_owl	local:design	.

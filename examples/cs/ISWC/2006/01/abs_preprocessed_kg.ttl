@@ -1,0 +1,226 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:ontology_alignment	rdfs:label	"ontology alignment"	.
+
+local:alignment	rdfs:label	"alignment"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:describes	rdfs:label	"describes"	.
+
+local:explicitly	rdfs:label	"explicitly"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:holding	rdfs:label	"holding"	.
+
+local:two_ontologies	rdfs:label	"two ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:composed	rdfs:label	"composed"	.
+
+local:system	rdfs:label	"system"	.
+
+local:interconnecting	rdfs:label	"interconnecting"	.
+
+local:system_composed	rdfs:label	"system composed"	.
+
+local:composed_of_ontologies	rdfs:label	"composed of ontologies"	.
+
+local:them	rdfs:label	"them"	.
+
+local:called	rdfs:label	"called"	.
+
+local:herein	rdfs:label	"herein"	.
+
+local:distributed_system	rdfs:label	"distributed system"	.
+
+local:distributed	rdfs:label	"distributed"	.
+
+local:alignments_interconnecting	rdfs:label	"alignments interconnecting"	.
+
+local:alignments	rdfs:label	"alignments"	.
+
+local:composed_of_alignments	rdfs:label	"composed of alignments"	.
+
+local:give	rdfs:label	"give"	.
+
+local:we	rdfs:label	"we"	.
+
+local:different_semantics	rdfs:label	"different semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:different	rdfs:label	"different"	.
+
+local:three_different_semantics	rdfs:label	"three different semantics"	.
+
+local:three_different_semantics_of_distributed_system	rdfs:label	"three different semantics of distributed system"	.
+
+local:interfere	rdfs:label	"interfere"	.
+
+local:not	rdfs:label	"not"	.
+
+local:semantics_of_ontologies	rdfs:label	"semantics of ontologies"	.
+
+local:compared	rdfs:label	"compared"	.
+
+local:consistent	rdfs:label	"consistent"	.
+
+local:consistent_merge	rdfs:label	"consistent merge"	.
+
+local:merge	rdfs:label	"merge"	.
+
+local:consistent_merge_of_ontologies	rdfs:label	"consistent merge of ontologies"	.
+
+local:respect	rdfs:label	"respect"	.
+
+local:allowing	rdfs:label	"allowing"	.
+
+local:composition	rdfs:label	"composition"	.
+
+local:composition_operation	rdfs:label	"composition operation"	.
+
+local:alignment_composition	rdfs:label	"alignment composition"	.
+
+local:alignment_composition_operation	rdfs:label	"alignment composition operation"	.
+
+local:operation	rdfs:label	"operation"	.
+
+local:complying_with_alignment_composition_operation	rdfs:label	"complying with alignment composition operation"	.
+
+local:complying	rdfs:label	"complying"	.
+
+local:advantages	rdfs:label	"advantages"	.
+
+local:managing	rdfs:label	"managing"	.
+
+local:heterogeneity	rdfs:label	"heterogeneity"	.
+
+local:two_variants	rdfs:label	"two variants"	.
+
+local:variants	rdfs:label	"variants"	.
+
+local:first_two_variants	rdfs:label	"first two variants"	.
+
+local:differ	rdfs:label	"differ"	.
+
+local:proposed_semantics	rdfs:label	"proposed semantics"	.
+
+local:proposed	rdfs:label	"proposed"	.
+
+local:show	rdfs:label	"show"	.
+
+local:sound	rdfs:label	"sound"	.
+
+local:sound_composition	rdfs:label	"sound composition"	.
+
+local:sound_composition_operation	rdfs:label	"sound composition operation"	.
+
+local:can_offer	rdfs:label	"can offer"	.
+
+local:offer	rdfs:label	"offer"	.
+
+local:can	rdfs:label	"can"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology_alignment	rdfs:label	"ontology alignment"	.
+local:distributed_system	owl:sameAs	cso:distributed_system	.
+local:ontology_alignment	owl:sameAs	cso:ontology_alignment	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:distributed_system	rdfs:label	"distributed system"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:semantics	rdfs:label	"semantics"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:holding	vn.role:Theme	local:relations	.
+local:composed	vn.role:Product	local:system	.
+local:three_different_semantics	rdfs:subClassOf	local:different_semantics	.
+local:composition_operation	rdfs:subClassOf	local:operation	.
+local:differ	vn.role:Actor1	local:first_two_variants	.
+local:sound_composition_operation	rdfs:subClassOf	local:composition_operation	.
+local:two_variants	rdfs:subClassOf	local:variants	.
+local:consistent_merge_of_ontologies	local:of_ontologies	local:consistent_merge	.
+local:consistent	rdfs:member	local:consistent_merge	.
+local:interconnecting	vn.role:Patient2	local:advantages	.
+local:composed	vn.role:Product	local:interconnecting	.
+local:called	vn.role:Theme	local:distributed_system	.
+local:composed	vn.role:Material	local:alignments_interconnecting	.
+local:alignment_composition_operation	rdfs:subClassOf	local:operation	.
+local:sound_composition	rdfs:subClassOf	local:composition	.
+local:offer	vn.role:Theme	local:sound_composition_operation	.
+local:system_composed	local:system_	local:composed	.
+local:describes	local:AM-MNR	local:explicitly	.
+local:interfere	vn.role:Agent	local:distributed_system	.
+local:interconnecting	vn.role:Patient2	local:system	.
+local:give	vn.role:Asset	local:we	.
+local:give	vn.role:object	local:three_different_semantics_of_distributed_system	.
+local:interfere	local:AM-NEG	local:not	.
+local:alignment	rdfs:member	local:alignment_composition	.
+local:complying	vn.role:Patient	local:alignment_composition_operation	.
+local:first_two_variants	rdfs:subClassOf	local:two_variants	.
+local:proposed_semantics	rdfs:subClassOf	local:semantics	.
+local:can_offer	rdfs:subClassOf	local:offer	.
+local:offer	vn.role:Agent	local:first_two_variants	.
+local:offer	local:AM-MOD	local:can	.
+local:describes	vn.role:Agent	local:ontology_alignment	.
+local:alignment_composition	rdfs:subClassOf	local:composition	.
+local:system_composed	local:_composed	local:system	.
+local:composed	vn.role:Material	local:alignments	.
+local:semantics_of_ontologies	local:semantics_of	local:ontologies	.
+local:two_ontologies	rdfs:subClassOf	local:ontologies	.
+local:sound_composition	rdfs:member	local:sound_composition_operation	.
+local:consistent_merge	rdfs:subClassOf	local:merge	.
+local:alignment_composition	rdfs:member	local:alignment_composition_operation	.
+local:show	vn.role:Theme	local:can_offer	.
+local:compared	vn.role:Agent	local:respect	.
+local:describes	vn.role:Theme	local:relations	.
+local:distributed	vn.role:Theme	local:system	.
+local:alignments_interconnecting	local:alignments_	local:interconnecting	.
+local:three_different_semantics_of_distributed_system	local:threedifferentsemantics_of	local:distributed_system	.
+local:composed_of_ontologies	local:of_ontologies	local:composed	.
+local:consistent_merge_of_ontologies	local:consistentmerge_of	local:ontologies	.
+local:different	rdfs:member	local:different_semantics	.
+local:alignment_composition_operation	rdfs:subClassOf	local:composition_operation	.
+local:holding	local:AM-MNR	local:two_ontologies	.
+local:differ	vn.role:Actor2	local:proposed_semantics	.
+local:composed_of_ontologies	local:composed_of	local:ontologies	.
+local:ontology	rdfs:member	local:ontology_alignment	.
+local:different_semantics	rdfs:subClassOf	local:semantics	.
+local:show	vn.role:Agent	local:we	.
+local:alignments_interconnecting	local:_interconnecting	local:alignments	.
+local:sound	rdfs:member	local:sound_composition	.
+local:three_different_semantics_of_distributed_system	local:of_distributedsystem	local:three_different_semantics	.
+local:distributed_system	rdfs:subClassOf	local:system	.
+local:semantics_of_ontologies	local:of_ontologies	local:semantics	.
+local:called	vn.role:Cause	local:system	.
+local:composed	vn.role:Material	local:ontologies	.
+local:interfere	vn.role:Theme	local:semantics_of_ontologies	.
+local:proposed	vn.role:Topic	local:semantics	.
+local:composed_of_alignments	local:of_alignments	local:composed	.
+local:sound_composition_operation	rdfs:subClassOf	local:operation	.
+local:complying_with_alignment_composition_operation	local:with_alignmentcompositionoperation	local:complying	.
+local:managing	vn.role:Theme	local:heterogeneity	.
+local:interconnecting	vn.role:Patient2	local:them	.
+local:composition	rdfs:member	local:composition_operation	.
+local:called	local:AM-MNR	local:herein	.
+local:distributed	rdfs:member	local:distributed_system	.
+local:ontology_alignment	rdfs:subClassOf	local:alignment	.
+local:complying_with_alignment_composition_operation	local:complying_with	local:alignment_composition_operation	.
+local:interconnecting	vn.role:Patient1	local:system_composed	.
+local:composed_of_alignments	local:composed_of	local:alignments	.
+local:allowing	vn.role:Theme	local:consistent_merge_of_ontologies	.
+local:compared	vn.role:Patient2	local:system	.

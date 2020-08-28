@@ -1,0 +1,213 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:show	rdfs:label	"show"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:acquisition_process	rdfs:label	"acquisition process"	.
+
+local:process	rdfs:label	"process"	.
+
+local:knowledge_acquisition	rdfs:label	"knowledge acquisition"	.
+
+local:acquisition	rdfs:label	"acquisition"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:use_ontologies	rdfs:label	"use ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:knowledge_acquisition_process	rdfs:label	"knowledge acquisition process"	.
+
+local:use	rdfs:label	"use"	.
+
+local:bootstrap	rdfs:label	"bootstrap"	.
+
+local:extracts	rdfs:label	"extracts"	.
+
+local:product_information	rdfs:label	"product information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:product	rdfs:label	"product"	.
+
+local:tabular_data	rdfs:label	"tabular data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:web_pages	rdfs:label	"web pages"	.
+
+local:pages	rdfs:label	"pages"	.
+
+local:tabular	rdfs:label	"tabular"	.
+
+local:web	rdfs:label	"web"	.
+
+local:tabular_data_on_web_pages	rdfs:label	"tabular data on web pages"	.
+
+local:furthermore	rdfs:label	"furthermore"	.
+
+local:logical_rules	rdfs:label	"logical rules"	.
+
+local:rules	rdfs:label	"rules"	.
+
+local:logical	rdfs:label	"logical"	.
+
+local:specific	rdfs:label	"specific"	.
+
+local:specific_properties	rdfs:label	"specific properties"	.
+
+local:properties	rdfs:label	"properties"	.
+
+local:product_specific_properties	rdfs:label	"product specific properties"	.
+
+local:reason_about_product_specific_properties	rdfs:label	"reason about product specific properties"	.
+
+local:reason	rdfs:label	"reason"	.
+
+local:derive_higherorder_knowledge	rdfs:label	"derive higher-order knowledge"	.
+
+local:higherorder	rdfs:label	"higher-order"	.
+
+local:higherorder_knowledge	rdfs:label	"higher-order knowledge"	.
+
+local:derive	rdfs:label	"derive"	.
+
+local:derive_higherorder	rdfs:label	"derive higher-order"	.
+
+local:product_features	rdfs:label	"product features"	.
+
+local:features	rdfs:label	"features"	.
+
+local:higherorder_knowledge_about_product_features	rdfs:label	"higher-order knowledge about product features"	.
+
+local:explain	rdfs:label	"explain"	.
+
+local:will	rdfs:label	"will"	.
+
+local:also	rdfs:label	"also"	.
+
+local:covering	rdfs:label	"covering"	.
+
+local:procedural_aspects	rdfs:label	"procedural aspects"	.
+
+local:aspects	rdfs:label	"aspects"	.
+
+local:procedural	rdfs:label	"procedural"	.
+
+local:ontological_aspects	rdfs:label	"ontological aspects"	.
+
+local:ontological	rdfs:label	"ontological"	.
+
+local:give	rdfs:label	"give"	.
+
+local:finally	rdfs:label	"finally"	.
+
+local:quantitative	rdfs:label	"quantitative"	.
+
+local:quantitative_evaluation	rdfs:label	"quantitative evaluation"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+local:qualitative_evaluation	rdfs:label	"qualitative evaluation"	.
+
+local:qualitative	rdfs:label	"qualitative"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:knowledge_acquisition	rdfs:label	"knowledge acquisition"	.
+local:web_pages	owl:sameAs	cso:web_pages	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:web_pages	rdfs:label	"web pages"	.
+local:product_features	owl:sameAs	cso:product_feature	.
+cso:product_feature	rdfs:label	"product features"	.
+local:knowledge_acquisition	owl:sameAs	cso:knowledge_acquisition	.
+local:acquisition_process	owl:sameAs	cso:acquisition_process	.
+cso:acquisition_process	rdfs:label	"acquisition process"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:tabular_data_on_web_pages	local:on_webpages	local:tabular_data	.
+local:reason	vn.role:Theme1	local:furthermore	.
+local:knowledge	rdfs:member	local:knowledge_acquisition	.
+local:acquisition	rdfs:member	local:acquisition_process	.
+local:use	rdfs:member	local:use_ontologies	.
+local:give	vn.role:indirect_object	local:finally	.
+local:derive	rdfs:member	local:derive_higherorder	.
+local:knowledge_acquisition	rdfs:subClassOf	local:acquisition	.
+local:knowledge_acquisition	rdfs:member	local:knowledge_acquisition_process	.
+local:web	rdfs:member	local:web_pages	.
+local:derive_higherorder_knowledge	rdfs:subClassOf	local:knowledge	.
+local:explain	vn.role:Cause	local:knowledge_acquisition_process	.
+local:quantitative_evaluation	rdfs:subClassOf	local:evaluation	.
+local:qualitative	rdfs:member	local:qualitative_evaluation	.
+local:tabular_data	rdfs:subClassOf	local:data	.
+local:use	vn.role:Theme	local:ontologies	.
+local:web_pages	rdfs:subClassOf	local:pages	.
+local:use	vn.role:Agent	local:we	.
+local:logical_rules	rdfs:subClassOf	local:rules	.
+local:use	vn.role:Theme	local:logical_rules	.
+local:reason_about_product_specific_properties	local:about_productspecificproperties	local:reason	.
+local:reason	vn.role:Theme2	local:product_specific_properties	.
+local:explain	local:AM-DIS	local:also	.
+local:acquisition_process	rdfs:subClassOf	local:process	.
+local:higherorder_knowledge	rdfs:subClassOf	local:knowledge	.
+local:use	vn.role:Recipient	local:furthermore	.
+local:covering	vn.role:Theme2	local:ontological_aspects	.
+local:show	vn.role:Agent	local:we	.
+local:ontological_aspects	rdfs:subClassOf	local:aspects	.
+local:use	vn.role:Recipient	local:bootstrap	.
+local:specific_properties	rdfs:subClassOf	local:properties	.
+local:derive_higherorder	rdfs:subClassOf	local:higherorder	.
+local:show	local:AM-LOC	local:paper	.
+local:give	vn.role:Asset	local:we	.
+local:give	vn.role:object	local:qualitative_evaluation	.
+local:use	vn.role:Recipient	local:reason_about_product_specific_properties	.
+local:knowledge_acquisition_process	rdfs:subClassOf	local:process	.
+local:covering	vn.role:Theme2	local:procedural_aspects	.
+local:procedural_aspects	rdfs:subClassOf	local:aspects	.
+local:ontological	rdfs:member	local:ontological_aspects	.
+local:product_information	rdfs:subClassOf	local:information	.
+local:covering	vn.role:indirect_object	local:knowledge_acquisition_process	.
+local:use_ontologies	rdfs:subClassOf	local:ontologies	.
+local:use	vn.role:Recipient	local:derive	.
+local:specific	rdfs:member	local:specific_properties	.
+local:procedural	rdfs:member	local:procedural_aspects	.
+local:qualitative_evaluation	rdfs:subClassOf	local:evaluation	.
+local:higherorder_knowledge_about_product_features	local:higher-orderknowledge_about	local:product_features	.
+local:show	vn.role:Theme	local:use_ontologies	.
+local:product	rdfs:member	local:product_features	.
+local:derive	vn.role:Location	local:higherorder_knowledge_about_product_features	.
+local:bootstrap	vn.role:Patient	local:knowledge_acquisition_process	.
+local:product_specific_properties	rdfs:subClassOf	local:specific_properties	.
+local:explain	vn.role:Recipient	local:we	.
+local:higherorder	rdfs:member	local:higherorder_knowledge	.
+local:quantitative	rdfs:member	local:quantitative_evaluation	.
+local:give	vn.role:object	local:quantitative_evaluation	.
+local:reason_about_product_specific_properties	local:reason_about	local:product_specific_properties	.
+local:product_features	rdfs:subClassOf	local:features	.
+local:higherorder_knowledge_about_product_features	local:about_productfeatures	local:higherorder_knowledge	.
+local:tabular	rdfs:member	local:tabular_data	.
+local:knowledge_acquisition_process	rdfs:subClassOf	local:acquisition_process	.
+local:extracts	vn.role:Agent	local:knowledge_acquisition_process	.
+local:tabular_data_on_web_pages	local:tabulardata_on	local:web_pages	.
+local:extracts	vn.role:Source	local:tabular_data_on_web_pages	.
+local:logical	rdfs:member	local:logical_rules	.
+local:derive_higherorder	rdfs:member	local:derive_higherorder_knowledge	.
+local:give	local:AM-MOD	local:will	.
+local:explain	local:AM-MOD	local:will	.
+local:product	rdfs:member	local:product_information	.
+local:extracts	vn.role:Theme	local:product_information	.

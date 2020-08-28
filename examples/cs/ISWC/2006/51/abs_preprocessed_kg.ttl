@@ -1,0 +1,154 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:partwhole_relations	rdfs:label	"part-whole relations"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:partwhole	rdfs:label	"part-whole"	.
+
+local:receive	rdfs:label	"receive"	.
+
+local:typically	rdfs:label	"typically"	.
+
+local:less	rdfs:label	"less"	.
+
+local:less_attention	rdfs:label	"less attention"	.
+
+local:attention	rdfs:label	"attention"	.
+
+local:subsumption	rdfs:label	"subsumption"	.
+
+local:subsumption_relation	rdfs:label	"subsumption relation"	.
+
+local:relation	rdfs:label	"relation"	.
+
+local:less_attention_than_subsumption_relation	rdfs:label	"less attention than subsumption relation"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:method	rdfs:label	"method"	.
+
+local:finding	rdfs:label	"finding"	.
+
+local:consists	rdfs:label	"consists"	.
+
+local:implicit_partwhole_relations	rdfs:label	"implicit part-whole relations"	.
+
+local:partwhole_relation	rdfs:label	"part-whole relation"	.
+
+local:phrase_patterns	rdfs:label	"phrase patterns"	.
+
+local:patterns	rdfs:label	"patterns"	.
+
+local:phrase	rdfs:label	"phrase"	.
+
+local:partwhole_relation_instances	rdfs:label	"part-whole relation instances"	.
+
+local:instances	rdfs:label	"instances"	.
+
+local:relation_instances	rdfs:label	"relation instances"	.
+
+local:implicit_partwhole	rdfs:label	"implicit part-whole"	.
+
+local:implicit	rdfs:label	"implicit"	.
+
+local:explicit_implicit_partwhole_relations	rdfs:label	"explicit implicit part-whole relations"	.
+
+local:two_steps	rdfs:label	"two steps"	.
+
+local:steps	rdfs:label	"steps"	.
+
+local:applying_for_explicit_implicit_partwhole_relations	rdfs:label	"applying for explicit implicit part-whole relations"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:find	rdfs:label	"find"	.
+
+local:phrase_patterns_for_explicit_implicit_partwhole_relations	rdfs:label	"phrase patterns for explicit implicit part-whole relations"	.
+
+local:show	rdfs:label	"show"	.
+
+local:applying_to_domain	rdfs:label	"applying to domain"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:sources_of_carcinogens	rdfs:label	"sources of carcinogens"	.
+
+local:sources	rdfs:label	"sources"	.
+
+local:carcinogens	rdfs:label	"carcinogens"	.
+
+local:results	rdfs:label	"results"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:phrase_patterns	rdfs:subClassOf	local:patterns	.
+local:applying	vn.role:Agent	local:we	.
+local:phrase_patterns_for_explicit_implicit_partwhole_relations	local:phrasepatterns_for	local:explicit_implicit_partwhole_relations	.
+local:implicit_partwhole_relations	rdfs:subClassOf	local:partwhole_relations	.
+local:partwhole_relation_instances	rdfs:subClassOf	local:relation_instances	.
+local:sources_of_carcinogens	local:of_carcinogens	local:sources	.
+local:finding	vn.role:Theme	local:phrase_patterns	.
+local:less_attention	rdfs:subClassOf	local:attention	.
+local:implicit_partwhole_relations	rdfs:subClassOf	local:relations	.
+local:less	rdfs:member	local:less_attention	.
+local:find	vn.role:Theme	local:partwhole_relation_instances	.
+local:show	vn.role:Agent	local:we	.
+local:show	vn.role:Theme	local:results	.
+local:two_steps	rdfs:subClassOf	local:steps	.
+local:implicit_partwhole	rdfs:subClassOf	local:partwhole	.
+local:applying_to_domain	local:applying_to	local:domain	.
+local:relation_instances	rdfs:subClassOf	local:instances	.
+local:phrase_patterns_for_explicit_implicit_partwhole_relations	local:for_explicitimplicitpart-wholerelations	local:phrase_patterns	.
+local:applying_for_explicit_implicit_partwhole_relations	local:for_explicitimplicitpart-wholerelations	local:applying	.
+local:applying	vn.role:Agent	local:two_steps	.
+local:receive	local:AM-TMP	local:typically	.
+local:finding	vn.role:Agent	local:domain	.
+local:applying	vn.role:Theme	local:method	.
+local:finding	vn.role:Theme	local:sources_of_carcinogens	.
+local:applying_to_domain	local:to_domain	local:applying	.
+local:receive	vn.role:Agent	local:partwhole_relations	.
+local:partwhole	rdfs:member	local:partwhole_relations	.
+local:relation	rdfs:member	local:relation_instances	.
+local:consists	vn.role:Location	local:method	.
+local:partwhole	rdfs:member	local:partwhole_relation	.
+local:phrase	rdfs:member	local:phrase_patterns	.
+local:explicit_implicit_partwhole_relations	rdfs:subClassOf	local:implicit_partwhole_relations	.
+local:applying	vn.role:Recipient	local:domain	.
+local:partwhole_relations	rdfs:subClassOf	local:relations	.
+local:applying_for_explicit_implicit_partwhole_relations	local:applying_for	local:explicit_implicit_partwhole_relations	.
+local:consists	vn.role:indirect_object	local:two_steps	.
+local:sources_of_carcinogens	local:sources_of	local:carcinogens	.
+local:less_attention_than_subsumption_relation	local:lessattention_than	local:subsumption_relation	.
+local:describe	vn.role:Theme	local:method	.
+local:implicit	rdfs:member	local:implicit_partwhole	.
+local:receive	vn.role:Theme	local:less_attention_than_subsumption_relation	.
+local:applying	vn.role:Theme	local:phrase_patterns	.
+local:applying	vn.role:Recipient	local:explicit_implicit_partwhole_relations	.
+local:partwhole_relation	rdfs:subClassOf	local:relation	.
+local:finding	vn.role:Theme	local:partwhole_relations	.
+local:partwhole_relation_instances	rdfs:subClassOf	local:instances	.
+local:partwhole_relation	rdfs:member	local:partwhole_relation_instances	.
+local:finding	vn.role:Agent	local:we	.
+local:describe	vn.role:Agent	local:we	.
+local:implicit_partwhole	rdfs:member	local:implicit_partwhole_relations	.
+local:less_attention_than_subsumption_relation	local:than_subsumptionrelation	local:less_attention	.
+local:subsumption	rdfs:member	local:subsumption_relation	.
+local:describe	local:AM-LOC	local:paper	.
+local:subsumption_relation	rdfs:subClassOf	local:relation	.

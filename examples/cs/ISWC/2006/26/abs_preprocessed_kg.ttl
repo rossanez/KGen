@@ -1,0 +1,185 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:communicate	rdfs:label	"communicate"	.
+
+local:agents	rdfs:label	"agents"	.
+
+local:same_vocabulary	rdfs:label	"same vocabulary"	.
+
+local:vocabulary	rdfs:label	"vocabulary"	.
+
+local:same	rdfs:label	"same"	.
+
+local:necessarily_use	rdfs:label	"necessarily use"	.
+
+local:use	rdfs:label	"use"	.
+
+local:not_necessarily_use	rdfs:label	"not necessarily use"	.
+
+local:do_not_necessarily_use	rdfs:label	"do not necessarily use"	.
+
+local:not	rdfs:label	"not"	.
+
+local:necessarily	rdfs:label	"necessarily"	.
+
+local:used	rdfs:label	"used"	.
+
+local:terms	rdfs:label	"terms"	.
+
+local:respective_ontologies	rdfs:label	"respective ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:respective	rdfs:label	"respective"	.
+
+local:agents_respective_ontologies	rdfs:label	"agents respective ontologies"	.
+
+local:interact	rdfs:label	"interact"	.
+
+local:successfully_agents	rdfs:label	"successfully agents"	.
+
+local:successfully_interact	rdfs:label	"successfully interact"	.
+
+local:agents_agents	rdfs:label	"agents agents"	.
+
+local:find	rdfs:label	"find"	.
+
+local:must	rdfs:label	"must"	.
+
+local:correspondences_between_terms	rdfs:label	"correspondences between terms"	.
+
+local:correspondences	rdfs:label	"correspondences"	.
+
+local:many	rdfs:label	"many"	.
+
+local:many_proposals	rdfs:label	"many proposals"	.
+
+local:proposals	rdfs:label	"proposals"	.
+
+local:matching	rdfs:label	"matching"	.
+
+local:agent	rdfs:label	"agent"	.
+
+local:agent_ontologies	rdfs:label	"agent ontologies"	.
+
+local:two_agent_ontologies	rdfs:label	"two agent ontologies"	.
+
+local:seen	rdfs:label	"seen"	.
+
+local:resulting_alignment	rdfs:label	"resulting alignment"	.
+
+local:alignment	rdfs:label	"alignment"	.
+
+local:literature_resulting_alignment	rdfs:label	"literature resulting alignment"	.
+
+local:literature	rdfs:label	"literature"	.
+
+local:resulting	rdfs:label	"resulting"	.
+
+local:seen_in_literature	rdfs:label	"seen in literature"	.
+
+local:need	rdfs:label	"need"	.
+
+local:thus	rdfs:label	"thus"	.
+
+local:may	rdfs:label	"may"	.
+
+local:additional	rdfs:label	"additional"	.
+
+local:additional_negotiation	rdfs:label	"additional negotiation"	.
+
+local:negotiation	rdfs:label	"negotiation"	.
+
+local:agreeable_set	rdfs:label	"agreeable set"	.
+
+local:set	rdfs:label	"set"	.
+
+local:mutually_agreeable	rdfs:label	"mutually agreeable"	.
+
+local:agreeable	rdfs:label	"agreeable"	.
+
+local:mutually_agreeable_set	rdfs:label	"mutually agreeable set"	.
+
+local:mutually	rdfs:label	"mutually"	.
+
+local:agreeable_set_of_correspondences	rdfs:label	"agreeable set of correspondences"	.
+
+local:identify	rdfs:label	"identify"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:vocabulary	rdfs:label	"vocabulary"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:vocabulary	owl:sameAs	cso:vocabulary	.
+
+#### Relations ####
+
+local:interact	vn.role:Actor1	local:successfully_agents	.
+local:many_proposals	rdfs:subClassOf	local:proposals	.
+local:find	vn.role:Agent	local:agents_agents	.
+local:same_vocabulary	rdfs:subClassOf	local:vocabulary	.
+local:additional	rdfs:member	local:additional_negotiation	.
+local:successfully_interact	rdfs:subClassOf	local:interact	.
+local:use	local:AM-NEG	local:not	.
+local:need	local:AM-MOD	local:may	.
+local:need	vn.role:Patient	local:additional_negotiation	.
+local:find	local:AM-MOD	local:must	.
+local:necessarily_use	rdfs:subClassOf	local:use	.
+local:additional_negotiation	rdfs:subClassOf	local:negotiation	.
+local:agreeable	rdfs:member	local:agreeable_set	.
+local:need	local:AM-ADV	local:seen_in_literature	.
+local:use	vn.role:Agent	local:communicate	.
+local:mutually	rdfs:member	local:mutually_agreeable	.
+local:same	rdfs:member	local:same_vocabulary	.
+local:agents_respective_ontologies	rdfs:subClassOf	local:respective_ontologies	.
+local:need	local:AM-DIS	local:thus	.
+local:literature_resulting_alignment	local:_resultingalignment	local:literature	.
+local:need	local:AM-PNC	local:identify	.
+local:correspondences_between_terms	local:correspondences_between	local:terms	.
+local:not_necessarily_use	rdfs:subClassOf	local:necessarily_use	.
+local:do_not_necessarily_use	rdfs:subClassOf	local:not_necessarily_use	.
+local:many	rdfs:member	local:many_proposals	.
+local:mutually_agreeable	rdfs:subClassOf	local:agreeable	.
+local:mutually_agreeable_set	rdfs:subClassOf	local:set	.
+local:mutually_agreeable	rdfs:member	local:mutually_agreeable_set	.
+local:two_agent_ontologies	rdfs:subClassOf	local:agent_ontologies	.
+local:use	vn.role:Theme	local:vocabulary	.
+local:identify	vn.role:Theme	local:agreeable_set_of_correspondences	.
+local:agent	rdfs:member	local:agent_ontologies	.
+local:seen	vn.role:Theme	local:many_proposals	.
+local:correspondences_between_terms	local:between_terms	local:correspondences	.
+local:matching	vn.role:Patient1	local:many_proposals	.
+local:use	local:AM-ADV	local:necessarily	.
+local:used	local:AM-LOC	local:agents_respective_ontologies	.
+local:identify	vn.role:Agent	local:many_proposals	.
+local:successfully_agents	rdfs:subClassOf	local:agents	.
+local:seen	local:AM-LOC	local:literature_resulting_alignment	.
+local:agreeable_set_of_correspondences	local:of_correspondences	local:agreeable_set	.
+local:agreeable_set_of_correspondences	local:agreeableset_of	local:correspondences	.
+local:find	vn.role:Theme	local:correspondences_between_terms	.
+local:resulting	vn.role:Theme	local:alignment	.
+local:seen_in_literature	local:in_literature	local:seen	.
+local:respective	rdfs:member	local:respective_ontologies	.
+local:agents_agents	local:_agents	local:agents	.
+local:literature_resulting_alignment	local:literature_	local:resulting_alignment	.
+local:agent_ontologies	rdfs:subClassOf	local:ontologies	.
+local:respective_ontologies	rdfs:subClassOf	local:ontologies	.
+local:resulting_alignment	rdfs:subClassOf	local:alignment	.
+local:communicate	vn.role:object	local:do_not_necessarily_use	.
+local:agents_agents	local:agents_	local:agents	.
+local:seen_in_literature	local:seen_in	local:literature	.
+local:matching	vn.role:Patient2	local:two_agent_ontologies	.
+local:interact	vn.role:Actor	local:agents	.
+local:used	vn.role:Theme	local:terms	.
+local:communicate	vn.role:subject	local:agents	.
+local:agreeable_set	rdfs:subClassOf	local:set	.

@@ -1,0 +1,255 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:rejecting	rdfs:label	"rejecting"	.
+
+local:managers	rdfs:label	"managers"	.
+
+local:projects	rdfs:label	"projects"	.
+
+local:new_baseline	rdfs:label	"new baseline"	.
+
+local:baseline	rdfs:label	"baseline"	.
+
+local:new	rdfs:label	"new"	.
+
+local:published	rdfs:label	"published"	.
+
+local:previous_baseline_versions	rdfs:label	"previous baseline versions"	.
+
+local:versions	rdfs:label	"versions"	.
+
+local:baseline_versions	rdfs:label	"baseline versions"	.
+
+local:previous_baseline	rdfs:label	"previous baseline"	.
+
+local:previous	rdfs:label	"previous"	.
+
+local:changes_from_previous_baseline_versions	rdfs:label	"changes from previous baseline versions"	.
+
+local:changes	rdfs:label	"changes"	.
+
+local:examining	rdfs:label	"examining"	.
+
+local:discovering	rdfs:label	"discovering"	.
+
+local:users	rdfs:label	"users"	.
+
+local:new_versions	rdfs:label	"new versions"	.
+
+local:serendipitously_versions	rdfs:label	"serendipitously versions"	.
+
+local:new_serendipitously_versions	rdfs:label	"new serendipitously versions"	.
+
+local:accepting	rdfs:label	"accepting"	.
+
+local:managers_of_projects	rdfs:label	"managers of projects"	.
+
+local:exercise	rdfs:label	"exercise"	.
+
+local:may	rdfs:label	"may"	.
+
+local:quality	rdfs:label	"quality"	.
+
+local:quality_control	rdfs:label	"quality control"	.
+
+local:control	rdfs:label	"control"	.
+
+local:ontology_versions	rdfs:label	"ontology versions"	.
+
+local:successive_ontology	rdfs:label	"successive ontology"	.
+
+local:successive_ontology_versions	rdfs:label	"successive ontology versions"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:successive	rdfs:label	"successive"	.
+
+local:posted	rdfs:label	"posted"	.
+
+local:can	rdfs:label	"can"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:discuss	rdfs:label	"discuss"	.
+
+local:we	rdfs:label	"we"	.
+
+local:highlevel	rdfs:label	"high-level"	.
+
+local:highlevel_tasks	rdfs:label	"high-level tasks"	.
+
+local:tasks	rdfs:label	"tasks"	.
+
+local:must_support	rdfs:label	"must support"	.
+
+local:support	rdfs:label	"support"	.
+
+local:editing_environment	rdfs:label	"editing environment"	.
+
+local:environment	rdfs:label	"environment"	.
+
+local:must	rdfs:label	"must"	.
+
+local:present	rdfs:label	"present"	.
+
+local:then	rdfs:label	"then"	.
+
+local:different_modes	rdfs:label	"different modes"	.
+
+local:modes	rdfs:label	"modes"	.
+
+local:single	rdfs:label	"single"	.
+
+local:single_framework	rdfs:label	"single framework"	.
+
+local:unified_comprehensive	rdfs:label	"unified comprehensive"	.
+
+local:comprehensive	rdfs:label	"comprehensive"	.
+
+local:comprehensive_set	rdfs:label	"comprehensive set"	.
+
+local:set	rdfs:label	"set"	.
+
+local:unified	rdfs:label	"unified"	.
+
+local:unified_comprehensive_set	rdfs:label	"unified comprehensive set"	.
+
+local:different_scenarios	rdfs:label	"different scenarios"	.
+
+local:scenarios	rdfs:label	"scenarios"	.
+
+local:different	rdfs:label	"different"	.
+
+local:framework	rdfs:label	"framework"	.
+
+local:easily_switch	rdfs:label	"easily switch"	.
+
+local:switch	rdfs:label	"switch"	.
+
+local:unified_comprehensive_set_of_tools	rdfs:label	"unified comprehensive set of tools"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:support_in_single_framework	rdfs:label	"support in single framework"	.
+
+local:easily_switch_between_different_modes	rdfs:label	"easily switch between different modes"	.
+
+local:single_framework_allowing	rdfs:label	"single framework allowing"	.
+
+local:allowing	rdfs:label	"allowing"	.
+
+local:easily_modes	rdfs:label	"easily modes"	.
+
+local:different_easily_modes	rdfs:label	"different easily modes"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology	rdfs:label	"ontology"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:highlevel	rdfs:member	local:highlevel_tasks	.
+local:examining	vn.role:Location	local:changes_from_previous_baseline_versions	.
+local:present	local:AM-TMP	local:then	.
+local:unified_comprehensive_set	rdfs:subClassOf	local:comprehensive_set	.
+local:successive_ontology_versions	rdfs:subClassOf	local:versions	.
+local:allowing	vn.role:Agent	local:single_framework	.
+local:discovering	vn.role:Agent	local:users	.
+local:support	vn.role:subject	local:editing_environment	.
+local:accepting	vn.role:Agent	local:managers	.
+local:single	rdfs:member	local:single_framework	.
+local:baseline	rdfs:member	local:baseline_versions	.
+local:comprehensive_set	rdfs:subClassOf	local:set	.
+local:previous_baseline_versions	rdfs:subClassOf	local:baseline_versions	.
+local:present	vn.role:Theme	local:unified_comprehensive_set_of_tools	.
+local:baseline_versions	rdfs:subClassOf	local:versions	.
+local:managers_of_projects	local:managers_of	local:projects	.
+local:new_serendipitously_versions	rdfs:subClassOf	local:serendipitously_versions	.
+local:exercise	vn.role:Agent	local:managers_of_projects	.
+local:successive_ontology	rdfs:member	local:successive_ontology_versions	.
+local:must_support	rdfs:subClassOf	local:support	.
+local:easily_modes	rdfs:subClassOf	local:modes	.
+local:single_framework	rdfs:subClassOf	local:framework	.
+local:support	vn.role:Theme	local:we	.
+local:unified	rdfs:member	local:unified_comprehensive	.
+local:quality_control	rdfs:subClassOf	local:control	.
+local:exercise	vn.role:Patient	local:quality_control	.
+local:editing_environment	rdfs:subClassOf	local:environment	.
+local:serendipitously_versions	rdfs:subClassOf	local:versions	.
+local:changes_from_previous_baseline_versions	local:from_previousbaselineversions	local:changes	.
+local:rejecting	vn.role:Theme	local:projects	.
+local:new_baseline	rdfs:subClassOf	local:baseline	.
+local:single_framework_allowing	local:_allowing	local:single_framework	.
+local:allowing	vn.role:Theme	local:users	.
+local:different_modes	rdfs:subClassOf	local:modes	.
+local:allowing	vn.role:Agent	local:different_scenarios	.
+local:support	local:AM-MOD	local:must	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:previous_baseline_versions	rdfs:subClassOf	local:versions	.
+local:previous	rdfs:member	local:previous_baseline	.
+local:support_in_single_framework	local:in_singleframework	local:support	.
+local:different	rdfs:member	local:different_scenarios	.
+local:posted	local:AM-LOC	local:semantic_web	.
+local:easily_switch_between_different_modes	local:easilyswitch_between	local:different_modes	.
+local:different	rdfs:member	local:different_modes	.
+local:support	local:AM-LOC	local:single_framework_allowing	.
+local:previous_baseline	rdfs:subClassOf	local:baseline	.
+local:discuss	vn.role:Patient2	local:highlevel_tasks	.
+local:new_versions	rdfs:subClassOf	local:versions	.
+local:exercise	local:AM-MOD	local:may	.
+local:managers_of_projects	local:of_projects	local:managers	.
+local:different_scenarios	rdfs:subClassOf	local:scenarios	.
+local:different_easily_modes	rdfs:subClassOf	local:easily_modes	.
+local:switch	vn.role:Patient	local:different_easily_modes	.
+local:discuss	vn.role:Patient1	local:we	.
+local:successive_ontology	rdfs:subClassOf	local:ontology	.
+local:comprehensive	rdfs:member	local:comprehensive_set	.
+local:changes_from_previous_baseline_versions	local:changes_from	local:previous_baseline_versions	.
+local:ontology_versions	rdfs:subClassOf	local:versions	.
+local:present	vn.role:Agent	local:we	.
+local:unified_comprehensive_set	rdfs:subClassOf	local:set	.
+local:unified_comprehensive_set_of_tools	local:unifiedcomprehensiveset_of	local:tools	.
+local:easily_switch_between_different_modes	local:between_differentmodes	local:easily_switch	.
+local:successive	rdfs:member	local:successive_ontology	.
+local:allowing	vn.role:Agent	local:unified_comprehensive_set_of_tools	.
+local:previous_baseline	rdfs:member	local:previous_baseline_versions	.
+local:successive_ontology_versions	rdfs:subClassOf	local:ontology_versions	.
+local:unified_comprehensive	rdfs:subClassOf	local:comprehensive	.
+local:unified_comprehensive	rdfs:member	local:unified_comprehensive_set	.
+local:new	rdfs:member	local:new_baseline	.
+local:rejecting	vn.role:Agent	local:managers	.
+local:rejecting	local:AM-TMP	local:published	.
+local:posted	local:AM-MOD	local:can	.
+local:ontology	rdfs:member	local:ontology_versions	.
+local:accepting	local:AM-TMP	local:published	.
+local:support_in_single_framework	local:support_in	local:single_framework	.
+local:posted	vn.role:Theme	local:successive_ontology_versions	.
+local:single_framework_allowing	local:singleframework_	local:allowing	.
+local:support	vn.role:Experiencer	local:different_scenarios	.
+local:unified_comprehensive_set_of_tools	local:of_tools	local:unified_comprehensive_set	.
+local:easily_switch	rdfs:subClassOf	local:switch	.
+local:highlevel_tasks	rdfs:subClassOf	local:tasks	.
+local:accepting	vn.role:Proposition	local:projects	.
+local:discovering	vn.role:Theme	local:new_serendipitously_versions	.
+local:switch	vn.role:Agent	local:users	.
+local:new	rdfs:member	local:new_versions	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:quality	rdfs:member	local:quality_control	.

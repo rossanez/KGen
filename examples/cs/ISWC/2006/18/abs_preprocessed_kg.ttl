@@ -1,0 +1,178 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:presented	rdfs:label	"presented"	.
+
+local:work	rdfs:label	"work"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:large	rdfs:label	"large"	.
+
+local:large_amounts	rdfs:label	"large amounts"	.
+
+local:amounts	rdfs:label	"amounts"	.
+
+local:semistructured_data	rdfs:label	"semistructured data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:large_amounts_of_semistructured_data	rdfs:label	"large amounts of semistructured data"	.
+
+local:obtain	rdfs:label	"obtain"	.
+
+local:web	rdfs:label	"web"	.
+
+local:harvesting	rdfs:label	"harvesting"	.
+
+local:largescale_query_answering	rdfs:label	"large-scale query answering"	.
+
+local:answering	rdfs:label	"answering"	.
+
+local:largescale_query	rdfs:label	"large-scale query"	.
+
+local:web_sources	rdfs:label	"web sources"	.
+
+local:largescale	rdfs:label	"large-scale"	.
+
+local:query	rdfs:label	"query"	.
+
+local:query_answering	rdfs:label	"query answering"	.
+
+local:sources	rdfs:label	"sources"	.
+
+local:largescale_query_answering_over_web_sources	rdfs:label	"large-scale query answering over web sources"	.
+
+local:enabling	rdfs:label	"enabling"	.
+
+local:prerequisite	rdfs:label	"prerequisite"	.
+
+local:contrast	rdfs:label	"contrast"	.
+
+local:we	rdfs:label	"we"	.
+
+local:conventional_web	rdfs:label	"conventional web"	.
+
+local:conventional_web_crawlers	rdfs:label	"conventional web crawlers"	.
+
+local:web_crawlers	rdfs:label	"web crawlers"	.
+
+local:conventional	rdfs:label	"conventional"	.
+
+local:pipelined_architecture	rdfs:label	"pipelined architecture"	.
+
+local:architecture	rdfs:label	"architecture"	.
+
+local:crawlers	rdfs:label	"crawlers"	.
+
+local:pipelined	rdfs:label	"pipelined"	.
+
+local:fivestep_pipelined_architecture	rdfs:label	"five-step pipelined architecture"	.
+
+local:approach_to_conventional_web_crawlers	rdfs:label	"approach to conventional web crawlers"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:index_data	rdfs:label	"index data"	.
+
+local:index	rdfs:label	"index"	.
+
+local:index_data_from_semantic_web	rdfs:label	"index data from semantic web"	.
+
+local:evaluate	rdfs:label	"evaluate"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:traditional	rdfs:label	"traditional"	.
+
+local:crawl	rdfs:label	"crawl"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:pipelined_architecture	owl:sameAs	cso:pipelined_architecture	.
+local:query_answering	owl:sameAs	cso:query_answering	.
+cso:query_answering	rdfs:label	"query answering"	.
+local:web_crawlers	owl:sameAs	cso:web_crawlers	.
+cso:web_crawlers	rdfs:label	"web crawlers"	.
+cso:pipelined_architecture	rdfs:label	"pipelined architecture"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+
+#### Relations ####
+
+local:index_data_from_semantic_web	local:indexdata_from	local:semantic_web	.
+local:enabling	vn.role:Patient	local:largescale_query_answering_over_web_sources	.
+local:harvesting	vn.role:Patient	local:semistructured_data	.
+local:contrast	vn.role:Agent	local:index_data_from_semantic_web	.
+local:presented	local:AM-LOC	local:paper	.
+local:contrast	vn.role:Agent	local:crawl	.
+local:conventional_web	rdfs:member	local:conventional_web_crawlers	.
+local:fivestep_pipelined_architecture	rdfs:subClassOf	local:pipelined_architecture	.
+local:obtain	vn.role:indirect_object	local:web	.
+local:contrast	vn.role:Patient2	local:approach_to_conventional_web_crawlers	.
+local:largescale_query	rdfs:subClassOf	local:query	.
+local:contrast	vn.role:Patient1	local:we	.
+local:answering	vn.role:Agent	local:largescale_query	.
+local:web	rdfs:member	local:web_sources	.
+local:web_sources	rdfs:subClassOf	local:sources	.
+local:evaluate	vn.role:other	local:semantic_web	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:describe	vn.role:Predicate	local:crawl	.
+local:evaluate	vn.role:Attribute	local:crawl	.
+local:largescale_query_answering	rdfs:subClassOf	local:answering	.
+local:largescale_query	rdfs:member	local:largescale_query_answering	.
+local:large	rdfs:member	local:large_amounts	.
+local:conventional	rdfs:member	local:conventional_web	.
+local:describe	vn.role:Predicate	local:index_data_from_semantic_web	.
+local:enabling	vn.role:Agent	local:prerequisite	.
+local:conventional_web_crawlers	rdfs:subClassOf	local:web_crawlers	.
+local:describe	vn.role:Agent	local:we	.
+local:approach	vn.role:indirect_object	local:index_data_from_semantic_web	.
+local:conventional_web_crawlers	rdfs:subClassOf	local:crawlers	.
+local:evaluate	vn.role:other	local:traditional	.
+local:large_amounts_of_semistructured_data	local:largeamounts_of	local:semistructured_data	.
+local:obtain	vn.role:object	local:large_amounts_of_semistructured_data	.
+local:harvesting	vn.role:Agent	local:largescale_query_answering_over_web_sources	.
+local:pipelined_architecture	rdfs:subClassOf	local:architecture	.
+local:evaluate	vn.role:Attribute	local:index_data	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:web	rdfs:member	local:web_crawlers	.
+local:semistructured_data	rdfs:subClassOf	local:data	.
+local:conventional_web	rdfs:subClassOf	local:web	.
+local:index	rdfs:member	local:index_data	.
+local:largescale_query_answering_over_web_sources	local:large-scalequeryanswering_over	local:web_sources	.
+local:presented	vn.role:Theme	local:work	.
+local:approach_to_conventional_web_crawlers	local:to_conventionalwebcrawlers	local:approach	.
+local:index_data_from_semantic_web	local:from_semanticweb	local:index_data	.
+local:approach_to_conventional_web_crawlers	local:approach_to	local:conventional_web_crawlers	.
+local:approach	vn.role:indirect_object	local:crawl	.
+local:index_data	rdfs:subClassOf	local:data	.
+local:large_amounts	rdfs:subClassOf	local:amounts	.
+local:evaluate	vn.role:Theme	local:fivestep_pipelined_architecture	.
+local:describe	vn.role:Theme	local:fivestep_pipelined_architecture	.
+local:largescale_query_answering_over_web_sources	local:over_websources	local:largescale_query_answering	.
+local:approach	vn.role:indirect_object	local:conventional_web_crawlers	.
+local:large_amounts_of_semistructured_data	local:of_semistructureddata	local:large_amounts	.
+local:approach	vn.role:object	local:we	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:describe	vn.role:other	local:traditional	.
+local:web_crawlers	rdfs:subClassOf	local:crawlers	.
+local:answering	vn.role:Predicate	local:web_sources	.
+local:pipelined	rdfs:member	local:pipelined_architecture	.
+local:largescale	rdfs:member	local:largescale_query	.
+local:query	rdfs:member	local:query_answering	.
+local:largescale_query_answering	rdfs:subClassOf	local:query_answering	.
+local:evaluate	vn.role:Agent	local:we	.
+local:describe	vn.role:Predicate	local:index_data	.

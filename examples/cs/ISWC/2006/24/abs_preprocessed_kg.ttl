@@ -1,0 +1,207 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:owl_ontologies	rdfs:label	"owl ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:reasoning_on_owl_ontologies	rdfs:label	"reasoning on owl ontologies"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:known	rdfs:label	"known"	.
+
+local:intractable_in_worstcase	rdfs:label	"intractable in worst-case"	.
+
+local:intractable	rdfs:label	"intractable"	.
+
+local:worstcase	rdfs:label	"worst-case"	.
+
+local:numerous	rdfs:label	"numerous"	.
+
+local:numerous_assertions	rdfs:label	"numerous assertions"	.
+
+local:individuals	rdfs:label	"individuals"	.
+
+local:individuals_relations	rdfs:label	"individuals relations"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:assertions	rdfs:label	"assertions"	.
+
+local:numerous_assertions_about_individuals_relations	rdfs:label	"numerous assertions about individuals relations"	.
+
+local:most_owl	rdfs:label	"most owl"	.
+
+local:most_owl_ontologies	rdfs:label	"most owl ontologies"	.
+
+local:most	rdfs:label	"most"	.
+
+local:practice_most_owl_ontologies	rdfs:label	"practice most owl ontologies"	.
+
+local:have	rdfs:label	"have"	.
+
+local:large	rdfs:label	"large"	.
+
+local:large_aboxes	rdfs:label	"large aboxes"	.
+
+local:aboxes	rdfs:label	"aboxes"	.
+
+local:uses	rdfs:label	"uses"	.
+
+local:technique	rdfs:label	"technique"	.
+
+local:summary_of_ontology	rdfs:label	"summary of ontology"	.
+
+local:summary	rdfs:label	"summary"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:reduce	rdfs:label	"reduce"	.
+
+local:small	rdfs:label	"small"	.
+
+local:small_subset	rdfs:label	"small subset"	.
+
+local:original_abox	rdfs:label	"original abox"	.
+
+local:abox	rdfs:label	"abox"	.
+
+local:subset	rdfs:label	"subset"	.
+
+local:original	rdfs:label	"original"	.
+
+local:small_subset_of_original_abox	rdfs:label	"small subset of original abox"	.
+
+local:prove	rdfs:label	"prove"	.
+
+local:summary_abox	rdfs:label	"summary abox"	.
+
+local:summary_of_summary_abox	rdfs:label	"summary of summary abox"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:we	rdfs:label	"we"	.
+
+local:4_ontologies	rdfs:label	"4 ontologies"	.
+
+local:largest_of_which	rdfs:label	"largest of which"	.
+
+local:largest	rdfs:label	"largest"	.
+
+local:which	rdfs:label	"which"	.
+
+local:has	rdfs:label	"has"	.
+
+local:role	rdfs:label	"role"	.
+
+local:role_assertions	rdfs:label	"role assertions"	.
+
+local:million_role_assertions	rdfs:label	"million role assertions"	.
+
+local:65_million	rdfs:label	"6.5 million"	.
+
+local:million	rdfs:label	"million"	.
+
+local:demonstrate	rdfs:label	"demonstrate"	.
+
+local:consistency_detection	rdfs:label	"consistency detection"	.
+
+local:detection	rdfs:label	"detection"	.
+
+local:consistency	rdfs:label	"consistency"	.
+
+local:scalability_of_technique	rdfs:label	"scalability of technique"	.
+
+local:scalability	rdfs:label	"scalability"	.
+
+local:scalability_of_technique_for_consistency_detection	rdfs:label	"scalability of technique for consistency detection"	.
+
+local:consistency_detection_in_4_ontologies	rdfs:label	"consistency detection in 4 ontologies"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:owl	rdfs:label	"owl"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+
+#### Relations ####
+
+local:owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:summary_of_summary_abox	local:summary_of	local:summary_abox	.
+local:consistency_detection_in_4_ontologies	local:consistencydetection_in	local:4_ontologies	.
+local:known	vn.role:Theme	local:reasoning_on_owl_ontologies	.
+local:numerous_assertions_about_individuals_relations	local:numerousassertions_about	local:individuals_relations	.
+local:uses	vn.role:Theme	local:summary_of_summary_abox	.
+local:summary_of_ontology	local:summary_of	local:ontology	.
+local:reduce	vn.role:Patient	local:reasoning	.
+local:summary_of_ontology	local:of_ontology	local:summary	.
+local:uses	vn.role:Agent	local:technique	.
+local:reduce	vn.role:Proposition	local:small_subset_of_original_abox	.
+local:role_assertions	rdfs:subClassOf	local:assertions	.
+local:most_owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:demonstrate	vn.role:Cause	local:scalability_of_technique_for_consistency_detection	.
+local:65_million	rdfs:subClassOf	local:million	.
+local:numerous_assertions_about_individuals_relations	local:about_individualsrelations	local:numerous_assertions	.
+local:intractable_in_worstcase	local:intractable_in	local:worstcase	.
+local:reduce	vn.role:Cause	local:technique	.
+local:practice_most_owl_ontologies	rdfs:subClassOf	local:most_owl_ontologies	.
+local:4_ontologies	rdfs:subClassOf	local:ontologies	.
+local:largest_of_which	local:largest_of	local:which	.
+local:consistency_detection	rdfs:subClassOf	local:detection	.
+local:consistency	rdfs:member	local:consistency_detection	.
+local:individuals_relations	rdfs:subClassOf	local:relations	.
+local:owl	rdfs:member	local:owl_ontologies	.
+local:individuals	rdfs:member	local:individuals_relations	.
+local:summary_abox	rdfs:subClassOf	local:abox	.
+local:have	vn.role:Stimulus	local:large_aboxes	.
+local:summary	rdfs:member	local:summary_abox	.
+local:scalability_of_technique	local:scalability_of	local:technique	.
+local:consistency_detection_in_4_ontologies	local:in_4ontologies	local:consistency_detection	.
+local:prove	vn.role:Agent	local:technique	.
+local:scalability_of_technique_for_consistency_detection	local:for_consistencydetection	local:scalability_of_technique	.
+local:most_owl	rdfs:member	local:most_owl_ontologies	.
+local:propose	vn.role:Topic	local:technique	.
+local:most_owl_ontologies	rdfs:subClassOf	local:owl_ontologies	.
+local:has	vn.role:Experiencer	local:4_ontologies	.
+local:scalability_of_technique_for_consistency_detection	local:scalabilityoftechnique_for	local:consistency_detection	.
+local:uses	vn.role:Theme	local:summary_of_ontology	.
+local:small	rdfs:member	local:small_subset	.
+local:intractable_in_worstcase	local:in_worst-case	local:intractable	.
+local:scalability_of_technique	local:of_technique	local:scalability	.
+local:most	rdfs:member	local:most_owl	.
+local:reasoning_on_owl_ontologies	local:on_owlontologies	local:reasoning	.
+local:summary_of_summary_abox	local:of_summaryabox	local:summary	.
+local:small_subset_of_original_abox	local:smallsubset_of	local:original_abox	.
+local:known	local:AM-CAU	local:numerous_assertions_about_individuals_relations	.
+local:original	rdfs:member	local:original_abox	.
+local:has	vn.role:Stimulus	local:million_role_assertions	.
+local:have	local:AM-MNR	local:practice_most_owl_ontologies	.
+local:demonstrate	vn.role:Recipient	local:we	.
+local:large_aboxes	rdfs:subClassOf	local:aboxes	.
+local:role	rdfs:member	local:role_assertions	.
+local:largest_of_which	local:of_which	local:largest	.
+local:original_abox	rdfs:subClassOf	local:abox	.
+local:large	rdfs:member	local:large_aboxes	.
+local:million_role_assertions	rdfs:subClassOf	local:role_assertions	.
+local:small_subset_of_original_abox	local:of_originalabox	local:small_subset	.
+local:numerous	rdfs:member	local:numerous_assertions	.
+local:small_subset	rdfs:subClassOf	local:subset	.
+local:numerous_assertions	rdfs:subClassOf	local:assertions	.
+local:reasoning_on_owl_ontologies	local:reasoning_on	local:owl_ontologies	.
+local:known	vn.role:Predicate	local:intractable_in_worstcase	.
+local:propose	vn.role:Agent	local:we	.
+local:most_owl	rdfs:subClassOf	local:owl	.

@@ -1,0 +1,215 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:based	rdfs:label	"based"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+local:gold	rdfs:label	"gold"	.
+
+local:gold_standard	rdfs:label	"gold standard"	.
+
+local:several_measures	rdfs:label	"several measures"	.
+
+local:measures	rdfs:label	"measures"	.
+
+local:several	rdfs:label	"several"	.
+
+local:standard	rdfs:label	"standard"	.
+
+local:several_measures_for_gold_standard	rdfs:label	"several measures for gold standard"	.
+
+local:distinguished	rdfs:label	"distinguished"	.
+
+local:can	rdfs:label	"can"	.
+
+local:lexical_term_layer	rdfs:label	"lexical term layer"	.
+
+local:layer	rdfs:label	"layer"	.
+
+local:term_layer	rdfs:label	"term layer"	.
+
+local:term	rdfs:label	"term"	.
+
+local:lexical_term	rdfs:label	"lexical term"	.
+
+local:lexical	rdfs:label	"lexical"	.
+
+local:eg_lexical_term_layer	rdfs:label	"e.g. lexical term layer"	.
+
+local:layers_of_eg_lexical_term_layer	rdfs:label	"layers of e.g. lexical term layer"	.
+
+local:layers	rdfs:label	"layers"	.
+
+local:based_evaluation	rdfs:label	"based evaluation"	.
+
+local:based_evaluation_of_ontology	rdfs:label	"based evaluation of ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:learning	rdfs:label	"learning"	.
+
+local:evaluate	rdfs:label	"evaluate"	.
+
+local:layers_of_ontology	rdfs:label	"layers of ontology"	.
+
+local:concept_hierarchy	rdfs:label	"concept hierarchy"	.
+
+local:hierarchy	rdfs:label	"hierarchy"	.
+
+local:layers_of_concept_hierarchy	rdfs:label	"layers of concept hierarchy"	.
+
+local:list_of_criteria	rdfs:label	"list of criteria"	.
+
+local:list	rdfs:label	"list"	.
+
+local:criteria	rdfs:label	"criteria"	.
+
+local:judging	rdfs:label	"judging"	.
+
+local:we	rdfs:label	"we"	.
+
+local:show	rdfs:label	"show"	.
+
+local:sufficient_measures	rdfs:label	"sufficient measures"	.
+
+local:exist	rdfs:label	"exist"	.
+
+local:evaluating	rdfs:label	"evaluating"	.
+
+local:concept_hierarchies	rdfs:label	"concept hierarchies"	.
+
+local:hierarchies	rdfs:label	"hierarchies"	.
+
+local:concept	rdfs:label	"concept"	.
+
+local:existing_measures	rdfs:label	"existing measures"	.
+
+local:existing_measures_for_evaluation	rdfs:label	"existing measures for evaluation"	.
+
+local:evaluation_of_concept_hierarchies	rdfs:label	"evaluation of concept hierarchies"	.
+
+local:fail	rdfs:label	"fail"	.
+
+local:however	rdfs:label	"however"	.
+
+local:basic_criteria	rdfs:label	"basic criteria"	.
+
+local:basic	rdfs:label	"basic"	.
+
+local:meet	rdfs:label	"meet"	.
+
+local:new_taxonomic_measure	rdfs:label	"new taxonomic measure"	.
+
+local:measure	rdfs:label	"measure"	.
+
+local:taxonomic_measure	rdfs:label	"taxonomic measure"	.
+
+local:new_taxonomic	rdfs:label	"new taxonomic"	.
+
+local:new	rdfs:label	"new"	.
+
+local:taxonomic	rdfs:label	"taxonomic"	.
+
+local:overcomes	rdfs:label	"overcomes"	.
+
+local:current	rdfs:label	"current"	.
+
+local:current_approaches	rdfs:label	"current approaches"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:problems_of_current_approaches	rdfs:label	"problems of current approaches"	.
+
+local:problems	rdfs:label	"problems"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:paper	rdfs:label	"paper"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+
+#### Relations ####
+
+local:layers_of_eg_lexical_term_layer	local:of_e.g.lexicaltermlayer	local:layers	.
+local:based_evaluation_of_ontology	local:of_ontology	local:based_evaluation	.
+local:concept	rdfs:member	local:concept_hierarchies	.
+local:list_of_criteria	local:list_of	local:criteria	.
+local:new_taxonomic_measure	rdfs:subClassOf	local:taxonomic_measure	.
+local:overcomes	vn.role:Theme2	local:problems_of_current_approaches	.
+local:layers_of_concept_hierarchy	local:layers_of	local:concept_hierarchy	.
+local:distinguished	vn.role:Patient	local:several_measures_for_gold_standard	.
+local:basic	rdfs:member	local:basic_criteria	.
+local:gold	rdfs:member	local:gold_standard	.
+local:several_measures_for_gold_standard	local:severalmeasures_for	local:gold_standard	.
+local:based_evaluation	rdfs:subClassOf	local:evaluation	.
+local:exist	vn.role:Location	local:sufficient_measures	.
+local:layers_of_eg_lexical_term_layer	local:layers_of	local:eg_lexical_term_layer	.
+local:taxonomic_measure	rdfs:subClassOf	local:measure	.
+local:overcomes	vn.role:Theme1	local:new_taxonomic_measure	.
+local:problems_of_current_approaches	local:problems_of	local:current_approaches	.
+local:lexical	rdfs:member	local:lexical_term	.
+local:lexical_term_layer	rdfs:subClassOf	local:term_layer	.
+local:concept_hierarchies	rdfs:subClassOf	local:hierarchies	.
+local:taxonomic	rdfs:member	local:taxonomic_measure	.
+local:judging	vn.role:Agent	local:we	.
+local:new_taxonomic	rdfs:member	local:new_taxonomic_measure	.
+local:basic_criteria	rdfs:subClassOf	local:criteria	.
+local:new	rdfs:member	local:new_taxonomic	.
+local:presents	vn.role:Theme	local:new_taxonomic_measure	.
+local:several	rdfs:member	local:several_measures	.
+local:lexical_term	rdfs:member	local:lexical_term_layer	.
+local:based_evaluation_of_ontology	local:basedevaluation_of	local:ontology	.
+local:evaluation_of_concept_hierarchies	local:of_concepthierarchies	local:evaluation	.
+local:new_taxonomic_measure	rdfs:subClassOf	local:measure	.
+local:new_taxonomic	rdfs:subClassOf	local:taxonomic	.
+local:learning	local:AM-MNR	local:list_of_criteria	.
+local:distinguished	vn.role:Agent	local:layers_of_eg_lexical_term_layer	.
+local:layers_of_ontology	local:of_ontology	local:layers	.
+local:show	vn.role:Agent	local:we	.
+local:fail	vn.role:indirect_object	local:meet	.
+local:distinguished	vn.role:Agent	local:layers_of_ontology	.
+local:based	vn.role:Cause	local:evaluation	.
+local:distinguished	vn.role:Agent	local:layers_of_concept_hierarchy	.
+local:lexical_term_layer	rdfs:subClassOf	local:layer	.
+local:evaluating	vn.role:Theme	local:lexical_term_layer	.
+local:layers_of_concept_hierarchy	local:of_concepthierarchy	local:layers	.
+local:sufficient_measures	rdfs:subClassOf	local:measures	.
+local:term_layer	rdfs:subClassOf	local:layer	.
+local:current	rdfs:member	local:current_approaches	.
+local:several_measures_for_gold_standard	local:for_goldstandard	local:several_measures	.
+local:term	rdfs:member	local:term_layer	.
+local:concept_hierarchy	rdfs:subClassOf	local:hierarchy	.
+local:learning	vn.role:Agent	local:evaluate	.
+local:several_measures	rdfs:subClassOf	local:measures	.
+local:distinguished	local:AM-MOD	local:can	.
+local:layers_of_ontology	local:layers_of	local:ontology	.
+local:problems_of_current_approaches	local:of_currentapproaches	local:problems	.
+local:lexical_term	rdfs:subClassOf	local:term	.
+local:existing_measures_for_evaluation	local:for_evaluation	local:existing_measures	.
+local:learning	vn.role:Agent	local:gold_standard	.
+local:list_of_criteria	local:of_criteria	local:list	.
+local:show	local:AM-ADV	local:judging	.
+local:meet	vn.role:Theme1	local:however	.
+local:existing_measures_for_evaluation	local:existingmeasures_for	local:evaluation	.
+local:gold_standard	rdfs:subClassOf	local:standard	.
+local:show	vn.role:Theme	local:exist	.
+local:judging	vn.role:Theme	local:several_measures_for_gold_standard	.
+local:existing_measures	rdfs:subClassOf	local:measures	.
+local:evaluation_of_concept_hierarchies	local:evaluation_of	local:concept_hierarchies	.
+local:eg_lexical_term_layer	rdfs:subClassOf	local:lexical_term_layer	.
+local:fail	vn.role:Theme	local:however	.
+local:presents	vn.role:Agent	local:paper	.
+local:current_approaches	rdfs:subClassOf	local:approaches	.
+local:meet	vn.role:Theme2	local:basic_criteria	.
