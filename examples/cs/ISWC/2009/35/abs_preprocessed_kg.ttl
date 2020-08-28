@@ -1,0 +1,241 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:core_services	rdfs:label	"core services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:core	rdfs:label	"core"	.
+
+local:provided	rdfs:label	"provided"	.
+
+local:owl_reasoners	rdfs:label	"owl reasoners"	.
+
+local:reasoners	rdfs:label	"reasoners"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:subclass	rdfs:label	"subclass"	.
+
+local:subclass_relationships	rdfs:label	"subclass relationships"	.
+
+local:class	rdfs:label	"class"	.
+
+local:class_names	rdfs:label	"class names"	.
+
+local:names	rdfs:label	"names"	.
+
+local:relationships	rdfs:label	"relationships"	.
+
+local:subclass_relationships_between_class_names	rdfs:label	"subclass relationships between class names"	.
+
+local:occurring	rdfs:label	"occurring"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:discovering	rdfs:label	"discovering"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:classification	rdfs:label	"classification"	.
+
+local:classification_algorithm	rdfs:label	"classification algorithm"	.
+
+local:algorithm	rdfs:label	"algorithm"	.
+
+local:exploits	rdfs:label	"exploits"	.
+
+local:large	rdfs:label	"large"	.
+
+local:large_ontologies	rdfs:label	"large ontologies"	.
+
+local:partial_information	rdfs:label	"partial information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:partial	rdfs:label	"partial"	.
+
+local:partial_information_about_subclass_relationships	rdfs:label	"partial information about subclass relationships"	.
+
+local:working_with_large_ontologies	rdfs:label	"working with large ontologies"	.
+
+local:working	rdfs:label	"working"	.
+
+local:reduce	rdfs:label	"reduce"	.
+
+local:cost	rdfs:label	"cost"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:individual	rdfs:label	"individual"	.
+
+local:individual_tests	rdfs:label	"individual tests"	.
+
+local:tests	rdfs:label	"tests"	.
+
+local:number_of_individual_tests	rdfs:label	"number of individual tests"	.
+
+local:number	rdfs:label	"number"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:also	rdfs:label	"also"	.
+
+local:such_partial	rdfs:label	"such partial"	.
+
+local:such_partial_information	rdfs:label	"such partial information"	.
+
+local:such	rdfs:label	"such"	.
+
+local:existing_reasoners	rdfs:label	"existing reasoners"	.
+
+local:such_partial_information_from_existing_reasoners	rdfs:label	"such partial information from existing reasoners"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:extracting	rdfs:label	"extracting"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:empirical	rdfs:label	"empirical"	.
+
+local:empirical_results	rdfs:label	"empirical results"	.
+
+local:results	rdfs:label	"results"	.
+
+local:prototypical_implementation	rdfs:label	"prototypical implementation"	.
+
+local:implementation	rdfs:label	"implementation"	.
+
+local:prototypical	rdfs:label	"prototypical"	.
+
+local:empirical_results_from_prototypical_implementation	rdfs:label	"empirical results from prototypical implementation"	.
+
+local:demonstrate	rdfs:label	"demonstrate"	.
+
+local:substantial	rdfs:label	"substantial"	.
+
+local:substantial_performance	rdfs:label	"substantial performance"	.
+
+local:substantial_performance_improvements	rdfs:label	"substantial performance improvements"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:improvements	rdfs:label	"improvements"	.
+
+local:performance_improvements	rdfs:label	"performance improvements"	.
+
+local:compared	rdfs:label	"compared"	.
+
+local:implementations	rdfs:label	"implementations"	.
+
+local:existing_algorithms	rdfs:label	"existing algorithms"	.
+
+local:algorithms	rdfs:label	"algorithms"	.
+
+local:substantial_performance_improvements_compared	rdfs:label	"substantial performance improvements compared"	.
+
+local:compared_to_existing_algorithms	rdfs:label	"compared to existing algorithms"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:reasoner	rdfs:label	"reasoners"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontology	rdfs:label	"ontology"	.
+local:reasoners	owl:sameAs	cso:reasoner	.
+
+#### Relations ####
+
+local:existing	vn.role:Location	local:algorithms	.
+local:working	local:AM-MNR	local:large_ontologies	.
+local:number_of_individual_tests	local:number_of	local:individual_tests	.
+local:empirical_results_from_prototypical_implementation	local:from_prototypicalimplementation	local:empirical_results	.
+local:existing_algorithms	rdfs:subClassOf	local:algorithms	.
+local:class_names	rdfs:subClassOf	local:names	.
+local:partial	rdfs:member	local:partial_information	.
+local:reduce	vn.role:Patient	local:cost	.
+local:subclass	rdfs:member	local:subclass_relationships	.
+local:such_partial_information_from_existing_reasoners	local:from_existingreasoners	local:such_partial_information	.
+local:existing_reasoners	rdfs:subClassOf	local:reasoners	.
+local:present	vn.role:Agent	local:we	.
+local:prototypical	rdfs:member	local:prototypical_implementation	.
+local:substantial_performance	rdfs:subClassOf	local:performance	.
+local:owl	rdfs:member	local:owl_reasoners	.
+local:reduce	vn.role:Cause	local:classification_algorithm	.
+local:such_partial_information	rdfs:subClassOf	local:information	.
+local:working_with_large_ontologies	local:with_largeontologies	local:working	.
+local:describe	vn.role:Theme	local:techniques	.
+local:classification_algorithm	rdfs:subClassOf	local:algorithm	.
+local:prototypical_implementation	rdfs:subClassOf	local:implementation	.
+local:substantial_performance_improvements	rdfs:subClassOf	local:improvements	.
+local:compared_to_existing_algorithms	local:to_existingalgorithms	local:compared	.
+local:individual_tests	rdfs:subClassOf	local:tests	.
+local:classification	rdfs:member	local:classification_algorithm	.
+local:subclass_relationships_between_class_names	local:subclassrelationships_between	local:class_names	.
+local:number_of_individual_tests	local:of_individualtests	local:number	.
+local:demonstrate	vn.role:Cause	local:substantial_performance_improvements	.
+local:partial_information	rdfs:subClassOf	local:information	.
+local:extracting	vn.role:Theme	local:partial_information	.
+local:occurring	local:AM-LOC	local:ontology	.
+local:empirical_results	rdfs:subClassOf	local:results	.
+local:substantial_performance_improvements	rdfs:subClassOf	local:performance_improvements	.
+local:class	rdfs:member	local:class_names	.
+local:present	vn.role:Theme	local:classification_algorithm	.
+local:describe	vn.role:Agent	local:we	.
+local:describe	local:AM-DIS	local:also	.
+local:performance	rdfs:member	local:performance_improvements	.
+local:demonstrate	vn.role:Cause	local:substantial_performance_improvements_compared	.
+local:core_services	rdfs:subClassOf	local:services	.
+local:working_with_large_ontologies	local:working_with	local:large_ontologies	.
+local:such_partial_information_from_existing_reasoners	local:suchpartialinformation_from	local:existing_reasoners	.
+local:extracting	vn.role:Source	local:existing_reasoners	.
+local:demonstrate	vn.role:Recipient	local:empirical_results_from_prototypical_implementation	.
+local:compared	vn.role:Agent	local:implementations	.
+local:substantial	rdfs:member	local:substantial_performance	.
+local:subclass_relationships_between_class_names	local:between_classnames	local:subclass_relationships	.
+local:partial_information_about_subclass_relationships	local:about_subclassrelationships	local:partial_information	.
+local:substantial_performance	rdfs:member	local:substantial_performance_improvements	.
+local:partial_information_about_subclass_relationships	local:partialinformation_about	local:subclass_relationships	.
+local:compared	vn.role:Patient2	local:substantial_performance_improvements	.
+local:large_ontologies	rdfs:subClassOf	local:ontologies	.
+local:performance_improvements	rdfs:subClassOf	local:improvements	.
+local:exploits	vn.role:Agent	local:classification_algorithm	.
+local:substantial_performance_improvements_compared	local:_compared	local:substantial_performance_improvements	.
+local:large	rdfs:member	local:large_ontologies	.
+local:empirical	rdfs:member	local:empirical_results	.
+local:such_partial	rdfs:subClassOf	local:partial	.
+local:exploits	vn.role:Predicate	local:partial_information_about_subclass_relationships	.
+local:compared	vn.role:Agent	local:existing_algorithms	.
+local:provided	vn.role:Recipient	local:owl_reasoners	.
+local:provided	vn.role:Agent	local:core_services	.
+local:empirical_results_from_prototypical_implementation	local:empiricalresults_from	local:prototypical_implementation	.
+local:extracting	vn.role:Agent	local:techniques	.
+local:substantial_performance_improvements_compared	local:substantialperformanceimprovements_	local:compared	.
+local:discovering	vn.role:Theme	local:relations	.
+local:such	rdfs:member	local:such_partial	.
+local:individual	rdfs:member	local:individual_tests	.
+local:such_partial_information	rdfs:subClassOf	local:partial_information	.
+local:existing	vn.role:Location	local:reasoners	.
+local:compared_to_existing_algorithms	local:compared_to	local:existing_algorithms	.
+local:occurring	vn.role:Location	local:subclass_relationships_between_class_names	.
+local:reduce	vn.role:Patient	local:number_of_individual_tests	.
+local:such_partial	rdfs:member	local:such_partial_information	.
+local:core	rdfs:member	local:core_services	.
+local:owl_reasoners	rdfs:subClassOf	local:reasoners	.
+local:subclass_relationships	rdfs:subClassOf	local:relationships	.

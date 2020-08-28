@@ -1,0 +1,57 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:restricted	rdfs:label	"restricted"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:mostly	rdfs:label	"mostly"	.
+
+local:general	rdfs:label	"general"	.
+
+local:general_knowledge	rdfs:label	"general knowledge"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:general_knowledge_bases	rdfs:label	"general knowledge bases"	.
+
+local:bases	rdfs:label	"bases"	.
+
+local:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+local:used	rdfs:label	"used"	.
+
+local:attempts	rdfs:label	"attempts"	.
+
+local:tboxes	rdfs:label	"tboxes"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+#### Relations ####
+
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:general_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:knowledge	rdfs:member	local:knowledge_bases	.
+local:restricted	vn.role:Proposition	local:general_knowledge_bases	.
+local:used	local:AM-LOC	local:attempts	.
+local:general_knowledge	rdfs:member	local:general_knowledge_bases	.
+local:restricted	vn.role:Proposition	local:tboxes	.
+local:restricted	local:AM-ADV	local:mostly	.
+local:general_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
+local:general_knowledge	rdfs:subClassOf	local:knowledge	.
+local:general	rdfs:member	local:general_knowledge	.
+local:used	vn.role:Theme	local:ontologies	.
+local:restricted	vn.role:Patient	local:ontologies	.

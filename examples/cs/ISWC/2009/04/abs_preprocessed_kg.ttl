@@ -1,0 +1,252 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:focus	rdfs:label	"focus"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:design	rdfs:label	"design"	.
+
+local:design_patterns	rdfs:label	"design patterns"	.
+
+local:content_ontology_design	rdfs:label	"content ontology design"	.
+
+local:content_ontology_design_patterns	rdfs:label	"content ontology design patterns"	.
+
+local:ontology_design	rdfs:label	"ontology design"	.
+
+local:ontology_design_patterns	rdfs:label	"ontology design patterns"	.
+
+local:content_ontology	rdfs:label	"content ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:reuse	rdfs:label	"reuse"	.
+
+local:reuse_phases	rdfs:label	"reuse phases"	.
+
+local:content	rdfs:label	"content"	.
+
+local:initial_ontology	rdfs:label	"initial ontology"	.
+
+local:phases	rdfs:label	"phases"	.
+
+local:patterns	rdfs:label	"patterns"	.
+
+local:initial	rdfs:label	"initial"	.
+
+local:where_enriched	rdfs:label	"where enriched"	.
+
+local:enriched	rdfs:label	"enriched"	.
+
+local:based	rdfs:label	"based"	.
+
+local:content_odps	rdfs:label	"content odps"	.
+
+local:odps	rdfs:label	"odps"	.
+
+local:retain	rdfs:label	"retain"	.
+
+local:retain_phases	rdfs:label	"retain phases"	.
+
+local:especially_implementation	rdfs:label	"especially implementation"	.
+
+local:implementation	rdfs:label	"implementation"	.
+
+local:especially_implementation_of_phases	rdfs:label	"especially implementation of phases"	.
+
+local:constructed	rdfs:label	"constructed"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:automatically	rdfs:label	"automatically"	.
+
+local:subsequent_evaluation	rdfs:label	"subsequent evaluation"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+local:subsequent	rdfs:label	"subsequent"	.
+
+local:showing	rdfs:label	"showing"	.
+
+local:characteristics_of_ontologies	rdfs:label	"characteristics of ontologies"	.
+
+local:characteristics	rdfs:label	"characteristics"	.
+
+local:show	rdfs:label	"show"	.
+
+local:learning_methods	rdfs:label	"learning methods"	.
+
+local:methods	rdfs:label	"methods"	.
+
+local:ontology_learning_methods	rdfs:label	"ontology learning methods"	.
+
+local:existing_ontology_learning_methods	rdfs:label	"existing ontology learning methods"	.
+
+local:results_of_existing_ontology_learning_methods	rdfs:label	"results of existing ontology learning methods"	.
+
+local:results	rdfs:label	"results"	.
+
+local:possible	rdfs:label	"possible"	.
+
+local:improve	rdfs:label	"improve"	.
+
+local:reusing	rdfs:label	"reusing"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:learning	rdfs:label	"learning"	.
+
+local:selecting	rdfs:label	"selecting"	.
+
+local:background_knowledge	rdfs:label	"background knowledge"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:background	rdfs:label	"background"	.
+
+local:exploiting	rdfs:label	"exploiting"	.
+
+local:given	rdfs:label	"given"	.
+
+local:overall_structure	rdfs:label	"overall structure"	.
+
+local:structure	rdfs:label	"structure"	.
+
+local:overall	rdfs:label	"overall"	.
+
+local:richer	rdfs:label	"richer"	.
+
+local:richer_overall	rdfs:label	"richer overall"	.
+
+local:richer_overall_structure	rdfs:label	"richer overall structure"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:ontocase	rdfs:label	"ontocase"	.
+
+local:top	rdfs:label	"top"	.
+
+local:top_structure	rdfs:label	"top structure"	.
+
+local:general	rdfs:label	"general"	.
+
+local:general_top	rdfs:label	"general top"	.
+
+local:general_top_structure	rdfs:label	"general top structure"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:background_knowledge	owl:sameAs	cso:background_knowledge	.
+local:design_patterns	owl:sameAs	cso:design_patterns	.
+local:ontology_design	owl:sameAs	cso:ontology_design	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:background_knowledge	rdfs:label	"background knowledge"	.
+cso:ontology_design	rdfs:label	"ontology design"	.
+cso:design_patterns	rdfs:label	"design patterns"	.
+
+#### Relations ####
+
+local:subsequent	rdfs:member	local:subsequent_evaluation	.
+local:reuse_phases	rdfs:subClassOf	local:phases	.
+local:richer	rdfs:member	local:richer_overall	.
+local:especially_implementation	rdfs:subClassOf	local:implementation	.
+local:richer_overall_structure	rdfs:subClassOf	local:structure	.
+local:overall_structure	rdfs:subClassOf	local:structure	.
+local:show	vn.role:Theme	local:possible	.
+local:improve	vn.role:Patient	local:results_of_existing_ontology_learning_methods	.
+local:enriched	vn.role:Theme	local:especially_implementation_of_phases	.
+local:enriched	local:AM-MNR	local:content_ontology_design_patterns	.
+local:introduce	vn.role:Patient1	local:ontologies	.
+local:based	vn.role:indirect_object	local:content_ontology_design_patterns	.
+local:initial_ontology	rdfs:subClassOf	local:ontology	.
+local:top	rdfs:member	local:top_structure	.
+local:content_odps	rdfs:subClassOf	local:odps	.
+local:content_ontology_design_patterns	rdfs:subClassOf	local:patterns	.
+local:introduce	vn.role:Agent	local:ontocase	.
+local:subsequent_evaluation	rdfs:subClassOf	local:evaluation	.
+local:background	rdfs:member	local:background_knowledge	.
+local:initial	rdfs:member	local:initial_ontology	.
+local:constructed	vn.role:Product	local:ontologies	.
+local:enriched	local:AM-LOC	local:content_odps	.
+local:reusing	vn.role:Theme	local:content_odps	.
+local:ontology_design_patterns	rdfs:subClassOf	local:design_patterns	.
+local:based	local:AM-LOC	local:odps	.
+local:focus	vn.role:indirect_object	local:retain	.
+local:show	vn.role:Agent	local:we	.
+local:existing_ontology_learning_methods	rdfs:subClassOf	local:ontology_learning_methods	.
+local:given	local:AM-MNR	local:exploiting	.
+local:exploiting	vn.role:Predicate	local:background_knowledge	.
+local:based	vn.role:indirect_object	local:especially_implementation_of_phases	.
+local:based	vn.role:indirect_object	local:content_odps	.
+local:reuse	rdfs:member	local:reuse_phases	.
+local:design	rdfs:member	local:design_patterns	.
+local:improve	local:AM-MNR	local:reusing	.
+local:based	vn.role:Cause	local:ontologies	.
+local:overall	rdfs:member	local:overall_structure	.
+local:ontology_design	rdfs:member	local:ontology_design_patterns	.
+local:content	rdfs:member	local:content_odps	.
+local:given	vn.role:object	local:richer_overall_structure	.
+local:retain	rdfs:member	local:retain_phases	.
+local:constructed	local:AM-ADV	local:odps	.
+local:showing	vn.role:Theme	local:characteristics_of_ontologies	.
+local:ontology_design	rdfs:subClassOf	local:design	.
+local:learning_methods	rdfs:subClassOf	local:methods	.
+local:improve	local:AM-MNR	local:selecting	.
+local:focus	local:AM-LOC	local:paper	.
+local:design_patterns	rdfs:subClassOf	local:patterns	.
+local:richer_overall_structure	rdfs:subClassOf	local:overall_structure	.
+local:existing	vn.role:Location	local:ontology_learning_methods	.
+local:characteristics_of_ontologies	local:of_ontologies	local:characteristics	.
+local:characteristics_of_ontologies	local:characteristics_of	local:ontologies	.
+local:selecting	vn.role:Agent	local:content_odps	.
+local:content_ontology	rdfs:subClassOf	local:ontology	.
+local:top_structure	rdfs:subClassOf	local:structure	.
+local:results_of_existing_ontology_learning_methods	local:results_of	local:existing_ontology_learning_methods	.
+local:content	rdfs:member	local:content_ontology	.
+local:general_top	rdfs:member	local:general_top_structure	.
+local:retain	vn.role:Theme	local:phases	.
+local:general_top_structure	rdfs:subClassOf	local:top_structure	.
+local:content_ontology_design	rdfs:member	local:content_ontology_design_patterns	.
+local:showing	vn.role:Agent	local:subsequent_evaluation	.
+local:content_ontology_design_patterns	rdfs:subClassOf	local:ontology_design_patterns	.
+local:background_knowledge	rdfs:subClassOf	local:knowledge	.
+local:general	rdfs:member	local:general_top	.
+local:richer_overall	rdfs:subClassOf	local:overall	.
+local:given	vn.role:Asset	local:ontology	.
+local:retain_phases	rdfs:subClassOf	local:phases	.
+local:enriched	local:AM-LOC	local:retain	.
+local:constructed	local:AM-MNR	local:automatically	.
+local:general_top	rdfs:subClassOf	local:top	.
+local:focus	vn.role:Experiencer	local:we	.
+local:learning	vn.role:Agent	local:methods	.
+local:results_of_existing_ontology_learning_methods	local:of_existingontologylearningmethods	local:results	.
+local:ontology_learning_methods	rdfs:subClassOf	local:learning_methods	.
+local:introduce	vn.role:Patient	local:general_top_structure	.
+local:ontology	rdfs:member	local:ontology_design	.
+local:enriched	vn.role:Theme	local:initial_ontology	.
+local:content_ontology_design	rdfs:subClassOf	local:design	.
+local:based	local:AM-MNR	local:automatically	.
+local:exploiting	vn.role:Agent	local:ontology	.
+local:content_ontology	rdfs:member	local:content_ontology_design	.
+local:especially_implementation_of_phases	local:of_phases	local:especially_implementation	.
+local:especially_implementation_of_phases	local:especiallyimplementation_of	local:phases	.
+local:general_top_structure	rdfs:subClassOf	local:structure	.
+local:enriched	local:AM-LOC	local:reuse_phases	.
+local:focus	vn.role:indirect_object	local:reuse_phases	.
+local:where_enriched	rdfs:subClassOf	local:enriched	.
+local:ontology_design_patterns	rdfs:subClassOf	local:patterns	.
+local:richer_overall	rdfs:member	local:richer_overall_structure	.
