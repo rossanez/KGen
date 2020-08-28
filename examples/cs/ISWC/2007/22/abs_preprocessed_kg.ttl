@@ -1,0 +1,187 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+local:owl_knowledge_bases	rdfs:label	"owl knowledge bases"	.
+
+local:bases	rdfs:label	"bases"	.
+
+local:owl_knowledge	rdfs:label	"owl knowledge"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:querying	rdfs:label	"querying"	.
+
+local:investigate	rdfs:label	"investigate"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:major	rdfs:label	"major"	.
+
+local:major_design	rdfs:label	"major design"	.
+
+local:design	rdfs:label	"design"	.
+
+local:design_criteria	rdfs:label	"design criteria"	.
+
+local:conjunctive	rdfs:label	"conjunctive"	.
+
+local:conjunctive_ones—	rdfs:label	"conjunctive ones—"	.
+
+local:criteria	rdfs:label	"criteria"	.
+
+local:namely_conjunctive	rdfs:label	"namely conjunctive"	.
+
+local:namely_conjunctive_ones—	rdfs:label	"namely conjunctive ones—"	.
+
+local:desirable_form	rdfs:label	"desirable form"	.
+
+local:form	rdfs:label	"form"	.
+
+local:desirable	rdfs:label	"desirable"	.
+
+local:major_design_criteria	rdfs:label	"major design criteria"	.
+
+local:ones—	rdfs:label	"ones—"	.
+
+local:namely	rdfs:label	"namely"	.
+
+local:can_retained	rdfs:label	"can retained"	.
+
+local:retained	rdfs:label	"retained"	.
+
+local:namely_one	rdfs:label	"namely one"	.
+
+local:one	rdfs:label	"one"	.
+
+local:criteria_owl	rdfs:label	"criteria owl"	.
+
+local:namely_one_major_design_criteria	rdfs:label	"namely one major design criteria"	.
+
+local:can_used	rdfs:label	"can used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:conjunctive_ones	rdfs:label	"conjunctive ones"	.
+
+local:ones	rdfs:label	"ones"	.
+
+local:natural_desirable_form	rdfs:label	"natural desirable form"	.
+
+local:natural_desirable_form_of_queries	rdfs:label	"natural desirable form of queries"	.
+
+local:queries	rdfs:label	"queries"	.
+
+local:can_used_in_conjunction	rdfs:label	"can used in conjunction"	.
+
+local:conjunction	rdfs:label	"conjunction"	.
+
+local:conjunction_with_criteria_owl	rdfs:label	"conjunction with criteria owl"	.
+
+local:namely_one_major_design_criteria_of_latter	rdfs:label	"namely one major design criteria of latter"	.
+
+local:latter	rdfs:label	"latter"	.
+
+local:can	rdfs:label	"can"	.
+
+local:show	rdfs:label	"show"	.
+
+local:precisely	rdfs:label	"precisely"	.
+
+local:unrestricted_el	rdfs:label	"unrestricted el"	.
+
+local:el	rdfs:label	"el"	.
+
+local:unrestricted	rdfs:label	"unrestricted"	.
+
+local:decidable	rdfs:label	"decidable"	.
+
+local:also	rdfs:label	"also"	.
+
+local:undecidable	rdfs:label	"undecidable"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:complexity	rdfs:label	"complexity"	.
+
+local:analysis	rdfs:label	"analysis"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:owl_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:provide	local:AM-DIS	local:also	.
+local:conjunction_with_criteria_owl	local:conjunction_with	local:criteria_owl	.
+local:knowledge	rdfs:member	local:knowledge_bases	.
+local:unrestricted	rdfs:member	local:unrestricted_el	.
+local:show	vn.role:Theme	local:undecidable	.
+local:major_design	rdfs:member	local:major_design_criteria	.
+local:owl_knowledge	rdfs:subClassOf	local:knowledge	.
+local:namely_conjunctive_ones—	rdfs:subClassOf	local:ones—	.
+local:major_design_criteria	rdfs:subClassOf	local:design_criteria	.
+local:conjunctive	rdfs:member	local:conjunctive_ones—	.
+local:design	rdfs:member	local:design_criteria	.
+local:investigate	vn.role:Location	local:can_retained	.
+local:can_used_in_conjunction	local:in_conjunction	local:can_used	.
+local:major	rdfs:member	local:major_design	.
+local:querying	vn.role:Agent	local:we	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:show	vn.role:Theme	local:decidable	.
+local:show	local:AM-DIS	local:also	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:namely_one	rdfs:subClassOf	local:one	.
+local:major_design	rdfs:subClassOf	local:design	.
+local:desirable_form	rdfs:subClassOf	local:form	.
+local:namely_conjunctive	rdfs:subClassOf	local:conjunctive	.
+local:owl	rdfs:member	local:owl_knowledge	.
+local:namely_conjunctive	rdfs:member	local:namely_conjunctive_ones—	.
+local:investigate	local:AM-LOC	local:paper	.
+local:namely_one_major_design_criteria	rdfs:subClassOf	local:major_design_criteria	.
+local:can_used_in_conjunction	local:canused_in	local:conjunction	.
+local:natural_desirable_form_of_queries	local:of_queries	local:natural_desirable_form	.
+local:namely_one_major_design_criteria_of_latter	local:of_latter	local:namely_one_major_design_criteria	.
+local:provide	vn.role:Recipient	local:we	.
+local:investigate	vn.role:Agent	local:we	.
+local:design_criteria	rdfs:subClassOf	local:criteria	.
+local:conjunctive_ones	rdfs:subClassOf	local:ones	.
+local:show	vn.role:Agent	local:precisely	.
+local:unrestricted_el	rdfs:subClassOf	local:el	.
+local:used	vn.role:Theme	local:natural_desirable_form_of_queries	.
+local:major_design_criteria	rdfs:subClassOf	local:criteria	.
+local:namely_one_major_design_criteria_of_latter	local:namelyonemajordesigncriteria_of	local:latter	.
+local:provide	vn.role:indirect_object	local:analysis	.
+local:conjunctive_ones—	rdfs:subClassOf	local:ones—	.
+local:natural_desirable_form_of_queries	local:naturaldesirableform_of	local:queries	.
+local:used	local:AM-MOD	local:can	.
+local:provide	vn.role:Agent	local:complexity	.
+local:can_retained	rdfs:subClassOf	local:retained	.
+local:namely	rdfs:member	local:namely_conjunctive	.
+local:owl_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
+local:criteria_owl	rdfs:subClassOf	local:owl	.
+local:querying	vn.role:Theme	local:unrestricted_el	.
+local:conjunction_with_criteria_owl	local:with_criteriaowl	local:conjunction	.
+local:used	local:AM-LOC	local:can_retained	.
+local:natural_desirable_form	rdfs:subClassOf	local:desirable_form	.
+local:querying	vn.role:Theme	local:owl_knowledge_bases	.
+local:desirable	rdfs:member	local:desirable_form	.
+local:show	vn.role:Agent	local:we	.
+local:owl_knowledge	rdfs:member	local:owl_knowledge_bases	.

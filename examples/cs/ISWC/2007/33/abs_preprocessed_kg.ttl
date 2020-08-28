@@ -1,0 +1,143 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:instantiating	rdfs:label	"instantiating"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:manually_highquality	rdfs:label	"manually high-quality"	.
+
+local:highquality	rdfs:label	"high-quality"	.
+
+local:uptodate	rdfs:label	"up-to-date"	.
+
+local:uptodate_instance	rdfs:label	"up-to-date instance"	.
+
+local:instance	rdfs:label	"instance"	.
+
+local:uptodate_instance_information	rdfs:label	"up-to-date instance information"	.
+
+local:instance_information	rdfs:label	"instance information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:manually_information	rdfs:label	"manually information"	.
+
+local:instance_manually_information	rdfs:label	"instance manually information"	.
+
+local:uptodate_instance_manually_information	rdfs:label	"up-to-date instance manually information"	.
+
+local:possible_solutions	rdfs:label	"possible solutions"	.
+
+local:solutions	rdfs:label	"solutions"	.
+
+local:possible	rdfs:label	"possible"	.
+
+local:one_possible_solutions	rdfs:label	"one possible solutions"	.
+
+local:one_possible_solutions_to_problem	rdfs:label	"one possible solutions to problem"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:supported	rdfs:label	"supported"	.
+
+local:available_information	rdfs:label	"available information"	.
+
+local:population_of_ontology	rdfs:label	"population of ontology"	.
+
+local:population	rdfs:label	"population"	.
+
+local:population_of_ontology_through_exploitation	rdfs:label	"population of ontology through exploitation"	.
+
+local:exploitation	rdfs:label	"exploitation"	.
+
+local:exploitation_of_available_information	rdfs:label	"exploitation of available information"	.
+
+local:available_on_web	rdfs:label	"available on web"	.
+
+local:available	rdfs:label	"available"	.
+
+local:web	rdfs:label	"web"	.
+
+local:automatic_ontology	rdfs:label	"automatic ontology"	.
+
+local:web_sources	rdfs:label	"web sources"	.
+
+local:automatic_ontology_instantiation	rdfs:label	"automatic ontology instantiation"	.
+
+local:ontology_instantiation	rdfs:label	"ontology instantiation"	.
+
+local:instantiation	rdfs:label	"instantiation"	.
+
+local:automatic	rdfs:label	"automatic"	.
+
+local:sources	rdfs:label	"sources"	.
+
+local:automatic_ontology_instantiation_from_web_sources	rdfs:label	"automatic ontology instantiation from web sources"	.
+
+local:aims	rdfs:label	"aims"	.
+
+local:supported_through_exploitation	rdfs:label	"supported through exploitation"	.
+
+local:computer	rdfs:label	"computer"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:uptodate_instance_manually_information	rdfs:subClassOf	local:instance_manually_information	.
+local:instance_information	rdfs:subClassOf	local:information	.
+local:exploitation_of_available_information	local:exploitation_of	local:available_information	.
+local:automatic_ontology	rdfs:member	local:automatic_ontology_instantiation	.
+local:web	rdfs:member	local:web_sources	.
+local:uptodate_instance	rdfs:subClassOf	local:instance	.
+local:automatic_ontology_instantiation_from_web_sources	local:from_websources	local:automatic_ontology_instantiation	.
+local:instantiating	local:AM-MNR	local:uptodate_instance_manually_information	.
+local:available_information	rdfs:subClassOf	local:information	.
+local:manually_highquality	rdfs:subClassOf	local:highquality	.
+local:ontology	rdfs:member	local:ontology_instantiation	.
+local:possible_solutions	rdfs:subClassOf	local:solutions	.
+local:one_possible_solutions	rdfs:subClassOf	local:possible_solutions	.
+local:supported	vn.role:Theme	local:computer	.
+local:automatic	rdfs:member	local:automatic_ontology	.
+local:instantiating	local:AM-MNR	local:manually_highquality	.
+local:automatic_ontology_instantiation	rdfs:subClassOf	local:ontology_instantiation	.
+local:automatic_ontology	rdfs:subClassOf	local:ontology	.
+local:ontology_instantiation	rdfs:subClassOf	local:instantiation	.
+local:web_sources	rdfs:subClassOf	local:sources	.
+local:population_of_ontology_through_exploitation	local:populationofontology_through	local:exploitation	.
+local:aims	vn.role:indirect_object	local:supported_through_exploitation	.
+local:one_possible_solutions_to_problem	local:to_problem	local:one_possible_solutions	.
+local:exploitation_of_available_information	local:of_availableinformation	local:exploitation	.
+local:uptodate_instance_information	rdfs:subClassOf	local:information	.
+local:supported_through_exploitation	local:through_exploitation	local:supported	.
+local:population_of_ontology	local:of_ontology	local:population	.
+local:available_on_web	local:available_on	local:web	.
+local:population_of_ontology	local:population_of	local:ontology	.
+local:instance	rdfs:member	local:instance_information	.
+local:instance_manually_information	rdfs:subClassOf	local:manually_information	.
+local:supported_through_exploitation	local:supported_through	local:exploitation	.
+local:possible	rdfs:member	local:possible_solutions	.
+local:population_of_ontology_through_exploitation	local:through_exploitation	local:population_of_ontology	.
+local:aims	vn.role:Experiencer	local:automatic_ontology_instantiation_from_web_sources	.
+local:automatic_ontology_instantiation	rdfs:subClassOf	local:instantiation	.
+local:uptodate_instance	rdfs:member	local:uptodate_instance_information	.
+local:supported	vn.role:Theme	local:one_possible_solutions_to_problem	.
+local:automatic_ontology_instantiation_from_web_sources	local:automaticontologyinstantiation_from	local:web_sources	.
+local:manually_information	rdfs:subClassOf	local:information	.
+local:uptodate	rdfs:member	local:uptodate_instance	.
+local:instantiating	vn.role:Theme	local:ontology	.
+local:one_possible_solutions_to_problem	local:onepossiblesolutions_to	local:problem	.
+local:available_on_web	local:on_web	local:available	.
+local:supported	vn.role:Experiencer	local:population_of_ontology_through_exploitation	.

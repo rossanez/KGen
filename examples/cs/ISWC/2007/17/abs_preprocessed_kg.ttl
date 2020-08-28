@@ -1,0 +1,199 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:structured_data	rdfs:label	"structured data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:reusable_structured_data	rdfs:label	"reusable structured data"	.
+
+local:appears	rdfs:label	"appears"	.
+
+local:casual	rdfs:label	"casual"	.
+
+local:casual_users	rdfs:label	"casual users"	.
+
+local:users	rdfs:label	"users"	.
+
+local:appears_on_web	rdfs:label	"appears on web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:web_casual_users	rdfs:label	"web casual users"	.
+
+local:want	rdfs:label	"want"	.
+
+local:will	rdfs:label	"will"	.
+
+local:up	rdfs:label	"up"	.
+
+local:up_data	rdfs:label	"up data"	.
+
+local:take_into_casual_users	rdfs:label	"take into casual users"	.
+
+local:take	rdfs:label	"take"	.
+
+local:own	rdfs:label	"own"	.
+
+local:own_hands	rdfs:label	"own hands"	.
+
+local:hands	rdfs:label	"hands"	.
+
+local:task	rdfs:label	"task"	.
+
+local:mashing	rdfs:label	"mashing"	.
+
+local:mashup_sites	rdfs:label	"mash-up sites"	.
+
+local:sites	rdfs:label	"sites"	.
+
+local:mashup	rdfs:label	"mash-up"	.
+
+local:wait	rdfs:label	"wait"	.
+
+local:unique_needs	rdfs:label	"unique needs"	.
+
+local:needs	rdfs:label	"needs"	.
+
+local:individually_unique_needs	rdfs:label	"individually unique needs"	.
+
+local:individually_unique	rdfs:label	"individually unique"	.
+
+local:unique	rdfs:label	"unique"	.
+
+local:exactly_casual	rdfs:label	"exactly casual"	.
+
+local:exactly	rdfs:label	"exactly"	.
+
+local:exactly_casual_users	rdfs:label	"exactly casual users"	.
+
+local:individually	rdfs:label	"individually"	.
+
+local:built	rdfs:label	"built"	.
+
+local:address	rdfs:label	"address"	.
+
+local:present	rdfs:label	"present"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:user_interface	rdfs:label	"user interface"	.
+
+local:interface	rdfs:label	"interface"	.
+
+local:user	rdfs:label	"user"	.
+
+local:web_user_interface	rdfs:label	"web user interface"	.
+
+local:lets	rdfs:label	"lets"	.
+
+local:casual_users–	rdfs:label	"casual users–"	.
+
+local:users–	rdfs:label	"users–"	.
+
+local:expertise–_mash	rdfs:label	"expertise– mash"	.
+
+local:mash	rdfs:label	"mash"	.
+
+local:expertise–	rdfs:label	"expertise–"	.
+
+local:modeling_expertise	rdfs:label	"modeling expertise"	.
+
+local:expertise	rdfs:label	"expertise"	.
+
+local:data_modeling_expertise	rdfs:label	"data modeling expertise"	.
+
+local:mash_data_modeling_expertise	rdfs:label	"mash data modeling expertise"	.
+
+local:programming_skills	rdfs:label	"programming skills"	.
+
+local:skills	rdfs:label	"skills"	.
+
+local:those_without_programming_skills	rdfs:label	"those without programming skills"	.
+
+local:those	rdfs:label	"those"	.
+
+local:those_without_programming_skills_without_data_modeling_expertise	rdfs:label	"those without programming skills without data modeling expertise"	.
+
+local:potluck	rdfs:label	"potluck"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:user_interface	rdfs:label	"user interface"	.
+local:user_interface	owl:sameAs	cso:user_interface	.
+
+#### Relations ####
+
+local:mashing	vn.role:Patient	local:data	.
+local:expertise–_mash	rdfs:subClassOf	local:mash	.
+local:individually_unique	rdfs:member	local:individually_unique_needs	.
+local:casual	rdfs:member	local:casual_users	.
+local:web_casual_users	local:_casualusers	local:web	.
+local:exactly	rdfs:member	local:exactly_casual	.
+local:individually	rdfs:member	local:individually_unique	.
+local:take	vn.role:Theme	local:task	.
+local:present	vn.role:Theme	local:web_user_interface	.
+local:web_user_interface	rdfs:subClassOf	local:user_interface	.
+local:casual_users–	rdfs:subClassOf	local:users–	.
+local:take	vn.role:Agent	local:web_casual_users	.
+local:user_interface	rdfs:subClassOf	local:interface	.
+local:present	vn.role:Theme	local:potluck	.
+local:programming_skills	rdfs:subClassOf	local:skills	.
+local:user	rdfs:member	local:user_interface	.
+local:mashup	rdfs:member	local:mashup_sites	.
+local:take_into_casual_users	local:into_casualusers	local:take	.
+local:exactly_casual_users	rdfs:subClassOf	local:users	.
+local:take	vn.role:Source	local:own	.
+local:wait	local:AM-PNC	local:built	.
+local:wait	vn.role:indirect_object	local:mashup_sites	.
+local:appears	vn.role:Location	local:reusable_structured_data	.
+local:individually_unique_needs	rdfs:subClassOf	local:needs	.
+local:casual	rdfs:member	local:casual_users–	.
+local:lets	vn.role:Agent	local:web_user_interface	.
+local:reusable_structured_data	rdfs:subClassOf	local:structured_data	.
+local:up_data	rdfs:subClassOf	local:data	.
+local:appears_on_web	local:on_web	local:appears	.
+local:expertise–	rdfs:member	local:expertise–_mash	.
+local:data_modeling_expertise	rdfs:subClassOf	local:modeling_expertise	.
+local:take_into_casual_users	local:take_into	local:casual_users	.
+local:want	local:AM-ADV	local:structured_data	.
+local:those_without_programming_skills	local:without_programmingskills	local:those	.
+local:own_hands	rdfs:subClassOf	local:hands	.
+local:mashup_sites	rdfs:subClassOf	local:sites	.
+local:exactly_casual	rdfs:subClassOf	local:casual	.
+local:want	local:AM-MOD	local:will	.
+local:appears	vn.role:Location	local:structured_data	.
+local:those_without_programming_skills	local:those_without	local:programming_skills	.
+local:own	rdfs:member	local:own_hands	.
+local:want	vn.role:Theme	local:own	.
+local:present	local:AM-LOC	local:paper	.
+local:modeling_expertise	rdfs:subClassOf	local:expertise	.
+local:unique_needs	rdfs:subClassOf	local:needs	.
+local:those_without_programming_skills_without_data_modeling_expertise	local:without_datamodelingexpertise	local:those_without_programming_skills	.
+local:want	vn.role:Agent	local:appears_on_web	.
+local:web_casual_users	rdfs:subClassOf	local:casual_users	.
+local:exactly_casual	rdfs:member	local:exactly_casual_users	.
+local:lets	vn.role:Theme	local:casual_users	.
+local:built	vn.role:Material	local:mashup_sites	.
+local:web_casual_users	local:web_	local:casual_users	.
+local:appears_on_web	local:appears_on	local:web	.
+local:unique	rdfs:member	local:unique_needs	.
+local:present	vn.role:Agent	local:we	.
+local:built	vn.role:Material	local:address	.
+local:up	rdfs:member	local:up_data	.
+local:want	vn.role:Agent	local:web_casual_users	.
+local:those_without_programming_skills_without_data_modeling_expertise	local:thosewithoutprogrammingskills_without	local:data_modeling_expertise	.
+local:mash_data_modeling_expertise	rdfs:subClassOf	local:data_modeling_expertise	.
+local:structured_data	rdfs:subClassOf	local:data	.
+local:casual_users	rdfs:subClassOf	local:users	.
+local:individually_unique	rdfs:subClassOf	local:unique	.

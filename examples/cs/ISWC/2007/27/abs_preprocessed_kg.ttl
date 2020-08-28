@@ -1,0 +1,222 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:play	rdfs:label	"play"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:core_role	rdfs:label	"core role"	.
+
+local:role	rdfs:label	"role"	.
+
+local:core	rdfs:label	"core"	.
+
+local:shared	rdfs:label	"shared"	.
+
+local:shared_vocabulary	rdfs:label	"shared vocabulary"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:vocabulary	rdfs:label	"vocabulary"	.
+
+local:different	rdfs:label	"different"	.
+
+local:different_resources	rdfs:label	"different resources"	.
+
+local:resources	rdfs:label	"resources"	.
+
+local:semantic_semantic_web	rdfs:label	"semantic semantic web"	.
+
+local:success_of_semantic_semantic_web	rdfs:label	"success of semantic semantic web"	.
+
+local:success	rdfs:label	"success"	.
+
+local:shared_vocabulary_for_different_resources	rdfs:label	"shared vocabulary for different resources"	.
+
+local:shared_vocabulary_for_different_resources_for_applications	rdfs:label	"shared vocabulary for different resources for applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:core_role_in_success	rdfs:label	"core role in success"	.
+
+local:core_role_in_success_as_semantic_web	rdfs:label	"core role in success as semantic web"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:errorfree	rdfs:label	"error-free"	.
+
+local:errorfree_ontology	rdfs:label	"error-free ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:developing	rdfs:label	"developing"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:dlbased	rdfs:label	"dl-based"	.
+
+local:dlbased_ontologies	rdfs:label	"dl-based ontologies"	.
+
+local:measuring_in_dlbased_ontologies	rdfs:label	"measuring in dl-based ontologies"	.
+
+local:measuring	rdfs:label	"measuring"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:incoherence	rdfs:label	"incoherence"	.
+
+local:give	rdfs:label	"give"	.
+
+local:measures	rdfs:label	"measures"	.
+
+local:important_information	rdfs:label	"important information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:engineer_important	rdfs:label	"engineer important"	.
+
+local:engineer_important_information	rdfs:label	"engineer important information"	.
+
+local:important	rdfs:label	"important"	.
+
+local:engineer	rdfs:label	"engineer"	.
+
+local:ontology_engineer_important_information	rdfs:label	"ontology engineer important information"	.
+
+local:evaluating	rdfs:label	"evaluating"	.
+
+local:maintaining	rdfs:label	"maintaining"	.
+
+local:proposed	rdfs:label	"proposed"	.
+
+local:proposed_approaches	rdfs:label	"proposed approaches"	.
+
+local:using	rdfs:label	"using"	.
+
+local:kaon2_reasoner	rdfs:label	"kaon2 reasoner"	.
+
+local:reasoner	rdfs:label	"reasoner"	.
+
+local:kaon2	rdfs:label	"kaon2"	.
+
+local:encouraging_empirical_results	rdfs:label	"encouraging empirical results"	.
+
+local:results	rdfs:label	"results"	.
+
+local:empirical	rdfs:label	"empirical"	.
+
+local:empirical_results	rdfs:label	"empirical results"	.
+
+local:encouraging_empirical	rdfs:label	"encouraging empirical"	.
+
+local:encouraging	rdfs:label	"encouraging"	.
+
+local:preliminary_encouraging_empirical_results	rdfs:label	"preliminary encouraging empirical results"	.
+
+local:implement	rdfs:label	"implement"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+local:vocabulary	owl:sameAs	cso:vocabulary	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:ontology	rdfs:label	"ontology"	.
+cso:engineers	rdfs:label	"engineer"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:vocabulary	rdfs:label	"vocabulary"	.
+local:engineer	owl:sameAs	cso:engineers	.
+local:reasoner	owl:sameAs	cso:reasoner	.
+cso:reasoner	rdfs:label	"reasoner"	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:provide	vn.role:Recipient	local:core_role_in_success_as_semantic_web	.
+local:measuring	local:AM-LOC	local:dlbased_ontologies	.
+local:propose	vn.role:Agent	local:we	.
+local:using	vn.role:Theme	local:kaon2_reasoner	.
+local:implement	vn.role:Theme	local:proposed_approaches	.
+local:shared	rdfs:member	local:shared_vocabulary	.
+local:shared	vn.role:Patient	local:vocabulary	.
+local:measuring	vn.role:Theme	local:incoherence	.
+local:important	rdfs:member	local:important_information	.
+local:proposed_approaches	rdfs:subClassOf	local:approaches	.
+local:dlbased_ontologies	rdfs:subClassOf	local:ontologies	.
+local:give	vn.role:object	local:ontology_engineer_important_information	.
+local:encouraging_empirical	rdfs:subClassOf	local:empirical	.
+local:play	vn.role:Actor	local:ontologies	.
+local:evaluating	vn.role:Theme	local:ontologies	.
+local:using	vn.role:Agent	local:proposed_approaches	.
+local:errorfree_ontology	rdfs:subClassOf	local:ontology	.
+local:core_role	rdfs:subClassOf	local:role	.
+local:core_role_in_success	local:in_success	local:core_role	.
+local:provide	vn.role:Agent	local:preliminary_encouraging_empirical_results	.
+local:core_role_in_success_as_semantic_web	local:coreroleinsuccess_as	local:semantic_web	.
+local:semantic_semantic_web	rdfs:subClassOf	local:semantic_web	.
+local:shared_vocabulary_for_different_resources_for_applications	local:sharedvocabularyfordifferentresources_for	local:applications	.
+local:provide	vn.role:Agent	local:shared	.
+local:shared_vocabulary_for_different_resources_for_applications	local:for_applications	local:shared_vocabulary_for_different_resources	.
+local:propose	local:AM-LOC	local:paper	.
+local:maintaining	vn.role:Theme	local:ontologies	.
+local:encouraging_empirical_results	rdfs:subClassOf	local:empirical_results	.
+local:success_of_semantic_semantic_web	local:of_semanticsemanticweb	local:success	.
+local:different_resources	rdfs:subClassOf	local:resources	.
+local:measuring_in_dlbased_ontologies	local:measuring_in	local:dlbased_ontologies	.
+local:core	rdfs:member	local:core_role	.
+local:developing	vn.role:Location	local:errorfree_ontology	.
+local:core_role_in_success_as_semantic_web	local:as_semanticweb	local:core_role_in_success	.
+local:engineer	rdfs:member	local:engineer_important	.
+local:engineer_important	rdfs:subClassOf	local:important	.
+local:give	vn.role:Asset	local:measures	.
+local:errorfree	rdfs:member	local:errorfree_ontology	.
+local:engineer_important_information	rdfs:subClassOf	local:information	.
+local:preliminary_encouraging_empirical_results	rdfs:subClassOf	local:encouraging_empirical_results	.
+local:ontology_engineer_important_information	rdfs:subClassOf	local:engineer_important_information	.
+local:different	rdfs:member	local:different_resources	.
+local:encouraging_empirical	rdfs:member	local:encouraging_empirical_results	.
+local:engineer_important	rdfs:member	local:engineer_important_information	.
+local:provide	vn.role:Recipient	local:we	.
+local:success_of_semantic_semantic_web	local:success_of	local:semantic_semantic_web	.
+local:kaon2_reasoner	rdfs:subClassOf	local:reasoner	.
+local:kaon2	rdfs:member	local:kaon2_reasoner	.
+local:encouraging	rdfs:member	local:encouraging_empirical	.
+local:measuring_in_dlbased_ontologies	local:in_dl-basedontologies	local:measuring	.
+local:empirical_results	rdfs:subClassOf	local:results	.
+local:evaluating	vn.role:Agent	local:ontology_engineer_important_information	.
+local:encouraging_empirical_results	rdfs:subClassOf	local:results	.
+local:play	vn.role:Actor1	local:core_role	.
+local:shared_vocabulary_for_different_resources	local:sharedvocabulary_for	local:different_resources	.
+local:proposed	vn.role:Topic	local:approaches	.
+local:implement	vn.role:Agent	local:we	.
+local:shared_vocabulary	rdfs:subClassOf	local:vocabulary	.
+local:important_information	rdfs:subClassOf	local:information	.
+local:propose	vn.role:Topic	local:approaches	.
+local:give	local:AM-PNC	local:maintaining	.
+local:play	local:AM-TMP	local:success_of_semantic_semantic_web	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:shared_vocabulary_for_different_resources	local:for_differentresources	local:shared_vocabulary	.
+local:core_role_in_success	local:corerole_in	local:success	.
+local:engineer_important_information	rdfs:subClassOf	local:important_information	.
+local:dlbased	rdfs:member	local:dlbased_ontologies	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:provide	vn.role:indirect_object	local:different_resources	.
+local:empirical	rdfs:member	local:empirical_results	.

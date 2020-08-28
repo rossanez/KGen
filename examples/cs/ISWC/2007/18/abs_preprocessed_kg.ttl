@@ -1,0 +1,90 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:depends	rdfs:label	"depends"	.
+
+local:it	rdfs:label	"it"	.
+
+local:crucially	rdfs:label	"crucially"	.
+
+local:annotated	rdfs:label	"annotated"	.
+
+local:annotated_instances	rdfs:label	"annotated instances"	.
+
+local:instances	rdfs:label	"instances"	.
+
+local:similarity_between_sets	rdfs:label	"similarity between sets"	.
+
+local:similarity	rdfs:label	"similarity"	.
+
+local:sets	rdfs:label	"sets"	.
+
+local:sets_of_annotated_instances	rdfs:label	"sets of annotated instances"	.
+
+local:measuring	rdfs:label	"measuring"	.
+
+local:study	rdfs:label	"study"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:cooccurrence_measures	rdfs:label	"co-occurrence measures"	.
+
+local:measures	rdfs:label	"measures"	.
+
+local:instancebased	rdfs:label	"instance-based"	.
+
+local:instancebased_mapping	rdfs:label	"instance-based mapping"	.
+
+local:cooccurrence	rdfs:label	"co-occurrence"	.
+
+local:mapping	rdfs:label	"mapping"	.
+
+local:choice_of_cooccurrence_measures	rdfs:label	"choice of co-occurrence measures"	.
+
+local:choice	rdfs:label	"choice"	.
+
+local:performance_of_instancebased_mapping	rdfs:label	"performance of instance-based mapping"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:affects	rdfs:label	"affects"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:annotated_instances	rdfs:subClassOf	local:instances	.
+local:study	local:AM-LOC	local:paper	.
+local:similarity_between_sets	local:between_sets	local:similarity	.
+local:instancebased_mapping	rdfs:subClassOf	local:mapping	.
+local:study	vn.role:Agent	local:we	.
+local:instancebased	rdfs:member	local:instancebased_mapping	.
+local:affects	local:AM-LOC	local:paper	.
+local:cooccurrence	rdfs:member	local:cooccurrence_measures	.
+local:study	vn.role:Theme	local:affects	.
+local:annotated	rdfs:member	local:annotated_instances	.
+local:affects	vn.role:Experiencer	local:choice_of_cooccurrence_measures	.
+local:affects	vn.role:Cause	local:performance_of_instancebased_mapping	.
+local:sets_of_annotated_instances	local:of_annotatedinstances	local:sets	.
+local:depends	vn.role:Location	local:measuring	.
+local:choice_of_cooccurrence_measures	local:of_co-occurrencemeasures	local:choice	.
+local:performance_of_instancebased_mapping	local:of_instance-basedmapping	local:performance	.
+local:depends	vn.role:Theme	local:it	.
+local:similarity_between_sets	local:similarity_between	local:sets	.
+local:depends	local:AM-MNR	local:crucially	.
+local:sets_of_annotated_instances	local:sets_of	local:annotated_instances	.
+local:measuring	vn.role:Theme	local:similarity_between_sets	.
+local:cooccurrence_measures	rdfs:subClassOf	local:measures	.
+local:choice_of_cooccurrence_measures	local:choice_of	local:cooccurrence_measures	.
+local:performance_of_instancebased_mapping	local:performance_of	local:instancebased_mapping	.

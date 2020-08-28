@@ -1,0 +1,187 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:approach	rdfs:label	"approach,"	.
+
+local:we	rdfs:label	"we"	.
+
+local:prototype	rdfs:label	"prototype"	.
+
+local:prototype_tool	rdfs:label	"prototype tool"	.
+
+local:tool	rdfs:label	"tool"	.
+
+local:performance_bottlenecks	rdfs:label	"performance bottlenecks"	.
+
+local:performance_bottlenecks_ontologies	rdfs:label	"performance bottlenecks ontologies"	.
+
+local:bottlenecks	rdfs:label	"bottlenecks"	.
+
+local:bottlenecks_ontologies	rdfs:label	"bottlenecks ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:help_users	rdfs:label	"help users"	.
+
+local:users	rdfs:label	"users"	.
+
+local:reasoner_performance_bottlenecks	rdfs:label	"reasoner performance bottlenecks"	.
+
+local:reasoner_performance	rdfs:label	"reasoner performance"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:help	rdfs:label	"help"	.
+
+local:reasoner	rdfs:label	"reasoner"	.
+
+local:reasoner_performance_bottlenecks_ontologies	rdfs:label	"reasoner performance bottlenecks ontologies"	.
+
+local:identify_withrespectto_reasoner_performance_bottlenecks_ontologies	rdfs:label	"identify with_respect_to reasoner performance bottlenecks ontologies"	.
+
+local:identify	rdfs:label	"identify"	.
+
+local:present	rdfs:label	"present"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:challenges	rdfs:label	"challenges"	.
+
+local:then	rdfs:label	"then"	.
+
+local:case_studies	rdfs:label	"case studies"	.
+
+local:studies	rdfs:label	"studies"	.
+
+local:synthetic	rdfs:label	"synthetic"	.
+
+local:synthetic_ontologies	rdfs:label	"synthetic ontologies"	.
+
+local:case	rdfs:label	"case"	.
+
+local:4_case_studies	rdfs:label	"4 case studies"	.
+
+local:4_case_studies_on_synthetic_ontologies	rdfs:label	"4 case studies on synthetic ontologies"	.
+
+local:realworld	rdfs:label	"real-world"	.
+
+local:realworld_ontologies	rdfs:label	"real-world ontologies"	.
+
+local:4_case_studies_on_realworld_ontologies	rdfs:label	"4 case studies on real-world ontologies"	.
+
+local:anecdotal	rdfs:label	"anecdotal"	.
+
+local:anecdotal_evidence	rdfs:label	"anecdotal evidence"	.
+
+local:evidence	rdfs:label	"evidence"	.
+
+local:suggests	rdfs:label	"suggests"	.
+
+local:ontology_developers	rdfs:label	"ontology developers"	.
+
+local:developers	rdfs:label	"developers"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:more_desired	rdfs:label	"more desired"	.
+
+local:desired	rdfs:label	"desired"	.
+
+local:much_more	rdfs:label	"much more"	.
+
+local:more	rdfs:label	"more"	.
+
+local:can_useful	rdfs:label	"can useful"	.
+
+local:useful	rdfs:label	"useful"	.
+
+local:can_useful_for_ontology_developers	rdfs:label	"can useful for ontology developers"	.
+
+local:reasoner_implementors	rdfs:label	"reasoner implementors"	.
+
+local:implementors	rdfs:label	"implementors"	.
+
+local:can_useful_for_reasoner_implementors	rdfs:label	"can useful for reasoner implementors"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:reasoner	rdfs:label	"reasoner"	.
+cso:ontology	rdfs:label	"ontology"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:reasoner	owl:sameAs	cso:reasoner	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:identify	vn.role:Theme	local:reasoner_performance_bottlenecks	.
+local:more_desired	rdfs:subClassOf	local:desired	.
+local:describe	vn.role:Theme	local:challenges	.
+local:performance_bottlenecks_ontologies	rdfs:subClassOf	local:bottlenecks_ontologies	.
+local:reasoner_performance_bottlenecks	rdfs:subClassOf	local:bottlenecks	.
+local:prototype	rdfs:member	local:prototype_tool	.
+local:reasoner	rdfs:member	local:reasoner_performance	.
+local:4_case_studies_on_synthetic_ontologies	local:on_syntheticontologies	local:4_case_studies	.
+local:realworld	rdfs:member	local:realworld_ontologies	.
+local:implementors	vn.role:subject	local:reasoner	.
+local:identify_withrespectto_reasoner_performance_bottlenecks_ontologies	local:with_respect_to_reasonerperformancebottlenecksontologies	local:identify	.
+local:anecdotal	rdfs:member	local:anecdotal_evidence	.
+local:help_users	rdfs:subClassOf	local:users	.
+local:present	local:AM-PNC	local:identify_withrespectto_reasoner_performance_bottlenecks_ontologies	.
+local:4_case_studies_on_synthetic_ontologies	local:4casestudies_on	local:synthetic_ontologies	.
+local:can_useful_for_reasoner_implementors	local:canuseful_for	local:reasoner_implementors	.
+local:realworld_ontologies	rdfs:subClassOf	local:ontologies	.
+local:bottlenecks_ontologies	rdfs:subClassOf	local:ontologies	.
+local:describe	vn.role:Agent	local:we	.
+local:4_case_studies	rdfs:subClassOf	local:case_studies	.
+local:reasoner_performance	rdfs:subClassOf	local:performance	.
+local:prototype_tool	rdfs:subClassOf	local:tool	.
+local:approach	local:AM-PNC	local:identify_withrespectto_reasoner_performance_bottlenecks_ontologies	.
+local:case_studies	rdfs:subClassOf	local:studies	.
+local:describe	vn.role:Theme	local:4_case_studies_on_realworld_ontologies	.
+local:suggests	vn.role:Agent	local:can_useful_for_reasoner_implementors	.
+local:4_case_studies_on_realworld_ontologies	local:4casestudies_on	local:realworld_ontologies	.
+local:ontology_developers	rdfs:subClassOf	local:developers	.
+local:implementors	vn.role:object	local:much_more	.
+local:approach	vn.role:object	local:prototype_tool	.
+local:help	vn.role:Beneficiary	local:identify_withrespectto_reasoner_performance_bottlenecks_ontologies	.
+local:much_more	rdfs:subClassOf	local:more	.
+local:help	vn.role:Agent	local:we	.
+local:performance_bottlenecks	rdfs:subClassOf	local:bottlenecks	.
+local:performance_bottlenecks_ontologies	rdfs:subClassOf	local:ontologies	.
+local:case	rdfs:member	local:case_studies	.
+local:synthetic_ontologies	rdfs:subClassOf	local:ontologies	.
+local:synthetic	rdfs:member	local:synthetic_ontologies	.
+local:can_useful_for_ontology_developers	local:canuseful_for	local:ontology_developers	.
+local:describe	vn.role:Theme	local:4_case_studies_on_synthetic_ontologies	.
+local:suggests	vn.role:Agent	local:can_useful_for_ontology_developers	.
+local:approach	vn.role:subject	local:we	.
+local:help	rdfs:member	local:help_users	.
+local:identify_withrespectto_reasoner_performance_bottlenecks_ontologies	local:identify_with_respect_to	local:reasoner_performance_bottlenecks_ontologies	.
+local:reasoner_implementors	rdfs:subClassOf	local:implementors	.
+local:anecdotal_evidence	rdfs:subClassOf	local:evidence	.
+local:can_useful_for_reasoner_implementors	local:for_reasonerimplementors	local:can_useful	.
+local:performance_bottlenecks	rdfs:member	local:performance_bottlenecks_ontologies	.
+local:bottlenecks	rdfs:member	local:bottlenecks_ontologies	.
+local:4_case_studies_on_realworld_ontologies	local:on_real-worldontologies	local:4_case_studies	.
+local:performance	rdfs:member	local:performance_bottlenecks	.
+local:present	vn.role:Theme	local:prototype_tool	.
+local:can_useful_for_ontology_developers	local:for_ontologydevelopers	local:can_useful	.
+local:can_useful	rdfs:subClassOf	local:useful	.
+local:suggests	vn.role:Theme	local:anecdotal_evidence	.
+local:present	vn.role:Agent	local:we	.
+local:reasoner_performance_bottlenecks_ontologies	rdfs:subClassOf	local:performance_bottlenecks_ontologies	.
+local:reasoner_performance	rdfs:member	local:reasoner_performance_bottlenecks	.
+local:identify	vn.role:Agent	local:users	.
+local:describe	local:AM-TMP	local:then	.
+local:ontology	rdfs:member	local:ontology_developers	.
+local:reasoner_performance_bottlenecks	rdfs:subClassOf	local:performance_bottlenecks	.
+local:reasoner	rdfs:member	local:reasoner_implementors	.

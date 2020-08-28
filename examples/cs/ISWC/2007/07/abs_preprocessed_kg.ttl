@@ -1,0 +1,193 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:information	rdfs:label	"information"	.
+
+local:information_extraction	rdfs:label	"information extraction"	.
+
+local:information_extraction_tools	rdfs:label	"information extraction tools"	.
+
+local:extraction	rdfs:label	"extraction"	.
+
+local:extraction_tools	rdfs:label	"extraction tools"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:ontology_reasoning	rdfs:label	"ontology reasoning"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:output_of_information_extraction_tools	rdfs:label	"output of information extraction tools"	.
+
+local:output	rdfs:label	"output"	.
+
+local:using	rdfs:label	"using"	.
+
+local:cleanse	rdfs:label	"cleanse"	.
+
+local:articulated	rdfs:label	"articulated"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:first	rdfs:label	"first"	.
+
+local:semanticlean	rdfs:label	"semanticlean"	.
+
+local:produced	rdfs:label	"produced"	.
+
+local:data	rdfs:label	"data"	.
+
+local:limiting	rdfs:label	"limiting"	.
+
+local:factor	rdfs:label	"factor"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:not_scale	rdfs:label	"not scale"	.
+
+local:scale	rdfs:label	"scale"	.
+
+local:does_not_scale	rdfs:label	"does not scale"	.
+
+local:does_not_scale_to_size	rdfs:label	"does not scale to size"	.
+
+local:size	rdfs:label	"size"	.
+
+local:size_of_data	rdfs:label	"size of data"	.
+
+local:ontology_reasoning_has	rdfs:label	"ontology reasoning has"	.
+
+local:has	rdfs:label	"has"	.
+
+local:find	rdfs:label	"find"	.
+
+local:inconsistencies	rdfs:label	"inconsistencies"	.
+
+local:not	rdfs:label	"not"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:inconsistency	rdfs:label	"inconsistency"	.
+
+local:inconsistency_detection	rdfs:label	"inconsistency detection"	.
+
+local:detection	rdfs:label	"detection"	.
+
+local:scale_inconsistency_detection	rdfs:label	"scale inconsistency detection"	.
+
+local:techniques_to_scale_inconsistency_detection	rdfs:label	"techniques to scale inconsistency detection"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:illustrate	rdfs:label	"illustrate"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_base	rdfs:label	"knowledge base"	.
+
+local:base	rdfs:label	"base"	.
+
+local:consistent	rdfs:label	"consistent"	.
+
+local:consistent_subset	rdfs:label	"consistent subset"	.
+
+local:subset	rdfs:label	"subset"	.
+
+local:thousand_inconsistencies	rdfs:label	"thousand inconsistencies"	.
+
+local:several_thousand	rdfs:label	"several thousand"	.
+
+local:thousand	rdfs:label	"thousand"	.
+
+local:consistent_subset_of_knowledge_base	rdfs:label	"consistent subset of knowledge base"	.
+
+local:knowledge_base_with_thousand_inconsistencies	rdfs:label	"knowledge base with thousand inconsistencies"	.
+
+local:use	rdfs:label	"use"	.
+
+local:produce	rdfs:label	"produce"	.
+
+local:consistent_subset_of_knowledge_base_with_thousand_inconsistencies	rdfs:label	"consistent subset of knowledge base with thousand inconsistencies"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_base	owl:sameAs	cso:knowledge_base	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+cso:information_extraction	rdfs:label	"information extraction"	.
+local:information_extraction	owl:sameAs	cso:information_extraction	.
+cso:knowledge_base	rdfs:label	"knowledge base"	.
+cso:reasoning	rdfs:label	"reasoning"	.
+
+#### Relations ####
+
+local:inconsistency_detection	rdfs:subClassOf	local:detection	.
+local:applying	vn.role:Recipient	local:cleanse	.
+local:scale	vn.role:Theme	local:inconsistency_detection	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:using	vn.role:Theme	local:ontology_reasoning	.
+local:extraction_tools	rdfs:subClassOf	local:tools	.
+local:does_not_scale	rdfs:subClassOf	local:not_scale	.
+local:information_extraction_tools	rdfs:subClassOf	local:tools	.
+local:thousand_inconsistencies	rdfs:subClassOf	local:inconsistencies	.
+local:ontology_reasoning_has	local:ontologyreasoning_	local:has	.
+local:using	vn.role:Theme	local:ontology_reasoning_has	.
+local:produced	vn.role:Agent	local:information_extraction_tools	.
+local:consistent_subset_of_knowledge_base	local:of_knowledgebase	local:consistent_subset	.
+local:does_not_scale_to_size	local:to_size	local:does_not_scale	.
+local:information	rdfs:member	local:information_extraction	.
+local:illustrate	vn.role:Theme	local:use	.
+local:knowledge_base_with_thousand_inconsistencies	local:with_thousandinconsistencies	local:knowledge_base	.
+local:consistent_subset_of_knowledge_base_with_thousand_inconsistencies	local:with_thousandinconsistencies	local:consistent_subset_of_knowledge_base	.
+local:inconsistency	rdfs:member	local:inconsistency_detection	.
+local:describe	local:AM-LOC	local:paper	.
+local:ontology_reasoning_has	local:_has	local:ontology_reasoning	.
+local:consistent_subset_of_knowledge_base	local:consistentsubset_of	local:knowledge_base	.
+local:scale	vn.role:Agent	local:inconsistencies	.
+local:consistent_subset	rdfs:subClassOf	local:subset	.
+local:knowledge_base_with_thousand_inconsistencies	local:knowledgebase_with	local:thousand_inconsistencies	.
+local:describe	vn.role:Agent	local:we	.
+local:describe	vn.role:Theme	local:techniques_to_scale_inconsistency_detection	.
+local:articulated	local:AM-LOC	local:semanticlean	.
+local:scale	local:AM-NEG	local:not	.
+local:information_extraction	rdfs:member	local:information_extraction_tools	.
+local:applying	vn.role:Theme	local:approach	.
+local:not_scale	rdfs:subClassOf	local:scale	.
+local:size_of_data	local:of_data	local:size	.
+local:scale_inconsistency_detection	rdfs:subClassOf	local:inconsistency_detection	.
+local:ontology_reasoning	rdfs:subClassOf	local:reasoning	.
+local:output_of_information_extraction_tools	local:output_of	local:information_extraction_tools	.
+local:techniques_to_scale_inconsistency_detection	local:techniques_to	local:scale_inconsistency_detection	.
+local:information_extraction	rdfs:subClassOf	local:extraction	.
+local:produced	vn.role:Product	local:data	.
+local:several_thousand	rdfs:subClassOf	local:thousand	.
+local:produce	vn.role:Agent	local:we	.
+local:consistent_subset_of_knowledge_base_with_thousand_inconsistencies	local:consistentsubsetofknowledgebase_with	local:thousand_inconsistencies	.
+local:limiting	vn.role:Cause	local:factor	.
+local:information_extraction_tools	rdfs:subClassOf	local:extraction_tools	.
+local:scale	vn.role:Source	local:size_of_data	.
+local:size_of_data	local:size_of	local:data	.
+local:extraction	rdfs:member	local:extraction_tools	.
+local:articulated	vn.role:Topic	local:approach	.
+local:articulated	local:AM-TMP	local:first	.
+local:produce	vn.role:Product	local:consistent_subset_of_knowledge_base_with_thousand_inconsistencies	.
+local:illustrate	local:AM-LOC	local:paper	.
+local:techniques_to_scale_inconsistency_detection	local:to_scaleinconsistencydetection	local:techniques	.
+local:find	vn.role:Theme	local:inconsistencies	.
+local:consistent	rdfs:member	local:consistent_subset	.
+local:does_not_scale_to_size	local:doesnotscale_to	local:size	.
+local:cleanse	vn.role:Theme	local:output_of_information_extraction_tools	.
+local:knowledge	rdfs:member	local:knowledge_base	.
+local:illustrate	vn.role:Agent	local:we	.
+local:output_of_information_extraction_tools	local:of_informationextractiontools	local:output	.

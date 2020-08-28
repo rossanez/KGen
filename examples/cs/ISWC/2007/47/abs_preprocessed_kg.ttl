@@ -1,0 +1,152 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:several_proposals	rdfs:label	"several proposals"	.
+
+local:proposals	rdfs:label	"proposals"	.
+
+local:several	rdfs:label	"several"	.
+
+local:put	rdfs:label	"put"	.
+
+local:agent	rdfs:label	"agent"	.
+
+local:agent_cooperation	rdfs:label	"agent cooperation"	.
+
+local:cooperation	rdfs:label	"cooperation"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:one_ontology	rdfs:label	"one ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:agent_cooperation_in_semantic_web	rdfs:label	"agent cooperation in semantic web"	.
+
+local:allowing_in_one_ontology	rdfs:label	"allowing in one ontology"	.
+
+local:allowing	rdfs:label	"allowing"	.
+
+local:reused_in_ontology	rdfs:label	"reused in ontology"	.
+
+local:reused	rdfs:label	"reused"	.
+
+local:distributed	rdfs:label	"distributed"	.
+
+local:support	rdfs:label	"support"	.
+
+local:distributed_agent_cooperation	rdfs:label	"distributed agent cooperation"	.
+
+local:distributed_agent_cooperation_in_semantic_web	rdfs:label	"distributed agent cooperation in semantic web"	.
+
+local:concepts_in_one_ontology	rdfs:label	"concepts in one ontology"	.
+
+local:concepts	rdfs:label	"concepts"	.
+
+local:roles_in_one_ontology	rdfs:label	"roles in one ontology"	.
+
+local:roles	rdfs:label	"roles"	.
+
+local:reduce	rdfs:label	"reduce"	.
+
+local:general	rdfs:label	"general"	.
+
+local:autonomy_of_ontology	rdfs:label	"autonomy of ontology"	.
+
+local:autonomy	rdfs:label	"autonomy"	.
+
+local:other	rdfs:label	"other"	.
+
+local:other_ontologies	rdfs:label	"other ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:semantics_of_ontology	rdfs:label	"semantics of ontology"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:depend_on_semantics	rdfs:label	"depend on semantics"	.
+
+local:depend	rdfs:label	"depend"	.
+
+local:semantics_of_other_ontologies	rdfs:label	"semantics of other ontologies"	.
+
+local:defining	rdfs:label	"defining"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology	rdfs:label	"ontology"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:semantics	rdfs:label	"semantics"	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:semantics	owl:sameAs	cso:semantics	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+
+#### Relations ####
+
+local:distributed_agent_cooperation	rdfs:subClassOf	local:agent_cooperation	.
+local:support	local:AM-MNR	local:allowing	.
+local:other_ontologies	rdfs:subClassOf	local:ontologies	.
+local:roles_in_one_ontology	local:roles_in	local:one_ontology	.
+local:support	vn.role:Theme	local:several_proposals	.
+local:semantics_of_ontology	local:of_ontology	local:semantics	.
+local:support	local:AM-MNR	local:allowing_in_one_ontology	.
+local:autonomy_of_ontology	local:of_ontology	local:autonomy	.
+local:put	local:AM-PNC	local:distributed	.
+local:semantics_of_ontology	local:semantics_of	local:ontology	.
+local:roles_in_one_ontology	local:in_oneontology	local:roles	.
+local:reduce	local:AM-MNR	local:defining	.
+local:other	rdfs:member	local:other_ontologies	.
+local:put	vn.role:object	local:several_proposals	.
+local:autonomy_of_ontology	local:autonomy_of	local:ontology	.
+local:allowing	vn.role:Theme	local:reused_in_ontology	.
+local:reduce	vn.role:Cause	local:several_proposals	.
+local:one_ontology	rdfs:subClassOf	local:ontology	.
+local:distributed_agent_cooperation_in_semantic_web	local:in_semanticweb	local:distributed_agent_cooperation	.
+local:support	vn.role:Experiencer	local:distributed_agent_cooperation_in_semantic_web	.
+local:agent_cooperation_in_semantic_web	local:in_semanticweb	local:agent_cooperation	.
+local:allowing_in_one_ontology	local:allowing_in	local:one_ontology	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:concepts_in_one_ontology	local:in_oneontology	local:concepts	.
+local:reduce	local:AM-LOC	local:general	.
+local:defining	vn.role:Theme	local:semantics_of_ontology	.
+local:reused	local:AM-MNR	local:one_ontology	.
+local:several_proposals	rdfs:subClassOf	local:proposals	.
+local:distributed	local:AM-MNR	local:allowing_in_one_ontology	.
+local:reduce	vn.role:Patient	local:autonomy_of_ontology	.
+local:reused	vn.role:Theme	local:concepts	.
+local:several	rdfs:member	local:several_proposals	.
+local:distributed	vn.role:Theme	local:agent_cooperation_in_semantic_web	.
+local:agent_cooperation_in_semantic_web	local:agentcooperation_in	local:semantic_web	.
+local:concepts_in_one_ontology	local:concepts_in	local:one_ontology	.
+local:depend_on_semantics	local:on_semantics	local:depend	.
+local:semantics_of_other_ontologies	local:of_otherontologies	local:semantics	.
+local:depend_on_semantics	local:depend_on	local:semantics	.
+local:depend	vn.role:Location	local:semantics_of_other_ontologies	.
+local:reused	vn.role:Theme	local:roles	.
+local:distributed	local:AM-MNR	local:allowing	.
+local:reused	local:AM-LOC	local:ontology	.
+local:semantics_of_other_ontologies	local:semantics_of	local:other_ontologies	.
+local:allowing_in_one_ontology	local:in_oneontology	local:allowing	.
+local:agent	rdfs:member	local:agent_cooperation	.
+local:reused_in_ontology	local:in_ontology	local:reused	.
+local:distributed_agent_cooperation_in_semantic_web	local:distributedagentcooperation_in	local:semantic_web	.
+local:agent_cooperation	rdfs:subClassOf	local:cooperation	.
+local:reused_in_ontology	local:reused_in	local:ontology	.
+local:allowing	vn.role:Agent	local:several_proposals	.
+local:semantic	rdfs:member	local:semantic_web	.

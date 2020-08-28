@@ -1,0 +1,259 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_descriptions	rdfs:label	"semantic descriptions"	.
+
+local:nontextual_media	rdfs:label	"non-textual media"	.
+
+local:media	rdfs:label	"media"	.
+
+local:nontextual	rdfs:label	"non-textual"	.
+
+local:descriptions	rdfs:label	"descriptions"	.
+
+local:available_descriptions	rdfs:label	"available descriptions"	.
+
+local:semantic_available_descriptions	rdfs:label	"semantic available descriptions"	.
+
+local:semantic_available_descriptions_of_nontextual_media	rdfs:label	"semantic available descriptions of non-textual media"	.
+
+local:available_on_web	rdfs:label	"available on web"	.
+
+local:available	rdfs:label	"available"	.
+
+local:web	rdfs:label	"web"	.
+
+local:used	rdfs:label	"used"	.
+
+local:can	rdfs:label	"can"	.
+
+local:media_assets	rdfs:label	"media assets"	.
+
+local:assets	rdfs:label	"assets"	.
+
+local:facilitate	rdfs:label	"facilitate"	.
+
+local:facilitate_presentation	rdfs:label	"facilitate presentation"	.
+
+local:presentation	rdfs:label	"presentation"	.
+
+local:media_media_assets	rdfs:label	"media media assets"	.
+
+local:presentation_of_media_media_assets	rdfs:label	"presentation of media media assets"	.
+
+local:media_media_assets_containing	rdfs:label	"media media assets containing"	.
+
+local:containing	rdfs:label	"containing"	.
+
+local:facilitate_retrieval	rdfs:label	"facilitate retrieval"	.
+
+local:retrieval	rdfs:label	"retrieval"	.
+
+local:retrieval_of_documents	rdfs:label	"retrieval of documents"	.
+
+local:documents	rdfs:label	"documents"	.
+
+local:documents_containing	rdfs:label	"documents containing"	.
+
+local:presentation_of_documents	rdfs:label	"presentation of documents"	.
+
+local:retrieval_of_media_media_assets	rdfs:label	"retrieval of media media assets"	.
+
+local:retrieval_of_media_assets	rdfs:label	"retrieval of media assets"	.
+
+local:media_assets_containing	rdfs:label	"media assets containing"	.
+
+local:presentation_of_media_assets	rdfs:label	"presentation of media assets"	.
+
+local:web_technologies	rdfs:label	"web technologies"	.
+
+local:technologies	rdfs:label	"technologies"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:annotation	rdfs:label	"annotation"	.
+
+local:annotation_scenario	rdfs:label	"annotation scenario"	.
+
+local:scenario	rdfs:label	"scenario"	.
+
+local:using	rdfs:label	"using"	.
+
+local:explain	rdfs:label	"explain"	.
+
+local:we	rdfs:label	"we"	.
+
+local:complexity_of_problem	rdfs:label	"complexity of problem"	.
+
+local:complexity	rdfs:label	"complexity"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:derive	rdfs:label	"derive"	.
+
+local:then	rdfs:label	"then"	.
+
+local:formal_multimedia	rdfs:label	"formal multimedia"	.
+
+local:multimedia	rdfs:label	"multimedia"	.
+
+local:multimedia_ontology	rdfs:label	"multimedia ontology"	.
+
+local:formal_multimedia_ontology	rdfs:label	"formal multimedia ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:formal	rdfs:label	"formal"	.
+
+local:number_of_requirements	rdfs:label	"number of requirements"	.
+
+local:number	rdfs:label	"number"	.
+
+local:requirements	rdfs:label	"requirements"	.
+
+local:developed	rdfs:label	"developed"	.
+
+local:developed_ontology	rdfs:label	"developed ontology"	.
+
+local:evaluate	rdfs:label	"evaluate"	.
+
+local:specifying	rdfs:label	"specifying"	.
+
+local:present	rdfs:label	"present"	.
+
+local:present_comm	rdfs:label	"present comm"	.
+
+local:comm	rdfs:label	"comm"	.
+
+local:evaluate_comm	rdfs:label	"evaluate comm"	.
+
+local:present_developed_ontology	rdfs:label	"present developed ontology"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:api	rdfs:label	"api"	.
+
+local:multimedia_annotations	rdfs:label	"multimedia annotations"	.
+
+local:annotations	rdfs:label	"annotations"	.
+
+local:generating	rdfs:label	"generating"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:semantic_descriptions	rdfs:label	"semantic descriptions"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:semantic_descriptions	owl:sameAs	cso:semantic_descriptions	.
+
+#### Relations ####
+
+local:facilitate	vn.role:Beneficiary	local:retrieval_of_media_assets	.
+local:containing	vn.role:Theme2	local:documents	.
+local:media_assets_containing	local:_containing	local:media_assets	.
+local:facilitate_presentation	rdfs:subClassOf	local:presentation	.
+local:facilitate	vn.role:Agent	local:semantic_available_descriptions_of_nontextual_media	.
+local:nontextual	rdfs:member	local:nontextual_media	.
+local:facilitate	vn.role:Beneficiary	local:retrieval_of_documents	.
+local:containing	vn.role:Theme2	local:media_assets	.
+local:formal_multimedia	rdfs:subClassOf	local:multimedia	.
+local:complexity_of_problem	local:complexity_of	local:problem	.
+local:presentation_of_media_media_assets	local:presentation_of	local:media_media_assets	.
+local:facilitate	rdfs:member	local:facilitate_retrieval	.
+local:present_developed_ontology	rdfs:subClassOf	local:developed_ontology	.
+local:evaluate	local:AM-MNR	local:requirements	.
+local:derive	local:AM-TMP	local:present_comm	.
+local:existing	vn.role:Location	local:descriptions	.
+local:generating	vn.role:Theme1	local:api	.
+local:containing	vn.role:Theme1	local:documents	.
+local:media_assets_containing	local:mediaassets_	local:containing	.
+local:complexity_of_problem	local:of_problem	local:complexity	.
+local:existing	vn.role:Location	local:web_technologies	.
+local:presentation_of_media_media_assets	local:of_mediamediaassets	local:presentation	.
+local:present	rdfs:member	local:present_comm	.
+local:facilitate	vn.role:Beneficiary	local:presentation_of_documents	.
+local:present	vn.role:Theme	local:developed_ontology	.
+local:media_assets	rdfs:subClassOf	local:assets	.
+local:specifying	local:AM-TMP	local:present_developed_ontology	.
+local:presentation_of_media_assets	local:of_mediaassets	local:presentation	.
+local:using	vn.role:Theme	local:annotation_scenario	.
+local:semantic_available_descriptions_of_nontextual_media	local:of_non-textualmedia	local:semantic_available_descriptions	.
+local:formal_multimedia_ontology	rdfs:subClassOf	local:ontology	.
+local:evaluate_comm	rdfs:subClassOf	local:comm	.
+local:retrieval_of_documents	local:retrieval_of	local:documents	.
+local:formal	rdfs:member	local:formal_multimedia	.
+local:annotation_scenario	rdfs:subClassOf	local:scenario	.
+local:explain	vn.role:Cause	local:complexity_of_problem	.
+local:present_comm	rdfs:subClassOf	local:comm	.
+local:media_media_assets	rdfs:subClassOf	local:media_assets	.
+local:derive	local:AM-TMP	local:evaluate	.
+local:presentation_of_documents	local:presentation_of	local:documents	.
+local:present	vn.role:Theme	local:comm	.
+local:retrieval_of_media_assets	local:retrieval_of	local:media_assets	.
+local:developed_ontology	rdfs:subClassOf	local:ontology	.
+local:number_of_requirements	local:number_of	local:requirements	.
+local:documents_containing	local:_containing	local:documents	.
+local:derive	local:AM-TMP	local:present_developed_ontology	.
+local:retrieval_of_media_media_assets	local:of_mediamediaassets	local:retrieval	.
+local:retrieval_of_media_assets	local:of_mediaassets	local:retrieval	.
+local:provide	vn.role:Agent	local:api	.
+local:evaluate	rdfs:member	local:evaluate_comm	.
+local:evaluate	vn.role:Theme	local:comm	.
+local:developed	vn.role:Location	local:ontology	.
+local:provide	vn.role:indirect_object	local:generating	.
+local:documents_containing	local:documents_	local:containing	.
+local:used	vn.role:Recipient	local:facilitate	.
+local:formal_multimedia	rdfs:member	local:formal_multimedia_ontology	.
+local:multimedia_annotations	rdfs:subClassOf	local:annotations	.
+local:semantic_available_descriptions_of_nontextual_media	local:semanticavailabledescriptions_of	local:nontextual_media	.
+local:multimedia	rdfs:member	local:multimedia_ontology	.
+local:retrieval_of_documents	local:of_documents	local:retrieval	.
+local:web_technologies	rdfs:subClassOf	local:technologies	.
+local:media_media_assets_containing	local:mediamediaassets_	local:containing	.
+local:evaluate	vn.role:Theme	local:developed_ontology	.
+local:multimedia_ontology	rdfs:subClassOf	local:ontology	.
+local:web	rdfs:member	local:web_technologies	.
+local:presentation_of_documents	local:of_documents	local:presentation	.
+local:specifying	vn.role:Theme	local:ontology	.
+local:media	rdfs:member	local:media_assets	.
+local:retrieval_of_media_media_assets	local:retrieval_of	local:media_media_assets	.
+local:available_descriptions	rdfs:subClassOf	local:descriptions	.
+local:semantic_available_descriptions	rdfs:subClassOf	local:available_descriptions	.
+local:derive	vn.role:Theme	local:we	.
+local:facilitate	vn.role:Beneficiary	local:presentation_of_media_media_assets	.
+local:facilitate	vn.role:Beneficiary	local:presentation_of_media_assets	.
+local:media_media_assets_containing	local:_containing	local:media_media_assets	.
+local:present	vn.role:Agent	local:we	.
+local:semantic	rdfs:member	local:semantic_descriptions	.
+local:available_on_web	local:available_on	local:web	.
+local:presentation_of_media_assets	local:presentation_of	local:media_assets	.
+local:facilitate	vn.role:Beneficiary	local:retrieval_of_media_media_assets	.
+local:derive	local:AM-TMP	local:then	.
+local:annotation	rdfs:member	local:annotation_scenario	.
+local:number_of_requirements	local:of_requirements	local:number	.
+local:generating	vn.role:Theme2	local:multimedia_annotations	.
+local:nontextual_media	rdfs:subClassOf	local:media	.
+local:available_on_web	local:on_web	local:available	.
+local:used	local:AM-MOD	local:can	.
+local:facilitate	rdfs:member	local:facilitate_presentation	.
+local:developed	rdfs:member	local:developed_ontology	.
+local:used	vn.role:Theme	local:semantic_available_descriptions_of_nontextual_media	.
+local:facilitate_retrieval	rdfs:subClassOf	local:retrieval	.
+local:derive	vn.role:Location	local:number_of_requirements	.
+local:semantic_descriptions	rdfs:subClassOf	local:descriptions	.
+local:explain	vn.role:Recipient	local:we	.
+local:evaluate	vn.role:Agent	local:we	.
+local:provide	vn.role:Recipient	local:we	.
+local:multimedia	rdfs:member	local:multimedia_annotations	.
