@@ -1,0 +1,227 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:ontology_verification	rdfs:label	"ontology verification"	.
+
+local:verification	rdfs:label	"verification"	.
+
+local:concerned	rdfs:label	"concerned"	.
+
+local:intended_structures	rdfs:label	"intended structures"	.
+
+local:structures	rdfs:label	"structures"	.
+
+local:intended	rdfs:label	"intended"	.
+
+local:relationship_between_intended_structures	rdfs:label	"relationship between intended structures"	.
+
+local:relationship	rdfs:label	"relationship"	.
+
+local:relationship_between_intended_structures_for_ontology	rdfs:label	"relationship between intended structures for ontology"	.
+
+local:relationship_between_models	rdfs:label	"relationship between models"	.
+
+local:models	rdfs:label	"models"	.
+
+local:models_of_axiomatization	rdfs:label	"models of axiomatization"	.
+
+local:axiomatization	rdfs:label	"axiomatization"	.
+
+local:axiomatization_of_ontology	rdfs:label	"axiomatization of ontology"	.
+
+local:particular	rdfs:label	"particular"	.
+
+local:particular_ontology	rdfs:label	"particular ontology"	.
+
+local:verification_of_particular_ontology	rdfs:label	"verification of particular ontology"	.
+
+local:requires	rdfs:label	"requires"	.
+
+local:characterization_of_models	rdfs:label	"characterization of models"	.
+
+local:characterization	rdfs:label	"characterization"	.
+
+local:models_of_ontology	rdfs:label	"models of ontology"	.
+
+local:ontology_to_isomorphism	rdfs:label	"ontology to isomorphism"	.
+
+local:isomorphism	rdfs:label	"isomorphism"	.
+
+local:equivalent_to_intended_structures	rdfs:label	"equivalent to intended structures"	.
+
+local:equivalent	rdfs:label	"equivalent"	.
+
+local:intended_structures_for_ontology	rdfs:label	"intended structures for ontology"	.
+
+local:characterization_of_models_to_proof	rdfs:label	"characterization of models to proof"	.
+
+local:proof	rdfs:label	"proof"	.
+
+local:introduced	rdfs:label	"introduced"	.
+
+local:time	rdfs:label	"time"	.
+
+local:pan	rdfs:label	"pan"	.
+
+local:hobbs	rdfs:label	"hobbs"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:firstorder	rdfs:label	"first-order"	.
+
+local:firstorder_axiomatization	rdfs:label	"first-order axiomatization"	.
+
+local:verification_of_ontology	rdfs:label	"verification of ontology"	.
+
+local:ontology_of_time	rdfs:label	"ontology of time"	.
+
+local:firstorder_axiomatization_of_owltime	rdfs:label	"first-order axiomatization of owl-time"	.
+
+local:owltime	rdfs:label	"owl-time"	.
+
+local:present	rdfs:label	"present"	.
+
+local:complete	rdfs:label	"complete"	.
+
+local:complete_account	rdfs:label	"complete account"	.
+
+local:metatheoretic_relationships	rdfs:label	"metatheoretic relationships"	.
+
+local:relationships	rdfs:label	"relationships"	.
+
+local:account	rdfs:label	"account"	.
+
+local:metatheoretic	rdfs:label	"metatheoretic"	.
+
+local:five_modules	rdfs:label	"five modules"	.
+
+local:modules	rdfs:label	"modules"	.
+
+local:complete_account_of_metatheoretic_relationships	rdfs:label	"complete account of metatheoretic relationships"	.
+
+local:metatheoretic_relationships_among_five_modules	rdfs:label	"metatheoretic relationships among five modules"	.
+
+local:other_time	rdfs:label	"other time"	.
+
+local:other_time_ontologies	rdfs:label	"other time ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:time_ontologies	rdfs:label	"time ontologies"	.
+
+local:other	rdfs:label	"other"	.
+
+local:metatheoretic_relationships_between_other_time_ontologies	rdfs:label	"metatheoretic relationships between other time ontologies"	.
+
+local:metatheoretic_relationships_between_other_time_ontologies_for_points	rdfs:label	"metatheoretic relationships between other time ontologies for points"	.
+
+local:points	rdfs:label	"points"	.
+
+local:identify	rdfs:label	"identify"	.
+
+local:metatheoretic_relationships_between_other_time_ontologies_for_intervals	rdfs:label	"metatheoretic relationships between other time ontologies for intervals"	.
+
+local:intervals	rdfs:label	"intervals"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:verification	owl:sameAs	cso:verification	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:verification	rdfs:label	"verification"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:five_modules	rdfs:subClassOf	local:modules	.
+local:relationship_between_intended_structures_for_ontology	local:relationshipbetweenintendedstructures_for	local:ontology	.
+local:relationship_between_intended_structures	local:relationship_between	local:intended_structures	.
+local:identify	local:AM-LOC	local:ontology	.
+local:characterization_of_models_to_proof	local:characterizationofmodels_to	local:proof	.
+local:requires	vn.role:Patient	local:characterization_of_models_to_proof	.
+local:provide	vn.role:Agent	local:verification_of_ontology	.
+local:axiomatization_of_ontology	local:of_ontology	local:axiomatization	.
+local:metatheoretic_relationships	rdfs:subClassOf	local:relationships	.
+local:complete_account	rdfs:subClassOf	local:account	.
+local:provide	local:AM-LOC	local:paper	.
+local:intended	rdfs:member	local:intended_structures	.
+local:provide	vn.role:Recipient	local:we	.
+local:characterization_of_models	local:characterization_of	local:models	.
+local:other_time	rdfs:subClassOf	local:time	.
+local:particular	rdfs:member	local:particular_ontology	.
+local:introduced	vn.role:Agent	local:pan	.
+local:complete_account_of_metatheoretic_relationships	local:of_metatheoreticrelationships	local:complete_account	.
+local:verification_of_ontology	local:verification_of	local:ontology	.
+local:metatheoretic_relationships_between_other_time_ontologies	local:metatheoreticrelationships_between	local:other_time_ontologies	.
+local:models_of_ontology	local:of_ontology	local:models	.
+local:models_of_axiomatization	local:models_of	local:axiomatization	.
+local:concerned	vn.role:Experiencer	local:relationship_between_models	.
+local:ontology_of_time	local:ontology_of	local:time	.
+local:firstorder_axiomatization_of_owltime	local:first-orderaxiomatization_of	local:owltime	.
+local:ontology_to_isomorphism	local:ontology_to	local:isomorphism	.
+local:characterization_of_models_to_proof	local:to_proof	local:characterization_of_models	.
+local:models_of_ontology	local:models_of	local:ontology	.
+local:identify	vn.role:Agent	local:we	.
+local:identify	vn.role:Theme	local:five_modules	.
+local:ontology_verification	rdfs:subClassOf	local:verification	.
+local:firstorder_axiomatization	rdfs:subClassOf	local:axiomatization	.
+local:intended_structures_for_ontology	local:intendedstructures_for	local:ontology	.
+local:present	vn.role:Theme	local:complete_account_of_metatheoretic_relationships	.
+local:ontology	rdfs:member	local:ontology_verification	.
+local:verification_of_ontology	local:of_ontology	local:verification	.
+local:intended_structures	rdfs:subClassOf	local:structures	.
+local:equivalent_to_intended_structures	local:equivalent_to	local:intended_structures	.
+local:metatheoretic	rdfs:member	local:metatheoretic_relationships	.
+local:present	vn.role:Agent	local:we	.
+local:other_time	rdfs:member	local:other_time_ontologies	.
+local:requires	vn.role:Patient	local:characterization_of_models	.
+local:ontology_of_time	local:of_time	local:ontology	.
+local:equivalent_to_intended_structures	local:to_intendedstructures	local:equivalent	.
+local:ontology_to_isomorphism	local:to_isomorphism	local:ontology	.
+local:relationship_between_models	local:between_models	local:relationship	.
+local:complete	rdfs:member	local:complete_account	.
+local:complete_account_of_metatheoretic_relationships	local:completeaccount_of	local:metatheoretic_relationships	.
+local:concerned	vn.role:Cause	local:ontology_verification	.
+local:time_ontologies	rdfs:subClassOf	local:ontologies	.
+local:metatheoretic_relationships_between_other_time_ontologies_for_intervals	local:for_intervals	local:metatheoretic_relationships_between_other_time_ontologies	.
+local:characterization_of_models	local:of_models	local:characterization	.
+local:models_of_axiomatization	local:of_axiomatization	local:models	.
+local:axiomatization_of_ontology	local:axiomatization_of	local:ontology	.
+local:requires	vn.role:Agent	local:verification_of_particular_ontology	.
+local:firstorder_axiomatization_of_owltime	local:of_owl-time	local:firstorder_axiomatization	.
+local:metatheoretic_relationships_among_five_modules	local:among_fivemodules	local:metatheoretic_relationships	.
+local:relationship_between_models	local:relationship_between	local:models	.
+local:metatheoretic_relationships_between_other_time_ontologies_for_points	local:metatheoreticrelationshipsbetweenothertimeontologies_for	local:points	.
+local:time	rdfs:member	local:time_ontologies	.
+local:metatheoretic_relationships_between_other_time_ontologies_for_intervals	local:metatheoreticrelationshipsbetweenothertimeontologies_for	local:intervals	.
+local:particular_ontology	rdfs:subClassOf	local:ontology	.
+local:other_time_ontologies	rdfs:subClassOf	local:time_ontologies	.
+local:verification_of_particular_ontology	local:verification_of	local:particular_ontology	.
+local:firstorder	rdfs:member	local:firstorder_axiomatization	.
+local:other	rdfs:member	local:other_time	.
+local:metatheoretic_relationships_between_other_time_ontologies_for_points	local:for_points	local:metatheoretic_relationships_between_other_time_ontologies	.
+local:other_time_ontologies	rdfs:subClassOf	local:ontologies	.
+local:intended_structures_for_ontology	local:for_ontology	local:intended_structures	.
+local:metatheoretic_relationships_among_five_modules	local:metatheoreticrelationships_among	local:five_modules	.
+local:introduced	vn.role:Agent	local:hobbs	.
+local:concerned	vn.role:Experiencer	local:relationship_between_intended_structures_for_ontology	.
+local:verification_of_particular_ontology	local:of_particularontology	local:verification	.
+local:metatheoretic_relationships_between_other_time_ontologies	local:between_othertimeontologies	local:metatheoretic_relationships	.
+local:introduced	vn.role:Patient	local:time	.
+local:relationship_between_intended_structures	local:between_intendedstructures	local:relationship	.
+local:relationship_between_intended_structures_for_ontology	local:for_ontology	local:relationship_between_intended_structures	.

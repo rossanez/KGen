@@ -1,0 +1,165 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:ontology_language	rdfs:label	"ontology language"	.
+
+local:ontology_language_owl	rdfs:label	"ontology language owl"	.
+
+local:language	rdfs:label	"language"	.
+
+local:language_owl	rdfs:label	"language owl"	.
+
+local:closed	rdfs:label	"closed"	.
+
+local:closed_world	rdfs:label	"closed world"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:web_ontology_language	rdfs:label	"web ontology language"	.
+
+local:web_ontology_language_owl	rdfs:label	"web ontology language owl"	.
+
+local:web	rdfs:label	"web"	.
+
+local:web_ontology	rdfs:label	"web ontology"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:new	rdfs:label	"new"	.
+
+local:new_approach	rdfs:label	"new approach"	.
+
+local:world	rdfs:label	"world"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:world_reasoning	rdfs:label	"world reasoning"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:closed_world_reasoning	rdfs:label	"closed world reasoning"	.
+
+local:adding_to_web_ontology_language_owl	rdfs:label	"adding to web ontology language owl"	.
+
+local:adding	rdfs:label	"adding"	.
+
+local:world_reasoning_to_web_ontology_language_owl	rdfs:label	"world reasoning to web ontology language owl"	.
+
+local:circumscriptive	rdfs:label	"circumscriptive"	.
+
+local:circumscriptive_description	rdfs:label	"circumscriptive description"	.
+
+local:description	rdfs:label	"description"	.
+
+local:description_logics	rdfs:label	"description logics"	.
+
+local:logics	rdfs:label	"logics"	.
+
+local:circumscriptive_description_logics	rdfs:label	"circumscriptive description logics"	.
+
+local:had	rdfs:label	"had"	.
+
+local:undecidable_logic	rdfs:label	"undecidable logic"	.
+
+local:logic	rdfs:label	"logic"	.
+
+local:undecidable	rdfs:label	"undecidable"	.
+
+local:drawback	rdfs:label	"drawback"	.
+
+local:yielding	rdfs:label	"yielding"	.
+
+local:transcends	rdfs:label	"transcends"	.
+
+local:previous_work	rdfs:label	"previous work"	.
+
+local:work	rdfs:label	"work"	.
+
+local:previous	rdfs:label	"previous"	.
+
+local:local_closure	rdfs:label	"local closure"	.
+
+local:closure	rdfs:label	"closure"	.
+
+local:local	rdfs:label	"local"	.
+
+local:apply	rdfs:label	"apply"	.
+
+local:roles	rdfs:label	"roles"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:ontology_language	rdfs:label	"ontology language"	.
+local:ontology_language	owl:sameAs	cso:ontology_language	.
+cso:web_ontology_language	rdfs:label	"web ontology language"	.
+local:description_logics	owl:sameAs	cso:description_logics	.
+cso:description_logics	rdfs:label	"description logics"	.
+cso:owl	rdfs:label	"owl"	.
+local:web_ontology_language	owl:sameAs	cso:web_ontology_language	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+local:owl	owl:sameAs	cso:owl	.
+
+#### Relations ####
+
+local:closed_world_reasoning	rdfs:subClassOf	local:world_reasoning	.
+local:ontology	rdfs:member	local:ontology_language	.
+local:web_ontology_language_owl	rdfs:subClassOf	local:ontology_language_owl	.
+local:web_ontology_language	rdfs:member	local:web_ontology_language_owl	.
+local:undecidable_logic	rdfs:subClassOf	local:logic	.
+local:undecidable	rdfs:member	local:undecidable_logic	.
+local:previous_work	rdfs:subClassOf	local:work	.
+local:adding	vn.role:Agent	local:we	.
+local:transcends	vn.role:Theme1	local:new_approach	.
+local:present	vn.role:Agent	local:we	.
+local:circumscriptive_description_logics	rdfs:subClassOf	local:logics	.
+local:adding_to_web_ontology_language_owl	local:to_webontologylanguageowl	local:adding	.
+local:language	rdfs:member	local:language_owl	.
+local:world_reasoning_to_web_ontology_language_owl	local:worldreasoning_to	local:web_ontology_language_owl	.
+local:circumscriptive	rdfs:member	local:circumscriptive_description	.
+local:circumscriptive_description_logics	rdfs:subClassOf	local:description_logics	.
+local:closed_world	rdfs:subClassOf	local:world	.
+local:circumscriptive_description	rdfs:member	local:circumscriptive_description_logics	.
+local:new	rdfs:member	local:new_approach	.
+local:new_approach	rdfs:subClassOf	local:approach	.
+local:had	vn.role:Experiencer	local:circumscriptive_description_logics	.
+local:web_ontology_language	rdfs:subClassOf	local:language	.
+local:previous	rdfs:member	local:previous_work	.
+local:ontology_language_owl	rdfs:subClassOf	local:owl	.
+local:ontology_language_owl	rdfs:subClassOf	local:language_owl	.
+local:adding_to_web_ontology_language_owl	local:adding_to	local:web_ontology_language_owl	.
+local:web	rdfs:member	local:web_ontology	.
+local:web_ontology_language_owl	rdfs:subClassOf	local:owl	.
+local:circumscriptive_description	rdfs:subClassOf	local:description	.
+local:description_logics	rdfs:subClassOf	local:logics	.
+local:apply	vn.role:Theme	local:local_closure	.
+local:web_ontology	rdfs:member	local:web_ontology_language	.
+local:had	vn.role:Stimulus	local:drawback	.
+local:ontology_language	rdfs:subClassOf	local:language	.
+local:transcends	vn.role:Theme2	local:previous_work	.
+local:local_closure	rdfs:subClassOf	local:closure	.
+local:present	vn.role:Theme	local:new_approach	.
+local:description	rdfs:member	local:description_logics	.
+local:transcends	local:AM-LOC	local:circumscriptive_description_logics	.
+local:ontology_language	rdfs:member	local:ontology_language_owl	.
+local:yielding	vn.role:Theme	local:undecidable_logic	.
+local:world_reasoning	rdfs:subClassOf	local:reasoning	.
+local:world_reasoning_to_web_ontology_language_owl	local:to_webontologylanguageowl	local:world_reasoning	.
+local:language_owl	rdfs:subClassOf	local:owl	.
+local:adding	vn.role:Patient	local:world_reasoning_to_web_ontology_language_owl	.
+local:closed	rdfs:member	local:closed_world	.
+local:web_ontology	rdfs:subClassOf	local:ontology	.
+local:local	rdfs:member	local:local_closure	.
+local:apply	vn.role:Recipient	local:roles	.

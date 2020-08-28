@@ -1,0 +1,129 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:established	rdfs:label	"established"	.
+
+local:means	rdfs:label	"means"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_work	rdfs:label	"knowledge work"	.
+
+local:organizational_knowledge_work	rdfs:label	"organizational knowledge work"	.
+
+local:work	rdfs:label	"work"	.
+
+local:organizational_knowledge	rdfs:label	"organizational knowledge"	.
+
+local:organizational	rdfs:label	"organizational"	.
+
+local:improving_efficiency	rdfs:label	"improving efficiency"	.
+
+local:efficiency	rdfs:label	"efficiency"	.
+
+local:improving_efficiency_of_organizational_knowledge_work	rdfs:label	"improving efficiency of organizational knowledge work"	.
+
+local:efficiency_of_organizational_knowledge_work	rdfs:label	"efficiency of organizational knowledge work"	.
+
+local:improving	rdfs:label	"improving"	.
+
+local:implicit_procedural	rdfs:label	"implicit procedural"	.
+
+local:implicit_procedural_knowledge	rdfs:label	"implicit procedural knowledge"	.
+
+local:implicit	rdfs:label	"implicit"	.
+
+local:procedural	rdfs:label	"procedural"	.
+
+local:procedural_knowledge	rdfs:label	"procedural knowledge"	.
+
+local:implicit_procedural_knowledge_in_organization	rdfs:label	"implicit procedural knowledge in organization"	.
+
+local:organization	rdfs:label	"organization"	.
+
+local:made	rdfs:label	"made"	.
+
+local:explicit	rdfs:label	"explicit"	.
+
+local:defining	rdfs:label	"defining"	.
+
+local:processes	rdfs:label	"processes"	.
+
+local:described	rdfs:label	"described"	.
+
+local:explicitly	rdfs:label	"explicitly"	.
+
+local:synchronized	rdfs:label	"synchronized"	.
+
+local:addition	rdfs:label	"addition"	.
+
+local:individual_knowledge	rdfs:label	"individual knowledge"	.
+
+local:individual_knowledge_work	rdfs:label	"individual knowledge work"	.
+
+local:individual	rdfs:label	"individual"	.
+
+local:activities_of_individual_knowledge_work	rdfs:label	"activities of individual knowledge work"	.
+
+local:activities	rdfs:label	"activities"	.
+
+local:can	rdfs:label	"can"	.
+
+local:not	rdfs:label	"not"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:made	vn.role:Product	local:explicit	.
+local:made	local:AM-MNR	local:defining	.
+local:efficiency_of_organizational_knowledge_work	local:efficiency_of	local:organizational_knowledge_work	.
+local:defining	vn.role:Theme	local:processes	.
+local:individual_knowledge	rdfs:member	local:individual_knowledge_work	.
+local:improving_efficiency_of_organizational_knowledge_work	local:of_organizationalknowledgework	local:improving_efficiency	.
+local:improving	vn.role:Patient	local:efficiency_of_organizational_knowledge_work	.
+local:activities_of_individual_knowledge_work	local:of_individualknowledgework	local:activities	.
+local:procedural_knowledge	rdfs:subClassOf	local:knowledge	.
+local:individual_knowledge_work	rdfs:subClassOf	local:work	.
+local:described	vn.role:Theme	local:processes	.
+local:implicit_procedural_knowledge	rdfs:subClassOf	local:knowledge	.
+local:organizational_knowledge	rdfs:member	local:organizational_knowledge_work	.
+local:organizational_knowledge	rdfs:subClassOf	local:knowledge	.
+local:synchronized	local:AM-LOC	local:organizational_knowledge_work	.
+local:implicit_procedural_knowledge	rdfs:subClassOf	local:procedural_knowledge	.
+local:organizational_knowledge_work	rdfs:subClassOf	local:knowledge_work	.
+local:procedural	rdfs:member	local:procedural_knowledge	.
+local:implicit_procedural_knowledge_in_organization	local:implicitproceduralknowledge_in	local:organization	.
+local:organizational_knowledge_work	rdfs:subClassOf	local:work	.
+local:synchronized	vn.role:Patient	local:activities_of_individual_knowledge_work	.
+local:implicit	rdfs:member	local:implicit_procedural	.
+local:knowledge	rdfs:member	local:knowledge_work	.
+local:organizational	rdfs:member	local:organizational_knowledge	.
+local:individual_knowledge	rdfs:subClassOf	local:knowledge	.
+local:implicit_procedural	rdfs:member	local:implicit_procedural_knowledge	.
+local:improving_efficiency_of_organizational_knowledge_work	local:improvingefficiency_of	local:organizational_knowledge_work	.
+local:implicit_procedural_knowledge_in_organization	local:in_organization	local:implicit_procedural_knowledge	.
+local:synchronized	local:AM-MNR	local:activities	.
+local:activities_of_individual_knowledge_work	local:activities_of	local:individual_knowledge_work	.
+local:synchronized	local:AM-NEG	local:not	.
+local:described	local:AM-MNR	local:explicitly	.
+local:improving_efficiency	rdfs:subClassOf	local:efficiency	.
+local:implicit_procedural	rdfs:subClassOf	local:procedural	.
+local:knowledge_work	rdfs:subClassOf	local:work	.
+local:individual_knowledge_work	rdfs:subClassOf	local:knowledge_work	.
+local:made	vn.role:Material	local:implicit_procedural_knowledge_in_organization	.
+local:established	local:AM-PNC	local:improving_efficiency_of_organizational_knowledge_work	.
+local:efficiency_of_organizational_knowledge_work	local:of_organizationalknowledgework	local:efficiency	.
+local:established	vn.role:Cause	local:means	.
+local:individual	rdfs:member	local:individual_knowledge	.
+local:synchronized	local:AM-LOC	local:addition	.
+local:synchronized	local:AM-MOD	local:can	.

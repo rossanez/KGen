@@ -1,0 +1,207 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:study	rdfs:label	"study"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:watermarking	rdfs:label	"watermarking"	.
+
+local:ownership_of_ontology	rdfs:label	"ownership of ontology"	.
+
+local:ownership	rdfs:label	"ownership"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:prove	rdfs:label	"prove"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:statements	rdfs:label	"statements"	.
+
+local:existing_approaches	rdfs:label	"existing approaches"	.
+
+local:different_from_existing_approaches	rdfs:label	"different from existing approaches"	.
+
+local:different	rdfs:label	"different"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:watermark	rdfs:label	"watermark"	.
+
+local:not	rdfs:label	"not"	.
+
+local:existing_statements	rdfs:label	"existing statements"	.
+
+local:existing_existing_statements	rdfs:label	"existing existing statements"	.
+
+local:altering	rdfs:label	"altering"	.
+
+local:removing	rdfs:label	"removing"	.
+
+local:thereby_approach	rdfs:label	"thereby approach"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:false	rdfs:label	"false"	.
+
+local:false_statements	rdfs:label	"false statements"	.
+
+local:show	rdfs:label	"show"	.
+
+local:probability_bounds	rdfs:label	"probability bounds"	.
+
+local:bounds	rdfs:label	"bounds"	.
+
+local:tight_probability	rdfs:label	"tight probability"	.
+
+local:tight_probability_bounds	rdfs:label	"tight probability bounds"	.
+
+local:provably_tight_probability_bounds	rdfs:label	"provably tight probability bounds"	.
+
+local:only_parts	rdfs:label	"only parts"	.
+
+local:parts	rdfs:label	"parts"	.
+
+local:provably_tight_probability	rdfs:label	"provably tight probability"	.
+
+local:probability	rdfs:label	"probability"	.
+
+local:provably	rdfs:label	"provably"	.
+
+local:provably_tight	rdfs:label	"provably tight"	.
+
+local:tight	rdfs:label	"tight"	.
+
+local:only	rdfs:label	"only"	.
+
+local:are_reused	rdfs:label	"are re-used"	.
+
+local:reused	rdfs:label	"re-used"	.
+
+local:even_are_reused	rdfs:label	"even are re-used"	.
+
+local:can_established	rdfs:label	"can established"	.
+
+local:established	rdfs:label	"established"	.
+
+local:ownership_of_ontologies	rdfs:label	"ownership of ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:can_established_with_tight_probability_bounds	rdfs:label	"can established with tight probability bounds"	.
+
+local:only_parts_of_ontology	rdfs:label	"only parts of ontology"	.
+
+local:can	rdfs:label	"can"	.
+
+local:demonstrate	rdfs:label	"demonstrate"	.
+
+local:finally	rdfs:label	"finally"	.
+
+local:realworld_ontologies	rdfs:label	"real-world ontologies"	.
+
+local:realworld	rdfs:label	"real-world"	.
+
+local:approach_on_realworld_ontologies	rdfs:label	"approach on real-world ontologies"	.
+
+local:viability	rdfs:label	"viability"	.
+
+local:viability_of_we	rdfs:label	"viability of we"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:probability	owl:sameAs	cso:probability	.
+cso:probability	rdfs:label	"probability"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:study	local:AM-LOC	local:paper	.
+local:demonstrate	vn.role:Cause	local:viability	.
+local:introduce	vn.role:Patient	local:false_statements	.
+local:propose	local:AM-NEG	local:not	.
+local:ownership_of_ontologies	local:ownership_of	local:ontologies	.
+local:study	vn.role:Agent	local:we	.
+local:established	local:AM-ADV	local:even_are_reused	.
+local:realworld	rdfs:member	local:realworld_ontologies	.
+local:only_parts_of_ontology	local:onlyparts_of	local:ontology	.
+local:propose	vn.role:Topic	local:watermark	.
+local:ownership_of_ontology	local:of_ontology	local:ownership	.
+local:probability_bounds	rdfs:subClassOf	local:bounds	.
+local:false	rdfs:member	local:false_statements	.
+local:realworld_ontologies	rdfs:subClassOf	local:ontologies	.
+local:study	local:AM-PNC	local:prove	.
+local:only_parts_of_ontology	local:of_ontology	local:only_parts	.
+local:existing	vn.role:Location	local:statements	.
+local:provably_tight_probability	rdfs:member	local:provably_tight_probability_bounds	.
+local:thereby_approach	rdfs:subClassOf	local:approach	.
+local:only	rdfs:member	local:only_parts	.
+local:propose	vn.role:Agent	local:we	.
+local:altering	vn.role:Patient	local:existing_statements	.
+local:removing	vn.role:Theme	local:existing_statements	.
+local:introduce	vn.role:Agent	local:thereby_approach	.
+local:show	vn.role:Agent	local:we	.
+local:probability	rdfs:member	local:probability_bounds	.
+local:viability_of_we	local:viability_of	local:we	.
+local:approach_on_realworld_ontologies	local:approach_on	local:realworld_ontologies	.
+local:introduce	local:AM-NEG	local:not	.
+local:false_statements	rdfs:subClassOf	local:statements	.
+local:tight_probability_bounds	rdfs:subClassOf	local:bounds	.
+local:introduce	vn.role:Patient1	local:ontology	.
+local:existing_statements	rdfs:subClassOf	local:statements	.
+local:removing	vn.role:Agent	local:we	.
+local:provably_tight	rdfs:member	local:provably_tight_probability	.
+local:even_are_reused	rdfs:subClassOf	local:are_reused	.
+local:established	vn.role:Cause	local:ownership_of_ontologies	.
+local:existing_existing_statements	rdfs:subClassOf	local:existing_statements	.
+local:tight_probability	rdfs:member	local:tight_probability_bounds	.
+local:can_established	rdfs:subClassOf	local:established	.
+local:propose	local:AM-ADV	local:different_from_existing_approaches	.
+local:can_established_with_tight_probability_bounds	local:with_tightprobabilitybounds	local:can_established	.
+local:demonstrate	local:AM-TMP	local:finally	.
+local:approach_on_realworld_ontologies	local:on_real-worldontologies	local:approach	.
+local:tight	rdfs:member	local:tight_probability	.
+local:demonstrate	vn.role:Recipient	local:we	.
+local:propose	local:AM-MNR	local:altering	.
+local:different_from_existing_approaches	local:from_existingapproaches	local:different	.
+local:provably_tight_probability	rdfs:subClassOf	local:probability	.
+local:can_established_with_tight_probability_bounds	local:canestablished_with	local:tight_probability_bounds	.
+local:viability_of_we	local:of_we	local:viability	.
+local:approach	vn.role:object	local:viability_of_we	.
+local:established	local:AM-MNR	local:tight_probability_bounds	.
+local:different_from_existing_approaches	local:different_from	local:existing_approaches	.
+local:study	vn.role:Theme	local:watermarking	.
+local:existing	vn.role:Location	local:approaches	.
+local:only_parts	rdfs:subClassOf	local:parts	.
+local:provably_tight_probability_bounds	rdfs:subClassOf	local:bounds	.
+local:approach	vn.role:indirect_object	local:realworld_ontologies	.
+local:tight_probability_bounds	rdfs:subClassOf	local:probability_bounds	.
+local:provably	rdfs:member	local:provably_tight	.
+local:ownership_of_ontologies	local:of_ontologies	local:ownership	.
+local:established	local:AM-MOD	local:can	.
+local:prove	vn.role:Theme	local:ownership_of_ontology	.
+local:provably_tight	rdfs:subClassOf	local:tight	.
+local:show	vn.role:Theme	local:can_established_with_tight_probability_bounds	.
+local:altering	vn.role:Agent	local:we	.
+local:tight_probability	rdfs:subClassOf	local:probability	.
+local:are_reused	rdfs:subClassOf	local:reused	.
+local:existing_approaches	rdfs:subClassOf	local:approaches	.
+local:ownership_of_ontology	local:ownership_of	local:ontology	.

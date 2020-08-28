@@ -1,0 +1,197 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:tagging_systems	rdfs:label	"tagging systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:typical_tagging_systems	rdfs:label	"typical tagging systems"	.
+
+local:capture	rdfs:label	"capture"	.
+
+local:merely	rdfs:label	"merely"	.
+
+local:tagging_interactions	rdfs:label	"tagging interactions"	.
+
+local:interactions	rdfs:label	"interactions"	.
+
+local:tagging	rdfs:label	"tagging"	.
+
+local:part_of_tagging_interactions	rdfs:label	"part of tagging interactions"	.
+
+local:part	rdfs:label	"part"	.
+
+local:enrich	rdfs:label	"enrich"	.
+
+local:tag	rdfs:label	"tag"	.
+
+local:tag_assignments	rdfs:label	"tag assignments"	.
+
+local:assignments	rdfs:label	"assignments"	.
+
+local:semantics_of_tag_assignments	rdfs:label	"semantics of tag assignments"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:user	rdfs:label	"user"	.
+
+local:user_profiles	rdfs:label	"user profiles"	.
+
+local:profiles	rdfs:label	"profiles"	.
+
+local:build	rdfs:label	"build"	.
+
+local:tag_assignment	rdfs:label	"tag assignment"	.
+
+local:additional	rdfs:label	"additional"	.
+
+local:additional_evidence	rdfs:label	"additional evidence"	.
+
+local:assignment	rdfs:label	"assignment"	.
+
+local:evidence	rdfs:label	"evidence"	.
+
+local:basis_of_statistics	rdfs:label	"basis of statistics"	.
+
+local:basis	rdfs:label	"basis"	.
+
+local:statistics	rdfs:label	"statistics"	.
+
+local:statistics_about_tags	rdfs:label	"statistics about tags"	.
+
+local:tags	rdfs:label	"tags"	.
+
+local:pertain_to_tag_assignment	rdfs:label	"pertain to tag assignment"	.
+
+local:pertain	rdfs:label	"pertain"	.
+
+local:disregarding	rdfs:label	"disregarding"	.
+
+local:common_practice	rdfs:label	"common practice"	.
+
+local:practice	rdfs:label	"practice"	.
+
+local:common	rdfs:label	"common"	.
+
+local:tagbased_resource	rdfs:label	"tag-based resource"	.
+
+local:resource	rdfs:label	"resource"	.
+
+local:tagbased	rdfs:label	"tag-based"	.
+
+local:pertain_to_user	rdfs:label	"pertain to user"	.
+
+local:user_profiles_on_basis	rdfs:label	"user profiles on basis"	.
+
+local:user_profiles_on_basis_disregarding	rdfs:label	"user profiles on basis disregarding"	.
+
+local:pertain_to_resource	rdfs:label	"pertain to resource"	.
+
+local:main_bulk	rdfs:label	"main bulk"	.
+
+local:bulk	rdfs:label	"bulk"	.
+
+local:valuable	rdfs:label	"valuable"	.
+
+local:valuable_information	rdfs:label	"valuable information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:main	rdfs:label	"main"	.
+
+local:main_bulk_of_valuable_information	rdfs:label	"main bulk of valuable information"	.
+
+local:ignored	rdfs:label	"ignored"	.
+
+local:thus	rdfs:label	"thus"	.
+
+local:generating	rdfs:label	"generating"	.
+
+local:resource_profiles	rdfs:label	"resource profiles"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:statistics	owl:sameAs	cso:statistics	.
+local:tagbased	owl:sameAs	cso:tag-based	.
+cso:semantics	rdfs:label	"semantics"	.
+cso:user_profiles	rdfs:label	"user profiles"	.
+cso:statistics	rdfs:label	"statistics"	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:tag-based	rdfs:label	"tag-based"	.
+local:user_profiles	owl:sameAs	cso:user_profiles	.
+
+#### Relations ####
+
+local:common_practice	rdfs:subClassOf	local:practice	.
+local:part_of_tagging_interactions	local:part_of	local:tagging_interactions	.
+local:user_profiles_on_basis	local:on_basis	local:user_profiles	.
+local:resource	rdfs:member	local:resource_profiles	.
+local:main_bulk_of_valuable_information	local:of_valuableinformation	local:main_bulk	.
+local:tagging	rdfs:member	local:tagging_interactions	.
+local:tagging_interactions	rdfs:subClassOf	local:interactions	.
+local:tagging_systems	rdfs:subClassOf	local:systems	.
+local:build	vn.role:Agent	local:common_practice	.
+local:typical_tagging_systems	rdfs:subClassOf	local:tagging_systems	.
+local:pertain_to_tag_assignment	local:pertain_to	local:tag_assignment	.
+local:tagbased	rdfs:member	local:tagbased_resource	.
+local:build	local:AM-MNR	local:basis_of_statistics	.
+local:valuable	rdfs:member	local:valuable_information	.
+local:ignored	vn.role:Theme	local:thus	.
+local:build	vn.role:Material	local:tagbased_resource	.
+local:user_profiles	rdfs:subClassOf	local:profiles	.
+local:user_profiles_on_basis_disregarding	local:_disregarding	local:user_profiles_on_basis	.
+local:pertain_to_user	local:to_user	local:pertain	.
+local:resource_profiles	rdfs:subClassOf	local:profiles	.
+local:disregarding	vn.role:Theme	local:additional_evidence	.
+local:part_of_tagging_interactions	local:of_tagginginteractions	local:part	.
+local:tag	rdfs:member	local:tag_assignment	.
+local:pertain	vn.role:Recipient	local:tag	.
+local:tag	rdfs:member	local:tag_assignments	.
+local:build	vn.role:Material	local:user_profiles	.
+local:enrich	vn.role:Theme	local:semantics_of_tag_assignments	.
+local:disregarding	vn.role:Agent	local:tags	.
+local:pertain	vn.role:Recipient	local:user	.
+local:tag_assignments	rdfs:subClassOf	local:assignments	.
+local:common	rdfs:member	local:common_practice	.
+local:build	vn.role:Material	local:user_profiles_on_basis_disregarding	.
+local:pertain_to_resource	local:pertain_to	local:resource	.
+local:ignored	local:AM-TMP	local:generating	.
+local:user	rdfs:member	local:user_profiles	.
+local:main	rdfs:member	local:main_bulk	.
+local:generating	vn.role:Theme2	local:user_profiles	.
+local:additional_evidence	rdfs:subClassOf	local:evidence	.
+local:valuable_information	rdfs:subClassOf	local:information	.
+local:tagging	vn.role:Theme	local:interactions	.
+local:additional	rdfs:member	local:additional_evidence	.
+local:semantics_of_tag_assignments	local:of_tagassignments	local:semantics	.
+local:tag_assignment	rdfs:subClassOf	local:assignment	.
+local:tagbased_resource	rdfs:subClassOf	local:resource	.
+local:pertain_to_resource	local:to_resource	local:pertain	.
+local:capture	vn.role:Agent	local:typical_tagging_systems	.
+local:user_profiles_on_basis	local:userprofiles_on	local:basis	.
+local:statistics_about_tags	local:about_tags	local:statistics	.
+local:capture	local:AM-ADV	local:merely	.
+local:main_bulk_of_valuable_information	local:mainbulk_of	local:valuable_information	.
+local:enrich	vn.role:Agent	local:tagging	.
+local:pertain	vn.role:Recipient	local:resource	.
+local:statistics_about_tags	local:statistics_about	local:tags	.
+local:semantics_of_tag_assignments	local:semantics_of	local:tag_assignments	.
+local:pertain_to_user	local:pertain_to	local:user	.
+local:generating	vn.role:Theme1	local:thus	.
+local:generating	vn.role:Theme2	local:resource_profiles	.
+local:user_profiles_on_basis_disregarding	local:userprofilesonbasis_	local:disregarding	.
+local:basis_of_statistics	local:basis_of	local:statistics	.
+local:pertain_to_tag_assignment	local:to_tagassignment	local:pertain	.
+local:pertain	vn.role:Agent	local:additional_evidence	.
+local:basis_of_statistics	local:of_statistics	local:basis	.
+local:pertain	vn.role:Theme	local:tag_assignment	.
+local:main_bulk	rdfs:subClassOf	local:bulk	.
+local:capture	vn.role:Theme	local:part_of_tagging_interactions	.

@@ -1,0 +1,49 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:performing	rdfs:label	"performing"	.
+
+local:inference	rdfs:label	"inference"	.
+
+local:different_modes	rdfs:label	"different modes"	.
+
+local:modes	rdfs:label	"modes"	.
+
+local:different	rdfs:label	"different"	.
+
+local:materialization_as_different_modes	rdfs:label	"materialization as different modes"	.
+
+local:materialization	rdfs:label	"materialization"	.
+
+local:have	rdfs:label	"have"	.
+
+local:complementary_advantages	rdfs:label	"complementary advantages"	.
+
+local:advantages	rdfs:label	"advantages"	.
+
+local:complementary	rdfs:label	"complementary"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:inference	owl:sameAs	cso:inference	.
+cso:inference	rdfs:label	"inference"	.
+
+#### Relations ####
+
+local:different	rdfs:member	local:different_modes	.
+local:complementary_advantages	rdfs:subClassOf	local:advantages	.
+local:different_modes	rdfs:subClassOf	local:modes	.
+local:materialization_as_different_modes	local:materialization_as	local:different_modes	.
+local:complementary	rdfs:member	local:complementary_advantages	.
+local:performing	vn.role:Theme	local:inference	.
+local:materialization_as_different_modes	local:as_differentmodes	local:materialization	.
+local:have	vn.role:Experiencer	local:materialization_as_different_modes	.
+local:have	vn.role:Stimulus	local:complementary_advantages	.

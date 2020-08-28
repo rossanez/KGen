@@ -1,0 +1,152 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:even_more	rdfs:label	"even more"	.
+
+local:even_more_expressive	rdfs:label	"even more expressive"	.
+
+local:expressive	rdfs:label	"expressive"	.
+
+local:expressive_language	rdfs:label	"expressive language"	.
+
+local:language	rdfs:label	"language"	.
+
+local:more_expressive_language	rdfs:label	"more expressive language"	.
+
+local:more_expressive	rdfs:label	"more expressive"	.
+
+local:even_more_expressive_language	rdfs:label	"even more expressive language"	.
+
+local:even	rdfs:label	"even"	.
+
+local:more	rdfs:label	"more"	.
+
+local:allows	rdfs:label	"allows"	.
+
+local:modeling_defaults	rdfs:label	"modeling defaults"	.
+
+local:defaults	rdfs:label	"defaults"	.
+
+local:integrity	rdfs:label	"integrity"	.
+
+local:integrity_constraints	rdfs:label	"integrity constraints"	.
+
+local:constraints	rdfs:label	"constraints"	.
+
+local:ontology_languages	rdfs:label	"ontology languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:extending	rdfs:label	"extending"	.
+
+local:rules_suchas_expressible	rdfs:label	"rules such_as expressible"	.
+
+local:rules	rdfs:label	"rules"	.
+
+local:expressible	rdfs:label	"expressible"	.
+
+local:expressible_in_rifcore	rdfs:label	"expressible in rif-core"	.
+
+local:rifcore	rdfs:label	"rif-core"	.
+
+local:default	rdfs:label	"default"	.
+
+local:default_negation	rdfs:label	"default negation"	.
+
+local:nonmonotonic	rdfs:label	"non-monotonic"	.
+
+local:nonmonotonic_rules	rdfs:label	"non-monotonic rules"	.
+
+local:negation	rdfs:label	"negation"	.
+
+local:nonmonotonic_rules_integrating	rdfs:label	"non-monotonic rules integrating"	.
+
+local:integrating	rdfs:label	"integrating"	.
+
+local:described_in_riffld	rdfs:label	"described in rif-fld"	.
+
+local:described	rdfs:label	"described"	.
+
+local:riffld	rdfs:label	"rif-fld"	.
+
+local:those	rdfs:label	"those"	.
+
+local:yields	rdfs:label	"yields"	.
+
+local:further_nonmonotonic_rules	rdfs:label	"further non-monotonic rules"	.
+
+local:ontology_languages_with_rules	rdfs:label	"ontology languages with rules"	.
+
+local:ontology_languages_with_rules_with_further_nonmonotonic_rules	rdfs:label	"ontology languages with rules with further non-monotonic rules"	.
+
+local:ontology_languages_with_rules_with_further_nonmonotonic_rules_integrating	rdfs:label	"ontology languages with rules with further non-monotonic rules integrating"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology_language	rdfs:label	"ontology languages"	.
+local:ontology_languages	owl:sameAs	cso:ontology_language	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:modeling_defaults	rdfs:subClassOf	local:defaults	.
+local:described_in_riffld	local:in_rif-fld	local:described	.
+local:allows	vn.role:Theme	local:integrity_constraints	.
+local:nonmonotonic	rdfs:member	local:nonmonotonic_rules	.
+local:even_more_expressive_language	rdfs:subClassOf	local:language	.
+local:ontology_languages_with_rules_with_further_nonmonotonic_rules_integrating	local:ontologylanguageswithruleswithfurthernon-monotonicrules_	local:integrating	.
+local:even_more	rdfs:member	local:even_more_expressive	.
+local:nonmonotonic_rules_integrating	local:non-monotonicrules_	local:integrating	.
+local:ontology_languages_with_rules_with_further_nonmonotonic_rules	local:with_furthernon-monotonicrules	local:ontology_languages_with_rules	.
+local:extending	vn.role:Recipient	local:nonmonotonic_rules_integrating	.
+local:integrity	rdfs:member	local:integrity_constraints	.
+local:expressive_language	rdfs:subClassOf	local:language	.
+local:default	rdfs:member	local:default_negation	.
+local:even_more	rdfs:subClassOf	local:more	.
+local:ontology_languages	rdfs:subClassOf	local:languages	.
+local:integrating	vn.role:Patient1	local:those	.
+local:further_nonmonotonic_rules	rdfs:subClassOf	local:nonmonotonic_rules	.
+local:extending	vn.role:Theme	local:ontology_languages	.
+local:rules_suchas_expressible	local:rules_such_as	local:expressible	.
+local:default_negation	rdfs:subClassOf	local:negation	.
+local:ontology_languages_with_rules_with_further_nonmonotonic_rules	local:ontologylanguageswithrules_with	local:further_nonmonotonic_rules	.
+local:ontology	rdfs:member	local:ontology_languages	.
+local:integrating	vn.role:Patient1	local:nonmonotonic_rules	.
+local:described_in_riffld	local:described_in	local:riffld	.
+local:nonmonotonic_rules_integrating	local:_integrating	local:nonmonotonic_rules	.
+local:ontology_languages_with_rules_with_further_nonmonotonic_rules_integrating	local:_integrating	local:ontology_languages_with_rules_with_further_nonmonotonic_rules	.
+local:extending	vn.role:Recipient	local:rules_suchas_expressible	.
+local:integrating	vn.role:Patient2	local:default_negation	.
+local:expressive	rdfs:member	local:expressive_language	.
+local:allows	vn.role:Agent	local:expressive_language	.
+local:nonmonotonic_rules	rdfs:subClassOf	local:rules	.
+local:ontology_languages_with_rules	local:ontologylanguages_with	local:rules	.
+local:rules_suchas_expressible	local:such_as_expressible	local:rules	.
+local:yields	vn.role:Theme	local:expressive_language	.
+local:yields	vn.role:Agent	local:ontology_languages_with_rules_with_further_nonmonotonic_rules_integrating	.
+local:more_expressive	rdfs:subClassOf	local:expressive	.
+local:expressible_in_rifcore	local:in_rif-core	local:expressible	.
+local:described	local:AM-LOC	local:riffld	.
+local:expressible_in_rifcore	local:expressible_in	local:rifcore	.
+local:even_more_expressive	rdfs:subClassOf	local:more_expressive	.
+local:more_expressive_language	rdfs:subClassOf	local:language	.
+local:even	rdfs:member	local:even_more	.
+local:ontology_languages_with_rules	local:with_rules	local:ontology_languages	.
+local:more_expressive	rdfs:member	local:more_expressive_language	.
+local:allows	vn.role:Theme	local:modeling_defaults	.
+local:even_more_expressive	rdfs:member	local:even_more_expressive_language	.
+local:integrity_constraints	rdfs:subClassOf	local:constraints	.
+local:more	rdfs:member	local:more_expressive	.
+local:integrating	local:AM-MNR	local:yields	.
+local:even_more_expressive	rdfs:subClassOf	local:expressive	.
