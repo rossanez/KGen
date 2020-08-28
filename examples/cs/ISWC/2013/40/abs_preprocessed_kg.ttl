@@ -1,0 +1,116 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:annotated_data	rdfs:label	"annotated data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:semantically_annotated	rdfs:label	"semantically annotated"	.
+
+local:annotated	rdfs:label	"annotated"	.
+
+local:using	rdfs:label	"using"	.
+
+local:machines	rdfs:label	"machines"	.
+
+local:explicit	rdfs:label	"explicit"	.
+
+local:explicit_information	rdfs:label	"explicit information"	.
+
+local:implicit_knowledge	rdfs:label	"implicit knowledge"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:information	rdfs:label	"information"	.
+
+local:implicit	rdfs:label	"implicit"	.
+
+local:semantically_annotated_data	rdfs:label	"semantically annotated data"	.
+
+local:semantically_annotated_data_deriving	rdfs:label	"semantically annotated data deriving"	.
+
+local:deriving	rdfs:label	"deriving"	.
+
+local:deriving_from_explicit_information	rdfs:label	"deriving from explicit information"	.
+
+local:reason	rdfs:label	"reason"	.
+
+local:can	rdfs:label	"can"	.
+
+local:main_advantages	rdfs:label	"main advantages"	.
+
+local:advantages	rdfs:label	"advantages"	.
+
+local:main	rdfs:label	"main"	.
+
+local:one_main_advantages	rdfs:label	"one main advantages"	.
+
+local:semantically	rdfs:label	"semantically"	.
+
+local:implicit_knowledge_from_explicit_information	rdfs:label	"implicit knowledge from explicit information"	.
+
+local:given	rdfs:label	"given"	.
+
+local:input	rdfs:label	"input"	.
+
+local:large	rdfs:label	"large"	.
+
+local:large_data	rdfs:label	"large data"	.
+
+local:large_data_volumes	rdfs:label	"large data volumes"	.
+
+local:volumes	rdfs:label	"volumes"	.
+
+local:data_volumes	rdfs:label	"data volumes"	.
+
+local:considering	rdfs:label	"considering"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:main	rdfs:member	local:main_advantages	.
+local:using	vn.role:Theme	local:annotated_data	.
+local:semantically_annotated	rdfs:subClassOf	local:annotated	.
+local:reason	local:AM-MOD	local:can	.
+local:main_advantages	rdfs:subClassOf	local:advantages	.
+local:given	vn.role:object	local:input	.
+local:large_data	rdfs:member	local:large_data_volumes	.
+local:data_volumes	rdfs:subClassOf	local:volumes	.
+local:using	vn.role:Theme	local:semantically_annotated_data_deriving	.
+local:annotated	local:AM-MNR	local:semantically	.
+local:large_data	rdfs:subClassOf	local:data	.
+local:annotated_data	rdfs:subClassOf	local:data	.
+local:annotated	local:AM-ADV	local:deriving_from_explicit_information	.
+local:explicit_information	rdfs:subClassOf	local:information	.
+local:deriving	vn.role:Location	local:implicit_knowledge_from_explicit_information	.
+local:deriving_from_explicit_information	local:deriving_from	local:explicit_information	.
+local:using	vn.role:Agent	local:machines	.
+local:deriving	vn.role:Theme	local:semantically_annotated_data	.
+local:data	rdfs:member	local:data_volumes	.
+local:large_data_volumes	rdfs:subClassOf	local:data_volumes	.
+local:deriving_from_explicit_information	local:from_explicitinformation	local:deriving	.
+local:annotated	vn.role:Theme	local:data	.
+local:explicit	rdfs:member	local:explicit_information	.
+local:implicit	rdfs:member	local:implicit_knowledge	.
+local:semantically_annotated_data_deriving	local:semanticallyannotateddata_	local:deriving	.
+local:implicit_knowledge	rdfs:subClassOf	local:knowledge	.
+local:implicit_knowledge_from_explicit_information	local:implicitknowledge_from	local:explicit_information	.
+local:large	rdfs:member	local:large_data	.
+local:implicit_knowledge_from_explicit_information	local:from_explicitinformation	local:implicit_knowledge	.
+local:considering	vn.role:Theme	local:large_data_volumes	.
+local:semantically_annotated_data	rdfs:subClassOf	local:annotated_data	.
+local:reason	vn.role:Theme1	local:machines	.
+local:one_main_advantages	rdfs:subClassOf	local:main_advantages	.
+local:semantically_annotated_data_deriving	local:_deriving	local:semantically_annotated_data	.
+local:reason	vn.role:Theme2	local:one_main_advantages	.
+local:large_data_volumes	rdfs:subClassOf	local:volumes	.

@@ -1,0 +1,173 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:illustrate	rdfs:label	"illustrate"	.
+
+local:we	rdfs:label	"we"	.
+
+local:several_novel_attacks	rdfs:label	"several novel attacks"	.
+
+local:attacks	rdfs:label	"attacks"	.
+
+local:several_novel	rdfs:label	"several novel"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:novel_attacks	rdfs:label	"novel attacks"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+local:bases	rdfs:label	"bases"	.
+
+local:several	rdfs:label	"several"	.
+
+local:several_novel_attacks_to_confidentiality	rdfs:label	"several novel attacks to confidentiality"	.
+
+local:confidentiality	rdfs:label	"confidentiality"	.
+
+local:confidentiality_of_knowledge_bases	rdfs:label	"confidentiality of knowledge bases"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:then	rdfs:label	"then"	.
+
+local:confidentiality_model	rdfs:label	"confidentiality model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:new_confidentiality_model	rdfs:label	"new confidentiality model"	.
+
+local:new	rdfs:label	"new"	.
+
+local:new_confidentiality	rdfs:label	"new confidentiality"	.
+
+local:secure_knowledge	rdfs:label	"secure knowledge"	.
+
+local:secure	rdfs:label	"secure"	.
+
+local:bases_views	rdfs:label	"bases views"	.
+
+local:views	rdfs:label	"views"	.
+
+local:knowledge_bases_views	rdfs:label	"knowledge bases views"	.
+
+local:secure_knowledge_bases_views	rdfs:label	"secure knowledge bases views"	.
+
+local:sensitive	rdfs:label	"sensitive"	.
+
+local:detect	rdfs:label	"detect"	.
+
+local:constructing	rdfs:label	"constructing"	.
+
+local:identify	rdfs:label	"identify"	.
+
+local:safe_approximations	rdfs:label	"safe approximations"	.
+
+local:approximations	rdfs:label	"approximations"	.
+
+local:background	rdfs:label	"background"	.
+
+local:background_knowledge	rdfs:label	"background knowledge"	.
+
+local:safe	rdfs:label	"safe"	.
+
+local:safe_approximations_of_background_knowledge	rdfs:label	"safe approximations of background knowledge"	.
+
+local:can_used	rdfs:label	"can used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:knowledge_safe_approximations	rdfs:label	"knowledge safe approximations"	.
+
+local:background_knowledge_safe_approximations	rdfs:label	"background knowledge safe approximations"	.
+
+local:safe_approximations_of_background_knowledge_safe_approximations	rdfs:label	"safe approximations of background knowledge safe approximations"	.
+
+local:background_knowledge_safe_approximations_of_background_knowledge	rdfs:label	"background knowledge safe approximations of background knowledge"	.
+
+local:can	rdfs:label	"can"	.
+
+local:reduce	rdfs:label	"reduce"	.
+
+local:complexity	rdfs:label	"complexity"	.
+
+local:exploited	rdfs:label	"exploited"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+cso:background_knowledge	rdfs:label	"background knowledge"	.
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+local:background_knowledge	owl:sameAs	cso:background_knowledge	.
+
+#### Relations ####
+
+local:secure_knowledge	rdfs:subClassOf	local:knowledge	.
+local:detect	vn.role:Experiencer	local:new_confidentiality_model	.
+local:safe_approximations_of_background_knowledge_safe_approximations	local:of_backgroundknowledgesafeapproximations	local:safe_approximations	.
+local:knowledge_bases_views	rdfs:subClassOf	local:bases_views	.
+local:background_knowledge_safe_approximations	rdfs:subClassOf	local:knowledge_safe_approximations	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:introduce	vn.role:Agent	local:we	.
+local:confidentiality	rdfs:member	local:confidentiality_model	.
+local:exploited	local:AM-LOC	local:attacks	.
+local:safe_approximations_of_background_knowledge	local:safeapproximations_of	local:background_knowledge	.
+local:illustrate	vn.role:Agent	local:we	.
+local:constructing	vn.role:Product	local:secure_knowledge_bases_views	.
+local:new_confidentiality	rdfs:subClassOf	local:confidentiality	.
+local:detect	vn.role:Stimulus	local:several_novel_attacks	.
+local:novel	rdfs:member	local:novel_attacks	.
+local:several_novel_attacks_to_confidentiality	local:severalnovelattacks_to	local:confidentiality	.
+local:several	rdfs:member	local:several_novel	.
+local:exploited	local:AM-LOC	local:several_novel_attacks	.
+local:knowledge	rdfs:member	local:knowledge_bases	.
+local:detect	vn.role:Experiencer	local:we	.
+local:identify	local:AM-PNC	local:can_used	.
+local:confidentiality_of_knowledge_bases	local:of_knowledgebases	local:confidentiality	.
+local:used	local:AM-MOD	local:can	.
+local:safe_approximations_of_background_knowledge_safe_approximations	local:safeapproximations_of	local:background_knowledge_safe_approximations	.
+local:safe_approximations	rdfs:subClassOf	local:approximations	.
+local:knowledge_safe_approximations	rdfs:subClassOf	local:safe_approximations	.
+local:safe_approximations_of_background_knowledge	local:of_backgroundknowledge	local:safe_approximations	.
+local:new_confidentiality_model	rdfs:subClassOf	local:confidentiality_model	.
+local:safe	rdfs:member	local:safe_approximations	.
+local:secure_knowledge_bases_views	rdfs:subClassOf	local:knowledge_bases_views	.
+local:background_knowledge	rdfs:subClassOf	local:knowledge	.
+local:introduce	local:AM-MNR	local:sensitive	.
+local:identify	vn.role:Theme	local:safe_approximations_of_background_knowledge	.
+local:illustrate	vn.role:Theme	local:several_novel_attacks_to_confidentiality	.
+local:secure	rdfs:member	local:secure_knowledge	.
+local:reduce	vn.role:Patient	local:complexity	.
+local:identify	vn.role:Agent	local:we	.
+local:exploited	vn.role:Predicate	local:background_knowledge	.
+local:background_knowledge_safe_approximations_of_background_knowledge	local:of_backgroundknowledge	local:background_knowledge_safe_approximations	.
+local:used	vn.role:Theme	local:safe_approximations_of_background_knowledge_safe_approximations	.
+local:bases_views	rdfs:subClassOf	local:views	.
+local:new_confidentiality_model	rdfs:subClassOf	local:model	.
+local:several_novel	rdfs:member	local:several_novel_attacks	.
+local:introduce	local:AM-DIS	local:then	.
+local:introduce	vn.role:Patient	local:new_confidentiality_model	.
+local:several_novel_attacks	rdfs:subClassOf	local:novel_attacks	.
+local:new	rdfs:member	local:new_confidentiality	.
+local:new_confidentiality	rdfs:member	local:new_confidentiality_model	.
+local:used	vn.role:Recipient	local:reduce	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:several_novel_attacks_to_confidentiality	local:to_confidentiality	local:several_novel_attacks	.
+local:confidentiality_model	rdfs:subClassOf	local:model	.
+local:several_novel_attacks	rdfs:subClassOf	local:attacks	.
+local:several_novel	rdfs:subClassOf	local:novel	.
+local:background_knowledge_safe_approximations_of_background_knowledge	local:backgroundknowledgesafeapproximations_of	local:background_knowledge	.
+local:confidentiality_of_knowledge_bases	local:confidentiality_of	local:knowledge_bases	.
+local:constructing	vn.role:Agent	local:we	.
+local:background	rdfs:member	local:background_knowledge	.
+local:novel_attacks	rdfs:subClassOf	local:attacks	.
