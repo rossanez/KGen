@@ -1,0 +1,171 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:web_service	rdfs:label	"web service"	.
+
+local:service	rdfs:label	"service"	.
+
+local:many_web_service	rdfs:label	"many web service"	.
+
+local:many_web_service_composition	rdfs:label	"many web service composition"	.
+
+local:composition	rdfs:label	"composition"	.
+
+local:many_web	rdfs:label	"many web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:web_service_composition	rdfs:label	"web service composition"	.
+
+local:service_composition	rdfs:label	"service composition"	.
+
+local:many	rdfs:label	"many"	.
+
+local:needed	rdfs:label	"needed"	.
+
+local:problems_information	rdfs:label	"problems information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:may	rdfs:label	"may"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:composition_process	rdfs:label	"composition process"	.
+
+local:process	rdfs:label	"process"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:research	rdfs:label	"research"	.
+
+local:existing_research	rdfs:label	"existing research"	.
+
+local:existing_research_on_web_service_composition	rdfs:label	"existing research on web service composition"	.
+
+local:web_service_composition_wsc	rdfs:label	"web service composition wsc"	.
+
+local:wsc	rdfs:label	"wsc"	.
+
+local:assumed	rdfs:label	"assumed"	.
+
+local:procedures	rdfs:label	"procedures"	.
+
+local:generally	rdfs:label	"generally"	.
+
+local:not_change	rdfs:label	"not change"	.
+
+local:change	rdfs:label	"change."	.
+
+local:will_not_change	rdfs:label	"will not change"	.
+
+local:will	rdfs:label	"will"	.
+
+local:not	rdfs:label	"not"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:we	rdfs:label	"we"	.
+
+local:volatile	rdfs:label	"volatile"	.
+
+local:volatile_information	rdfs:label	"volatile information"	.
+
+local:two_ways	rdfs:label	"two ways"	.
+
+local:ways	rdfs:label	"ways"	.
+
+local:two_two_ways	rdfs:label	"two two ways"	.
+
+local:deal_with_volatile_information	rdfs:label	"deal with volatile information"	.
+
+local:deal	rdfs:label	"deal"	.
+
+local:modify	rdfs:label	"modify"	.
+
+local:wsc_procedures	rdfs:label	"wsc procedures"	.
+
+local:such_wsc	rdfs:label	"such wsc"	.
+
+local:such_wsc_procedures	rdfs:label	"such wsc procedures"	.
+
+local:such	rdfs:label	"such"	.
+
+local:take	rdfs:label	"take"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:web_service_composition	rdfs:label	"web service composition"	.
+local:web_service_composition	owl:sameAs	cso:web_service_composition	.
+local:service_composition	owl:sameAs	cso:service_composition	.
+cso:service_composition	rdfs:label	"service composition"	.
+
+#### Relations ####
+
+local:existing_research	rdfs:subClassOf	local:research	.
+local:deal_with_volatile_information	local:deal_with	local:volatile_information	.
+local:needed	vn.role:Patient	local:problems_information	.
+local:not_change	rdfs:subClassOf	local:change	.
+local:assumed	vn.role:Theme	local:will_not_change	.
+local:such_wsc_procedures	rdfs:subClassOf	local:wsc_procedures	.
+local:web_service_composition_wsc	local:_wsc	local:web_service_composition	.
+local:change	local:AM-MOD	local:will	.
+local:describe	vn.role:Agent	local:we	.
+local:many	rdfs:member	local:many_web	.
+local:describe	vn.role:Theme	local:two_two_ways	.
+local:existing	vn.role:Location	local:research	.
+local:composition	rdfs:member	local:composition_process	.
+local:existing_research_on_web_service_composition	local:on_webservicecomposition	local:existing_research	.
+local:such_wsc_procedures	rdfs:subClassOf	local:procedures	.
+local:needed	local:AM-LOC	local:many_web_service_composition	.
+local:needed	local:AM-MOD	local:may	.
+local:take	vn.role:Theme	local:wsc_procedures	.
+local:composition_process	rdfs:subClassOf	local:process	.
+local:modify	vn.role:Patient	local:two_ways	.
+local:service	rdfs:member	local:service_composition	.
+local:web_service_composition_wsc	local:webservicecomposition_	local:wsc	.
+local:will_not_change	rdfs:subClassOf	local:not_change	.
+local:web	rdfs:member	local:web_service	.
+local:volatile_information	rdfs:subClassOf	local:information	.
+local:web	rdfs:member	local:web_services	.
+local:many_web_service_composition	rdfs:subClassOf	local:composition	.
+local:existing_research_on_web_service_composition	local:existingresearch_on	local:web_service_composition	.
+local:wsc_procedures	rdfs:subClassOf	local:procedures	.
+local:web_service	rdfs:member	local:web_service_composition	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:web_service_composition	rdfs:subClassOf	local:composition	.
+local:volatile	rdfs:member	local:volatile_information	.
+local:needed	local:AM-TMP	local:composition_process	.
+local:deal	vn.role:Theme	local:volatile_information	.
+local:many_web_service_composition	rdfs:subClassOf	local:web_service_composition	.
+local:web_service_composition	rdfs:subClassOf	local:service_composition	.
+local:two_two_ways	rdfs:subClassOf	local:two_ways	.
+local:such_wsc	rdfs:member	local:such_wsc_procedures	.
+local:many_web_service	rdfs:subClassOf	local:service	.
+local:deal_with_volatile_information	local:with_volatileinformation	local:deal	.
+local:describe	vn.role:Theme	local:two_ways	.
+local:problems_information	rdfs:subClassOf	local:information	.
+local:many_web	rdfs:subClassOf	local:web	.
+local:change	vn.role:object	local:information	.
+local:wsc	rdfs:member	local:wsc_procedures	.
+local:such_wsc	rdfs:subClassOf	local:wsc	.
+local:many_web	rdfs:member	local:many_web_service	.
+local:service_composition	rdfs:subClassOf	local:composition	.
+local:assumed	vn.role:Agent	local:procedures	.
+local:change	local:AM-NEG	local:not	.
+local:such	rdfs:member	local:such_wsc	.
+local:assumed	local:AM-ADV	local:generally	.
+local:needed	vn.role:other	local:web_services	.
+local:two_ways	rdfs:subClassOf	local:ways	.
+local:web_service	rdfs:subClassOf	local:service	.
+local:many_web_service	rdfs:member	local:many_web_service_composition	.

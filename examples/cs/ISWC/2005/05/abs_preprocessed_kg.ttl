@@ -1,0 +1,165 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:web_services	rdfs:label	"web services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:web	rdfs:label	"web"	.
+
+local:described	rdfs:label	"described"	.
+
+local:owls	rdfs:label	"owl-s"	.
+
+local:apply	rdfs:label	"apply"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:automatic_tools	rdfs:label	"automatic tools"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:automatic	rdfs:label	"automatic"	.
+
+local:interaction_protocols	rdfs:label	"interaction protocols"	.
+
+local:protocols	rdfs:label	"protocols"	.
+
+local:interaction	rdfs:label	"interaction"	.
+
+local:verification_of_interaction_protocols	rdfs:label	"verification of interaction protocols"	.
+
+local:verification	rdfs:label	"verification"	.
+
+local:interaction_protocols_of_web_services	rdfs:label	"interaction protocols of web services"	.
+
+local:modeling_procedure	rdfs:label	"modeling procedure"	.
+
+local:procedure	rdfs:label	"procedure"	.
+
+local:preserves	rdfs:label	"preserves"	.
+
+local:control_flow_process_models	rdfs:label	"control flow process models"	.
+
+local:models	rdfs:label	"models"	.
+
+local:flow_process	rdfs:label	"flow process"	.
+
+local:process	rdfs:label	"process"	.
+
+local:flow_process_models	rdfs:label	"flow process models"	.
+
+local:process_models	rdfs:label	"process models"	.
+
+local:control_flow	rdfs:label	"control flow"	.
+
+local:flow	rdfs:label	"flow"	.
+
+local:control_flow_process	rdfs:label	"control flow process"	.
+
+local:control	rdfs:label	"control"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:data	rdfs:label	"data"	.
+
+local:data_flow	rdfs:label	"data flow"	.
+
+local:owls_process	rdfs:label	"owl-s process"	.
+
+local:owls_process_models	rdfs:label	"owl-s process models"	.
+
+local:data_flow_of_owls_process_models	rdfs:label	"data flow of owl-s process models"	.
+
+local:work	rdfs:label	"work"	.
+
+local:complete_modeling	rdfs:label	"complete modeling"	.
+
+local:modeling	rdfs:label	"modeling"	.
+
+local:complete	rdfs:label	"complete"	.
+
+local:complete_modeling_of_owls_process_models	rdfs:label	"complete modeling of owl-s process models"	.
+
+local:provides	rdfs:label	"provides"	.
+
+local:result_of_we	rdfs:label	"result of we"	.
+
+local:result	rdfs:label	"result"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:verification	rdfs:label	"verification"	.
+cso:owl-s	rdfs:label	"owl-s"	.
+cso:process_models	rdfs:label	"process models"	.
+local:process_models	owl:sameAs	cso:process_models	.
+local:verification	owl:sameAs	cso:verification	.
+local:owls	owl:sameAs	cso:owl-s	.
+
+#### Relations ####
+
+local:complete_modeling	rdfs:subClassOf	local:modeling	.
+local:apply	local:AM-LOC	local:paper	.
+local:flow_process	rdfs:member	local:flow_process_models	.
+local:control_flow_process	rdfs:member	local:control_flow_process_models	.
+local:provides	vn.role:Recipient	local:work	.
+local:described	vn.role:Agent	local:web_services	.
+local:work	vn.role:Actor2	local:provides	.
+local:data_flow_of_owls_process_models	local:of_owl-sprocessmodels	local:data_flow	.
+local:process	rdfs:member	local:process_models	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:interaction_protocols_of_web_services	local:of_webservices	local:interaction_protocols	.
+local:complete	rdfs:member	local:complete_modeling	.
+local:web	rdfs:member	local:web_services	.
+local:owls_process_models	rdfs:subClassOf	local:process_models	.
+local:flow_process_models	rdfs:subClassOf	local:models	.
+local:apply	vn.role:Theme	local:automatic_tools	.
+local:automatic	rdfs:member	local:automatic_tools	.
+local:preserves	vn.role:Agent	local:modeling_procedure	.
+local:process_models	rdfs:subClassOf	local:models	.
+local:control	rdfs:member	local:control_flow	.
+local:interaction_protocols_of_web_services	local:interactionprotocols_of	local:web_services	.
+local:control_flow_process_models	rdfs:subClassOf	local:flow_process_models	.
+local:propose	vn.role:Agent	local:we	.
+local:data	rdfs:member	local:data_flow	.
+local:preserves	vn.role:Theme	local:data_flow_of_owls_process_models	.
+local:owls_process_models	rdfs:subClassOf	local:models	.
+local:preserves	vn.role:Theme	local:control_flow_process_models	.
+local:control_flow	rdfs:member	local:control_flow_process	.
+local:flow	rdfs:member	local:flow_process	.
+local:interaction	rdfs:member	local:interaction_protocols	.
+local:flow_process_models	rdfs:subClassOf	local:process_models	.
+local:complete_modeling_of_owls_process_models	local:of_owl-sprocessmodels	local:complete_modeling	.
+local:apply	vn.role:Agent	local:we	.
+local:owls_process	rdfs:member	local:owls_process_models	.
+local:automatic_tools	rdfs:subClassOf	local:tools	.
+local:control_flow	rdfs:subClassOf	local:flow	.
+local:result_of_we	local:of_we	local:result	.
+local:owls_process	rdfs:subClassOf	local:process	.
+local:verification_of_interaction_protocols	local:of_interactionprotocols	local:verification	.
+local:data_flow_of_owls_process_models	local:dataflow_of	local:owls_process_models	.
+local:propose	vn.role:Topic	local:modeling_procedure	.
+local:data_flow	rdfs:subClassOf	local:flow	.
+local:interaction_protocols	rdfs:subClassOf	local:protocols	.
+local:owls	rdfs:member	local:owls_process	.
+local:apply	vn.role:Recipient	local:verification_of_interaction_protocols	.
+local:work	vn.role:Actor1	local:we	.
+local:result_of_we	local:result_of	local:we	.
+local:provides	vn.role:Agent	local:complete_modeling_of_owls_process_models	.
+local:verification_of_interaction_protocols	local:verification_of	local:interaction_protocols	.
+local:control_flow_process	rdfs:subClassOf	local:process	.
+local:complete_modeling_of_owls_process_models	local:completemodeling_of	local:owls_process_models	.
+local:described	local:AM-LOC	local:owls	.
+local:control_flow_process_models	rdfs:subClassOf	local:models	.
+local:flow_process	rdfs:subClassOf	local:process	.
+local:modeling_procedure	rdfs:subClassOf	local:procedure	.

@@ -1,0 +1,190 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:show	rdfs:label	"show"	.
+
+local:we	rdfs:label	"we"	.
+
+local:stateoftheart_semantic	rdfs:label	"state-of-the-art semantic"	.
+
+local:stateoftheart_semantic_web	rdfs:label	"state-of-the-art semantic web"	.
+
+local:resulting_classification	rdfs:label	"resulting classification"	.
+
+local:classification	rdfs:label	"classification"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:stateoftheart	rdfs:label	"state-of-the-art"	.
+
+local:stateoftheart_semantic_web_technology	rdfs:label	"state-of-the-art semantic web technology"	.
+
+local:web_technology	rdfs:label	"web technology"	.
+
+local:semantic_web_technology	rdfs:label	"semantic web technology"	.
+
+local:technology	rdfs:label	"technology"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:resulting	rdfs:label	"resulting"	.
+
+local:can_used	rdfs:label	"can used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:can_used_in_escience	rdfs:label	"can used in e-science"	.
+
+local:escience	rdfs:label	"e-science"	.
+
+local:escience_in_particular	rdfs:label	"e-science in particular"	.
+
+local:particular	rdfs:label	"particular"	.
+
+local:can	rdfs:label	"can"	.
+
+local:automate	rdfs:label	"automate"	.
+
+local:comparable	rdfs:label	"comparable"	.
+
+local:comparable_quality	rdfs:label	"comparable quality"	.
+
+local:quality	rdfs:label	"quality"	.
+
+local:comparable_quality_to_that	rdfs:label	"comparable quality to that"	.
+
+local:that	rdfs:label	"that"	.
+
+local:performed	rdfs:label	"performed"	.
+
+local:human	rdfs:label	"human"	.
+
+local:human_expert	rdfs:label	"human expert"	.
+
+local:expert	rdfs:label	"expert"	.
+
+local:possible_drugtarget	rdfs:label	"possible drug-target"	.
+
+local:drugtarget	rdfs:label	"drug-target"	.
+
+local:possible	rdfs:label	"possible"	.
+
+local:significant	rdfs:label	"significant"	.
+
+local:significant_information	rdfs:label	"significant information"	.
+
+local:information	rdfs:label	"information"	.
+
+local:even_resulted	rdfs:label	"even resulted"	.
+
+local:resulted	rdfs:label	"resulted"	.
+
+local:even_resulted_in_discovery	rdfs:label	"even resulted in discovery"	.
+
+local:discovery	rdfs:label	"discovery"	.
+
+local:discovery_of_significant_information	rdfs:label	"discovery of significant information"	.
+
+local:significant_information_leading	rdfs:label	"significant information leading"	.
+
+local:leading	rdfs:label	"leading"	.
+
+local:leading_to_identification	rdfs:label	"leading to identification"	.
+
+local:identification	rdfs:label	"identification"	.
+
+local:identification_of_possible_drugtarget	rdfs:label	"identification of possible drug-target"	.
+
+local:investigations	rdfs:label	"investigations"	.
+
+local:even	rdfs:label	"even"	.
+
+local:using	rdfs:label	"using"	.
+
+local:classified_data	rdfs:label	"classified data"	.
+
+local:data	rdfs:label	"data"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantic_web_technology	rdfs:label	"semantic web technology"	.
+local:escience	owl:sameAs	cso:e-science	.
+local:semantic_web_technology	owl:sameAs	cso:semantic_web_technology	.
+cso:e-science	rdfs:label	"e-science"	.
+
+#### Relations ####
+
+local:show	vn.role:Agent	local:we	.
+local:used	local:AM-MOD	local:can	.
+local:used	local:AM-LOC	local:particular	.
+local:discovery_of_significant_information	local:of_significantinformation	local:discovery	.
+local:used	vn.role:Theme	local:stateoftheart_semantic_web_technology	.
+local:resulted	local:AM-ADV	local:even	.
+local:comparable_quality	rdfs:subClassOf	local:quality	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:significant	rdfs:member	local:significant_information	.
+local:escience_in_particular	local:in_particular	local:escience	.
+local:using	vn.role:Agent	local:investigations	.
+local:resulted	vn.role:indirect_object	local:discovery_of_significant_information	.
+local:stateoftheart_semantic_web	rdfs:member	local:stateoftheart_semantic_web_technology	.
+local:stateoftheart_semantic_web_technology	rdfs:subClassOf	local:semantic_web_technology	.
+local:can_used_in_escience	local:in_e-science	local:can_used	.
+local:classified_data	rdfs:subClassOf	local:data	.
+local:web	rdfs:member	local:web_technology	.
+local:resulting	vn.role:Location	local:classification	.
+local:stateoftheart_semantic_web_technology	rdfs:subClassOf	local:technology	.
+local:show	vn.role:Theme	local:comparable_quality_to_that	.
+local:identification_of_possible_drugtarget	local:identification_of	local:possible_drugtarget	.
+local:resulted	vn.role:Location	local:investigations	.
+local:semantic_web_technology	rdfs:subClassOf	local:web_technology	.
+local:even_resulted_in_discovery	local:in_discovery	local:even_resulted	.
+local:show	vn.role:Theme	local:can_used_in_escience	.
+local:used	local:AM-PNC	local:automate	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:possible	rdfs:member	local:possible_drugtarget	.
+local:significant_information	rdfs:subClassOf	local:information	.
+local:even_resulted_in_discovery	local:evenresulted_in	local:discovery	.
+local:significant_information_leading	local:significantinformation_	local:leading	.
+local:significant_information_leading	local:_leading	local:significant_information	.
+local:identification_of_possible_drugtarget	local:of_possibledrug-target	local:identification	.
+local:possible_drugtarget	rdfs:subClassOf	local:drugtarget	.
+local:show	vn.role:Theme	local:even_resulted_in_discovery	.
+local:using	vn.role:Theme	local:classified_data	.
+local:resulting	vn.role:Theme	local:classification	.
+local:semantic_web_technology	rdfs:subClassOf	local:technology	.
+local:stateoftheart_semantic	rdfs:subClassOf	local:semantic	.
+local:performed	vn.role:Agent	local:human_expert	.
+local:comparable	rdfs:member	local:comparable_quality	.
+local:comparable_quality_to_that	local:comparablequality_to	local:that	.
+local:stateoftheart_semantic_web	rdfs:subClassOf	local:web	.
+local:human	rdfs:member	local:human_expert	.
+local:semantic_web	rdfs:member	local:semantic_web_technology	.
+local:leading_to_identification	local:leading_to	local:identification	.
+local:leading	vn.role:Destination	local:identification_of_possible_drugtarget	.
+local:web_technology	rdfs:subClassOf	local:technology	.
+local:resulting_classification	rdfs:subClassOf	local:classification	.
+local:human_expert	rdfs:subClassOf	local:expert	.
+local:stateoftheart_semantic	rdfs:member	local:stateoftheart_semantic_web	.
+local:automate	vn.role:Patient	local:resulting_classification	.
+local:resulting	rdfs:member	local:resulting_classification	.
+local:automate	vn.role:Agent	local:stateoftheart_semantic_web_technology	.
+local:can_used_in_escience	local:canused_in	local:escience	.
+local:stateoftheart	rdfs:member	local:stateoftheart_semantic	.
+local:comparable_quality_to_that	local:to_that	local:comparable_quality	.
+local:performed	vn.role:Theme	local:that	.
+local:even_resulted	rdfs:subClassOf	local:resulted	.
+local:discovery_of_significant_information	local:discovery_of	local:significant_information	.
+local:leading_to_identification	local:to_identification	local:leading	.
+local:used	local:AM-LOC	local:escience	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:escience_in_particular	local:e-science_in	local:particular	.

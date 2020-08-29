@@ -1,0 +1,233 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:built	rdfs:label	"built"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:triple_model	rdfs:label	"triple model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:triple	rdfs:label	"triple"	.
+
+local:semanticweb_rdf	rdfs:label	"semantic-web rdf"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:semanticweb	rdfs:label	"semantic-web"	.
+
+local:rdf_triple_model	rdfs:label	"rdf triple model"	.
+
+local:semanticweb_rdf_triple_model	rdfs:label	"semantic-web rdf triple model"	.
+
+local:top_of_semanticweb_rdf_triple_model	rdfs:label	"top of semantic-web rdf triple model"	.
+
+local:top	rdfs:label	"top"	.
+
+local:explain	rdfs:label	"explain"	.
+
+local:article	rdfs:label	"article"	.
+
+local:we	rdfs:label	"we"	.
+
+local:separate_proprietary_internal	rdfs:label	"separate proprietary internal"	.
+
+local:separate_proprietary_internal_data	rdfs:label	"separate proprietary internal data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:data_model	rdfs:label	"data model"	.
+
+local:separate_proprietary_internal_data_model	rdfs:label	"separate proprietary internal data model"	.
+
+local:separate	rdfs:label	"separate"	.
+
+local:separate_proprietary	rdfs:label	"separate proprietary"	.
+
+local:internal	rdfs:label	"internal"	.
+
+local:internal_data	rdfs:label	"internal data"	.
+
+local:internal_data_model	rdfs:label	"internal data model"	.
+
+local:proprietary_internal_data_model	rdfs:label	"proprietary internal data model"	.
+
+local:proprietary_internal	rdfs:label	"proprietary internal"	.
+
+local:proprietary_internal_data	rdfs:label	"proprietary internal data"	.
+
+local:triplecentered	rdfs:label	"triple-centered"	.
+
+local:triplecentered_design	rdfs:label	"triple-centered design"	.
+
+local:design	rdfs:label	"design"	.
+
+local:proprietary	rdfs:label	"proprietary"	.
+
+local:compares_to_use	rdfs:label	"compares to use"	.
+
+local:compares	rdfs:label	"compares"	.
+
+local:use	rdfs:label	"use"	.
+
+local:use_of_separate_proprietary_internal_data_model	rdfs:label	"use of separate proprietary internal data model"	.
+
+local:show	rdfs:label	"show"	.
+
+local:article_offers	rdfs:label	"article offers"	.
+
+local:article_offers_advantages	rdfs:label	"article offers advantages"	.
+
+local:offers	rdfs:label	"offers"	.
+
+local:advantages	rdfs:label	"advantages"	.
+
+local:inconsistent_data	rdfs:label	"inconsistent data"	.
+
+local:inconsistent	rdfs:label	"inconsistent"	.
+
+local:offers_advantages	rdfs:label	"offers advantages"	.
+
+local:when_dealing	rdfs:label	"when dealing"	.
+
+local:dealing	rdfs:label	"dealing"	.
+
+local:when_dealing_with_inconsistent_data	rdfs:label	"when dealing with inconsistent data"	.
+
+local:dealing_with_inconsistent_data	rdfs:label	"dealing with inconsistent data"	.
+
+local:integrating_tools	rdfs:label	"integrating tools"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:integrating	rdfs:label	"integrating"	.
+
+local:when_dealing_for_integrating_tools	rdfs:label	"when dealing for integrating tools"	.
+
+local:incomplete	rdfs:label	"incomplete"	.
+
+local:incomplete_data	rdfs:label	"incomplete data"	.
+
+local:when_dealing_with_incomplete_data	rdfs:label	"when dealing with incomplete data"	.
+
+local:dealing_with_incomplete_data	rdfs:label	"dealing with incomplete data"	.
+
+local:lowlevel	rdfs:label	"low-level"	.
+
+local:lowlevel_data	rdfs:label	"low-level data"	.
+
+local:deal_with_problems	rdfs:label	"deal with problems"	.
+
+local:deal	rdfs:label	"deal"	.
+
+local:problems	rdfs:label	"problems"	.
+
+local:problems_of_lowlevel_data	rdfs:label	"problems of low-level data"	.
+
+local:problems_of_model	rdfs:label	"problems of model"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:rdf	rdfs:label	"rdf"	.
+local:rdf	owl:sameAs	cso:rdf	.
+
+#### Relations ####
+
+local:semanticweb_rdf_triple_model	rdfs:subClassOf	local:rdf_triple_model	.
+local:triple	rdfs:member	local:triple_model	.
+local:compares_to_use	local:compares_to	local:use	.
+local:article_offers	rdfs:member	local:article_offers_advantages	.
+local:separate_proprietary_internal	rdfs:subClassOf	local:internal	.
+local:proprietary_internal	rdfs:subClassOf	local:internal	.
+local:deal_with_problems	local:deal_with	local:problems	.
+local:offers	rdfs:member	local:offers_advantages	.
+local:internal_data_model	rdfs:subClassOf	local:data_model	.
+local:internal_data	rdfs:subClassOf	local:data	.
+local:triplecentered_design	rdfs:subClassOf	local:design	.
+local:offers	vn.role:Agent	local:article	.
+local:offers_advantages	rdfs:subClassOf	local:advantages	.
+local:lowlevel_data	rdfs:subClassOf	local:data	.
+local:proprietary_internal_data_model	rdfs:subClassOf	local:internal_data_model	.
+local:dealing_with_incomplete_data	local:with_incompletedata	local:dealing	.
+local:semanticweb	rdfs:member	local:semanticweb_rdf	.
+local:when_dealing_with_inconsistent_data	local:whendealing_with	local:inconsistent_data	.
+local:incomplete_data	rdfs:subClassOf	local:data	.
+local:problems_of_lowlevel_data	local:of_low-leveldata	local:problems	.
+local:dealing_with_inconsistent_data	local:with_inconsistentdata	local:dealing	.
+local:semanticweb_rdf	rdfs:subClassOf	local:rdf	.
+local:separate_proprietary_internal_data_model	rdfs:subClassOf	local:model	.
+local:proprietary_internal	rdfs:member	local:proprietary_internal_data	.
+local:explain	local:AM-LOC	local:article	.
+local:when_dealing_for_integrating_tools	local:for_integratingtools	local:when_dealing	.
+local:explain	vn.role:Cause	local:compares_to_use	.
+local:separate_proprietary_internal_data	rdfs:subClassOf	local:data	.
+local:internal	rdfs:member	local:internal_data	.
+local:compares_to_use	local:to_use	local:compares	.
+local:use_of_separate_proprietary_internal_data_model	local:use_of	local:separate_proprietary_internal_data_model	.
+local:dealing_with_inconsistent_data	local:dealing_with	local:inconsistent_data	.
+local:problems_of_lowlevel_data	local:problems_of	local:lowlevel_data	.
+local:article_offers	rdfs:subClassOf	local:offers	.
+local:internal_data_model	rdfs:subClassOf	local:model	.
+local:explain	vn.role:Recipient	local:we	.
+local:top_of_semanticweb_rdf_triple_model	local:of_semantic-webrdftriplemodel	local:top	.
+local:built	vn.role:Material	local:languages	.
+local:problems_of_model	local:problems_of	local:model	.
+local:top_of_semanticweb_rdf_triple_model	local:top_of	local:semanticweb_rdf_triple_model	.
+local:use_of_separate_proprietary_internal_data_model	local:of_separateproprietaryinternaldatamodel	local:use	.
+local:deal	vn.role:Agent	local:we	.
+local:rdf_triple_model	rdfs:subClassOf	local:triple_model	.
+local:data	rdfs:member	local:data_model	.
+local:inconsistent	rdfs:member	local:inconsistent_data	.
+local:proprietary_internal_data	rdfs:subClassOf	local:data	.
+local:when_dealing_for_integrating_tools	local:whendealing_for	local:integrating_tools	.
+local:proprietary	rdfs:member	local:proprietary_internal	.
+local:separate_proprietary_internal_data	rdfs:member	local:separate_proprietary_internal_data_model	.
+local:show	vn.role:Agent	local:we	.
+local:integrating_tools	rdfs:subClassOf	local:tools	.
+local:show	vn.role:Theme	local:offers	.
+local:separate_proprietary	rdfs:member	local:separate_proprietary_internal	.
+local:deal	vn.role:Theme	local:problems_of_lowlevel_data	.
+local:problems_of_model	local:of_model	local:problems	.
+local:proprietary_internal_data_model	rdfs:subClassOf	local:model	.
+local:dealing	vn.role:Theme	local:inconsistent_data	.
+local:triple_model	rdfs:subClassOf	local:model	.
+local:inconsistent_data	rdfs:subClassOf	local:data	.
+local:article_offers_advantages	rdfs:subClassOf	local:advantages	.
+local:compares	vn.role:Agent	local:use_of_separate_proprietary_internal_data_model	.
+local:triplecentered	rdfs:member	local:triplecentered_design	.
+local:separate_proprietary_internal	rdfs:member	local:separate_proprietary_internal_data	.
+local:offers	local:AM-TMP	local:dealing_with_inconsistent_data	.
+local:internal_data	rdfs:member	local:internal_data_model	.
+local:data_model	rdfs:subClassOf	local:model	.
+local:when_dealing	rdfs:subClassOf	local:dealing	.
+local:when_dealing_with_inconsistent_data	local:with_inconsistentdata	local:when_dealing	.
+local:deal	vn.role:Theme	local:problems_of_model	.
+local:lowlevel	rdfs:member	local:lowlevel_data	.
+local:compares	vn.role:Patient2	local:triplecentered_design	.
+local:when_dealing_with_incomplete_data	local:with_incompletedata	local:when_dealing	.
+local:deal_with_problems	local:with_problems	local:deal	.
+local:incomplete	rdfs:member	local:incomplete_data	.
+local:integrating	vn.role:Patient2	local:tools	.
+local:show	vn.role:Theme	local:deal_with_problems	.
+local:built	vn.role:Product	local:top_of_semanticweb_rdf_triple_model	.
+local:proprietary_internal_data	rdfs:member	local:proprietary_internal_data_model	.
+local:integrating	rdfs:member	local:integrating_tools	.
+local:dealing	vn.role:Theme	local:integrating	.
+local:article	rdfs:member	local:article_offers	.
+local:dealing_with_incomplete_data	local:dealing_with	local:incomplete_data	.
+local:separate	rdfs:member	local:separate_proprietary	.
+local:offers	local:AM-TMP	local:dealing_with_incomplete_data	.
+local:separate_proprietary_internal_data_model	rdfs:subClassOf	local:proprietary_internal_data_model	.
+local:separate_proprietary	rdfs:subClassOf	local:proprietary	.
+local:when_dealing_with_incomplete_data	local:whendealing_with	local:incomplete_data	.
+local:offers	vn.role:Theme	local:advantages	.
+local:dealing	vn.role:Theme	local:incomplete_data	.

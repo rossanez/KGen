@@ -1,0 +1,117 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:semantic_consequence	rdfs:label	"semantic consequence"	.
+
+local:consequence	rdfs:label	"consequence"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_consequence_in_rdf	rdfs:label	"semantic consequence in rdf"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:computed	rdfs:label	"computed"	.
+
+local:ususally	rdfs:label	"ususally"	.
+
+local:pat_hayes_interpolation	rdfs:label	"pat hayes interpolation"	.
+
+local:interpolation	rdfs:label	"interpolation"	.
+
+local:interpolation_lemma	rdfs:label	"interpolation lemma"	.
+
+local:hayes_interpolation	rdfs:label	"hayes interpolation"	.
+
+local:hayes_interpolation_lemma	rdfs:label	"hayes interpolation lemma"	.
+
+local:pat_hayes	rdfs:label	"pat hayes"	.
+
+local:hayes	rdfs:label	"hayes"	.
+
+local:pat_hayes_interpolation_lemma	rdfs:label	"pat hayes interpolation lemma"	.
+
+local:lemma	rdfs:label	"lemma"	.
+
+local:pat	rdfs:label	"pat"	.
+
+local:using	rdfs:label	"using"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:graph_homomorphism	rdfs:label	"graph homomorphism"	.
+
+local:homomorphism	rdfs:label	"homomorphism"	.
+
+local:known	rdfs:label	"known"	.
+
+local:conceptual_graphs	rdfs:label	"conceptual graphs"	.
+
+local:graphs	rdfs:label	"graphs"	.
+
+local:conceptual	rdfs:label	"conceptual"	.
+
+local:projection_in_conceptual_graphs	rdfs:label	"projection in conceptual graphs"	.
+
+local:projection	rdfs:label	"projection"	.
+
+local:reformulate	rdfs:label	"reformulate"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:mechanism	rdfs:label	"mechanism"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:rdf	rdfs:label	"rdf"	.
+local:rdf	owl:sameAs	cso:rdf	.
+
+#### Relations ####
+
+local:pat	rdfs:member	local:pat_hayes	.
+local:projection_in_conceptual_graphs	local:projection_in	local:conceptual_graphs	.
+local:pat_hayes_interpolation_lemma	rdfs:subClassOf	local:hayes_interpolation_lemma	.
+local:semantic_consequence_in_rdf	local:in_rdf	local:semantic_consequence	.
+local:reformulate	vn.role:Topic	local:mechanism	.
+local:pat_hayes_interpolation	rdfs:member	local:pat_hayes_interpolation_lemma	.
+local:reformulate	local:AM-MNR	local:graph_homomorphism	.
+local:hayes_interpolation	rdfs:member	local:hayes_interpolation_lemma	.
+local:projection_in_conceptual_graphs	local:in_conceptualgraphs	local:projection	.
+local:known	vn.role:Theme	local:graph_homomorphism	.
+local:reformulate	local:AM-LOC	local:paper	.
+local:computed	local:AM-MNR	local:ususally	.
+local:semantic_consequence	rdfs:subClassOf	local:consequence	.
+local:hayes	rdfs:member	local:hayes_interpolation	.
+local:using	vn.role:Theme	local:pat_hayes_interpolation_lemma	.
+local:known	vn.role:Predicate	local:projection_in_conceptual_graphs	.
+local:pat_hayes	rdfs:subClassOf	local:hayes	.
+local:conceptual_graphs	rdfs:subClassOf	local:graphs	.
+local:interpolation	rdfs:member	local:interpolation_lemma	.
+local:graph_homomorphism	rdfs:subClassOf	local:homomorphism	.
+local:reformulate	vn.role:Agent	local:we	.
+local:semantic_consequence_in_rdf	local:semanticconsequence_in	local:rdf	.
+local:conceptual	rdfs:member	local:conceptual_graphs	.
+local:hayes_interpolation	rdfs:subClassOf	local:interpolation	.
+local:graph	rdfs:member	local:graph_homomorphism	.
+local:pat_hayes	rdfs:member	local:pat_hayes_interpolation	.
+local:interpolation_lemma	rdfs:subClassOf	local:lemma	.
+local:pat_hayes_interpolation_lemma	rdfs:subClassOf	local:lemma	.
+local:hayes_interpolation_lemma	rdfs:subClassOf	local:interpolation_lemma	.
+local:hayes_interpolation_lemma	rdfs:subClassOf	local:lemma	.
+local:semantic	rdfs:member	local:semantic_consequence	.
+local:computed	local:AM-ADV	local:using	.
+local:pat_hayes_interpolation	rdfs:subClassOf	local:interpolation	.
+local:using	vn.role:Agent	local:semantic_consequence_in_rdf	.
+local:computed	vn.role:Product	local:semantic_consequence_in_rdf	.

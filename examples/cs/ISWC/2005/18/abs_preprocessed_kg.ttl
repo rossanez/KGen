@@ -1,0 +1,146 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:define	rdfs:label	"define"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:general_concepts	rdfs:label	"general concepts"	.
+
+local:concepts	rdfs:label	"concepts"	.
+
+local:general	rdfs:label	"general"	.
+
+local:general_concepts_for_diagnosis	rdfs:label	"general concepts for diagnosis"	.
+
+local:diagnosis	rdfs:label	"diagnosis"	.
+
+local:diagnosis_of_ontologies	rdfs:label	"diagnosis of ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:complete_algorithms	rdfs:label	"complete algorithms"	.
+
+local:algorithms	rdfs:label	"algorithms"	.
+
+local:minimal	rdfs:label	"minimal"	.
+
+local:minimal_diagnoses	rdfs:label	"minimal diagnoses"	.
+
+local:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+local:bases	rdfs:label	"bases"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:diagnoses	rdfs:label	"diagnoses"	.
+
+local:complete	rdfs:label	"complete"	.
+
+local:complete_algorithms_for_computation	rdfs:label	"complete algorithms for computation"	.
+
+local:computation	rdfs:label	"computation"	.
+
+local:computation_of_minimal_diagnoses	rdfs:label	"computation of minimal diagnoses"	.
+
+local:minimal_diagnoses_of_knowledge_bases	rdfs:label	"minimal diagnoses of knowledge bases"	.
+
+local:based	rdfs:label	"based"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:correct_algorithms	rdfs:label	"correct algorithms"	.
+
+local:correct	rdfs:label	"correct"	.
+
+local:correct_algorithms_for_computation	rdfs:label	"correct algorithms for computation"	.
+
+local:practical	rdfs:label	"practical"	.
+
+local:practical_feasibility	rdfs:label	"practical feasibility"	.
+
+local:feasibility	rdfs:label	"feasibility"	.
+
+local:our_method	rdfs:label	"our method"	.
+
+local:method	rdfs:label	"method"	.
+
+local:practical_feasibility_of_our_method	rdfs:label	"practical feasibility of our method"	.
+
+local:shown	rdfs:label	"shown"	.
+
+local:extensive_test	rdfs:label	"extensive test"	.
+
+local:test	rdfs:label	"test"	.
+
+local:test_evaluations	rdfs:label	"test evaluations"	.
+
+local:evaluations	rdfs:label	"evaluations"	.
+
+local:extensive_test_evaluations	rdfs:label	"extensive test evaluations"	.
+
+local:extensive	rdfs:label	"extensive"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+
+#### Relations ####
+
+local:define	vn.role:Agent	local:we	.
+local:provide	vn.role:Agent	local:complete_algorithms_for_computation	.
+local:diagnosis_of_ontologies	local:of_ontologies	local:diagnosis	.
+local:diagnosis_of_ontologies	local:diagnosis_of	local:ontologies	.
+local:practical	rdfs:member	local:practical_feasibility	.
+local:correct_algorithms_for_computation	local:correctalgorithms_for	local:computation	.
+local:minimal	rdfs:member	local:minimal_diagnoses	.
+local:test_evaluations	rdfs:subClassOf	local:evaluations	.
+local:extensive_test	rdfs:member	local:extensive_test_evaluations	.
+local:general_concepts	rdfs:subClassOf	local:concepts	.
+local:computation_of_minimal_diagnoses	local:of_minimaldiagnoses	local:computation	.
+local:based	vn.role:indirect_object	local:provide	.
+local:practical_feasibility_of_our_method	local:of_ourmethod	local:practical_feasibility	.
+local:shown	vn.role:Agent	local:extensive_test_evaluations	.
+local:practical_feasibility_of_our_method	local:practicalfeasibility_of	local:our_method	.
+local:extensive_test_evaluations	rdfs:subClassOf	local:test_evaluations	.
+local:complete	rdfs:member	local:complete_algorithms	.
+local:correct_algorithms	rdfs:subClassOf	local:algorithms	.
+local:minimal_diagnoses_of_knowledge_bases	local:of_knowledgebases	local:minimal_diagnoses	.
+local:minimal_diagnoses	rdfs:subClassOf	local:diagnoses	.
+local:practical_feasibility	rdfs:subClassOf	local:feasibility	.
+local:shown	vn.role:Theme	local:practical_feasibility_of_our_method	.
+local:define	local:AM-LOC	local:paper	.
+local:complete_algorithms	rdfs:subClassOf	local:algorithms	.
+local:provide	vn.role:Recipient	local:we	.
+local:extensive_test_evaluations	rdfs:subClassOf	local:evaluations	.
+local:our_method	rdfs:subClassOf	local:method	.
+local:correct	rdfs:member	local:correct_algorithms	.
+local:provide	local:AM-MNR	local:general_concepts	.
+local:computation_of_minimal_diagnoses	local:computation_of	local:minimal_diagnoses	.
+local:complete_algorithms_for_computation	local:completealgorithms_for	local:computation	.
+local:general	rdfs:member	local:general_concepts	.
+local:define	vn.role:Theme	local:general_concepts_for_diagnosis	.
+local:provide	vn.role:Agent	local:correct_algorithms_for_computation	.
+local:extensive	rdfs:member	local:extensive_test	.
+local:knowledge	rdfs:member	local:knowledge_bases	.
+local:complete_algorithms_for_computation	local:for_computation	local:complete_algorithms	.
+local:minimal_diagnoses_of_knowledge_bases	local:minimaldiagnoses_of	local:knowledge_bases	.
+local:general_concepts_for_diagnosis	local:for_diagnosis	local:general_concepts	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:correct_algorithms_for_computation	local:for_computation	local:correct_algorithms	.
+local:general_concepts_for_diagnosis	local:generalconcepts_for	local:diagnosis	.
+local:extensive_test	rdfs:subClassOf	local:test	.
+local:test	rdfs:member	local:test_evaluations	.

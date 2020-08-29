@@ -1,0 +1,227 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:public_semantic	rdfs:label	"public semantic"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:semantic_web_server	rdfs:label	"semantic web server"	.
+
+local:web_server	rdfs:label	"web server"	.
+
+local:server	rdfs:label	"server"	.
+
+local:web	rdfs:label	"web"	.
+
+local:public_semantic_web	rdfs:label	"public semantic web"	.
+
+local:public_semantic_web_server	rdfs:label	"public semantic web server"	.
+
+local:public	rdfs:label	"public"	.
+
+local:maintaining	rdfs:label	"maintaining"	.
+
+local:telecom	rdfs:label	"telecom"	.
+
+local:telecom_valley	rdfs:label	"telecom valley"	.
+
+local:valley	rdfs:label	"valley"	.
+
+local:annotations_about_actors	rdfs:label	"annotations about actors"	.
+
+local:annotations	rdfs:label	"annotations"	.
+
+local:actors	rdfs:label	"actors"	.
+
+local:actors_of_telecom_valley	rdfs:label	"actors of telecom valley"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:we	rdfs:label	"we"	.
+
+local:experience	rdfs:label	"experience"	.
+
+local:building	rdfs:label	"building"	.
+
+local:focus	rdfs:label	"focus"	.
+
+local:then	rdfs:label	"then"	.
+
+local:example_of_inference	rdfs:label	"example of inference"	.
+
+local:example	rdfs:label	"example"	.
+
+local:inference	rdfs:label	"inference"	.
+
+local:used	rdfs:label	"used"	.
+
+local:economic	rdfs:label	"economic"	.
+
+local:economic_actors	rdfs:label	"economic actors"	.
+
+local:one_type	rdfs:label	"one type"	.
+
+local:type	rdfs:label	"type"	.
+
+local:one_type_of_cartography	rdfs:label	"one type of cartography"	.
+
+local:cartography	rdfs:label	"cartography"	.
+
+local:cartography_of_competences	rdfs:label	"cartography of competences"	.
+
+local:competences	rdfs:label	"competences"	.
+
+local:competences_of_economic_actors	rdfs:label	"competences of economic actors"	.
+
+local:economic_actors_of_telecom_valley	rdfs:label	"economic actors of telecom valley"	.
+
+local:using	rdfs:label	"using"	.
+
+local:ontologybased	rdfs:label	"ontology-based"	.
+
+local:ontologybased_metrics	rdfs:label	"ontology-based metrics"	.
+
+local:metrics	rdfs:label	"metrics"	.
+
+local:conceptual	rdfs:label	"conceptual"	.
+
+local:conceptual_clustering	rdfs:label	"conceptual clustering"	.
+
+local:clustering	rdfs:label	"clustering"	.
+
+local:detailed	rdfs:label	"detailed"	.
+
+local:graph_model	rdfs:label	"graph model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:graph_model_of_semantic_web	rdfs:label	"graph model of semantic web"	.
+
+local:exploits	rdfs:label	"exploits"	.
+
+local:give	rdfs:label	"give"	.
+
+local:associated_interpretations	rdfs:label	"associated interpretations"	.
+
+local:interpretations	rdfs:label	"interpretations"	.
+
+local:associated	rdfs:label	"associated"	.
+
+local:prove	rdfs:label	"prove"	.
+
+local:theses_metrics	rdfs:label	"theses metrics"	.
+
+local:theses	rdfs:label	"theses"	.
+
+local:characteristics_of_metrics	rdfs:label	"characteristics of metrics"	.
+
+local:characteristics	rdfs:label	"characteristics"	.
+
+local:characteristics_of_metrics_of_inferences	rdfs:label	"characteristics of metrics of inferences"	.
+
+local:inferences	rdfs:label	"inferences"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:economic_actors	owl:sameAs	cso:economic_factors	.
+cso:economic_factors	rdfs:label	"economic actors"	.
+cso:web_server	rdfs:label	"web server"	.
+local:clustering	owl:sameAs	cso:clustering	.
+local:inference	owl:sameAs	cso:inference	.
+cso:inference	rdfs:label	"inferences"	.
+cso:semantics	rdfs:label	"semantic"	.
+local:inferences	owl:sameAs	cso:inference	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:web_server	owl:sameAs	cso:web_server	.
+cso:inference	rdfs:label	"inference"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:clustering	rdfs:label	"clustering"	.
+
+#### Relations ####
+
+local:actors_of_telecom_valley	local:actors_of	local:telecom_valley	.
+local:example_of_inference	local:of_inference	local:example	.
+local:semantic_web	rdfs:member	local:semantic_web_server	.
+local:building	vn.role:Material	local:one_type_of_cartography	.
+local:building	vn.role:Material	local:public_semantic_web_server	.
+local:give	vn.role:object	local:associated_interpretations	.
+local:characteristics_of_metrics	local:of_metrics	local:characteristics	.
+local:theses	rdfs:member	local:theses_metrics	.
+local:economic_actors	rdfs:subClassOf	local:actors	.
+local:characteristics_of_metrics	local:characteristics_of	local:metrics	.
+local:characteristics_of_metrics_of_inferences	local:of_inferences	local:characteristics_of_metrics	.
+local:focus	vn.role:Experiencer	local:we	.
+local:using	vn.role:Agent	local:semantic_web	.
+local:detailed	vn.role:Agent	local:we	.
+local:give	vn.role:Asset	local:we	.
+local:focus	local:AM-TMP	local:then	.
+local:one_type_of_cartography	local:of_cartography	local:one_type	.
+local:graph	rdfs:member	local:graph_model	.
+local:competences_of_economic_actors	local:competences_of	local:economic_actors	.
+local:associated_interpretations	rdfs:subClassOf	local:interpretations	.
+local:web	rdfs:member	local:web_server	.
+local:public_semantic_web_server	rdfs:subClassOf	local:semantic_web_server	.
+local:cartography_of_competences	local:cartography_of	local:competences	.
+local:detailed	vn.role:Theme	local:exploits	.
+local:semantic_web_server	rdfs:subClassOf	local:web_server	.
+local:economic	rdfs:member	local:economic_actors	.
+local:economic_actors_of_telecom_valley	local:of_telecomvalley	local:economic_actors	.
+local:public_semantic_web	rdfs:member	local:public_semantic_web_server	.
+local:prove	vn.role:Agent	local:we	.
+local:telecom_valley	rdfs:subClassOf	local:valley	.
+local:prove	vn.role:Theme	local:characteristics_of_metrics_of_inferences	.
+local:one_type_of_cartography	local:onetype_of	local:cartography	.
+local:theses_metrics	rdfs:subClassOf	local:metrics	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:using	vn.role:Theme	local:conceptual_clustering	.
+local:telecom	rdfs:member	local:telecom_valley	.
+local:exploits	vn.role:Agent	local:inference	.
+local:using	vn.role:Theme	local:ontologybased_metrics	.
+local:exploits	vn.role:Predicate	local:graph_model_of_semantic_web	.
+local:associated	vn.role:Agent	local:interpretations	.
+local:actors_of_telecom_valley	local:of_telecomvalley	local:actors	.
+local:characteristics_of_metrics_of_inferences	local:characteristicsofmetrics_of	local:inferences	.
+local:competences_of_economic_actors	local:of_economicactors	local:competences	.
+local:graph_model_of_semantic_web	local:of_semanticweb	local:graph_model	.
+local:maintaining	vn.role:Agent	local:public_semantic_web_server	.
+local:annotations_about_actors	local:about_actors	local:annotations	.
+local:building	vn.role:Agent	local:we	.
+local:maintaining	vn.role:Theme	local:annotations_about_actors	.
+local:annotations_about_actors	local:annotations_about	local:actors	.
+local:graph_model_of_semantic_web	local:graphmodel_of	local:semantic_web	.
+local:example_of_inference	local:example_of	local:inference	.
+local:ontologybased	rdfs:member	local:ontologybased_metrics	.
+local:cartography_of_competences	local:of_competences	local:cartography	.
+local:used	vn.role:Theme	local:building	.
+local:public_semantic	rdfs:subClassOf	local:semantic	.
+local:semantic_web_server	rdfs:subClassOf	local:server	.
+local:introduce	vn.role:Agent	local:we	.
+local:web_server	rdfs:subClassOf	local:server	.
+local:introduce	vn.role:Patient	local:experience	.
+local:economic_actors_of_telecom_valley	local:economicactors_of	local:telecom_valley	.
+local:used	vn.role:Theme	local:inference	.
+local:conceptual	rdfs:member	local:conceptual_clustering	.
+local:public	rdfs:member	local:public_semantic	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:focus	vn.role:indirect_object	local:example_of_inference	.
+local:conceptual_clustering	rdfs:subClassOf	local:clustering	.
+local:one_type	rdfs:subClassOf	local:type	.
+local:graph_model	rdfs:subClassOf	local:model	.
+local:public_semantic_web	rdfs:subClassOf	local:web	.
+local:public_semantic_web_server	rdfs:subClassOf	local:server	.
+local:building	vn.role:Agent	local:inference	.
+local:ontologybased_metrics	rdfs:subClassOf	local:metrics	.
+local:public_semantic	rdfs:member	local:public_semantic_web	.

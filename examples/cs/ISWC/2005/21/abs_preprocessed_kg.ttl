@@ -1,0 +1,229 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:present	rdfs:label	"present"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:briefly	rdfs:label	"briefly"	.
+
+local:benchmarking	rdfs:label	"benchmarking"	.
+
+local:used	rdfs:label	"used"	.
+
+local:ontology_development	rdfs:label	"ontology development"	.
+
+local:ontology_development_tools	rdfs:label	"ontology development tools"	.
+
+local:development	rdfs:label	"development"	.
+
+local:development_tools	rdfs:label	"development tools"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:scalability_of_ontology_development_tools	rdfs:label	"scalability of ontology development tools"	.
+
+local:scalability	rdfs:label	"scalability"	.
+
+local:improve	rdfs:label	"improve"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:focus	rdfs:label	"focus"	.
+
+local:definition_of_infrastructure	rdfs:label	"definition of infrastructure"	.
+
+local:definition	rdfs:label	"definition"	.
+
+local:infrastructure	rdfs:label	"infrastructure"	.
+
+local:ontology_management	rdfs:label	"ontology management"	.
+
+local:management	rdfs:label	"management"	.
+
+local:management_apis	rdfs:label	"management apis"	.
+
+local:execution_efficiency	rdfs:label	"execution efficiency"	.
+
+local:efficiency	rdfs:label	"efficiency"	.
+
+local:scalability_execution	rdfs:label	"scalability execution"	.
+
+local:scalability_ontology_management	rdfs:label	"scalability ontology management"	.
+
+local:scalability_ontology_management_apis	rdfs:label	"scalability ontology management apis"	.
+
+local:scalability_execution_efficiency	rdfs:label	"scalability execution efficiency"	.
+
+local:ontology_management_apis	rdfs:label	"ontology management apis"	.
+
+local:execution	rdfs:label	"execution"	.
+
+local:scalability_ontology	rdfs:label	"scalability ontology"	.
+
+local:apis	rdfs:label	"apis"	.
+
+local:evaluating_in_terms	rdfs:label	"evaluating in terms"	.
+
+local:evaluating	rdfs:label	"evaluating"	.
+
+local:terms	rdfs:label	"terms"	.
+
+local:terms_of_scalability_execution_efficiency	rdfs:label	"terms of scalability execution efficiency"	.
+
+local:scalability_ontology_management_apis_in_terms	rdfs:label	"scalability ontology management apis in terms"	.
+
+local:tools_performance	rdfs:label	"tools performance"	.
+
+local:ontology_tools	rdfs:label	"ontology tools"	.
+
+local:ontology_tools_performance	rdfs:label	"ontology tools performance"	.
+
+local:performance_of_ontology_tools_performance	rdfs:label	"performance of ontology tools performance"	.
+
+local:terms_of_ontology_tools_performance	rdfs:label	"terms of ontology tools performance"	.
+
+local:webode_ontology	rdfs:label	"webode ontology"	.
+
+local:webode_ontology_engineering	rdfs:label	"webode ontology engineering"	.
+
+local:ontology_engineering_workbench	rdfs:label	"ontology engineering workbench"	.
+
+local:workbench	rdfs:label	"workbench"	.
+
+local:engineering	rdfs:label	"engineering"	.
+
+local:engineering_workbench	rdfs:label	"engineering workbench"	.
+
+local:ontology_engineering	rdfs:label	"ontology engineering"	.
+
+local:webode	rdfs:label	"webode"	.
+
+local:webode_ontology_engineering_workbench	rdfs:label	"webode ontology engineering workbench"	.
+
+local:api_of_webode_ontology_engineering_workbench	rdfs:label	"api of webode ontology engineering workbench"	.
+
+local:api	rdfs:label	"api"	.
+
+local:also	rdfs:label	"also"	.
+
+local:benchmarking_methodology	rdfs:label	"benchmarking methodology"	.
+
+local:methodology	rdfs:label	"methodology"	.
+
+local:results	rdfs:label	"results"	.
+
+local:applying	rdfs:label	"applying"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology_development	rdfs:label	"ontology development"	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology_engineering	owl:sameAs	cso:ontology_engineering	.
+cso:ontology_engineering	rdfs:label	"ontology engineering"	.
+local:ontology_development	owl:sameAs	cso:ontology_development	.
+
+#### Relations ####
+
+local:ontology	rdfs:member	local:ontology_development	.
+local:improve	local:AM-PNC	local:evaluating	.
+local:ontology	rdfs:member	local:ontology_management	.
+local:scalability_ontology_management	rdfs:member	local:scalability_ontology_management_apis	.
+local:focus	local:AM-PNC	local:evaluating_in_terms	.
+local:scalability_ontology_management	rdfs:subClassOf	local:management	.
+local:applying	vn.role:Theme	local:benchmarking	.
+local:present	local:AM-LOC	local:paper	.
+local:execution_efficiency	rdfs:subClassOf	local:efficiency	.
+local:ontology_management	rdfs:member	local:ontology_management_apis	.
+local:development_tools	rdfs:subClassOf	local:tools	.
+local:scalability_ontology	rdfs:member	local:scalability_ontology_management	.
+local:focus	vn.role:indirect_object	local:definition_of_infrastructure	.
+local:webode_ontology	rdfs:subClassOf	local:ontology	.
+local:api_of_webode_ontology_engineering_workbench	local:of_webodeontologyengineeringworkbench	local:api	.
+local:ontology	rdfs:member	local:ontology_engineering	.
+local:ontology_management_apis	rdfs:subClassOf	local:management_apis	.
+local:management_apis	rdfs:subClassOf	local:apis	.
+local:scalability_execution	rdfs:member	local:scalability_execution_efficiency	.
+local:improve	vn.role:Patient	local:performance	.
+local:terms_of_ontology_tools_performance	local:of_ontologytoolsperformance	local:terms	.
+local:ontology_tools	rdfs:member	local:ontology_tools_performance	.
+local:evaluating	vn.role:Theme	local:performance_of_ontology_tools_performance	.
+local:ontology_development	rdfs:member	local:ontology_development_tools	.
+local:definition_of_infrastructure	local:of_infrastructure	local:definition	.
+local:scalability_ontology_management_apis	rdfs:subClassOf	local:ontology_management_apis	.
+local:scalability_of_ontology_development_tools	local:of_ontologydevelopmenttools	local:scalability	.
+local:focus	local:AM-PNC	local:evaluating	.
+local:ontology_development_tools	rdfs:subClassOf	local:development_tools	.
+local:webode_ontology_engineering_workbench	rdfs:subClassOf	local:workbench	.
+local:ontology_development_tools	rdfs:subClassOf	local:tools	.
+local:performance_of_ontology_tools_performance	local:performance_of	local:ontology_tools_performance	.
+local:scalability_execution_efficiency	rdfs:subClassOf	local:execution_efficiency	.
+local:ontology_tools	rdfs:subClassOf	local:tools	.
+local:api_of_webode_ontology_engineering_workbench	local:api_of	local:webode_ontology_engineering_workbench	.
+local:present	vn.role:Agent	local:we	.
+local:scalability_execution	rdfs:subClassOf	local:execution	.
+local:evaluating_in_terms	local:in_terms	local:evaluating	.
+local:terms_of_scalability_execution_efficiency	local:of_scalabilityexecutionefficiency	local:terms	.
+local:ontology_engineering_workbench	rdfs:subClassOf	local:engineering_workbench	.
+local:evaluating	vn.role:Theme	local:api_of_webode_ontology_engineering_workbench	.
+local:webode_ontology_engineering	rdfs:subClassOf	local:engineering	.
+local:webode_ontology_engineering_workbench	rdfs:subClassOf	local:ontology_engineering_workbench	.
+local:ontology	rdfs:member	local:ontology_tools	.
+local:scalability	rdfs:member	local:scalability_ontology	.
+local:terms_of_scalability_execution_efficiency	local:terms_of	local:scalability_execution_efficiency	.
+local:improve	vn.role:Patient	local:scalability_of_ontology_development_tools	.
+local:ontology_management	rdfs:subClassOf	local:management	.
+local:scalability_execution_efficiency	rdfs:subClassOf	local:efficiency	.
+local:improve	vn.role:Agent	local:benchmarking	.
+local:ontology_management_apis	rdfs:subClassOf	local:apis	.
+local:tools_performance	rdfs:subClassOf	local:performance	.
+local:evaluating	vn.role:Agent	local:we	.
+local:ontology_engineering_workbench	rdfs:subClassOf	local:workbench	.
+local:execution	rdfs:member	local:execution_efficiency	.
+local:scalability_ontology_management_apis_in_terms	local:in_terms	local:scalability_ontology_management_apis	.
+local:definition_of_infrastructure	local:definition_of	local:infrastructure	.
+local:scalability_ontology_management_apis_in_terms	local:scalabilityontologymanagementapis_in	local:terms	.
+local:ontology_development	rdfs:subClassOf	local:development	.
+local:engineering_workbench	rdfs:subClassOf	local:workbench	.
+local:webode	rdfs:member	local:webode_ontology	.
+local:scalability_ontology_management_apis	rdfs:subClassOf	local:apis	.
+local:scalability_of_ontology_development_tools	local:scalability_of	local:ontology_development_tools	.
+local:development	rdfs:member	local:development_tools	.
+local:benchmarking	rdfs:member	local:benchmarking_methodology	.
+local:ontology_engineering	rdfs:member	local:ontology_engineering_workbench	.
+local:applying	vn.role:Agent	local:we	.
+local:present	vn.role:Theme	local:benchmarking	.
+local:scalability	rdfs:member	local:scalability_execution	.
+local:tools	rdfs:member	local:tools_performance	.
+local:used	vn.role:Recipient	local:improve	.
+local:terms_of_ontology_tools_performance	local:terms_of	local:ontology_tools_performance	.
+local:ontology_tools_performance	rdfs:subClassOf	local:tools_performance	.
+local:webode_ontology	rdfs:member	local:webode_ontology_engineering	.
+local:performance_of_ontology_tools_performance	local:of_ontologytoolsperformance	local:performance	.
+local:present	local:AM-TMP	local:briefly	.
+local:benchmarking_methodology	rdfs:subClassOf	local:methodology	.
+local:evaluating_in_terms	local:evaluating_in	local:terms	.
+local:management	rdfs:member	local:management_apis	.
+local:ontology_engineering	rdfs:subClassOf	local:engineering	.
+local:scalability_ontology	rdfs:subClassOf	local:ontology	.
+local:present	local:AM-DIS	local:also	.
+local:present	vn.role:Theme	local:results	.
+local:used	vn.role:Theme	local:benchmarking	.
+local:focus	vn.role:Experiencer	local:we	.
+local:ontology_tools_performance	rdfs:subClassOf	local:performance	.
+local:engineering	rdfs:member	local:engineering_workbench	.
+local:evaluating	vn.role:Theme	local:scalability_ontology_management_apis_in_terms	.
+local:webode_ontology_engineering	rdfs:member	local:webode_ontology_engineering_workbench	.

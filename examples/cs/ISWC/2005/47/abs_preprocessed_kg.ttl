@@ -1,0 +1,257 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:extends	rdfs:label	"extends"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:model	rdfs:label	"model"	.
+
+local:model_theory	rdfs:label	"model theory"	.
+
+local:theory	rdfs:label	"theory"	.
+
+local:model_theory_of_rdf	rdfs:label	"model theory of rdf"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:rules_placing	rdfs:label	"rules placing"	.
+
+local:rules	rdfs:label	"rules"	.
+
+local:placing	rdfs:label	"placing"	.
+
+local:emphasis_on_integration	rdfs:label	"emphasis on integration"	.
+
+local:emphasis	rdfs:label	"emphasis"	.
+
+local:integration	rdfs:label	"integration"	.
+
+local:integration_with_decidability	rdfs:label	"integration with decidability"	.
+
+local:decidability	rdfs:label	"decidability"	.
+
+local:decidability_of_entailment	rdfs:label	"decidability of entailment"	.
+
+local:entailment	rdfs:label	"entailment"	.
+
+local:integration_with_owl	rdfs:label	"integration with owl"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:owl_of_entailment	rdfs:label	"owl of entailment"	.
+
+local:rule_graphs	rdfs:label	"rule graphs"	.
+
+local:graphs	rdfs:label	"graphs"	.
+
+local:rule	rdfs:label	"rule"	.
+
+local:generalize	rdfs:label	"generalize"	.
+
+local:rdf_graphs	rdfs:label	"rdf graphs"	.
+
+local:rule_variables	rdfs:label	"rule variables"	.
+
+local:variables	rdfs:label	"variables"	.
+
+local:also_allowing	rdfs:label	"also allowing"	.
+
+local:allowing	rdfs:label	"allowing"	.
+
+local:object_positions	rdfs:label	"object positions"	.
+
+local:positions	rdfs:label	"positions"	.
+
+local:object	rdfs:label	"object"	.
+
+local:rule_rdf_graphs	rdfs:label	"rule rdf graphs"	.
+
+local:also	rdfs:label	"also"	.
+
+local:rule_variables_in_object_positions	rdfs:label	"rule variables in object positions"	.
+
+local:subject	rdfs:label	"subject"	.
+
+local:subject_positions	rdfs:label	"subject positions"	.
+
+local:rule_variables_in_subject_positions	rdfs:label	"rule variables in subject positions"	.
+
+local:start	rdfs:label	"start"	.
+
+local:we	rdfs:label	"we"	.
+
+local:abstract	rdfs:label	"abstract"	.
+
+local:abstract_syntax	rdfs:label	"abstract syntax"	.
+
+local:syntax	rdfs:label	"syntax"	.
+
+local:predicate_positions	rdfs:label	"predicate positions"	.
+
+local:predicate	rdfs:label	"predicate"	.
+
+local:rule_variables_in_predicate_positions	rdfs:label	"rule variables in predicate positions"	.
+
+local:views	rdfs:label	"views"	.
+
+local:pair_of_rule_graphs	rdfs:label	"pair of rule graphs"	.
+
+local:pair	rdfs:label	"pair"	.
+
+local:include	rdfs:label	"include"	.
+
+local:decidable	rdfs:label	"decidable"	.
+
+local:decidable_part	rdfs:label	"decidable part"	.
+
+local:part	rdfs:label	"part"	.
+
+local:decidable_part_of_owl	rdfs:label	"decidable part of owl"	.
+
+local:full_owl	rdfs:label	"full owl"	.
+
+local:weakens	rdfs:label	"weakens"	.
+
+local:dentailment	rdfs:label	"d-entailment"	.
+
+local:rdfs	rdfs:label	"rdfs"	.
+
+local:used	rdfs:label	"used"	.
+
+local:classes	rdfs:label	"classes"	.
+
+local:can	rdfs:label	"can"	.
+
+local:instances	rdfs:label	"instances"	.
+
+local:daml	rdfs:label	"daml"	.
+
+local:daml_set	rdfs:label	"daml set"	.
+
+local:test	rdfs:label	"test"	.
+
+local:test_rules	rdfs:label	"test rules"	.
+
+local:set	rdfs:label	"set"	.
+
+local:almost_examples	rdfs:label	"almost examples"	.
+
+local:examples	rdfs:label	"examples"	.
+
+local:almost_examples_in_daml_set	rdfs:label	"almost examples in daml set"	.
+
+local:daml_set_of_test_rules	rdfs:label	"daml set of test rules"	.
+
+local:covered	rdfs:label	"covered"	.
+
+local:approach	rdfs:label	"approach"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:rdf	owl:sameAs	cso:rdf	.
+cso:rdf_graph	rdfs:label	"rdf graphs"	.
+local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
+local:owl	owl:sameAs	cso:owl	.
+cso:abstract_syntax	rdfs:label	"abstract syntax"	.
+cso:owl	rdfs:label	"owl"	.
+cso:rdf	rdfs:label	"rdf"	.
+local:abstract_syntax	owl:sameAs	cso:abstract_syntax	.
+
+#### Relations ####
+
+local:model_theory	rdfs:subClassOf	local:theory	.
+local:allowing	vn.role:Theme	local:rule_variables_in_subject_positions	.
+local:covered	vn.role:indirect_object	local:almost_examples_in_daml_set	.
+local:include	vn.role:Theme	local:decidable_part_of_owl	.
+local:allowing	vn.role:Theme	local:rule_variables_in_predicate_positions	.
+local:rule	rdfs:member	local:rule_graphs	.
+local:also_allowing	rdfs:subClassOf	local:allowing	.
+local:placing	vn.role:indirect_object	local:integration_with_owl	.
+local:abstract_syntax	rdfs:subClassOf	local:syntax	.
+local:include	vn.role:Theme	local:rdfs	.
+local:rule	rdfs:member	local:rule_variables	.
+local:test_rules	rdfs:subClassOf	local:rules	.
+local:owl_of_entailment	local:of_entailment	local:owl	.
+local:weakens	vn.role:Patient	local:full_owl	.
+local:placing	vn.role:object	local:emphasis	.
+local:generalize	local:AM-MNR	local:object_positions	.
+local:weakens	vn.role:Patient	local:owl	.
+local:model_theory_of_rdf	local:of_rdf	local:model_theory	.
+local:rules_placing	local:_placing	local:rules	.
+local:rule_variables_in_subject_positions	local:rulevariables_in	local:subject_positions	.
+local:allowing	vn.role:Theme	local:rule_variables_in_object_positions	.
+local:emphasis_on_integration	local:emphasis_on	local:integration	.
+local:integration_with_decidability	local:with_decidability	local:integration	.
+local:abstract	rdfs:member	local:abstract_syntax	.
+local:generalize	vn.role:Agent	local:rule_graphs	.
+local:rdf_graphs	rdfs:subClassOf	local:graphs	.
+local:subject_positions	rdfs:subClassOf	local:positions	.
+local:views	vn.role:Predicate	local:pair_of_rule_graphs	.
+local:rule_variables_in_object_positions	local:in_objectpositions	local:rule_variables	.
+local:decidable_part_of_owl	local:decidablepart_of	local:owl	.
+local:decidable	rdfs:member	local:decidable_part	.
+local:start	local:AM-MNR	local:abstract_syntax	.
+local:object_positions	rdfs:subClassOf	local:positions	.
+local:pair_of_rule_graphs	local:of_rulegraphs	local:pair	.
+local:allowing	local:AM-DIS	local:also	.
+local:rule_variables	rdfs:subClassOf	local:variables	.
+local:model	rdfs:member	local:model_theory	.
+local:extends	vn.role:Recipient	local:rules_placing	.
+local:used	vn.role:Theme	local:classes	.
+local:rules_placing	local:rules_	local:placing	.
+local:include	vn.role:Location	local:we	.
+local:extends	vn.role:Agent	local:paper	.
+local:rule_variables_in_predicate_positions	local:rulevariables_in	local:predicate_positions	.
+local:placing	vn.role:Theme	local:rules	.
+local:used	vn.role:Recipient	local:instances	.
+local:object	rdfs:member	local:object_positions	.
+local:almost_examples_in_daml_set	local:in_damlset	local:almost_examples	.
+local:decidability_of_entailment	local:decidability_of	local:entailment	.
+local:integration_with_decidability	local:integration_with	local:decidability	.
+local:almost_examples	rdfs:subClassOf	local:examples	.
+local:predicate_positions	rdfs:subClassOf	local:positions	.
+local:rdf	rdfs:member	local:rdf_graphs	.
+local:generalize	local:AM-LOC	local:subject_positions	.
+local:decidability_of_entailment	local:of_entailment	local:decidability	.
+local:used	local:AM-MOD	local:can	.
+local:generalize	vn.role:Patient	local:rdf_graphs	.
+local:decidable_part	rdfs:subClassOf	local:part	.
+local:extends	vn.role:Theme	local:model_theory_of_rdf	.
+local:predicate	rdfs:member	local:predicate_positions	.
+local:owl_of_entailment	local:owl_of	local:entailment	.
+local:daml	rdfs:member	local:daml_set	.
+local:start	vn.role:Theme	local:we	.
+local:rule_variables_in_subject_positions	local:in_subjectpositions	local:rule_variables	.
+local:model_theory_of_rdf	local:modeltheory_of	local:rdf	.
+local:integration_with_owl	local:integration_with	local:owl	.
+local:rule_variables_in_predicate_positions	local:in_predicatepositions	local:rule_variables	.
+local:daml_set_of_test_rules	local:damlset_of	local:test_rules	.
+local:generalize	local:AM-MNR	local:also_allowing	.
+local:daml_set_of_test_rules	local:of_testrules	local:daml_set	.
+local:allowing	vn.role:Agent	local:rule_rdf_graphs	.
+local:pair_of_rule_graphs	local:pair_of	local:rule_graphs	.
+local:emphasis_on_integration	local:on_integration	local:emphasis	.
+local:rule_rdf_graphs	rdfs:subClassOf	local:rdf_graphs	.
+local:placing	vn.role:indirect_object	local:integration_with_decidability	.
+local:rule_variables_in_object_positions	local:rulevariables_in	local:object_positions	.
+local:subject	rdfs:member	local:subject_positions	.
+local:views	vn.role:Agent	local:abstract_syntax	.
+local:views	vn.role:Theme	local:rule	.
+local:covered	vn.role:Theme1	local:approach	.
+local:test	rdfs:member	local:test_rules	.
+local:almost_examples_in_daml_set	local:almostexamples_in	local:daml_set	.
+local:decidable_part_of_owl	local:of_owl	local:decidable_part	.
+local:full_owl	rdfs:subClassOf	local:owl	.
+local:rule_graphs	rdfs:subClassOf	local:graphs	.
+local:integration_with_owl	local:with_owl	local:integration	.
+local:daml_set	rdfs:subClassOf	local:set	.
+local:weakens	vn.role:Patient	local:dentailment	.

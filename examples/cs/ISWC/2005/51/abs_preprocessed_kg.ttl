@@ -1,0 +1,133 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:discuss	rdfs:label	"discuss"	.
+
+local:we	rdfs:label	"we"	.
+
+local:linguistic_ontologymapping_techniques	rdfs:label	"linguistic ontology-mapping techniques"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:ontologymapping	rdfs:label	"ontology-mapping"	.
+
+local:ontologymapping_techniques	rdfs:label	"ontology-mapping techniques"	.
+
+local:linguistic	rdfs:label	"linguistic"	.
+
+local:linguistic_ontologymapping	rdfs:label	"linguistic ontology-mapping"	.
+
+local:four_linguistic_ontologymapping_techniques	rdfs:label	"four linguistic ontology-mapping techniques"	.
+
+local:evaluate	rdfs:label	"evaluate"	.
+
+local:reallife_ontologies	rdfs:label	"real-life ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:reallife	rdfs:label	"real-life"	.
+
+local:four_linguistic_ontologymapping_techniques_on_reallife_ontologies	rdfs:label	"four linguistic ontology-mapping techniques on real-life ontologies"	.
+
+local:reallife_ontologies_in_domain	rdfs:label	"real-life ontologies in domain"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:domain_of_food	rdfs:label	"domain of food"	.
+
+local:food	rdfs:label	"food"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:furthermore	rdfs:label	"furthermore"	.
+
+local:manual_labor	rdfs:label	"manual labor"	.
+
+local:labor	rdfs:label	"labor"	.
+
+local:manual	rdfs:label	"manual"	.
+
+local:necessary_amount	rdfs:label	"necessary amount"	.
+
+local:amount	rdfs:label	"amount"	.
+
+local:necessary	rdfs:label	"necessary"	.
+
+local:necessary_amount_of_manual_labor	rdfs:label	"necessary amount of manual labor"	.
+
+local:necessary_amount_of_manual_labor_of_computation	rdfs:label	"necessary amount of manual labor of computation"	.
+
+local:computation	rdfs:label	"computation"	.
+
+local:method	rdfs:label	"method"	.
+
+local:recall	rdfs:label	"recall"	.
+
+local:reduce	rdfs:label	"reduce"	.
+
+local:high_precision	rdfs:label	"high precision"	.
+
+local:precision	rdfs:label	"precision"	.
+
+local:high	rdfs:label	"high"	.
+
+local:combine_with_high_precision	rdfs:label	"combine with high precision"	.
+
+local:combine	rdfs:label	"combine"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:linguistics	rdfs:label	"linguistic"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:linguistic	owl:sameAs	cso:linguistics	.
+cso:ontologies	rdfs:label	"ontologies"	.
+
+#### Relations ####
+
+local:linguistic_ontologymapping	rdfs:member	local:linguistic_ontologymapping_techniques	.
+local:domain_of_food	local:domain_of	local:food	.
+local:combine	vn.role:Patient	local:ontologymapping_techniques	.
+local:manual	rdfs:member	local:manual_labor	.
+local:high	rdfs:member	local:high_precision	.
+local:combine_with_high_precision	local:with_highprecision	local:combine	.
+local:propose	vn.role:Topic	local:method	.
+local:propose	vn.role:Agent	local:we	.
+local:reallife_ontologies_in_domain	local:real-lifeontologies_in	local:domain	.
+local:four_linguistic_ontologymapping_techniques_on_reallife_ontologies	local:fourlinguisticontology-mappingtechniques_on	local:reallife_ontologies	.
+local:linguistic_ontologymapping_techniques	rdfs:subClassOf	local:ontologymapping_techniques	.
+local:linguistic_ontologymapping	rdfs:subClassOf	local:ontologymapping	.
+local:necessary_amount_of_manual_labor	local:necessaryamount_of	local:manual_labor	.
+local:discuss	vn.role:Patient2	local:four_linguistic_ontologymapping_techniques	.
+local:necessary_amount	rdfs:subClassOf	local:amount	.
+local:necessary_amount_of_manual_labor_of_computation	local:of_computation	local:necessary_amount_of_manual_labor	.
+local:necessary_amount_of_manual_labor_of_computation	local:necessaryamountofmanuallabor_of	local:computation	.
+local:recall	local:AM-PNC	local:reduce	.
+local:reallife_ontologies_in_domain	local:in_domain	local:reallife_ontologies	.
+local:domain_of_food	local:of_food	local:domain	.
+local:linguistic	rdfs:member	local:linguistic_ontologymapping	.
+local:propose	local:AM-DIS	local:furthermore	.
+local:four_linguistic_ontologymapping_techniques	rdfs:subClassOf	local:linguistic_ontologymapping_techniques	.
+local:combine_with_high_precision	local:combine_with	local:high_precision	.
+local:ontologymapping_techniques	rdfs:subClassOf	local:techniques	.
+local:four_linguistic_ontologymapping_techniques_on_reallife_ontologies	local:on_real-lifeontologies	local:four_linguistic_ontologymapping_techniques	.
+local:necessary_amount_of_manual_labor	local:of_manuallabor	local:necessary_amount	.
+local:evaluate	vn.role:Agent	local:we	.
+local:ontologymapping	rdfs:member	local:ontologymapping_techniques	.
+local:linguistic_ontologymapping_techniques	rdfs:subClassOf	local:techniques	.
+local:evaluate	vn.role:Theme	local:four_linguistic_ontologymapping_techniques_on_reallife_ontologies	.
+local:reallife_ontologies	rdfs:subClassOf	local:ontologies	.
+local:manual_labor	rdfs:subClassOf	local:labor	.
+local:discuss	vn.role:Patient1	local:we	.
+local:reduce	vn.role:Patient	local:necessary_amount_of_manual_labor_of_computation	.
+local:combine	vn.role:Patient1	local:high_precision	.
+local:necessary	rdfs:member	local:necessary_amount	.
+local:reallife	rdfs:member	local:reallife_ontologies	.
+local:high_precision	rdfs:subClassOf	local:precision	.

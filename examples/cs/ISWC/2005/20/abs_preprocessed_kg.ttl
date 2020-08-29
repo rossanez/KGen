@@ -1,0 +1,212 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:design	rdfs:label	"design"	.
+
+local:design_patterns	rdfs:label	"design patterns"	.
+
+local:patterns	rdfs:label	"patterns"	.
+
+local:facilitate	rdfs:label	"facilitate"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:used	rdfs:label	"used"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:ontology_lifecycle	rdfs:label	"ontology lifecycle"	.
+
+local:lifecycle	rdfs:label	"lifecycle"	.
+
+local:improve	rdfs:label	"improve"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:framework	rdfs:label	"framework"	.
+
+local:introducing	rdfs:label	"introducing"	.
+
+local:drawn	rdfs:label	"drawn"	.
+
+local:distinctions	rdfs:label	"distinctions"	.
+
+local:ontology_design	rdfs:label	"ontology design"	.
+
+local:ontology_design_patterns	rdfs:label	"ontology design patterns"	.
+
+local:kinds_of_ontology_design_patterns	rdfs:label	"kinds of ontology design patterns"	.
+
+local:kinds	rdfs:label	"kinds"	.
+
+local:contentoriented_patterns	rdfs:label	"content-oriented patterns"	.
+
+local:contentoriented	rdfs:label	"content-oriented"	.
+
+local:presented	rdfs:label	"presented"	.
+
+local:can_specialized	rdfs:label	"can specialized"	.
+
+local:specialized	rdfs:label	"specialized"	.
+
+local:order	rdfs:label	"order"	.
+
+local:different_degrees	rdfs:label	"different degrees"	.
+
+local:degrees	rdfs:label	"degrees"	.
+
+local:contentoriented_patterns_utility	rdfs:label	"content-oriented patterns utility"	.
+
+local:patterns_utility	rdfs:label	"patterns utility"	.
+
+local:utility	rdfs:label	"utility"	.
+
+local:different	rdfs:label	"different"	.
+
+local:illustrate_at_different_degrees	rdfs:label	"illustrate at different degrees"	.
+
+local:illustrate	rdfs:label	"illustrate"	.
+
+local:different_degrees_of_abstraction	rdfs:label	"different degrees of abstraction"	.
+
+local:abstraction	rdfs:label	"abstraction"	.
+
+local:contentoriented_patterns_utility_at_different_degrees	rdfs:label	"content-oriented patterns utility at different degrees"	.
+
+local:can_composed	rdfs:label	"can composed"	.
+
+local:composed	rdfs:label	"composed"	.
+
+local:proposed	rdfs:label	"proposed"	.
+
+local:proposed_framework	rdfs:label	"proposed framework"	.
+
+local:designed	rdfs:label	"designed"	.
+
+local:function_as_pipeline	rdfs:label	"function as pipeline"	.
+
+local:function	rdfs:label	"function"	.
+
+local:pipeline	rdfs:label	"pipeline"	.
+
+local:connecting	rdfs:label	"connecting"	.
+
+local:user	rdfs:label	"user"	.
+
+local:user_requirements	rdfs:label	"user requirements"	.
+
+local:requirements	rdfs:label	"requirements"	.
+
+local:initial	rdfs:label	"initial"	.
+
+local:initial_set	rdfs:label	"initial set"	.
+
+local:set	rdfs:label	"set"	.
+
+local:initial_set_of_patterns	rdfs:label	"initial set of patterns"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:domain_modelling	rdfs:label	"domain modelling"	.
+
+local:modelling	rdfs:label	"modelling"	.
+
+local:ontologydriven	rdfs:label	"ontology-driven"	.
+
+local:ontologydriven_tasksqueries	rdfs:label	"ontology-driven tasksqueries"	.
+
+local:tasksqueries	rdfs:label	"tasksqueries"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:design_patterns	rdfs:label	"design patterns"	.
+cso:ontology	rdfs:label	"ontology"	.
+cso:ontology_design	rdfs:label	"ontology design"	.
+local:ontology_design	owl:sameAs	cso:ontology_design	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:design_patterns	owl:sameAs	cso:design_patterns	.
+
+#### Relations ####
+
+local:user_requirements	rdfs:subClassOf	local:requirements	.
+local:contentoriented_patterns	rdfs:member	local:contentoriented_patterns_utility	.
+local:contentoriented_patterns_utility_at_different_degrees	local:at_differentdegrees	local:contentoriented_patterns_utility	.
+local:kinds_of_ontology_design_patterns	local:kinds_of	local:ontology_design_patterns	.
+local:function	vn.role:Agent	local:proposed_framework	.
+local:improve	vn.role:Patient	local:techniques	.
+local:introducing	vn.role:Patient	local:design	.
+local:illustrate	vn.role:Theme	local:contentoriented_patterns_utility_at_different_degrees	.
+local:domain	rdfs:member	local:domain_modelling	.
+local:initial_set_of_patterns	local:of_patterns	local:initial_set	.
+local:presented	local:AM-PNC	local:illustrate_at_different_degrees	.
+local:illustrate	vn.role:Agent	local:contentoriented_patterns	.
+local:presented	local:AM-ADV	local:order	.
+local:presented	vn.role:Theme	local:can_composed	.
+local:different_degrees_of_abstraction	local:of_abstraction	local:different_degrees	.
+local:ontology_lifecycle	rdfs:subClassOf	local:lifecycle	.
+local:ontology_design_patterns	rdfs:subClassOf	local:patterns	.
+local:presented	vn.role:Theme	local:can_specialized	.
+local:introducing	vn.role:Agent	local:patterns	.
+local:contentoriented_patterns_utility	rdfs:subClassOf	local:patterns_utility	.
+local:function_as_pipeline	local:function_as	local:pipeline	.
+local:different	rdfs:member	local:different_degrees	.
+local:initial_set	rdfs:subClassOf	local:set	.
+local:connecting	vn.role:Patient	local:ontologydriven_tasksqueries	.
+local:connecting	vn.role:Patient	local:domain_modelling	.
+local:design_patterns	rdfs:subClassOf	local:patterns	.
+local:introducing	vn.role:Agent	local:paper	.
+local:can_specialized	rdfs:subClassOf	local:specialized	.
+local:presented	vn.role:Theme	local:contentoriented_patterns	.
+local:ontology_design	rdfs:subClassOf	local:design	.
+local:designed	local:AM-PNC	local:order	.
+local:function	vn.role:Agent	local:initial_set_of_patterns	.
+local:ontologydriven_tasksqueries	rdfs:subClassOf	local:tasksqueries	.
+local:used	local:AM-TMP	local:ontology_lifecycle	.
+local:drawn	vn.role:Patient	local:distinctions	.
+local:facilitate	vn.role:Beneficiary	local:techniques	.
+local:patterns_utility	rdfs:subClassOf	local:utility	.
+local:function_as_pipeline	local:as_pipeline	local:function	.
+local:function	vn.role:Predicate	local:pipeline	.
+local:connecting	vn.role:Patient	local:user_requirements	.
+local:ontology_design_patterns	rdfs:subClassOf	local:design_patterns	.
+local:drawn	local:AM-MNR	local:kinds_of_ontology_design_patterns	.
+local:used	vn.role:Theme	local:techniques	.
+local:improve	vn.role:Agent	local:design_patterns	.
+local:initial_set_of_patterns	local:initialset_of	local:patterns	.
+local:initial	rdfs:member	local:initial_set	.
+local:ontologydriven	rdfs:member	local:ontologydriven_tasksqueries	.
+local:facilitate	vn.role:Agent	local:design_patterns	.
+local:can_composed	rdfs:subClassOf	local:composed	.
+local:contentoriented	rdfs:member	local:contentoriented_patterns	.
+local:domain_modelling	rdfs:subClassOf	local:modelling	.
+local:presents	vn.role:Agent	local:paper	.
+local:contentoriented_patterns_utility	rdfs:subClassOf	local:utility	.
+local:illustrate_at_different_degrees	local:illustrate_at	local:different_degrees	.
+local:illustrate_at_different_degrees	local:at_differentdegrees	local:illustrate	.
+local:presents	vn.role:Theme	local:framework	.
+local:patterns	rdfs:member	local:patterns_utility	.
+local:designed	vn.role:Product	local:proposed_framework	.
+local:connecting	vn.role:Agent	local:pipeline	.
+local:designed	vn.role:Product	local:initial_set_of_patterns	.
+local:ontology	rdfs:member	local:ontology_lifecycle	.
+local:user	rdfs:member	local:user_requirements	.
+local:different_degrees	rdfs:subClassOf	local:degrees	.
+local:proposed	vn.role:Topic	local:framework	.
+local:contentoriented_patterns	rdfs:subClassOf	local:patterns	.
+local:proposed_framework	rdfs:subClassOf	local:framework	.
+local:contentoriented_patterns_utility_at_different_degrees	local:content-orientedpatternsutility_at	local:different_degrees	.
+local:different_degrees_of_abstraction	local:differentdegrees_of	local:abstraction	.
+local:design	rdfs:member	local:design_patterns	.
+local:kinds_of_ontology_design_patterns	local:of_ontologydesignpatterns	local:kinds	.
+local:ontology	rdfs:member	local:ontology_design	.
+local:ontology_design	rdfs:member	local:ontology_design_patterns	.
