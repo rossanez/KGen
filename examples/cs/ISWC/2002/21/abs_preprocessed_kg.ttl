@@ -1,0 +1,200 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:aim	rdfs:label	"aim"	.
+
+local:activities	rdfs:label	"activities"	.
+
+local:business	rdfs:label	"business"	.
+
+local:business_processes	rdfs:label	"business processes"	.
+
+local:processes	rdfs:label	"processes"	.
+
+local:not_only	rdfs:label	"not only"	.
+
+local:only	rdfs:label	"only"	.
+
+local:usable_web	rdfs:label	"usable web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:make_on_usable_web	rdfs:label	"make on usable web"	.
+
+local:make	rdfs:label	"make"	.
+
+local:foundation_for_business_processes	rdfs:label	"foundation for business processes"	.
+
+local:foundation	rdfs:label	"foundation"	.
+
+local:content	rdfs:label	"content"	.
+
+local:create	rdfs:label	"create"	.
+
+local:humans	rdfs:label	"humans"	.
+
+local:also_machines	rdfs:label	"also machines"	.
+
+local:machines	rdfs:label	"machines"	.
+
+local:only_also	rdfs:label	"only also"	.
+
+local:also	rdfs:label	"also"	.
+
+local:usable_for_also_machines	rdfs:label	"usable for also machines"	.
+
+local:usable	rdfs:label	"usable"	.
+
+local:automated_services	rdfs:label	"automated services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:intelligent_automated_services	rdfs:label	"intelligent automated services"	.
+
+local:foundation_for_intelligent_automated_services	rdfs:label	"foundation for intelligent automated services"	.
+
+local:order	rdfs:label	"order"	.
+
+local:automated	rdfs:label	"automated"	.
+
+local:intelligent	rdfs:label	"intelligent"	.
+
+local:accessible_web	rdfs:label	"accessible web"	.
+
+local:make_on_accessible_web	rdfs:label	"make on accessible web"	.
+
+local:also_accessible	rdfs:label	"also accessible"	.
+
+local:accessible	rdfs:label	"accessible"	.
+
+local:also_accessible_web	rdfs:label	"also accessible web"	.
+
+local:make_on_also_accessible_web	rdfs:label	"make on also accessible web"	.
+
+local:only_also_for_machines	rdfs:label	"only also for machines"	.
+
+local:contributes	rdfs:label	"contributes"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:process_of_unification	rdfs:label	"process of unification"	.
+
+local:process	rdfs:label	"process"	.
+
+local:unification	rdfs:label	"unification"	.
+
+local:services_descriptions	rdfs:label	"services descriptions"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:web_ontologies	rdfs:label	"web ontologies"	.
+
+local:web_services_descriptions	rdfs:label	"web services descriptions"	.
+
+local:descriptions	rdfs:label	"descriptions"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:semantic_web_ontologies	rdfs:label	"semantic web ontologies"	.
+
+local:connecting_with_semantic_web_ontologies	rdfs:label	"connecting with semantic web ontologies"	.
+
+local:connecting	rdfs:label	"connecting"	.
+
+local:presenting	rdfs:label	"presenting"	.
+
+local:method	rdfs:label	"method"	.
+
+local:web_services_descriptions_with_semantic_web_ontologies	rdfs:label	"web services descriptions with semantic web ontologies"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+cso:business_processes	rdfs:label	"business processes"	.
+local:web_services_descriptions	owl:sameAs	cso:web_service_description	.
+local:business_processes	owl:sameAs	cso:business_processes	.
+cso:web_service_description	rdfs:label	"web services descriptions"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+
+#### Relations ####
+
+local:aim	vn.role:Theme	local:make_on_also_accessible_web	.
+local:contributes	vn.role:indirect_object	local:process_of_unification	.
+local:make	local:AM-PNC	local:order	.
+local:connecting_with_semantic_web_ontologies	local:connecting_with	local:semantic_web_ontologies	.
+local:usable_web	rdfs:subClassOf	local:web	.
+local:usable_for_also_machines	local:usable_for	local:also_machines	.
+local:create	vn.role:Product	local:foundation_for_intelligent_automated_services	.
+local:contributes	local:AM-MNR	local:presenting	.
+local:web	rdfs:member	local:web_services	.
+local:semantic_web	rdfs:member	local:semantic_web_ontologies	.
+local:make_on_usable_web	local:on_usableweb	local:make	.
+local:make_on_also_accessible_web	local:on_alsoaccessibleweb	local:make	.
+local:create	vn.role:Agent	local:humans	.
+local:make	vn.role:Product	local:usable_web	.
+local:semantic_web_ontologies	rdfs:subClassOf	local:web_ontologies	.
+local:services_descriptions	rdfs:subClassOf	local:descriptions	.
+local:intelligent_automated_services	rdfs:subClassOf	local:automated_services	.
+local:connecting_with_semantic_web_ontologies	local:with_semanticwebontologies	local:connecting	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:semantic_web_ontologies	rdfs:subClassOf	local:ontologies	.
+local:aim	local:AM-PNC	local:order	.
+local:business_processes	rdfs:subClassOf	local:processes	.
+local:make_on_also_accessible_web	local:make_on	local:also_accessible_web	.
+local:make	vn.role:Material	local:content	.
+local:also_accessible	rdfs:subClassOf	local:accessible	.
+local:foundation_for_business_processes	local:foundation_for	local:business_processes	.
+local:also_accessible_web	rdfs:subClassOf	local:web	.
+local:business	rdfs:member	local:business_processes	.
+local:only_also	rdfs:subClassOf	local:also	.
+local:only_also_for_machines	local:onlyalso_for	local:machines	.
+local:web_services_descriptions	rdfs:subClassOf	local:services_descriptions	.
+local:also_machines	rdfs:subClassOf	local:machines	.
+local:usable_for_also_machines	local:for_alsomachines	local:usable	.
+local:services	rdfs:member	local:services_descriptions	.
+local:make	vn.role:Product	local:accessible_web	.
+local:process_of_unification	local:of_unification	local:process	.
+local:foundation_for_intelligent_automated_services	local:for_intelligentautomatedservices	local:foundation	.
+local:aim	vn.role:Theme	local:make_on_accessible_web	.
+local:accessible_web	rdfs:subClassOf	local:web	.
+local:presenting	vn.role:Agent	local:paper	.
+local:presenting	vn.role:Theme	local:method	.
+local:make_on_usable_web	local:make_on	local:usable_web	.
+local:web_services	rdfs:member	local:web_services_descriptions	.
+local:web_services_descriptions_with_semantic_web_ontologies	local:webservicesdescriptions_with	local:semantic_web_ontologies	.
+local:web_services_descriptions_with_semantic_web_ontologies	local:with_semanticwebontologies	local:web_services_descriptions	.
+local:automated_services	rdfs:subClassOf	local:services	.
+local:aim	vn.role:Theme	local:make_on_usable_web	.
+local:automated	vn.role:Patient	local:services	.
+local:not_only	rdfs:subClassOf	local:only	.
+local:foundation_for_intelligent_automated_services	local:foundation_for	local:intelligent_automated_services	.
+local:process_of_unification	local:process_of	local:unification	.
+local:contributes	vn.role:Theme2	local:paper	.
+local:web_ontologies	rdfs:subClassOf	local:ontologies	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:only_also_for_machines	local:for_machines	local:only_also	.
+local:make_on_accessible_web	local:on_accessibleweb	local:make	.
+local:automated	local:AM-MNR	local:intelligent	.
+local:web_services_descriptions	rdfs:subClassOf	local:descriptions	.
+local:connecting	vn.role:Patient	local:web_services_descriptions_with_semantic_web_ontologies	.
+local:create	vn.role:Product	local:foundation_for_business_processes	.
+local:web	rdfs:member	local:web_ontologies	.
+local:make_on_accessible_web	local:make_on	local:accessible_web	.
+local:foundation_for_business_processes	local:for_businessprocesses	local:foundation	.
+local:make	vn.role:Product	local:also_accessible_web	.
+local:aim	vn.role:Experiencer	local:activities	.

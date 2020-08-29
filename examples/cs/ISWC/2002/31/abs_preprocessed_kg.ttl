@@ -1,0 +1,189 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:describes	rdfs:label	"describes"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:annotation	rdfs:label	"annotation"	.
+
+local:annotation_tool	rdfs:label	"annotation tool"	.
+
+local:tool	rdfs:label	"tool"	.
+
+local:miniexperiment	rdfs:label	"mini-experiment"	.
+
+local:windsor	rdfs:label	"windsor"	.
+
+local:windsor_chairs	rdfs:label	"windsor chairs"	.
+
+local:index	rdfs:label	"index"	.
+
+local:index_photographs	rdfs:label	"index photographs"	.
+
+local:photographs	rdfs:label	"photographs"	.
+
+local:chairs	rdfs:label	"chairs"	.
+
+local:index_photographs_of_windsor_chairs	rdfs:label	"index photographs of windsor chairs"	.
+
+local:using	rdfs:label	"using"	.
+
+local:antique_furniture	rdfs:label	"antique furniture"	.
+
+local:furniture	rdfs:label	"furniture"	.
+
+local:antique	rdfs:label	"antique"	.
+
+local:furniture_photographs	rdfs:label	"furniture photographs"	.
+
+local:a_antique_furniture	rdfs:label	"a antique furniture"	.
+
+local:index_furniture_photographs	rdfs:label	"index furniture photographs"	.
+
+local:art	rdfs:label	"art"	.
+
+local:art_standards	rdfs:label	"art standards"	.
+
+local:standards	rdfs:label	"standards"	.
+
+local:based	rdfs:label	"based"	.
+
+local:makes	rdfs:label	"makes"	.
+
+local:use	rdfs:label	"use"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:report	rdfs:label	"report"	.
+
+local:we	rdfs:label	"we"	.
+
+local:experiences_of_subjects	rdfs:label	"experiences of subjects"	.
+
+local:experiences	rdfs:label	"experiences"	.
+
+local:subjects	rdfs:label	"subjects"	.
+
+local:suggest	rdfs:label	"suggest"	.
+
+local:results	rdfs:label	"results"	.
+
+local:also	rdfs:label	"also"	.
+
+local:clear_added_value	rdfs:label	"clear added value"	.
+
+local:value	rdfs:label	"value"	.
+
+local:clear_added	rdfs:label	"clear added"	.
+
+local:added	rdfs:label	"added"	.
+
+local:clear	rdfs:label	"clear"	.
+
+local:added_value	rdfs:label	"added value"	.
+
+local:clear_added_value_for_indexers	rdfs:label	"clear added value for indexers"	.
+
+local:indexers	rdfs:label	"indexers"	.
+
+local:has	rdfs:label	"has"	.
+
+local:semantic_annotations	rdfs:label	"semantic annotations"	.
+
+local:annotations	rdfs:label	"annotations"	.
+
+local:certain_level	rdfs:label	"certain level"	.
+
+local:level	rdfs:label	"level"	.
+
+local:certain	rdfs:label	"certain"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:domain_expertise	rdfs:label	"domain expertise"	.
+
+local:expertise	rdfs:label	"expertise"	.
+
+local:certain_level_of_domain_expertise	rdfs:label	"certain level of domain expertise"	.
+
+local:needed_for_semantic_annotations	rdfs:label	"needed for semantic annotations"	.
+
+local:needed	rdfs:label	"needed"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+local:semantic_annotations	owl:sameAs	cso:semantic_annotations	.
+cso:semantic_annotations	rdfs:label	"semantic annotations"	.
+
+#### Relations ####
+
+local:index	rdfs:member	local:index_photographs	.
+local:suggest	local:AM-DIS	local:also	.
+local:index_photographs_of_windsor_chairs	local:indexphotographs_of	local:windsor_chairs	.
+local:a_antique_furniture	rdfs:subClassOf	local:antique_furniture	.
+local:index_photographs_of_windsor_chairs	local:of_windsorchairs	local:index_photographs	.
+local:suggest	vn.role:Agent	local:has	.
+local:clear_added_value	rdfs:subClassOf	local:value	.
+local:describes	vn.role:Agent	local:paper	.
+local:clear	rdfs:member	local:clear_added	.
+local:has	vn.role:Experiencer	local:annotation_tool	.
+local:using	vn.role:Recipient	local:index_furniture_photographs	.
+local:annotation_tool	rdfs:subClassOf	local:tool	.
+local:using	vn.role:Theme	local:annotation_tool	.
+local:using	vn.role:Recipient	local:index_photographs_of_windsor_chairs	.
+local:describes	vn.role:Predicate	local:index_furniture_photographs	.
+local:annotation	rdfs:member	local:annotation_tool	.
+local:index_furniture_photographs	rdfs:subClassOf	local:furniture_photographs	.
+local:certain_level	rdfs:subClassOf	local:level	.
+local:experiences_of_subjects	local:of_subjects	local:experiences	.
+local:describes	vn.role:Theme	local:miniexperiment	.
+local:art_standards	rdfs:subClassOf	local:standards	.
+local:suggest	vn.role:Agent	local:needed_for_semantic_annotations	.
+local:certain_level_of_domain_expertise	local:of_domainexpertise	local:certain_level	.
+local:antique_furniture	rdfs:subClassOf	local:furniture	.
+local:makes	vn.role:Material	local:use	.
+local:experiences_of_subjects	local:experiences_of	local:subjects	.
+local:report	vn.role:Theme	local:experiences_of_subjects	.
+local:semantic_annotations	rdfs:subClassOf	local:annotations	.
+local:windsor_chairs	rdfs:subClassOf	local:chairs	.
+local:antique	rdfs:member	local:antique_furniture	.
+local:suggest	vn.role:Theme	local:results	.
+local:domain_expertise	rdfs:subClassOf	local:expertise	.
+local:based	local:AM-LOC	local:art_standards	.
+local:has	vn.role:Stimulus	local:clear_added_value_for_indexers	.
+local:describes	vn.role:Predicate	local:index_photographs_of_windsor_chairs	.
+local:needed_for_semantic_annotations	local:needed_for	local:semantic_annotations	.
+local:art	rdfs:member	local:art_standards	.
+local:report	vn.role:Agent	local:we	.
+local:furniture_photographs	rdfs:subClassOf	local:photographs	.
+local:clear_added	rdfs:subClassOf	local:added	.
+local:needed_for_semantic_annotations	local:for_semanticannotations	local:needed	.
+local:needed	local:AM-PNC	local:semantic_annotations	.
+local:semantic	rdfs:member	local:semantic_annotations	.
+local:windsor	rdfs:member	local:windsor_chairs	.
+local:clear_added	rdfs:member	local:clear_added_value	.
+local:clear_added_value_for_indexers	local:clearaddedvalue_for	local:indexers	.
+local:added	rdfs:member	local:added_value	.
+local:index_photographs	rdfs:subClassOf	local:photographs	.
+local:certain_level_of_domain_expertise	local:certainlevel_of	local:domain_expertise	.
+local:certain	rdfs:member	local:certain_level	.
+local:added_value	rdfs:subClassOf	local:value	.
+local:needed	vn.role:Patient	local:certain_level_of_domain_expertise	.
+local:domain	rdfs:member	local:domain_expertise	.
+local:makes	vn.role:Agent	local:annotation_tool	.
+local:clear_added_value	rdfs:subClassOf	local:added_value	.
+local:clear_added_value_for_indexers	local:for_indexers	local:clear_added_value	.
+local:makes	vn.role:Product	local:ontology	.

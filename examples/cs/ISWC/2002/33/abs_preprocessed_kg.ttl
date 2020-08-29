@@ -1,0 +1,109 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:knowledgebearing_arcs	rdfs:label	"knowledge-bearing arcs"	.
+
+local:arcs	rdfs:label	"arcs"	.
+
+local:knowledgebearing	rdfs:label	"knowledge-bearing"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_graph	rdfs:label	"semantic graph"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:location_of_node	rdfs:label	"location of node"	.
+
+local:location	rdfs:label	"location"	.
+
+local:node	rdfs:label	"node"	.
+
+local:location_of_node_in_semantic_graph	rdfs:label	"location of node in semantic graph"	.
+
+local:semantic_graph_in_terms	rdfs:label	"semantic graph in terms"	.
+
+local:terms	rdfs:label	"terms"	.
+
+local:terms_of_sequence	rdfs:label	"terms of sequence"	.
+
+local:sequence	rdfs:label	"sequence"	.
+
+local:sequence_of_knowledgebearing_arcs	rdfs:label	"sequence of knowledge-bearing arcs"	.
+
+local:express	rdfs:label	"express"	.
+
+local:lead	rdfs:label	"lead"	.
+
+local:node_from_node	rdfs:label	"node from node"	.
+
+local:used	rdfs:label	"used"	.
+
+local:point_of_reference	rdfs:label	"point of reference"	.
+
+local:point	rdfs:label	"point"	.
+
+local:reference	rdfs:label	"reference"	.
+
+local:addressing	rdfs:label	"addressing"	.
+
+local:graphbased	rdfs:label	"graph-based"	.
+
+local:expressions	rdfs:label	"expressions"	.
+
+local:disappear	rdfs:label	"disappear"	.
+
+local:arcs_disappear	rdfs:label	"arcs disappear"	.
+
+local:become	rdfs:label	"become"	.
+
+local:invalid	rdfs:label	"invalid"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantics	rdfs:label	"semantic"	.
+cso:graph-based	rdfs:label	"graph-based"	.
+local:graphbased	owl:sameAs	cso:graph-based	.
+local:semantic	owl:sameAs	cso:semantics	.
+
+#### Relations ####
+
+local:arcs	rdfs:member	local:arcs_disappear	.
+local:semantic_graph_in_terms	local:semanticgraph_in	local:terms	.
+local:node_from_node	local:node_from	local:node	.
+local:terms_of_sequence	local:of_sequence	local:terms	.
+local:addressing	vn.role:Agent	local:expressions	.
+local:knowledgebearing	rdfs:member	local:knowledgebearing_arcs	.
+local:location_of_node_in_semantic_graph	local:locationofnode_in	local:semantic_graph	.
+local:become	vn.role:Patient	local:disappear	.
+local:sequence_of_knowledgebearing_arcs	local:of_knowledge-bearingarcs	local:sequence	.
+local:become	vn.role:indirect_object	local:invalid	.
+local:point_of_reference	local:of_reference	local:point	.
+local:express	vn.role:Agent	local:location_of_node_in_semantic_graph	.
+local:addressing	vn.role:Agent	local:graphbased	.
+local:semantic	rdfs:member	local:semantic_graph	.
+local:lead	vn.role:Agent	local:knowledgebearing_arcs	.
+local:terms_of_sequence	local:terms_of	local:sequence	.
+local:location_of_node	local:of_node	local:location	.
+local:location_of_node_in_semantic_graph	local:in_semanticgraph	local:location_of_node	.
+local:semantic_graph	rdfs:subClassOf	local:graph	.
+local:knowledgebearing_arcs	rdfs:subClassOf	local:arcs	.
+local:disappear	vn.role:object	local:expressions	.
+local:node_from_node	local:from_node	local:node	.
+local:semantic_graph_in_terms	local:in_terms	local:semantic_graph	.
+local:point_of_reference	local:point_of	local:reference	.
+local:lead	vn.role:Destination	local:node_from_node	.
+local:disappear	vn.role:subject	local:arcs	.
+local:sequence_of_knowledgebearing_arcs	local:sequence_of	local:knowledgebearing_arcs	.
+local:used	vn.role:Theme	local:node	.
+local:arcs_disappear	rdfs:subClassOf	local:disappear	.
+local:location_of_node	local:location_of	local:node	.
+local:used	vn.role:Recipient	local:point_of_reference	.

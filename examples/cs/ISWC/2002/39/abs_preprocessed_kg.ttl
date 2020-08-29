@@ -1,0 +1,200 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:ensuring	rdfs:label	"ensuring"	.
+
+local:consistent	rdfs:label	"consistent"	.
+
+local:important	rdfs:label	"important"	.
+
+local:important_part	rdfs:label	"important part"	.
+
+local:ontology_development	rdfs:label	"ontology development"	.
+
+local:development	rdfs:label	"development"	.
+
+local:part	rdfs:label	"part"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:important_part_of_ontology_development	rdfs:label	"important part of ontology development"	.
+
+local:important_part_of_ontology_development_of_testing	rdfs:label	"important part of ontology development of testing"	.
+
+local:testing	rdfs:label	"testing"	.
+
+local:autonomous	rdfs:label	"autonomous"	.
+
+local:autonomous_software	rdfs:label	"autonomous software"	.
+
+local:software	rdfs:label	"software"	.
+
+local:software_agents	rdfs:label	"software agents"	.
+
+local:agents	rdfs:label	"agents"	.
+
+local:autonomous_software_agents	rdfs:label	"autonomous software agents"	.
+
+local:use	rdfs:label	"use"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:inconsistent_ontologies	rdfs:label	"inconsistent ontologies"	.
+
+local:inconsistent	rdfs:label	"inconsistent"	.
+
+local:reasoning_with_inconsistent_ontologies	rdfs:label	"reasoning with inconsistent ontologies"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:lead	rdfs:label	"lead"	.
+
+local:may	rdfs:label	"may"	.
+
+local:erroneous_conclusions	rdfs:label	"erroneous conclusions"	.
+
+local:conclusions	rdfs:label	"conclusions"	.
+
+local:erroneous	rdfs:label	"erroneous"	.
+
+local:introduce	rdfs:label	"introduce"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:consvisor_tool	rdfs:label	"consvisor tool"	.
+
+local:tool	rdfs:label	"tool"	.
+
+local:consvisor	rdfs:label	"consvisor"	.
+
+local:consistency_checking	rdfs:label	"consistency checking"	.
+
+local:checking	rdfs:label	"checking"	.
+
+local:consistency	rdfs:label	"consistency"	.
+
+local:consistency_checking_of_ontologies	rdfs:label	"consistency checking of ontologies"	.
+
+local:checks	rdfs:label	"checks"	.
+
+local:verifying	rdfs:label	"verifying"	.
+
+local:axioms	rdfs:label	"axioms"	.
+
+local:ubot	rdfs:label	"ubot"	.
+
+local:ubot_toolkit	rdfs:label	"ubot toolkit"	.
+
+local:toolkit	rdfs:label	"toolkit"	.
+
+local:uses	rdfs:label	"uses"	.
+
+local:theorem_proving	rdfs:label	"theorem proving"	.
+
+local:proving	rdfs:label	"proving"	.
+
+local:theorem	rdfs:label	"theorem"	.
+
+local:variety_of_techniques	rdfs:label	"variety of techniques"	.
+
+local:variety	rdfs:label	"variety"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:techniques_suchas_theorem_proving	rdfs:label	"techniques such_as theorem proving"	.
+
+local:logic_programming	rdfs:label	"logic programming"	.
+
+local:programming	rdfs:label	"programming"	.
+
+local:logic	rdfs:label	"logic"	.
+
+local:techniques_suchas_logic_programming	rdfs:label	"techniques such_as logic programming"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:logic_programming	rdfs:label	"logic programming"	.
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:software	rdfs:label	"software"	.
+local:software_agents	owl:sameAs	cso:software_agents	.
+local:ontology_development	owl:sameAs	cso:ontology_development	.
+cso:software_agents	rdfs:label	"software agents"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+local:consistency_checking	owl:sameAs	cso:consistency_checking	.
+cso:ontology_development	rdfs:label	"ontology development"	.
+cso:consistency_checking	rdfs:label	"consistency checking"	.
+local:logic_programming	owl:sameAs	cso:logic_programming	.
+local:software	owl:sameAs	cso:software	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:ensuring	vn.role:Agent	local:important_part_of_ontology_development_of_testing	.
+local:software_agents	rdfs:subClassOf	local:agents	.
+local:checks	vn.role:Experiencer	local:consvisor	.
+local:erroneous_conclusions	rdfs:subClassOf	local:conclusions	.
+local:introduce	vn.role:Patient1	local:consistency_checking_of_ontologies	.
+local:use	vn.role:Agent	local:autonomous_software_agents	.
+local:ontology_development	rdfs:subClassOf	local:development	.
+local:consvisor	rdfs:member	local:consvisor_tool	.
+local:logic_programming	rdfs:subClassOf	local:programming	.
+local:autonomous_software	rdfs:subClassOf	local:software	.
+local:techniques_suchas_theorem_proving	local:such_as_theoremproving	local:techniques	.
+local:software	rdfs:member	local:software_agents	.
+local:techniques_suchas_logic_programming	local:such_as_logicprogramming	local:techniques	.
+local:checks	local:AM-MNR	local:verifying	.
+local:verifying	vn.role:Experiencer	local:axioms	.
+local:consistency_checking_of_ontologies	local:consistencychecking_of	local:ontologies	.
+local:ubot	rdfs:member	local:ubot_toolkit	.
+local:verifying	vn.role:Theme	local:consvisor	.
+local:uses	vn.role:Agent	local:ubot_toolkit	.
+local:introduce	vn.role:Agent	local:we	.
+local:introduce	local:AM-LOC	local:paper	.
+local:ubot_toolkit	rdfs:subClassOf	local:toolkit	.
+local:autonomous_software_agents	rdfs:subClassOf	local:agents	.
+local:consistency_checking_of_ontologies	local:of_ontologies	local:consistency_checking	.
+local:lead	vn.role:Agent	local:reasoning_with_inconsistent_ontologies	.
+local:important	rdfs:member	local:important_part	.
+local:consistency	rdfs:member	local:consistency_checking	.
+local:ontology	rdfs:member	local:ontology_development	.
+local:important_part_of_ontology_development_of_testing	local:of_testing	local:important_part_of_ontology_development	.
+local:techniques_suchas_theorem_proving	local:techniques_such_as	local:theorem_proving	.
+local:lead	local:AM-MOD	local:may	.
+local:important_part_of_ontology_development	local:importantpart_of	local:ontology_development	.
+local:introduce	vn.role:Patient	local:consvisor_tool	.
+local:inconsistent_ontologies	rdfs:subClassOf	local:ontologies	.
+local:inconsistent	rdfs:member	local:inconsistent_ontologies	.
+local:variety_of_techniques	local:of_techniques	local:variety	.
+local:use	vn.role:Theme	local:ontologies	.
+local:logic	rdfs:member	local:logic_programming	.
+local:autonomous_software	rdfs:member	local:autonomous_software_agents	.
+local:consistency_checking	rdfs:subClassOf	local:checking	.
+local:erroneous	rdfs:member	local:erroneous_conclusions	.
+local:checks	vn.role:Stimulus	local:consistency	.
+local:important_part_of_ontology_development_of_testing	local:importantpartofontologydevelopment_of	local:testing	.
+local:important_part_of_ontology_development	local:of_ontologydevelopment	local:important_part	.
+local:uses	vn.role:Theme	local:variety_of_techniques	.
+local:use	local:AM-LOC	local:autonomous_software_agents	.
+local:important_part	rdfs:subClassOf	local:part	.
+local:ensuring	vn.role:Theme	local:consistent	.
+local:reasoning_with_inconsistent_ontologies	local:reasoning_with	local:inconsistent_ontologies	.
+local:reasoning_with_inconsistent_ontologies	local:with_inconsistentontologies	local:reasoning	.
+local:autonomous	rdfs:member	local:autonomous_software	.
+local:consvisor_tool	rdfs:subClassOf	local:tool	.
+local:theorem_proving	rdfs:subClassOf	local:proving	.
+local:techniques_suchas_logic_programming	local:techniques_such_as	local:logic_programming	.
+local:variety_of_techniques	local:variety_of	local:techniques	.
+local:lead	vn.role:Destination	local:erroneous_conclusions	.
+local:theorem	rdfs:member	local:theorem_proving	.
+local:autonomous_software_agents	rdfs:subClassOf	local:software_agents	.

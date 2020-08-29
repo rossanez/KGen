@@ -1,0 +1,139 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:presents	rdfs:label	"presents"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:rule	rdfs:label	"rule"	.
+
+local:rule_language	rdfs:label	"rule language"	.
+
+local:modular_rule	rdfs:label	"modular rule"	.
+
+local:modular_rule_language	rdfs:label	"modular rule language"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:language	rdfs:label	"language"	.
+
+local:modular	rdfs:label	"modular"	.
+
+local:web	rdfs:label	"web"	.
+
+local:modular_rule_language_for_semantic_web	rdfs:label	"modular rule language for semantic web"	.
+
+local:layered_for_semantic_web	rdfs:label	"layered for semantic web"	.
+
+local:layered	rdfs:label	"layered"	.
+
+local:triple	rdfs:label	"triple"	.
+
+local:designed	rdfs:label	"designed"	.
+
+local:especially	rdfs:label	"especially"	.
+
+local:rdf_models	rdfs:label	"rdf models"	.
+
+local:models	rdfs:label	"models"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:transforming_rdf_models	rdfs:label	"transforming rdf models"	.
+
+local:transforming	rdfs:label	"transforming"	.
+
+local:borrows	rdfs:label	"borrows"	.
+
+local:many	rdfs:label	"many"	.
+
+local:many_basic	rdfs:label	"many basic"	.
+
+local:many_basic_features	rdfs:label	"many basic features"	.
+
+local:basic	rdfs:label	"basic"	.
+
+local:features	rdfs:label	"features"	.
+
+local:basic_features	rdfs:label	"basic features"	.
+
+local:many_basic_features_from_flogic	rdfs:label	"many basic features from f-logic"	.
+
+local:flogic	rdfs:label	"f-logic"	.
+
+local:based	rdfs:label	"based"	.
+
+local:horn_logic	rdfs:label	"horn logic"	.
+
+local:logic	rdfs:label	"logic"	.
+
+local:horn	rdfs:label	"horn"	.
+
+local:querying	rdfs:label	"querying"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:rdf	rdfs:label	"rdf"	.
+cso:layered	rdfs:label	"layered"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:layered	owl:sameAs	cso:layered	.
+
+#### Relations ####
+
+local:many_basic	rdfs:member	local:many_basic_features	.
+local:querying	vn.role:Theme	local:rdf_models	.
+local:basic	rdfs:member	local:basic_features	.
+local:modular	rdfs:member	local:modular_rule	.
+local:basic_features	rdfs:subClassOf	local:features	.
+local:modular_rule_language_for_semantic_web	local:modularrulelanguage_for	local:semantic_web	.
+local:rule_language	rdfs:subClassOf	local:language	.
+local:designed	vn.role:Product	local:triple	.
+local:many_basic	rdfs:subClassOf	local:basic	.
+local:presents	vn.role:Theme	local:triple	.
+local:designed	local:AM-MNR	local:especially	.
+local:presents	vn.role:Agent	local:paper	.
+local:transforming	vn.role:Patient	local:rdf_models	.
+local:borrows	vn.role:Theme	local:triple	.
+local:layered_for_semantic_web	local:layered_for	local:semantic_web	.
+local:many_basic_features	rdfs:subClassOf	local:features	.
+local:transforming_rdf_models	rdfs:subClassOf	local:rdf_models	.
+local:designed	vn.role:Beneficiary	local:transforming_rdf_models	.
+local:modular_rule_language	rdfs:subClassOf	local:rule_language	.
+local:horn_logic	rdfs:subClassOf	local:logic	.
+local:presents	vn.role:Theme	local:layered_for_semantic_web	.
+local:many_basic_features	rdfs:subClassOf	local:basic_features	.
+local:transforming	vn.role:Agent	local:triple	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:rule	rdfs:member	local:rule_language	.
+local:designed	vn.role:Beneficiary	local:querying	.
+local:rdf_models	rdfs:subClassOf	local:models	.
+local:rdf	rdfs:member	local:rdf_models	.
+local:querying	vn.role:Agent	local:triple	.
+local:modular_rule_language	rdfs:subClassOf	local:language	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:modular_rule	rdfs:member	local:modular_rule_language	.
+local:presents	vn.role:Theme	local:modular_rule_language_for_semantic_web	.
+local:layered_for_semantic_web	local:for_semanticweb	local:layered	.
+local:horn	rdfs:member	local:horn_logic	.
+local:borrows	vn.role:Theme	local:many_basic_features_from_flogic	.
+local:many_basic_features_from_flogic	local:from_f-logic	local:many_basic_features	.
+local:many	rdfs:member	local:many_basic	.
+local:based	vn.role:indirect_object	local:horn_logic	.
+local:many_basic_features_from_flogic	local:manybasicfeatures_from	local:flogic	.
+local:based	vn.role:Cause	local:triple	.
+local:modular_rule	rdfs:subClassOf	local:rule	.
+local:modular_rule_language_for_semantic_web	local:for_semanticweb	local:modular_rule_language	.

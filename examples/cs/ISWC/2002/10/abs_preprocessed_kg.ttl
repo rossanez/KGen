@@ -1,0 +1,190 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:deals	rdfs:label	"deals"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:modeling_aspects	rdfs:label	"modeling aspects"	.
+
+local:aspects	rdfs:label	"aspects"	.
+
+local:modeling	rdfs:label	"modeling"	.
+
+local:addressed	rdfs:label	"addressed"	.
+
+local:have	rdfs:label	"have"	.
+
+local:autonomous_xml	rdfs:label	"autonomous xml"	.
+
+local:autonomous_xml_resources	rdfs:label	"autonomous xml resources"	.
+
+local:resources	rdfs:label	"resources"	.
+
+local:xml_resources	rdfs:label	"xml resources"	.
+
+local:autonomous	rdfs:label	"autonomous"	.
+
+local:xml	rdfs:label	"xml"	.
+
+local:context_of_integration	rdfs:label	"context of integration"	.
+
+local:context	rdfs:label	"context"	.
+
+local:integration	rdfs:label	"integration"	.
+
+local:integration_of_autonomous_xml_resources	rdfs:label	"integration of autonomous xml resources"	.
+
+local:heterogeneous_xml_resources	rdfs:label	"heterogeneous xml resources"	.
+
+local:heterogeneous_xml	rdfs:label	"heterogeneous xml"	.
+
+local:heterogeneous	rdfs:label	"heterogeneous"	.
+
+local:integration_of_heterogeneous_xml_resources	rdfs:label	"integration of heterogeneous xml resources"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:we	rdfs:label	"we"	.
+
+local:integration_system	rdfs:label	"integration system"	.
+
+local:system	rdfs:label	"system"	.
+
+local:focus	rdfs:label	"focus"	.
+
+local:appropriate_highlevel	rdfs:label	"appropriate high-level"	.
+
+local:appropriate_highlevel_primitives	rdfs:label	"appropriate high-level primitives"	.
+
+local:xml_data	rdfs:label	"xml data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:highlevel_primitives	rdfs:label	"high-level primitives"	.
+
+local:primitives	rdfs:label	"primitives"	.
+
+local:highlevel	rdfs:label	"high-level"	.
+
+local:appropriate	rdfs:label	"appropriate"	.
+
+local:semantics_of_xml_data	rdfs:label	"semantics of xml data"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:significance	rdfs:label	"significance"	.
+
+local:offering	rdfs:label	"offering"	.
+
+local:representing	rdfs:label	"representing"	.
+
+local:posit	rdfs:label	"posit"	.
+
+local:such_primitives	rdfs:label	"such primitives"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:such	rdfs:label	"such"	.
+
+local:support_for_such_primitives	rdfs:label	"support for such primitives"	.
+
+local:support	rdfs:label	"support"	.
+
+local:support_for_such_primitives_for_mechanisms	rdfs:label	"support for such primitives for mechanisms"	.
+
+local:mechanisms	rdfs:label	"mechanisms"	.
+
+local:goals_of_semantic_web	rdfs:label	"goals of semantic web"	.
+
+local:goals	rdfs:label	"goals"	.
+
+local:prerequisite	rdfs:label	"pre-requisite"	.
+
+local:realizing	rdfs:label	"realizing"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:xml_data	owl:sameAs	cso:xml_data	.
+cso:semantics	rdfs:label	"semantics"	.
+local:semantics	owl:sameAs	cso:semantics	.
+local:xml	owl:sameAs	cso:xml	.
+cso:xml	rdfs:label	"xml"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+cso:xml_data	rdfs:label	"xml data"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+local:semantic	owl:sameAs	cso:semantics	.
+
+#### Relations ####
+
+local:integration_of_heterogeneous_xml_resources	local:integration_of	local:heterogeneous_xml_resources	.
+local:highlevel	rdfs:member	local:highlevel_primitives	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:goals_of_semantic_web	local:of_semanticweb	local:goals	.
+local:support_for_such_primitives_for_mechanisms	local:for_mechanisms	local:support_for_such_primitives	.
+local:context_of_integration	local:context_of	local:integration	.
+local:realizing	vn.role:Theme	local:goals_of_semantic_web	.
+local:addressed	vn.role:Theme	local:modeling_aspects	.
+local:offering	vn.role:Agent	local:we	.
+local:semantics_of_xml_data	local:semantics_of	local:xml_data	.
+local:addressed	local:AM-LOC	local:context_of_integration	.
+local:heterogeneous_xml_resources	rdfs:subClassOf	local:xml_resources	.
+local:offering	vn.role:Theme	local:appropriate_highlevel_primitives	.
+local:appropriate	rdfs:member	local:appropriate_highlevel	.
+local:autonomous	rdfs:member	local:autonomous_xml	.
+local:posit	vn.role:Agent	local:we	.
+local:posit	vn.role:Theme	local:prerequisite	.
+local:context_of_integration	local:of_integration	local:context	.
+local:xml_resources	rdfs:subClassOf	local:resources	.
+local:highlevel_primitives	rdfs:subClassOf	local:primitives	.
+local:support_for_such_primitives	local:support_for	local:such_primitives	.
+local:semantics_of_xml_data	local:of_xmldata	local:semantics	.
+local:heterogeneous_xml_resources	rdfs:subClassOf	local:resources	.
+local:representing	vn.role:Theme	local:semantics_of_xml_data	.
+local:deals	vn.role:Theme	local:modeling_aspects	.
+local:integration_system	rdfs:subClassOf	local:system	.
+local:appropriate_highlevel	rdfs:member	local:appropriate_highlevel_primitives	.
+local:xml_data	rdfs:subClassOf	local:data	.
+local:heterogeneous	rdfs:member	local:heterogeneous_xml	.
+local:appropriate_highlevel_primitives	rdfs:subClassOf	local:primitives	.
+local:focus	vn.role:indirect_object	local:significance	.
+local:offering	vn.role:other	local:representing	.
+local:such	rdfs:member	local:such_primitives	.
+local:focus	vn.role:Experiencer	local:we	.
+local:appropriate_highlevel	rdfs:subClassOf	local:highlevel	.
+local:goals_of_semantic_web	local:goals_of	local:semantic_web	.
+local:support_for_such_primitives	local:for_suchprimitives	local:support	.
+local:deals	vn.role:Agent	local:paper	.
+local:autonomous_xml	rdfs:member	local:autonomous_xml_resources	.
+local:integration_of_autonomous_xml_resources	local:integration_of	local:autonomous_xml_resources	.
+local:heterogeneous_xml	rdfs:member	local:heterogeneous_xml_resources	.
+local:xml	rdfs:member	local:xml_data	.
+local:propose	vn.role:Agent	local:we	.
+local:integration_of_autonomous_xml_resources	local:of_autonomousxmlresources	local:integration	.
+local:propose	vn.role:Topic	local:integration_system	.
+local:appropriate_highlevel_primitives	rdfs:subClassOf	local:highlevel_primitives	.
+local:such_primitives	rdfs:subClassOf	local:primitives	.
+local:xml	rdfs:member	local:xml_resources	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:autonomous_xml_resources	rdfs:subClassOf	local:xml_resources	.
+local:integration	rdfs:member	local:integration_system	.
+local:integration_of_heterogeneous_xml_resources	local:of_heterogeneousxmlresources	local:integration	.
+local:autonomous_xml	rdfs:subClassOf	local:xml	.
+local:support_for_such_primitives_for_mechanisms	local:supportforsuchprimitives_for	local:mechanisms	.
+local:heterogeneous_xml	rdfs:subClassOf	local:xml	.
+local:addressed	local:AM-MOD	local:have	.
+local:autonomous_xml_resources	rdfs:subClassOf	local:resources	.
+local:modeling_aspects	rdfs:subClassOf	local:aspects	.
+local:modeling	rdfs:member	local:modeling_aspects	.

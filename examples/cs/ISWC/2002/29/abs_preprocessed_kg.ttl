@@ -1,0 +1,67 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:advanced	rdfs:label	"advanced"	.
+
+local:most	rdfs:label	"most"	.
+
+local:layer	rdfs:label	"layer"	.
+
+local:damloil	rdfs:label	"damloil"	.
+
+local:damloil_language	rdfs:label	"damloil language"	.
+
+local:language	rdfs:label	"language"	.
+
+local:corresponds	rdfs:label	"corresponds"	.
+
+local:description	rdfs:label	"description"	.
+
+local:description_logic	rdfs:label	"description logic"	.
+
+local:rich_description_logic	rdfs:label	"rich description logic"	.
+
+local:logic	rdfs:label	"logic"	.
+
+local:rich	rdfs:label	"rich"	.
+
+local:rich_description	rdfs:label	"rich description"	.
+
+local:advanced_layer	rdfs:label	"advanced layer"	.
+
+local:reached	rdfs:label	"reached"	.
+
+local:maturity	rdfs:label	"maturity"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:description_logic	rdfs:label	"description logic"	.
+local:description_logic	owl:sameAs	cso:description_logic	.
+
+#### Relations ####
+
+local:corresponds	vn.role:Actor1	local:damloil_language	.
+local:rich_description	rdfs:member	local:rich_description_logic	.
+local:advanced_layer	rdfs:subClassOf	local:layer	.
+local:rich_description	rdfs:subClassOf	local:description	.
+local:advanced	rdfs:member	local:advanced_layer	.
+local:description	rdfs:member	local:description_logic	.
+local:description_logic	rdfs:subClassOf	local:logic	.
+local:damloil_language	rdfs:subClassOf	local:language	.
+local:reached	vn.role:Agent	local:advanced_layer	.
+local:advanced	vn.role:object	local:layer	.
+local:rich	rdfs:member	local:rich_description	.
+local:rich_description_logic	rdfs:subClassOf	local:description_logic	.
+local:reached	vn.role:Theme	local:maturity	.
+local:advanced	local:AM-EXT	local:most	.
+local:rich_description_logic	rdfs:subClassOf	local:logic	.
+local:corresponds	vn.role:Actor2	local:rich_description_logic	.
+local:damloil	rdfs:member	local:damloil_language	.

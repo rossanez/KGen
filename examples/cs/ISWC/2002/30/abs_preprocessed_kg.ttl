@@ -1,0 +1,214 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:describes	rdfs:label	"describes"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:initial_work	rdfs:label	"initial work"	.
+
+local:work	rdfs:label	"work"	.
+
+local:initial	rdfs:label	"initial"	.
+
+local:initial_work_on_netapi	rdfs:label	"initial work on netapi"	.
+
+local:netapi	rdfs:label	"netapi"	.
+
+local:rdf_data	rdfs:label	"rdf data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:accessing_over_web	rdfs:label	"accessing over web"	.
+
+local:accessing	rdfs:label	"accessing"	.
+
+local:web	rdfs:label	"web"	.
+
+local:rdf_data_over_web	rdfs:label	"rdf data over web"	.
+
+local:updating_over_web	rdfs:label	"updating over web"	.
+
+local:updating	rdfs:label	"updating"	.
+
+local:includes	rdfs:label	"includes"	.
+
+local:conditional_extraction	rdfs:label	"conditional extraction"	.
+
+local:extraction	rdfs:label	"extraction"	.
+
+local:conditional	rdfs:label	"conditional"	.
+
+local:actions_for_conditional_extraction	rdfs:label	"actions for conditional extraction"	.
+
+local:actions	rdfs:label	"actions"	.
+
+local:hosting	rdfs:label	"hosting"	.
+
+local:hosting_server	rdfs:label	"hosting server"	.
+
+local:server	rdfs:label	"server"	.
+
+local:enquire_about_capabilities	rdfs:label	"enquire about capabilities"	.
+
+local:enquire	rdfs:label	"enquire"	.
+
+local:capabilities	rdfs:label	"capabilities"	.
+
+local:capabilities_of_hosting_server	rdfs:label	"capabilities of hosting server"	.
+
+local:web_update	rdfs:label	"web update"	.
+
+local:update	rdfs:label	"update"	.
+
+local:model_upload	rdfs:label	"model upload"	.
+
+local:upload	rdfs:label	"upload"	.
+
+local:model	rdfs:label	"model"	.
+
+local:web_update_of_rdf_data	rdfs:label	"web update of rdf data"	.
+
+local:web_update_of_rdf_data_actions	rdfs:label	"web update of rdf data actions"	.
+
+local:actions_for_model_upload	rdfs:label	"actions for model upload"	.
+
+local:actions_for_model_upload_for_download	rdfs:label	"actions for model upload for download"	.
+
+local:download	rdfs:label	"download"	.
+
+local:rdf_rdf_data	rdfs:label	"rdf rdf data"	.
+
+local:rdf_rdf_data_over_web	rdfs:label	"rdf rdf data over web"	.
+
+local:update_of_rdf_data	rdfs:label	"update of rdf data"	.
+
+local:rdf_data_actions	rdfs:label	"rdf data actions"	.
+
+local:initial_experimental	rdfs:label	"initial experimental"	.
+
+local:experimental	rdfs:label	"experimental"	.
+
+local:initial_experimental_system	rdfs:label	"initial experimental system"	.
+
+local:experimental_system	rdfs:label	"experimental system"	.
+
+local:system	rdfs:label	"system"	.
+
+local:described	rdfs:label	"described"	.
+
+local:partially_implements	rdfs:label	"partially implements"	.
+
+local:implements	rdfs:label	"implements"	.
+
+local:jena	rdfs:label	"jena"	.
+
+local:jena_toolkit	rdfs:label	"jena toolkit"	.
+
+local:partially	rdfs:label	"partially"	.
+
+local:toolkit	rdfs:label	"toolkit"	.
+
+local:partially_implements_within_jena_toolkit	rdfs:label	"partially implements within jena toolkit"	.
+
+local:ideas_within_jena_toolkit	rdfs:label	"ideas within jena toolkit"	.
+
+local:ideas	rdfs:label	"ideas"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:rdf_data	rdfs:label	"rdf data"	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:rdf	rdfs:label	"rdf"	.
+
+#### Relations ####
+
+local:actions_for_model_upload_for_download	local:for_download	local:actions_for_model_upload	.
+local:capabilities_of_hosting_server	local:capabilities_of	local:hosting_server	.
+local:web	rdfs:member	local:web_update	.
+local:enquire	vn.role:Agent	local:netapi	.
+local:described	vn.role:Theme	local:initial_experimental_system	.
+local:web_update_of_rdf_data	local:of_rdfdata	local:web_update	.
+local:initial_work	rdfs:subClassOf	local:work	.
+local:rdf_rdf_data_over_web	local:over_web	local:rdf_rdf_data	.
+local:update_of_rdf_data	local:update_of	local:rdf_data	.
+local:initial_experimental	rdfs:subClassOf	local:experimental	.
+local:initial_work_on_netapi	local:on_netapi	local:initial_work	.
+local:initial_experimental_system	rdfs:subClassOf	local:experimental_system	.
+local:actions_for_model_upload_for_download	local:actionsformodelupload_for	local:download	.
+local:hosting_server	rdfs:subClassOf	local:server	.
+local:describes	vn.role:Theme	local:initial_work_on_netapi	.
+local:capabilities_of_hosting_server	local:of_hostingserver	local:capabilities	.
+local:initial_work_on_netapi	local:initialwork_on	local:netapi	.
+local:ideas_within_jena_toolkit	local:within_jenatoolkit	local:ideas	.
+local:actions_for_model_upload	local:for_modelupload	local:actions	.
+local:accessing	vn.role:Patient	local:rdf_data_over_web	.
+local:web_update_of_rdf_data	local:webupdate_of	local:rdf_data	.
+local:partially	rdfs:member	local:partially_implements	.
+local:updating	local:AM-PNC	local:web	.
+local:enquire	vn.role:Recipient	local:capabilities_of_hosting_server	.
+local:rdf_rdf_data	rdfs:subClassOf	local:rdf_data	.
+local:partially_implements_within_jena_toolkit	local:partiallyimplements_within	local:jena_toolkit	.
+local:ideas_within_jena_toolkit	local:ideas_within	local:jena_toolkit	.
+local:implements	vn.role:Theme	local:ideas_within_jena_toolkit	.
+local:described	vn.role:Theme	local:partially_implements_within_jena_toolkit	.
+local:describes	vn.role:Predicate	local:accessing_over_web	.
+local:conditional_extraction	rdfs:subClassOf	local:extraction	.
+local:partially_implements	rdfs:subClassOf	local:implements	.
+local:updating	vn.role:Predicate	local:rdf_data_over_web	.
+local:includes	vn.role:Location	local:netapi	.
+local:enquire_about_capabilities	local:about_capabilities	local:enquire	.
+local:actions_for_model_upload	local:actions_for	local:model_upload	.
+local:initial	rdfs:member	local:initial_work	.
+local:updating_over_web	local:updating_over	local:web	.
+local:conditional	rdfs:member	local:conditional_extraction	.
+local:hosting	rdfs:member	local:hosting_server	.
+local:enquire_about_capabilities	local:enquire_about	local:capabilities	.
+local:describes	vn.role:Predicate	local:updating_over_web	.
+local:rdf_data_over_web	local:rdfdata_over	local:web	.
+local:model	rdfs:member	local:model_upload	.
+local:rdf_data_actions	local:rdfdata_	local:actions	.
+local:initial_experimental	rdfs:member	local:initial_experimental_system	.
+local:update_of_rdf_data	local:of_rdfdata	local:update	.
+local:updating	vn.role:indirect_object	local:web	.
+local:updating	local:AM-PNC	local:web_update_of_rdf_data_actions	.
+local:accessing	vn.role:Agent	local:netapi	.
+local:initial_experimental_system	rdfs:subClassOf	local:system	.
+local:experimental	rdfs:member	local:experimental_system	.
+local:rdf_data_actions	local:_actions	local:rdf_data	.
+local:accessing	vn.role:Patient	local:update_of_rdf_data	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:partially_implements_within_jena_toolkit	local:within_jenatoolkit	local:partially_implements	.
+local:implements	vn.role:Agent	local:initial_experimental_system	.
+local:describes	vn.role:Agent	local:paper	.
+local:updating_over_web	local:over_web	local:updating	.
+local:rdf	rdfs:member	local:rdf_data	.
+local:rdf_rdf_data_over_web	local:rdfrdfdata_over	local:web	.
+local:experimental_system	rdfs:subClassOf	local:system	.
+local:web_update	rdfs:subClassOf	local:update	.
+local:accessing_over_web	local:accessing_over	local:web	.
+local:updating	vn.role:Agent	local:netapi	.
+local:web_update_of_rdf_data_actions	local:webupdateofrdfdata_	local:actions	.
+local:includes	vn.role:Theme	local:actions_for_conditional_extraction	.
+local:web_update_of_rdf_data_actions	local:_actions	local:web_update_of_rdf_data	.
+local:jena	rdfs:member	local:jena_toolkit	.
+local:accessing_over_web	local:over_web	local:accessing	.
+local:model_upload	rdfs:subClassOf	local:upload	.
+local:jena_toolkit	rdfs:subClassOf	local:toolkit	.
+local:actions_for_conditional_extraction	local:for_conditionalextraction	local:actions	.
+local:implements	local:AM-MNR	local:partially	.
+local:initial	rdfs:member	local:initial_experimental	.
+local:actions_for_conditional_extraction	local:actions_for	local:conditional_extraction	.
+local:rdf_data_over_web	local:over_web	local:rdf_data	.
+local:updating	vn.role:Predicate	local:rdf_data	.

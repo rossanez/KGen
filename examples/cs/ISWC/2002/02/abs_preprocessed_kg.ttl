@@ -1,0 +1,188 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:describes	rdfs:label	"describes"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:graphs_of_statements	rdfs:label	"graphs of statements"	.
+
+local:graphs	rdfs:label	"graphs"	.
+
+local:statements	rdfs:label	"statements"	.
+
+local:statements_about_resources	rdfs:label	"statements about resources"	.
+
+local:resources	rdfs:label	"resources"	.
+
+local:explores	rdfs:label	"explores"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:isomorphism_literature	rdfs:label	"isomorphism literature"	.
+
+local:literature	rdfs:label	"literature"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:graph_isomorphism	rdfs:label	"graph isomorphism"	.
+
+local:isomorphism	rdfs:label	"isomorphism"	.
+
+local:rdf_graphs	rdfs:label	"rdf graphs"	.
+
+local:graph_isomorphism_literature	rdfs:label	"graph isomorphism literature"	.
+
+local:two_rdf_graphs	rdfs:label	"two rdf graphs"	.
+
+local:equality_of_two_rdf_graphs	rdfs:label	"equality of two rdf graphs"	.
+
+local:equality	rdfs:label	"equality"	.
+
+local:equality_of_two_rdf_graphs_in_light	rdfs:label	"equality of two rdf graphs in light"	.
+
+local:light	rdfs:label	"light"	.
+
+local:light_of_graph_isomorphism_literature	rdfs:label	"light of graph isomorphism literature"	.
+
+local:show	rdfs:label	"show"	.
+
+local:we	rdfs:label	"we"	.
+
+local:standard_graph_isomorphism	rdfs:label	"standard graph isomorphism"	.
+
+local:standard_graph_isomorphism_algorithms	rdfs:label	"standard graph isomorphism algorithms"	.
+
+local:standard	rdfs:label	"standard"	.
+
+local:standard_graph	rdfs:label	"standard graph"	.
+
+local:graph_isomorphism_algorithms	rdfs:label	"graph isomorphism algorithms"	.
+
+local:algorithms	rdfs:label	"algorithms"	.
+
+local:isomorphism_algorithms	rdfs:label	"isomorphism algorithms"	.
+
+local:effectively_used	rdfs:label	"effectively used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:can_effectively_used	rdfs:label	"can effectively used"	.
+
+local:can	rdfs:label	"can"	.
+
+local:effectively	rdfs:label	"effectively"	.
+
+local:comparing	rdfs:label	"comparing"	.
+
+local:consider	rdfs:label	"consider"	.
+
+local:anonymous_resources	rdfs:label	"anonymous resources"	.
+
+local:anonymous	rdfs:label	"anonymous"	.
+
+local:unlabelled_vertices	rdfs:label	"unlabelled vertices"	.
+
+local:vertices	rdfs:label	"vertices"	.
+
+local:unlabelled	rdfs:label	"unlabelled"	.
+
+local:unlabelled_vertices_in_graph	rdfs:label	"unlabelled vertices in graph"	.
+
+local:developed	rdfs:label	"developed"	.
+
+local:’_s	rdfs:label	"’ s"	.
+
+local:s	rdfs:label	"s"	.
+
+local:’	rdfs:label	"’"	.
+
+local:1970	rdfs:label	"1970"	.
+
+local:rdf_software	rdfs:label	"rdf software"	.
+
+local:software	rdfs:label	"software"	.
+
+local:testing	rdfs:label	"testing"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
+cso:rdf_graph	rdfs:label	"rdf graphs"	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:software	rdfs:label	"software"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:software	owl:sameAs	cso:software	.
+
+#### Relations ####
+
+local:explores	vn.role:Agent	local:paper	.
+local:used	vn.role:Theme	local:standard_graph_isomorphism_algorithms	.
+local:unlabelled_vertices_in_graph	local:unlabelledvertices_in	local:graph	.
+local:two_rdf_graphs	rdfs:subClassOf	local:rdf_graphs	.
+local:effectively_used	rdfs:subClassOf	local:used	.
+local:statements_about_resources	local:about_resources	local:statements	.
+local:standard_graph_isomorphism_algorithms	rdfs:subClassOf	local:graph_isomorphism_algorithms	.
+local:rdf_software	rdfs:subClassOf	local:software	.
+local:standard_graph	rdfs:member	local:standard_graph_isomorphism	.
+local:isomorphism	rdfs:member	local:isomorphism_literature	.
+local:graph_isomorphism	rdfs:member	local:graph_isomorphism_algorithms	.
+local:developed	vn.role:Location	local:standard_graph_isomorphism_algorithms	.
+local:graphs_of_statements	local:of_statements	local:graphs	.
+local:rdf	rdfs:member	local:rdf_graphs	.
+local:anonymous	rdfs:member	local:anonymous_resources	.
+local:equality_of_two_rdf_graphs_in_light	local:in_light	local:equality_of_two_rdf_graphs	.
+local:comparing	vn.role:Patient2	local:rdf_graphs	.
+local:unlabelled	rdfs:member	local:unlabelled_vertices	.
+local:consider	vn.role:Predicate	local:unlabelled_vertices_in_graph	.
+local:graph_isomorphism_algorithms	rdfs:subClassOf	local:isomorphism_algorithms	.
+local:show	vn.role:Agent	local:we	.
+local:describes	vn.role:Agent	local:rdf	.
+local:’_s	rdfs:subClassOf	local:s	.
+local:rdf_graphs	rdfs:subClassOf	local:graphs	.
+local:equality_of_two_rdf_graphs	local:of_twordfgraphs	local:equality	.
+local:standard_graph	rdfs:subClassOf	local:graph	.
+local:graph_isomorphism	rdfs:member	local:graph_isomorphism_literature	.
+local:rdf	rdfs:member	local:rdf_software	.
+local:standard	rdfs:member	local:standard_graph	.
+local:isomorphism_algorithms	rdfs:subClassOf	local:algorithms	.
+local:unlabelled_vertices_in_graph	local:in_graph	local:unlabelled_vertices	.
+local:testing	vn.role:Location	local:rdf_software	.
+local:equality_of_two_rdf_graphs_in_light	local:equalityoftwordfgraphs_in	local:light	.
+local:graph_isomorphism_literature	rdfs:subClassOf	local:isomorphism_literature	.
+local:explores	vn.role:Location	local:equality_of_two_rdf_graphs_in_light	.
+local:used	local:AM-MNR	local:effectively	.
+local:unlabelled_vertices	rdfs:subClassOf	local:vertices	.
+local:light_of_graph_isomorphism_literature	local:of_graphisomorphismliterature	local:light	.
+local:standard_graph_isomorphism_algorithms	rdfs:subClassOf	local:algorithms	.
+local:comparing	vn.role:Patient1	local:standard_graph_isomorphism_algorithms	.
+local:used	vn.role:Recipient	local:comparing	.
+local:graph_isomorphism_algorithms	rdfs:subClassOf	local:algorithms	.
+local:show	vn.role:Theme	local:can_effectively_used	.
+local:statements_about_resources	local:statements_about	local:resources	.
+local:standard_graph_isomorphism	rdfs:subClassOf	local:isomorphism	.
+local:used	local:AM-MOD	local:can	.
+local:consider	vn.role:Theme	local:anonymous_resources	.
+local:graphs_of_statements	local:graphs_of	local:statements	.
+local:light_of_graph_isomorphism_literature	local:light_of	local:graph_isomorphism_literature	.
+local:graph	rdfs:member	local:graph_isomorphism	.
+local:isomorphism_literature	rdfs:subClassOf	local:literature	.
+local:standard_graph_isomorphism	rdfs:member	local:standard_graph_isomorphism_algorithms	.
+local:isomorphism	rdfs:member	local:isomorphism_algorithms	.
+local:consider	vn.role:Agent	local:we	.
+local:developed	local:AM-LOC	local:1970	.
+local:graph_isomorphism	rdfs:subClassOf	local:isomorphism	.
+local:can_effectively_used	rdfs:subClassOf	local:effectively_used	.
+local:’	rdfs:member	local:’_s	.
+local:anonymous_resources	rdfs:subClassOf	local:resources	.
+local:describes	vn.role:Theme	local:graphs_of_statements	.
+local:equality_of_two_rdf_graphs	local:equality_of	local:two_rdf_graphs	.
+local:graph_isomorphism_literature	rdfs:subClassOf	local:literature	.

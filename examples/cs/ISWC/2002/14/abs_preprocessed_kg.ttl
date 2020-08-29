@@ -1,0 +1,181 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:set	rdfs:label	"set"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:key	rdfs:label	"key"	.
+
+local:key_role	rdfs:label	"key role"	.
+
+local:web	rdfs:label	"web"	.
+
+local:role	rdfs:label	"role"	.
+
+local:play_in_semantic_web	rdfs:label	"play in semantic web"	.
+
+local:play	rdfs:label	"play"	.
+
+local:ontology_languages	rdfs:label	"ontology languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:web_ontology_languages	rdfs:label	"web ontology languages"	.
+
+local:several_web_ontology_languages	rdfs:label	"several web ontology languages"	.
+
+local:several_web_ontology_languages_like_damloil	rdfs:label	"several web ontology languages like damloil"	.
+
+local:damloil	rdfs:label	"damloil"	.
+
+local:based	rdfs:label	"based"	.
+
+local:dls	rdfs:label	"dls"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:these	rdfs:label	"these"	.
+
+local:not	rdfs:label	"not"	.
+
+local:only	rdfs:label	"only"	.
+
+local:clear_semantics	rdfs:label	"clear semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:clear	rdfs:label	"clear"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:clear_semantics_to_ontology_languages	rdfs:label	"clear semantics to ontology languages"	.
+
+local:dl_systems	rdfs:label	"dl systems"	.
+
+local:dl_systems_systems	rdfs:label	"dl systems systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:systems_systems	rdfs:label	"systems systems"	.
+
+local:dl	rdfs:label	"dl"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:reasoning_services	rdfs:label	"reasoning services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:reasoning_reasoning_services	rdfs:label	"reasoning reasoning services"	.
+
+local:complete_reasoning_reasoning_services	rdfs:label	"complete reasoning reasoning services"	.
+
+local:exploit_dl	rdfs:label	"exploit dl"	.
+
+local:exploit_dl_systems	rdfs:label	"exploit dl systems"	.
+
+local:complete_reasoning	rdfs:label	"complete reasoning"	.
+
+local:complete_reasoning_services	rdfs:label	"complete reasoning services"	.
+
+local:complete	rdfs:label	"complete"	.
+
+local:exploit	rdfs:label	"exploit"	.
+
+local:allows	rdfs:label	"allows"	.
+
+local:order	rdfs:label	"order"	.
+
+local:correct_reasoning_reasoning_services	rdfs:label	"correct reasoning reasoning services"	.
+
+local:correct_reasoning_services	rdfs:label	"correct reasoning services"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology_language	rdfs:label	"ontology languages"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:web_ontology_language	rdfs:label	"web ontology languages"	.
+local:web_ontology_languages	owl:sameAs	cso:web_ontology_language	.
+cso:semantics	rdfs:label	"semantics"	.
+local:ontology_languages	owl:sameAs	cso:ontology_language	.
+local:semantic	owl:sameAs	cso:semantics	.
+
+#### Relations ####
+
+local:semantic	rdfs:member	local:semantic_web	.
+local:systems_systems	rdfs:subClassOf	local:systems	.
+local:clear_semantics_to_ontology_languages	local:clearsemantics_to	local:ontology_languages	.
+local:ontology	rdfs:member	local:ontology_languages	.
+local:dl_systems	rdfs:member	local:dl_systems_systems	.
+local:play_in_semantic_web	local:in_semanticweb	local:play	.
+local:based	vn.role:indirect_object	local:dls	.
+local:clear	rdfs:member	local:clear_semantics	.
+local:provide	vn.role:Agent	local:complete_reasoning_reasoning_services	.
+local:play_in_semantic_web	local:play_in	local:semantic_web	.
+local:exploit	local:AM-PNC	local:order	.
+local:provide	vn.role:Agent	local:clear_semantics_to_ontology_languages	.
+local:dl	rdfs:member	local:dl_systems	.
+local:complete_reasoning	rdfs:subClassOf	local:reasoning	.
+local:dl_systems	rdfs:subClassOf	local:systems	.
+local:several_web_ontology_languages	rdfs:subClassOf	local:web_ontology_languages	.
+local:provide	local:AM-ADV	local:only	.
+local:clear_semantics	rdfs:subClassOf	local:semantics	.
+local:provide	vn.role:Recipient	local:services	.
+local:provide	vn.role:Agent	local:services	.
+local:provide	local:AM-NEG	local:not	.
+local:exploit	vn.role:Agent	local:these	.
+local:set	vn.role:Patient	local:ontologies	.
+local:dl_systems_systems	rdfs:subClassOf	local:systems	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:set	vn.role:indirect_object	local:play_in_semantic_web	.
+local:clear_semantics_to_ontology_languages	local:to_ontologylanguages	local:clear_semantics	.
+local:reasoning_services	rdfs:subClassOf	local:services	.
+local:reasoning_reasoning_services	rdfs:subClassOf	local:reasoning_services	.
+local:complete_reasoning	rdfs:member	local:complete_reasoning_services	.
+local:exploit_dl_systems	rdfs:subClassOf	local:systems	.
+local:key	rdfs:member	local:key_role	.
+local:play	vn.role:Actor	local:ontologies	.
+local:exploit	rdfs:member	local:exploit_dl	.
+local:exploit	vn.role:Predicate	local:dl_systems	.
+local:reasoning	rdfs:member	local:reasoning_services	.
+local:correct_reasoning_reasoning_services	rdfs:subClassOf	local:reasoning_reasoning_services	.
+local:correct_reasoning_services	rdfs:subClassOf	local:reasoning_services	.
+local:web_ontology_languages	rdfs:subClassOf	local:ontology_languages	.
+local:systems	rdfs:member	local:systems_systems	.
+local:play	vn.role:Actor1	local:key_role	.
+local:several_web_ontology_languages_like_damloil	local:like_damloil	local:several_web_ontology_languages	.
+local:complete_reasoning_reasoning_services	rdfs:subClassOf	local:reasoning_reasoning_services	.
+local:ontology_languages	rdfs:subClassOf	local:languages	.
+local:provide	vn.role:Agent	local:correct_reasoning_reasoning_services	.
+local:several_web_ontology_languages_like_damloil	local:severalwebontologylanguages_like	local:damloil	.
+local:provide	vn.role:Agent	local:dl_systems_systems	.
+local:exploit_dl	rdfs:member	local:exploit_dl_systems	.
+local:complete_reasoning_services	rdfs:subClassOf	local:services	.
+local:complete	rdfs:member	local:complete_reasoning	.
+local:key_role	rdfs:subClassOf	local:role	.
+local:based	vn.role:Cause	local:several_web_ontology_languages_like_damloil	.
+local:allows	vn.role:Theme	local:exploit	.
+local:complete_reasoning_services	rdfs:subClassOf	local:reasoning_services	.
+local:provide	vn.role:Recipient	local:these	.
+local:exploit_dl	rdfs:subClassOf	local:dl	.
+local:play	local:AM-LOC	local:semantic_web	.
+local:dl_systems_systems	rdfs:subClassOf	local:systems_systems	.

@@ -1,0 +1,170 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:moving	rdfs:label	"moving"	.
+
+local:web	rdfs:label	"web"	.
+
+local:collection_of_pages	rdfs:label	"collection of pages"	.
+
+local:collection	rdfs:label	"collection"	.
+
+local:pages	rdfs:label	"pages"	.
+
+local:collection_of_pages_toward_collection	rdfs:label	"collection of pages toward collection"	.
+
+local:collection_of_services	rdfs:label	"collection of services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:interoperate	rdfs:label	"interoperate"	.
+
+local:internet	rdfs:label	"internet"	.
+
+local:help	rdfs:label	"help"	.
+
+local:can	rdfs:label	"can"	.
+
+local:solution_of_problem	rdfs:label	"solution of problem"	.
+
+local:solution	rdfs:label	"solution"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:claim	rdfs:label	"claim"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_match	rdfs:label	"semantic match"	.
+
+local:match	rdfs:label	"match"	.
+
+local:should_based	rdfs:label	"should based"	.
+
+local:based	rdfs:label	"based"	.
+
+local:location_of_web_services	rdfs:label	"location of web services"	.
+
+local:location	rdfs:label	"location"	.
+
+local:should_based_on_semantic_match	rdfs:label	"should based on semantic match"	.
+
+local:semantic_match_between_description	rdfs:label	"semantic match between description"	.
+
+local:description	rdfs:label	"description"	.
+
+local:description_of_service	rdfs:label	"description of service"	.
+
+local:service	rdfs:label	"service"	.
+
+local:should	rdfs:label	"should"	.
+
+local:declarative_description	rdfs:label	"declarative description"	.
+
+local:declarative	rdfs:label	"declarative"	.
+
+local:semantic_match_between_declarative_description	rdfs:label	"semantic match between declarative description"	.
+
+local:declarative_description_of_service	rdfs:label	"declarative description of service"	.
+
+local:furthermore	rdfs:label	"furthermore"	.
+
+local:representation_capabilities	rdfs:label	"representation capabilities"	.
+
+local:capabilities	rdfs:label	"capabilities"	.
+
+local:representation	rdfs:label	"representation"	.
+
+local:representation_capabilities_of_languages	rdfs:label	"representation capabilities of languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:languages_suchas_wsdl	rdfs:label	"languages such_as wsdl"	.
+
+local:wsdl	rdfs:label	"wsdl"	.
+
+local:representation_capabilities_of_registries	rdfs:label	"representation capabilities of registries"	.
+
+local:registries	rdfs:label	"registries"	.
+
+local:registries_suchas_uddi	rdfs:label	"registries such_as uddi"	.
+
+local:uddi	rdfs:label	"uddi"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:internet	rdfs:label	"internet"	.
+local:internet	owl:sameAs	cso:internet	.
+
+#### Relations ####
+
+local:representation_capabilities_of_languages	local:representationcapabilities_of	local:languages	.
+local:moving	vn.role:Cause	local:web	.
+local:semantic_match_between_declarative_description	local:between_declarativedescription	local:semantic_match	.
+local:declarative_description_of_service	local:of_service	local:declarative_description	.
+local:collection_of_pages_toward_collection	local:toward_collection	local:collection_of_pages	.
+local:representation_capabilities	rdfs:subClassOf	local:capabilities	.
+local:claim	vn.role:Agent	local:furthermore	.
+local:collection_of_pages	local:of_pages	local:collection	.
+local:semantic	rdfs:member	local:semantic_match	.
+local:declarative	rdfs:member	local:declarative_description	.
+local:based	vn.role:indirect_object	local:semantic_match_between_declarative_description	.
+local:registries_suchas_uddi	local:registries_such_as	local:uddi	.
+local:semantic_match_between_description	local:semanticmatch_between	local:description	.
+local:location_of_web_services	local:of_webservices	local:location	.
+local:description_of_service	local:description_of	local:service	.
+local:collection_of_pages_toward_collection	local:collectionofpages_toward	local:collection	.
+local:collection_of_pages	local:collection_of	local:pages	.
+local:collection_of_services	local:of_services	local:collection	.
+local:languages_suchas_wsdl	local:such_as_wsdl	local:languages	.
+local:claim	vn.role:Topic	local:representation_capabilities_of_languages	.
+local:help	vn.role:Beneficiary	local:solution_of_problem	.
+local:help	vn.role:Agent	local:services	.
+local:moving	vn.role:indirect_object	local:collection_of_pages_toward_collection	.
+local:claim	vn.role:Agent	local:we	.
+local:solution_of_problem	local:solution_of	local:problem	.
+local:web	rdfs:member	local:web_services	.
+local:declarative_description	rdfs:subClassOf	local:description	.
+local:interoperate	vn.role:indirect_object	local:internet	.
+local:languages_suchas_wsdl	local:languages_such_as	local:wsdl	.
+local:should_based_on_semantic_match	local:on_semanticmatch	local:should_based	.
+local:help	local:AM-MOD	local:can	.
+local:representation_capabilities_of_registries	local:of_registries	local:representation_capabilities	.
+local:description_of_service	local:of_service	local:description	.
+local:collection_of_services	local:collection_of	local:services	.
+local:interoperate	vn.role:object	local:services	.
+local:based	local:AM-MOD	local:should	.
+local:representation_capabilities_of_languages	local:of_languages	local:representation_capabilities	.
+local:claim	vn.role:Topic	local:representation_capabilities_of_registries	.
+local:registries_suchas_uddi	local:such_as_uddi	local:registries	.
+local:location_of_web_services	local:location_of	local:web_services	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:semantic_match	rdfs:subClassOf	local:match	.
+local:declarative_description_of_service	local:declarativedescription_of	local:service	.
+local:should_based_on_semantic_match	local:shouldbased_on	local:semantic_match	.
+local:claim	vn.role:Topic	local:should_based_on_semantic_match	.
+local:representation_capabilities_of_registries	local:representationcapabilities_of	local:registries	.
+local:representation	rdfs:member	local:representation_capabilities	.
+local:based	vn.role:indirect_object	local:semantic_match_between_description	.
+local:semantic_match_between_declarative_description	local:semanticmatch_between	local:declarative_description	.
+local:claim	local:AM-LOC	local:paper	.
+local:should_based	rdfs:subClassOf	local:based	.
+local:solution_of_problem	local:of_problem	local:solution	.
+local:based	vn.role:Cause	local:location_of_web_services	.
+local:semantic_match_between_description	local:between_description	local:semantic_match	.

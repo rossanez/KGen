@@ -1,0 +1,219 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:description_framework	rdfs:label	"description framework"	.
+
+local:framework	rdfs:label	"framework"	.
+
+local:resource_description	rdfs:label	"resource description"	.
+
+local:description	rdfs:label	"description"	.
+
+local:resource	rdfs:label	"resource"	.
+
+local:resource_description_framework	rdfs:label	"resource description framework"	.
+
+local:supposed	rdfs:label	"supposed"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:other_semantic	rdfs:label	"other semantic"	.
+
+local:other_semantic_web	rdfs:label	"other semantic web"	.
+
+local:other	rdfs:label	"other"	.
+
+local:semantic_web_languages	rdfs:label	"semantic web languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:other_semantic_web_languages	rdfs:label	"other semantic web languages"	.
+
+local:web_languages	rdfs:label	"web languages"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:foundations_of_semantic_web	rdfs:label	"foundations of semantic web"	.
+
+local:foundations	rdfs:label	"foundations"	.
+
+local:layered_ontopof_other_semantic_web_languages	rdfs:label	"layered on_top_of other semantic web languages"	.
+
+local:layered	rdfs:label	"layered"	.
+
+local:top_of_other_semantic_web_languages	rdfs:label	"top of other semantic web languages"	.
+
+local:top	rdfs:label	"top"	.
+
+local:description_framework_schema	rdfs:label	"description framework schema"	.
+
+local:framework_schema	rdfs:label	"framework schema"	.
+
+local:schema_specification	rdfs:label	"schema specification"	.
+
+local:specification	rdfs:label	"specification"	.
+
+local:description_framework_schema_specification	rdfs:label	"description framework schema specification"	.
+
+local:schema	rdfs:label	"schema"	.
+
+local:resource_description_framework_schema	rdfs:label	"resource description framework schema"	.
+
+local:framework_schema_specification	rdfs:label	"framework schema specification"	.
+
+local:resource_description_framework_schema_specification	rdfs:label	"resource description framework schema specification"	.
+
+local:straightforward	rdfs:label	"straightforward"	.
+
+local:straightforward_way	rdfs:label	"straightforward way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:not_achieved	rdfs:label	"not achieved"	.
+
+local:achieved	rdfs:label	"achieved"	.
+
+local:can_not_achieved	rdfs:label	"can not achieved"	.
+
+local:can_not_achieved_in_straightforward_way	rdfs:label	"can not achieved in straightforward way"	.
+
+local:turns	rdfs:label	"turns"	.
+
+local:layering	rdfs:label	"layering"	.
+
+local:can	rdfs:label	"can"	.
+
+local:not	rdfs:label	"not"	.
+
+local:lays	rdfs:label	"lays"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:several_alternative	rdfs:label	"several alternative"	.
+
+local:alternative	rdfs:label	"alternative"	.
+
+local:layering_possibilities	rdfs:label	"layering possibilities"	.
+
+local:possibilities	rdfs:label	"possibilities"	.
+
+local:several	rdfs:label	"several"	.
+
+local:several_alternative_layering	rdfs:label	"several alternative layering"	.
+
+local:alternative_layering_possibilities	rdfs:label	"alternative layering possibilities"	.
+
+local:alternative_layering	rdfs:label	"alternative layering"	.
+
+local:several_alternative_layering_possibilities	rdfs:label	"several alternative layering possibilities"	.
+
+local:describes	rdfs:label	"describes"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:straightforward_layering	rdfs:label	"straightforward layering"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:layered	rdfs:label	"layered"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:layered	owl:sameAs	cso:layered	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:resource_description_framework	owl:sameAs	cso:resource_description_framework	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:resource_description_framework	rdfs:label	"resource description framework"	.
+
+#### Relations ####
+
+local:alternative_layering_possibilities	rdfs:subClassOf	local:possibilities	.
+local:other_semantic_web_languages	rdfs:subClassOf	local:languages	.
+local:resource_description	rdfs:subClassOf	local:description	.
+local:straightforward_way	rdfs:subClassOf	local:way	.
+local:resource_description	rdfs:member	local:resource_description_framework	.
+local:straightforward	rdfs:member	local:straightforward_way	.
+local:resource_description_framework_schema	rdfs:member	local:resource_description_framework_schema_specification	.
+local:achieved	local:AM-NEG	local:not	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:layered	vn.role:Patient	local:semantic_web_languages	.
+local:several_alternative	rdfs:member	local:several_alternative_layering	.
+local:resource	rdfs:member	local:resource_description	.
+local:achieved	vn.role:Theme	local:layering	.
+local:several_alternative_layering_possibilities	rdfs:subClassOf	local:alternative_layering_possibilities	.
+local:achieved	local:AM-MOD	local:can	.
+local:describes	vn.role:Predicate	local:straightforward_layering	.
+local:description_framework_schema	rdfs:subClassOf	local:schema	.
+local:resource_description_framework	rdfs:subClassOf	local:description_framework	.
+local:straightforward	rdfs:member	local:straightforward_layering	.
+local:web_languages	rdfs:subClassOf	local:languages	.
+local:description	rdfs:member	local:description_framework	.
+local:alternative_layering	rdfs:member	local:alternative_layering_possibilities	.
+local:alternative_layering	rdfs:subClassOf	local:layering	.
+local:semantic_web	rdfs:member	local:semantic_web_languages	.
+local:framework_schema	rdfs:subClassOf	local:schema	.
+local:framework_schema	rdfs:member	local:framework_schema_specification	.
+local:layering	rdfs:member	local:layering_possibilities	.
+local:resource_description_framework	rdfs:member	local:resource_description_framework_schema	.
+local:other_semantic_web	rdfs:member	local:other_semantic_web_languages	.
+local:achieved	local:AM-LOC	local:straightforward_way	.
+local:other	rdfs:member	local:other_semantic	.
+local:turns	vn.role:Patient	local:can_not_achieved_in_straightforward_way	.
+local:other_semantic_web_languages	rdfs:subClassOf	local:semantic_web_languages	.
+local:resource_description_framework_schema	rdfs:subClassOf	local:schema	.
+local:description_framework_schema	rdfs:member	local:description_framework_schema_specification	.
+local:straightforward_layering	rdfs:subClassOf	local:layering	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:web	rdfs:member	local:web_languages	.
+local:can_not_achieved	rdfs:subClassOf	local:not_achieved	.
+local:other_semantic	rdfs:subClassOf	local:semantic	.
+local:several_alternative_layering	rdfs:subClassOf	local:layering	.
+local:supposed	vn.role:Theme	local:resource_description_framework	.
+local:several_alternative_layering	rdfs:member	local:several_alternative_layering_possibilities	.
+local:top_of_other_semantic_web_languages	local:top_of	local:other_semantic_web_languages	.
+local:description_framework	rdfs:member	local:description_framework_schema	.
+local:several	rdfs:member	local:several_alternative	.
+local:top_of_other_semantic_web_languages	local:of_othersemanticweblanguages	local:top	.
+local:foundations_of_semantic_web	local:foundations_of	local:semantic_web	.
+local:lays	vn.role:Agent	local:paper	.
+local:description_framework_schema_specification	rdfs:subClassOf	local:framework_schema_specification	.
+local:not_achieved	rdfs:subClassOf	local:achieved	.
+local:resource_description_framework_schema_specification	rdfs:subClassOf	local:description_framework_schema_specification	.
+local:several_alternative_layering_possibilities	rdfs:subClassOf	local:possibilities	.
+local:alternative_layering_possibilities	rdfs:subClassOf	local:layering_possibilities	.
+local:lays	vn.role:Product	local:several_alternative_layering_possibilities	.
+local:describes	vn.role:Agent	local:paper	.
+local:layered	vn.role:Instrument	local:top_of_other_semantic_web_languages	.
+local:semantic_web_languages	rdfs:subClassOf	local:languages	.
+local:other_semantic	rdfs:member	local:other_semantic_web	.
+local:framework_schema_specification	rdfs:subClassOf	local:specification	.
+local:alternative	rdfs:member	local:alternative_layering	.
+local:other_semantic_web	rdfs:subClassOf	local:web	.
+local:description_framework_schema_specification	rdfs:subClassOf	local:specification	.
+local:framework_schema_specification	rdfs:subClassOf	local:schema_specification	.
+local:resource_description_framework_schema_specification	rdfs:subClassOf	local:specification	.
+local:resource_description_framework	rdfs:subClassOf	local:framework	.
+local:schema_specification	rdfs:subClassOf	local:specification	.
+local:describes	vn.role:Theme	local:problem	.
+local:supposed	vn.role:Predicate	local:foundations_of_semantic_web	.
+local:supposed	vn.role:Theme	local:resource_description_framework_schema_specification	.
+local:layered_ontopof_other_semantic_web_languages	local:layered_on_top_of	local:other_semantic_web_languages	.
+local:can_not_achieved_in_straightforward_way	local:in_straightforwardway	local:can_not_achieved	.
+local:semantic_web_languages	rdfs:subClassOf	local:web_languages	.
+local:several_alternative	rdfs:subClassOf	local:alternative	.
+local:foundations_of_semantic_web	local:of_semanticweb	local:foundations	.
+local:description_framework	rdfs:subClassOf	local:framework	.
+local:can_not_achieved_in_straightforward_way	local:cannotachieved_in	local:straightforward_way	.
+local:layered_ontopof_other_semantic_web_languages	local:on_top_of_othersemanticweblanguages	local:layered	.
+local:layering_possibilities	rdfs:subClassOf	local:possibilities	.
+local:framework	rdfs:member	local:framework_schema	.
+local:schema	rdfs:member	local:schema_specification	.

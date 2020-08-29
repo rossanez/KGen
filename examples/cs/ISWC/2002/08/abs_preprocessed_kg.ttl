@@ -1,0 +1,268 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:locate	rdfs:label	"locate"	.
+
+local:rapidly	rdfs:label	"rapidly"	.
+
+local:software	rdfs:label	"software"	.
+
+local:software_applications	rdfs:label	"software applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:useful	rdfs:label	"useful"	.
+
+local:useful_documents	rdfs:label	"useful documents"	.
+
+local:documents	rdfs:label	"documents"	.
+
+local:simply_useful	rdfs:label	"simply useful"	.
+
+local:simply_useful_documents	rdfs:label	"simply useful documents"	.
+
+local:simply	rdfs:label	"simply"	.
+
+local:opposed	rdfs:label	"opposed"	.
+
+local:rapidly_locate	rdfs:label	"rapidly locate"	.
+
+local:opposed_to_useful_documents	rdfs:label	"opposed to useful documents"	.
+
+local:becoming	rdfs:label	"becoming"	.
+
+local:ability	rdfs:label	"ability"	.
+
+local:many_domains	rdfs:label	"many domains"	.
+
+local:domains	rdfs:label	"domains"	.
+
+local:many	rdfs:label	"many"	.
+
+local:increasingly_critical	rdfs:label	"increasingly critical"	.
+
+local:critical	rdfs:label	"critical"	.
+
+local:increasingly_critical_in_many_domains	rdfs:label	"increasingly critical in many domains"	.
+
+local:service	rdfs:label	"service"	.
+
+local:service_organizations	rdfs:label	"service organizations"	.
+
+local:organizations	rdfs:label	"organizations"	.
+
+local:software_components	rdfs:label	"software components"	.
+
+local:components	rdfs:label	"components"	.
+
+local:process_models	rdfs:label	"process models"	.
+
+local:models	rdfs:label	"models"	.
+
+local:process	rdfs:label	"process"	.
+
+local:eg_process_models	rdfs:label	"e.g. process models"	.
+
+local:	rdfs:label	"),"	.
+
+local:online_services	rdfs:label	"on-line services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:useful_online_services	rdfs:label	"useful on-line services"	.
+
+local:online	rdfs:label	"on-line"	.
+
+local:useful_online	rdfs:label	"useful on-line"	.
+
+local:describes	rdfs:label	"describes"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:service_retrieval	rdfs:label	"service retrieval"	.
+
+local:novel_service	rdfs:label	"novel service"	.
+
+local:novel_service_retrieval	rdfs:label	"novel service retrieval"	.
+
+local:process_ontologies	rdfs:label	"process ontologies"	.
+
+local:retrieval	rdfs:label	"retrieval"	.
+
+local:sophisticated_use	rdfs:label	"sophisticated use"	.
+
+local:use	rdfs:label	"use"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:sophisticated	rdfs:label	"sophisticated"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:sophisticated_use_of_process_ontologies	rdfs:label	"sophisticated use of process ontologies"	.
+
+local:approached	rdfs:label	"approached"	.
+
+local:based	rdfs:label	"based"	.
+
+local:preliminary	rdfs:label	"preliminary"	.
+
+local:preliminary_evaluations	rdfs:label	"preliminary evaluations"	.
+
+local:evaluations	rdfs:label	"evaluations"	.
+
+local:suggest	rdfs:label	"suggest"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:approach_offers	rdfs:label	"approach offers"	.
+
+local:qualitatively_higher_retrieval	rdfs:label	"qualitatively higher retrieval"	.
+
+local:higher_retrieval_precision	rdfs:label	"higher retrieval precision"	.
+
+local:precision	rdfs:label	"precision"	.
+
+local:higher	rdfs:label	"higher"	.
+
+local:higher_retrieval	rdfs:label	"higher retrieval"	.
+
+local:qualitatively_higher_retrieval_precision	rdfs:label	"qualitatively higher retrieval precision"	.
+
+local:retrieval_precision	rdfs:label	"retrieval precision"	.
+
+local:qualitatively_higher	rdfs:label	"qualitatively higher"	.
+
+local:offers	rdfs:label	"offers"	.
+
+local:qualitatively	rdfs:label	"qualitatively"	.
+
+local:existing_approaches	rdfs:label	"existing approaches"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:higher_retrieval_precision_than_existing_approaches	rdfs:label	"higher retrieval precision than existing approaches"	.
+
+local:sacrificing	rdfs:label	"sacrificing"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:recall	rdfs:label	"recall"	.
+
+local:computational_tractability	rdfs:label	"computational tractability"	.
+
+local:tractability	rdfs:label	"tractability"	.
+
+local:computational	rdfs:label	"computational"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:process_models	owl:sameAs	cso:process_models	.
+local:software	owl:sameAs	cso:software	.
+cso:software	rdfs:label	"software"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:process_models	rdfs:label	"process models"	.
+
+#### Relations ####
+
+local:process_ontologies	rdfs:subClassOf	local:ontologies	.
+local:suggest	vn.role:Agent	local:offers	.
+local:software_applications	rdfs:subClassOf	local:applications	.
+local:useful_online	rdfs:member	local:useful_online_services	.
+local:sacrificing	vn.role:Theme	local:recall	.
+local:sacrificing	vn.role:Theme	local:computational_tractability	.
+local:existing_approaches	rdfs:subClassOf	local:approaches	.
+local:rapidly_locate	rdfs:subClassOf	local:locate	.
+local:process	rdfs:member	local:process_models	.
+local:increasingly_critical_in_many_domains	local:in_manydomains	local:increasingly_critical	.
+local:service	rdfs:member	local:service_organizations	.
+local:service_retrieval	rdfs:subClassOf	local:retrieval	.
+local:approached	local:AM-ADV	local:sophisticated_use_of_process_ontologies	.
+local:higher_retrieval_precision_than_existing_approaches	local:than_existingapproaches	local:higher_retrieval_precision	.
+local:locate	vn.role:Theme	local:useful_online_services	.
+local:service	rdfs:member	local:service_retrieval	.
+local:preliminary	rdfs:member	local:preliminary_evaluations	.
+local:sophisticated	rdfs:member	local:sophisticated_use	.
+local:sophisticated_use_of_process_ontologies	local:sophisticateduse_of	local:process_ontologies	.
+local:increasingly_critical_in_many_domains	local:increasinglycritical_in	local:many_domains	.
+local:useful	rdfs:member	local:useful_documents	.
+local:novel_service	rdfs:subClassOf	local:service	.
+local:novel_service_retrieval	rdfs:subClassOf	local:retrieval	.
+local:becoming	vn.role:Patient	local:ability	.
+local:process	rdfs:member	local:process_ontologies	.
+local:computational_tractability	rdfs:subClassOf	local:tractability	.
+local:offers	vn.role:Theme	local:higher_retrieval_precision_than_existing_approaches	.
+local:higher	rdfs:member	local:higher_retrieval	.
+local:qualitatively_higher	rdfs:subClassOf	local:higher	.
+local:sophisticated_use_of_process_ontologies	local:of_processontologies	local:sophisticated_use	.
+local:	local:AM-MNR	local:opposed_to_useful_documents	.
+local:locate	local:AM-MNR	local:software_applications	.
+local:online_services	rdfs:subClassOf	local:services	.
+local:online	rdfs:member	local:online_services	.
+local:approach	rdfs:member	local:approach_offers	.
+local:software	rdfs:member	local:software_components	.
+local:many_domains	rdfs:subClassOf	local:domains	.
+local:offers	vn.role:Agent	local:approach	.
+local:simply_useful	rdfs:member	local:simply_useful_documents	.
+local:useful_online_services	rdfs:subClassOf	local:services	.
+local:higher_retrieval_precision	rdfs:subClassOf	local:precision	.
+local:simply_useful_documents	rdfs:subClassOf	local:useful_documents	.
+local:locate	vn.role:Theme	local:service_organizations	.
+local:sophisticated_use	rdfs:subClassOf	local:use	.
+local:service_organizations	rdfs:subClassOf	local:organizations	.
+local:computational	rdfs:member	local:computational_tractability	.
+local:process_models	rdfs:subClassOf	local:models	.
+local:useful	rdfs:member	local:useful_online	.
+local:locate	local:AM-PNC	local:opposed_to_useful_documents	.
+local:preliminary_evaluations	rdfs:subClassOf	local:evaluations	.
+local:qualitatively_higher_retrieval	rdfs:member	local:qualitatively_higher_retrieval_precision	.
+local:becoming	vn.role:indirect_object	local:increasingly_critical_in_many_domains	.
+local:simply_useful_documents	rdfs:subClassOf	local:documents	.
+local:useful_online_services	rdfs:subClassOf	local:online_services	.
+local:opposed	vn.role:Patient	local:simply_useful_documents	.
+local:useful_documents	rdfs:subClassOf	local:documents	.
+local:higher_retrieval_precision	rdfs:subClassOf	local:retrieval_precision	.
+local:locate	local:AM-MNR	local:software_components	.
+local:suggest	vn.role:Theme	local:preliminary_evaluations	.
+local:locate	vn.role:Theme	local:eg_process_models	.
+local:describes	vn.role:Theme	local:approached	.
+local:software_components	rdfs:subClassOf	local:components	.
+local:retrieval_precision	rdfs:subClassOf	local:precision	.
+local:novel	rdfs:member	local:novel_service	.
+local:novel_service	rdfs:member	local:novel_service_retrieval	.
+local:software	rdfs:member	local:software_applications	.
+local:based	vn.role:Cause	local:novel_service_retrieval	.
+local:higher_retrieval_precision_than_existing_approaches	local:higherretrievalprecision_than	local:existing_approaches	.
+local:novel_service_retrieval	rdfs:subClassOf	local:service_retrieval	.
+local:opposed_to_useful_documents	local:opposed_to	local:useful_documents	.
+local:locate	local:AM-MNR	local:rapidly	.
+local:qualitatively_higher	rdfs:member	local:qualitatively_higher_retrieval	.
+local:higher_retrieval	rdfs:subClassOf	local:retrieval	.
+local:increasingly_critical	rdfs:subClassOf	local:critical	.
+local:approach_offers	rdfs:subClassOf	local:offers	.
+local:existing	vn.role:Location	local:approaches	.
+local:qualitatively_higher_retrieval	rdfs:subClassOf	local:retrieval	.
+local:useful_online	rdfs:subClassOf	local:online	.
+local:offers	local:AM-MNR	local:sacrificing	.
+local:eg_process_models	rdfs:subClassOf	local:process_models	.
+local:simply_useful	rdfs:subClassOf	local:useful	.
+local:qualitatively_higher_retrieval_precision	rdfs:subClassOf	local:precision	.
+local:higher_retrieval	rdfs:member	local:higher_retrieval_precision	.
+local:	vn.role:object	local:ability	.
+local:approached	vn.role:object	local:novel_service_retrieval	.
+local:opposed_to_useful_documents	local:to_usefuldocuments	local:opposed	.
+local:simply	rdfs:member	local:simply_useful	.
+local:based	vn.role:indirect_object	local:sophisticated_use_of_process_ontologies	.
+local:describes	vn.role:Agent	local:paper	.
+local:qualitatively	rdfs:member	local:qualitatively_higher	.
+local:many	rdfs:member	local:many_domains	.
+local:retrieval	rdfs:member	local:retrieval_precision	.

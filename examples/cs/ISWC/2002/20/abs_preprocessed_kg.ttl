@@ -1,0 +1,172 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:web_mining	rdfs:label	"web mining"	.
+
+local:mining	rdfs:label	"mining"	.
+
+local:semantic_web_mining	rdfs:label	"semantic web mining"	.
+
+local:web	rdfs:label	"web"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:aims	rdfs:label	"aims"	.
+
+local:fastdeveloping_research	rdfs:label	"fast-developing research"	.
+
+local:fastdeveloping_research_areas	rdfs:label	"fast-developing research areas"	.
+
+local:fastdeveloping	rdfs:label	"fast-developing"	.
+
+local:research_areas	rdfs:label	"research areas"	.
+
+local:areas	rdfs:label	"areas"	.
+
+local:research	rdfs:label	"research"	.
+
+local:two_fastdeveloping_research_areas	rdfs:label	"two fast-developing research areas"	.
+
+local:combining	rdfs:label	"combining"	.
+
+local:use_of_web_mining	rdfs:label	"use of web mining"	.
+
+local:use	rdfs:label	"use"	.
+
+local:make	rdfs:label	"make"	.
+
+local:hand	rdfs:label	"hand"	.
+
+local:building	rdfs:label	"building"	.
+
+local:one_hand	rdfs:label	"one hand"	.
+
+local:improve	rdfs:label	"improve,"	.
+
+local:results_of_web_mining	rdfs:label	"results of web mining"	.
+
+local:results	rdfs:label	"results"	.
+
+local:semantic_structures	rdfs:label	"semantic structures"	.
+
+local:structures	rdfs:label	"structures"	.
+
+local:new_semantic_structures	rdfs:label	"new semantic structures"	.
+
+local:new_semantic	rdfs:label	"new semantic"	.
+
+local:new	rdfs:label	"new"	.
+
+local:new_semantic_structures_in_web	rdfs:label	"new semantic structures in web"	.
+
+local:exploiting	rdfs:label	"exploiting"	.
+
+local:gives	rdfs:label	"gives"	.
+
+local:sketches	rdfs:label	"sketches"	.
+
+local:sketches_ways	rdfs:label	"sketches ways"	.
+
+local:closer_integration	rdfs:label	"closer integration"	.
+
+local:integration	rdfs:label	"integration"	.
+
+local:ways	rdfs:label	"ways"	.
+
+local:closer	rdfs:label	"closer"	.
+
+local:could_profitable	rdfs:label	"could profitable"	.
+
+local:profitable	rdfs:label	"profitable"	.
+
+local:how_could_profitable	rdfs:label	"how could profitable"	.
+
+local:today_meet	rdfs:label	"today meet"	.
+
+local:meet	rdfs:label	"meet"	.
+
+local:two_areas	rdfs:label	"two areas"	.
+
+local:where_today_meet	rdfs:label	"where today meet"	.
+
+local:overview	rdfs:label	"overview"	.
+
+local:today	rdfs:label	"today"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+cso:web_mining	rdfs:label	"web mining"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:web_mining	owl:sameAs	cso:web_mining	.
+
+#### Relations ####
+
+local:one_hand	rdfs:subClassOf	local:hand	.
+local:meet	vn.role:Theme2	local:today	.
+local:use_of_web_mining	local:use_of	local:web_mining	.
+local:semantic	rdfs:member	local:semantic_structures	.
+local:new	rdfs:member	local:new_semantic	.
+local:improve	local:AM-MNR	local:exploiting	.
+local:new_semantic_structures	rdfs:subClassOf	local:semantic_structures	.
+local:meet	vn.role:Theme1	local:two_areas	.
+local:semantic_web_mining	rdfs:subClassOf	local:web_mining	.
+local:fastdeveloping_research	rdfs:member	local:fastdeveloping_research_areas	.
+local:new_semantic	rdfs:member	local:new_semantic_structures	.
+local:web	rdfs:member	local:web_mining	.
+local:sketches_ways	rdfs:subClassOf	local:ways	.
+local:how_could_profitable	rdfs:subClassOf	local:could_profitable	.
+local:semantic_web	rdfs:member	local:semantic_web_mining	.
+local:aims	vn.role:Experiencer	local:semantic_web_mining	.
+local:aims	vn.role:Theme	local:combining	.
+local:results_of_web_mining	local:of_webmining	local:results	.
+local:new_semantic_structures_in_web	local:in_web	local:new_semantic_structures	.
+local:exploiting	vn.role:Agent	local:one_hand	.
+local:could_profitable	rdfs:subClassOf	local:profitable	.
+local:where_today_meet	rdfs:subClassOf	local:today_meet	.
+local:fastdeveloping_research	rdfs:subClassOf	local:research	.
+local:today_meet	rdfs:subClassOf	local:meet	.
+local:closer_integration	rdfs:subClassOf	local:integration	.
+local:results_of_web_mining	local:results_of	local:web_mining	.
+local:new_semantic	rdfs:subClassOf	local:semantic	.
+local:improve	vn.role:indirect_object	local:one_hand	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:fastdeveloping	rdfs:member	local:fastdeveloping_research	.
+local:combining	vn.role:Agent	local:semantic_web_mining	.
+local:exploiting	vn.role:Predicate	local:new_semantic_structures_in_web	.
+local:fastdeveloping_research_areas	rdfs:subClassOf	local:areas	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:two_fastdeveloping_research_areas	rdfs:subClassOf	local:fastdeveloping_research_areas	.
+local:aims	vn.role:indirect_object	local:combining	.
+local:combining	vn.role:Patient	local:two_fastdeveloping_research_areas	.
+local:research	rdfs:member	local:research_areas	.
+local:new_semantic_structures	rdfs:subClassOf	local:structures	.
+local:gives	vn.role:object	local:overview	.
+local:fastdeveloping_research_areas	rdfs:subClassOf	local:research_areas	.
+local:gives	vn.role:Asset	local:semantic_web	.
+local:semantic_web_mining	rdfs:subClassOf	local:mining	.
+local:make	vn.role:Material	local:use_of_web_mining	.
+local:semantic_structures	rdfs:subClassOf	local:structures	.
+local:gives	vn.role:object	local:sketches_ways	.
+local:sketches	rdfs:member	local:sketches_ways	.
+local:new_semantic_structures_in_web	local:newsemanticstructures_in	local:web	.
+local:use_of_web_mining	local:of_webmining	local:use	.
+local:research_areas	rdfs:subClassOf	local:areas	.
+local:improve	vn.role:object	local:results_of_web_mining	.
+local:make	local:AM-PNC	local:building	.
+local:closer	rdfs:member	local:closer_integration	.
+local:two_areas	rdfs:subClassOf	local:areas	.
+local:make	vn.role:Product	local:hand	.
+local:web_mining	rdfs:subClassOf	local:mining	.

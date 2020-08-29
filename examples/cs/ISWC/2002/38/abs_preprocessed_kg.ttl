@@ -1,0 +1,243 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:rdfannotated_pages	rdfs:label	"rdf-annotated pages"	.
+
+local:pages	rdfs:label	"pages"	.
+
+local:rdfannotated	rdfs:label	"rdf-annotated"	.
+
+local:participating	rdfs:label	"participating"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:critical	rdfs:label	"critical"	.
+
+local:critical_mass	rdfs:label	"critical mass"	.
+
+local:mass	rdfs:label	"mass"	.
+
+local:make	rdfs:label	"make"	.
+
+local:will	rdfs:label	"will"	.
+
+local:success	rdfs:label	"success"	.
+
+local:potential	rdfs:label	"potential"	.
+
+local:potential_participants	rdfs:label	"potential participants"	.
+
+local:participants	rdfs:label	"participants"	.
+
+local:n’t	rdfs:label	"n’t"	.
+
+local:ca	rdfs:label	"ca"	.
+
+local:additional_work	rdfs:label	"additional work"	.
+
+local:work	rdfs:label	"work"	.
+
+local:additional	rdfs:label	"additional"	.
+
+local:yet_needed	rdfs:label	"yet needed"	.
+
+local:needed	rdfs:label	"needed"	.
+
+local:necessary_work	rdfs:label	"necessary work"	.
+
+local:additional_necessary_work	rdfs:label	"additional necessary work"	.
+
+local:necessary_for_semantic_web	rdfs:label	"necessary for semantic web"	.
+
+local:necessary	rdfs:label	"necessary"	.
+
+local:yet_needed_for_semantic_web	rdfs:label	"yet needed for semantic web"	.
+
+local:afford	rdfs:label	"afford"	.
+
+local:additional_necessary_work_yet_needed	rdfs:label	"additional necessary work yet needed"	.
+
+local:’re	rdfs:label	"’re"	.
+
+local:needed_for_semantic_web	rdfs:label	"needed for semantic web"	.
+
+local:participants_re	rdfs:label	"participants re"	.
+
+local:re	rdfs:label	"re"	.
+
+local:reach	rdfs:label	"reach"	.
+
+local:discusses	rdfs:label	"discusses"	.
+
+local:own_information_layer	rdfs:label	"own information layer"	.
+
+local:own_information_layer_system	rdfs:label	"own information layer system"	.
+
+local:layer_system	rdfs:label	"layer system"	.
+
+local:system	rdfs:label	"system"	.
+
+local:own_information	rdfs:label	"own information"	.
+
+local:information_layer_system	rdfs:label	"information layer system"	.
+
+local:information_layer	rdfs:label	"information layer"	.
+
+local:layer	rdfs:label	"layer"	.
+
+local:information	rdfs:label	"information"	.
+
+local:own	rdfs:label	"own"	.
+
+local:possible_way	rdfs:label	"possible way"	.
+
+local:way	rdfs:label	"way"	.
+
+local:possible	rdfs:label	"possible"	.
+
+local:our_own_information_layer_system	rdfs:label	"our own information layer system"	.
+
+local:barrier_for_entry	rdfs:label	"barrier for entry"	.
+
+local:barrier	rdfs:label	"barrier"	.
+
+local:entry	rdfs:label	"entry"	.
+
+local:entry_using	rdfs:label	"entry using"	.
+
+local:using	rdfs:label	"using"	.
+
+local:using_like_our_own_information_layer_system	rdfs:label	"using like our own information layer system"	.
+
+local:lower	rdfs:label	"lower"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:problems	rdfs:label	"problems"	.
+
+local:prevent	rdfs:label	"prevent"	.
+
+local:may	rdfs:label	"may"	.
+
+local:content_providers	rdfs:label	"content providers"	.
+
+local:providers	rdfs:label	"providers"	.
+
+local:content	rdfs:label	"content"	.
+
+local:small_content	rdfs:label	"small content"	.
+
+local:small_content_providers	rdfs:label	"small content providers"	.
+
+local:small	rdfs:label	"small"	.
+
+local:participating_in_semantic_web	rdfs:label	"participating in semantic web"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:semantic	owl:sameAs	cso:semantics	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+local:content_providers	owl:sameAs	cso:content_providers	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:content_providers	rdfs:label	"content providers"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+
+#### Relations ####
+
+local:make	vn.role:Agent	local:critical_mass	.
+local:barrier_for_entry	local:barrier_for	local:entry	.
+local:yet_needed_for_semantic_web	local:for_semanticweb	local:yet_needed	.
+local:small	rdfs:member	local:small_content	.
+local:layer_system	rdfs:subClassOf	local:system	.
+local:’re	vn.role:subject	local:potential_participants	.
+local:prevent	local:AM-MOD	local:may	.
+local:potential_participants	rdfs:subClassOf	local:participants	.
+local:participating	vn.role:Actor1	local:small_content_providers	.
+local:necessary_for_semantic_web	local:for_semanticweb	local:necessary	.
+local:necessary_for_semantic_web	local:necessary_for	local:semantic_web	.
+local:information_layer	rdfs:subClassOf	local:layer	.
+local:entry_using	local:entry_	local:using	.
+local:using	vn.role:Recipient	local:our_own_information_layer_system	.
+local:potential	rdfs:member	local:potential_participants	.
+local:prevent	vn.role:Agent	local:problems	.
+local:afford	vn.role:Agent	local:potential_participants	.
+local:critical_mass	rdfs:subClassOf	local:mass	.
+local:n’t	vn.role:object	local:afford	.
+local:information_layer_system	rdfs:subClassOf	local:layer_system	.
+local:barrier_for_entry	local:for_entry	local:barrier	.
+local:reach	vn.role:Theme	local:critical_mass	.
+local:yet_needed_for_semantic_web	local:yetneeded_for	local:semantic_web	.
+local:discusses	vn.role:Patient2	local:problems	.
+local:prevent	vn.role:Theme	local:small_content_providers	.
+local:n’t	local:AM-MOD	local:ca	.
+local:using	vn.role:Theme	local:tools	.
+local:own_information	rdfs:member	local:own_information_layer	.
+local:make	local:AM-MOD	local:will	.
+local:participating_in_semantic_web	local:in_semanticweb	local:participating	.
+local:additional_necessary_work_yet_needed	local:_yetneeded	local:additional_necessary_work	.
+local:needed_for_semantic_web	local:for_semanticweb	local:needed	.
+local:needed	local:AM-PNC	local:reach	.
+local:information	rdfs:member	local:information_layer	.
+local:small_content_providers	rdfs:subClassOf	local:content_providers	.
+local:participating	vn.role:Actor2	local:semantic_web	.
+local:critical	rdfs:member	local:critical_mass	.
+local:lower	vn.role:Patient	local:semantic_web	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:small_content	rdfs:member	local:small_content_providers	.
+local:’re	vn.role:object	local:needed_for_semantic_web	.
+local:small_content	rdfs:subClassOf	local:content	.
+local:possible	rdfs:member	local:possible_way	.
+local:small_content_providers	rdfs:subClassOf	local:providers	.
+local:discusses	vn.role:Patient2	local:possible_way	.
+local:information_layer_system	rdfs:subClassOf	local:system	.
+local:participating_in_semantic_web	local:participating_in	local:semantic_web	.
+local:content	rdfs:member	local:content_providers	.
+local:reach	vn.role:Agent	local:potential_participants	.
+local:rdfannotated	rdfs:member	local:rdfannotated_pages	.
+local:discusses	vn.role:Patient1	local:semantic_web	.
+local:additional	rdfs:member	local:additional_work	.
+local:layer	rdfs:member	local:layer_system	.
+local:own_information_layer_system	rdfs:subClassOf	local:system	.
+local:own	rdfs:member	local:own_information	.
+local:make	vn.role:Product	local:semantic_web	.
+local:participants_re	rdfs:subClassOf	local:re	.
+local:content_providers	rdfs:subClassOf	local:providers	.
+local:make	vn.role:Material	local:success	.
+local:own_information_layer_system	rdfs:subClassOf	local:information_layer_system	.
+local:afford	vn.role:Theme	local:additional_necessary_work_yet_needed	.
+local:necessary_work	rdfs:subClassOf	local:work	.
+local:rdfannotated_pages	rdfs:subClassOf	local:pages	.
+local:own_information_layer	rdfs:subClassOf	local:layer	.
+local:using_like_our_own_information_layer_system	local:like_ourowninformationlayersystem	local:using	.
+local:additional_work	rdfs:subClassOf	local:work	.
+local:additional_necessary_work	rdfs:subClassOf	local:necessary_work	.
+local:yet_needed	rdfs:subClassOf	local:needed	.
+local:lower	vn.role:Attribute	local:barrier_for_entry	.
+local:needed	vn.role:Patient	local:participants_re	.
+local:our_own_information_layer_system	rdfs:subClassOf	local:own_information_layer_system	.
+local:reach	vn.role:Agent	local:semantic_web	.
+local:entry_using	local:_using	local:entry	.
+local:n’t	vn.role:subject	local:potential_participants	.
+local:own_information_layer	rdfs:member	local:own_information_layer_system	.
+local:needed_for_semantic_web	local:needed_for	local:semantic_web	.
+local:using_like_our_own_information_layer_system	local:using_like	local:our_own_information_layer_system	.
+local:needed	vn.role:other	local:semantic_web	.
+local:possible_way	rdfs:subClassOf	local:way	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:participating	vn.role:Actor1	local:rdfannotated_pages	.
+local:prevent	vn.role:indirect_object	local:participating_in_semantic_web	.
+local:information_layer	rdfs:member	local:information_layer_system	.
+local:own_information	rdfs:subClassOf	local:information	.
+local:additional_necessary_work_yet_needed	local:additionalnecessarywork_	local:yet_needed	.

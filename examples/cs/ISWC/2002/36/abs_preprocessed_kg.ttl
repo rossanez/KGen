@@ -1,0 +1,189 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:modelled	rdfs:label	"modelled"	.
+
+local:system	rdfs:label	"system"	.
+
+local:explicitly	rdfs:label	"explicitly"	.
+
+local:related	rdfs:label	"related"	.
+
+local:related_papers	rdfs:label	"related papers"	.
+
+local:papers	rdfs:label	"papers"	.
+
+local:rhetorical_relations	rdfs:label	"rhetorical relations"	.
+
+local:relations	rdfs:label	"relations"	.
+
+local:rhetorical	rdfs:label	"rhetorical"	.
+
+local:rhetorical_relations_between_claims	rdfs:label	"rhetorical relations between claims"	.
+
+local:claims	rdfs:label	"claims"	.
+
+local:claims_in_related_papers	rdfs:label	"claims in related papers"	.
+
+local:research_papers	rdfs:label	"research papers"	.
+
+local:research	rdfs:label	"research"	.
+
+local:usability_of_research_papers	rdfs:label	"usability of research papers"	.
+
+local:usability	rdfs:label	"usability"	.
+
+local:usability_of_research_papers_on_web	rdfs:label	"usability of research papers on web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:enhanced	rdfs:label	"enhanced"	.
+
+local:would	rdfs:label	"would"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:we	rdfs:label	"we"	.
+
+local:core_content	rdfs:label	"core content"	.
+
+local:content	rdfs:label	"content"	.
+
+local:’	rdfs:label	"’"	.
+
+local:’_interpretations	rdfs:label	"’ interpretations"	.
+
+local:interpretations	rdfs:label	"interpretations"	.
+
+local:core	rdfs:label	"core"	.
+
+local:readers_interpretations	rdfs:label	"readers interpretations"	.
+
+local:readers_interpretations_of_core_content	rdfs:label	"readers interpretations of core content"	.
+
+local:core_content_of_papers	rdfs:label	"core content of papers"	.
+
+local:claimaker	rdfs:label	"claimaker"	.
+
+local:provides	rdfs:label	"provides"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:web_representation	rdfs:label	"web representation"	.
+
+local:representation	rdfs:label	"representation"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:semantic_web_representation	rdfs:label	"semantic web representation"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web_representation_of_claims	rdfs:label	"semantic web representation of claims"	.
+
+local:claims_in_research_papers	rdfs:label	"claims in research papers"	.
+
+local:build	rdfs:label	"build"	.
+
+local:using	rdfs:label	"using"	.
+
+local:ontology_of_relations	rdfs:label	"ontology of relations"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:demonstrate	rdfs:label	"demonstrate"	.
+
+local:interdocument_queries	rdfs:label	"inter-document queries"	.
+
+local:queries	rdfs:label	"queries"	.
+
+local:interdocument	rdfs:label	"inter-document"	.
+
+local:can_used	rdfs:label	"can used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:can	rdfs:label	"can"	.
+
+local:make	rdfs:label	"make"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontology	rdfs:label	"ontology"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+local:ontology	owl:sameAs	cso:ontology	.
+
+#### Relations ####
+
+local:claims_in_related_papers	local:claims_in	local:related_papers	.
+local:web_representation	rdfs:subClassOf	local:representation	.
+local:usability_of_research_papers	local:usability_of	local:research_papers	.
+local:’	rdfs:member	local:’_interpretations	.
+local:build	vn.role:Material	local:semantic_web_representation_of_claims	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:semantic_web_representation_of_claims	local:of_claims	local:semantic_web_representation	.
+local:describe	vn.role:Agent	local:we	.
+local:web	rdfs:member	local:web_representation	.
+local:provides	local:AM-PNC	local:build	.
+local:provides	vn.role:Recipient	local:system	.
+local:related_papers	rdfs:subClassOf	local:papers	.
+local:enhanced	vn.role:Instrument	local:system	.
+local:demonstrate	vn.role:Recipient	local:we	.
+local:enhanced	local:AM-MOD	local:would	.
+local:semantic_web	rdfs:member	local:semantic_web_representation	.
+local:readers_interpretations	rdfs:subClassOf	local:interpretations	.
+local:semantic_web_representation_of_claims	local:semanticwebrepresentation_of	local:claims	.
+local:research	rdfs:member	local:research_papers	.
+local:enhanced	vn.role:Patient	local:usability_of_research_papers_on_web	.
+local:readers_interpretations_of_core_content	local:of_corecontent	local:readers_interpretations	.
+local:provides	vn.role:Recipient	local:claimaker	.
+local:make	vn.role:Material	local:interdocument_queries	.
+local:rhetorical_relations_between_claims	local:rhetoricalrelations_between	local:claims	.
+local:claims_in_research_papers	local:claims_in	local:research_papers	.
+local:research_papers	rdfs:subClassOf	local:papers	.
+local:modelled	local:AM-MNR	local:explicitly	.
+local:claims_in_related_papers	local:in_relatedpapers	local:claims	.
+local:core	rdfs:member	local:core_content	.
+local:using	vn.role:Theme	local:ontology_of_relations	.
+local:readers_interpretations_of_core_content	local:readersinterpretations_of	local:core_content	.
+local:usability_of_research_papers_on_web	local:on_web	local:usability_of_research_papers	.
+local:’_interpretations	rdfs:subClassOf	local:interpretations	.
+local:interdocument_queries	rdfs:subClassOf	local:queries	.
+local:rhetorical	rdfs:member	local:rhetorical_relations	.
+local:usability_of_research_papers_on_web	local:usabilityofresearchpapers_on	local:web	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:semantic_web_representation	rdfs:subClassOf	local:representation	.
+local:used	vn.role:Recipient	local:make	.
+local:core_content	rdfs:subClassOf	local:content	.
+local:modelled	vn.role:Agent	local:system	.
+local:modelled	vn.role:Theme	local:rhetorical_relations_between_claims	.
+local:build	vn.role:Agent	local:claimaker	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:interdocument	rdfs:member	local:interdocument_queries	.
+local:make	vn.role:Agent	local:system	.
+local:using	vn.role:Agent	local:research_papers	.
+local:core_content_of_papers	local:of_papers	local:core_content	.
+local:used	vn.role:Theme	local:system	.
+local:used	local:AM-MOD	local:can	.
+local:describe	vn.role:Theme	local:system	.
+local:usability_of_research_papers	local:of_researchpapers	local:usability	.
+local:demonstrate	vn.role:Cause	local:can_used	.
+local:claims_in_research_papers	local:in_researchpapers	local:claims	.
+local:rhetorical_relations	rdfs:subClassOf	local:relations	.
+local:provides	vn.role:Agent	local:tools	.
+local:core_content_of_papers	local:corecontent_of	local:papers	.
+local:describe	vn.role:Theme	local:claimaker	.
+local:semantic_web_representation	rdfs:subClassOf	local:web_representation	.
+local:rhetorical_relations_between_claims	local:between_claims	local:rhetorical_relations	.
+local:ontology_of_relations	local:of_relations	local:ontology	.
+local:related	rdfs:member	local:related_papers	.
+local:ontology_of_relations	local:ontology_of	local:relations	.
