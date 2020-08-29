@@ -1,0 +1,242 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:encode	rdfs:label	"encode"	.
+
+local:domain	rdfs:label	"domain"	.
+
+local:view	rdfs:label	"view"	.
+
+local:shared	rdfs:label	"shared"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:models	rdfs:label	"models"	.
+
+local:local_models	rdfs:label	"local models"	.
+
+local:local	rdfs:label	"local"	.
+
+local:subjective	rdfs:label	"subjective"	.
+
+local:subjective_view	rdfs:label	"subjective view"	.
+
+local:s_subjective	rdfs:label	"s subjective"	.
+
+local:s_subjective_view	rdfs:label	"s subjective view"	.
+
+local:party	rdfs:label	"party"	.
+
+local:party_’	rdfs:label	"party ’"	.
+
+local:’	rdfs:label	"’"	.
+
+local:s	rdfs:label	"s"	.
+
+local:party_subjective_view	rdfs:label	"party subjective view"	.
+
+local:party_subjective_view_of_domain	rdfs:label	"party subjective view of domain"	.
+
+local:show	rdfs:label	"show"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:certain_useful	rdfs:label	"certain useful"	.
+
+local:certain_useful_properties	rdfs:label	"certain useful properties"	.
+
+local:useful	rdfs:label	"useful"	.
+
+local:useful_properties	rdfs:label	"useful properties"	.
+
+local:properties	rdfs:label	"properties"	.
+
+local:certain	rdfs:label	"certain"	.
+
+local:not_provide	rdfs:label	"not provide"	.
+
+local:provide	rdfs:label	"provide."	.
+
+local:can_not_provide	rdfs:label	"can not provide"	.
+
+local:shared_approach	rdfs:label	"shared approach"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:pure_shared_approach	rdfs:label	"pure shared approach"	.
+
+local:thus_acquiring	rdfs:label	"thus acquiring"	.
+
+local:acquiring	rdfs:label	"acquiring"	.
+
+local:can_contextualized	rdfs:label	"can contextualized"	.
+
+local:contextualized	rdfs:label	"contextualized"	.
+
+local:thus	rdfs:label	"thus"	.
+
+local:pure	rdfs:label	"pure"	.
+
+local:can	rdfs:label	"can"	.
+
+local:not	rdfs:label	"not"	.
+
+local:ontology_contents	rdfs:label	"ontology contents"	.
+
+local:contents	rdfs:label	"contents"	.
+
+local:ontology	rdfs:label	"ontology"	.
+
+local:mapped	rdfs:label	"mapped"	.
+
+local:other_ontologies	rdfs:label	"other ontologies"	.
+
+local:other	rdfs:label	"other"	.
+
+local:contents_of_other_ontologies	rdfs:label	"contents of other ontologies"	.
+
+local:context	rdfs:label	"context"	.
+
+local:explicit_mappings	rdfs:label	"explicit mappings"	.
+
+local:mappings	rdfs:label	"mappings"	.
+
+local:say	rdfs:label	"say"	.
+
+local:contextual_ontology	rdfs:label	"contextual ontology"	.
+
+local:contextual	rdfs:label	"contextual"	.
+
+local:also_contextual_ontology	rdfs:label	"also contextual ontology"	.
+
+local:kept	rdfs:label	"kept"	.
+
+local:obtained	rdfs:label	"obtained"	.
+
+local:language	rdfs:label	"language"	.
+
+local:owl_syntax	rdfs:label	"owl syntax"	.
+
+local:syntax	rdfs:label	"syntax"	.
+
+local:contextual_ontologies	rdfs:label	"contextual ontologies"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:allow_for_representation	rdfs:label	"allow for representation"	.
+
+local:allow	rdfs:label	"allow"	.
+
+local:representation	rdfs:label	"representation"	.
+
+local:representation_of_contextual_ontologies	rdfs:label	"representation of contextual ontologies"	.
+
+local:extending	rdfs:label	"extending"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:owl	owl:sameAs	cso:owl	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:semantics	rdfs:label	"semantics"	.
+cso:owl	rdfs:label	"owl"	.
+cso:ontology	rdfs:label	"ontology"	.
+
+#### Relations ####
+
+local:s_subjective	rdfs:subClassOf	local:subjective	.
+local:useful_properties	rdfs:subClassOf	local:properties	.
+local:acquiring	local:AM-DIS	local:thus	.
+local:mapped	local:AM-MNR	local:explicit_mappings	.
+local:shared	local:AM-MNR	local:pure	.
+local:acquiring	vn.role:Topic	local:certain_useful_properties	.
+local:obtained	local:AM-MNR	local:extending	.
+local:say	vn.role:Cause	local:also_contextual_ontology	.
+local:certain	rdfs:member	local:certain_useful	.
+local:shared_approach	rdfs:subClassOf	local:approach	.
+local:shared	local:AM-MNR	local:ontologies	.
+local:certain_useful_properties	rdfs:subClassOf	local:properties	.
+local:local	rdfs:member	local:local_models	.
+local:mapped	vn.role:Predicate	local:ontology_contents	.
+local:encode	vn.role:Agent	local:local_models	.
+local:provide	vn.role:subject	local:pure_shared_approach	.
+local:contextual_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s_subjective_view	rdfs:subClassOf	local:view	.
+local:acquiring	vn.role:Agent	local:ontologies	.
+local:contextual	rdfs:member	local:contextual_ontology	.
+local:contents_of_other_ontologies	local:contents_of	local:other_ontologies	.
+local:pure_shared_approach	rdfs:subClassOf	local:shared_approach	.
+local:shared	local:AM-NEG	local:not	.
+local:thus_acquiring	rdfs:subClassOf	local:acquiring	.
+local:can_not_provide	rdfs:subClassOf	local:not_provide	.
+local:mapped	local:AM-MNR	local:contents_of_other_ontologies	.
+local:subjective	rdfs:member	local:subjective_view	.
+local:owl_syntax	rdfs:subClassOf	local:syntax	.
+local:shared	vn.role:Patient	local:ontology_contents	.
+local:kept	vn.role:Theme	local:local	.
+local:allow	vn.role:Agent	local:semantics	.
+local:party_subjective_view	rdfs:subClassOf	local:subjective_view	.
+local:shared	vn.role:Patient	local:approach	.
+local:encode	vn.role:Patient	local:party_subjective_view_of_domain	.
+local:provide	local:AM-MOD	local:can	.
+local:certain_useful	rdfs:subClassOf	local:useful	.
+local:allow_for_representation	local:for_representation	local:allow	.
+local:show	vn.role:Agent	local:we	.
+local:party_subjective_view_of_domain	local:partysubjectiveview_of	local:domain	.
+local:ontology_contents	rdfs:subClassOf	local:contents	.
+local:other	rdfs:member	local:other_ontologies	.
+local:say	vn.role:Cause	local:contextualized	.
+local:shared	vn.role:Agent	local:ontologies	.
+local:shared	vn.role:Proposition	local:domain	.
+local:shared	vn.role:Patient	local:models	.
+local:obtained	vn.role:object	local:language	.
+local:party_subjective_view_of_domain	local:of_domain	local:party_subjective_view	.
+local:certain_useful	rdfs:member	local:certain_useful_properties	.
+local:provide	vn.role:object	local:certain_useful_properties	.
+local:acquiring	vn.role:Agent	local:contextualized	.
+local:party	rdfs:member	local:party_’	.
+local:allow	vn.role:Theme	local:representation_of_contextual_ontologies	.
+local:allow_for_representation	local:allow_for	local:representation	.
+local:encode	vn.role:Agent	local:domain	.
+local:can_contextualized	rdfs:subClassOf	local:contextualized	.
+local:contents_of_other_ontologies	local:of_otherontologies	local:contents	.
+local:representation_of_contextual_ontologies	local:of_contextualontologies	local:representation	.
+local:show	vn.role:Theme	local:can_contextualized	.
+local:extending	local:AM-PNC	local:allow_for_representation	.
+local:owl	rdfs:member	local:owl_syntax	.
+local:certain_useful_properties	rdfs:subClassOf	local:useful_properties	.
+local:local_models	rdfs:subClassOf	local:models	.
+local:other_ontologies	rdfs:subClassOf	local:ontologies	.
+local:show	local:AM-LOC	local:paper	.
+local:contextual	rdfs:member	local:contextual_ontologies	.
+local:say	vn.role:Recipient	local:we	.
+local:provide	local:AM-NEG	local:not	.
+local:ontology	rdfs:member	local:ontology_contents	.
+local:s	rdfs:member	local:s_subjective	.
+local:representation_of_contextual_ontologies	local:representation_of	local:contextual_ontologies	.
+local:party_’	rdfs:subClassOf	local:’	.
+local:encode	vn.role:Patient	local:view	.
+local:useful	rdfs:member	local:useful_properties	.
+local:s_subjective	rdfs:member	local:s_subjective_view	.
+local:mapped	local:AM-MNR	local:context	.
+local:extending	vn.role:Theme	local:owl_syntax	.
+local:kept	vn.role:Theme	local:contextual_ontology	.
+local:explicit_mappings	rdfs:subClassOf	local:mappings	.
+local:subjective_view	rdfs:subClassOf	local:view	.
+local:contextual_ontology	rdfs:subClassOf	local:ontology	.
+local:also_contextual_ontology	rdfs:subClassOf	local:contextual_ontology	.
+local:not_provide	rdfs:subClassOf	local:provide	.

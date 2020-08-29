@@ -1,0 +1,129 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:web_technology	rdfs:label	"web technology"	.
+
+local:technology	rdfs:label	"technology"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:semantic_web_technology	rdfs:label	"semantic web technology"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:information	rdfs:label	"information"	.
+
+local:information_systems	rdfs:label	"information systems"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:multimedia_information	rdfs:label	"multimedia information"	.
+
+local:multimedia_information_systems	rdfs:label	"multimedia information systems"	.
+
+local:retrieval_process	rdfs:label	"retrieval process"	.
+
+local:process	rdfs:label	"process"	.
+
+local:retrieval	rdfs:label	"retrieval"	.
+
+local:multimedia	rdfs:label	"multimedia"	.
+
+local:has_focused	rdfs:label	"has focused"	.
+
+local:focused	rdfs:label	"focused"	.
+
+local:traditionally_research	rdfs:label	"traditionally research"	.
+
+local:research	rdfs:label	"research"	.
+
+local:applying_to_multimedia_information_systems	rdfs:label	"applying to multimedia information systems"	.
+
+local:using	rdfs:label	"using"	.
+
+local:annotations	rdfs:label	"annotations"	.
+
+local:improve	rdfs:label	"improve"	.
+
+local:traditionally	rdfs:label	"traditionally"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:concentrates	rdfs:label	"concentrates"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:retrieval_results	rdfs:label	"retrieval results"	.
+
+local:results	rdfs:label	"results"	.
+
+local:presentation_of_retrieval	rdfs:label	"presentation of retrieval"	.
+
+local:presentation	rdfs:label	"presentation"	.
+
+local:improving	rdfs:label	"improving"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:semantic_web_technology	owl:sameAs	cso:semantic_web_technology	.
+cso:semantic_web_technology	rdfs:label	"semantic web technology"	.
+local:information_systems	owl:sameAs	cso:information_systems	.
+cso:information_systems	rdfs:label	"information systems"	.
+local:retrieval_process	owl:sameAs	cso:retrieval_process	.
+cso:retrieval_process	rdfs:label	"retrieval process"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+
+#### Relations ####
+
+local:retrieval_process	rdfs:subClassOf	local:process	.
+local:using	vn.role:Theme	local:ontologies	.
+local:using	vn.role:Theme	local:annotations	.
+local:has_focused	rdfs:subClassOf	local:focused	.
+local:applying_to_multimedia_information_systems	local:applying_to	local:multimedia_information_systems	.
+local:applying_to_multimedia_information_systems	local:to_multimediainformationsystems	local:applying	.
+local:improving	vn.role:Agent	local:paper	.
+local:applying	vn.role:Recipient	local:has_focused	.
+local:presentation_of_retrieval	local:of_retrieval	local:presentation	.
+local:improve	vn.role:Agent	local:ontologies	.
+local:semantic_web_technology	rdfs:subClassOf	local:technology	.
+local:multimedia	rdfs:member	local:multimedia_information	.
+local:focused	vn.role:Experiencer	local:traditionally	.
+local:information	rdfs:member	local:information_systems	.
+local:semantic_web_technology	rdfs:subClassOf	local:web_technology	.
+local:applying	vn.role:Theme	local:semantic_web_technology	.
+local:multimedia_information	rdfs:member	local:multimedia_information_systems	.
+local:using	vn.role:Recipient	local:improve	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:improve	vn.role:Patient	local:retrieval_process	.
+local:presentation_of_retrieval	local:presentation_of	local:retrieval	.
+local:focused	vn.role:indirect_object	local:using	.
+local:focused	local:AM-PNC	local:applying_to_multimedia_information_systems	.
+local:multimedia_information_systems	rdfs:subClassOf	local:information_systems	.
+local:retrieval	rdfs:member	local:retrieval_results	.
+local:improving	vn.role:Patient	local:results	.
+local:multimedia_information	rdfs:subClassOf	local:information	.
+local:concentrates	vn.role:Experiencer	local:paper	.
+local:focused	vn.role:Experiencer	local:traditionally_research	.
+local:web	rdfs:member	local:web_technology	.
+local:multimedia_information_systems	rdfs:subClassOf	local:systems	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:retrieval_results	rdfs:subClassOf	local:results	.
+local:traditionally_research	rdfs:subClassOf	local:research	.
+local:concentrates	vn.role:Theme	local:results	.
+local:semantic_web	rdfs:member	local:semantic_web_technology	.
+local:web_technology	rdfs:subClassOf	local:technology	.
+local:information_systems	rdfs:subClassOf	local:systems	.
+local:retrieval	rdfs:member	local:retrieval_process	.

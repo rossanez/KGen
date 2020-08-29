@@ -1,0 +1,211 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:web_realization	rdfs:label	"web realization"	.
+
+local:realization	rdfs:label	"realization"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web_realization	rdfs:label	"semantic web realization"	.
+
+local:depends	rdfs:label	"depends"	.
+
+local:critical	rdfs:label	"critical"	.
+
+local:critical_mass	rdfs:label	"critical mass"	.
+
+local:formal_knowledge	rdfs:label	"formal knowledge"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:mass	rdfs:label	"mass"	.
+
+local:web_content	rdfs:label	"web content"	.
+
+local:formal	rdfs:label	"formal"	.
+
+local:content	rdfs:label	"content"	.
+
+local:availability_of_critical_mass	rdfs:label	"availability of critical mass"	.
+
+local:availability	rdfs:label	"availability"	.
+
+local:critical_mass_of_metadata	rdfs:label	"critical mass of metadata"	.
+
+local:metadata	rdfs:label	"metadata"	.
+
+local:availability_of_critical_mass_for_web_content	rdfs:label	"availability of critical mass for web content"	.
+
+local:availability_of_critical_mass_for_web_content_linked	rdfs:label	"availability of critical mass for web content linked"	.
+
+local:linked	rdfs:label	"linked"	.
+
+local:linked_to_formal_knowledge	rdfs:label	"linked to formal knowledge"	.
+
+local:formal_knowledge_about_world	rdfs:label	"formal knowledge about world"	.
+
+local:world	rdfs:label	"world"	.
+
+local:holistic	rdfs:label	"holistic"	.
+
+local:holistic_system	rdfs:label	"holistic system"	.
+
+local:system	rdfs:label	"system"	.
+
+local:allowing	rdfs:label	"allowing"	.
+
+local:realworld_entities	rdfs:label	"real-world entities"	.
+
+local:entities	rdfs:label	"entities"	.
+
+local:realworld	rdfs:label	"real-world"	.
+
+local:retrieval_of_documents	rdfs:label	"retrieval of documents"	.
+
+local:retrieval	rdfs:label	"retrieval"	.
+
+local:documents	rdfs:label	"documents"	.
+
+local:retrieval_of_documents_withrespectto_realworld_entities	rdfs:label	"retrieval of documents with_respect_to real-world entities"	.
+
+local:indexing_of_documents	rdfs:label	"indexing of documents"	.
+
+local:indexing	rdfs:label	"indexing"	.
+
+local:indexing_of_documents_withrespectto_realworld_entities	rdfs:label	"indexing of documents with_respect_to real-world entities"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:vision_about_holistic_system	rdfs:label	"vision about holistic system"	.
+
+local:vision	rdfs:label	"vision"	.
+
+local:annotation_of_documents	rdfs:label	"annotation of documents"	.
+
+local:annotation	rdfs:label	"annotation"	.
+
+local:annotation_of_documents_withrespectto_realworld_entities	rdfs:label	"annotation of documents with_respect_to real-world entities"	.
+
+local:called	rdfs:label	"called"	.
+
+local:kim	rdfs:label	"kim"	.
+
+local:partially_implementing	rdfs:label	"partially implementing"	.
+
+local:implementing	rdfs:label	"implementing"	.
+
+local:partially	rdfs:label	"partially"	.
+
+local:concept	rdfs:label	"concept"	.
+
+local:system_partially_implementing	rdfs:label	"system partially implementing"	.
+
+local:presented	rdfs:label	"presented"	.
+
+local:shortly	rdfs:label	"shortly"	.
+
+local:demonstration	rdfs:label	"demonstration"	.
+
+local:used	rdfs:label	"used"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:web_content	owl:sameAs	cso:web_content	.
+local:demonstration	owl:sameAs	cso:demonstrations	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:web_content	rdfs:label	"web content"	.
+cso:demonstrations	rdfs:label	"demonstration"	.
+
+#### Relations ####
+
+local:called	vn.role:Theme	local:kim	.
+local:implementing	local:AM-MNR	local:partially	.
+local:semantic_web_realization	rdfs:subClassOf	local:realization	.
+local:semantic_web	rdfs:member	local:semantic_web_realization	.
+local:called	vn.role:Cause	local:system	.
+local:used	vn.role:Recipient	local:evaluation	.
+local:retrieval_of_documents	local:of_documents	local:retrieval	.
+local:presents	vn.role:Agent	local:paper	.
+local:linked	vn.role:Agent	local:web_content	.
+local:formal	rdfs:member	local:formal_knowledge	.
+local:vision_about_holistic_system	local:vision_about	local:holistic_system	.
+local:indexing_of_documents	local:of_documents	local:indexing	.
+local:semantic_web_realization	rdfs:subClassOf	local:web_realization	.
+local:used	vn.role:Agent	local:system_partially_implementing	.
+local:system_partially_implementing	local:_partiallyimplementing	local:system	.
+local:web	rdfs:member	local:web_realization	.
+local:indexing_of_documents	local:indexing_of	local:documents	.
+local:presented	local:AM-PNC	local:evaluation	.
+local:annotation_of_documents	local:annotation_of	local:documents	.
+local:availability_of_critical_mass	local:availability_of	local:critical_mass	.
+local:annotation_of_documents	local:of_documents	local:annotation	.
+local:annotation_of_documents_withrespectto_realworld_entities	local:with_respect_to_real-worldentities	local:annotation_of_documents	.
+local:linked	vn.role:Patient	local:formal_knowledge_about_world	.
+local:called	vn.role:Theme	local:partially_implementing	.
+local:depends	vn.role:Theme	local:semantic_web_realization	.
+local:vision_about_holistic_system	local:about_holisticsystem	local:vision	.
+local:partially_implementing	rdfs:subClassOf	local:implementing	.
+local:annotation_of_documents_withrespectto_realworld_entities	local:annotationofdocuments_with_respect_to	local:realworld_entities	.
+local:presented	vn.role:Theme	local:system_partially_implementing	.
+local:availability_of_critical_mass_for_web_content_linked	local:_linked	local:availability_of_critical_mass_for_web_content	.
+local:implementing	vn.role:Agent	local:kim	.
+local:critical_mass	rdfs:subClassOf	local:mass	.
+local:linked_to_formal_knowledge	local:linked_to	local:formal_knowledge	.
+local:realworld	rdfs:member	local:realworld_entities	.
+local:web	rdfs:member	local:web_content	.
+local:called	vn.role:Cause	local:partially_implementing	.
+local:indexing_of_documents_withrespectto_realworld_entities	local:with_respect_to_real-worldentities	local:indexing_of_documents	.
+local:used	local:AM-TMP	local:shortly	.
+local:presents	vn.role:Theme	local:vision_about_holistic_system	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:holistic	rdfs:member	local:holistic_system	.
+local:implementing	vn.role:Agent	local:system	.
+local:presented	local:AM-PNC	local:demonstration	.
+local:allowing	vn.role:Theme	local:retrieval_of_documents_withrespectto_realworld_entities	.
+local:critical_mass_of_metadata	local:of_metadata	local:critical_mass	.
+local:presented	local:AM-TMP	local:shortly	.
+local:availability_of_critical_mass	local:of_criticalmass	local:availability	.
+local:retrieval_of_documents	local:retrieval_of	local:documents	.
+local:web_realization	rdfs:subClassOf	local:realization	.
+local:critical	rdfs:member	local:critical_mass	.
+local:holistic_system	rdfs:subClassOf	local:system	.
+local:retrieval_of_documents_withrespectto_realworld_entities	local:retrievalofdocuments_with_respect_to	local:realworld_entities	.
+local:realworld_entities	rdfs:subClassOf	local:entities	.
+local:indexing_of_documents_withrespectto_realworld_entities	local:indexingofdocuments_with_respect_to	local:realworld_entities	.
+local:system_partially_implementing	local:system_	local:partially_implementing	.
+local:used	vn.role:Recipient	local:demonstration	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:availability_of_critical_mass_for_web_content	local:availabilityofcriticalmass_for	local:web_content	.
+local:formal_knowledge	rdfs:subClassOf	local:knowledge	.
+local:critical_mass_of_metadata	local:criticalmass_of	local:metadata	.
+local:formal_knowledge_about_world	local:about_world	local:formal_knowledge	.
+local:retrieval_of_documents_withrespectto_realworld_entities	local:with_respect_to_real-worldentities	local:retrieval_of_documents	.
+local:allowing	vn.role:Theme	local:annotation_of_documents_withrespectto_realworld_entities	.
+local:called	vn.role:Cause	local:kim	.
+local:web_content	rdfs:subClassOf	local:content	.
+local:availability_of_critical_mass_for_web_content	local:for_webcontent	local:availability_of_critical_mass	.
+local:linked_to_formal_knowledge	local:to_formalknowledge	local:linked	.
+local:depends	vn.role:Location	local:availability_of_critical_mass_for_web_content_linked	.
+local:formal_knowledge_about_world	local:formalknowledge_about	local:world	.
+local:availability_of_critical_mass_for_web_content_linked	local:availabilityofcriticalmassforwebcontent_	local:linked	.
+local:allowing	vn.role:Agent	local:holistic_system	.
+local:implementing	vn.role:Theme	local:concept	.
+local:allowing	vn.role:Theme	local:indexing_of_documents_withrespectto_realworld_entities	.

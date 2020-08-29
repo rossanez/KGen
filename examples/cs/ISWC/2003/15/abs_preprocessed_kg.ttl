@@ -1,0 +1,274 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:challenging_problems	rdfs:label	"challenging problems"	.
+
+local:problems	rdfs:label	"problems"	.
+
+local:faces	rdfs:label	"faces"	.
+
+local:web_service	rdfs:label	"web service"	.
+
+local:service	rdfs:label	"service"	.
+
+local:web_service_technology	rdfs:label	"web service technology"	.
+
+local:web	rdfs:label	"web"	.
+
+local:service_technology	rdfs:label	"service technology"	.
+
+local:technology	rdfs:label	"technology"	.
+
+local:challenging	rdfs:label	"challenging"	.
+
+local:one_challenging_problems	rdfs:label	"one challenging problems"	.
+
+local:discover	rdfs:label	"discover"	.
+
+local:effectively	rdfs:label	"effectively"	.
+
+local:service_technology_capabilities	rdfs:label	"service technology capabilities"	.
+
+local:web_service_technology_capabilities	rdfs:label	"web service technology capabilities"	.
+
+local:technology_capabilities	rdfs:label	"technology capabilities"	.
+
+local:capabilities	rdfs:label	"capabilities"	.
+
+local:services_based	rdfs:label	"services based"	.
+
+local:services	rdfs:label	"services"	.
+
+local:based	rdfs:label	"based"	.
+
+local:based_on_web_service_technology_capabilities	rdfs:label	"based on web service technology capabilities"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:damls	rdfs:label	"daml-s"	.
+
+local:damls_ontologies	rdfs:label	"daml-s ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:tackle_in_context	rdfs:label	"tackle in context"	.
+
+local:tackle	rdfs:label	"tackle"	.
+
+local:context	rdfs:label	"context"	.
+
+local:context_of_damls_ontologies	rdfs:label	"context of daml-s ontologies"	.
+
+local:damls_ontologies_of_services	rdfs:label	"daml-s ontologies of services"	.
+
+local:problem	rdfs:label	"problem"	.
+
+local:proposed	rdfs:label	"proposed"	.
+
+local:proposed_approach	rdfs:label	"proposed approach"	.
+
+local:enables	rdfs:label	"enables"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:extra	rdfs:label	"extra"	.
+
+local:extra_information	rdfs:label	"extra information"	.
+
+local:best	rdfs:label	"best"	.
+
+local:best_match	rdfs:label	"best match"	.
+
+local:service_request	rdfs:label	"service request"	.
+
+local:information	rdfs:label	"information"	.
+
+local:request	rdfs:label	"request"	.
+
+local:match	rdfs:label	"match"	.
+
+local:effectively_computes	rdfs:label	"effectively computes"	.
+
+local:computes	rdfs:label	"computes"	.
+
+local:given_request	rdfs:label	"given request"	.
+
+local:combinations_of_web_services	rdfs:label	"combinations of web services"	.
+
+local:combinations	rdfs:label	"combinations"	.
+
+local:information_required	rdfs:label	"information required"	.
+
+local:required	rdfs:label	"required"	.
+
+local:required_by_service_request	rdfs:label	"required by service request"	.
+
+local:select	rdfs:label	"select"	.
+
+local:given	rdfs:label	"given"	.
+
+local:existing_service	rdfs:label	"existing service"	.
+
+local:not_provided	rdfs:label	"not provided"	.
+
+local:provided	rdfs:label	"provided"	.
+
+local:information_not_provided	rdfs:label	"information not provided"	.
+
+local:not_provided_by_existing_service	rdfs:label	"not provided by existing service"	.
+
+local:not	rdfs:label	"not"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:request_q	rdfs:label	"request q."	.
+
+local:q	rdfs:label	"q."	.
+
+local:derived	rdfs:label	"derived"	.
+
+local:algorithm	rdfs:label	"algorithm"	.
+
+local:hypergraphs_theory	rdfs:label	"hypergraphs theory"	.
+
+local:theory	rdfs:label	"theory"	.
+
+local:hypergraphs	rdfs:label	"hypergraphs"	.
+
+local:study	rdfs:label	"study"	.
+
+local:reasoning_problem	rdfs:label	"reasoning problem"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:associated	rdfs:label	"associated"	.
+
+local:matching_process	rdfs:label	"matching process"	.
+
+local:process	rdfs:label	"process"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:matching_process	rdfs:label	"matching process"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:matching_process	owl:sameAs	cso:matching_process	.
+local:reasoning_problem	owl:sameAs	cso:reasoning_problems	.
+cso:reasoning_problems	rdfs:label	"reasoning problem"	.
+
+#### Relations ####
+
+local:derived	vn.role:Location	local:algorithm	.
+local:required_by_service_request	local:required_by	local:service_request	.
+local:match	vn.role:Patient2	local:combinations_of_web_services	.
+local:propose	vn.role:Topic	local:algorithm	.
+local:study	vn.role:Theme	local:reasoning_problem	.
+local:web_service_technology_capabilities	rdfs:subClassOf	local:capabilities	.
+local:tackle	local:AM-LOC	local:context_of_damls_ontologies	.
+local:service_technology	rdfs:subClassOf	local:technology	.
+local:tackle_in_context	local:in_context	local:tackle	.
+local:best_match	rdfs:subClassOf	local:match	.
+local:not_provided_by_existing_service	local:by_existingservice	local:not_provided	.
+local:extra	rdfs:member	local:extra_information	.
+local:match	vn.role:Patient2	local:request	.
+local:match	local:AM-TMP	local:effectively_computes	.
+local:based	vn.role:indirect_object	local:web_service_technology_capabilities	.
+local:damls	rdfs:member	local:damls_ontologies	.
+local:faces	vn.role:Agent	local:web_service_technology	.
+local:existing_service	rdfs:subClassOf	local:service	.
+local:associated	vn.role:Patient2	local:reasoning_problem	.
+local:best	rdfs:member	local:best_match	.
+local:based_on_web_service_technology_capabilities	local:on_webservicetechnologycapabilities	local:based	.
+local:extra_information	rdfs:subClassOf	local:information	.
+local:match	local:AM-MNR	local:effectively	.
+local:web_service	rdfs:member	local:web_service_technology	.
+local:combinations_of_web_services	local:combinations_of	local:web_services	.
+local:present	local:AM-PNC	local:tackle_in_context	.
+local:request_q	rdfs:subClassOf	local:q	.
+local:context_of_damls_ontologies	local:of_daml-sontologies	local:context	.
+local:select	vn.role:Agent	local:proposed_approach	.
+local:associated	vn.role:Agent	local:matching_process	.
+local:web_service_technology	rdfs:subClassOf	local:service_technology	.
+local:request	rdfs:member	local:request_q	.
+local:matching_process	rdfs:subClassOf	local:process	.
+local:web	rdfs:member	local:web_services	.
+local:service_technology_capabilities	rdfs:subClassOf	local:technology_capabilities	.
+local:required	vn.role:Patient	local:information	.
+local:one_challenging_problems	rdfs:subClassOf	local:challenging_problems	.
+local:discover	vn.role:Theme	local:services_based	.
+local:services_based	local:services_	local:based	.
+local:based_on_web_service_technology_capabilities	local:based_on	local:web_service_technology_capabilities	.
+local:technology_capabilities	rdfs:subClassOf	local:capabilities	.
+local:given	vn.role:object	local:request	.
+local:propose	vn.role:Agent	local:we	.
+local:provided	vn.role:Recipient	local:existing_service	.
+local:existing	vn.role:Location	local:service	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:service_technology_capabilities	rdfs:subClassOf	local:capabilities	.
+local:effectively_computes	rdfs:subClassOf	local:computes	.
+local:information_required	local:information_	local:required	.
+local:select	vn.role:Theme	local:combinations_of_web_services	.
+local:faces	vn.role:Theme	local:challenging_problems	.
+local:computes	vn.role:Product	local:extra_information	.
+local:context_of_damls_ontologies	local:context_of	local:damls_ontologies	.
+local:match	local:AM-ADV	local:effectively_computes	.
+local:service_request	rdfs:subClassOf	local:request	.
+local:hypergraphs	rdfs:member	local:hypergraphs_theory	.
+local:service	rdfs:member	local:service_technology	.
+local:web_service_technology	rdfs:member	local:web_service_technology_capabilities	.
+local:computes	local:AM-MNR	local:effectively	.
+local:hypergraphs_theory	rdfs:subClassOf	local:theory	.
+local:challenging_problems	rdfs:subClassOf	local:problems	.
+local:technology	rdfs:member	local:technology_capabilities	.
+local:required_by_service_request	local:by_servicerequest	local:required	.
+local:given_request	rdfs:subClassOf	local:request	.
+local:service_technology	rdfs:member	local:service_technology_capabilities	.
+local:web_service	rdfs:subClassOf	local:service	.
+local:information_not_provided	local:_notprovided	local:information	.
+local:damls_ontologies	rdfs:subClassOf	local:ontologies	.
+local:match	vn.role:Patient2	local:request_q	.
+local:provided	vn.role:Agent	local:combinations_of_web_services	.
+local:derived	vn.role:indirect_object	local:hypergraphs_theory	.
+local:tackle	vn.role:Theme	local:problem	.
+local:enables	vn.role:Patient	local:select	.
+local:required	vn.role:Agent	local:service_request	.
+local:combinations_of_web_services	local:of_webservices	local:combinations	.
+local:computes	vn.role:Agent	local:enables	.
+local:present	vn.role:Theme	local:approach	.
+local:tackle	vn.role:Agent	local:we	.
+local:discover	vn.role:Agent	local:one_challenging_problems	.
+local:enables	vn.role:Agent	local:proposed_approach	.
+local:services_based	local:_based	local:services	.
+local:damls_ontologies_of_services	local:daml-sontologies_of	local:services	.
+local:information_not_provided	local:information_	local:not_provided	.
+local:present	vn.role:Agent	local:we	.
+local:damls_ontologies_of_services	local:of_services	local:damls_ontologies	.
+local:tackle_in_context	local:tackle_in	local:context	.
+local:provided	local:AM-NEG	local:not	.
+local:not_provided_by_existing_service	local:notprovided_by	local:existing_service	.
+local:reasoning_problem	rdfs:subClassOf	local:problem	.
+local:study	vn.role:Agent	local:we	.
+local:proposed	vn.role:Topic	local:approach	.
+local:service	rdfs:member	local:service_request	.
+local:web	rdfs:member	local:web_service	.
+local:not_provided	rdfs:subClassOf	local:provided	.
+local:match	local:AM-MNR	local:best	.
+local:provided	vn.role:Agent	local:information	.
+local:web_service_technology	rdfs:subClassOf	local:technology	.
+local:web_service_technology_capabilities	rdfs:subClassOf	local:service_technology_capabilities	.
+local:information_required	local:_required	local:information	.
+local:discover	local:AM-MNR	local:effectively	.
+local:proposed_approach	rdfs:subClassOf	local:approach	.
+local:challenging	rdfs:member	local:challenging_problems	.

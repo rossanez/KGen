@@ -1,0 +1,138 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:personal_agents	rdfs:label	"personal agents"	.
+
+local:agents	rdfs:label	"agents"	.
+
+local:personal	rdfs:label	"personal"	.
+
+local:supports	rdfs:label	"supports"	.
+
+local:interpersonal_information_exchange	rdfs:label	"inter-personal information exchange"	.
+
+local:exchange	rdfs:label	"exchange"	.
+
+local:information	rdfs:label	"information"	.
+
+local:information_exchange	rdfs:label	"information exchange"	.
+
+local:interpersonal	rdfs:label	"inter-personal"	.
+
+local:interpersonal_information	rdfs:label	"inter-personal information"	.
+
+local:sharing	rdfs:label	"sharing"	.
+
+local:propose	rdfs:label	"propose"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:framework	rdfs:label	"framework"	.
+
+local:offers	rdfs:label	"offers"	.
+
+local:repositorycentered	rdfs:label	"repository-centered"	.
+
+local:repositorycentered_architecture	rdfs:label	"repository-centered architecture"	.
+
+local:architecture	rdfs:label	"architecture"	.
+
+local:store	rdfs:label	"store"	.
+
+local:user	rdfs:label	"user"	.
+
+local:can	rdfs:label	"can"	.
+
+local:information_resources	rdfs:label	"information resources"	.
+
+local:resources	rdfs:label	"resources"	.
+
+local:personal_agents_applications	rdfs:label	"personal agents applications"	.
+
+local:agents_applications	rdfs:label	"agents applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:framework_for_personal_agents	rdfs:label	"framework for personal agents"	.
+
+local:work	rdfs:label	"work"	.
+
+local:collaboratively	rdfs:label	"collaboratively"	.
+
+local:notification	rdfs:label	"notification"	.
+
+local:notification_mechanism	rdfs:label	"notification mechanism"	.
+
+local:event_notification	rdfs:label	"event notification"	.
+
+local:event_notification_mechanism	rdfs:label	"event notification mechanism"	.
+
+local:mechanism	rdfs:label	"mechanism"	.
+
+local:event	rdfs:label	"event"	.
+
+local:help_of_event_notification_mechanism	rdfs:label	"help of event notification mechanism"	.
+
+local:help	rdfs:label	"help"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:information_exchange	rdfs:label	"information exchange"	.
+local:information_exchange	owl:sameAs	cso:information_exchange	.
+
+#### Relations ####
+
+local:event_notification_mechanism	rdfs:subClassOf	local:mechanism	.
+local:personal_agents	rdfs:subClassOf	local:agents	.
+local:sharing	vn.role:Patient	local:offers	.
+local:interpersonal_information	rdfs:subClassOf	local:information	.
+local:propose	local:AM-PNC	local:personal_agents	.
+local:framework_for_personal_agents	local:framework_for	local:personal_agents	.
+local:repositorycentered_architecture	rdfs:subClassOf	local:architecture	.
+local:store	local:AM-MOD	local:can	.
+local:help_of_event_notification_mechanism	local:of_eventnotificationmechanism	local:help	.
+local:work	vn.role:Theme	local:help_of_event_notification_mechanism	.
+local:agents	rdfs:member	local:agents_applications	.
+local:repositorycentered	rdfs:member	local:repositorycentered_architecture	.
+local:information_resources	rdfs:subClassOf	local:resources	.
+local:personal	rdfs:member	local:personal_agents	.
+local:store	vn.role:Value	local:information_resources	.
+local:framework_for_personal_agents	local:for_personalagents	local:framework	.
+local:event_notification_mechanism	rdfs:subClassOf	local:notification_mechanism	.
+local:information	rdfs:member	local:information_resources	.
+local:personal_agents_applications	rdfs:subClassOf	local:applications	.
+local:propose	vn.role:Agent	local:we	.
+local:supports	vn.role:Theme	local:personal_agents	.
+local:sharing	vn.role:Agent	local:personal_agents	.
+local:notification_mechanism	rdfs:subClassOf	local:mechanism	.
+local:agents_applications	rdfs:subClassOf	local:applications	.
+local:help_of_event_notification_mechanism	local:help_of	local:event_notification_mechanism	.
+local:interpersonal	rdfs:member	local:interpersonal_information	.
+local:supports	vn.role:Experiencer	local:interpersonal_information_exchange	.
+local:event_notification	rdfs:member	local:event_notification_mechanism	.
+local:work	local:AM-MNR	local:applications	.
+local:store	local:AM-LOC	local:repositorycentered_architecture	.
+local:store	vn.role:Agent	local:user	.
+local:event	rdfs:member	local:event_notification	.
+local:interpersonal_information	rdfs:member	local:interpersonal_information_exchange	.
+local:interpersonal_information_exchange	rdfs:subClassOf	local:information_exchange	.
+local:information_exchange	rdfs:subClassOf	local:exchange	.
+local:interpersonal_information_exchange	rdfs:subClassOf	local:exchange	.
+local:propose	vn.role:Topic	local:framework	.
+local:personal_agents	rdfs:member	local:personal_agents_applications	.
+local:work	local:AM-MNR	local:collaboratively	.
+local:propose	local:AM-LOC	local:paper	.
+local:notification	rdfs:member	local:notification_mechanism	.
+local:event_notification	rdfs:subClassOf	local:notification	.
+local:information	rdfs:member	local:information_exchange	.
+local:supports	vn.role:Experiencer	local:sharing	.

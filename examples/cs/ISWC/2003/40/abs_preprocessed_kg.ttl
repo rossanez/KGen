@@ -1,0 +1,246 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:programming	rdfs:label	"programming"	.
+
+local:prolog	rdfs:label	"prolog"	.
+
+local:language	rdfs:label	"language"	.
+
+local:patternmatching	rdfs:label	"pattern-matching"	.
+
+local:outline	rdfs:label	"outline"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:we	rdfs:label	"we"	.
+
+local:elementary_reasoning	rdfs:label	"elementary reasoning"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:elementary	rdfs:label	"elementary"	.
+
+local:infrastructure_storing	rdfs:label	"infrastructure storing"	.
+
+local:infrastructure	rdfs:label	"infrastructure"	.
+
+local:storing	rdfs:label	"storing"	.
+
+local:infrastructure_storing_elementary_reasoning	rdfs:label	"infrastructure storing elementary reasoning"	.
+
+local:elementary_reasoning_with_visualization	rdfs:label	"elementary reasoning with visualization"	.
+
+local:visualization	rdfs:label	"visualization"	.
+
+local:saving	rdfs:label	"saving"	.
+
+local:rdfxml	rdfs:label	"rdfxml"	.
+
+local:triples_elementary_reasoning	rdfs:label	"triples elementary reasoning"	.
+
+local:triples	rdfs:label	"triples"	.
+
+local:elementary_reasoning_with_triples	rdfs:label	"elementary reasoning with triples"	.
+
+local:loading	rdfs:label	"loading"	.
+
+local:predecessor_of_infrastructure	rdfs:label	"predecessor of infrastructure"	.
+
+local:predecessor	rdfs:label	"predecessor"	.
+
+local:used	rdfs:label	"used"	.
+
+local:various_applications	rdfs:label	"various applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:multimedia_objects	rdfs:label	"multimedia objects"	.
+
+local:objects	rdfs:label	"objects"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:web_languages	rdfs:label	"web languages"	.
+
+local:semantic_web_languages	rdfs:label	"semantic web languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:various	rdfs:label	"various"	.
+
+local:ontologybased	rdfs:label	"ontology-based"	.
+
+local:ontologybased_annotation	rdfs:label	"ontology-based annotation"	.
+
+local:multimedia	rdfs:label	"multimedia"	.
+
+local:annotation	rdfs:label	"annotation"	.
+
+local:various_applications_for_ontologybased_annotation	rdfs:label	"various applications for ontology-based annotation"	.
+
+local:ontologybased_annotation_of_multimedia_objects	rdfs:label	"ontology-based annotation of multimedia objects"	.
+
+local:various_applications_for_ontologybased_annotation_using	rdfs:label	"various applications for ontology-based annotation using"	.
+
+local:using	rdfs:label	"using"	.
+
+local:described	rdfs:label	"described"	.
+
+local:here	rdfs:label	"here"	.
+
+local:aims	rdfs:label	"aims"	.
+
+local:library	rdfs:label	"library"	.
+
+local:fairly_large_applications	rdfs:label	"fairly large applications"	.
+
+local:fast	rdfs:label	"fast"	.
+
+local:fast_parsing	rdfs:label	"fast parsing"	.
+
+local:parsing	rdfs:label	"parsing"	.
+
+local:fairly_large	rdfs:label	"fairly large"	.
+
+local:large	rdfs:label	"large"	.
+
+local:fast_access	rdfs:label	"fast access"	.
+
+local:access	rdfs:label	"access"	.
+
+local:large_applications	rdfs:label	"large applications"	.
+
+local:fairly	rdfs:label	"fairly"	.
+
+local:million_triples	rdfs:label	"million triples"	.
+
+local:40_million	rdfs:label	"40 million"	.
+
+local:million	rdfs:label	"million"	.
+
+local:upto_million_triples	rdfs:label	"upto million triples"	.
+
+local:fast_parsing_for_large_applications	rdfs:label	"fast parsing for large applications"	.
+
+local:not	rdfs:label	"not"	.
+
+local:not_unbounded	rdfs:label	"not unbounded"	.
+
+local:unbounded_applications	rdfs:label	"unbounded applications"	.
+
+local:unbounded	rdfs:label	"unbounded"	.
+
+local:not_unbounded_applications	rdfs:label	"not unbounded applications"	.
+
+local:fast_parsing_for_not_unbounded_applications	rdfs:label	"fast parsing for not unbounded applications"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:library	rdfs:label	"library"	.
+cso:visualization	rdfs:label	"visualization"	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:reasoning	rdfs:label	"reasoning"	.
+cso:parsing	rdfs:label	"parsing"	.
+local:visualization	owl:sameAs	cso:visualization	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:parsing	owl:sameAs	cso:parsing	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+local:library	owl:sameAs	cso:library	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+
+#### Relations ####
+
+local:web	rdfs:member	local:web_languages	.
+local:elementary_reasoning_with_triples	local:with_triples	local:elementary_reasoning	.
+local:fairly_large	rdfs:member	local:fairly_large_applications	.
+local:using	vn.role:Theme	local:semantic_web_languages	.
+local:fairly	rdfs:member	local:fairly_large	.
+local:storing	local:AM-PNC	local:loading	.
+local:elementary_reasoning_with_visualization	local:with_visualization	local:elementary_reasoning	.
+local:saving	vn.role:Agent	local:infrastructure	.
+local:ontologybased_annotation_of_multimedia_objects	local:of_multimediaobjects	local:ontologybased_annotation	.
+local:fairly_large_applications	rdfs:subClassOf	local:applications	.
+local:elementary_reasoning_with_visualization	local:elementaryreasoning_with	local:visualization	.
+local:fairly_large	rdfs:subClassOf	local:large	.
+local:ontologybased_annotation_of_multimedia_objects	local:ontology-basedannotation_of	local:multimedia_objects	.
+local:various	rdfs:member	local:various_applications	.
+local:storing	vn.role:Agent	local:infrastructure	.
+local:various_applications_for_ontologybased_annotation	local:for_ontology-basedannotation	local:various_applications	.
+local:predecessor_of_infrastructure	local:of_infrastructure	local:predecessor	.
+local:not	rdfs:member	local:not_unbounded	.
+local:triples_elementary_reasoning	local:triples_	local:elementary_reasoning	.
+local:semantic_web	rdfs:member	local:semantic_web_languages	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:various_applications_for_ontologybased_annotation	local:variousapplications_for	local:ontologybased_annotation	.
+local:semantic_web_languages	rdfs:subClassOf	local:web_languages	.
+local:programming	local:AM-ADV	local:patternmatching	.
+local:used	vn.role:Theme	local:predecessor_of_infrastructure	.
+local:used	vn.role:Agent	local:various_applications_for_ontologybased_annotation_using	.
+local:40_million	rdfs:subClassOf	local:million	.
+local:infrastructure_storing_elementary_reasoning	local:infrastructurestoring_	local:elementary_reasoning	.
+local:fast_parsing_for_large_applications	local:for_largeapplications	local:fast_parsing	.
+local:triples_elementary_reasoning	local:_elementaryreasoning	local:triples	.
+local:unbounded	rdfs:member	local:unbounded_applications	.
+local:storing	vn.role:Agent	local:rdfxml	.
+local:elementary_reasoning	rdfs:subClassOf	local:reasoning	.
+local:infrastructure_storing	local:infrastructure_	local:storing	.
+local:ontologybased	rdfs:member	local:ontologybased_annotation	.
+local:described	vn.role:Theme	local:here	.
+local:fast_parsing_for_large_applications	local:fastparsing_for	local:large_applications	.
+local:aims	vn.role:Theme	local:fast_parsing_for_not_unbounded_applications	.
+local:elementary	rdfs:member	local:elementary_reasoning	.
+local:various_applications	rdfs:subClassOf	local:applications	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:loading	vn.role:object	local:elementary_reasoning_with_visualization	.
+local:saving	vn.role:Asset	local:elementary_reasoning_with_visualization	.
+local:various_applications_for_ontologybased_annotation_using	local:_using	local:various_applications_for_ontologybased_annotation	.
+local:loading	vn.role:object	local:elementary_reasoning_with_triples	.
+local:aims	vn.role:indirect_object	local:fast_parsing_for_large_applications	.
+local:saving	vn.role:Asset	local:elementary_reasoning_with_triples	.
+local:programming	vn.role:Experiencer	local:prolog	.
+local:web_languages	rdfs:subClassOf	local:languages	.
+local:fast_parsing	rdfs:subClassOf	local:parsing	.
+local:fast_parsing_for_not_unbounded_applications	local:for_notunboundedapplications	local:fast_parsing	.
+local:multimedia	rdfs:member	local:multimedia_objects	.
+local:predecessor_of_infrastructure	local:predecessor_of	local:infrastructure	.
+local:ontologybased_annotation	rdfs:subClassOf	local:annotation	.
+local:unbounded_applications	rdfs:subClassOf	local:applications	.
+local:not_unbounded	rdfs:member	local:not_unbounded_applications	.
+local:fast_parsing_for_not_unbounded_applications	local:fastparsing_for	local:not_unbounded_applications	.
+local:large	rdfs:member	local:large_applications	.
+local:large_applications	rdfs:subClassOf	local:applications	.
+local:fast	rdfs:member	local:fast_access	.
+local:semantic_web_languages	rdfs:subClassOf	local:languages	.
+local:fast_access	rdfs:subClassOf	local:access	.
+local:programming	vn.role:Experiencer	local:language	.
+local:not_unbounded	rdfs:subClassOf	local:unbounded	.
+local:not_unbounded_applications	rdfs:subClassOf	local:applications	.
+local:outline	vn.role:Agent	local:we	.
+local:infrastructure_storing	local:_storing	local:infrastructure	.
+local:various_applications_for_ontologybased_annotation_using	local:variousapplicationsforontology-basedannotation_	local:using	.
+local:not_unbounded_applications	rdfs:subClassOf	local:unbounded_applications	.
+local:fast	rdfs:member	local:fast_parsing	.
+local:million_triples	rdfs:subClassOf	local:triples	.
+local:upto_million_triples	rdfs:subClassOf	local:million_triples	.
+local:aims	vn.role:Experiencer	local:library	.
+local:elementary_reasoning_with_triples	local:elementaryreasoning_with	local:triples	.
+local:multimedia_objects	rdfs:subClassOf	local:objects	.
+local:infrastructure_storing_elementary_reasoning	local:_elementaryreasoning	local:infrastructure_storing	.
+local:storing	vn.role:Value	local:triples_elementary_reasoning	.
+local:described	vn.role:Agent	local:infrastructure	.
+local:outline	local:AM-LOC	local:paper	.
+local:outline	vn.role:Theme	local:infrastructure_storing_elementary_reasoning	.

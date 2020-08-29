@@ -1,0 +1,229 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:describe	rdfs:label	"describe"	.
+
+local:we	rdfs:label	"we"	.
+
+local:damljesskb	rdfs:label	"damljesskb"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:performing_on_semantic_web	rdfs:label	"performing on semantic web"	.
+
+local:performing	rdfs:label	"performing"	.
+
+local:inference_on_semantic_web	rdfs:label	"inference on semantic web"	.
+
+local:inference	rdfs:label	"inference"	.
+
+local:agent_markup	rdfs:label	"agent markup"	.
+
+local:agent_markup_language	rdfs:label	"agent markup language"	.
+
+local:markup	rdfs:label	"markup"	.
+
+local:language	rdfs:label	"language"	.
+
+local:darpa_agent_markup	rdfs:label	"darpa agent markup"	.
+
+local:darpa_agent_markup_language	rdfs:label	"darpa agent markup language"	.
+
+local:darpa_agent	rdfs:label	"darpa agent"	.
+
+local:agent	rdfs:label	"agent"	.
+
+local:darpa	rdfs:label	"darpa"	.
+
+local:markup_language	rdfs:label	"markup language"	.
+
+local:tool_for_reasoning	rdfs:label	"tool for reasoning"	.
+
+local:tool	rdfs:label	"tool"	.
+
+local:reasoning	rdfs:label	"reasoning"	.
+
+local:reasoning_with_darpa_agent_markup_language	rdfs:label	"reasoning with darpa agent markup language"	.
+
+local:provides	rdfs:label	"provides"	.
+
+local:article	rdfs:label	"article"	.
+
+local:detailed_example	rdfs:label	"detailed example"	.
+
+local:example	rdfs:label	"example"	.
+
+local:design_knowledge	rdfs:label	"design knowledge"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:detailed	rdfs:label	"detailed"	.
+
+local:engineering_design_knowledge	rdfs:label	"engineering design knowledge"	.
+
+local:engineering_design	rdfs:label	"engineering design"	.
+
+local:damlencoded_engineering_design_knowledge	rdfs:label	"daml-encoded engineering design knowledge"	.
+
+local:damlencoded_engineering_design	rdfs:label	"daml-encoded engineering design"	.
+
+local:design	rdfs:label	"design"	.
+
+local:engineering	rdfs:label	"engineering"	.
+
+local:damlencoded	rdfs:label	"daml-encoded"	.
+
+local:damlencoded_engineering	rdfs:label	"daml-encoded engineering"	.
+
+local:can_used	rdfs:label	"can used"	.
+
+local:used	rdfs:label	"used"	.
+
+local:how_can_used	rdfs:label	"how can used"	.
+
+local:decisions_about_damlencoded_engineering_design_knowledge	rdfs:label	"decisions about daml-encoded engineering design knowledge"	.
+
+local:decisions	rdfs:label	"decisions"	.
+
+local:can	rdfs:label	"can"	.
+
+local:make	rdfs:label	"make"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:underlying_methodology	rdfs:label	"underlying methodology"	.
+
+local:methodology	rdfs:label	"methodology"	.
+
+local:underlying	rdfs:label	"underlying"	.
+
+local:believe	rdfs:label	"believe"	.
+
+local:full_potential	rdfs:label	"full potential"	.
+
+local:potential	rdfs:label	"potential"	.
+
+local:full	rdfs:label	"full"	.
+
+local:tools_like_damljesskb	rdfs:label	"tools like damljesskb"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:full_potential_of_semantic_web	rdfs:label	"full potential of semantic web"	.
+
+local:needed	rdfs:label	"needed"	.
+
+local:realize	rdfs:label	"realize"	.
+
+local:help	rdfs:label	"help"	.
+
+local:full_potential_of_darpa_agent_markup_language	rdfs:label	"full potential of darpa agent markup language"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:inference	rdfs:label	"inference"	.
+cso:reasoning	rdfs:label	"reasoning"	.
+local:inference	owl:sameAs	cso:inference	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+cso:design_knowledge	rdfs:label	"design knowledge"	.
+cso:engineering_design	rdfs:label	"engineering design"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+local:design_knowledge	owl:sameAs	cso:design_knowledge	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+local:engineering_design	owl:sameAs	cso:engineering_design	.
+local:semantic	owl:sameAs	cso:semantics	.
+
+#### Relations ####
+
+local:engineering	rdfs:member	local:engineering_design	.
+local:presents	vn.role:Agent	local:article	.
+local:decisions_about_damlencoded_engineering_design_knowledge	local:about_daml-encodedengineeringdesignknowledge	local:decisions	.
+local:used	vn.role:Theme	local:damljesskb	.
+local:detailed	rdfs:member	local:detailed_example	.
+local:full_potential_of_darpa_agent_markup_language	local:of_darpaagentmarkuplanguage	local:full_potential	.
+local:darpa_agent_markup_language	rdfs:subClassOf	local:language	.
+local:inference_on_semantic_web	local:on_semanticweb	local:inference	.
+local:describe	vn.role:Theme	local:damljesskb	.
+local:design	rdfs:member	local:design_knowledge	.
+local:performing	vn.role:Theme	local:inference_on_semantic_web	.
+local:decisions_about_damlencoded_engineering_design_knowledge	local:decisions_about	local:damlencoded_engineering_design_knowledge	.
+local:agent_markup	rdfs:member	local:agent_markup_language	.
+local:believe	vn.role:Experiencer	local:needed	.
+local:describe	vn.role:Theme	local:performing_on_semantic_web	.
+local:detailed_example	rdfs:subClassOf	local:example	.
+local:engineering_design_knowledge	rdfs:subClassOf	local:knowledge	.
+local:tools_like_damljesskb	local:like_damljesskb	local:tools	.
+local:darpa_agent_markup_language	rdfs:subClassOf	local:agent_markup_language	.
+local:provides	vn.role:Agent	local:detailed_example	.
+local:tools_like_damljesskb	local:tools_like	local:damljesskb	.
+local:performing_on_semantic_web	local:on_semanticweb	local:performing	.
+local:tool_for_reasoning	local:for_reasoning	local:tool	.
+local:realize	vn.role:Agent	local:tools_like_damljesskb	.
+local:how_can_used	rdfs:subClassOf	local:can_used	.
+local:darpa_agent_markup	rdfs:member	local:darpa_agent_markup_language	.
+local:markup	rdfs:member	local:markup_language	.
+local:needed	vn.role:Patient	local:tools_like_damljesskb	.
+local:full_potential_of_semantic_web	local:of_semanticweb	local:full_potential	.
+local:reasoning_with_darpa_agent_markup_language	local:reasoning_with	local:darpa_agent_markup_language	.
+local:describe	vn.role:Theme	local:tool_for_reasoning	.
+local:engineering_design	rdfs:member	local:engineering_design_knowledge	.
+local:darpa	rdfs:member	local:darpa_agent	.
+local:agent	rdfs:member	local:agent_markup	.
+local:damlencoded_engineering_design	rdfs:member	local:damlencoded_engineering_design_knowledge	.
+local:damlencoded_engineering	rdfs:subClassOf	local:engineering	.
+local:damlencoded_engineering	rdfs:member	local:damlencoded_engineering_design	.
+local:help	vn.role:Beneficiary	local:realize	.
+local:full_potential	rdfs:subClassOf	local:potential	.
+local:full_potential_of_darpa_agent_markup_language	local:fullpotential_of	local:darpa_agent_markup_language	.
+local:tool_for_reasoning	local:tool_for	local:reasoning	.
+local:design_knowledge	rdfs:subClassOf	local:knowledge	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:make	vn.role:Agent	local:damljesskb	.
+local:make	vn.role:Product	local:damlencoded_engineering_design_knowledge	.
+local:darpa_agent	rdfs:subClassOf	local:agent	.
+local:believe	vn.role:Theme	local:we	.
+local:darpa_agent	rdfs:member	local:darpa_agent_markup	.
+local:realize	vn.role:Theme	local:full_potential_of_darpa_agent_markup_language	.
+local:inference_on_semantic_web	local:inference_on	local:semantic_web	.
+local:agent_markup_language	rdfs:subClassOf	local:markup_language	.
+local:performing_on_semantic_web	local:performing_on	local:semantic_web	.
+local:engineering_design_knowledge	rdfs:subClassOf	local:design_knowledge	.
+local:needed	local:AM-PNC	local:realize	.
+local:provides	vn.role:Recipient	local:article	.
+local:make	vn.role:Material	local:decisions	.
+local:full	rdfs:member	local:full_potential	.
+local:help	vn.role:Agent	local:tools_like_damljesskb	.
+local:damlencoded_engineering_design_knowledge	rdfs:subClassOf	local:engineering_design_knowledge	.
+local:reasoning_with_darpa_agent_markup_language	local:with_darpaagentmarkuplanguage	local:reasoning	.
+local:performing	vn.role:Agent	local:we	.
+local:markup_language	rdfs:subClassOf	local:language	.
+local:engineering_design	rdfs:subClassOf	local:design	.
+local:damlencoded_engineering_design	rdfs:subClassOf	local:design	.
+local:used	local:AM-MOD	local:can	.
+local:underlying	vn.role:Theme1	local:methodology	.
+local:realize	vn.role:Theme	local:full_potential_of_semantic_web	.
+local:darpa_agent_markup	rdfs:subClassOf	local:markup	.
+local:used	local:AM-PNC	local:make	.
+local:presents	vn.role:Theme	local:underlying_methodology	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:describe	vn.role:Agent	local:we	.
+local:full_potential_of_semantic_web	local:fullpotential_of	local:semantic_web	.
+local:agent_markup	rdfs:subClassOf	local:markup	.
+local:agent_markup_language	rdfs:subClassOf	local:language	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:underlying_methodology	rdfs:subClassOf	local:methodology	.
+local:damlencoded_engineering_design_knowledge	rdfs:subClassOf	local:knowledge	.
+local:damlencoded	rdfs:member	local:damlencoded_engineering	.

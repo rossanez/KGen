@@ -1,0 +1,151 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:surround	rdfs:label	"surround"	.
+
+local:issues	rdfs:label	"issues"	.
+
+local:provision	rdfs:label	"provision"	.
+
+local:application_support	rdfs:label	"application support"	.
+
+local:support	rdfs:label	"support"	.
+
+local:application	rdfs:label	"application"	.
+
+local:discusses	rdfs:label	"discusses"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:owl_ontologies	rdfs:label	"owl ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:using	rdfs:label	"using"	.
+
+local:presents	rdfs:label	"presents"	.
+
+local:highlevel_programmatic	rdfs:label	"high-level programmatic"	.
+
+local:highlevel_programmatic_interface	rdfs:label	"high-level programmatic interface"	.
+
+local:programmatic_interface	rdfs:label	"programmatic interface"	.
+
+local:interface	rdfs:label	"interface"	.
+
+local:programmatic	rdfs:label	"programmatic"	.
+
+local:highlevel	rdfs:label	"high-level"	.
+
+local:api_highlevel_programmatic_interface	rdfs:label	"api high-level programmatic interface"	.
+
+local:api	rdfs:label	"api"	.
+
+local:accessing	rdfs:label	"accessing"	.
+
+local:owl_api	rdfs:label	"owl api"	.
+
+local:owl_api_highlevel_programmatic_interface	rdfs:label	"owl api high-level programmatic interface"	.
+
+local:illustrate	rdfs:label	"illustrate"	.
+
+local:we	rdfs:label	"we"	.
+
+local:possible	rdfs:label	"possible"	.
+
+local:possible_solutions	rdfs:label	"possible solutions"	.
+
+local:technical	rdfs:label	"technical"	.
+
+local:technical_issues	rdfs:label	"technical issues"	.
+
+local:solutions	rdfs:label	"solutions"	.
+
+local:possible_solutions_to_technical_issues	rdfs:label	"possible solutions to technical issues"	.
+
+local:intend	rdfs:label	"intend"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:owl_standard	rdfs:label	"owl standard"	.
+
+local:standard	rdfs:label	"standard"	.
+
+local:discuss	rdfs:label	"discuss"	.
+
+local:design	rdfs:label	"design"	.
+
+local:design_issues	rdfs:label	"design issues"	.
+
+local:underlying_design_issues	rdfs:label	"underlying design issues"	.
+
+local:occurring	rdfs:label	"occurring"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+local:owl	owl:sameAs	cso:owl	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:highlevel_programmatic_interface	rdfs:subClassOf	local:interface	.
+local:owl_standard	rdfs:subClassOf	local:standard	.
+local:intend	vn.role:Agent	local:systems	.
+local:discuss	vn.role:Patient1	local:we	.
+local:illustrate	vn.role:Agent	local:we	.
+local:owl	rdfs:member	local:owl_standard	.
+local:possible_solutions_to_technical_issues	local:possiblesolutions_to	local:technical_issues	.
+local:accessing	vn.role:Patient	local:owl_ontologies	.
+local:possible	rdfs:member	local:possible_solutions	.
+local:surround	vn.role:indirect_object	local:application_support	.
+local:technical_issues	rdfs:subClassOf	local:issues	.
+local:programmatic	rdfs:member	local:programmatic_interface	.
+local:discuss	vn.role:Patient2	local:underlying_design_issues	.
+local:programmatic_interface	rdfs:subClassOf	local:interface	.
+local:support	vn.role:Theme	local:systems	.
+local:highlevel	rdfs:member	local:highlevel_programmatic	.
+local:owl_api_highlevel_programmatic_interface	local:_high-levelprogrammaticinterface	local:owl_api	.
+local:api_highlevel_programmatic_interface	local:_high-levelprogrammaticinterface	local:api	.
+local:illustrate	vn.role:Theme	local:possible_solutions_to_technical_issues	.
+local:owl	rdfs:member	local:owl_ontologies	.
+local:presents	vn.role:Theme	local:owl_api_highlevel_programmatic_interface	.
+local:technical	rdfs:member	local:technical_issues	.
+local:using	vn.role:Theme	local:owl_ontologies	.
+local:presents	vn.role:Recipient	local:api_highlevel_programmatic_interface	.
+local:owl_api	rdfs:subClassOf	local:api	.
+local:possible_solutions	rdfs:subClassOf	local:solutions	.
+local:api_highlevel_programmatic_interface	local:api_	local:highlevel_programmatic_interface	.
+local:intend	vn.role:Predicate	local:support	.
+local:presents	vn.role:Theme	local:owl	.
+local:underlying_design_issues	rdfs:subClassOf	local:design_issues	.
+local:surround	vn.role:indirect_object	local:issues	.
+local:support	vn.role:Experiencer	local:owl_standard	.
+local:occurring	vn.role:Location	local:technical_issues	.
+local:highlevel_programmatic_interface	rdfs:subClassOf	local:programmatic_interface	.
+local:owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:discusses	vn.role:Patient2	local:issues	.
+local:application_support	rdfs:subClassOf	local:support	.
+local:owl_api_highlevel_programmatic_interface	local:owlapi_	local:highlevel_programmatic_interface	.
+local:highlevel_programmatic	rdfs:subClassOf	local:programmatic	.
+local:possible_solutions_to_technical_issues	local:to_technicalissues	local:possible_solutions	.
+local:discusses	vn.role:Patient1	local:paper	.
+local:highlevel_programmatic	rdfs:member	local:highlevel_programmatic_interface	.
+local:design_issues	rdfs:subClassOf	local:issues	.
+local:application	rdfs:member	local:application_support	.
+local:presents	vn.role:Agent	local:paper	.
+local:occurring	local:AM-LOC	local:systems	.
+local:surround	vn.role:Theme2	local:provision	.
+local:owl	rdfs:member	local:owl_api	.
+local:design	rdfs:member	local:design_issues	.

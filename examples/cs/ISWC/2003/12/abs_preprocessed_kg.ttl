@@ -1,0 +1,236 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:process	rdfs:label	"process"	.
+
+local:process_model	rdfs:label	"process model"	.
+
+local:damls_process	rdfs:label	"daml-s process"	.
+
+local:damls_process_model	rdfs:label	"daml-s process model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:damls	rdfs:label	"daml-s"	.
+
+local:designed	rdfs:label	"designed"	.
+
+local:automated_composition	rdfs:label	"automated composition"	.
+
+local:composition	rdfs:label	"composition"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:automated	rdfs:label	"automated"	.
+
+local:web	rdfs:label	"web"	.
+
+local:ai_planning	rdfs:label	"ai planning"	.
+
+local:planning	rdfs:label	"planning"	.
+
+local:techniques_to_automated_composition	rdfs:label	"techniques to automated composition"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:automated_composition_of_web_services	rdfs:label	"automated composition of web services"	.
+
+local:support	rdfs:label	"support"	.
+
+local:application	rdfs:label	"application"	.
+
+local:working	rdfs:label	"working"	.
+
+local:proven	rdfs:label	"proven"	.
+
+local:we	rdfs:label	"we"	.
+
+local:situation_calculus	rdfs:label	"situation calculus"	.
+
+local:calculus	rdfs:label	"calculus"	.
+
+local:situation_calculus_semantics	rdfs:label	"situation calculus semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:calculus_semantics	rdfs:label	"calculus semantics"	.
+
+local:situation	rdfs:label	"situation"	.
+
+local:correspondence_between_situation_calculus_semantics	rdfs:label	"correspondence between situation calculus semantics"	.
+
+local:correspondence	rdfs:label	"correspondence"	.
+
+local:situation_calculus_semantics_of_process_model	rdfs:label	"situation calculus semantics of process model"	.
+
+local:shop2	rdfs:label	"shop2"	.
+
+local:shop2_process	rdfs:label	"shop2 process"	.
+
+local:shop2_process_model	rdfs:label	"shop2 process model"	.
+
+local:correspondence_between_semantics	rdfs:label	"correspondence between semantics"	.
+
+local:semantics_of_shop2_process_model	rdfs:label	"semantics of shop2 process model"	.
+
+local:implemented	rdfs:label	"implemented"	.
+
+local:also	rdfs:label	"also"	.
+
+local:system	rdfs:label	"system"	.
+
+local:executes	rdfs:label	"executes"	.
+
+local:resulting_plans	rdfs:label	"resulting plans"	.
+
+local:plans	rdfs:label	"plans"	.
+
+local:resulting_plans_over_web	rdfs:label	"resulting plans over web"	.
+
+local:resulting	rdfs:label	"resulting"	.
+
+local:soundly	rdfs:label	"soundly"	.
+
+local:damls_descriptions	rdfs:label	"daml-s descriptions"	.
+
+local:descriptions	rdfs:label	"descriptions"	.
+
+local:sets_of_damls_descriptions	rdfs:label	"sets of daml-s descriptions"	.
+
+local:sets	rdfs:label	"sets"	.
+
+local:shop2_planner	rdfs:label	"shop2 planner"	.
+
+local:planner	rdfs:label	"planner"	.
+
+local:using	rdfs:label	"using"	.
+
+local:completely	rdfs:label	"completely"	.
+
+local:discuss	rdfs:label	"discuss"	.
+
+local:humanoriented_context	rdfs:label	"human-oriented context"	.
+
+local:context	rdfs:label	"context"	.
+
+local:humanoriented	rdfs:label	"human-oriented"	.
+
+local:using_in_humanoriented_context	rdfs:label	"using in human-oriented context"	.
+
+local:humanoriented_context_of_web_services	rdfs:label	"human-oriented context of web services"	.
+
+local:challenges	rdfs:label	"challenges"	.
+
+local:informationrich	rdfs:label	"information-rich"	.
+
+local:informationrich_context	rdfs:label	"information-rich context"	.
+
+local:using_in_informationrich_context	rdfs:label	"using in information-rich context"	.
+
+local:informationrich_context_of_web_services	rdfs:label	"information-rich context of web services"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ai_planning	rdfs:label	"ai planning"	.
+local:ai_planning	owl:sameAs	cso:ai_planning	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantics"	.
+local:process_model	owl:sameAs	cso:process_models	.
+cso:process_models	rdfs:label	"process model"	.
+
+#### Relations ####
+
+local:correspondence_between_situation_calculus_semantics	local:correspondence_between	local:situation_calculus_semantics	.
+local:damls_process	rdfs:subClassOf	local:process	.
+local:planning	vn.role:Theme	local:techniques_to_automated_composition	.
+local:using	vn.role:Theme	local:shop2_planner	.
+local:damls_process_model	rdfs:subClassOf	local:model	.
+local:correspondence_between_semantics	local:correspondence_between	local:semantics	.
+local:executes	vn.role:Patient	local:resulting_plans_over_web	.
+local:techniques_to_automated_composition	local:techniques_to	local:automated_composition	.
+local:correspondence_between_situation_calculus_semantics	local:between_situationcalculussemantics	local:correspondence	.
+local:shop2_planner	rdfs:subClassOf	local:planner	.
+local:informationrich_context_of_web_services	local:information-richcontext_of	local:web_services	.
+local:plans	vn.role:Theme	local:sets_of_damls_descriptions	.
+local:humanoriented	rdfs:member	local:humanoriented_context	.
+local:situation	rdfs:member	local:situation_calculus	.
+local:situation_calculus	rdfs:member	local:situation_calculus_semantics	.
+local:damls_process	rdfs:member	local:damls_process_model	.
+local:informationrich	rdfs:member	local:informationrich_context	.
+local:using_in_informationrich_context	local:using_in	local:informationrich_context	.
+local:damls	rdfs:member	local:damls_process	.
+local:plans	local:AM-MNR	local:soundly	.
+local:semantics_of_shop2_process_model	local:of_shop2processmodel	local:semantics	.
+local:automated_composition	rdfs:subClassOf	local:composition	.
+local:shop2	rdfs:member	local:shop2_planner	.
+local:using	vn.role:Recipient	local:humanoriented_context_of_web_services	.
+local:calculus	rdfs:member	local:calculus_semantics	.
+local:informationrich_context_of_web_services	local:of_webservices	local:informationrich_context	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:situation_calculus_semantics	rdfs:subClassOf	local:calculus_semantics	.
+local:implemented	local:AM-DIS	local:also	.
+local:designed	vn.role:Beneficiary	local:support	.
+local:automated	vn.role:Patient	local:composition	.
+local:shop2_process_model	rdfs:subClassOf	local:process_model	.
+local:correspondence_between_semantics	local:between_semantics	local:correspondence	.
+local:proven	vn.role:Theme	local:correspondence_between_situation_calculus_semantics	.
+local:shop2_process	rdfs:member	local:shop2_process_model	.
+local:implemented	vn.role:Agent	local:we	.
+local:process	rdfs:member	local:process_model	.
+local:designed	vn.role:Product	local:damls_process_model	.
+local:web	rdfs:member	local:web_services	.
+local:executes	vn.role:Agent	local:system	.
+local:damls_descriptions	rdfs:subClassOf	local:descriptions	.
+local:discuss	vn.role:Patient1	local:we	.
+local:process_model	rdfs:subClassOf	local:model	.
+local:using	vn.role:Theme	local:shop2	.
+local:ai_planning	rdfs:subClassOf	local:planning	.
+local:sets_of_damls_descriptions	local:of_daml-sdescriptions	local:sets	.
+local:support	vn.role:Theme	local:damls_process_model	.
+local:techniques_to_automated_composition	local:to_automatedcomposition	local:techniques	.
+local:shop2_process	rdfs:subClassOf	local:process	.
+local:resulting_plans_over_web	local:resultingplans_over	local:web	.
+local:sets_of_damls_descriptions	local:sets_of	local:damls_descriptions	.
+local:using_in_informationrich_context	local:in_information-richcontext	local:using	.
+local:working	vn.role:Actor2	local:process_model	.
+local:support	vn.role:Experiencer	local:application	.
+local:damls_process_model	rdfs:subClassOf	local:process_model	.
+local:automated_composition_of_web_services	local:automatedcomposition_of	local:web_services	.
+local:calculus_semantics	rdfs:subClassOf	local:semantics	.
+local:shop2_process_model	rdfs:subClassOf	local:model	.
+local:situation_calculus	rdfs:subClassOf	local:calculus	.
+local:resulting_plans_over_web	local:over_web	local:resulting_plans	.
+local:plans	vn.role:Experiencer	local:system	.
+local:automated_composition_of_web_services	local:of_webservices	local:automated_composition	.
+local:using	vn.role:Agent	local:we	.
+local:resulting_plans	rdfs:subClassOf	local:plans	.
+local:implemented	vn.role:Theme	local:system	.
+local:humanoriented_context	rdfs:subClassOf	local:context	.
+local:using_in_humanoriented_context	local:using_in	local:humanoriented_context	.
+local:humanoriented_context_of_web_services	local:human-orientedcontext_of	local:web_services	.
+local:discuss	vn.role:Patient2	local:challenges	.
+local:informationrich_context	rdfs:subClassOf	local:context	.
+local:proven	vn.role:Agent	local:we	.
+local:proven	vn.role:Theme	local:correspondence_between_semantics	.
+local:using	vn.role:Recipient	local:informationrich_context_of_web_services	.
+local:humanoriented_context_of_web_services	local:of_webservices	local:humanoriented_context	.
+local:using_in_humanoriented_context	local:in_human-orientedcontext	local:using	.
+local:damls	rdfs:member	local:damls_descriptions	.
+local:automated	rdfs:member	local:automated_composition	.
+local:resulting	vn.role:Theme	local:plans	.
+local:situation_calculus_semantics_of_process_model	local:situationcalculussemantics_of	local:process_model	.
+local:situation_calculus_semantics	rdfs:subClassOf	local:semantics	.
+local:plans	local:AM-MNR	local:completely	.
+local:semantics_of_shop2_process_model	local:semantics_of	local:shop2_process_model	.
+local:situation_calculus_semantics_of_process_model	local:of_processmodel	local:situation_calculus_semantics	.
+local:shop2	rdfs:member	local:shop2_process	.

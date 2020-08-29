@@ -1,0 +1,237 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:web_standards	rdfs:label	"web standards"	.
+
+local:standards	rdfs:label	"standards"	.
+
+local:web	rdfs:label	"web"	.
+
+local:emerging	rdfs:label	"emerging"	.
+
+local:emerging_web_standards	rdfs:label	"emerging web standards"	.
+
+local:promise	rdfs:label	"promise"	.
+
+local:web_services	rdfs:label	"web services"	.
+
+local:services	rdfs:label	"services"	.
+
+local:interoperable_web_services	rdfs:label	"interoperable web services"	.
+
+local:interoperable	rdfs:label	"interoperable"	.
+
+local:interoperable_web	rdfs:label	"interoperable web"	.
+
+local:yet_interoperable	rdfs:label	"yet interoperable"	.
+
+local:heterogeneous_interoperable_web_services	rdfs:label	"heterogeneous interoperable web services"	.
+
+local:network_of_heterogeneous_interoperable_web_services	rdfs:label	"network of heterogeneous interoperable web services"	.
+
+local:network	rdfs:label	"network"	.
+
+local:simplify	rdfs:label	"simplify"	.
+
+local:would	rdfs:label	"would"	.
+
+local:greatly	rdfs:label	"greatly"	.
+
+local:data_integration	rdfs:label	"data integration"	.
+
+local:integration	rdfs:label	"integration"	.
+
+local:many_kinds	rdfs:label	"many kinds"	.
+
+local:kinds	rdfs:label	"kinds"	.
+
+local:many	rdfs:label	"many"	.
+
+local:data	rdfs:label	"data"	.
+
+local:development_of_many_kinds	rdfs:label	"development of many kinds"	.
+
+local:development	rdfs:label	"development"	.
+
+local:many_kinds_of_data_integration	rdfs:label	"many kinds of data integration"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_management	rdfs:label	"knowledge management"	.
+
+local:management	rdfs:label	"management"	.
+
+local:management_applications	rdfs:label	"management applications"	.
+
+local:applications	rdfs:label	"applications"	.
+
+local:knowledge_management_applications	rdfs:label	"knowledge management applications"	.
+
+local:many_kinds_of_knowledge_management_applications	rdfs:label	"many kinds of knowledge management applications"	.
+
+local:unfortunately_vision	rdfs:label	"unfortunately vision"	.
+
+local:vision	rdfs:label	"vision"	.
+
+local:requires	rdfs:label	"requires"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:describe_services	rdfs:label	"describe services"	.
+
+local:semantic_metadata	rdfs:label	"semantic metadata"	.
+
+local:metadata	rdfs:label	"metadata"	.
+
+local:services_describe	rdfs:label	"services describe"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:large	rdfs:label	"large"	.
+
+local:large_amounts	rdfs:label	"large amounts"	.
+
+local:services_describe_services	rdfs:label	"services describe services"	.
+
+local:glue_”	rdfs:label	"glue ”"	.
+
+local:”	rdfs:label	"”"	.
+
+local:amounts	rdfs:label	"amounts"	.
+
+local:glue	rdfs:label	"glue"	.
+
+local:metadata_glue	rdfs:label	"metadata glue"	.
+
+local:semantic_metadata_glue	rdfs:label	"semantic metadata glue"	.
+
+local:describe_with_large_amounts	rdfs:label	"describe with large amounts"	.
+
+local:large_amounts_of_semantic_metadata_glue	rdfs:label	"large amounts of semantic metadata glue"	.
+
+local:explore	rdfs:label	"explore"	.
+
+local:we	rdfs:label	"we"	.
+
+local:semiautomatically	rdfs:label	"semi-automatically"	.
+
+local:semiautomatically_create	rdfs:label	"semi-automatically create"	.
+
+local:such_metadata	rdfs:label	"such metadata"	.
+
+local:create	rdfs:label	"create"	.
+
+local:such	rdfs:label	"such"	.
+
+local:learning_techniques	rdfs:label	"learning techniques"	.
+
+local:techniques	rdfs:label	"techniques"	.
+
+local:machine_learning_techniques	rdfs:label	"machine learning techniques"	.
+
+local:variety_of_machine_learning_techniques	rdfs:label	"variety of machine learning techniques"	.
+
+local:variety	rdfs:label	"variety"	.
+
+local:learning	rdfs:label	"learning"	.
+
+local:machine	rdfs:label	"machine"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:machine_learning_techniques	owl:sameAs	cso:machine_learning_techniques	.
+local:semantic_metadata	owl:sameAs	cso:semantic_metadata	.
+local:knowledge_management	owl:sameAs	cso:knowledge_management	.
+cso:knowledge_management	rdfs:label	"knowledge management"	.
+cso:semantic_metadata	rdfs:label	"semantic metadata"	.
+cso:data_integration	rdfs:label	"data integration"	.
+local:data_integration	owl:sameAs	cso:data_integration	.
+cso:machine_learning_techniques	rdfs:label	"machine learning techniques"	.
+
+#### Relations ####
+
+local:promise	vn.role:Recipient	local:network_of_heterogeneous_interoperable_web_services	.
+local:many_kinds	rdfs:subClassOf	local:kinds	.
+local:describe	vn.role:Agent	local:services	.
+local:glue_”	rdfs:subClassOf	local:”	.
+local:glue	rdfs:member	local:glue_”	.
+local:services_describe	rdfs:member	local:services_describe_services	.
+local:describe_with_large_amounts	local:with_largeamounts	local:describe	.
+local:create	local:AM-MNR	local:semiautomatically	.
+local:large	rdfs:member	local:large_amounts	.
+local:describe	local:AM-MNR	local:large_amounts_of_semantic_metadata_glue	.
+local:many_kinds_of_data_integration	local:manykinds_of	local:data_integration	.
+local:emerging_web_standards	rdfs:subClassOf	local:web_standards	.
+local:simplify	local:AM-MOD	local:would	.
+local:knowledge_management_applications	rdfs:subClassOf	local:management_applications	.
+local:heterogeneous_interoperable_web_services	rdfs:subClassOf	local:interoperable_web_services	.
+local:interoperable	rdfs:member	local:interoperable_web	.
+local:many	rdfs:member	local:many_kinds	.
+local:learning_techniques	rdfs:subClassOf	local:techniques	.
+local:create	vn.role:Agent	local:variety	.
+local:network_of_heterogeneous_interoperable_web_services	local:of_heterogeneousinteroperablewebservices	local:network	.
+local:simplify	vn.role:Patient	local:development_of_many_kinds	.
+local:interoperable_web_services	rdfs:subClassOf	local:web_services	.
+local:development_of_many_kinds	local:development_of	local:many_kinds	.
+local:describe_with_large_amounts	local:describe_with	local:large_amounts	.
+local:knowledge_management	rdfs:member	local:knowledge_management_applications	.
+local:explore	vn.role:Agent	local:we	.
+local:learning	vn.role:Agent	local:techniques	.
+local:explore	vn.role:Location	local:variety_of_machine_learning_techniques	.
+local:management_applications	rdfs:subClassOf	local:applications	.
+local:web	rdfs:member	local:web_services	.
+local:large_amounts	rdfs:subClassOf	local:amounts	.
+local:knowledge	rdfs:member	local:knowledge_management	.
+local:semantic_metadata	rdfs:subClassOf	local:metadata	.
+local:development_of_many_kinds	local:of_manykinds	local:development	.
+local:semiautomatically_create	rdfs:subClassOf	local:create	.
+local:such_metadata	rdfs:subClassOf	local:metadata	.
+local:variety_of_machine_learning_techniques	local:of_machinelearningtechniques	local:variety	.
+local:create	vn.role:Product	local:metadata	.
+local:requires	vn.role:Patient	local:describe_with_large_amounts	.
+local:large_amounts_of_semantic_metadata_glue	local:of_semanticmetadataglue	local:large_amounts	.
+local:simplify	local:AM-MNR	local:greatly	.
+local:interoperable_web	rdfs:subClassOf	local:web	.
+local:data_integration	rdfs:subClassOf	local:integration	.
+local:simplify	vn.role:Agent	local:web_services	.
+local:interoperable_web_services	rdfs:subClassOf	local:services	.
+local:describe	vn.role:Theme	local:services	.
+local:knowledge_management_applications	rdfs:subClassOf	local:applications	.
+local:management	rdfs:member	local:management_applications	.
+local:interoperable_web	rdfs:member	local:interoperable_web_services	.
+local:many_kinds_of_knowledge_management_applications	local:manykinds_of	local:knowledge_management_applications	.
+local:requires	vn.role:Agent	local:unfortunately_vision	.
+local:promise	vn.role:Agent	local:emerging_web_standards	.
+local:network_of_heterogeneous_interoperable_web_services	local:network_of	local:heterogeneous_interoperable_web_services	.
+local:emerging	vn.role:Theme	local:web_standards	.
+local:knowledge_management	rdfs:subClassOf	local:management	.
+local:services	rdfs:member	local:services_describe	.
+local:semantic_metadata_glue	rdfs:subClassOf	local:metadata_glue	.
+local:semiautomatically	rdfs:member	local:semiautomatically_create	.
+local:machine_learning_techniques	rdfs:subClassOf	local:learning_techniques	.
+local:metadata_glue	rdfs:subClassOf	local:glue	.
+local:such	rdfs:member	local:such_metadata	.
+local:semantic	rdfs:member	local:semantic_metadata	.
+local:services_describe_services	rdfs:subClassOf	local:services	.
+local:web_standards	rdfs:subClassOf	local:standards	.
+local:services_describe	rdfs:subClassOf	local:describe	.
+local:describe	rdfs:member	local:describe_services	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:variety_of_machine_learning_techniques	local:variety_of	local:machine_learning_techniques	.
+local:many_kinds_of_data_integration	local:of_dataintegration	local:many_kinds	.
+local:unfortunately_vision	rdfs:subClassOf	local:vision	.
+local:large_amounts_of_semantic_metadata_glue	local:largeamounts_of	local:semantic_metadata_glue	.
+local:many_kinds_of_knowledge_management_applications	local:of_knowledgemanagementapplications	local:many_kinds	.
+local:yet_interoperable	rdfs:subClassOf	local:interoperable	.
+local:data	rdfs:member	local:data_integration	.
+local:describe_services	rdfs:subClassOf	local:services	.
+local:learning	vn.role:Agent	local:machine	.
+local:web	rdfs:member	local:web_standards	.
