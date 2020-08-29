@@ -1,0 +1,119 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:complement	rdfs:label	"complement"	.
+
+local:we	rdfs:label	"we"	.
+
+local:rdf_semantics	rdfs:label	"rdf semantics"	.
+
+local:semantics	rdfs:label	"semantics"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:rdf_semantics_specification	rdfs:label	"rdf semantics specification"	.
+
+local:semantics_specification	rdfs:label	"semantics specification"	.
+
+local:specification	rdfs:label	"specification"	.
+
+local:rdf_semantics_specification_of_w3c	rdfs:label	"rdf semantics specification of w3c"	.
+
+local:w3c	rdfs:label	"w3c"	.
+
+local:rdfs	rdfs:label	"rdfs"	.
+
+local:rdfs_entailment	rdfs:label	"rdfs entailment"	.
+
+local:entailment	rdfs:label	"entailment"	.
+
+local:decidability_of_rdfs_entailment	rdfs:label	"decidability of rdfs entailment"	.
+
+local:decidability	rdfs:label	"decidability"	.
+
+local:proving	rdfs:label	"proving"	.
+
+local:extended	rdfs:label	"extended"	.
+
+local:datatypes	rdfs:label	"datatypes"	.
+
+local:show	rdfs:label	"show"	.
+
+local:completeness_of_entailment	rdfs:label	"completeness of entailment"	.
+
+local:completeness	rdfs:label	"completeness"	.
+
+local:completeness_of_entailment_for_rdfs	rdfs:label	"completeness of entailment for rdfs"	.
+
+local:propertyrelated	rdfs:label	"property-related"	.
+
+local:propertyrelated_subset	rdfs:label	"property-related subset"	.
+
+local:subset	rdfs:label	"subset"	.
+
+local:propertyrelated_subset_of_owl	rdfs:label	"property-related subset of owl"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:furthermore	rdfs:label	"furthermore"	.
+
+local:decidability_of_entailment	rdfs:label	"decidability of entailment"	.
+
+local:decidability_of_entailment_for_rdfs	rdfs:label	"decidability of entailment for rdfs"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:semantics	rdfs:label	"semantics"	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:rdf	rdfs:label	"rdf"	.
+local:semantics	owl:sameAs	cso:semantics	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:semantics_specification	rdfs:subClassOf	local:specification	.
+local:rdfs_entailment	rdfs:subClassOf	local:entailment	.
+local:decidability_of_entailment_for_rdfs	local:decidabilityofentailment_for	local:rdfs	.
+local:complement	local:AM-MNR	local:proving	.
+local:extended	vn.role:Recipient	local:datatypes	.
+local:proving	vn.role:Theme	local:decidability_of_rdfs_entailment	.
+local:decidability_of_rdfs_entailment	local:decidability_of	local:rdfs_entailment	.
+local:completeness_of_entailment_for_rdfs	local:for_rdfs	local:completeness_of_entailment	.
+local:complement	vn.role:indirect_object	local:rdf_semantics_specification_of_w3c	.
+local:proving	vn.role:Agent	local:we	.
+local:propertyrelated_subset	rdfs:subClassOf	local:subset	.
+local:propertyrelated_subset_of_owl	local:property-relatedsubset_of	local:owl	.
+local:rdf_semantics_specification_of_w3c	local:of_w3c	local:rdf_semantics_specification	.
+local:propertyrelated	rdfs:member	local:propertyrelated_subset	.
+local:rdf_semantics_specification	rdfs:subClassOf	local:specification	.
+local:completeness_of_entailment_for_rdfs	local:completenessofentailment_for	local:rdfs	.
+local:extended	vn.role:Recipient	local:propertyrelated_subset_of_owl	.
+local:decidability_of_entailment	local:decidability_of	local:entailment	.
+local:rdf_semantics	rdfs:subClassOf	local:semantics	.
+local:show	vn.role:Theme	local:decidability_of_entailment_for_rdfs	.
+local:complement	vn.role:Predicate	local:we	.
+local:rdf	rdfs:member	local:rdf_semantics	.
+local:rdf_semantics_specification	rdfs:subClassOf	local:semantics_specification	.
+local:decidability_of_rdfs_entailment	local:of_rdfsentailment	local:decidability	.
+local:completeness_of_entailment	local:completeness_of	local:entailment	.
+local:rdf_semantics_specification_of_w3c	local:rdfsemanticsspecification_of	local:w3c	.
+local:propertyrelated_subset_of_owl	local:of_owl	local:propertyrelated_subset	.
+local:show	vn.role:Predicate	local:furthermore	.
+local:completeness_of_entailment	local:of_entailment	local:completeness	.
+local:extended	vn.role:Theme	local:rdfs	.
+local:show	vn.role:Agent	local:we	.
+local:decidability_of_entailment	local:of_entailment	local:decidability	.
+local:decidability_of_entailment_for_rdfs	local:for_rdfs	local:decidability_of_entailment	.
+local:rdf_semantics	rdfs:member	local:rdf_semantics_specification	.
+local:semantics	rdfs:member	local:semantics_specification	.
+local:rdfs	rdfs:member	local:rdfs_entailment	.
+local:show	vn.role:Theme	local:completeness_of_entailment_for_rdfs	.

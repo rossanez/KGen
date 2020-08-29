@@ -1,0 +1,172 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:introduces	rdfs:label	"introduces"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:umlbased_notation	rdfs:label	"uml-based notation"	.
+
+local:notation	rdfs:label	"notation"	.
+
+local:umlbased	rdfs:label	"uml-based"	.
+
+local:visual_umlbased_notation	rdfs:label	"visual uml-based notation"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:owl_ontologies	rdfs:label	"owl ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:language	rdfs:label	"language"	.
+
+local:language_primitives	rdfs:label	"language primitives"	.
+
+local:primitives	rdfs:label	"primitives"	.
+
+local:offered	rdfs:label	"offered"	.
+
+local:owl_dl	rdfs:label	"owl dl"	.
+
+local:dl	rdfs:label	"dl"	.
+
+local:standard	rdfs:label	"standard"	.
+
+local:standard_mof2	rdfs:label	"standard mof2"	.
+
+local:standard_mof2_compliant_metamodel	rdfs:label	"standard mof2 compliant metamodel"	.
+
+local:metamodel	rdfs:label	"metamodel"	.
+
+local:mof2_compliant	rdfs:label	"mof2 compliant"	.
+
+local:compliant	rdfs:label	"compliant"	.
+
+local:mof2_compliant_metamodel	rdfs:label	"mof2 compliant metamodel"	.
+
+local:mof2	rdfs:label	"mof2"	.
+
+local:standard_mof2_compliant	rdfs:label	"standard mof2 compliant"	.
+
+local:compliant_metamodel	rdfs:label	"compliant metamodel"	.
+
+local:captures	rdfs:label	"captures"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:we	rdfs:label	"we"	.
+
+local:invent	rdfs:label	"invent"	.
+
+local:uml_profile	rdfs:label	"uml profile"	.
+
+local:profile	rdfs:label	"profile"	.
+
+local:uml	rdfs:label	"uml"	.
+
+local:allows	rdfs:label	"allows"	.
+
+local:model_owl	rdfs:label	"model owl"	.
+
+local:model_owl_ontologies	rdfs:label	"model owl ontologies"	.
+
+local:model	rdfs:label	"model"	.
+
+local:visually_model	rdfs:label	"visually model"	.
+
+local:visually_model_owl_ontologies	rdfs:label	"visually model owl ontologies"	.
+
+local:visually	rdfs:label	"visually"	.
+
+local:visually_model_owl	rdfs:label	"visually model owl"	.
+
+local:using	rdfs:label	"using"	.
+
+local:uml_tools	rdfs:label	"uml tools"	.
+
+local:tools	rdfs:label	"tools"	.
+
+local:this	rdfs:label	"this"	.
+
+local:develop	rdfs:label	"develop"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:owl	owl:sameAs	cso:owl	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:uml	owl:sameAs	cso:uml	.
+cso:uml_profile	rdfs:label	"uml profile"	.
+cso:uml	rdfs:label	"uml"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:uml_profile	owl:sameAs	cso:uml_profile	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:visually	rdfs:member	local:visually_model	.
+local:allows	vn.role:Theme	local:develop	.
+local:umlbased	rdfs:member	local:umlbased_notation	.
+local:mof2_compliant_metamodel	rdfs:subClassOf	local:compliant_metamodel	.
+local:model_owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:owl_dl	rdfs:subClassOf	local:dl	.
+local:model_owl	rdfs:subClassOf	local:owl	.
+local:introduces	vn.role:Patient1	local:owl_ontologies	.
+local:owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:visually_model_owl	rdfs:subClassOf	local:owl	.
+local:uml_profile	rdfs:subClassOf	local:profile	.
+local:standard_mof2_compliant_metamodel	rdfs:subClassOf	local:mof2_compliant_metamodel	.
+local:develop	vn.role:Location	local:ontologies	.
+local:model	rdfs:member	local:model_owl	.
+local:umlbased_notation	rdfs:subClassOf	local:notation	.
+local:standard_mof2	rdfs:subClassOf	local:mof2	.
+local:standard_mof2_compliant	rdfs:member	local:standard_mof2_compliant_metamodel	.
+local:invent	vn.role:Product	local:uml_profile	.
+local:introduces	vn.role:Patient	local:visual_umlbased_notation	.
+local:allows	vn.role:Agent	local:uml_profile	.
+local:uml	rdfs:member	local:uml_tools	.
+local:allows	vn.role:Agent	local:this	.
+local:captures	vn.role:Agent	local:standard_mof2_compliant_metamodel	.
+local:visually_model_owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:using	vn.role:Agent	local:ontologies	.
+local:mof2_compliant	rdfs:member	local:mof2_compliant_metamodel	.
+local:visually_model_owl	rdfs:member	local:visually_model_owl_ontologies	.
+local:standard	rdfs:member	local:standard_mof2	.
+local:owl	rdfs:member	local:owl_ontologies	.
+local:provide	vn.role:Agent	local:standard_mof2_compliant_metamodel	.
+local:language	rdfs:member	local:language_primitives	.
+local:invent	vn.role:Agent	local:we	.
+local:using	vn.role:Theme	local:uml_tools	.
+local:visually_model	rdfs:member	local:visually_model_owl	.
+local:visual_umlbased_notation	rdfs:subClassOf	local:umlbased_notation	.
+local:standard_mof2_compliant_metamodel	rdfs:subClassOf	local:metamodel	.
+local:visually_model	rdfs:subClassOf	local:model	.
+local:visually_model_owl_ontologies	rdfs:subClassOf	local:model_owl_ontologies	.
+local:provide	vn.role:Recipient	local:we	.
+local:owl	rdfs:member	local:owl_dl	.
+local:model_owl_ontologies	rdfs:subClassOf	local:owl_ontologies	.
+local:allows	vn.role:Theme	local:visually_model_owl_ontologies	.
+local:offered	vn.role:Theme	local:language_primitives	.
+local:offered	vn.role:Agent	local:owl_dl	.
+local:standard_mof2_compliant	rdfs:subClassOf	local:compliant	.
+local:standard_mof2	rdfs:member	local:standard_mof2_compliant	.
+local:compliant_metamodel	rdfs:subClassOf	local:metamodel	.
+local:captures	vn.role:Theme	local:language_primitives	.
+local:uml	rdfs:member	local:uml_profile	.
+local:mof2_compliant	rdfs:subClassOf	local:compliant	.
+local:model_owl	rdfs:member	local:model_owl_ontologies	.
+local:allows	local:AM-LOC	local:notation	.
+local:introduces	vn.role:Agent	local:paper	.
+local:mof2	rdfs:member	local:mof2_compliant	.
+local:language_primitives	rdfs:subClassOf	local:primitives	.
+local:compliant	rdfs:member	local:compliant_metamodel	.
+local:uml_tools	rdfs:subClassOf	local:tools	.
+local:mof2_compliant_metamodel	rdfs:subClassOf	local:metamodel	.

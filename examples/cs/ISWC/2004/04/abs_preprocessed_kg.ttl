@@ -1,0 +1,123 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:simple	rdfs:label	"simple"	.
+
+local:simple_examples	rdfs:label	"simple examples"	.
+
+local:examples	rdfs:label	"examples"	.
+
+local:understood	rdfs:label	"understood"	.
+
+local:can	rdfs:label	"can"	.
+
+local:intuitively	rdfs:label	"intuitively"	.
+
+local:complex_cases	rdfs:label	"complex cases"	.
+
+local:cases	rdfs:label	"cases"	.
+
+local:central_notion	rdfs:label	"central notion"	.
+
+local:notion	rdfs:label	"notion"	.
+
+local:more_complex_cases	rdfs:label	"more complex cases"	.
+
+local:complex	rdfs:label	"complex"	.
+
+local:more_complex	rdfs:label	"more complex"	.
+
+local:central	rdfs:label	"central"	.
+
+local:more	rdfs:label	"more"	.
+
+local:particularly_regarding	rdfs:label	"particularly regarding"	.
+
+local:regarding	rdfs:label	"regarding"	.
+
+local:well_scale	rdfs:label	"well scale"	.
+
+local:scale	rdfs:label	"scale"	.
+
+local:not_well_scale	rdfs:label	"not well scale"	.
+
+local:does_not_well_scale	rdfs:label	"does not well scale"	.
+
+local:labeled_graphs	rdfs:label	"labeled graphs"	.
+
+local:graphs	rdfs:label	"graphs"	.
+
+local:directed_labeled_graphs	rdfs:label	"directed labeled graphs"	.
+
+local:does_not_well_scale_for_more_complex_cases	rdfs:label	"does not well scale for more complex cases"	.
+
+local:central_notion_of_connectivity	rdfs:label	"central notion of connectivity"	.
+
+local:connectivity	rdfs:label	"connectivity"	.
+
+local:connectivity_of_resources	rdfs:label	"connectivity of resources"	.
+
+local:resources	rdfs:label	"resources"	.
+
+local:directed	rdfs:label	"directed"	.
+
+local:labeled	rdfs:label	"labeled"	.
+
+local:representation	rdfs:label	"representation"	.
+
+local:graphs_representation	rdfs:label	"graphs representation"	.
+
+local:not	rdfs:label	"not"	.
+
+local:well	rdfs:label	"well"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+
+#### Relations ####
+
+local:understood	local:AM-MNR	local:intuitively	.
+local:understood	local:AM-TMP	local:does_not_well_scale_for_more_complex_cases	.
+local:particularly_regarding	rdfs:subClassOf	local:regarding	.
+local:understood	local:AM-MOD	local:can	.
+local:does_not_well_scale_for_more_complex_cases	local:doesnotwellscale_for	local:more_complex_cases	.
+local:well_scale	rdfs:subClassOf	local:scale	.
+local:directed	vn.role:Beneficiary	local:does_not_well_scale_for_more_complex_cases	.
+local:more_complex	rdfs:subClassOf	local:complex	.
+local:scale	local:AM-MNR	local:particularly_regarding	.
+local:central_notion_of_connectivity	local:of_connectivity	local:central_notion	.
+local:more_complex	rdfs:member	local:more_complex_cases	.
+local:central	rdfs:member	local:central_notion	.
+local:simple_examples	rdfs:subClassOf	local:examples	.
+local:understood	vn.role:Proposition	local:simple_examples	.
+local:does_not_well_scale_for_more_complex_cases	local:for_morecomplexcases	local:does_not_well_scale	.
+local:labeled_graphs	rdfs:subClassOf	local:graphs	.
+local:scale	local:AM-MNR	local:well	.
+local:understood	local:AM-ADV	local:simple_examples	.
+local:connectivity_of_resources	local:of_resources	local:connectivity	.
+local:scale	local:AM-NEG	local:not	.
+local:central_notion_of_connectivity	local:centralnotion_of	local:connectivity	.
+local:scale	vn.role:Source	local:complex_cases	.
+local:labeled	vn.role:Theme	local:graphs	.
+local:not_well_scale	rdfs:subClassOf	local:well_scale	.
+local:connectivity_of_resources	local:connectivity_of	local:resources	.
+local:more	rdfs:member	local:more_complex	.
+local:graphs_representation	rdfs:subClassOf	local:representation	.
+local:complex	rdfs:member	local:complex_cases	.
+local:complex_cases	rdfs:subClassOf	local:cases	.
+local:does_not_well_scale	rdfs:subClassOf	local:not_well_scale	.
+local:central_notion	rdfs:subClassOf	local:notion	.
+local:directed_labeled_graphs	rdfs:subClassOf	local:labeled_graphs	.
+local:labeled	vn.role:Destination	local:representation	.
+local:more_complex_cases	rdfs:subClassOf	local:complex_cases	.
+local:scale	vn.role:Agent	local:graphs_representation	.
+local:simple	rdfs:member	local:simple_examples	.
+local:more_complex_cases	rdfs:subClassOf	local:cases	.

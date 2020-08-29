@@ -1,0 +1,190 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:description_logic	rdfs:label	"description logic"	.
+
+local:logic	rdfs:label	"logic"	.
+
+local:description	rdfs:label	"description"	.
+
+local:corresponds	rdfs:label	"corresponds"	.
+
+local:owl	rdfs:label	"owl"	.
+
+local:designed	rdfs:label	"designed"	.
+
+local:experiments	rdfs:label	"experiments"	.
+
+local:classical_firstorder_predicate_logic	rdfs:label	"classical first-order predicate logic"	.
+
+local:classical_firstorder_predicate	rdfs:label	"classical first-order predicate"	.
+
+local:firstorder	rdfs:label	"first-order"	.
+
+local:firstorder_predicate	rdfs:label	"first-order predicate"	.
+
+local:predicate	rdfs:label	"predicate"	.
+
+local:predicate_logic	rdfs:label	"predicate logic"	.
+
+local:firstorder_predicate_logic	rdfs:label	"first-order predicate logic"	.
+
+local:classical_firstorder	rdfs:label	"classical first-order"	.
+
+local:firstorder_predicate_logic_provers	rdfs:label	"first-order predicate logic provers"	.
+
+local:provers	rdfs:label	"provers"	.
+
+local:generalpurpose	rdfs:label	"general-purpose"	.
+
+local:generalpurpose_classical	rdfs:label	"general-purpose classical"	.
+
+local:classical	rdfs:label	"classical"	.
+
+local:generalpurpose_classical_firstorder	rdfs:label	"general-purpose classical first-order"	.
+
+local:generalpurpose_classical_firstorder_predicate	rdfs:label	"general-purpose classical first-order predicate"	.
+
+local:generalpurpose_classical_firstorder_predicate_logic_provers	rdfs:label	"general-purpose classical first-order predicate logic provers"	.
+
+local:generalpurpose_classical_firstorder_predicate_logic	rdfs:label	"general-purpose classical first-order predicate logic"	.
+
+local:classical_firstorder_predicate_logic_provers	rdfs:label	"classical first-order predicate logic provers"	.
+
+local:predicate_logic_provers	rdfs:label	"predicate logic provers"	.
+
+local:logic_provers	rdfs:label	"logic provers"	.
+
+local:existing_generalpurpose_classical_firstorder_predicate_logic_provers	rdfs:label	"existing general-purpose classical first-order predicate logic provers"	.
+
+local:explore	rdfs:label	"explore"	.
+
+local:reason_with_owl	rdfs:label	"reason with owl"	.
+
+local:reason	rdfs:label	"reason"	.
+
+local:feasibility	rdfs:label	"feasibility"	.
+
+local:using	rdfs:label	"using"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:extend	rdfs:label	"extend"	.
+
+local:we	rdfs:label	"we"	.
+
+local:also	rdfs:label	"also"	.
+
+local:rule_language	rdfs:label	"rule language"	.
+
+local:rule_language_extension	rdfs:label	"rule language extension"	.
+
+local:language_extension	rdfs:label	"language extension"	.
+
+local:extension	rdfs:label	"extension"	.
+
+local:rule	rdfs:label	"rule"	.
+
+local:language	rdfs:label	"language"	.
+
+local:proposed_rule_language_extension	rdfs:label	"proposed rule language extension"	.
+
+local:approach_to_proposed_rule_language_extension	rdfs:label	"approach to proposed rule language extension"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:proposed_rule_language_extension_to_owl	rdfs:label	"proposed rule language extension to owl"	.
+
+local:approach_to_swrl	rdfs:label	"approach to swrl"	.
+
+local:swrl	rdfs:label	"swrl"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:description_logic	owl:sameAs	cso:description_logic	.
+cso:swrl	rdfs:label	"swrl"	.
+cso:description_logic	rdfs:label	"description logic"	.
+local:owl	owl:sameAs	cso:owl	.
+local:swrl	owl:sameAs	cso:swrl	.
+cso:owl	rdfs:label	"owl"	.
+
+#### Relations ####
+
+local:classical_firstorder	rdfs:member	local:classical_firstorder_predicate	.
+local:generalpurpose_classical	rdfs:subClassOf	local:classical	.
+local:classical_firstorder_predicate_logic	rdfs:member	local:classical_firstorder_predicate_logic_provers	.
+local:explore	vn.role:Agent	local:experiments	.
+local:approach_to_proposed_rule_language_extension	local:to_proposedrulelanguageextension	local:approach	.
+local:rule_language	rdfs:member	local:rule_language_extension	.
+local:classical_firstorder_predicate	rdfs:member	local:classical_firstorder_predicate_logic	.
+local:firstorder	rdfs:member	local:firstorder_predicate	.
+local:generalpurpose_classical_firstorder	rdfs:member	local:generalpurpose_classical_firstorder_predicate	.
+local:predicate_logic	rdfs:member	local:predicate_logic_provers	.
+local:approach_to_proposed_rule_language_extension	local:approach_to	local:proposed_rule_language_extension	.
+local:classical_firstorder_predicate_logic	rdfs:subClassOf	local:logic	.
+local:classical_firstorder	rdfs:subClassOf	local:firstorder	.
+local:rule_language	rdfs:subClassOf	local:language	.
+local:approach	vn.role:object	local:we	.
+local:explore	vn.role:Location	local:feasibility	.
+local:generalpurpose_classical_firstorder_predicate_logic_provers	rdfs:subClassOf	local:provers	.
+local:generalpurpose_classical_firstorder_predicate_logic_provers	rdfs:subClassOf	local:classical_firstorder_predicate_logic_provers	.
+local:generalpurpose_classical_firstorder_predicate	rdfs:member	local:generalpurpose_classical_firstorder_predicate_logic	.
+local:corresponds	vn.role:Actor1	local:owl	.
+local:classical_firstorder_predicate_logic_provers	rdfs:subClassOf	local:provers	.
+local:classical_firstorder_predicate	rdfs:subClassOf	local:predicate	.
+local:firstorder_predicate_logic	rdfs:member	local:firstorder_predicate_logic_provers	.
+local:extend	vn.role:Agent	local:we	.
+local:generalpurpose_classical_firstorder_predicate_logic	rdfs:member	local:generalpurpose_classical_firstorder_predicate_logic_provers	.
+local:designed	local:AM-PNC	local:reason_with_owl	.
+local:proposed_rule_language_extension_to_owl	local:proposedrulelanguageextension_to	local:owl	.
+local:language_extension	rdfs:subClassOf	local:extension	.
+local:logic	rdfs:member	local:logic_provers	.
+local:approach	vn.role:indirect_object	local:proposed_rule_language_extension_to_owl	.
+local:predicate	rdfs:member	local:predicate_logic	.
+local:rule_language_extension	rdfs:subClassOf	local:extension	.
+local:firstorder_predicate_logic_provers	rdfs:subClassOf	local:provers	.
+local:language	rdfs:member	local:language_extension	.
+local:generalpurpose	rdfs:member	local:generalpurpose_classical	.
+local:classical	rdfs:member	local:classical_firstorder	.
+local:using	vn.role:Theme	local:existing_generalpurpose_classical_firstorder_predicate_logic_provers	.
+local:proposed_rule_language_extension_to_owl	local:to_owl	local:proposed_rule_language_extension	.
+local:extend	vn.role:Theme	local:approach_to_swrl	.
+local:existing_generalpurpose_classical_firstorder_predicate_logic_provers	rdfs:subClassOf	local:generalpurpose_classical_firstorder_predicate_logic_provers	.
+local:extend	local:AM-DIS	local:also	.
+local:rule	rdfs:member	local:rule_language	.
+local:firstorder_predicate	rdfs:subClassOf	local:predicate	.
+local:firstorder_predicate_logic	rdfs:subClassOf	local:logic	.
+local:approach_to_swrl	local:to_swrl	local:approach	.
+local:generalpurpose_classical_firstorder	rdfs:subClassOf	local:firstorder	.
+local:designed	vn.role:Product	local:experiments	.
+local:approach_to_swrl	local:approach_to	local:swrl	.
+local:reason_with_owl	local:reason_with	local:owl	.
+local:using	vn.role:Recipient	local:reason_with_owl	.
+local:proposed_rule_language_extension	rdfs:subClassOf	local:rule_language_extension	.
+local:firstorder_predicate	rdfs:member	local:firstorder_predicate_logic	.
+local:firstorder_predicate_logic_provers	rdfs:subClassOf	local:predicate_logic_provers	.
+local:logic_provers	rdfs:subClassOf	local:provers	.
+local:predicate_logic	rdfs:subClassOf	local:logic	.
+local:classical_firstorder_predicate_logic_provers	rdfs:subClassOf	local:firstorder_predicate_logic_provers	.
+local:reason_with_owl	local:with_owl	local:reason	.
+local:generalpurpose_classical	rdfs:member	local:generalpurpose_classical_firstorder	.
+local:approach	vn.role:indirect_object	local:swrl	.
+local:description_logic	rdfs:subClassOf	local:logic	.
+local:generalpurpose_classical_firstorder_predicate_logic	rdfs:subClassOf	local:logic	.
+local:designed	vn.role:Beneficiary	local:explore	.
+local:rule_language_extension	rdfs:subClassOf	local:language_extension	.
+local:description	rdfs:member	local:description_logic	.
+local:corresponds	vn.role:Actor2	local:description_logic	.
+local:extend	vn.role:Theme	local:approach_to_proposed_rule_language_extension	.
+local:predicate_logic_provers	rdfs:subClassOf	local:provers	.
+local:generalpurpose_classical_firstorder_predicate	rdfs:subClassOf	local:predicate	.
+local:existing	vn.role:Location	local:generalpurpose_classical_firstorder_predicate_logic_provers	.
+local:predicate_logic_provers	rdfs:subClassOf	local:logic_provers	.

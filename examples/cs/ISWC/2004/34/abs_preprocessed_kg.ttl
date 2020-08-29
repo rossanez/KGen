@@ -1,0 +1,190 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:purpose_of_paper	rdfs:label	"purpose of paper"	.
+
+local:purpose	rdfs:label	"purpose"	.
+
+local:paper	rdfs:label	"paper"	.
+
+local:provide	rdfs:label	"provide"	.
+
+local:rigorous_comparison	rdfs:label	"rigorous comparison"	.
+
+local:comparison	rdfs:label	"comparison"	.
+
+local:query_languages	rdfs:label	"query languages"	.
+
+local:languages	rdfs:label	"languages"	.
+
+local:rigorous	rdfs:label	"rigorous"	.
+
+local:query	rdfs:label	"query"	.
+
+local:six_query_languages	rdfs:label	"six query languages"	.
+
+local:rigorous_comparison_of_six_query_languages	rdfs:label	"rigorous comparison of six query languages"	.
+
+local:six_query_languages_for_rdf	rdfs:label	"six query languages for rdf"	.
+
+local:rdf	rdfs:label	"rdf"	.
+
+local:categorize	rdfs:label	"categorize"	.
+
+local:we	rdfs:label	"we"	.
+
+local:rdf_query	rdfs:label	"rdf query"	.
+
+local:rdf_query_language	rdfs:label	"rdf query language"	.
+
+local:individual_languages	rdfs:label	"individual languages"	.
+
+local:individual	rdfs:label	"individual"	.
+
+local:query_language	rdfs:label	"query language"	.
+
+local:language	rdfs:label	"language"	.
+
+local:should_provide	rdfs:label	"should provide"	.
+
+local:individual_languages_along_features	rdfs:label	"individual languages along features"	.
+
+local:features	rdfs:label	"features"	.
+
+local:should	rdfs:label	"should"	.
+
+local:outline	rdfs:label	"outline"	.
+
+local:should_compare	rdfs:label	"should compare"	.
+
+local:compare	rdfs:label	"compare"	.
+
+local:conclude	rdfs:label	"conclude"	.
+
+local:particular_query	rdfs:label	"particular query"	.
+
+local:particular_query_languages	rdfs:label	"particular query languages"	.
+
+local:particular	rdfs:label	"particular"	.
+
+local:comparison_of_expressiveness	rdfs:label	"comparison of expressiveness"	.
+
+local:expressiveness	rdfs:label	"expressiveness"	.
+
+local:expressiveness_of_particular_query_languages	rdfs:label	"expressiveness of particular query languages"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:several_practical_usage	rdfs:label	"several practical usage"	.
+
+local:usage	rdfs:label	"usage"	.
+
+local:usage_examples	rdfs:label	"usage examples"	.
+
+local:examples	rdfs:label	"examples"	.
+
+local:several_practical_usage_examples	rdfs:label	"several practical usage examples"	.
+
+local:practical_usage	rdfs:label	"practical usage"	.
+
+local:practical_usage_examples	rdfs:label	"practical usage examples"	.
+
+local:several	rdfs:label	"several"	.
+
+local:several_practical	rdfs:label	"several practical"	.
+
+local:practical	rdfs:label	"practical"	.
+
+local:rdf_queries	rdfs:label	"rdf queries"	.
+
+local:queries	rdfs:label	"queries"	.
+
+local:several_practical_usage_examples_for_rdf_queries	rdfs:label	"several practical usage examples for rdf queries"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:query_languages	rdfs:label	"query language"	.
+local:query_languages	owl:sameAs	cso:query_languages	.
+cso:query_languages	rdfs:label	"query languages"	.
+cso:rdf	rdfs:label	"rdf"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:query_language	owl:sameAs	cso:query_languages	.
+
+#### Relations ####
+
+local:several_practical_usage	rdfs:subClassOf	local:usage	.
+local:compare	vn.role:Agent	local:rdf_query_language	.
+local:provide	vn.role:Agent	local:rigorous_comparison_of_six_query_languages	.
+local:particular_query_languages	rdfs:subClassOf	local:languages	.
+local:several_practical_usage_examples_for_rdf_queries	local:severalpracticalusageexamples_for	local:rdf_queries	.
+local:expressiveness_of_particular_query_languages	local:expressiveness_of	local:particular_query_languages	.
+local:individual_languages	rdfs:subClassOf	local:languages	.
+local:individual_languages_along_features	local:individuallanguages_along	local:features	.
+local:particular_query	rdfs:subClassOf	local:query	.
+local:six_query_languages	rdfs:subClassOf	local:query_languages	.
+local:purpose_of_paper	local:purpose_of	local:paper	.
+local:rdf_query_language	rdfs:subClassOf	local:language	.
+local:several_practical_usage	rdfs:member	local:several_practical_usage_examples	.
+local:rdf	rdfs:member	local:rdf_query	.
+local:practical_usage	rdfs:subClassOf	local:usage	.
+local:rdf_query	rdfs:member	local:rdf_query_language	.
+local:rdf	rdfs:member	local:rdf_queries	.
+local:several_practical_usage_examples_for_rdf_queries	local:for_rdfqueries	local:several_practical_usage_examples	.
+local:rdf_query	rdfs:subClassOf	local:query	.
+local:categorize	vn.role:Patient	local:features	.
+local:outline	vn.role:Agent	local:we	.
+local:comparison_of_expressiveness	local:comparison_of	local:expressiveness	.
+local:practical_usage_examples	rdfs:subClassOf	local:examples	.
+local:rigorous_comparison	rdfs:subClassOf	local:comparison	.
+local:individual	rdfs:member	local:individual_languages	.
+local:conclude	vn.role:Agent	local:we	.
+local:practical_usage_examples	rdfs:subClassOf	local:usage_examples	.
+local:provide	vn.role:Agent	local:individual_languages_along_features	.
+local:practical_usage	rdfs:member	local:practical_usage_examples	.
+local:purpose_of_paper	local:of_paper	local:purpose	.
+local:categorize	vn.role:Agent	local:we	.
+local:provide	vn.role:Recipient	local:rdf_query_language	.
+local:particular_query_languages	rdfs:subClassOf	local:query_languages	.
+local:query_languages	rdfs:subClassOf	local:languages	.
+local:six_query_languages_for_rdf	local:for_rdf	local:six_query_languages	.
+local:conclude	vn.role:Theme	local:comparison_of_expressiveness	.
+local:usage	rdfs:member	local:usage_examples	.
+local:several	rdfs:member	local:several_practical	.
+local:should_compare	rdfs:subClassOf	local:compare	.
+local:rigorous	rdfs:member	local:rigorous_comparison	.
+local:describe	vn.role:Agent	local:we	.
+local:rdf_queries	rdfs:subClassOf	local:queries	.
+local:rigorous_comparison_of_six_query_languages	local:rigorouscomparison_of	local:six_query_languages	.
+local:particular_query	rdfs:member	local:particular_query_languages	.
+local:comparison_of_expressiveness	local:of_expressiveness	local:comparison	.
+local:compare	vn.role:Patient2	local:individual_languages	.
+local:query_language	rdfs:subClassOf	local:language	.
+local:should_provide	rdfs:subClassOf	local:provide	.
+local:provide	local:AM-MOD	local:should	.
+local:compare	vn.role:Agent	local:features	.
+local:particular	rdfs:member	local:particular_query	.
+local:describe	vn.role:Theme	local:several_practical_usage_examples_for_rdf_queries	.
+local:compare	local:AM-MOD	local:should	.
+local:query	rdfs:member	local:query_languages	.
+local:outline	vn.role:Theme	local:features	.
+local:rdf_query_language	rdfs:subClassOf	local:query_language	.
+local:individual_languages_along_features	local:along_features	local:individual_languages	.
+local:several_practical_usage_examples	rdfs:subClassOf	local:examples	.
+local:rigorous_comparison_of_six_query_languages	local:of_sixquerylanguages	local:rigorous_comparison	.
+local:several_practical_usage_examples	rdfs:subClassOf	local:practical_usage_examples	.
+local:expressiveness_of_particular_query_languages	local:of_particularquerylanguages	local:expressiveness	.
+local:usage_examples	rdfs:subClassOf	local:examples	.
+local:several_practical	rdfs:subClassOf	local:practical	.
+local:query	rdfs:member	local:query_language	.
+local:practical	rdfs:member	local:practical_usage	.
+local:six_query_languages_for_rdf	local:sixquerylanguages_for	local:rdf	.
+local:provide	vn.role:Recipient	local:purpose_of_paper	.
+local:several_practical	rdfs:member	local:several_practical_usage	.

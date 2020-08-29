@@ -1,0 +1,156 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:owl	rdfs:label	"owl"	.
+
+local:owl_ontologies	rdfs:label	"owl ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:represented	rdfs:label	"represented"	.
+
+local:rdfxml	rdfs:label	"rdfxml"	.
+
+local:web	rdfs:label	"web"	.
+
+local:analysis_of_owl_ontologies	rdfs:label	"analysis of owl ontologies"	.
+
+local:analysis	rdfs:label	"analysis"	.
+
+local:shows	rdfs:label	"shows"	.
+
+local:owl_full	rdfs:label	"owl full"	.
+
+local:full	rdfs:label	"full"	.
+
+local:many_cases	rdfs:label	"many cases"	.
+
+local:cases	rdfs:label	"cases"	.
+
+local:many	rdfs:label	"many"	.
+
+local:use	rdfs:label	"use"	.
+
+local:full_owl	rdfs:label	"full owl"	.
+
+local:expressivity_provided	rdfs:label	"expressivity provided"	.
+
+local:expressivity	rdfs:label	"expressivity"	.
+
+local:provided	rdfs:label	"provided"	.
+
+local:provided_by_full_owl	rdfs:label	"provided by full owl"	.
+
+local:robust	rdfs:label	"robust"	.
+
+local:robust_parsers	rdfs:label	"robust parsers"	.
+
+local:parsers	rdfs:label	"parsers"	.
+
+local:attempt	rdfs:label	"attempt"	.
+
+local:such_errors	rdfs:label	"such errors"	.
+
+local:errors	rdfs:label	"errors"	.
+
+local:such	rdfs:label	"such"	.
+
+local:cope_with_such_errors	rdfs:label	"cope with such errors"	.
+
+local:cope	rdfs:label	"cope"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:“	rdfs:label	"“"	.
+
+local:“_rogues	rdfs:label	"“ rogues"	.
+
+local:common	rdfs:label	"common"	.
+
+local:common_errors	rdfs:label	"common errors"	.
+
+local:rogues	rdfs:label	"rogues"	.
+
+local:rogues_gallery	rdfs:label	"rogues gallery"	.
+
+local:gallery	rdfs:label	"gallery"	.
+
+local:rogues_gallery_of_common_errors	rdfs:label	"rogues gallery of common errors"	.
+
+local:encountered	rdfs:label	"encountered"	.
+
+local:gallery_”	rdfs:label	"gallery ”"	.
+
+local:”	rdfs:label	"”"	.
+
+local:describe	rdfs:label	"describe"	.
+
+local:can_produced	rdfs:label	"can produced"	.
+
+local:produced	rdfs:label	"produced"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+cso:ontologies	rdfs:label	"ontologies"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+
+#### Relations ####
+
+local:cope_with_such_errors	local:cope_with	local:such_errors	.
+local:“_rogues	rdfs:subClassOf	local:rogues	.
+local:robust	rdfs:member	local:robust_parsers	.
+local:robust_parsers	rdfs:subClassOf	local:parsers	.
+local:expressivity_provided	local:expressivity_	local:provided	.
+local:full_owl	rdfs:subClassOf	local:owl	.
+local:many_cases	rdfs:subClassOf	local:cases	.
+local:owl_ontologies	rdfs:subClassOf	local:ontologies	.
+local:provided	vn.role:Agent	local:expressivity	.
+local:gallery	rdfs:member	local:gallery_”	.
+local:shows	vn.role:Agent	local:analysis_of_owl_ontologies	.
+local:rogues_gallery	rdfs:subClassOf	local:gallery	.
+local:analysis_of_owl_ontologies	local:analysis_of	local:owl_ontologies	.
+local:such	rdfs:member	local:such_errors	.
+local:such_errors	rdfs:subClassOf	local:errors	.
+local:describe	vn.role:Theme	local:can_produced	.
+local:can_produced	rdfs:subClassOf	local:produced	.
+local:present	vn.role:Theme	local:encountered	.
+local:provided_by_full_owl	local:provided_by	local:full_owl	.
+local:“	rdfs:member	local:“_rogues	.
+local:owl	rdfs:member	local:owl_ontologies	.
+local:owl_full	rdfs:subClassOf	local:full	.
+local:expressivity_provided	local:_provided	local:expressivity	.
+local:represented	vn.role:Agent	local:owl_ontologies	.
+local:analysis_of_owl_ontologies	local:of_owlontologies	local:analysis	.
+local:provided	vn.role:Recipient	local:full_owl	.
+local:common	rdfs:member	local:common_errors	.
+local:represented	local:AM-LOC	local:rdfxml	.
+local:rogues_gallery_of_common_errors	local:of_commonerrors	local:rogues_gallery	.
+local:provided_by_full_owl	local:by_fullowl	local:provided	.
+local:use	vn.role:Theme	local:expressivity_provided	.
+local:cope_with_such_errors	local:with_sucherrors	local:cope	.
+local:present	vn.role:Theme	local:rogues_gallery_of_common_errors	.
+local:use	vn.role:Agent	local:many_cases	.
+local:cope	vn.role:Theme	local:errors	.
+local:gallery_”	rdfs:subClassOf	local:”	.
+local:rogues_gallery_of_common_errors	local:roguesgallery_of	local:common_errors	.
+local:shows	vn.role:Theme	local:owl_full	.
+local:common_errors	rdfs:subClassOf	local:errors	.
+local:represented	vn.role:Theme	local:web	.
+local:many	rdfs:member	local:many_cases	.
+local:cope	vn.role:Agent	local:robust_parsers	.
+local:describe	vn.role:Agent	local:present	.
+local:present	vn.role:Agent	local:we	.
+local:attempt	vn.role:Agent	local:robust_parsers	.
+local:attempt	vn.role:Predicate	local:cope_with_such_errors	.

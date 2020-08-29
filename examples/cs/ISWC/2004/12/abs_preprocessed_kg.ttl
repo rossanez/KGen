@@ -1,0 +1,228 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:current	rdfs:label	"current"	.
+
+local:current_web	rdfs:label	"current web"	.
+
+local:web	rdfs:label	"web"	.
+
+local:turning	rdfs:label	"turning"	.
+
+local:semantic	rdfs:label	"semantic"	.
+
+local:semantic_web	rdfs:label	"semantic web"	.
+
+local:current_semantic_web	rdfs:label	"current semantic web"	.
+
+local:turning_into_semantic_web	rdfs:label	"turning into semantic web"	.
+
+local:requires	rdfs:label	"requires"	.
+
+local:manual	rdfs:label	"manual"	.
+
+local:manual_approaches	rdfs:label	"manual approaches"	.
+
+local:approaches	rdfs:label	"approaches"	.
+
+local:automatic	rdfs:label	"automatic"	.
+
+local:automatic_approaches	rdfs:label	"automatic approaches"	.
+
+local:not_scale	rdfs:label	"not scale"	.
+
+local:scale	rdfs:label	"scale"	.
+
+local:will_not_scale	rdfs:label	"will not scale"	.
+
+local:existing_data	rdfs:label	"existing data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:automatic_approaches_for_annotation	rdfs:label	"automatic approaches for annotation"	.
+
+local:annotation	rdfs:label	"annotation"	.
+
+local:annotation_of_existing_data	rdfs:label	"annotation of existing data"	.
+
+local:existing	rdfs:label	"existing"	.
+
+local:will	rdfs:label	"will"	.
+
+local:not	rdfs:label	"not"	.
+
+local:general	rdfs:label	"general"	.
+
+local:supports	rdfs:label	"supports"	.
+
+local:tables	rdfs:label	"tables"	.
+
+local:subsequently	rdfs:label	"subsequently"	.
+
+local:automatic_population	rdfs:label	"automatic population"	.
+
+local:population	rdfs:label	"population"	.
+
+local:automatic_population_of_ontologies	rdfs:label	"automatic population of ontologies"	.
+
+local:ontologies	rdfs:label	"ontologies"	.
+
+local:tablelike_structures	rdfs:label	"table-like structures"	.
+
+local:structures	rdfs:label	"structures"	.
+
+local:tablelike	rdfs:label	"table-like"	.
+
+local:present	rdfs:label	"present"	.
+
+local:we	rdfs:label	"we"	.
+
+local:here	rdfs:label	"here"	.
+
+local:automatic_generation	rdfs:label	"automatic generation"	.
+
+local:generation	rdfs:label	"generation"	.
+
+local:flogic	rdfs:label	"f-logic"	.
+
+local:flogic_frames	rdfs:label	"f-logic frames"	.
+
+local:frames	rdfs:label	"frames"	.
+
+local:approach_for_automatic_generation	rdfs:label	"approach for automatic generation"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:automatic_generation_of_flogic_frames	rdfs:label	"automatic generation of f-logic frames"	.
+
+local:automatic_generation_of_flogic_frames_outof_tables	rdfs:label	"automatic generation of f-logic frames out_of tables"	.
+
+local:consists	rdfs:label	"consists"	.
+
+local:thorough	rdfs:label	"thorough"	.
+
+local:thorough_evaluation	rdfs:label	"thorough evaluation"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+local:accompanying	rdfs:label	"accompanying"	.
+
+local:implementation	rdfs:label	"implementation"	.
+
+local:methodology	rdfs:label	"methodology"	.
+
+local:based	rdfs:label	"based"	.
+
+local:table_model_methodology	rdfs:label	"table model methodology"	.
+
+local:model_methodology	rdfs:label	"model methodology"	.
+
+local:cognitive_table_model	rdfs:label	"cognitive table model"	.
+
+local:cognitive_table_model_methodology	rdfs:label	"cognitive table model methodology"	.
+
+local:cognitive_table	rdfs:label	"cognitive table"	.
+
+local:table	rdfs:label	"table"	.
+
+local:model	rdfs:label	"model"	.
+
+local:table_model	rdfs:label	"table model"	.
+
+local:cognitive	rdfs:label	"cognitive"	.
+
+local:grounded_cognitive_table_model_methodology	rdfs:label	"grounded cognitive table model methodology"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:frames	owl:sameAs	cso:frames	.
+cso:frames	rdfs:label	"frames"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+
+#### Relations ####
+
+local:turning_into_semantic_web	local:into_semanticweb	local:turning	.
+local:automatic_generation_of_flogic_frames	local:automaticgeneration_of	local:flogic_frames	.
+local:current_web	rdfs:subClassOf	local:web	.
+local:present	vn.role:Theme	local:approach_for_automatic_generation	.
+local:thorough	rdfs:member	local:thorough_evaluation	.
+local:current	rdfs:member	local:current_web	.
+local:semantic	rdfs:member	local:semantic_web	.
+local:table_model	rdfs:subClassOf	local:model	.
+local:consists	vn.role:indirect_object	local:thorough_evaluation	.
+local:automatic_population	rdfs:subClassOf	local:population	.
+local:automatic	rdfs:member	local:automatic_generation	.
+local:tablelike	rdfs:member	local:tablelike_structures	.
+local:cognitive_table	rdfs:subClassOf	local:table	.
+local:accompanying	vn.role:Agent	local:implementation	.
+local:table_model_methodology	rdfs:subClassOf	local:methodology	.
+local:table_model_methodology	rdfs:subClassOf	local:model_methodology	.
+local:automatic_approaches_for_annotation	local:automaticapproaches_for	local:annotation	.
+local:approach_for_automatic_generation	local:for_automaticgeneration	local:approach	.
+local:annotation_of_existing_data	local:annotation_of	local:existing_data	.
+local:tablelike_structures	rdfs:subClassOf	local:structures	.
+local:consists	vn.role:Location	local:approach	.
+local:turning_into_semantic_web	local:turning_into	local:semantic_web	.
+local:cognitive_table_model_methodology	rdfs:subClassOf	local:methodology	.
+local:scale	vn.role:Agent	local:manual_approaches	.
+local:supports	local:AM-TMP	local:subsequently	.
+local:automatic	rdfs:member	local:automatic_approaches	.
+local:approach_for_automatic_generation	local:approach_for	local:automatic_generation	.
+local:consists	vn.role:indirect_object	local:accompanying	.
+local:cognitive_table	rdfs:member	local:cognitive_table_model	.
+local:automatic_population_of_ontologies	local:automaticpopulation_of	local:ontologies	.
+local:existing_data	rdfs:subClassOf	local:data	.
+local:existing	vn.role:Location	local:data	.
+local:based	vn.role:Cause	local:approach	.
+local:model_methodology	rdfs:subClassOf	local:methodology	.
+local:cognitive_table_model_methodology	rdfs:subClassOf	local:table_model_methodology	.
+local:automatic_generation_of_flogic_frames_outof_tables	local:automaticgenerationoff-logicframes_out_of	local:tables	.
+local:current_semantic_web	rdfs:subClassOf	local:semantic_web	.
+local:automatic_approaches_for_annotation	local:for_annotation	local:automatic_approaches	.
+local:scale	local:AM-MNR	local:general	.
+local:supports	vn.role:Experiencer	local:automatic_population_of_ontologies	.
+local:flogic_frames	rdfs:subClassOf	local:frames	.
+local:cognitive_table_model	rdfs:member	local:cognitive_table_model_methodology	.
+local:table_model	rdfs:member	local:table_model_methodology	.
+local:cognitive	rdfs:member	local:cognitive_table	.
+local:requires	vn.role:Patient	local:automatic_approaches_for_annotation	.
+local:manual_approaches	rdfs:subClassOf	local:approaches	.
+local:will_not_scale	rdfs:subClassOf	local:not_scale	.
+local:annotation_of_existing_data	local:of_existingdata	local:annotation	.
+local:scale	local:AM-NEG	local:not	.
+local:thorough_evaluation	rdfs:subClassOf	local:evaluation	.
+local:present	local:AM-TMP	local:here	.
+local:consists	vn.role:indirect_object	local:methodology	.
+local:model	rdfs:member	local:model_methodology	.
+local:supports	vn.role:Predicate	local:tablelike_structures	.
+local:turning	vn.role:Patient	local:current_web	.
+local:automatic_generation_of_flogic_frames_outof_tables	local:out_of_tables	local:automatic_generation_of_flogic_frames	.
+local:present	vn.role:Agent	local:we	.
+local:table	rdfs:member	local:table_model	.
+local:based	vn.role:indirect_object	local:grounded_cognitive_table_model_methodology	.
+local:automatic_population_of_ontologies	local:of_ontologies	local:automatic_population	.
+local:flogic	rdfs:member	local:flogic_frames	.
+local:cognitive_table_model	rdfs:subClassOf	local:model	.
+local:supports	vn.role:Theme	local:tables	.
+local:scale	local:AM-MOD	local:will	.
+local:turning	vn.role:Source	local:semantic_web	.
+local:requires	vn.role:Agent	local:turning_into_semantic_web	.
+local:automatic_approaches	rdfs:subClassOf	local:approaches	.
+local:automatic_generation_of_flogic_frames	local:of_f-logicframes	local:automatic_generation	.
+local:manual	rdfs:member	local:manual_approaches	.
+local:grounded_cognitive_table_model_methodology	rdfs:subClassOf	local:cognitive_table_model_methodology	.
+local:automatic_generation	rdfs:subClassOf	local:generation	.
+local:not_scale	rdfs:subClassOf	local:scale	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:automatic	rdfs:member	local:automatic_population	.
