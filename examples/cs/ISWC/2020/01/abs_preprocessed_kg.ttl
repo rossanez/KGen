@@ -1,0 +1,282 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:answering	rdfs:label	"answering"	.
+
+local:systems	rdfs:label	"systems"	.
+
+local:answering_systems	rdfs:label	"answering systems"	.
+
+local:question_answering_systems	rdfs:label	"question answering systems"	.
+
+local:modelled	rdfs:label	"modelled"	.
+
+local:generally	rdfs:label	"generally"	.
+
+local:pipeline	rdfs:label	"pipeline"	.
+
+local:consisting	rdfs:label	"consisting"	.
+
+local:sequence_of_steps	rdfs:label	"sequence of steps"	.
+
+local:sequence	rdfs:label	"sequence"	.
+
+local:steps	rdfs:label	"steps"	.
+
+local:pipeline_entity	rdfs:label	"pipeline entity"	.
+
+local:entity	rdfs:label	"entity"	.
+
+local:linking	rdfs:label	"linking"	.
+
+local:several	rdfs:label	"several"	.
+
+local:several_entity	rdfs:label	"several entity"	.
+
+local:perform	rdfs:label	"perform"	.
+
+local:entity_disambiguation	rdfs:label	"entity disambiguation"	.
+
+local:disambiguation	rdfs:label	"disambiguation"	.
+
+local:span_detection	rdfs:label	"span detection"	.
+
+local:detection	rdfs:label	"detection"	.
+
+local:span	rdfs:label	"span"	.
+
+local:first_models	rdfs:label	"first models"	.
+
+local:models	rdfs:label	"models"	.
+
+local:gold	rdfs:label	"gold"	.
+
+local:gold_entity	rdfs:label	"gold entity"	.
+
+local:lack_of_gold_entity	rdfs:label	"lack of gold entity"	.
+
+local:lack	rdfs:label	"lack"	.
+
+local:spans	rdfs:label	"spans"	.
+
+local:moreover	rdfs:label	"moreover"	.
+
+local:training_data	rdfs:label	"training data"	.
+
+local:data	rdfs:label	"data"	.
+
+local:training	rdfs:label	"training"	.
+
+local:limiting	rdfs:label	"limiting"	.
+
+local:factor	rdfs:label	"factor"	.
+
+local:endtoend_entity	rdfs:label	"end-to-end entity"	.
+
+local:endtoend	rdfs:label	"end-to-end"	.
+
+local:movement_towards_endtoend_entity	rdfs:label	"movement towards end-to-end entity"	.
+
+local:movement	rdfs:label	"movement"	.
+
+local:endtoend_entity_linking	rdfs:label	"end-to-end entity linking"	.
+
+local:began	rdfs:label	"began"	.
+
+local:hence	rdfs:label	"hence"	.
+
+local:detection_step	rdfs:label	"detection step"	.
+
+local:step	rdfs:label	"step"	.
+
+local:span_detection_step	rdfs:label	"span detection step"	.
+
+local:separate_span_detection_step	rdfs:label	"separate span detection step"	.
+
+local:separate	rdfs:label	"separate"	.
+
+local:separate_span	rdfs:label	"separate span"	.
+
+local:separate_span_detection	rdfs:label	"separate span detection"	.
+
+local:pointer_network	rdfs:label	"pointer network"	.
+
+local:network	rdfs:label	"network"	.
+
+local:popular_pointer	rdfs:label	"popular pointer"	.
+
+local:pointer	rdfs:label	"pointer"	.
+
+local:network_model	rdfs:label	"network model"	.
+
+local:model	rdfs:label	"model"	.
+
+local:popular_pointer_network	rdfs:label	"popular pointer network"	.
+
+local:popular_pointer_network_model	rdfs:label	"popular pointer network model"	.
+
+local:popular	rdfs:label	"popular"	.
+
+local:pointer_network_model	rdfs:label	"pointer network model"	.
+
+local:achieves	rdfs:label	"achieves"	.
+
+local:competitive_performance	rdfs:label	"competitive performance"	.
+
+local:performance	rdfs:label	"performance"	.
+
+local:competitive	rdfs:label	"competitive"	.
+
+local:present	rdfs:label	"present"	.
+
+local:work	rdfs:label	"work"	.
+
+local:we	rdfs:label	"we"	.
+
+local:novel_approach	rdfs:label	"novel approach"	.
+
+local:approach	rdfs:label	"approach"	.
+
+local:novel	rdfs:label	"novel"	.
+
+local:novel_approach_to_endtoend_entity	rdfs:label	"novel approach to end-to-end entity"	.
+
+local:applying	rdfs:label	"applying"	.
+
+local:demonstrate	rdfs:label	"demonstrate"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:knowledge_graph	rdfs:label	"knowledge graph"	.
+
+local:wikidata_knowledge	rdfs:label	"wikidata knowledge"	.
+
+local:wikidata_knowledge_graph	rdfs:label	"wikidata knowledge graph"	.
+
+local:graph	rdfs:label	"graph"	.
+
+local:wikidata	rdfs:label	"wikidata"	.
+
+local:three_datasets	rdfs:label	"three datasets"	.
+
+local:datasets	rdfs:label	"datasets"	.
+
+local:evaluation_over_three_datasets	rdfs:label	"evaluation over three datasets"	.
+
+local:evaluation	rdfs:label	"evaluation"	.
+
+local:three_datasets_on_wikidata_knowledge_graph	rdfs:label	"three datasets on wikidata knowledge graph"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:question_answering_systems	owl:sameAs	cso:question_answering_systems	.
+cso:question_answering_systems	rdfs:label	"question answering systems"	.
+
+#### Relations ####
+
+local:separate_span_detection_step	rdfs:subClassOf	local:span_detection_step	.
+local:spans	vn.role:Theme2	local:moreover	.
+local:popular	rdfs:member	local:popular_pointer	.
+local:consisting	vn.role:indirect_object	local:sequence_of_steps	.
+local:linking	vn.role:Patient	local:endtoend_entity	.
+local:perform	vn.role:Agent	local:several_entity	.
+local:wikidata_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
+local:knowledge	rdfs:member	local:knowledge_graph	.
+local:present	local:AM-LOC	local:work	.
+local:span_detection	rdfs:subClassOf	local:detection	.
+local:limiting	vn.role:Cause	local:factor	.
+local:perform	vn.role:Theme	local:entity_disambiguation	.
+local:novel_approach	rdfs:subClassOf	local:approach	.
+local:question_answering_systems	rdfs:subClassOf	local:answering_systems	.
+local:lack_of_gold_entity	local:of_goldentity	local:lack	.
+local:movement_towards_endtoend_entity	local:towards_end-to-endentity	local:movement	.
+local:present	local:AM-MNR	local:applying	.
+local:span_detection_step	rdfs:subClassOf	local:detection_step	.
+local:linking	vn.role:Agent	local:several_entity	.
+local:modelled	vn.role:indirect_object	local:pipeline	.
+local:popular_pointer_network	rdfs:subClassOf	local:network	.
+local:pointer_network	rdfs:member	local:pointer_network_model	.
+local:several	rdfs:member	local:several_entity	.
+local:endtoend_entity_linking	local:_linking	local:endtoend_entity	.
+local:popular_pointer	rdfs:subClassOf	local:pointer	.
+local:pipeline_entity	local:pipeline_	local:entity	.
+local:endtoend_entity_linking	local:end-to-endentity_	local:linking	.
+local:answering	vn.role:Agent	local:systems	.
+local:span_detection_step	rdfs:subClassOf	local:step	.
+local:demonstrate	vn.role:Cause	local:evaluation_over_three_datasets	.
+local:separate_span_detection	rdfs:subClassOf	local:detection	.
+local:sequence_of_steps	local:of_steps	local:sequence	.
+local:span_detection	rdfs:member	local:span_detection_step	.
+local:endtoend_entity	rdfs:subClassOf	local:entity	.
+local:popular_pointer_network_model	rdfs:subClassOf	local:model	.
+local:network	rdfs:member	local:network_model	.
+local:popular_pointer	rdfs:member	local:popular_pointer_network	.
+local:separate_span_detection_step	rdfs:subClassOf	local:step	.
+local:network_model	rdfs:subClassOf	local:model	.
+local:separate	rdfs:member	local:separate_span	.
+local:pointer	rdfs:member	local:pointer_network	.
+local:novel	rdfs:member	local:novel_approach	.
+local:consisting	vn.role:Location	local:pipeline	.
+local:popular_pointer_network_model	rdfs:subClassOf	local:pointer_network_model	.
+local:separate_span_detection	rdfs:member	local:separate_span_detection_step	.
+local:three_datasets_on_wikidata_knowledge_graph	local:threedatasets_on	local:wikidata_knowledge_graph	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:achieves	vn.role:Theme	local:competitive_performance	.
+local:linking	vn.role:Patient	local:models	.
+local:gold_entity	rdfs:subClassOf	local:entity	.
+local:first_models	rdfs:subClassOf	local:models	.
+local:linking	vn.role:Agent	local:endtoend_entity	.
+local:novel_approach_to_endtoend_entity	local:to_end-to-endentity	local:novel_approach	.
+local:endtoend	rdfs:member	local:endtoend_entity	.
+local:sequence_of_steps	local:sequence_of	local:steps	.
+local:several_entity	rdfs:subClassOf	local:entity	.
+local:separate_span	rdfs:member	local:separate_span_detection	.
+local:detection	rdfs:member	local:detection_step	.
+local:began	local:AM-EXT	local:separate_span_detection_step	.
+local:evaluation_over_three_datasets	local:evaluation_over	local:three_datasets	.
+local:spans	vn.role:indirect_object	local:training_data	.
+local:wikidata	rdfs:member	local:wikidata_knowledge	.
+local:linking	vn.role:Patient	local:pipeline_entity	.
+local:separate_span	rdfs:subClassOf	local:span	.
+local:competitive_performance	rdfs:subClassOf	local:performance	.
+local:evaluation_over_three_datasets	local:over_threedatasets	local:evaluation	.
+local:training	rdfs:member	local:training_data	.
+local:span	rdfs:member	local:span_detection	.
+local:lack_of_gold_entity	local:lack_of	local:gold_entity	.
+local:gold	rdfs:member	local:gold_entity	.
+local:training_data	rdfs:subClassOf	local:data	.
+local:detection_step	rdfs:subClassOf	local:step	.
+local:answering_systems	rdfs:subClassOf	local:systems	.
+local:novel_approach_to_endtoend_entity	local:novelapproach_to	local:endtoend_entity	.
+local:modelled	local:AM-ADV	local:generally	.
+local:wikidata_knowledge_graph	rdfs:subClassOf	local:graph	.
+local:three_datasets_on_wikidata_knowledge_graph	local:on_wikidataknowledgegraph	local:three_datasets	.
+local:wikidata_knowledge	rdfs:member	local:wikidata_knowledge_graph	.
+local:pointer_network_model	rdfs:subClassOf	local:network_model	.
+local:present	vn.role:Theme	local:linking	.
+local:wikidata_knowledge	rdfs:subClassOf	local:knowledge	.
+local:applying	vn.role:Recipient	local:popular_pointer_network_model	.
+local:entity_disambiguation	rdfs:subClassOf	local:disambiguation	.
+local:demonstrate	vn.role:Recipient	local:we	.
+local:present	vn.role:Agent	local:we	.
+local:three_datasets	rdfs:subClassOf	local:datasets	.
+local:movement_towards_endtoend_entity	local:movement_towards	local:endtoend_entity	.
+local:competitive	rdfs:member	local:competitive_performance	.
+local:pointer_network_model	rdfs:subClassOf	local:model	.
+local:achieves	vn.role:Agent	local:popular_pointer_network_model	.
+local:popular_pointer_network	rdfs:member	local:popular_pointer_network_model	.
+local:pointer_network	rdfs:subClassOf	local:network	.
+local:modelled	vn.role:Theme	local:question_answering_systems	.
+local:entity	rdfs:member	local:entity_disambiguation	.
+local:linking	vn.role:Patient	local:first_models	.
+local:pipeline_entity	local:_entity	local:pipeline	.
+local:perform	vn.role:Theme	local:span_detection	.
+local:began	local:AM-ADV	local:hence	.

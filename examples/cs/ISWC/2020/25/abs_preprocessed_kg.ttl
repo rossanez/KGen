@@ -1,0 +1,170 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
+@prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Classes ####
+
+local:language_models	rdfs:label	"language models"	.
+
+local:models	rdfs:label	"models"	.
+
+local:language	rdfs:label	"language"	.
+
+local:brought	rdfs:label	"brought"	.
+
+local:great_improvements	rdfs:label	"great improvements"	.
+
+local:improvements	rdfs:label	"improvements"	.
+
+local:great	rdfs:label	"great"	.
+
+local:many_downstream	rdfs:label	"many downstream"	.
+
+local:many_downstream_tasks	rdfs:label	"many downstream tasks"	.
+
+local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+
+local:graphs	rdfs:label	"graphs"	.
+
+local:tasks	rdfs:label	"tasks"	.
+
+local:downstream	rdfs:label	"downstream"	.
+
+local:downstream_tasks	rdfs:label	"downstream tasks"	.
+
+local:knowledge	rdfs:label	"knowledge"	.
+
+local:many	rdfs:label	"many"	.
+
+local:often_combined	rdfs:label	"often combined"	.
+
+local:combined	rdfs:label	"combined"	.
+
+local:language_language_models	rdfs:label	"language language models"	.
+
+local:many_downstream_tasks_on_language_language_models	rdfs:label	"many downstream tasks on language language models"	.
+
+local:often_combined_with_knowledge_graphs	rdfs:label	"often combined with knowledge graphs"	.
+
+local:own	rdfs:label	"own"	.
+
+local:have_brought	rdfs:label	"have brought"	.
+
+local:have_brought_for_many_downstream_tasks	rdfs:label	"have brought for many downstream tasks"	.
+
+local:have_brought_for_many_downstream_tasks_on_language_language_models	rdfs:label	"have brought for many downstream tasks on language language models"	.
+
+local:language_language_models_own	rdfs:label	"language language models own"	.
+
+local:often	rdfs:label	"often"	.
+
+local:providing	rdfs:label	"providing"	.
+
+local:structured_knowledge	rdfs:label	"structured knowledge"	.
+
+local:well_structured	rdfs:label	"well structured"	.
+
+local:structured	rdfs:label	"structured"	.
+
+local:aggregated_structured_knowledge	rdfs:label	"aggregated structured knowledge"	.
+
+local:additionally_aggregated	rdfs:label	"additionally aggregated"	.
+
+local:aggregated	rdfs:label	"aggregated"	.
+
+local:done	rdfs:label	"done"	.
+
+local:this	rdfs:label	"this"	.
+
+local:leveraging	rdfs:label	"leveraging"	.
+
+local:usually	rdfs:label	"usually"	.
+
+local:improve	rdfs:label	"improve"	.
+
+local:around_turn	rdfs:label	"around turn"	.
+
+local:turn	rdfs:label	"turn"	.
+
+local:happens	rdfs:label	"happens"	.
+
+local:we	rdfs:label	"we"	.
+
+local:around	rdfs:label	"around"	.
+
+local:use_language_models	rdfs:label	"use language models"	.
+
+local:use_language	rdfs:label	"use language"	.
+
+local:use	rdfs:label	"use"	.
+
+#### Properties ####
+
+#### Mapped Relations ####
+
+local:language_models	owl:sameAs	cso:language_models	.
+cso:language_models	rdfs:label	"language models"	.
+
+#### Relations ####
+
+local:many_downstream_tasks	rdfs:subClassOf	local:downstream_tasks	.
+local:great_improvements	rdfs:subClassOf	local:improvements	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:use	vn.role:Theme	local:language_models	.
+local:downstream	rdfs:member	local:downstream_tasks	.
+local:have_brought	rdfs:subClassOf	local:brought	.
+local:turn	vn.role:Agent	local:we	.
+local:downstream_tasks	rdfs:subClassOf	local:tasks	.
+local:great	rdfs:member	local:great_improvements	.
+local:language_language_models_own	local:_own	local:language_language_models	.
+local:many_downstream_tasks	rdfs:subClassOf	local:tasks	.
+local:language	rdfs:member	local:language_models	.
+local:knowledge	rdfs:member	local:knowledge_graphs	.
+local:leveraging	local:AM-PNC	local:improve	.
+local:leveraging	vn.role:Agent	local:usually	.
+local:turn	vn.role:Patient	local:around	.
+local:have_brought_for_many_downstream_tasks_on_language_language_models	local:on_languagelanguagemodels	local:have_brought_for_many_downstream_tasks	.
+local:done	local:AM-MNR	local:leveraging	.
+local:many_downstream	rdfs:member	local:many_downstream_tasks	.
+local:language_language_models_own	local:languagelanguagemodels_	local:own	.
+local:use	vn.role:Recipient	local:improve	.
+local:language_language_models	rdfs:subClassOf	local:language_models	.
+local:combined	vn.role:Patient1	local:knowledge_graphs	.
+local:around_turn	rdfs:subClassOf	local:turn	.
+local:providing	vn.role:Recipient	local:knowledge_graphs	.
+local:improve	vn.role:Patient	local:knowledge_graphs	.
+local:additionally_aggregated	rdfs:subClassOf	local:aggregated	.
+local:often_combined_with_knowledge_graphs	local:oftencombined_with	local:knowledge_graphs	.
+local:use	vn.role:Agent	local:we	.
+local:language_models	rdfs:subClassOf	local:models	.
+local:providing	vn.role:Agent	local:aggregated_structured_knowledge	.
+local:use_language_models	rdfs:subClassOf	local:models	.
+local:use_language	rdfs:subClassOf	local:language	.
+local:have_brought_for_many_downstream_tasks_on_language_language_models	local:havebroughtformanydownstreamtasks_on	local:language_language_models	.
+local:leveraging	vn.role:Theme	local:knowledge_graphs	.
+local:aggregated_structured_knowledge	rdfs:subClassOf	local:structured_knowledge	.
+local:many_downstream	rdfs:subClassOf	local:downstream	.
+local:structured_knowledge	rdfs:subClassOf	local:knowledge	.
+local:many_downstream_tasks_on_language_language_models	local:manydownstreamtasks_on	local:language_language_models	.
+local:improve	vn.role:Patient	local:language_models	.
+local:have_brought_for_many_downstream_tasks	local:for_manydownstreamtasks	local:have_brought	.
+local:brought	vn.role:object	local:great_improvements	.
+local:often_combined	rdfs:subClassOf	local:combined	.
+local:many	rdfs:member	local:many_downstream	.
+local:happens	local:AM-ADV	local:around_turn	.
+local:well_structured	rdfs:subClassOf	local:structured	.
+local:use_language	rdfs:member	local:use_language_models	.
+local:combined	local:AM-TMP	local:often	.
+local:done	vn.role:object	local:this	.
+local:use	rdfs:member	local:use_language	.
+local:brought	vn.role:other	local:own	.
+local:use_language_models	rdfs:subClassOf	local:language_models	.
+local:combined	vn.role:Patient	local:have_brought_for_many_downstream_tasks_on_language_language_models	.
+local:brought	vn.role:Destination	local:language_models	.
+local:happens	local:AM-ADV	local:use_language_models	.
+local:many_downstream_tasks_on_language_language_models	local:on_languagelanguagemodels	local:many_downstream_tasks	.
+local:often_combined_with_knowledge_graphs	local:with_knowledgegraphs	local:often_combined	.
+local:have_brought_for_many_downstream_tasks	local:havebrought_for	local:many_downstream_tasks	.
