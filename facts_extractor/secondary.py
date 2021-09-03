@@ -139,12 +139,12 @@ class SecondaryFactsExtractor:
                     else:
                         full = '{} {} {}'.format(first, connector, second)
                     
-                    triple = Triple(sentence_number, first, 'rdfs:member', full)
+                    triple = Triple(sentence_number, full, 'rdfs:member', first)
                     if verbose:
                         print(triple.to_string())
                     out_contents += triple.to_string() + '\n'
 
-                    triple = Triple(sentence_number, second, 'rdfs:member', full)
+                    triple = Triple(sentence_number, full, 'rdfs:member', second)
                     if verbose:
                         print(triple.to_string())
                     out_contents += triple.to_string() + '\n'
