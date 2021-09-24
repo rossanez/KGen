@@ -23,10 +23,10 @@ class SemanticRoleLabeler:
                 if len(line) < 1:
                     continue
 
-                senna_output = senna.srl(line, verbose=False)
+                srl_dict, statement_dict = senna.srl(line, verbose=False)
                 predicate_number = 0
-                for predicate in senna_output.keys():
-                    pred_args = sorted(senna_output[predicate], key=lambda t: t[1]) # Sorting to make sure the subject appears before the object
+                for predicate in srl_dict.keys():
+                    pred_args = sorted(srl_dict[predicate], key=lambda t: t[1]) # Sorting to make sure the subject appears before the object
                     pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose)
                     if len(pred_arg_names) < 1:
                         print('WARNING -- Unable to retrieve predicate arg names for "{}"'.format(predicate))

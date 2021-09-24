@@ -84,11 +84,17 @@ class SennaWrapper:
         with open(tmp_out_filename, 'r') as out_file:
             pred_list = list()
             predicates = {}
+            statements = {}
             for line in out_file.readlines():
                 line_list = line.split()
-                if len(line_list) > 1 and not line_list[1] == '-':
+                # Line: Terms | Verbs | SRL_0 | SRL_1 | ...
+                # Idx:   [0]     [1]     [2]     [3]    ...
+                # *** Number of predicates (verbs) == Number of statements == Number of SRL columns ***
+                if len(line_list) > 1 and not line_list[1] == '-': # get predicates (verbs)
                     predicates[line_list[1]] = []
                     pred_list.append(line_list[1]) # list to iterate later - dictionary will not keep keys in order
+
+            stat_list = [[] for l in range(len(pred_list))] # to be filled with each statement's contents
 
             out_file.seek(0)
             for line in out_file.readlines():
@@ -116,7 +122,15 @@ class SennaWrapper:
                         pred_dict[-1] = (srl, last_tuple[1] + ' ' + term)
                         predicates[key] = pred_dict
 
+                srl_offset = 2
+                for i in range(len(stat_list)):
+                    if not (line_list[srl_offset + i] == 'O'):
+                        stat_list[i].append(term)
+
             out_file.close()
             os.remove(tmp_out_filename)
 
-        return predicates
+            for i in range(len(pred_list)):
+                statements[pred_list[i]] = ' '.join(stat_list[i])
+
+        return predicates, statements
