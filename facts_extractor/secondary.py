@@ -42,7 +42,7 @@ class SecondaryFactsExtractor:
                 if len(line) < 4:
                     continue
 
-                sentence_number = int(line_lst[0])
+                statement_id = line_lst[0]
                 verb = line_lst[1].replace('"', '')
                 predicate = line_lst[2]
                 obj = line_lst[3].replace('"', '')
@@ -51,7 +51,7 @@ class SecondaryFactsExtractor:
 
                 entity_composites = self.__compose_subconcepts(NLPUtils.extract_candidate_entities(obj))
                 for entry in entity_composites:
-                    triple = Triple(sentence_number, entry[0], entry[1], entry[2])
+                    triple = Triple(statement_id, entry[0], entry[1], entry[2])
 
                     if verbose:
                         print(triple.to_string())
@@ -85,7 +85,7 @@ class SecondaryFactsExtractor:
 
                         replacements[elem[0]] = updated_term
 
-                        triple = Triple(sentence_number, updated_term, 'rdfs:subClassOf', previous_compound)
+                        triple = Triple(statement_id, updated_term, 'rdfs:subClassOf', previous_compound)
 
                         previous_compound = updated_term
                         previous_term = governor
@@ -127,7 +127,7 @@ class SecondaryFactsExtractor:
                         second = replacements[second]
 
                     if elem[1] == 'ROOT':
-                        triple = Triple(sentence_number, verb, predicate, second)
+                        triple = Triple(statement_id, verb, predicate, second)
                         if verbose:
                             print(triple.to_string())
 
@@ -139,12 +139,12 @@ class SecondaryFactsExtractor:
                     else:
                         full = '{} {} {}'.format(first, connector, second)
                     
-                    triple = Triple(sentence_number, full, 'rdfs:member', first)
+                    triple = Triple(statement_id, full, 'rdfs:member', first)
                     if verbose:
                         print(triple.to_string())
                     out_contents += triple.to_string() + '\n'
 
-                    triple = Triple(sentence_number, full, 'rdfs:member', second)
+                    triple = Triple(statement_id, full, 'rdfs:member', second)
                     if verbose:
                         print(triple.to_string())
                     out_contents += triple.to_string() + '\n'

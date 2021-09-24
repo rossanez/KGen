@@ -18,20 +18,25 @@ class SemanticRoleLabeler:
 
         out_contents = ''
         with open(input_filename, 'r') as input_file:
-            sentence_number = 0
+            line_number = 0
             for line in input_file.readlines():
                 if len(line) < 1:
                     continue
 
                 senna_output = senna.srl(line, verbose=False)
+                predicate_number = 0
                 for predicate in senna_output.keys():
-                    pred_args = senna_output[predicate]
+                    pred_args = sorted(senna_output[predicate], key=lambda t: t[1]) # Sorting to make sure the subject appears before the object
                     pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose)
                     if len(pred_arg_names) < 1:
                         print('WARNING -- Unable to retrieve predicate arg names for "{}"'.format(predicate))
 
+                    statement_id = f's{line_number}'
+                    if predicate_number > 0:
+                        statement_id += f'.{predicate_number}'
+
                     if verbose:
-                        print('predicate: {}, args: {}'.format(predicate, pred_args))
+                        print(f'statement_id: {statement_id}; predicate: {predicate} args: {pred_args}')
 
                     for pred_arg in pred_args: # iterating over list of tuples
                         if pred_arg[0].startswith('AM-'): # Adjuncts
@@ -48,7 +53,7 @@ class SemanticRoleLabeler:
                                 s = s.split(' ', 1)[1]
                                 split = s.split(' ')
 
-                            triple = Triple(sentence_number, predicate, 'local:{}'.format(pred_arg[0]), s)
+                            triple = Triple(statement_id, predicate, 'local:{}'.format(pred_arg[0]), s)
                             if verbose:
                                 print(triple.to_string())
 
@@ -59,7 +64,7 @@ class SemanticRoleLabeler:
                         elif pred_arg[0].startswith('R-'): # References
                             print('Ignoring Reference')
                         elif pred_arg[0].startswith('V'): # Verbs
-                            print('Ignoring Verb')
+                            print('Ignoring Verb') # Verbs should be the predicate already
                         else: # Arguments (A0, A1, A2, etc.)
                             # Remove initial stopwords (e.g. determiners)
                             s = pred_arg[1].strip()
@@ -82,13 +87,14 @@ class SemanticRoleLabeler:
                                     role = 'indirect_object'
                                 else:
                                     role = 'other'
-                            triple = Triple(sentence_number, predicate, 'vn.role:{}'.format(role), s)
+                            triple = Triple(statement_id, predicate, 'vn.role:{}'.format(role), s)
                             if verbose:
                                 print(triple.to_string())
 
                             out_contents += triple.to_string() + '\n'
 
-                sentence_number += 1
+                    predicate_number += 1
+                line_number += 1
 
             input_file.close()
 
