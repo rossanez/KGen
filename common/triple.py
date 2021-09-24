@@ -4,7 +4,7 @@ class Triple:
     __predicate = None
     __object = None
 
-    __sentence_number = -1
+    __sentence_number = None
 
     __subject_links = []
     __predicate_link = None
@@ -42,19 +42,19 @@ class Triple:
         part_relations = set()
 
         s = 'local:{}'.format(self.__format_name(self.__subject))
-        #s_class = '{}\ta\trdfs:Class'.format(s)
-        s_label = '{}\trdfs:label\t"{}"'.format(s, self.__subject)
-        #classes.update({s: '{}\t;\n\t{}\t.'.format(s_class, s_label)})
-        classes.update({s: '{}\t.'.format(s_label)})
+        s_class = '{}\ta\trdf:Class'.format(s)
+        s_label = 'rdfs:label\t"{}"'.format(self.__subject)
+        classes.update({s: '{}\t;\n\t{}\t.'.format(s_class, s_label)})
+        #classes.update({s: '{}\t.'.format(s_label)})
 
         if len(self.__subject_links) > 0:
             part_relations.update(self.__get_parts(self.__subject_links, s))
 
         o = 'local:{}'.format(self.__format_name(self.__object))
-        #o_class = '{}\ta\trdfs:Class'.format(o)
-        o_label = '{}\trdfs:label\t"{}"'.format(o, self.__object)
-        #classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
-        classes.update({o: '{}\t.'.format(o_label)})
+        o_class = '{}\ta\trdf:Class'.format(o)
+        o_label = 'rdfs:label\t"{}"'.format(self.__object)
+        classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
+        #classes.update({o: '{}\t.'.format(o_label)})
 
         if len(self.__object_links) > 0:
             part_relations.update(self.__get_parts(self.__object_links, o))
@@ -63,13 +63,13 @@ class Triple:
             p = self.__predicate # It is already a resource/link
         else:
             p = 'local:{}'.format(self.__format_name(self.__predicate))
-            #p_class = '{}\ta\trdf:Property'.format(p)
+            p_class = '{}\ta\trdf:Property'.format(p)
             #p_domain = 'rdf:subject\t{}'.format(s)
             #p_range = 'rdf:object\t{}'.format(o)
-            p_label = '{}\trdfs:label\t"{}"'.format(p, self.__predicate)
+            p_label = 'rdfs:label\t"{}"'.format(self.__predicate)
             #properties.update({p+p_range+p_label: '{}\t;\n\t{}\t;\n\t{}\t;\n\t{}\t.'.format(p_class, p_domain, p_range, p_label)})
-            #properties.update({p: '{}\t;\n\t{}\t.'.format(p_class, p_label)})
-            properties.update({p: '{}\t.'.format(p_label)})
+            properties.update({p: '{}\t;\n\t{}\t.'.format(p_class, p_label)})
+            #properties.update({p: '{}\t.'.format(p_label)})
 
             if len(self.__predicate_link) > 0:
                 part_relations.update(self.__get_parts([self.__predicate_link], p))

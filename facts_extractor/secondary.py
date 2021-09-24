@@ -3,6 +3,7 @@ from sys import path
 
 path.insert(0, '../')
 from common.nlputils import NLPUtils
+from common.statement import Statement
 from common.triple import Triple
 
 class SecondaryFactsExtractor:
@@ -27,7 +28,7 @@ class SecondaryFactsExtractor:
                     part = ' '.join(gram[:-1])
 
                     entity_composites.add((subClass, 'rdfs:subClassOf', klass))
-                    entity_composites.add((part, 'rdfs:member', subClass))
+                    entity_composites.add((subClass, 'rdfs:member', part))
 
         return entity_composites
 
@@ -39,7 +40,16 @@ class SecondaryFactsExtractor:
         with open(main_triples_filename, 'r') as input_file:
             for line in input_file.readlines():
                 line_lst = line.split('\t')
-                if len(line) < 4:
+                
+                if len(line_lst) == 2: # A statement
+                    statement = Statement(line_lst[0], line_lst[1].replace('"', '').strip())
+                    if verbose:
+                        print(statement.to_string())
+                    out_contents += statement.to_string() + '\n'
+                    continue
+
+                if len(line_lst) < 4: # Ill-formed. Let us ignore it...
+                    print('Warning: bad line: "{}"'.format(line))
                     continue
 
                 statement_id = line_lst[0]

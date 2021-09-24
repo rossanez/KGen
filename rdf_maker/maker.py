@@ -8,6 +8,7 @@ from sys import path
 path.insert(0, '../')
 from common.nlputils import NLPUtils
 from common.stanfordcorenlp.corenlpfactory import CoreNLPFactory
+from common.statement import Statement
 from common.triple import Triple
 
 class RDFMaker:
@@ -15,6 +16,7 @@ class RDFMaker:
     __prefixed = {}
     __links = {}
 
+    __statements = {}
     __classes = {}
     __properties = {}
     __mapped_relations = set()
@@ -33,7 +35,9 @@ class RDFMaker:
         if not links_filename == None:
             with open(links_filename, 'r') as links_file:
                 for line in links_file.readlines():
-                    if len(line) < 2: continue
+                    if len(line) < 2: # Ill-formed. Let us ignore it...
+                        print('Warning: bad line: "{}"'.format(line))
+                        continue
 
                     if line.startswith('@PREFIX'):
                         line_list = line.split()
@@ -57,6 +61,16 @@ class RDFMaker:
         with open(triples_filename, 'r') as triples_file:
             for line in triples_file.readlines():
                 line_lst = line.replace('\"', '').split('\t')
+
+                if len(line_lst) == 2: # A statement
+                    statement = Statement(line_lst[0].strip(), line_lst[1].strip())
+                    self.__statements.update(statement.to_turtle())
+                    continue
+
+                if len(line_lst) < 4: # Ill-formed. Let us ignore it...
+                    print('Warning: bad line: "{}"'.format(line))
+                    continue
+
                 sentence_number = line_lst[0].strip()
                 subject = line_lst[1].strip()
                 predicate = line_lst[2].strip()
@@ -149,6 +163,10 @@ class RDFMaker:
         with open(output_filename, 'a') as output_file:
             for key in self.__prefixed.keys():
                 output_file.write('@prefix\t{}:\t<{}>\t.\n'.format(self.__prefixed[key], key))
+
+            output_file.write('\n#### Statements ####\n\n')
+            for key in self.__statements.keys():
+                output_file.write('{}\n\n'.format(self.__statements[key]))
 
             output_file.write('\n#### Classes ####\n\n')
             for key in self.__classes.keys():

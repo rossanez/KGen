@@ -3,6 +3,7 @@ from sys import path
 path.insert(0, '../')
 from common.nlputils import NLPUtils
 from common.senna.sennawrapper import SennaWrapper
+from common.statement import Statement
 from common.triple import Triple
 
 class SemanticRoleLabeler:
@@ -21,6 +22,7 @@ class SemanticRoleLabeler:
             line_number = 0
             for line in input_file.readlines():
                 if len(line) < 1:
+                    print('Warning: bad line: "{}"'.format(line))
                     continue
 
                 srl_dict, statement_dict = senna.srl(line, verbose=False)
@@ -35,8 +37,11 @@ class SemanticRoleLabeler:
                     if predicate_number > 0:
                         statement_id += f'.{predicate_number}'
 
+                    statement = Statement(statement_id, statement_dict[predicate])
                     if verbose:
-                        print(f'statement_id: {statement_id}; predicate: {predicate} args: {pred_args}')
+                        print(statement.to_string())
+
+                    out_contents += statement.to_string() + '\n'
 
                     for pred_arg in pred_args: # iterating over list of tuples
                         if pred_arg[0].startswith('AM-'): # Adjuncts
