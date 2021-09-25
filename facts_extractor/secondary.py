@@ -38,24 +38,34 @@ class SecondaryFactsExtractor:
 
         out_contents = ''
         with open(main_triples_filename, 'r') as input_file:
+            statements = {}
             for line in input_file.readlines():
                 line_lst = line.split('\t')
                 
                 if len(line_lst) == 2: # A statement
-                    statement = Statement(line_lst[0], line_lst[1].replace('"', '').strip())
+                    stm_id = line_lst[0].strip()
+                    stm_contents = line_lst[1].replace('"', '').strip()
+                    statement = Statement(stm_id, stm_contents)
                     if verbose:
                         print(statement.to_string())
-                    out_contents += statement.to_string() + '\n'
+                    statements[stm_contents] = statement
+                    out_contents += line # Let us leave this line alone.
                     continue
 
                 if len(line_lst) < 4: # Ill-formed. Let us ignore it...
                     print('Warning: bad line: "{}"'.format(line))
                     continue
 
-                statement_id = line_lst[0]
-                verb = line_lst[1].replace('"', '')
-                predicate = line_lst[2]
-                obj = line_lst[3].replace('"', '')
+                statement_id = line_lst[0].strip()
+                stmt = line_lst[1].replace('"', '').strip()
+                predicate = line_lst[2].strip()
+                obj = line_lst[3].replace('"', '').strip()
+
+                if obj in statements.keys():
+                    if verbose:
+                        print(f'Existing statement for object: {obj} - {statements[obj].get_res_id()}')
+                    out_contents += line # Leave alone - secondary relations should have been obtained already!
+                    continue
 
                 replacements = {}
 
@@ -137,7 +147,7 @@ class SecondaryFactsExtractor:
                         second = replacements[second]
 
                     if elem[1] == 'ROOT':
-                        triple = Triple(statement_id, verb, predicate, second)
+                        triple = Triple(statement_id, stmt, predicate, second)
                         if verbose:
                             print(triple.to_string())
 

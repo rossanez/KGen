@@ -59,12 +59,18 @@ class RDFMaker:
                 links_file.close()
 
         with open(triples_filename, 'r') as triples_file:
+            statements = {}
             for line in triples_file.readlines():
                 line_lst = line.replace('\"', '').split('\t')
 
                 if len(line_lst) == 2: # A statement
-                    statement = Statement(line_lst[0].strip(), line_lst[1].strip())
-                    self.__statements.update(statement.to_turtle())
+                    stm_id = line_lst[0].strip()
+                    stm_contents = line_lst[1].strip()
+                    statement = Statement(stm_id, stm_contents)
+                    prefixes, stmt_ttl = statement.to_turtle()
+                    self.__prefixed.update(prefixes)
+                    self.__statements.update(stmt_ttl)
+                    statements[stm_contents] = statement
                     continue
 
                 if len(line_lst) < 4: # Ill-formed. Let us ignore it...
@@ -93,48 +99,10 @@ class RDFMaker:
                 if len(closest_subjects) < 1:
                     if verbose:
                         print('Warning: no match for subject "{}" was found in the links! Atempting partials ...'.format(subject))
-                    #subj = subject
-                    # Reverse sorted list of entities by string length
-                    #lst_entities = sorted(list(entities), key=len, reverse=True)
-                    #for elem in lst_entities:
-                    #    if elem in subj:
-                    #        if verbose:
-                    #            print('-- Found: {}'.format(elem))
-                    #        closest_subjects.append(elem)
-                    #        subj = subj.replace(elem, '')
-
-                    #if len(closest_subjects) < 1:
-                    #    if verbose:
-                    #        print('WARNING: not even partial matches were found for subject "{}" in the links!'.format(subject))
-                    #    continue
 
                 if len(closest_objects) < 1:
                     if verbose:
                         print('Warning: no match for object "{}" was found in the links! Atempting partials ...'.format(object))
-                    #obj = object
-                    # Reverse sorted list of entities by string length
-                    #lst_entities = sorted(list(entities), key=len, reverse=True)
-                    #for elem in lst_entities:
-                    #    if elem in obj:
-                    #        if verbose:
-                    #            print('-- Found: {}'.format(elem))
-                    #        closest_objects.append(elem)
-                    #        obj = obj.replace(elem, '')
-
-                    #if len(closest_objects) < 1:
-                    #    if verbose:
-                    #        print('WARNING: not even partial matches were found for object "{}" in the links!'.format(object))
-                    #    continue
-
-                # Check for exact matches and discard the others if that's the case
-                #for sub in closest_subjects:
-                #    if subject == sub:
-                #        closest_subjects = [sub]
-                #        break
-                #for ob in closest_objects:
-                #    if object == ob:
-                #        closest_objects = [ob]
-                #        break
 
                 subject_links = []
                 for subj in closest_subjects:
@@ -144,6 +112,15 @@ class RDFMaker:
                 for obj in closest_objects:
                     object_links += [self.__links[obj]]
                     break
+
+                if subject in statements.keys():
+                    if verbose:
+                        print(f'Existing statement for subject: {subject} - {statements[subject].get_res_id()}')
+                    subject = statements[subject].get_res_id()
+                if object in statements.keys():
+                    if verbose:
+                        print(f'Existing statement for object: {object} - {statements[object].get_res_id()}')
+                    object = statements[object].get_res_id()
 
                 triple = Triple(sentence_number, subject, predicate, object, subject_links, predicate_link, object_links)
 

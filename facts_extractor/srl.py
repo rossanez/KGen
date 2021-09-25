@@ -19,15 +19,18 @@ class SemanticRoleLabeler:
 
         out_contents = ''
         with open(input_filename, 'r') as input_file:
-            line_number = 0
+            statements = {}
+            line_number = -1
             for line in input_file.readlines():
+                line_number += 1
                 if len(line) < 1:
                     print('Warning: bad line: "{}"'.format(line))
                     continue
 
                 srl_dict, statement_dict = senna.srl(line, verbose=False)
-                predicate_number = 0
+                predicate_number = -1
                 for predicate in srl_dict.keys():
+                    predicate_number += 1
                     pred_args = sorted(srl_dict[predicate], key=lambda t: t[1]) # Sorting to make sure the subject appears before the object
                     pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose)
                     if len(pred_arg_names) < 1:
@@ -38,11 +41,9 @@ class SemanticRoleLabeler:
                         statement_id += f'.{predicate_number}'
 
                     statement = Statement(statement_id, statement_dict[predicate])
-                    if verbose:
-                        print(statement.to_string())
+                    statement.set_predicate(predicate)
 
-                    out_contents += statement.to_string() + '\n'
-
+                    print(pred_args)
                     for pred_arg in pred_args: # iterating over list of tuples
                         if pred_arg[0].startswith('AM-'): # Adjuncts
                             #if 'AM-NEG' == pred_arg[0]: # Check https://etd.ohiolink.edu/!etd.send_file?accession=osu1430876809&disposition=inline
@@ -58,11 +59,7 @@ class SemanticRoleLabeler:
                                 s = s.split(' ', 1)[1]
                                 split = s.split(' ')
 
-                            triple = Triple(statement_id, predicate, 'local:{}'.format(pred_arg[0]), s)
-                            if verbose:
-                                print(triple.to_string())
-
-                            out_contents += triple.to_string() + '\n'
+                            statement.add_other('local:{}'.format(pred_arg[0]), s)
 
                         elif pred_arg[0].startswith('C-'): # Continuities
                             print('Ignoring Continuity')
@@ -92,14 +89,15 @@ class SemanticRoleLabeler:
                                     role = 'indirect_object'
                                 else:
                                     role = 'other'
-                            triple = Triple(statement_id, predicate, 'vn.role:{}'.format(role), s)
-                            if verbose:
-                                print(triple.to_string())
+                            if role_index == 0:
+                                statement.set_subject(s)
+                            else:
+                                statement.set_object(s)
 
-                            out_contents += triple.to_string() + '\n'
+                    if verbose:
+                        print(statement.to_string())
 
-                    predicate_number += 1
-                line_number += 1
+                    out_contents = statement.to_string() + '\n' + out_contents # Reverse insertion for secondary extraction later on.
 
             input_file.close()
 

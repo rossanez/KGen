@@ -13,9 +13,15 @@ class Triple:
     def __init__(self, sn, s, p, o, sl=[], pl=None, ol=[]):
         self.__sentence_number = sn
 
-        self.__subject = s.lower().strip()
-        self.__predicate = p.strip() # no lowering here (e.g. 'rdfs:subClassOf' != 'rdfs:subclassof')
-        self.__object = o.lower().strip()
+        if s.find(':') > 0:
+            self.__subject = s.strip()
+        else:
+            self.__subject = s.lower().strip()
+        self.__predicate = p.strip() # no lowering here. It will always be an URI.
+        if o.find(':') > 0:
+            self.__object = o.strip()
+        else:
+            self.__object = o.lower().strip()
 
         self.__subject_links = sl
         self.__predicate_link = pl
@@ -25,10 +31,20 @@ class Triple:
         return (self.__subject, self.__predicate, self.__object)
 
     def to_string(self):
-        if self.__predicate.find(':') > 0: #Predicate is not a String, it is a resource/link
-            return '{}\t"{}"\t{}\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
+        if self.__subject.find(':') > 0: #Subject is not a String, it is a resource/link
+            s_subj = '{}'.format(self.__subject)
         else:
-            return '{}\t"{}"\t"{}"\t"{}"'.format(self.__sentence_number, self.__subject, self.__predicate, self.__object)
+            s_subj = '"{}"'.format(self.__subject)
+        if self.__predicate.find(':') > 0: #Predicate is not a String, it is a resource/link
+            s_pred = '{}'.format(self.__predicate)
+        else:
+            s_pred = '"{}"'.format(self.__predicate)
+        if self.__object.find(':') > 0: #Object is not a String, it is a resource/link
+            s_obj = '{}'.format(self.__object)
+        else:
+            s_obj = '"{}"'.format(self.__object)
+
+        return f'{self.__sentence_number}\t{s_subj}\t{s_pred}\t{s_obj}'
 
     def __format_name(self, name):
         nospacesname = '_'.join(name.split())
@@ -41,23 +57,29 @@ class Triple:
         properties = {}
         part_relations = set()
 
-        s = 'local:{}'.format(self.__format_name(self.__subject))
-        s_class = '{}\ta\trdf:Class'.format(s)
-        s_label = 'rdfs:label\t"{}"'.format(self.__subject)
-        classes.update({s: '{}\t;\n\t{}\t.'.format(s_class, s_label)})
-        #classes.update({s: '{}\t.'.format(s_label)})
+        if self.__subject.find(':') > 0:
+            s = self.__subject # It is already a resource/link
+        else:
+            s = 'local:{}'.format(self.__format_name(self.__subject))
+            s_class = '{}\ta\trdf:Class'.format(s)
+            s_label = 'rdfs:label\t"{}"'.format(self.__subject)
+            classes.update({s: '{}\t;\n\t{}\t.'.format(s_class, s_label)})
+            #classes.update({s: '{}\t.'.format(s_label)})
 
-        if len(self.__subject_links) > 0:
-            part_relations.update(self.__get_parts(self.__subject_links, s))
+            if len(self.__subject_links) > 0:
+                part_relations.update(self.__get_parts(self.__subject_links, s))
 
-        o = 'local:{}'.format(self.__format_name(self.__object))
-        o_class = '{}\ta\trdf:Class'.format(o)
-        o_label = 'rdfs:label\t"{}"'.format(self.__object)
-        classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
-        #classes.update({o: '{}\t.'.format(o_label)})
+        if self.__object.find(':') > 0:
+            o = self.__object # It is already a resource/link
+        else:
+            o = 'local:{}'.format(self.__format_name(self.__object))
+            o_class = '{}\ta\trdf:Class'.format(o)
+            o_label = 'rdfs:label\t"{}"'.format(self.__object)
+            classes.update({o: '{}\t;\n\t{}\t.'.format(o_class, o_label)})
+            #classes.update({o: '{}\t.'.format(o_label)})
 
-        if len(self.__object_links) > 0:
-            part_relations.update(self.__get_parts(self.__object_links, o))
+            if len(self.__object_links) > 0:
+                part_relations.update(self.__get_parts(self.__object_links, o))
 
         if self.__predicate.find(':') > 0:
             p = self.__predicate # It is already a resource/link
