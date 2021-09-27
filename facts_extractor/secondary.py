@@ -61,6 +61,11 @@ class SecondaryFactsExtractor:
                 predicate = line_lst[2].strip()
                 obj = line_lst[3].replace('"', '').strip()
 
+                if predicate == 'rdf:predicate':
+                    # This should be either a verb or a 'not' followed by a verb. No need to decompose it.
+                    out_contents += line
+                    continue
+
                 if obj in statements.keys():
                     if verbose:
                         print(f'Existing statement for object: {obj} - {statements[obj].get_res_id()}')

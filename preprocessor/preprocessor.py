@@ -1,7 +1,10 @@
+import contractions
 import os
 import re
+import unidecode
 
 from argparse import ArgumentParser
+from bs4 import BeautifulSoup
 from sys import argv
 from sys import path
 
@@ -32,6 +35,10 @@ class Preprocessor:
             contents = input_file.read()
             input_file.close()
 
+        contents = self.__remove_html_tags(contents)
+        contents = self.__remove_accented_chars(contents)
+        contents = self.__expand_contractions(contents)
+
         out = ENUM_REGEX.sub('', contents.replace('%', ' percent'))
         out = ENUM_ALPHA_LOWER_REGEX.sub('', out)
         out = REF_REGEX.sub('', out)
@@ -52,6 +59,16 @@ class Preprocessor:
         print('Preprocessed text stored at {}'.format(output_filename))
 
         return output_filename
+
+    def __remove_html_tags(self, text):
+        soup = BeautifulSoup(text, "html.parser")
+        return soup.get_text(separator=" ")
+
+    def __remove_accented_chars(self, text):
+        return unidecode.unidecode(text)
+
+    def __expand_contractions(self, text):
+        return contractions.fix(text)
 
 def main(args):
     arg_p = ArgumentParser('python preprocessor.py', description='Preprocess an unstructured text.')

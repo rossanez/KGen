@@ -26,6 +26,10 @@ class Statement:
     def set_predicate(self, p):
         self.__predicate = p
 
+    def set_negative_predicate(self):
+        if not self.__predicate == None:
+            self.__predicate = f'not {self.__predicate}'
+
     def set_object(self, o):
         self.__object = o
 
@@ -33,7 +37,7 @@ class Statement:
         return not self.__object == None
 
     def add_object(self, o):
-        self.__object = ' '.join([self.__object, o])
+        self.__object = f'{self.__object} {o}'
 
     def add_other(self, p, o):
         self.__others.append((p,o))

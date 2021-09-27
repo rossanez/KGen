@@ -35,23 +35,18 @@ class SemanticRoleLabeler:
                     if verbose:
                         print(f'Pred. Args: {pred_args}')
 
-                    pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose)
-                    if len(pred_arg_names) < 1:
-                        print('WARNING -- Unable to retrieve predicate arg names for "{}"'.format(predicate))
-
                     statement_id = f's{line_number}'
                     if predicate_number > 0:
                         statement_id += f'.{predicate_number}'
 
                     statement = Statement(statement_id, statement_dict[predicate])
-                    statement.set_predicate(predicate)
+                    statement.set_predicate(NLPUtils.infinitize(predicate))
 
                     for pred_arg in pred_args: # iterating over list of tuples
                         if pred_arg[0].startswith('AM-'): # Adjuncts
-                            #if 'AM-NEG' == pred_arg[0]: # Check https://etd.ohiolink.edu/!etd.send_file?accession=osu1430876809&disposition=inline
-                            #    predicate = 'not {}'.format(predicate)
-                            #else:
-                            #    predicate = ' '.join([pred_arg[1].strip(), predicate])
+                            if 'AM-NEG' == pred_arg[0]: # Check https://etd.ohiolink.edu/!etd.send_file?accession=osu1430876809&disposition=inline
+                                statement.set_negative_predicate()
+                                continue
 
                             # Remove initial stopwords (e.g. determiners)
                             s = pred_arg[1].strip()
