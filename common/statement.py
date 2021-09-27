@@ -20,11 +20,20 @@ class Statement:
     def set_subject(self, s):
         self.__subject = s
 
+    def has_subject(self):
+        return not self.__subject == None
+
     def set_predicate(self, p):
         self.__predicate = p
 
     def set_object(self, o):
         self.__object = o
+
+    def has_object(self):
+        return not self.__object == None
+
+    def add_object(self, o):
+        self.__object = ' '.join([self.__object, o])
 
     def add_other(self, p, o):
         self.__others.append((p,o))

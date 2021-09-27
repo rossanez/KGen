@@ -31,7 +31,10 @@ class SemanticRoleLabeler:
                 predicate_number = -1
                 for predicate in srl_dict.keys():
                     predicate_number += 1
-                    pred_args = sorted(srl_dict[predicate], key=lambda t: t[1]) # Sorting to make sure the subject appears before the object
+                    pred_args = sorted(srl_dict[predicate], key=lambda t: t[0]) # Sorting to process A0, A1, ... in order
+                    if verbose:
+                        print(f'Pred. Args: {pred_args}')
+
                     pred_arg_names = NLPUtils.get_verbnet_args(predicate, verbose)
                     if len(pred_arg_names) < 1:
                         print('WARNING -- Unable to retrieve predicate arg names for "{}"'.format(predicate))
@@ -43,7 +46,6 @@ class SemanticRoleLabeler:
                     statement = Statement(statement_id, statement_dict[predicate])
                     statement.set_predicate(predicate)
 
-                    print(pred_args)
                     for pred_arg in pred_args: # iterating over list of tuples
                         if pred_arg[0].startswith('AM-'): # Adjuncts
                             #if 'AM-NEG' == pred_arg[0]: # Check https://etd.ohiolink.edu/!etd.send_file?accession=osu1430876809&disposition=inline
@@ -77,22 +79,18 @@ class SemanticRoleLabeler:
                                 split = s.split(' ')
 
                             role_index = int(pred_arg[0][-1])
-                            try:
-                                role = pred_arg_names[role_index]
-                            except IndexError:
-                                print('No role index found for {}. Falling back to defaults!'.format(pred_arg[0]))
-                                if role_index == 0:
-                                    role = 'subject'
-                                elif role_index == 1:
-                                    role = 'object'
-                                elif role_index == 2:
-                                    role = 'indirect_object'
-                                else:
-                                    role = 'other'
                             if role_index == 0:
                                 statement.set_subject(s)
+                            elif role_index == 1:
+                                if not statement.has_subject():
+                                    statement.set_subject(s)
+                                else:
+                                    statement.set_object(s)
                             else:
-                                statement.set_object(s)
+                                if not statement.has_object():
+                                    statement.set_object(s)
+                                else:
+                                    statement.add_object(s)
 
                     if verbose:
                         print(statement.to_string())
