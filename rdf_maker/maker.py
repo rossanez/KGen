@@ -141,25 +141,30 @@ class RDFMaker:
             for key in self.__prefixed.keys():
                 output_file.write('@prefix\t{}:\t<{}>\t.\n'.format(self.__prefixed[key], key))
 
-            output_file.write('\n#### Statements ####\n\n')
-            for key in self.__statements.keys():
-                output_file.write('{}\n\n'.format(self.__statements[key]))
+            if len(self.__statements) > 0:
+                output_file.write('\n#### Statements ####\n\n')
+                for key in self.__statements.keys():
+                    output_file.write('{}\n\n'.format(self.__statements[key]))
 
-            output_file.write('\n#### Classes ####\n\n')
-            for key in self.__classes.keys():
-                output_file.write('{}\n\n'.format(self.__classes[key]))
+            if len(self.__classes) > 0:
+                output_file.write('\n#### Classes ####\n\n')
+                for key in self.__classes.keys():
+                    output_file.write('{}\n\n'.format(self.__classes[key]))
 
-            output_file.write('#### Properties ####\n\n')
-            for key in self.__properties.keys():
-                output_file.write('{}\n\n'.format(self.__properties[key]))
+            if len(self.__properties) > 0:
+                output_file.write('#### Properties ####\n\n')
+                for key in self.__properties.keys():
+                    output_file.write('{}\n\n'.format(self.__properties[key]))
 
-            output_file.write('#### Mapped Relations ####\n\n')
-            for mapping in self.__mapped_relations:
-                output_file.write('{}\n'.format(mapping))
+            if len(self.__mapped_relations) > 0:
+                output_file.write('#### Mapped Relations ####\n\n')
+                for mapping in self.__mapped_relations:
+                    output_file.write('{}\n'.format(mapping))
 
-            output_file.write('\n#### Relations ####\n\n')
-            for relation in self.__relations:
-                output_file.write('{}\n'.format(relation))
+            if len(self.__relations) > 0:
+                output_file.write('\n#### Relations ####\n\n')
+                for relation in self.__relations:
+                    output_file.write('{}\n'.format(relation))
 
             output_file.close()
         print('RDF stored at {}'.format(output_filename))
