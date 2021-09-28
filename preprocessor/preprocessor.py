@@ -1,6 +1,7 @@
 import contractions
 import os
 import re
+import string
 import unidecode
 
 from argparse import ArgumentParser
@@ -51,9 +52,11 @@ class Preprocessor:
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
         simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
 
+        contents = self.__remove_punctuation(simplified_contents)
+
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:
-            output_file.write(simplified_contents)
+            output_file.write(contents)
             output_file.close()
 
         print('Preprocessed text stored at {}'.format(output_filename))
@@ -69,6 +72,9 @@ class Preprocessor:
 
     def __expand_contractions(self, text):
         return contractions.fix(text)
+
+    def __remove_punctuation(self, text):
+        return text.translate(str.maketrans('', '', string.punctuation))
 
 def main(args):
     arg_p = ArgumentParser('python preprocessor.py', description='Preprocess an unstructured text.')

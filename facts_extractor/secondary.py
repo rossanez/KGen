@@ -61,23 +61,31 @@ class SecondaryFactsExtractor:
                 predicate = line_lst[2].strip()
                 obj = line_lst[3].replace('"', '').strip()
 
+                out_contents += line # The original line must be kept.
+
                 if predicate == 'rdf:predicate':
                     # This should be either a verb or a 'not' followed by a verb. No need to decompose it.
-                    out_contents += line
                     continue
 
                 if obj in statements.keys():
                     if verbose:
                         print(f'Existing statement for object: {obj} - {statements[obj].get_res_id()}')
-                    out_contents += line # Leave alone - secondary relations should have been obtained already!
-                    continue
+                    continue # Leave alone - secondary relations should have been obtained already!
 
                 replacements = {}
 
-                entity_composites = self.__compose_subconcepts(NLPUtils.extract_candidate_entities(obj))
+                candidate_entities = NLPUtils.extract_candidate_entities(obj)
+                if len(candidate_entities) > 1:
+                    for candidate in candidate_entities:
+                        triple = Triple(statement_id, obj, 'rdfs:member', candidate)
+                        if verbose:
+                            print(triple.to_string())
+
+                        out_contents += triple.to_string() + '\n'
+
+                entity_composites = self.__compose_subconcepts(candidate_entities)
                 for entry in entity_composites:
                     triple = Triple(statement_id, entry[0], entry[1], entry[2])
-
                     if verbose:
                         print(triple.to_string())
 
@@ -152,11 +160,6 @@ class SecondaryFactsExtractor:
                         second = replacements[second]
 
                     if elem[1] == 'ROOT':
-                        triple = Triple(statement_id, stmt, predicate, second)
-                        if verbose:
-                            print(triple.to_string())
-
-                        out_contents += triple.to_string() + '\n'
                         continue
 
                     if connector == '':
