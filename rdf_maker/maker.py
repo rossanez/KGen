@@ -31,7 +31,7 @@ class RDFMaker:
 
         print('Processing triples from {}'.format(triples_filename))
 
-        self.__prefixed = {'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local', 'http://local/verbnet_roles.owl#': 'vn.role'}
+        self.__prefixed = {'http://www.w3.org/2000/01/rdf-schema#': 'rdfs', 'http://local/local.owl#': 'local'}
         if not links_filename == None:
             with open(links_filename, 'r') as links_file:
                 for line in links_file.readlines():

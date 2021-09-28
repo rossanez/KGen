@@ -68,4 +68,5 @@ class Statement:
         s_statement = '{}\ta\trdf:Statement'.format(s)
         s_label = 'rdfs:label\t"{}"'.format(self.__contents)
 
+        # subject/predicate/object/others will be processed as Triple objects
         return prefixes, {s: '{}\t;\n\t{}\t.'.format(s_statement, s_label)}
