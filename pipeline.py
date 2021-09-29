@@ -34,7 +34,7 @@ class Pipeline:
         elif self.__server_instance.isServerStarted():
             print('- Warning: Stanford CoreNLP server instance is still running!')
 
-    def run(self, filename, preprocess=True, primary_triples='senna', secondary_triples=False, k_base=None, umls=False, png=True, verbose=False):
+    def run(self, filename, preprocess=True, primary_triples='senna', secondary_triples=False, tinfo=None, k_base=None, umls=False, png=True, verbose=False):
         if not filename.startswith('/'):
             filename = os.path.dirname(os.path.realpath(__file__)) + '/' + filename
 
@@ -47,7 +47,7 @@ class Pipeline:
             preprocessed_filename = filename
 
         triples_filename = None
-        triples_filename = FactsExtractor().extract_triples(preprocessed_filename, primary_triples, secondary_triples, verbose)
+        triples_filename = FactsExtractor().extract_triples(preprocessed_filename, primary_triples, secondary_triples, tinfo, verbose)
         assert not triples_filename is None, 'Facts Extraction has failed!'
 
         links_filename = None
@@ -78,6 +78,7 @@ def main(args):
     arg_p.add_argument('-np', '--nopreprocess', action='store_true', help='Skips preprocessing')
     arg_p.add_argument('-p', '--primary', type=str, default='senna', help='Primary triples extraction method, e.g., senna (default)), openie, clausie')
     arg_p.add_argument('-s', '--secondary', action='store_true', help='Extract secondary triples using dependency parsing')
+    arg_p.add_argument('-t', '--tinfo', type=str, default=None, help='Include temporal information to compose statement IDs')
     arg_p.add_argument('-k', '--kbase', type=str, default=None, help='Knowledge base used for linking, e.g., cso, ncbo, babelfy')
     arg_p.add_argument('-u', '--umls', action='store_true', help='Use UMLS to improve linking in the biomedical domain')
     arg_p.add_argument('-ng', '--nograph', action='store_true', help='Skips PNG image generation')
@@ -88,6 +89,7 @@ def main(args):
     preprocess = not args.nopreprocess
     primary_triples = args.primary
     secondary_triples = args.secondary
+    tinfo = args.tinfo
     k_base = args.kbase
     umls = args.umls
     png = not args.nograph
@@ -98,7 +100,7 @@ def main(args):
         exit(1)
 
     pipeline = Pipeline()
-    pipeline.run(filename, preprocess, primary_triples, secondary_triples, k_base, umls, png, verbose)
+    pipeline.run(filename, preprocess, primary_triples, secondary_triples, tinfo, k_base, umls, png, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))

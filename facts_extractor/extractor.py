@@ -10,7 +10,7 @@ from secondary import SecondaryFactsExtractor
 
 class FactsExtractor:
 
-    def extract_triples(self, input_filename, primary='stanford', secondary=False, verbose=False):
+    def extract_triples(self, input_filename, primary='stanford', secondary=False, tinfo=None, verbose=False):
         if not input_filename.startswith('/'):
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
@@ -20,7 +20,7 @@ class FactsExtractor:
         open(output_filename, 'w').close()
 
         if primary in ['senna']:
-            output = SemanticRoleLabeler().extract(input_filename, output_filename, verbose)
+            output = SemanticRoleLabeler().extract(input_filename, output_filename, tinfo, verbose)
         elif primary in ['stanford', 'clausie']:
             output = OpenIE(primary).extract(input_filename, output_filename, verbose)
         else:
@@ -38,12 +38,14 @@ def main(args):
     arg_p.add_argument('Filename', metavar='filename', type=str, default=None, help='Text file')
     arg_p.add_argument('-p', '--primary', type=str, default='stanford', help='Specify system/method to extract the primary facts: stanford (default), clausie, or senna')
     arg_p.add_argument('-s', '--secondary', action='store_true', help='Attempt to retrieve secondary facts')
+    arg_p.add_argument('-t', '--tinfo', type=str, default=None, help='Include temporal information to compose statement IDs')
     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
 
     args = arg_p.parse_args(args[1:])
     filename = args.Filename
     primary = args.primary
     secondary = args.secondary
+    tinfo = args.tinfo
     verbose = args.verbose
 
     if filename is None:
@@ -51,7 +53,7 @@ def main(args):
         exit(1)
 
     extractor = FactsExtractor()
-    extractor.extract_triples(filename, primary, secondary, verbose)
+    extractor.extract_triples(filename, primary, secondary, tinfo, verbose)
 
 if __name__ == '__main__':
     exit(main(argv))

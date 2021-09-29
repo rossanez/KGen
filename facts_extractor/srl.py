@@ -8,10 +8,10 @@ from common.triple import Triple
 
 class SemanticRoleLabeler:
 
-    def extract(self, input_filename, output_filename, verbose=False):
-        return self.__senna(input_filename, output_filename, verbose)
+    def extract(self, input_filename, output_filename, tinfo=None, verbose=False):
+        return self.__senna(input_filename, output_filename, tinfo, verbose)
 
-    def __senna(self, input_filename, output_filename, verbose=False):
+    def __senna(self, input_filename, output_filename, tinfo=None, verbose=False):
         if verbose:
             print('Performing Sentence Role Labeling with SENNA...')
 
@@ -36,6 +36,8 @@ class SemanticRoleLabeler:
                         print(f'Pred. Args: {pred_args}')
 
                     statement_id = f's{line_number}'
+                    if not tinfo is None:
+                        statement_id = f's{tinfo}.{line_number}'
                     if predicate_number > 0:
                         statement_id += f'.{predicate_number}'
 
