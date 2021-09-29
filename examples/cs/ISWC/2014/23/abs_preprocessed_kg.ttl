@@ -1,492 +1,807 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"we effectively detect noisy type assertions in dbpedia with a high precision of 95"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we approach effectively detect noisy type assertions in dbpedia with a high precision of 95"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we evaluate the approach on both synthetic datasets and dbpedia"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"instanceconcept compatability metrics based on instanceconcept assertions"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"furthermore we propose instanceconcept compatability metrics based on instanceconcept assertions"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"instanceconcept compatability metrics based on instanceinstance relationships"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"furthermore we propose instanceconcept compatability metrics based on instanceinstance relationships"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"the multiclass classification solved by adaboost with c4 5 as the base classifier"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"type assertions which type an individual to two potential disjoint concepts"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we transform noisy type assertion detection into multiclass classification of pairs of type assertions"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we making use of concept disjointness relationships"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"in this paper we study the problem of noisy type assertion detection in semantic web datasets by making use of concept disjointness relationships"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"concept disjointness relationships hidden in the datasets"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"this problem mainly studied in the domain of data mining"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"this problem mainly studied in the semantic web community"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"noisy type assertions play an important role"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"semantic datasets performance always decreased by the noises in the datasets among which noisy type assertions play an important role"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"semantic datasets automate many tasks such as question"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"semantic datasets provide support to automate many tasks such as question"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"semantic datasets automate many tasks such as decisionmaking answering"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"semantic datasets provide support to automate many tasks such as decisionmaking answering"	.
+
+
 #### Classes ####
 
-local:semantic	rdfs:label	"semantic"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:semantic_datasets	rdfs:label	"semantic datasets"	.
+local:detect	a	rdf:Class	;
+	rdfs:label	"detect"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:noisy_type_assertions_in_dbpedia	a	rdf:Class	;
+	rdfs:label	"noisy type assertions in dbpedia"	.
 
-local:provide	rdfs:label	"provide"	.
+local:noisy_type_assertions	a	rdf:Class	;
+	rdfs:label	"noisy type assertions"	.
 
-local:decisionmaking_answering	rdfs:label	"decision-making answering"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:answering	rdfs:label	"answering"	.
+local:type_assertions	a	rdf:Class	;
+	rdfs:label	"type assertions"	.
 
-local:many	rdfs:label	"many"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:many_tasks	rdfs:label	"many tasks"	.
+local:noisy_type	a	rdf:Class	;
+	rdfs:label	"noisy type"	.
 
-local:tasks	rdfs:label	"tasks"	.
+local:assertions	a	rdf:Class	;
+	rdfs:label	"assertions"	.
 
-local:decisionmaking	rdfs:label	"decision-making"	.
+local:noisy	a	rdf:Class	;
+	rdfs:label	"noisy"	.
 
-local:many_tasks_suchas_decisionmaking_answering	rdfs:label	"many tasks such_as decision-making answering"	.
+local:effectively	a	rdf:Class	;
+	rdfs:label	"effectively"	.
 
-local:support	rdfs:label	"support"	.
+local:high_precision_of_95	a	rdf:Class	;
+	rdfs:label	"high precision of 95"	.
 
-local:automate	rdfs:label	"automate"	.
+local:high_precision	a	rdf:Class	;
+	rdfs:label	"high precision"	.
 
-local:question_answering	rdfs:label	"question answering"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:question	rdfs:label	"question"	.
+local:high	a	rdf:Class	;
+	rdfs:label	"high"	.
 
-local:many_tasks_suchas_question_answering	rdfs:label	"many tasks such_as question answering"	.
+local:95	a	rdf:Class	;
+	rdfs:label	"95"	.
 
-local:semantic_datasets_performance	rdfs:label	"semantic datasets performance"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:performance	rdfs:label	"performance"	.
+local:effectively_detect_noisy_type_assertions_in_dbpedia_with_a_high_precision_of_95	a	rdf:Class	;
+	rdfs:label	"effectively detect noisy type assertions in dbpedia with a high precision of 95"	.
 
-local:datasets_performance	rdfs:label	"datasets performance"	.
+local:effectively_detect_noisy_type_assertions	a	rdf:Class	;
+	rdfs:label	"effectively detect noisy type assertions"	.
 
-local:however_semantic_datasets_performance	rdfs:label	"however semantic datasets performance"	.
+local:detect_noisy_type	a	rdf:Class	;
+	rdfs:label	"detect noisy type"	.
 
-local:decreased	rdfs:label	"decreased"	.
+local:detect_noisy	a	rdf:Class	;
+	rdfs:label	"detect noisy"	.
 
-local:always	rdfs:label	"always"	.
+local:effectively_detect	a	rdf:Class	;
+	rdfs:label	"effectively detect"	.
 
-local:important	rdfs:label	"important"	.
+local:detect_noisy_type_assertions	a	rdf:Class	;
+	rdfs:label	"detect noisy type assertions"	.
 
-local:important_role	rdfs:label	"important role"	.
+local:effectively_detect_noisy_type	a	rdf:Class	;
+	rdfs:label	"effectively detect noisy type"	.
 
-local:role	rdfs:label	"role"	.
+local:effectively_detect_noisy	a	rdf:Class	;
+	rdfs:label	"effectively detect noisy"	.
 
-local:type	rdfs:label	"type"	.
+local:effectively_detect_in_dbpedia	a	rdf:Class	;
+	rdfs:label	"effectively detect in dbpedia"	.
 
-local:type_assertions	rdfs:label	"type assertions"	.
+local:dbpedia_with_high_precision	a	rdf:Class	;
+	rdfs:label	"dbpedia with high precision"	.
 
-local:assertions	rdfs:label	"assertions"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:noisy_type_assertions	rdfs:label	"noisy type assertions"	.
+local:approach_on_both_synthetic_datasets_and_dbpedia	a	rdf:Class	;
+	rdfs:label	"approach on both synthetic datasets and dbpedia"	.
 
-local:noises_in_datasets	rdfs:label	"noises in datasets"	.
+local:synthetic_datasets	a	rdf:Class	;
+	rdfs:label	"synthetic datasets"	.
 
-local:noises	rdfs:label	"noises"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:play_among_datasets	rdfs:label	"play among datasets"	.
+local:synthetic	a	rdf:Class	;
+	rdfs:label	"synthetic"	.
 
-local:play	rdfs:label	"play"	.
+local:approach_on_synthetic_datasets	a	rdf:Class	;
+	rdfs:label	"approach on synthetic datasets"	.
 
-local:noisy_type_assertions_among_datasets	rdfs:label	"noisy type assertions among datasets"	.
+local:approach_on_synthetic_datasets_on_dbpedia	a	rdf:Class	;
+	rdfs:label	"approach on synthetic datasets on dbpedia"	.
 
-local:studied	rdfs:label	"studied"	.
+local:instanceconcept_compatability_metrics	a	rdf:Class	;
+	rdfs:label	"instanceconcept compatability metrics"	.
 
-local:problem	rdfs:label	"problem"	.
+local:metrics	a	rdf:Class	;
+	rdfs:label	"metrics"	.
 
-local:mainly	rdfs:label	"mainly"	.
+local:instanceconcept_compatability	a	rdf:Class	;
+	rdfs:label	"instanceconcept compatability"	.
 
-local:data	rdfs:label	"data"	.
+local:instanceconcept	a	rdf:Class	;
+	rdfs:label	"instanceconcept"	.
 
-local:data_mining	rdfs:label	"data mining"	.
+local:compatability	a	rdf:Class	;
+	rdfs:label	"compatability"	.
 
-local:mining	rdfs:label	"mining"	.
+local:compatability_metrics	a	rdf:Class	;
+	rdfs:label	"compatability metrics"	.
 
-local:domain_of_data_mining	rdfs:label	"domain of data mining"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:domain	rdfs:label	"domain"	.
+local:instanceconcept_assertions	a	rdf:Class	;
+	rdfs:label	"instanceconcept assertions"	.
 
-local:web	rdfs:label	"web"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:web_community	rdfs:label	"web community"	.
+local:furthermore	a	rdf:Class	;
+	rdfs:label	"furthermore"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:instanceinstance_relationships	a	rdf:Class	;
+	rdfs:label	"instanceinstance relationships"	.
 
-local:community	rdfs:label	"community"	.
+local:relationships	a	rdf:Class	;
+	rdfs:label	"relationships"	.
 
-local:semantic_web_community	rdfs:label	"semantic web community"	.
+local:instanceinstance	a	rdf:Class	;
+	rdfs:label	"instanceinstance"	.
 
-local:study	rdfs:label	"study"	.
+local:adaboost_with_c4_5_as_the_base_classifier	a	rdf:Class	;
+	rdfs:label	"adaboost with c4 5 as the base classifier"	.
 
-local:paper	rdfs:label	"paper"	.
+local:c4	a	rdf:Class	;
+	rdfs:label	"c4"	.
 
-local:we	rdfs:label	"we"	.
+local:base_classifier	a	rdf:Class	;
+	rdfs:label	"base classifier"	.
 
-local:semantic_web_datasets	rdfs:label	"semantic web datasets"	.
+local:adaboost	a	rdf:Class	;
+	rdfs:label	"adaboost"	.
 
-local:assertion_detection	rdfs:label	"assertion detection"	.
+local:classifier	a	rdf:Class	;
+	rdfs:label	"classifier"	.
 
-local:detection	rdfs:label	"detection"	.
+local:5_c4	a	rdf:Class	;
+	rdfs:label	"5 c4"	.
 
-local:noisy_type_assertion	rdfs:label	"noisy type assertion"	.
+local:adaboost_with_5_c4	a	rdf:Class	;
+	rdfs:label	"adaboost with 5 c4"	.
 
-local:noisy_type_assertion_detection	rdfs:label	"noisy type assertion detection"	.
+local:adaboost_with_5_c4_as_base_classifier	a	rdf:Class	;
+	rdfs:label	"adaboost with 5 c4 as base classifier"	.
 
-local:web_datasets	rdfs:label	"web datasets"	.
+local:solve	a	rdf:Class	;
+	rdfs:label	"solve"	.
 
-local:noisy_type	rdfs:label	"noisy type"	.
+local:multiclass_classification	a	rdf:Class	;
+	rdfs:label	"multiclass classification"	.
 
-local:noisy	rdfs:label	"noisy"	.
+local:classification	a	rdf:Class	;
+	rdfs:label	"classification"	.
 
-local:type_assertion_detection	rdfs:label	"type assertion detection"	.
+local:multiclass	a	rdf:Class	;
+	rdfs:label	"multiclass"	.
 
-local:type_assertion	rdfs:label	"type assertion"	.
+local:individual_two_potential_disjoint_concepts	a	rdf:Class	;
+	rdfs:label	"individual two potential disjoint concepts"	.
 
-local:assertion	rdfs:label	"assertion"	.
+local:potential_disjoint	a	rdf:Class	;
+	rdfs:label	"potential disjoint"	.
 
-local:problem_of_noisy_type_assertion_detection	rdfs:label	"problem of noisy type assertion detection"	.
+local:disjoint	a	rdf:Class	;
+	rdfs:label	"disjoint"	.
 
-local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	rdfs:label	"problem of noisy type assertion detection in semantic web datasets"	.
+local:potential_disjoint_concepts	a	rdf:Class	;
+	rdfs:label	"potential disjoint concepts"	.
 
-local:disjointness_relationships	rdfs:label	"disjointness relationships"	.
+local:disjoint_concepts	a	rdf:Class	;
+	rdfs:label	"disjoint concepts"	.
 
-local:relationships	rdfs:label	"relationships"	.
+local:potential	a	rdf:Class	;
+	rdfs:label	"potential"	.
 
-local:disjointness	rdfs:label	"disjointness"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:concept_disjointness_relationships	rdfs:label	"concept disjointness relationships"	.
+local:two_potential_disjoint_concepts	a	rdf:Class	;
+	rdfs:label	"two potential disjoint concepts"	.
 
-local:use_of_concept_disjointness_relationships	rdfs:label	"use of concept disjointness relationships"	.
+local:transform	a	rdf:Class	;
+	rdfs:label	"transform"	.
 
-local:use	rdfs:label	"use"	.
+local:noisy_type_assertion_detection_multiclass_classification_of_pairs_of_type_assertions	a	rdf:Class	;
+	rdfs:label	"noisy type assertion detection multiclass classification of pairs of type assertions"	.
 
-local:making	rdfs:label	"making"	.
+local:pairs	a	rdf:Class	;
+	rdfs:label	"pairs"	.
 
-local:concept_disjointness	rdfs:label	"concept disjointness"	.
+local:noisy_type_assertion_detection_multiclass_classification	a	rdf:Class	;
+	rdfs:label	"noisy type assertion detection multiclass classification"	.
 
-local:concept	rdfs:label	"concept"	.
+local:noisy_type_assertion_detection_multiclass	a	rdf:Class	;
+	rdfs:label	"noisy type assertion detection multiclass"	.
 
-local:hidden	rdfs:label	"hidden"	.
+local:noisy_type_assertion_detection	a	rdf:Class	;
+	rdfs:label	"noisy type assertion detection"	.
 
-local:transform	rdfs:label	"transform"	.
+local:type_assertion_detection	a	rdf:Class	;
+	rdfs:label	"type assertion detection"	.
 
-local:multiclass	rdfs:label	"multiclass"	.
+local:type_assertion	a	rdf:Class	;
+	rdfs:label	"type assertion"	.
 
-local:multiclass_classification	rdfs:label	"multiclass classification"	.
+local:assertion_detection	a	rdf:Class	;
+	rdfs:label	"assertion detection"	.
 
-local:classification	rdfs:label	"classification"	.
+local:assertion	a	rdf:Class	;
+	rdfs:label	"assertion"	.
 
-local:assertions_classification	rdfs:label	"assertions classification"	.
+local:detection_multiclass_classification	a	rdf:Class	;
+	rdfs:label	"detection multiclass classification"	.
 
-local:pairs_type_assertions	rdfs:label	"pairs type assertions"	.
+local:type_assertion_detection_multiclass	a	rdf:Class	;
+	rdfs:label	"type assertion detection multiclass"	.
 
-local:multiclass_assertions_classification	rdfs:label	"multiclass assertions classification"	.
+local:detection_multiclass	a	rdf:Class	;
+	rdfs:label	"detection multiclass"	.
 
-local:individual	rdfs:label	"individual"	.
+local:detection	a	rdf:Class	;
+	rdfs:label	"detection"	.
 
-local:potential	rdfs:label	"potential"	.
+local:noisy_type_assertion	a	rdf:Class	;
+	rdfs:label	"noisy type assertion"	.
 
-local:potential_disjoint	rdfs:label	"potential disjoint"	.
+local:assertion_detection_multiclass	a	rdf:Class	;
+	rdfs:label	"assertion detection multiclass"	.
 
-local:disjoint	rdfs:label	"disjoint"	.
+local:assertion_detection_multiclass_classification	a	rdf:Class	;
+	rdfs:label	"assertion detection multiclass classification"	.
 
-local:potential_disjoint_concepts	rdfs:label	"potential disjoint concepts"	.
+local:type_assertion_detection_multiclass_classification	a	rdf:Class	;
+	rdfs:label	"type assertion detection multiclass classification"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:assertions_classification	a	rdf:Class	;
+	rdfs:label	"assertions classification"	.
 
-local:disjoint_concepts	rdfs:label	"disjoint concepts"	.
+local:pairs_type_assertions	a	rdf:Class	;
+	rdfs:label	"pairs type assertions"	.
 
-local:two_potential_disjoint_concepts	rdfs:label	"two potential disjoint concepts"	.
+local:multiclass_assertions_classification	a	rdf:Class	;
+	rdfs:label	"multiclass assertions classification"	.
 
-local:solved	rdfs:label	"solved"	.
+local:detection_multiclass_assertions_classification	a	rdf:Class	;
+	rdfs:label	"detection multiclass assertions classification"	.
 
-local:c4	rdfs:label	"c4"	.
+local:assertion_detection_multiclass_assertions_classification	a	rdf:Class	;
+	rdfs:label	"assertion detection multiclass assertions classification"	.
 
-local:c4_5	rdfs:label	"c4 .5"	.
+local:type_assertion_detection_multiclass_assertions_classification	a	rdf:Class	;
+	rdfs:label	"type assertion detection multiclass assertions classification"	.
 
-local:5	rdfs:label	".5"	.
+local:noisy_type_assertion_detection_multiclass_assertions_classification	a	rdf:Class	;
+	rdfs:label	"noisy type assertion detection multiclass assertions classification"	.
 
-local:base_classifier	rdfs:label	"base classifier"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:classifier	rdfs:label	"classifier"	.
+local:use_concept_disjointness_relationships	a	rdf:Class	;
+	rdfs:label	"use concept disjointness relationships"	.
 
-local:base	rdfs:label	"base"	.
+local:concept_disjointness	a	rdf:Class	;
+	rdfs:label	"concept disjointness"	.
 
-local:5_c4	rdfs:label	".5 c4"	.
+local:concept	a	rdf:Class	;
+	rdfs:label	"concept"	.
 
-local:adaboost_with_5_c4	rdfs:label	"adaboost with .5 c4"	.
+local:concept_disjointness_relationships	a	rdf:Class	;
+	rdfs:label	"concept disjointness relationships"	.
 
-local:adaboost	rdfs:label	"adaboost"	.
+local:use_concept	a	rdf:Class	;
+	rdfs:label	"use concept"	.
 
-local:adaboost_with_5_c4_as_base_classifier	rdfs:label	"adaboost with .5 c4 as base classifier"	.
+local:use_concept_disjointness	a	rdf:Class	;
+	rdfs:label	"use concept disjointness"	.
 
-local:propose	rdfs:label	"propose"	.
+local:disjointness	a	rdf:Class	;
+	rdfs:label	"disjointness"	.
 
-local:compatability_metrics	rdfs:label	"compatability metrics"	.
+local:disjointness_relationships	a	rdf:Class	;
+	rdfs:label	"disjointness relationships"	.
 
-local:metrics	rdfs:label	"metrics"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:compatability	rdfs:label	"compatability"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:instanceconcept_compatability	rdfs:label	"instance-concept compatability"	.
+local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	a	rdf:Class	;
+	rdfs:label	"problem of noisy type assertion detection in semantic web datasets"	.
 
-local:instanceconcept_compatability_metrics	rdfs:label	"instance-concept compatability metrics"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:instanceconcept_assertions	rdfs:label	"instance-concept assertions"	.
+local:semantic_web_datasets	a	rdf:Class	;
+	rdfs:label	"semantic web datasets"	.
 
-local:instanceconcept	rdfs:label	"instance-concept"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:instanceconcept_compatability_metrics_based	rdfs:label	"instance-concept compatability metrics based"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:based	rdfs:label	"based"	.
+local:web_datasets	a	rdf:Class	;
+	rdfs:label	"web datasets"	.
 
-local:based_on_instanceconcept_assertions	rdfs:label	"based on instance-concept assertions"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:instanceinstance_relationships	rdfs:label	"instance-instance relationships"	.
+local:problem_of_noisy_type_assertion_detection	a	rdf:Class	;
+	rdfs:label	"problem of noisy type assertion detection"	.
 
-local:instanceinstance	rdfs:label	"instance-instance"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:based_on_instanceinstance_relationships	rdfs:label	"based on instance-instance relationships"	.
+local:making_use_of_concept_disjointness_relationships	a	rdf:Class	;
+	rdfs:label	"making use of concept disjointness relationships"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:use_of_concept_disjointness_relationships	a	rdf:Class	;
+	rdfs:label	"use of concept disjointness relationships"	.
 
-local:synthetic	rdfs:label	"synthetic"	.
+local:hide	a	rdf:Class	;
+	rdfs:label	"hide"	.
 
-local:synthetic_datasets	rdfs:label	"synthetic datasets"	.
+local:mainly	a	rdf:Class	;
+	rdfs:label	"mainly"	.
 
-local:approach_on_synthetic_datasets	rdfs:label	"approach on synthetic datasets"	.
+local:domain_of_data_mining	a	rdf:Class	;
+	rdfs:label	"domain of data mining"	.
 
-local:approach	rdfs:label	"approach"	.
+local:data_mining	a	rdf:Class	;
+	rdfs:label	"data mining"	.
 
-local:approach_on_synthetic_datasets_on_dbpedia	rdfs:label	"approach on synthetic datasets on dbpedia"	.
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:effectively_detect_noisy	rdfs:label	"effectively detect noisy"	.
+local:mining	a	rdf:Class	;
+	rdfs:label	"mining"	.
 
-local:effectively_detect_noisy_type	rdfs:label	"effectively detect noisy type"	.
+local:semantic_web_community	a	rdf:Class	;
+	rdfs:label	"semantic web community"	.
 
-local:effectively	rdfs:label	"effectively"	.
+local:community	a	rdf:Class	;
+	rdfs:label	"community"	.
 
-local:effectively_detect	rdfs:label	"effectively detect"	.
+local:web_community	a	rdf:Class	;
+	rdfs:label	"web community"	.
 
-local:detect_noisy	rdfs:label	"detect noisy"	.
+local:play	a	rdf:Class	;
+	rdfs:label	"play"	.
 
-local:detect_noisy_type	rdfs:label	"detect noisy type"	.
+local:important_role	a	rdf:Class	;
+	rdfs:label	"important role"	.
 
-local:detect	rdfs:label	"detect"	.
+local:role	a	rdf:Class	;
+	rdfs:label	"role"	.
 
-local:detect_noisy_type_assertions	rdfs:label	"detect noisy type assertions"	.
+local:important	a	rdf:Class	;
+	rdfs:label	"important"	.
 
-local:high_precision	rdfs:label	"high precision"	.
+local:noises_in_the_datasets_among_which_noisy_type_assertions_play_an_important_role	a	rdf:Class	;
+	rdfs:label	"noises in the datasets among which noisy type assertions play an important role"	.
 
-local:precision	rdfs:label	"precision"	.
+local:noises	a	rdf:Class	;
+	rdfs:label	"noises"	.
 
-local:effectively_detect_noisy_type_assertions	rdfs:label	"effectively detect noisy type assertions"	.
+local:noises_in_datasets	a	rdf:Class	;
+	rdfs:label	"noises in datasets"	.
 
-local:high	rdfs:label	"high"	.
+local:play_among_datasets	a	rdf:Class	;
+	rdfs:label	"play among datasets"	.
 
-local:effectively_detect_in_dbpedia	rdfs:label	"effectively detect in dbpedia"	.
+local:decrease	a	rdf:Class	;
+	rdfs:label	"decrease"	.
 
-local:dbpedia_with_high_precision	rdfs:label	"dbpedia with high precision"	.
+local:semantic_datasets_performance	a	rdf:Class	;
+	rdfs:label	"semantic datasets performance"	.
 
-local:high_precision_of_95	rdfs:label	"high precision of 95"	.
+local:datasets_performance	a	rdf:Class	;
+	rdfs:label	"datasets performance"	.
 
-local:95	rdfs:label	"95"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:noisy_type_assertions_in_dbpedia	rdfs:label	"noisy type assertions in dbpedia"	.
+local:semantic_datasets	a	rdf:Class	;
+	rdfs:label	"semantic datasets"	.
 
-#### Properties ####
+local:always	a	rdf:Class	;
+	rdfs:label	"always"	.
+
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
+
+local:automate	a	rdf:Class	;
+	rdfs:label	"automate"	.
+
+local:many_tasks_such_as_question	a	rdf:Class	;
+	rdfs:label	"many tasks such_as question"	.
+
+local:question	a	rdf:Class	;
+	rdfs:label	"question"	.
+
+local:many_tasks	a	rdf:Class	;
+	rdfs:label	"many tasks"	.
+
+local:tasks	a	rdf:Class	;
+	rdfs:label	"tasks"	.
+
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
+
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
+
+local:support_to_automate_many_tasks_such_as_question	a	rdf:Class	;
+	rdfs:label	"support to automate many tasks such as question"	.
+
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
+
+local:many_tasks_such_as_decisionmaking_answering	a	rdf:Class	;
+	rdfs:label	"many tasks such_as decisionmaking answering"	.
+
+local:decisionmaking_answering	a	rdf:Class	;
+	rdfs:label	"decisionmaking answering"	.
+
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
+
+local:support_to_automate_many_tasks_such_as_decisionmaking_answering	a	rdf:Class	;
+	rdfs:label	"support to automate many tasks such as decisionmaking answering"	.
 
 #### Mapped Relations ####
 
-cso:semantics	rdfs:label	"semantic"	.
-local:multiclass_classification	owl:sameAs	cso:multiclass_classification	.
 local:data_mining	owl:sameAs	cso:data_mining	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-cso:semantic_web	rdfs:label	"semantic web"	.
-local:semantic_web	owl:sameAs	cso:semantic_web	.
-local:semantic	owl:sameAs	cso:semantics	.
 cso:multiclass_classification	rdfs:label	"multiclass classification"	.
-cso:base_classifiers	rdfs:label	"base classifier"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
 local:base_classifier	owl:sameAs	cso:base_classifiers	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:base_classifiers	rdfs:label	"base classifier"	.
 cso:adaboost	rdfs:label	"adaboost"	.
-local:adaboost	owl:sameAs	cso:adaboost	.
-cso:question_answering	rdfs:label	"question answering"	.
 local:dbpedia	owl:sameAs	cso:dbpedia	.
-local:question_answering	owl:sameAs	cso:question_answering	.
+cso:semantics	rdfs:label	"semantic"	.
+local:adaboost	owl:sameAs	cso:adaboost	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
 cso:data_mining	rdfs:label	"data mining"	.
+local:multiclass_classification	owl:sameAs	cso:multiclass_classification	.
 
 #### Relations ####
 
-local:concept_disjointness	rdfs:member	local:concept_disjointness_relationships	.
-local:many_tasks_suchas_question_answering	local:such_as_questionanswering	local:many_tasks	.
-local:base	rdfs:member	local:base_classifier	.
-local:instanceconcept	rdfs:member	local:instanceconcept_compatability	.
-local:domain_of_data_mining	local:of_datamining	local:domain	.
-local:type	vn.role:Agent	local:type_assertions	.
-local:problem_of_noisy_type_assertion_detection	local:problem_of	local:noisy_type_assertion_detection	.
-local:potential_disjoint	rdfs:subClassOf	local:disjoint	.
-local:approach_on_synthetic_datasets_on_dbpedia	local:on_dbpedia	local:approach_on_synthetic_datasets	.
-local:potential_disjoint_concepts	rdfs:subClassOf	local:disjoint_concepts	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:studied	local:AM-LOC	local:semantic_web_community	.
-local:semantic_datasets	rdfs:subClassOf	local:datasets	.
-local:effectively_detect_noisy	rdfs:member	local:effectively_detect_noisy_type	.
-local:study	local:AM-MNR	local:making	.
-local:semantic_web	rdfs:member	local:semantic_web_community	.
-local:evaluate	vn.role:Theme	local:approach_on_synthetic_datasets_on_dbpedia	.
-local:effectively_detect_in_dbpedia	local:effectivelydetect_in	local:dbpedia	.
-local:solved	vn.role:Location	local:adaboost_with_5_c4_as_base_classifier	.
-local:noisy_type_assertion_detection	rdfs:subClassOf	local:type_assertion_detection	.
-local:multiclass_classification	rdfs:subClassOf	local:classification	.
-local:decisionmaking_answering	rdfs:subClassOf	local:answering	.
-local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	local:problemofnoisytypeassertiondetection_in	local:semantic_web_datasets	.
-local:concept_disjointness_relationships	rdfs:subClassOf	local:disjointness_relationships	.
-local:synthetic_datasets	rdfs:subClassOf	local:datasets	.
-local:effectively_detect	rdfs:subClassOf	local:detect	.
-local:effectively_detect_in_dbpedia	local:in_dbpedia	local:effectively_detect	.
-local:play	vn.role:Actor1	local:important_role	.
-local:many_tasks_suchas_decisionmaking_answering	local:manytasks_such_as	local:decisionmaking_answering	.
-local:important	rdfs:member	local:important_role	.
-local:making	vn.role:Material	local:use	.
-local:evaluate	vn.role:Agent	local:we	.
-local:use_of_concept_disjointness_relationships	local:use_of	local:concept_disjointness_relationships	.
-local:many_tasks_suchas_decisionmaking_answering	local:such_as_decision-makinganswering	local:many_tasks	.
-local:question_answering	rdfs:subClassOf	local:answering	.
-local:based_on_instanceconcept_assertions	local:based_on	local:instanceconcept_assertions	.
-local:noises_in_datasets	local:in_datasets	local:noises	.
-local:multiclass	rdfs:member	local:multiclass_classification	.
-local:effectively	rdfs:member	local:effectively_detect	.
-local:two_potential_disjoint_concepts	rdfs:subClassOf	local:potential_disjoint_concepts	.
-local:play_among_datasets	local:play_among	local:datasets	.
-local:high_precision_of_95	local:highprecision_of	local:95	.
-local:automate	vn.role:Patient	local:many_tasks_suchas_question_answering	.
-local:datasets_performance	rdfs:subClassOf	local:performance	.
-local:type	vn.role:Theme	local:individual	.
-local:effectively_detect_noisy	rdfs:subClassOf	local:noisy	.
-local:data	rdfs:member	local:data_mining	.
-local:solved	vn.role:object	local:multiclass_classification	.
-local:instanceconcept_compatability_metrics_based	local:instance-conceptcompatabilitymetrics_	local:based	.
-local:approach_on_synthetic_datasets	local:approach_on	local:synthetic_datasets	.
-local:effectively_detect_noisy_type_assertions	rdfs:subClassOf	local:assertions	.
-local:question	rdfs:member	local:question_answering	.
-local:semantic_web_datasets	rdfs:subClassOf	local:web_datasets	.
-local:c4_5	rdfs:subClassOf	local:5	.
-local:noisy_type_assertions	rdfs:subClassOf	local:assertions	.
-local:type_assertion_detection	rdfs:subClassOf	local:detection	.
-local:datasets	rdfs:member	local:datasets_performance	.
-local:problem_of_noisy_type_assertion_detection	local:of_noisytypeassertiondetection	local:problem	.
-local:concept	rdfs:member	local:concept_disjointness	.
-local:provide	vn.role:Recipient	local:semantic_datasets	.
-local:instanceconcept_compatability_metrics	rdfs:subClassOf	local:compatability_metrics	.
-local:domain_of_data_mining	local:domain_of	local:data_mining	.
-local:transform	vn.role:Product	local:multiclass_assertions_classification	.
-local:making	vn.role:Agent	local:we	.
-local:propose	vn.role:Agent	local:we	.
-local:noisy	rdfs:member	local:noisy_type	.
-local:potential_disjoint_concepts	rdfs:subClassOf	local:concepts	.
-local:disjoint_concepts	rdfs:subClassOf	local:concepts	.
-local:semantic_web_community	rdfs:subClassOf	local:community	.
-local:instanceconcept_compatability	rdfs:subClassOf	local:compatability	.
-local:detect_noisy_type	rdfs:member	local:detect_noisy_type_assertions	.
-local:effectively_detect_noisy_type	rdfs:subClassOf	local:type	.
-local:instanceconcept_compatability	rdfs:member	local:instanceconcept_compatability_metrics	.
-local:decreased	vn.role:Attribute	local:however_semantic_datasets_performance	.
-local:noisy_type_assertions	rdfs:subClassOf	local:type_assertions	.
-local:dbpedia_with_high_precision	local:with_highprecision	local:dbpedia	.
-local:type_assertions	rdfs:subClassOf	local:assertions	.
-local:data_mining	rdfs:subClassOf	local:mining	.
-local:hidden	local:AM-LOC	local:datasets	.
-local:based	vn.role:Cause	local:instanceconcept_compatability_metrics	.
-local:web	rdfs:member	local:web_datasets	.
-local:automate	vn.role:Patient	local:many_tasks_suchas_decisionmaking_answering	.
-local:web_datasets	rdfs:subClassOf	local:datasets	.
-local:study	local:AM-LOC	local:paper	.
-local:important_role	rdfs:subClassOf	local:role	.
-local:detect_noisy_type	rdfs:subClassOf	local:type	.
-local:detect	vn.role:Stimulus	local:noisy_type_assertions_in_dbpedia	.
-local:many	rdfs:member	local:many_tasks	.
-local:detect_noisy	rdfs:subClassOf	local:noisy	.
-local:noisy_type_assertions_among_datasets	local:noisytypeassertions_among	local:datasets	.
-local:adaboost_with_5_c4_as_base_classifier	local:adaboostwith.5c4_as	local:base_classifier	.
-local:based	local:AM-LOC	local:instanceinstance_relationships	.
-local:noisy_type	rdfs:member	local:noisy_type_assertions	.
-local:decreased	vn.role:Patient	local:noises_in_datasets	.
-local:study	vn.role:Agent	local:we	.
-local:assertion_detection	rdfs:subClassOf	local:detection	.
-local:web_community	rdfs:subClassOf	local:community	.
-local:instanceconcept_compatability_metrics_based	local:_based	local:instanceconcept_compatability_metrics	.
-local:noisy_type_assertion_detection	rdfs:subClassOf	local:detection	.
-local:assertions_classification	rdfs:subClassOf	local:classification	.
-local:decreased	local:AM-TMP	local:always	.
-local:noisy_type_assertions_in_dbpedia	local:in_dbpedia	local:noisy_type_assertions	.
-local:semantic_web	rdfs:member	local:semantic_web_datasets	.
-local:noisy_type	rdfs:subClassOf	local:type	.
-local:provide	vn.role:Agent	local:support	.
-local:adaboost_with_5_c4	local:adaboost_with	local:5_c4	.
-local:potential	rdfs:member	local:potential_disjoint	.
-local:instanceconcept_compatability_metrics	rdfs:subClassOf	local:metrics	.
-local:based_on_instanceinstance_relationships	local:on_instance-instancerelationships	local:based	.
-local:synthetic	rdfs:member	local:synthetic_datasets	.
-local:studied	local:AM-LOC	local:domain_of_data_mining	.
-local:type_assertion	rdfs:member	local:type_assertion_detection	.
-local:play_among_datasets	local:among_datasets	local:play	.
-local:detect	vn.role:Experiencer	local:we	.
-local:compatability_metrics	rdfs:subClassOf	local:metrics	.
-local:semantic_datasets_performance	rdfs:subClassOf	local:datasets_performance	.
-local:use_of_concept_disjointness_relationships	local:of_conceptdisjointnessrelationships	local:use	.
-local:high_precision	rdfs:subClassOf	local:precision	.
-local:compatability	rdfs:member	local:compatability_metrics	.
-local:instanceconcept_assertions	rdfs:subClassOf	local:assertions	.
-local:multiclass_assertions_classification	rdfs:subClassOf	local:assertions_classification	.
-local:semantic_datasets	rdfs:member	local:semantic_datasets_performance	.
-local:decisionmaking	rdfs:member	local:decisionmaking_answering	.
-local:web	rdfs:member	local:web_community	.
-local:high	rdfs:member	local:high_precision	.
-local:detect	rdfs:member	local:detect_noisy	.
-local:studied	vn.role:Theme	local:problem	.
-local:pairs_type_assertions	rdfs:subClassOf	local:type_assertions	.
-local:studied	local:AM-ADV	local:mainly	.
-local:concept_disjointness	rdfs:subClassOf	local:disjointness	.
-local:transform	vn.role:Patient	local:noisy_type_assertion_detection	.
-local:detect_noisy_type_assertions	rdfs:subClassOf	local:assertions	.
-local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	local:in_semanticwebdatasets	local:problem_of_noisy_type_assertion_detection	.
-local:disjointness_relationships	rdfs:subClassOf	local:relationships	.
-local:noisy_type	rdfs:member	local:noisy_type_assertion	.
-local:adaboost_with_5_c4	local:with_.5c4	local:adaboost	.
-local:instanceconcept	rdfs:member	local:instanceconcept_assertions	.
-local:type	rdfs:member	local:type_assertion	.
-local:potential_disjoint	rdfs:member	local:potential_disjoint_concepts	.
-local:noisy_type_assertion	rdfs:subClassOf	local:assertion	.
-local:high_precision_of_95	local:of_95	local:high_precision	.
-local:instanceinstance_relationships	rdfs:subClassOf	local:relationships	.
-local:play	vn.role:Actor	local:noises_in_datasets	.
-local:disjoint	rdfs:member	local:disjoint_concepts	.
-local:effectively_detect	rdfs:member	local:effectively_detect_noisy	.
-local:based	local:AM-LOC	local:instanceconcept_assertions	.
-local:noisy_type_assertions_among_datasets	local:among_datasets	local:noisy_type_assertions	.
-local:disjointness	rdfs:member	local:disjointness_relationships	.
-local:based_on_instanceconcept_assertions	local:on_instance-conceptassertions	local:based	.
-local:automate	vn.role:Agent	local:semantic_datasets	.
-local:type	rdfs:member	local:type_assertions	.
-local:approach	vn.role:object	local:we	.
-local:type	vn.role:Destination	local:two_potential_disjoint_concepts	.
-local:type_assertion	rdfs:subClassOf	local:assertion	.
-local:based_on_instanceinstance_relationships	local:based_on	local:instanceinstance_relationships	.
-local:semantic_datasets_performance	rdfs:subClassOf	local:performance	.
-local:many_tasks	rdfs:subClassOf	local:tasks	.
-local:dbpedia_with_high_precision	local:dbpedia_with	local:high_precision	.
-local:semantic	rdfs:member	local:semantic_datasets	.
-local:adaboost_with_5_c4_as_base_classifier	local:as_baseclassifier	local:adaboost_with_5_c4	.
-local:concept_disjointness_relationships	rdfs:subClassOf	local:relationships	.
-local:approach_on_synthetic_datasets	local:on_syntheticdatasets	local:approach	.
-local:study	vn.role:Theme	local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	.
-local:propose	vn.role:Topic	local:instanceconcept_compatability_metrics_based	.
-local:approach	vn.role:indirect_object	local:effectively_detect_in_dbpedia	.
+local:adaboost_with_5_c4_as_base_classifier	rdfs:member	local:adaboost_with_5_c4	.
+local:s1	rdf:object	local:support_to_automate_many_tasks_such_as_question	.
+local:s4	rdf:subject	local:problem	.
+local:assertion_detection	rdfs:member	local:assertion	.
 local:semantic_web	rdfs:subClassOf	local:web	.
-local:however_semantic_datasets_performance	rdfs:subClassOf	local:semantic_datasets_performance	.
-local:noises_in_datasets	local:noises_in	local:datasets	.
-local:noisy_type_assertion	rdfs:member	local:noisy_type_assertion_detection	.
-local:semantic_web_datasets	rdfs:subClassOf	local:datasets	.
-local:type_assertion_detection	rdfs:subClassOf	local:assertion_detection	.
-local:transform	vn.role:Agent	local:we	.
-local:noisy_type_assertions_in_dbpedia	local:noisytypeassertions_in	local:dbpedia	.
-local:instanceinstance	rdfs:member	local:instanceinstance_relationships	.
-local:many_tasks_suchas_question_answering	local:manytasks_such_as	local:question_answering	.
-local:hidden	vn.role:Recipient	local:concept_disjointness_relationships	.
-local:making	vn.role:Product	local:concept_disjointness_relationships	.
-local:5_c4	rdfs:subClassOf	local:c4	.
-local:assertion	rdfs:member	local:assertion_detection	.
-local:detect	local:AM-MNR	local:effectively	.
-local:approach_on_synthetic_datasets_on_dbpedia	local:approachonsyntheticdatasets_on	local:dbpedia	.
-local:semantic_web_community	rdfs:subClassOf	local:web_community	.
-local:c4	rdfs:member	local:c4_5	.
-local:effectively_detect_noisy_type	rdfs:member	local:effectively_detect_noisy_type_assertions	.
-local:detect_noisy	rdfs:member	local:detect_noisy_type	.
+local:effectively_detect_noisy_type_assertions_in_dbpedia_with_a_high_precision_of_95	rdfs:member	local:high_precision	.
+local:high_precision	rdfs:member	local:high	.
+local:detect_noisy	rdfs:subClassOf	local:noisy	.
+local:datasets_performance	rdfs:subClassOf	local:performance	.
+local:s10.1	rdf:subject	local:instanceconcept_compatability_metrics	.
+local:s9	rdf:subject	local:adaboost_with_c4_5_as_the_base_classifier	.
+local:use_concept_disjointness	rdfs:member	local:use_concept	.
+local:s7	rdf:predicate	local:transform	.
+local:s2.1	rdf:subject	local:noisy_type_assertions	.
 local:base_classifier	rdfs:subClassOf	local:classifier	.
+local:noisy_type_assertion_detection_multiclass_classification_of_pairs_of_type_assertions	rdfs:member	local:pairs	.
+local:s3	local:AM-ADV	local:mainly	.
+local:detection_multiclass_classification	rdfs:member	local:detection_multiclass	.
+local:noisy_type	rdfs:subClassOf	local:type	.
+local:s13.1	local:AM-MNR	local:high_precision_of_95	.
+local:s3	local:AM-LOC	local:semantic_web_community	.
+local:disjointness_relationships	rdfs:member	local:disjointness	.
+local:datasets_performance	rdfs:member	local:datasets	.
+local:synthetic_datasets	rdfs:member	local:synthetic	.
+local:noisy_type_assertion_detection_multiclass_classification	rdfs:member	local:noisy_type_assertion_detection_multiclass	.
+local:s6	rdf:predicate	local:study	.
+local:s9	rdf:object	local:multiclass_classification	.
+local:s4	rdf:predicate	local:study	.
+local:s2	rdf:subject	local:noises_in_the_datasets_among_which_noisy_type_assertions_play_an_important_role	.
+local:s1.1	rdf:subject	local:semantic_datasets	.
+local:s6.1	rdf:predicate	local:make	.
+local:use_of_concept_disjointness_relationships	rdfs:member	local:use	.
+local:assertion_detection	rdfs:subClassOf	local:detection	.
+local:play_among_datasets	rdfs:member	local:datasets	.
+local:detection_multiclass	rdfs:subClassOf	local:multiclass	.
+local:s3	rdf:subject	local:problem	.
+local:s11	rdf:object	local:s11.1	.
+local:potential_disjoint_concepts	rdfs:subClassOf	local:disjoint_concepts	.
+local:s13.1	rdf:object	local:noisy_type_assertions_in_dbpedia	.
+local:noises_in_the_datasets_among_which_noisy_type_assertions_play_an_important_role	rdfs:member	local:noises	.
+local:type_assertions	rdfs:subClassOf	local:assertions	.
+local:high_precision	rdfs:subClassOf	local:precision	.
+local:effectively_detect_noisy_type_assertions_in_dbpedia_with_a_high_precision_of_95	rdfs:member	local:dbpedia	.
+local:s10.1	local:AM-LOC	local:instanceinstance_relationships	.
+local:approach_on_synthetic_datasets_on_dbpedia	rdfs:member	local:dbpedia	.
+local:instanceconcept_compatability	rdfs:subClassOf	local:compatability	.
+local:type_assertion_detection_multiclass_classification	rdfs:subClassOf	local:classification	.
+local:instanceconcept_compatability_metrics	rdfs:subClassOf	local:compatability_metrics	.
+local:concept_disjointness	rdfs:subClassOf	local:disjointness	.
+local:semantic_web_datasets	rdfs:subClassOf	local:web_datasets	.
+local:s5	rdf:predicate	local:hide	.
+local:semantic_web_community	rdfs:member	local:semantic_web	.
+local:s11.1	rdf:predicate	local:base	.
+local:s8	rdf:object	local:individual_two_potential_disjoint_concepts	.
+local:potential_disjoint	rdfs:subClassOf	local:disjoint	.
+local:individual_two_potential_disjoint_concepts	rdfs:subClassOf	local:two_potential_disjoint_concepts	.
+local:domain_of_data_mining	rdfs:member	local:domain	.
+local:compatability_metrics	rdfs:subClassOf	local:metrics	.
+local:disjoint_concepts	rdfs:subClassOf	local:concepts	.
+local:s7	rdf:subject	local:we	.
+local:assertion_detection_multiclass_assertions_classification	rdfs:subClassOf	local:detection_multiclass_assertions_classification	.
+local:s13.1	rdf:subject	local:we	.
+local:concept_disjointness_relationships	rdfs:subClassOf	local:relationships	.
+local:domain_of_data_mining	rdfs:member	local:data_mining	.
+local:noisy_type_assertions	rdfs:subClassOf	local:type_assertions	.
+local:effectively_detect_in_dbpedia	rdfs:member	local:dbpedia	.
+local:noisy_type_assertion_detection_multiclass	rdfs:subClassOf	local:multiclass	.
+local:type_assertion_detection	rdfs:member	local:type_assertion	.
+local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	rdfs:member	local:problem	.
+local:web_datasets	rdfs:subClassOf	local:datasets	.
+local:s2	rdf:object	local:semantic_datasets_performance	.
+local:high_precision_of_95	rdfs:member	local:high_precision	.
+local:making_use_of_concept_disjointness_relationships	rdfs:member	local:use	.
+local:noises_in_the_datasets_among_which_noisy_type_assertions_play_an_important_role	rdfs:member	local:important_role	.
+local:semantic_datasets_performance	rdfs:subClassOf	local:datasets_performance	.
+local:approach_on_synthetic_datasets	rdfs:member	local:synthetic_datasets	.
+local:many_tasks_such_as_question	rdfs:member	local:many_tasks	.
+local:s2.1	rdf:object	local:important_role	.
+local:synthetic_datasets	rdfs:subClassOf	local:datasets	.
+local:semantic_datasets_performance	rdfs:subClassOf	local:performance	.
+local:s10	rdf:predicate	local:propose	.
+local:noisy_type_assertions_in_dbpedia	rdfs:member	local:noisy_type_assertions	.
+local:approach_on_both_synthetic_datasets_and_dbpedia	rdfs:member	local:synthetic_datasets	.
+local:noisy_type_assertions	rdfs:member	local:noisy_type	.
+local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	rdfs:member	local:problem_of_noisy_type_assertion_detection	.
+local:noises_in_the_datasets_among_which_noisy_type_assertions_play_an_important_role	rdfs:member	local:datasets	.
+local:detect_noisy	rdfs:member	local:detect	.
+local:effectively_detect_noisy_type_assertions_in_dbpedia_with_a_high_precision_of_95	rdfs:member	local:effectively_detect_noisy_type_assertions	.
+local:use_of_concept_disjointness_relationships	rdfs:member	local:concept_disjointness_relationships	.
+local:adaboost_with_5_c4	rdfs:member	local:adaboost	.
+local:s0.1	rdf:predicate	local:automate	.
+local:type_assertion_detection_multiclass_assertions_classification	rdfs:subClassOf	local:assertion_detection_multiclass_assertions_classification	.
+local:support_to_automate_many_tasks_such_as_question	rdfs:member	local:question	.
+local:decisionmaking_answering	rdfs:subClassOf	local:answering	.
+local:s11	local:AM-DIS	local:furthermore	.
+local:effectively_detect	rdfs:member	local:effectively	.
+local:multiclass_classification	rdfs:subClassOf	local:classification	.
+local:detection_multiclass_classification	rdfs:subClassOf	local:classification	.
+local:s8	rdf:predicate	local:type	.
+local:s0	rdf:predicate	local:provide	.
+local:assertion_detection_multiclass	rdfs:member	local:assertion_detection	.
+local:use_concept_disjointness_relationships	rdfs:subClassOf	local:relationships	.
+local:s2.1	rdf:predicate	local:play	.
+local:instanceconcept_compatability_metrics	rdfs:member	local:instanceconcept_compatability	.
+local:s10	rdf:subject	local:we	.
+local:assertion_detection_multiclass_classification	rdfs:member	local:assertion_detection_multiclass	.
+local:support_to_automate_many_tasks_such_as_decisionmaking_answering	rdfs:member	local:support	.
+local:s11	rdf:predicate	local:propose	.
+local:detection_multiclass	rdfs:member	local:detection	.
+local:noisy_type_assertion_detection_multiclass_classification_of_pairs_of_type_assertions	rdfs:member	local:noisy_type_assertion_detection_multiclass_classification	.
+local:5_c4	rdfs:subClassOf	local:c4	.
+local:disjointness_relationships	rdfs:subClassOf	local:relationships	.
+local:type_assertions	rdfs:member	local:type	.
+local:potential_disjoint_concepts	rdfs:subClassOf	local:concepts	.
+local:noisy_type_assertion_detection_multiclass_assertions_classification	rdfs:subClassOf	local:type_assertion_detection_multiclass_assertions_classification	.
+local:s10	rdf:object	local:s10.1	.
+local:detect_noisy_type	rdfs:member	local:detect_noisy	.
+local:instanceinstance_relationships	rdfs:subClassOf	local:relationships	.
+local:potential_disjoint	rdfs:member	local:potential	.
+local:approach_on_both_synthetic_datasets_and_dbpedia	rdfs:member	local:dbpedia	.
+local:effectively_detect_noisy	rdfs:subClassOf	local:noisy	.
+local:noises_in_datasets	rdfs:member	local:noises	.
+local:approach_on_both_synthetic_datasets_and_dbpedia	rdfs:member	local:approach	.
+local:assertion_detection_multiclass_classification	rdfs:subClassOf	local:classification	.
+local:noisy_type_assertion	rdfs:member	local:noisy_type	.
+local:s1	rdf:subject	local:semantic_datasets	.
+local:detect_noisy_type	rdfs:subClassOf	local:type	.
+local:disjoint_concepts	rdfs:member	local:disjoint	.
+local:many_tasks	rdfs:member	local:many	.
+local:noisy_type_assertion_detection	rdfs:subClassOf	local:type_assertion_detection	.
+local:s10.1	rdf:predicate	local:base	.
+local:semantic_web_community	rdfs:subClassOf	local:web_community	.
+local:web_datasets	rdfs:member	local:web	.
+local:s13	rdf:subject	local:we	.
+local:effectively_detect	rdfs:subClassOf	local:detect	.
+local:semantic_datasets	rdfs:subClassOf	local:datasets	.
+local:s13	rdf:predicate	local:approach	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:data_mining	rdfs:subClassOf	local:mining	.
+local:use_concept_disjointness	rdfs:subClassOf	local:disjointness	.
+local:s10	local:AM-DIS	local:furthermore	.
+local:s4	local:AM-LOC	local:domain_of_data_mining	.
+local:noisy_type_assertions	rdfs:subClassOf	local:assertions	.
+local:effectively_detect_in_dbpedia	rdfs:member	local:effectively_detect	.
+local:s6	rdf:object	local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	.
+local:adaboost_with_c4_5_as_the_base_classifier	rdfs:member	local:adaboost	.
+local:noisy_type_assertion_detection	rdfs:member	local:noisy_type_assertion	.
+local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	rdfs:member	local:semantic_web_datasets	.
+local:s12	rdf:predicate	local:evaluate	.
+local:instanceconcept_assertions	rdfs:member	local:instanceconcept	.
+local:detect_noisy_type_assertions	rdfs:subClassOf	local:assertions	.
+local:effectively_detect_noisy_type	rdfs:subClassOf	local:type	.
+local:type_assertion	rdfs:member	local:type	.
+local:making_use_of_concept_disjointness_relationships	rdfs:member	local:concept_disjointness_relationships	.
+local:effectively_detect_noisy_type	rdfs:member	local:effectively_detect_noisy	.
+local:type_assertion_detection	rdfs:subClassOf	local:assertion_detection	.
+local:semantic_datasets_performance	rdfs:member	local:semantic_datasets	.
+local:assertion_detection_multiclass	rdfs:subClassOf	local:multiclass	.
+local:s4	local:AM-ADV	local:mainly	.
+local:s13.1	rdf:predicate	local:detect	.
+local:noisy_type_assertions_in_dbpedia	rdfs:member	local:dbpedia	.
+local:use_concept_disjointness_relationships	rdfs:subClassOf	local:concept_disjointness_relationships	.
+local:noises_in_the_datasets_among_which_noisy_type_assertions_play_an_important_role	rdfs:member	local:type_assertions	.
+local:noisy_type_assertion	rdfs:subClassOf	local:assertion	.
+local:s11	rdf:subject	local:we	.
+local:problem_of_noisy_type_assertion_detection	rdfs:member	local:noisy_type_assertion_detection	.
+local:instanceconcept_assertions	rdfs:subClassOf	local:assertions	.
+local:s11.1	local:AM-LOC	local:instanceconcept_assertions	.
+local:adaboost_with_5_c4	rdfs:member	local:5_c4	.
+local:concept_disjointness_relationships	rdfs:member	local:concept_disjointness	.
+local:s0.1	rdf:object	local:many_tasks_such_as_decisionmaking_answering	.
+local:s6.1	rdf:subject	local:we	.
+local:s0	rdf:subject	local:semantic_datasets	.
+local:high_precision_of_95	rdfs:member	local:95	.
+local:s13	rdf:object	local:effectively_detect_noisy_type_assertions_in_dbpedia_with_a_high_precision_of_95	.
+local:use_concept	rdfs:member	local:use	.
+local:s11.1	rdf:subject	local:instanceconcept_compatability_metrics	.
+local:data_mining	rdfs:member	local:data	.
+local:important_role	rdfs:subClassOf	local:role	.
+local:multiclass_assertions_classification	rdfs:subClassOf	local:assertions_classification	.
+local:multiclass_classification	rdfs:member	local:multiclass	.
+local:s5	rdf:subject	local:concept_disjointness_relationships	.
+local:web_community	rdfs:member	local:web	.
+local:approach_on_synthetic_datasets	rdfs:member	local:approach	.
+local:s13.1	local:AM-MNR	local:effectively	.
+local:web_community	rdfs:subClassOf	local:community	.
+local:dbpedia_with_high_precision	rdfs:member	local:dbpedia	.
+local:s1.1	rdf:predicate	local:automate	.
+local:use_concept	rdfs:subClassOf	local:concept	.
+local:potential_disjoint_concepts	rdfs:member	local:potential_disjoint	.
+local:many_tasks	rdfs:subClassOf	local:tasks	.
+local:two_potential_disjoint_concepts	rdfs:subClassOf	local:potential_disjoint_concepts	.
+local:assertions_classification	rdfs:subClassOf	local:classification	.
+local:type_assertion	rdfs:subClassOf	local:assertion	.
+local:problem_of_noisy_type_assertion_detection_in_semantic_web_datasets	rdfs:member	local:noisy_type_assertion_detection	.
+local:semantic_web_datasets	rdfs:subClassOf	local:datasets	.
+local:detection_multiclass_assertions_classification	rdfs:subClassOf	local:multiclass_assertions_classification	.
+local:s3	rdf:predicate	local:study	.
+local:support_to_automate_many_tasks_such_as_decisionmaking_answering	rdfs:member	local:many_tasks	.
+local:type_assertion_detection_multiclass	rdfs:member	local:type_assertion_detection	.
+local:s6	rdf:subject	local:we	.
+local:problem_of_noisy_type_assertion_detection	rdfs:member	local:problem	.
+local:concept_disjointness_relationships	rdfs:subClassOf	local:disjointness_relationships	.
+local:pairs_type_assertions	rdfs:subClassOf	local:type_assertions	.
+local:instanceinstance_relationships	rdfs:member	local:instanceinstance	.
+local:s2	rdf:predicate	local:decrease	.
+local:type_assertion_detection	rdfs:subClassOf	local:detection	.
+local:s1.1	rdf:object	local:many_tasks_such_as_question	.
+local:effectively_detect_noisy_type_assertions	rdfs:member	local:effectively_detect_noisy_type	.
+local:base_classifier	rdfs:member	local:base	.
+local:s6	local:AM-LOC	local:paper	.
+local:semantic_web_datasets	rdfs:member	local:semantic_web	.
+local:s5	local:AM-LOC	local:datasets	.
+local:noises_in_datasets	rdfs:member	local:datasets	.
+local:instanceconcept_compatability	rdfs:member	local:instanceconcept	.
+local:concept_disjointness	rdfs:member	local:concept	.
+local:s9	rdf:predicate	local:solve	.
+local:noisy_type	rdfs:member	local:noisy	.
+local:dbpedia_with_high_precision	rdfs:member	local:high_precision	.
+local:instanceconcept_compatability_metrics	rdfs:subClassOf	local:metrics	.
+local:effectively_detect_noisy	rdfs:member	local:effectively_detect	.
+local:adaboost_with_5_c4_as_base_classifier	rdfs:member	local:base_classifier	.
+local:many_tasks_such_as_decisionmaking_answering	rdfs:member	local:many_tasks	.
+local:noisy_type_assertion_detection_multiclass_classification	rdfs:subClassOf	local:classification	.
+local:s2	local:AM-TMP	local:always	.
+local:support_to_automate_many_tasks_such_as_question	rdfs:member	local:support	.
+local:s12	rdf:subject	local:we	.
+local:noisy_type_assertion_detection_multiclass_classification_of_pairs_of_type_assertions	rdfs:member	local:type_assertions	.
+local:s7	rdf:object	local:noisy_type_assertion_detection_multiclass_classification_of_pairs_of_type_assertions	.
+local:s8	rdf:subject	local:type_assertions	.
+local:semantic_datasets	rdfs:member	local:semantic	.
+local:effectively_detect_noisy_type_assertions	rdfs:subClassOf	local:assertions	.
+local:semantic_web_community	rdfs:subClassOf	local:community	.
+local:use_concept_disjointness_relationships	rdfs:member	local:use_concept_disjointness	.
+local:detect_noisy_type_assertions	rdfs:member	local:detect_noisy_type	.
+local:many_tasks_such_as_question	rdfs:member	local:question	.
+local:s1	rdf:predicate	local:provide	.
+local:s6.1	rdf:object	local:use_concept_disjointness_relationships	.
+local:s0.1	rdf:subject	local:semantic_datasets	.
+local:s12	rdf:object	local:approach_on_both_synthetic_datasets_and_dbpedia	.
+local:type_assertion_detection_multiclass_classification	rdfs:member	local:type_assertion_detection_multiclass	.
+local:noisy_type_assertion_detection_multiclass	rdfs:member	local:noisy_type_assertion_detection	.
+local:important_role	rdfs:member	local:important	.
+local:many_tasks_such_as_decisionmaking_answering	rdfs:member	local:decisionmaking_answering	.
+local:type_assertion_detection_multiclass	rdfs:subClassOf	local:multiclass	.
+local:s1.2	rdf:predicate	local:answer	.
+local:s0	rdf:object	local:support_to_automate_many_tasks_such_as_decisionmaking_answering	.
+local:noisy_type_assertion_detection	rdfs:subClassOf	local:detection	.
+local:adaboost_with_c4_5_as_the_base_classifier	rdfs:member	local:c4	.
+local:s6	local:AM-MNR	local:making_use_of_concept_disjointness_relationships	.
+local:approach_on_synthetic_datasets_on_dbpedia	rdfs:member	local:approach_on_synthetic_datasets	.
+local:compatability_metrics	rdfs:member	local:compatability	.
+local:support_to_automate_many_tasks_such_as_question	rdfs:member	local:many_tasks	.
+local:play_among_datasets	rdfs:member	local:play	.
+local:adaboost_with_c4_5_as_the_base_classifier	rdfs:member	local:base_classifier	.

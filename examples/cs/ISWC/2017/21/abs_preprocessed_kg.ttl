@@ -1,379 +1,711 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"researchers solving researchers mainly by experimentation"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"researchers embarked in solving researchers mainly by experimentation"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"only a few formal theoretical tools answer other practical questions"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"only a few formal theoretical tools help other practical questions"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"only a few formal theoretical tools answer these"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"only a few formal theoretical tools help"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"complete a given task"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"restricted capabilities"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"given task"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"complete a given task"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"restricted capabilities"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"given task"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"complete a given task"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"restricted capabilities"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"given task"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"other interfaces previously implemented in the same server"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"how this new ldf interface compares to other interfaces previously implemented in the same server"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"for example before exposing a new type of ldfs in some server can we formally say something about how this new ldf interface compares to other interfaces previously implemented in the same server"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"exposing a new type of ldfs in some server this new ldf interface"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"caching several practical challenges"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"this new ldf interface own particular properties regarding performance bandwidth needs arise"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"this new ldf interface has this new ldf interface own particular properties regarding performance bandwidth needs arise"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the linked data fragment framework explore the tradeoffs of consuming linked data"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the linked data fragment framework proposed as a uniform view to explore the tradeoffs of consuming linked data"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"ldf framework explore the tradeoffs of consuming linked data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"ldf framework proposed as a uniform view to explore the tradeoffs of consuming linked data"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"access servers data"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"servers provide different interfaces to access servers data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+
 #### Classes ####
 
-local:data_fragment	rdfs:label	"data fragment"	.
+local:researchers	a	rdf:Class	;
+	rdfs:label	"researchers"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:solve	a	rdf:Class	;
+	rdfs:label	"solve"	.
 
-local:fragment_lrb	rdfs:label	"fragment -lrb-"	.
+local:mainly_by_experimentation	a	rdf:Class	;
+	rdfs:label	"mainly by experimentation"	.
 
-local:lrb	rdfs:label	"-lrb-"	.
+local:mainly_experimentation	a	rdf:Class	;
+	rdfs:label	"mainly experimentation"	.
 
-local:data_fragment_lrb	rdfs:label	"data fragment -lrb-"	.
+local:experimentation	a	rdf:Class	;
+	rdfs:label	"experimentation"	.
 
-local:rrb	rdfs:label	"-rrb-"	.
+local:embark	a	rdf:Class	;
+	rdfs:label	"embark"	.
 
-local:rrb_framework	rdfs:label	"-rrb- framework"	.
+local:solving_researchers	a	rdf:Class	;
+	rdfs:label	"solving researchers"	.
 
-local:framework	rdfs:label	"framework"	.
+local:mainly	a	rdf:Class	;
+	rdfs:label	"mainly"	.
 
-local:data	rdfs:label	"data"	.
+local:formal_theoretical_tools	a	rdf:Class	;
+	rdfs:label	"formal theoretical tools"	.
 
-local:ldf_rrb_framework	rdfs:label	"ldf -rrb- framework"	.
+local:formal_theoretical	a	rdf:Class	;
+	rdfs:label	"formal theoretical"	.
 
-local:lrb_ldf_rrb_framework	rdfs:label	"-lrb- ldf -rrb- framework"	.
+local:theoretical	a	rdf:Class	;
+	rdfs:label	"theoretical"	.
 
-local:fragment_lrb_ldf_rrb_framework	rdfs:label	"fragment -lrb- ldf -rrb- framework"	.
+local:theoretical_tools	a	rdf:Class	;
+	rdfs:label	"theoretical tools"	.
 
-local:data_fragment_lrb_ldf_rrb_framework	rdfs:label	"data fragment -lrb- ldf -rrb- framework"	.
+local:tools	a	rdf:Class	;
+	rdfs:label	"tools"	.
 
-local:linked_data_fragment_lrb_ldf_rrb_framework	rdfs:label	"linked data fragment -lrb- ldf -rrb- framework"	.
+local:formal	a	rdf:Class	;
+	rdfs:label	"formal"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:uniform	rdfs:label	"uniform"	.
+local:practical_questions	a	rdf:Class	;
+	rdfs:label	"practical questions"	.
 
-local:uniform_view	rdfs:label	"uniform view"	.
+local:practical	a	rdf:Class	;
+	rdfs:label	"practical"	.
 
-local:view	rdfs:label	"view"	.
+local:questions	a	rdf:Class	;
+	rdfs:label	"questions"	.
 
-local:access	rdfs:label	"access"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:access_servers	rdfs:label	"access servers"	.
+local:these	a	rdf:Class	;
+	rdfs:label	"these"	.
 
-local:servers	rdfs:label	"servers"	.
+local:given_task	a	rdf:Class	;
+	rdfs:label	"given task"	.
 
-local:different_interfaces	rdfs:label	"different interfaces"	.
+local:complete	a	rdf:Class	;
+	rdfs:label	"complete"	.
 
-local:interfaces	rdfs:label	"interfaces"	.
+local:capabilities	a	rdf:Class	;
+	rdfs:label	"capabilities"	.
 
-local:different	rdfs:label	"different"	.
+local:restrict	a	rdf:Class	;
+	rdfs:label	"restrict"	.
 
-local:servers_data	rdfs:label	"servers data"	.
+local:client_side	a	rdf:Class	;
+	rdfs:label	"client side"	.
 
-local:access_servers_data	rdfs:label	"access servers data"	.
+local:client	a	rdf:Class	;
+	rdfs:label	"client"	.
 
-local:when_provide	rdfs:label	"when provide"	.
+local:side	a	rdf:Class	;
+	rdfs:label	"side"	.
 
-local:provide	rdfs:label	"provide"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:task_client	a	rdf:Class	;
+	rdfs:label	"task client"	.
 
-local:consuming_linked_data	rdfs:label	"consuming linked data"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:tradeoffs_of_consuming_linked_data	rdfs:label	"trade-offs of consuming linked data"	.
+local:task_restricted_capabilities	a	rdf:Class	;
+	rdfs:label	"task restricted capabilities"	.
 
-local:tradeoffs	rdfs:label	"trade-offs"	.
+local:interfaces	a	rdf:Class	;
+	rdfs:label	"interfaces"	.
 
-local:when_provide_to_access_servers_data	rdfs:label	"when provide to access servers data"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:explore	rdfs:label	"explore"	.
+local:server	a	rdf:Class	;
+	rdfs:label	"server"	.
 
-local:linked	rdfs:label	"linked"	.
+local:previously	a	rdf:Class	;
+	rdfs:label	"previously"	.
 
-local:new	rdfs:label	"new"	.
+local:new_ldf_interface	a	rdf:Class	;
+	rdfs:label	"new ldf interface"	.
 
-local:new_ldf	rdfs:label	"new ldf"	.
+local:new_ldf	a	rdf:Class	;
+	rdfs:label	"new ldf"	.
 
-local:new_ldf_interface	rdfs:label	"new ldf interface"	.
+local:ldf	a	rdf:Class	;
+	rdfs:label	"ldf"	.
 
-local:interface	rdfs:label	"interface"	.
+local:interface	a	rdf:Class	;
+	rdfs:label	"interface"	.
 
-local:ldf	rdfs:label	"ldf"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:ldf_interface	rdfs:label	"ldf interface"	.
+local:ldf_interface	a	rdf:Class	;
+	rdfs:label	"ldf interface"	.
 
-local:has	rdfs:label	"has"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:particular_properties	rdfs:label	"particular properties"	.
+local:interfaces_previously_implemented_in_the_same_server	a	rdf:Class	;
+	rdfs:label	"interfaces previously implemented in the same server"	.
 
-local:properties	rdfs:label	"properties"	.
+local:same_server	a	rdf:Class	;
+	rdfs:label	"same server"	.
 
-local:own_particular	rdfs:label	"own particular"	.
+local:same	a	rdf:Class	;
+	rdfs:label	"same"	.
 
-local:particular	rdfs:label	"particular"	.
+local:previously_implemented	a	rdf:Class	;
+	rdfs:label	"previously implemented"	.
 
-local:own_particular_properties	rdfs:label	"own particular properties"	.
+local:implemented	a	rdf:Class	;
+	rdfs:label	"implemented"	.
 
-local:bandwidth_needs	rdfs:label	"bandwidth needs"	.
+local:interfaces_previously_implemented	a	rdf:Class	;
+	rdfs:label	"interfaces previously implemented"	.
 
-local:needs	rdfs:label	"needs"	.
+local:previously_implemented_in_same_server	a	rdf:Class	;
+	rdfs:label	"previously implemented in same server"	.
 
-local:bandwidth	rdfs:label	"bandwidth"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:own	rdfs:label	"own"	.
+local:say	a	rdf:Class	;
+	rdfs:label	"say"	.
 
-local:interface_own_particular_properties	rdfs:label	"interface own particular properties"	.
+local:something_about_how_this_new_ldf_interface_compares_to_other_interfaces_previously_implemented_in_the_same_server	a	rdf:Class	;
+	rdfs:label	"something about how this new ldf interface compares to other interfaces previously implemented in the same server"	.
 
-local:ldf_interface_own_particular_properties	rdfs:label	"ldf interface own particular properties"	.
+local:other_interfaces	a	rdf:Class	;
+	rdfs:label	"other interfaces"	.
 
-local:new_ldf_interface_own_particular_properties	rdfs:label	"new ldf interface own particular properties"	.
+local:something	a	rdf:Class	;
+	rdfs:label	"something"	.
 
-local:new_ldf_interface_own_particular_properties_regarding	rdfs:label	"new ldf interface own particular properties regarding"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:regarding	rdfs:label	"regarding"	.
+local:how_compares	a	rdf:Class	;
+	rdfs:label	"how compares"	.
 
-local:new_ldf_interface_own_particular_properties_regarding_bandwidth_needs	rdfs:label	"new ldf interface own particular properties regarding bandwidth needs"	.
+local:compares	a	rdf:Class	;
+	rdfs:label	"compares"	.
 
-local:bandwidth_needs_caching	rdfs:label	"bandwidth needs caching"	.
+local:how_compares_to_other_interfaces	a	rdf:Class	;
+	rdfs:label	"how compares to other interfaces"	.
 
-local:caching	rdfs:label	"caching"	.
+local:formally	a	rdf:Class	;
+	rdfs:label	"formally"	.
 
-local:new_type	rdfs:label	"new type"	.
+local:example_before_exposing_a_new_type_of_ldfs_in_some_server_can	a	rdf:Class	;
+	rdfs:label	"example before exposing a new type of ldfs in some server can"	.
 
-local:type	rdfs:label	"type"	.
+local:new_type	a	rdf:Class	;
+	rdfs:label	"new type"	.
 
-local:new_type_of_ldfs	rdfs:label	"new type of ldfs"	.
+local:example	a	rdf:Class	;
+	rdfs:label	"example"	.
 
-local:ldfs	rdfs:label	"ldfs"	.
+local:ldfs	a	rdf:Class	;
+	rdfs:label	"ldfs"	.
 
-local:exposing	rdfs:label	"exposing"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:server	rdfs:label	"server"	.
+local:new_type_of_ldfs	a	rdf:Class	;
+	rdfs:label	"new type of ldfs"	.
 
-local:exposing_in_server	rdfs:label	"exposing in server"	.
+local:exposing_in_server	a	rdf:Class	;
+	rdfs:label	"exposing in server"	.
 
-local:say	rdfs:label	"say"	.
+local:exposing	a	rdf:Class	;
+	rdfs:label	"exposing"	.
 
-local:can	rdfs:label	"can"	.
+local:expose	a	rdf:Class	;
+	rdfs:label	"expose"	.
 
-local:we	rdfs:label	"we"	.
+local:new_type_of_ldfs_server	a	rdf:Class	;
+	rdfs:label	"new type of ldfs server"	.
 
-local:formally	rdfs:label	"formally"	.
+local:ldfs_server	a	rdf:Class	;
+	rdfs:label	"ldfs server"	.
 
-local:other	rdfs:label	"other"	.
+local:several_practical_challenges	a	rdf:Class	;
+	rdfs:label	"several practical challenges"	.
 
-local:other_interfaces	rdfs:label	"other interfaces"	.
+local:practical_challenges	a	rdf:Class	;
+	rdfs:label	"practical challenges"	.
 
-local:same_server	rdfs:label	"same server"	.
+local:challenges	a	rdf:Class	;
+	rdfs:label	"challenges"	.
 
-local:same	rdfs:label	"same"	.
+local:several_practical	a	rdf:Class	;
+	rdfs:label	"several practical"	.
 
-local:previously_implemented	rdfs:label	"previously implemented"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:cache	a	rdf:Class	;
+	rdfs:label	"cache"	.
 
-local:how_compares	rdfs:label	"how compares"	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs	a	rdf:Class	;
+	rdfs:label	"new ldf interface own particular properties regarding performance bandwidth needs"	.
 
-local:compares	rdfs:label	"compares"	.
+local:performance_bandwidth_needs	a	rdf:Class	;
+	rdfs:label	"performance bandwidth needs"	.
 
-local:how_compares_to_other_interfaces	rdfs:label	"how compares to other interfaces"	.
+local:own_particular_properties	a	rdf:Class	;
+	rdfs:label	"own particular properties"	.
 
-local:previously_implemented_in_same_server	rdfs:label	"previously implemented in same server"	.
+local:particular_properties	a	rdf:Class	;
+	rdfs:label	"particular properties"	.
 
-local:something	rdfs:label	"something"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:interfaces_previously_implemented	rdfs:label	"interfaces previously implemented"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:previously	rdfs:label	"previously"	.
+local:bandwidth_needs	a	rdf:Class	;
+	rdfs:label	"bandwidth needs"	.
 
-local:given	rdfs:label	"given"	.
+local:bandwidth	a	rdf:Class	;
+	rdfs:label	"bandwidth"	.
 
-local:client	rdfs:label	"client"	.
+local:own_particular	a	rdf:Class	;
+	rdfs:label	"own particular"	.
 
-local:task	rdfs:label	"task"	.
+local:own	a	rdf:Class	;
+	rdfs:label	"own"	.
 
-local:restricted	rdfs:label	"restricted"	.
+local:performance_bandwidth	a	rdf:Class	;
+	rdfs:label	"performance bandwidth"	.
 
-local:capabilities	rdfs:label	"capabilities"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:complete	rdfs:label	"complete"	.
+local:needs	a	rdf:Class	;
+	rdfs:label	"needs"	.
 
-local:other_practical	rdfs:label	"other practical"	.
+local:interface_own_particular_properties	a	rdf:Class	;
+	rdfs:label	"interface own particular properties"	.
 
-local:other_practical_questions	rdfs:label	"other practical questions"	.
+local:ldf_interface_own_particular_properties	a	rdf:Class	;
+	rdfs:label	"ldf interface own particular properties"	.
 
-local:questions	rdfs:label	"questions"	.
+local:new_ldf_interface_own_particular_properties	a	rdf:Class	;
+	rdfs:label	"new ldf interface own particular properties"	.
 
-local:practical	rdfs:label	"practical"	.
+local:new_ldf_interface_own_particular_properties_regarding	a	rdf:Class	;
+	rdfs:label	"new ldf interface own particular properties regarding"	.
 
-local:practical_questions	rdfs:label	"practical questions"	.
+local:regarding	a	rdf:Class	;
+	rdfs:label	"regarding"	.
 
-local:mainly_experimentation	rdfs:label	"mainly experimentation"	.
+local:arise	a	rdf:Class	;
+	rdfs:label	"arise"	.
 
-local:experimentation	rdfs:label	"experimentation"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:have_embarked	rdfs:label	"have embarked"	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs_arise	a	rdf:Class	;
+	rdfs:label	"new ldf interface own particular properties regarding performance bandwidth needs arise"	.
 
-local:embarked	rdfs:label	"embarked"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:solving_by_mainly_experimentation	rdfs:label	"solving by mainly experimentation"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:solving	rdfs:label	"solving"	.
+local:linked_data_fragment_framework	a	rdf:Class	;
+	rdfs:label	"linked data fragment framework"	.
 
-local:help	rdfs:label	"help"	.
+local:fragment_framework	a	rdf:Class	;
+	rdfs:label	"fragment framework"	.
 
-local:answer	rdfs:label	"answer"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-local:theoretical_tools	rdfs:label	"theoretical tools"	.
+local:data_fragment_framework	a	rdf:Class	;
+	rdfs:label	"data fragment framework"	.
 
-local:tools	rdfs:label	"tools"	.
+local:data_fragment	a	rdf:Class	;
+	rdfs:label	"data fragment"	.
 
-local:formal	rdfs:label	"formal"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:formal_theoretical	rdfs:label	"formal theoretical"	.
+local:explore	a	rdf:Class	;
+	rdfs:label	"explore"	.
 
-local:theoretical	rdfs:label	"theoretical"	.
+local:tradeoffs_of_consuming_linked_data	a	rdf:Class	;
+	rdfs:label	"tradeoffs of consuming linked data"	.
 
-local:formal_theoretical_tools	rdfs:label	"formal theoretical tools"	.
+local:tradeoffs	a	rdf:Class	;
+	rdfs:label	"tradeoffs"	.
 
-local:mainly	rdfs:label	"mainly"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:researchers	rdfs:label	"researchers"	.
+local:uniform_view	a	rdf:Class	;
+	rdfs:label	"uniform view"	.
 
-local:these	rdfs:label	"these"	.
+local:uniform	a	rdf:Class	;
+	rdfs:label	"uniform"	.
 
-#### Properties ####
+local:view	a	rdf:Class	;
+	rdfs:label	"view"	.
+
+local:explore_the_tradeoffs_of_consuming_linked_data	a	rdf:Class	;
+	rdfs:label	"explore the tradeoffs of consuming linked data"	.
+
+local:ldf_framework	a	rdf:Class	;
+	rdfs:label	"ldf framework"	.
+
+local:servers_data	a	rdf:Class	;
+	rdfs:label	"servers data"	.
+
+local:servers	a	rdf:Class	;
+	rdfs:label	"servers"	.
+
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
+
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
+
+local:different_interfaces_access_servers_data	a	rdf:Class	;
+	rdfs:label	"different interfaces access servers data"	.
+
+local:different_interfaces	a	rdf:Class	;
+	rdfs:label	"different interfaces"	.
+
+local:different_interfaces_access_servers	a	rdf:Class	;
+	rdfs:label	"different interfaces access servers"	.
+
+local:different_interfaces_access	a	rdf:Class	;
+	rdfs:label	"different interfaces access"	.
+
+local:interfaces_access_servers_data	a	rdf:Class	;
+	rdfs:label	"interfaces access servers data"	.
+
+local:interfaces_access_servers	a	rdf:Class	;
+	rdfs:label	"interfaces access servers"	.
+
+local:access_servers	a	rdf:Class	;
+	rdfs:label	"access servers"	.
+
+local:interfaces_access	a	rdf:Class	;
+	rdfs:label	"interfaces access"	.
+
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
 #### Mapped Relations ####
 
-local:linked_data	owl:sameAs	cso:linked_data	.
-cso:servers	rdfs:label	"servers"	.
-cso:bandwidth	rdfs:label	"bandwidth"	.
-local:bandwidth	owl:sameAs	cso:bandwidth	.
 local:servers	owl:sameAs	cso:servers	.
-cso:caching	rdfs:label	"caching"	.
-cso:linked_data	rdfs:label	"linked data"	.
-local:caching	owl:sameAs	cso:caching	.
+cso:bandwidth	rdfs:label	"bandwidth"	.
+cso:servers	rdfs:label	"servers"	.
+local:bandwidth	owl:sameAs	cso:bandwidth	.
 
 #### Relations ####
 
-local:data_fragment_lrb	rdfs:subClassOf	local:lrb	.
-local:compares	vn.role:Patient2	local:new_ldf_interface	.
-local:uniform_view	rdfs:subClassOf	local:view	.
-local:theoretical_tools	rdfs:subClassOf	local:tools	.
-local:new_ldf_interface	rdfs:subClassOf	local:interface	.
-local:bandwidth_needs	rdfs:subClassOf	local:needs	.
-local:new	rdfs:member	local:new_type	.
-local:has	vn.role:Stimulus	local:new_ldf_interface_own_particular_properties_regarding_bandwidth_needs	.
-local:new_ldf_interface_own_particular_properties_regarding	local:_regarding	local:new_ldf_interface_own_particular_properties	.
-local:embarked	vn.role:Theme	local:formal_theoretical_tools	.
-local:formal	rdfs:member	local:formal_theoretical	.
-local:how_compares_to_other_interfaces	local:to_otherinterfaces	local:how_compares	.
-local:other_practical_questions	rdfs:subClassOf	local:questions	.
-local:how_compares	rdfs:subClassOf	local:compares	.
-local:lrb_ldf_rrb_framework	rdfs:subClassOf	local:ldf_rrb_framework	.
-local:how_compares_to_other_interfaces	local:howcompares_to	local:other_interfaces	.
-local:implemented	local:AM-TMP	local:previously	.
-local:ldf	rdfs:member	local:ldf_interface	.
-local:formal_theoretical_tools	rdfs:subClassOf	local:theoretical_tools	.
-local:provide	vn.role:Recipient	local:servers	.
-local:proposed	vn.role:Topic	local:linked_data_fragment_lrb_ldf_rrb_framework	.
-local:linked	vn.role:Patient	local:data	.
-local:complete	vn.role:Theme	local:task	.
-local:own_particular_properties	rdfs:subClassOf	local:particular_properties	.
-local:explore	vn.role:Location	local:tradeoffs_of_consuming_linked_data	.
-local:complete	vn.role:Agent	local:client	.
-local:new_type_of_ldfs	local:newtype_of	local:ldfs	.
-local:implemented	vn.role:Theme	local:interfaces	.
-local:say	vn.role:Cause	local:something	.
-local:practical	rdfs:member	local:practical_questions	.
-local:other	rdfs:member	local:other_interfaces	.
-local:solving_by_mainly_experimentation	local:by_mainlyexperimentation	local:solving	.
-local:data_fragment_lrb_ldf_rrb_framework	rdfs:subClassOf	local:fragment_lrb_ldf_rrb_framework	.
-local:uniform	rdfs:member	local:uniform_view	.
-local:exposing	vn.role:Recipient	local:server	.
-local:answer	vn.role:Predicate	local:practical_questions	.
-local:when_provide_to_access_servers_data	local:to_accessserversdata	local:when_provide	.
-local:given	vn.role:indirect_object	local:client	.
-local:proposed	local:AM-PNC	local:explore	.
-local:new_type_of_ldfs	local:of_ldfs	local:new_type	.
-local:access	rdfs:member	local:access_servers	.
-local:different_interfaces	rdfs:subClassOf	local:interfaces	.
-local:solving	vn.role:Location	local:practical_questions	.
-local:formal_theoretical	rdfs:subClassOf	local:theoretical	.
-local:fragment_lrb_ldf_rrb_framework	rdfs:subClassOf	local:lrb_ldf_rrb_framework	.
-local:new_ldf	rdfs:member	local:new_ldf_interface	.
-local:say	local:AM-MNR	local:formally	.
-local:different	rdfs:member	local:different_interfaces	.
-local:ldf_interface_own_particular_properties	rdfs:subClassOf	local:interface_own_particular_properties	.
-local:access_servers	rdfs:subClassOf	local:servers	.
-local:particular	rdfs:member	local:particular_properties	.
-local:theoretical	rdfs:member	local:theoretical_tools	.
-local:new_ldf	rdfs:subClassOf	local:ldf	.
-local:ldf_rrb_framework	rdfs:subClassOf	local:rrb_framework	.
-local:provide	vn.role:Agent	local:different_interfaces	.
-local:restricted	vn.role:Patient	local:capabilities	.
-local:embarked	vn.role:Agent	local:these	.
-local:same	rdfs:member	local:same_server	.
-local:new_ldf_interface_own_particular_properties_regarding_bandwidth_needs	local:_bandwidthneeds	local:new_ldf_interface_own_particular_properties_regarding	.
-local:explore	vn.role:Agent	local:linked_data_fragment_lrb_ldf_rrb_framework	.
-local:embarked	vn.role:Agent	local:practical_questions	.
-local:provide	vn.role:indirect_object	local:access_servers_data	.
-local:exposing	vn.role:Agent	local:new_type_of_ldfs	.
-local:implemented	local:AM-TMP	local:server	.
-local:own	rdfs:member	local:own_particular	.
-local:own_particular	rdfs:member	local:own_particular_properties	.
-local:particular_properties	rdfs:subClassOf	local:properties	.
-local:embarked	vn.role:Agent	local:experimentation	.
-local:interfaces_previously_implemented	local:interfaces_	local:previously_implemented	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:help	vn.role:Beneficiary	local:answer	.
-local:exposing_in_server	local:exposing_in	local:server	.
-local:exposing_in_server	local:in_server	local:exposing	.
-local:new_ldf_interface	rdfs:subClassOf	local:ldf_interface	.
-local:interface_own_particular_properties	rdfs:subClassOf	local:own_particular_properties	.
-local:previously_implemented_in_same_server	local:previouslyimplemented_in	local:same_server	.
-local:bandwidth_needs_caching	local:_caching	local:bandwidth_needs	.
-local:same_server	rdfs:subClassOf	local:server	.
-local:other_practical	rdfs:member	local:other_practical_questions	.
-local:when_provide	rdfs:subClassOf	local:provide	.
-local:bandwidth_needs_caching	local:bandwidthneeds_	local:caching	.
-local:previously_implemented	rdfs:subClassOf	local:implemented	.
-local:when_provide_to_access_servers_data	local:whenprovide_to	local:access_servers_data	.
-local:has	vn.role:Experiencer	local:new_ldf_interface	.
-local:other_practical_questions	rdfs:subClassOf	local:practical_questions	.
-local:other_practical	rdfs:subClassOf	local:practical	.
-local:say	local:AM-ADV	local:can	.
+local:s6.1	rdf:subject	local:capabilities	.
 local:ldf_interface	rdfs:subClassOf	local:interface	.
-local:new_ldf_interface_own_particular_properties	rdfs:subClassOf	local:ldf_interface_own_particular_properties	.
-local:access_servers_data	rdfs:subClassOf	local:servers_data	.
-local:own_particular	rdfs:subClassOf	local:particular	.
-local:given	vn.role:object	local:task	.
-local:own_particular_properties	rdfs:subClassOf	local:properties	.
-local:mainly_experimentation	rdfs:subClassOf	local:experimentation	.
-local:say	vn.role:Recipient	local:we	.
-local:embarked	vn.role:Theme	local:solving	.
-local:formal_theoretical	rdfs:member	local:formal_theoretical_tools	.
-local:compares	vn.role:Agent	local:interfaces_previously_implemented	.
-local:formal_theoretical_tools	rdfs:subClassOf	local:tools	.
-local:access_servers	rdfs:member	local:access_servers_data	.
-local:solving	vn.role:object	local:researchers	.
-local:rrb	rdfs:member	local:rrb_framework	.
-local:answer	vn.role:Predicate	local:these	.
-local:solving	vn.role:Location	local:these	.
-local:linked_data_fragment_lrb_ldf_rrb_framework	rdfs:subClassOf	local:data_fragment_lrb_ldf_rrb_framework	.
-local:fragment	rdfs:member	local:fragment_lrb	.
-local:bandwidth	rdfs:member	local:bandwidth_needs	.
-local:consuming_linked_data	rdfs:subClassOf	local:linked_data	.
-local:other	rdfs:member	local:other_practical	.
-local:proposed	local:AM-MNR	local:uniform_view	.
-local:fragment_lrb	rdfs:subClassOf	local:lrb	.
-local:other_interfaces	rdfs:subClassOf	local:interfaces	.
-local:rrb_framework	rdfs:subClassOf	local:framework	.
-local:new	rdfs:member	local:new_ldf	.
-local:servers_data	rdfs:subClassOf	local:data	.
-local:new_ldf_interface_own_particular_properties_regarding_bandwidth_needs	local:newldfinterfaceownparticularpropertiesregarding_	local:bandwidth_needs	.
-local:solving	local:AM-MNR	local:mainly_experimentation	.
-local:new_ldf_interface_own_particular_properties_regarding	local:newldfinterfaceownparticularproperties_	local:regarding	.
-local:have_embarked	rdfs:subClassOf	local:embarked	.
-local:previously_implemented_in_same_server	local:in_sameserver	local:previously_implemented	.
-local:servers	rdfs:member	local:servers_data	.
-local:data_fragment	rdfs:member	local:data_fragment_lrb	.
-local:exposing	vn.role:Theme	local:new_ldf_interface	.
-local:tradeoffs_of_consuming_linked_data	local:of_consuminglinkeddata	local:tradeoffs	.
+local:how_compares_to_other_interfaces	rdfs:member	local:other_interfaces	.
+local:performance_bandwidth_needs	rdfs:member	local:performance_bandwidth	.
+local:ldf_interface	rdfs:member	local:ldf	.
+local:own_particular_properties	rdfs:subClassOf	local:particular_properties	.
+local:explore_the_tradeoffs_of_consuming_linked_data	rdfs:member	local:data	.
+local:s1.2	rdf:predicate	local:linked	.
+local:s11	rdf:subject	local:experimentation	.
+local:new_type_of_ldfs_server	rdfs:member	local:new_type	.
+local:s3	rdf:predicate	local:have	.
+local:s11	local:AM-ADV	local:mainly	.
+local:s5.3	rdf:predicate	local:implement	.
+local:new_type_of_ldfs	rdfs:member	local:new_type	.
+local:tradeoffs_of_consuming_linked_data	rdfs:member	local:tradeoffs	.
+local:ldf_framework	rdfs:member	local:ldf	.
+local:s7	rdf:subject	local:client	.
+local:interfaces_access	rdfs:member	local:interfaces	.
+local:something_about_how_this_new_ldf_interface_compares_to_other_interfaces_previously_implemented_in_the_same_server	rdfs:member	local:new_ldf_interface	.
+local:data_fragment_framework	rdfs:subClassOf	local:fragment_framework	.
+local:s10	rdf:predicate	local:help	.
+local:example_before_exposing_a_new_type_of_ldfs_in_some_server_can	rdfs:member	local:new_type	.
+local:s8	rdf:object	local:task_client	.
+local:new_ldf_interface_own_particular_properties_regarding	rdfs:member	local:new_ldf_interface_own_particular_properties	.
+local:performance_bandwidth	rdfs:subClassOf	local:bandwidth	.
+local:interfaces_previously_implemented	rdfs:member	local:interfaces	.
+local:uniform_view	rdfs:member	local:uniform	.
+local:formal_theoretical	rdfs:member	local:formal	.
+local:exposing_in_server	rdfs:member	local:server	.
+local:s4	rdf:subject	local:several_practical_challenges	.
+local:s8.2	rdf:predicate	local:complete	.
 local:practical_questions	rdfs:subClassOf	local:questions	.
-local:interfaces_previously_implemented	local:_previouslyimplemented	local:interfaces	.
-local:embarked	local:AM-ADV	local:mainly	.
-local:data_fragment	rdfs:subClassOf	local:fragment	.
-local:data	rdfs:member	local:data_fragment	.
-local:solving_by_mainly_experimentation	local:solving_by	local:mainly_experimentation	.
-local:tradeoffs_of_consuming_linked_data	local:trade-offs_of	local:consuming_linked_data	.
-local:access_servers_data	rdfs:subClassOf	local:data	.
+local:performance_bandwidth	rdfs:member	local:performance	.
+local:s3	rdf:object	local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs_arise	.
+local:s6.2	rdf:predicate	local:complete	.
+local:s0.1	rdf:subject	local:servers	.
+local:s5.1	rdf:predicate	local:say	.
+local:s10	rdf:object	local:practical_questions	.
+local:new_ldf_interface	rdfs:subClassOf	local:interface	.
+local:s1.2	rdfs:subClassOf	local:data	.
+local:s9	rdf:predicate	local:help	.
+local:several_practical	rdfs:member	local:several	.
+local:s0.2	rdfs:subClassOf	local:servers_data	.
+local:task_restricted_capabilities	rdfs:member	local:task	.
+local:theoretical_tools	rdfs:subClassOf	local:tools	.
+local:formal_theoretical_tools	rdfs:member	local:formal_theoretical	.
+local:example_before_exposing_a_new_type_of_ldfs_in_some_server_can	rdfs:member	local:ldfs	.
+local:new_ldf_interface_own_particular_properties	rdfs:subClassOf	local:ldf_interface_own_particular_properties	.
+local:new_ldf_interface	rdfs:member	local:new_ldf	.
+local:s11.1	rdf:object	local:researchers	.
+local:s1	rdf:predicate	local:propose	.
+local:s7.2	rdf:predicate	local:complete	.
+local:s3.1	rdf:subject	local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs	.
+local:interfaces_previously_implemented_in_the_same_server	rdfs:member	local:same_server	.
+local:new_ldf_interface_own_particular_properties_regarding	rdfs:member	local:regarding	.
+local:client_side	rdfs:member	local:client	.
+local:ldfs_server	rdfs:member	local:ldfs	.
+local:ldf_interface_own_particular_properties	rdfs:subClassOf	local:interface_own_particular_properties	.
+local:s3.1	rdf:predicate	local:arise	.
+local:s0.2	rdf:predicate	local:access	.
+local:interfaces_previously_implemented_in_the_same_server	rdfs:member	local:interfaces	.
+local:new_ldf	rdfs:subClassOf	local:ldf	.
+local:s7.1	rdf:subject	local:capabilities	.
+local:s10.1	rdf:subject	local:formal_theoretical_tools	.
+local:something_about_how_this_new_ldf_interface_compares_to_other_interfaces_previously_implemented_in_the_same_server	rdfs:member	local:something	.
+local:formal_theoretical_tools	rdfs:subClassOf	local:tools	.
+local:s11.1	rdf:predicate	local:solve	.
+local:new_type	rdfs:member	local:new	.
+local:s0.2	rdfs:member	local:access_servers	.
+local:s9.1	rdf:subject	local:formal_theoretical_tools	.
+local:s9.1	rdf:object	local:these	.
+local:previously_implemented_in_same_server	rdfs:member	local:previously_implemented	.
+local:s5.1	rdf:object	local:something_about_how_this_new_ldf_interface_compares_to_other_interfaces_previously_implemented_in_the_same_server	.
+local:data_fragment_framework	rdfs:subClassOf	local:framework	.
+local:s10.1	rdf:object	local:practical_questions	.
+local:several_practical_challenges	rdfs:subClassOf	local:practical_challenges	.
+local:s0	rdf:predicate	local:linked	.
+local:bandwidth_needs	rdfs:member	local:bandwidth	.
+local:s8.1	rdf:predicate	local:restrict	.
+local:several_practical_challenges	rdfs:member	local:several_practical	.
+local:uniform_view	rdfs:subClassOf	local:view	.
+local:s7.2	rdf:subject	local:s8	.
+local:fragment_framework	rdfs:member	local:fragment	.
+local:something_about_how_this_new_ldf_interface_compares_to_other_interfaces_previously_implemented_in_the_same_server	rdfs:member	local:same_server	.
+local:mainly_experimentation	rdfs:subClassOf	local:experimentation	.
+local:s2.2	rdfs:subClassOf	local:data	.
+local:performance_bandwidth_needs	rdfs:subClassOf	local:needs	.
+local:s1.2	rdf:subject	local:data	.
+local:new_type_of_ldfs	rdfs:member	local:ldfs	.
+local:linked_data_fragment_framework	rdfs:subClassOf	local:data_fragment_framework	.
+local:s0.1	rdf:predicate	local:provide	.
+local:new_ldf	rdfs:member	local:new	.
+local:s6	rdf:subject	local:s6.1	.
+local:s0.2	rdf:subject	local:servers_data	.
+local:task_restricted_capabilities	rdfs:member	local:capabilities	.
+local:interface_own_particular_properties	rdfs:subClassOf	local:own_particular_properties	.
+local:task_client	rdfs:member	local:task	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs	rdfs:member	local:own_particular_properties	.
+local:s5	rdf:predicate	local:expose	.
+local:s8.1	rdf:subject	local:capabilities	.
+local:practical_questions	rdfs:member	local:practical	.
+local:own_particular_properties	rdfs:member	local:own_particular	.
+local:interfaces_access_servers_data	rdfs:subClassOf	local:s0.2	.
+local:s1	local:AM-MNR	local:uniform_view	.
+local:s5.1	rdf:subject	local:we	.
+local:data_fragment	rdfs:member	local:data	.
+local:new_type_of_ldfs_server	rdfs:member	local:ldfs_server	.
+local:s11.1	rdf:subject	local:researchers	.
+local:interfaces_previously_implemented	rdfs:member	local:previously_implemented	.
+local:s9	rdf:subject	local:formal_theoretical_tools	.
+local:s6.1	rdf:predicate	local:restrict	.
+local:s2	local:AM-MNR	local:uniform_view	.
+local:access_servers	rdfs:subClassOf	local:servers	.
+local:s8	rdf:subject	local:client_side	.
+local:example_before_exposing_a_new_type_of_ldfs_in_some_server_can	rdfs:member	local:server	.
+local:s8.2	rdf:subject	local:given_task	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs_arise	rdfs:member	local:own_particular_properties	.
+local:s11.1	local:AM-MNR	local:mainly_by_experimentation	.
+local:s1	local:AM-PNC	local:explore_the_tradeoffs_of_consuming_linked_data	.
+local:s7	rdf:predicate	local:give	.
+local:s5.1	local:AM-MNR	local:formally	.
+local:s5	rdf:object	local:new_type_of_ldfs_server	.
+local:s1.1	rdf:subject	local:ldf_framework	.
+local:ldf_framework	rdfs:subClassOf	local:framework	.
+local:s0.1	rdf:object	local:different_interfaces_access_servers_data	.
+local:s4	rdf:predicate	local:cache	.
+local:different_interfaces	rdfs:member	local:different	.
+local:s2.1	rdf:subject	local:linked_data_fragment_framework	.
+local:different_interfaces_access_servers_data	rdfs:subClassOf	local:interfaces_access_servers_data	.
+local:practical_challenges	rdfs:subClassOf	local:challenges	.
+local:s2	rdf:predicate	local:propose	.
+local:client_side	rdfs:subClassOf	local:side	.
+local:theoretical_tools	rdfs:member	local:theoretical	.
+local:s7.1	rdfs:subClassOf	local:capabilities	.
+local:other_interfaces	rdfs:member	local:other	.
+local:s5.2	rdf:object	local:interfaces_previously_implemented_in_the_same_server	.
+local:different_interfaces	rdfs:subClassOf	local:interfaces	.
+local:s0.2	rdfs:subClassOf	local:data	.
+local:performance_bandwidth_needs	rdfs:subClassOf	local:bandwidth_needs	.
+local:s2	rdf:subject	local:linked_data_fragment_framework	.
+local:different_interfaces_access_servers_data	rdfs:member	local:different_interfaces_access_servers	.
+local:task_client	rdfs:subClassOf	local:client	.
+local:s5.3	local:AM-LOC	local:server	.
+local:several_practical	rdfs:subClassOf	local:practical	.
+local:other_interfaces	rdfs:subClassOf	local:interfaces	.
+local:s2.1	rdf:predicate	local:explore	.
+local:s1.1	rdf:object	local:tradeoffs_of_consuming_linked_data	.
+local:own_particular	rdfs:member	local:own	.
+local:s6	rdf:predicate	local:give	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs	rdfs:member	local:performance_bandwidth_needs	.
+local:different_interfaces_access_servers	rdfs:member	local:different_interfaces_access	.
+local:s6.2	rdf:subject	local:s7	.
+local:s5	rdf:subject	local:new_ldf_interface	.
+local:tradeoffs_of_consuming_linked_data	rdfs:member	local:data	.
+local:s6	rdf:object	local:task_client	.
+local:s5.2	rdf:predicate	local:compare	.
+local:s11	rdf:predicate	local:embark	.
+local:different_interfaces_access_servers_data	rdfs:subClassOf	local:data	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs	rdfs:member	local:new_ldf_interface	.
+local:s5.3	local:AM-TMP	local:previously	.
+local:s1	rdf:subject	local:ldf_framework	.
+local:different_interfaces_access_servers	rdfs:subClassOf	local:servers	.
+local:s1.1	rdf:predicate	local:explore	.
+local:same_server	rdfs:member	local:same	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs_arise	rdfs:member	local:new_ldf_interface	.
+local:how_compares	rdfs:subClassOf	local:compares	.
+local:interfaces_access_servers_data	rdfs:member	local:interfaces_access_servers	.
+local:different_interfaces_access	rdfs:subClassOf	local:access	.
+local:formal_theoretical	rdfs:subClassOf	local:theoretical	.
+local:s5.3	rdf:subject	local:interfaces	.
+local:s2.2	rdf:subject	local:data	.
+local:fragment_framework	rdfs:subClassOf	local:framework	.
+local:s5.1	local:AM-TMP	local:example_before_exposing_a_new_type_of_ldfs_in_some_server_can	.
+local:interfaces_access_servers_data	rdfs:subClassOf	local:data	.
+local:exposing_in_server	rdfs:member	local:exposing	.
+local:s0	rdf:subject	local:data	.
+local:data_fragment_framework	rdfs:member	local:data_fragment	.
+local:particular_properties	rdfs:subClassOf	local:properties	.
+local:s2	local:AM-PNC	local:explore_the_tradeoffs_of_consuming_linked_data	.
+local:interfaces_access	rdfs:subClassOf	local:access	.
 local:new_type	rdfs:subClassOf	local:type	.
+local:access_servers	rdfs:member	local:access	.
+local:s3	rdf:subject	local:new_ldf_interface	.
+local:data_fragment	rdfs:subClassOf	local:fragment	.
+local:particular_properties	rdfs:member	local:particular	.
+local:explore_the_tradeoffs_of_consuming_linked_data	rdfs:member	local:tradeoffs	.
+local:interfaces_access_servers	rdfs:subClassOf	local:servers	.
+local:servers_data	rdfs:member	local:servers	.
+local:interfaces_access_servers	rdfs:member	local:interfaces_access	.
+local:previously_implemented_in_same_server	rdfs:member	local:same_server	.
+local:own_particular_properties	rdfs:subClassOf	local:properties	.
+local:ldfs_server	rdfs:subClassOf	local:server	.
+local:same_server	rdfs:subClassOf	local:server	.
+local:several_practical_challenges	rdfs:subClassOf	local:challenges	.
+local:servers_data	rdfs:subClassOf	local:data	.
+local:how_compares_to_other_interfaces	rdfs:member	local:how_compares	.
+local:s10.1	rdf:predicate	local:answer	.
+local:s9.1	rdf:predicate	local:answer	.
+local:s8	rdf:predicate	local:give	.
+local:s7.1	rdf:predicate	local:restrict	.
+local:bandwidth_needs	rdfs:subClassOf	local:needs	.
+local:s10	rdf:subject	local:formal_theoretical_tools	.
+local:example_before_exposing_a_new_type_of_ldfs_in_some_server_can	rdfs:member	local:example	.
+local:previously_implemented	rdfs:subClassOf	local:implemented	.
+local:s7	rdf:object	local:task_restricted_capabilities	.
+local:new_ldf_interface	rdfs:subClassOf	local:ldf_interface	.
+local:own_particular	rdfs:subClassOf	local:particular	.
+local:something_about_how_this_new_ldf_interface_compares_to_other_interfaces_previously_implemented_in_the_same_server	rdfs:member	local:other_interfaces	.
+local:practical_challenges	rdfs:member	local:practical	.
+local:formal_theoretical_tools	rdfs:subClassOf	local:theoretical_tools	.
+local:s5.2	rdf:subject	local:new_ldf_interface	.
+local:s2.1	rdf:object	local:tradeoffs_of_consuming_linked_data	.
+local:different_interfaces_access	rdfs:member	local:different_interfaces	.
+local:task_restricted_capabilities	rdfs:subClassOf	local:s7.1	.
+local:new_ldf_interface_own_particular_properties_regarding_performance_bandwidth_needs_arise	rdfs:member	local:performance_bandwidth_needs	.
+local:s11	rdf:object	local:solving_researchers	.
+local:s2.2	rdf:predicate	local:linked	.

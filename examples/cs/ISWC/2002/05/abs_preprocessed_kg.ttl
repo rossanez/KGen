@@ -1,273 +1,654 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"a webbased groupware aimed at consensus building"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the documents produced by the virtual community of users explicitly through the use of a webbased groupware"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"the terms that frequently referred in the documents"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"an implicit way candidate concepts selected among the terms that are frequently referred in the documents"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"consensus achieved in an implicit way implicitly since candidate concepts are selected among the terms that are frequently referred in the documents"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"the terms that frequently referred in the documents"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"an explicit way implicitly since candidate concepts selected among the terms that are frequently referred in the documents"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"consensus achieved in an explicit way implicitly since candidate concepts are selected among the terms that are frequently referred in the documents"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"the terms that consistently referred in the documents"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"an implicit way candidate concepts selected among the terms that are consistently referred in the documents"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"consensus achieved in an implicit way implicitly since candidate concepts are selected among the terms that are consistently referred in the documents"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"the terms that consistently referred in the documents"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"an explicit way candidate concepts selected among the terms that are consistently referred in the documents"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"consensus achieved in an explicit way implicitly since candidate concepts are selected among the terms that are consistently referred in the documents"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"shared consensus"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"software tools obtaining a shared consensus on a domain ontology content"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"software tools aimed at obtaining a shared consensus on a domain ontology content"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"software tools populating a domain ontology"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"software tools supporting domain experts"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"software tools aimed at supporting domain experts in populating a domain ontology"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a set of software tools"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a method"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in fact an ontology will even"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in fact an ontology will scarcely used"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"given community"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"the quality of the stored knowledge determines the success of an ontology"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"stored knowledge"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"experience shows that the quality of the stored knowledge determines the success of an ontology"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"the quality of the stored knowledge determines therefore the effective usage of an ontology"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"stored knowledge"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"experience shows that the quality of the stored knowledge determines therefore the effective usage of an ontology"	.
+
+
 #### Classes ####
 
-local:shows	rdfs:label	"shows"	.
+local:webbased_groupware	a	rdf:Class	;
+	rdfs:label	"webbased groupware"	.
 
-local:experience	rdfs:label	"experience"	.
+local:groupware	a	rdf:Class	;
+	rdfs:label	"groupware"	.
 
-local:stored_knowledge	rdfs:label	"stored knowledge"	.
+local:aim	a	rdf:Class	;
+	rdfs:label	"aim"	.
 
-local:stored_knowledge_determines	rdfs:label	"stored knowledge determines"	.
+local:consensus_building	a	rdf:Class	;
+	rdfs:label	"consensus building"	.
 
-local:knowledge_determines	rdfs:label	"knowledge determines"	.
+local:building	a	rdf:Class	;
+	rdfs:label	"building"	.
 
-local:determines	rdfs:label	"determines"	.
+local:consensus	a	rdf:Class	;
+	rdfs:label	"consensus"	.
 
-local:effective	rdfs:label	"effective"	.
+local:virtual_community_of_users	a	rdf:Class	;
+	rdfs:label	"virtual community of users"	.
 
-local:effective_usage	rdfs:label	"effective usage"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:virtual_community	a	rdf:Class	;
+	rdfs:label	"virtual community"	.
 
-local:stored	rdfs:label	"stored"	.
+local:community	a	rdf:Class	;
+	rdfs:label	"community"	.
 
-local:usage	rdfs:label	"usage"	.
+local:virtual	a	rdf:Class	;
+	rdfs:label	"virtual"	.
 
-local:therefore_determines	rdfs:label	"therefore determines"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:quality_of_stored_knowledge	rdfs:label	"quality of stored knowledge"	.
+local:documents	a	rdf:Class	;
+	rdfs:label	"documents"	.
 
-local:quality	rdfs:label	"quality"	.
+local:explicitly	a	rdf:Class	;
+	rdfs:label	"explicitly"	.
 
-local:effective_usage_of_ontology	rdfs:label	"effective usage of ontology"	.
+local:use_of_a_webbased_groupware	a	rdf:Class	;
+	rdfs:label	"use of a webbased groupware"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:success_of_ontology	rdfs:label	"success of ontology"	.
+local:webbased	a	rdf:Class	;
+	rdfs:label	"webbased"	.
 
-local:success	rdfs:label	"success"	.
+local:use_of_webbased_groupware	a	rdf:Class	;
+	rdfs:label	"use of webbased groupware"	.
 
-local:given	rdfs:label	"given"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:community	rdfs:label	"community"	.
+local:refer	a	rdf:Class	;
+	rdfs:label	"refer"	.
 
-local:software_tools	rdfs:label	"software tools"	.
+local:frequently	a	rdf:Class	;
+	rdfs:label	"frequently"	.
 
-local:tools	rdfs:label	"tools"	.
+local:candidate_concepts	a	rdf:Class	;
+	rdfs:label	"candidate concepts"	.
 
-local:software	rdfs:label	"software"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:aimed	rdfs:label	"aimed"	.
+local:candidate	a	rdf:Class	;
+	rdfs:label	"candidate"	.
 
-local:domain	rdfs:label	"domain"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:domain_ontology	rdfs:label	"domain ontology"	.
+local:among_the_terms_that_are_frequently_referred_in_the_documents	a	rdf:Class	;
+	rdfs:label	"among the terms that are frequently referred in the documents"	.
 
-local:domain_ontology_content	rdfs:label	"domain ontology content"	.
+local:frequently_referred	a	rdf:Class	;
+	rdfs:label	"frequently referred"	.
 
-local:ontology_content	rdfs:label	"ontology content"	.
+local:referred	a	rdf:Class	;
+	rdfs:label	"referred"	.
 
-local:content	rdfs:label	"content"	.
+local:frequently_referred_in_documents	a	rdf:Class	;
+	rdfs:label	"frequently referred in documents"	.
 
-local:shared_consensus	rdfs:label	"shared consensus"	.
+local:implicit_way	a	rdf:Class	;
+	rdfs:label	"implicit way"	.
 
-local:consensus	rdfs:label	"consensus"	.
+local:way	a	rdf:Class	;
+	rdfs:label	"way"	.
 
-local:shared_consensus_on_domain_ontology_content	rdfs:label	"shared consensus on domain ontology content"	.
+local:implicit	a	rdf:Class	;
+	rdfs:label	"implicit"	.
 
-local:obtaining	rdfs:label	"obtaining"	.
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
 
-local:shared	rdfs:label	"shared"	.
+local:implicit_way_implicitly	a	rdf:Class	;
+	rdfs:label	"implicit way implicitly"	.
 
-local:present	rdfs:label	"present"	.
+local:implicitly_way	a	rdf:Class	;
+	rdfs:label	"implicitly way"	.
 
-local:paper	rdfs:label	"paper"	.
+local:implicit_implicitly_way	a	rdf:Class	;
+	rdfs:label	"implicit implicitly way"	.
 
-local:we	rdfs:label	"we"	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_frequently_referred_in_the_documents	a	rdf:Class	;
+	rdfs:label	"since candidate concepts are selected among the terms that are frequently referred in the documents"	.
 
-local:set_of_software_tools	rdfs:label	"set of software tools"	.
+local:selected_among_terms	a	rdf:Class	;
+	rdfs:label	"selected among terms"	.
 
-local:set	rdfs:label	"set"	.
+local:selected	a	rdf:Class	;
+	rdfs:label	"selected"	.
 
-local:method	rdfs:label	"method"	.
+local:explicit_way_implicitly_since_candidate_concepts	a	rdf:Class	;
+	rdfs:label	"explicit way implicitly since candidate concepts"	.
 
-local:domain_experts	rdfs:label	"domain experts"	.
+local:explicit_way	a	rdf:Class	;
+	rdfs:label	"explicit way"	.
 
-local:experts	rdfs:label	"experts"	.
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
 
-local:supporting	rdfs:label	"supporting"	.
+local:implicitly_candidate_concepts	a	rdf:Class	;
+	rdfs:label	"implicitly candidate concepts"	.
 
-local:populating	rdfs:label	"populating"	.
+local:explicit_way_since_implicitly_candidate_concepts	a	rdf:Class	;
+	rdfs:label	"explicit way since implicitly candidate concepts"	.
 
-local:“	rdfs:label	"“"	.
+local:explicit_way_implicitly	a	rdf:Class	;
+	rdfs:label	"explicit way implicitly"	.
 
-local:“_consensus	rdfs:label	"“ consensus"	.
+local:explicit_implicitly_way	a	rdf:Class	;
+	rdfs:label	"explicit implicitly way"	.
 
-local:“_consensus_”	rdfs:label	"“ consensus ”"	.
+local:consistently	a	rdf:Class	;
+	rdfs:label	"consistently"	.
 
-local:”	rdfs:label	"”"	.
+local:among_the_terms_that_are_consistently_referred_in_the_documents	a	rdf:Class	;
+	rdfs:label	"among the terms that are consistently referred in the documents"	.
 
-local:consensus_”	rdfs:label	"consensus ”"	.
+local:consistently_referred	a	rdf:Class	;
+	rdfs:label	"consistently referred"	.
 
-local:achieved	rdfs:label	"achieved"	.
+local:consistently_referred_in_documents	a	rdf:Class	;
+	rdfs:label	"consistently referred in documents"	.
 
-local:implicit_way	rdfs:label	"implicit way"	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_consistently_referred_in_the_documents	a	rdf:Class	;
+	rdfs:label	"since candidate concepts are selected among the terms that are consistently referred in the documents"	.
 
-local:way	rdfs:label	"way"	.
+local:share	a	rdf:Class	;
+	rdfs:label	"share"	.
 
-local:implicit	rdfs:label	"implicit"	.
+local:software_tools	a	rdf:Class	;
+	rdfs:label	"software tools"	.
 
-local:candidate_concepts	rdfs:label	"candidate concepts"	.
+local:software	a	rdf:Class	;
+	rdfs:label	"software"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:tools	a	rdf:Class	;
+	rdfs:label	"tools"	.
 
-local:candidate	rdfs:label	"candidate"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:selected_among_terms	rdfs:label	"selected among terms"	.
+local:shared_consensus_on_a_domain_ontology_content	a	rdf:Class	;
+	rdfs:label	"shared consensus on a domain ontology content"	.
 
-local:selected	rdfs:label	"selected"	.
+local:domain_ontology_content	a	rdf:Class	;
+	rdfs:label	"domain ontology content"	.
 
-local:terms	rdfs:label	"terms"	.
+local:ontology_content	a	rdf:Class	;
+	rdfs:label	"ontology content"	.
 
-local:webbased	rdfs:label	"web-based"	.
+local:content	a	rdf:Class	;
+	rdfs:label	"content"	.
 
-local:webbased_groupware	rdfs:label	"web-based groupware"	.
+local:domain_ontology	a	rdf:Class	;
+	rdfs:label	"domain ontology"	.
 
-local:groupware	rdfs:label	"groupware"	.
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
 
-local:consensus_building	rdfs:label	"consensus building"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:building	rdfs:label	"building"	.
+local:shared_consensus_on_domain_ontology_content	a	rdf:Class	;
+	rdfs:label	"shared consensus on domain ontology content"	.
 
-local:explicit_way	rdfs:label	"explicit way"	.
+local:obtaining_a_shared_consensus_on_a_domain_ontology_content	a	rdf:Class	;
+	rdfs:label	"obtaining a shared consensus on a domain ontology content"	.
 
-local:explicit	rdfs:label	"explicit"	.
+local:populate	a	rdf:Class	;
+	rdfs:label	"populate"	.
 
-local:referred	rdfs:label	"referred"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:frequently	rdfs:label	"frequently"	.
+local:domain_experts	a	rdf:Class	;
+	rdfs:label	"domain experts"	.
 
-local:documents	rdfs:label	"documents"	.
+local:experts	a	rdf:Class	;
+	rdfs:label	"experts"	.
 
-local:consistently	rdfs:label	"consistently"	.
+local:supporting_domain_experts_in_populating_a_domain_ontology	a	rdf:Class	;
+	rdfs:label	"supporting domain experts in populating a domain ontology"	.
 
-local:produced	rdfs:label	"produced"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:virtual_community	rdfs:label	"virtual community"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:virtual	rdfs:label	"virtual"	.
+local:set_of_software_tools	a	rdf:Class	;
+	rdfs:label	"set of software tools"	.
 
-local:virtual_community_of_users	rdfs:label	"virtual community of users"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:users	rdfs:label	"users"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:use_of_webbased_groupware	rdfs:label	"use of web-based groupware"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:use	rdfs:label	"use"	.
+local:disregard	a	rdf:Class	;
+	rdfs:label	"disregard"	.
 
-#### Properties ####
+local:fact_an_ontology	a	rdf:Class	;
+	rdfs:label	"fact an ontology"	.
+
+local:fact	a	rdf:Class	;
+	rdfs:label	"fact"	.
+
+local:even	a	rdf:Class	;
+	rdfs:label	"even"	.
+
+local:will	a	rdf:Class	;
+	rdfs:label	"will"	.
+
+local:scarcely	a	rdf:Class	;
+	rdfs:label	"scarcely"	.
+
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
+
+local:quality_of_the_stored_knowledge	a	rdf:Class	;
+	rdfs:label	"quality of the stored knowledge"	.
+
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
+
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
+
+local:stored_knowledge	a	rdf:Class	;
+	rdfs:label	"stored knowledge"	.
+
+local:quality_of_stored_knowledge	a	rdf:Class	;
+	rdfs:label	"quality of stored knowledge"	.
+
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
+
+local:success_of_an_ontology	a	rdf:Class	;
+	rdfs:label	"success of an ontology"	.
+
+local:success	a	rdf:Class	;
+	rdfs:label	"success"	.
+
+local:success_of_ontology	a	rdf:Class	;
+	rdfs:label	"success of ontology"	.
+
+local:store	a	rdf:Class	;
+	rdfs:label	"store"	.
+
+local:experience	a	rdf:Class	;
+	rdfs:label	"experience"	.
+
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
+
+local:quality_of_the_stored_knowledge_determines_the_success_of_an_ontology	a	rdf:Class	;
+	rdfs:label	"quality of the stored knowledge determines the success of an ontology"	.
+
+local:stored	a	rdf:Class	;
+	rdfs:label	"stored"	.
+
+local:effective_usage_of_an_ontology	a	rdf:Class	;
+	rdfs:label	"effective usage of an ontology"	.
+
+local:effective_usage	a	rdf:Class	;
+	rdfs:label	"effective usage"	.
+
+local:usage	a	rdf:Class	;
+	rdfs:label	"usage"	.
+
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
+
+local:effective_usage_of_ontology	a	rdf:Class	;
+	rdfs:label	"effective usage of ontology"	.
+
+local:therefore	a	rdf:Class	;
+	rdfs:label	"therefore"	.
+
+local:quality_of_the_stored_knowledge_determines_therefore_the_effective_usage_of_an_ontology	a	rdf:Class	;
+	rdfs:label	"quality of the stored knowledge determines therefore the effective usage of an ontology"	.
+
+local:stored_knowledge_determines	a	rdf:Class	;
+	rdfs:label	"stored knowledge determines"	.
+
+local:knowledge_determines	a	rdf:Class	;
+	rdfs:label	"knowledge determines"	.
+
+local:determines	a	rdf:Class	;
+	rdfs:label	"determines"	.
+
+local:therefore_determines	a	rdf:Class	;
+	rdfs:label	"therefore determines"	.
 
 #### Mapped Relations ####
 
+cso:virtual_community	rdfs:label	"virtual community"	.
+cso:domain_ontology	rdfs:label	"domain ontology"	.
 local:groupware	owl:sameAs	cso:groupware	.
-local:domain_ontology	owl:sameAs	cso:domain_ontology	.
-cso:domain_experts	rdfs:label	"domain experts"	.
-cso:groupware	rdfs:label	"groupware"	.
-cso:software	rdfs:label	"software"	.
 local:ontology	owl:sameAs	cso:ontology	.
+local:domain_ontology	owl:sameAs	cso:domain_ontology	.
+cso:groupware	rdfs:label	"groupware"	.
 local:virtual_community	owl:sameAs	cso:virtual_community	.
+cso:domain_experts	rdfs:label	"domain experts"	.
+local:software	owl:sameAs	cso:software	.
 local:domain_experts	owl:sameAs	cso:domain_experts	.
 cso:ontology	rdfs:label	"ontology"	.
-cso:domain_ontology	rdfs:label	"domain ontology"	.
-cso:virtual_community	rdfs:label	"virtual community"	.
-local:software	owl:sameAs	cso:software	.
+cso:software	rdfs:label	"software"	.
 
 #### Relations ####
 
-local:selected_among_terms	local:among_terms	local:selected	.
-local:virtual_community_of_users	local:virtualcommunity_of	local:users	.
-local:stored_knowledge	rdfs:member	local:stored_knowledge_determines	.
-local:present	vn.role:Agent	local:we	.
-local:achieved	local:AM-LOC	local:explicit_way	.
-local:effective_usage	rdfs:subClassOf	local:usage	.
-local:therefore_determines	rdfs:subClassOf	local:determines	.
-local:referred	local:AM-LOC	local:documents	.
-local:software_tools	rdfs:subClassOf	local:tools	.
-local:stored_knowledge_determines	rdfs:subClassOf	local:determines	.
-local:aimed	vn.role:Theme	local:software_tools	.
-local:use_of_webbased_groupware	local:of_web-basedgroupware	local:use	.
-local:knowledge	rdfs:member	local:knowledge_determines	.
-local:webbased_groupware	rdfs:subClassOf	local:groupware	.
-local:ontology_content	rdfs:subClassOf	local:content	.
-local:effective_usage_of_ontology	local:effectiveusage_of	local:ontology	.
-local:domain	rdfs:member	local:domain_ontology	.
-local:shows	vn.role:Theme	local:therefore_determines	.
-local:knowledge_determines	rdfs:subClassOf	local:determines	.
-local:obtaining	vn.role:object	local:shared_consensus_on_domain_ontology_content	.
-local:virtual	rdfs:member	local:virtual_community	.
-local:shared	vn.role:Patient	local:consensus	.
-local:domain_ontology	rdfs:member	local:domain_ontology_content	.
-local:quality_of_stored_knowledge	local:of_storedknowledge	local:quality	.
-local:shared_consensus_on_domain_ontology_content	local:sharedconsensus_on	local:domain_ontology_content	.
-local:“_consensus	rdfs:member	local:“_consensus_”	.
-local:use_of_webbased_groupware	local:use_of	local:webbased_groupware	.
-local:populating	vn.role:Location	local:domain_ontology	.
-local:shows	vn.role:Theme	local:determines	.
-local:selected	local:AM-LOC	local:terms	.
-local:present	vn.role:Theme	local:method	.
-local:domain	rdfs:member	local:domain_experts	.
-local:produced	local:AM-MNR	local:use_of_webbased_groupware	.
-local:achieved	vn.role:Theme	local:consensus	.
-local:aimed	vn.role:Theme	local:webbased_groupware	.
-local:domain_experts	rdfs:subClassOf	local:experts	.
-local:achieved	local:AM-TMP	local:selected_among_terms	.
-local:selected_among_terms	local:selected_among	local:terms	.
-local:consensus	rdfs:member	local:consensus_building	.
-local:present	vn.role:Theme	local:set_of_software_tools	.
-local:stored	rdfs:member	local:stored_knowledge	.
-local:“_consensus	rdfs:subClassOf	local:consensus	.
+local:use_of_webbased_groupware	rdfs:member	local:use	.
 local:consensus_building	rdfs:subClassOf	local:building	.
-local:candidate_concepts	rdfs:subClassOf	local:concepts	.
-local:aimed	vn.role:indirect_object	local:supporting	.
-local:success_of_ontology	local:of_ontology	local:success	.
-local:aimed	vn.role:indirect_object	local:obtaining	.
-local:populating	vn.role:Theme	local:software_tools	.
-local:referred	local:AM-TMP	local:frequently	.
-local:software	rdfs:member	local:software_tools	.
-local:“	rdfs:member	local:“_consensus	.
-local:determines	vn.role:Theme	local:success_of_ontology	.
-local:supporting	vn.role:Theme	local:software_tools	.
-local:produced	vn.role:Product	local:documents	.
-local:ontology	rdfs:member	local:ontology_content	.
-local:stored_knowledge	rdfs:subClassOf	local:knowledge	.
-local:selected	vn.role:Theme	local:candidate_concepts	.
-local:explicit	rdfs:member	local:explicit_way	.
-local:consensus	rdfs:member	local:consensus_”	.
+local:s11.1	rdf:subject	local:candidate_concepts	.
+local:s9.1	rdf:predicate	local:obtain	.
 local:domain_ontology	rdfs:subClassOf	local:ontology	.
-local:aimed	vn.role:indirect_object	local:consensus_building	.
-local:consensus_”	rdfs:subClassOf	local:”	.
-local:implicit_way	rdfs:subClassOf	local:way	.
-local:produced	vn.role:Agent	local:virtual_community_of_users	.
-local:referred	local:AM-MNR	local:consistently	.
-local:implicit	rdfs:member	local:implicit_way	.
-local:determines	vn.role:Agent	local:quality_of_stored_knowledge	.
-local:shared_consensus	rdfs:subClassOf	local:consensus	.
-local:stored	vn.role:Value	local:knowledge	.
-local:domain_ontology_content	rdfs:subClassOf	local:content	.
-local:candidate	rdfs:member	local:candidate_concepts	.
-local:set_of_software_tools	local:of_softwaretools	local:set	.
-local:shows	vn.role:Agent	local:experience	.
-local:set_of_software_tools	local:set_of	local:software_tools	.
-local:virtual_community	rdfs:subClassOf	local:community	.
-local:success_of_ontology	local:success_of	local:ontology	.
-local:explicit_way	rdfs:subClassOf	local:way	.
-local:present	local:AM-LOC	local:paper	.
-local:referred	vn.role:Theme	local:terms	.
-local:webbased	rdfs:member	local:webbased_groupware	.
-local:achieved	local:AM-LOC	local:implicit_way	.
-local:virtual_community_of_users	local:of_users	local:virtual_community	.
-local:effective	rdfs:member	local:effective_usage	.
-local:shared_consensus_on_domain_ontology_content	local:on_domainontologycontent	local:shared_consensus	.
-local:effective_usage_of_ontology	local:of_ontology	local:effective_usage	.
-local:quality_of_stored_knowledge	local:quality_of	local:stored_knowledge	.
+local:s9.2	rdfs:subClassOf	local:consensus	.
+local:s1.2	rdf:subject	local:quality_of_the_stored_knowledge	.
+local:s7	rdf:predicate	local:present	.
+local:success_of_an_ontology	rdfs:member	local:success	.
 local:domain_ontology_content	rdfs:subClassOf	local:ontology_content	.
-local:given	vn.role:object	local:community	.
-local:obtaining	vn.role:Asset	local:software_tools	.
-local:“_consensus_”	rdfs:subClassOf	local:”	.
-local:supporting	vn.role:Experiencer	local:domain_experts	.
+local:use_of_a_webbased_groupware	rdfs:member	local:webbased_groupware	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_consistently_referred_in_the_documents	rdfs:member	local:terms	.
+local:s8.2	rdf:object	local:domain_ontology	.
+local:s13.1	rdf:subject	local:candidate_concepts	.
+local:quality_of_the_stored_knowledge_determines_the_success_of_an_ontology	rdfs:member	local:s1.1	.
+local:s10	local:AM-MNR	local:explicit_way_implicitly	.
+local:s0.2	rdf:predicate	local:determine	.
+local:effective_usage	rdfs:subClassOf	local:usage	.
+local:s13.1	local:AM-LOC	local:among_the_terms_that_are_frequently_referred_in_the_documents	.
+local:frequently_referred_in_documents	rdfs:member	local:frequently_referred	.
+local:ontology_content	rdfs:member	local:ontology	.
+local:s11	rdf:subject	local:consensus	.
+local:shared_consensus_on_a_domain_ontology_content	rdfs:member	local:consensus	.
+local:s8.2	rdf:subject	local:software_tools	.
+local:s12	local:AM-TMP	local:since_candidate_concepts_are_selected_among_the_terms_that_are_frequently_referred_in_the_documents	.
+local:s10.1	local:AM-LOC	local:among_the_terms_that_are_consistently_referred_in_the_documents	.
+local:supporting_domain_experts_in_populating_a_domain_ontology	rdfs:member	local:domain_ontology	.
+local:knowledge_determines	rdfs:subClassOf	local:determines	.
+local:software_tools	rdfs:subClassOf	local:tools	.
+local:s9.1	rdf:subject	local:software_tools	.
+local:s13	rdf:predicate	local:achieve	.
+local:s11.2	local:AM-LOC	local:documents	.
+local:s8.1	rdf:object	local:domain_experts	.
+local:obtaining_a_shared_consensus_on_a_domain_ontology_content	rdfs:member	local:domain_ontology_content	.
+local:s7	rdf:object	local:set_of_software_tools	.
+local:software_tools	rdfs:member	local:software	.
+local:s13.2	local:AM-LOC	local:documents	.
+local:s11.2	rdf:subject	local:terms	.
+local:s0.1	rdfs:member	local:stored	.
+local:virtual_community	rdfs:member	local:virtual	.
+local:webbased_groupware	rdfs:member	local:webbased	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_frequently_referred_in_the_documents	rdfs:member	local:candidate_concepts	.
+local:selected_among_terms	rdfs:member	local:selected	.
+local:s10.2	rdf:subject	local:terms	.
+local:s11	local:AM-TMP	local:since_candidate_concepts_are_selected_among_the_terms_that_are_consistently_referred_in_the_documents	.
+local:s10.2	local:AM-MNR	local:consistently	.
+local:s13	local:AM-TMP	local:since_candidate_concepts_are_selected_among_the_terms_that_are_frequently_referred_in_the_documents	.
+local:success_of_ontology	rdfs:member	local:ontology	.
+local:among_the_terms_that_are_consistently_referred_in_the_documents	rdfs:member	local:documents	.
+local:implicitly_candidate_concepts	rdfs:subClassOf	local:candidate_concepts	.
+local:among_the_terms_that_are_consistently_referred_in_the_documents	rdfs:member	local:terms	.
+local:explicit_implicitly_way	rdfs:subClassOf	local:implicitly_way	.
+local:s10	rdf:subject	local:consensus	.
+local:s0	rdf:predicate	local:show	.
+local:ontology_content	rdfs:subClassOf	local:content	.
+local:obtaining_a_shared_consensus_on_a_domain_ontology_content	rdfs:member	local:consensus	.
+local:s14	rdf:subject	local:virtual_community_of_users	.
+local:fact_an_ontology	rdfs:member	local:ontology	.
+local:s12	local:AM-MNR	local:explicit_way_implicitly	.
+local:s10.1	rdf:predicate	local:select	.
+local:consistently_referred	rdfs:subClassOf	local:referred	.
+local:implicit_way	rdfs:subClassOf	local:way	.
+local:success_of_ontology	rdfs:member	local:success	.
+local:s0	rdf:object	local:quality_of_the_stored_knowledge_determines_therefore_the_effective_usage_of_an_ontology	.
+local:s14	local:AM-MNR	local:explicitly	.
+local:quality_of_the_stored_knowledge_determines_therefore_the_effective_usage_of_an_ontology	rdfs:member	local:effective_usage	.
+local:s6	local:AM-LOC	local:paper	.
+local:s1.1	rdf:predicate	local:store	.
+local:s12.2	rdf:subject	local:terms	.
+local:shared_consensus_on_a_domain_ontology_content	rdfs:member	local:domain_ontology_content	.
+local:s9.1	rdf:object	local:shared_consensus_on_a_domain_ontology_content	.
+local:s8.1	rdf:predicate	local:support	.
+local:quality_of_stored_knowledge	rdfs:member	local:s1.1	.
+local:s13	local:AM-MNR	local:implicit_way_implicitly	.
+local:use_of_a_webbased_groupware	rdfs:member	local:use	.
+local:s10.1	local:AM-MNR	local:explicit_way	.
+local:s8	rdf:object	local:supporting_domain_experts_in_populating_a_domain_ontology	.
+local:s5	rdf:predicate	local:disregard	.
+local:quality_of_the_stored_knowledge_determines_the_success_of_an_ontology	rdfs:member	local:success	.
+local:s11	local:AM-MNR	local:implicit_way_implicitly	.
+local:quality_of_stored_knowledge	rdfs:member	local:s0.1	.
+local:s13.2	local:AM-TMP	local:frequently	.
+local:domain_ontology_content	rdfs:subClassOf	local:content	.
+local:consistently_referred_in_documents	rdfs:member	local:consistently_referred	.
+local:consensus_building	rdfs:member	local:consensus	.
+local:s12	rdf:subject	local:consensus	.
+local:s14	local:AM-MNR	local:use_of_a_webbased_groupware	.
+local:s2	rdf:subject	local:community	.
+local:virtual_community_of_users	rdfs:member	local:virtual_community	.
+local:s4	rdf:predicate	local:use	.
+local:quality_of_stored_knowledge	rdfs:member	local:quality	.
+local:quality_of_the_stored_knowledge_determines_therefore_the_effective_usage_of_an_ontology	rdfs:member	local:stored_knowledge_determines	.
+local:s11.2	rdf:predicate	local:refer	.
+local:knowledge_determines	rdfs:member	local:knowledge	.
+local:s9	rdf:subject	local:software_tools	.
+local:s0.1	rdf:predicate	local:store	.
+local:s13	rdf:subject	local:consensus	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_frequently_referred_in_the_documents	rdfs:member	local:documents	.
+local:s9.2	rdf:subject	local:consensus	.
+local:domain_experts	rdfs:subClassOf	local:experts	.
+local:therefore_determines	rdfs:subClassOf	local:determines	.
+local:s14	rdf:predicate	local:produce	.
+local:s6	rdf:predicate	local:present	.
+local:s13.1	local:AM-MNR	local:implicit_way	.
+local:s0.1	rdf:subject	local:knowledge	.
+local:frequently_referred	rdfs:subClassOf	local:referred	.
+local:s10.1	rdf:subject	local:candidate_concepts	.
+local:s13.1	rdf:predicate	local:select	.
+local:quality_of_the_stored_knowledge_determines_the_success_of_an_ontology	rdfs:member	local:quality	.
+local:s0.2	rdf:subject	local:quality_of_the_stored_knowledge	.
+local:fact_an_ontology	rdfs:member	local:fact	.
+local:s1	rdf:predicate	local:show	.
+local:s8.1	rdf:subject	local:software_tools	.
+local:s8.2	rdf:predicate	local:populate	.
+local:effective_usage_of_an_ontology	rdfs:member	local:ontology	.
+local:s0	rdf:subject	local:experience	.
+local:s4	local:AM-MNR	local:scarcely	.
+local:s1	rdf:object	local:quality_of_the_stored_knowledge_determines_the_success_of_an_ontology	.
+local:s5	local:AM-MOD	local:will	.
+local:implicitly_way	rdfs:subClassOf	local:way	.
+local:s11.1	local:AM-LOC	local:among_the_terms_that_are_consistently_referred_in_the_documents	.
+local:shared_consensus_on_domain_ontology_content	rdfs:member	local:domain_ontology_content	.
+local:s9.2	rdf:predicate	local:share	.
+local:domain_experts	rdfs:member	local:domain	.
+local:quality_of_the_stored_knowledge_determines_the_success_of_an_ontology	rdfs:member	local:ontology	.
+local:candidate_concepts	rdfs:subClassOf	local:concepts	.
+local:quality_of_the_stored_knowledge_determines_therefore_the_effective_usage_of_an_ontology	rdfs:member	local:quality	.
+local:s12.2	rdf:predicate	local:refer	.
+local:s12.2	local:AM-TMP	local:frequently	.
+local:s8	rdf:predicate	local:aim	.
+local:supporting_domain_experts_in_populating_a_domain_ontology	rdfs:member	local:domain_experts	.
+local:s1	rdf:subject	local:experience	.
+local:domain_ontology_content	rdfs:member	local:domain_ontology	.
+local:s4	local:AM-ADV	local:fact_an_ontology	.
+local:frequently_referred_in_documents	rdfs:member	local:documents	.
+local:s7	local:AM-LOC	local:paper	.
+local:s10.2	local:AM-LOC	local:documents	.
+local:s11.1	rdf:predicate	local:select	.
+local:s1.1	rdfs:member	local:stored	.
+local:s14	rdf:object	local:documents	.
+local:s1.2	rdf:predicate	local:determine	.
+local:s11.2	local:AM-MNR	local:consistently	.
+local:quality_of_stored_knowledge	rdfs:member	local:stored_knowledge	.
+local:implicit_implicitly_way	rdfs:subClassOf	local:implicitly_way	.
+local:s0.1	rdfs:subClassOf	local:knowledge	.
+local:explicit_way_implicitly_since_candidate_concepts	rdfs:member	local:candidate_concepts	.
+local:explicit_way	rdfs:subClassOf	local:way	.
+local:stored_knowledge_determines	rdfs:member	local:s0.1	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_frequently_referred_in_the_documents	rdfs:member	local:terms	.
+local:s12.1	local:AM-LOC	local:among_the_terms_that_are_frequently_referred_in_the_documents	.
+local:s11.1	local:AM-MNR	local:implicit_way	.
+local:stored_knowledge	rdfs:subClassOf	local:knowledge	.
+local:explicit_way_since_implicitly_candidate_concepts	rdfs:member	local:explicit_way	.
+local:s15	rdf:predicate	local:aim	.
+local:effective_usage_of_ontology	rdfs:member	local:effective_usage	.
+local:stored_knowledge_determines	rdfs:subClassOf	local:determines	.
+local:s0.2	local:AM-ADV	local:therefore	.
+local:among_the_terms_that_are_frequently_referred_in_the_documents	rdfs:member	local:terms	.
+local:explicit_way_implicitly_since_candidate_concepts	rdfs:member	local:explicit_way	.
+local:s1.1	rdfs:subClassOf	local:knowledge	.
+local:set_of_software_tools	rdfs:member	local:software_tools	.
+local:s4	local:AM-MOD	local:will	.
+local:shared_consensus_on_domain_ontology_content	rdfs:member	local:s9.2	.
+local:s10	rdf:predicate	local:achieve	.
+local:consistently_referred_in_documents	rdfs:member	local:documents	.
+local:s15	rdf:subject	local:webbased_groupware	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_consistently_referred_in_the_documents	rdfs:member	local:candidate_concepts	.
+local:effective_usage_of_ontology	rdfs:member	local:ontology	.
+local:s8	rdf:subject	local:software_tools	.
+local:s5	local:AM-DIS	local:even	.
+local:s10	local:AM-TMP	local:since_candidate_concepts_are_selected_among_the_terms_that_are_consistently_referred_in_the_documents	.
+local:s10.2	rdf:predicate	local:refer	.
+local:implicit_way	rdfs:member	local:implicit	.
+local:set_of_software_tools	rdfs:member	local:set	.
+local:effective_usage_of_an_ontology	rdfs:member	local:effective_usage	.
+local:s1.1	rdf:subject	local:knowledge	.
+local:since_candidate_concepts_are_selected_among_the_terms_that_are_consistently_referred_in_the_documents	rdfs:member	local:documents	.
+local:explicit_way_since_implicitly_candidate_concepts	rdfs:member	local:implicitly_candidate_concepts	.
+local:s9	rdf:predicate	local:aim	.
+local:s13.2	rdf:predicate	local:refer	.
+local:effective_usage	rdfs:member	local:effective	.
+local:s5	local:AM-ADV	local:fact_an_ontology	.
+local:among_the_terms_that_are_frequently_referred_in_the_documents	rdfs:member	local:documents	.
+local:quality_of_the_stored_knowledge_determines_therefore_the_effective_usage_of_an_ontology	rdfs:member	local:ontology	.
+local:explicit_way	rdfs:member	local:explicit	.
+local:s12.1	rdf:predicate	local:select	.
+local:s2	rdf:predicate	local:give	.
+local:s15	rdf:object	local:consensus_building	.
+local:s12	rdf:predicate	local:achieve	.
+local:s6	rdf:object	local:method	.
+local:candidate_concepts	rdfs:member	local:candidate	.
+local:virtual_community_of_users	rdfs:member	local:users	.
+local:webbased_groupware	rdfs:subClassOf	local:groupware	.
+local:virtual_community	rdfs:subClassOf	local:community	.
+local:s1.2	rdf:object	local:success_of_an_ontology	.
+local:s7	rdf:subject	local:we	.
+local:quality_of_the_stored_knowledge	rdfs:member	local:knowledge	.
+local:s13.2	rdf:subject	local:terms	.
+local:s0.2	rdf:object	local:effective_usage_of_an_ontology	.
+local:s9	rdf:object	local:obtaining_a_shared_consensus_on_a_domain_ontology_content	.
+local:domain_ontology	rdfs:member	local:domain	.
+local:s6	rdf:subject	local:we	.
+local:s12.1	local:AM-MNR	local:explicit_way_implicitly_since_candidate_concepts	.
+local:quality_of_the_stored_knowledge	rdfs:member	local:quality	.
+local:use_of_webbased_groupware	rdfs:member	local:webbased_groupware	.
+local:success_of_an_ontology	rdfs:member	local:ontology	.
+local:s12.2	local:AM-LOC	local:documents	.
+local:selected_among_terms	rdfs:member	local:terms	.
+local:s11	rdf:predicate	local:achieve	.

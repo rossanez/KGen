@@ -1,281 +1,512 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"the matchers evaluating mappings unrelated to the interaction"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the suggestions are accurate the matchers avoid evaluating mappings unrelated to the interaction"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"the suggestions can evaluate by any standard ontology matcher if the suggestions are accurate the matchers avoid evaluating mappings unrelated to the interaction"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"exchanged messages"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the computed model suggest the possible mappings for the exchanged messages in new interactions"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the computed model can used to suggest the possible mappings for the exchanged messages in new interactions"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"similar interactions follow similar conventions and patterns"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"similar conventions and patterns which can"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"mappings simplifying dynamic ontology mapping"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"the interactions the interactions themselves between the actors between the interactions themselves between the actors predict mappings simplifying dynamic ontology mapping"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"the interactions the interactions themselves between the actors between the interactions themselves between the actors can used to predict mappings simplifying dynamic ontology mapping"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"this paper shows that the interactions the interactions themselves between the actors between the interactions themselves between the actors can be used to predict mappings simplifying dynamic ontology mapping"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"conventional mapping systems focus on mapping whole ontologies"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"conventional mapping systems acquiring static information"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"conventional mapping systems focus on acquiring static information"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"interacting actors"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"in distributed environments ontology mapping provides interoperability between interacting actors"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"distributed environments ontology mapping"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"interacting actors"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in open environments ontology mapping provides interoperability between interacting actors"	.
+
+
 #### Classes ####
 
-local:open	rdfs:label	"open"	.
+local:matchers	a	rdf:Class	;
+	rdfs:label	"matchers"	.
 
-local:open_environments	rdfs:label	"open environments"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:environments	rdfs:label	"environments"	.
+local:mappings_unrelated_to_the_interaction	a	rdf:Class	;
+	rdfs:label	"mappings unrelated to the interaction"	.
 
-local:ontology_mapping	rdfs:label	"ontology mapping"	.
+local:interaction	a	rdf:Class	;
+	rdfs:label	"interaction"	.
 
-local:mapping	rdfs:label	"mapping"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:provides	rdfs:label	"provides"	.
+local:unrelated_mappings	a	rdf:Class	;
+	rdfs:label	"unrelated mappings"	.
 
-local:interacting_actors	rdfs:label	"interacting actors"	.
+local:unrelated_to_interaction	a	rdf:Class	;
+	rdfs:label	"unrelated to interaction"	.
 
-local:actors	rdfs:label	"actors"	.
+local:unrelated	a	rdf:Class	;
+	rdfs:label	"unrelated"	.
 
-local:interoperability_between_interacting_actors	rdfs:label	"interoperability between interacting actors"	.
+local:suggestions_are_accurate_the_matchers	a	rdf:Class	;
+	rdfs:label	"suggestions are accurate the matchers"	.
 
-local:interoperability	rdfs:label	"interoperability"	.
+local:suggestions	a	rdf:Class	;
+	rdfs:label	"suggestions"	.
 
-local:interacting	rdfs:label	"interacting"	.
+local:avoid	a	rdf:Class	;
+	rdfs:label	"avoid"	.
 
-local:environments_ontology_mapping	rdfs:label	"environments ontology mapping"	.
+local:evaluating_mappings_unrelated_to_the_interaction	a	rdf:Class	;
+	rdfs:label	"evaluating mappings unrelated to the interaction"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:standard_ontology_matcher	a	rdf:Class	;
+	rdfs:label	"standard ontology matcher"	.
 
-local:conventional_mapping_systems	rdfs:label	"conventional mapping systems"	.
+local:matcher	a	rdf:Class	;
+	rdfs:label	"matcher"	.
 
-local:systems	rdfs:label	"systems"	.
+local:standard_ontology	a	rdf:Class	;
+	rdfs:label	"standard ontology"	.
 
-local:conventional_mapping	rdfs:label	"conventional mapping"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:conventional	rdfs:label	"conventional"	.
+local:ontology_matcher	a	rdf:Class	;
+	rdfs:label	"ontology matcher"	.
 
-local:mapping_systems	rdfs:label	"mapping systems"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:however_conventional_mapping_systems	rdfs:label	"however conventional mapping systems"	.
+local:suggestions_are_accurate_the_matchers_avoid_evaluating_mappings_unrelated_to_the_interaction	a	rdf:Class	;
+	rdfs:label	"suggestions are accurate the matchers avoid evaluating mappings unrelated to the interaction"	.
 
-local:focus	rdfs:label	"focus"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:whole	rdfs:label	"whole"	.
+local:messages	a	rdf:Class	;
+	rdfs:label	"messages"	.
 
-local:whole_ontologies	rdfs:label	"whole ontologies"	.
+local:exchange	a	rdf:Class	;
+	rdfs:label	"exchange"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:computed_model	a	rdf:Class	;
+	rdfs:label	"computed model"	.
 
-local:static_information	rdfs:label	"static information"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:information	rdfs:label	"information"	.
+local:suggest	a	rdf:Class	;
+	rdfs:label	"suggest"	.
 
-local:static	rdfs:label	"static"	.
+local:possible_mappings_for_the_exchanged_messages_in_new_interactions	a	rdf:Class	;
+	rdfs:label	"possible mappings for the exchanged messages in new interactions"	.
 
-local:acquiring	rdfs:label	"acquiring"	.
+local:possible_mappings	a	rdf:Class	;
+	rdfs:label	"possible mappings"	.
 
-local:shows	rdfs:label	"shows"	.
+local:new_interactions	a	rdf:Class	;
+	rdfs:label	"new interactions"	.
 
-local:paper	rdfs:label	"paper"	.
+local:interactions	a	rdf:Class	;
+	rdfs:label	"interactions"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:dynamic_ontology_mapping	rdfs:label	"dynamic ontology mapping"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:dynamic_ontology	rdfs:label	"dynamic ontology"	.
+local:exchanged	a	rdf:Class	;
+	rdfs:label	"exchanged"	.
 
-local:dynamic	rdfs:label	"dynamic"	.
+local:possible_mappings_for_exchanged_messages	a	rdf:Class	;
+	rdfs:label	"possible mappings for exchanged messages"	.
 
-local:can_used	rdfs:label	"can used"	.
+local:possible_mappings_for_exchanged_messages_in_new_interactions	a	rdf:Class	;
+	rdfs:label	"possible mappings for exchanged messages in new interactions"	.
 
-local:used	rdfs:label	"used"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:themselves_interactions	rdfs:label	"themselves interactions"	.
+local:suggest_the_possible_mappings_for_the_exchanged_messages_in_new_interactions	a	rdf:Class	;
+	rdfs:label	"suggest the possible mappings for the exchanged messages in new interactions"	.
 
-local:interactions	rdfs:label	"interactions"	.
+local:similar_interactions	a	rdf:Class	;
+	rdfs:label	"similar interactions"	.
 
-local:themselves_themselves_interactions	rdfs:label	"themselves themselves interactions"	.
+local:similar	a	rdf:Class	;
+	rdfs:label	"similar"	.
 
-local:themselves_themselves_interactions_between_actors	rdfs:label	"themselves themselves interactions between actors"	.
+local:follow	a	rdf:Class	;
+	rdfs:label	"follow"	.
 
-local:actors_between_themselves_interactions	rdfs:label	"actors between themselves interactions"	.
+local:similar_conventions_and_patterns	a	rdf:Class	;
+	rdfs:label	"similar conventions and patterns"	.
 
-local:themselves_interactions_between_actors	rdfs:label	"themselves interactions between actors"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:interactions_simplifying	rdfs:label	"interactions simplifying"	.
+local:similar_conventions	a	rdf:Class	;
+	rdfs:label	"similar conventions"	.
 
-local:simplifying	rdfs:label	"simplifying"	.
+local:conventions	a	rdf:Class	;
+	rdfs:label	"conventions"	.
 
-local:can	rdfs:label	"can"	.
+local:analyse	a	rdf:Class	;
+	rdfs:label	"analyse"	.
 
-local:predict	rdfs:label	"predict"	.
+local:simplify	a	rdf:Class	;
+	rdfs:label	"simplify"	.
 
-local:predict_mappings	rdfs:label	"predict mappings"	.
+local:dynamic_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"dynamic ontology mapping"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:ontology_mapping	a	rdf:Class	;
+	rdfs:label	"ontology mapping"	.
 
-local:similar	rdfs:label	"similar"	.
+local:mapping	a	rdf:Class	;
+	rdfs:label	"mapping"	.
 
-local:similar_interactions	rdfs:label	"similar interactions"	.
+local:dynamic_ontology	a	rdf:Class	;
+	rdfs:label	"dynamic ontology"	.
 
-local:follow	rdfs:label	"follow"	.
+local:dynamic	a	rdf:Class	;
+	rdfs:label	"dynamic"	.
 
-local:similar_conventions	rdfs:label	"similar conventions"	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors	a	rdf:Class	;
+	rdfs:label	"interactions the interactions themselves between the actors between the interactions themselves between the actors"	.
 
-local:conventions	rdfs:label	"conventions"	.
+local:actors	a	rdf:Class	;
+	rdfs:label	"actors"	.
 
-local:computed_model	rdfs:label	"computed model"	.
+local:themselves_interactions	a	rdf:Class	;
+	rdfs:label	"themselves interactions"	.
 
-local:model	rdfs:label	"model"	.
+local:themselves_themselves_interactions	a	rdf:Class	;
+	rdfs:label	"themselves themselves interactions"	.
 
-local:new	rdfs:label	"new"	.
+local:themselves_themselves_interactions_between_actors	a	rdf:Class	;
+	rdfs:label	"themselves themselves interactions between actors"	.
 
-local:new_interactions	rdfs:label	"new interactions"	.
+local:actors_between_themselves_interactions	a	rdf:Class	;
+	rdfs:label	"actors between themselves interactions"	.
 
-local:exchanged_messages	rdfs:label	"exchanged messages"	.
+local:themselves_interactions_between_actors	a	rdf:Class	;
+	rdfs:label	"themselves interactions between actors"	.
 
-local:messages	rdfs:label	"messages"	.
+local:predict	a	rdf:Class	;
+	rdfs:label	"predict"	.
 
-local:possible	rdfs:label	"possible"	.
+local:predict_mappings_simplifying_dynamic_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"predict mappings simplifying dynamic ontology mapping"	.
 
-local:possible_mappings	rdfs:label	"possible mappings"	.
+local:predict_mappings	a	rdf:Class	;
+	rdfs:label	"predict mappings"	.
 
-local:exchanged	rdfs:label	"exchanged"	.
+local:mappings_simplifying	a	rdf:Class	;
+	rdfs:label	"mappings simplifying"	.
 
-local:possible_mappings_for_exchanged_messages	rdfs:label	"possible mappings for exchanged messages"	.
+local:simplifying	a	rdf:Class	;
+	rdfs:label	"simplifying"	.
 
-local:possible_mappings_for_exchanged_messages_in_new_interactions	rdfs:label	"possible mappings for exchanged messages in new interactions"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:suggest	rdfs:label	"suggest"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors_can_be_used_to_predict_mappings_simplifying_dynamic_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"interactions the interactions themselves between the actors between the interactions themselves between the actors can be used to predict mappings simplifying dynamic ontology mapping"	.
 
-local:suggestions	rdfs:label	"suggestions"	.
+local:can_used	a	rdf:Class	;
+	rdfs:label	"can used"	.
 
-local:ontology_matcher	rdfs:label	"ontology matcher"	.
+local:used	a	rdf:Class	;
+	rdfs:label	"used"	.
 
-local:matcher	rdfs:label	"matcher"	.
+local:conventional_mapping_systems	a	rdf:Class	;
+	rdfs:label	"conventional mapping systems"	.
 
-local:standard_ontology	rdfs:label	"standard ontology"	.
+local:conventional_mapping	a	rdf:Class	;
+	rdfs:label	"conventional mapping"	.
 
-local:standard_ontology_matcher	rdfs:label	"standard ontology matcher"	.
+local:mapping_systems	a	rdf:Class	;
+	rdfs:label	"mapping systems"	.
 
-local:standard	rdfs:label	"standard"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:unrelated_mappings	rdfs:label	"unrelated mappings"	.
+local:conventional	a	rdf:Class	;
+	rdfs:label	"conventional"	.
 
-local:unrelated_to_interaction	rdfs:label	"unrelated to interaction"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:unrelated	rdfs:label	"unrelated"	.
+local:mapping_whole_ontologies	a	rdf:Class	;
+	rdfs:label	"mapping whole ontologies"	.
 
-local:interaction	rdfs:label	"interaction"	.
+local:whole_ontologies	a	rdf:Class	;
+	rdfs:label	"whole ontologies"	.
 
-local:avoid	rdfs:label	"avoid"	.
+local:whole	a	rdf:Class	;
+	rdfs:label	"whole"	.
 
-local:accurate_matchers	rdfs:label	"accurate matchers"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:accurate	rdfs:label	"accurate"	.
+local:acquire	a	rdf:Class	;
+	rdfs:label	"acquire"	.
 
-local:matchers	rdfs:label	"matchers"	.
+local:static_information	a	rdf:Class	;
+	rdfs:label	"static information"	.
 
-local:evaluating	rdfs:label	"evaluating"	.
+local:static	a	rdf:Class	;
+	rdfs:label	"static"	.
 
-#### Properties ####
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
+
+local:acquiring_static_information	a	rdf:Class	;
+	rdfs:label	"acquiring static information"	.
+
+local:interact	a	rdf:Class	;
+	rdfs:label	"interact"	.
+
+local:interoperability_between_interacting_actors	a	rdf:Class	;
+	rdfs:label	"interoperability between interacting actors"	.
+
+local:interoperability	a	rdf:Class	;
+	rdfs:label	"interoperability"	.
+
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
+
+local:distributed_environments_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"distributed environments ontology mapping"	.
+
+local:environments_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"environments ontology mapping"	.
+
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
+
+local:open_environments_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"open environments ontology mapping"	.
+
+local:open_environments	a	rdf:Class	;
+	rdfs:label	"open environments"	.
+
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
+
+local:environments	a	rdf:Class	;
+	rdfs:label	"environments"	.
 
 #### Mapped Relations ####
 
-local:ontology_mapping	owl:sameAs	cso:ontology_mapping	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:ontology	rdfs:label	"ontology"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontology	owl:sameAs	cso:ontology	.
 cso:ontology_mapping	rdfs:label	"ontology mapping"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:ontology_mapping	owl:sameAs	cso:ontology_mapping	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
 
 #### Relations ####
 
-local:ontology_matcher	rdfs:subClassOf	local:matcher	.
-local:acquiring	vn.role:Topic	local:static_information	.
-local:unrelated_to_interaction	local:unrelated_to	local:interaction	.
-local:standard_ontology	rdfs:subClassOf	local:ontology	.
-local:evaluate	vn.role:Agent	local:standard_ontology_matcher	.
-local:ontology	rdfs:member	local:ontology_matcher	.
-local:provides	vn.role:Agent	local:interoperability_between_interacting_actors	.
-local:whole	rdfs:member	local:whole_ontologies	.
-local:dynamic_ontology	rdfs:member	local:dynamic_ontology_mapping	.
-local:standard_ontology_matcher	rdfs:subClassOf	local:ontology_matcher	.
-local:standard	rdfs:member	local:standard_ontology	.
-local:evaluate	local:AM-MOD	local:can	.
-local:focus	vn.role:Experiencer	local:however_conventional_mapping_systems	.
-local:new_interactions	rdfs:subClassOf	local:interactions	.
-local:themselves_interactions_between_actors	local:themselvesinteractions_between	local:actors	.
-local:unrelated_to_interaction	local:to_interaction	local:unrelated	.
-local:can_used	rdfs:subClassOf	local:used	.
-local:shows	vn.role:Theme	local:interactions_simplifying	.
-local:interactions_simplifying	local:interactions_	local:simplifying	.
-local:predict	vn.role:Recipient	local:interactions	.
-local:exchanged_messages	rdfs:subClassOf	local:messages	.
-local:unrelated_mappings	rdfs:subClassOf	local:mappings	.
-local:used	vn.role:Theme	local:computed_model	.
-local:interacting	vn.role:Actor1	local:actors	.
-local:avoid	vn.role:Agent	local:accurate_matchers	.
-local:static	rdfs:member	local:static_information	.
-local:interactions_simplifying	local:_simplifying	local:interactions	.
-local:provides	local:AM-LOC	local:distributed	.
-local:suggest	vn.role:Theme	local:computed_model	.
-local:acquiring	vn.role:Agent	local:however_conventional_mapping_systems	.
+local:suggest_the_possible_mappings_for_the_exchanged_messages_in_new_interactions	rdfs:member	local:s8.2	.
+local:themselves_themselves_interactions_between_actors	rdfs:member	local:actors	.
+local:possible_mappings_for_exchanged_messages_in_new_interactions	rdfs:member	local:possible_mappings_for_exchanged_messages	.
+local:s1	rdf:subject	local:environments_ontology_mapping	.
+local:interoperability_between_interacting_actors	rdfs:member	local:s0.1	.
+local:s2.1	rdf:subject	local:conventional_mapping_systems	.
+local:s5.1	local:AM-MOD	local:can	.
+local:suggestions_are_accurate_the_matchers	rdfs:member	local:suggestions	.
+local:s8	rdf:predicate	local:use	.
+local:new_interactions	rdfs:member	local:new	.
+local:conventional_mapping_systems	rdfs:member	local:conventional_mapping	.
+local:possible_mappings_for_the_exchanged_messages_in_new_interactions	rdfs:member	local:possible_mappings	.
+local:s5.3	rdf:object	local:dynamic_ontology_mapping	.
 local:open_environments	rdfs:subClassOf	local:environments	.
-local:conventional_mapping_systems	rdfs:subClassOf	local:mapping_systems	.
-local:accurate_matchers	local:_matchers	local:accurate	.
-local:possible_mappings_for_exchanged_messages	local:possiblemappings_for	local:exchanged_messages	.
-local:evaluating	vn.role:Theme	local:unrelated_mappings	.
-local:exchanged	rdfs:member	local:exchanged_messages	.
-local:whole_ontologies	rdfs:subClassOf	local:ontologies	.
-local:used	vn.role:Recipient	local:suggest	.
-local:accurate_matchers	local:accurate_	local:matchers	.
-local:dynamic_ontology	rdfs:subClassOf	local:ontology	.
-local:themselves_themselves_interactions_between_actors	local:between_actors	local:themselves_themselves_interactions	.
-local:predict	rdfs:member	local:predict_mappings	.
-local:open	rdfs:member	local:open_environments	.
-local:simplifying	vn.role:Patient	local:dynamic_ontology_mapping	.
-local:dynamic_ontology_mapping	rdfs:subClassOf	local:ontology_mapping	.
-local:predict_mappings	rdfs:subClassOf	local:mappings	.
-local:interoperability_between_interacting_actors	local:between_interactingactors	local:interoperability	.
-local:possible_mappings_for_exchanged_messages	local:for_exchangedmessages	local:possible_mappings	.
-local:ontology	rdfs:member	local:ontology_mapping	.
-local:suggest	vn.role:Agent	local:possible_mappings_for_exchanged_messages_in_new_interactions	.
-local:interacting_actors	rdfs:subClassOf	local:actors	.
-local:focus	vn.role:indirect_object	local:mapping	.
-local:similar_conventions	rdfs:subClassOf	local:conventions	.
-local:possible	rdfs:member	local:possible_mappings	.
-local:similar_interactions	rdfs:subClassOf	local:interactions	.
-local:themselves_interactions	rdfs:subClassOf	local:interactions	.
-local:similar	rdfs:member	local:similar_conventions	.
-local:conventional_mapping	rdfs:subClassOf	local:mapping	.
-local:distributed	vn.role:Theme	local:environments_ontology_mapping	.
-local:however_conventional_mapping_systems	rdfs:subClassOf	local:conventional_mapping_systems	.
-local:environments_ontology_mapping	rdfs:subClassOf	local:ontology_mapping	.
-local:actors_between_themselves_interactions	local:between_themselvesinteractions	local:actors	.
-local:provides	local:AM-LOC	local:open_environments	.
-local:evaluate	vn.role:Theme	local:suggestions	.
-local:themselves_themselves_interactions	rdfs:subClassOf	local:themselves_interactions	.
-local:predict	vn.role:Cause	local:mappings	.
-local:ontology_mapping	rdfs:subClassOf	local:mapping	.
-local:similar	rdfs:member	local:similar_interactions	.
-local:mapping_systems	rdfs:subClassOf	local:systems	.
-local:used	local:AM-MOD	local:can	.
-local:actors_between_themselves_interactions	local:actors_between	local:themselves_interactions	.
-local:focus	vn.role:indirect_object	local:acquiring	.
-local:dynamic	rdfs:member	local:dynamic_ontology	.
-local:conventional_mapping	rdfs:member	local:conventional_mapping_systems	.
-local:follow	vn.role:Location	local:similar_conventions	.
-local:computed_model	rdfs:subClassOf	local:model	.
-local:standard_ontology	rdfs:member	local:standard_ontology_matcher	.
-local:mapping	vn.role:Predicate	local:whole_ontologies	.
-local:new	rdfs:member	local:new_interactions	.
-local:avoid	vn.role:Location	local:evaluating	.
-local:evaluate	local:AM-ADV	local:avoid	.
-local:possible_mappings	rdfs:subClassOf	local:mappings	.
-local:used	vn.role:Recipient	local:predict	.
-local:mapping	rdfs:member	local:mapping_systems	.
-local:static_information	rdfs:subClassOf	local:information	.
-local:shows	vn.role:Agent	local:paper	.
+local:s2	rdf:object	local:acquiring_static_information	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors_can_be_used_to_predict_mappings_simplifying_dynamic_ontology_mapping	rdfs:member	local:mappings	.
+local:s1.1	rdf:subject	local:interoperability_between_interacting_actors	.
+local:s1.1	local:AM-LOC	local:distributed_environments_ontology_mapping	.
+local:dynamic_ontology	rdfs:member	local:dynamic	.
 local:standard_ontology_matcher	rdfs:subClassOf	local:matcher	.
-local:mapping	vn.role:Agent	local:however_conventional_mapping_systems	.
-local:themselves_themselves_interactions_between_actors	local:themselvesthemselvesinteractions_between	local:actors	.
-local:possible_mappings_for_exchanged_messages_in_new_interactions	local:in_newinteractions	local:possible_mappings_for_exchanged_messages	.
-local:possible_mappings_for_exchanged_messages_in_new_interactions	local:possiblemappingsforexchangedmessages_in	local:new_interactions	.
-local:conventional_mapping_systems	rdfs:subClassOf	local:systems	.
-local:follow	vn.role:Theme	local:similar_interactions	.
-local:interoperability_between_interacting_actors	local:interoperability_between	local:interacting_actors	.
-local:themselves_interactions_between_actors	local:between_actors	local:themselves_interactions	.
-local:conventional	rdfs:member	local:conventional_mapping	.
-local:used	vn.role:Theme	local:interactions	.
+local:open_environments	rdfs:member	local:open	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors_can_be_used_to_predict_mappings_simplifying_dynamic_ontology_mapping	rdfs:member	local:dynamic_ontology_mapping	.
+local:s8.1	rdf:object	local:possible_mappings_for_the_exchanged_messages_in_new_interactions	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors	rdfs:member	local:interactions	.
+local:s0.1	rdf:predicate	local:interact	.
+local:s8	rdf:object	local:suggest_the_possible_mappings_for_the_exchanged_messages_in_new_interactions	.
+local:standard_ontology	rdfs:member	local:standard	.
+local:mappings_unrelated_to_the_interaction	rdfs:member	local:mappings	.
+local:s5	rdf:subject	local:paper	.
+local:s9	rdf:predicate	local:evaluate	.
+local:suggest_the_possible_mappings_for_the_exchanged_messages_in_new_interactions	rdfs:member	local:new_interactions	.
+local:s9	local:AM-MOD	local:can	.
+local:s9	rdf:object	local:suggestions	.
+local:s5.2	rdf:object	local:s5.3	.
+local:s8	rdf:subject	local:computed_model	.
+local:s7	rdf:subject	local:similar_interactions	.
+local:conventional_mapping	rdfs:member	local:conventional	.
+local:s9.2	rdf:predicate	local:evaluate	.
+local:s1.2	rdf:subject	local:actors	.
+local:s8.2	rdfs:subClassOf	local:messages	.
+local:similar_interactions	rdfs:subClassOf	local:interactions	.
+local:possible_mappings_for_the_exchanged_messages_in_new_interactions	rdfs:member	local:new_interactions	.
 local:dynamic_ontology_mapping	rdfs:subClassOf	local:mapping	.
-local:exchanged	vn.role:object	local:messages	.
+local:whole_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s9.1	rdf:subject	local:suggestions_are_accurate_the_matchers	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors_can_be_used_to_predict_mappings_simplifying_dynamic_ontology_mapping	rdfs:member	local:interactions	.
+local:predict_mappings_simplifying_dynamic_ontology_mapping	rdfs:member	local:dynamic_ontology_mapping	.
+local:s5.3	rdf:subject	local:mappings	.
+local:ontology_matcher	rdfs:member	local:ontology	.
+local:suggest_the_possible_mappings_for_the_exchanged_messages_in_new_interactions	rdfs:member	local:possible_mappings	.
+local:s0	local:AM-LOC	local:open_environments_ontology_mapping	.
+local:unrelated_to_interaction	rdfs:member	local:unrelated	.
+local:s5.3	rdf:predicate	local:simplify	.
+local:predict_mappings_simplifying_dynamic_ontology_mapping	rdfs:member	local:predict_mappings	.
+local:s4	rdf:predicate	local:focus	.
+local:s8.2	rdf:predicate	local:exchange	.
+local:conventional_mapping_systems	rdfs:subClassOf	local:mapping_systems	.
+local:s0.1	rdf:subject	local:actors	.
+local:similar_conventions	rdfs:member	local:similar	.
+local:suggestions_are_accurate_the_matchers_avoid_evaluating_mappings_unrelated_to_the_interaction	rdfs:member	local:suggestions	.
+local:s5.2	rdf:predicate	local:predict	.
+local:standard_ontology_matcher	rdfs:member	local:standard_ontology	.
+local:ontology_mapping	rdfs:member	local:ontology	.
+local:s9	local:AM-ADV	local:suggestions_are_accurate_the_matchers_avoid_evaluating_mappings_unrelated_to_the_interaction	.
+local:actors_between_themselves_interactions	rdfs:member	local:actors	.
+local:s8	local:AM-MOD	local:can	.
+local:similar_interactions	rdfs:member	local:similar	.
+local:themselves_interactions	rdfs:subClassOf	local:interactions	.
+local:possible_mappings	rdfs:member	local:possible	.
+local:interoperability_between_interacting_actors	rdfs:member	local:s1.2	.
+local:predict_mappings	rdfs:subClassOf	local:mappings	.
+local:mappings_simplifying	rdfs:member	local:simplifying	.
+local:possible_mappings_for_exchanged_messages_in_new_interactions	rdfs:member	local:new_interactions	.
+local:s9	rdf:subject	local:standard_ontology_matcher	.
+local:ontology_mapping	rdfs:subClassOf	local:mapping	.
+local:standard_ontology_matcher	rdfs:subClassOf	local:ontology_matcher	.
+local:suggestions_are_accurate_the_matchers	rdfs:member	local:matchers	.
+local:mappings_simplifying	rdfs:member	local:mappings	.
+local:s1.1	rdf:predicate	local:provide	.
+local:interoperability_between_interacting_actors	rdfs:member	local:interoperability	.
+local:s5.1	rdf:subject	local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors	.
+local:possible_mappings_for_exchanged_messages	rdfs:member	local:possible_mappings	.
+local:dynamic_ontology_mapping	rdfs:subClassOf	local:ontology_mapping	.
+local:dynamic_ontology	rdfs:subClassOf	local:ontology	.
+local:themselves_interactions_between_actors	rdfs:member	local:actors	.
+local:s4	rdf:subject	local:conventional_mapping_systems	.
+local:static_information	rdfs:subClassOf	local:information	.
+local:s2	rdf:subject	local:conventional_mapping_systems	.
+local:s8.1	rdf:predicate	local:suggest	.
+local:ontology_matcher	rdfs:subClassOf	local:matcher	.
+local:s4	rdf:object	local:mapping_whole_ontologies	.
+local:possible_mappings	rdfs:subClassOf	local:mappings	.
+local:similar_conventions_and_patterns	rdfs:member	local:similar_conventions	.
+local:predict_mappings	rdfs:member	local:predict	.
+local:s2	rdf:predicate	local:focus	.
+local:s5.2	rdf:subject	local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors	.
+local:static_information	rdfs:member	local:static	.
+local:environments_ontology_mapping	rdfs:subClassOf	local:ontology_mapping	.
+local:unrelated_to_interaction	rdfs:member	local:interaction	.
+local:themselves_themselves_interactions_between_actors	rdfs:member	local:themselves_themselves_interactions	.
+local:s5	rdf:predicate	local:show	.
+local:similar_conventions	rdfs:subClassOf	local:conventions	.
+local:evaluating_mappings_unrelated_to_the_interaction	rdfs:member	local:interaction	.
+local:s0	rdf:predicate	local:provide	.
+local:s9.2	rdf:subject	local:matchers	.
+local:mapping_systems	rdfs:subClassOf	local:systems	.
+local:s2.1	rdf:object	local:static_information	.
+local:mapping_systems	rdfs:member	local:mapping	.
+local:s2.1	rdf:predicate	local:acquire	.
+local:s8.2	rdfs:member	local:exchanged	.
+local:dynamic_ontology_mapping	rdfs:member	local:dynamic_ontology	.
+local:s8.2	rdf:subject	local:messages	.
+local:themselves_themselves_interactions	rdfs:subClassOf	local:themselves_interactions	.
+local:actors_between_themselves_interactions	rdfs:member	local:themselves_interactions	.
+local:s6	rdf:predicate	local:analyse	.
+local:s9.1	rdf:predicate	local:avoid	.
+local:standard_ontology	rdfs:subClassOf	local:ontology	.
+local:s6	local:AM-MOD	local:can	.
+local:s6	rdf:subject	local:similar_conventions_and_patterns	.
+local:s1.2	rdfs:subClassOf	local:actors	.
+local:s8.1	rdf:subject	local:computed_model	.
+local:conventional_mapping_systems	rdfs:subClassOf	local:systems	.
+local:unrelated_mappings	rdfs:subClassOf	local:mappings	.
+local:conventional_mapping	rdfs:subClassOf	local:mapping	.
+local:s5.1	rdf:object	local:predict_mappings_simplifying_dynamic_ontology_mapping	.
+local:s5.1	rdf:predicate	local:use	.
+local:suggestions_are_accurate_the_matchers_avoid_evaluating_mappings_unrelated_to_the_interaction	rdfs:member	local:mappings	.
+local:s9.2	rdf:object	local:mappings_unrelated_to_the_interaction	.
+local:s7	rdf:predicate	local:follow	.
+local:whole_ontologies	rdfs:member	local:whole	.
+local:themselves_interactions_between_actors	rdfs:member	local:themselves_interactions	.
+local:s0	rdf:subject	local:interoperability_between_interacting_actors	.
+local:possible_mappings_for_exchanged_messages	rdfs:member	local:s8.2	.
+local:suggestions_are_accurate_the_matchers_avoid_evaluating_mappings_unrelated_to_the_interaction	rdfs:member	local:matchers	.
+local:new_interactions	rdfs:subClassOf	local:interactions	.
+local:s1.2	rdf:predicate	local:interact	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors	rdfs:member	local:actors	.
+local:suggestions_are_accurate_the_matchers_avoid_evaluating_mappings_unrelated_to_the_interaction	rdfs:member	local:interaction	.
+local:s9.1	rdf:object	local:evaluating_mappings_unrelated_to_the_interaction	.
+local:s5	rdf:object	local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors_can_be_used_to_predict_mappings_simplifying_dynamic_ontology_mapping	.
+local:interactions_the_interactions_themselves_between_the_actors_between_the_interactions_themselves_between_the_actors_can_be_used_to_predict_mappings_simplifying_dynamic_ontology_mapping	rdfs:member	local:actors	.
+local:mappings_unrelated_to_the_interaction	rdfs:member	local:interaction	.
+local:s7	rdf:object	local:similar_conventions_and_patterns	.
+local:similar_conventions_and_patterns	rdfs:member	local:patterns	.
+local:possible_mappings_for_the_exchanged_messages_in_new_interactions	rdfs:member	local:s8.2	.
+local:s0.1	rdfs:subClassOf	local:actors	.
+local:interoperability_between_interacting_actors	rdfs:member	local:actors	.
+local:computed_model	rdfs:subClassOf	local:model	.
+local:evaluating_mappings_unrelated_to_the_interaction	rdfs:member	local:mappings	.
+local:s1	rdf:predicate	local:distribute	.
+local:can_used	rdfs:subClassOf	local:used	.

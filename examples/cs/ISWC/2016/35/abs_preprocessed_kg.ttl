@@ -1,407 +1,634 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we extensively evaluate the proposed approach"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"considerable improvements compared to timeagnostic entity recommendation approaches"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"we extensively evaluate we experimental results show considerable improvements compared to timeagnostic entity recommendation approaches"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we extensively evaluate we experimental results show considerable improvements compared to timeagnostic entity recommendation approaches"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"entities extracted from different data sources publicly available on the web"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we propose the first probabilistic model"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"leveraging heterogeneous knowledge of entities"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the first probabilistic model that takes timeawareness into consideration for entity recommendation by leveraging heterogeneous knowledge of entities"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we introducing the task of timeaware entity recommendation"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"in this paper we address this gap by introducing the task of timeaware entity recommendation"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"however while this has become an established functionality in document search engines the significance of time not yet recognized for entity recommendation"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"this become an established functionality in document search engines the significance of time"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"given query into account"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"another trend in the area of information retrieval take temporal aspects of a given query into account"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"assessing the relevance of documents"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"related entities given a keyword query"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"ranked"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"retrieve a ranked list of related entities"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"related entity recommendation"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"develop techniques for related entity recommendation"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"increasing effort"	.
+
+
 #### Classes ####
 
-local:entity	rdfs:label	"entity"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:entity_recommendation	rdfs:label	"entity recommendation"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:recommendation	rdfs:label	"recommendation"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:related	rdfs:label	"related"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:ranked_list	rdfs:label	"ranked list"	.
+local:extensively	a	rdf:Class	;
+	rdfs:label	"extensively"	.
 
-local:list	rdfs:label	"list"	.
+local:considerable_improvements	a	rdf:Class	;
+	rdfs:label	"considerable improvements"	.
 
-local:related_entities	rdfs:label	"related entities"	.
+local:improvements	a	rdf:Class	;
+	rdfs:label	"improvements"	.
 
-local:entities	rdfs:label	"entities"	.
+local:considerable	a	rdf:Class	;
+	rdfs:label	"considerable"	.
 
-local:ranked	rdfs:label	"ranked"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:ranked_list_of_related_entities	rdfs:label	"ranked list of related entities"	.
+local:timeagnostic_entity_recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"timeagnostic entity recommendation approaches"	.
 
-local:retrieve	rdfs:label	"retrieve"	.
+local:timeagnostic_entity	a	rdf:Class	;
+	rdfs:label	"timeagnostic entity"	.
 
-local:increasing	rdfs:label	"increasing"	.
+local:timeagnostic	a	rdf:Class	;
+	rdfs:label	"timeagnostic"	.
 
-local:effort	rdfs:label	"effort"	.
+local:timeagnostic_entity_recommendation	a	rdf:Class	;
+	rdfs:label	"timeagnostic entity recommendation"	.
 
-local:related_entity	rdfs:label	"related entity"	.
+local:entity_recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"entity recommendation approaches"	.
 
-local:related_entity_recommendation	rdfs:label	"related entity recommendation"	.
+local:entity_recommendation	a	rdf:Class	;
+	rdfs:label	"entity recommendation"	.
 
-local:techniques_for_related_entity_recommendation	rdfs:label	"techniques for related entity recommendation"	.
+local:recommendation	a	rdf:Class	;
+	rdfs:label	"recommendation"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"recommendation approaches"	.
 
-local:develop	rdfs:label	"develop"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:given	rdfs:label	"given"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:keyword	rdfs:label	"keyword"	.
+local:extensively_evaluate_we_experimental_results	a	rdf:Class	;
+	rdfs:label	"extensively evaluate we experimental results"	.
 
-local:keyword_query	rdfs:label	"keyword query"	.
+local:extensively_evaluate	a	rdf:Class	;
+	rdfs:label	"extensively evaluate"	.
 
-local:query	rdfs:label	"query"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:information	rdfs:label	"information"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:information_retrieval	rdfs:label	"information retrieval"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:retrieval	rdfs:label	"retrieval"	.
+local:experimental_results_show_considerable_improvements_compared_to_timeagnostic_entity_recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"experimental results show considerable improvements compared to timeagnostic entity recommendation approaches"	.
 
-local:trend_in_area	rdfs:label	"trend in area"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:trend	rdfs:label	"trend"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:area	rdfs:label	"area"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:area_of_information	rdfs:label	"area of information"	.
+local:different_data_sources_publicly_available_on_the_web	a	rdf:Class	;
+	rdfs:label	"different data sources publicly available on the web"	.
 
-local:take	rdfs:label	"take"	.
+local:different_data_sources	a	rdf:Class	;
+	rdfs:label	"different data sources"	.
 
-local:temporal_aspects	rdfs:label	"temporal aspects"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:aspects	rdfs:label	"aspects"	.
+local:different_data	a	rdf:Class	;
+	rdfs:label	"different data"	.
 
-local:temporal	rdfs:label	"temporal"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:given_query	rdfs:label	"given query"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:temporal_aspects_of_given_query	rdfs:label	"temporal aspects of given query"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:temporal_aspects_of_given_query_into_account	rdfs:label	"temporal aspects of given query into account"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:account	rdfs:label	"account"	.
+local:publicly_available	a	rdf:Class	;
+	rdfs:label	"publicly available"	.
 
-local:relevance_of_documents	rdfs:label	"relevance of documents"	.
+local:available	a	rdf:Class	;
+	rdfs:label	"available"	.
 
-local:relevance	rdfs:label	"relevance"	.
+local:publicly_available_on_web	a	rdf:Class	;
+	rdfs:label	"publicly available on web"	.
 
-local:documents	rdfs:label	"documents"	.
+local:first_probabilistic_model	a	rdf:Class	;
+	rdfs:label	"first probabilistic model"	.
 
-local:assessing	rdfs:label	"assessing"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:become	rdfs:label	"become"	.
+local:probabilistic_model	a	rdf:Class	;
+	rdfs:label	"probabilistic model"	.
 
-local:this	rdfs:label	"this"	.
+local:probabilistic	a	rdf:Class	;
+	rdfs:label	"probabilistic"	.
 
-local:document_search	rdfs:label	"document search"	.
+local:first_probabilistic	a	rdf:Class	;
+	rdfs:label	"first probabilistic"	.
 
-local:search	rdfs:label	"search"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:document_search_engines	rdfs:label	"document search engines"	.
+local:heterogeneous_knowledge_of_entities	a	rdf:Class	;
+	rdfs:label	"heterogeneous knowledge of entities"	.
 
-local:engines	rdfs:label	"engines"	.
+local:heterogeneous_knowledge	a	rdf:Class	;
+	rdfs:label	"heterogeneous knowledge"	.
 
-local:search_engines	rdfs:label	"search engines"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:document	rdfs:label	"document"	.
+local:heterogeneous	a	rdf:Class	;
+	rdfs:label	"heterogeneous"	.
 
-local:established_functionality	rdfs:label	"established functionality"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:functionality	rdfs:label	"functionality"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:established_functionality_in_document_search_engines	rdfs:label	"established functionality in document search engines"	.
+local:timeawareness	a	rdf:Class	;
+	rdfs:label	"timeawareness"	.
 
-local:established_functionality_in_document_search_engines_significance	rdfs:label	"established functionality in document search engines significance"	.
+local:consideration_for_entity_recommendation	a	rdf:Class	;
+	rdfs:label	"consideration for entity recommendation"	.
 
-local:significance	rdfs:label	"significance"	.
+local:consideration	a	rdf:Class	;
+	rdfs:label	"consideration"	.
 
-local:significance_of_time	rdfs:label	"significance of time"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:time	rdfs:label	"time"	.
+local:task_of_timeaware_entity_recommendation	a	rdf:Class	;
+	rdfs:label	"task of timeaware entity recommendation"	.
 
-local:established	rdfs:label	"established"	.
+local:timeaware_entity_recommendation	a	rdf:Class	;
+	rdfs:label	"timeaware entity recommendation"	.
 
-local:has_become	rdfs:label	"has become"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:recognized	rdfs:label	"recognized"	.
+local:timeaware_entity	a	rdf:Class	;
+	rdfs:label	"timeaware entity"	.
 
-local:however	rdfs:label	"however"	.
+local:timeaware	a	rdf:Class	;
+	rdfs:label	"timeaware"	.
 
-local:not	rdfs:label	"not"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:yet	rdfs:label	"yet"	.
+local:gap	a	rdf:Class	;
+	rdfs:label	"gap"	.
 
-local:address	rdfs:label	"address"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:paper	rdfs:label	"paper"	.
+local:introducing_the_task_of_timeaware_entity_recommendation	a	rdf:Class	;
+	rdfs:label	"introducing the task of timeaware entity recommendation"	.
 
-local:we	rdfs:label	"we"	.
+local:not_recognize	a	rdf:Class	;
+	rdfs:label	"not recognize"	.
 
-local:gap	rdfs:label	"gap"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:timeaware_entity	rdfs:label	"time-aware entity"	.
+local:become_an_established_functionality_in_document_search_engines_the_significance_of_time	a	rdf:Class	;
+	rdfs:label	"become an established functionality in document search engines the significance of time"	.
 
-local:timeaware_entity_recommendation	rdfs:label	"time-aware entity recommendation"	.
+local:significance	a	rdf:Class	;
+	rdfs:label	"significance"	.
 
-local:timeaware	rdfs:label	"time-aware"	.
+local:established_functionality	a	rdf:Class	;
+	rdfs:label	"established functionality"	.
 
-local:task_of_timeaware_entity_recommendation	rdfs:label	"task of time-aware entity recommendation"	.
+local:document_search	a	rdf:Class	;
+	rdfs:label	"document search"	.
 
-local:task	rdfs:label	"task"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:introducing	rdfs:label	"introducing"	.
+local:functionality	a	rdf:Class	;
+	rdfs:label	"functionality"	.
 
-local:task_of_timeaware_entity	rdfs:label	"task of time-aware entity"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:propose	rdfs:label	"propose"	.
+local:established	a	rdf:Class	;
+	rdfs:label	"established"	.
 
-local:first	rdfs:label	"first"	.
+local:document	a	rdf:Class	;
+	rdfs:label	"document"	.
 
-local:first_probabilistic	rdfs:label	"first probabilistic"	.
+local:search_engines	a	rdf:Class	;
+	rdfs:label	"search engines"	.
 
-local:probabilistic	rdfs:label	"probabilistic"	.
+local:engines	a	rdf:Class	;
+	rdfs:label	"engines"	.
 
-local:probabilistic_model	rdfs:label	"probabilistic model"	.
+local:document_search_engines	a	rdf:Class	;
+	rdfs:label	"document search engines"	.
 
-local:first_probabilistic_model	rdfs:label	"first probabilistic model"	.
+local:established_functionality_in_document_search_engines	a	rdf:Class	;
+	rdfs:label	"established functionality in document search engines"	.
 
-local:model	rdfs:label	"model"	.
+local:significance_of_time	a	rdf:Class	;
+	rdfs:label	"significance of time"	.
 
-local:takes	rdfs:label	"takes"	.
+local:yet	a	rdf:Class	;
+	rdfs:label	"yet"	.
 
-local:timeawareness	rdfs:label	"time-awareness"	.
+local:this	a	rdf:Class	;
+	rdfs:label	"this"	.
 
-local:consideration_for_entity_recommendation	rdfs:label	"consideration for entity recommendation"	.
+local:become	a	rdf:Class	;
+	rdfs:label	"become"	.
 
-local:consideration	rdfs:label	"consideration"	.
+local:established_functionality_in_document_search_engines_the_significance_of_time	a	rdf:Class	;
+	rdfs:label	"established functionality in document search engines the significance of time"	.
 
-local:heterogeneous_knowledge	rdfs:label	"heterogeneous knowledge"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:heterogeneous	rdfs:label	"heterogeneous"	.
+local:account	a	rdf:Class	;
+	rdfs:label	"account"	.
 
-local:heterogeneous_knowledge_of_entities	rdfs:label	"heterogeneous knowledge of entities"	.
+local:another_trend_in_the_area_of_information_retrieval	a	rdf:Class	;
+	rdfs:label	"another trend in the area of information retrieval"	.
 
-local:leveraging	rdfs:label	"leveraging"	.
+local:area	a	rdf:Class	;
+	rdfs:label	"area"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:trend	a	rdf:Class	;
+	rdfs:label	"trend"	.
 
-local:different_data	rdfs:label	"different data"	.
+local:information_retrieval	a	rdf:Class	;
+	rdfs:label	"information retrieval"	.
 
-local:different_data_sources	rdfs:label	"different data sources"	.
+local:retrieval	a	rdf:Class	;
+	rdfs:label	"retrieval"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:sources	rdfs:label	"sources"	.
+local:trend_in_area	a	rdf:Class	;
+	rdfs:label	"trend in area"	.
 
-local:data	rdfs:label	"data"	.
+local:area_of_information	a	rdf:Class	;
+	rdfs:label	"area of information"	.
 
-local:different	rdfs:label	"different"	.
+local:temporal_aspects_of_a_given_query_into_account	a	rdf:Class	;
+	rdfs:label	"temporal aspects of a given query into account"	.
 
-local:publicly_available	rdfs:label	"publicly available"	.
+local:temporal_aspects	a	rdf:Class	;
+	rdfs:label	"temporal aspects"	.
 
-local:available	rdfs:label	"available"	.
+local:aspects	a	rdf:Class	;
+	rdfs:label	"aspects"	.
 
-local:publicly_available_on_web	rdfs:label	"publicly available on web"	.
+local:temporal	a	rdf:Class	;
+	rdfs:label	"temporal"	.
 
-local:web	rdfs:label	"web"	.
+local:given_query	a	rdf:Class	;
+	rdfs:label	"given query"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:temporal_aspects_of_given_query	a	rdf:Class	;
+	rdfs:label	"temporal aspects of given query"	.
 
-local:extensively	rdfs:label	"extensively"	.
+local:temporal_aspects_of_given_query_into_account	a	rdf:Class	;
+	rdfs:label	"temporal aspects of given query into account"	.
 
-local:proposed_approach	rdfs:label	"proposed approach"	.
+local:relevance_of_documents	a	rdf:Class	;
+	rdfs:label	"relevance of documents"	.
 
-local:approach	rdfs:label	"approach"	.
+local:documents	a	rdf:Class	;
+	rdfs:label	"documents"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:relevance	a	rdf:Class	;
+	rdfs:label	"relevance"	.
 
-local:timeagnostic_entity_recommendation_approaches	rdfs:label	"time-agnostic entity recommendation approaches"	.
+local:assess	a	rdf:Class	;
+	rdfs:label	"assess"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:related_entities	a	rdf:Class	;
+	rdfs:label	"related entities"	.
 
-local:considerable	rdfs:label	"considerable"	.
+local:related	a	rdf:Class	;
+	rdfs:label	"related"	.
 
-local:considerable_improvements	rdfs:label	"considerable improvements"	.
+local:keyword_query	a	rdf:Class	;
+	rdfs:label	"keyword query"	.
 
-local:timeagnostic_entity_recommendation	rdfs:label	"time-agnostic entity recommendation"	.
+local:keyword	a	rdf:Class	;
+	rdfs:label	"keyword"	.
 
-local:entity_recommendation_approaches	rdfs:label	"entity recommendation approaches"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:experimental_results	rdfs:label	"experimental results"	.
+local:ranked_list_of_related_entities	a	rdf:Class	;
+	rdfs:label	"ranked list of related entities"	.
 
-local:results	rdfs:label	"results"	.
+local:ranked_list	a	rdf:Class	;
+	rdfs:label	"ranked list"	.
 
-local:timeagnostic_entity	rdfs:label	"time-agnostic entity"	.
+local:list	a	rdf:Class	;
+	rdfs:label	"list"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:retrieve	a	rdf:Class	;
+	rdfs:label	"retrieve"	.
 
-local:timeagnostic	rdfs:label	"time-agnostic"	.
+local:relate	a	rdf:Class	;
+	rdfs:label	"relate"	.
 
-local:recommendation_approaches	rdfs:label	"recommendation approaches"	.
+local:techniques_for_related_entity_recommendation	a	rdf:Class	;
+	rdfs:label	"techniques for related entity recommendation"	.
 
-local:improvements	rdfs:label	"improvements"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:show	rdfs:label	"show"	.
+local:related_entity	a	rdf:Class	;
+	rdfs:label	"related entity"	.
 
-local:extensively_evaluate	rdfs:label	"extensively evaluate"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:compared	rdfs:label	"compared"	.
+local:effort	a	rdf:Class	;
+	rdfs:label	"effort"	.
 
-#### Properties ####
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
 
 #### Mapped Relations ####
 
-local:recommendation	owl:sameAs	cso:recommendation	.
-cso:search_engines	rdfs:label	"search engines"	.
-local:probabilistic_model	owl:sameAs	cso:probabilistic_model	.
-cso:information_retrieval	rdfs:label	"information retrieval"	.
 local:information_retrieval	owl:sameAs	cso:information_retrieval	.
+local:recommendation	owl:sameAs	cso:recommendation	.
+cso:probabilistic_model	rdfs:label	"probabilistic model"	.
+cso:information_retrieval	rdfs:label	"information retrieval"	.
+cso:search_engines	rdfs:label	"search engines"	.
 local:search_engines	owl:sameAs	cso:search_engines	.
 cso:recommendation	rdfs:label	"recommendation"	.
-cso:probabilistic_model	rdfs:label	"probabilistic model"	.
+local:probabilistic_model	owl:sameAs	cso:probabilistic_model	.
 
 #### Relations ####
 
-local:ranked_list_of_related_entities	local:rankedlist_of	local:related_entities	.
-local:document_search_engines	rdfs:subClassOf	local:search_engines	.
-local:search_engines	rdfs:subClassOf	local:engines	.
-local:assessing	vn.role:Theme	local:relevance_of_documents	.
-local:techniques_for_related_entity_recommendation	local:for_relatedentityrecommendation	local:techniques	.
-local:first_probabilistic	rdfs:subClassOf	local:probabilistic	.
-local:show	vn.role:Agent	local:extensively_evaluate	.
-local:heterogeneous	rdfs:member	local:heterogeneous_knowledge	.
-local:takes	vn.role:Source	local:timeawareness	.
-local:probabilistic	rdfs:member	local:probabilistic_model	.
-local:given_query	rdfs:subClassOf	local:query	.
-local:given	vn.role:indirect_object	local:account	.
-local:timeagnostic	rdfs:member	local:timeagnostic_entity	.
-local:recognized	local:AM-TMP	local:yet	.
-local:evaluate	vn.role:Theme	local:proposed_approach	.
-local:temporal_aspects	rdfs:subClassOf	local:aspects	.
-local:takes	vn.role:Agent	local:first_probabilistic_model	.
-local:entity_recommendation_approaches	rdfs:subClassOf	local:recommendation_approaches	.
-local:document_search	rdfs:subClassOf	local:search	.
-local:show	vn.role:Theme	local:considerable_improvements	.
-local:heterogeneous_knowledge_of_entities	local:of_entities	local:heterogeneous_knowledge	.
-local:timeaware	rdfs:member	local:timeaware_entity	.
-local:heterogeneous_knowledge_of_entities	local:heterogeneousknowledge_of	local:entities	.
-local:extensively	rdfs:member	local:extensively_evaluate	.
-local:timeagnostic_entity_recommendation_approaches	rdfs:subClassOf	local:approaches	.
-local:area_of_information	local:area_of	local:information	.
-local:techniques_for_related_entity_recommendation	local:techniques_for	local:related_entity_recommendation	.
-local:take	vn.role:Agent	local:retrieval	.
-local:different_data	rdfs:member	local:different_data_sources	.
-local:take	vn.role:Theme	local:temporal_aspects_of_given_query_into_account	.
-local:takes	local:AM-MNR	local:leveraging	.
-local:recommendation	rdfs:member	local:recommendation_approaches	.
-local:compared	vn.role:Patient2	local:considerable_improvements	.
-local:recognized	local:AM-NEG	local:not	.
-local:document_search	rdfs:member	local:document_search_engines	.
-local:considerable	rdfs:member	local:considerable_improvements	.
-local:extracted	vn.role:Source	local:publicly_available_on_web	.
-local:temporal	rdfs:member	local:temporal_aspects	.
-local:document_search_engines	rdfs:subClassOf	local:engines	.
-local:recognized	local:AM-ADV	local:however	.
-local:publicly_available_on_web	local:on_web	local:publicly_available	.
-local:given	vn.role:Asset	local:related_entities	.
-local:temporal_aspects_of_given_query_into_account	local:into_account	local:temporal_aspects_of_given_query	.
-local:recommendation_approaches	rdfs:subClassOf	local:approaches	.
-local:different_data	rdfs:subClassOf	local:data	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:ranked_list_of_related_entities	local:of_relatedentities	local:ranked_list	.
-local:information	rdfs:member	local:information_retrieval	.
-local:propose	vn.role:Agent	local:we	.
-local:different	rdfs:member	local:different_data	.
-local:become	vn.role:Patient	local:this	.
-local:compared	vn.role:Agent	local:timeagnostic_entity_recommendation_approaches	.
-local:related_entity	rdfs:member	local:related_entity_recommendation	.
-local:task_of_timeaware_entity_recommendation	local:task_of	local:timeaware_entity_recommendation	.
-local:first_probabilistic	rdfs:member	local:first_probabilistic_model	.
-local:temporal_aspects_of_given_query	local:temporalaspects_of	local:given_query	.
-local:relevance_of_documents	local:of_documents	local:relevance	.
-local:has_become	rdfs:subClassOf	local:become	.
-local:different_data_sources	rdfs:subClassOf	local:sources	.
-local:data	rdfs:member	local:data_sources	.
-local:related	rdfs:member	local:related_entity	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:established	rdfs:member	local:established_functionality	.
-local:evaluate	vn.role:Agent	local:we	.
-local:temporal_aspects_of_given_query_into_account	local:temporalaspectsofgivenquery_into	local:account	.
-local:proposed_approach	rdfs:subClassOf	local:approach	.
-local:increasing	vn.role:Attribute	local:effort	.
-local:area_of_information	local:of_information	local:area	.
-local:established_functionality_in_document_search_engines	local:in_documentsearchengines	local:established_functionality	.
-local:address	vn.role:Agent	local:we	.
-local:established_functionality_in_document_search_engines_significance	local:establishedfunctionalityindocumentsearchengines_	local:significance	.
-local:first	rdfs:member	local:first_probabilistic	.
-local:related_entity_recommendation	rdfs:subClassOf	local:recommendation	.
-local:extensively_evaluate	rdfs:subClassOf	local:evaluate	.
-local:publicly_available_on_web	local:publiclyavailable_on	local:web	.
-local:propose	vn.role:Topic	local:first_probabilistic_model	.
-local:related_entity_recommendation	rdfs:subClassOf	local:entity_recommendation	.
-local:timeaware_entity_recommendation	rdfs:subClassOf	local:recommendation	.
-local:entity_recommendation	rdfs:member	local:entity_recommendation_approaches	.
-local:probabilistic_model	rdfs:subClassOf	local:model	.
-local:develop	vn.role:Location	local:techniques_for_related_entity_recommendation	.
-local:keyword_query	rdfs:subClassOf	local:query	.
-local:task_of_timeaware_entity	local:of_time-awareentity	local:task	.
-local:established_functionality_in_document_search_engines	local:establishedfunctionality_in	local:document_search_engines	.
-local:task_of_timeaware_entity_recommendation	local:of_time-awareentityrecommendation	local:task	.
-local:keyword	rdfs:member	local:keyword_query	.
-local:given	vn.role:object	local:keyword_query	.
-local:temporal_aspects_of_given_query	local:of_givenquery	local:temporal_aspects	.
-local:introducing	vn.role:Patient	local:task_of_timeaware_entity	.
-local:entity	rdfs:member	local:entity_recommendation	.
-local:timeagnostic_entity_recommendation_approaches	rdfs:subClassOf	local:entity_recommendation_approaches	.
-local:timeaware_entity_recommendation	rdfs:subClassOf	local:entity_recommendation	.
-local:first_probabilistic_model	rdfs:subClassOf	local:probabilistic_model	.
-local:proposed	vn.role:Topic	local:approach	.
-local:related	rdfs:member	local:related_entities	.
-local:address	vn.role:Theme	local:gap	.
-local:related_entity	rdfs:subClassOf	local:entity	.
-local:evaluate	local:AM-MNR	local:extensively	.
-local:ranked	rdfs:member	local:ranked_list	.
-local:timeagnostic_entity_recommendation	rdfs:member	local:timeagnostic_entity_recommendation_approaches	.
-local:entity_recommendation	rdfs:subClassOf	local:recommendation	.
-local:become	vn.role:indirect_object	local:established_functionality_in_document_search_engines_significance	.
-local:task_of_timeaware_entity	local:task_of	local:timeaware_entity	.
-local:related	vn.role:Topic	local:entity_recommendation	.
-local:established_functionality_in_document_search_engines_significance	local:_significance	local:established_functionality_in_document_search_engines	.
-local:timeagnostic_entity	rdfs:member	local:timeagnostic_entity_recommendation	.
-local:timeagnostic_entity_recommendation	rdfs:subClassOf	local:recommendation	.
-local:consideration_for_entity_recommendation	local:consideration_for	local:entity_recommendation	.
-local:evaluate	vn.role:Theme	local:show	.
-local:trend_in_area	local:trend_in	local:area	.
+local:s5.1	local:AM-TMP	local:yet	.
+local:s10	rdf:subject	local:we	.
 local:first_probabilistic_model	rdfs:subClassOf	local:model	.
-local:significance_of_time	local:significance_of	local:time	.
-local:given	vn.role:object	local:query	.
-local:address	local:AM-LOC	local:paper	.
-local:ranked_list	rdfs:subClassOf	local:list	.
-local:trend_in_area	local:in_area	local:trend	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:introducing	vn.role:Agent	local:we	.
+local:ranked_list	rdfs:member	local:s1.2	.
+local:s4.1	rdf:predicate	local:give	.
+local:temporal_aspects_of_a_given_query_into_account	rdfs:member	local:temporal_aspects	.
+local:recommendation_approaches	rdfs:subClassOf	local:approaches	.
+local:s1.1	rdf:subject	local:ranked_list_of_related_entities	.
+local:related_entity	rdfs:subClassOf	local:entity	.
+local:another_trend_in_the_area_of_information_retrieval	rdfs:member	local:area	.
+local:s4	rdf:object	local:temporal_aspects_of_a_given_query_into_account	.
+local:trend_in_area	rdfs:member	local:trend	.
 local:timeaware_entity	rdfs:subClassOf	local:entity	.
-local:timeaware_entity	rdfs:member	local:timeaware_entity_recommendation	.
-local:retrieve	vn.role:Theme	local:ranked_list_of_related_entities	.
-local:established_functionality	rdfs:subClassOf	local:functionality	.
-local:address	local:AM-MNR	local:introducing	.
-local:related_entities	rdfs:subClassOf	local:entities	.
-local:relevance_of_documents	local:relevance_of	local:documents	.
-local:leveraging	vn.role:Theme	local:heterogeneous_knowledge_of_entities	.
-local:heterogeneous_knowledge	rdfs:subClassOf	local:knowledge	.
-local:considerable_improvements	rdfs:subClassOf	local:improvements	.
-local:introducing	vn.role:Agent	local:recommendation	.
-local:timeagnostic_entity	rdfs:subClassOf	local:entity	.
-local:entity_recommendation_approaches	rdfs:subClassOf	local:approaches	.
-local:recognized	vn.role:Predicate	local:entity_recommendation	.
-local:consideration_for_entity_recommendation	local:for_entityrecommendation	local:consideration	.
-local:significance_of_time	local:of_time	local:significance	.
-local:publicly_available	rdfs:subClassOf	local:available	.
-local:takes	local:AM-DIR	local:consideration_for_entity_recommendation	.
-local:extracted	vn.role:Theme	local:entities	.
+local:timeagnostic_entity_recommendation	rdfs:subClassOf	local:recommendation	.
 local:different_data_sources	rdfs:subClassOf	local:data_sources	.
-local:document	rdfs:member	local:document_search	.
-local:search	rdfs:member	local:search_engines	.
+local:s11	rdf:object	local:s11.1	.
+local:s11.1	rdf:predicate	local:propose	.
+local:task_of_timeaware_entity_recommendation	rdfs:member	local:task	.
+local:related_entities	rdfs:subClassOf	local:entities	.
+local:s7	local:AM-MNR	local:s7.1	.
+local:significance_of_time	rdfs:member	local:time	.
+local:s10	rdf:object	local:experimental_results_show_considerable_improvements_compared_to_timeagnostic_entity_recommendation_approaches	.
+local:timeaware_entity_recommendation	rdfs:member	local:timeaware_entity	.
+local:first_probabilistic_model	rdfs:member	local:first_probabilistic	.
+local:s0.1	rdf:subject	local:techniques_for_related_entity_recommendation	.
+local:s7	rdf:subject	local:first_probabilistic_model	.
+local:entity_recommendation_approaches	rdfs:member	local:entity_recommendation	.
+local:timeagnostic_entity_recommendation_approaches	rdfs:subClassOf	local:entity_recommendation_approaches	.
+local:search_engines	rdfs:subClassOf	local:engines	.
+local:s1	rdfs:subClassOf	local:recommendation	.
+local:s10.1	rdf:subject	local:extensively_evaluate_we_experimental_results	.
+local:s10.2	rdf:subject	local:considerable_improvements	.
+local:another_trend_in_the_area_of_information_retrieval	rdfs:member	local:information_retrieval	.
+local:entity_recommendation	rdfs:member	local:entity	.
+local:established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:functionality	.
+local:ranked_list	rdfs:subClassOf	local:list	.
+local:s7	local:AM-DIR	local:consideration_for_entity_recommendation	.
+local:s0.1	rdf:predicate	local:develop	.
+local:techniques_for_related_entity_recommendation	rdfs:member	local:s1	.
+local:given_query	rdfs:subClassOf	local:query	.
+local:s1	rdfs:subClassOf	local:entity_recommendation	.
+local:extensively_evaluate_we_experimental_results	rdfs:member	local:extensively_evaluate	.
+local:s9	rdf:predicate	local:extract	.
+local:relevance_of_documents	rdfs:member	local:relevance	.
+local:introducing_the_task_of_timeaware_entity_recommendation	rdfs:member	local:timeaware_entity_recommendation	.
+local:recommendation_approaches	rdfs:member	local:recommendation	.
+local:document_search	rdfs:member	local:document	.
+local:s10	local:AM-MNR	local:extensively	.
+local:different_data	rdfs:subClassOf	local:data	.
+local:heterogeneous_knowledge	rdfs:member	local:heterogeneous	.
+local:s11.1	rdf:subject	local:approach	.
+local:different_data_sources_publicly_available_on_the_web	rdfs:member	local:web	.
+local:document_search	rdfs:subClassOf	local:search	.
+local:become_an_established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:time	.
+local:s1.1	rdf:predicate	local:retrieve	.
+local:s1	rdfs:member	local:related_entity	.
+local:experimental_results_show_considerable_improvements_compared_to_timeagnostic_entity_recommendation_approaches	rdfs:member	local:experimental_results	.
+local:different_data	rdfs:member	local:different	.
+local:established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:time	.
+local:s7.1	rdf:subject	local:heterogeneous_knowledge_of_entities	.
+local:different_data_sources_publicly_available_on_the_web	rdfs:member	local:different_data_sources	.
+local:s5	rdf:subject	local:this	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:s1	rdf:subject	local:entity_recommendation	.
+local:s2	rdf:subject	local:related_entities	.
+local:temporal_aspects	rdfs:member	local:temporal	.
+local:first_probabilistic_model	rdfs:subClassOf	local:probabilistic_model	.
+local:timeaware_entity_recommendation	rdfs:subClassOf	local:entity_recommendation	.
+local:area_of_information	rdfs:member	local:information	.
+local:heterogeneous_knowledge	rdfs:subClassOf	local:knowledge	.
+local:temporal_aspects_of_a_given_query_into_account	rdfs:member	local:account	.
+local:temporal_aspects	rdfs:subClassOf	local:aspects	.
+local:s6	local:AM-MNR	local:introducing_the_task_of_timeaware_entity_recommendation	.
+local:keyword_query	rdfs:member	local:keyword	.
+local:s8	rdf:object	local:first_probabilistic_model	.
+local:temporal_aspects_of_given_query	rdfs:member	local:given_query	.
+local:probabilistic_model	rdfs:member	local:probabilistic	.
 local:information_retrieval	rdfs:subClassOf	local:retrieval	.
+local:s6	rdf:object	local:gap	.
+local:timeagnostic_entity_recommendation	rdfs:member	local:timeagnostic_entity	.
+local:consideration_for_entity_recommendation	rdfs:member	local:entity_recommendation	.
+local:first_probabilistic	rdfs:subClassOf	local:probabilistic	.
+local:s7.1	rdf:predicate	local:leverage	.
+local:s3	rdf:subject	local:relevance_of_documents	.
+local:s5	rdf:predicate	local:become	.
+local:become_an_established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:established_functionality	.
+local:document_search_engines	rdfs:subClassOf	local:search_engines	.
+local:trend_in_area	rdfs:member	local:area	.
+local:timeaware_entity_recommendation	rdfs:subClassOf	local:recommendation	.
+local:s5.1	local:AM-DIS	local:however	.
+local:different_data_sources	rdfs:member	local:different_data	.
+local:relevance_of_documents	rdfs:member	local:documents	.
+local:s9	rdf:object	local:different_data_sources_publicly_available_on_the_web	.
+local:become_an_established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:significance	.
+local:experimental_results_show_considerable_improvements_compared_to_timeagnostic_entity_recommendation_approaches	rdfs:member	local:timeagnostic_entity_recommendation_approaches	.
+local:techniques_for_related_entity_recommendation	rdfs:member	local:techniques	.
+local:s7	rdf:predicate	local:take	.
+local:established_functionality_in_document_search_engines	rdfs:member	local:document_search_engines	.
+local:information_retrieval	rdfs:member	local:information	.
+local:first_probabilistic	rdfs:member	local:first	.
+local:related_entity	rdfs:member	local:related	.
+local:s6.1	rdf:predicate	local:introduce	.
+local:entity_recommendation_approaches	rdfs:subClassOf	local:approaches	.
+local:task_of_timeaware_entity_recommendation	rdfs:member	local:timeaware_entity_recommendation	.
+local:s11	rdf:predicate	local:evaluate	.
+local:established_functionality	rdfs:member	local:established	.
+local:s4.1	rdf:object	local:account	.
+local:s3	rdf:predicate	local:assess	.
+local:keyword_query	rdfs:subClassOf	local:query	.
+local:entity_recommendation	rdfs:subClassOf	local:recommendation	.
+local:ranked_list_of_related_entities	rdfs:member	local:related_entities	.
+local:s6.1	rdf:subject	local:we	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:heterogeneous_knowledge_of_entities	rdfs:member	local:heterogeneous_knowledge	.
+local:publicly_available_on_web	rdfs:member	local:web	.
+local:data_sources	rdfs:member	local:data	.
+local:temporal_aspects_of_given_query	rdfs:member	local:temporal_aspects	.
+local:consideration_for_entity_recommendation	rdfs:member	local:consideration	.
+local:s7	rdf:object	local:timeawareness	.
+local:different_data_sources	rdfs:subClassOf	local:sources	.
+local:probabilistic_model	rdfs:subClassOf	local:model	.
+local:considerable_improvements	rdfs:subClassOf	local:improvements	.
+local:s1.2	rdf:predicate	local:rank	.
+local:temporal_aspects_of_a_given_query_into_account	rdfs:member	local:query	.
+local:established_functionality_in_document_search_engines	rdfs:member	local:established_functionality	.
+local:established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:significance	.
+local:s0	rdf:subject	local:effort	.
+local:s11	rdf:subject	local:we	.
+local:temporal_aspects_of_given_query_into_account	rdfs:member	local:account	.
+local:s8	rdf:predicate	local:propose	.
+local:s2	rdf:predicate	local:give	.
+local:s10.2	rdf:object	local:timeagnostic_entity_recommendation_approaches	.
+local:s4	rdf:subject	local:another_trend_in_the_area_of_information_retrieval	.
+local:s5.1	rdf:object	local:entity_recommendation	.
+local:s10.2	rdf:predicate	local:compare	.
+local:s5	rdf:object	local:established_functionality_in_document_search_engines_the_significance_of_time	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:s4.1	rdf:subject	local:query	.
+local:experimental_results_show_considerable_improvements_compared_to_timeagnostic_entity_recommendation_approaches	rdfs:member	local:considerable_improvements	.
+local:extensively_evaluate_we_experimental_results	rdfs:member	local:results	.
+local:extensively_evaluate	rdfs:member	local:extensively	.
+local:s1	rdf:predicate	local:relate	.
+local:considerable_improvements	rdfs:member	local:considerable	.
+local:s2	rdf:object	local:keyword_query	.
+local:another_trend_in_the_area_of_information_retrieval	rdfs:member	local:trend	.
+local:s5.1	rdf:predicate	local:not_recognize	.
+local:heterogeneous_knowledge_of_entities	rdfs:member	local:entities	.
+local:s4	rdf:predicate	local:take	.
+local:s5.1	local:AM-TMP	local:become_an_established_functionality_in_document_search_engines_the_significance_of_time	.
+local:significance_of_time	rdfs:member	local:significance	.
+local:extensively_evaluate	rdfs:subClassOf	local:evaluate	.
+local:s6	rdf:subject	local:we	.
+local:timeagnostic_entity	rdfs:member	local:timeagnostic	.
+local:s6	rdf:predicate	local:address	.
+local:temporal_aspects_of_given_query_into_account	rdfs:member	local:temporal_aspects_of_given_query	.
+local:ranked_list_of_related_entities	rdfs:member	local:ranked_list	.
+local:established_functionality	rdfs:subClassOf	local:functionality	.
+local:publicly_available_on_web	rdfs:member	local:publicly_available	.
+local:timeagnostic_entity_recommendation_approaches	rdfs:member	local:timeagnostic_entity_recommendation	.
+local:s6	local:AM-LOC	local:paper	.
+local:s10	rdf:predicate	local:evaluate	.
+local:timeagnostic_entity_recommendation_approaches	rdfs:subClassOf	local:approaches	.
+local:introducing_the_task_of_timeaware_entity_recommendation	rdfs:member	local:task	.
+local:s6.1	rdf:object	local:task_of_timeaware_entity_recommendation	.
+local:s9	rdf:subject	local:entities	.
+local:established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:document_search	.
+local:timeagnostic_entity	rdfs:subClassOf	local:entity	.
+local:s8	rdf:subject	local:we	.
+local:s11	local:AM-MNR	local:extensively	.
+local:become_an_established_functionality_in_document_search_engines_the_significance_of_time	rdfs:member	local:document_search	.
+local:entity_recommendation_approaches	rdfs:subClassOf	local:recommendation_approaches	.
+local:publicly_available	rdfs:subClassOf	local:available	.
+local:area_of_information	rdfs:member	local:area	.
+local:related_entities	rdfs:member	local:related	.
+local:s10.1	rdf:object	local:s10.2	.
+local:s10.1	rdf:predicate	local:show	.
+local:timeaware_entity	rdfs:member	local:timeaware	.
+local:s0	rdf:predicate	local:increase	.

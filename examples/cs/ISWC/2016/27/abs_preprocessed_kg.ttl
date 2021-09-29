@@ -1,35 +1,56 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"we we earlier finding that more than 95"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we build on we earlier finding that more than 95"	.
+
+
 #### Classes ####
 
-local:build	rdfs:label	"build"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:we	rdfs:label	"we"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:earlier_finding	rdfs:label	"earlier finding"	.
+local:95	a	rdf:Class	;
+	rdfs:label	"95"	.
 
-local:finding	rdfs:label	"finding"	.
+local:earlier	a	rdf:Class	;
+	rdfs:label	"earlier"	.
 
-local:95	rdfs:label	"95"	.
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
 
-local:earlier	rdfs:label	"earlier"	.
+local:earlier_finding_that_more_than_95	a	rdf:Class	;
+	rdfs:label	"earlier finding that more than 95"	.
 
-#### Properties ####
+local:more_95	a	rdf:Class	;
+	rdfs:label	"more 95"	.
 
-#### Mapped Relations ####
+local:earlier_finding	a	rdf:Class	;
+	rdfs:label	"earlier finding"	.
+
+local:finding	a	rdf:Class	;
+	rdfs:label	"finding"	.
 
 
 #### Relations ####
 
-local:finding	vn.role:Agent	local:we	.
-local:finding	local:AM-TMP	local:earlier	.
-local:build	local:AM-LOC	local:earlier_finding	.
-local:build	vn.role:Agent	local:we	.
+local:s0.1	rdf:predicate	local:find	.
+local:s0.1	local:AM-TMP	local:earlier	.
 local:earlier_finding	rdfs:subClassOf	local:finding	.
-local:finding	vn.role:Theme	local:95	.
-local:build	local:AM-TMP	local:95	.
+local:s0	local:AM-MNR	local:earlier_finding_that_more_than_95	.
+local:s0.1	rdf:subject	local:we	.
+local:s0	rdf:predicate	local:build	.
+local:s0.1	rdf:object	local:95	.
+local:s0	rdf:subject	local:we	.
+local:more_95	rdfs:subClassOf	local:95	.

@@ -1,450 +1,802 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"marvel effectively handling rdf specifics"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"marvel can improve query response time by more than an order of magnitude while effectively handling rdf specifics"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the experimental evaluation shows that marvel can improve query response time by more than an order of magnitude while effectively handling rdf specifics"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"an algorithm for rewriting sparql queries materialized rdf views"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"an algorithm rewriting sparql queries"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the approach consists of a view selection algorithm"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"a view selection algorithm based on an associated rdfspecific cost model a view definition syntax"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"using"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"rewriting sparql queries using"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"marvel materialized rdf views with incompletness"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"this paper proposes marvel materialized rdf views with incompletness"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"overcome these challenges this paper"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"marvel materialized rdf views with entailment"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"this paper proposes marvel materialized rdf views with entailment"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"overcome these challenges this paper"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"rdf specifics support implicit information"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"proposed for rdf do not support rdf specifics such as incompleteness to support implicit information"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"however materialized view techniques as proposed for rdf do not support rdf specifics such as incompleteness to support implicit information"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"rdf specifics support implicit information"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"proposed for rdf do not support rdf specifics such as the need to support implicit information"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"however materialized view techniques as proposed for rdf do not support rdf specifics such as the need to support implicit information"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"views can created as a source of precomputed partial results during query processing"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"these limitations materialized views"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"overcome these limitations"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"views can used as a source of precomputed partial results during query processing"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"these limitations materialized views"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"overcome these limitations"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"in this setup both the size of the datasets represent challenges for standard sparql query processing techniques"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"this setup both the need to process aggregate queries represent challenges for standard sparql query processing techniques"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"process aggregate queries represent challenges for standard sparql query processing techniques"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"during recent years more data published as native rdf datasets"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"during recent years more data published as native rdf datasets"	.
+
+
 #### Classes ####
 
-local:recent_years	rdfs:label	"recent years"	.
+local:marvel	a	rdf:Class	;
+	rdfs:label	"marvel"	.
 
-local:years	rdfs:label	"years"	.
+local:handle	a	rdf:Class	;
+	rdfs:label	"handle"	.
 
-local:more_data	rdfs:label	"more data"	.
+local:rdf_specifics	a	rdf:Class	;
+	rdfs:label	"rdf specifics"	.
 
-local:data	rdfs:label	"data"	.
+local:specifics	a	rdf:Class	;
+	rdfs:label	"specifics"	.
 
-local:more	rdfs:label	"more"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:recent	rdfs:label	"recent"	.
+local:effectively	a	rdf:Class	;
+	rdfs:label	"effectively"	.
 
-local:published	rdfs:label	"published"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:native_rdf_datasets	rdfs:label	"native rdf datasets"	.
+local:query_response_time	a	rdf:Class	;
+	rdfs:label	"query response time"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:response_time	a	rdf:Class	;
+	rdfs:label	"response time"	.
 
-local:rdf_datasets	rdfs:label	"rdf datasets"	.
+local:response	a	rdf:Class	;
+	rdfs:label	"response"	.
 
-local:native	rdfs:label	"native"	.
+local:query_response	a	rdf:Class	;
+	rdfs:label	"query response"	.
 
-local:native_rdf	rdfs:label	"native rdf"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:standard_sparql_query_processing_techniques	rdfs:label	"standard sparql query processing techniques"	.
+local:order_of_magnitude	a	rdf:Class	;
+	rdfs:label	"order of magnitude"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:magnitude	a	rdf:Class	;
+	rdfs:label	"magnitude"	.
 
-local:sparql_query_processing	rdfs:label	"sparql query processing"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:sparql_query_processing_techniques	rdfs:label	"sparql query processing techniques"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:standard_sparql_query_processing	rdfs:label	"standard sparql query processing"	.
+local:effectively_handling_rdf_specifics	a	rdf:Class	;
+	rdfs:label	"effectively handling rdf specifics"	.
 
-local:standard	rdfs:label	"standard"	.
+local:effectively_handling	a	rdf:Class	;
+	rdfs:label	"effectively handling"	.
 
-local:standard_sparql	rdfs:label	"standard sparql"	.
+local:handling	a	rdf:Class	;
+	rdfs:label	"handling"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:experimental_evaluation	a	rdf:Class	;
+	rdfs:label	"experimental evaluation"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:standard_sparql_query	rdfs:label	"standard sparql query"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:query	rdfs:label	"query"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:query_processing	rdfs:label	"query processing"	.
+local:marvel_can_improve_query_response_time_by_more_than_an_order_of_magnitude_while_effectively_handling_rdf_specifics	a	rdf:Class	;
+	rdfs:label	"marvel can improve query response time by more than an order of magnitude while effectively handling rdf specifics"	.
 
-local:query_processing_techniques	rdfs:label	"query processing techniques"	.
+local:more_order	a	rdf:Class	;
+	rdfs:label	"more order"	.
 
-local:processing	rdfs:label	"processing"	.
+local:can_improve	a	rdf:Class	;
+	rdfs:label	"can improve"	.
 
-local:aggregate	rdfs:label	"aggregate"	.
+local:can_improve_by_more_order	a	rdf:Class	;
+	rdfs:label	"can improve by more order"	.
 
-local:aggregate_queries	rdfs:label	"aggregate queries"	.
+local:more_order_of_magnitude	a	rdf:Class	;
+	rdfs:label	"more order of magnitude"	.
 
-local:processing_techniques	rdfs:label	"processing techniques"	.
+local:algorithm_for_rewriting_sparql_queries	a	rdf:Class	;
+	rdfs:label	"algorithm for rewriting sparql queries"	.
 
-local:queries	rdfs:label	"queries"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:challenges_for_standard_sparql_query_processing_techniques	rdfs:label	"challenges for standard sparql query processing techniques"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:challenges	rdfs:label	"challenges"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:process	rdfs:label	"process"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:represent	rdfs:label	"represent"	.
+local:materialize	a	rdf:Class	;
+	rdfs:label	"materialize"	.
 
-local:setup_need	rdfs:label	"setup need"	.
+local:rdf_views	a	rdf:Class	;
+	rdfs:label	"rdf views"	.
 
-local:setup	rdfs:label	"setup"	.
+local:views	a	rdf:Class	;
+	rdfs:label	"views"	.
 
-local:need	rdfs:label	"need"	.
+local:rewrite	a	rdf:Class	;
+	rdfs:label	"rewrite"	.
 
-local:size_of_datasets	rdfs:label	"size of datasets"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:size	rdfs:label	"size"	.
+local:consist	a	rdf:Class	;
+	rdfs:label	"consist"	.
 
-local:overcome	rdfs:label	"overcome"	.
+local:view_selection_algorithm	a	rdf:Class	;
+	rdfs:label	"view selection algorithm"	.
 
-local:materialized	rdfs:label	"materialized"	.
+local:view_selection	a	rdf:Class	;
+	rdfs:label	"view selection"	.
 
-local:views	rdfs:label	"views"	.
+local:selection	a	rdf:Class	;
+	rdfs:label	"selection"	.
 
-local:used	rdfs:label	"used"	.
+local:selection_algorithm	a	rdf:Class	;
+	rdfs:label	"selection algorithm"	.
 
-local:can	rdfs:label	"can"	.
+local:view	a	rdf:Class	;
+	rdfs:label	"view"	.
 
-local:partial_results	rdfs:label	"partial results"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:results	rdfs:label	"results"	.
+local:associated_rdfspecific_cost_model_a_view_definition_syntax	a	rdf:Class	;
+	rdfs:label	"associated rdfspecific cost model a view definition syntax"	.
 
-local:partial	rdfs:label	"partial"	.
+local:rdfspecific_cost_model	a	rdf:Class	;
+	rdfs:label	"rdfspecific cost model"	.
 
-local:precomputed_partial_results	rdfs:label	"precomputed partial results"	.
+local:view_definition_syntax	a	rdf:Class	;
+	rdfs:label	"view definition syntax"	.
 
-local:source_of_precomputed_partial_results	rdfs:label	"source of precomputed partial results"	.
+local:definition_syntax	a	rdf:Class	;
+	rdfs:label	"definition syntax"	.
 
-local:source	rdfs:label	"source"	.
+local:syntax	a	rdf:Class	;
+	rdfs:label	"syntax"	.
 
-local:created	rdfs:label	"created"	.
+local:view_definition	a	rdf:Class	;
+	rdfs:label	"view definition"	.
 
-local:source_of_precomputed_partial_results_during_query_processing	rdfs:label	"source of precomputed partial results during query processing"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:however	rdfs:label	"however"	.
+local:cost_model	a	rdf:Class	;
+	rdfs:label	"cost model"	.
 
-local:view	rdfs:label	"view"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:view_techniques	rdfs:label	"view techniques"	.
+local:rdfspecific_cost	a	rdf:Class	;
+	rdfs:label	"rdfspecific cost"	.
 
-local:implicit_information	rdfs:label	"implicit information"	.
+local:rdfspecific	a	rdf:Class	;
+	rdfs:label	"rdfspecific"	.
 
-local:information	rdfs:label	"information"	.
+local:definition	a	rdf:Class	;
+	rdfs:label	"definition"	.
 
-local:rdf_specifics	rdfs:label	"rdf specifics"	.
+local:associated_rdfspecific_cost_model	a	rdf:Class	;
+	rdfs:label	"associated rdfspecific cost model"	.
 
-local:specifics	rdfs:label	"specifics"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:implicit	rdfs:label	"implicit"	.
+local:materialized	a	rdf:Class	;
+	rdfs:label	"materialized"	.
 
-local:not_support	rdfs:label	"not support"	.
+local:incompletness	a	rdf:Class	;
+	rdfs:label	"incompletness"	.
 
-local:support	rdfs:label	"support"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:do_not_support	rdfs:label	"do not support"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:proposed_for_rdf	rdfs:label	"proposed for rdf"	.
+local:marvel_materialized_rdf_views_with_incompletness	a	rdf:Class	;
+	rdfs:label	"marvel materialized rdf views with incompletness"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:marvel_materialized_rdf_views	a	rdf:Class	;
+	rdfs:label	"marvel materialized rdf views"	.
 
-local:rdf_specifics_suchas_incompleteness	rdfs:label	"rdf specifics such_as incompleteness"	.
+local:marvel_materialized	a	rdf:Class	;
+	rdfs:label	"marvel materialized"	.
 
-local:incompleteness	rdfs:label	"incompleteness"	.
+local:marvel_materialized_rdf	a	rdf:Class	;
+	rdfs:label	"marvel materialized rdf"	.
 
-local:not	rdfs:label	"not"	.
+local:materialized_rdf	a	rdf:Class	;
+	rdfs:label	"materialized rdf"	.
 
-local:rdf_specifics_specifics	rdfs:label	"rdf specifics specifics"	.
+local:materialized_rdf_views	a	rdf:Class	;
+	rdfs:label	"materialized rdf views"	.
 
-local:rdf_specifics_specifics_suchas_incompleteness	rdfs:label	"rdf specifics specifics such_as incompleteness"	.
+local:materialized_with_incompletness	a	rdf:Class	;
+	rdfs:label	"materialized with incompletness"	.
 
-local:rdf_specifics_suchas_need	rdfs:label	"rdf specifics such_as need"	.
+local:overcome	a	rdf:Class	;
+	rdfs:label	"overcome"	.
 
-local:rdf_specifics_specifics_suchas_need	rdfs:label	"rdf specifics specifics such_as need"	.
+local:challenges	a	rdf:Class	;
+	rdfs:label	"challenges"	.
 
-local:paper	rdfs:label	"paper"	.
+local:entailment	a	rdf:Class	;
+	rdfs:label	"entailment"	.
 
-local:challenges_paper	rdfs:label	"challenges paper"	.
+local:marvel_materialized_rdf_views_with_entailment	a	rdf:Class	;
+	rdfs:label	"marvel materialized rdf views with entailment"	.
 
-local:proposes	rdfs:label	"proposes"	.
+local:materialized_with_entailment	a	rdf:Class	;
+	rdfs:label	"materialized with entailment"	.
 
-local:rdf_views	rdfs:label	"rdf views"	.
+local:not_support	a	rdf:Class	;
+	rdfs:label	"not support"	.
 
-local:rdf_views_with_entailment	rdfs:label	"rdf views with entailment"	.
+local:implicit_information_information	a	rdf:Class	;
+	rdfs:label	"implicit information information"	.
 
-local:entailment	rdfs:label	"entailment"	.
+local:implicit_information	a	rdf:Class	;
+	rdfs:label	"implicit information"	.
 
-local:marvel	rdfs:label	"marvel"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:incompletness	rdfs:label	"incompletness"	.
+local:information_information	a	rdf:Class	;
+	rdfs:label	"information information"	.
 
-local:view_selection_algorithm	rdfs:label	"view selection algorithm"	.
+local:implicit	a	rdf:Class	;
+	rdfs:label	"implicit"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	a	rdf:Class	;
+	rdfs:label	"rdf do not support rdf specifics such as incompleteness to support implicit information"	.
 
-local:view_selection	rdfs:label	"view selection"	.
+local:incompleteness	a	rdf:Class	;
+	rdfs:label	"incompleteness"	.
 
-local:selection	rdfs:label	"selection"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:selection_algorithm	rdfs:label	"selection algorithm"	.
+local:do_not_support	a	rdf:Class	;
+	rdfs:label	"do not support"	.
 
-local:based	rdfs:label	"based"	.
+local:rdf_specifics_such_as_incompleteness	a	rdf:Class	;
+	rdfs:label	"rdf specifics such_as incompleteness"	.
 
-local:cost	rdfs:label	"cost"	.
+local:view_techniques	a	rdf:Class	;
+	rdfs:label	"view techniques"	.
 
-local:cost_model	rdfs:label	"cost model"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:rdfspecific_cost	rdfs:label	"rdf-specific cost"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:rdfspecific_cost_model	rdfs:label	"rdf-specific cost model"	.
+local:proposed_for_rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	a	rdf:Class	;
+	rdfs:label	"proposed for rdf do not support rdf specifics such as incompleteness to support implicit information"	.
 
-local:definition	rdfs:label	"definition"	.
+local:proposed_for_rdf	a	rdf:Class	;
+	rdfs:label	"proposed for rdf"	.
 
-local:definition_syntax	rdfs:label	"definition syntax"	.
+local:proposed	a	rdf:Class	;
+	rdfs:label	"proposed"	.
 
-local:view_definition	rdfs:label	"view definition"	.
+local:rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	a	rdf:Class	;
+	rdfs:label	"rdf do not support rdf specifics such as the need to support implicit information"	.
 
-local:view_definition_syntax	rdfs:label	"view definition syntax"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:syntax	rdfs:label	"syntax"	.
+local:rdf_specifics_such_as_need	a	rdf:Class	;
+	rdfs:label	"rdf specifics such_as need"	.
 
-local:rdfspecific	rdfs:label	"rdf-specific"	.
+local:proposed_for_rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	a	rdf:Class	;
+	rdfs:label	"proposed for rdf do not support rdf specifics such as the need to support implicit information"	.
 
-local:model	rdfs:label	"model"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:associated_rdfspecific_cost_model	rdfs:label	"associated rdf-specific cost model"	.
+local:source_of_precomputed_partial_results_during_query_processing	a	rdf:Class	;
+	rdfs:label	"source of precomputed partial results during query processing"	.
 
-local:associated_rdfspecific_cost_model_view_definition_syntax	rdfs:label	"associated rdf-specific cost model view definition syntax"	.
+local:partial_results	a	rdf:Class	;
+	rdfs:label	"partial results"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:rewriting	rdfs:label	"rewriting"	.
+local:query_processing	a	rdf:Class	;
+	rdfs:label	"query processing"	.
 
-local:using	rdfs:label	"using"	.
+local:partial	a	rdf:Class	;
+	rdfs:label	"partial"	.
 
-local:consists	rdfs:label	"consists"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:approach	rdfs:label	"approach"	.
+local:processing	a	rdf:Class	;
+	rdfs:label	"processing"	.
 
-local:experimental_evaluation	rdfs:label	"experimental evaluation"	.
+local:precomputed_partial_results	a	rdf:Class	;
+	rdfs:label	"precomputed partial results"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:source_of_precomputed_partial_results	a	rdf:Class	;
+	rdfs:label	"source of precomputed partial results"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:limitations	a	rdf:Class	;
+	rdfs:label	"limitations"	.
 
-local:shows	rdfs:label	"shows"	.
+local:size_of_the_datasets	a	rdf:Class	;
+	rdfs:label	"size of the datasets"	.
 
-local:response_time	rdfs:label	"response time"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:time	rdfs:label	"time"	.
+local:size	a	rdf:Class	;
+	rdfs:label	"size"	.
 
-local:query_response	rdfs:label	"query response"	.
+local:size_of_datasets	a	rdf:Class	;
+	rdfs:label	"size of datasets"	.
 
-local:response	rdfs:label	"response"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:query_response_time	rdfs:label	"query response time"	.
+local:challenges_for_standard_sparql_query_processing_techniques	a	rdf:Class	;
+	rdfs:label	"challenges for standard sparql query processing techniques"	.
 
-local:effectively_handling	rdfs:label	"effectively handling"	.
+local:standard_sparql_query_processing_techniques	a	rdf:Class	;
+	rdfs:label	"standard sparql query processing techniques"	.
 
-local:handling	rdfs:label	"handling"	.
+local:sparql_query_processing	a	rdf:Class	;
+	rdfs:label	"sparql query processing"	.
 
-local:more_order	rdfs:label	"more order"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:order	rdfs:label	"order"	.
+local:standard_sparql_query_processing	a	rdf:Class	;
+	rdfs:label	"standard sparql query processing"	.
 
-local:can_improve	rdfs:label	"can improve"	.
+local:sparql_query_processing_techniques	a	rdf:Class	;
+	rdfs:label	"sparql query processing techniques"	.
 
-local:improve	rdfs:label	"improve"	.
+local:standard_sparql_query	a	rdf:Class	;
+	rdfs:label	"standard sparql query"	.
 
-local:can_improve_by_more_order	rdfs:label	"can improve by more order"	.
+local:standard_sparql	a	rdf:Class	;
+	rdfs:label	"standard sparql"	.
 
-local:more_order_of_magnitude	rdfs:label	"more order of magnitude"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:magnitude	rdfs:label	"magnitude"	.
+local:query_processing_techniques	a	rdf:Class	;
+	rdfs:label	"query processing techniques"	.
 
-local:order_of_magnitude	rdfs:label	"order of magnitude"	.
+local:processing_techniques	a	rdf:Class	;
+	rdfs:label	"processing techniques"	.
 
-local:effectively	rdfs:label	"effectively"	.
+local:setup	a	rdf:Class	;
+	rdfs:label	"setup"	.
 
-#### Properties ####
+local:setup_both_the_need_to_process_aggregate_queries	a	rdf:Class	;
+	rdfs:label	"setup both the need to process aggregate queries"	.
+
+local:aggregate_queries	a	rdf:Class	;
+	rdfs:label	"aggregate queries"	.
+
+local:aggregate	a	rdf:Class	;
+	rdfs:label	"aggregate"	.
+
+local:aggregate_queries_represent_challenges_for_standard_sparql_query_processing_techniques	a	rdf:Class	;
+	rdfs:label	"aggregate queries represent challenges for standard sparql query processing techniques"	.
+
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
+
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
+
+local:publish	a	rdf:Class	;
+	rdfs:label	"publish"	.
+
+local:native_rdf_datasets	a	rdf:Class	;
+	rdfs:label	"native rdf datasets"	.
+
+local:native_rdf	a	rdf:Class	;
+	rdfs:label	"native rdf"	.
+
+local:native	a	rdf:Class	;
+	rdfs:label	"native"	.
+
+local:rdf_datasets	a	rdf:Class	;
+	rdfs:label	"rdf datasets"	.
+
+local:recent_years	a	rdf:Class	;
+	rdfs:label	"recent years"	.
+
+local:recent	a	rdf:Class	;
+	rdfs:label	"recent"	.
+
+local:years	a	rdf:Class	;
+	rdfs:label	"years"	.
 
 #### Mapped Relations ####
 
-cso:rdf	rdfs:label	"rdf"	.
-cso:view_selection	rdfs:label	"view selection"	.
 local:sparql	owl:sameAs	cso:sparql	.
-local:query_processing	owl:sameAs	cso:query_processing	.
-cso:query_processing	rdfs:label	"query processing"	.
 cso:sparql	rdfs:label	"sparql"	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
 cso:sparql_queries	rdfs:label	"sparql queries"	.
 local:rdf	owl:sameAs	cso:rdf	.
+cso:rdf	rdfs:label	"rdf"	.
+local:query_processing	owl:sameAs	cso:query_processing	.
+cso:query_processing	rdfs:label	"query processing"	.
+cso:view_selection	rdfs:label	"view selection"	.
 local:view_selection	owl:sameAs	cso:view_selection	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
 
 #### Relations ####
 
-local:based	vn.role:indirect_object	local:associated_rdfspecific_cost_model_view_definition_syntax	.
-local:native_rdf_datasets	rdfs:subClassOf	local:datasets	.
-local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
-local:queries	vn.role:Agent	local:sparql	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:rdf_specifics_such_as_need	rdfs:member	local:need	.
+local:s14.1	rdfs:member	local:order	.
+local:s6	rdf:subject	local:view_techniques	.
+local:definition_syntax	rdfs:member	local:definition	.
+local:s8.2	rdfs:member	local:marvel_materialized_rdf_views	.
+local:s7.2	rdf:object	local:implicit_information_information	.
+local:s6.1	rdf:predicate	local:propose	.
+local:rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	rdfs:member	local:implicit_information	.
 local:rdfspecific_cost	rdfs:subClassOf	local:cost	.
-local:materialized	local:AM-MNR	local:entailment	.
-local:proposed_for_rdf	local:proposed_for	local:rdf	.
-local:materialized	vn.role:Location	local:however	.
-local:used	local:AM-MOD	local:can	.
-local:standard_sparql_query_processing_techniques	rdfs:subClassOf	local:techniques	.
-local:partial	rdfs:member	local:partial_results	.
-local:materialized	local:AM-MNR	local:incompletness	.
-local:handling	local:AM-MNR	local:effectively	.
-local:improve	local:AM-MOD	local:can	.
-local:represent	vn.role:Agent	local:size_of_datasets	.
-local:setup_need	local:setup_	local:need	.
-local:rdf	rdfs:member	local:rdf_datasets	.
-local:rdf_specifics_specifics_suchas_need	local:such_as_need	local:rdf_specifics_specifics	.
-local:precomputed_partial_results	rdfs:subClassOf	local:partial_results	.
-local:standard_sparql_query_processing	rdfs:subClassOf	local:processing	.
-local:more	rdfs:member	local:more_data	.
-local:handling	vn.role:object	local:rdf_specifics	.
-local:rdfspecific_cost_model	rdfs:subClassOf	local:model	.
-local:rdf_specifics_suchas_need	local:rdfspecifics_such_as	local:need	.
-local:aggregate	rdfs:member	local:aggregate_queries	.
-local:associated_rdfspecific_cost_model_view_definition_syntax	local:_viewdefinitionsyntax	local:associated_rdfspecific_cost_model	.
-local:query_processing_techniques	rdfs:subClassOf	local:processing_techniques	.
-local:support	vn.role:Experiencer	local:rdf	.
-local:query_response_time	rdfs:subClassOf	local:response_time	.
-local:processing_techniques	rdfs:subClassOf	local:techniques	.
-local:standard_sparql_query_processing	rdfs:member	local:standard_sparql_query_processing_techniques	.
-local:rdfspecific	rdfs:member	local:rdfspecific_cost	.
-local:rewriting	vn.role:Agent	local:algorithm	.
-local:query_response_time	rdfs:subClassOf	local:time	.
-local:standard_sparql_query	rdfs:subClassOf	local:query	.
-local:sparql_query_processing	rdfs:member	local:sparql_query_processing_techniques	.
-local:proposed_for_rdf	local:for_rdf	local:proposed	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:not_support	rdfs:subClassOf	local:support	.
-local:can_improve_by_more_order	local:by_moreorder	local:can_improve	.
-local:materialized	vn.role:Location	local:algorithm	.
-local:improve	vn.role:Patient	local:query_response_time	.
-local:support	local:AM-NEG	local:not	.
-local:sparql	rdfs:member	local:sparql_query	.
 local:implicit_information	rdfs:subClassOf	local:information	.
-local:support	vn.role:Experiencer	local:rdf_specifics_specifics_suchas_incompleteness	.
-local:standard_sparql_query	rdfs:member	local:standard_sparql_query_processing	.
-local:rdf_views	rdfs:subClassOf	local:views	.
-local:response_time	rdfs:subClassOf	local:time	.
-local:view	rdfs:member	local:view_selection	.
-local:view_selection_algorithm	rdfs:subClassOf	local:algorithm	.
-local:rdfspecific_cost_model	rdfs:subClassOf	local:cost_model	.
-local:materialized	vn.role:Location	local:view_techniques	.
-local:support	vn.role:Experiencer	local:information	.
-local:proposes	vn.role:Topic	local:marvel	.
-local:query_processing	rdfs:subClassOf	local:processing	.
-local:rdf_views_with_entailment	local:rdfviews_with	local:entailment	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:order_of_magnitude	local:order_of	local:magnitude	.
-local:source_of_precomputed_partial_results_during_query_processing	local:during_queryprocessing	local:source_of_precomputed_partial_results	.
-local:rdf_specifics_specifics_suchas_incompleteness	local:such_as_incompleteness	local:rdf_specifics_specifics	.
-local:rdf_views_with_entailment	local:with_entailment	local:rdf_views	.
-local:support	vn.role:Theme	local:rdf	.
-local:associated_rdfspecific_cost_model	rdfs:subClassOf	local:rdfspecific_cost_model	.
-local:response	rdfs:member	local:response_time	.
-local:associated_rdfspecific_cost_model_view_definition_syntax	local:associatedrdf-specificcostmodel_	local:view_definition_syntax	.
-local:view_selection_algorithm	rdfs:subClassOf	local:selection_algorithm	.
-local:query_response	rdfs:subClassOf	local:response	.
-local:aggregate_queries	rdfs:subClassOf	local:queries	.
-local:standard_sparql_query_processing_techniques	rdfs:subClassOf	local:sparql_query_processing_techniques	.
-local:created	local:AM-PNC	local:overcome	.
-local:selection_algorithm	rdfs:subClassOf	local:algorithm	.
-local:processing	rdfs:member	local:processing_techniques	.
-local:rewriting	vn.role:Agent	local:using	.
-local:cost	rdfs:member	local:cost_model	.
-local:support	vn.role:Experiencer	local:implicit_information	.
-local:sparql_query_processing_techniques	rdfs:subClassOf	local:techniques	.
-local:consists	vn.role:indirect_object	local:view_selection_algorithm	.
-local:standard	rdfs:member	local:standard_sparql	.
-local:size_of_datasets	local:size_of	local:datasets	.
-local:published	local:AM-MNR	local:native_rdf_datasets	.
-local:query_processing	rdfs:member	local:query_processing_techniques	.
-local:view_techniques	rdfs:subClassOf	local:techniques	.
-local:overcome	vn.role:Theme1	local:paper	.
-local:view_selection	rdfs:subClassOf	local:selection	.
-local:rewriting	vn.role:Agent	local:rdf_views	.
-local:used	vn.role:Recipient	local:source_of_precomputed_partial_results	.
-local:native_rdf	rdfs:subClassOf	local:rdf	.
-local:query_response	rdfs:member	local:query_response_time	.
-local:view_definition	rdfs:subClassOf	local:definition	.
-local:rdf_specifics_specifics	local:_specifics	local:rdf_specifics	.
-local:query	rdfs:member	local:query_processing	.
-local:rdf_specifics	rdfs:subClassOf	local:specifics	.
-local:rdf_specifics_specifics_suchas_need	local:rdfspecificsspecifics_such_as	local:need	.
-local:native	rdfs:member	local:native_rdf	.
-local:represent	vn.role:Theme	local:challenges_for_standard_sparql_query_processing_techniques	.
-local:published	local:AM-TMP	local:recent_years	.
-local:view_selection	rdfs:member	local:view_selection_algorithm	.
-local:definition	rdfs:member	local:definition_syntax	.
-local:more_order	rdfs:subClassOf	local:order	.
-local:sparql_query_processing_techniques	rdfs:subClassOf	local:query_processing_techniques	.
-local:view_definition	rdfs:member	local:view_definition_syntax	.
-local:query_processing_techniques	rdfs:subClassOf	local:techniques	.
-local:consists	vn.role:Location	local:approach	.
-local:order_of_magnitude	local:of_magnitude	local:order	.
-local:view	rdfs:member	local:view_definition	.
-local:setup_need	local:_need	local:setup	.
-local:improve	vn.role:Agent	local:marvel	.
-local:experimental	rdfs:member	local:experimental_evaluation	.
-local:challenges_paper	rdfs:subClassOf	local:paper	.
-local:support	vn.role:Experiencer	local:rdf_specifics_specifics_suchas_need	.
-local:overcome	vn.role:Theme2	local:challenges	.
-local:size_of_datasets	local:of_datasets	local:size	.
-local:represent	vn.role:Agent	local:setup_need	.
-local:view_definition_syntax	rdfs:subClassOf	local:syntax	.
-local:rdfspecific_cost	rdfs:member	local:rdfspecific_cost_model	.
-local:rdf	rdfs:member	local:rdf_specifics	.
-local:queries	vn.role:Theme	local:using	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:proposed	local:AM-PNC	local:do_not_support	.
-local:rdf_datasets	rdfs:subClassOf	local:datasets	.
-local:view_definition_syntax	rdfs:subClassOf	local:definition_syntax	.
-local:represent	local:AM-LOC	local:setup	.
-local:rewriting	vn.role:Topic	local:sparql_queries	.
-local:sparql_query	rdfs:member	local:sparql_query_processing	.
-local:sparql_query_processing	rdfs:subClassOf	local:processing	.
-local:shows	vn.role:Agent	local:experimental_evaluation	.
-local:can_improve	rdfs:subClassOf	local:improve	.
-local:recent	rdfs:member	local:recent_years	.
-local:recent_years	rdfs:subClassOf	local:years	.
-local:improve	local:AM-TMP	local:effectively_handling	.
-local:rdf_specifics_suchas_incompleteness	local:such_as_incompleteness	local:rdf_specifics	.
-local:rdf_specifics_suchas_need	local:such_as_need	local:rdf_specifics	.
-local:created	local:AM-MOD	local:can	.
-local:definition_syntax	rdfs:subClassOf	local:syntax	.
-local:rdf_specifics_suchas_incompleteness	local:rdfspecifics_such_as	local:incompleteness	.
-local:can_improve_by_more_order	local:canimprove_by	local:more_order	.
-local:created	local:AM-PNC	local:source_of_precomputed_partial_results_during_query_processing	.
-local:query	rdfs:member	local:query_response	.
-local:rdf	rdfs:member	local:rdf_views	.
-local:native_rdf	rdfs:member	local:native_rdf_datasets	.
-local:view	rdfs:member	local:view_techniques	.
-local:used	local:AM-PNC	local:overcome	.
-local:based	vn.role:Cause	local:view_selection_algorithm	.
-local:partial_results	rdfs:subClassOf	local:results	.
-local:process	vn.role:Theme	local:represent	.
-local:more_order_of_magnitude	local:moreorder_of	local:magnitude	.
-local:implicit	rdfs:member	local:implicit_information	.
-local:rdf_specifics_specifics	local:rdfspecifics_	local:specifics	.
-local:used	local:AM-TMP	local:query_processing	.
-local:standard_sparql	rdfs:subClassOf	local:sparql	.
-local:cost_model	rdfs:subClassOf	local:model	.
-local:native_rdf_datasets	rdfs:subClassOf	local:rdf_datasets	.
-local:materialized	vn.role:Location	local:views	.
-local:proposes	vn.role:Agent	local:challenges_paper	.
-local:effectively_handling	rdfs:subClassOf	local:handling	.
-local:improve	local:AM-MNR	local:order_of_magnitude	.
-local:shows	vn.role:Theme	local:can_improve_by_more_order	.
-local:processing	vn.role:Agent	local:techniques	.
-local:challenges_for_standard_sparql_query_processing_techniques	local:challenges_for	local:standard_sparql_query_processing_techniques	.
-local:rdf_specifics_specifics_suchas_incompleteness	local:rdfspecificsspecifics_such_as	local:incompleteness	.
-local:materialized	local:AM-TMP	local:do_not_support	.
-local:handling	vn.role:Theme	local:marvel	.
-local:materialized	vn.role:Location	local:rdf_views	.
-local:source_of_precomputed_partial_results	local:source_of	local:precomputed_partial_results	.
-local:more_order_of_magnitude	local:of_magnitude	local:more_order	.
-local:source_of_precomputed_partial_results_during_query_processing	local:sourceofprecomputedpartialresults_during	local:query_processing	.
-local:source_of_precomputed_partial_results	local:of_precomputedpartialresults	local:source	.
-local:challenges_for_standard_sparql_query_processing_techniques	local:for_standardsparqlqueryprocessingtechniques	local:challenges	.
-local:more_data	rdfs:subClassOf	local:data	.
-local:overcome	vn.role:Theme2	local:materialized	.
-local:standard_sparql	rdfs:member	local:standard_sparql_query	.
+local:materialized_with_entailment	rdfs:member	local:materialized	.
+local:s7.2	rdf:predicate	local:not_support	.
 local:do_not_support	rdfs:subClassOf	local:not_support	.
-local:selection	rdfs:member	local:selection_algorithm	.
+local:s14	rdf:predicate	local:show	.
+local:sparql_query_processing_techniques	rdfs:subClassOf	local:techniques	.
+local:challenges_for_standard_sparql_query_processing_techniques	rdfs:member	local:challenges	.
+local:sparql_query_processing	rdfs:member	local:sparql_query	.
+local:marvel_materialized_rdf_views	rdfs:subClassOf	local:views	.
+local:s9.1	rdf:subject	local:paper	.
+local:s7.1	local:AM-PNC	local:rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	.
+local:view_definition_syntax	rdfs:member	local:view_definition	.
+local:more_order_of_magnitude	rdfs:member	local:more_order	.
+local:s8.2	rdf:subject	local:marvel	.
+local:s8.2	local:AM-MNR	local:entailment	.
+local:s13.1	rdf:predicate	local:materialize	.
+local:s2	rdf:predicate	local:process	.
+local:s9.2	rdf:predicate	local:materialized	.
+local:s14.2	rdf:object	local:rdf_specifics	.
+local:s4.1	rdf:object	local:views	.
+local:s10	rdf:subject	local:s10.1	.
+local:information_information	rdfs:subClassOf	local:information	.
+local:s9.1	rdf:predicate	local:propose	.
+local:query_processing_techniques	rdfs:subClassOf	local:processing_techniques	.
+local:s8.1	rdf:object	local:marvel_materialized_rdf_views_with_entailment	.
+local:partial_results	rdfs:member	local:partial	.
+local:s4.2	rdf:subject	local:views	.
+local:s4	rdf:subject	local:limitations	.
+local:s4.2	rdf:object	local:source_of_precomputed_partial_results_during_query_processing	.
+local:s7	rdf:subject	local:view_techniques	.
+local:s6.2	rdf:predicate	local:not_support	.
+local:marvel_materialized	rdfs:subClassOf	local:materialized	.
+local:s3	local:AM-LOC	local:setup	.
+local:implicit_information_information	rdfs:subClassOf	local:information	.
+local:s0	rdf:subject	local:data	.
+local:sparql_query_processing_techniques	rdfs:member	local:sparql_query_processing	.
+local:materialized_rdf	rdfs:subClassOf	local:rdf	.
+local:s0	rdf:predicate	local:publish	.
+local:s6.1	rdfs:member	local:rdf_specifics	.
+local:materialized_rdf_views	rdfs:subClassOf	local:views	.
+local:view_selection_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s6.1	rdfs:member	local:rdf	.
+local:selection_algorithm	rdfs:subClassOf	local:algorithm	.
+local:rdfspecific_cost_model	rdfs:subClassOf	local:model	.
+local:s14.1	rdf:predicate	local:improve	.
+local:s14.1	rdfs:member	local:marvel	.
+local:s0	local:AM-TMP	local:recent_years	.
+local:rdf_views	rdfs:subClassOf	local:views	.
+local:s5.1	rdf:predicate	local:materialize	.
+local:s7.1	rdfs:member	local:rdf_specifics	.
+local:aggregate_queries	rdfs:subClassOf	local:queries	.
+local:s6.2	rdf:subject	local:rdf	.
+local:s14.2	rdf:subject	local:marvel	.
+local:s9.2	rdfs:member	local:marvel_materialized_rdf_views	.
+local:s7.1	rdfs:member	local:incompleteness	.
+local:query_processing	rdfs:subClassOf	local:processing	.
+local:materialized_rdf	rdfs:member	local:materialized	.
+local:s6	local:AM-DIS	local:however	.
+local:marvel_materialized_rdf_views	rdfs:member	local:marvel_materialized_rdf	.
+local:s9	rdf:object	local:challenges	.
+local:rdf_specifics_such_as_incompleteness	rdfs:member	local:incompleteness	.
+local:query_response_time	rdfs:subClassOf	local:time	.
+local:s4.2	local:AM-MOD	local:can	.
+local:standard_sparql	rdfs:subClassOf	local:sparql	.
+local:s14.1	local:AM-MNR	local:order_of_magnitude	.
+local:algorithm_for_rewriting_sparql_queries	rdfs:member	local:algorithm	.
+local:more_order_of_magnitude	rdfs:member	local:magnitude	.
+local:implicit_information_information	rdfs:subClassOf	local:information_information	.
+local:view_techniques	rdfs:subClassOf	local:techniques	.
+local:marvel_materialized	rdfs:member	local:marvel	.
+local:s13	rdf:predicate	local:rewrite	.
+local:s6.2	rdf:object	local:implicit_information_information	.
+local:view_techniques	rdfs:member	local:view	.
+local:query_response	rdfs:member	local:query	.
+local:native_rdf	rdfs:subClassOf	local:rdf	.
+local:s6	local:AM-PNC	local:proposed_for_rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	.
+local:s12	rdf:predicate	local:consist	.
+local:rdf_views	rdfs:member	local:rdf	.
+local:query_response_time	rdfs:subClassOf	local:response_time	.
+local:s4.2	rdf:predicate	local:use	.
+local:partial_results	rdfs:subClassOf	local:results	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:view_definition_syntax	rdfs:subClassOf	local:definition_syntax	.
+local:s5.1	rdf:subject	local:limitations	.
+local:query_processing	rdfs:member	local:query	.
+local:s13	rdf:subject	local:algorithm	.
+local:associated_rdfspecific_cost_model_a_view_definition_syntax	rdfs:member	local:view_definition_syntax	.
+local:native_rdf_datasets	rdfs:subClassOf	local:rdf_datasets	.
+local:size_of_the_datasets	rdfs:member	local:datasets	.
+local:s4.1	rdf:predicate	local:materialize	.
+local:size_of_the_datasets	rdfs:member	local:size	.
+local:s8	rdf:subject	local:paper	.
+local:order_of_magnitude	rdfs:member	local:order	.
+local:definition_syntax	rdfs:subClassOf	local:syntax	.
+local:s9.2	rdf:object	local:rdf_views	.
+local:s7.1	rdfs:member	local:rdf	.
+local:can_improve_by_more_order	rdfs:member	local:more_order	.
+local:s2.1	rdf:object	local:challenges_for_standard_sparql_query_processing_techniques	.
+local:standard_sparql_query	rdfs:subClassOf	local:query	.
+local:sparql_query_processing_techniques	rdfs:subClassOf	local:query_processing_techniques	.
+local:view_definition	rdfs:subClassOf	local:definition	.
+local:s13.1	rdf:subject	local:algorithm_for_rewriting_sparql_queries	.
+local:marvel_materialized_rdf	rdfs:subClassOf	local:rdf	.
+local:s7.1	rdf:predicate	local:propose	.
+local:setup_both_the_need_to_process_aggregate_queries	rdfs:member	local:aggregate_queries	.
+local:rdf_datasets	rdfs:subClassOf	local:datasets	.
+local:rdf_specifics	rdfs:subClassOf	local:specifics	.
+local:s9.1	rdf:object	local:marvel_materialized_rdf_views_with_incompletness	.
+local:s9	rdf:predicate	local:overcome	.
+local:s2.1	rdf:predicate	local:represent	.
+local:s8.2	rdf:object	local:rdf_views	.
+local:s7.1	rdfs:member	local:implicit_information	.
+local:s5.1	rdf:object	local:views	.
+local:can_improve	rdfs:subClassOf	local:improve	.
+local:s8	rdf:predicate	local:overcome	.
+local:s1	local:AM-MNR	local:native_rdf_datasets	.
+local:rdfspecific_cost_model	rdfs:member	local:rdfspecific_cost	.
+local:view_selection	rdfs:subClassOf	local:selection	.
+local:s6.1	local:AM-PNC	local:rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	.
+local:source_of_precomputed_partial_results	rdfs:member	local:source	.
+local:cost_model	rdfs:member	local:cost	.
+local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
+local:s2.1	rdf:subject	local:setup_both_the_need_to_process_aggregate_queries	.
+local:setup_both_the_need_to_process_aggregate_queries	rdfs:member	local:need	.
+local:native_rdf_datasets	rdfs:member	local:native_rdf	.
+local:query_processing_techniques	rdfs:subClassOf	local:techniques	.
+local:s5.2	rdf:subject	local:views	.
+local:s5.2	rdf:predicate	local:create	.
+local:rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	rdfs:member	local:rdf_specifics	.
+local:native_rdf_datasets	rdfs:subClassOf	local:datasets	.
+local:proposed_for_rdf	rdfs:member	local:proposed	.
+local:s5.2	local:AM-MOD	local:can	.
+local:s12	rdf:subject	local:approach	.
+local:associated_rdfspecific_cost_model_a_view_definition_syntax	rdfs:member	local:rdfspecific_cost_model	.
+local:s8.1	rdf:subject	local:paper	.
+local:precomputed_partial_results	rdfs:subClassOf	local:partial_results	.
+local:view_definition	rdfs:member	local:view	.
+local:s12	rdf:object	local:view_selection_algorithm	.
+local:query_response_time	rdfs:member	local:query_response	.
+local:s8.2	rdf:predicate	local:materialized	.
+local:processing_techniques	rdfs:member	local:processing	.
+local:s3	rdf:predicate	local:represent	.
+local:s14.2	local:AM-MNR	local:effectively	.
+local:s10	rdf:predicate	local:rewrite	.
+local:rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	rdfs:member	local:rdf	.
+local:associated_rdfspecific_cost_model	rdfs:subClassOf	local:rdfspecific_cost_model	.
+local:s0	local:AM-MNR	local:native_rdf_datasets	.
+local:s5	rdf:subject	local:limitations	.
+local:standard_sparql_query_processing_techniques	rdfs:member	local:standard_sparql_query_processing	.
+local:setup_both_the_need_to_process_aggregate_queries	rdfs:member	local:setup	.
+local:s7	rdf:predicate	local:materialize	.
+local:rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	rdfs:member	local:rdf	.
+local:standard_sparql_query_processing_techniques	rdfs:subClassOf	local:sparql_query_processing_techniques	.
+local:s3	rdf:object	local:challenges_for_standard_sparql_query_processing_techniques	.
+local:view_selection_algorithm	rdfs:member	local:view_selection	.
+local:s1	local:AM-TMP	local:recent_years	.
+local:s14.1	rdfs:member	local:rdf_specifics	.
+local:query_response	rdfs:subClassOf	local:response	.
+local:rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	rdfs:member	local:need	.
+local:cost_model	rdfs:subClassOf	local:model	.
+local:s8	rdf:object	local:challenges	.
+local:rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	rdfs:member	local:incompleteness	.
+local:rdf_specifics_such_as_incompleteness	rdfs:member	local:rdf_specifics	.
+local:information_information	rdfs:member	local:information	.
+local:source_of_precomputed_partial_results_during_query_processing	rdfs:member	local:source	.
+local:s14.1	local:AM-TMP	local:effectively_handling_rdf_specifics	.
+local:s14.1	rdf:subject	local:marvel	.
+local:rdf_do_not_support_rdf_specifics_such_as_the_need_to_support_implicit_information	rdfs:member	local:rdf_specifics	.
+local:aggregate_queries	rdfs:member	local:aggregate	.
+local:view_selection_algorithm	rdfs:subClassOf	local:selection_algorithm	.
+local:algorithm_for_rewriting_sparql_queries	rdfs:member	local:sparql_queries	.
+local:s2	rdf:subject	local:aggregate_queries_represent_challenges_for_standard_sparql_query_processing_techniques	.
+local:source_of_precomputed_partial_results	rdfs:member	local:precomputed_partial_results	.
+local:s14.1	rdf:object	local:query_response_time	.
+local:more_order	rdfs:subClassOf	local:order	.
+local:view_definition_syntax	rdfs:subClassOf	local:syntax	.
+local:s11	rdf:subject	local:view_selection_algorithm	.
+local:s14	rdf:object	local:marvel_can_improve_query_response_time_by_more_than_an_order_of_magnitude_while_effectively_handling_rdf_specifics	.
+local:marvel_materialized_rdf	rdfs:member	local:marvel_materialized	.
+local:s11	rdf:object	local:associated_rdfspecific_cost_model_a_view_definition_syntax	.
+local:rdfspecific_cost	rdfs:member	local:rdfspecific	.
+local:processing_techniques	rdfs:subClassOf	local:techniques	.
+local:rdfspecific_cost_model	rdfs:subClassOf	local:cost_model	.
+local:sparql_query_processing	rdfs:subClassOf	local:processing	.
+local:rdf_specifics	rdfs:member	local:rdf	.
+local:s14	rdf:subject	local:experimental_evaluation	.
+local:implicit_information	rdfs:member	local:implicit	.
+local:source_of_precomputed_partial_results_during_query_processing	rdfs:member	local:query_processing	.
+local:proposed_for_rdf	rdfs:member	local:rdf	.
+local:materialized_rdf_views	rdfs:member	local:materialized_rdf	.
+local:s8.2	rdfs:member	local:entailment	.
+local:s6.1	rdfs:member	local:need	.
+local:not_support	rdfs:subClassOf	local:support	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:standard_sparql_query_processing	rdfs:member	local:standard_sparql_query	.
+local:standard_sparql_query_processing_techniques	rdfs:subClassOf	local:techniques	.
+local:aggregate_queries_represent_challenges_for_standard_sparql_query_processing_techniques	rdfs:member	local:challenges	.
+local:source_of_precomputed_partial_results_during_query_processing	rdfs:member	local:partial_results	.
+local:effectively_handling	rdfs:subClassOf	local:handling	.
+local:challenges_for_standard_sparql_query_processing_techniques	rdfs:member	local:standard_sparql_query_processing_techniques	.
+local:standard_sparql_query_processing	rdfs:subClassOf	local:processing	.
+local:selection_algorithm	rdfs:member	local:selection	.
+local:s8.1	rdf:predicate	local:propose	.
+local:s14.2	rdf:predicate	local:handle	.
+local:s7	local:AM-DIS	local:however	.
+local:experimental_evaluation	rdfs:member	local:experimental	.
+local:implicit_information_information	rdfs:member	local:implicit_information	.
+local:s6.1	rdfs:member	local:implicit_information	.
+local:size_of_datasets	rdfs:member	local:size	.
+local:s1	rdf:predicate	local:publish	.
+local:view_selection	rdfs:member	local:view	.
+local:s4	rdf:predicate	local:overcome	.
+local:materialized_with_incompletness	rdfs:member	local:materialized	.
+local:s10	rdf:object	local:sparql_queries	.
+local:aggregate_queries_represent_challenges_for_standard_sparql_query_processing_techniques	rdfs:member	local:aggregate_queries	.
+local:materialized_with_entailment	rdfs:member	local:entailment	.
+local:s9.2	rdf:subject	local:marvel	.
+local:recent_years	rdfs:member	local:recent	.
+local:s14.1	local:AM-MOD	local:can	.
+local:query_processing_techniques	rdfs:member	local:query_processing	.
+local:s4.1	rdf:subject	local:limitations	.
+local:aggregate_queries_represent_challenges_for_standard_sparql_query_processing_techniques	rdfs:member	local:standard_sparql_query_processing_techniques	.
+local:standard_sparql	rdfs:member	local:standard	.
+local:native_rdf	rdfs:member	local:native	.
+local:s11	rdf:predicate	local:base	.
+local:s3	rdf:subject	local:size_of_the_datasets	.
+local:s7.2	rdf:subject	local:rdf	.
+local:rdf_datasets	rdfs:member	local:rdf	.
+local:response_time	rdfs:subClassOf	local:time	.
+local:s13.1	rdf:object	local:rdf_views	.
+local:s1	rdf:subject	local:data	.
+local:s14.1	rdfs:member	local:magnitude	.
+local:response_time	rdfs:member	local:response	.
+local:order_of_magnitude	rdfs:member	local:magnitude	.
+local:source_of_precomputed_partial_results_during_query_processing	rdfs:member	local:source_of_precomputed_partial_results	.
+local:s10.1	rdf:predicate	local:use	.
+local:s7	local:AM-PNC	local:proposed_for_rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	.
+local:rdf_do_not_support_rdf_specifics_such_as_incompleteness_to_support_implicit_information	rdfs:member	local:implicit_information	.
+local:s5.2	local:AM-TMP	local:source_of_precomputed_partial_results_during_query_processing	.
+local:s13	rdf:object	local:sparql_queries	.
+local:standard_sparql_query	rdfs:member	local:standard_sparql	.
+local:can_improve_by_more_order	rdfs:member	local:can_improve	.
+local:s9.2	rdfs:member	local:incompletness	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:size_of_datasets	rdfs:member	local:datasets	.
+local:s5	rdf:predicate	local:overcome	.
+local:materialized_with_incompletness	rdfs:member	local:incompletness	.
+local:s9	rdf:subject	local:paper	.
+local:s9.2	local:AM-MNR	local:incompletness	.
+local:recent_years	rdfs:subClassOf	local:years	.
+local:rdf_specifics_such_as_need	rdfs:member	local:rdf_specifics	.
+local:s14.1	rdfs:member	local:query_response_time	.
+local:s6	rdf:predicate	local:materialize	.

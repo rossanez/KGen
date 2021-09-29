@@ -1,263 +1,431 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a golden standard that evaluated in a user study"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"selected users"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"a golden standard that built online by a group of selected users"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"an algorithm tuned against a golden standard"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"types aligned to a subset of dolcedns ultra lite classes"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"types aligned to two toplevel ontologies"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"types aligned to wordnet supersenses"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"heuristics based on graph patterns"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"types identified by means of a set of heuristics based on graph patterns"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"tipalo natural language definition which extracted from tipalo corresponding wikipedia page"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"tipalo interpreting tipalo natural language definition"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"tipalo identifies the most appropriate types for an entity by interpreting tipalo natural language definition"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"we automatically typing dbpedia entities"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we present tool for automatically typing dbpedia entities"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we present an algorithm"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we present tipalo"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:golden_standard	a	rdf:Class	;
+	rdfs:label	"golden standard"	.
 
-local:we	rdfs:label	"we"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:golden	a	rdf:Class	;
+	rdfs:label	"golden"	.
 
-local:dbpedia_entities	rdfs:label	"dbpedia entities"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:entities	rdfs:label	"entities"	.
+local:user_study	a	rdf:Class	;
+	rdfs:label	"user study"	.
 
-local:automatically_typing	rdfs:label	"automatically typing"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:typing	rdfs:label	"typing"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:tool	rdfs:label	"tool"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:tìpalo	rdfs:label	"tìpalo"	.
+local:group_of_selected_users	a	rdf:Class	;
+	rdfs:label	"group of selected users"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:group	a	rdf:Class	;
+	rdfs:label	"group"	.
 
-local:language_definition	rdfs:label	"language definition"	.
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
 
-local:definition	rdfs:label	"definition"	.
+local:online	a	rdf:Class	;
+	rdfs:label	"online"	.
 
-local:natural_language	rdfs:label	"natural language"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:natural_language_definition	rdfs:label	"natural language definition"	.
+local:tune	a	rdf:Class	;
+	rdfs:label	"tune"	.
 
-local:tìpalo_natural_language	rdfs:label	"tìpalo natural language"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:language	rdfs:label	"language"	.
+local:align	a	rdf:Class	;
+	rdfs:label	"align"	.
 
-local:tìpalo_natural	rdfs:label	"tìpalo natural"	.
+local:subset_of_dolcedns_ultra_lite_classes	a	rdf:Class	;
+	rdfs:label	"subset of dolcedns ultra lite classes"	.
 
-local:natural	rdfs:label	"natural"	.
+local:subset	a	rdf:Class	;
+	rdfs:label	"subset"	.
 
-local:tìpalo_natural_language_definition	rdfs:label	"tìpalo natural language definition"	.
+local:dolcedns_ultra_lite_classes	a	rdf:Class	;
+	rdfs:label	"dolcedns ultra lite classes"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:dolcedns_ultra	a	rdf:Class	;
+	rdfs:label	"dolcedns ultra"	.
 
-local:wikipedia_page	rdfs:label	"wikipedia page"	.
+local:ultra	a	rdf:Class	;
+	rdfs:label	"ultra"	.
 
-local:wikipedia_page_abstract	rdfs:label	"wikipedia page abstract"	.
+local:ultra_lite	a	rdf:Class	;
+	rdfs:label	"ultra lite"	.
 
-local:abstract	rdfs:label	"abstract"	.
+local:dolcedns_ultra_lite	a	rdf:Class	;
+	rdfs:label	"dolcedns ultra lite"	.
 
-local:page	rdfs:label	"page"	.
+local:ultra_lite_classes	a	rdf:Class	;
+	rdfs:label	"ultra lite classes"	.
 
-local:page_abstract	rdfs:label	"page abstract"	.
+local:lite_classes	a	rdf:Class	;
+	rdfs:label	"lite classes"	.
 
-local:wikipedia	rdfs:label	"wikipedia"	.
+local:lite	a	rdf:Class	;
+	rdfs:label	"lite"	.
 
-local:corresponding_wikipedia_page	rdfs:label	"corresponding wikipedia page"	.
+local:classes	a	rdf:Class	;
+	rdfs:label	"classes"	.
 
-local:tìpalo_corresponding_wikipedia_page	rdfs:label	"tìpalo corresponding wikipedia page"	.
+local:dolcedns	a	rdf:Class	;
+	rdfs:label	"dolcedns"	.
 
-local:identifies	rdfs:label	"identifies"	.
+local:two_toplevel_ontologies	a	rdf:Class	;
+	rdfs:label	"two toplevel ontologies"	.
 
-local:appropriate_types	rdfs:label	"appropriate types"	.
+local:toplevel_ontologies	a	rdf:Class	;
+	rdfs:label	"toplevel ontologies"	.
 
-local:types	rdfs:label	"types"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:appropriate	rdfs:label	"appropriate"	.
+local:toplevel	a	rdf:Class	;
+	rdfs:label	"toplevel"	.
 
-local:appropriate_types_for_entity	rdfs:label	"appropriate types for entity"	.
+local:wordnet_supersenses	a	rdf:Class	;
+	rdfs:label	"wordnet supersenses"	.
 
-local:entity	rdfs:label	"entity"	.
+local:wordnet	a	rdf:Class	;
+	rdfs:label	"wordnet"	.
 
-local:interpreting	rdfs:label	"interpreting"	.
+local:supersenses	a	rdf:Class	;
+	rdfs:label	"supersenses"	.
 
-local:aligned	rdfs:label	"aligned"	.
+local:heuristics	a	rdf:Class	;
+	rdfs:label	"heuristics"	.
 
-local:wordnet_supersenses	rdfs:label	"wordnet supersenses"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:supersenses	rdfs:label	"supersenses"	.
+local:graph_patterns	a	rdf:Class	;
+	rdfs:label	"graph patterns"	.
 
-local:wordnet	rdfs:label	"wordnet"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:lite	rdfs:label	"lite"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:lite_classes	rdfs:label	"lite classes"	.
+local:means_of_a_set_of_heuristics_based_on_graph_patterns	a	rdf:Class	;
+	rdfs:label	"means of a set of heuristics based on graph patterns"	.
 
-local:ultra_lite	rdfs:label	"ultra lite"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:ultra_lite_classes	rdfs:label	"ultra lite classes"	.
+local:means	a	rdf:Class	;
+	rdfs:label	"means"	.
 
-local:classes	rdfs:label	"classes"	.
+local:means_of_set	a	rdf:Class	;
+	rdfs:label	"means of set"	.
 
-local:ultra	rdfs:label	"ultra"	.
+local:set_of_heuristics	a	rdf:Class	;
+	rdfs:label	"set of heuristics"	.
 
-local:subset_of_dolcedns	rdfs:label	"subset of dolcedns"	.
+local:set_of_heuristics_based_on_graph_patterns	a	rdf:Class	;
+	rdfs:label	"set of heuristics based_on graph patterns"	.
 
-local:subset	rdfs:label	"subset"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:dolcedns	rdfs:label	"dolcedns"	.
+local:tipalo_natural_language_definition	a	rdf:Class	;
+	rdfs:label	"tipalo natural language definition"	.
 
-local:toplevel	rdfs:label	"top-level"	.
+local:tipalo	a	rdf:Class	;
+	rdfs:label	"tipalo"	.
 
-local:toplevel_ontologies	rdfs:label	"top-level ontologies"	.
+local:natural_language_definition	a	rdf:Class	;
+	rdfs:label	"natural language definition"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:language_definition	a	rdf:Class	;
+	rdfs:label	"language definition"	.
 
-local:two_toplevel_ontologies	rdfs:label	"two top-level ontologies"	.
+local:definition	a	rdf:Class	;
+	rdfs:label	"definition"	.
 
-local:identified	rdfs:label	"identified"	.
+local:natural_language	a	rdf:Class	;
+	rdfs:label	"natural language"	.
 
-local:graph	rdfs:label	"graph"	.
+local:natural	a	rdf:Class	;
+	rdfs:label	"natural"	.
 
-local:graph_patterns	rdfs:label	"graph patterns"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:patterns	rdfs:label	"patterns"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:means_of_set	rdfs:label	"means of set"	.
+local:tipalo_corresponding_wikipedia_page	a	rdf:Class	;
+	rdfs:label	"tipalo corresponding wikipedia page"	.
 
-local:means	rdfs:label	"means"	.
+local:wikipedia_page	a	rdf:Class	;
+	rdfs:label	"wikipedia page"	.
 
-local:set	rdfs:label	"set"	.
+local:page	a	rdf:Class	;
+	rdfs:label	"page"	.
 
-local:set_of_heuristics	rdfs:label	"set of heuristics"	.
+local:wikipedia	a	rdf:Class	;
+	rdfs:label	"wikipedia"	.
 
-local:heuristics	rdfs:label	"heuristics"	.
+local:corresponding_wikipedia_page	a	rdf:Class	;
+	rdfs:label	"corresponding wikipedia page"	.
 
-local:set_of_heuristics_basedon_graph_patterns	rdfs:label	"set of heuristics based_on graph patterns"	.
+local:interpret	a	rdf:Class	;
+	rdfs:label	"interpret"	.
 
-local:based	rdfs:label	"based"	.
+local:appropriate_types_for_an_entity	a	rdf:Class	;
+	rdfs:label	"appropriate types for an entity"	.
 
-local:golden	rdfs:label	"golden"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:golden_standard	rdfs:label	"golden standard"	.
+local:appropriate_types	a	rdf:Class	;
+	rdfs:label	"appropriate types"	.
 
-local:standard	rdfs:label	"standard"	.
+local:appropriate	a	rdf:Class	;
+	rdfs:label	"appropriate"	.
 
-local:built	rdfs:label	"built"	.
+local:appropriate_types_for_entity	a	rdf:Class	;
+	rdfs:label	"appropriate types for entity"	.
 
-local:online	rdfs:label	"online"	.
+local:interpreting_tipalo_natural_language_definition	a	rdf:Class	;
+	rdfs:label	"interpreting tipalo natural language definition"	.
 
-local:selected_users	rdfs:label	"selected users"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:users	rdfs:label	"users"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:group_of_selected_users	rdfs:label	"group of selected users"	.
+local:dbpedia_entities	a	rdf:Class	;
+	rdfs:label	"dbpedia entities"	.
 
-local:group	rdfs:label	"group"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:selected	rdfs:label	"selected"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:user	rdfs:label	"user"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:tuned	rdfs:label	"tuned"	.
+local:tool_for_automatically_typing_dbpedia_entities	a	rdf:Class	;
+	rdfs:label	"tool for automatically typing dbpedia entities"	.
 
-#### Properties ####
+local:tool	a	rdf:Class	;
+	rdfs:label	"tool"	.
+
+local:automatically_typing	a	rdf:Class	;
+	rdfs:label	"automatically typing"	.
+
+local:typing	a	rdf:Class	;
+	rdfs:label	"typing"	.
 
 #### Mapped Relations ####
 
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:wordnet	rdfs:label	"wordnet"	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-local:wordnet	owl:sameAs	cso:wordnet	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
 cso:ontologies	rdfs:label	"ontologies"	.
-cso:natural_language	rdfs:label	"natural language"	.
 local:natural_language	owl:sameAs	cso:natural_language	.
+cso:wordnet	rdfs:label	"wordnet"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
+cso:natural_language	rdfs:label	"natural language"	.
+local:wordnet	owl:sameAs	cso:wordnet	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
 
 #### Relations ####
 
-local:selected	vn.role:Theme	local:users	.
-local:automatically_typing	rdfs:subClassOf	local:typing	.
-local:subset_of_dolcedns	local:of_dolcedns	local:subset	.
-local:graph_patterns	rdfs:subClassOf	local:patterns	.
-local:aligned	vn.role:indirect_object	local:wordnet_supersenses	.
-local:lite_classes	rdfs:subClassOf	local:classes	.
-local:evaluated	local:AM-LOC	local:user	.
-local:natural_language_definition	rdfs:subClassOf	local:language_definition	.
-local:wikipedia_page_abstract	rdfs:subClassOf	local:abstract	.
-local:dbpedia_entities	rdfs:subClassOf	local:entities	.
-local:wikipedia_page	rdfs:member	local:wikipedia_page_abstract	.
-local:set_of_heuristics_basedon_graph_patterns	local:setofheuristics_based_on	local:graph_patterns	.
-local:means_of_set	local:of_set	local:means	.
-local:natural	rdfs:member	local:natural_language	.
-local:tuned	vn.role:indirect_object	local:golden_standard	.
 local:corresponding_wikipedia_page	rdfs:subClassOf	local:wikipedia_page	.
-local:toplevel_ontologies	rdfs:subClassOf	local:ontologies	.
-local:golden	rdfs:member	local:golden_standard	.
-local:language	rdfs:member	local:language_definition	.
-local:aligned	vn.role:Theme	local:types	.
-local:set_of_heuristics_basedon_graph_patterns	local:based_on_graphpatterns	local:set_of_heuristics	.
-local:identified	vn.role:Agent	local:means_of_set	.
-local:lite	rdfs:member	local:lite_classes	.
-local:tìpalo_natural_language	rdfs:member	local:tìpalo_natural_language_definition	.
-local:natural_language_definition	rdfs:subClassOf	local:definition	.
-local:based	vn.role:Cause	local:heuristics	.
-local:group_of_selected_users	local:of_selectedusers	local:group	.
-local:dbpedia	rdfs:member	local:dbpedia_entities	.
-local:wordnet_supersenses	rdfs:subClassOf	local:supersenses	.
-local:ultra_lite	rdfs:member	local:ultra_lite_classes	.
-local:typing	local:AM-MNR	local:automatically	.
-local:golden_standard	rdfs:subClassOf	local:standard	.
-local:built	vn.role:Material	local:golden_standard	.
-local:page	rdfs:member	local:page_abstract	.
-local:set_of_heuristics	local:set_of	local:heuristics	.
-local:wikipedia	rdfs:member	local:wikipedia_page	.
-local:appropriate_types_for_entity	local:for_entity	local:appropriate_types	.
-local:wordnet	rdfs:member	local:wordnet_supersenses	.
-local:natural_language	rdfs:subClassOf	local:language	.
-local:built	vn.role:Agent	local:group_of_selected_users	.
-local:present	vn.role:Theme	local:tìpalo	.
-local:set_of_heuristics	local:of_heuristics	local:set	.
-local:identifies	local:AM-MNR	local:interpreting	.
-local:subset_of_dolcedns	local:subset_of	local:dolcedns	.
-local:ultra	rdfs:member	local:ultra_lite	.
-local:typing	vn.role:Theme	local:dbpedia_entities	.
-local:evaluated	vn.role:Theme	local:golden_standard	.
-local:identifies	vn.role:Theme	local:appropriate_types_for_entity	.
-local:present	vn.role:Agent	local:we	.
-local:wikipedia_page	rdfs:subClassOf	local:page	.
-local:two_toplevel_ontologies	rdfs:subClassOf	local:toplevel_ontologies	.
 local:ultra_lite	rdfs:subClassOf	local:lite	.
-local:built	vn.role:Material	local:online	.
-local:page_abstract	rdfs:subClassOf	local:abstract	.
-local:appropriate	rdfs:member	local:appropriate_types	.
-local:tìpalo_natural	rdfs:member	local:tìpalo_natural_language	.
-local:means_of_set	local:means_of	local:set	.
-local:tìpalo	rdfs:member	local:tìpalo_natural	.
-local:tìpalo_corresponding_wikipedia_page	rdfs:subClassOf	local:corresponding_wikipedia_page	.
-local:tìpalo_natural_language	rdfs:subClassOf	local:language	.
-local:tìpalo_natural_language_definition	rdfs:subClassOf	local:natural_language_definition	.
-local:natural_language	rdfs:member	local:natural_language_definition	.
-local:selected_users	rdfs:subClassOf	local:users	.
-local:identifies	vn.role:Agent	local:tìpalo	.
-local:identified	vn.role:Theme	local:types	.
+local:s4	rdf:predicate	local:extract	.
 local:ultra_lite_classes	rdfs:subClassOf	local:classes	.
-local:tìpalo_natural_language_definition	rdfs:subClassOf	local:definition	.
-local:based	vn.role:indirect_object	local:graph_patterns	.
+local:natural_language_definition	rdfs:subClassOf	local:definition	.
+local:dbpedia_entities	rdfs:member	local:dbpedia	.
+local:s11.1	rdf:subject	local:users	.
+local:s10	rdf:subject	local:algorithm	.
+local:group_of_selected_users	rdfs:member	local:users	.
+local:subset_of_dolcedns_ultra_lite_classes	rdfs:member	local:dolcedns_ultra_lite_classes	.
+local:s12	local:AM-LOC	local:user_study	.
+local:tipalo_corresponding_wikipedia_page	rdfs:member	local:tipalo	.
+local:golden_standard	rdfs:subClassOf	local:standard	.
+local:s9	rdf:subject	local:types	.
+local:wikipedia_page	rdfs:subClassOf	local:page	.
+local:s7	rdf:predicate	local:align	.
+local:s9	rdf:predicate	local:align	.
+local:s7	rdf:subject	local:types	.
+local:means_of_set	rdfs:member	local:means	.
+local:s2.1	rdf:object	local:dbpedia_entities	.
+local:means_of_a_set_of_heuristics_based_on_graph_patterns	rdfs:member	local:graph_patterns	.
+local:wordnet_supersenses	rdfs:member	local:wordnet	.
+local:s3.1	rdf:predicate	local:interpret	.
+local:graph_patterns	rdfs:member	local:graph	.
+local:subset_of_dolcedns_ultra_lite_classes	rdfs:member	local:subset	.
+local:s2.1	local:AM-MNR	local:automatically	.
+local:s1	rdf:subject	local:we	.
+local:ultra_lite	rdfs:member	local:ultra	.
+local:s10	rdf:predicate	local:tune	.
+local:group_of_selected_users	rdfs:member	local:s11.1	.
+local:s0	rdf:subject	local:we	.
+local:dolcedns_ultra_lite	rdfs:member	local:dolcedns_ultra	.
+local:means_of_a_set_of_heuristics_based_on_graph_patterns	rdfs:member	local:set	.
+local:s3.1	rdf:object	local:tipalo_natural_language_definition	.
+local:appropriate_types_for_entity	rdfs:member	local:entity	.
+local:means_of_set	rdfs:member	local:set	.
+local:s4	rdf:object	local:tipalo_corresponding_wikipedia_page	.
+local:s5.1	rdf:subject	local:heuristics	.
+local:dolcedns_ultra	rdfs:member	local:dolcedns	.
+local:tipalo_corresponding_wikipedia_page	rdfs:subClassOf	local:corresponding_wikipedia_page	.
+local:dolcedns_ultra_lite_classes	rdfs:subClassOf	local:classes	.
+local:s2	rdf:subject	local:we	.
+local:language_definition	rdfs:member	local:language	.
+local:golden_standard	rdfs:member	local:golden	.
+local:toplevel_ontologies	rdfs:member	local:toplevel	.
+local:means_of_a_set_of_heuristics_based_on_graph_patterns	rdfs:member	local:means	.
+local:appropriate_types	rdfs:member	local:appropriate	.
+local:interpreting_tipalo_natural_language_definition	rdfs:member	local:tipalo	.
+local:wikipedia_page	rdfs:member	local:wikipedia	.
+local:s1	rdf:predicate	local:present	.
+local:s1	rdf:object	local:algorithm	.
+local:dolcedns_ultra_lite_classes	rdfs:member	local:dolcedns_ultra_lite	.
+local:appropriate_types_for_entity	rdfs:member	local:appropriate_types	.
+local:s11	rdf:predicate	local:build	.
+local:user_study	rdfs:member	local:user	.
+local:set_of_heuristics	rdfs:member	local:heuristics	.
+local:set_of_heuristics_based_on_graph_patterns	rdfs:member	local:set_of_heuristics	.
+local:s3	rdf:predicate	local:identify	.
+local:s8	rdf:subject	local:types	.
+local:natural_language	rdfs:member	local:natural	.
+local:tool_for_automatically_typing_dbpedia_entities	rdfs:member	local:dbpedia_entities	.
+local:natural_language	rdfs:subClassOf	local:language	.
+local:user_study	rdfs:subClassOf	local:study	.
+local:group_of_selected_users	rdfs:member	local:group	.
+local:appropriate_types_for_an_entity	rdfs:member	local:appropriate_types	.
+local:s3	local:AM-MNR	local:interpreting_tipalo_natural_language_definition	.
+local:means_of_a_set_of_heuristics_based_on_graph_patterns	rdfs:member	local:heuristics	.
+local:s2.1	rdf:predicate	local:type	.
+local:s8	rdf:object	local:two_toplevel_ontologies	.
+local:automatically_typing	rdfs:subClassOf	local:typing	.
+local:interpreting_tipalo_natural_language_definition	rdfs:member	local:natural_language_definition	.
+local:set_of_heuristics	rdfs:member	local:set	.
+local:s0	rdf:object	local:tipalo	.
+local:s10	rdf:object	local:golden_standard	.
+local:s12	rdf:predicate	local:evaluate	.
+local:s5	rdf:subject	local:means_of_a_set_of_heuristics_based_on_graph_patterns	.
+local:s2.1	rdf:subject	local:we	.
+local:s0	rdf:predicate	local:present	.
+local:ultra_lite_classes	rdfs:member	local:ultra_lite	.
+local:tipalo_natural_language_definition	rdfs:subClassOf	local:natural_language_definition	.
+local:s2	rdf:predicate	local:present	.
+local:s11	rdf:object	local:online	.
+local:tipalo_corresponding_wikipedia_page	rdfs:member	local:wikipedia_page	.
+local:appropriate_types_for_an_entity	rdfs:member	local:entity	.
+local:lite_classes	rdfs:member	local:lite	.
+local:natural_language_definition	rdfs:subClassOf	local:language_definition	.
+local:lite_classes	rdfs:subClassOf	local:classes	.
+local:ultra_lite_classes	rdfs:subClassOf	local:lite_classes	.
 local:appropriate_types	rdfs:subClassOf	local:types	.
-local:aligned	vn.role:indirect_object	local:ultra	.
-local:graph	rdfs:member	local:graph_patterns	.
-local:interpreting	vn.role:Theme	local:tìpalo_natural_language_definition	.
-local:interpreting	vn.role:Agent	local:tìpalo	.
-local:tìpalo_natural	rdfs:subClassOf	local:natural	.
-local:toplevel	rdfs:member	local:toplevel_ontologies	.
-local:typing	vn.role:Agent	local:we	.
-local:extracted	vn.role:Source	local:abstract	.
+local:set_of_heuristics_based_on_graph_patterns	rdfs:member	local:graph_patterns	.
+local:dolcedns_ultra	rdfs:subClassOf	local:ultra	.
+local:s5.1	rdf:object	local:graph_patterns	.
+local:natural_language_definition	rdfs:member	local:natural_language	.
+local:s8	rdf:predicate	local:align	.
+local:dolcedns_ultra_lite	rdfs:subClassOf	local:lite	.
+local:s4	rdf:subject	local:tipalo_natural_language_definition	.
+local:tool_for_automatically_typing_dbpedia_entities	rdfs:member	local:tool	.
+local:two_toplevel_ontologies	rdfs:subClassOf	local:toplevel_ontologies	.
+local:s3	rdf:subject	local:tipalo	.
+local:dolcedns_ultra_lite_classes	rdfs:subClassOf	local:ultra_lite_classes	.
+local:wordnet_supersenses	rdfs:subClassOf	local:supersenses	.
+local:s2	rdf:object	local:tool_for_automatically_typing_dbpedia_entities	.
+local:s9	rdf:object	local:subset_of_dolcedns_ultra_lite_classes	.
+local:graph_patterns	rdfs:subClassOf	local:patterns	.
+local:tipalo_natural_language_definition	rdfs:member	local:natural_language_definition	.
+local:s11.1	rdfs:subClassOf	local:users	.
+local:tipalo_natural_language_definition	rdfs:member	local:tipalo	.
 local:language_definition	rdfs:subClassOf	local:definition	.
-local:aligned	vn.role:indirect_object	local:two_toplevel_ontologies	.
-local:present	vn.role:Theme	local:tool	.
-local:present	vn.role:Theme	local:algorithm	.
-local:extracted	vn.role:Theme	local:tìpalo_natural_language_definition	.
-local:group_of_selected_users	local:group_of	local:selected_users	.
-local:tuned	vn.role:Predicate	local:algorithm	.
-local:appropriate_types_for_entity	local:appropriatetypes_for	local:entity	.
+local:s3.1	rdf:subject	local:tipalo	.
+local:s5	rdf:predicate	local:identify	.
+local:s3	rdf:object	local:appropriate_types_for_an_entity	.
+local:dbpedia_entities	rdfs:subClassOf	local:entities	.
+local:s5	rdf:object	local:types	.
+local:s5.1	rdf:predicate	local:base	.
+local:s11.1	rdf:predicate	local:select	.
+local:s12	rdf:subject	local:golden_standard	.
+local:toplevel_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s7	rdf:object	local:wordnet_supersenses	.
+local:s11	rdf:subject	local:group_of_selected_users	.

@@ -1,285 +1,416 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"predict the relevant entities and types"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"both reasoning learning"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a framework that combines both reasoning learning"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"both entity matching"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we evaluate this framework against stateoftheart baselines for both entity matching"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we evaluate this framework against stateoftheart baselines for both semantic typing"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we propose a framework"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"predict the relevant entities and types"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"both machine learning"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a framework that combines both machine"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"existing entity"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"replacing the literal with an existing entity from the ontologybased knowledge base"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"replacing the literal with a new entity"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"automated canonicalization"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in this paper we study the automated canonicalization of such literals"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a new entity that using classes from the ontologybased knowledge base"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a new entity that typed using classes from the ontologybased knowledge base"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"typed entities"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"usability limited by various quality issues"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"ontologybased knowledge bases rrb like dbpedia usefulness"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"usability limited by various quality issues"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"ontologybased knowledge bases rrb like dbpedia usefulness"	.
+
+
 #### Classes ####
 
-local:very_valuable	rdfs:label	"very valuable"	.
+local:relevant_entities_and_types	a	rdf:Class	;
+	rdfs:label	"relevant entities and types"	.
 
-local:very_valuable_resources	rdfs:label	"very valuable resources"	.
+local:relevant_entities	a	rdf:Class	;
+	rdfs:label	"relevant entities"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:bases	rdfs:label	"bases"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:very	rdfs:label	"very"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:valuable	rdfs:label	"valuable"	.
+local:predict	a	rdf:Class	;
+	rdfs:label	"predict"	.
 
-local:valuable_resources	rdfs:label	"valuable resources"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:dbpedia_usefulness	rdfs:label	"dbpedia usefulness"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:usefulness	rdfs:label	"usefulness"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:resources	rdfs:label	"resources"	.
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:reasoning_learning	a	rdf:Class	;
+	rdfs:label	"reasoning learning"	.
 
-local:ontologybased	rdfs:label	"ontology-based"	.
+local:learning	a	rdf:Class	;
+	rdfs:label	"learning"	.
 
-local:ontologybased_knowledge	rdfs:label	"ontology-based knowledge"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:ontologybased_knowledge_bases	rdfs:label	"ontology-based knowledge bases"	.
+local:match	a	rdf:Class	;
+	rdfs:label	"match"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:ontologybased_knowledge_bases_like_dbpedia	rdfs:label	"ontology-based knowledge bases like dbpedia"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:ontologybased_knowledge_bases_like_dbpedia_usefulness	rdfs:label	"ontology-based knowledge bases like dbpedia usefulness"	.
+local:framework_against_stateoftheart_baselines_for_both_entity_matching	a	rdf:Class	;
+	rdfs:label	"framework against stateoftheart baselines for both entity matching"	.
 
-local:ontologybased_knowledge_bases_like_dbpedia_usefulness_like_usability	rdfs:label	"ontology-based knowledge bases like dbpedia usefulness like usability"	.
+local:stateoftheart_baselines	a	rdf:Class	;
+	rdfs:label	"stateoftheart baselines"	.
 
-local:usability	rdfs:label	"usability"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:limited	rdfs:label	"limited"	.
+local:baselines	a	rdf:Class	;
+	rdfs:label	"baselines"	.
 
-local:quality_issues	rdfs:label	"quality issues"	.
+local:entity_matching	a	rdf:Class	;
+	rdfs:label	"entity matching"	.
 
-local:issues	rdfs:label	"issues"	.
+local:matching	a	rdf:Class	;
+	rdfs:label	"matching"	.
 
-local:various_quality_issues	rdfs:label	"various quality issues"	.
+local:framework_against_stateoftheart_baselines	a	rdf:Class	;
+	rdfs:label	"framework against stateoftheart baselines"	.
 
-local:various	rdfs:label	"various"	.
+local:stateoftheart_baselines_for_entity_matching	a	rdf:Class	;
+	rdfs:label	"stateoftheart baselines for entity matching"	.
 
-local:various_quality	rdfs:label	"various quality"	.
+local:stateoftheart_baselines_for_both_semantic_typing	a	rdf:Class	;
+	rdfs:label	"stateoftheart baselines for both semantic typing"	.
 
-local:quality	rdfs:label	"quality"	.
+local:semantic_typing	a	rdf:Class	;
+	rdfs:label	"semantic typing"	.
 
-local:typed	rdfs:label	"typed"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:semantically	rdfs:label	"semantically"	.
+local:typing	a	rdf:Class	;
+	rdfs:label	"typing"	.
 
-local:entities	rdfs:label	"entities"	.
+local:stateoftheart_baselines_for_semantic_typing	a	rdf:Class	;
+	rdfs:label	"stateoftheart baselines for semantic typing"	.
 
-local:study	rdfs:label	"study"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:paper	rdfs:label	"paper"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:we	rdfs:label	"we"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:such_literals	rdfs:label	"such literals"	.
+local:literal	a	rdf:Class	;
+	rdfs:label	"literal"	.
 
-local:literals	rdfs:label	"literals"	.
+local:replace	a	rdf:Class	;
+	rdfs:label	"replace"	.
 
-local:such	rdfs:label	"such"	.
+local:existing_entity_from_the_ontologybased_knowledge_base	a	rdf:Class	;
+	rdfs:label	"existing entity from the ontologybased knowledge base"	.
 
-local:automated_canonicalization	rdfs:label	"automated canonicalization"	.
+local:knowledge_base	a	rdf:Class	;
+	rdfs:label	"knowledge base"	.
 
-local:canonicalization	rdfs:label	"canonicalization"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:automated_canonicalization_of_such_literals	rdfs:label	"automated canonicalization of such literals"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:new	rdfs:label	"new"	.
+local:ontologybased_knowledge_base	a	rdf:Class	;
+	rdfs:label	"ontologybased knowledge base"	.
 
-local:new_entity	rdfs:label	"new entity"	.
+local:existing_entity_from_ontologybased_knowledge_base	a	rdf:Class	;
+	rdfs:label	"existing entity from ontologybased knowledge base"	.
 
-local:entity	rdfs:label	"entity"	.
+local:new_entity	a	rdf:Class	;
+	rdfs:label	"new entity"	.
 
-local:knowledge_base	rdfs:label	"knowledge base"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:ontologybased_knowledge_base	rdfs:label	"ontology-based knowledge base"	.
+local:canonicalization	a	rdf:Class	;
+	rdfs:label	"canonicalization"	.
 
-local:base	rdfs:label	"base"	.
+local:automate	a	rdf:Class	;
+	rdfs:label	"automate"	.
 
-local:existing_entity	rdfs:label	"existing entity"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:replacing_with_existing_entity	rdfs:label	"replacing with existing entity"	.
+local:automated_canonicalization_of_such_literals	a	rdf:Class	;
+	rdfs:label	"automated canonicalization of such literals"	.
 
-local:replacing	rdfs:label	"replacing"	.
+local:such_literals	a	rdf:Class	;
+	rdfs:label	"such literals"	.
 
-local:existing_entity_from_ontologybased_knowledge_base	rdfs:label	"existing entity from ontology-based knowledge base"	.
+local:literals	a	rdf:Class	;
+	rdfs:label	"literals"	.
 
-local:replacing_with_existing_entity_with_new_entity	rdfs:label	"replacing with existing entity with new entity"	.
+local:such	a	rdf:Class	;
+	rdfs:label	"such"	.
 
-local:using_from_ontologybased_knowledge_base	rdfs:label	"using from ontology-based knowledge base"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:using	rdfs:label	"using"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:automated	rdfs:label	"automated"	.
+local:classes_ontologybased_knowledge_base	a	rdf:Class	;
+	rdfs:label	"classes ontologybased knowledge base"	.
 
-local:literal	rdfs:label	"literal"	.
+local:classes	a	rdf:Class	;
+	rdfs:label	"classes"	.
 
-local:existing	rdfs:label	"existing"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:classes	rdfs:label	"classes"	.
+local:using_classes_from_the_ontologybased_knowledge_base	a	rdf:Class	;
+	rdfs:label	"using classes from the ontologybased knowledge base"	.
 
-local:propose	rdfs:label	"propose"	.
+local:classes_from_ontologybased_knowledge_base	a	rdf:Class	;
+	rdfs:label	"classes from ontologybased knowledge base"	.
 
-local:stateoftheart_baselines	rdfs:label	"state-of-the-art baselines"	.
+local:various_quality_issues	a	rdf:Class	;
+	rdfs:label	"various quality issues"	.
 
-local:baselines	rdfs:label	"baselines"	.
+local:various_quality	a	rdf:Class	;
+	rdfs:label	"various quality"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:various	a	rdf:Class	;
+	rdfs:label	"various"	.
 
-local:semantic_typing	rdfs:label	"semantic typing"	.
+local:quality_issues	a	rdf:Class	;
+	rdfs:label	"quality issues"	.
 
-local:entity_matching	rdfs:label	"entity matching"	.
+local:issues	a	rdf:Class	;
+	rdfs:label	"issues"	.
 
-local:typing	rdfs:label	"typing"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:limit	a	rdf:Class	;
+	rdfs:label	"limit"	.
 
-local:relevant_entities	rdfs:label	"relevant entities"	.
+local:usability	a	rdf:Class	;
+	rdfs:label	"usability"	.
 
-local:matching	rdfs:label	"matching"	.
+local:ontologybased_knowledge	a	rdf:Class	;
+	rdfs:label	"ontologybased knowledge"	.
 
-local:machine	rdfs:label	"machine"	.
+local:rrb_like_dbpedia_usefulness	a	rdf:Class	;
+	rdfs:label	"rrb like dbpedia usefulness"	.
 
-local:machine_learning	rdfs:label	"machine learning"	.
+local:rrb	a	rdf:Class	;
+	rdfs:label	"rrb"	.
 
-local:learning	rdfs:label	"learning"	.
+local:dbpedia_usefulness	a	rdf:Class	;
+	rdfs:label	"dbpedia usefulness"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:framework_against_stateoftheart_baselines	rdfs:label	"framework against state-of-the-art baselines"	.
-
-local:framework	rdfs:label	"framework"	.
-
-local:evaluate_for_semantic_typing	rdfs:label	"evaluate for semantic typing"	.
-
-local:evaluate	rdfs:label	"evaluate"	.
-
-local:evaluate_for_semantic_typing_for_entity_matching	rdfs:label	"evaluate for semantic typing for entity matching"	.
-
-local:combines	rdfs:label	"combines"	.
-
-local:reasoning	rdfs:label	"reasoning"	.
-
-local:predict	rdfs:label	"predict"	.
-
-#### Properties ####
+local:usefulness	a	rdf:Class	;
+	rdfs:label	"usefulness"	.
 
 #### Mapped Relations ####
 
-cso:knowledge_base	rdfs:member	local:knowledge_base	.
-local:semantic	owl:sameAs	cso:semantics	.
-cso:knowledge_bases	rdfs:member	local:knowledge_bases	.
-local:ontologybased_knowledge_base	rdfs:label	"ontology-based knowledge base"	.
-local:ontologybased_knowledge_bases	rdfs:member	local:ontologybased_knowledge_bases	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-local:ontologybased_knowledge_base	rdfs:member	local:ontologybased_knowledge_base	.
 cso:knowledge_base	rdfs:label	"knowledge base"	.
-cso:machine_learning	rdfs:label	"machine learning"	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
-local:machine_learning	owl:sameAs	cso:machine_learning	.
-cso:semantics	rdfs:label	"semantic"	.
-cso:knowledge_bases	rdfs:label	"knowledge bases"	.
-local:ontologybased_knowledge_bases	rdfs:label	"ontology-based knowledge bases"	.
-local:ontologybased_knowledge_bases	rdfs:member	local:ontologybased_knowledge_base	.
 cso:reasoning	rdfs:label	"reasoning"	.
-local:ontologybased_knowledge_base	rdfs:member	local:ontologybased_knowledge_bases	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
+local:knowledge_base	owl:sameAs	cso:knowledge_base	.
 local:reasoning	owl:sameAs	cso:reasoning	.
-cso:knowledge_bases	rdfs:member	local:knowledge_base	.
-cso:knowledge_base	rdfs:member	local:knowledge_bases	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
+cso:semantics	rdfs:label	"semantic"	.
 
 #### Relations ####
 
-local:replacing	vn.role:Theme2	local:ontologybased_knowledge_base	.
-local:entity_matching	rdfs:subClassOf	local:matching	.
-local:replacing_with_existing_entity_with_new_entity	local:replacingwithexistingentity_with	local:new_entity	.
-local:valuable_resources	rdfs:subClassOf	local:resources	.
-local:propose	vn.role:Agent	local:we	.
-local:ontologybased_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
-local:evaluate	local:AM-MNR	local:stateoftheart_baselines	.
-local:using	vn.role:Agent	local:new_entity	.
-local:ontologybased_knowledge_bases_like_dbpedia_usefulness_like_usability	local:ontology-basedknowledgebaseslikedbpediausefulness_like	local:usability	.
-local:study	local:AM-PNC	local:replacing_with_existing_entity_with_new_entity	.
-local:machine	rdfs:member	local:machine_learning	.
-local:existing_entity_from_ontologybased_knowledge_base	local:from_ontology-basedknowledgebase	local:existing_entity	.
-local:ontologybased_knowledge	rdfs:member	local:ontologybased_knowledge_bases	.
-local:automated	vn.role:Patient	local:canonicalization	.
-local:ontologybased_knowledge_base	rdfs:subClassOf	local:base	.
-local:limited	vn.role:Cause	local:various_quality_issues	.
-local:dbpedia_usefulness	rdfs:subClassOf	local:usefulness	.
-local:automated_canonicalization	rdfs:subClassOf	local:canonicalization	.
-local:replacing_with_existing_entity	local:replacing_with	local:existing_entity	.
-local:framework_against_stateoftheart_baselines	local:against_state-of-the-artbaselines	local:framework	.
-local:combines	vn.role:Agent	local:framework	.
+local:s7	rdf:object	local:existing_entity_from_the_ontologybased_knowledge_base	.
 local:quality_issues	rdfs:subClassOf	local:issues	.
-local:such_literals	rdfs:subClassOf	local:literals	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:evaluate	vn.role:Theme	local:framework	.
-local:evaluate_for_semantic_typing	local:for_semantictyping	local:evaluate	.
-local:new	rdfs:member	local:new_entity	.
-local:various_quality_issues	rdfs:subClassOf	local:quality_issues	.
-local:automated_canonicalization_of_such_literals	local:of_suchliterals	local:automated_canonicalization	.
-local:very_valuable_resources	rdfs:subClassOf	local:resources	.
-local:such	rdfs:member	local:such_literals	.
-local:replacing	vn.role:Theme1	local:existing_entity	.
-local:replacing	vn.role:Agent	local:automated_canonicalization_of_such_literals	.
-local:ontologybased_knowledge	rdfs:member	local:ontologybased_knowledge_base	.
-local:framework_against_stateoftheart_baselines	local:framework_against	local:stateoftheart_baselines	.
-local:very	rdfs:member	local:very_valuable	.
-local:ontologybased_knowledge_bases_like_dbpedia_usefulness	local:ontology-basedknowledgebases_like	local:dbpedia_usefulness	.
-local:automated_canonicalization_of_such_literals	local:automatedcanonicalization_of	local:such_literals	.
-local:limited	vn.role:Patient	local:valuable_resources	.
-local:typed	vn.role:Theme	local:entities	.
 local:ontologybased_knowledge	rdfs:subClassOf	local:knowledge	.
-local:dbpedia	rdfs:member	local:dbpedia_usefulness	.
-local:ontologybased_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:ontologybased_knowledge_bases_like_dbpedia	local:like_dbpedia	local:ontologybased_knowledge_bases	.
-local:replacing_with_existing_entity_with_new_entity	local:with_newentity	local:replacing_with_existing_entity	.
-local:stateoftheart_baselines	rdfs:subClassOf	local:baselines	.
-local:replacing	vn.role:Theme2	local:literal	.
-local:existing_entity	rdfs:subClassOf	local:entity	.
-local:various_quality_issues	rdfs:subClassOf	local:issues	.
+local:s4	rdf:subject	local:new_entity	.
+local:s11.1	rdf:predicate	local:match	.
+local:relevant_entities_and_types	rdfs:member	local:relevant_entities	.
+local:s6	rdf:predicate	local:replace	.
+local:s0	rdf:predicate	local:base	.
+local:s8.2	rdf:predicate	local:predict	.
+local:s5	local:AM-LOC	local:paper	.
+local:s7.1	rdf:predicate	local:exist	.
+local:classes_ontologybased_knowledge_base	rdfs:subClassOf	local:ontologybased_knowledge_base	.
 local:semantic_typing	rdfs:subClassOf	local:typing	.
-local:existing	vn.role:Location	local:entity	.
-local:very_valuable	rdfs:member	local:very_valuable_resources	.
-local:various	rdfs:member	local:various_quality	.
-local:semantic	rdfs:member	local:semantic_typing	.
-local:typed	local:AM-MNR	local:semantically	.
-local:study	local:AM-LOC	local:paper	.
-local:study	vn.role:Agent	local:we	.
+local:s3	rdf:predicate	local:type	.
+local:s0.1	rdf:predicate	local:limit	.
+local:s12	rdf:object	local:reasoning_learning	.
+local:s11.1	rdf:subject	local:entity	.
+local:stateoftheart_baselines_for_entity_matching	rdfs:member	local:entity_matching	.
+local:stateoftheart_baselines	rdfs:member	local:stateoftheart	.
+local:s9	rdf:object	local:framework	.
+local:knowledge_base	rdfs:member	local:knowledge	.
+local:s6	rdf:object	local:new_entity	.
+local:relevant_entities_and_types	rdfs:member	local:types	.
+local:s5	rdf:predicate	local:study	.
+local:s12.2	rdf:subject	local:relevant_entities_and_types	.
+local:s10	rdf:object	local:framework	.
+local:existing_entity_from_ontologybased_knowledge_base	rdfs:member	local:ontologybased_knowledge_base	.
+local:various_quality_issues	rdfs:subClassOf	local:issues	.
+local:s1	rdf:subject	local:ontologybased_knowledge	.
+local:using_classes_from_the_ontologybased_knowledge_base	rdfs:member	local:classes	.
+local:stateoftheart_baselines_for_both_semantic_typing	rdfs:member	local:semantic_typing	.
+local:classes_from_ontologybased_knowledge_base	rdfs:member	local:classes	.
+local:s1	rdf:predicate	local:base	.
+local:automated_canonicalization_of_such_literals	rdfs:member	local:canonicalization	.
+local:quality_issues	rdfs:member	local:quality	.
+local:using_classes_from_the_ontologybased_knowledge_base	rdfs:member	local:knowledge_base	.
+local:existing_entity_from_ontologybased_knowledge_base	rdfs:member	local:s7.1	.
+local:s4	local:AM-MNR	local:using_classes_from_the_ontologybased_knowledge_base	.
+local:s8	rdf:subject	local:framework	.
+local:existing_entity_from_the_ontologybased_knowledge_base	rdfs:member	local:knowledge_base	.
+local:stateoftheart_baselines_for_semantic_typing	rdfs:member	local:semantic_typing	.
+local:semantic_typing	rdfs:member	local:semantic	.
 local:various_quality	rdfs:subClassOf	local:quality	.
-local:evaluate_for_semantic_typing	local:evaluate_for	local:semantic_typing	.
-local:propose	vn.role:Topic	local:framework	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:various_quality	rdfs:member	local:various_quality_issues	.
-local:ontologybased	rdfs:member	local:ontologybased_knowledge	.
-local:predict	vn.role:Cause	local:relevant_entities	.
-local:quality	rdfs:member	local:quality_issues	.
-local:relevant	rdfs:member	local:relevant_entities	.
-local:ontologybased_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
-local:study	vn.role:Theme	local:automated_canonicalization_of_such_literals	.
 local:new_entity	rdfs:subClassOf	local:entity	.
-local:ontologybased_knowledge_bases_like_dbpedia	local:ontology-basedknowledgebases_like	local:dbpedia	.
-local:typed	vn.role:Theme	local:new_entity	.
-local:evaluate_for_semantic_typing_for_entity_matching	local:evaluateforsemantictyping_for	local:entity_matching	.
-local:combines	vn.role:Patient	local:reasoning	.
-local:evaluate	local:AM-PNC	local:semantic_typing	.
-local:stateoftheart	rdfs:member	local:stateoftheart_baselines	.
-local:typed	local:AM-MNR	local:using	.
-local:entity	rdfs:member	local:entity_matching	.
-local:using_from_ontologybased_knowledge_base	local:using_from	local:ontologybased_knowledge_base	.
-local:replacing_with_existing_entity	local:with_existingentity	local:replacing	.
-local:knowledge	rdfs:member	local:knowledge_base	.
-local:typed	vn.role:other	local:ontologybased_knowledge_base	.
-local:existing_entity_from_ontologybased_knowledge_base	local:existingentity_from	local:ontologybased_knowledge_base	.
-local:using	vn.role:Theme	local:classes	.
+local:entity_matching	rdfs:subClassOf	local:matching	.
+local:s10	local:AM-MNR	local:stateoftheart_baselines_for_both_semantic_typing	.
+local:dbpedia_usefulness	rdfs:subClassOf	local:usefulness	.
+local:various_quality_issues	rdfs:subClassOf	local:quality_issues	.
+local:stateoftheart_baselines	rdfs:subClassOf	local:baselines	.
+local:s7	rdf:predicate	local:replace	.
+local:s10	rdf:predicate	local:evaluate	.
+local:s1	rdf:object	local:rrb_like_dbpedia_usefulness	.
+local:s12.1	rdf:subject	local:reasoning	.
+local:s7	rdf:subject	local:literal	.
+local:such_literals	rdfs:member	local:such	.
+local:existing_entity_from_the_ontologybased_knowledge_base	rdfs:member	local:entity	.
 local:knowledge_base	rdfs:subClassOf	local:base	.
-local:learning	vn.role:Agent	local:reasoning	.
-local:valuable	rdfs:member	local:valuable_resources	.
-local:machine_learning	rdfs:subClassOf	local:learning	.
-local:ontologybased_knowledge_bases_like_dbpedia_usefulness	local:like_dbpediausefulness	local:ontologybased_knowledge_bases	.
-local:using	vn.role:Recipient	local:ontologybased_knowledge_base	.
-local:evaluate	vn.role:Agent	local:we	.
-local:very_valuable	rdfs:subClassOf	local:valuable	.
-local:ontologybased_knowledge_bases_like_dbpedia_usefulness_like_usability	local:like_usability	local:ontologybased_knowledge_bases_like_dbpedia_usefulness	.
+local:relevant_entities	rdfs:member	local:relevant	.
+local:stateoftheart_baselines_for_both_semantic_typing	rdfs:member	local:stateoftheart_baselines	.
+local:s12.2	rdf:predicate	local:predict	.
+local:framework_against_stateoftheart_baselines	rdfs:member	local:framework	.
+local:s8.1	rdf:subject	local:machine	.
+local:s8	rdf:object	local:machine	.
+local:reasoning_learning	rdfs:subClassOf	local:learning	.
+local:s1.1	rdf:predicate	local:limit	.
+local:classes_ontologybased_knowledge_base	rdfs:member	local:knowledge_base	.
+local:classes_ontologybased_knowledge_base	rdfs:member	local:classes	.
+local:s9	rdf:subject	local:we	.
+local:framework_against_stateoftheart_baselines_for_both_entity_matching	rdfs:member	local:stateoftheart_baselines	.
+local:new_entity	rdfs:member	local:new	.
+local:s10	rdf:subject	local:we	.
+local:s12	rdf:subject	local:framework	.
+local:s0.1	rdf:object	local:usability	.
+local:s11	rdf:predicate	local:evaluate	.
 local:relevant_entities	rdfs:subClassOf	local:entities	.
-local:using_from_ontologybased_knowledge_base	local:from_ontology-basedknowledgebase	local:using	.
-local:evaluate_for_semantic_typing_for_entity_matching	local:for_entitymatching	local:evaluate_for_semantic_typing	.
+local:s5.1	rdfs:subClassOf	local:canonicalization	.
+local:s8	rdf:predicate	local:combine	.
+local:automated_canonicalization_of_such_literals	rdfs:member	local:s5.1	.
+local:s8.2	rdf:subject	local:relevant_entities_and_types	.
+local:s5	rdf:object	local:automated_canonicalization_of_such_literals	.
+local:framework_against_stateoftheart_baselines_for_both_entity_matching	rdfs:member	local:entity	.
+local:s4	rdf:predicate	local:type	.
+local:s3	rdf:subject	local:entities	.
+local:s0.1	rdf:subject	local:various_quality_issues	.
+local:s8.1	rdf:predicate	local:learn	.
+local:s5	rdf:subject	local:we	.
+local:classes_from_ontologybased_knowledge_base	rdfs:member	local:ontologybased_knowledge_base	.
+local:s5.1	rdf:predicate	local:automate	.
+local:rrb_like_dbpedia_usefulness	rdfs:member	local:rrb	.
+local:such_literals	rdfs:subClassOf	local:literals	.
+local:s4.1	rdf:object	local:classes_ontologybased_knowledge_base	.
+local:s5.1	rdf:subject	local:canonicalization	.
+local:dbpedia_usefulness	rdfs:member	local:dbpedia	.
+local:stateoftheart_baselines_for_semantic_typing	rdfs:member	local:stateoftheart_baselines	.
+local:stateoftheart_baselines_for_entity_matching	rdfs:member	local:stateoftheart_baselines	.
+local:framework_against_stateoftheart_baselines	rdfs:member	local:stateoftheart_baselines	.
+local:s4.1	rdf:subject	local:new_entity	.
+local:s1.1	rdf:subject	local:various_quality_issues	.
+local:ontologybased_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
+local:s0	rdf:object	local:rrb_like_dbpedia_usefulness	.
+local:s12	rdf:predicate	local:combine	.
+local:s7.1	rdfs:subClassOf	local:entity	.
+local:s6	rdf:subject	local:literal	.
+local:s1.1	rdf:object	local:usability	.
+local:various_quality	rdfs:member	local:various	.
+local:s7.1	rdf:subject	local:entity	.
+local:s11	rdf:subject	local:we	.
+local:framework_against_stateoftheart_baselines_for_both_entity_matching	rdfs:member	local:framework	.
+local:automated_canonicalization_of_such_literals	rdfs:member	local:such_literals	.
+local:s4.1	rdf:predicate	local:use	.
+local:rrb_like_dbpedia_usefulness	rdfs:member	local:dbpedia_usefulness	.
+local:s12.1	rdf:predicate	local:learn	.
+local:s0	rdf:subject	local:ontologybased_knowledge	.
+local:s11	rdf:object	local:framework_against_stateoftheart_baselines_for_both_entity_matching	.
+local:various_quality_issues	rdfs:member	local:various_quality	.
+local:s9	rdf:predicate	local:propose	.

@@ -1,381 +1,309 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"such counting quantifiers neglected by prior work"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"such counting quantifiers can help in a variety of tasks such as knowledge base curation"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"counting quantifiers"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"such counting quantifiers can help in a variety of tasks such as query answering"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"counting quantifiers"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"texts mentioning the objects a number of objects"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"information stating that a subject is in a specific relation with a number of objects without mentioning the objects a number of objects"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"yet texts often also contain counting information stating that a subject is in a specific relation with a number of objects without mentioning the objects a number of objects"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"information extraction extracting relations between identifiable entities"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"information extraction traditionally focuses on extracting relations between identifiable entities"	.
+
+
 #### Classes ####
 
-local:information	rdfs:label	"information"	.
+local:counting_quantifiers	a	rdf:Class	;
+	rdfs:label	"counting quantifiers"	.
 
-local:information_extraction	rdfs:label	"information extraction"	.
+local:neglect	a	rdf:Class	;
+	rdfs:label	"neglect"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:prior_work	a	rdf:Class	;
+	rdfs:label	"prior work"	.
 
-local:focuses	rdfs:label	"focuses"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:traditionally	rdfs:label	"traditionally"	.
+local:prior	a	rdf:Class	;
+	rdfs:label	"prior"	.
 
-local:_lrb__rangle_	rdfs:label	"\ -lrb- \ rangle \"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:	rdfs:label	"\"	.
+local:variety_of_tasks_such_as_knowledge_base_curation	a	rdf:Class	;
+	rdfs:label	"variety of tasks such as knowledge base curation"	.
 
-local:rangle_	rdfs:label	"rangle \"	.
+local:variety	a	rdf:Class	;
+	rdfs:label	"variety"	.
 
-local:rangle__rrb	rdfs:label	"rangle \ -rrb-"	.
+local:knowledge_base_curation	a	rdf:Class	;
+	rdfs:label	"knowledge base curation"	.
 
-local:langle__rrb_monterey	rdfs:label	"langle \ -rrb- monterey"	.
+local:tasks	a	rdf:Class	;
+	rdfs:label	"tasks"	.
 
-local:monterey	rdfs:label	"monterey"	.
+local:base_curation	a	rdf:Class	;
+	rdfs:label	"base curation"	.
 
-local:_lrb__langle	rdfs:label	"\ -lrb- \ langle"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:_lrb__langle_	rdfs:label	"\ -lrb- \ langle \"	.
+local:curation	a	rdf:Class	;
+	rdfs:label	"curation"	.
 
-local:california__lrb__rangle_	rdfs:label	"california \ -lrb- \ rangle \"	.
+local:knowledge_base	a	rdf:Class	;
+	rdfs:label	"knowledge base"	.
 
-local:california__lrb__rangle__rrb	rdfs:label	"california \ -lrb- \ rangle \ -rrb-"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:_lrb__rangle	rdfs:label	"\ -lrb- \ rangle"	.
+local:variety_of_tasks	a	rdf:Class	;
+	rdfs:label	"variety of tasks"	.
 
-local:rangle	rdfs:label	"rangle"	.
+local:tasks_such_as_knowledge_base_curation	a	rdf:Class	;
+	rdfs:label	"tasks such_as knowledge base curation"	.
 
-local:langle__rrb	rdfs:label	"langle \ -rrb-"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:_lrb__langle__rrb	rdfs:label	"\ -lrb- \ langle \ -rrb-"	.
+local:quantifiers	a	rdf:Class	;
+	rdfs:label	"quantifiers"	.
 
-local:rrb	rdfs:label	"-rrb-"	.
+local:count	a	rdf:Class	;
+	rdfs:label	"count"	.
 
-local:_rangle	rdfs:label	"\ rangle"	.
+local:variety_of_tasks_such_as_query_answering	a	rdf:Class	;
+	rdfs:label	"variety of tasks such as query answering"	.
 
-local:_rangle_	rdfs:label	"\ rangle \"	.
+local:query_answering	a	rdf:Class	;
+	rdfs:label	"query answering"	.
 
-local:_rangle__rrb	rdfs:label	"\ rangle \ -rrb-"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:lrb__langle__rrb	rdfs:label	"-lrb- \ langle \ -rrb-"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-local:lrb__langle__rrb_monterey	rdfs:label	"-lrb- \ langle \ -rrb- monterey"	.
+local:tasks_such_as_query_answering	a	rdf:Class	;
+	rdfs:label	"tasks such_as query answering"	.
 
-local:_rrb	rdfs:label	"\ -rrb-"	.
+local:texts	a	rdf:Class	;
+	rdfs:label	"texts"	.
 
-local:identifiable_entities	rdfs:label	"identifiable entities"	.
+local:mention	a	rdf:Class	;
+	rdfs:label	"mention"	.
 
-local:entities	rdfs:label	"entities"	.
+local:objects_a_number_of_objects	a	rdf:Class	;
+	rdfs:label	"objects a number of objects"	.
 
-local:california__lrb	rdfs:label	"california \ -lrb-"	.
+local:objects	a	rdf:Class	;
+	rdfs:label	"objects"	.
 
-local:lrb	rdfs:label	"-lrb-"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:_lrb__langle__rrb_monterey	rdfs:label	"\ -lrb- \ langle \ -rrb- monterey"	.
+local:a_objects	a	rdf:Class	;
+	rdfs:label	"a objects"	.
 
-local:langle	rdfs:label	"langle"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:langle_	rdfs:label	"langle \"	.
+local:state	a	rdf:Class	;
+	rdfs:label	"state"	.
 
-local:california__lrb_	rdfs:label	"california \ -lrb- \"	.
+local:subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	a	rdf:Class	;
+	rdfs:label	"subject is in a specific relation with a number of objects without mentioning the objects a number of objects"	.
 
-local:_langle_	rdfs:label	"\ langle \"	.
+local:specific_relation	a	rdf:Class	;
+	rdfs:label	"specific relation"	.
 
-local:_langle__rrb	rdfs:label	"\ langle \ -rrb-"	.
+local:subject	a	rdf:Class	;
+	rdfs:label	"subject"	.
 
-local:_lrb__rangle__rrb	rdfs:label	"\ -lrb- \ rangle \ -rrb-"	.
+local:specific	a	rdf:Class	;
+	rdfs:label	"specific"	.
 
-local:_langle	rdfs:label	"\ langle"	.
+local:relation	a	rdf:Class	;
+	rdfs:label	"relation"	.
 
-local:california_	rdfs:label	"california \"	.
+local:objects_relation	a	rdf:Class	;
+	rdfs:label	"objects relation"	.
 
-local:california__lrb__rangle	rdfs:label	"california \ -lrb- \ rangle"	.
+local:specific_objects_relation	a	rdf:Class	;
+	rdfs:label	"specific objects relation"	.
 
-local:_lrb	rdfs:label	"\ -lrb-"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:_rrb_monterey	rdfs:label	"\ -rrb- monterey"	.
+local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	a	rdf:Class	;
+	rdfs:label	"counting information stating that a subject is in a specific relation with a number of objects without mentioning the objects a number of objects"	.
 
-local:lrb_	rdfs:label	"-lrb- \"	.
+local:information_stating	a	rdf:Class	;
+	rdfs:label	"information stating"	.
 
-local:lrb__rangle	rdfs:label	"-lrb- \ rangle"	.
+local:stating	a	rdf:Class	;
+	rdfs:label	"stating"	.
 
-local:lrb__langle_	rdfs:label	"-lrb- \ langle \"	.
+local:yet	a	rdf:Class	;
+	rdfs:label	"yet"	.
 
-local:rrb_monterey	rdfs:label	"-rrb- monterey"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:identifiable	rdfs:label	"identifiable"	.
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
 
-local:_lrb_	rdfs:label	"\ -lrb- \"	.
+local:information_extraction	a	rdf:Class	;
+	rdfs:label	"information extraction"	.
 
-local:lrb__langle	rdfs:label	"-lrb- \ langle"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:lrb__rangle_	rdfs:label	"-lrb- \ rangle \"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:lrb__rangle__rrb	rdfs:label	"-lrb- \ rangle \ -rrb-"	.
+local:relations_between_identifiable_entities	a	rdf:Class	;
+	rdfs:label	"relations between identifiable entities"	.
 
-local:california	rdfs:label	"california"	.
+local:identifiable_entities	a	rdf:Class	;
+	rdfs:label	"identifiable entities"	.
 
-local:_langle__rrb_monterey	rdfs:label	"\ langle \ -rrb- monterey"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:relations_between_identifiable_entities	rdfs:label	"relations between identifiable entities"	.
+local:identifiable	a	rdf:Class	;
+	rdfs:label	"identifiable"	.
 
-local:relations	rdfs:label	"relations"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:identifiable_entities_suchas__lrb__langle__rrb_monterey	rdfs:label	"identifiable entities such_as \ -lrb- \ langle \ -rrb- monterey"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:extracting	rdfs:label	"extracting"	.
+local:extracting_relations_between_identifiable_entities	a	rdf:Class	;
+	rdfs:label	"extracting relations between identifiable entities"	.
 
-local:yet_texts	rdfs:label	"yet texts"	.
-
-local:texts	rdfs:label	"texts"	.
-
-local:contain	rdfs:label	"contain"	.
-
-local:often	rdfs:label	"often"	.
-
-local:also	rdfs:label	"also"	.
-
-local:specific	rdfs:label	"specific"	.
-
-local:specific_relation	rdfs:label	"specific relation"	.
-
-local:relation	rdfs:label	"relation"	.
-
-local:58_counties	rdfs:label	"58 counties"	.
-
-local:counties	rdfs:label	"counties"	.
-
-local:a_objects	rdfs:label	"a objects"	.
-
-local:objects	rdfs:label	"objects"	.
-
-local:objects_relation	rdfs:label	"objects relation"	.
-
-local:specific_objects_relation	rdfs:label	"specific objects relation"	.
-
-local:number_for_example	rdfs:label	"number for example"	.
-
-local:number	rdfs:label	"number"	.
-
-local:example	rdfs:label	"example"	.
-
-local:monterey_california	rdfs:label	"monterey california"	.
-
-local:divided_into_58_counties	rdfs:label	"divided into 58 counties"	.
-
-local:divided	rdfs:label	"divided"	.
-
-local:counting	rdfs:label	"counting"	.
-
-local:stating	rdfs:label	"stating"	.
-
-local:mentioning	rdfs:label	"mentioning"	.
-
-local:number_of_objects	rdfs:label	"number of objects"	.
-
-local:monterey_california_for_example	rdfs:label	"monterey california for example"	.
-
-local:monterey_california_for_example_locatedin	rdfs:label	"monterey california for example locatedin"	.
-
-local:locatedin	rdfs:label	"locatedin"	.
-
-local:neglected	rdfs:label	"neglected"	.
-
-local:prior	rdfs:label	"prior"	.
-
-local:prior_work	rdfs:label	"prior work"	.
-
-local:work	rdfs:label	"work"	.
-
-local:quantifiers	rdfs:label	"quantifiers"	.
-
-local:help	rdfs:label	"help"	.
-
-local:can	rdfs:label	"can"	.
-
-local:base_curation	rdfs:label	"base curation"	.
-
-local:curation	rdfs:label	"curation"	.
-
-local:knowledge_base_curation	rdfs:label	"knowledge base curation"	.
-
-local:base	rdfs:label	"base"	.
-
-local:knowledge_base	rdfs:label	"knowledge base"	.
-
-local:knowledge	rdfs:label	"knowledge"	.
-
-local:variety_of_tasks	rdfs:label	"variety of tasks"	.
-
-local:variety	rdfs:label	"variety"	.
-
-local:tasks	rdfs:label	"tasks"	.
-
-local:tasks_suchas_knowledge_base_curation	rdfs:label	"tasks such_as knowledge base curation"	.
-
-local:query_answering	rdfs:label	"query answering"	.
-
-local:answering	rdfs:label	"answering"	.
-
-local:query	rdfs:label	"query"	.
-
-local:tasks_suchas_query_answering	rdfs:label	"tasks such_as query answering"	.
-
-#### Properties ####
+local:traditionally	a	rdf:Class	;
+	rdfs:label	"traditionally"	.
 
 #### Mapped Relations ####
 
-cso:information_extraction	rdfs:label	"information extraction"	.
-cso:query_answering	rdfs:label	"query answering"	.
 cso:knowledge_base	rdfs:label	"knowledge base"	.
 local:information_extraction	owl:sameAs	cso:information_extraction	.
 local:knowledge_base	owl:sameAs	cso:knowledge_base	.
 local:query_answering	owl:sameAs	cso:query_answering	.
+cso:query_answering	rdfs:label	"query answering"	.
+cso:information_extraction	rdfs:label	"information extraction"	.
 
 #### Relations ####
 
-local:_rrb	rdfs:subClassOf	local:rrb	.
-local:_lrb_	rdfs:member	local:_lrb__langle	.
-local:identifiable_entities_suchas__lrb__langle__rrb_monterey	local:such_as_\-lrb-\langle\-rrb-monterey	local:identifiable_entities	.
-local:prior	rdfs:member	local:prior_work	.
-local:langle_	rdfs:member	local:langle__rrb	.
-local:lrb_	rdfs:member	local:lrb__langle	.
-local:58_counties	rdfs:subClassOf	local:counties	.
-local:langle__rrb_monterey	rdfs:subClassOf	local:monterey	.
-local:california__lrb	rdfs:member	local:california__lrb_	.
-local:counting	vn.role:Agent	local:quantifiers	.
-local:contain	local:AM-DIS	local:also	.
-local:rrb_monterey	rdfs:subClassOf	local:monterey	.
-local:lrb__langle__rrb_monterey	rdfs:subClassOf	local:monterey	.
-local:lrb__langle	rdfs:member	local:lrb__langle_	.
-local:information	rdfs:member	local:information_extraction	.
-local:_lrb__langle__rrb_monterey	rdfs:subClassOf	local:lrb__langle__rrb_monterey	.
-local:contain	local:AM-TMP	local:often	.
-local:prior_work	rdfs:subClassOf	local:work	.
-local:help	vn.role:Agent	local:counting	.
-local:_rangle_	rdfs:subClassOf	local:	.
-local:_lrb__rangle_	rdfs:subClassOf	local:	.
-local:california__lrb__rangle	rdfs:subClassOf	local:_lrb__rangle	.
-local:yet_texts	rdfs:subClassOf	local:texts	.
-local:lrb__langle__rrb	rdfs:subClassOf	local:rrb	.
-local:contain	vn.role:Theme2	local:counting	.
-local:stating	vn.role:Topic	local:specific_objects_relation	.
-local:rangle_	rdfs:member	local:rangle__rrb	.
-local:_langle	rdfs:subClassOf	local:langle	.
-local:_rangle__rrb	rdfs:subClassOf	local:rrb	.
-local:extracting	vn.role:Agent	local:information_extraction	.
-local:rangle	rdfs:member	local:rangle_	.
-local:_lrb_	rdfs:subClassOf	local:	.
-local:_lrb__rangle	rdfs:subClassOf	local:lrb__rangle	.
-local:monterey_california	local:_california	local:monterey	.
+local:knowledge_base_curation	rdfs:member	local:knowledge_base	.
+local:base_curation	rdfs:member	local:base	.
+local:variety_of_tasks_such_as_knowledge_base_curation	rdfs:member	local:knowledge_base_curation	.
+local:s1.1	rdf:predicate	local:state	.
+local:specific_relation	rdfs:member	local:specific	.
+local:s1	rdf:predicate	local:contain	.
+local:prior_work	rdfs:member	local:prior	.
+local:s2.1	rdf:subject	local:s3	.
+local:s4	local:AM-TMP	local:prior_work	.
+local:s3.1	local:AM-MOD	local:can	.
+local:variety_of_tasks_such_as_query_answering	rdfs:member	local:query_answering	.
+local:s1.1	rdf:object	local:subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	.
+local:information_stating	rdfs:member	local:information	.
+local:s2.1	local:AM-MOD	local:can	.
+local:variety_of_tasks_such_as_query_answering	rdfs:member	local:variety	.
+local:s0.1	rdf:predicate	local:extract	.
+local:s4	rdf:subject	local:counting_quantifiers	.
+local:subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:subject	.
+local:s1	rdf:subject	local:texts	.
+local:s0	rdf:predicate	local:focus	.
+local:s3.1	local:AM-LOC	local:variety_of_tasks_such_as_knowledge_base_curation	.
+local:s1.2	rdf:subject	local:texts	.
+local:variety_of_tasks	rdfs:member	local:variety	.
+local:information_extraction	rdfs:member	local:information	.
+local:s3.1	rdf:subject	local:counting_quantifiers	.
+local:extracting_relations_between_identifiable_entities	rdfs:member	local:identifiable_entities	.
+local:variety_of_tasks_such_as_knowledge_base_curation	rdfs:member	local:variety	.
 local:a_objects	rdfs:subClassOf	local:objects	.
-local:number_for_example	local:number_for	local:example	.
-local:_rangle	rdfs:subClassOf	local:rangle	.
-local:lrb_	rdfs:member	local:lrb__rangle	.
-local:_lrb	rdfs:member	local:_lrb_	.
-local:	rdfs:member	local:_lrb	.
-local:monterey_california_for_example_locatedin	local:montereycaliforniaforexample_	local:locatedin	.
-local:california__lrb__rangle__rrb	rdfs:subClassOf	local:rrb	.
-local:lrb__langle_	rdfs:member	local:lrb__langle__rrb	.
-local:monterey_california_for_example	local:montereycalifornia_for	local:example	.
-local:_lrb__langle_	rdfs:subClassOf	local:	.
-local:tasks_suchas_query_answering	local:tasks_such_as	local:query_answering	.
-local:_langle	rdfs:member	local:_langle_	.
-local:neglected	vn.role:Theme	local:counting	.
-local:knowledge_base	rdfs:member	local:knowledge_base_curation	.
-local:langle	rdfs:member	local:langle_	.
-local:_lrb__rangle	rdfs:member	local:_lrb__rangle_	.
-local:lrb_	rdfs:subClassOf	local:	.
-local:lrb__langle__rrb	rdfs:member	local:lrb__langle__rrb_monterey	.
-local:divided_into_58_counties	local:into_58counties	local:divided	.
-local:specific_relation	rdfs:subClassOf	local:relation	.
-local:lrb__langle__rrb_monterey	rdfs:subClassOf	local:_langle__rrb_monterey	.
-local:tasks_suchas_knowledge_base_curation	local:tasks_such_as	local:knowledge_base_curation	.
-local:number_of_objects	local:of_objects	local:number	.
-local:knowledge_base_curation	rdfs:subClassOf	local:base_curation	.
-local:_rangle	rdfs:member	local:_rangle_	.
-local:california__lrb__rangle	rdfs:member	local:california__lrb__rangle_	.
-local:lrb__rangle	rdfs:subClassOf	local:rangle	.
-local:specific_objects_relation	rdfs:subClassOf	local:objects_relation	.
-local:neglected	local:AM-TMP	local:work	.
-local:identifiable_entities_suchas__lrb__langle__rrb_monterey	local:identifiableentities_such_as	local:_lrb__langle__rrb_monterey	.
-local:_rrb_monterey	rdfs:subClassOf	local:monterey	.
-local:rangle__rrb	rdfs:subClassOf	local:rrb	.
-local:_lrb__langle__rrb	rdfs:member	local:_lrb__langle__rrb_monterey	.
-local:_langle__rrb	rdfs:subClassOf	local:rrb	.
-local:_lrb_	rdfs:member	local:_lrb__rangle	.
-local:california	rdfs:member	local:california_	.
-local:	rdfs:member	local:_rangle	.
-local:rrb	rdfs:member	local:rrb_monterey	.
-local:california__lrb_	rdfs:subClassOf	local:	.
-local:base_curation	rdfs:subClassOf	local:curation	.
-local:_langle_	rdfs:subClassOf	local:	.
-local:help	local:AM-MOD	local:can	.
-local:mentioning	vn.role:Topic	local:objects	.
-local:_lrb__langle__rrb_monterey	rdfs:subClassOf	local:monterey	.
-local:monterey_california	rdfs:subClassOf	local:california	.
-local:lrb__rangle_	rdfs:subClassOf	local:	.
-local:divided	vn.role:Instrument	local:58_counties	.
-local:_rrb	rdfs:member	local:_rrb_monterey	.
-local:focuses	local:AM-ADV	local:traditionally	.
-local:objects_relation	rdfs:subClassOf	local:relation	.
-local:variety_of_tasks	local:variety_of	local:tasks	.
-local:_lrb__rangle__rrb	rdfs:subClassOf	local:rrb	.
-local:divided	vn.role:Patient	local:monterey_california_for_example_locatedin	.
-local:langle__rrb	rdfs:subClassOf	local:rrb	.
-local:tasks_suchas_knowledge_base_curation	local:such_as_knowledgebasecuration	local:tasks	.
-local:identifiable	rdfs:member	local:identifiable_entities	.
-local:california__lrb__rangle_	rdfs:member	local:california__lrb__rangle__rrb	.
-local:	rdfs:member	local:_rrb	.
-local:california_	rdfs:member	local:california__lrb	.
-local:base	rdfs:member	local:base_curation	.
-local:	rdfs:member	local:_langle	.
-local:_langle__rrb	rdfs:member	local:_langle__rrb_monterey	.
-local:_lrb__langle__rrb	rdfs:subClassOf	local:rrb	.
-local:_lrb__langle	rdfs:subClassOf	local:langle	.
-local:langle__rrb	rdfs:member	local:langle__rrb_monterey	.
-local:monterey_california_for_example_locatedin	local:_locatedin	local:monterey_california_for_example	.
-local:query_answering	rdfs:subClassOf	local:answering	.
-local:_langle_	rdfs:member	local:_langle__rrb	.
-local:lrb__langle_	rdfs:subClassOf	local:	.
-local:lrb__rangle_	rdfs:member	local:lrb__rangle__rrb	.
-local:lrb__langle	rdfs:subClassOf	local:langle	.
-local:relations_between_identifiable_entities	local:relations_between	local:identifiable_entities	.
-local:lrb__rangle	rdfs:member	local:lrb__rangle_	.
-local:lrb	rdfs:member	local:lrb_	.
-local:_lrb__rangle	rdfs:subClassOf	local:rangle	.
-local:california__lrb_	rdfs:member	local:california__lrb__rangle	.
-local:specific	rdfs:member	local:specific_relation	.
-local:contain	vn.role:Theme1	local:yet_texts	.
-local:monterey_california	local:monterey_	local:california	.
-local:_lrb__rangle_	rdfs:member	local:_lrb__rangle__rrb	.
-local:california__lrb__rangle	rdfs:subClassOf	local:rangle	.
-local:knowledge	rdfs:member	local:knowledge_base	.
-local:divided_into_58_counties	local:divided_into	local:58_counties	.
-local:_langle__rrb_monterey	rdfs:subClassOf	local:monterey	.
-local:relations_between_identifiable_entities	local:between_identifiableentities	local:relations	.
-local:help	local:AM-LOC	local:variety_of_tasks	.
-local:langle_	rdfs:subClassOf	local:	.
-local:focuses	vn.role:Experiencer	local:information_extraction	.
-local:lrb__rangle__rrb	rdfs:subClassOf	local:rrb	.
-local:focuses	vn.role:indirect_object	local:extracting	.
-local:rangle_	rdfs:subClassOf	local:	.
-local:lrb__rangle	rdfs:subClassOf	local:_rangle	.
-local:california_	rdfs:subClassOf	local:	.
-local:extracting	vn.role:Theme	local:relations_between_identifiable_entities	.
-local:tasks_suchas_query_answering	local:such_as_queryanswering	local:tasks	.
-local:_rrb_monterey	rdfs:subClassOf	local:rrb_monterey	.
-local:monterey_california_for_example	local:for_example	local:monterey_california	.
+local:s1	local:AM-DIS	local:also	.
 local:knowledge_base	rdfs:subClassOf	local:base	.
-local:variety_of_tasks	local:of_tasks	local:variety	.
-local:_lrb__langle	rdfs:member	local:_lrb__langle_	.
-local:_lrb	rdfs:subClassOf	local:lrb	.
-local:langle__rrb_monterey	rdfs:subClassOf	local:_rrb_monterey	.
-local:query	rdfs:member	local:query_answering	.
-local:identifiable_entities	rdfs:subClassOf	local:entities	.
-local:stating	vn.role:Agent	local:counting	.
-local:california__lrb__rangle_	rdfs:subClassOf	local:	.
-local:number_of_objects	local:number_of	local:objects	.
-local:knowledge_base_curation	rdfs:subClassOf	local:curation	.
-local:number_for_example	local:for_example	local:number	.
-local:_langle__rrb_monterey	rdfs:subClassOf	local:langle__rrb_monterey	.
-local:_lrb__langle_	rdfs:member	local:_lrb__langle__rrb	.
-local:_rangle_	rdfs:member	local:_rangle__rrb	.
+local:objects_relation	rdfs:subClassOf	local:relation	.
 local:information_extraction	rdfs:subClassOf	local:extraction	.
-local:california__lrb	rdfs:subClassOf	local:lrb	.
+local:s1	local:AM-DIS	local:yet	.
+local:s3	rdf:subject	local:quantifiers	.
+local:s3	rdf:predicate	local:count	.
+local:extracting_relations_between_identifiable_entities	rdfs:member	local:relations	.
+local:variety_of_tasks	rdfs:member	local:tasks	.
+local:s0	rdf:subject	local:information_extraction	.
+local:prior_work	rdfs:subClassOf	local:work	.
+local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:number	.
+local:s1.1	rdf:subject	local:information	.
+local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:specific_relation	.
+local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:objects	.
+local:s1.2	rdf:object	local:objects_a_number_of_objects	.
+local:relations_between_identifiable_entities	rdfs:member	local:relations	.
+local:s1.2	rdf:predicate	local:mention	.
+local:tasks_such_as_knowledge_base_curation	rdfs:member	local:tasks	.
+local:s0	rdf:object	local:extracting_relations_between_identifiable_entities	.
+local:s2.1	local:AM-LOC	local:variety_of_tasks_such_as_query_answering	.
+local:variety_of_tasks_such_as_query_answering	rdfs:member	local:tasks	.
+local:knowledge_base_curation	rdfs:subClassOf	local:base_curation	.
+local:s0.1	rdf:subject	local:information_extraction	.
+local:specific_relation	rdfs:subClassOf	local:relation	.
+local:s4	rdf:predicate	local:neglect	.
+local:tasks_such_as_query_answering	rdfs:member	local:tasks	.
+local:s3.1	rdf:predicate	local:help	.
+local:s0.1	rdf:object	local:relations_between_identifiable_entities	.
+local:tasks_such_as_knowledge_base_curation	rdfs:member	local:knowledge_base_curation	.
+local:specific_objects_relation	rdfs:subClassOf	local:objects_relation	.
+local:tasks_such_as_query_answering	rdfs:member	local:query_answering	.
+local:base_curation	rdfs:subClassOf	local:curation	.
+local:query_answering	rdfs:member	local:query	.
+local:s2	rdf:subject	local:quantifiers	.
+local:information_stating	rdfs:member	local:stating	.
+local:subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:specific_relation	.
+local:s1	local:AM-TMP	local:often	.
+local:identifiable_entities	rdfs:member	local:identifiable	.
+local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:subject	.
+local:s0	local:AM-ADV	local:traditionally	.
+local:variety_of_tasks_such_as_knowledge_base_curation	rdfs:member	local:tasks	.
+local:s2	rdf:predicate	local:count	.
+local:subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:objects	.
+local:s1	rdf:object	local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	.
+local:s2.1	rdf:predicate	local:help	.
+local:counting_information_stating_that_a_subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:information	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:relations_between_identifiable_entities	rdfs:member	local:identifiable_entities	.
+local:knowledge_base_curation	rdfs:subClassOf	local:curation	.
+local:subject_is_in_a_specific_relation_with_a_number_of_objects_without_mentioning_the_objects_a_number_of_objects	rdfs:member	local:number	.
+local:identifiable_entities	rdfs:subClassOf	local:entities	.
+local:knowledge_base	rdfs:member	local:knowledge	.
+local:objects_a_number_of_objects	rdfs:member	local:number	.
+local:objects_a_number_of_objects	rdfs:member	local:objects	.

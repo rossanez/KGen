@@ -1,197 +1,312 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"minimize the amount of expert decisions"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"already approved statements"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"axioms that entailed by the already approved statements"	.
+
+local:s4.4	a	rdf:Statement	;
+	rdfs:label	"axioms"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"each expert decision axioms automatically approved"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"by using automated reasoning we partially automate the process after each expert decision axioms are automatically approved whereas axioms are declined"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"automated reasoning"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"using automated reasoning we"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"axioms that would lead to an inconsistency"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we consider the tightest possible approach"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"acquired data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we consider an exhaustive manual inspection of the acquired data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"when ontological knowledge acquired automatically quality control"	.
+
+
 #### Classes ####
 
-local:ontological	rdfs:label	"ontological"	.
+local:amount_of_expert_decisions	a	rdf:Class	;
+	rdfs:label	"amount of expert decisions"	.
 
-local:ontological_knowledge	rdfs:label	"ontological knowledge"	.
+local:expert_decisions	a	rdf:Class	;
+	rdfs:label	"expert decisions"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:amount	a	rdf:Class	;
+	rdfs:label	"amount"	.
 
-local:acquired	rdfs:label	"acquired"	.
+local:decisions	a	rdf:Class	;
+	rdfs:label	"decisions"	.
 
-local:quality_control	rdfs:label	"quality control"	.
+local:expert	a	rdf:Class	;
+	rdfs:label	"expert"	.
 
-local:control	rdfs:label	"control"	.
+local:minimize	a	rdf:Class	;
+	rdfs:label	"minimize"	.
 
-local:quality	rdfs:label	"quality"	.
+local:statements	a	rdf:Class	;
+	rdfs:label	"statements"	.
 
-local:automatically_quality_control	rdfs:label	"automatically quality control"	.
+local:approve	a	rdf:Class	;
+	rdfs:label	"approve"	.
 
-local:consider	rdfs:label	"consider"	.
+local:already	a	rdf:Class	;
+	rdfs:label	"already"	.
 
-local:we	rdfs:label	"we"	.
+local:entail	a	rdf:Class	;
+	rdfs:label	"entail"	.
 
-local:tightest	rdfs:label	"tightest"	.
+local:axioms	a	rdf:Class	;
+	rdfs:label	"axioms"	.
 
-local:tightest_possible	rdfs:label	"tightest possible"	.
+local:decline	a	rdf:Class	;
+	rdfs:label	"decline"	.
 
-local:possible_approach–	rdfs:label	"possible approach–"	.
+local:expert_decision_axioms	a	rdf:Class	;
+	rdfs:label	"expert decision axioms"	.
 
-local:approach–	rdfs:label	"approach–"	.
+local:decision_axioms	a	rdf:Class	;
+	rdfs:label	"decision axioms"	.
 
-local:tightest_possible_approach–	rdfs:label	"tightest possible approach–"	.
+local:expert_decision	a	rdf:Class	;
+	rdfs:label	"expert decision"	.
 
-local:exhaustive_manual	rdfs:label	"exhaustive manual"	.
+local:decision	a	rdf:Class	;
+	rdfs:label	"decision"	.
 
-local:manual	rdfs:label	"manual"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:possible	rdfs:label	"possible"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:manual_inspection	rdfs:label	"manual inspection"	.
+local:automate	a	rdf:Class	;
+	rdfs:label	"automate"	.
 
-local:inspection	rdfs:label	"inspection"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:exhaustive_manual_inspection	rdfs:label	"exhaustive manual inspection"	.
+local:using_automated_reasoning	a	rdf:Class	;
+	rdfs:label	"using automated reasoning"	.
 
-local:exhaustive	rdfs:label	"exhaustive"	.
+local:automated_reasoning	a	rdf:Class	;
+	rdfs:label	"automated reasoning"	.
 
-local:acquired_data	rdfs:label	"acquired data"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:data	rdfs:label	"data"	.
+local:partially	a	rdf:Class	;
+	rdfs:label	"partially"	.
 
-local:possible_approach	rdfs:label	"possible approach"	.
+local:expert_decision_axioms_are_automatically_approved_whereas_axioms_are_declined	a	rdf:Class	;
+	rdfs:label	"expert decision axioms are automatically approved whereas axioms are declined"	.
 
-local:approach	rdfs:label	"approach"	.
+local:whereas_axioms	a	rdf:Class	;
+	rdfs:label	"whereas axioms"	.
 
-local:tightest_possible_approach	rdfs:label	"tightest possible approach"	.
+local:whereas	a	rdf:Class	;
+	rdfs:label	"whereas"	.
 
-local:exhaustive_manual_inspection_of_acquired_data	rdfs:label	"exhaustive manual inspection of acquired data"	.
+local:automatically_approved	a	rdf:Class	;
+	rdfs:label	"automatically approved"	.
 
-local:lead	rdfs:label	"lead"	.
+local:approved	a	rdf:Class	;
+	rdfs:label	"approved"	.
 
-local:axioms	rdfs:label	"axioms"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:would	rdfs:label	"would"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:inconsistency	rdfs:label	"inconsistency"	.
+local:inconsistency	a	rdf:Class	;
+	rdfs:label	"inconsistency"	.
 
-local:entailed	rdfs:label	"entailed"	.
+local:would	a	rdf:Class	;
+	rdfs:label	"would"	.
 
-local:approved_statements	rdfs:label	"approved statements"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:statements	rdfs:label	"statements"	.
+local:tightest_possible_approach	a	rdf:Class	;
+	rdfs:label	"tightest possible approach"	.
 
-local:already_approved	rdfs:label	"already approved"	.
+local:possible_approach	a	rdf:Class	;
+	rdfs:label	"possible approach"	.
 
-local:approved	rdfs:label	"approved,"	.
+local:tightest	a	rdf:Class	;
+	rdfs:label	"tightest"	.
 
-local:already	rdfs:label	"already"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:automated_reasoning	rdfs:label	"automated reasoning"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:using	rdfs:label	"using"	.
+local:acquire	a	rdf:Class	;
+	rdfs:label	"acquire"	.
 
-local:automated	rdfs:label	"automated"	.
+local:exhaustive_manual_inspection_of_the_acquired_data	a	rdf:Class	;
+	rdfs:label	"exhaustive manual inspection of the acquired data"	.
 
-local:automate	rdfs:label	"automate"	.
+local:exhaustive_manual_inspection	a	rdf:Class	;
+	rdfs:label	"exhaustive manual inspection"	.
 
-local:partially	rdfs:label	"partially"	.
+local:manual_inspection	a	rdf:Class	;
+	rdfs:label	"manual inspection"	.
 
-local:process	rdfs:label	"process"	.
+local:inspection	a	rdf:Class	;
+	rdfs:label	"inspection"	.
 
-local:expert	rdfs:label	"expert"	.
+local:exhaustive_manual	a	rdf:Class	;
+	rdfs:label	"exhaustive manual"	.
 
-local:expert_decision	rdfs:label	"expert decision"	.
+local:exhaustive	a	rdf:Class	;
+	rdfs:label	"exhaustive"	.
 
-local:decision	rdfs:label	"decision"	.
+local:manual	a	rdf:Class	;
+	rdfs:label	"manual"	.
 
-local:automatically_approved	rdfs:label	"automatically approved"	.
+local:exhaustive_manual_inspection_of_acquired_data	a	rdf:Class	;
+	rdfs:label	"exhaustive manual inspection of acquired data"	.
 
-local:expert_decision_axioms	rdfs:label	"expert decision axioms"	.
+local:ontological_knowledge	a	rdf:Class	;
+	rdfs:label	"ontological knowledge"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:ontological	a	rdf:Class	;
+	rdfs:label	"ontological"	.
 
-local:whereas_axioms	rdfs:label	"whereas axioms"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:whereas	rdfs:label	"whereas"	.
+local:automatically_quality_control	a	rdf:Class	;
+	rdfs:label	"automatically quality control"	.
 
-local:declined	rdfs:label	"declined"	.
+local:automatically_quality	a	rdf:Class	;
+	rdfs:label	"automatically quality"	.
 
-local:expert_decisions	rdfs:label	"expert decisions"	.
+local:control	a	rdf:Class	;
+	rdfs:label	"control"	.
 
-local:decisions	rdfs:label	"decisions"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:amount_of_expert_decisions	rdfs:label	"amount of expert decisions"	.
-
-local:amount	rdfs:label	"amount"	.
-
-local:minimize	rdfs:label	"minimize"	.
-
-#### Properties ####
+local:quality_control	a	rdf:Class	;
+	rdfs:label	"quality control"	.
 
 #### Mapped Relations ####
 
 cso:automated_reasoning	rdfs:label	"automated reasoning"	.
 local:automated_reasoning	owl:sameAs	cso:automated_reasoning	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+cso:reasoning	rdfs:label	"reasoning"	.
 
 #### Relations ####
 
-local:expert	rdfs:member	local:expert_decisions	.
-local:amount_of_expert_decisions	local:amount_of	local:expert_decisions	.
-local:exhaustive_manual_inspection_of_acquired_data	local:exhaustivemanualinspection_of	local:acquired_data	.
-local:approved	local:AM-TMP	local:already	.
-local:automated_reasoning	rdfs:subClassOf	local:reasoning	.
-local:tightest_possible	rdfs:subClassOf	local:possible	.
-local:quality_control	rdfs:subClassOf	local:control	.
-local:tightest_possible_approach	rdfs:subClassOf	local:possible_approach	.
-local:entailed	vn.role:Theme	local:approved_statements	.
-local:whereas_axioms	rdfs:subClassOf	local:axioms	.
-local:expert_decision	rdfs:subClassOf	local:decision	.
-local:approved	local:AM-ADV	local:declined	.
-local:automate	vn.role:Agent	local:we	.
-local:tightest	rdfs:member	local:tightest_possible	.
-local:using	vn.role:Theme	local:automated_reasoning	.
-local:minimize	vn.role:Attribute	local:amount_of_expert_decisions	.
-local:acquired	vn.role:Topic	local:data	.
-local:consider	vn.role:Theme	local:tightest_possible_approach	.
-local:approved	vn.role:Theme	local:statements	.
-local:exhaustive_manual	rdfs:subClassOf	local:manual	.
-local:lead	vn.role:Agent	local:axioms	.
-local:ontological_knowledge	rdfs:subClassOf	local:knowledge	.
-local:possible_approach–	rdfs:subClassOf	local:approach–	.
-local:acquired	vn.role:Topic	local:automatically_quality_control	.
-local:exhaustive_manual_inspection_of_acquired_data	local:of_acquireddata	local:exhaustive_manual_inspection	.
-local:lead	local:AM-MOD	local:would	.
-local:possible	rdfs:member	local:possible_approach–	.
-local:quality	rdfs:member	local:quality_control	.
-local:entailed	vn.role:object	local:axioms	.
-local:already_approved	rdfs:subClassOf	local:approved	.
-local:automated	vn.role:Patient	local:reasoning	.
-local:automate	vn.role:Patient	local:process	.
-local:approved_statements	rdfs:subClassOf	local:statements	.
-local:tightest_possible	rdfs:member	local:tightest_possible_approach–	.
-local:expert_decisions	rdfs:subClassOf	local:decisions	.
-local:consider	vn.role:Agent	local:we	.
-local:acquired	vn.role:Topic	local:ontological_knowledge	.
-local:lead	vn.role:Destination	local:inconsistency	.
-local:approved	local:AM-MNR	local:automatically	.
+local:s4.2	rdf:object	local:process	.
+local:exhaustive_manual_inspection_of_the_acquired_data	rdfs:member	local:data	.
 local:automatically_approved	rdfs:subClassOf	local:approved	.
-local:ontological	rdfs:member	local:ontological_knowledge	.
-local:automatically_quality_control	rdfs:subClassOf	local:quality_control	.
-local:expert	rdfs:member	local:expert_decision	.
-local:expert_decision_axioms	local:_axioms	local:expert_decision	.
-local:approved	vn.role:object	local:expert_decision_axioms	.
-local:using	vn.role:Agent	local:we	.
-local:exhaustive	rdfs:member	local:exhaustive_manual	.
-local:acquired_data	rdfs:subClassOf	local:data	.
-local:automate	local:AM-MNR	local:partially	.
-local:exhaustive_manual_inspection	rdfs:subClassOf	local:inspection	.
-local:exhaustive_manual_inspection	rdfs:subClassOf	local:manual_inspection	.
-local:tightest_possible_approach–	rdfs:subClassOf	local:approach–	.
-local:automate	local:AM-TMP	local:automatically_approved	.
-local:expert_decision_axioms	local:expertdecision_	local:axioms	.
+local:s4.2	local:AM-TMP	local:expert_decision_axioms_are_automatically_approved_whereas_axioms_are_declined	.
+local:s4.1	rdf:predicate	local:automate	.
+local:s1.1	rdf:predicate	local:acquire	.
+local:s0	rdf:predicate	local:acquire	.
+local:automated_reasoning	rdfs:subClassOf	local:reasoning	.
 local:possible_approach	rdfs:subClassOf	local:approach	.
-local:amount_of_expert_decisions	local:of_expertdecisions	local:amount	.
-local:exhaustive_manual	rdfs:member	local:exhaustive_manual_inspection	.
-local:whereas	rdfs:member	local:whereas_axioms	.
+local:s1.1	rdfs:subClassOf	local:data	.
+local:s6	rdf:subject	local:amount_of_expert_decisions	.
+local:expert_decision_axioms	rdfs:subClassOf	local:decision_axioms	.
+local:s2	rdf:object	local:tightest_possible_approach	.
+local:expert_decision_axioms	rdfs:member	local:expert_decision	.
+local:s4.3	rdf:predicate	local:approve	.
+local:automatically_quality	rdfs:member	local:automatically	.
+local:automatically_quality_control	rdfs:subClassOf	local:control	.
+local:s5.1	rdf:predicate	local:approve	.
+local:s4.2	local:AM-MNR	local:using_automated_reasoning	.
+local:expert_decision	rdfs:member	local:expert	.
+local:s4	rdf:subject	local:we	.
+local:possible_approach	rdfs:member	local:possible	.
+local:quality_control	rdfs:member	local:quality	.
+local:s4	rdf:predicate	local:use	.
+local:expert_decision_axioms_are_automatically_approved_whereas_axioms_are_declined	rdfs:member	local:whereas_axioms	.
 local:manual_inspection	rdfs:subClassOf	local:inspection	.
-local:automate	local:AM-MNR	local:using	.
-local:manual	rdfs:member	local:manual_inspection	.
+local:whereas_axioms	rdfs:member	local:whereas	.
+local:s4.4	rdf:subject	local:s4.4	.
+local:decision_axioms	rdfs:member	local:decision	.
+local:expert_decision	rdfs:subClassOf	local:decision	.
+local:quality_control	rdfs:subClassOf	local:control	.
+local:exhaustive_manual_inspection	rdfs:member	local:exhaustive_manual	.
+local:s2	rdf:predicate	local:consider	.
+local:automatically_quality	rdfs:subClassOf	local:quality	.
+local:s1	rdf:object	local:exhaustive_manual_inspection_of_the_acquired_data	.
+local:exhaustive_manual_inspection_of_acquired_data	rdfs:member	local:exhaustive_manual_inspection	.
+local:whereas_axioms	rdfs:subClassOf	local:s4.4	.
+local:automatically_quality_control	rdfs:member	local:automatically_quality	.
+local:s4.3	local:AM-MNR	local:automatically	.
+local:s1.1	rdf:subject	local:data	.
+local:ontological_knowledge	rdfs:subClassOf	local:knowledge	.
+local:expert_decisions	rdfs:subClassOf	local:decisions	.
+local:tightest_possible_approach	rdfs:member	local:possible_approach	.
+local:s1	rdf:predicate	local:consider	.
+local:s3	rdf:object	local:inconsistency	.
+local:expert_decisions	rdfs:member	local:expert	.
+local:s5.1	local:AM-TMP	local:already	.
+local:s6	rdf:predicate	local:minimize	.
+local:exhaustive_manual	rdfs:member	local:exhaustive	.
+local:s5	rdf:object	local:axioms	.
+local:s4.3	rdf:subject	local:expert_decision_axioms	.
+local:s3	rdf:subject	local:s4.4	.
+local:automatically_quality_control	rdfs:subClassOf	local:quality_control	.
+local:exhaustive_manual_inspection	rdfs:subClassOf	local:inspection	.
+local:exhaustive_manual_inspection_of_acquired_data	rdfs:member	local:s1.1	.
+local:s4.2	rdf:subject	local:we	.
+local:s4.2	rdf:predicate	local:automate	.
+local:s3	rdf:predicate	local:lead	.
+local:expert_decision_axioms	rdfs:subClassOf	local:s4.4	.
+local:exhaustive_manual_inspection	rdfs:subClassOf	local:manual_inspection	.
+local:s4.2	local:AM-MNR	local:partially	.
+local:expert_decision_axioms_are_automatically_approved_whereas_axioms_are_declined	rdfs:member	local:expert_decision_axioms	.
+local:s3	local:AM-MOD	local:would	.
+local:s2	rdf:subject	local:we	.
+local:s5	rdf:subject	local:s5.1	.
+local:tightest_possible_approach	rdfs:member	local:tightest	.
+local:s0	rdf:object	local:automatically_quality_control	.
+local:s5	rdf:predicate	local:entail	.
+local:exhaustive_manual	rdfs:subClassOf	local:manual	.
+local:manual_inspection	rdfs:member	local:manual	.
+local:decision_axioms	rdfs:subClassOf	local:s4.4	.
+local:amount_of_expert_decisions	rdfs:member	local:amount	.
+local:s4.4	rdf:predicate	local:decline	.
+local:tightest_possible_approach	rdfs:subClassOf	local:possible_approach	.
+local:ontological_knowledge	rdfs:member	local:ontological	.
+local:s4	rdf:object	local:s4.1	.
+local:s5.1	rdf:subject	local:statements	.
+local:amount_of_expert_decisions	rdfs:member	local:expert_decisions	.
+local:s0	rdf:subject	local:ontological_knowledge	.
+local:s1	rdf:subject	local:we	.
+local:s4.1	rdf:subject	local:reasoning	.
+local:exhaustive_manual_inspection_of_the_acquired_data	rdfs:member	local:exhaustive_manual_inspection	.

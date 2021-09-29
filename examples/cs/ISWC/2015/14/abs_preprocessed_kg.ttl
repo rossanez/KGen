@@ -1,278 +1,518 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we prove that this algebra is coherent with respect to the simple semantics of alignments"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"all qualitative taxonomical relations that occur between individuals"	.
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"a new algebra of relations which first solves the limitation of the previous one and second all qualitative taxonomical relations including the relations"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"a new algebra of relations which first solves the limitation of the previous one and second incorporates all qualitative taxonomical relations including the relations"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"a new algebra which first solves the limitation of the previous one and second incorporates all qualitative taxonomical relations including the relations"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"here we introduce a new algebra of relations which first solves the limitation of the previous one and second incorporates all qualitative taxonomical relations including the relations"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"all qualitative taxonomical relations that occur between concepts"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"moreover this algebra covers relations only between classes"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"compositional inference using this algebra"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"classes which occur in alignments"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"classes have nonempty extensions"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we assume that classes have nonempty extensions"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the previously contains taxonomical relations between classes"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"previously considered algebra"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"propagate alignments within a network of ontologies"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"aggregate alignments disjunctively"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"algebras of relations make possible to aggregate alignments disjunctively"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"aggregate alignments conjunctively"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"algebras of relations make possible to aggregate alignments conjunctively"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"algebras of relations managing ontology alignments"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"algebras of relations shown useful in managing ontology alignments"	.
+
+
 #### Classes ####
 
-local:algebras_of_relations	rdfs:label	"algebras of relations"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:algebras	rdfs:label	"algebras"	.
+local:prove	a	rdf:Class	;
+	rdfs:label	"prove"	.
 
-local:relations	rdfs:label	"relations"	.
+local:algebra_is_coherent_with_respect_to_the_simple_semantics_of_alignments	a	rdf:Class	;
+	rdfs:label	"algebra is coherent with respect to the simple semantics of alignments"	.
 
-local:shown	rdfs:label	"shown"	.
+local:alignments	a	rdf:Class	;
+	rdfs:label	"alignments"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:algebra	a	rdf:Class	;
+	rdfs:label	"algebra"	.
 
-local:ontology_alignments	rdfs:label	"ontology alignments"	.
+local:respect	a	rdf:Class	;
+	rdfs:label	"respect"	.
 
-local:alignments	rdfs:label	"alignments"	.
+local:simple_semantics	a	rdf:Class	;
+	rdfs:label	"simple semantics"	.
 
-local:useful	rdfs:label	"useful"	.
+local:simple	a	rdf:Class	;
+	rdfs:label	"simple"	.
 
-local:managing	rdfs:label	"managing"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:make	rdfs:label	"make"	.
+local:coherent_with_respect_to_simple_semantics	a	rdf:Class	;
+	rdfs:label	"coherent with_respect_to simple semantics"	.
 
-local:possible	rdfs:label	"possible"	.
+local:coherent	a	rdf:Class	;
+	rdfs:label	"coherent"	.
 
-local:aggregate_alignments	rdfs:label	"aggregate alignments"	.
+local:simple_semantics_of_alignments	a	rdf:Class	;
+	rdfs:label	"simple semantics of alignments"	.
 
-local:aggregate	rdfs:label	"aggregate"	.
+local:qualitative_taxonomical_relations	a	rdf:Class	;
+	rdfs:label	"qualitative taxonomical relations"	.
 
-local:conjunctively_alignments	rdfs:label	"conjunctively alignments"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:aggregate_conjunctively_alignments	rdfs:label	"aggregate conjunctively alignments"	.
+local:qualitative_taxonomical	a	rdf:Class	;
+	rdfs:label	"qualitative taxonomical"	.
 
-local:disjunctively_alignments	rdfs:label	"disjunctively alignments"	.
+local:taxonomical	a	rdf:Class	;
+	rdfs:label	"taxonomical"	.
 
-local:aggregate_disjunctively_alignments	rdfs:label	"aggregate disjunctively alignments"	.
+local:taxonomical_relations	a	rdf:Class	;
+	rdfs:label	"taxonomical relations"	.
 
-local:alignments_within_network	rdfs:label	"alignments within network"	.
+local:qualitative	a	rdf:Class	;
+	rdfs:label	"qualitative"	.
 
-local:network	rdfs:label	"network"	.
+local:occur	a	rdf:Class	;
+	rdfs:label	"occur"	.
 
-local:network_of_ontologies	rdfs:label	"network of ontologies"	.
+local:individuals	a	rdf:Class	;
+	rdfs:label	"individuals"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:include	a	rdf:Class	;
+	rdfs:label	"include"	.
 
-local:propagate	rdfs:label	"propagate"	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_qualitative_taxonomical_relations	a	rdf:Class	;
+	rdfs:label	"new algebra of relations which first solves the limitation of the previous one and second qualitative taxonomical relations"	.
 
-local:contains	rdfs:label	"contains"	.
+local:limitation	a	rdf:Class	;
+	rdfs:label	"limitation"	.
 
-local:the	rdfs:label	"the"	.
+local:new_algebra	a	rdf:Class	;
+	rdfs:label	"new algebra"	.
 
-local:previously	rdfs:label	"previously"	.
+local:second_qualitative_taxonomical_relations	a	rdf:Class	;
+	rdfs:label	"second qualitative taxonomical relations"	.
 
-local:taxonomical_relations	rdfs:label	"taxonomical relations"	.
+local:second_qualitative_taxonomical	a	rdf:Class	;
+	rdfs:label	"second qualitative taxonomical"	.
 
-local:taxonomical	rdfs:label	"taxonomical"	.
+local:second_qualitative	a	rdf:Class	;
+	rdfs:label	"second qualitative"	.
 
-local:taxonomical_relations_between_classes	rdfs:label	"taxonomical relations between classes"	.
+local:second	a	rdf:Class	;
+	rdfs:label	"second"	.
 
-local:classes	rdfs:label	"classes"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:considered	rdfs:label	"considered"	.
+local:previous_one	a	rdf:Class	;
+	rdfs:label	"previous one"	.
 
-local:algebra	rdfs:label	"algebra"	.
+local:one	a	rdf:Class	;
+	rdfs:label	"one"	.
 
-local:occur	rdfs:label	"occur"	.
+local:first_solves	a	rdf:Class	;
+	rdfs:label	"first solves"	.
 
-local:compositional	rdfs:label	"compositional"	.
+local:solves	a	rdf:Class	;
+	rdfs:label	"solves"	.
 
-local:compositional_inference	rdfs:label	"compositional inference"	.
+local:new_algebra_of_relations	a	rdf:Class	;
+	rdfs:label	"new algebra of relations"	.
 
-local:inference	rdfs:label	"inference"	.
+local:limitation_of_previous_one	a	rdf:Class	;
+	rdfs:label	"limitation of previous one"	.
 
-local:using	rdfs:label	"using"	.
+local:limitation_of_previous_one_of_second_qualitative_taxonomical_relations	a	rdf:Class	;
+	rdfs:label	"limitation of previous one of second qualitative taxonomical relations"	.
 
-local:assume	rdfs:label	"assume"	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second	a	rdf:Class	;
+	rdfs:label	"new algebra of relations which first solves the limitation of the previous one and second"	.
 
-local:we	rdfs:label	"we"	.
+local:limitation_of_previous_one_of_second	a	rdf:Class	;
+	rdfs:label	"limitation of previous one of second"	.
 
-local:nonempty	rdfs:label	"nonempty"	.
+local:incorporate	a	rdf:Class	;
+	rdfs:label	"incorporate"	.
 
-local:nonempty_extensions	rdfs:label	"nonempty extensions"	.
+local:qualitative_taxonomical_relations_including_the_relations	a	rdf:Class	;
+	rdfs:label	"qualitative taxonomical relations including the relations"	.
 
-local:extensions	rdfs:label	"extensions"	.
+local:qualitative_taxonomical_relations_including_relations	a	rdf:Class	;
+	rdfs:label	"qualitative taxonomical relations including relations"	.
 
-local:have	rdfs:label	"have"	.
+local:solve	a	rdf:Class	;
+	rdfs:label	"solve"	.
 
-local:moreover_algebra	rdfs:label	"moreover algebra"	.
+local:limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	a	rdf:Class	;
+	rdfs:label	"limitation of the previous one and second incorporates all qualitative taxonomical relations including the relations"	.
 
-local:covers	rdfs:label	"covers"	.
+local:second_incorporates	a	rdf:Class	;
+	rdfs:label	"second incorporates"	.
 
-local:only_classes	rdfs:label	"only classes"	.
+local:incorporates	a	rdf:Class	;
+	rdfs:label	"incorporates"	.
 
-local:relations_between_only_classes	rdfs:label	"relations between only classes"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:qualitative_taxonomical	rdfs:label	"qualitative taxonomical"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:qualitative_taxonomical_relations	rdfs:label	"qualitative taxonomical relations"	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	a	rdf:Class	;
+	rdfs:label	"new algebra of relations which first solves the limitation of the previous one and second incorporates all qualitative taxonomical relations including the relations"	.
 
-local:qualitative	rdfs:label	"qualitative"	.
+local:here	a	rdf:Class	;
+	rdfs:label	"here"	.
 
-local:concepts_including_relations	rdfs:label	"concepts including relations"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:cover	a	rdf:Class	;
+	rdfs:label	"cover"	.
 
-local:including	rdfs:label	"including"	.
+local:relations_only_between_classes	a	rdf:Class	;
+	rdfs:label	"relations only between classes"	.
 
-local:individuals_including_relations	rdfs:label	"individuals including relations"	.
+local:classes	a	rdf:Class	;
+	rdfs:label	"classes"	.
 
-local:individuals	rdfs:label	"individuals"	.
+local:only_classes	a	rdf:Class	;
+	rdfs:label	"only classes"	.
 
-local:introduce	rdfs:label	"introduce"	.
+local:relations_between_only_classes	a	rdf:Class	;
+	rdfs:label	"relations between only classes"	.
 
-local:here	rdfs:label	"here"	.
+local:moreover	a	rdf:Class	;
+	rdfs:label	"moreover"	.
 
-local:new_algebra	rdfs:label	"new algebra"	.
+local:compositional_inference	a	rdf:Class	;
+	rdfs:label	"compositional inference"	.
 
-local:new	rdfs:label	"new"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:new_algebra_of_relations	rdfs:label	"new algebra of relations"	.
+local:compositional	a	rdf:Class	;
+	rdfs:label	"compositional"	.
 
-local:new_algebra_of_relations_which	rdfs:label	"new algebra of relations which"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:which	rdfs:label	"which"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:relations_which	rdfs:label	"relations which"	.
+local:nonempty_extensions	a	rdf:Class	;
+	rdfs:label	"nonempty extensions"	.
 
-local:solves	rdfs:label	"solves"	.
+local:extensions	a	rdf:Class	;
+	rdfs:label	"extensions"	.
 
-local:not_is	rdfs:label	"not is"	.
+local:nonempty	a	rdf:Class	;
+	rdfs:label	"nonempty"	.
 
-local:is	rdfs:label	"is"	.
+local:assume	a	rdf:Class	;
+	rdfs:label	"assume"	.
 
-local:incorporates	rdfs:label	"incorporates"	.
+local:the	a	rdf:Class	;
+	rdfs:label	"the"	.
 
-local:second	rdfs:label	"second"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:previous_one	rdfs:label	"previous one"	.
+local:previously	a	rdf:Class	;
+	rdfs:label	"previously"	.
 
-local:one	rdfs:label	"one"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:limitation_of_previous_one	rdfs:label	"limitation of previous one"	.
+local:alignments_within_a_network_of_ontologies	a	rdf:Class	;
+	rdfs:label	"alignments within a network of ontologies"	.
 
-local:limitation	rdfs:label	"limitation"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:previous	rdfs:label	"previous"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:prove	rdfs:label	"prove"	.
+local:alignments_within_network	a	rdf:Class	;
+	rdfs:label	"alignments within network"	.
 
-local:simple_semantics	rdfs:label	"simple semantics"	.
+local:network_of_ontologies	a	rdf:Class	;
+	rdfs:label	"network of ontologies"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:propagate	a	rdf:Class	;
+	rdfs:label	"propagate"	.
 
-local:simple	rdfs:label	"simple"	.
+local:alignments_disjunctively	a	rdf:Class	;
+	rdfs:label	"alignments disjunctively"	.
 
-local:coherent_withrespectto_simple_semantics	rdfs:label	"coherent with_respect_to simple semantics"	.
+local:disjunctively_alignments	a	rdf:Class	;
+	rdfs:label	"disjunctively alignments"	.
 
-local:coherent	rdfs:label	"coherent"	.
+local:aggregate	a	rdf:Class	;
+	rdfs:label	"aggregate"	.
 
-local:simple_semantics_of_alignments	rdfs:label	"simple semantics of alignments"	.
+local:algebras_of_relations	a	rdf:Class	;
+	rdfs:label	"algebras of relations"	.
 
-#### Properties ####
+local:algebras	a	rdf:Class	;
+	rdfs:label	"algebras"	.
+
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
+
+local:aggregate_alignments_disjunctively_possible	a	rdf:Class	;
+	rdfs:label	"aggregate alignments disjunctively possible"	.
+
+local:aggregate_alignments	a	rdf:Class	;
+	rdfs:label	"aggregate alignments"	.
+
+local:disjunctively_possible	a	rdf:Class	;
+	rdfs:label	"disjunctively possible"	.
+
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
+
+local:alignments_conjunctively	a	rdf:Class	;
+	rdfs:label	"alignments conjunctively"	.
+
+local:conjunctively_alignments	a	rdf:Class	;
+	rdfs:label	"conjunctively alignments"	.
+
+local:aggregate_alignments_conjunctively_possible	a	rdf:Class	;
+	rdfs:label	"aggregate alignments conjunctively possible"	.
+
+local:conjunctively_possible	a	rdf:Class	;
+	rdfs:label	"conjunctively possible"	.
+
+local:manage	a	rdf:Class	;
+	rdfs:label	"manage"	.
+
+local:ontology_alignments	a	rdf:Class	;
+	rdfs:label	"ontology alignments"	.
+
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
+
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
+
+local:useful_in_managing_ontology_alignments	a	rdf:Class	;
+	rdfs:label	"useful in managing ontology alignments"	.
 
 #### Mapped Relations ####
 
-local:inference	owl:sameAs	cso:inference	.
-cso:semantics	rdfs:label	"semantics"	.
-cso:ontology_alignment	rdfs:label	"ontology alignments"	.
-local:semantics	owl:sameAs	cso:semantics	.
-local:ontology_alignments	owl:sameAs	cso:ontology_alignment	.
 cso:ontologies	rdfs:label	"ontologies"	.
 cso:inference	rdfs:label	"inference"	.
+cso:semantics	rdfs:label	"semantics"	.
+local:semantics	owl:sameAs	cso:semantics	.
 local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontology_alignment	rdfs:label	"ontology alignments"	.
+local:ontology_alignments	owl:sameAs	cso:ontology_alignment	.
+local:inference	owl:sameAs	cso:inference	.
 
 #### Relations ####
 
-local:qualitative_taxonomical_relations	rdfs:subClassOf	local:taxonomical_relations	.
-local:aggregate_conjunctively_alignments	rdfs:subClassOf	local:conjunctively_alignments	.
-local:taxonomical	rdfs:member	local:taxonomical_relations	.
-local:managing	vn.role:Theme	local:ontology_alignments	.
-local:prove	vn.role:Theme	local:coherent_withrespectto_simple_semantics	.
-local:simple	rdfs:member	local:simple_semantics	.
-local:considered	local:AM-TMP	local:previously	.
-local:simple_semantics_of_alignments	local:simplesemantics_of	local:alignments	.
-local:occur	local:AM-LOC	local:alignments	.
-local:new_algebra_of_relations_which	local:newalgebraofrelations_	local:which	.
-local:including	vn.role:Location	local:individuals	.
-local:introduce	local:AM-LOC	local:here	.
-local:coherent_withrespectto_simple_semantics	local:coherent_with_respect_to	local:simple_semantics	.
-local:new	rdfs:member	local:new_algebra	.
-local:not_is	rdfs:subClassOf	local:is	.
-local:incorporates	vn.role:Patient1	local:second	.
-local:network_of_ontologies	local:network_of	local:ontologies	.
-local:previous_one	rdfs:subClassOf	local:one	.
-local:limitation_of_previous_one	local:of_previousone	local:limitation	.
-local:make	vn.role:Agent	local:algebras_of_relations	.
-local:assume	vn.role:Theme	local:have	.
-local:relations_between_only_classes	local:relations_between	local:only_classes	.
-local:limitation_of_previous_one	local:limitation_of	local:previous_one	.
-local:qualitative	rdfs:member	local:qualitative_taxonomical	.
-local:contains	vn.role:Theme2	local:taxonomical_relations_between_classes	.
-local:make	vn.role:Material	local:aggregate_disjunctively_alignments	.
-local:individuals_including_relations	local:including_relations	local:individuals	.
-local:network_of_ontologies	local:of_ontologies	local:network	.
-local:conjunctively_alignments	rdfs:subClassOf	local:alignments	.
-local:aggregate_disjunctively_alignments	rdfs:subClassOf	local:disjunctively_alignments	.
-local:new_algebra_of_relations	local:of_relations	local:new_algebra	.
-local:new_algebra_of_relations_which	local:_which	local:new_algebra_of_relations	.
-local:covers	vn.role:indirect_object	local:moreover_algebra	.
-local:relations_which	local:_which	local:relations	.
-local:prove	vn.role:Agent	local:we	.
-local:managing	vn.role:Agent	local:algebras_of_relations	.
-local:moreover_algebra	rdfs:subClassOf	local:algebra	.
-local:taxonomical_relations	rdfs:subClassOf	local:relations	.
-local:aggregate	vn.role:Theme	local:conjunctively_alignments	.
-local:occur	vn.role:Location	local:qualitative_taxonomical_relations	.
-local:ontology	rdfs:member	local:ontology_alignments	.
-local:occur	local:AM-LOC	local:individuals_including_relations	.
-local:including	vn.role:Theme	local:relations	.
-local:including	vn.role:Location	local:concepts	.
-local:occur	vn.role:Location	local:classes	.
-local:relations_which	local:relations_	local:which	.
-local:simple_semantics_of_alignments	local:of_alignments	local:simple_semantics	.
-local:compositional	rdfs:member	local:compositional_inference	.
-local:individuals_including_relations	local:individuals_including	local:relations	.
-local:using	vn.role:Theme	local:algebra	.
-local:aggregate	vn.role:Theme	local:disjunctively_alignments	.
-local:new_algebra_of_relations	local:newalgebra_of	local:relations	.
-local:nonempty	rdfs:member	local:nonempty_extensions	.
-local:incorporates	vn.role:Patient1	local:limitation_of_previous_one	.
-local:occur	local:AM-LOC	local:concepts_including_relations	.
-local:shown	vn.role:Theme	local:algebras_of_relations	.
-local:assume	vn.role:Agent	local:we	.
-local:compositional_inference	rdfs:subClassOf	local:inference	.
-local:considered	vn.role:Theme	local:algebra	.
-local:aggregate	rdfs:member	local:aggregate_alignments	.
-local:simple_semantics	rdfs:subClassOf	local:semantics	.
-local:qualitative_taxonomical	rdfs:subClassOf	local:taxonomical	.
-local:alignments_within_network	local:within_network	local:alignments	.
-local:have	vn.role:Experiencer	local:classes	.
-local:taxonomical_relations_between_classes	local:between_classes	local:taxonomical_relations	.
-local:aggregate_alignments	rdfs:subClassOf	local:alignments	.
-local:contains	vn.role:Theme1	local:the	.
-local:qualitative_taxonomical	rdfs:member	local:qualitative_taxonomical_relations	.
 local:only_classes	rdfs:subClassOf	local:classes	.
-local:concepts_including_relations	local:concepts_including	local:relations	.
-local:coherent_withrespectto_simple_semantics	local:with_respect_to_simplesemantics	local:coherent	.
-local:nonempty_extensions	rdfs:subClassOf	local:extensions	.
-local:have	vn.role:Stimulus	local:nonempty_extensions	.
-local:solves	vn.role:object	local:incorporates	.
-local:alignments_within_network	local:alignments_within	local:network	.
-local:algebras_of_relations	local:algebras_of	local:relations	.
-local:previous	rdfs:member	local:previous_one	.
-local:algebras_of_relations	local:of_relations	local:algebras	.
-local:using	vn.role:Agent	local:compositional_inference	.
-local:propagate	vn.role:Location	local:alignments_within_network	.
-local:make	vn.role:Product	local:possible	.
-local:make	vn.role:Material	local:aggregate_conjunctively_alignments	.
-local:contains	local:AM-TMP	local:previously	.
-local:concepts_including_relations	local:including_relations	local:concepts	.
-local:relations_between_only_classes	local:between_onlyclasses	local:relations	.
-local:introduce	vn.role:Patient	local:new_algebra_of_relations_which	.
+local:s11.3	rdf:predicate	local:include	.
+local:aggregate_alignments	rdfs:member	local:aggregate	.
+local:simple_semantics	rdfs:member	local:simple	.
+local:limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:second_incorporates	.
+local:s6.1	rdf:subject	local:classes	.
+local:s4	rdf:predicate	local:consider	.
+local:limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:limitation	.
+local:alignments_within_a_network_of_ontologies	rdfs:member	local:alignments	.
+local:coherent_with_respect_to_simple_semantics	rdfs:member	local:coherent	.
+local:s6	rdf:object	local:s6.1	.
+local:s11	rdf:object	local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_qualitative_taxonomical_relations	rdfs:member	local:relations	.
+local:s4	local:AM-TMP	local:previously	.
+local:algebras_of_relations	rdfs:member	local:relations	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second	rdfs:member	local:new_algebra	.
+local:limitation_of_previous_one_of_second_qualitative_taxonomical_relations	rdfs:member	local:second_qualitative_taxonomical_relations	.
+local:qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:qualitative_taxonomical_relations	.
+local:s11.2	rdf:subject	local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second	.
+local:s9	local:AM-DIS	local:moreover	.
+local:previous_one	rdfs:subClassOf	local:one	.
+local:disjunctively_possible	rdfs:subClassOf	local:possible	.
+local:s8	rdf:object	local:algebra	.
+local:relations_between_only_classes	rdfs:member	local:only_classes	.
+local:s5	rdf:object	local:taxonomical_relations	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_qualitative_taxonomical_relations	rdfs:member	local:new_algebra	.
+local:simple_semantics	rdfs:subClassOf	local:semantics	.
+local:s1	rdf:subject	local:algebras_of_relations	.
+local:s11	local:AM-LOC	local:here	.
+local:s7	rdf:predicate	local:occur	.
+local:relations_only_between_classes	rdfs:member	local:relations	.
+local:s13	rdf:object	local:algebra_is_coherent_with_respect_to_the_simple_semantics_of_alignments	.
+local:s9	rdf:subject	local:algebra	.
+local:s6	rdf:predicate	local:assume	.
+local:s3	rdf:subject	local:alignments_within_a_network_of_ontologies	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:limitation	.
 local:disjunctively_alignments	rdfs:subClassOf	local:alignments	.
-local:taxonomical_relations_between_classes	local:taxonomicalrelations_between	local:classes	.
-local:covers	vn.role:Theme2	local:relations_between_only_classes	.
-local:introduce	vn.role:Agent	local:we	.
-local:new_algebra	rdfs:subClassOf	local:algebra	.
+local:second_qualitative	rdfs:subClassOf	local:qualitative	.
+local:coherent_with_respect_to_simple_semantics	rdfs:member	local:simple_semantics	.
+local:alignments_within_network	rdfs:member	local:alignments	.
 local:qualitative_taxonomical_relations	rdfs:subClassOf	local:relations	.
-local:shown	local:AM-MNR	local:useful	.
-local:solves	vn.role:Location	local:relations_which	.
+local:limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:relations	.
+local:qualitative_taxonomical_relations	rdfs:member	local:qualitative_taxonomical	.
+local:qualitative_taxonomical_relations_including_relations	rdfs:member	local:relations	.
+local:network_of_ontologies	rdfs:member	local:network	.
+local:new_algebra	rdfs:member	local:new	.
+local:s11.2	rdf:object	local:qualitative_taxonomical_relations_including_the_relations	.
+local:s11.3	rdf:subject	local:relations	.
+local:qualitative_taxonomical_relations	rdfs:subClassOf	local:taxonomical_relations	.
+local:s11	rdf:predicate	local:introduce	.
+local:simple_semantics_of_alignments	rdfs:member	local:alignments	.
+local:s2.1	rdf:subject	local:alignments_disjunctively	.
+local:s1.1	rdf:subject	local:alignments_conjunctively	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_qualitative_taxonomical_relations	rdfs:member	local:limitation	.
+local:second_incorporates	rdfs:subClassOf	local:incorporates	.
+local:s12	rdf:subject	local:qualitative_taxonomical_relations	.
+local:new_algebra	rdfs:subClassOf	local:algebra	.
+local:qualitative_taxonomical	rdfs:subClassOf	local:taxonomical	.
+local:second_qualitative_taxonomical_relations	rdfs:subClassOf	local:relations	.
+local:nonempty_extensions	rdfs:subClassOf	local:extensions	.
+local:s2.1	rdf:predicate	local:aggregate	.
+local:s12	rdf:predicate	local:occur	.
+local:algebra_is_coherent_with_respect_to_the_simple_semantics_of_alignments	rdfs:member	local:simple_semantics	.
+local:limitation_of_previous_one	rdfs:member	local:previous_one	.
 local:ontology_alignments	rdfs:subClassOf	local:alignments	.
-local:incorporates	vn.role:Patient2	local:qualitative_taxonomical_relations	.
+local:s8	rdf:subject	local:compositional_inference	.
+local:relations_between_only_classes	rdfs:member	local:relations	.
+local:taxonomical_relations	rdfs:subClassOf	local:relations	.
+local:compositional_inference	rdfs:member	local:compositional	.
+local:s13	rdf:subject	local:we	.
+local:qualitative_taxonomical	rdfs:member	local:qualitative	.
+local:network_of_ontologies	rdfs:member	local:ontologies	.
+local:second_qualitative_taxonomical_relations	rdfs:subClassOf	local:qualitative_taxonomical_relations	.
+local:s6	rdf:subject	local:we	.
+local:s5	local:AM-TMP	local:classes	.
+local:s1	rdf:object	local:aggregate_alignments_conjunctively_possible	.
+local:s7	local:AM-LOC	local:alignments	.
+local:s12	local:AM-LOC	local:individuals	.
+local:second_incorporates	rdfs:member	local:second	.
+local:second_qualitative	rdfs:member	local:second	.
+local:conjunctively_possible	rdfs:subClassOf	local:possible	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second	rdfs:member	local:limitation	.
+local:s6.1	rdf:predicate	local:have	.
+local:s11.1	local:AM-TMP	local:first	.
+local:second_qualitative_taxonomical	rdfs:subClassOf	local:taxonomical	.
+local:qualitative_taxonomical_relations_including_relations	rdfs:member	local:qualitative_taxonomical_relations	.
+local:s2	rdf:predicate	local:make	.
+local:algebra_is_coherent_with_respect_to_the_simple_semantics_of_alignments	rdfs:member	local:alignments	.
+local:conjunctively_alignments	rdfs:subClassOf	local:alignments	.
+local:taxonomical_relations	rdfs:member	local:taxonomical	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_qualitative_taxonomical_relations	rdfs:member	local:second_qualitative_taxonomical_relations	.
+local:s8	rdf:predicate	local:use	.
+local:limitation_of_previous_one_of_second_qualitative_taxonomical_relations	rdfs:member	local:limitation_of_previous_one	.
+local:s13	rdf:predicate	local:prove	.
+local:compositional_inference	rdfs:subClassOf	local:inference	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:qualitative_taxonomical_relations	.
+local:algebra_is_coherent_with_respect_to_the_simple_semantics_of_alignments	rdfs:member	local:algebra	.
+local:alignments_within_a_network_of_ontologies	rdfs:member	local:ontologies	.
+local:new_algebra_of_relations	rdfs:member	local:new_algebra	.
+local:s3	rdf:predicate	local:propagate	.
+local:algebras_of_relations	rdfs:member	local:algebras	.
+local:s1.1	rdf:predicate	local:aggregate	.
+local:s1	rdf:predicate	local:make	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:second_incorporates	.
+local:s9	rdf:object	local:relations_only_between_classes	.
+local:second_qualitative_taxonomical	rdfs:member	local:second_qualitative	.
+local:alignments_within_a_network_of_ontologies	rdfs:member	local:network	.
+local:s11.1	rdf:subject	local:new_algebra	.
+local:s7	rdf:subject	local:classes	.
+local:s0	local:AM-MNR	local:useful_in_managing_ontology_alignments	.
+local:s10	local:AM-MNR	local:concepts	.
+local:s6.1	rdf:object	local:nonempty_extensions	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:new_algebra	.
+local:s11.2	rdf:predicate	local:incorporate	.
+local:s5	rdf:subject	local:the	.
+local:s0.1	rdf:predicate	local:manage	.
+local:limitation_of_previous_one	rdfs:member	local:limitation	.
+local:qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:relations	.
+local:limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:qualitative_taxonomical_relations	.
+local:s0.1	rdf:object	local:ontology_alignments	.
+local:simple_semantics_of_alignments	rdfs:member	local:simple_semantics	.
+local:s5	local:AM-TMP	local:previously	.
+local:s11.1	rdf:predicate	local:solve	.
+local:algebra_is_coherent_with_respect_to_the_simple_semantics_of_alignments	rdfs:member	local:respect	.
+local:new_algebra_of_relations	rdfs:member	local:relations	.
+local:alignments_within_network	rdfs:member	local:network	.
+local:s10	rdf:subject	local:qualitative_taxonomical_relations	.
+local:second_qualitative_taxonomical_relations	rdfs:member	local:second_qualitative_taxonomical	.
+local:s0.1	rdf:subject	local:algebras_of_relations	.
+local:nonempty_extensions	rdfs:member	local:nonempty	.
+local:first_solves	rdfs:subClassOf	local:solves	.
+local:relations_only_between_classes	rdfs:member	local:classes	.
+local:s0	rdf:subject	local:algebras_of_relations	.
+local:s11.1	rdf:object	local:limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	.
+local:s0	rdf:predicate	local:show	.
+local:s11.3	rdf:object	local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_qualitative_taxonomical_relations	.
+local:limitation_of_previous_one_of_second	rdfs:member	local:second	.
+local:s10	rdf:predicate	local:occur	.
+local:s5	rdf:predicate	local:contain	.
+local:s4	rdf:subject	local:algebra	.
+local:ontology_alignments	rdfs:member	local:ontology	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second	rdfs:member	local:relations	.
+local:s2	rdf:object	local:aggregate_alignments_disjunctively_possible	.
+local:s11	rdf:subject	local:we	.
+local:aggregate_alignments	rdfs:subClassOf	local:alignments	.
+local:s2	rdf:subject	local:algebras_of_relations	.
+local:new_algebra_of_relations_which_first_solves_the_limitation_of_the_previous_one_and_second_incorporates_all_qualitative_taxonomical_relations_including_the_relations	rdfs:member	local:relations	.
+local:s9	rdf:predicate	local:cover	.
+local:limitation_of_previous_one_of_second	rdfs:member	local:limitation_of_previous_one	.

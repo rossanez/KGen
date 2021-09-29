@@ -1,276 +1,493 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"following common setbased intuitions"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"reasoning in rdf schema can implemented following common setbased intuitions"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"this result can positively impact current implementations as reasoning in rdf schema can be implemented following common setbased intuitions"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"this result can positively impact current implementations as reasoning in rdf schema can be compatible with owl extensions"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"we preserving the simplicity complexity of deduction of the intensional version"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"in this paper we develop a standard setbased extensional semantics for the rdf schema vocabulary while preserving the simplicity complexity of deduction of the intensional version"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"we preserving the computational complexity of deduction of the intensional version"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"in this paper we develop a standard setbased extensional semantics for the rdf schema vocabulary while preserving the computational complexity of deduction of the intensional version"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"classes thus departing from standard setbased semantics"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"the normative version of rdf schema gives nonstandard intensional interpretations to some standard notions such as classes thus departing from standard setbased semantics"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"properties thus departing from standard setbased semantics"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the normative version of rdf schema gives nonstandard intensional interpretations to some standard notions such as properties thus departing from standard setbased semantics"	.
+
+
 #### Classes ####
 
-local:normative	rdfs:label	"normative"	.
+local:follow	a	rdf:Class	;
+	rdfs:label	"follow"	.
 
-local:normative_version	rdfs:label	"normative version"	.
+local:common_setbased_intuitions	a	rdf:Class	;
+	rdfs:label	"common setbased intuitions"	.
 
-local:version	rdfs:label	"version"	.
+local:setbased_intuitions	a	rdf:Class	;
+	rdfs:label	"setbased intuitions"	.
 
-local:rdf_schema	rdfs:label	"rdf schema"	.
+local:intuitions	a	rdf:Class	;
+	rdfs:label	"intuitions"	.
 
-local:schema	rdfs:label	"schema"	.
+local:reasoning_in_rdf_schema	a	rdf:Class	;
+	rdfs:label	"reasoning in rdf schema"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:rdf_schema	a	rdf:Class	;
+	rdfs:label	"rdf schema"	.
 
-local:normative_version_of_rdf_schema	rdfs:label	"normative version of rdf schema"	.
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
 
-local:gives	rdfs:label	"gives"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:nonstandard_interpretations	rdfs:label	"non-standard interpretations"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:interpretations	rdfs:label	"interpretations"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:setbased_semantics	rdfs:label	"set-based semantics"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:standard	rdfs:label	"standard"	.
+local:impact	a	rdf:Class	;
+	rdfs:label	"impact"	.
 
-local:standard_notions	rdfs:label	"standard notions"	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_implemented_following_common_setbased_intuitions	a	rdf:Class	;
+	rdfs:label	"current implementations as reasoning in rdf schema can be implemented following common setbased intuitions"	.
 
-local:standard_setbased_semantics	rdfs:label	"standard set-based semantics"	.
+local:current_implementations	a	rdf:Class	;
+	rdfs:label	"current implementations"	.
 
-local:standard_setbased	rdfs:label	"standard set-based"	.
+local:common_setbased	a	rdf:Class	;
+	rdfs:label	"common setbased"	.
 
-local:notions	rdfs:label	"notions"	.
+local:setbased	a	rdf:Class	;
+	rdfs:label	"setbased"	.
 
-local:setbased	rdfs:label	"set-based"	.
+local:common	a	rdf:Class	;
+	rdfs:label	"common"	.
 
-local:thus_departing	rdfs:label	"thus departing"	.
+local:implementations	a	rdf:Class	;
+	rdfs:label	"implementations"	.
 
-local:departing	rdfs:label	"departing"	.
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
 
-local:standard_notions_suchas_classes	rdfs:label	"standard notions such_as classes"	.
+local:can_implemented	a	rdf:Class	;
+	rdfs:label	"can implemented"	.
 
-local:classes	rdfs:label	"classes"	.
+local:implemented	a	rdf:Class	;
+	rdfs:label	"implemented"	.
 
-local:standard_notions_suchas_classes_thus_departing	rdfs:label	"standard notions such_as classes thus departing"	.
+local:current_implementations_as_reasoning	a	rdf:Class	;
+	rdfs:label	"current implementations as reasoning"	.
 
-local:thus_departing_from_standard_setbased_semantics	rdfs:label	"thus departing from standard set-based semantics"	.
+local:can_implemented_following_common_setbased_intuitions	a	rdf:Class	;
+	rdfs:label	"can implemented following common setbased intuitions"	.
 
-local:thus	rdfs:label	"thus"	.
+local:positively	a	rdf:Class	;
+	rdfs:label	"positively"	.
 
-local:standard_notions_suchas_properties	rdfs:label	"standard notions such_as properties"	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_compatible_with_owl_extensions	a	rdf:Class	;
+	rdfs:label	"current implementations as reasoning in rdf schema can be compatible with owl extensions"	.
 
-local:properties	rdfs:label	"properties"	.
+local:owl_extensions	a	rdf:Class	;
+	rdfs:label	"owl extensions"	.
 
-local:standard_notions_suchas_properties_thus_departing	rdfs:label	"standard notions such_as properties thus departing"	.
+local:extensions	a	rdf:Class	;
+	rdfs:label	"extensions"	.
 
-local:develop	rdfs:label	"develop"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:paper	rdfs:label	"paper"	.
+local:can_compatible	a	rdf:Class	;
+	rdfs:label	"can compatible"	.
 
-local:we	rdfs:label	"we"	.
+local:compatible	a	rdf:Class	;
+	rdfs:label	"compatible"	.
 
-local:schema_vocabulary	rdfs:label	"schema vocabulary"	.
+local:can_compatible_with_owl_extensions	a	rdf:Class	;
+	rdfs:label	"can compatible with owl extensions"	.
 
-local:rdf_schema_vocabulary	rdfs:label	"rdf schema vocabulary"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:vocabulary	rdfs:label	"vocabulary"	.
+local:preserve	a	rdf:Class	;
+	rdfs:label	"preserve"	.
 
-local:standard_setbased_semantics_for_rdf_schema_vocabulary	rdfs:label	"standard set-based semantics for rdf schema vocabulary"	.
+local:simplicity_complexity_of_deduction_of_the_intensional_version	a	rdf:Class	;
+	rdfs:label	"simplicity complexity of deduction of the intensional version"	.
 
-local:intensional_version	rdfs:label	"intensional version"	.
+local:deduction	a	rdf:Class	;
+	rdfs:label	"deduction"	.
 
-local:computational_complexity	rdfs:label	"computational complexity"	.
+local:intensional_version	a	rdf:Class	;
+	rdfs:label	"intensional version"	.
 
-local:complexity	rdfs:label	"complexity"	.
+local:simplicity_complexity	a	rdf:Class	;
+	rdfs:label	"simplicity complexity"	.
 
-local:computational	rdfs:label	"computational"	.
+local:version	a	rdf:Class	;
+	rdfs:label	"version"	.
 
-local:intensional	rdfs:label	"intensional"	.
+local:simplicity	a	rdf:Class	;
+	rdfs:label	"simplicity"	.
 
-local:computational_complexity_of_deduction	rdfs:label	"computational complexity of deduction"	.
+local:complexity	a	rdf:Class	;
+	rdfs:label	"complexity"	.
 
-local:deduction	rdfs:label	"deduction"	.
+local:intensional	a	rdf:Class	;
+	rdfs:label	"intensional"	.
 
-local:deduction_of_intensional_version	rdfs:label	"deduction of intensional version"	.
+local:simplicity_complexity_of_deduction	a	rdf:Class	;
+	rdfs:label	"simplicity complexity of deduction"	.
 
-local:preserving	rdfs:label	"preserving"	.
+local:deduction_of_intensional_version	a	rdf:Class	;
+	rdfs:label	"deduction of intensional version"	.
 
-local:simplicity	rdfs:label	"simplicity"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:simplicity_complexity	rdfs:label	"simplicity complexity"	.
+local:standard_setbased_extensional_semantics_for_the_rdf_schema_vocabulary	a	rdf:Class	;
+	rdfs:label	"standard setbased extensional semantics for the rdf schema vocabulary"	.
 
-local:simplicity_complexity_of_deduction	rdfs:label	"simplicity complexity of deduction"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:impact	rdfs:label	"impact"	.
+local:extensional_semantics	a	rdf:Class	;
+	rdfs:label	"extensional semantics"	.
 
-local:result	rdfs:label	"result"	.
+local:rdf_schema_vocabulary	a	rdf:Class	;
+	rdfs:label	"rdf schema vocabulary"	.
 
-local:can	rdfs:label	"can"	.
+local:extensional	a	rdf:Class	;
+	rdfs:label	"extensional"	.
 
-local:positively	rdfs:label	"positively"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:current	rdfs:label	"current"	.
+local:schema_vocabulary	a	rdf:Class	;
+	rdfs:label	"schema vocabulary"	.
 
-local:current_implementations	rdfs:label	"current implementations"	.
+local:vocabulary	a	rdf:Class	;
+	rdfs:label	"vocabulary"	.
 
-local:following_common_setbased	rdfs:label	"following common set-based"	.
+local:setbased_extensional_semantics	a	rdf:Class	;
+	rdfs:label	"setbased extensional semantics"	.
 
-local:common_setbased	rdfs:label	"common set-based"	.
+local:standard_setbased_extensional_semantics	a	rdf:Class	;
+	rdfs:label	"standard setbased extensional semantics"	.
 
-local:following_common	rdfs:label	"following common"	.
+local:standard_setbased_extensional_semantics_for_rdf_schema_vocabulary	a	rdf:Class	;
+	rdfs:label	"standard setbased extensional semantics for rdf schema vocabulary"	.
 
-local:common_setbased_intuitions	rdfs:label	"common set-based intuitions"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:intuitions	rdfs:label	"intuitions"	.
+local:preserving_the_simplicity_complexity_of_deduction_of_the_intensional_version	a	rdf:Class	;
+	rdfs:label	"preserving the simplicity complexity of deduction of the intensional version"	.
 
-local:common	rdfs:label	"common"	.
+local:computational_complexity_of_deduction_of_the_intensional_version	a	rdf:Class	;
+	rdfs:label	"computational complexity of deduction of the intensional version"	.
 
-local:setbased_intuitions	rdfs:label	"set-based intuitions"	.
+local:computational_complexity	a	rdf:Class	;
+	rdfs:label	"computational complexity"	.
 
-local:implementations	rdfs:label	"implementations"	.
+local:computational	a	rdf:Class	;
+	rdfs:label	"computational"	.
 
-local:following	rdfs:label	"following"	.
+local:computational_complexity_of_deduction	a	rdf:Class	;
+	rdfs:label	"computational complexity of deduction"	.
 
-local:following_common_setbased_intuitions	rdfs:label	"following common set-based intuitions"	.
+local:preserving_the_computational_complexity_of_deduction_of_the_intensional_version	a	rdf:Class	;
+	rdfs:label	"preserving the computational complexity of deduction of the intensional version"	.
 
-local:can_implemented	rdfs:label	"can implemented"	.
+local:classes	a	rdf:Class	;
+	rdfs:label	"classes"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:depart	a	rdf:Class	;
+	rdfs:label	"depart"	.
 
-local:can_implemented_as_reasoning	rdfs:label	"can implemented as reasoning"	.
+local:standard_setbased_semantics	a	rdf:Class	;
+	rdfs:label	"standard setbased semantics"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:setbased_semantics	a	rdf:Class	;
+	rdfs:label	"setbased semantics"	.
 
-local:reasoning_in_rdf_schema	rdfs:label	"reasoning in rdf schema"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:can_implemented_as_reasoning_following_common_setbased_intuitions	rdfs:label	"can implemented as reasoning following common set-based intuitions"	.
+local:normative_version_of_rdf_schema	a	rdf:Class	;
+	rdfs:label	"normative version of rdf schema"	.
 
-local:owl	rdfs:label	"owl"	.
+local:normative_version	a	rdf:Class	;
+	rdfs:label	"normative version"	.
 
-local:owl_extensions	rdfs:label	"owl extensions"	.
+local:normative	a	rdf:Class	;
+	rdfs:label	"normative"	.
 
-local:extensions	rdfs:label	"extensions"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:can_compatible	rdfs:label	"can compatible"	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations standard notions such as classes thus departing from standard setbased semantics"	.
 
-local:compatible	rdfs:label	"compatible"	.
+local:nonstandard_intensional_interpretations	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations"	.
 
-local:can_compatible_as_reasoning	rdfs:label	"can compatible as reasoning"	.
+local:standard_notions	a	rdf:Class	;
+	rdfs:label	"standard notions"	.
 
-local:can_compatible_as_reasoning_with_owl_extensions	rdfs:label	"can compatible as reasoning with owl extensions"	.
+local:notions	a	rdf:Class	;
+	rdfs:label	"notions"	.
 
-#### Properties ####
+local:nonstandard_intensional	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional"	.
+
+local:nonstandard	a	rdf:Class	;
+	rdfs:label	"nonstandard"	.
+
+local:interpretations	a	rdf:Class	;
+	rdfs:label	"interpretations"	.
+
+local:intensional_interpretations	a	rdf:Class	;
+	rdfs:label	"intensional interpretations"	.
+
+local:thus_departing	a	rdf:Class	;
+	rdfs:label	"thus departing"	.
+
+local:departing	a	rdf:Class	;
+	rdfs:label	"departing"	.
+
+local:interpretations_standard_notions	a	rdf:Class	;
+	rdfs:label	"interpretations standard notions"	.
+
+local:intensional_interpretations_standard_notions	a	rdf:Class	;
+	rdfs:label	"intensional interpretations standard notions"	.
+
+local:nonstandard_intensional_interpretations_standard_notions	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations standard notions"	.
+
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations standard notions such_as classes"	.
+
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations standard notions such_as classes thus departing"	.
+
+local:thus_departing_from_standard_setbased_semantics	a	rdf:Class	;
+	rdfs:label	"thus departing from standard setbased semantics"	.
+
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
+
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations standard notions such as properties thus departing from standard setbased semantics"	.
+
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties	a	rdf:Class	;
+	rdfs:label	"nonstandard intensional interpretations standard notions such_as properties"	.
+
+local:properties_thus_departing	a	rdf:Class	;
+	rdfs:label	"properties thus departing"	.
 
 #### Mapped Relations ####
 
-local:rdf	owl:sameAs	cso:rdf	.
-cso:rdf	rdfs:label	"rdf"	.
-local:vocabulary	owl:sameAs	cso:vocabulary	.
-cso:owl	rdfs:label	"owl"	.
 cso:semantics	rdfs:label	"semantics"	.
-cso:reasoning	rdfs:label	"reasoning"	.
-cso:vocabulary	rdfs:label	"vocabulary"	.
-local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+local:vocabulary	owl:sameAs	cso:vocabulary	.
 local:semantics	owl:sameAs	cso:semantics	.
+cso:vocabulary	rdfs:label	"vocabulary"	.
 local:reasoning	owl:sameAs	cso:reasoning	.
+cso:rdf	rdfs:label	"rdf"	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:reasoning	rdfs:label	"reasoning"	.
+local:owl	owl:sameAs	cso:owl	.
 
 #### Relations ####
 
-local:implemented	vn.role:Theme	local:current_implementations	.
-local:setbased	rdfs:member	local:setbased_semantics	.
-local:rdf_schema_vocabulary	rdfs:subClassOf	local:schema_vocabulary	.
-local:develop	vn.role:Location	local:standard_setbased_semantics_for_rdf_schema_vocabulary	.
-local:standard_setbased_semantics_for_rdf_schema_vocabulary	local:for_rdfschemavocabulary	local:standard_setbased_semantics	.
-local:setbased_intuitions	rdfs:subClassOf	local:intuitions	.
-local:impact	vn.role:Cause	local:can_implemented_as_reasoning_following_common_setbased_intuitions	.
-local:preserving	vn.role:Theme	local:computational_complexity_of_deduction	.
-local:current	rdfs:member	local:current_implementations	.
+local:rdf_schema_vocabulary	rdfs:member	local:rdf_schema	.
+local:s4	local:AM-MNR	local:positively	.
+local:preserving_the_computational_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:computational_complexity	.
+local:preserving_the_simplicity_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:intensional_version	.
+local:simplicity_complexity_of_deduction	rdfs:member	local:simplicity_complexity	.
+local:normative_version	rdfs:member	local:normative	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	rdfs:member	local:standard	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes	rdfs:member	local:classes	.
+local:simplicity_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:intensional_version	.
+local:nonstandard_intensional_interpretations	rdfs:member	local:nonstandard_intensional	.
+local:can_compatible_with_owl_extensions	rdfs:member	local:owl_extensions	.
 local:thus_departing	rdfs:subClassOf	local:departing	.
-local:standard_notions_suchas_properties	local:standardnotions_such_as	local:properties	.
-local:develop	local:AM-TMP	local:preserving	.
-local:standard_setbased	rdfs:member	local:standard_setbased_semantics	.
-local:rdf_schema_vocabulary	rdfs:subClassOf	local:vocabulary	.
-local:following	rdfs:member	local:following_common	.
-local:common_setbased_intuitions	rdfs:subClassOf	local:intuitions	.
-local:schema	rdfs:member	local:schema_vocabulary	.
-local:can_compatible_as_reasoning	local:cancompatible_as	local:reasoning	.
-local:reasoning_in_rdf_schema	local:reasoning_in	local:rdf_schema	.
-local:preserving	vn.role:Theme	local:simplicity_complexity_of_deduction	.
-local:simplicity_complexity_of_deduction	local:simplicitycomplexity_of	local:deduction	.
-local:impact	local:AM-MOD	local:can	.
-local:can_implemented_as_reasoning_following_common_setbased_intuitions	local:canimplementedasreasoning_following	local:common_setbased_intuitions	.
-local:standard_notions_suchas_classes_thus_departing	local:_thusdeparting	local:standard_notions_suchas_classes	.
-local:departing	vn.role:Location	local:classes	.
-local:can_implemented_as_reasoning	local:canimplemented_as	local:reasoning	.
-local:rdf_schema	rdfs:subClassOf	local:schema	.
-local:intensional_version	rdfs:subClassOf	local:version	.
-local:implemented	local:AM-TMP	local:common_setbased_intuitions	.
-local:standard_setbased	rdfs:subClassOf	local:setbased	.
-local:computational	rdfs:member	local:computational_complexity	.
-local:standard	rdfs:member	local:standard_notions	.
-local:standard	rdfs:member	local:standard_setbased	.
-local:following_common_setbased_intuitions	rdfs:subClassOf	local:intuitions	.
-local:departing	vn.role:Location	local:properties	.
+local:computational_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:deduction	.
+local:standard_setbased_extensional_semantics_for_the_rdf_schema_vocabulary	rdfs:member	local:standard	.
 local:can_implemented	rdfs:subClassOf	local:implemented	.
-local:standard_notions_suchas_classes	local:standardnotions_such_as	local:classes	.
-local:develop	local:AM-LOC	local:paper	.
-local:following_common_setbased	rdfs:subClassOf	local:setbased	.
-local:gives	vn.role:Asset	local:normative_version_of_rdf_schema	.
-local:schema_vocabulary	rdfs:subClassOf	local:vocabulary	.
-local:setbased	rdfs:member	local:setbased_intuitions	.
-local:simplicity	rdfs:member	local:simplicity_complexity	.
-local:can_compatible	rdfs:subClassOf	local:compatible	.
-local:standard_notions_suchas_properties	local:such_as_properties	local:standard_notions	.
-local:departing	local:AM-DIS	local:thus	.
-local:standard_notions	rdfs:subClassOf	local:notions	.
-local:thus_departing_from_standard_setbased_semantics	local:from_standardset-basedsemantics	local:thus_departing	.
-local:common	rdfs:member	local:common_setbased	.
-local:standard_notions_suchas_classes	local:such_as_classes	local:standard_notions	.
-local:owl	rdfs:member	local:owl_extensions	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	rdfs:member	local:semantics	.
+local:s2	local:AM-TMP	local:preserving_the_computational_complexity_of_deduction_of_the_intensional_version	.
 local:setbased_semantics	rdfs:subClassOf	local:semantics	.
-local:normative_version_of_rdf_schema	local:normativeversion_of	local:rdf_schema	.
-local:thus_departing_from_standard_setbased_semantics	local:thusdeparting_from	local:standard_setbased_semantics	.
-local:following_common_setbased	rdfs:member	local:following_common_setbased_intuitions	.
-local:develop	vn.role:Theme	local:we	.
-local:impact	vn.role:Cause	local:can_compatible_as_reasoning_with_owl_extensions	.
-local:can_implemented_as_reasoning_following_common_setbased_intuitions	local:following_commonset-basedintuitions	local:can_implemented_as_reasoning	.
-local:standard_setbased_semantics	rdfs:subClassOf	local:semantics	.
-local:computational_complexity_of_deduction	local:of_deduction	local:computational_complexity	.
-local:common_setbased	rdfs:member	local:common_setbased_intuitions	.
-local:standard_setbased_semantics	rdfs:subClassOf	local:setbased_semantics	.
-local:gives	vn.role:object	local:nonstandard_interpretations	.
-local:normative	rdfs:member	local:normative_version	.
-local:intensional	rdfs:member	local:intensional_version	.
-local:rdf	rdfs:member	local:rdf_schema	.
-local:computational_complexity	rdfs:subClassOf	local:complexity	.
-local:can_compatible_as_reasoning_with_owl_extensions	local:cancompatibleasreasoning_with	local:owl_extensions	.
-local:following	vn.role:Location	local:common_setbased_intuitions	.
-local:nonstandard_interpretations	rdfs:subClassOf	local:interpretations	.
-local:rdf_schema	rdfs:member	local:rdf_schema_vocabulary	.
-local:gives	vn.role:indirect_object	local:standard_notions_suchas_classes_thus_departing	.
+local:standard_setbased_extensional_semantics	rdfs:subClassOf	local:setbased_extensional_semantics	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	rdfs:member	local:nonstandard_intensional_interpretations	.
 local:normative_version	rdfs:subClassOf	local:version	.
-local:deduction_of_intensional_version	local:deduction_of	local:intensional_version	.
-local:can_compatible_as_reasoning_with_owl_extensions	local:with_owlextensions	local:can_compatible_as_reasoning	.
-local:computational_complexity_of_deduction	local:computationalcomplexity_of	local:deduction	.
-local:simplicity_complexity	rdfs:subClassOf	local:complexity	.
-local:deduction_of_intensional_version	local:of_intensionalversion	local:deduction	.
-local:normative_version_of_rdf_schema	local:of_rdfschema	local:normative_version	.
-local:following_common	rdfs:member	local:following_common_setbased	.
-local:implemented	local:AM-MOD	local:can	.
-local:current_implementations	rdfs:subClassOf	local:implementations	.
-local:common_setbased	rdfs:subClassOf	local:setbased	.
-local:following_common	rdfs:subClassOf	local:common	.
-local:standard_notions_suchas_properties_thus_departing	local:standardnotionssuch_asproperties_	local:thus_departing	.
-local:departing	vn.role:object	local:standard_setbased_semantics	.
-local:impact	vn.role:Experiencer	local:result	.
-local:gives	vn.role:indirect_object	local:standard_notions_suchas_properties_thus_departing	.
-local:can_compatible_as_reasoning	local:as_reasoning	local:can_compatible	.
+local:intensional_interpretations_standard_notions	rdfs:subClassOf	local:interpretations_standard_notions	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_compatible_with_owl_extensions	rdfs:member	local:current_implementations	.
+local:properties_thus_departing	rdfs:member	local:properties	.
+local:s2	local:AM-LOC	local:paper	.
+local:setbased_intuitions	rdfs:subClassOf	local:intuitions	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing	rdfs:member	local:thus_departing	.
+local:computational_complexity	rdfs:subClassOf	local:complexity	.
+local:normative_version_of_rdf_schema	rdfs:member	local:rdf_schema	.
+local:intensional_interpretations	rdfs:member	local:intensional	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_implemented_following_common_setbased_intuitions	rdfs:member	local:reasoning	.
+local:reasoning_in_rdf_schema	rdfs:member	local:reasoning	.
+local:computational_complexity	rdfs:member	local:computational	.
+local:computational_complexity_of_deduction	rdfs:member	local:computational_complexity	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	rdfs:member	local:nonstandard_intensional_interpretations	.
+local:can_compatible_with_owl_extensions	rdfs:member	local:can_compatible	.
+local:s0.1	local:AM-DIS	local:thus	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_implemented_following_common_setbased_intuitions	rdfs:member	local:rdf_schema	.
+local:s5	rdf:object	local:current_implementations_as_reasoning_in_rdf_schema_can_be_implemented_following_common_setbased_intuitions	.
+local:s3	local:AM-LOC	local:paper	.
+local:preserving_the_computational_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:intensional_version	.
+local:nonstandard_intensional_interpretations	rdfs:subClassOf	local:interpretations	.
+local:current_implementations	rdfs:member	local:current	.
+local:s2.1	rdf:subject	local:we	.
+local:standard_setbased_extensional_semantics_for_the_rdf_schema_vocabulary	rdfs:member	local:extensional_semantics	.
+local:s1	rdf:subject	local:normative_version_of_rdf_schema	.
+local:s5.1	local:AM-MOD	local:can	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	rdfs:member	local:standard_notions	.
+local:s1.1	rdf:object	local:standard_setbased_semantics	.
+local:s1.1	rdf:subject	local:classes	.
+local:intensional_version	rdfs:member	local:intensional	.
+local:properties_thus_departing	rdfs:member	local:thus_departing	.
+local:can_implemented_following_common_setbased_intuitions	rdfs:member	local:can_implemented	.
+local:s0	rdf:object	local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_implemented_following_common_setbased_intuitions	rdfs:member	local:common_setbased_intuitions	.
+local:s3	rdf:subject	local:we	.
+local:deduction_of_intensional_version	rdfs:member	local:deduction	.
+local:s2	rdf:subject	local:we	.
+local:s5	rdf:subject	local:result	.
+local:s5.1	rdf:predicate	local:implement	.
+local:s3	rdf:predicate	local:develop	.
+local:s3	rdf:object	local:standard_setbased_extensional_semantics_for_the_rdf_schema_vocabulary	.
+local:s2.1	rdf:predicate	local:preserve	.
+local:s5.2	rdf:predicate	local:follow	.
 local:owl_extensions	rdfs:subClassOf	local:extensions	.
-local:standard_notions_suchas_classes_thus_departing	local:standardnotionssuch_asclasses_	local:thus_departing	.
-local:standard_notions_suchas_properties_thus_departing	local:_thusdeparting	local:standard_notions_suchas_properties	.
-local:impact	local:AM-MNR	local:positively	.
-local:simplicity_complexity_of_deduction	local:of_deduction	local:simplicity_complexity	.
+local:s3	local:AM-TMP	local:preserving_the_simplicity_complexity_of_deduction_of_the_intensional_version	.
+local:current_implementations_as_reasoning	rdfs:member	local:reasoning	.
+local:standard_setbased_extensional_semantics_for_rdf_schema_vocabulary	rdfs:member	local:standard_setbased_extensional_semantics	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing	rdfs:member	local:nonstandard_intensional_interpretations_standard_notions_such_as_classes	.
+local:computational_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:computational_complexity	.
+local:common_setbased_intuitions	rdfs:subClassOf	local:intuitions	.
+local:simplicity_complexity_of_deduction	rdfs:member	local:deduction	.
+local:standard_setbased_semantics	rdfs:subClassOf	local:setbased_semantics	.
+local:nonstandard_intensional_interpretations_standard_notions	rdfs:subClassOf	local:intensional_interpretations_standard_notions	.
+local:setbased_intuitions	rdfs:member	local:setbased	.
+local:s0	rdf:subject	local:normative_version_of_rdf_schema	.
+local:s3.1	rdf:subject	local:we	.
+local:s2	rdf:object	local:standard_setbased_extensional_semantics_for_the_rdf_schema_vocabulary	.
+local:s1	rdf:object	local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes_thus_departing_from_standard_setbased_semantics	rdfs:member	local:classes	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	rdfs:member	local:standard	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	rdfs:member	local:properties	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_implemented_following_common_setbased_intuitions	rdfs:member	local:current_implementations	.
+local:rdf_schema	rdfs:member	local:rdf	.
+local:current_implementations_as_reasoning	rdfs:member	local:current_implementations	.
 local:common_setbased_intuitions	rdfs:subClassOf	local:setbased_intuitions	.
-local:standard_setbased_semantics_for_rdf_schema_vocabulary	local:standardset-basedsemantics_for	local:rdf_schema_vocabulary	.
-local:can_implemented_as_reasoning	local:as_reasoning	local:can_implemented	.
-local:reasoning_in_rdf_schema	local:in_rdfschema	local:reasoning	.
+local:simplicity_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:simplicity_complexity	.
+local:standard_setbased_extensional_semantics_for_the_rdf_schema_vocabulary	rdfs:member	local:rdf_schema_vocabulary	.
+local:s4	rdf:predicate	local:impact	.
+local:s4	rdf:object	local:current_implementations_as_reasoning_in_rdf_schema_can_be_compatible_with_owl_extensions	.
+local:preserving_the_simplicity_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:simplicity_complexity	.
+local:setbased_extensional_semantics	rdfs:subClassOf	local:extensional_semantics	.
+local:standard_notions	rdfs:member	local:standard	.
+local:intensional_version	rdfs:subClassOf	local:version	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	rdfs:member	local:standard_notions	.
+local:normative_version_of_rdf_schema	rdfs:member	local:normative_version	.
+local:deduction_of_intensional_version	rdfs:member	local:intensional_version	.
+local:s1.1	local:AM-DIS	local:thus	.
+local:intensional_interpretations	rdfs:subClassOf	local:interpretations	.
+local:s5	rdf:predicate	local:impact	.
+local:extensional_semantics	rdfs:member	local:extensional	.
+local:simplicity_complexity	rdfs:member	local:simplicity	.
+local:preserving_the_simplicity_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:deduction	.
+local:s0	rdf:predicate	local:give	.
+local:owl_extensions	rdfs:member	local:owl	.
+local:reasoning_in_rdf_schema	rdfs:member	local:rdf_schema	.
+local:preserving_the_computational_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:deduction	.
+local:computational_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:intensional_version	.
+local:common_setbased	rdfs:member	local:common	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_compatible_with_owl_extensions	rdfs:member	local:owl_extensions	.
+local:s4	local:AM-MOD	local:can	.
+local:interpretations_standard_notions	rdfs:subClassOf	local:standard_notions	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties	rdfs:member	local:properties	.
+local:s2.1	rdf:object	local:computational_complexity_of_deduction_of_the_intensional_version	.
+local:rdf_schema	rdfs:subClassOf	local:schema	.
+local:current_implementations	rdfs:subClassOf	local:implementations	.
+local:s0.1	rdf:subject	local:properties	.
+local:schema_vocabulary	rdfs:subClassOf	local:vocabulary	.
+local:rdf_schema_vocabulary	rdfs:subClassOf	local:vocabulary	.
+local:s0.1	rdf:predicate	local:depart	.
+local:standard_setbased_semantics	rdfs:member	local:standard	.
+local:s5.1	rdf:subject	local:reasoning_in_rdf_schema	.
+local:s1	rdf:predicate	local:give	.
+local:can_implemented_following_common_setbased_intuitions	rdfs:member	local:common_setbased_intuitions	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_compatible_with_owl_extensions	rdfs:member	local:reasoning	.
+local:standard_setbased_extensional_semantics_for_rdf_schema_vocabulary	rdfs:member	local:rdf_schema_vocabulary	.
+local:rdf_schema_vocabulary	rdfs:subClassOf	local:schema_vocabulary	.
+local:s0.1	rdf:object	local:standard_setbased_semantics	.
+local:common_setbased	rdfs:subClassOf	local:setbased	.
+local:can_compatible	rdfs:subClassOf	local:compatible	.
+local:s5	local:AM-MNR	local:positively	.
+local:s5	local:AM-MOD	local:can	.
+local:s3.1	rdf:predicate	local:preserve	.
+local:s3.1	rdf:object	local:simplicity_complexity_of_deduction_of_the_intensional_version	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties_thus_departing_from_standard_setbased_semantics	rdfs:member	local:semantics	.
+local:s2	rdf:predicate	local:develop	.
+local:simplicity_complexity	rdfs:subClassOf	local:complexity	.
+local:s4	rdf:subject	local:result	.
+local:nonstandard_intensional	rdfs:member	local:nonstandard	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_properties	rdfs:member	local:nonstandard_intensional_interpretations_standard_notions	.
+local:common_setbased_intuitions	rdfs:member	local:common_setbased	.
+local:computational_complexity_of_deduction	rdfs:member	local:deduction	.
+local:s5.2	rdf:object	local:common_setbased_intuitions	.
+local:thus_departing_from_standard_setbased_semantics	rdfs:member	local:thus_departing	.
+local:s1.1	rdf:predicate	local:depart	.
+local:nonstandard_intensional_interpretations_standard_notions_such_as_classes	rdfs:member	local:nonstandard_intensional_interpretations_standard_notions	.
+local:extensional_semantics	rdfs:subClassOf	local:semantics	.
+local:standard_setbased_semantics	rdfs:member	local:semantics	.
+local:current_implementations_as_reasoning_in_rdf_schema_can_be_compatible_with_owl_extensions	rdfs:member	local:rdf_schema	.
+local:thus_departing_from_standard_setbased_semantics	rdfs:member	local:standard_setbased_semantics	.
+local:schema_vocabulary	rdfs:member	local:schema	.
+local:simplicity_complexity_of_deduction_of_the_intensional_version	rdfs:member	local:deduction	.
+local:nonstandard_intensional	rdfs:subClassOf	local:intensional	.
+local:standard_notions	rdfs:subClassOf	local:notions	.
+local:s5.1	local:AM-TMP	local:s5.2	.

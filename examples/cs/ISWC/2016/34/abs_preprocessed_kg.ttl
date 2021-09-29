@@ -1,404 +1,726 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"traversed ie without knowledge of the whole graph"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"such a costfunction only using basic topological features of the nodes of the paths as the paths are being traversed ie without knowledge of the whole graph"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"such a costfunction can generated only using basic topological features of the nodes of the paths as the paths are being traversed ie without knowledge of the whole graph"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we show how such a costfunction can be generated only using basic topological features of the nodes of the paths as the paths are being traversed ie without knowledge of the whole graph"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the properties that connect nodes in the graph"	.
+
+local:s9.4	a	rdf:Statement	;
+	rdfs:label	"introducing a very small amount of knowledge about the vocabularies of the properties"	.
+
+local:s9.3	a	rdf:Statement	;
+	rdfs:label	"how it can improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"such a costfunction only using basic topological features of the nodes of the paths how it can be improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"how such a costfunction can generated only using basic topological features of the nodes of the paths how it can be improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we show how such a costfunction can be generated only using basic topological features of the nodes of the paths how it can be improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
+
+local:s8.3	a	rdf:Statement	;
+	rdfs:label	"path evaluation functions that compare well with human evaluations"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"we generate path evaluation functions that compare well with human evaluations"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"we use a genetic programming approach in a supervised learning method to generate path evaluation functions that compare well with human evaluations"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"achieve this we use a genetic programming approach in a supervised learning method"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"given path"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the challenge here objectively assessing the value of a given path"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"given entities"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a costfunction that detect the strongest relationship between two given entities"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"such relationships can represented as paths of properties"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a blind graph search process traversing linked data"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"such relationships can represented as paths of entities"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"such relationships can obtained through a blind graph search process"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"a measure supporting the detection of strong relationships between linked data entities"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"learn a measure"	.
+
+
 #### Classes ####
 
-local:supporting	rdfs:label	"supporting"	.
+local:traverse	a	rdf:Class	;
+	rdfs:label	"traverse"	.
 
-local:measure	rdfs:label	"measure"	.
+local:without_knowledge_of_the_whole_graph	a	rdf:Class	;
+	rdfs:label	"without knowledge of the whole graph"	.
 
-local:strong_relationships	rdfs:label	"strong relationships"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:relationships	rdfs:label	"relationships"	.
+local:whole_graph	a	rdf:Class	;
+	rdfs:label	"whole graph"	.
 
-local:data	rdfs:label	"data"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:data_entities	rdfs:label	"data entities"	.
+local:whole	a	rdf:Class	;
+	rdfs:label	"whole"	.
 
-local:strong	rdfs:label	"strong"	.
+local:knowledge_of_whole_graph	a	rdf:Class	;
+	rdfs:label	"knowledge of whole graph"	.
 
-local:entities	rdfs:label	"entities"	.
+local:ie	a	rdf:Class	;
+	rdfs:label	"ie"	.
 
-local:linked_data_entities	rdfs:label	"linked data entities"	.
+local:costfunction	a	rdf:Class	;
+	rdfs:label	"costfunction"	.
 
-local:detection_of_strong_relationships	rdfs:label	"detection of strong relationships"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:detection	rdfs:label	"detection"	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	a	rdf:Class	;
+	rdfs:label	"basic topological features of the nodes of the paths as the paths are being traversed ie without knowledge of the whole graph"	.
 
-local:strong_relationships_between_linked_data_entities	rdfs:label	"strong relationships between linked data entities"	.
+local:basic_topological_features	a	rdf:Class	;
+	rdfs:label	"basic topological features"	.
 
-local:learn	rdfs:label	"learn"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:paths	a	rdf:Class	;
+	rdfs:label	"paths"	.
 
-local:can	rdfs:label	"can"	.
+local:basic_topological	a	rdf:Class	;
+	rdfs:label	"basic topological"	.
 
-local:blind	rdfs:label	"blind"	.
+local:topological	a	rdf:Class	;
+	rdfs:label	"topological"	.
 
-local:blind_graph	rdfs:label	"blind graph"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:graph	rdfs:label	"graph"	.
+local:basic	a	rdf:Class	;
+	rdfs:label	"basic"	.
 
-local:represented	rdfs:label	"represented"	.
+local:topological_features	a	rdf:Class	;
+	rdfs:label	"topological features"	.
 
-local:paths_of_entities	rdfs:label	"paths of entities"	.
+local:ie_traversed	a	rdf:Class	;
+	rdfs:label	"ie traversed"	.
 
-local:paths	rdfs:label	"paths"	.
+local:traversed	a	rdf:Class	;
+	rdfs:label	"traversed"	.
 
-local:paths_of_properties	rdfs:label	"paths of properties"	.
+local:are_ie_traversed	a	rdf:Class	;
+	rdfs:label	"are ie traversed"	.
 
-local:properties	rdfs:label	"properties"	.
+local:basic_topological_features_of_nodes	a	rdf:Class	;
+	rdfs:label	"basic topological features of nodes"	.
 
-local:graph_search_process	rdfs:label	"graph search process"	.
+local:nodes_of_paths	a	rdf:Class	;
+	rdfs:label	"nodes of paths"	.
 
-local:process	rdfs:label	"process"	.
+local:are_ie_traversed_without_knowledge	a	rdf:Class	;
+	rdfs:label	"are ie traversed without knowledge"	.
 
-local:graph_search	rdfs:label	"graph search"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:search_process	rdfs:label	"search process"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:search	rdfs:label	"search"	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths	a	rdf:Class	;
+	rdfs:label	"using basic topological features of the nodes of the paths"	.
 
-local:blind_graph_search_process	rdfs:label	"blind graph search process"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:traversing	rdfs:label	"traversing"	.
+local:paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	a	rdf:Class	;
+	rdfs:label	"paths are being traversed ie without knowledge of the whole graph"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:linked	rdfs:label	"linked"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:detect	rdfs:label	"detect"	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	a	rdf:Class	;
+	rdfs:label	"costfunction can be generated only using basic topological features of the nodes of the paths as the paths are being traversed ie without knowledge of the whole graph"	.
 
-local:costfunction	rdfs:label	"cost-function"	.
+local:only_using	a	rdf:Class	;
+	rdfs:label	"only using"	.
 
-local:strongest_relationship	rdfs:label	"strongest relationship"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:relationship	rdfs:label	"relationship"	.
+local:can_generated	a	rdf:Class	;
+	rdfs:label	"can generated"	.
 
-local:strongest	rdfs:label	"strongest"	.
+local:generated	a	rdf:Class	;
+	rdfs:label	"generated"	.
 
-local:given_entities	rdfs:label	"given entities"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:two_given_entities	rdfs:label	"two given entities"	.
+local:connect	a	rdf:Class	;
+	rdfs:label	"connect"	.
 
-local:strongest_relationship_between_two_given_entities	rdfs:label	"strongest relationship between two given entities"	.
+local:nodes_in_the_graph	a	rdf:Class	;
+	rdfs:label	"nodes in the graph"	.
 
-local:given	rdfs:label	"given"	.
+local:nodes_in_graph	a	rdf:Class	;
+	rdfs:label	"nodes in graph"	.
 
-local:here_challenge	rdfs:label	"here challenge"	.
+local:small_amount_of_knowledge_about_the_vocabularies_of_the_properties	a	rdf:Class	;
+	rdfs:label	"small amount of knowledge about the vocabularies of the properties"	.
 
-local:challenge	rdfs:label	"challenge"	.
+local:vocabularies	a	rdf:Class	;
+	rdfs:label	"vocabularies"	.
 
-local:assessing	rdfs:label	"assessing"	.
+local:small_amount	a	rdf:Class	;
+	rdfs:label	"small amount"	.
 
-local:objectively	rdfs:label	"objectively"	.
+local:small	a	rdf:Class	;
+	rdfs:label	"small"	.
 
-local:given_path	rdfs:label	"given path"	.
+local:amount	a	rdf:Class	;
+	rdfs:label	"amount"	.
 
-local:path	rdfs:label	"path"	.
+local:small_amount_of_knowledge	a	rdf:Class	;
+	rdfs:label	"small amount of knowledge"	.
 
-local:value_of_given_path	rdfs:label	"value of given path"	.
+local:knowledge_about_vocabularies	a	rdf:Class	;
+	rdfs:label	"knowledge about vocabularies"	.
 
-local:value	rdfs:label	"value"	.
+local:vocabularies_of_properties	a	rdf:Class	;
+	rdfs:label	"vocabularies of properties"	.
 
-local:achieve	rdfs:label	"achieve"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:this	rdfs:label	"this"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:we	rdfs:label	"we"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:use	rdfs:label	"use"	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	a	rdf:Class	;
+	rdfs:label	"basic topological features of the nodes of the paths how it can be improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
 
-local:genetic	rdfs:label	"genetic"	.
+local:very_small_amount	a	rdf:Class	;
+	rdfs:label	"very small amount"	.
 
-local:genetic_programming	rdfs:label	"genetic programming"	.
+local:very_small	a	rdf:Class	;
+	rdfs:label	"very small"	.
 
-local:programming	rdfs:label	"programming"	.
+local:very	a	rdf:Class	;
+	rdfs:label	"very"	.
 
-local:programming_approach	rdfs:label	"programming approach"	.
+local:can_improved	a	rdf:Class	;
+	rdfs:label	"can improved"	.
 
-local:approach	rdfs:label	"approach"	.
+local:improved	a	rdf:Class	;
+	rdfs:label	"improved"	.
 
-local:genetic_programming_approach	rdfs:label	"genetic programming approach"	.
+local:how_can_improved	a	rdf:Class	;
+	rdfs:label	"how can improved"	.
 
-local:path_evaluation	rdfs:label	"path evaluation"	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	a	rdf:Class	;
+	rdfs:label	"using basic topological features of the nodes of the paths how it can be improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
 
-local:path_evaluation_functions	rdfs:label	"path evaluation functions"	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	a	rdf:Class	;
+	rdfs:label	"costfunction can be generated only using basic topological features of the nodes of the paths how it can be improved through introducing a very small amount of knowledge about the vocabularies of the properties"	.
 
-local:evaluation_functions	rdfs:label	"evaluation functions"	.
+local:path_evaluation_functions	a	rdf:Class	;
+	rdfs:label	"path evaluation functions"	.
 
-local:functions	rdfs:label	"functions"	.
+local:evaluation_functions	a	rdf:Class	;
+	rdfs:label	"evaluation functions"	.
 
-local:human_evaluations	rdfs:label	"human evaluations"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:evaluations	rdfs:label	"evaluations"	.
+local:path_evaluation	a	rdf:Class	;
+	rdfs:label	"path evaluation"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:path	a	rdf:Class	;
+	rdfs:label	"path"	.
 
-local:human	rdfs:label	"human"	.
+local:functions	a	rdf:Class	;
+	rdfs:label	"functions"	.
 
-local:well_compare	rdfs:label	"well compare"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:compare	rdfs:label	"compare"	.
+local:human_evaluations	a	rdf:Class	;
+	rdfs:label	"human evaluations"	.
 
-local:learning_method	rdfs:label	"learning method"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:method	rdfs:label	"method"	.
+local:evaluations	a	rdf:Class	;
+	rdfs:label	"evaluations"	.
 
-local:supervised_learning_method	rdfs:label	"supervised learning method"	.
+local:well	a	rdf:Class	;
+	rdfs:label	"well"	.
 
-local:well_compare_with_human_evaluations	rdfs:label	"well compare with human evaluations"	.
+local:genetic_programming_approach	a	rdf:Class	;
+	rdfs:label	"genetic programming approach"	.
 
-local:generate	rdfs:label	"generate"	.
+local:genetic_programming	a	rdf:Class	;
+	rdfs:label	"genetic programming"	.
 
-local:well	rdfs:label	"well"	.
+local:genetic	a	rdf:Class	;
+	rdfs:label	"genetic"	.
 
-local:show	rdfs:label	"show"	.
+local:programming	a	rdf:Class	;
+	rdfs:label	"programming"	.
 
-local:basic	rdfs:label	"basic"	.
+local:programming_approach	a	rdf:Class	;
+	rdfs:label	"programming approach"	.
 
-local:basic_topological	rdfs:label	"basic topological"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:whole_graph	rdfs:label	"whole graph"	.
+local:supervised_learning_method_to_generate_path_evaluation_functions_that_compare_well_with_human_evaluations	a	rdf:Class	;
+	rdfs:label	"supervised learning method to generate path evaluation functions that compare well with human evaluations"	.
 
-local:topological	rdfs:label	"topological"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:basic_topological_features	rdfs:label	"basic topological features"	.
+local:well_compare	a	rdf:Class	;
+	rdfs:label	"well compare"	.
 
-local:topological_features	rdfs:label	"topological features"	.
+local:learning_method	a	rdf:Class	;
+	rdfs:label	"learning method"	.
 
-local:whole	rdfs:label	"whole"	.
+local:supervised_learning_method	a	rdf:Class	;
+	rdfs:label	"supervised learning method"	.
 
-local:features	rdfs:label	"features"	.
+local:well_compare_with_human_evaluations	a	rdf:Class	;
+	rdfs:label	"well compare with human evaluations"	.
 
-local:ie_knowledge	rdfs:label	"i.e. knowledge"	.
+local:use_a_genetic_programming_approach_in_a_supervised_learning_method	a	rdf:Class	;
+	rdfs:label	"use a genetic programming approach in a supervised learning method"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:learning	a	rdf:Class	;
+	rdfs:label	"learning"	.
 
-local:are_traversed	rdfs:label	"are traversed"	.
+local:supervised_learning	a	rdf:Class	;
+	rdfs:label	"supervised learning"	.
 
-local:traversed	rdfs:label	"traversed"	.
+local:supervised	a	rdf:Class	;
+	rdfs:label	"supervised"	.
 
-local:only_using	rdfs:label	"only using"	.
+local:use_in_supervised_learning_method	a	rdf:Class	;
+	rdfs:label	"use in supervised learning method"	.
 
-local:using	rdfs:label	"using"	.
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
 
-local:can_generated	rdfs:label	"can generated"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:generated	rdfs:label	"generated"	.
+local:challenge_here	a	rdf:Class	;
+	rdfs:label	"challenge here"	.
 
-local:basic_topological_features_of_nodes	rdfs:label	"basic topological features of nodes"	.
+local:here_challenge	a	rdf:Class	;
+	rdfs:label	"here challenge"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:challenge	a	rdf:Class	;
+	rdfs:label	"challenge"	.
 
-local:nodes_of_paths	rdfs:label	"nodes of paths"	.
+local:assess	a	rdf:Class	;
+	rdfs:label	"assess"	.
 
-local:ie_knowledge_of_whole_graph	rdfs:label	"i.e. knowledge of whole graph"	.
+local:value_of_a_given_path	a	rdf:Class	;
+	rdfs:label	"value of a given path"	.
 
-local:only	rdfs:label	"only"	.
+local:value	a	rdf:Class	;
+	rdfs:label	"value"	.
 
-local:basic_topological_features_of_nodes_as_paths	rdfs:label	"basic topological features of nodes as paths"	.
+local:value_of_given_path	a	rdf:Class	;
+	rdfs:label	"value of given path"	.
 
-local:ie_without_knowledge	rdfs:label	"i.e. without knowledge"	.
+local:objectively	a	rdf:Class	;
+	rdfs:label	"objectively"	.
 
-local:ie	rdfs:label	"i.e."	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:knowledge_of_whole_graph	rdfs:label	"knowledge of whole graph"	.
+local:detect	a	rdf:Class	;
+	rdfs:label	"detect"	.
 
-local:connect	rdfs:label	"connect"	.
+local:strongest_relationship_between_two_given_entities	a	rdf:Class	;
+	rdfs:label	"strongest relationship between two given entities"	.
 
-local:nodes_in_graph	rdfs:label	"nodes in graph"	.
+local:strongest_relationship	a	rdf:Class	;
+	rdfs:label	"strongest relationship"	.
 
-local:small_amount	rdfs:label	"small amount"	.
+local:strongest	a	rdf:Class	;
+	rdfs:label	"strongest"	.
 
-local:amount	rdfs:label	"amount"	.
+local:relationship	a	rdf:Class	;
+	rdfs:label	"relationship"	.
 
-local:small	rdfs:label	"small"	.
+local:two_given_entities	a	rdf:Class	;
+	rdfs:label	"two given entities"	.
 
-local:very_small	rdfs:label	"very small"	.
+local:relationships	a	rdf:Class	;
+	rdfs:label	"relationships"	.
 
-local:very_small_amount	rdfs:label	"very small amount"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:very	rdfs:label	"very"	.
+local:paths_of_properties	a	rdf:Class	;
+	rdfs:label	"paths of properties"	.
 
-local:can_improved	rdfs:label	"can improved"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:improved	rdfs:label	"improved"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:how_can_improved	rdfs:label	"how can improved"	.
+local:blind_graph_search_process	a	rdf:Class	;
+	rdfs:label	"blind graph search process"	.
 
-local:small_amount_of_knowledge	rdfs:label	"small amount of knowledge"	.
+local:graph_search	a	rdf:Class	;
+	rdfs:label	"graph search"	.
 
-local:knowledge_about_vocabularies	rdfs:label	"knowledge about vocabularies"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:vocabularies	rdfs:label	"vocabularies"	.
+local:search_process	a	rdf:Class	;
+	rdfs:label	"search process"	.
 
-local:vocabularies_of_properties	rdfs:label	"vocabularies of properties"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:it	rdfs:label	"it"	.
+local:graph_search_process	a	rdf:Class	;
+	rdfs:label	"graph search process"	.
 
-local:introducing	rdfs:label	"introducing"	.
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
 
-#### Properties ####
+local:paths_of_entities	a	rdf:Class	;
+	rdfs:label	"paths of entities"	.
+
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
+
+local:measure	a	rdf:Class	;
+	rdfs:label	"measure"	.
+
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
+
+local:detection_of_strong_relationships_between_linked_data_entities	a	rdf:Class	;
+	rdfs:label	"detection of strong relationships between linked data entities"	.
+
+local:detection	a	rdf:Class	;
+	rdfs:label	"detection"	.
+
+local:data_entities	a	rdf:Class	;
+	rdfs:label	"data entities"	.
+
+local:strong_relationships	a	rdf:Class	;
+	rdfs:label	"strong relationships"	.
+
+local:strong	a	rdf:Class	;
+	rdfs:label	"strong"	.
+
+local:linked_data_entities	a	rdf:Class	;
+	rdfs:label	"linked data entities"	.
+
+local:detection_of_strong_relationships	a	rdf:Class	;
+	rdfs:label	"detection of strong relationships"	.
+
+local:strong_relationships_between_linked_data_entities	a	rdf:Class	;
+	rdfs:label	"strong relationships between linked data entities"	.
+
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
 #### Mapped Relations ####
 
-local:human_evaluations	owl:sameAs	cso:human_evaluation	.
-cso:linked_data	rdfs:label	"linked data"	.
+local:search_process	owl:sameAs	cso:search_process	.
 cso:search_process	rdfs:label	"search process"	.
 cso:genetic_programming	rdfs:label	"genetic programming"	.
 cso:human_evaluation	rdfs:label	"human evaluations"	.
+local:human_evaluations	owl:sameAs	cso:human_evaluation	.
 local:genetic_programming	owl:sameAs	cso:genetic_programming	.
-local:search_process	owl:sameAs	cso:search_process	.
-local:linked_data	owl:sameAs	cso:linked_data	.
 
 #### Relations ####
 
-local:whole_graph	rdfs:subClassOf	local:graph	.
-local:here_challenge	rdfs:subClassOf	local:challenge	.
-local:programming	rdfs:member	local:programming_approach	.
-local:path	rdfs:member	local:path_evaluation	.
-local:blind_graph_search_process	rdfs:subClassOf	local:graph_search_process	.
-local:genetic_programming	rdfs:member	local:genetic_programming_approach	.
-local:can_improved	rdfs:subClassOf	local:improved	.
-local:traversed	vn.role:Theme2	local:basic_topological_features_of_nodes_as_paths	.
-local:basic_topological_features_of_nodes	local:basictopologicalfeatures_of	local:nodes	.
-local:represented	local:AM-MOD	local:can	.
-local:ie_without_knowledge	local:without_knowledge	local:ie	.
-local:compare	vn.role:Agent	local:human_evaluations	.
-local:generated	vn.role:Theme2	local:costfunction	.
-local:nodes_in_graph	local:nodes_in	local:graph	.
-local:evaluation	rdfs:member	local:evaluation_functions	.
-local:path_evaluation_functions	rdfs:subClassOf	local:functions	.
-local:genetic_programming_approach	rdfs:subClassOf	local:programming_approach	.
-local:small_amount_of_knowledge	local:of_knowledge	local:small_amount	.
-local:strongest_relationship_between_two_given_entities	local:between_twogivenentities	local:strongest_relationship	.
-local:basic_topological_features_of_nodes	local:of_nodes	local:basic_topological_features	.
-local:traversed	local:AM-ADV	local:ie_without_knowledge	.
-local:assessing	local:AM-MNR	local:objectively	.
-local:vocabularies_of_properties	local:vocabularies_of	local:properties	.
-local:given	vn.role:object	local:entities	.
-local:human_evaluations	rdfs:subClassOf	local:evaluations	.
-local:knowledge_about_vocabularies	local:knowledge_about	local:vocabularies	.
-local:evaluation_functions	rdfs:subClassOf	local:functions	.
-local:nodes_of_paths	local:of_paths	local:nodes	.
-local:use	local:AM-PNC	local:achieve	.
-local:are_traversed	rdfs:subClassOf	local:traversed	.
+local:s11.1	local:AM-MNR	local:using_basic_topological_features_of_the_nodes_of_the_paths	.
+local:value_of_a_given_path	rdfs:member	local:value	.
+local:s4	rdf:object	local:linked_data	.
+local:genetic_programming	rdfs:member	local:genetic	.
+local:paths_of_properties	rdfs:member	local:properties	.
+local:paths_of_properties	rdfs:member	local:paths	.
 local:can_generated	rdfs:subClassOf	local:generated	.
-local:search	rdfs:member	local:search_process	.
-local:small_amount	rdfs:subClassOf	local:amount	.
-local:detection_of_strong_relationships	local:of_strongrelationships	local:detection	.
-local:very	rdfs:member	local:very_small	.
-local:graph_search_process	rdfs:subClassOf	local:process	.
-local:improved	local:AM-MNR	local:introducing	.
-local:value_of_given_path	local:of_givenpath	local:value	.
-local:vocabularies_of_properties	local:of_properties	local:vocabularies	.
-local:learning_method	rdfs:subClassOf	local:method	.
-local:basic	rdfs:member	local:basic_topological	.
-local:very_small	rdfs:member	local:very_small_amount	.
-local:compare	vn.role:Patient2	local:path_evaluation_functions	.
-local:strongest_relationship	rdfs:subClassOf	local:relationship	.
-local:blind_graph	rdfs:subClassOf	local:graph	.
-local:generate	vn.role:Theme2	local:functions	.
-local:basic_topological	rdfs:subClassOf	local:topological	.
-local:detect	vn.role:Experiencer	local:costfunction	.
-local:genetic	rdfs:member	local:genetic_programming	.
-local:very_small_amount	rdfs:subClassOf	local:amount	.
-local:traversing	vn.role:Theme1	local:blind_graph_search_process	.
-local:introducing	vn.role:Patient	local:small_amount_of_knowledge	.
-local:supporting	vn.role:Experiencer	local:detection_of_strong_relationships	.
-local:graph_search	rdfs:member	local:graph_search_process	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:knowledge_about_vocabularies	local:about_vocabularies	local:knowledge	.
-local:graph_search	rdfs:subClassOf	local:search	.
-local:only_using	rdfs:subClassOf	local:using	.
-local:detect	vn.role:Stimulus	local:strongest_relationship_between_two_given_entities	.
-local:nodes_of_paths	local:nodes_of	local:paths	.
-local:path_evaluation_functions	rdfs:subClassOf	local:evaluation_functions	.
-local:linked_data_entities	rdfs:subClassOf	local:data_entities	.
-local:supporting	vn.role:Theme	local:measure	.
-local:strong_relationships_between_linked_data_entities	local:strongrelationships_between	local:linked_data_entities	.
-local:generated	local:AM-MNR	local:using	.
-local:genetic_programming_approach	rdfs:subClassOf	local:approach	.
-local:generated	local:AM-TMP	local:are_traversed	.
-local:knowledge_of_whole_graph	local:of_wholegraph	local:knowledge	.
-local:detection_of_strong_relationships	local:detection_of	local:strong_relationships	.
-local:learn	vn.role:Theme	local:measure	.
-local:programming_approach	rdfs:subClassOf	local:approach	.
-local:path_evaluation	rdfs:member	local:path_evaluation_functions	.
-local:ie_knowledge_of_whole_graph	local:i.e.knowledge_of	local:whole_graph	.
-local:use	local:AM-LOC	local:functions	.
-local:strongest_relationship_between_two_given_entities	local:strongestrelationship_between	local:two_given_entities	.
-local:assessing	vn.role:Theme	local:value_of_given_path	.
-local:connect	vn.role:Agent	local:properties	.
-local:ie_knowledge_of_whole_graph	local:of_wholegraph	local:ie_knowledge	.
-local:given_entities	rdfs:subClassOf	local:entities	.
-local:nodes_in_graph	local:in_graph	local:nodes	.
-local:improved	vn.role:Patient	local:it	.
-local:very_small	rdfs:subClassOf	local:small	.
-local:well_compare_with_human_evaluations	local:with_humanevaluations	local:well_compare	.
-local:achieve	vn.role:Theme	local:this	.
-local:strong_relationships_between_linked_data_entities	local:between_linkeddataentities	local:strong_relationships	.
-local:use	vn.role:Agent	local:we	.
-local:obtained	vn.role:object	local:relationships	.
-local:represented	local:AM-MNR	local:paths_of_entities	.
-local:two_given_entities	rdfs:subClassOf	local:given_entities	.
-local:show	vn.role:Theme	local:can_generated	.
-local:obtained	local:AM-MOD	local:can	.
-local:using	local:AM-ADV	local:only	.
-local:basic_topological_features_of_nodes_as_paths	local:as_paths	local:basic_topological_features_of_nodes	.
-local:graph_search_process	rdfs:subClassOf	local:search_process	.
-local:traversing	vn.role:Theme2	local:linked_data	.
-local:human	rdfs:member	local:human_evaluations	.
-local:linked	vn.role:Patient	local:data	.
-local:paths_of_entities	local:of_entities	local:paths	.
-local:genetic_programming	rdfs:subClassOf	local:programming	.
-local:show	vn.role:Agent	local:we	.
-local:graph	rdfs:member	local:graph_search	.
-local:blind	rdfs:member	local:blind_graph	.
-local:basic_topological_features_of_nodes_as_paths	local:basictopologicalfeaturesofnodes_as	local:paths	.
-local:knowledge_of_whole_graph	local:knowledge_of	local:whole_graph	.
-local:strong	rdfs:member	local:strong_relationships	.
-local:paths_of_properties	local:paths_of	local:properties	.
-local:value_of_given_path	local:value_of	local:given_path	.
-local:well_compare	rdfs:subClassOf	local:compare	.
+local:genetic_programming_approach	rdfs:member	local:genetic_programming	.
+local:whole_graph	rdfs:subClassOf	local:graph	.
+local:s10	rdf:predicate	local:connect	.
+local:small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:properties	.
+local:s9.3	local:AM-MNR	local:s9.4	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:nodes	.
 local:topological_features	rdfs:subClassOf	local:features	.
-local:ie_without_knowledge	local:i.e._without	local:knowledge	.
-local:basic_topological_features	rdfs:subClassOf	local:features	.
-local:basic_topological	rdfs:member	local:basic_topological_features	.
-local:generated	local:AM-MOD	local:can	.
-local:small	rdfs:member	local:small_amount	.
-local:given_path	rdfs:subClassOf	local:path	.
-local:supervised_learning_method	rdfs:subClassOf	local:learning_method	.
-local:small_amount_of_knowledge	local:smallamount_of	local:knowledge	.
-local:well_compare_with_human_evaluations	local:wellcompare_with	local:human_evaluations	.
-local:assessing	vn.role:Agent	local:here_challenge	.
-local:use	vn.role:Theme	local:genetic_programming_approach	.
-local:paths_of_entities	local:paths_of	local:entities	.
-local:generate	vn.role:Theme1	local:we	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:paths	.
+local:very_small_amount	rdfs:member	local:very_small	.
+local:s2	local:AM-MNR	local:blind_graph_search_process	.
+local:supervised_learning_method	rdfs:subClassOf	local:method	.
+local:knowledge_about_vocabularies	rdfs:member	local:knowledge	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:very_small_amount	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:basic_topological_features	.
+local:s9.4	rdf:predicate	local:introduce	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:nodes	.
+local:s5	rdf:predicate	local:represent	.
+local:whole_graph	rdfs:member	local:whole	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:knowledge	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:vocabularies	.
+local:s8.1	local:AM-LOC	local:supervised_learning_method_to_generate_path_evaluation_functions_that_compare_well_with_human_evaluations	.
+local:paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:whole_graph	.
+local:s9.3	rdf:subject	local:it	.
+local:well_compare_with_human_evaluations	rdfs:member	local:human_evaluations	.
+local:use_in_supervised_learning_method	rdfs:member	local:use	.
+local:s7	rdf:object	local:value_of_a_given_path	.
+local:s2	rdf:predicate	local:obtain	.
+local:use_in_supervised_learning_method	rdfs:member	local:supervised_learning_method	.
+local:s2	local:AM-MOD	local:can	.
+local:s1	rdf:subject	local:measure	.
+local:supervised_learning_method_to_generate_path_evaluation_functions_that_compare_well_with_human_evaluations	rdfs:member	local:path_evaluation_functions	.
+local:s8.1	rdf:subject	local:we	.
+local:s9	rdf:object	local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	.
+local:without_knowledge_of_the_whole_graph	rdfs:member	local:knowledge	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths	rdfs:member	local:nodes	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:knowledge	.
+local:very_small_amount	rdfs:subClassOf	local:amount	.
+local:supervised_learning_method	rdfs:member	local:supervised_learning	.
+local:s4	rdf:subject	local:blind_graph_search_process	.
+local:strong_relationships	rdfs:member	local:strong	.
+local:s9.1	local:AM-MOD	local:can	.
+local:detection_of_strong_relationships_between_linked_data_entities	rdfs:member	local:data_entities	.
+local:human_evaluations	rdfs:subClassOf	local:evaluations	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:very_small_amount	.
+local:s9.1	rdf:predicate	local:generate	.
+local:nodes_in_graph	rdfs:member	local:nodes	.
+local:s7	rdf:subject	local:challenge_here	.
+local:strong_relationships_between_linked_data_entities	rdfs:member	local:strong_relationships	.
+local:graph_search	rdfs:subClassOf	local:search	.
+local:s8.3	rdf:predicate	local:compare	.
+local:s11.2	rdf:subject	local:costfunction	.
+local:paths_of_entities	rdfs:member	local:paths	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:whole_graph	.
+local:human_evaluations	rdfs:member	local:human	.
+local:detection_of_strong_relationships_between_linked_data_entities	rdfs:member	local:detection	.
+local:s9.4	rdf:subject	local:small_amount_of_knowledge_about_the_vocabularies_of_the_properties	.
+local:genetic_programming_approach	rdfs:subClassOf	local:approach	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:properties	.
 local:search_process	rdfs:subClassOf	local:process	.
-local:strong_relationships	rdfs:subClassOf	local:relationships	.
-local:whole	rdfs:member	local:whole_graph	.
-local:topological	rdfs:member	local:topological_features	.
-local:connect	vn.role:Patient	local:nodes_in_graph	.
-local:compare	local:AM-MNR	local:well	.
-local:data	rdfs:member	local:data_entities	.
-local:path_evaluation	rdfs:subClassOf	local:evaluation	.
-local:using	vn.role:Agent	local:costfunction	.
-local:strongest	rdfs:member	local:strongest_relationship	.
-local:represented	vn.role:Theme	local:relationships	.
-local:ie_knowledge	rdfs:subClassOf	local:knowledge	.
-local:given	vn.role:object	local:path	.
-local:represented	local:AM-MNR	local:paths_of_properties	.
-local:improved	local:AM-MOD	local:can	.
 local:data_entities	rdfs:subClassOf	local:entities	.
-local:how_can_improved	rdfs:subClassOf	local:can_improved	.
+local:supervised_learning	rdfs:subClassOf	local:learning	.
+local:detection_of_strong_relationships_between_linked_data_entities	rdfs:member	local:strong_relationships	.
+local:programming_approach	rdfs:member	local:programming	.
+local:s5	local:AM-MOD	local:can	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths	rdfs:member	local:paths	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:nodes	.
+local:paths_of_entities	rdfs:member	local:entities	.
+local:knowledge_about_vocabularies	rdfs:member	local:vocabularies	.
+local:basic_topological_features	rdfs:member	local:basic_topological	.
+local:two_given_entities	rdfs:subClassOf	local:s6.1	.
+local:s8.3	rdf:subject	local:path_evaluation_functions	.
+local:nodes_of_paths	rdfs:member	local:paths	.
+local:well_compare	rdfs:subClassOf	local:compare	.
+local:small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:vocabularies	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:knowledge	.
+local:ie_traversed	rdfs:subClassOf	local:traversed	.
+local:are_ie_traversed	rdfs:subClassOf	local:ie_traversed	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:basic_topological_features	.
+local:s11	rdf:subject	local:we	.
+local:s7.1	rdfs:subClassOf	local:path	.
+local:s6.1	rdfs:subClassOf	local:entities	.
+local:graph_search_process	rdfs:member	local:graph_search	.
+local:s9.2	local:AM-ADV	local:only	.
+local:strongest_relationship	rdfs:member	local:strongest	.
+local:s10	rdf:subject	local:properties	.
+local:small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:knowledge	.
+local:basic_topological	rdfs:member	local:basic	.
+local:without_knowledge_of_the_whole_graph	rdfs:member	local:whole_graph	.
+local:are_ie_traversed_without_knowledge	rdfs:member	local:are_ie_traversed	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths	rdfs:member	local:basic_topological_features	.
+local:knowledge_of_whole_graph	rdfs:member	local:whole_graph	.
+local:strongest_relationship_between_two_given_entities	rdfs:member	local:strongest_relationship	.
+local:s8.1	rdf:object	local:genetic_programming_approach	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:nodes	.
+local:s8	rdf:subject	local:use_a_genetic_programming_approach_in_a_supervised_learning_method	.
+local:topological_features	rdfs:member	local:topological	.
+local:only_using	rdfs:subClassOf	local:using	.
+local:path_evaluation_functions	rdfs:subClassOf	local:functions	.
+local:s11.3	rdf:predicate	local:traverse	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:properties	.
+local:s9	rdf:subject	local:we	.
+local:use_a_genetic_programming_approach_in_a_supervised_learning_method	rdfs:member	local:supervised_learning_method	.
+local:s6.1	rdf:predicate	local:give	.
+local:s4	rdf:predicate	local:traverse	.
+local:s8.3	rdf:object	local:human_evaluations	.
+local:s4.1	rdfs:subClassOf	local:data	.
+local:s9.2	rdf:subject	local:costfunction	.
+local:s3	rdf:predicate	local:represent	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:nodes	.
+local:knowledge_of_whole_graph	rdfs:member	local:knowledge	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:properties	.
+local:small_amount	rdfs:subClassOf	local:amount	.
+local:s0	rdf:predicate	local:learn	.
+local:strong_relationships	rdfs:subClassOf	local:relationships	.
+local:nodes_in_graph	rdfs:member	local:graph	.
+local:s3	rdf:subject	local:relationships	.
+local:s9.2	rdf:predicate	local:use	.
+local:small_amount	rdfs:member	local:small	.
+local:strongest_relationship	rdfs:subClassOf	local:relationship	.
+local:s11.3	local:AM-MNR	local:ie	.
+local:very_small	rdfs:subClassOf	local:small	.
+local:genetic_programming_approach	rdfs:subClassOf	local:programming_approach	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:basic_topological_features	.
+local:path_evaluation	rdfs:subClassOf	local:evaluation	.
+local:here_challenge	rdfs:subClassOf	local:challenge	.
+local:use_a_genetic_programming_approach_in_a_supervised_learning_method	rdfs:member	local:genetic_programming_approach	.
+local:detection_of_strong_relationships	rdfs:member	local:detection	.
+local:s3	local:AM-MOD	local:can	.
+local:s11	rdf:object	local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	.
+local:s7.1	rdf:predicate	local:give	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:costfunction	.
+local:small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:small_amount	.
+local:well_compare_with_human_evaluations	rdfs:member	local:well_compare	.
 local:basic_topological_features	rdfs:subClassOf	local:topological_features	.
-local:paths_of_properties	local:of_properties	local:paths	.
-local:using	vn.role:Theme	local:basic_topological_features_of_nodes	.
-local:obtained	local:AM-MNR	local:blind_graph	.
-local:achieve	vn.role:Agent	local:we	.
+local:strong_relationships_between_linked_data_entities	rdfs:member	local:linked_data_entities	.
+local:s9.1	local:AM-MNR	local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	.
+local:basic_topological	rdfs:subClassOf	local:topological	.
+local:s6	rdf:object	local:strongest_relationship_between_two_given_entities	.
+local:small_amount_of_knowledge	rdfs:member	local:small_amount	.
+local:s9	rdf:predicate	local:show	.
+local:linked_data_entities	rdfs:subClassOf	local:data_entities	.
+local:graph_search_process	rdfs:subClassOf	local:process	.
+local:s6	rdf:subject	local:costfunction	.
+local:evaluation_functions	rdfs:member	local:evaluation	.
+local:value_of_a_given_path	rdfs:member	local:path	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:paths	.
+local:vocabularies_of_properties	rdfs:member	local:vocabularies	.
+local:value_of_given_path	rdfs:member	local:s7.1	.
+local:basic_topological_features_of_nodes	rdfs:member	local:basic_topological_features	.
+local:nodes_of_paths	rdfs:member	local:nodes	.
+local:path_evaluation_functions	rdfs:subClassOf	local:evaluation_functions	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:knowledge	.
+local:blind_graph_search_process	rdfs:subClassOf	local:graph_search_process	.
+local:s7.1	rdf:subject	local:path	.
+local:path_evaluation_functions	rdfs:member	local:path_evaluation	.
+local:paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:ie	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:costfunction	.
+local:s8.1	rdf:predicate	local:use	.
+local:vocabularies_of_properties	rdfs:member	local:properties	.
+local:value_of_given_path	rdfs:member	local:value	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:ie	.
+local:s8.2	rdf:predicate	local:generate	.
+local:programming_approach	rdfs:subClassOf	local:approach	.
+local:s11.2	rdf:object	local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	.
+local:s4.1	rdf:predicate	local:linked	.
+local:s11.2	rdf:predicate	local:use	.
+local:s7	rdf:predicate	local:assess	.
+local:s9.2	rdf:object	local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	.
+local:s11.3	local:AM-ADV	local:without_knowledge_of_the_whole_graph	.
+local:learning_method	rdfs:subClassOf	local:method	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:knowledge	.
+local:supervised_learning	rdfs:member	local:supervised	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:basic_topological_features	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:vocabularies	.
+local:s1	rdf:object	local:detection_of_strong_relationships_between_linked_data_entities	.
+local:supervised_learning_method	rdfs:subClassOf	local:learning_method	.
+local:s11	rdf:predicate	local:show	.
+local:s3	local:AM-MNR	local:paths_of_entities	.
+local:s5	rdf:subject	local:relationships	.
+local:basic_topological_features_of_nodes	rdfs:member	local:nodes	.
+local:paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:knowledge	.
+local:graph_search	rdfs:member	local:graph	.
+local:s1	rdf:predicate	local:support	.
+local:s8.2	rdf:object	local:s8.3	.
+local:can_improved	rdfs:subClassOf	local:improved	.
+local:s10	rdf:object	local:nodes_in_the_graph	.
+local:s9.3	rdf:predicate	local:improve	.
+local:s9.3	local:AM-MOD	local:can	.
+local:detection_of_strong_relationships	rdfs:member	local:strong_relationships	.
+local:s11.1	local:AM-TMP	local:paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	.
+local:basic_topological_features	rdfs:subClassOf	local:features	.
+local:strongest_relationship_between_two_given_entities	rdfs:member	local:two_given_entities	.
+local:s11.1	rdf:predicate	local:generate	.
+local:supervised_learning_method_to_generate_path_evaluation_functions_that_compare_well_with_human_evaluations	rdfs:member	local:human_evaluations	.
+local:evaluation_functions	rdfs:subClassOf	local:functions	.
+local:s8.3	local:AM-MNR	local:well	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:whole_graph	.
+local:s9.1	rdf:subject	local:costfunction	.
+local:s7	local:AM-MNR	local:objectively	.
+local:learning_method	rdfs:member	local:learning	.
+local:s5	local:AM-MNR	local:paths_of_properties	.
+local:basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:very_small_amount	.
+local:s11.2	local:AM-ADV	local:only	.
+local:search_process	rdfs:member	local:search	.
+local:basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:ie	.
+local:s11.1	rdf:subject	local:costfunction	.
+local:s2	rdf:subject	local:relationships	.
+local:small_amount_of_knowledge	rdfs:member	local:knowledge	.
+local:strongest_relationship_between_two_given_entities	rdfs:member	local:entities	.
+local:how_can_improved	rdfs:subClassOf	local:can_improved	.
+local:using_basic_topological_features_of_the_nodes_of_the_paths_how_it_can_be_improved_through_introducing_a_very_small_amount_of_knowledge_about_the_vocabularies_of_the_properties	rdfs:member	local:vocabularies	.
+local:nodes_in_the_graph	rdfs:member	local:graph	.
+local:s6	rdf:predicate	local:detect	.
+local:genetic_programming	rdfs:subClassOf	local:programming	.
+local:s4.1	rdf:subject	local:data	.
+local:s0	rdf:subject	local:measure	.
+local:data_entities	rdfs:member	local:data	.
+local:path_evaluation	rdfs:member	local:path	.
+local:s8.2	rdf:subject	local:we	.
+local:graph_search_process	rdfs:subClassOf	local:search_process	.
+local:nodes_in_the_graph	rdfs:member	local:nodes	.
+local:s11.1	local:AM-MOD	local:can	.
+local:costfunction_can_be_generated_only_using_basic_topological_features_of_the_nodes_of_the_paths_as_the_paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:basic_topological_features	.
+local:s6.1	rdf:subject	local:entities	.
+local:paths_are_being_traversed_ie_without_knowledge_of_the_whole_graph	rdfs:member	local:paths	.
+local:s8	rdf:predicate	local:achieve	.
+local:supervised_learning_method_to_generate_path_evaluation_functions_that_compare_well_with_human_evaluations	rdfs:member	local:method	.
+local:very_small	rdfs:member	local:very	.
+local:are_ie_traversed_without_knowledge	rdfs:member	local:knowledge	.

@@ -1,445 +1,849 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we evaluated we system"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"system using both a synthetic data set data"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"system using both a synthetic data set data"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"system using a subset of the realworld billion triple challenge data"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"the selected sources corresponding ontologies"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"selected sources"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"an owl reasoner answer queries over the selected sources"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we use an owl reasoner to answer queries over the selected sources"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"selected sources"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"a query optimization algorithm further constrain other nodes"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a query optimization algorithm then uses the information from these sources to further constrain other nodes"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"a rule goal tree that expresses the reformulation of a conjunctive query"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"a bottomup approach estimate the selectivity of each node"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"given a rule goal tree a query optimization algorithm uses a bottomup approach to estimate the selectivity of each node"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"given a rule goal tree a query optimization algorithm"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"these two patterns treated independently"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"join selectivity"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a query optimization algorithm based on the observation that the join selectivity of a pair of query triple patterns is often higher than the overall selectivity of these two patterns"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"sources using structural query features"	.
+
+local:s2.3	a	rdf:Statement	;
+	rdfs:label	"we a query optimization algorithm identify the potentially relevant semantic web data sources"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"in order to effectively answer queries in environments with distributed rdfowl we present a query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"distributed rdfowl we present a query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"effectively answer queries in environments with distributed rdfowl we present a query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"we a query optimization algorithm identify the potentially relevant semantic web data sources"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"in order to quickly answer queries in environments with distributed rdfowl we present a query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"distributed rdfowl a query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"quickly answer queries in environments with distributed rdfowl we"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"sources using a term index"	.
+
+
 #### Classes ####
 
-local:using	rdfs:label	"using"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:sources	rdfs:label	"sources"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:structural_query	rdfs:label	"structural query"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:query	rdfs:label	"query"	.
+local:system_using_both_a_synthetic_data	a	rdf:Class	;
+	rdfs:label	"system using both a synthetic data"	.
 
-local:query_features	rdfs:label	"query features"	.
+local:synthetic_data	a	rdf:Class	;
+	rdfs:label	"synthetic data"	.
 
-local:features	rdfs:label	"features"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:structural_query_features	rdfs:label	"structural query features"	.
+local:synthetic	a	rdf:Class	;
+	rdfs:label	"synthetic"	.
 
-local:structural	rdfs:label	"structural"	.
+local:system_using	a	rdf:Class	;
+	rdfs:label	"system using"	.
 
-local:answer	rdfs:label	"answer"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:quickly	rdfs:label	"quickly"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:distributed_rdfowl	rdfs:label	"distributed rdfowl"	.
+local:synthetic_data_set_data	a	rdf:Class	;
+	rdfs:label	"synthetic data set data"	.
 
-local:rdfowl	rdfs:label	"rdfowl"	.
+local:subset_of_the_realworld_billion_triple_challenge_data	a	rdf:Class	;
+	rdfs:label	"subset of the realworld billion triple challenge data"	.
 
-local:queries_in_environments	rdfs:label	"queries in environments"	.
+local:subset	a	rdf:Class	;
+	rdfs:label	"subset"	.
 
-local:queries	rdfs:label	"queries"	.
+local:realworld_billion_triple_challenge_data	a	rdf:Class	;
+	rdfs:label	"realworld billion triple challenge data"	.
 
-local:environments	rdfs:label	"environments"	.
+local:triple_challenge_data	a	rdf:Class	;
+	rdfs:label	"triple challenge data"	.
 
-local:environments_with_distributed_rdfowl	rdfs:label	"environments with distributed rdfowl"	.
+local:realworld_billion_triple_challenge	a	rdf:Class	;
+	rdfs:label	"realworld billion triple challenge"	.
 
-local:we	rdfs:label	"we"	.
+local:triple_challenge	a	rdf:Class	;
+	rdfs:label	"triple challenge"	.
 
-local:optimization	rdfs:label	"optimization"	.
+local:challenge	a	rdf:Class	;
+	rdfs:label	"challenge"	.
 
-local:optimization_algorithm	rdfs:label	"optimization algorithm"	.
+local:realworld_billion_triple	a	rdf:Class	;
+	rdfs:label	"realworld billion triple"	.
 
-local:query_optimization	rdfs:label	"query optimization"	.
+local:realworld_billion	a	rdf:Class	;
+	rdfs:label	"realworld billion"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:billion_triple	a	rdf:Class	;
+	rdfs:label	"billion triple"	.
 
-local:query_optimization_algorithm	rdfs:label	"query optimization algorithm"	.
+local:billion	a	rdf:Class	;
+	rdfs:label	"billion"	.
 
-local:present	rdfs:label	"present"	.
+local:billion_triple_challenge	a	rdf:Class	;
+	rdfs:label	"billion triple challenge"	.
 
-local:relevant_semantic_web_data	rdfs:label	"relevant semantic web data"	.
+local:triple	a	rdf:Class	;
+	rdfs:label	"triple"	.
 
-local:relevant_semantic_web_data_sources	rdfs:label	"relevant semantic web data sources"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:billion_triple_challenge_data	a	rdf:Class	;
+	rdfs:label	"billion triple challenge data"	.
 
-local:semantic_web_data	rdfs:label	"semantic web data"	.
+local:challenge_data	a	rdf:Class	;
+	rdfs:label	"challenge data"	.
 
-local:potentially_relevant_semantic_web_data	rdfs:label	"potentially relevant semantic web data"	.
+local:subset_of_realworld_billion_triple_challenge_data	a	rdf:Class	;
+	rdfs:label	"subset of realworld billion triple challenge data"	.
 
-local:data	rdfs:label	"data"	.
+local:selected_sources	a	rdf:Class	;
+	rdfs:label	"selected sources"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:relevant_semantic_web	rdfs:label	"relevant semantic web"	.
+local:correspond	a	rdf:Class	;
+	rdfs:label	"correspond"	.
 
-local:web	rdfs:label	"web"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:web_data	rdfs:label	"web data"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:owl_reasoner	a	rdf:Class	;
+	rdfs:label	"owl reasoner"	.
 
-local:relevant_semantic	rdfs:label	"relevant semantic"	.
+local:reasoner	a	rdf:Class	;
+	rdfs:label	"reasoner"	.
 
-local:potentially_relevant_semantic	rdfs:label	"potentially relevant semantic"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:potentially_relevant_semantic_web	rdfs:label	"potentially relevant semantic web"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:web_data_sources	rdfs:label	"web data sources"	.
+local:queries_over_the_selected_sources	a	rdf:Class	;
+	rdfs:label	"queries over the selected sources"	.
 
-local:potentially_relevant	rdfs:label	"potentially relevant"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:potentially	rdfs:label	"potentially"	.
+local:queries_over_selected_sources	a	rdf:Class	;
+	rdfs:label	"queries over selected sources"	.
 
-local:semantic_web_data_sources	rdfs:label	"semantic web data sources"	.
+local:answer_queries_over_the_selected_sources	a	rdf:Class	;
+	rdfs:label	"answer queries over the selected sources"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:answer_queries	a	rdf:Class	;
+	rdfs:label	"answer queries"	.
 
-local:potentially_relevant_semantic_web_data_sources	rdfs:label	"potentially relevant semantic web data sources"	.
+local:answer_queries_over_selected_sources	a	rdf:Class	;
+	rdfs:label	"answer queries over selected sources"	.
 
-local:identify	rdfs:label	"identify"	.
+local:query_optimization_algorithm	a	rdf:Class	;
+	rdfs:label	"query optimization algorithm"	.
 
-local:term_index	rdfs:label	"term index"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:index	rdfs:label	"index"	.
+local:query_optimization	a	rdf:Class	;
+	rdfs:label	"query optimization"	.
 
-local:term	rdfs:label	"term"	.
+local:optimization	a	rdf:Class	;
+	rdfs:label	"optimization"	.
 
-local:effectively	rdfs:label	"effectively"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:effectively_answer	rdfs:label	"effectively answer"	.
+local:optimization_algorithm	a	rdf:Class	;
+	rdfs:label	"optimization algorithm"	.
 
-local:order	rdfs:label	"order"	.
+local:constrain	a	rdf:Class	;
+	rdfs:label	"constrain"	.
 
-local:two_patterns	rdfs:label	"two patterns"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:patterns	rdfs:label	"patterns"	.
+local:further	a	rdf:Class	;
+	rdfs:label	"further"	.
 
-local:treated	rdfs:label	"treated"	.
+local:information_sources_to_further_constrain_other_nodes	a	rdf:Class	;
+	rdfs:label	"information sources to further constrain other nodes"	.
 
-local:independently	rdfs:label	"independently"	.
+local:further_constrain	a	rdf:Class	;
+	rdfs:label	"further constrain"	.
 
-local:based	rdfs:label	"based"	.
+local:other_nodes	a	rdf:Class	;
+	rdfs:label	"other nodes"	.
 
-local:overall	rdfs:label	"overall"	.
+local:information_sources	a	rdf:Class	;
+	rdfs:label	"information sources"	.
 
-local:overall_selectivity	rdfs:label	"overall selectivity"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:join_selectivity	rdfs:label	"join selectivity"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:selectivity	rdfs:label	"selectivity"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:triple_patterns	rdfs:label	"triple patterns"	.
+local:rule_goal_tree	a	rdf:Class	;
+	rdfs:label	"rule goal tree"	.
 
-local:triple	rdfs:label	"triple"	.
+local:tree	a	rdf:Class	;
+	rdfs:label	"tree"	.
 
-local:query_triple	rdfs:label	"query triple"	.
+local:rule_goal	a	rdf:Class	;
+	rdfs:label	"rule goal"	.
 
-local:query_triple_patterns	rdfs:label	"query triple patterns"	.
+local:rule	a	rdf:Class	;
+	rdfs:label	"rule"	.
 
-local:join	rdfs:label	"join"	.
+local:goal_tree	a	rdf:Class	;
+	rdfs:label	"goal tree"	.
 
-local:often_higher	rdfs:label	"often higher"	.
+local:goal	a	rdf:Class	;
+	rdfs:label	"goal"	.
 
-local:higher	rdfs:label	"higher"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:patterns_selectivity	rdfs:label	"patterns selectivity"	.
+local:reformulation_of_a_conjunctive_query	a	rdf:Class	;
+	rdfs:label	"reformulation of a conjunctive query"	.
 
-local:a_query_triple_patterns	rdfs:label	"a query triple patterns"	.
+local:conjunctive_query	a	rdf:Class	;
+	rdfs:label	"conjunctive query"	.
 
-local:join_patterns_selectivity	rdfs:label	"join patterns selectivity"	.
+local:reformulation	a	rdf:Class	;
+	rdfs:label	"reformulation"	.
 
-local:often_higher_than_overall_selectivity	rdfs:label	"often higher than overall selectivity"	.
+local:conjunctive	a	rdf:Class	;
+	rdfs:label	"conjunctive"	.
 
-local:overall_selectivity_of_two_patterns	rdfs:label	"overall selectivity of two patterns"	.
+local:reformulation_of_conjunctive_query	a	rdf:Class	;
+	rdfs:label	"reformulation of conjunctive query"	.
 
-local:observation	rdfs:label	"observation"	.
+local:bottomup_approach	a	rdf:Class	;
+	rdfs:label	"bottomup approach"	.
 
-local:rule	rdfs:label	"rule"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:rule_goal	rdfs:label	"rule goal"	.
+local:bottomup	a	rdf:Class	;
+	rdfs:label	"bottomup"	.
 
-local:goal	rdfs:label	"goal"	.
+local:estimate	a	rdf:Class	;
+	rdfs:label	"estimate"	.
 
-local:goal_tree	rdfs:label	"goal tree"	.
+local:selectivity_of_each_node	a	rdf:Class	;
+	rdfs:label	"selectivity of each node"	.
 
-local:tree	rdfs:label	"tree"	.
+local:node	a	rdf:Class	;
+	rdfs:label	"node"	.
 
-local:rule_goal_tree	rdfs:label	"rule goal tree"	.
+local:selectivity	a	rdf:Class	;
+	rdfs:label	"selectivity"	.
 
-local:expresses	rdfs:label	"expresses"	.
+local:selectivity_of_node	a	rdf:Class	;
+	rdfs:label	"selectivity of node"	.
 
-local:conjunctive_query	rdfs:label	"conjunctive query"	.
+local:bottomup_approach_estimate_the_selectivity_of_each_node	a	rdf:Class	;
+	rdfs:label	"bottomup approach estimate the selectivity of each node"	.
 
-local:conjunctive	rdfs:label	"conjunctive"	.
+local:given_a_rule_goal_tree	a	rdf:Class	;
+	rdfs:label	"given a rule goal tree"	.
 
-local:reformulation_of_conjunctive_query	rdfs:label	"reformulation of conjunctive query"	.
+local:rule_goal_tree_a_query_optimization_algorithm	a	rdf:Class	;
+	rdfs:label	"rule goal tree a query optimization algorithm"	.
 
-local:reformulation	rdfs:label	"reformulation"	.
+local:given	a	rdf:Class	;
+	rdfs:label	"given"	.
 
-local:given	rdfs:label	"given"	.
+local:two_patterns	a	rdf:Class	;
+	rdfs:label	"two patterns"	.
 
-local:uses	rdfs:label	"uses"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:bottomup_approach	rdfs:label	"bottom-up approach"	.
+local:treat	a	rdf:Class	;
+	rdfs:label	"treat"	.
 
-local:approach	rdfs:label	"approach"	.
+local:independently	a	rdf:Class	;
+	rdfs:label	"independently"	.
 
-local:bottomup	rdfs:label	"bottom-up"	.
+local:join	a	rdf:Class	;
+	rdfs:label	"join"	.
 
-local:selectivity_of_node	rdfs:label	"selectivity of node"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:node	rdfs:label	"node"	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	a	rdf:Class	;
+	rdfs:label	"observation that the join selectivity of a pair of query triple patterns is often higher than the overall selectivity of these two patterns"	.
 
-local:estimate	rdfs:label	"estimate"	.
+local:observation	a	rdf:Class	;
+	rdfs:label	"observation"	.
 
-local:then	rdfs:label	"then"	.
+local:overall_selectivity	a	rdf:Class	;
+	rdfs:label	"overall selectivity"	.
 
-local:information	rdfs:label	"information"	.
+local:query_triple_patterns	a	rdf:Class	;
+	rdfs:label	"query triple patterns"	.
 
-local:other_nodes	rdfs:label	"other nodes"	.
+local:pair	a	rdf:Class	;
+	rdfs:label	"pair"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:query_triple	a	rdf:Class	;
+	rdfs:label	"query triple"	.
 
-local:further_constrain	rdfs:label	"further constrain"	.
+local:overall	a	rdf:Class	;
+	rdfs:label	"overall"	.
 
-local:constrain	rdfs:label	"constrain"	.
+local:triple_patterns	a	rdf:Class	;
+	rdfs:label	"triple patterns"	.
 
-local:further	rdfs:label	"further"	.
+local:often_higher	a	rdf:Class	;
+	rdfs:label	"often higher"	.
 
-local:other	rdfs:label	"other"	.
+local:higher	a	rdf:Class	;
+	rdfs:label	"higher"	.
 
-local:use	rdfs:label	"use"	.
+local:patterns_selectivity	a	rdf:Class	;
+	rdfs:label	"patterns selectivity"	.
 
-local:owl_reasoner	rdfs:label	"owl reasoner"	.
+local:a_query_triple_patterns	a	rdf:Class	;
+	rdfs:label	"a query triple patterns"	.
 
-local:reasoner	rdfs:label	"reasoner"	.
+local:join_patterns_selectivity	a	rdf:Class	;
+	rdfs:label	"join patterns selectivity"	.
 
-local:owl	rdfs:label	"owl"	.
+local:often_higher_than_overall_selectivity	a	rdf:Class	;
+	rdfs:label	"often higher than overall selectivity"	.
 
-local:answer_queries	rdfs:label	"answer queries"	.
+local:overall_selectivity_of_two_patterns	a	rdf:Class	;
+	rdfs:label	"overall selectivity of two patterns"	.
 
-local:selected_sources	rdfs:label	"selected sources"	.
+local:structural_query_features	a	rdf:Class	;
+	rdfs:label	"structural query features"	.
 
-local:answer_queries_over_selected_sources	rdfs:label	"answer queries over selected sources"	.
+local:structural_query	a	rdf:Class	;
+	rdfs:label	"structural query"	.
 
-local:queries_over_selected_sources	rdfs:label	"queries over selected sources"	.
+local:structural	a	rdf:Class	;
+	rdfs:label	"structural"	.
 
-local:selected	rdfs:label	"selected"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:system	rdfs:label	"system"	.
+local:query_features	a	rdf:Class	;
+	rdfs:label	"query features"	.
 
-local:triple_challenge	rdfs:label	"triple challenge"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:challenge	rdfs:label	"challenge"	.
+local:potentially_relevant_semantic_web_data_sources	a	rdf:Class	;
+	rdfs:label	"potentially relevant semantic web data sources"	.
 
-local:triple_challenge_data	rdfs:label	"triple challenge data"	.
+local:relevant_semantic_web	a	rdf:Class	;
+	rdfs:label	"relevant semantic web"	.
 
-local:challenge_data	rdfs:label	"challenge data"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:billion_triple_challenge_data	rdfs:label	"billion triple challenge data"	.
+local:web_data_sources	a	rdf:Class	;
+	rdfs:label	"web data sources"	.
 
-local:realworld_billion_triple_challenge_data	rdfs:label	"real-world billion triple challenge data"	.
+local:web_data	a	rdf:Class	;
+	rdfs:label	"web data"	.
 
-local:subset_of_realworld_billion_triple_challenge_data	rdfs:label	"subset of real-world billion triple challenge data"	.
+local:relevant_semantic_web_data	a	rdf:Class	;
+	rdfs:label	"relevant semantic web data"	.
 
-local:subset	rdfs:label	"subset"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:synthetic_data	rdfs:label	"synthetic data"	.
+local:potentially_relevant_semantic_web_data	a	rdf:Class	;
+	rdfs:label	"potentially relevant semantic web data"	.
 
-local:synthetic	rdfs:label	"synthetic"	.
+local:potentially_relevant	a	rdf:Class	;
+	rdfs:label	"potentially relevant"	.
 
-local:set	rdfs:label	"set"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:system_using	rdfs:label	"system using"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:potentially_relevant_semantic_web	a	rdf:Class	;
+	rdfs:label	"potentially relevant semantic web"	.
 
-#### Properties ####
+local:potentially	a	rdf:Class	;
+	rdfs:label	"potentially"	.
+
+local:relevant_semantic	a	rdf:Class	;
+	rdfs:label	"relevant semantic"	.
+
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
+
+local:relevant_semantic_web_data_sources	a	rdf:Class	;
+	rdfs:label	"relevant semantic web data sources"	.
+
+local:potentially_relevant_semantic	a	rdf:Class	;
+	rdfs:label	"potentially relevant semantic"	.
+
+local:semantic_web_data	a	rdf:Class	;
+	rdfs:label	"semantic web data"	.
+
+local:semantic_web_data_sources	a	rdf:Class	;
+	rdfs:label	"semantic web data sources"	.
+
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
+
+local:order_to_effectively_answer_queries_in_environments_with_distributed_rdfowl	a	rdf:Class	;
+	rdfs:label	"order to effectively answer queries in environments with distributed rdfowl"	.
+
+local:environments	a	rdf:Class	;
+	rdfs:label	"environments"	.
+
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
+
+local:distributed_rdfowl	a	rdf:Class	;
+	rdfs:label	"distributed rdfowl"	.
+
+local:distributed	a	rdf:Class	;
+	rdfs:label	"distributed"	.
+
+local:rdfowl	a	rdf:Class	;
+	rdfs:label	"rdfowl"	.
+
+local:effectively_answer	a	rdf:Class	;
+	rdfs:label	"effectively answer"	.
+
+local:queries_in_environments	a	rdf:Class	;
+	rdfs:label	"queries in environments"	.
+
+local:environments_with_distributed_rdfowl	a	rdf:Class	;
+	rdfs:label	"environments with distributed rdfowl"	.
+
+local:identify_the_potentially_relevant_semantic_web_data_sources	a	rdf:Class	;
+	rdfs:label	"identify the potentially relevant semantic web data sources"	.
+
+local:rdfowl_we_present_a_query_optimization_algorithm	a	rdf:Class	;
+	rdfs:label	"rdfowl we present a query optimization algorithm"	.
+
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
+
+local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	a	rdf:Class	;
+	rdfs:label	"queries in environments with distributed rdfowl we present a query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:effectively	a	rdf:Class	;
+	rdfs:label	"effectively"	.
+
+local:order_to_quickly_answer_queries_in_environments_with_distributed_rdfowl	a	rdf:Class	;
+	rdfs:label	"order to quickly answer queries in environments with distributed rdfowl"	.
+
+local:quickly_answer	a	rdf:Class	;
+	rdfs:label	"quickly answer"	.
+
+local:query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	a	rdf:Class	;
+	rdfs:label	"query optimization algorithm to identify the potentially relevant semantic web data sources"	.
+
+local:queries_in_environments_with_distributed_rdfowl	a	rdf:Class	;
+	rdfs:label	"queries in environments with distributed rdfowl"	.
+
+local:quickly	a	rdf:Class	;
+	rdfs:label	"quickly"	.
+
+local:term_index	a	rdf:Class	;
+	rdfs:label	"term index"	.
+
+local:term	a	rdf:Class	;
+	rdfs:label	"term"	.
+
+local:index	a	rdf:Class	;
+	rdfs:label	"index"	.
 
 #### Mapped Relations ####
 
-local:owl	owl:sameAs	cso:owl	.
 local:optimization	owl:sameAs	cso:optimization	.
 local:semantic	owl:sameAs	cso:semantics	.
-local:reasoner	owl:sameAs	cso:reasoner	.
-cso:owl	rdfs:label	"owl"	.
 cso:semantics	rdfs:label	"semantic"	.
-local:query_optimization	owl:sameAs	cso:query_optimization	.
+cso:owl	rdfs:label	"owl"	.
+local:optimization_algorithm	owl:sameAs	cso:optimization_algorithms	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:query_optimization	rdfs:label	"query optimization"	.
+cso:optimization_algorithms	rdfs:label	"optimization algorithm"	.
+cso:optimization	rdfs:label	"optimization"	.
 local:semantic_web	owl:sameAs	cso:semantic_web	.
 cso:semantic_web	rdfs:label	"semantic web"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:owl	owl:sameAs	cso:owl	.
+local:query_optimization	owl:sameAs	cso:query_optimization	.
+local:reasoner	owl:sameAs	cso:reasoner	.
 cso:reasoner	rdfs:label	"reasoner"	.
-local:optimization_algorithm	owl:sameAs	cso:optimization_algorithms	.
-cso:optimization	rdfs:label	"optimization"	.
-cso:optimization_algorithms	rdfs:label	"optimization algorithm"	.
-cso:query_optimization	rdfs:label	"query optimization"	.
 
 #### Relations ####
 
-local:query_triple	rdfs:member	local:query_triple_patterns	.
-local:billion_triple_challenge_data	rdfs:subClassOf	local:triple_challenge_data	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:challenge	rdfs:member	local:challenge_data	.
-local:often_higher_than_overall_selectivity	local:oftenhigher_than	local:overall_selectivity	.
-local:relevant_semantic	rdfs:member	local:relevant_semantic_web	.
-local:web_data_sources	rdfs:subClassOf	local:sources	.
-local:synthetic	rdfs:member	local:synthetic_data	.
-local:relevant	rdfs:member	local:relevant_semantic	.
-local:goal	rdfs:member	local:goal_tree	.
-local:query_optimization	rdfs:member	local:query_optimization_algorithm	.
-local:often_higher	rdfs:subClassOf	local:higher	.
-local:based	vn.role:indirect_object	local:observation	.
-local:overall_selectivity	rdfs:subClassOf	local:selectivity	.
-local:identify	vn.role:Agent	local:we	.
-local:subset_of_realworld_billion_triple_challenge_data	local:of_real-worldbilliontriplechallengedata	local:subset	.
-local:relevant_semantic_web	rdfs:member	local:relevant_semantic_web_data	.
-local:rule_goal	rdfs:member	local:rule_goal_tree	.
-local:rule_goal_tree	rdfs:subClassOf	local:goal_tree	.
-local:using	vn.role:Theme	local:set	.
-local:treated	vn.role:Theme	local:two_patterns	.
-local:goal_tree	rdfs:subClassOf	local:tree	.
-local:two_patterns	rdfs:subClassOf	local:patterns	.
-local:conjunctive_query	rdfs:subClassOf	local:query	.
-local:triple_challenge	rdfs:subClassOf	local:challenge	.
-local:queries_in_environments	local:in_environments	local:queries	.
-local:potentially_relevant_semantic_web_data	rdfs:subClassOf	local:data	.
-local:answer	local:AM-MNR	local:quickly	.
-local:data	rdfs:member	local:data_sources	.
-local:answer	vn.role:Agent	local:owl_reasoner	.
-local:term	rdfs:member	local:term_index	.
-local:distributed_rdfowl	rdfs:subClassOf	local:rdfowl	.
-local:term_index	rdfs:subClassOf	local:index	.
-local:rule_goal_tree	rdfs:subClassOf	local:tree	.
-local:reformulation_of_conjunctive_query	local:of_conjunctivequery	local:reformulation	.
-local:distributed	vn.role:Theme	local:present	.
-local:relevant_semantic_web_data	rdfs:subClassOf	local:data	.
-local:bottomup	rdfs:member	local:bottomup_approach	.
-local:system_using	local:_using	local:system	.
-local:using	vn.role:Theme	local:subset_of_realworld_billion_triple_challenge_data	.
-local:structural	rdfs:member	local:structural_query	.
-local:web_data	rdfs:member	local:web_data_sources	.
-local:query	rdfs:member	local:query_optimization	.
-local:given	vn.role:object	local:rule_goal_tree	.
-local:answer	vn.role:Agent	local:we	.
-local:overall_selectivity_of_two_patterns	local:of_twopatterns	local:overall_selectivity	.
-local:optimization_algorithm	rdfs:subClassOf	local:algorithm	.
-local:query	rdfs:member	local:query_triple	.
-local:reformulation_of_conjunctive_query	local:reformulation_of	local:conjunctive_query	.
-local:uses	local:AM-TMP	local:then	.
-local:semantic_web_data	rdfs:member	local:semantic_web_data_sources	.
-local:structural_query_features	rdfs:subClassOf	local:query_features	.
-local:further_constrain	rdfs:subClassOf	local:constrain	.
-local:often_higher_than_overall_selectivity	local:than_overallselectivity	local:often_higher	.
-local:estimate	vn.role:Theme	local:selectivity_of_node	.
-local:uses	vn.role:Recipient	local:estimate	.
-local:join	vn.role:Actor2	local:selectivity	.
-local:structural_query	rdfs:member	local:structural_query_features	.
-local:query_optimization_algorithm	rdfs:subClassOf	local:optimization_algorithm	.
-local:structural_query	rdfs:subClassOf	local:query	.
-local:semantic_web_data_sources	rdfs:subClassOf	local:sources	.
-local:web	rdfs:member	local:web_data	.
-local:evaluated	vn.role:Theme	local:we	.
-local:set	vn.role:indirect_object	local:data	.
-local:patterns_selectivity	rdfs:subClassOf	local:selectivity	.
-local:present	local:AM-PNC	local:identify	.
-local:triple	rdfs:member	local:triple_challenge	.
-local:treated	vn.role:Predicate	local:independently	.
-local:answer	vn.role:Predicate	local:present	.
-local:uses	vn.role:Recipient	local:sources	.
-local:use	vn.role:Agent	local:we	.
-local:based	vn.role:Cause	local:query_optimization_algorithm	.
-local:evaluated	vn.role:Agent	local:we	.
-local:answer	local:AM-MNR	local:effectively	.
-local:rule	rdfs:member	local:rule_goal	.
-local:other	rdfs:member	local:other_nodes	.
-local:using	vn.role:Agent	local:system	.
-local:overall	rdfs:member	local:overall_selectivity	.
-local:uses	vn.role:Agent	local:query_optimization_algorithm	.
-local:semantic_web_data_sources	rdfs:subClassOf	local:web_data_sources	.
-local:use	vn.role:Theme	local:owl_reasoner	.
-local:other_nodes	rdfs:subClassOf	local:nodes	.
-local:optimization	rdfs:member	local:optimization_algorithm	.
-local:query_features	rdfs:subClassOf	local:features	.
-local:semantic_web_data	rdfs:subClassOf	local:data	.
-local:web_data_sources	rdfs:subClassOf	local:data_sources	.
-local:system_using	local:system_	local:using	.
-local:answer_queries	rdfs:subClassOf	local:queries	.
-local:potentially_relevant_semantic_web	rdfs:member	local:potentially_relevant_semantic_web_data	.
-local:join_patterns_selectivity	rdfs:subClassOf	local:patterns_selectivity	.
-local:uses	local:AM-ADV	local:rule_goal_tree	.
-local:potentially_relevant_semantic	rdfs:member	local:potentially_relevant_semantic_web	.
-local:selectivity_of_node	local:of_node	local:selectivity	.
-local:queries_over_selected_sources	local:queries_over	local:selected_sources	.
-local:potentially_relevant_semantic_web_data_sources	rdfs:subClassOf	local:sources	.
-local:query_optimization_algorithm	rdfs:subClassOf	local:algorithm	.
-local:environments_with_distributed_rdfowl	local:with_distributedrdfowl	local:environments	.
-local:selected	vn.role:Theme	local:sources	.
-local:present	local:AM-PNC	local:order	.
-local:owl	rdfs:member	local:owl_reasoner	.
-local:potentially_relevant	rdfs:member	local:potentially_relevant_semantic	.
-local:answer_queries_over_selected_sources	local:answerqueries_over	local:selected_sources	.
-local:bottomup_approach	rdfs:subClassOf	local:approach	.
-local:uses	vn.role:Theme	local:information	.
-local:present	vn.role:Theme	local:query_optimization_algorithm	.
-local:join_selectivity	rdfs:subClassOf	local:selectivity	.
-local:constrain	vn.role:Patient	local:nodes	.
-local:triple	rdfs:member	local:triple_patterns	.
-local:relevant_semantic_web_data_sources	rdfs:subClassOf	local:sources	.
-local:relevant_semantic_web_data_sources	rdfs:subClassOf	local:semantic_web_data_sources	.
-local:identify	vn.role:Theme	local:relevant_semantic_web_data_sources	.
-local:relevant_semantic	rdfs:subClassOf	local:semantic	.
-local:join	rdfs:member	local:join_selectivity	.
-local:relevant_semantic_web_data	rdfs:member	local:relevant_semantic_web_data_sources	.
-local:uses	vn.role:Theme	local:bottomup_approach	.
-local:subset_of_realworld_billion_triple_challenge_data	local:subset_of	local:realworld_billion_triple_challenge_data	.
-local:answer	vn.role:Predicate	local:queries_over_selected_sources	.
-local:identify	vn.role:Agent	local:query_optimization_algorithm	.
-local:a_query_triple_patterns	rdfs:subClassOf	local:query_triple_patterns	.
-local:queries_in_environments	local:queries_in	local:environments	.
-local:further	rdfs:member	local:further_constrain	.
-local:set	vn.role:Agent	local:system_using	.
-local:selected_sources	rdfs:subClassOf	local:sources	.
-local:realworld_billion_triple_challenge_data	rdfs:subClassOf	local:billion_triple_challenge_data	.
-local:owl_reasoner	rdfs:subClassOf	local:reasoner	.
-local:selectivity_of_node	local:selectivity_of	local:node	.
-local:use	local:AM-PNC	local:answer_queries_over_selected_sources	.
-local:triple_challenge	rdfs:member	local:triple_challenge_data	.
-local:rule_goal	rdfs:subClassOf	local:goal	.
-local:using	vn.role:Theme	local:structural_query_features	.
-local:distributed	rdfs:member	local:distributed_rdfowl	.
-local:answer_queries_over_selected_sources	local:over_selectedsources	local:answer_queries	.
+local:s2	local:AM-MNR	local:effectively	.
+local:s1.3	rdf:subject	local:query_optimization_algorithm	.
 local:structural_query_features	rdfs:subClassOf	local:features	.
-local:potentially_relevant_semantic_web_data	rdfs:member	local:potentially_relevant_semantic_web_data_sources	.
-local:effectively_answer	rdfs:subClassOf	local:answer	.
-local:potentially_relevant	rdfs:subClassOf	local:relevant	.
-local:synthetic_data	rdfs:subClassOf	local:data	.
-local:using	vn.role:Agent	local:sources	.
-local:potentially_relevant_semantic_web	rdfs:subClassOf	local:web	.
-local:triple_challenge_data	rdfs:subClassOf	local:challenge_data	.
-local:environments_with_distributed_rdfowl	local:environments_with	local:distributed_rdfowl	.
-local:distributed	local:AM-PNC	local:identify	.
-local:expresses	vn.role:Agent	local:reformulation_of_conjunctive_query	.
-local:present	vn.role:Agent	local:we	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:query_optimization	rdfs:subClassOf	local:optimization	.
-local:constrain	local:AM-MNR	local:further	.
-local:present	local:AM-MNR	local:distributed_rdfowl	.
-local:expresses	vn.role:Theme	local:rule_goal_tree	.
-local:estimate	vn.role:Agent	local:bottomup_approach	.
-local:potentially_relevant_semantic	rdfs:subClassOf	local:semantic	.
-local:query_triple_patterns	rdfs:subClassOf	local:patterns	.
-local:potentially	rdfs:member	local:potentially_relevant	.
-local:triple_challenge_data	rdfs:subClassOf	local:data	.
-local:web_data	rdfs:subClassOf	local:data	.
-local:using	vn.role:Theme	local:term_index	.
-local:query_triple_patterns	rdfs:subClassOf	local:triple_patterns	.
-local:overall_selectivity_of_two_patterns	local:overallselectivity_of	local:two_patterns	.
-local:answer	rdfs:member	local:answer_queries	.
-local:challenge_data	rdfs:subClassOf	local:data	.
-local:relevant_semantic_web	rdfs:subClassOf	local:web	.
-local:query_triple	rdfs:subClassOf	local:triple	.
-local:conjunctive	rdfs:member	local:conjunctive_query	.
-local:semantic_web	rdfs:member	local:semantic_web_data	.
-local:queries_over_selected_sources	local:over_selectedsources	local:queries	.
+local:structural_query_features	rdfs:member	local:structural_query	.
+local:relevant_semantic	rdfs:member	local:relevant	.
+local:s4.1	rdf:subject	local:selectivity	.
+local:s2.2	rdf:subject	local:we	.
+local:selectivity_of_node	rdfs:member	local:selectivity	.
+local:s0	rdf:object	local:term_index	.
+local:billion_triple_challenge	rdfs:subClassOf	local:challenge	.
+local:answer_queries_over_the_selected_sources	rdfs:member	local:answer_queries	.
+local:reformulation_of_conjunctive_query	rdfs:member	local:conjunctive_query	.
+local:answer_queries_over_selected_sources	rdfs:member	local:s12	.
+local:answer_queries	rdfs:subClassOf	local:queries	.
+local:structural_query	rdfs:member	local:structural	.
+local:s6.1	rdf:object	local:bottomup_approach_estimate_the_selectivity_of_each_node	.
+local:s11.1	rdf:predicate	local:answer	.
 local:semantic_web	rdfs:subClassOf	local:web	.
-local:answer	vn.role:Predicate	local:queries_in_environments	.
+local:relevant_semantic_web_data_sources	rdfs:subClassOf	local:sources	.
+local:s2.1	rdf:subject	local:rdfowl_we_present_a_query_optimization_algorithm	.
+local:s1.2	local:AM-PNC	local:order_to_quickly_answer_queries_in_environments_with_distributed_rdfowl	.
+local:subset_of_the_realworld_billion_triple_challenge_data	rdfs:member	local:subset	.
+local:system_using	rdfs:member	local:using	.
+local:s14	rdf:predicate	local:use	.
+local:subset_of_realworld_billion_triple_challenge_data	rdfs:member	local:realworld_billion_triple_challenge_data	.
+local:query_triple_patterns	rdfs:subClassOf	local:triple_patterns	.
+local:information_sources	rdfs:member	local:information	.
+local:triple_challenge_data	rdfs:subClassOf	local:data	.
+local:answer_queries_over_the_selected_sources	rdfs:member	local:sources	.
+local:s2.3	rdf:predicate	local:identify	.
+local:s1.1	rdf:object	local:query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	.
+local:bottomup_approach_estimate_the_selectivity_of_each_node	rdfs:member	local:bottomup_approach	.
+local:bottomup_approach_estimate_the_selectivity_of_each_node	rdfs:member	local:selectivity	.
+local:information_sources_to_further_constrain_other_nodes	rdfs:member	local:further_constrain	.
+local:rule_goal_tree_a_query_optimization_algorithm	rdfs:member	local:query_optimization_algorithm	.
+local:rule_goal_tree	rdfs:subClassOf	local:goal_tree	.
+local:s2.1	rdf:predicate	local:distribute	.
+local:s3	rdf:object	local:structural_query_features	.
+local:s6.1	rdf:predicate	local:use	.
+local:query_optimization	rdfs:member	local:query	.
+local:s7	rdf:object	local:reformulation_of_a_conjunctive_query	.
+local:s8	local:AM-TMP	local:then	.
+local:s8.1	rdf:subject	local:query_optimization_algorithm	.
+local:other_nodes	rdfs:subClassOf	local:nodes	.
+local:selectivity_of_each_node	rdfs:member	local:node	.
+local:s5	local:AM-MNR	local:independently	.
+local:queries_in_environments_with_distributed_rdfowl	rdfs:member	local:distributed_rdfowl	.
+local:query_triple_patterns	rdfs:member	local:query_triple	.
+local:term_index	rdfs:member	local:term	.
+local:queries_over_the_selected_sources	rdfs:member	local:sources	.
+local:often_higher	rdfs:subClassOf	local:higher	.
+local:overall_selectivity_of_two_patterns	rdfs:member	local:overall_selectivity	.
+local:relevant_semantic_web	rdfs:subClassOf	local:web	.
+local:order_to_quickly_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:environments	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	rdfs:member	local:s4.1	.
+local:overall_selectivity	rdfs:member	local:overall	.
+local:potentially_relevant	rdfs:subClassOf	local:relevant	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	rdfs:member	local:overall_selectivity	.
+local:distributed_rdfowl	rdfs:subClassOf	local:rdfowl	.
+local:a_query_triple_patterns	rdfs:subClassOf	local:query_triple_patterns	.
+local:semantic_web_data	rdfs:subClassOf	local:data	.
+local:s8	rdf:predicate	local:use	.
+local:s13	rdf:object	local:subset_of_the_realworld_billion_triple_challenge_data	.
+local:web_data_sources	rdfs:subClassOf	local:sources	.
+local:s4.1	rdfs:member	local:join	.
+local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:queries	.
+local:query_optimization_algorithm	rdfs:member	local:query_optimization	.
+local:s10	rdf:predicate	local:select	.
+local:relevant_semantic_web_data	rdfs:member	local:relevant_semantic_web	.
+local:triple_challenge	rdfs:member	local:triple	.
+local:optimization_algorithm	rdfs:subClassOf	local:algorithm	.
+local:synthetic_data_set_data	rdfs:member	local:data	.
+local:effectively_answer	rdfs:subClassOf	local:answer	.
+local:s1.2	rdf:subject	local:we	.
+local:s6.1	local:AM-ADV	local:given_a_rule_goal_tree	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	rdfs:member	local:observation	.
 local:triple_patterns	rdfs:subClassOf	local:patterns	.
-local:query	rdfs:member	local:query_features	.
+local:challenge_data	rdfs:member	local:challenge	.
+local:queries_in_environments_with_distributed_rdfowl	rdfs:member	local:environments	.
+local:semantic_web_data_sources	rdfs:subClassOf	local:sources	.
+local:s2	rdf:predicate	local:answer	.
+local:s13	rdf:subject	local:system	.
+local:relevant_semantic	rdfs:subClassOf	local:semantic	.
+local:semantic_web_data	rdfs:member	local:semantic_web	.
+local:s12	rdf:predicate	local:select	.
+local:s6	rdf:subject	local:rule_goal_tree_a_query_optimization_algorithm	.
+local:realworld_billion_triple	rdfs:subClassOf	local:triple	.
+local:structural_query	rdfs:subClassOf	local:query	.
+local:data_sources	rdfs:member	local:data	.
+local:further_constrain	rdfs:member	local:further	.
+local:queries_in_environments	rdfs:member	local:queries	.
+local:order_to_quickly_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:order	.
+local:query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:potentially_relevant_semantic_web_data_sources	.
+local:s5	rdf:subject	local:two_patterns	.
+local:s11.1	rdf:subject	local:owl_reasoner	.
+local:query_features	rdfs:member	local:query	.
+local:potentially_relevant_semantic	rdfs:subClassOf	local:semantic	.
+local:s1	local:AM-MNR	local:quickly	.
+local:conjunctive_query	rdfs:member	local:conjunctive	.
+local:triple_patterns	rdfs:member	local:triple	.
+local:s8.1	rdf:object	local:nodes	.
+local:s15	rdf:object	local:system	.
+local:s2.2	local:AM-PNC	local:order_to_effectively_answer_queries_in_environments_with_distributed_rdfowl	.
+local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:environments	.
+local:subset_of_realworld_billion_triple_challenge_data	rdfs:member	local:subset	.
+local:s2.2	local:AM-PNC	local:identify_the_potentially_relevant_semantic_web_data_sources	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	rdfs:member	local:patterns	.
+local:query_optimization_algorithm	rdfs:subClassOf	local:algorithm	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:s4.1	rdf:predicate	local:join	.
+local:s11	local:AM-PNC	local:answer_queries_over_the_selected_sources	.
+local:optimization_algorithm	rdfs:member	local:optimization	.
+local:other_nodes	rdfs:member	local:other	.
+local:order_to_effectively_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:environments	.
+local:s1.2	local:AM-PNC	local:identify_the_potentially_relevant_semantic_web_data_sources	.
+local:rule_goal_tree_a_query_optimization_algorithm	rdfs:member	local:rule_goal	.
+local:s2.3	rdf:subject	local:query_optimization_algorithm	.
+local:potentially_relevant_semantic_web_data_sources	rdfs:member	local:potentially_relevant_semantic_web_data	.
+local:relevant_semantic_web_data_sources	rdfs:member	local:relevant_semantic_web_data	.
+local:potentially_relevant_semantic_web_data_sources	rdfs:subClassOf	local:sources	.
+local:queries_over_the_selected_sources	rdfs:member	local:queries	.
+local:s12.1	rdf:predicate	local:correspond	.
+local:quickly_answer	rdfs:subClassOf	local:answer	.
+local:s6.2	rdf:subject	local:bottomup_approach	.
+local:relevant_semantic_web_data_sources	rdfs:subClassOf	local:semantic_web_data_sources	.
+local:synthetic_data	rdfs:subClassOf	local:data	.
+local:further_constrain	rdfs:subClassOf	local:constrain	.
+local:s8	rdf:object	local:information_sources_to_further_constrain_other_nodes	.
+local:query_optimization	rdfs:subClassOf	local:optimization	.
+local:order_to_effectively_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:order	.
+local:s4.1	rdfs:subClassOf	local:selectivity	.
+local:triple_challenge_data	rdfs:subClassOf	local:challenge_data	.
+local:queries_in_environments	rdfs:member	local:environments	.
+local:s15	rdf:predicate	local:evaluate	.
+local:owl_reasoner	rdfs:subClassOf	local:reasoner	.
+local:query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:query_optimization_algorithm	.
+local:bottomup_approach	rdfs:subClassOf	local:approach	.
+local:queries_over_selected_sources	rdfs:member	local:queries	.
+local:selected_sources	rdfs:subClassOf	local:sources	.
+local:information_sources_to_further_constrain_other_nodes	rdfs:member	local:other_nodes	.
+local:s2	rdf:subject	local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	.
+local:billion_triple_challenge_data	rdfs:member	local:billion_triple_challenge	.
+local:order_to_quickly_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:distributed_rdfowl	.
+local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:query_optimization_algorithm	.
+local:potentially_relevant	rdfs:member	local:potentially	.
+local:order_to_effectively_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:distributed_rdfowl	.
+local:s1.1	rdf:predicate	local:distribute	.
+local:potentially_relevant_semantic_web	rdfs:subClassOf	local:web	.
+local:realworld_billion_triple_challenge	rdfs:member	local:realworld_billion_triple	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	rdfs:member	local:query_triple_patterns	.
+local:answer_queries_over_selected_sources	rdfs:member	local:answer_queries	.
+local:join_patterns_selectivity	rdfs:subClassOf	local:patterns_selectivity	.
+local:query_optimization_algorithm	rdfs:subClassOf	local:optimization_algorithm	.
+local:owl_reasoner	rdfs:member	local:owl	.
+local:rule_goal	rdfs:member	local:rule	.
+local:query_features	rdfs:subClassOf	local:features	.
+local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:distributed_rdfowl	.
+local:rule_goal_tree	rdfs:member	local:rule_goal	.
+local:selectivity_of_each_node	rdfs:member	local:selectivity	.
+local:s14.1	rdf:object	local:data	.
+local:information_sources	rdfs:subClassOf	local:sources	.
+local:structural_query_features	rdfs:subClassOf	local:query_features	.
+local:s2.2	rdf:predicate	local:present	.
+local:billion_triple_challenge_data	rdfs:subClassOf	local:triple_challenge_data	.
+local:s7	rdf:predicate	local:express	.
+local:s15	rdf:subject	local:we	.
+local:answer_queries	rdfs:member	local:answer	.
+local:bottomup_approach	rdfs:member	local:bottomup	.
+local:overall_selectivity	rdfs:subClassOf	local:selectivity	.
+local:s14.1	rdf:predicate	local:set	.
+local:queries_over_selected_sources	rdfs:member	local:s12	.
+local:s8	rdf:subject	local:query_optimization_algorithm	.
+local:s10	rdf:subject	local:sources	.
+local:realworld_billion_triple_challenge_data	rdfs:member	local:realworld_billion_triple_challenge	.
+local:relevant_semantic_web_data	rdfs:subClassOf	local:data	.
+local:environments_with_distributed_rdfowl	rdfs:member	local:distributed_rdfowl	.
+local:s14.1	rdf:subject	local:system_using_both_a_synthetic_data	.
+local:realworld_billion	rdfs:member	local:realworld	.
+local:information_sources_to_further_constrain_other_nodes	rdfs:member	local:information_sources	.
+local:term_index	rdfs:subClassOf	local:index	.
+local:realworld_billion	rdfs:subClassOf	local:billion	.
+local:query_triple_patterns	rdfs:subClassOf	local:patterns	.
+local:s2.3	rdf:object	local:potentially_relevant_semantic_web_data_sources	.
+local:s5	rdf:predicate	local:treat	.
+local:web_data_sources	rdfs:subClassOf	local:data_sources	.
+local:semantic_web_data_sources	rdfs:member	local:semantic_web_data	.
+local:realworld_billion_triple_challenge	rdfs:subClassOf	local:challenge	.
+local:s11.1	rdf:object	local:queries_over_the_selected_sources	.
+local:s0	rdf:subject	local:sources	.
+local:s6	rdf:predicate	local:given	.
+local:overall_selectivity_of_two_patterns	rdfs:member	local:two_patterns	.
+local:web_data	rdfs:subClassOf	local:data	.
+local:s11	rdf:object	local:owl_reasoner	.
+local:query_triple	rdfs:member	local:query	.
+local:s13	rdf:predicate	local:use	.
+local:realworld_billion_triple_challenge_data	rdfs:subClassOf	local:data	.
+local:s4	rdf:predicate	local:base	.
+local:rule_goal_tree	rdfs:subClassOf	local:tree	.
+local:triple_challenge_data	rdfs:member	local:triple_challenge	.
+local:often_higher_than_overall_selectivity	rdfs:member	local:overall_selectivity	.
+local:order_to_effectively_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:queries	.
+local:system_using_both_a_synthetic_data	rdfs:member	local:synthetic_data	.
+local:environments_with_distributed_rdfowl	rdfs:member	local:environments	.
+local:s14	rdf:object	local:synthetic_data_set_data	.
+local:goal_tree	rdfs:subClassOf	local:tree	.
+local:s12.1	rdf:subject	local:selected_sources	.
+local:bottomup_approach_estimate_the_selectivity_of_each_node	rdfs:member	local:node	.
+local:s8.1	rdf:predicate	local:constrain	.
+local:often_higher_than_overall_selectivity	rdfs:member	local:often_higher	.
+local:subset_of_the_realworld_billion_triple_challenge_data	rdfs:member	local:realworld_billion_triple_challenge_data	.
+local:billion_triple_challenge_data	rdfs:subClassOf	local:data	.
+local:synthetic_data	rdfs:member	local:synthetic	.
+local:reformulation_of_a_conjunctive_query	rdfs:member	local:reformulation	.
+local:s12.1	rdf:object	local:ontologies	.
+local:s4	rdf:subject	local:query_optimization_algorithm	.
+local:web_data	rdfs:member	local:web	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:reformulation_of_conjunctive_query	rdfs:member	local:reformulation	.
+local:s1.3	rdf:predicate	local:identify	.
+local:relevant_semantic_web	rdfs:member	local:relevant_semantic	.
+local:s1.3	rdf:object	local:potentially_relevant_semantic_web_data_sources	.
+local:s2.2	rdf:object	local:query_optimization_algorithm	.
+local:s3	rdf:predicate	local:use	.
+local:rdfowl_we_present_a_query_optimization_algorithm	rdfs:member	local:rdfowl	.
+local:s6.2	rdf:predicate	local:estimate	.
+local:potentially_relevant_semantic	rdfs:member	local:potentially_relevant	.
+local:queries_in_environments_with_distributed_rdfowl	rdfs:member	local:queries	.
+local:billion_triple_challenge	rdfs:member	local:billion_triple	.
+local:system_using_both_a_synthetic_data	rdfs:member	local:system	.
+local:s0	rdf:predicate	local:use	.
+local:s12	rdfs:subClassOf	local:sources	.
+local:patterns_selectivity	rdfs:subClassOf	local:selectivity	.
+local:realworld_billion_triple	rdfs:member	local:realworld_billion	.
+local:billion_triple	rdfs:member	local:billion	.
+local:s6.2	rdf:object	local:selectivity_of_each_node	.
+local:potentially_relevant_semantic_web	rdfs:member	local:potentially_relevant_semantic	.
+local:s1.1	rdf:subject	local:rdfowl	.
+local:synthetic_data_set_data	rdfs:member	local:synthetic_data	.
+local:s1	rdf:predicate	local:answer	.
+local:semantic_web_data_sources	rdfs:subClassOf	local:web_data_sources	.
+local:s8.1	local:AM-MNR	local:further	.
+local:s11	rdf:subject	local:we	.
+local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	rdfs:member	local:pair	.
+local:challenge_data	rdfs:subClassOf	local:data	.
+local:distributed_rdfowl	rdfs:member	local:distributed	.
+local:s1	rdf:subject	local:we	.
+local:potentially_relevant_semantic_web_data	rdfs:subClassOf	local:data	.
+local:s14	rdf:subject	local:system	.
+local:query_triple	rdfs:subClassOf	local:triple	.
+local:web_data_sources	rdfs:member	local:web_data	.
+local:order_to_quickly_answer_queries_in_environments_with_distributed_rdfowl	rdfs:member	local:queries	.
+local:s1	rdf:object	local:queries_in_environments_with_distributed_rdfowl	.
+local:potentially_relevant_semantic_web_data	rdfs:member	local:potentially_relevant_semantic_web	.
+local:triple_challenge	rdfs:subClassOf	local:challenge	.
+local:rule_goal	rdfs:subClassOf	local:goal	.
+local:reformulation_of_a_conjunctive_query	rdfs:member	local:conjunctive_query	.
+local:conjunctive_query	rdfs:subClassOf	local:query	.
+local:billion_triple	rdfs:subClassOf	local:triple	.
+local:queries_in_environments_with_distributed_rdfowl_we_present_a_query_optimization_algorithm_to_identify_the_potentially_relevant_semantic_web_data_sources	rdfs:member	local:potentially_relevant_semantic_web_data_sources	.
+local:s11	rdf:predicate	local:use	.
+local:s7	rdf:subject	local:rule_goal_tree	.
+local:s1.2	rdf:object	local:query_optimization_algorithm	.
+local:s12	rdf:subject	local:sources	.
+local:rdfowl_we_present_a_query_optimization_algorithm	rdfs:member	local:query_optimization_algorithm	.
+local:goal_tree	rdfs:member	local:goal	.
+local:s4	rdf:object	local:observation_that_the_join_selectivity_of_a_pair_of_query_triple_patterns_is_often_higher_than_the_overall_selectivity_of_these_two_patterns	.
+local:s2.1	local:AM-PNC	local:identify_the_potentially_relevant_semantic_web_data_sources	.
+local:s6.1	rdf:subject	local:query_optimization_algorithm	.
+local:system_using	rdfs:member	local:system	.
+local:realworld_billion_triple_challenge_data	rdfs:subClassOf	local:billion_triple_challenge_data	.
+local:selectivity_of_node	rdfs:member	local:node	.
+local:s3	rdf:subject	local:sources	.
+local:two_patterns	rdfs:subClassOf	local:patterns	.
+local:s1.2	rdf:predicate	local:present	.

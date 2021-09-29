@@ -1,396 +1,656 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"proposed algorithms"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"extensive experiments on large real rdf datasets demonstrate the efficiency of the proposed algorithms"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"notable subgroups"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"a conceptual abstract summarizing notable subgroups"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"an efficient mining algorithm based on canonical codes and partitions"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"present an efficient mining algorithm based on canonical codes and partitions"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a conceptual abstract summarizing notable subgroups to present an efficient mining algorithm based on canonical codes and partitions"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"a possibly large group of associations we mine frequent association patterns as a conceptual abstract"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"having found a possibly large group of associations we propose to mine frequent association patterns as a conceptual abstract"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"found a possibly large group of associations we propose to mine frequent association patterns as a conceptual abstract"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"based on a distance oracle"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"entities computed based on a distance oracle"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"an efficient graph search algorithm finding associations"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we propose an efficient graph search algorithm for finding associations"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"associations which exploiting distances between entities"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"associations which prunes the search space by exploiting distances between entities"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"a minimal connected subgraph"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"an association connecting multiple entities in a graph as a minimal connected subgraph"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in this paper we define an association"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a minimal connected subgraph containing all of them"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"connected subgraph"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the web describing relations between entities"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"increasing amount"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"it facilitated by the increasing amount of graphstructured data on the web"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"finding associations between entities"	.
+
+
 #### Classes ####
 
-local:associations_between_entities	rdfs:label	"associations between entities"	.
+local:algorithms	a	rdf:Class	;
+	rdfs:label	"algorithms"	.
 
-local:associations	rdfs:label	"associations"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:entities	rdfs:label	"entities"	.
+local:extensive_experiments_on_large_real_rdf_datasets	a	rdf:Class	;
+	rdfs:label	"extensive experiments on large real rdf datasets"	.
 
-local:finding	rdfs:label	"finding"	.
+local:extensive_experiments	a	rdf:Class	;
+	rdfs:label	"extensive experiments"	.
 
-local:describing	rdfs:label	"describing"	.
+local:large_real_rdf_datasets	a	rdf:Class	;
+	rdfs:label	"large real rdf datasets"	.
 
-local:web	rdfs:label	"web"	.
+local:real_rdf	a	rdf:Class	;
+	rdfs:label	"real rdf"	.
 
-local:relations_between_entities	rdfs:label	"relations between entities"	.
+local:real	a	rdf:Class	;
+	rdfs:label	"real"	.
 
-local:relations	rdfs:label	"relations"	.
+local:real_rdf_datasets	a	rdf:Class	;
+	rdfs:label	"real rdf datasets"	.
 
-local:facilitated	rdfs:label	"facilitated"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:it	rdfs:label	"it"	.
+local:rdf_datasets	a	rdf:Class	;
+	rdfs:label	"rdf datasets"	.
 
-local:graphstructured	rdfs:label	"graph-structured"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:graphstructured_data	rdfs:label	"graph-structured data"	.
+local:large_real_rdf	a	rdf:Class	;
+	rdfs:label	"large real rdf"	.
 
-local:data	rdfs:label	"data"	.
+local:large_real	a	rdf:Class	;
+	rdfs:label	"large real"	.
 
-local:increasing_amount	rdfs:label	"increasing amount"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:amount	rdfs:label	"amount"	.
+local:extensive	a	rdf:Class	;
+	rdfs:label	"extensive"	.
 
-local:increasing_amount_of_graphstructured_data	rdfs:label	"increasing amount of graph-structured data"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:increasing_amount_of_graphstructured_data_on_web	rdfs:label	"increasing amount of graph-structured data on web"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:increasing	rdfs:label	"increasing"	.
+local:efficiency_of_the_proposed_algorithms	a	rdf:Class	;
+	rdfs:label	"efficiency of the proposed algorithms"	.
 
-local:connected	rdfs:label	"connected"	.
+local:efficiency	a	rdf:Class	;
+	rdfs:label	"efficiency"	.
 
-local:subgraph	rdfs:label	"subgraph"	.
+local:efficiency_of_proposed_algorithms	a	rdf:Class	;
+	rdfs:label	"efficiency of proposed algorithms"	.
 
-local:connected_subgraph	rdfs:label	"connected subgraph"	.
+local:explore	a	rdf:Class	;
+	rdfs:label	"explore"	.
 
-local:minimal_connected_subgraph	rdfs:label	"minimal connected subgraph"	.
+local:conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"conceptual abstract"	.
 
-local:containing	rdfs:label	"containing"	.
+local:conceptual	a	rdf:Class	;
+	rdfs:label	"conceptual"	.
 
-local:them	rdfs:label	"them"	.
+local:abstract	a	rdf:Class	;
+	rdfs:label	"abstract"	.
 
-local:define	rdfs:label	"define"	.
+local:summarize	a	rdf:Class	;
+	rdfs:label	"summarize"	.
 
-local:paper	rdfs:label	"paper"	.
+local:efficient_mining_algorithm	a	rdf:Class	;
+	rdfs:label	"efficient mining algorithm"	.
 
-local:we	rdfs:label	"we"	.
+local:efficient_mining	a	rdf:Class	;
+	rdfs:label	"efficient mining"	.
 
-local:association	rdfs:label	"association"	.
+local:mining	a	rdf:Class	;
+	rdfs:label	"mining"	.
 
-local:connecting	rdfs:label	"connecting"	.
+local:mining_algorithm	a	rdf:Class	;
+	rdfs:label	"mining algorithm"	.
 
-local:multiple	rdfs:label	"multiple"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:multiple_entities	rdfs:label	"multiple entities"	.
+local:efficient	a	rdf:Class	;
+	rdfs:label	"efficient"	.
 
-local:multiple_entities_in_graph	rdfs:label	"multiple entities in graph"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:graph	rdfs:label	"graph"	.
+local:canonical_codes_and_partitions	a	rdf:Class	;
+	rdfs:label	"canonical codes and partitions"	.
 
-local:multiple_entities_in_graph_as_minimal_connected_subgraph	rdfs:label	"multiple entities in graph as minimal connected subgraph"	.
+local:canonical_codes	a	rdf:Class	;
+	rdfs:label	"canonical codes"	.
 
-local:minimal	rdfs:label	"minimal"	.
+local:partitions	a	rdf:Class	;
+	rdfs:label	"partitions"	.
 
-local:propose	rdfs:label	"propose"	.
+local:canonical	a	rdf:Class	;
+	rdfs:label	"canonical"	.
 
-local:graph_search	rdfs:label	"graph search"	.
+local:codes	a	rdf:Class	;
+	rdfs:label	"codes"	.
 
-local:graph_search_algorithm	rdfs:label	"graph search algorithm"	.
+local:efficient_mining_algorithm_based_on_canonical_codes_and_partitions	a	rdf:Class	;
+	rdfs:label	"efficient mining algorithm based on canonical codes and partitions"	.
 
-local:search	rdfs:label	"search"	.
+local:efficient_mining_algorithm_based_on_canonical_codes	a	rdf:Class	;
+	rdfs:label	"efficient mining algorithm based_on canonical codes"	.
 
-local:search_algorithm	rdfs:label	"search algorithm"	.
+local:efficient_mining_algorithm_based_on_canonical_codes_based_on_partitions	a	rdf:Class	;
+	rdfs:label	"efficient mining algorithm based_on canonical codes based_on partitions"	.
 
-local:efficient_graph_search	rdfs:label	"efficient graph search"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:notable_subgroups_present_an_efficient_mining_algorithm_based_on_canonical_codes_and_partitions	a	rdf:Class	;
+	rdfs:label	"notable subgroups present an efficient mining algorithm based on canonical codes and partitions"	.
 
-local:efficient_graph	rdfs:label	"efficient graph"	.
+local:subgroups	a	rdf:Class	;
+	rdfs:label	"subgroups"	.
 
-local:efficient_graph_search_algorithm	rdfs:label	"efficient graph search algorithm"	.
+local:notable	a	rdf:Class	;
+	rdfs:label	"notable"	.
 
-local:efficient	rdfs:label	"efficient"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:computed	rdfs:label	"computed"	.
+local:mine	a	rdf:Class	;
+	rdfs:label	"mine"	.
 
-local:distance	rdfs:label	"distance"	.
+local:frequent_association_patterns_as_a_conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"frequent association patterns as a conceptual abstract"	.
 
-local:distance_oracle	rdfs:label	"distance oracle"	.
+local:frequent_association_patterns	a	rdf:Class	;
+	rdfs:label	"frequent association patterns"	.
 
-local:oracle	rdfs:label	"oracle"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:based	rdfs:label	"based"	.
+local:association_patterns	a	rdf:Class	;
+	rdfs:label	"association patterns"	.
 
-local:prunes	rdfs:label	"prunes"	.
+local:frequent_association	a	rdf:Class	;
+	rdfs:label	"frequent association"	.
 
-local:search_space	rdfs:label	"search space"	.
+local:association	a	rdf:Class	;
+	rdfs:label	"association"	.
 
-local:space	rdfs:label	"space"	.
+local:frequent	a	rdf:Class	;
+	rdfs:label	"frequent"	.
 
-local:distances_between_entities	rdfs:label	"distances between entities"	.
+local:frequent_association_patterns_as_conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"frequent association patterns as conceptual abstract"	.
 
-local:distances	rdfs:label	"distances"	.
+local:mine_frequent_association_patterns_as_a_conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"mine frequent association patterns as a conceptual abstract"	.
 
-local:exploiting	rdfs:label	"exploiting"	.
+local:mine_frequent_association_patterns	a	rdf:Class	;
+	rdfs:label	"mine frequent association patterns"	.
 
-local:possibly_large	rdfs:label	"possibly large"	.
+local:mine_frequent_association_patterns_as_conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"mine frequent association patterns as conceptual abstract"	.
 
-local:possibly_large_group	rdfs:label	"possibly large group"	.
+local:found_a_possibly_large_group_of_associations	a	rdf:Class	;
+	rdfs:label	"found a possibly large group of associations"	.
 
-local:frequent_association	rdfs:label	"frequent association"	.
+local:associations	a	rdf:Class	;
+	rdfs:label	"associations"	.
 
-local:frequent_association_patterns	rdfs:label	"frequent association patterns"	.
+local:possibly_large_group	a	rdf:Class	;
+	rdfs:label	"possibly large group"	.
 
-local:conceptual	rdfs:label	"conceptual"	.
+local:possibly_large	a	rdf:Class	;
+	rdfs:label	"possibly large"	.
 
-local:conceptual_abstract	rdfs:label	"conceptual abstract"	.
+local:possibly	a	rdf:Class	;
+	rdfs:label	"possibly"	.
 
-local:group	rdfs:label	"group"	.
+local:large_group	a	rdf:Class	;
+	rdfs:label	"large group"	.
 
-local:association_patterns	rdfs:label	"association patterns"	.
+local:group	a	rdf:Class	;
+	rdfs:label	"group"	.
 
-local:large	rdfs:label	"large"	.
+local:large_group_of_associations	a	rdf:Class	;
+	rdfs:label	"large group of associations"	.
 
-local:patterns	rdfs:label	"patterns"	.
+local:possibly_large_group_of_associations_we_propose_to_mine_frequent_association_patterns_as_a_conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"possibly large group of associations we propose to mine frequent association patterns as a conceptual abstract"	.
 
-local:possibly	rdfs:label	"possibly"	.
+local:possibly_large_group_of_associations	a	rdf:Class	;
+	rdfs:label	"possibly large group of associations"	.
 
-local:large_group	rdfs:label	"large group"	.
+local:mine_as_conceptual_abstract	a	rdf:Class	;
+	rdfs:label	"mine as conceptual abstract"	.
 
-local:abstract	rdfs:label	"abstract"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:frequent	rdfs:label	"frequent"	.
+local:distance_oracle	a	rdf:Class	;
+	rdfs:label	"distance oracle"	.
 
-local:group_propose	rdfs:label	"group propose"	.
+local:distance	a	rdf:Class	;
+	rdfs:label	"distance"	.
 
-local:possibly_large_group_of_associations	rdfs:label	"possibly large group of associations"	.
+local:oracle	a	rdf:Class	;
+	rdfs:label	"oracle"	.
 
-local:mine_as_conceptual_abstract	rdfs:label	"mine as conceptual abstract"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:mine	rdfs:label	"mine"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:found	rdfs:label	"found"	.
+local:efficient_graph_search_algorithm	a	rdf:Class	;
+	rdfs:label	"efficient graph search algorithm"	.
 
-local:large_group_of_associations	rdfs:label	"large group of associations"	.
+local:efficient_graph	a	rdf:Class	;
+	rdfs:label	"efficient graph"	.
 
-local:mine_frequent_association_patterns	rdfs:label	"mine frequent association patterns"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:mine_frequent_association_patterns_as_conceptual_abstract	rdfs:label	"mine frequent association patterns as conceptual abstract"	.
+local:efficient_graph_search	a	rdf:Class	;
+	rdfs:label	"efficient graph search"	.
 
-local:frequent_association_patterns_as_conceptual_abstract	rdfs:label	"frequent association patterns as conceptual abstract"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:summarizing	rdfs:label	"summarizing"	.
+local:search_algorithm	a	rdf:Class	;
+	rdfs:label	"search algorithm"	.
 
-local:notable_subgroups	rdfs:label	"notable subgroups"	.
+local:graph_search	a	rdf:Class	;
+	rdfs:label	"graph search"	.
 
-local:subgroups	rdfs:label	"subgroups"	.
+local:graph_search_algorithm	a	rdf:Class	;
+	rdfs:label	"graph search algorithm"	.
 
-local:notable	rdfs:label	"notable"	.
+local:finding_associations	a	rdf:Class	;
+	rdfs:label	"finding associations"	.
 
-local:mining_algorithm	rdfs:label	"mining algorithm"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:canonical	rdfs:label	"canonical"	.
+local:distances	a	rdf:Class	;
+	rdfs:label	"distances"	.
 
-local:canonical_codes	rdfs:label	"canonical codes"	.
+local:prune	a	rdf:Class	;
+	rdfs:label	"prune"	.
 
-local:mining	rdfs:label	"mining"	.
+local:search_space	a	rdf:Class	;
+	rdfs:label	"search space"	.
 
-local:efficient_mining	rdfs:label	"efficient mining"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:efficient_mining_algorithm	rdfs:label	"efficient mining algorithm"	.
+local:exploiting_distances_between_entities	a	rdf:Class	;
+	rdfs:label	"exploiting distances between entities"	.
 
-local:codes	rdfs:label	"codes"	.
+local:distances_between_entities	a	rdf:Class	;
+	rdfs:label	"distances between entities"	.
 
-local:present_efficient_mining_algorithm	rdfs:label	"present efficient mining algorithm"	.
+local:minimal	a	rdf:Class	;
+	rdfs:label	"minimal"	.
 
-local:present_efficient_mining_algorithm_basedon_canonical_codes	rdfs:label	"present efficient mining algorithm based_on canonical codes"	.
+local:connect	a	rdf:Class	;
+	rdfs:label	"connect"	.
 
-local:present_efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	rdfs:label	"present efficient mining algorithm based_on canonical codes based_on partitions"	.
+local:subgraph	a	rdf:Class	;
+	rdfs:label	"subgraph"	.
 
-local:partitions	rdfs:label	"partitions"	.
+local:multiple_entities_in_a_graph_as_a_minimal_connected_subgraph	a	rdf:Class	;
+	rdfs:label	"multiple entities in a graph as a minimal connected subgraph"	.
 
-local:efficient_mining_algorithm_basedon_canonical_codes	rdfs:label	"efficient mining algorithm based_on canonical codes"	.
+local:multiple_entities	a	rdf:Class	;
+	rdfs:label	"multiple entities"	.
 
-local:efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	rdfs:label	"efficient mining algorithm based_on canonical codes based_on partitions"	.
+local:multiple	a	rdf:Class	;
+	rdfs:label	"multiple"	.
 
-local:present	rdfs:label	"present"	.
+local:connected_subgraph	a	rdf:Class	;
+	rdfs:label	"connected subgraph"	.
 
-local:explored	rdfs:label	"explored"	.
+local:minimal_connected_subgraph	a	rdf:Class	;
+	rdfs:label	"minimal connected subgraph"	.
 
-local:extensive_experiments	rdfs:label	"extensive experiments"	.
+local:multiple_entities_in_graph	a	rdf:Class	;
+	rdfs:label	"multiple entities in graph"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:multiple_entities_in_graph_as_minimal_connected_subgraph	a	rdf:Class	;
+	rdfs:label	"multiple entities in graph as minimal connected subgraph"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-local:rdf_datasets	rdfs:label	"rdf datasets"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:extensive	rdfs:label	"extensive"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:real_rdf	rdfs:label	"real rdf"	.
+local:them	a	rdf:Class	;
+	rdfs:label	"them"	.
 
-local:real_rdf_datasets	rdfs:label	"real rdf datasets"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:real	rdfs:label	"real"	.
+local:relations_between_entities	a	rdf:Class	;
+	rdfs:label	"relations between entities"	.
 
-local:large_real_rdf_datasets	rdfs:label	"large real rdf datasets"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:extensive_experiments_on_large_real_rdf_datasets	rdfs:label	"extensive experiments on large real rdf datasets"	.
+local:amount	a	rdf:Class	;
+	rdfs:label	"amount"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
 
-local:proposed_algorithms	rdfs:label	"proposed algorithms"	.
+local:increasing_amount_of_graphstructured_data_on_the_web	a	rdf:Class	;
+	rdfs:label	"increasing amount of graphstructured data on the web"	.
 
-local:algorithms	rdfs:label	"algorithms"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:efficiency_of_proposed_algorithms	rdfs:label	"efficiency of proposed algorithms"	.
+local:graphstructured_data	a	rdf:Class	;
+	rdfs:label	"graphstructured data"	.
 
-local:efficiency	rdfs:label	"efficiency"	.
+local:increasing_amount_of_graphstructured_data	a	rdf:Class	;
+	rdfs:label	"increasing amount of graphstructured data"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:increasing_amount_of_graphstructured_data_on_web	a	rdf:Class	;
+	rdfs:label	"increasing amount of graphstructured data on web"	.
 
-#### Properties ####
+local:facilitate	a	rdf:Class	;
+	rdfs:label	"facilitate"	.
+
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
+
+local:associations_between_entities	a	rdf:Class	;
+	rdfs:label	"associations between entities"	.
+
+local:finding	a	rdf:Class	;
+	rdfs:label	"finding"	.
 
 #### Mapped Relations ####
 
-local:mining_algorithm	owl:sameAs	cso:mining_algorithms	.
 local:rdf	owl:sameAs	cso:rdf	.
-cso:rdf	rdfs:label	"rdf"	.
 cso:mining_algorithms	rdfs:label	"mining algorithm"	.
+cso:rdf	rdfs:label	"rdf"	.
+local:mining_algorithm	owl:sameAs	cso:mining_algorithms	.
 
 #### Relations ####
 
-local:graph_search_algorithm	rdfs:subClassOf	local:search_algorithm	.
-local:efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	local:efficientminingalgorithmbased_oncanonicalcodes_based_on	local:partitions	.
-local:efficient_mining_algorithm	rdfs:subClassOf	local:algorithm	.
-local:large	rdfs:member	local:large_group	.
-local:demonstrate	vn.role:Cause	local:efficiency_of_proposed_algorithms	.
-local:summarizing	vn.role:Recipient	local:present_efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	.
-local:frequent_association_patterns_as_conceptual_abstract	local:frequentassociationpatterns_as	local:conceptual_abstract	.
-local:minimal_connected_subgraph	rdfs:subClassOf	local:connected_subgraph	.
-local:present	vn.role:Theme	local:efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	.
-local:multiple_entities_in_graph_as_minimal_connected_subgraph	local:multipleentitiesingraph_as	local:minimal_connected_subgraph	.
-local:summarizing	vn.role:Recipient	local:explored	.
-local:search	rdfs:member	local:search_algorithm	.
-local:graph_search	rdfs:subClassOf	local:search	.
-local:propose	local:AM-ADV	local:found	.
-local:mine_frequent_association_patterns	rdfs:subClassOf	local:frequent_association_patterns	.
-local:possibly_large	rdfs:member	local:possibly_large_group	.
-local:finding	vn.role:Agent	local:efficient_graph_search_algorithm	.
-local:search_algorithm	rdfs:subClassOf	local:algorithm	.
-local:computed	local:AM-MNR	local:distance_oracle	.
-local:distances_between_entities	local:distances_between	local:entities	.
-local:distances_between_entities	local:between_entities	local:distances	.
-local:frequent_association_patterns_as_conceptual_abstract	local:as_conceptualabstract	local:frequent_association_patterns	.
-local:describing	vn.role:Agent	local:web	.
-local:efficiency_of_proposed_algorithms	local:efficiency_of	local:proposed_algorithms	.
-local:distance_oracle	rdfs:subClassOf	local:oracle	.
-local:real_rdf	rdfs:member	local:real_rdf_datasets	.
-local:possibly_large_group	rdfs:subClassOf	local:large_group	.
-local:demonstrate	vn.role:Recipient	local:extensive_experiments_on_large_real_rdf_datasets	.
-local:propose	vn.role:Topic	local:efficient_graph_search_algorithm	.
-local:canonical_codes	rdfs:subClassOf	local:codes	.
-local:increasing	vn.role:Attribute	local:amount	.
-local:increasing_amount_of_graphstructured_data_on_web	local:increasingamountofgraph-structureddata_on	local:web	.
-local:rdf	rdfs:member	local:rdf_datasets	.
-local:associations_between_entities	local:between_entities	local:associations	.
-local:large_group_of_associations	local:largegroup_of	local:associations	.
-local:propose	vn.role:Topic	local:mine_frequent_association_patterns_as_conceptual_abstract	.
-local:containing	vn.role:Theme1	local:minimal_connected_subgraph	.
-local:define	local:AM-LOC	local:paper	.
-local:mine	vn.role:Theme	local:possibly_large_group_of_associations	.
-local:real_rdf_datasets	rdfs:subClassOf	local:datasets	.
-local:increasing_amount_of_graphstructured_data	local:increasingamount_of	local:graphstructured_data	.
-local:efficiency_of_proposed_algorithms	local:of_proposedalgorithms	local:efficiency	.
-local:connected	local:AM-MNR	local:minimal	.
-local:facilitated	vn.role:Beneficiary	local:it	.
-local:efficient_graph_search	rdfs:subClassOf	local:search	.
-local:rdf_datasets	rdfs:subClassOf	local:datasets	.
-local:notable	rdfs:member	local:notable_subgroups	.
-local:relations_between_entities	local:relations_between	local:entities	.
-local:multiple_entities_in_graph	local:in_graph	local:multiple_entities	.
-local:mining	rdfs:member	local:mining_algorithm	.
-local:efficient_graph	rdfs:member	local:efficient_graph_search	.
-local:increasing_amount_of_graphstructured_data_on_web	local:on_web	local:increasing_amount_of_graphstructured_data	.
-local:graph_search_algorithm	rdfs:subClassOf	local:algorithm	.
-local:connecting	vn.role:Patient	local:multiple_entities_in_graph_as_minimal_connected_subgraph	.
-local:large_group	rdfs:subClassOf	local:group	.
-local:present_efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	local:presentefficientminingalgorithmbased_oncanonicalcodes_based_on	local:partitions	.
-local:extensive_experiments_on_large_real_rdf_datasets	local:on_largerealrdfdatasets	local:extensive_experiments	.
-local:associations_between_entities	local:associations_between	local:entities	.
-local:multiple	rdfs:member	local:multiple_entities	.
-local:mine_frequent_association_patterns_as_conceptual_abstract	local:as_conceptualabstract	local:mine_frequent_association_patterns	.
-local:efficient_mining	rdfs:subClassOf	local:mining	.
-local:extensive_experiments	rdfs:subClassOf	local:experiments	.
-local:distance	rdfs:member	local:distance_oracle	.
-local:frequent_association	rdfs:member	local:frequent_association_patterns	.
-local:possibly_large_group	rdfs:subClassOf	local:group	.
-local:efficient	rdfs:member	local:efficient_mining	.
-local:real_rdf	rdfs:subClassOf	local:rdf	.
-local:prunes	local:AM-MNR	local:exploiting	.
-local:mine	vn.role:Location	local:frequent_association_patterns_as_conceptual_abstract	.
-local:multiple_entities_in_graph_as_minimal_connected_subgraph	local:as_minimalconnectedsubgraph	local:multiple_entities_in_graph	.
-local:multiple_entities_in_graph	local:multipleentities_in	local:graph	.
-local:mine_frequent_association_patterns_as_conceptual_abstract	local:minefrequentassociationpatterns_as	local:conceptual_abstract	.
-local:possibly_large_group_of_associations	local:of_associations	local:possibly_large_group	.
-local:increasing_amount	rdfs:subClassOf	local:amount	.
-local:notable_subgroups	rdfs:subClassOf	local:subgroups	.
-local:define	vn.role:Agent	local:we	.
-local:frequent	rdfs:member	local:frequent_association	.
-local:possibly_large_group_of_associations	local:possiblylargegroup_of	local:associations	.
-local:efficient_mining	rdfs:member	local:efficient_mining_algorithm	.
-local:possibly	rdfs:member	local:possibly_large	.
-local:connecting	vn.role:Agent	local:association	.
-local:association	rdfs:member	local:association_patterns	.
-local:efficient_graph_search_algorithm	rdfs:subClassOf	local:algorithm	.
-local:efficient_graph_search_algorithm	rdfs:subClassOf	local:graph_search_algorithm	.
-local:graphstructured_data	rdfs:subClassOf	local:data	.
-local:mine	vn.role:Agent	local:we	.
-local:possibly_large	rdfs:subClassOf	local:large	.
-local:efficient_mining_algorithm_basedon_canonical_codes	local:based_on_canonicalcodes	local:efficient_mining_algorithm	.
-local:search	rdfs:member	local:search_space	.
-local:summarizing	vn.role:Agent	local:conceptual_abstract	.
-local:group_propose	rdfs:subClassOf	local:propose	.
-local:frequent_association	rdfs:subClassOf	local:association	.
-local:graphstructured	rdfs:member	local:graphstructured_data	.
-local:mining_algorithm	rdfs:subClassOf	local:algorithm	.
-local:efficient	rdfs:member	local:efficient_graph	.
-local:finding	vn.role:Theme	local:associations_between_entities	.
-local:real	rdfs:member	local:real_rdf	.
-local:increasing_amount_of_graphstructured_data	local:of_graph-structureddata	local:increasing_amount	.
-local:exploiting	vn.role:Predicate	local:distances_between_entities	.
-local:propose	vn.role:Agent	local:we	.
-local:based	vn.role:indirect_object	local:distance_oracle	.
-local:proposed	vn.role:Topic	local:algorithms	.
-local:computed	vn.role:Product	local:entities	.
-local:exploiting	vn.role:Agent	local:associations	.
-local:efficient_graph	rdfs:subClassOf	local:graph	.
-local:canonical	rdfs:member	local:canonical_codes	.
-local:conceptual	rdfs:member	local:conceptual_abstract	.
-local:describing	vn.role:Theme	local:relations_between_entities	.
-local:mine_as_conceptual_abstract	local:as_conceptualabstract	local:mine	.
-local:graph_search	rdfs:member	local:graph_search_algorithm	.
-local:present_efficient_mining_algorithm_basedon_canonical_codes	local:based_on_canonicalcodes	local:present_efficient_mining_algorithm	.
-local:facilitated	vn.role:Agent	local:increasing_amount_of_graphstructured_data_on_web	.
-local:proposed_algorithms	rdfs:subClassOf	local:algorithms	.
-local:conceptual_abstract	rdfs:subClassOf	local:abstract	.
-local:finding	vn.role:Agent	local:associations	.
-local:mine_as_conceptual_abstract	local:mine_as	local:conceptual_abstract	.
-local:efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	local:based_on_partitions	local:efficient_mining_algorithm_basedon_canonical_codes	.
-local:connected_subgraph	rdfs:subClassOf	local:subgraph	.
+local:s0	rdf:subject	local:associations_between_entities	.
+local:frequent_association	rdfs:member	local:frequent	.
+local:s8	rdf:predicate	local:compute	.
+local:efficient_mining_algorithm	rdfs:member	local:efficient_mining	.
+local:s3	rdf:subject	local:subgraph	.
+local:efficient_mining_algorithm_based_on_canonical_codes	rdfs:member	local:efficient_mining_algorithm	.
 local:large_real_rdf_datasets	rdfs:subClassOf	local:real_rdf_datasets	.
-local:prunes	vn.role:Patient	local:search_space	.
-local:large_group_of_associations	local:of_associations	local:large_group	.
-local:efficient_mining_algorithm	rdfs:subClassOf	local:mining_algorithm	.
+local:possibly_large_group	rdfs:subClassOf	local:group	.
+local:efficiency_of_the_proposed_algorithms	rdfs:member	local:algorithms	.
+local:rdf_datasets	rdfs:subClassOf	local:datasets	.
+local:s6.1	rdf:subject	local:associations	.
+local:distances_between_entities	rdfs:member	local:entities	.
+local:real_rdf_datasets	rdfs:subClassOf	local:datasets	.
+local:frequent_association_patterns	rdfs:member	local:frequent_association	.
+local:s12.1	rdf:predicate	local:propose	.
+local:efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:canonical_codes	.
+local:efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:efficient	.
+local:multiple_entities_in_graph_as_minimal_connected_subgraph	rdfs:member	local:multiple_entities_in_graph	.
+local:large_real_rdf_datasets	rdfs:member	local:large_real_rdf	.
+local:s10.2	rdf:predicate	local:base	.
+local:canonical_codes_and_partitions	rdfs:member	local:canonical_codes	.
+local:mining_algorithm	rdfs:member	local:mining	.
+local:mine_frequent_association_patterns_as_conceptual_abstract	rdfs:member	local:conceptual_abstract	.
+local:s5	rdf:subject	local:association	.
+local:increasing_amount_of_graphstructured_data_on_the_web	rdfs:member	local:web	.
+local:frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:frequent_association_patterns	.
+local:canonical_codes_and_partitions	rdfs:member	local:partitions	.
+local:rdf_datasets	rdfs:member	local:rdf	.
+local:multiple_entities	rdfs:member	local:multiple	.
+local:possibly_large_group_of_associations_we_propose_to_mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:conceptual_abstract	.
+local:efficient_graph_search_algorithm	rdfs:subClassOf	local:graph_search_algorithm	.
+local:graph_search_algorithm	rdfs:member	local:graph_search	.
+local:possibly_large_group_of_associations	rdfs:member	local:associations	.
+local:large_group_of_associations	rdfs:member	local:associations	.
+local:efficient_mining_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s8	rdf:subject	local:entities	.
+local:minimal_connected_subgraph	rdfs:subClassOf	local:connected_subgraph	.
+local:canonical_codes	rdfs:member	local:canonical	.
+local:possibly_large_group	rdfs:member	local:possibly_large	.
+local:s9.2	rdf:object	local:frequent_association_patterns_as_a_conceptual_abstract	.
+local:s11.1	rdf:subject	local:s11.1	.
+local:frequent_association_patterns_as_conceptual_abstract	rdfs:member	local:frequent_association_patterns	.
+local:s6	rdf:predicate	local:prune	.
+local:s8.1	rdf:object	local:distance_oracle	.
+local:large_group	rdfs:subClassOf	local:group	.
+local:s2	rdf:subject	local:web	.
+local:associations_between_entities	rdfs:member	local:associations	.
+local:s7	rdf:object	local:efficient_graph_search_algorithm	.
+local:increasing_amount_of_graphstructured_data_on_the_web	rdfs:member	local:data	.
+local:exploiting_distances_between_entities	rdfs:member	local:distances	.
+local:increasing_amount_of_graphstructured_data	rdfs:member	local:graphstructured_data	.
+local:s12	rdf:predicate	local:demonstrate	.
+local:s8.1	rdf:predicate	local:base	.
+local:s0	rdf:predicate	local:finding	.
 local:frequent_association_patterns	rdfs:subClassOf	local:association_patterns	.
-local:based	vn.role:indirect_object	local:canonical_codes	.
-local:found	vn.role:Theme	local:group_propose	.
-local:summarizing	vn.role:Topic	local:notable_subgroups	.
-local:containing	vn.role:Theme2	local:them	.
+local:s10.2	rdf:subject	local:efficient_mining_algorithm	.
+local:large_real	rdfs:member	local:large	.
+local:s7	rdf:subject	local:we	.
+local:s9	rdf:predicate	local:find	.
+local:s7.1	rdf:object	local:associations	.
+local:real_rdf	rdfs:member	local:real	.
+local:mining_algorithm	rdfs:subClassOf	local:algorithm	.
+local:possibly_large	rdfs:subClassOf	local:large	.
+local:mine_frequent_association_patterns	rdfs:subClassOf	local:frequent_association_patterns	.
+local:mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:frequent_association_patterns	.
+local:notable_subgroups_present_an_efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:s11.1	.
+local:extensive_experiments_on_large_real_rdf_datasets	rdfs:member	local:extensive_experiments	.
+local:s11.1	rdf:predicate	local:explore	.
+local:s10.1	rdf:subject	local:efficient_mining_algorithm_based_on_canonical_codes_and_partitions	.
+local:efficient_graph_search_algorithm	rdfs:member	local:efficient_graph_search	.
+local:conceptual_abstract	rdfs:member	local:conceptual	.
+local:search_algorithm	rdfs:subClassOf	local:algorithm	.
+local:multiple_entities_in_a_graph_as_a_minimal_connected_subgraph	rdfs:member	local:multiple_entities	.
+local:s2	rdf:object	local:relations_between_entities	.
+local:efficient_mining_algorithm_based_on_canonical_codes_based_on_partitions	rdfs:member	local:partitions	.
+local:efficient_graph_search	rdfs:member	local:efficient_graph	.
+local:s4	rdf:object	local:association	.
+local:s2	rdf:predicate	local:describe	.
+local:efficient_mining_algorithm_based_on_canonical_codes	rdfs:member	local:canonical_codes	.
+local:mine_as_conceptual_abstract	rdfs:member	local:conceptual_abstract	.
+local:efficient_mining	rdfs:subClassOf	local:mining	.
+local:large_real	rdfs:subClassOf	local:real	.
+local:notable_subgroups_present_an_efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:canonical_codes	.
+local:s11.1	rdfs:subClassOf	local:subgroups	.
+local:large_group_of_associations	rdfs:member	local:large_group	.
+local:possibly_large_group	rdfs:subClassOf	local:large_group	.
+local:s6.1	local:AM-LOC	local:entities	.
+local:multiple_entities_in_a_graph_as_a_minimal_connected_subgraph	rdfs:member	local:graph	.
+local:s5	rdf:object	local:multiple_entities_in_a_graph_as_a_minimal_connected_subgraph	.
+local:s9.1	rdf:predicate	local:propose	.
+local:possibly_large_group_of_associations_we_propose_to_mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:associations	.
+local:s1	rdf:subject	local:increasing_amount_of_graphstructured_data_on_the_web	.
+local:large_real_rdf	rdfs:subClassOf	local:rdf	.
+local:conceptual_abstract	rdfs:subClassOf	local:abstract	.
+local:efficiency_of_proposed_algorithms	rdfs:member	local:s12.1	.
+local:relations_between_entities	rdfs:member	local:relations	.
 local:search_space	rdfs:subClassOf	local:space	.
-local:define	vn.role:Theme	local:association	.
-local:multiple_entities	rdfs:subClassOf	local:entities	.
-local:propose	local:AM-PNC	local:finding	.
-local:based	vn.role:Cause	local:efficient_mining_algorithm	.
-local:efficient_graph_search	rdfs:member	local:efficient_graph_search_algorithm	.
-local:extensive	rdfs:member	local:extensive_experiments	.
-local:prunes	vn.role:Agent	local:associations	.
-local:connected	vn.role:Patient	local:subgraph	.
-local:relations_between_entities	local:between_entities	local:relations	.
-local:graph	rdfs:member	local:graph_search	.
-local:frequent_association_patterns	rdfs:subClassOf	local:patterns	.
-local:present_efficient_mining_algorithm_basedon_canonical_codes_basedon_partitions	local:based_on_partitions	local:present_efficient_mining_algorithm_basedon_canonical_codes	.
-local:association_patterns	rdfs:subClassOf	local:patterns	.
-local:present_efficient_mining_algorithm_basedon_canonical_codes	local:presentefficientminingalgorithm_based_on	local:canonical_codes	.
-local:present_efficient_mining_algorithm	rdfs:subClassOf	local:efficient_mining_algorithm	.
+local:canonical_codes	rdfs:subClassOf	local:codes	.
+local:graph_search_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s10	rdf:predicate	local:summarize	.
+local:distance_oracle	rdfs:subClassOf	local:oracle	.
+local:s7.1	rdf:subject	local:efficient_graph_search_algorithm	.
+local:efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:algorithm	.
+local:s5.1	rdf:predicate	local:connect	.
+local:s5.1	rdf:object	local:subgraph	.
+local:multiple_entities_in_graph	rdfs:member	local:multiple_entities	.
+local:frequent_association_patterns_as_conceptual_abstract	rdfs:member	local:conceptual_abstract	.
+local:s12.1	rdf:subject	local:algorithms	.
+local:graph_search	rdfs:member	local:graph	.
+local:s6	local:AM-MNR	local:exploiting_distances_between_entities	.
+local:multiple_entities_in_a_graph_as_a_minimal_connected_subgraph	rdfs:member	local:subgraph	.
+local:associations_between_entities	rdfs:member	local:entities	.
+local:exploiting_distances_between_entities	rdfs:member	local:entities	.
+local:s9.1	local:AM-ADV	local:found_a_possibly_large_group_of_associations	.
 local:real_rdf_datasets	rdfs:subClassOf	local:rdf_datasets	.
-local:efficient_mining_algorithm_basedon_canonical_codes	local:efficientminingalgorithm_based_on	local:canonical_codes	.
-local:extensive_experiments_on_large_real_rdf_datasets	local:extensiveexperiments_on	local:large_real_rdf_datasets	.
+local:efficient_graph_search	rdfs:subClassOf	local:search	.
+local:extensive_experiments_on_large_real_rdf_datasets	rdfs:member	local:large_real_rdf_datasets	.
+local:efficient_graph	rdfs:member	local:efficient	.
+local:s6.1	rdf:object	local:distances	.
+local:s10	rdf:object	local:notable_subgroups_present_an_efficient_mining_algorithm_based_on_canonical_codes_and_partitions	.
+local:efficient_graph	rdfs:subClassOf	local:graph	.
+local:extensive_experiments	rdfs:member	local:extensive	.
+local:large_real_rdf	rdfs:member	local:large_real	.
+local:s11	rdf:predicate	local:summarize	.
+local:mine_as_conceptual_abstract	rdfs:member	local:mine	.
+local:s7	local:AM-PNC	local:finding_associations	.
+local:multiple_entities_in_graph	rdfs:member	local:graph	.
+local:s9.2	rdf:subject	local:we	.
+local:multiple_entities_in_graph_as_minimal_connected_subgraph	rdfs:member	local:minimal_connected_subgraph	.
+local:efficient_graph_search_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s3.1	rdf:predicate	local:contain	.
+local:efficiency_of_proposed_algorithms	rdfs:member	local:efficiency	.
+local:s11	rdf:subject	local:conceptual_abstract	.
+local:s9.1	rdf:subject	local:we	.
+local:s4	rdf:predicate	local:define	.
+local:s1	rdf:predicate	local:facilitate	.
+local:efficient_mining	rdfs:member	local:efficient	.
+local:s9.1	rdf:object	local:mine_frequent_association_patterns_as_a_conceptual_abstract	.
+local:s12.1	rdfs:subClassOf	local:algorithms	.
+local:s8	local:AM-MNR	local:s8.1	.
+local:frequent_association_patterns	rdfs:subClassOf	local:patterns	.
+local:notable_subgroups_present_an_efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:efficient_mining_algorithm	.
+local:s12	rdf:object	local:efficiency_of_the_proposed_algorithms	.
+local:s3	rdf:predicate	local:connect	.
+local:increasing_amount_of_graphstructured_data_on_web	rdfs:member	local:increasing_amount_of_graphstructured_data	.
+local:search_space	rdfs:member	local:search	.
+local:relations_between_entities	rdfs:member	local:entities	.
+local:real_rdf	rdfs:subClassOf	local:rdf	.
+local:connected_subgraph	rdfs:subClassOf	local:subgraph	.
+local:s4	local:AM-LOC	local:paper	.
+local:mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:conceptual_abstract	.
+local:possibly_large_group_of_associations	rdfs:member	local:possibly_large_group	.
+local:search_algorithm	rdfs:member	local:search	.
+local:s11.1	rdfs:member	local:notable	.
+local:distances_between_entities	rdfs:member	local:distances	.
+local:efficient_mining_algorithm_based_on_canonical_codes_based_on_partitions	rdfs:member	local:efficient_mining_algorithm_based_on_canonical_codes	.
+local:increasing_amount_of_graphstructured_data	rdfs:member	local:s1.1	.
+local:possibly_large_group_of_associations_we_propose_to_mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:possibly_large_group	.
+local:s1.1	rdf:subject	local:amount	.
+local:s5.1	rdf:subject	local:minimal	.
+local:found_a_possibly_large_group_of_associations	rdfs:member	local:associations	.
+local:s7	rdf:predicate	local:propose	.
+local:s6	rdf:subject	local:associations	.
+local:s6	rdf:object	local:search_space	.
+local:s3.1	rdf:object	local:them	.
+local:s10.1	rdf:predicate	local:present	.
+local:association_patterns	rdfs:member	local:association	.
+local:s3.1	rdf:subject	local:minimal_connected_subgraph	.
+local:graph_search	rdfs:subClassOf	local:search	.
+local:s4	rdf:subject	local:we	.
+local:s9	rdf:subject	local:possibly_large_group_of_associations_we_propose_to_mine_frequent_association_patterns_as_a_conceptual_abstract	.
+local:possibly_large	rdfs:member	local:possibly	.
+local:frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:conceptual_abstract	.
+local:s1.1	rdf:predicate	local:increase	.
+local:graphstructured_data	rdfs:subClassOf	local:data	.
+local:association_patterns	rdfs:subClassOf	local:patterns	.
+local:distance_oracle	rdfs:member	local:distance	.
+local:s10	rdf:subject	local:conceptual_abstract	.
+local:graph_search_algorithm	rdfs:subClassOf	local:search_algorithm	.
+local:notable_subgroups_present_an_efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:partitions	.
+local:increasing_amount_of_graphstructured_data_on_web	rdfs:member	local:web	.
+local:frequent_association	rdfs:subClassOf	local:association	.
+local:s5	rdf:predicate	local:connect	.
+local:found_a_possibly_large_group_of_associations	rdfs:member	local:possibly_large_group	.
+local:efficiency_of_the_proposed_algorithms	rdfs:member	local:efficiency	.
+local:mine_frequent_association_patterns_as_conceptual_abstract	rdfs:member	local:mine_frequent_association_patterns	.
+local:s1.1	rdfs:subClassOf	local:amount	.
+local:s9.2	rdf:predicate	local:mine	.
+local:real_rdf_datasets	rdfs:member	local:real_rdf	.
+local:s12	rdf:subject	local:extensive_experiments_on_large_real_rdf_datasets	.
+local:efficient_mining_algorithm_based_on_canonical_codes_and_partitions	rdfs:member	local:partitions	.
+local:possibly_large_group_of_associations_we_propose_to_mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:frequent_association_patterns	.
+local:multiple_entities	rdfs:subClassOf	local:entities	.
+local:s1	rdf:object	local:it	.
+local:s7.1	rdf:predicate	local:find	.
+local:s10.2	rdf:object	local:canonical_codes_and_partitions	.
+local:increasing_amount_of_graphstructured_data_on_the_web	rdfs:member	local:amount	.
+local:efficient_mining_algorithm	rdfs:subClassOf	local:mining_algorithm	.
+local:large_real_rdf_datasets	rdfs:subClassOf	local:datasets	.
+local:mine_frequent_association_patterns_as_a_conceptual_abstract	rdfs:member	local:mine	.
+local:extensive_experiments	rdfs:subClassOf	local:experiments	.
+local:large_group	rdfs:member	local:large	.
+local:s6.1	rdf:predicate	local:exploit	.
+local:s11	rdf:object	local:s11.1	.

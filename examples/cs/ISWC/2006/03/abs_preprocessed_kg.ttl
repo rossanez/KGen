@@ -1,336 +1,617 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the precision measurements provide encouraging results"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the recall measurements provide encouraging results"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"realworld ontology extracted from the dblp bibliography website"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"researchers using a large scale realworld ontology"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"researchers appearing in a collection of dbworld posts using a large scale realworld ontology"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we demonstrate the applicability of we method by disambiguating names of researchers"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"determining the correct entity"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"provide clues in determining the correct entity"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"originality of our demonstrated from the ontology to provide clues in determining the correct entity"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"our novel method uses different relationships in a document"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"originality of our demonstrated in the way our novel method uses different relationships in a document"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"data items that can provide strong evidence such as email addresses for disambiguating person names"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"our novel method not rely on the existence of any structure in a document"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"our novel method not rely on the appearance of data items"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"our novel method utilizes background knowledge in the form of a populated ontology"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"determining the correct entity out of various candidate entities"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"precisely identifying entities in web documents document indexing data integration"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"document indexing web search"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"precisely identifying entities in web documents"	.
+
+
 #### Classes ####
 
-local:identifying	rdfs:label	"identifying"	.
+local:precision_measurements	a	rdf:Class	;
+	rdfs:label	"precision measurements"	.
 
-local:precisely	rdfs:label	"precisely"	.
+local:measurements	a	rdf:Class	;
+	rdfs:label	"measurements"	.
 
-local:entities	rdfs:label	"entities"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:web	rdfs:label	"web"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:web_documents	rdfs:label	"web documents"	.
+local:encouraging_results	a	rdf:Class	;
+	rdfs:label	"encouraging results"	.
 
-local:documents	rdfs:label	"documents"	.
+local:encouraging	a	rdf:Class	;
+	rdfs:label	"encouraging"	.
 
-local:correct_entity	rdfs:label	"correct entity"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:entity	rdfs:label	"entity"	.
+local:recall_measurements	a	rdf:Class	;
+	rdfs:label	"recall measurements"	.
 
-local:various_candidate	rdfs:label	"various candidate"	.
+local:recall	a	rdf:Class	;
+	rdfs:label	"recall"	.
 
-local:various_candidate_entities	rdfs:label	"various candidate entities"	.
+local:realworld_ontology	a	rdf:Class	;
+	rdfs:label	"realworld ontology"	.
 
-local:candidate	rdfs:label	"candidate"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:correct	rdfs:label	"correct"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:candidate_entities	rdfs:label	"candidate entities"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:various	rdfs:label	"various"	.
+local:dblp_bibliography_website	a	rdf:Class	;
+	rdfs:label	"dblp bibliography website"	.
 
-local:correct_entity_outof_various_candidate_entities	rdfs:label	"correct entity out_of various candidate entities"	.
+local:bibliography_website	a	rdf:Class	;
+	rdfs:label	"bibliography website"	.
 
-local:determining	rdfs:label	"determining"	.
+local:website	a	rdf:Class	;
+	rdfs:label	"website"	.
 
-local:novel_method	rdfs:label	"novel method"	.
+local:bibliography	a	rdf:Class	;
+	rdfs:label	"bibliography"	.
 
-local:method	rdfs:label	"method"	.
+local:dblp_bibliography	a	rdf:Class	;
+	rdfs:label	"dblp bibliography"	.
 
-local:novel	rdfs:label	"novel"	.
+local:dblp	a	rdf:Class	;
+	rdfs:label	"dblp"	.
 
-local:utilizes	rdfs:label	"utilizes"	.
+local:researchers	a	rdf:Class	;
+	rdfs:label	"researchers"	.
 
-local:background_knowledge	rdfs:label	"background knowledge"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:large_scale_realworld_ontology	a	rdf:Class	;
+	rdfs:label	"large scale realworld ontology"	.
 
-local:background	rdfs:label	"background"	.
+local:large_scale_realworld	a	rdf:Class	;
+	rdfs:label	"large scale realworld"	.
 
-local:populated_ontology	rdfs:label	"populated ontology"	.
+local:large_scale	a	rdf:Class	;
+	rdfs:label	"large scale"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:scale_realworld	a	rdf:Class	;
+	rdfs:label	"scale realworld"	.
 
-local:populated	rdfs:label	"populated"	.
+local:scale	a	rdf:Class	;
+	rdfs:label	"scale"	.
 
-local:background_knowledge_in_form	rdfs:label	"background knowledge in form"	.
+local:scale_realworld_ontology	a	rdf:Class	;
+	rdfs:label	"scale realworld ontology"	.
 
-local:form	rdfs:label	"form"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:form_of_populated_ontology	rdfs:label	"form of populated ontology"	.
+local:appear	a	rdf:Class	;
+	rdfs:label	"appear"	.
 
-local:our_novel_method	rdfs:label	"our novel method"	.
+local:using_a_large_scale_realworld_ontology	a	rdf:Class	;
+	rdfs:label	"using a large scale realworld ontology"	.
 
-local:additionally_our_novel_method	rdfs:label	"additionally our novel method"	.
+local:collection_of_dbworld_posts	a	rdf:Class	;
+	rdfs:label	"collection of dbworld posts"	.
 
-local:rely	rdfs:label	"rely"	.
+local:collection	a	rdf:Class	;
+	rdfs:label	"collection"	.
 
-local:not	rdfs:label	"not"	.
+local:dbworld_posts	a	rdf:Class	;
+	rdfs:label	"dbworld posts"	.
 
-local:data	rdfs:label	"data"	.
+local:posts	a	rdf:Class	;
+	rdfs:label	"posts"	.
 
-local:data_items	rdfs:label	"data items"	.
+local:dbworld	a	rdf:Class	;
+	rdfs:label	"dbworld"	.
 
-local:items	rdfs:label	"items"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:appearance_of_data_items	rdfs:label	"appearance of data items"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:appearance	rdfs:label	"appearance"	.
+local:applicability_of_we_method	a	rdf:Class	;
+	rdfs:label	"applicability of we method"	.
 
-local:provide	rdfs:label	"provide"	.
+local:applicability_of_we	a	rdf:Class	;
+	rdfs:label	"applicability of we"	.
 
-local:can	rdfs:label	"can"	.
+local:applicability	a	rdf:Class	;
+	rdfs:label	"applicability"	.
 
-local:strong	rdfs:label	"strong"	.
+local:disambiguating_names_of_researchers	a	rdf:Class	;
+	rdfs:label	"disambiguating names of researchers"	.
 
-local:strong_evidence	rdfs:label	"strong evidence"	.
+local:names	a	rdf:Class	;
+	rdfs:label	"names"	.
 
-local:email	rdfs:label	"email"	.
+local:names_of_researchers	a	rdf:Class	;
+	rdfs:label	"names of researchers"	.
 
-local:email_addresses	rdfs:label	"email addresses"	.
+local:correct_entity	a	rdf:Class	;
+	rdfs:label	"correct entity"	.
 
-local:addresses	rdfs:label	"addresses"	.
+local:correct	a	rdf:Class	;
+	rdfs:label	"correct"	.
 
-local:evidence	rdfs:label	"evidence"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:strong_evidence_suchas_email_addresses	rdfs:label	"strong evidence such_as email addresses"	.
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
 
-local:person	rdfs:label	"person"	.
+local:clues_in_determining_the_correct_entity	a	rdf:Class	;
+	rdfs:label	"clues in determining the correct entity"	.
 
-local:person_names	rdfs:label	"person names"	.
+local:clues	a	rdf:Class	;
+	rdfs:label	"clues"	.
 
-local:names	rdfs:label	"names"	.
+local:originality_of_our	a	rdf:Class	;
+	rdfs:label	"originality of our"	.
 
-local:disambiguating	rdfs:label	"disambiguating"	.
+local:originality	a	rdf:Class	;
+	rdfs:label	"originality"	.
 
-local:existence_of_structure	rdfs:label	"existence of structure"	.
+local:our	a	rdf:Class	;
+	rdfs:label	"our"	.
 
-local:existence	rdfs:label	"existence"	.
+local:ontology_to_provide_clues_in_determining_the_correct_entity	a	rdf:Class	;
+	rdfs:label	"ontology to provide clues in determining the correct entity"	.
 
-local:structure	rdfs:label	"structure"	.
+local:novel_method	a	rdf:Class	;
+	rdfs:label	"novel method"	.
 
-local:existence_of_structure_in_document	rdfs:label	"existence of structure in document"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:document	rdfs:label	"document"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:originality_of_our	rdfs:label	"originality of our"	.
+local:different_relationships_in_a_document	a	rdf:Class	;
+	rdfs:label	"different relationships in a document"	.
 
-local:originality	rdfs:label	"originality"	.
+local:document	a	rdf:Class	;
+	rdfs:label	"document"	.
 
-local:our	rdfs:label	"our"	.
+local:different_relationships	a	rdf:Class	;
+	rdfs:label	"different relationships"	.
 
-local:demonstrated	rdfs:label	"demonstrated"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:different_relationships	rdfs:label	"different relationships"	.
+local:relationships	a	rdf:Class	;
+	rdfs:label	"relationships"	.
 
-local:relationships	rdfs:label	"relationships"	.
+local:different_relationships_in_document	a	rdf:Class	;
+	rdfs:label	"different relationships in document"	.
 
-local:different	rdfs:label	"different"	.
+local:way_our_novel_method_uses_different_relationships_in_a_document	a	rdf:Class	;
+	rdfs:label	"way our novel method uses different relationships in a document"	.
 
-local:way_uses	rdfs:label	"way uses"	.
+local:way	a	rdf:Class	;
+	rdfs:label	"way"	.
 
-local:uses	rdfs:label	"uses"	.
+local:our_novel_method	a	rdf:Class	;
+	rdfs:label	"our novel method"	.
 
-local:way_uses_in_document	rdfs:label	"way uses in document"	.
+local:way_uses	a	rdf:Class	;
+	rdfs:label	"way uses"	.
 
-local:different_relationships_in_document	rdfs:label	"different relationships in document"	.
+local:uses	a	rdf:Class	;
+	rdfs:label	"uses"	.
 
-local:clues	rdfs:label	"clues"	.
+local:way_uses_in_document	a	rdf:Class	;
+	rdfs:label	"way uses in document"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:data_items	a	rdf:Class	;
+	rdfs:label	"data items"	.
 
-local:we	rdfs:label	"we"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:applicability	rdfs:label	"applicability"	.
+local:items	a	rdf:Class	;
+	rdfs:label	"items"	.
 
-local:names_of_researchers	rdfs:label	"names of researchers"	.
+local:strong_evidence_such_as_email_addresses_disambiguating_person_names	a	rdf:Class	;
+	rdfs:label	"strong evidence such as email addresses disambiguating person names"	.
 
-local:researchers	rdfs:label	"researchers"	.
+local:person_names	a	rdf:Class	;
+	rdfs:label	"person names"	.
 
-local:appearing	rdfs:label	"appearing"	.
+local:strong_evidence	a	rdf:Class	;
+	rdfs:label	"strong evidence"	.
 
-local:dbworld_posts	rdfs:label	"dbworld posts"	.
+local:email_addresses	a	rdf:Class	;
+	rdfs:label	"email addresses"	.
 
-local:posts	rdfs:label	"posts"	.
+local:evidence	a	rdf:Class	;
+	rdfs:label	"evidence"	.
 
-local:large	rdfs:label	"large"	.
+local:email	a	rdf:Class	;
+	rdfs:label	"email"	.
 
-local:large_scale	rdfs:label	"large scale"	.
+local:person	a	rdf:Class	;
+	rdfs:label	"person"	.
 
-local:dbworld	rdfs:label	"dbworld"	.
+local:addresses	a	rdf:Class	;
+	rdfs:label	"addresses"	.
 
-local:scale	rdfs:label	"scale"	.
+local:strong	a	rdf:Class	;
+	rdfs:label	"strong"	.
 
-local:realworld_ontology	rdfs:label	"real-world ontology"	.
+local:strong_evidence_such_as_email_addresses	a	rdf:Class	;
+	rdfs:label	"strong evidence such_as email addresses"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:email_addresses_disambiguating	a	rdf:Class	;
+	rdfs:label	"email addresses disambiguating"	.
 
-local:collection_of_dbworld_posts	rdfs:label	"collection of dbworld posts"	.
+local:disambiguating	a	rdf:Class	;
+	rdfs:label	"disambiguating"	.
 
-local:collection	rdfs:label	"collection"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:collection_of_dbworld_posts_using	rdfs:label	"collection of dbworld posts using"	.
+local:not_rely	a	rdf:Class	;
+	rdfs:label	"not rely"	.
 
-local:using	rdfs:label	"using"	.
+local:existence_of_any_structure	a	rdf:Class	;
+	rdfs:label	"existence of any structure"	.
 
-local:large_scale_realworld_ontology	rdfs:label	"large scale real-world ontology"	.
+local:existence	a	rdf:Class	;
+	rdfs:label	"existence"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:structure	a	rdf:Class	;
+	rdfs:label	"structure"	.
 
-local:bibliography_website	rdfs:label	"bibliography website"	.
+local:existence_of_structure	a	rdf:Class	;
+	rdfs:label	"existence of structure"	.
 
-local:website	rdfs:label	"website"	.
+local:appearance_of_data_items	a	rdf:Class	;
+	rdfs:label	"appearance of data items"	.
 
-local:dblp_bibliography	rdfs:label	"dblp bibliography"	.
+local:appearance	a	rdf:Class	;
+	rdfs:label	"appearance"	.
 
-local:bibliography	rdfs:label	"bibliography"	.
+local:utilize	a	rdf:Class	;
+	rdfs:label	"utilize"	.
 
-local:dblp_bibliography_website	rdfs:label	"dblp bibliography website"	.
+local:background_knowledge_in_the_form_of_a_populated_ontology	a	rdf:Class	;
+	rdfs:label	"background knowledge in the form of a populated ontology"	.
 
-local:dblp	rdfs:label	"dblp"	.
+local:background_knowledge	a	rdf:Class	;
+	rdfs:label	"background knowledge"	.
 
-local:precision_measurements	rdfs:label	"precision measurements"	.
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
 
-local:measurements	rdfs:label	"measurements"	.
+local:populated_ontology	a	rdf:Class	;
+	rdfs:label	"populated ontology"	.
 
-local:precision	rdfs:label	"precision"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:encouraging_results	rdfs:label	"encouraging results"	.
+local:populated	a	rdf:Class	;
+	rdfs:label	"populated"	.
 
-local:results	rdfs:label	"results"	.
+local:background	a	rdf:Class	;
+	rdfs:label	"background"	.
 
-local:encouraging	rdfs:label	"encouraging"	.
+local:background_knowledge_in_form	a	rdf:Class	;
+	rdfs:label	"background knowledge in form"	.
 
-local:recall_measurements	rdfs:label	"recall measurements"	.
+local:form_of_populated_ontology	a	rdf:Class	;
+	rdfs:label	"form of populated ontology"	.
 
-local:recall	rdfs:label	"recall"	.
+local:correct_entity_out_of_various_candidate_entities	a	rdf:Class	;
+	rdfs:label	"correct entity out_of various candidate entities"	.
 
-#### Properties ####
+local:various_candidate_entities	a	rdf:Class	;
+	rdfs:label	"various candidate entities"	.
+
+local:various_candidate	a	rdf:Class	;
+	rdfs:label	"various candidate"	.
+
+local:various	a	rdf:Class	;
+	rdfs:label	"various"	.
+
+local:candidate_entities	a	rdf:Class	;
+	rdfs:label	"candidate entities"	.
+
+local:candidate	a	rdf:Class	;
+	rdfs:label	"candidate"	.
+
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
+
+local:document_indexing_data_integration	a	rdf:Class	;
+	rdfs:label	"document indexing data integration"	.
+
+local:data_integration	a	rdf:Class	;
+	rdfs:label	"data integration"	.
+
+local:integration	a	rdf:Class	;
+	rdfs:label	"integration"	.
+
+local:indexing_data_integration	a	rdf:Class	;
+	rdfs:label	"indexing data integration"	.
+
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
+
+local:web_documents	a	rdf:Class	;
+	rdfs:label	"web documents"	.
+
+local:documents	a	rdf:Class	;
+	rdfs:label	"documents"	.
+
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
+
+local:precisely	a	rdf:Class	;
+	rdfs:label	"precisely"	.
+
+local:index	a	rdf:Class	;
+	rdfs:label	"index"	.
+
+local:web_search	a	rdf:Class	;
+	rdfs:label	"web search"	.
+
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
 #### Mapped Relations ####
 
-cso:ontology	rdfs:label	"ontology"	.
-local:email	owl:sameAs	cso:email	.
 local:ontology	owl:sameAs	cso:ontology	.
-cso:background_knowledge	rdfs:label	"background knowledge"	.
 cso:email	rdfs:label	"email"	.
+local:email	owl:sameAs	cso:email	.
+cso:background_knowledge	rdfs:label	"background knowledge"	.
+local:web_search	owl:sameAs	cso:web_search	.
+cso:ontology	rdfs:label	"ontology"	.
+cso:data_integration	rdfs:label	"data integration"	.
+local:data_integration	owl:sameAs	cso:data_integration	.
+cso:web_search	rdfs:label	"web search"	.
 local:background_knowledge	owl:sameAs	cso:background_knowledge	.
 
 #### Relations ####
 
-local:large	rdfs:member	local:large_scale	.
-local:appearing	vn.role:Location	local:researchers	.
-local:bibliography	rdfs:member	local:bibliography_website	.
-local:utilizes	vn.role:Agent	local:novel_method	.
-local:various	rdfs:member	local:various_candidate	.
-local:correct_entity_outof_various_candidate_entities	local:out_of_variouscandidateentities	local:correct_entity	.
-local:recall	rdfs:member	local:recall_measurements	.
-local:web	rdfs:member	local:web_documents	.
-local:additionally_our_novel_method	rdfs:subClassOf	local:our_novel_method	.
-local:rely	local:AM-NEG	local:not	.
-local:different_relationships	rdfs:subClassOf	local:relationships	.
-local:dblp_bibliography	rdfs:member	local:dblp_bibliography_website	.
-local:names_of_researchers	local:of_researchers	local:names	.
-local:different_relationships_in_document	local:in_document	local:different_relationships	.
-local:determining	vn.role:Theme	local:correct_entity	.
-local:precision_measurements	rdfs:subClassOf	local:measurements	.
-local:novel_method	rdfs:subClassOf	local:method	.
-local:collection_of_dbworld_posts_using	local:_using	local:collection_of_dbworld_posts	.
-local:provide	vn.role:other	local:disambiguating	.
-local:correct	rdfs:member	local:correct_entity	.
-local:data	rdfs:member	local:data_items	.
-local:extracted	vn.role:Theme	local:realworld_ontology	.
-local:strong	rdfs:member	local:strong_evidence	.
-local:web_documents	rdfs:subClassOf	local:documents	.
-local:various_candidate_entities	rdfs:subClassOf	local:candidate_entities	.
-local:utilizes	vn.role:Theme	local:background_knowledge_in_form	.
-local:various_candidate	rdfs:subClassOf	local:candidate	.
-local:originality_of_our	local:originality_of	local:our	.
-local:large_scale_realworld_ontology	local:_real-worldontology	local:large_scale	.
-local:provide	local:AM-MOD	local:can	.
-local:extracted	vn.role:other	local:dblp_bibliography_website	.
-local:demonstrated	local:AM-TMP	local:way_uses_in_document	.
-local:existence_of_structure	local:existence_of	local:structure	.
-local:person	rdfs:member	local:person_names	.
-local:identifying	vn.role:Theme	local:entities	.
-local:dblp_bibliography_website	rdfs:subClassOf	local:bibliography_website	.
-local:different_relationships_in_document	local:differentrelationships_in	local:document	.
-local:email_addresses	rdfs:subClassOf	local:addresses	.
-local:using	vn.role:Theme	local:large_scale_realworld_ontology	.
-local:way_uses_in_document	local:in_document	local:way_uses	.
-local:dbworld_posts	rdfs:subClassOf	local:posts	.
-local:dbworld	rdfs:member	local:dbworld_posts	.
-local:different	rdfs:member	local:different_relationships	.
-local:background	rdfs:member	local:background_knowledge	.
-local:background_knowledge	rdfs:subClassOf	local:knowledge	.
-local:demonstrate	vn.role:Cause	local:applicability	.
-local:rely	vn.role:Theme	local:existence_of_structure_in_document	.
-local:determining	vn.role:Theme	local:correct_entity_outof_various_candidate_entities	.
-local:populated	rdfs:member	local:populated_ontology	.
-local:names_of_researchers	local:names_of	local:researchers	.
-local:provide	vn.role:Agent	local:encouraging_results	.
-local:precision	rdfs:member	local:precision_measurements	.
-local:realworld_ontology	rdfs:subClassOf	local:ontology	.
-local:collection_of_dbworld_posts	local:collection_of	local:dbworld_posts	.
-local:uses	vn.role:Agent	local:novel_method	.
-local:appearance_of_data_items	local:appearance_of	local:data_items	.
-local:demonstrated	vn.role:Cause	local:originality_of_our	.
-local:collection_of_dbworld_posts_using	local:collectionofdbworldposts_	local:using	.
-local:uses	vn.role:Theme	local:different_relationships_in_document	.
-local:appearance_of_data_items	local:of_dataitems	local:appearance	.
-local:appearing	local:AM-LOC	local:collection_of_dbworld_posts_using	.
-local:strong_evidence_suchas_email_addresses	local:such_as_emailaddresses	local:strong_evidence	.
-local:existence_of_structure	local:of_structure	local:existence	.
-local:existence_of_structure_in_document	local:existenceofstructure_in	local:document	.
-local:background_knowledge_in_form	local:backgroundknowledge_in	local:form	.
-local:originality_of_our	local:of_our	local:originality	.
-local:identifying	local:AM-LOC	local:web_documents	.
-local:realworld	rdfs:member	local:realworld_ontology	.
-local:provide	vn.role:Agent	local:strong_evidence_suchas_email_addresses	.
-local:email	rdfs:member	local:email_addresses	.
-local:form_of_populated_ontology	local:of_populatedontology	local:form	.
-local:encouraging_results	rdfs:subClassOf	local:results	.
-local:novel	rdfs:member	local:novel_method	.
-local:demonstrate	local:AM-MNR	local:disambiguating	.
-local:dblp	rdfs:member	local:dblp_bibliography	.
-local:bibliography_website	rdfs:subClassOf	local:website	.
-local:way_uses_in_document	local:wayuses_in	local:document	.
-local:dblp_bibliography_website	rdfs:subClassOf	local:website	.
-local:collection_of_dbworld_posts	local:of_dbworldposts	local:collection	.
-local:existence_of_structure_in_document	local:in_document	local:existence_of_structure	.
-local:various_candidate_entities	rdfs:subClassOf	local:entities	.
-local:large_scale_realworld_ontology	local:largescale_	local:realworld_ontology	.
-local:encouraging	rdfs:member	local:encouraging_results	.
+local:correct_entity_out_of_various_candidate_entities	rdfs:member	local:correct_entity	.
+local:names_of_researchers	rdfs:member	local:researchers	.
+local:strong_evidence_such_as_email_addresses	rdfs:member	local:email_addresses	.
+local:large_scale_realworld_ontology	rdfs:member	local:large_scale_realworld	.
+local:data_items	rdfs:member	local:data	.
+local:email_addresses_disambiguating	rdfs:member	local:email_addresses	.
+local:email_addresses_disambiguating	rdfs:member	local:disambiguating	.
+local:s11	rdf:object	local:dblp_bibliography_website	.
+local:various_candidate	rdfs:member	local:various	.
 local:large_scale	rdfs:subClassOf	local:scale	.
-local:form_of_populated_ontology	local:form_of	local:populated_ontology	.
-local:various_candidate	rdfs:member	local:various_candidate_entities	.
-local:recall_measurements	rdfs:subClassOf	local:measurements	.
-local:background_knowledge_in_form	local:in_form	local:background_knowledge	.
-local:our_novel_method	rdfs:subClassOf	local:novel_method	.
-local:way_uses	rdfs:subClassOf	local:uses	.
-local:correct_entity	rdfs:subClassOf	local:entity	.
-local:strong_evidence	rdfs:subClassOf	local:evidence	.
-local:provide	vn.role:Recipient	local:precision_measurements	.
-local:data_items	rdfs:subClassOf	local:items	.
-local:strong_evidence_suchas_email_addresses	local:strongevidence_such_as	local:email_addresses	.
-local:identifying	local:AM-MNR	local:precisely	.
-local:provide	vn.role:Recipient	local:recall_measurements	.
-local:rely	vn.role:Theme	local:appearance_of_data_items	.
-local:candidate	rdfs:member	local:candidate_entities	.
-local:provide	vn.role:Recipient	local:data_items	.
-local:provide	vn.role:Agent	local:clues	.
-local:populated_ontology	rdfs:subClassOf	local:ontology	.
-local:using	vn.role:Agent	local:researchers	.
-local:rely	vn.role:Agent	local:additionally_our_novel_method	.
+local:s7	rdf:subject	local:originality_of_our	.
+local:clues_in_determining_the_correct_entity	rdfs:member	local:clues	.
+local:large_scale_realworld	rdfs:subClassOf	local:realworld	.
+local:way_our_novel_method_uses_different_relationships_in_a_document	rdfs:member	local:way	.
+local:bibliography_website	rdfs:subClassOf	local:website	.
 local:dblp_bibliography	rdfs:subClassOf	local:bibliography	.
-local:candidate_entities	rdfs:subClassOf	local:entities	.
-local:demonstrate	vn.role:Recipient	local:we	.
-local:correct_entity_outof_various_candidate_entities	local:correctentity_out_of	local:various_candidate_entities	.
+local:strong_evidence_such_as_email_addresses_disambiguating_person_names	rdfs:member	local:strong_evidence	.
+local:s10	rdf:subject	local:researchers	.
+local:correct_entity_out_of_various_candidate_entities	rdfs:member	local:various_candidate_entities	.
+local:collection_of_dbworld_posts	rdfs:member	local:collection	.
+local:document_indexing_data_integration	rdfs:member	local:data_integration	.
+local:s0.1	rdf:object	local:web_search	.
+local:various_candidate_entities	rdfs:subClassOf	local:candidate_entities	.
+local:precision_measurements	rdfs:subClassOf	local:measurements	.
+local:s10.1	rdf:object	local:large_scale_realworld_ontology	.
+local:ontology_to_provide_clues_in_determining_the_correct_entity	rdfs:member	local:ontology	.
+local:s8.2	rdf:predicate	local:determine	.
+local:s10	rdf:predicate	local:appear	.
+local:data_integration	rdfs:member	local:data	.
+local:strong_evidence_such_as_email_addresses_disambiguating_person_names	rdfs:member	local:person_names	.
+local:background_knowledge_in_the_form_of_a_populated_ontology	rdfs:member	local:populated_ontology	.
+local:s8.2	rdf:subject	local:correct_entity	.
+local:way_uses_in_document	rdfs:member	local:way_uses	.
+local:precision_measurements	rdfs:member	local:precision	.
+local:s10.1	rdf:subject	local:researchers	.
+local:s7.1	rdf:predicate	local:use	.
+local:different_relationships_in_document	rdfs:member	local:different_relationships	.
+local:clues_in_determining_the_correct_entity	rdfs:member	local:correct_entity	.
+local:s0	rdf:predicate	local:identify	.
+local:correct_entity	rdfs:subClassOf	local:entity	.
+local:email_addresses	rdfs:member	local:email	.
+local:web_documents	rdfs:member	local:web	.
+local:s8.1	rdf:predicate	local:provide	.
+local:encouraging_results	rdfs:member	local:encouraging	.
+local:recall_measurements	rdfs:subClassOf	local:measurements	.
+local:dbworld_posts	rdfs:member	local:dbworld	.
 local:person_names	rdfs:subClassOf	local:names	.
-local:demonstrated	vn.role:Topic	local:ontology	.
+local:web_search	rdfs:subClassOf	local:search	.
+local:existence_of_any_structure	rdfs:member	local:structure	.
+local:way_our_novel_method_uses_different_relationships_in_a_document	rdfs:member	local:different_relationships	.
+local:different_relationships	rdfs:member	local:different	.
+local:existence_of_any_structure	rdfs:member	local:existence	.
+local:data_items	rdfs:subClassOf	local:items	.
+local:way_our_novel_method_uses_different_relationships_in_a_document	rdfs:member	local:document	.
+local:s3	rdf:object	local:background_knowledge_in_the_form_of_a_populated_ontology	.
+local:strong_evidence_such_as_email_addresses_disambiguating_person_names	rdfs:member	local:email_addresses	.
+local:our_novel_method	rdfs:subClassOf	local:novel_method	.
+local:s0.1	rdf:predicate	local:index	.
+local:s9	local:AM-MNR	local:disambiguating_names_of_researchers	.
+local:s13	rdf:predicate	local:provide	.
+local:s9	rdf:subject	local:we	.
+local:web_documents	rdfs:subClassOf	local:documents	.
+local:s13	rdf:object	local:encouraging_results	.
+local:web_search	rdfs:member	local:web	.
+local:different_relationships_in_a_document	rdfs:member	local:different_relationships	.
+local:form_of_populated_ontology	rdfs:member	local:populated_ontology	.
+local:existence_of_structure	rdfs:member	local:structure	.
+local:dblp_bibliography_website	rdfs:subClassOf	local:bibliography_website	.
+local:various_candidate_entities	rdfs:subClassOf	local:entities	.
+local:novel_method	rdfs:member	local:novel	.
+local:background_knowledge	rdfs:subClassOf	local:knowledge	.
+local:encouraging_results	rdfs:subClassOf	local:results	.
+local:s13	rdf:subject	local:precision_measurements	.
+local:document_indexing_data_integration	rdfs:member	local:document	.
+local:s1	rdf:subject	local:document_indexing_data_integration	.
+local:ontology_to_provide_clues_in_determining_the_correct_entity	rdfs:member	local:correct_entity	.
+local:s10.1	rdf:predicate	local:use	.
+local:s8	rdf:subject	local:originality_of_our	.
+local:s1	rdf:object	local:entities	.
+local:large_scale_realworld	rdfs:member	local:large_scale	.
+local:candidate_entities	rdfs:subClassOf	local:entities	.
+local:strong_evidence	rdfs:member	local:strong	.
+local:s3	rdf:subject	local:novel_method	.
+local:appearance_of_data_items	rdfs:member	local:data_items	.
+local:s1	rdf:predicate	local:identify	.
+local:person_names	rdfs:member	local:person	.
+local:recall_measurements	rdfs:member	local:recall	.
+local:s0	local:AM-MNR	local:precisely	.
+local:s8	rdf:predicate	local:demonstrate	.
+local:background_knowledge_in_form	rdfs:member	local:form	.
+local:scale_realworld	rdfs:member	local:scale	.
+local:populated_ontology	rdfs:subClassOf	local:ontology	.
+local:s0	rdf:subject	local:entities	.
+local:different_relationships	rdfs:subClassOf	local:relationships	.
+local:background_knowledge_in_the_form_of_a_populated_ontology	rdfs:member	local:form	.
+local:large_scale_realworld_ontology	rdfs:subClassOf	local:scale_realworld_ontology	.
+local:candidate_entities	rdfs:member	local:candidate	.
+local:s6	rdf:predicate	local:provide	.
+local:s1	local:AM-MNR	local:precisely	.
+local:disambiguating_names_of_researchers	rdfs:member	local:researchers	.
+local:scale_realworld_ontology	rdfs:subClassOf	local:ontology	.
+local:s7.1	rdf:subject	local:novel_method	.
+local:different_relationships_in_a_document	rdfs:member	local:document	.
+local:originality_of_our	rdfs:member	local:our	.
+local:collection_of_dbworld_posts	rdfs:member	local:dbworld_posts	.
+local:s12	rdf:object	local:encouraging_results	.
+local:s4	rdf:object	local:appearance_of_data_items	.
+local:dblp_bibliography_website	rdfs:member	local:dblp_bibliography	.
+local:s4	rdf:predicate	local:not_rely	.
+local:form_of_populated_ontology	rdfs:member	local:form	.
+local:s1	local:AM-LOC	local:web_documents	.
+local:s0.1	rdf:subject	local:document	.
+local:scale_realworld_ontology	rdfs:subClassOf	local:realworld_ontology	.
+local:s5	rdf:subject	local:novel_method	.
+local:large_scale	rdfs:member	local:large	.
+local:realworld_ontology	rdfs:member	local:realworld	.
+local:s6	local:AM-MOD	local:can	.
+local:data_integration	rdfs:subClassOf	local:integration	.
+local:s7	local:AM-MNR	local:way_our_novel_method_uses_different_relationships_in_a_document	.
+local:background_knowledge_in_form	rdfs:member	local:background_knowledge	.
+local:correct_entity	rdfs:member	local:correct	.
+local:dblp_bibliography_website	rdfs:subClassOf	local:website	.
+local:applicability_of_we	rdfs:member	local:applicability	.
+local:s0	local:AM-LOC	local:web_documents	.
+local:indexing_data_integration	rdfs:subClassOf	local:data_integration	.
+local:s10	local:AM-ADV	local:using_a_large_scale_realworld_ontology	.
+local:large_scale_realworld_ontology	rdfs:subClassOf	local:ontology	.
+local:document_indexing_data_integration	rdfs:subClassOf	local:indexing_data_integration	.
+local:s11	rdf:predicate	local:extract	.
+local:s10	local:AM-LOC	local:collection_of_dbworld_posts	.
+local:different_relationships_in_document	rdfs:member	local:document	.
+local:way_uses_in_document	rdfs:member	local:document	.
+local:s12	rdf:predicate	local:provide	.
+local:originality_of_our	rdfs:member	local:originality	.
+local:disambiguating_names_of_researchers	rdfs:member	local:names	.
+local:populated_ontology	rdfs:member	local:populated	.
+local:s3	rdf:predicate	local:utilize	.
+local:s5	rdf:object	local:existence_of_any_structure	.
+local:way_uses	rdfs:subClassOf	local:uses	.
+local:s11	rdf:subject	local:realworld_ontology	.
+local:s12	rdf:subject	local:recall_measurements	.
+local:names_of_researchers	rdfs:member	local:names	.
+local:s7	rdf:predicate	local:demonstrate	.
+local:novel_method	rdfs:subClassOf	local:method	.
+local:ontology_to_provide_clues_in_determining_the_correct_entity	rdfs:member	local:clues	.
+local:existence_of_structure	rdfs:member	local:existence	.
+local:s5	rdf:predicate	local:not_rely	.
+local:applicability_of_we	rdfs:member	local:we	.
+local:s9	rdf:object	local:applicability_of_we_method	.
+local:background_knowledge_in_the_form_of_a_populated_ontology	rdfs:member	local:background_knowledge	.
+local:scale_realworld	rdfs:subClassOf	local:realworld	.
+local:email_addresses	rdfs:subClassOf	local:addresses	.
+local:appearance_of_data_items	rdfs:member	local:appearance	.
+local:scale_realworld_ontology	rdfs:member	local:scale_realworld	.
+local:s9	rdf:predicate	local:demonstrate	.
+local:strong_evidence_such_as_email_addresses	rdfs:member	local:strong_evidence	.
+local:s7.1	rdf:object	local:different_relationships_in_a_document	.
+local:bibliography_website	rdfs:member	local:bibliography	.
+local:s6	rdf:subject	local:data_items	.
+local:s2	rdf:predicate	local:determine	.
+local:various_candidate	rdfs:subClassOf	local:candidate	.
+local:background_knowledge	rdfs:member	local:background	.
+local:dbworld_posts	rdfs:subClassOf	local:posts	.
+local:s4	rdf:subject	local:novel_method	.
+local:various_candidate_entities	rdfs:member	local:various_candidate	.
+local:realworld_ontology	rdfs:subClassOf	local:ontology	.
+local:s8	rdf:object	local:ontology_to_provide_clues_in_determining_the_correct_entity	.
+local:s2	rdf:subject	local:correct_entity_out_of_various_candidate_entities	.
+local:s5	local:AM-LOC	local:document	.
+local:s8.1	rdf:subject	local:clues_in_determining_the_correct_entity	.
+local:way_our_novel_method_uses_different_relationships_in_a_document	rdfs:member	local:novel_method	.
+local:dblp_bibliography	rdfs:member	local:dblp	.
+local:strong_evidence	rdfs:subClassOf	local:evidence	.
+local:s6	rdf:object	local:strong_evidence_such_as_email_addresses_disambiguating_person_names	.

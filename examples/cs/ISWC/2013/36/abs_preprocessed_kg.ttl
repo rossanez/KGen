@@ -1,315 +1,579 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"papers comparing our analysis to other systems"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"papers more often cited"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"our analysis however shows that papers are more often cited than other papers"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the amount of experimental work"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we can not confirm a statistically significant correlation between a papers citations"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the amount and quality of experiments steadily increasing over time"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we observe that the amount and quality of experiments are steadily increasing over time"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"experimental research conducted"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the quality of experimental research"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the quality of experimental research"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"500 papers collected from the international semantic web conferences over the past decade"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the quality of experimental research compare the importance to general computer science"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the quality of experimental research compare the importance to general computer science"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the quality of experimental research"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the importance"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"based on a corpus of 500 papers we"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"in this paper we investigate the current status of experimental work on the semantic web"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"in this paper we investigate the development"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"validate results of computer science research in general"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"validate results of the semantic web in general"	.
+
+
 #### Classes ####
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:papers	a	rdf:Class	;
+	rdfs:label	"papers"	.
 
-local:web	rdfs:label	"web"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:analysis_systems	a	rdf:Class	;
+	rdfs:label	"analysis systems"	.
 
-local:results_of_semantic_web	rdfs:label	"results of semantic web"	.
+local:analysis	a	rdf:Class	;
+	rdfs:label	"analysis"	.
 
-local:results	rdfs:label	"results"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:validate	rdfs:label	"validate"	.
+local:cite	a	rdf:Class	;
+	rdfs:label	"cite"	.
 
-local:general	rdfs:label	"general"	.
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
 
-local:computer_science	rdfs:label	"computer science"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:science	rdfs:label	"science"	.
+local:papers_are_more_often_cited_than_other_papers	a	rdf:Class	;
+	rdfs:label	"papers are more often cited than other papers"	.
 
-local:computer_science_research	rdfs:label	"computer science research"	.
+local:other_papers	a	rdf:Class	;
+	rdfs:label	"other papers"	.
 
-local:research	rdfs:label	"research"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:science_research	rdfs:label	"science research"	.
+local:often_cited	a	rdf:Class	;
+	rdfs:label	"often cited"	.
 
-local:computer	rdfs:label	"computer"	.
+local:cited	a	rdf:Class	;
+	rdfs:label	"cited"	.
 
-local:results_of_computer_science_research	rdfs:label	"results of computer science research"	.
+local:more_often	a	rdf:Class	;
+	rdfs:label	"more often"	.
 
-local:investigate	rdfs:label	"investigate"	.
+local:often_cited_than_other_papers	a	rdf:Class	;
+	rdfs:label	"often cited than other papers"	.
 
-local:paper	rdfs:label	"paper"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:we	rdfs:label	"we"	.
+local:amount_of_experimental_work	a	rdf:Class	;
+	rdfs:label	"amount of experimental work"	.
 
-local:current_status	rdfs:label	"current status"	.
+local:experimental_work	a	rdf:Class	;
+	rdfs:label	"experimental work"	.
 
-local:status	rdfs:label	"status"	.
+local:amount	a	rdf:Class	;
+	rdfs:label	"amount"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:experimental_work	rdfs:label	"experimental work"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:current	rdfs:label	"current"	.
+local:report	a	rdf:Class	;
+	rdfs:label	"report"	.
 
-local:work	rdfs:label	"work"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:current_status_of_experimental_work	rdfs:label	"current status of experimental work"	.
+local:not_confirm	a	rdf:Class	;
+	rdfs:label	"not confirm"	.
 
-local:current_status_of_experimental_work_on_semantic_web	rdfs:label	"current status of experimental work on semantic web"	.
+local:statistically_significant_correlation_between_a_papers_citations	a	rdf:Class	;
+	rdfs:label	"statistically significant correlation between a papers citations"	.
 
-local:development	rdfs:label	"development"	.
+local:papers_citations	a	rdf:Class	;
+	rdfs:label	"papers citations"	.
 
-local:500_papers	rdfs:label	"500 papers"	.
+local:statistically_significant_correlation	a	rdf:Class	;
+	rdfs:label	"statistically significant correlation"	.
 
-local:papers	rdfs:label	"papers"	.
+local:significant_correlation	a	rdf:Class	;
+	rdfs:label	"significant correlation"	.
 
-local:corpus_of_500_papers	rdfs:label	"corpus of 500 papers"	.
+local:correlation	a	rdf:Class	;
+	rdfs:label	"correlation"	.
 
-local:corpus	rdfs:label	"corpus"	.
+local:significant	a	rdf:Class	;
+	rdfs:label	"significant"	.
 
-local:based	rdfs:label	"based"	.
+local:statistically_significant	a	rdf:Class	;
+	rdfs:label	"statistically significant"	.
 
-local:analyse	rdfs:label	"analyse"	.
+local:citations	a	rdf:Class	;
+	rdfs:label	"citations"	.
 
-local:importance	rdfs:label	"importance"	.
+local:statistically	a	rdf:Class	;
+	rdfs:label	"statistically"	.
 
-local:experimental_research	rdfs:label	"experimental research"	.
+local:significant_correlation_between_papers_citations	a	rdf:Class	;
+	rdfs:label	"significant correlation between papers citations"	.
 
-local:quality_of_experimental_research	rdfs:label	"quality of experimental research"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:quality	rdfs:label	"quality"	.
+local:hypothesise	a	rdf:Class	;
+	rdfs:label	"hypothesise"	.
 
-local:general_computer	rdfs:label	"general computer"	.
+local:amount_and_quality_of_experiments	a	rdf:Class	;
+	rdfs:label	"amount and quality of experiments"	.
 
-local:general_computer_science	rdfs:label	"general computer science"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:compare_to_general_computer_science	rdfs:label	"compare to general computer science"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:compare	rdfs:label	"compare"	.
+local:amount_of_experiments	a	rdf:Class	;
+	rdfs:label	"amount of experiments"	.
 
-local:conducted	rdfs:label	"conducted"	.
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
 
-local:collected	rdfs:label	"collected"	.
+local:steadily	a	rdf:Class	;
+	rdfs:label	"steadily"	.
 
-local:past	rdfs:label	"past"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:past_decade	rdfs:label	"past decade"	.
+local:observe	a	rdf:Class	;
+	rdfs:label	"observe"	.
 
-local:web_conferences	rdfs:label	"web conferences"	.
+local:amount_and_quality_of_experiments_are_steadily_increasing_over_time	a	rdf:Class	;
+	rdfs:label	"amount and quality of experiments are steadily increasing over time"	.
 
-local:international_semantic_web_conferences	rdfs:label	"international semantic web conferences"	.
+local:over_time	a	rdf:Class	;
+	rdfs:label	"over time"	.
 
-local:conferences	rdfs:label	"conferences"	.
+local:over	a	rdf:Class	;
+	rdfs:label	"over"	.
 
-local:international_semantic_web	rdfs:label	"international semantic web"	.
+local:steadily_increasing	a	rdf:Class	;
+	rdfs:label	"steadily increasing"	.
 
-local:international_semantic	rdfs:label	"international semantic"	.
+local:increasing	a	rdf:Class	;
+	rdfs:label	"increasing"	.
 
-local:semantic_web_conferences	rdfs:label	"semantic web conferences"	.
+local:are_steadily_increasing	a	rdf:Class	;
+	rdfs:label	"are steadily increasing"	.
 
-local:international	rdfs:label	"international"	.
+local:are_steadily_increasing_over_time	a	rdf:Class	;
+	rdfs:label	"are steadily increasing over time"	.
 
-local:decade	rdfs:label	"decade"	.
+local:experimental_research	a	rdf:Class	;
+	rdfs:label	"experimental research"	.
 
-local:international_semantic_web_conferences_over_past_decade	rdfs:label	"international semantic web conferences over past decade"	.
+local:research	a	rdf:Class	;
+	rdfs:label	"research"	.
 
-local:observe	rdfs:label	"observe"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:steadily_increasing	rdfs:label	"steadily increasing"	.
+local:analyse	a	rdf:Class	;
+	rdfs:label	"analyse"	.
 
-local:increasing	rdfs:label	"increasing"	.
+local:quality_of_experimental_research	a	rdf:Class	;
+	rdfs:label	"quality of experimental research"	.
 
-local:are_steadily_increasing	rdfs:label	"are steadily increasing"	.
+local:based_on_a_corpus_of_500_papers	a	rdf:Class	;
+	rdfs:label	"based on a corpus of 500 papers"	.
 
-local:amount_of_experiments	rdfs:label	"amount of experiments"	.
+local:corpus	a	rdf:Class	;
+	rdfs:label	"corpus"	.
 
-local:amount	rdfs:label	"amount"	.
+local:500_papers	a	rdf:Class	;
+	rdfs:label	"500 papers"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:corpus_of_500_papers	a	rdf:Class	;
+	rdfs:label	"corpus of 500 papers"	.
 
-local:are_steadily_increasing_over_time	rdfs:label	"are steadily increasing over time"	.
+local:based	a	rdf:Class	;
+	rdfs:label	"based"	.
 
-local:time	rdfs:label	"time"	.
+local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	a	rdf:Class	;
+	rdfs:label	"corpus of 500 papers we analyse the quality of experimental research"	.
 
-local:steadily	rdfs:label	"steadily"	.
+local:collect	a	rdf:Class	;
+	rdfs:label	"collect"	.
 
-local:confirm	rdfs:label	"confirm"	.
+local:international_semantic_web_conferences	a	rdf:Class	;
+	rdfs:label	"international semantic web conferences"	.
 
-local:can	rdfs:label	"can"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:not	rdfs:label	"not"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:significant	rdfs:label	"significant"	.
+local:international_semantic_web	a	rdf:Class	;
+	rdfs:label	"international semantic web"	.
 
-local:significant_correlation	rdfs:label	"significant correlation"	.
+local:web_conferences	a	rdf:Class	;
+	rdfs:label	"web conferences"	.
 
-local:paper_’	rdfs:label	"paper ’"	.
+local:conferences	a	rdf:Class	;
+	rdfs:label	"conferences"	.
 
-local:’	rdfs:label	"’"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:statistically_significant	rdfs:label	"statistically significant"	.
+local:international_semantic	a	rdf:Class	;
+	rdfs:label	"international semantic"	.
 
-local:statistically_significant_correlation	rdfs:label	"statistically significant correlation"	.
+local:international	a	rdf:Class	;
+	rdfs:label	"international"	.
 
-local:correlation	rdfs:label	"correlation"	.
+local:semantic_web_conferences	a	rdf:Class	;
+	rdfs:label	"semantic web conferences"	.
 
-local:s	rdfs:label	"s"	.
+local:past_decade	a	rdf:Class	;
+	rdfs:label	"past decade"	.
 
-local:s_citations	rdfs:label	"s citations"	.
+local:decade	a	rdf:Class	;
+	rdfs:label	"decade"	.
 
-local:statistically	rdfs:label	"statistically"	.
+local:past	a	rdf:Class	;
+	rdfs:label	"past"	.
 
-local:citations	rdfs:label	"citations"	.
+local:importance	a	rdf:Class	;
+	rdfs:label	"importance"	.
 
-local:paper_citations	rdfs:label	"paper citations"	.
+local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	a	rdf:Class	;
+	rdfs:label	"based on a corpus of 500 papers we analyse the quality of experimental research general computer science"	.
 
-local:significant_correlation_between_paper_citations	rdfs:label	"significant correlation between paper citations"	.
+local:general_computer_science	a	rdf:Class	;
+	rdfs:label	"general computer science"	.
 
-local:comparing	rdfs:label	"comparing"	.
+local:computer_science	a	rdf:Class	;
+	rdfs:label	"computer science"	.
 
-local:analysis	rdfs:label	"analysis"	.
+local:science	a	rdf:Class	;
+	rdfs:label	"science"	.
 
-local:systems	rdfs:label	"systems"	.
+local:computer	a	rdf:Class	;
+	rdfs:label	"computer"	.
 
-local:shows	rdfs:label	"shows"	.
+local:general_computer	a	rdf:Class	;
+	rdfs:label	"general computer"	.
 
-local:other_papers	rdfs:label	"other papers"	.
+local:general	a	rdf:Class	;
+	rdfs:label	"general"	.
 
-local:other	rdfs:label	"other"	.
+local:research_general_computer_science	a	rdf:Class	;
+	rdfs:label	"research general computer science"	.
 
-local:often_cited	rdfs:label	"often cited"	.
+local:experimental_research_general_computer_science	a	rdf:Class	;
+	rdfs:label	"experimental research general computer science"	.
 
-local:cited	rdfs:label	"cited"	.
+local:quality_of_experimental_research_general_computer_science	a	rdf:Class	;
+	rdfs:label	"quality of experimental research general computer science"	.
 
-local:more_often	rdfs:label	"more often"	.
+local:quality_of_experimental_research_compare_the_importance_to_general_computer_science	a	rdf:Class	;
+	rdfs:label	"quality of experimental research compare the importance to general computer science"	.
 
-local:often	rdfs:label	"often"	.
+local:compare_to_general_computer_science	a	rdf:Class	;
+	rdfs:label	"compare to general computer science"	.
 
-local:often_cited_than_other_papers	rdfs:label	"often cited than other papers"	.
+local:investigate	a	rdf:Class	;
+	rdfs:label	"investigate"	.
 
-#### Properties ####
+local:current_status_of_experimental_work_on_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"current status of experimental work on the semantic web"	.
+
+local:current_status	a	rdf:Class	;
+	rdfs:label	"current status"	.
+
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
+
+local:status	a	rdf:Class	;
+	rdfs:label	"status"	.
+
+local:current_status_of_experimental_work	a	rdf:Class	;
+	rdfs:label	"current status of experimental work"	.
+
+local:current_status_of_experimental_work_on_semantic_web	a	rdf:Class	;
+	rdfs:label	"current status of experimental work on semantic web"	.
+
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
+
+local:development	a	rdf:Class	;
+	rdfs:label	"development"	.
+
+local:results_of_computer_science_research	a	rdf:Class	;
+	rdfs:label	"results of computer science research"	.
+
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
+
+local:computer_science_research	a	rdf:Class	;
+	rdfs:label	"computer science research"	.
+
+local:science_research	a	rdf:Class	;
+	rdfs:label	"science research"	.
+
+local:validate	a	rdf:Class	;
+	rdfs:label	"validate"	.
+
+local:results_of_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"results of the semantic web"	.
+
+local:results_of_semantic_web	a	rdf:Class	;
+	rdfs:label	"results of semantic web"	.
 
 #### Mapped Relations ####
 
+local:computer_science	owl:sameAs	cso:computer_science	.
 local:semantic	owl:sameAs	cso:semantics	.
 local:semantic_web	owl:sameAs	cso:semantic_web	.
-cso:semantic_web	rdfs:label	"semantic web"	.
 cso:semantics	rdfs:label	"semantic"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
 cso:computer_science	rdfs:label	"computer science"	.
-local:computer_science	owl:sameAs	cso:computer_science	.
 
 #### Relations ####
 
-local:semantic_web_conferences	rdfs:subClassOf	local:web_conferences	.
-local:corpus_of_500_papers	local:of_500papers	local:corpus	.
-local:cited	vn.role:Topic	local:papers	.
-local:paper	rdfs:member	local:paper_’	.
-local:collected	vn.role:indirect_object	local:international_semantic_web_conferences_over_past_decade	.
-local:comparing	vn.role:Patient1	local:papers	.
-local:confirm	vn.role:Cause	local:significant_correlation_between_paper_citations	.
-local:statistically_significant_correlation	rdfs:subClassOf	local:correlation	.
-local:confirm	vn.role:Recipient	local:we	.
-local:current_status_of_experimental_work	local:currentstatus_of	local:experimental_work	.
-local:international_semantic_web_conferences	rdfs:subClassOf	local:semantic_web_conferences	.
-local:compare_to_general_computer_science	local:compare_to	local:general_computer_science	.
-local:past_decade	rdfs:subClassOf	local:decade	.
-local:experimental	rdfs:member	local:experimental_work	.
-local:international_semantic	rdfs:member	local:international_semantic_web	.
-local:current	rdfs:member	local:current_status	.
-local:amount_of_experiments	local:of_experiments	local:amount	.
-local:international	rdfs:member	local:international_semantic	.
-local:other	rdfs:member	local:other_papers	.
-local:observe	vn.role:Theme	local:are_steadily_increasing_over_time	.
-local:often_cited_than_other_papers	local:oftencited_than	local:other_papers	.
-local:past	rdfs:member	local:past_decade	.
-local:computer_science	rdfs:subClassOf	local:science	.
-local:international_semantic	rdfs:subClassOf	local:semantic	.
-local:current_status_of_experimental_work_on_semantic_web	local:currentstatusofexperimentalwork_on	local:semantic_web	.
-local:validate	vn.role:Theme	local:results_of_semantic_web	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:comparing	vn.role:Patient2	local:analysis	.
-local:confirm	local:AM-NEG	local:not	.
-local:analyse	vn.role:Theme	local:conducted	.
-local:web_conferences	rdfs:subClassOf	local:conferences	.
-local:current_status_of_experimental_work_on_semantic_web	local:on_semanticweb	local:current_status_of_experimental_work	.
-local:investigate	vn.role:Location	local:current_status_of_experimental_work_on_semantic_web	.
-local:science	rdfs:member	local:science_research	.
-local:international_semantic_web	rdfs:member	local:international_semantic_web_conferences	.
-local:web	rdfs:member	local:web_conferences	.
-local:analyse	vn.role:Agent	local:we	.
-local:compare	vn.role:Agent	local:general_computer_science	.
-local:validate	local:AM-LOC	local:general	.
-local:cited	local:AM-MNR	local:papers	.
-local:investigate	vn.role:Location	local:development	.
-local:analyse	vn.role:Theme	local:compare_to_general_computer_science	.
-local:statistically	rdfs:member	local:statistically_significant	.
-local:often_cited	rdfs:subClassOf	local:cited	.
-local:results_of_semantic_web	local:results_of	local:semantic_web	.
-local:significant_correlation_between_paper_citations	local:between_papercitations	local:significant_correlation	.
-local:analyse	local:AM-MNR	local:corpus_of_500_papers	.
-local:increasing	vn.role:Attribute	local:amount_of_experiments	.
-local:statistically_significant	rdfs:subClassOf	local:significant	.
-local:computer_science_research	rdfs:subClassOf	local:science_research	.
-local:s	rdfs:member	local:s_citations	.
-local:are_steadily_increasing_over_time	local:over_time	local:are_steadily_increasing	.
-local:more_often	rdfs:subClassOf	local:often	.
-local:s_citations	rdfs:subClassOf	local:citations	.
-local:experimental_research	rdfs:subClassOf	local:research	.
-local:other_papers	rdfs:subClassOf	local:papers	.
-local:500_papers	rdfs:subClassOf	local:papers	.
-local:amount_of_experiments	local:amount_of	local:experiments	.
-local:international_semantic_web	rdfs:subClassOf	local:web	.
-local:cited	local:AM-TMP	local:often	.
-local:computer_science_research	rdfs:subClassOf	local:research	.
-local:current_status	rdfs:subClassOf	local:status	.
-local:steadily_increasing	rdfs:subClassOf	local:increasing	.
-local:quality_of_experimental_research	local:quality_of	local:experimental_research	.
-local:semantic_web	rdfs:member	local:semantic_web_conferences	.
-local:experimental	rdfs:member	local:experimental_research	.
-local:shows	vn.role:Theme	local:often_cited_than_other_papers	.
-local:statistically_significant	rdfs:member	local:statistically_significant_correlation	.
-local:comparing	vn.role:Agent	local:systems	.
-local:experimental_work	rdfs:subClassOf	local:work	.
-local:validate	vn.role:Theme	local:results_of_computer_science_research	.
-local:increasing	local:AM-TMP	local:time	.
-local:corpus_of_500_papers	local:corpus_of	local:500_papers	.
-local:significant_correlation_between_paper_citations	local:significantcorrelation_between	local:paper_citations	.
-local:analyse	local:AM-ADV	local:corpus_of_500_papers	.
-local:paper_citations	rdfs:subClassOf	local:citations	.
-local:significant	rdfs:member	local:significant_correlation	.
-local:results_of_computer_science_research	local:of_computerscienceresearch	local:results	.
-local:compare_to_general_computer_science	local:to_generalcomputerscience	local:compare	.
-local:shows	vn.role:Agent	local:analysis	.
-local:investigate	local:AM-LOC	local:paper	.
-local:current_status_of_experimental_work	local:of_experimentalwork	local:current_status	.
-local:general_computer	rdfs:member	local:general_computer_science	.
-local:compare	vn.role:Patient2	local:importance	.
-local:paper_’	rdfs:subClassOf	local:’	.
-local:computer	rdfs:member	local:computer_science	.
-local:based	vn.role:Cause	local:we	.
-local:general_computer_science	rdfs:subClassOf	local:science	.
-local:significant_correlation	rdfs:subClassOf	local:correlation	.
-local:results_of_semantic_web	local:of_semanticweb	local:results	.
-local:results_of_computer_science_research	local:results_of	local:computer_science_research	.
-local:general_computer	rdfs:subClassOf	local:computer	.
-local:investigate	vn.role:Agent	local:we	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:general	rdfs:member	local:general_computer	.
-local:observe	vn.role:Agent	local:we	.
-local:science_research	rdfs:subClassOf	local:research	.
-local:quality_of_experimental_research	local:of_experimentalresearch	local:quality	.
-local:based	vn.role:indirect_object	local:corpus_of_500_papers	.
-local:semantic_web_conferences	rdfs:subClassOf	local:conferences	.
-local:often_cited_than_other_papers	local:than_otherpapers	local:often_cited	.
-local:international_semantic_web_conferences_over_past_decade	local:internationalsemanticwebconferences_over	local:past_decade	.
-local:increasing	local:AM-MNR	local:steadily	.
-local:analyse	vn.role:Theme	local:importance	.
-local:are_steadily_increasing_over_time	local:aresteadilyincreasing_over	local:time	.
+local:s7	rdf:object	local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	.
+local:s6	rdf:subject	local:500_papers	.
+local:semantic_web_conferences	rdfs:member	local:semantic_web	.
+local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	rdfs:member	local:corpus	.
+local:s2	local:AM-LOC	local:paper	.
+local:past_decade	rdfs:member	local:past	.
+local:s4	rdf:object	local:corpus_of_500_papers	.
+local:s6	rdf:object	local:international_semantic_web_conferences	.
 local:international_semantic_web_conferences	rdfs:subClassOf	local:conferences	.
+local:international_semantic_web_conferences	rdfs:subClassOf	local:semantic_web_conferences	.
+local:s2	rdf:object	local:development	.
+local:significant_correlation_between_papers_citations	rdfs:member	local:significant_correlation	.
+local:s7.1	rdf:predicate	local:analyse	.
+local:s5	rdf:predicate	local:based	.
+local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	rdfs:member	local:quality	.
+local:are_steadily_increasing_over_time	rdfs:member	local:are_steadily_increasing	.
+local:other_papers	rdfs:subClassOf	local:papers	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	rdfs:member	local:experimental_research	.
+local:s7.1	rdf:object	local:quality_of_experimental_research	.
+local:s3	rdf:predicate	local:investigate	.
+local:significant_correlation	rdfs:member	local:significant	.
+local:s2	rdf:subject	local:we	.
+local:s12	local:AM-DIS	local:however	.
+local:s10	local:AM-MOD	local:can	.
+local:amount_and_quality_of_experiments	rdfs:member	local:experiments	.
+local:corpus_of_500_papers	rdfs:member	local:papers	.
+local:computer_science	rdfs:member	local:computer	.
+local:s3	rdf:object	local:current_status_of_experimental_work_on_the_semantic_web	.
+local:s7.1	local:AM-ADV	local:based_on_a_corpus_of_500_papers	.
+local:s0	rdf:predicate	local:validate	.
+local:s5.1	rdf:object	local:quality_of_experimental_research_compare_the_importance_to_general_computer_science	.
+local:compare_to_general_computer_science	rdfs:member	local:general_computer_science	.
+local:international_semantic_web_conferences	rdfs:member	local:international_semantic_web	.
+local:often_cited_than_other_papers	rdfs:member	local:often_cited	.
+local:s8	rdf:predicate	local:observe	.
+local:other_papers	rdfs:member	local:other	.
+local:s7.1	rdf:subject	local:we	.
+local:international_semantic	rdfs:subClassOf	local:semantic	.
+local:are_steadily_increasing_over_time	rdfs:member	local:time	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:experimental_research_general_computer_science	rdfs:subClassOf	local:research_general_computer_science	.
+local:computer_science_research	rdfs:subClassOf	local:research	.
+local:results_of_semantic_web	rdfs:member	local:semantic_web	.
+local:s8	rdf:object	local:amount_and_quality_of_experiments_are_steadily_increasing_over_time	.
+local:s5	rdf:object	local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	.
+local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	rdfs:member	local:general_computer_science	.
+local:500_papers	rdfs:subClassOf	local:papers	.
+local:s12	rdf:subject	local:analysis	.
+local:papers_citations	rdfs:subClassOf	local:citations	.
+local:experimental_research	rdfs:member	local:experimental	.
+local:statistically_significant_correlation_between_a_papers_citations	rdfs:member	local:statistically_significant_correlation	.
 local:are_steadily_increasing	rdfs:subClassOf	local:steadily_increasing	.
-local:confirm	local:AM-MOD	local:can	.
-local:international_semantic_web_conferences_over_past_decade	local:over_pastdecade	local:international_semantic_web_conferences	.
-local:computer_science	rdfs:member	local:computer_science_research	.
-local:compare	vn.role:Agent	local:analyse	.
-local:collected	vn.role:Theme	local:500_papers	.
+local:papers_are_more_often_cited_than_other_papers	rdfs:member	local:other_papers	.
+local:analysis_systems	rdfs:subClassOf	local:systems	.
+local:international_semantic_web	rdfs:subClassOf	local:web	.
+local:web_conferences	rdfs:subClassOf	local:conferences	.
+local:past_decade	rdfs:subClassOf	local:decade	.
+local:s5.2	rdf:subject	local:importance	.
+local:international_semantic	rdfs:member	local:international	.
+local:s12.1	local:AM-TMP	local:often	.
+local:s13	rdf:object	local:analysis_systems	.
+local:statistically_significant	rdfs:member	local:statistically	.
+local:current_status	rdfs:subClassOf	local:status	.
+local:science_research	rdfs:subClassOf	local:research	.
+local:current_status_of_experimental_work_on_the_semantic_web	rdfs:member	local:current_status	.
+local:s8.1	rdf:predicate	local:increase	.
+local:science_research	rdfs:member	local:science	.
+local:based_on_a_corpus_of_500_papers	rdfs:member	local:corpus	.
+local:papers_are_more_often_cited_than_other_papers	rdfs:member	local:papers	.
+local:s10	rdf:predicate	local:not_confirm	.
+local:s8	rdf:subject	local:we	.
+local:research_general_computer_science	rdfs:subClassOf	local:general_computer_science	.
+local:current_status_of_experimental_work	rdfs:member	local:experimental_work	.
+local:s8.1	local:AM-MNR	local:steadily	.
+local:quality_of_experimental_research_compare_the_importance_to_general_computer_science	rdfs:member	local:quality	.
+local:often_cited	rdfs:subClassOf	local:cited	.
+local:s1	rdf:subject	local:results_of_computer_science_research	.
+local:s10	rdf:subject	local:we	.
+local:amount_and_quality_of_experiments_are_steadily_increasing_over_time	rdfs:member	local:over_time	.
+local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	rdfs:member	local:papers	.
+local:results_of_the_semantic_web	rdfs:member	local:semantic_web	.
+local:s0	local:AM-LOC	local:general	.
+local:quality_of_experimental_research	rdfs:member	local:quality	.
+local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	rdfs:member	local:papers	.
+local:current_status_of_experimental_work_on_semantic_web	rdfs:member	local:current_status_of_experimental_work	.
+local:statistically_significant_correlation	rdfs:member	local:statistically_significant	.
+local:amount_of_experiments	rdfs:member	local:experiments	.
+local:quality_of_experimental_research_general_computer_science	rdfs:member	local:quality	.
+local:statistically_significant_correlation_between_a_papers_citations	rdfs:member	local:papers_citations	.
+local:s5.1	rdf:subject	local:we	.
+local:experimental_work	rdfs:member	local:experimental	.
+local:s7.2	rdf:predicate	local:conduct	.
+local:general_computer	rdfs:subClassOf	local:computer	.
+local:s12.1	rdf:predicate	local:cite	.
+local:s2	rdf:predicate	local:investigate	.
+local:s13	rdf:subject	local:papers	.
+local:papers_citations	rdfs:member	local:papers	.
+local:s4	rdf:predicate	local:based	.
+local:experimental_research	rdfs:subClassOf	local:research	.
+local:web_conferences	rdfs:member	local:web	.
+local:s4	rdf:subject	local:we	.
+local:amount_and_quality_of_experiments_are_steadily_increasing_over_time	rdfs:member	local:quality	.
+local:over_time	rdfs:subClassOf	local:time	.
+local:s7	rdf:predicate	local:based	.
+local:amount_of_experimental_work	rdfs:member	local:experimental_work	.
+local:amount_and_quality_of_experiments	rdfs:member	local:amount	.
+local:s6	rdf:predicate	local:collect	.
+local:general_computer_science	rdfs:subClassOf	local:science	.
+local:compare_to_general_computer_science	rdfs:member	local:compare	.
+local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	rdfs:member	local:quality	.
+local:s9	rdf:predicate	local:hypothesise	.
+local:s5.1	local:AM-ADV	local:based_on_a_corpus_of_500_papers	.
+local:quality_of_experimental_research_compare_the_importance_to_general_computer_science	rdfs:member	local:importance	.
+local:corpus_of_500_papers	rdfs:member	local:500_papers	.
+local:statistically_significant_correlation	rdfs:subClassOf	local:correlation	.
+local:s7.2	rdf:subject	local:experimental_research	.
+local:current_status_of_experimental_work_on_semantic_web	rdfs:member	local:semantic_web	.
+local:corpus_of_500_papers	rdfs:member	local:corpus	.
+local:s5.2	rdf:object	local:based_on_a_corpus_of_500_papers_we_analyse_the_quality_of_experimental_research_general_computer_science	.
+local:results_of_the_semantic_web	rdfs:member	local:results	.
+local:based_on_a_corpus_of_500_papers	rdfs:member	local:papers	.
+local:computer_science_research	rdfs:subClassOf	local:science_research	.
+local:results_of_computer_science_research	rdfs:member	local:results	.
+local:s4.1	rdf:predicate	local:analyse	.
+local:steadily_increasing	rdfs:subClassOf	local:increasing	.
+local:significant_correlation_between_papers_citations	rdfs:member	local:papers_citations	.
+local:s12	rdf:object	local:papers_are_more_often_cited_than_other_papers	.
+local:quality_of_experimental_research_general_computer_science	rdfs:member	local:experimental_research_general_computer_science	.
+local:s4.1	rdf:object	local:importance	.
+local:statistically_significant	rdfs:subClassOf	local:significant	.
+local:current_status	rdfs:member	local:current	.
+local:current_status_of_experimental_work_on_the_semantic_web	rdfs:member	local:experimental_work	.
+local:significant_correlation	rdfs:subClassOf	local:correlation	.
+local:semantic_web_conferences	rdfs:subClassOf	local:conferences	.
+local:general_computer	rdfs:member	local:general	.
+local:s1	local:AM-LOC	local:general	.
+local:general_computer_science	rdfs:member	local:general_computer	.
+local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	rdfs:member	local:experimental_research	.
 local:general_computer_science	rdfs:subClassOf	local:computer_science	.
+local:computer_science_research	rdfs:member	local:computer_science	.
+local:s12.1	rdf:subject	local:papers	.
+local:often_cited_than_other_papers	rdfs:member	local:other_papers	.
+local:experimental_work	rdfs:subClassOf	local:work	.
+local:results_of_computer_science_research	rdfs:member	local:computer_science_research	.
+local:amount_and_quality_of_experiments_are_steadily_increasing_over_time	rdfs:member	local:experiments	.
+local:results_of_semantic_web	rdfs:member	local:results	.
+local:more_often	rdfs:subClassOf	local:often	.
+local:corpus_of_500_papers_we_analyse_the_quality_of_experimental_research	rdfs:member	local:corpus	.
+local:amount_and_quality_of_experiments	rdfs:member	local:quality	.
+local:s0	rdf:subject	local:results_of_the_semantic_web	.
+local:s5.2	rdf:predicate	local:compare	.
+local:semantic_web_conferences	rdfs:subClassOf	local:web_conferences	.
+local:international_semantic_web	rdfs:member	local:international_semantic	.
+local:current_status_of_experimental_work_on_the_semantic_web	rdfs:member	local:semantic_web	.
+local:quality_of_experimental_research_compare_the_importance_to_general_computer_science	rdfs:member	local:experimental_research	.
+local:s4.1	local:AM-MNR	local:based_on_a_corpus_of_500_papers	.
+local:s4.1	rdf:subject	local:we	.
+local:quality_of_experimental_research_compare_the_importance_to_general_computer_science	rdfs:member	local:general_computer_science	.
+local:s8.1	local:AM-TMP	local:time	.
+local:s11	rdf:subject	local:amount_of_experimental_work	.
+local:s6	local:AM-TMP	local:past_decade	.
+local:s10	rdf:object	local:statistically_significant_correlation_between_a_papers_citations	.
+local:amount_of_experimental_work	rdfs:member	local:amount	.
+local:over_time	rdfs:member	local:over	.
+local:quality_of_experimental_research	rdfs:member	local:experimental_research	.
+local:s1	rdf:predicate	local:validate	.
+local:analysis_systems	rdfs:member	local:analysis	.
+local:amount_and_quality_of_experiments_are_steadily_increasing_over_time	rdfs:member	local:amount	.
+local:computer_science	rdfs:subClassOf	local:science	.
+local:s13	rdf:predicate	local:compare	.
+local:s3	rdf:subject	local:we	.
+local:current_status_of_experimental_work	rdfs:member	local:current_status	.
+local:s12	rdf:predicate	local:show	.
+local:s11	rdf:predicate	local:report	.
+local:s3	local:AM-LOC	local:paper	.
+local:amount_of_experiments	rdfs:member	local:amount	.
+local:s5.1	rdf:predicate	local:analyse	.
+local:s8.1	rdf:subject	local:amount_and_quality_of_experiments	.

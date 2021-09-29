@@ -1,515 +1,881 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"reasoning paths between source entities thereby providing support evidence for the inferred link"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"our method finds reasoning paths between source entities thereby providing support evidence for the inferred link"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"reasoning paths between target entities thereby providing support evidence for the inferred link"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"our method finds reasoning paths between target entities thereby providing support evidence for the inferred link"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"reasoning paths between source entities thereby making the link prediction for unseen entities interpretable"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"our method finds reasoning paths between source entities thereby making the link prediction for unseen entities interpretable"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"reasoning paths between target entities thereby making the link prediction for unseen entities interpretable"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"our method finds reasoning paths between target entities thereby making the link prediction for unseen entities interpretable"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"framework that learn representations of previously unseen entities"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"to overcome this issue we propose an inductive representation"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"overcome this issue we"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"an inductive representation learning framework"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"newly emerging entities"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"evolving knowledge graphs"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"the knowledge graphs severely restricting pathbased approaches applicability for evolving knowledge graphs with newly emerging entities"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"however pathbased approaches typically consider static snapshots of the knowledge graphs severely restricting pathbased approaches applicability for evolving knowledge graphs with newly emerging entities"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"pathbased approaches operate in the symbolic space making the inference process explainable"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"pathbased approaches operate in the symbolic space making the inference process explainable"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"pathbased approaches operate in the symbolic space making the inference process explainable"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"pathbased approaches operate in the symbolic space making the inference process explainable"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"given a source entity"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"link prediction inferring a target entity given a source entity"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"link prediction can alleviate this by inferring a target entity given a source entity"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"given a query relation"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"link prediction inferring a target entity given a query relation"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"link prediction can alleviate this by inferring a target entity given a query relation"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"their largescale coverage largescale coverage crossdomain knowledge graphs invariably suffer from inherent incompleteness and sparsity"	.
+
+
 #### Classes ####
 
-local:crossdomain	rdfs:label	"cross-domain"	.
+local:reasoning_paths_between_source_entities	a	rdf:Class	;
+	rdfs:label	"reasoning paths between source entities"	.
 
-local:crossdomain_knowledge	rdfs:label	"cross-domain knowledge"	.
+local:paths	a	rdf:Class	;
+	rdfs:label	"paths"	.
 
-local:crossdomain_knowledge_graphs	rdfs:label	"cross-domain knowledge graphs"	.
+local:source_entities	a	rdf:Class	;
+	rdfs:label	"source entities"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:largescale	rdfs:label	"large-scale"	.
+local:reasoning_paths	a	rdf:Class	;
+	rdfs:label	"reasoning paths"	.
 
-local:largescale_coverage	rdfs:label	"large-scale coverage"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:support_evidence_inferred_link	a	rdf:Class	;
+	rdfs:label	"support evidence inferred link"	.
 
-local:coverage	rdfs:label	"coverage"	.
+local:support_evidence	a	rdf:Class	;
+	rdfs:label	"support evidence"	.
 
-local:coverage_largescale_coverage	rdfs:label	"coverage large-scale coverage"	.
+local:link	a	rdf:Class	;
+	rdfs:label	"link"	.
 
-local:coverage_largescale_coverage_crossdomain_knowledge_graphs	rdfs:label	"coverage large-scale coverage cross-domain knowledge graphs"	.
+local:evidence	a	rdf:Class	;
+	rdfs:label	"evidence"	.
 
-local:suffer	rdfs:label	"suffer"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:invariably	rdfs:label	"invariably"	.
+local:thereby	a	rdf:Class	;
+	rdfs:label	"thereby"	.
 
-local:inherent_incompleteness	rdfs:label	"inherent incompleteness"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:incompleteness	rdfs:label	"incompleteness"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:inherent	rdfs:label	"inherent"	.
+local:reasoning_paths_between_target_entities	a	rdf:Class	;
+	rdfs:label	"reasoning paths between target entities"	.
 
-local:link_prediction	rdfs:label	"link prediction"	.
+local:target_entities	a	rdf:Class	;
+	rdfs:label	"target entities"	.
 
-local:prediction	rdfs:label	"prediction"	.
+local:target	a	rdf:Class	;
+	rdfs:label	"target"	.
 
-local:link	rdfs:label	"link"	.
+local:support_evidence_for_the_inferred_link	a	rdf:Class	;
+	rdfs:label	"support evidence for the inferred link"	.
 
-local:alleviate	rdfs:label	"alleviate"	.
+local:inferred_link	a	rdf:Class	;
+	rdfs:label	"inferred link"	.
 
-local:can	rdfs:label	"can"	.
+local:inferred	a	rdf:Class	;
+	rdfs:label	"inferred"	.
 
-local:this	rdfs:label	"this"	.
+local:support_evidence_for_inferred_link	a	rdf:Class	;
+	rdfs:label	"support evidence for inferred link"	.
 
-local:target	rdfs:label	"target"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:target_entity	rdfs:label	"target entity"	.
+local:link_prediction_for_unseen_entities_interpretable	a	rdf:Class	;
+	rdfs:label	"link prediction for unseen entities interpretable"	.
 
-local:query_relation	rdfs:label	"query relation"	.
+local:unseen_entities	a	rdf:Class	;
+	rdfs:label	"unseen entities"	.
 
-local:relation	rdfs:label	"relation"	.
+local:link_prediction	a	rdf:Class	;
+	rdfs:label	"link prediction"	.
 
-local:query	rdfs:label	"query"	.
+local:prediction	a	rdf:Class	;
+	rdfs:label	"prediction"	.
 
-local:entity	rdfs:label	"entity"	.
+local:unseen	a	rdf:Class	;
+	rdfs:label	"unseen"	.
 
-local:inferring_given_query_relation	rdfs:label	"inferring given query relation"	.
+local:link_prediction_for_unseen_entities	a	rdf:Class	;
+	rdfs:label	"link prediction for unseen entities"	.
 
-local:inferring	rdfs:label	"inferring"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:target_entity_given_query_relation	rdfs:label	"target entity given query relation"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:given	rdfs:label	"given"	.
+local:representations_of_previously_unseen_entities	a	rdf:Class	;
+	rdfs:label	"representations of previously unseen entities"	.
 
-local:source_entity	rdfs:label	"source entity"	.
+local:previously_unseen_entities	a	rdf:Class	;
+	rdfs:label	"previously unseen entities"	.
 
-local:source	rdfs:label	"source"	.
+local:representations	a	rdf:Class	;
+	rdfs:label	"representations"	.
 
-local:target_source_entity	rdfs:label	"target source entity"	.
+local:previously_unseen	a	rdf:Class	;
+	rdfs:label	"previously unseen"	.
 
-local:inferring_given_source_entity	rdfs:label	"inferring given source entity"	.
+local:previously	a	rdf:Class	;
+	rdfs:label	"previously"	.
 
-local:target_source_entity_given_source_entity	rdfs:label	"target source entity given source entity"	.
+local:representations_of_unseen_entities	a	rdf:Class	;
+	rdfs:label	"representations of unseen entities"	.
 
-local:recent_embeddingbased	rdfs:label	"recent embedding-based"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:embeddingbased	rdfs:label	"embedding-based"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:recent	rdfs:label	"recent"	.
+local:inductive_representation	a	rdf:Class	;
+	rdfs:label	"inductive representation"	.
 
-local:recent_embeddingbased_approaches	rdfs:label	"recent embedding-based approaches"	.
+local:representation	a	rdf:Class	;
+	rdfs:label	"representation"	.
 
-local:embeddingbased_approaches	rdfs:label	"embedding-based approaches"	.
+local:inductive	a	rdf:Class	;
+	rdfs:label	"inductive"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:overcome_this_issue	a	rdf:Class	;
+	rdfs:label	"overcome this issue"	.
 
-local:operate	rdfs:label	"operate"	.
+local:overcome	a	rdf:Class	;
+	rdfs:label	"overcome"	.
 
-local:vector	rdfs:label	"vector"	.
+local:issue	a	rdf:Class	;
+	rdfs:label	"issue"	.
 
-local:vector_space	rdfs:label	"vector space"	.
+local:emerge	a	rdf:Class	;
+	rdfs:label	"emerge"	.
 
-local:uninterpretable_latent	rdfs:label	"uninterpretable latent"	.
+local:newly	a	rdf:Class	;
+	rdfs:label	"newly"	.
 
-local:uninterpretable_latent_semantic	rdfs:label	"uninterpretable latent semantic"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:latent_semantic_vector	rdfs:label	"latent semantic vector"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:semantic_vector	rdfs:label	"semantic vector"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:semantic_vector_space	rdfs:label	"semantic vector space"	.
+local:evolve	a	rdf:Class	;
+	rdfs:label	"evolve"	.
 
-local:space	rdfs:label	"space"	.
+local:restrict	a	rdf:Class	;
+	rdfs:label	"restrict"	.
 
-local:latent_semantic	rdfs:label	"latent semantic"	.
+local:pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	a	rdf:Class	;
+	rdfs:label	"pathbased approaches applicability for evolving knowledge graphs with newly emerging entities"	.
 
-local:latent_semantic_vector_space	rdfs:label	"latent semantic vector space"	.
+local:pathbased_approaches_applicability	a	rdf:Class	;
+	rdfs:label	"pathbased approaches applicability"	.
 
-local:uninterpretable_latent_semantic_vector	rdfs:label	"uninterpretable latent semantic vector"	.
+local:pathbased_approaches	a	rdf:Class	;
+	rdfs:label	"pathbased approaches"	.
 
-local:uninterpretable_latent_semantic_vector_space	rdfs:label	"uninterpretable latent semantic vector space"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:latent	rdfs:label	"latent"	.
+local:approaches_applicability	a	rdf:Class	;
+	rdfs:label	"approaches applicability"	.
 
-local:uninterpretable	rdfs:label	"uninterpretable"	.
+local:pathbased	a	rdf:Class	;
+	rdfs:label	"pathbased"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:applicability	a	rdf:Class	;
+	rdfs:label	"applicability"	.
 
-local:uninterpretable_latent_semantic_vector_space_of_entities	rdfs:label	"uninterpretable latent semantic vector space of entities"	.
+local:emerging_entities	a	rdf:Class	;
+	rdfs:label	"emerging entities"	.
 
-local:entities	rdfs:label	"entities"	.
+local:newly_emerging	a	rdf:Class	;
+	rdfs:label	"newly emerging"	.
 
-local:pathbased	rdfs:label	"path-based"	.
+local:emerging	a	rdf:Class	;
+	rdfs:label	"emerging"	.
 
-local:pathbased_approaches_approaches	rdfs:label	"path-based approaches approaches"	.
+local:evolving_with_emerging_entities	a	rdf:Class	;
+	rdfs:label	"evolving with emerging entities"	.
 
-local:pathbased_approaches	rdfs:label	"path-based approaches"	.
+local:evolving	a	rdf:Class	;
+	rdfs:label	"evolving"	.
 
-local:approaches_approaches	rdfs:label	"approaches approaches"	.
+local:severely	a	rdf:Class	;
+	rdfs:label	"severely"	.
 
-local:in_operate	rdfs:label	"in operate"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:symbolic_symbolic_space	rdfs:label	"symbolic symbolic space"	.
+local:static_snapshots_of_the_knowledge_graphs_severely_restricting_pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	a	rdf:Class	;
+	rdfs:label	"static snapshots of the knowledge graphs severely restricting pathbased approaches applicability for evolving knowledge graphs with newly emerging entities"	.
 
-local:symbolic_symbolic	rdfs:label	"symbolic symbolic"	.
+local:static_snapshots	a	rdf:Class	;
+	rdfs:label	"static snapshots"	.
 
-local:inference_inference	rdfs:label	"inference inference"	.
+local:static	a	rdf:Class	;
+	rdfs:label	"static"	.
 
-local:inference	rdfs:label	"inference"	.
+local:snapshots	a	rdf:Class	;
+	rdfs:label	"snapshots"	.
 
-local:inference_inference_process	rdfs:label	"inference inference process"	.
+local:severely_restricting	a	rdf:Class	;
+	rdfs:label	"severely restricting"	.
 
-local:process	rdfs:label	"process"	.
+local:restricting	a	rdf:Class	;
+	rdfs:label	"restricting"	.
 
-local:inference_process	rdfs:label	"inference process"	.
+local:static_snapshots_of_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"static snapshots of knowledge graphs"	.
 
-local:inference_process_process	rdfs:label	"inference process process"	.
+local:static_snapshots_of_knowledge_graphs_severely_restricting	a	rdf:Class	;
+	rdfs:label	"static snapshots of knowledge graphs severely restricting"	.
 
-local:symbolic	rdfs:label	"symbolic"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:symbolic_space	rdfs:label	"symbolic space"	.
+local:typically	a	rdf:Class	;
+	rdfs:label	"typically"	.
 
-local:process_process	rdfs:label	"process process"	.
+local:pathbased_approaches_operate_in_the_symbolic_space	a	rdf:Class	;
+	rdfs:label	"pathbased approaches operate in the symbolic space"	.
 
-local:inference_inference_process_process	rdfs:label	"inference inference process process"	.
+local:symbolic_space	a	rdf:Class	;
+	rdfs:label	"symbolic space"	.
 
-local:symbolic_symbolic_space_space	rdfs:label	"symbolic symbolic space space"	.
+local:symbolic	a	rdf:Class	;
+	rdfs:label	"symbolic"	.
 
-local:symbolic_symbolic_space_space_making	rdfs:label	"symbolic symbolic space space making"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:making	rdfs:label	"making"	.
+local:operate_in_symbolic_space	a	rdf:Class	;
+	rdfs:label	"operate in symbolic space"	.
 
-local:explainable	rdfs:label	"explainable"	.
+local:operate	a	rdf:Class	;
+	rdfs:label	"operate"	.
 
-local:operate_in_symbolic_space	rdfs:label	"operate in symbolic space"	.
+local:inference_process_explainable	a	rdf:Class	;
+	rdfs:label	"inference process explainable"	.
 
-local:uninterpretable_latent_semantic_vector_space_of_relations	rdfs:label	"uninterpretable latent semantic vector space of relations"	.
+local:inference_process	a	rdf:Class	;
+	rdfs:label	"inference process"	.
 
-local:relations	rdfs:label	"relations"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:however_pathbased_approaches	rdfs:label	"however path-based approaches"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:consider	rdfs:label	"consider"	.
+local:recent_embeddingbased_approaches	a	rdf:Class	;
+	rdfs:label	"recent embeddingbased approaches"	.
 
-local:typically	rdfs:label	"typically"	.
+local:recent	a	rdf:Class	;
+	rdfs:label	"recent"	.
 
-local:approaches_applicability	rdfs:label	"approaches applicability"	.
+local:embeddingbased_approaches	a	rdf:Class	;
+	rdfs:label	"embeddingbased approaches"	.
 
-local:applicability	rdfs:label	"applicability"	.
+local:symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	a	rdf:Class	;
+	rdfs:label	"symbolic symbolic space space making making the the inference inference process process explainable explainable"	.
 
-local:pathbased_approaches_applicability	rdfs:label	"path-based approaches applicability"	.
+local:inference_inference_process_process	a	rdf:Class	;
+	rdfs:label	"inference inference process process"	.
 
-local:static	rdfs:label	"static"	.
+local:symbolic_symbolic_space_space	a	rdf:Class	;
+	rdfs:label	"symbolic symbolic space space"	.
 
-local:static_snapshots	rdfs:label	"static snapshots"	.
+local:inference_inference_process	a	rdf:Class	;
+	rdfs:label	"inference inference process"	.
 
-local:snapshots	rdfs:label	"snapshots"	.
+local:symbolic_symbolic	a	rdf:Class	;
+	rdfs:label	"symbolic symbolic"	.
 
-local:emerging_entities	rdfs:label	"emerging entities"	.
+local:inference_process_process	a	rdf:Class	;
+	rdfs:label	"inference process process"	.
 
-local:newly_emerging	rdfs:label	"newly emerging"	.
+local:symbolic_symbolic_space	a	rdf:Class	;
+	rdfs:label	"symbolic symbolic space"	.
 
-local:emerging	rdfs:label	"emerging"	.
+local:space_space	a	rdf:Class	;
+	rdfs:label	"space space"	.
 
-local:severely_restricting	rdfs:label	"severely restricting"	.
+local:inference_inference	a	rdf:Class	;
+	rdfs:label	"inference inference"	.
 
-local:restricting	rdfs:label	"restricting"	.
+local:process_process	a	rdf:Class	;
+	rdfs:label	"process process"	.
 
-local:static_snapshots_of_knowledge_graphs	rdfs:label	"static snapshots of knowledge graphs"	.
+local:symbolic_space_space	a	rdf:Class	;
+	rdfs:label	"symbolic space space"	.
 
-local:evolving_with_emerging_entities	rdfs:label	"evolving with emerging entities"	.
+local:symbolic_symbolic_space_space_making	a	rdf:Class	;
+	rdfs:label	"symbolic symbolic space space making"	.
 
-local:evolving	rdfs:label	"evolving"	.
+local:making	a	rdf:Class	;
+	rdfs:label	"making"	.
 
-local:severely	rdfs:label	"severely"	.
+local:uninterpretable_latent_semantic_vector_space_of_entities	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent semantic vector space of entities"	.
 
-local:newly	rdfs:label	"newly"	.
+local:uninterpretable_latent_semantic_vector_space	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent semantic vector space"	.
 
-local:inductive_representation	rdfs:label	"inductive representation"	.
+local:vector_space	a	rdf:Class	;
+	rdfs:label	"vector space"	.
 
-local:representation	rdfs:label	"representation"	.
+local:latent_semantic	a	rdf:Class	;
+	rdfs:label	"latent semantic"	.
 
-local:inductive	rdfs:label	"inductive"	.
+local:latent	a	rdf:Class	;
+	rdfs:label	"latent"	.
 
-local:learning	rdfs:label	"learning"	.
+local:latent_semantic_vector	a	rdf:Class	;
+	rdfs:label	"latent semantic vector"	.
 
-local:framework	rdfs:label	"framework"	.
+local:vector	a	rdf:Class	;
+	rdfs:label	"vector"	.
 
-local:learn	rdfs:label	"learn"	.
+local:latent_semantic_vector_space	a	rdf:Class	;
+	rdfs:label	"latent semantic vector space"	.
 
-local:unseen_entities	rdfs:label	"unseen entities"	.
+local:uninterpretable_latent_semantic_vector	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent semantic vector"	.
 
-local:previously	rdfs:label	"previously"	.
+local:semantic_vector	a	rdf:Class	;
+	rdfs:label	"semantic vector"	.
 
-local:previously_unseen	rdfs:label	"previously unseen"	.
+local:uninterpretable_latent_semantic	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent semantic"	.
 
-local:previously_unseen_entities	rdfs:label	"previously unseen entities"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:unseen	rdfs:label	"unseen"	.
+local:semantic_vector_space	a	rdf:Class	;
+	rdfs:label	"semantic vector space"	.
 
-local:representations_of_unseen_entities	rdfs:label	"representations of unseen entities"	.
+local:uninterpretable_latent	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent"	.
 
-local:representations	rdfs:label	"representations"	.
+local:uninterpretable	a	rdf:Class	;
+	rdfs:label	"uninterpretable"	.
 
-local:overcome	rdfs:label	"overcome"	.
+local:pathbased_approaches_approaches_operate_in	a	rdf:Class	;
+	rdfs:label	"pathbased approaches approaches operate in"	.
 
-local:issue	rdfs:label	"issue"	.
+local:approaches_approaches	a	rdf:Class	;
+	rdfs:label	"approaches approaches"	.
 
-local:we	rdfs:label	"we"	.
+local:pathbased_approaches_approaches	a	rdf:Class	;
+	rdfs:label	"pathbased approaches approaches"	.
 
-local:propose	rdfs:label	"propose"	.
+local:in_operate	a	rdf:Class	;
+	rdfs:label	"in operate"	.
 
-local:finds	rdfs:label	"finds"	.
+local:explainable	a	rdf:Class	;
+	rdfs:label	"explainable"	.
 
-local:method	rdfs:label	"method"	.
+local:uninterpretable_latent_semantic_vector_space_of_relations_symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent semantic vector space of relations symbolic symbolic space space making making the the inference inference process process explainable explainable"	.
 
-local:target_entities	rdfs:label	"target entities"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:interpretable_entities	rdfs:label	"interpretable entities"	.
+local:uninterpretable_latent_semantic_vector_space_of_relations	a	rdf:Class	;
+	rdfs:label	"uninterpretable latent semantic vector space of relations"	.
 
-local:unseen_interpretable_entities	rdfs:label	"unseen interpretable entities"	.
+local:source_entity	a	rdf:Class	;
+	rdfs:label	"source entity"	.
 
-local:thereby_making	rdfs:label	"thereby making"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:reasoning_paths	rdfs:label	"reasoning paths"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:paths	rdfs:label	"paths"	.
+local:infer	a	rdf:Class	;
+	rdfs:label	"infer"	.
 
-local:reasoning_paths_between_target_entities	rdfs:label	"reasoning paths between target entities"	.
+local:target_entity_given_a_source_entity	a	rdf:Class	;
+	rdfs:label	"target entity given a source entity"	.
 
-local:link_prediction_for_unseen_interpretable_entities	rdfs:label	"link prediction for unseen interpretable entities"	.
+local:target_entity	a	rdf:Class	;
+	rdfs:label	"target entity"	.
 
-local:source_entities	rdfs:label	"source entities"	.
+local:target_source_entity	a	rdf:Class	;
+	rdfs:label	"target source entity"	.
 
-local:reasoning_paths_between_source_entities	rdfs:label	"reasoning paths between source entities"	.
+local:target_source_entity_given_source_entity	a	rdf:Class	;
+	rdfs:label	"target source entity given source entity"	.
 
-local:reasoning_paths_between_source	rdfs:label	"reasoning paths between source"	.
+local:alleviate	a	rdf:Class	;
+	rdfs:label	"alleviate"	.
 
-local:support	rdfs:label	"support"	.
+local:this	a	rdf:Class	;
+	rdfs:label	"this"	.
 
-local:support_evidence	rdfs:label	"support evidence"	.
+local:inferring_a_target_entity_given_a_source_entity	a	rdf:Class	;
+	rdfs:label	"inferring a target entity given a source entity"	.
 
-local:evidence	rdfs:label	"evidence"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:inferred_link	rdfs:label	"inferred link"	.
+local:query_relation	a	rdf:Class	;
+	rdfs:label	"query relation"	.
 
-local:inferred	rdfs:label	"inferred"	.
+local:relation	a	rdf:Class	;
+	rdfs:label	"relation"	.
 
-local:thereby_providing	rdfs:label	"thereby providing"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:providing	rdfs:label	"providing"	.
+local:target_entity_given_a_query_relation	a	rdf:Class	;
+	rdfs:label	"target entity given a query relation"	.
 
-local:reasoning_paths_between_target_entities_thereby_providing	rdfs:label	"reasoning paths between target entities thereby providing"	.
+local:target_entity_given_query_relation	a	rdf:Class	;
+	rdfs:label	"target entity given query relation"	.
 
-local:support_evidence_for_inferred_link	rdfs:label	"support evidence for inferred link"	.
+local:inferring_a_target_entity_given_a_query_relation	a	rdf:Class	;
+	rdfs:label	"inferring a target entity given a query relation"	.
 
-local:reasoning_paths_between_source_entities_thereby_providing	rdfs:label	"reasoning paths between source entities thereby providing"	.
+local:largescale_coverage_largescale_coverage_crossdomain_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"largescale coverage largescale coverage crossdomain knowledge graphs"	.
 
-#### Properties ####
+local:largescale_coverage	a	rdf:Class	;
+	rdfs:label	"largescale coverage"	.
+
+local:largescale_coverage_crossdomain_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"largescale coverage crossdomain knowledge graphs"	.
+
+local:coverage_crossdomain_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"coverage crossdomain knowledge graphs"	.
+
+local:crossdomain_knowledge	a	rdf:Class	;
+	rdfs:label	"crossdomain knowledge"	.
+
+local:crossdomain	a	rdf:Class	;
+	rdfs:label	"crossdomain"	.
+
+local:crossdomain_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"crossdomain knowledge graphs"	.
+
+local:coverage_crossdomain	a	rdf:Class	;
+	rdfs:label	"coverage crossdomain"	.
+
+local:largescale_coverage_crossdomain_knowledge	a	rdf:Class	;
+	rdfs:label	"largescale coverage crossdomain knowledge"	.
+
+local:largescale_coverage_crossdomain	a	rdf:Class	;
+	rdfs:label	"largescale coverage crossdomain"	.
+
+local:coverage_crossdomain_knowledge	a	rdf:Class	;
+	rdfs:label	"coverage crossdomain knowledge"	.
+
+local:coverage	a	rdf:Class	;
+	rdfs:label	"coverage"	.
+
+local:largescale	a	rdf:Class	;
+	rdfs:label	"largescale"	.
+
+local:coverage_largescale_coverage_crossdomain_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"coverage largescale coverage crossdomain knowledge graphs"	.
+
+local:suffer	a	rdf:Class	;
+	rdfs:label	"suffer"	.
+
+local:inherent_incompleteness_and_sparsity	a	rdf:Class	;
+	rdfs:label	"inherent incompleteness and sparsity"	.
+
+local:inherent_incompleteness	a	rdf:Class	;
+	rdfs:label	"inherent incompleteness"	.
+
+local:sparsity	a	rdf:Class	;
+	rdfs:label	"sparsity"	.
+
+local:inherent	a	rdf:Class	;
+	rdfs:label	"inherent"	.
+
+local:incompleteness	a	rdf:Class	;
+	rdfs:label	"incompleteness"	.
+
+local:invariably	a	rdf:Class	;
+	rdfs:label	"invariably"	.
 
 #### Mapped Relations ####
 
-local:inference	owl:sameAs	cso:inference	.
-cso:inference	rdfs:label	"inference"	.
-cso:link_prediction	rdfs:label	"link prediction"	.
-cso:semantics	rdfs:label	"semantic"	.
-local:link_prediction	owl:sameAs	cso:link_prediction	.
 local:semantic	owl:sameAs	cso:semantics	.
+cso:link_prediction	rdfs:label	"link prediction"	.
+local:inference	owl:sameAs	cso:inference	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:inference	rdfs:label	"inference"	.
+local:link_prediction	owl:sameAs	cso:link_prediction	.
 
 #### Relations ####
 
-local:making	vn.role:Material	local:inference_process	.
-local:latent_semantic_vector_space	rdfs:subClassOf	local:space	.
-local:inferring_given_query_relation	local:given_queryrelation	local:inferring	.
-local:crossdomain_knowledge	rdfs:subClassOf	local:knowledge	.
-local:recent	rdfs:member	local:recent_embeddingbased	.
-local:latent	rdfs:member	local:latent_semantic	.
-local:target_entity	rdfs:subClassOf	local:entity	.
-local:alleviate	local:AM-MNR	local:inferring_given_query_relation	.
-local:latent_semantic_vector	rdfs:member	local:latent_semantic_vector_space	.
-local:symbolic_symbolic	rdfs:subClassOf	local:symbolic	.
-local:uninterpretable_latent_semantic	rdfs:subClassOf	local:semantic	.
-local:emerging_entities	rdfs:subClassOf	local:entities	.
-local:uninterpretable_latent_semantic_vector	rdfs:subClassOf	local:vector	.
-local:reasoning_paths_between_source_entities	local:between_sourceentities	local:reasoning_paths	.
-local:target	rdfs:member	local:target_entities	.
-local:crossdomain_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:newly_emerging	rdfs:subClassOf	local:emerging	.
-local:however_pathbased_approaches	rdfs:subClassOf	local:pathbased_approaches	.
-local:previously_unseen_entities	rdfs:subClassOf	local:entities	.
-local:operate	local:AM-ADV	local:explainable	.
-local:reasoning_paths_between_source	local:between_source	local:reasoning_paths	.
-local:source_entities	rdfs:subClassOf	local:entities	.
-local:link_prediction_for_unseen_interpretable_entities	local:for_unseeninterpretableentities	local:link_prediction	.
-local:recent_embeddingbased	rdfs:subClassOf	local:embeddingbased	.
-local:given	vn.role:object	local:query_relation	.
-local:reasoning_paths_between_target_entities_thereby_providing	local:_therebyproviding	local:reasoning_paths_between_target_entities	.
-local:link	rdfs:member	local:link_prediction	.
-local:symbolic_symbolic	rdfs:member	local:symbolic_symbolic_space	.
-local:representations_of_unseen_entities	local:representations_of	local:unseen_entities	.
-local:restricting	local:AM-MNR	local:severely	.
-local:symbolic_symbolic_space_space_making	local:symbolicsymbolicspacespace_	local:making	.
-local:inferring	vn.role:Agent	local:link_prediction	.
-local:inference_inference	rdfs:member	local:inference_inference_process	.
-local:recent_embeddingbased_approaches	rdfs:subClassOf	local:approaches	.
-local:previously	rdfs:member	local:previously_unseen	.
-local:embeddingbased_approaches	rdfs:subClassOf	local:approaches	.
-local:coverage_largescale_coverage_crossdomain_knowledge_graphs	local:_cross-domainknowledgegraphs	local:coverage_largescale_coverage	.
-local:inherent_incompleteness	rdfs:subClassOf	local:incompleteness	.
-local:inference_process_process	rdfs:subClassOf	local:process	.
-local:finds	vn.role:Theme	local:reasoning_paths_between_source_entities_thereby_providing	.
-local:uninterpretable_latent_semantic_vector_space_of_relations	local:of_relations	local:uninterpretable_latent_semantic_vector_space	.
-local:evolving	vn.role:Location	local:knowledge_graphs	.
-local:making	vn.role:Material	local:link_prediction_for_unseen_interpretable_entities	.
-local:unseen	rdfs:member	local:unseen_entities	.
-local:largescale	rdfs:member	local:largescale_coverage	.
-local:providing	vn.role:Recipient	local:reasoning_paths_between_target_entities	.
-local:inferring	vn.role:Theme	local:target_entity_given_query_relation	.
-local:static_snapshots	rdfs:subClassOf	local:snapshots	.
-local:support_evidence_for_inferred_link	local:for_inferredlink	local:support_evidence	.
-local:inference_inference_process	rdfs:member	local:inference_inference_process_process	.
-local:inferred	rdfs:member	local:inferred_link	.
-local:inference_process_process	rdfs:subClassOf	local:process_process	.
-local:thereby_providing	rdfs:subClassOf	local:providing	.
-local:link_prediction	rdfs:subClassOf	local:prediction	.
-local:inference	rdfs:member	local:inference_inference	.
-local:making	vn.role:Agent	local:reasoning_paths_between_target_entities	.
-local:inferred_link	rdfs:subClassOf	local:link	.
-local:inference_inference_process_process	rdfs:subClassOf	local:process	.
-local:reasoning_paths_between_target_entities	local:between_targetentities	local:reasoning_paths	.
-local:source	rdfs:member	local:source_entities	.
-local:reasoning_paths_between_source_entities_thereby_providing	local:_therebyproviding	local:reasoning_paths_between_source_entities	.
-local:consider	vn.role:Agent	local:however_pathbased_approaches	.
-local:inferring_given_query_relation	local:inferring_given	local:query_relation	.
-local:reasoning_paths_between_source_entities_thereby_providing	local:reasoningpathsbetweensourceentities_	local:thereby_providing	.
-local:finds	vn.role:Theme	local:reasoning_paths_between_target_entities_thereby_providing	.
-local:providing	vn.role:Recipient	local:reasoning_paths_between_source_entities	.
-local:overcome	vn.role:Theme1	local:inductive_representation	.
-local:embeddingbased	rdfs:member	local:embeddingbased_approaches	.
-local:uninterpretable_latent_semantic_vector_space_of_entities	local:uninterpretablelatentsemanticvectorspace_of	local:entities	.
-local:largescale_coverage	rdfs:subClassOf	local:coverage	.
-local:pathbased_approaches_approaches	rdfs:subClassOf	local:approaches	.
-local:process	rdfs:member	local:process_process	.
-local:interpretable_entities	rdfs:subClassOf	local:entities	.
-local:coverage_largescale_coverage_crossdomain_knowledge_graphs	local:coveragelarge-scalecoverage_	local:crossdomain_knowledge_graphs	.
-local:uninterpretable_latent_semantic_vector_space_of_relations	local:uninterpretablelatentsemanticvectorspace_of	local:relations	.
-local:support	rdfs:member	local:support_evidence	.
-local:inference_inference	rdfs:subClassOf	local:inference	.
-local:emerging	local:AM-TMP	local:newly	.
-local:crossdomain_knowledge	rdfs:member	local:crossdomain_knowledge_graphs	.
-local:inferring_given_source_entity	local:given_sourceentity	local:inferring	.
-local:given	vn.role:object	local:source_entity	.
-local:support_evidence_for_inferred_link	local:supportevidence_for	local:inferred_link	.
-local:inference_inference_process	rdfs:subClassOf	local:process	.
-local:inductive	rdfs:member	local:inductive_representation	.
-local:symbolic	rdfs:member	local:symbolic_symbolic	.
-local:approaches_applicability	rdfs:subClassOf	local:applicability	.
-local:overcome	vn.role:Theme1	local:we	.
-local:propose	local:AM-PNC	local:overcome	.
-local:emerging	vn.role:Theme	local:entities	.
-local:approaches	rdfs:member	local:approaches_applicability	.
-local:symbolic_space	rdfs:subClassOf	local:space	.
-local:reasoning_paths	rdfs:subClassOf	local:paths	.
-local:semantic_vector_space	rdfs:subClassOf	local:vector_space	.
-local:uninterpretable_latent_semantic	rdfs:member	local:uninterpretable_latent_semantic_vector	.
-local:inference_process	rdfs:subClassOf	local:process	.
-local:static_snapshots_of_knowledge_graphs	local:of_knowledgegraphs	local:static_snapshots	.
-local:making	vn.role:Agent	local:reasoning_paths_between_source	.
-local:making	vn.role:Product	local:explainable	.
-local:inference	rdfs:member	local:inference_process	.
-local:operate	local:AM-LOC	local:uninterpretable_latent_semantic_vector_space_of_entities	.
-local:alleviate	vn.role:Cause	local:this	.
-local:uninterpretable_latent_semantic_vector_space	rdfs:subClassOf	local:space	.
-local:inference_process	rdfs:member	local:inference_process_process	.
-local:finds	vn.role:Agent	local:method	.
-local:inferring	vn.role:Theme	local:target_source_entity_given_source_entity	.
-local:latent_semantic	rdfs:subClassOf	local:semantic	.
-local:inductive_representation	rdfs:subClassOf	local:representation	.
-local:target_entity_given_query_relation	local:given_queryrelation	local:target_entity	.
-local:learn	vn.role:Theme	local:representations_of_unseen_entities	.
-local:reasoning_paths_between_source_entities	local:reasoningpaths_between	local:source_entities	.
-local:target_source_entity	rdfs:subClassOf	local:source_entity	.
-local:uninterpretable_latent_semantic_vector_space	rdfs:subClassOf	local:latent_semantic_vector_space	.
-local:target_entity_given_query_relation	local:targetentity_given	local:query_relation	.
-local:crossdomain	rdfs:member	local:crossdomain_knowledge	.
-local:semantic_vector_space	rdfs:subClassOf	local:space	.
-local:evolving_with_emerging_entities	local:evolving_with	local:emerging_entities	.
-local:making	vn.role:Agent	local:operate_in_symbolic_space	.
-local:providing	vn.role:indirect_object	local:inferred_link	.
-local:pathbased_approaches_applicability	rdfs:subClassOf	local:approaches_applicability	.
-local:symbolic_symbolic_space	rdfs:subClassOf	local:space	.
-local:recent_embeddingbased_approaches	rdfs:subClassOf	local:embeddingbased_approaches	.
-local:symbolic_symbolic_space	rdfs:subClassOf	local:symbolic_space	.
-local:finds	vn.role:Theme	local:thereby_making	.
-local:learning	vn.role:Agent	local:framework	.
-local:query	rdfs:member	local:query_relation	.
-local:pathbased_approaches	rdfs:member	local:pathbased_approaches_applicability	.
-local:providing	vn.role:Agent	local:support_evidence	.
-local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:learn	vn.role:Agent	local:framework	.
-local:target_source_entity_given_source_entity	local:given_sourceentity	local:target_source_entity	.
-local:alleviate	local:AM-MOD	local:can	.
-local:operate_in_symbolic_space	local:in_symbolicspace	local:operate	.
-local:consider	local:AM-TMP	local:typically	.
-local:uninterpretable_latent	rdfs:subClassOf	local:latent	.
-local:severely_restricting	rdfs:subClassOf	local:restricting	.
-local:thereby_making	rdfs:subClassOf	local:making	.
-local:symbolic	rdfs:member	local:symbolic_space	.
-local:pathbased_approaches_applicability	rdfs:subClassOf	local:applicability	.
-local:uninterpretable_latent_semantic_vector	rdfs:member	local:uninterpretable_latent_semantic_vector_space	.
-local:coverage_largescale_coverage	rdfs:subClassOf	local:largescale_coverage	.
-local:symbolic_symbolic_space_space	local:symbolicsymbolicspace_	local:space	.
-local:learning	vn.role:Agent	local:inductive_representation	.
-local:latent_semantic_vector_space	rdfs:subClassOf	local:semantic_vector_space	.
-local:previously_unseen	rdfs:subClassOf	local:unseen	.
-local:uninterpretable_latent_semantic_vector_space_of_entities	local:of_entities	local:uninterpretable_latent_semantic_vector_space	.
-local:target_entities	rdfs:subClassOf	local:entities	.
-local:inherent	rdfs:member	local:inherent_incompleteness	.
-local:semantic	rdfs:member	local:semantic_vector	.
-local:consider	vn.role:Theme	local:static_snapshots_of_knowledge_graphs	.
-local:alleviate	local:AM-MNR	local:inferring_given_source_entity	.
-local:alleviate	vn.role:Experiencer	local:link_prediction	.
-local:operate	vn.role:other	local:uninterpretable_latent_semantic_vector_space_of_relations	.
-local:target	rdfs:member	local:target_entity	.
-local:approaches	rdfs:member	local:approaches_approaches	.
-local:semantic_vector	rdfs:member	local:semantic_vector_space	.
-local:inference_inference_process_process	rdfs:subClassOf	local:inference_process_process	.
-local:query_relation	rdfs:subClassOf	local:relation	.
+local:s6	rdf:subject	local:framework	.
+local:latent_semantic	rdfs:member	local:latent	.
 local:crossdomain_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
-local:suffer	local:AM-TMP	local:invariably	.
-local:previously_unseen	rdfs:member	local:previously_unseen_entities	.
-local:vector	rdfs:member	local:vector_space	.
-local:link_prediction_for_unseen_interpretable_entities	local:linkprediction_for	local:unseen_interpretable_entities	.
-local:recent_embeddingbased	rdfs:member	local:recent_embeddingbased_approaches	.
-local:vector_space	rdfs:subClassOf	local:space	.
-local:pathbased_approaches	rdfs:member	local:pathbased_approaches_approaches	.
-local:operate	local:AM-ADV	local:symbolic_symbolic_space_space_making	.
-local:reasoning_paths_between_source	local:reasoningpaths_between	local:source	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:restricting	vn.role:Patient	local:pathbased_approaches_applicability	.
-local:propose	vn.role:Topic	local:inductive_representation	.
-local:pathbased_approaches	rdfs:subClassOf	local:approaches	.
-local:approaches_approaches	rdfs:subClassOf	local:approaches	.
-local:suffer	vn.role:Experiencer	local:inherent_incompleteness	.
-local:reasoning_paths_between_target_entities	local:reasoningpaths_between	local:target_entities	.
-local:pathbased_approaches_approaches	rdfs:subClassOf	local:approaches_approaches	.
-local:overcome	vn.role:Theme2	local:issue	.
-local:symbolic_symbolic_space_space	local:_space	local:symbolic_symbolic_space	.
-local:unseen_entities	rdfs:subClassOf	local:entities	.
-local:source_entity	rdfs:subClassOf	local:entity	.
-local:in_operate	rdfs:subClassOf	local:operate	.
-local:static_snapshots_of_knowledge_graphs	local:staticsnapshots_of	local:knowledge_graphs	.
-local:reasoning_paths_between_target_entities_thereby_providing	local:reasoningpathsbetweentargetentities_	local:thereby_providing	.
-local:inferring_given_source_entity	local:inferring_given	local:source_entity	.
-local:evolving_with_emerging_entities	local:with_emergingentities	local:evolving	.
-local:unseen_interpretable_entities	rdfs:subClassOf	local:interpretable_entities	.
-local:operate	vn.role:Patient	local:recent_embeddingbased_approaches	.
-local:operate	local:AM-TMP	local:pathbased	.
-local:symbolic_symbolic_space_space_making	local:_making	local:symbolic_symbolic_space_space	.
+local:s4	rdf:object	local:symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	.
+local:s11.1	rdf:subject	local:reasoning_paths_between_target_entities	.
 local:semantic_vector	rdfs:subClassOf	local:vector	.
-local:pathbased	rdfs:member	local:pathbased_approaches	.
-local:propose	vn.role:Agent	local:we	.
-local:operate	local:AM-TMP	local:in_operate	.
-local:operate_in_symbolic_space	local:operate_in	local:symbolic_space	.
-local:static	rdfs:member	local:static_snapshots	.
-local:source	rdfs:member	local:source_entity	.
-local:process_process	rdfs:subClassOf	local:process	.
-local:representations_of_unseen_entities	local:of_unseenentities	local:representations	.
-local:uninterpretable_latent	rdfs:member	local:uninterpretable_latent_semantic	.
-local:suffer	vn.role:Theme	local:coverage_largescale_coverage_crossdomain_knowledge_graphs	.
-local:target_source_entity_given_source_entity	local:targetsourceentity_given	local:source_entity	.
+local:s2.2	rdf:predicate	local:give	.
+local:previously_unseen_entities	rdfs:subClassOf	local:entities	.
+local:s2.1	rdf:predicate	local:infer	.
+local:link_prediction	rdfs:member	local:link	.
+local:previously_unseen_entities	rdfs:member	local:previously_unseen	.
+local:s7	rdf:object	local:issue	.
+local:target_entity_given_a_query_relation	rdfs:member	local:target_entity	.
+local:semantic_vector_space	rdfs:subClassOf	local:space	.
+local:s12.1	rdf:subject	local:reasoning_paths_between_source_entities	.
+local:approaches_approaches	rdfs:subClassOf	local:approaches	.
+local:query_relation	rdfs:subClassOf	local:relation	.
+local:s0	rdf:subject	local:largescale_coverage_largescale_coverage_crossdomain_knowledge_graphs	.
+local:s10.1	local:AM-ADV	local:thereby	.
+local:symbolic_symbolic	rdfs:member	local:symbolic	.
+local:source_entity	rdfs:subClassOf	local:entity	.
+local:source_entities	rdfs:subClassOf	local:entities	.
+local:s5.3	local:AM-TMP	local:newly	.
+local:symbolic_symbolic_space_space_making	rdfs:member	local:symbolic_symbolic_space_space	.
+local:uninterpretable_latent_semantic_vector_space	rdfs:subClassOf	local:latent_semantic_vector_space	.
+local:representations_of_previously_unseen_entities	rdfs:member	local:representations	.
+local:pathbased_approaches_operate_in_the_symbolic_space	rdfs:member	local:symbolic_space	.
+local:emerging_entities	rdfs:subClassOf	local:entities	.
+local:space_space	rdfs:member	local:space	.
+local:s4.1	rdf:object	local:inference_process_explainable	.
+local:coverage_crossdomain_knowledge_graphs	rdfs:subClassOf	local:crossdomain_knowledge_graphs	.
+local:s7	rdf:subject	local:we	.
+local:largescale_coverage_crossdomain_knowledge	rdfs:member	local:largescale_coverage_crossdomain	.
+local:symbolic_space	rdfs:subClassOf	local:space	.
+local:s9	rdf:object	local:s9.1	.
+local:inference_inference_process	rdfs:subClassOf	local:process	.
+local:latent_semantic_vector_space	rdfs:member	local:latent_semantic_vector	.
+local:coverage_largescale_coverage_crossdomain_knowledge_graphs	rdfs:subClassOf	local:largescale_coverage_crossdomain_knowledge_graphs	.
+local:s5.3	rdf:subject	local:entities	.
 local:latent_semantic_vector	rdfs:subClassOf	local:vector	.
-local:uninterpretable	rdfs:member	local:uninterpretable_latent	.
+local:static_snapshots_of_knowledge_graphs	rdfs:member	local:knowledge_graphs	.
+local:pathbased_approaches	rdfs:member	local:pathbased	.
+local:target_source_entity	rdfs:subClassOf	local:source_entity	.
+local:uninterpretable_latent_semantic	rdfs:member	local:uninterpretable_latent	.
+local:static_snapshots	rdfs:member	local:static	.
+local:s3	rdf:predicate	local:operate	.
+local:s9.1	rdf:predicate	local:make	.
+local:uninterpretable_latent	rdfs:member	local:uninterpretable	.
+local:s3	local:AM-TMP	local:pathbased	.
+local:s2	local:AM-MNR	local:inferring_a_target_entity_given_a_source_entity	.
+local:s3.1	rdf:object	local:inference_process	.
+local:s9	rdf:subject	local:method	.
+local:symbolic_symbolic_space_space	rdfs:subClassOf	local:space	.
+local:inference_inference_process	rdfs:member	local:inference_inference	.
+local:symbolic_space_space	rdfs:subClassOf	local:space	.
+local:latent_semantic_vector_space	rdfs:subClassOf	local:semantic_vector_space	.
+local:target_source_entity_given_source_entity	rdfs:member	local:target_source_entity	.
+local:target_entity_given_a_query_relation	rdfs:member	local:query_relation	.
+local:s2.2	rdf:subject	local:source_entity	.
+local:s10	rdf:object	local:s10.1	.
+local:recent_embeddingbased_approaches	rdfs:member	local:approaches	.
+local:query_relation	rdfs:member	local:query	.
+local:support_evidence_inferred_link	rdfs:member	local:support_evidence	.
+local:inferring_a_target_entity_given_a_query_relation	rdfs:member	local:target_entity	.
+local:s11	rdf:subject	local:method	.
+local:s0	rdf:object	local:inherent_incompleteness_and_sparsity	.
+local:s3	rdf:subject	local:recent_embeddingbased_approaches	.
+local:symbolic_space_space	rdfs:member	local:symbolic_space	.
+local:inferred_link	rdfs:member	local:inferred	.
+local:inductive_representation	rdfs:subClassOf	local:representation	.
+local:s5.1	rdf:subject	local:knowledge_graphs	.
+local:link_prediction_for_unseen_entities_interpretable	rdfs:member	local:link_prediction	.
+local:s9.1	local:AM-ADV	local:thereby	.
+local:link_prediction_for_unseen_entities	rdfs:member	local:link_prediction	.
+local:pathbased_approaches	rdfs:subClassOf	local:approaches	.
+local:operate_in_symbolic_space	rdfs:member	local:symbolic_space	.
+local:vector_space	rdfs:member	local:vector	.
+local:representations_of_previously_unseen_entities	rdfs:member	local:previously_unseen_entities	.
+local:largescale_coverage_largescale_coverage_crossdomain_knowledge_graphs	rdfs:member	local:largescale_coverage	.
+local:s6	rdf:predicate	local:learn	.
+local:coverage_crossdomain_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s1	rdf:predicate	local:alleviate	.
+local:largescale_coverage_crossdomain_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s5.2	rdf:subject	local:knowledge_graphs	.
+local:link_prediction_for_unseen_entities_interpretable	rdfs:member	local:unseen_entities	.
+local:static_snapshots_of_knowledge_graphs_severely_restricting	rdfs:member	local:severely_restricting	.
+local:inference_process	rdfs:subClassOf	local:process	.
+local:inference_process_process	rdfs:member	local:inference_process	.
+local:s9	rdf:predicate	local:find	.
+local:s5.3	rdf:predicate	local:emerge	.
+local:target_entity	rdfs:member	local:target	.
+local:s0	rdf:predicate	local:suffer	.
+local:target_source_entity_given_source_entity	rdfs:member	local:source_entity	.
+local:s5.1	rdf:object	local:pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	.
+local:uninterpretable_latent_semantic_vector	rdfs:member	local:uninterpretable_latent_semantic	.
+local:s4	local:AM-TMP	local:pathbased	.
+local:reasoning_paths_between_target_entities	rdfs:member	local:reasoning_paths	.
+local:reasoning_paths_between_source_entities	rdfs:member	local:reasoning_paths	.
+local:s7.1	rdf:object	local:inductive_representation	.
+local:s1.1	rdf:subject	local:link_prediction	.
+local:s10	rdf:subject	local:method	.
+local:semantic_vector_space	rdfs:member	local:semantic_vector	.
+local:largescale_coverage	rdfs:member	local:largescale	.
+local:pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:knowledge_graphs	.
+local:static_snapshots	rdfs:subClassOf	local:snapshots	.
+local:approaches_approaches	rdfs:member	local:approaches	.
+local:largescale_coverage_crossdomain_knowledge_graphs	rdfs:subClassOf	local:coverage_crossdomain_knowledge_graphs	.
+local:s7.1	local:AM-PNC	local:overcome_this_issue	.
+local:s4	rdf:subject	local:recent_embeddingbased_approaches	.
+local:coverage_crossdomain	rdfs:subClassOf	local:crossdomain	.
+local:latent_semantic	rdfs:subClassOf	local:semantic	.
+local:s12	rdf:predicate	local:find	.
+local:symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	rdfs:member	local:inference_inference_process_process	.
+local:pathbased_approaches_applicability	rdfs:member	local:pathbased_approaches	.
+local:s5	rdf:object	local:static_snapshots_of_the_knowledge_graphs_severely_restricting_pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	.
+local:static_snapshots_of_the_knowledge_graphs_severely_restricting_pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:static_snapshots	.
+local:representations_of_unseen_entities	rdfs:member	local:representations	.
+local:coverage_crossdomain_knowledge	rdfs:member	local:coverage_crossdomain	.
+local:unseen_entities	rdfs:member	local:unseen	.
+local:inherent_incompleteness_and_sparsity	rdfs:member	local:sparsity	.
+local:s5	rdf:subject	local:pathbased_approaches	.
+local:inference_process	rdfs:member	local:inference	.
+local:support_evidence_for_inferred_link	rdfs:member	local:support_evidence	.
+local:s9.1	rdf:object	local:link_prediction_for_unseen_entities_interpretable	.
+local:pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:entities	.
+local:symbolic_symbolic_space_space	rdfs:subClassOf	local:symbolic_space_space	.
+local:pathbased_approaches_operate_in_the_symbolic_space	rdfs:member	local:pathbased_approaches	.
+local:previously_unseen	rdfs:member	local:previously	.
+local:coverage_crossdomain_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s7.1	rdf:subject	local:we	.
+local:uninterpretable_latent_semantic_vector_space_of_relations_symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	rdfs:member	local:relations	.
+local:s10.1	rdf:object	local:link_prediction_for_unseen_entities_interpretable	.
+local:s1.2	rdf:predicate	local:give	.
+local:reasoning_paths	rdfs:subClassOf	local:paths	.
+local:target_entities	rdfs:subClassOf	local:entities	.
+local:static_snapshots_of_knowledge_graphs	rdfs:member	local:static_snapshots	.
+local:target_entity_given_query_relation	rdfs:member	local:query_relation	.
+local:s2	rdf:subject	local:link_prediction	.
+local:s2	rdf:object	local:this	.
+local:coverage_crossdomain	rdfs:member	local:coverage	.
+local:s8	rdf:predicate	local:learn	.
+local:largescale_coverage_crossdomain_knowledge_graphs	rdfs:member	local:largescale_coverage_crossdomain_knowledge	.
+local:inference_inference_process_process	rdfs:subClassOf	local:process	.
+local:s2.1	rdf:object	local:target_entity_given_a_source_entity	.
+local:symbolic_space_space	rdfs:subClassOf	local:space_space	.
+local:s3.1	rdf:predicate	local:make	.
+local:uninterpretable_latent_semantic_vector_space_of_relations_symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	rdfs:member	local:inference_inference_process_process	.
+local:s5	rdf:predicate	local:consider	.
+local:s10.1	rdf:subject	local:reasoning_paths_between_source_entities	.
+local:s11.1	rdf:object	local:support_evidence_for_the_inferred_link	.
+local:static_snapshots_of_the_knowledge_graphs_severely_restricting_pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:entities	.
+local:evolving_with_emerging_entities	rdfs:member	local:evolving	.
+local:in_operate	rdfs:subClassOf	local:operate	.
+local:s3	local:AM-TMP	local:pathbased_approaches_approaches_operate_in	.
+local:process_process	rdfs:member	local:process	.
+local:inference_inference_process_process	rdfs:subClassOf	local:inference_process_process	.
+local:s1	local:AM-MNR	local:inferring_a_target_entity_given_a_query_relation	.
+local:inductive_representation	rdfs:member	local:inductive	.
+local:target_entity_given_a_source_entity	rdfs:member	local:source_entity	.
+local:inferring_a_target_entity_given_a_query_relation	rdfs:member	local:query_relation	.
+local:pathbased_approaches_applicability	rdfs:subClassOf	local:approaches_applicability	.
+local:s1	rdf:object	local:this	.
+local:s8	rdf:object	local:representations_of_previously_unseen_entities	.
+local:support_evidence_for_inferred_link	rdfs:member	local:inferred_link	.
+local:s5.1	local:AM-MNR	local:severely	.
+local:s4	local:AM-LOC	local:uninterpretable_latent_semantic_vector_space_of_entities	.
+local:largescale_coverage_crossdomain	rdfs:subClassOf	local:crossdomain	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:symbolic_symbolic_space_space_making	rdfs:member	local:making	.
+local:latent_semantic_vector	rdfs:member	local:latent_semantic	.
+local:s1.1	rdf:object	local:target_entity_given_a_query_relation	.
+local:crossdomain_knowledge	rdfs:member	local:crossdomain	.
+local:s9.1	rdf:subject	local:reasoning_paths_between_target_entities	.
+local:previously_unseen	rdfs:subClassOf	local:unseen	.
+local:uninterpretable_latent_semantic_vector_space_of_relations	rdfs:member	local:relations	.
+local:largescale_coverage	rdfs:subClassOf	local:coverage	.
+local:crossdomain_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s12	rdf:subject	local:method	.
+local:source_entities	rdfs:member	local:source	.
+local:symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	rdfs:member	local:symbolic_symbolic_space_space	.
+local:inference_process_process	rdfs:subClassOf	local:process_process	.
+local:uninterpretable_latent_semantic	rdfs:subClassOf	local:semantic	.
+local:largescale_coverage_crossdomain	rdfs:member	local:largescale_coverage	.
+local:s12	rdf:object	local:s12.1	.
+local:largescale_coverage_largescale_coverage_crossdomain_knowledge_graphs	rdfs:subClassOf	local:coverage_largescale_coverage_crossdomain_knowledge_graphs	.
+local:uninterpretable_latent_semantic_vector_space	rdfs:subClassOf	local:space	.
+local:static_snapshots_of_knowledge_graphs_severely_restricting	rdfs:member	local:static_snapshots_of_knowledge_graphs	.
+local:inherent_incompleteness_and_sparsity	rdfs:member	local:inherent_incompleteness	.
+local:s1	local:AM-MOD	local:can	.
+local:support_evidence_for_the_inferred_link	rdfs:member	local:support_evidence	.
+local:uninterpretable_latent_semantic_vector_space_of_entities	rdfs:member	local:entities	.
+local:reasoning_paths_between_source_entities	rdfs:member	local:paths	.
+local:crossdomain_knowledge_graphs	rdfs:member	local:crossdomain_knowledge	.
+local:inferred_link	rdfs:subClassOf	local:link	.
+local:inference_inference	rdfs:subClassOf	local:inference	.
+local:inference_process_process	rdfs:subClassOf	local:process	.
+local:s5	local:AM-TMP	local:typically	.
+local:latent_semantic_vector_space	rdfs:subClassOf	local:space	.
+local:inferring_a_target_entity_given_a_source_entity	rdfs:member	local:source_entity	.
+local:s1	rdf:subject	local:link_prediction	.
+local:s8	rdf:subject	local:framework	.
+local:s2	rdf:predicate	local:alleviate	.
+local:s4	local:AM-TMP	local:pathbased_approaches_approaches_operate_in	.
+local:inherent_incompleteness	rdfs:member	local:inherent	.
+local:s4.1	rdf:predicate	local:make	.
+local:symbolic_symbolic_space	rdfs:member	local:symbolic_symbolic	.
+local:s12.1	rdf:object	local:support_evidence_inferred_link	.
+local:s3	rdf:object	local:uninterpretable_latent_semantic_vector_space_of_relations_symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	.
+local:operate_in_symbolic_space	rdfs:member	local:operate	.
+local:static_snapshots_of_the_knowledge_graphs_severely_restricting_pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:approaches_applicability	.
+local:approaches_applicability	rdfs:member	local:approaches	.
+local:s4	rdf:predicate	local:operate	.
+local:uninterpretable_latent_semantic_vector	rdfs:subClassOf	local:vector	.
+local:s1.2	rdf:subject	local:query_relation	.
+local:embeddingbased_approaches	rdfs:subClassOf	local:approaches	.
+local:symbolic_symbolic_space_space	rdfs:member	local:symbolic_symbolic_space	.
+local:s2	local:AM-MOD	local:can	.
+local:reasoning_paths_between_target_entities	rdfs:member	local:paths	.
+local:pathbased_approaches_approaches	rdfs:subClassOf	local:approaches	.
+local:s5	local:AM-DIS	local:however	.
+local:target_entity_given_query_relation	rdfs:member	local:target_entity	.
+local:severely_restricting	rdfs:subClassOf	local:restricting	.
+local:s0	local:AM-TMP	local:invariably	.
+local:s11	rdf:predicate	local:find	.
+local:target_entity	rdfs:subClassOf	local:entity	.
+local:reasoning_paths_between_source_entities	rdfs:member	local:source_entities	.
+local:newly_emerging	rdfs:subClassOf	local:emerging	.
+local:recent_embeddingbased_approaches	rdfs:subClassOf	local:embeddingbased_approaches	.
+local:uninterpretable_latent_semantic_vector_space_of_relations_symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	rdfs:member	local:uninterpretable_latent_semantic_vector_space	.
+local:s11	rdf:object	local:s11.1	.
+local:s1.1	rdf:predicate	local:infer	.
+local:support_evidence_inferred_link	rdfs:member	local:link	.
+local:pathbased_approaches_approaches	rdfs:member	local:pathbased_approaches	.
+local:inference_inference_process_process	rdfs:member	local:inference_inference_process	.
+local:s7.1	rdf:predicate	local:propose	.
+local:s3.1	rdf:subject	local:explainable	.
+local:s4.1	rdf:subject	local:pathbased_approaches_operate_in_the_symbolic_space	.
+local:symbolic_symbolic_space	rdfs:subClassOf	local:space	.
+local:pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:pathbased_approaches_applicability	.
+local:target_entity_given_a_source_entity	rdfs:member	local:target_entity	.
+local:s5.1	rdf:predicate	local:restrict	.
+local:process_process	rdfs:subClassOf	local:process	.
+local:unseen_entities	rdfs:subClassOf	local:entities	.
+local:representations_of_unseen_entities	rdfs:member	local:unseen_entities	.
+local:static_snapshots_of_the_knowledge_graphs_severely_restricting_pathbased_approaches_applicability_for_evolving_knowledge_graphs_with_newly_emerging_entities	rdfs:member	local:knowledge_graphs	.
+local:coverage_crossdomain_knowledge_graphs	rdfs:member	local:coverage_crossdomain_knowledge	.
+local:uninterpretable_latent_semantic_vector_space_of_relations_symbolic_symbolic_space_space_making_making_the_the_inference_inference_process_process_explainable_explainable	rdfs:member	local:symbolic_symbolic_space_space	.
+local:s11.1	rdf:predicate	local:provide	.
+local:support_evidence_for_the_inferred_link	rdfs:member	local:inferred_link	.
+local:inferring_a_target_entity_given_a_source_entity	rdfs:member	local:target_entity	.
+local:reasoning_paths_between_target_entities	rdfs:member	local:target_entities	.
+local:uninterpretable_latent	rdfs:subClassOf	local:latent	.
+local:largescale_coverage_crossdomain_knowledge	rdfs:subClassOf	local:knowledge	.
+local:inference_inference	rdfs:member	local:inference	.
+local:s11.1	local:AM-ADV	local:thereby	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:inherent_incompleteness	rdfs:subClassOf	local:incompleteness	.
+local:semantic_vector	rdfs:member	local:semantic	.
 local:support_evidence	rdfs:subClassOf	local:evidence	.
-local:inferred	vn.role:Theme	local:link	.
-local:latent_semantic	rdfs:member	local:latent_semantic_vector	.
+local:recent_embeddingbased_approaches	rdfs:member	local:recent	.
+local:uninterpretable_latent_semantic_vector_space_of_entities	rdfs:member	local:uninterpretable_latent_semantic_vector_space	.
+local:pathbased_approaches_approaches	rdfs:subClassOf	local:approaches_approaches	.
+local:s10.1	rdf:predicate	local:make	.
+local:vector_space	rdfs:subClassOf	local:space	.
+local:largescale_coverage_largescale_coverage_crossdomain_knowledge_graphs	rdfs:member	local:largescale_coverage_crossdomain_knowledge_graphs	.
+local:target_entities	rdfs:member	local:target	.
+local:s5.2	rdf:predicate	local:evolve	.
+local:uninterpretable_latent_semantic_vector_space	rdfs:member	local:uninterpretable_latent_semantic_vector	.
+local:support_evidence	rdfs:member	local:support	.
+local:crossdomain_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s7	rdf:predicate	local:overcome	.
+local:s2.1	rdf:subject	local:link_prediction	.
+local:approaches_applicability	rdfs:subClassOf	local:applicability	.
+local:evolving_with_emerging_entities	rdfs:member	local:emerging_entities	.
+local:s10	rdf:predicate	local:find	.
+local:s12.1	rdf:predicate	local:provide	.
+local:semantic_vector_space	rdfs:subClassOf	local:vector_space	.
+local:space_space	rdfs:subClassOf	local:space	.
+local:pathbased_approaches_applicability	rdfs:subClassOf	local:applicability	.
+local:uninterpretable_latent_semantic_vector_space_of_relations	rdfs:member	local:uninterpretable_latent_semantic_vector_space	.
+local:link_prediction_for_unseen_entities	rdfs:member	local:unseen_entities	.
+local:symbolic_space	rdfs:member	local:symbolic	.
+local:source_entity	rdfs:member	local:source	.
+local:s12.1	local:AM-ADV	local:thereby	.
+local:link_prediction	rdfs:subClassOf	local:prediction	.
+local:symbolic_symbolic	rdfs:subClassOf	local:symbolic	.

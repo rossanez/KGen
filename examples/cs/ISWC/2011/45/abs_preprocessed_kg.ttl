@@ -1,35 +1,64 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"both materialization and backwardchaining as different modes of performing inference have complementary advantages and disadvantages"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"performing inference"	.
+
+
 #### Classes ####
 
-local:performing	rdfs:label	"performing"	.
+local:materialization_and_backwardchaining_as_different_modes_of_performing_inference	a	rdf:Class	;
+	rdfs:label	"materialization and backwardchaining as different modes of performing inference"	.
 
-local:inference	rdfs:label	"inference"	.
+local:materialization	a	rdf:Class	;
+	rdfs:label	"materialization"	.
 
-local:different_modes	rdfs:label	"different modes"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:modes	rdfs:label	"modes"	.
+local:backwardchaining	a	rdf:Class	;
+	rdfs:label	"backwardchaining"	.
 
-local:different	rdfs:label	"different"	.
+local:different_modes	a	rdf:Class	;
+	rdfs:label	"different modes"	.
 
-local:materialization_as_different_modes	rdfs:label	"materialization as different modes"	.
+local:modes	a	rdf:Class	;
+	rdfs:label	"modes"	.
 
-local:materialization	rdfs:label	"materialization"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:have	rdfs:label	"have"	.
+local:materialization_as_different_modes	a	rdf:Class	;
+	rdfs:label	"materialization as different modes"	.
 
-local:complementary_advantages	rdfs:label	"complementary advantages"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:advantages	rdfs:label	"advantages"	.
+local:complementary_advantages_and_disadvantages	a	rdf:Class	;
+	rdfs:label	"complementary advantages and disadvantages"	.
 
-local:complementary	rdfs:label	"complementary"	.
+local:complementary_advantages	a	rdf:Class	;
+	rdfs:label	"complementary advantages"	.
 
-#### Properties ####
+local:disadvantages	a	rdf:Class	;
+	rdfs:label	"disadvantages"	.
+
+local:advantages	a	rdf:Class	;
+	rdfs:label	"advantages"	.
+
+local:complementary	a	rdf:Class	;
+	rdfs:label	"complementary"	.
+
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
 #### Mapped Relations ####
 
@@ -38,12 +67,20 @@ cso:inference	rdfs:label	"inference"	.
 
 #### Relations ####
 
-local:different	rdfs:member	local:different_modes	.
+local:materialization_as_different_modes	rdfs:member	local:materialization	.
+local:complementary_advantages_and_disadvantages	rdfs:member	local:complementary_advantages	.
 local:complementary_advantages	rdfs:subClassOf	local:advantages	.
+local:different_modes	rdfs:member	local:different	.
+local:materialization_as_different_modes	rdfs:member	local:different_modes	.
+local:complementary_advantages	rdfs:member	local:complementary	.
+local:s0	rdf:predicate	local:perform	.
+local:s0.1	rdf:predicate	local:have	.
+local:s0.1	rdf:subject	local:materialization_and_backwardchaining_as_different_modes_of_performing_inference	.
+local:s0.1	rdf:object	local:complementary_advantages_and_disadvantages	.
+local:materialization_and_backwardchaining_as_different_modes_of_performing_inference	rdfs:member	local:backwardchaining	.
+local:complementary_advantages_and_disadvantages	rdfs:member	local:disadvantages	.
+local:s0	rdf:subject	local:inference	.
+local:materialization_and_backwardchaining_as_different_modes_of_performing_inference	rdfs:member	local:materialization	.
+local:materialization_and_backwardchaining_as_different_modes_of_performing_inference	rdfs:member	local:inference	.
+local:materialization_and_backwardchaining_as_different_modes_of_performing_inference	rdfs:member	local:different_modes	.
 local:different_modes	rdfs:subClassOf	local:modes	.
-local:materialization_as_different_modes	local:materialization_as	local:different_modes	.
-local:complementary	rdfs:member	local:complementary_advantages	.
-local:performing	vn.role:Theme	local:inference	.
-local:materialization_as_different_modes	local:as_differentmodes	local:materialization	.
-local:have	vn.role:Experiencer	local:materialization_as_different_modes	.
-local:have	vn.role:Stimulus	local:complementary_advantages	.

@@ -1,428 +1,771 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the treewitness query rewriting"	.
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"the system produces scalable sql queries"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"the treewitness query tmapping"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"applying the the ontologybased data access platform ontop technologies the treewitness query tmapping optimisations the system"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"initial experimental results demonstrating that by applying the the ontologybased data access platform ontop technologies the treewitness query tmapping optimisations the system produces scalable sql queries"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"tmapping optimisations using sql expressivity"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"on the theoretical side we present initial experimental results"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"by applying the the ontologybased data access platform ontop technologies the treewitness query tmappings the system produces scalable sql queries"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"applying the the ontologybased data access platform ontop technologies the treewitness query tmappings the system"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"initial experimental results demonstrating that by applying the the ontologybased data access platform ontop technologies the treewitness query tmappings the system produces scalable sql queries"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"tmapping optimisations using database integrity constraints"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"tmappings compiling r2rml mappings with ontology hierarchies"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"how r2rml mappings can rewritten to an equivalent sql query solely over the data"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"on the theoretical side we show how r2rml mappings can be rewritten to an equivalent sql query solely over the data"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"any input sparql query owl 2 ql ontology can rewritten to an equivalent sql query solely over the data"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"on the theoretical side we show how any input sparql query owl 2 ql ontology can be rewritten to an equivalent sql query solely over the data"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"the ontologybased data access platform ontop that supports answering sparql queries under the owl 2 ql direct semantics entailment regime for data instances"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"answering sparql queries under the owl 2 ql direct semantics entailment regime"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the ontologybased data access platform ontop that supports answering sparql queries under the owl 2 ql direct semantics entailment regime for data instances"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we present an extension of the ontologybased data access platform ontop"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"data instances stored in relational databases"	.
+
+
 #### Classes ####
 
-local:ontologybased_data_access	rdfs:label	"ontology-based data access"	.
+local:treewitness_query	a	rdf:Class	;
+	rdfs:label	"treewitness query"	.
 
-local:access	rdfs:label	"access"	.
+local:treewitness	a	rdf:Class	;
+	rdfs:label	"treewitness"	.
 
-local:ontologybased_data	rdfs:label	"ontology-based data"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:data_access_platform	rdfs:label	"data access platform"	.
+local:rewrite	a	rdf:Class	;
+	rdfs:label	"rewrite"	.
 
-local:platform	rdfs:label	"platform"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:access_platform	rdfs:label	"access platform"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:access_platform_ontop	rdfs:label	"access platform ontop"	.
+local:scalable_sql_queries	a	rdf:Class	;
+	rdfs:label	"scalable sql queries"	.
 
-local:ontologybased_data_access_platform	rdfs:label	"ontology-based data access platform"	.
+local:scalable_sql	a	rdf:Class	;
+	rdfs:label	"scalable sql"	.
 
-local:data_access_platform_ontop	rdfs:label	"data access platform ontop"	.
+local:scalable	a	rdf:Class	;
+	rdfs:label	"scalable"	.
 
-local:ontop	rdfs:label	"ontop"	.
+local:sql_queries	a	rdf:Class	;
+	rdfs:label	"sql queries"	.
 
-local:platform_ontop	rdfs:label	"platform ontop"	.
+local:sql	a	rdf:Class	;
+	rdfs:label	"sql"	.
 
-local:data	rdfs:label	"data"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:data_access	rdfs:label	"data access"	.
+local:tmapping	a	rdf:Class	;
+	rdfs:label	"tmapping"	.
 
-local:ontologybased	rdfs:label	"ontology-based"	.
+local:ontologybased_data_access_platform_ontop	a	rdf:Class	;
+	rdfs:label	"ontologybased data access platform ontop"	.
 
-local:ontologybased_data_access_platform_ontop	rdfs:label	"ontology-based data access platform ontop"	.
+local:platform_ontop	a	rdf:Class	;
+	rdfs:label	"platform ontop"	.
 
-local:supports	rdfs:label	"supports"	.
+local:platform	a	rdf:Class	;
+	rdfs:label	"platform"	.
 
-local:direct	rdfs:label	"direct"	.
+local:access_platform_ontop	a	rdf:Class	;
+	rdfs:label	"access platform ontop"	.
 
-local:direct_semantics	rdfs:label	"direct semantics"	.
+local:access_platform	a	rdf:Class	;
+	rdfs:label	"access platform"	.
 
-local:data_instances	rdfs:label	"data instances"	.
+local:data_access	a	rdf:Class	;
+	rdfs:label	"data access"	.
 
-local:instances	rdfs:label	"instances"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:data_access_platform	a	rdf:Class	;
+	rdfs:label	"data access platform"	.
 
-local:queries	rdfs:label	"queries"	.
+local:ontop	a	rdf:Class	;
+	rdfs:label	"ontop"	.
 
-local:entailment	rdfs:label	"entailment"	.
+local:data_access_platform_ontop	a	rdf:Class	;
+	rdfs:label	"data access platform ontop"	.
 
-local:entailment_regime	rdfs:label	"entailment regime"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:regime	rdfs:label	"regime"	.
+local:technologies_the_treewitness_query_tmapping_optimisations_the_system	a	rdf:Class	;
+	rdfs:label	"technologies the treewitness query tmapping optimisations the system"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:treewitness_query_tmapping	a	rdf:Class	;
+	rdfs:label	"treewitness query tmapping"	.
 
-local:semantics_entailment_regime	rdfs:label	"semantics entailment regime"	.
+local:technologies	a	rdf:Class	;
+	rdfs:label	"technologies"	.
 
-local:direct_semantics_entailment_regime	rdfs:label	"direct semantics entailment regime"	.
+local:query_tmapping	a	rdf:Class	;
+	rdfs:label	"query tmapping"	.
 
-local:ql_direct_semantics_entailment_regime	rdfs:label	"ql direct semantics entailment regime"	.
+local:tmapping_optimisations	a	rdf:Class	;
+	rdfs:label	"tmapping optimisations"	.
 
-local:2_ql_direct_semantics_entailment_regime	rdfs:label	"2 ql direct semantics entailment regime"	.
+local:optimisations	a	rdf:Class	;
+	rdfs:label	"optimisations"	.
 
-local:owl_2_ql_direct_semantics_entailment_regime	rdfs:label	"owl 2 ql direct semantics entailment regime"	.
+local:query_tmapping_optimisations	a	rdf:Class	;
+	rdfs:label	"query tmapping optimisations"	.
 
-local:answering_under_owl_2_ql_direct_semantics_entailment_regime	rdfs:label	"answering under owl 2 ql direct semantics entailment regime"	.
+local:treewitness_query_tmapping_optimisations	a	rdf:Class	;
+	rdfs:label	"treewitness query tmapping optimisations"	.
 
-local:answering	rdfs:label	"answering"	.
+local:initial_experimental_results	a	rdf:Class	;
+	rdfs:label	"initial experimental results"	.
 
-local:owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:label	"owl 2 ql direct semantics entailment regime for data instances"	.
+local:initial_experimental	a	rdf:Class	;
+	rdfs:label	"initial experimental"	.
 
-local:direct_semantics_entailment	rdfs:label	"direct semantics entailment"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:semantics_entailment	rdfs:label	"semantics entailment"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	rdfs:label	"sparql queries under owl 2 ql direct semantics entailment regime"	.
+local:initial	a	rdf:Class	;
+	rdfs:label	"initial"	.
 
-local:stored	rdfs:label	"stored"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:relational_databases	rdfs:label	"relational databases"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:databases	rdfs:label	"databases"	.
+local:that	a	rdf:Class	;
+	rdfs:label	"that"	.
 
-local:relational	rdfs:label	"relational"	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmapping_optimisations_the_system_produces_scalable_sql_queries	a	rdf:Class	;
+	rdfs:label	"applying the the ontologybased data access platform ontop technologies the treewitness query tmapping optimisations the system produces scalable sql queries"	.
 
-local:present	rdfs:label	"present"	.
+local:ontologybased_data_access_platform	a	rdf:Class	;
+	rdfs:label	"ontologybased data access platform"	.
 
-local:we	rdfs:label	"we"	.
+local:ontologybased_data	a	rdf:Class	;
+	rdfs:label	"ontologybased data"	.
 
-local:extension_of_ontologybased_data_access_platform_ontop	rdfs:label	"extension of ontology-based data access platform ontop"	.
+local:ontologybased	a	rdf:Class	;
+	rdfs:label	"ontologybased"	.
 
-local:extension	rdfs:label	"extension"	.
+local:ontologybased_data_access	a	rdf:Class	;
+	rdfs:label	"ontologybased data access"	.
 
-local:theoretical_side	rdfs:label	"theoretical side"	.
+local:ontop_technologies	a	rdf:Class	;
+	rdfs:label	"ontop technologies"	.
 
-local:side	rdfs:label	"side"	.
+local:platform_ontop_technologies	a	rdf:Class	;
+	rdfs:label	"platform ontop technologies"	.
 
-local:theoretical	rdfs:label	"theoretical"	.
+local:access_platform_ontop_technologies	a	rdf:Class	;
+	rdfs:label	"access platform ontop technologies"	.
 
-local:show	rdfs:label	"show"	.
+local:data_access_platform_ontop_technologies	a	rdf:Class	;
+	rdfs:label	"data access platform ontop technologies"	.
 
-local:ql	rdfs:label	"ql"	.
+local:ontologybased_data_access_platform_ontop_technologies	a	rdf:Class	;
+	rdfs:label	"ontologybased data access platform ontop technologies"	.
 
-local:ql_ontology	rdfs:label	"ql ontology"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:input_sparql	rdfs:label	"input sparql"	.
+local:sql_expressivity	a	rdf:Class	;
+	rdfs:label	"sql expressivity"	.
 
-local:sql_query	rdfs:label	"sql query"	.
+local:expressivity	a	rdf:Class	;
+	rdfs:label	"expressivity"	.
 
-local:query	rdfs:label	"query"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:input_sparql_query	rdfs:label	"input sparql query"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:equivalent_sql_query	rdfs:label	"equivalent sql query"	.
+local:theoretical_side	a	rdf:Class	;
+	rdfs:label	"theoretical side"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:side	a	rdf:Class	;
+	rdfs:label	"side"	.
 
-local:input	rdfs:label	"input"	.
+local:theoretical	a	rdf:Class	;
+	rdfs:label	"theoretical"	.
 
-local:equivalent_sql	rdfs:label	"equivalent sql"	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings	a	rdf:Class	;
+	rdfs:label	"applying the the ontologybased data access platform ontop technologies the treewitness query tmappings"	.
 
-local:sql	rdfs:label	"sql"	.
+local:treewitness_query_tmappings	a	rdf:Class	;
+	rdfs:label	"treewitness query tmappings"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:query_tmappings	a	rdf:Class	;
+	rdfs:label	"query tmappings"	.
 
-local:equivalent	rdfs:label	"equivalent"	.
+local:tmappings	a	rdf:Class	;
+	rdfs:label	"tmappings"	.
 
-local:solely_data	rdfs:label	"solely data"	.
+local:technologies_the_treewitness_query_tmappings_the_system	a	rdf:Class	;
+	rdfs:label	"technologies the treewitness query tmappings the system"	.
 
-local:can_rewritten	rdfs:label	"can rewritten"	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings_the_system_produces_scalable_sql_queries	a	rdf:Class	;
+	rdfs:label	"applying the the ontologybased data access platform ontop technologies the treewitness query tmappings the system produces scalable sql queries"	.
 
-local:rewritten	rdfs:label	"rewritten"	.
+local:database_integrity_constraints	a	rdf:Class	;
+	rdfs:label	"database integrity constraints"	.
 
-local:2_ql_ontology	rdfs:label	"2 ql ontology"	.
+local:database_integrity	a	rdf:Class	;
+	rdfs:label	"database integrity"	.
 
-local:owl_2_ql_ontology	rdfs:label	"owl 2 ql ontology"	.
+local:integrity	a	rdf:Class	;
+	rdfs:label	"integrity"	.
 
-local:input_sparql_query_owl_2_ql_ontology	rdfs:label	"input sparql query owl 2 ql ontology"	.
+local:integrity_constraints	a	rdf:Class	;
+	rdfs:label	"integrity constraints"	.
 
-local:can_rewritten_to_equivalent_sql_query	rdfs:label	"can rewritten to equivalent sql query"	.
+local:constraints	a	rdf:Class	;
+	rdfs:label	"constraints"	.
 
-local:can_rewritten_to_equivalent_sql_query_over_solely_data	rdfs:label	"can rewritten to equivalent sql query over solely data"	.
+local:database	a	rdf:Class	;
+	rdfs:label	"database"	.
 
-local:can	rdfs:label	"can"	.
+local:compile	a	rdf:Class	;
+	rdfs:label	"compile"	.
 
-local:r2rml_mappings	rdfs:label	"r2rml mappings"	.
+local:r2rml_mappings_with_ontology_hierarchies	a	rdf:Class	;
+	rdfs:label	"r2rml mappings with ontology hierarchies"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:r2rml_mappings	a	rdf:Class	;
+	rdfs:label	"r2rml mappings"	.
 
-local:r2rml	rdfs:label	"r2rml"	.
+local:ontology_hierarchies	a	rdf:Class	;
+	rdfs:label	"ontology hierarchies"	.
 
-local:compiling	rdfs:label	"compiling"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:tmappings	rdfs:label	"t-mappings"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:ontology_hierarchies	rdfs:label	"ontology hierarchies"	.
+local:hierarchies	a	rdf:Class	;
+	rdfs:label	"hierarchies"	.
 
-local:hierarchies	rdfs:label	"hierarchies"	.
+local:r2rml	a	rdf:Class	;
+	rdfs:label	"r2rml"	.
 
-local:r2rml_mappings_with_ontology_hierarchies	rdfs:label	"r2rml mappings with ontology hierarchies"	.
+local:equivalent_sql_query	a	rdf:Class	;
+	rdfs:label	"equivalent sql query"	.
 
-local:tmapping_optimisations	rdfs:label	"t-mapping optimisations"	.
+local:equivalent_sql	a	rdf:Class	;
+	rdfs:label	"equivalent sql"	.
 
-local:optimisations	rdfs:label	"optimisations"	.
+local:equivalent	a	rdf:Class	;
+	rdfs:label	"equivalent"	.
 
-local:tmapping	rdfs:label	"t-mapping"	.
+local:sql_query	a	rdf:Class	;
+	rdfs:label	"sql query"	.
 
-local:using	rdfs:label	"using"	.
+local:solely_over_the_data	a	rdf:Class	;
+	rdfs:label	"solely over the data"	.
 
-local:database_integrity_constraints	rdfs:label	"database integrity constraints"	.
+local:solely_data	a	rdf:Class	;
+	rdfs:label	"solely data"	.
 
-local:constraints	rdfs:label	"constraints"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:database_integrity	rdfs:label	"database integrity"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:integrity	rdfs:label	"integrity"	.
+local:r2rml_mappings_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	a	rdf:Class	;
+	rdfs:label	"r2rml mappings can be rewritten to an equivalent sql query solely over the data"	.
 
-local:integrity_constraints	rdfs:label	"integrity constraints"	.
+local:can_rewritten	a	rdf:Class	;
+	rdfs:label	"can rewritten"	.
 
-local:database	rdfs:label	"database"	.
+local:rewritten	a	rdf:Class	;
+	rdfs:label	"rewritten"	.
 
-local:initial_experimental	rdfs:label	"initial experimental"	.
+local:can_rewritten_to_equivalent_sql_query	a	rdf:Class	;
+	rdfs:label	"can rewritten to equivalent sql query"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:can_rewritten_to_equivalent_sql_query_over_solely_data	a	rdf:Class	;
+	rdfs:label	"can rewritten to equivalent sql query over solely data"	.
 
-local:initial_experimental_results	rdfs:label	"initial experimental results"	.
+local:input_sparql_query_owl_2_ql_ontology	a	rdf:Class	;
+	rdfs:label	"input sparql query owl 2 ql ontology"	.
 
-local:results	rdfs:label	"results"	.
+local:input_sparql_query_owl	a	rdf:Class	;
+	rdfs:label	"input sparql query owl"	.
 
-local:experimental_results	rdfs:label	"experimental results"	.
+local:ql_ontology	a	rdf:Class	;
+	rdfs:label	"ql ontology"	.
 
-local:initial	rdfs:label	"initial"	.
+local:query_owl	a	rdf:Class	;
+	rdfs:label	"query owl"	.
 
-local:demonstrating	rdfs:label	"demonstrating"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:that	rdfs:label	"that"	.
+local:input_sparql_query	a	rdf:Class	;
+	rdfs:label	"input sparql query"	.
 
-local:treewitness_query	rdfs:label	"tree-witness query"	.
+local:input_sparql	a	rdf:Class	;
+	rdfs:label	"input sparql"	.
 
-local:treewitness_query_rewriting	rdfs:label	"tree-witness query rewriting"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:rewriting	rdfs:label	"rewriting"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:query_rewriting	rdfs:label	"query rewriting"	.
+local:ql	a	rdf:Class	;
+	rdfs:label	"ql"	.
 
-local:treewitness	rdfs:label	"tree-witness"	.
+local:sparql_query_owl	a	rdf:Class	;
+	rdfs:label	"sparql query owl"	.
 
-local:rewriting_tmappings	rdfs:label	"rewriting t-mappings"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:ontop_technologies	rdfs:label	"ontop technologies"	.
+local:2_ql_ontology	a	rdf:Class	;
+	rdfs:label	"2 ql ontology"	.
 
-local:technologies	rdfs:label	"technologies"	.
+local:owl_2_ql_ontology	a	rdf:Class	;
+	rdfs:label	"owl 2 ql ontology"	.
 
-local:applying	rdfs:label	"applying"	.
+local:query_owl_2_ql_ontology	a	rdf:Class	;
+	rdfs:label	"query owl 2 ql ontology"	.
 
-local:ontop_technologies—	rdfs:label	"ontop technologies—"	.
+local:sparql_query_owl_2_ql_ontology	a	rdf:Class	;
+	rdfs:label	"sparql query owl 2 ql ontology"	.
 
-local:technologies—	rdfs:label	"technologies—"	.
+local:input_sparql_query_owl_2_ql_ontology_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	a	rdf:Class	;
+	rdfs:label	"input sparql query owl 2 ql ontology can be rewritten to an equivalent sql query solely over the data"	.
 
-local:sql_expressivity	rdfs:label	"sql expressivity"	.
+local:ontologybased_data_access_platform_ontop_that_supports_answering_sparql	a	rdf:Class	;
+	rdfs:label	"ontologybased data access platform ontop that supports answering sparql"	.
 
-local:expressivity	rdfs:label	"expressivity"	.
+local:owl_2_ql_direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"owl 2 ql direct semantics entailment regime"	.
 
-local:system	rdfs:label	"system"	.
+local:direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"direct semantics entailment regime"	.
 
-local:produces	rdfs:label	"produces"	.
+local:semantics_entailment	a	rdf:Class	;
+	rdfs:label	"semantics entailment"	.
 
-local:sql_queries	rdfs:label	"sql queries"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:scalable_sql	rdfs:label	"scalable sql"	.
+local:regime	a	rdf:Class	;
+	rdfs:label	"regime"	.
 
-local:scalable	rdfs:label	"scalable"	.
+local:entailment_regime	a	rdf:Class	;
+	rdfs:label	"entailment regime"	.
 
-local:scalable_sql_queries	rdfs:label	"scalable sql queries"	.
+local:entailment	a	rdf:Class	;
+	rdfs:label	"entailment"	.
 
-#### Properties ####
+local:direct_semantics_entailment	a	rdf:Class	;
+	rdfs:label	"direct semantics entailment"	.
+
+local:direct_semantics	a	rdf:Class	;
+	rdfs:label	"direct semantics"	.
+
+local:semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"semantics entailment regime"	.
+
+local:direct	a	rdf:Class	;
+	rdfs:label	"direct"	.
+
+local:ql_direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"ql direct semantics entailment regime"	.
+
+local:2_ql_direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"2 ql direct semantics entailment regime"	.
+
+local:data_instances	a	rdf:Class	;
+	rdfs:label	"data instances"	.
+
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
+
+local:sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"sparql queries under the owl 2 ql direct semantics entailment regime"	.
+
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
+
+local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"sparql queries under owl 2 ql direct semantics entailment regime"	.
+
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
+
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
+
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	a	rdf:Class	;
+	rdfs:label	"answering sparql queries under the owl 2 ql direct semantics entailment regime for data instances"	.
+
+local:answering_under_owl_2_ql_direct_semantics_entailment_regime	a	rdf:Class	;
+	rdfs:label	"answering under owl 2 ql direct semantics entailment regime"	.
+
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
+
+local:owl_2_ql_direct_semantics_entailment_regime_for_data_instances	a	rdf:Class	;
+	rdfs:label	"owl 2 ql direct semantics entailment regime for data instances"	.
+
+local:extension_of_the_ontologybased_data_access_platform_ontop	a	rdf:Class	;
+	rdfs:label	"extension of the ontologybased data access platform ontop"	.
+
+local:extension	a	rdf:Class	;
+	rdfs:label	"extension"	.
+
+local:extension_of_ontologybased_data_access_platform_ontop	a	rdf:Class	;
+	rdfs:label	"extension of ontologybased data access platform ontop"	.
+
+local:store	a	rdf:Class	;
+	rdfs:label	"store"	.
+
+local:relational_databases	a	rdf:Class	;
+	rdfs:label	"relational databases"	.
+
+local:databases	a	rdf:Class	;
+	rdfs:label	"databases"	.
+
+local:relational	a	rdf:Class	;
+	rdfs:label	"relational"	.
 
 #### Mapped Relations ####
 
+cso:sparql	rdfs:label	"sparql"	.
+cso:sql	rdfs:label	"sql"	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:relational_databases	rdfs:label	"relational databases"	.
+cso:semantics	rdfs:label	"semantics"	.
+local:sql_query	owl:sameAs	cso:sql_query	.
 local:database	owl:sameAs	cso:database	.
+cso:owl	rdfs:label	"owl"	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontologybased_data_access	owl:sameAs	cso:ontology-based_data_access	.
+cso:ontology-based_data_access	rdfs:label	"ontologybased data access"	.
+cso:sparql_queries	rdfs:label	"sparql queries"	.
+local:owl	owl:sameAs	cso:owl	.
+local:sparql	owl:sameAs	cso:sparql	.
 cso:sql_query	rdfs:label	"sql query"	.
 local:databases	owl:sameAs	cso:database	.
-local:query_rewriting	owl:sameAs	cso:query_rewriting	.
-local:sql	owl:sameAs	cso:sql	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:query_rewriting	rdfs:label	"query rewriting"	.
-cso:ontology-based_data_access	rdfs:label	"ontology-based data access"	.
-local:ontologybased_data_access	owl:sameAs	cso:ontology-based_data_access	.
-cso:ontology	rdfs:label	"ontology"	.
-cso:sql	rdfs:label	"sql"	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:relational_databases	owl:sameAs	cso:relational_databases	.
 local:ontology	owl:sameAs	cso:ontology	.
-cso:relational_databases	rdfs:label	"relational databases"	.
-local:semantics	owl:sameAs	cso:semantics	.
-local:sql_query	owl:sameAs	cso:sql_query	.
 cso:database	rdfs:label	"database"	.
-cso:sparql_queries	rdfs:label	"sparql queries"	.
-cso:semantics	rdfs:label	"semantics"	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+local:relational_databases	owl:sameAs	cso:relational_databases	.
+local:sql	owl:sameAs	cso:sql	.
 
 #### Relations ####
 
-local:query_rewriting	rdfs:subClassOf	local:rewriting	.
-local:present	vn.role:Theme	local:extension_of_ontologybased_data_access_platform_ontop	.
-local:produces	vn.role:Product	local:scalable_sql_queries	.
-local:tmapping	vn.role:object	local:system	.
-local:2_ql_direct_semantics_entailment_regime	rdfs:subClassOf	local:ql_direct_semantics_entailment_regime	.
-local:platform	rdfs:member	local:platform_ontop	.
-local:query	rdfs:member	local:query_rewriting	.
-local:using	vn.role:Theme	local:database_integrity_constraints	.
-local:rewriting_tmappings	rdfs:subClassOf	local:tmappings	.
-local:present	vn.role:Agent	local:we	.
-local:applying	vn.role:Theme	local:ontop_technologies	.
-local:entailment_regime	rdfs:subClassOf	local:regime	.
-local:can_rewritten_to_equivalent_sql_query_over_solely_data	local:canrewrittentoequivalentsqlquery_over	local:solely_data	.
-local:ontologybased_data	rdfs:subClassOf	local:data	.
-local:show	local:AM-TMP	local:theoretical_side	.
-local:compiling	vn.role:Material	local:r2rml_mappings_with_ontology_hierarchies	.
-local:scalable	rdfs:member	local:scalable_sql	.
-local:ontologybased_data_access_platform	rdfs:member	local:ontologybased_data_access_platform_ontop	.
-local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	local:under_owl2qldirectsemanticsentailmentregime	local:sparql_queries	.
-local:ontology	rdfs:member	local:ontology_hierarchies	.
-local:queries	vn.role:Theme	local:data_instances	.
-local:data_access_platform	rdfs:member	local:data_access_platform_ontop	.
-local:scalable_sql_queries	rdfs:subClassOf	local:sql_queries	.
+local:s4	rdf:object	local:r2rml_mappings_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	.
+local:database_integrity_constraints	rdfs:member	local:database_integrity	.
+local:s3.1	rdf:predicate	local:rewrite	.
+local:s0	local:AM-LOC	local:relational_databases	.
+local:s4	rdf:subject	local:we	.
+local:input_sparql_query_owl_2_ql_ontology_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:equivalent_sql_query	.
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:owl	.
+local:input_sparql_query_owl_2_ql_ontology	rdfs:subClassOf	local:sparql_query_owl_2_ql_ontology	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmapping_optimisations_the_system_produces_scalable_sql_queries	rdfs:member	local:system	.
+local:technologies_the_treewitness_query_tmapping_optimisations_the_system	rdfs:member	local:system	.
 local:owl_2_ql_ontology	rdfs:subClassOf	local:2_ql_ontology	.
-local:present	vn.role:Theme	local:initial_experimental_results	.
-local:rewritten	vn.role:Topic	local:input_sparql_query_owl_2_ql_ontology	.
-local:input_sparql_query	rdfs:subClassOf	local:query	.
-local:tmapping	rdfs:member	local:tmapping_optimisations	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:applying	vn.role:Recipient	local:treewitness_query	.
-local:equivalent	rdfs:member	local:equivalent_sql	.
-local:ontologybased_data_access_platform	rdfs:subClassOf	local:platform	.
-local:demonstrating	vn.role:Recipient	local:initial_experimental_results	.
-local:entailment	rdfs:member	local:entailment_regime	.
-local:theoretical_side	rdfs:subClassOf	local:side	.
-local:tmapping	vn.role:subject	local:optimisations	.
-local:produces	vn.role:Agent	local:tmapping_optimisations	.
-local:show	vn.role:Agent	local:we	.
-local:r2rml	rdfs:member	local:r2rml_mappings	.
-local:sql	rdfs:member	local:sql_query	.
-local:using	vn.role:Theme	local:sql_expressivity	.
-local:demonstrating	vn.role:Cause	local:that	.
-local:sql_query	rdfs:subClassOf	local:query	.
-local:direct_semantics	rdfs:subClassOf	local:semantics	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:access	rdfs:member	local:access_platform	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:can_rewritten	rdfs:subClassOf	local:rewritten	.
-local:ontologybased_data_access	rdfs:subClassOf	local:access	.
-local:direct_semantics	rdfs:member	local:direct_semantics_entailment	.
-local:data	rdfs:member	local:data_access	.
-local:access_platform_ontop	rdfs:subClassOf	local:platform_ontop	.
-local:data_access_platform_ontop	rdfs:subClassOf	local:access_platform_ontop	.
-local:direct_semantics_entailment_regime	rdfs:subClassOf	local:regime	.
-local:ontologybased_data_access_platform_ontop	rdfs:subClassOf	local:data_access_platform_ontop	.
-local:compiling	vn.role:Agent	local:tmappings	.
-local:sql_expressivity	rdfs:subClassOf	local:expressivity	.
-local:can_rewritten_to_equivalent_sql_query	local:to_equivalentsqlquery	local:can_rewritten	.
-local:queries	vn.role:Theme	local:ontologybased_data_access_platform_ontop	.
-local:access_platform	rdfs:subClassOf	local:platform	.
-local:owl_2_ql_direct_semantics_entailment_regime_for_data_instances	local:owl2qldirectsemanticsentailmentregime_for	local:data_instances	.
-local:initial_experimental_results	rdfs:subClassOf	local:results	.
-local:show	vn.role:Theme	local:can_rewritten_to_equivalent_sql_query_over_solely_data	.
-local:scalable_sql	rdfs:member	local:scalable_sql_queries	.
-local:solely_data	rdfs:subClassOf	local:data	.
-local:stored	vn.role:Location	local:relational_databases	.
-local:supports	vn.role:Theme	local:ontologybased_data_access_platform_ontop	.
-local:supports	vn.role:Experiencer	local:answering_under_owl_2_ql_direct_semantics_entailment_regime	.
-local:rewritten	local:AM-LOC	local:solely_data	.
-local:ontologybased	rdfs:member	local:ontologybased_data	.
-local:treewitness_query_rewriting	rdfs:subClassOf	local:rewriting	.
-local:ql_direct_semantics_entailment_regime	rdfs:subClassOf	local:direct_semantics_entailment_regime	.
-local:queries	local:AM-LOC	local:owl_2_ql_direct_semantics_entailment_regime	.
-local:sql_queries	rdfs:subClassOf	local:queries	.
-local:semantics_entailment_regime	rdfs:subClassOf	local:regime	.
-local:input_sparql	rdfs:member	local:input_sparql_query	.
-local:database_integrity	rdfs:subClassOf	local:integrity	.
-local:database	rdfs:member	local:database_integrity	.
-local:r2rml_mappings_with_ontology_hierarchies	local:r2rmlmappings_with	local:ontology_hierarchies	.
-local:demonstrating	local:AM-MNR	local:applying	.
-local:initial_experimental	rdfs:member	local:initial_experimental_results	.
-local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	local:sparqlqueries_under	local:owl_2_ql_direct_semantics_entailment_regime	.
-local:rewritten	vn.role:Topic	local:r2rml_mappings	.
-local:direct	rdfs:member	local:direct_semantics	.
-local:owl_2_ql_direct_semantics_entailment_regime	rdfs:subClassOf	local:2_ql_direct_semantics_entailment_regime	.
-local:data_access_platform_ontop	rdfs:subClassOf	local:ontop	.
-local:direct_semantics_entailment	rdfs:member	local:direct_semantics_entailment_regime	.
-local:database_integrity_constraints	rdfs:subClassOf	local:integrity_constraints	.
-local:equivalent_sql_query	rdfs:subClassOf	local:query	.
-local:sparql	rdfs:member	local:sparql_query	.
-local:input_sparql_query_owl_2_ql_ontology	local:_owl2qlontology	local:input_sparql_query	.
-local:treewitness_query	rdfs:subClassOf	local:query	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:access_platform	rdfs:member	local:access_platform_ontop	.
-local:tmapping_optimisations	rdfs:subClassOf	local:optimisations	.
-local:treewitness_query	rdfs:member	local:treewitness_query_rewriting	.
-local:answering_under_owl_2_ql_direct_semantics_entailment_regime	local:under_owl2qldirectsemanticsentailmentregime	local:answering	.
-local:initial_experimental_results	rdfs:subClassOf	local:experimental_results	.
-local:equivalent_sql	rdfs:subClassOf	local:sql	.
-local:data_access	rdfs:subClassOf	local:access	.
-local:ontology_hierarchies	rdfs:subClassOf	local:hierarchies	.
-local:answering	vn.role:other	local:data_instances	.
-local:input_sparql_query	rdfs:subClassOf	local:sparql_query	.
-local:can_rewritten_to_equivalent_sql_query	local:canrewritten_to	local:equivalent_sql_query	.
-local:owl_2_ql_direct_semantics_entailment_regime_for_data_instances	local:for_datainstances	local:owl_2_ql_direct_semantics_entailment_regime	.
-local:2_ql_ontology	rdfs:subClassOf	local:ql_ontology	.
-local:stored	vn.role:Value	local:data_instances	.
-local:ontologybased_data	rdfs:member	local:ontologybased_data_access	.
-local:semantics	rdfs:member	local:semantics_entailment	.
-local:can_rewritten_to_equivalent_sql_query_over_solely_data	local:over_solelydata	local:can_rewritten_to_equivalent_sql_query	.
-local:treewitness	rdfs:member	local:treewitness_query	.
-local:semantics_entailment_regime	rdfs:subClassOf	local:entailment_regime	.
-local:direct_semantics_entailment_regime	rdfs:subClassOf	local:semantics_entailment_regime	.
-local:integrity	rdfs:member	local:integrity_constraints	.
-local:theoretical	rdfs:member	local:theoretical_side	.
-local:using	vn.role:Agent	local:tmapping_optimisations	.
-local:input	rdfs:member	local:input_sparql	.
-local:semantics_entailment	rdfs:member	local:semantics_entailment_regime	.
-local:ql_ontology	rdfs:subClassOf	local:ontology	.
-local:integrity_constraints	rdfs:subClassOf	local:constraints	.
-local:initial	rdfs:member	local:initial_experimental	.
-local:data_access_platform	rdfs:subClassOf	local:platform	.
-local:scalable_sql_queries	rdfs:subClassOf	local:queries	.
-local:equivalent_sql_query	rdfs:subClassOf	local:sql_query	.
-local:answering	vn.role:Predicate	local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	.
-local:ontologybased_data_access_platform_ontop	rdfs:subClassOf	local:ontop	.
-local:access_platform_ontop	rdfs:subClassOf	local:ontop	.
-local:rewritten	local:AM-MOD	local:can	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:sql	rdfs:member	local:sql_expressivity	.
-local:rewritten	vn.role:Recipient	local:equivalent_sql_query	.
-local:platform_ontop	rdfs:subClassOf	local:ontop	.
-local:ontop_technologies	rdfs:subClassOf	local:technologies	.
-local:database_integrity_constraints	rdfs:subClassOf	local:constraints	.
-local:input_sparql	rdfs:subClassOf	local:sparql	.
 local:direct_semantics_entailment	rdfs:subClassOf	local:entailment	.
-local:sql	rdfs:member	local:sql_queries	.
-local:r2rml_mappings	rdfs:subClassOf	local:mappings	.
-local:scalable_sql	rdfs:subClassOf	local:sql	.
-local:extension_of_ontologybased_data_access_platform_ontop	local:of_ontology-baseddataaccessplatformontop	local:extension	.
-local:database_integrity	rdfs:member	local:database_integrity_constraints	.
-local:data_access	rdfs:member	local:data_access_platform	.
-local:relational_databases	rdfs:subClassOf	local:databases	.
-local:ontop_technologies—	rdfs:subClassOf	local:technologies—	.
-local:ontop	rdfs:member	local:ontop_technologies—	.
-local:data	rdfs:member	local:data_instances	.
-local:initial_experimental	rdfs:subClassOf	local:experimental	.
-local:semantics_entailment	rdfs:subClassOf	local:entailment	.
-local:ql	rdfs:member	local:ql_ontology	.
-local:input_sparql_query_owl_2_ql_ontology	local:inputsparqlquery_	local:owl_2_ql_ontology	.
-local:equivalent_sql	rdfs:member	local:equivalent_sql_query	.
-local:r2rml_mappings_with_ontology_hierarchies	local:with_ontologyhierarchies	local:r2rml_mappings	.
-local:extension_of_ontologybased_data_access_platform_ontop	local:extension_of	local:ontologybased_data_access_platform_ontop	.
+local:treewitness_query_tmappings	rdfs:subClassOf	local:query_tmappings	.
+local:s10.3	rdf:subject	local:system	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:s5	rdf:subject	local:tmappings	.
+local:input_sparql_query_owl	rdfs:subClassOf	local:owl	.
 local:data_instances	rdfs:subClassOf	local:instances	.
-local:ontologybased_data_access	rdfs:member	local:ontologybased_data_access_platform	.
-local:relational	rdfs:member	local:relational_databases	.
-local:answering_under_owl_2_ql_direct_semantics_entailment_regime	local:answering_under	local:owl_2_ql_direct_semantics_entailment_regime	.
+local:direct_semantics_entailment_regime	rdfs:member	local:direct_semantics_entailment	.
+local:data_access_platform_ontop	rdfs:subClassOf	local:access_platform_ontop	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:initial_experimental	rdfs:member	local:initial	.
+local:s9	rdf:predicate	local:use	.
+local:s6	rdf:subject	local:tmapping_optimisations	.
+local:sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:sparql_queries	.
+local:extension_of_ontologybased_data_access_platform_ontop	rdfs:member	local:extension	.
+local:solely_data	rdfs:subClassOf	local:data	.
+local:s10.1	rdf:predicate	local:apply	.
+local:query_tmapping	rdfs:subClassOf	local:tmapping	.
+local:initial_experimental_results	rdfs:subClassOf	local:results	.
+local:r2rml_mappings	rdfs:member	local:r2rml	.
+local:input_sparql_query_owl	rdfs:member	local:input_sparql_query	.
+local:semantics_entailment	rdfs:subClassOf	local:entailment	.
+local:r2rml_mappings	rdfs:subClassOf	local:mappings	.
+local:s10.1	rdf:subject	local:ontologybased_data_access_platform_ontop	.
+local:s2.2	rdf:object	local:owl_2_ql_direct_semantics_entailment_regime	.
+local:can_rewritten	rdfs:subClassOf	local:rewritten	.
+local:data_access_platform_ontop_technologies	rdfs:subClassOf	local:access_platform_ontop_technologies	.
+local:s4.1	local:AM-MOD	local:can	.
+local:sql_queries	rdfs:subClassOf	local:queries	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmapping_optimisations_the_system_produces_scalable_sql_queries	rdfs:member	local:ontologybased_data_access_platform_ontop	.
+local:semantics_entailment_regime	rdfs:member	local:semantics_entailment	.
+local:2_ql_direct_semantics_entailment_regime	rdfs:subClassOf	local:ql_direct_semantics_entailment_regime	.
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:ql	.
+local:s8	local:AM-LOC	local:theoretical_side	.
+local:technologies_the_treewitness_query_tmappings_the_system	rdfs:member	local:technologies	.
+local:sparql_query_owl	rdfs:subClassOf	local:owl	.
+local:semantics_entailment	rdfs:member	local:semantics	.
+local:s1	rdf:predicate	local:present	.
+local:entailment_regime	rdfs:member	local:entailment	.
+local:s2.1	rdf:predicate	local:answer	.
+local:s11	rdf:predicate	local:rewrite	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings_the_system_produces_scalable_sql_queries	rdfs:member	local:treewitness_query_tmappings	.
+local:r2rml_mappings_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:r2rml_mappings	.
+local:ontologybased_data_access	rdfs:member	local:ontologybased_data	.
+local:s7.1	rdf:predicate	local:apply	.
+local:query_owl	rdfs:member	local:query	.
+local:direct_semantics	rdfs:subClassOf	local:semantics	.
+local:scalable_sql_queries	rdfs:subClassOf	local:queries	.
+local:platform_ontop	rdfs:subClassOf	local:ontop	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:s7.1	rdf:object	local:technologies_the_treewitness_query_tmappings_the_system	.
+local:s10	rdf:subject	local:initial_experimental_results	.
+local:s9	rdf:object	local:sql_expressivity	.
+local:equivalent_sql	rdfs:subClassOf	local:sql	.
+local:s10.2	rdf:subject	local:treewitness_query	.
+local:s7.2	local:AM-MNR	local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings	.
+local:relational_databases	rdfs:member	local:relational	.
+local:input_sparql	rdfs:member	local:input	.
+local:s3.1	local:AM-MOD	local:can	.
+local:owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:ql	.
+local:query_tmapping_optimisations	rdfs:subClassOf	local:tmapping_optimisations	.
+local:s7	rdf:predicate	local:demonstrate	.
+local:treewitness_query_tmapping_optimisations	rdfs:subClassOf	local:query_tmapping_optimisations	.
+local:access_platform	rdfs:subClassOf	local:platform	.
+local:ontologybased_data_access_platform_ontop	rdfs:subClassOf	local:ontop	.
+local:input_sparql_query_owl_2_ql_ontology	rdfs:member	local:ql_ontology	.
+local:access_platform_ontop	rdfs:member	local:access_platform	.
+local:query_tmappings	rdfs:subClassOf	local:tmappings	.
+local:equivalent_sql_query	rdfs:member	local:equivalent_sql	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings	rdfs:member	local:ontologybased_data_access_platform_ontop	.
+local:equivalent_sql_query	rdfs:subClassOf	local:query	.
+local:data_access_platform_ontop	rdfs:subClassOf	local:ontop	.
+local:ql_ontology	rdfs:subClassOf	local:ontology	.
+local:can_rewritten_to_equivalent_sql_query	rdfs:member	local:equivalent_sql_query	.
+local:ql_direct_semantics_entailment_regime	rdfs:subClassOf	local:direct_semantics_entailment_regime	.
+local:scalable_sql	rdfs:subClassOf	local:sql	.
+local:s10.3	rdf:object	local:scalable_sql_queries	.
+local:s10	rdf:predicate	local:demonstrate	.
+local:s2.2	rdf:subject	local:ontologybased_data_access_platform_ontop_that_supports_answering_sparql	.
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:direct_semantics	.
+local:database_integrity_constraints	rdfs:subClassOf	local:integrity_constraints	.
+local:data_instances	rdfs:member	local:data	.
+local:initial_experimental_results	rdfs:member	local:initial_experimental	.
+local:s7	rdf:subject	local:initial_experimental_results	.
+local:extension_of_the_ontologybased_data_access_platform_ontop	rdfs:member	local:ontologybased_data_access_platform_ontop	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings_the_system_produces_scalable_sql_queries	rdfs:member	local:ontologybased_data_access_platform_ontop	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings	rdfs:member	local:treewitness_query_tmappings	.
+local:ontologybased_data_access	rdfs:subClassOf	local:access	.
+local:s4.1	local:AM-MNR	local:solely_over_the_data	.
+local:s3	rdf:object	local:input_sparql_query_owl_2_ql_ontology_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings_the_system_produces_scalable_sql_queries	rdfs:member	local:scalable_sql_queries	.
+local:ontologybased_data_access_platform_ontop	rdfs:subClassOf	local:data_access_platform_ontop	.
+local:input_sparql_query_owl_2_ql_ontology_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:data	.
+local:answering_under_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:owl_2_ql_direct_semantics_entailment_regime	.
+local:treewitness_query	rdfs:member	local:treewitness	.
+local:scalable_sql_queries	rdfs:member	local:scalable_sql	.
+local:ontology_hierarchies	rdfs:subClassOf	local:hierarchies	.
+local:s7.2	rdf:predicate	local:produce	.
+local:technologies_the_treewitness_query_tmappings_the_system	rdfs:member	local:system	.
+local:access_platform_ontop	rdfs:subClassOf	local:platform_ontop	.
+local:s4.1	rdf:subject	local:r2rml_mappings	.
+local:input_sparql_query_owl_2_ql_ontology_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:ql_ontology	.
+local:sql_expressivity	rdfs:subClassOf	local:expressivity	.
+local:access_platform_ontop	rdfs:subClassOf	local:ontop	.
+local:s8	rdf:object	local:initial_experimental_results	.
+local:can_rewritten_to_equivalent_sql_query_over_solely_data	rdfs:member	local:can_rewritten_to_equivalent_sql_query	.
+local:ontologybased_data_access_platform_ontop_that_supports_answering_sparql	rdfs:member	local:data_access_platform_ontop	.
+local:data_access_platform	rdfs:subClassOf	local:platform	.
+local:r2rml_mappings_with_ontology_hierarchies	rdfs:member	local:ontology_hierarchies	.
+local:relational_databases	rdfs:subClassOf	local:databases	.
+local:platform_ontop	rdfs:member	local:platform	.
+local:integrity_constraints	rdfs:subClassOf	local:constraints	.
+local:database_integrity_constraints	rdfs:subClassOf	local:constraints	.
+local:s6	rdf:predicate	local:use	.
+local:semantics_entailment_regime	rdfs:subClassOf	local:regime	.
+local:s2.1	rdf:subject	local:sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime	.
+local:s10	local:AM-MNR	local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmapping_optimisations_the_system_produces_scalable_sql_queries	.
+local:s7.2	rdf:object	local:scalable_sql_queries	.
+local:initial_experimental_results	rdfs:subClassOf	local:experimental_results	.
+local:input_sparql_query	rdfs:member	local:input_sparql	.
+local:s7.1	rdf:subject	local:ontologybased_data_access_platform_ontop	.
+local:sql_queries	rdfs:member	local:sql	.
+local:sql_query	rdfs:member	local:sql	.
+local:direct_semantics_entailment	rdfs:member	local:direct_semantics	.
+local:technologies_the_treewitness_query_tmapping_optimisations_the_system	rdfs:member	local:technologies	.
+local:equivalent_sql	rdfs:member	local:equivalent	.
+local:s3.1	rdf:object	local:equivalent_sql_query	.
+local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:sparql_queries	.
+local:s4.1	rdf:predicate	local:rewrite	.
+local:r2rml_mappings_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:data	.
+local:integrity_constraints	rdfs:member	local:integrity	.
+local:sparql_query_owl_2_ql_ontology	rdfs:subClassOf	local:query_owl_2_ql_ontology	.
+local:s10.1	rdf:object	local:technologies_the_treewitness_query_tmapping_optimisations_the_system	.
+local:database_integrity	rdfs:subClassOf	local:integrity	.
+local:s8	rdf:predicate	local:present	.
+local:s5	rdf:predicate	local:compile	.
+local:ontologybased_data	rdfs:member	local:ontologybased	.
+local:theoretical_side	rdfs:member	local:theoretical	.
+local:s2	rdf:subject	local:ontologybased_data_access_platform_ontop	.
+local:input_sparql	rdfs:subClassOf	local:sparql	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:owl	.
+local:tmapping_optimisations	rdfs:subClassOf	local:optimisations	.
+local:ontop_technologies	rdfs:subClassOf	local:technologies	.
+local:can_rewritten_to_equivalent_sql_query_over_solely_data	rdfs:member	local:solely_data	.
+local:s3	rdf:subject	local:we	.
+local:can_rewritten_to_equivalent_sql_query	rdfs:member	local:can_rewritten	.
+local:s10.3	rdf:predicate	local:produce	.
+local:ontologybased_data	rdfs:subClassOf	local:data	.
+local:s6	rdf:object	local:database_integrity_constraints	.
+local:query_tmapping	rdfs:member	local:query	.
+local:s9	rdf:subject	local:tmapping_optimisations	.
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:data_instances	.
+local:s7	local:AM-MNR	local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings_the_system_produces_scalable_sql_queries	.
+local:ontologybased_data_access_platform_ontop_that_supports_answering_sparql	rdfs:member	local:sparql	.
+local:s2	rdf:predicate	local:support	.
+local:sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:direct_semantics_entailment_regime	.
+local:s0	rdf:subject	local:data_instances	.
+local:input_sparql_query_owl_2_ql_ontology_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:input_sparql_query_owl	.
+local:access_platform_ontop_technologies	rdfs:subClassOf	local:platform_ontop_technologies	.
+local:data_access	rdfs:member	local:data	.
+local:data_access	rdfs:subClassOf	local:access	.
+local:treewitness_query_tmapping	rdfs:subClassOf	local:tmapping	.
+local:scalable_sql_queries	rdfs:subClassOf	local:sql_queries	.
+local:s10	rdf:object	local:that	.
+local:ontologybased_data_access_platform	rdfs:member	local:ontologybased_data_access	.
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:sparql_queries	.
+local:ontologybased_data_access_platform_ontop	rdfs:member	local:ontologybased_data_access_platform	.
+local:s3	local:AM-LOC	local:theoretical_side	.
+local:ontologybased_data_access_platform	rdfs:subClassOf	local:platform	.
+local:initial_experimental	rdfs:subClassOf	local:experimental	.
+local:equivalent_sql_query	rdfs:subClassOf	local:sql_query	.
+local:ontologybased_data_access_platform_ontop_technologies	rdfs:subClassOf	local:data_access_platform_ontop_technologies	.
+local:owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:owl_2_ql_direct_semantics_entailment_regime	.
+local:extension_of_the_ontologybased_data_access_platform_ontop	rdfs:member	local:extension	.
+local:direct_semantics_entailment_regime	rdfs:subClassOf	local:semantics_entailment_regime	.
+local:sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:ql	.
+local:sparql_queries_under_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:owl_2_ql_direct_semantics_entailment_regime	.
+local:entailment_regime	rdfs:subClassOf	local:regime	.
+local:platform_ontop_technologies	rdfs:subClassOf	local:ontop_technologies	.
+local:s7.2	rdf:subject	local:system	.
+local:r2rml_mappings_can_be_rewritten_to_an_equivalent_sql_query_solely_over_the_data	rdfs:member	local:equivalent_sql_query	.
+local:extension_of_ontologybased_data_access_platform_ontop	rdfs:member	local:ontologybased_data_access_platform_ontop	.
+local:treewitness_query_tmapping	rdfs:member	local:treewitness_query	.
+local:treewitness_query_tmappings	rdfs:member	local:treewitness_query	.
+local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:entailment_regime	.
+local:s1	rdf:object	local:extension_of_the_ontologybased_data_access_platform_ontop	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmapping_optimisations_the_system_produces_scalable_sql_queries	rdfs:member	local:scalable_sql_queries	.
+local:sparql_query_owl	rdfs:member	local:sparql_query	.
+local:s11	rdf:subject	local:treewitness_query	.
+local:owl_2_ql_direct_semantics_entailment_regime_for_data_instances	rdfs:member	local:data_instances	.
+local:query_owl	rdfs:subClassOf	local:owl	.
+local:ontology_hierarchies	rdfs:member	local:ontology	.
+local:sql_query	rdfs:subClassOf	local:query	.
+local:s7	rdf:object	local:that	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmappings_the_system_produces_scalable_sql_queries	rdfs:member	local:system	.
+local:theoretical_side	rdfs:subClassOf	local:side	.
+local:data_access_platform_ontop	rdfs:member	local:data_access_platform	.
+local:s2.2	rdf:predicate	local:query	.
+local:technologies_the_treewitness_query_tmapping_optimisations_the_system	rdfs:member	local:treewitness_query_tmapping	.
+local:data_access_platform	rdfs:member	local:data_access	.
+local:input_sparql_query	rdfs:subClassOf	local:query	.
+local:s3	rdf:predicate	local:show	.
+local:sql_expressivity	rdfs:member	local:sql	.
+local:r2rml_mappings_with_ontology_hierarchies	rdfs:member	local:r2rml_mappings	.
+local:s4.1	rdf:object	local:equivalent_sql_query	.
+local:ql_ontology	rdfs:member	local:ql	.
+local:direct_semantics	rdfs:member	local:direct	.
+local:s3.1	rdf:subject	local:input_sparql_query_owl_2_ql_ontology	.
+local:s4	rdf:predicate	local:show	.
+local:s0	rdf:predicate	local:store	.
+local:query_owl_2_ql_ontology	rdfs:subClassOf	local:owl_2_ql_ontology	.
+local:treewitness_query_tmappings	rdfs:subClassOf	local:tmappings	.
+local:database_integrity	rdfs:member	local:database	.
+local:treewitness_query	rdfs:subClassOf	local:query	.
+local:technologies_the_treewitness_query_tmappings_the_system	rdfs:member	local:treewitness_query_tmappings	.
+local:scalable_sql	rdfs:member	local:scalable	.
+local:access_platform	rdfs:member	local:access	.
+local:2_ql_ontology	rdfs:subClassOf	local:ql_ontology	.
+local:semantics_entailment_regime	rdfs:subClassOf	local:entailment_regime	.
+local:s5	rdf:object	local:r2rml_mappings_with_ontology_hierarchies	.
+local:s2.2	local:AM-PNC	local:data_instances	.
+local:s1	rdf:subject	local:we	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:input_sparql_query_owl_2_ql_ontology	rdfs:member	local:input_sparql_query_owl	.
+local:s10.2	rdf:predicate	local:tmapping	.
+local:s3.1	local:AM-MNR	local:solely_over_the_data	.
+local:owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:direct_semantics_entailment_regime	.
+local:query_tmappings	rdfs:member	local:query	.
+local:direct_semantics_entailment_regime	rdfs:subClassOf	local:regime	.
+local:applying_the_the_ontologybased_data_access_platform_ontop_technologies_the_treewitness_query_tmapping_optimisations_the_system_produces_scalable_sql_queries	rdfs:member	local:treewitness_query_tmapping	.
+local:owl_2_ql_direct_semantics_entailment_regime	rdfs:subClassOf	local:2_ql_direct_semantics_entailment_regime	.
+local:s8	rdf:subject	local:we	.
+local:s2	rdf:object	local:answering_sparql_queries_under_the_owl_2_ql_direct_semantics_entailment_regime_for_data_instances	.
+local:s4	local:AM-LOC	local:theoretical_side	.
+local:answering_under_owl_2_ql_direct_semantics_entailment_regime	rdfs:member	local:answering	.

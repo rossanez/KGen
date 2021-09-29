@@ -1,308 +1,556 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the ontology underlying the data"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the data objects have heterogeneous sets of properties"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we approach where the data objects have heterogeneous sets of properties"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"has application in scenarios"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we approach has application in scenarios"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the data objects have heterogeneous sets of irregular structures"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we approach where the data objects have heterogeneous sets of irregular structures"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we a query processing algorithm incrementally computing the relaxed answer of a query"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we present a query processing algorithm for incrementally computing the relaxed answer of a query"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we develop a notion of ranking of query answers"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a query conditions based on rdfs entailment"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we make queries more flexible by logical relaxation of a query conditions based on rdfs entailment"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a query conditions based on rdfs ontologies"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we make queries more flexible by logical relaxation of a query conditions based on rdfs ontologies"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"data satisfying query conditions with varying degrees of exactness"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"return data"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"we making possible to return data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we explore flexible querying of rdf data with the aim of making it possible to return data"	.
+
+local:s0.4	a	rdf:Statement	;
+	rdfs:label	"how closely a query satisfy the query conditions"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"depending"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"rank the results of a query"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"we making possible to rank the results of a query"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we explore flexible querying of rdf data with the aim of making it possible to rank the results of a query depending on how closely a query satisfy the query conditions"	.
+
+
 #### Classes ####
 
-local:explore	rdfs:label	"explore"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:we	rdfs:label	"we"	.
+local:underlie	a	rdf:Class	;
+	rdfs:label	"underlie"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:data_objects	a	rdf:Class	;
+	rdfs:label	"data objects"	.
 
-local:data	rdfs:label	"data"	.
+local:objects	a	rdf:Class	;
+	rdfs:label	"objects"	.
 
-local:flexible_querying	rdfs:label	"flexible querying"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:querying	rdfs:label	"querying"	.
+local:heterogeneous_sets_of_properties	a	rdf:Class	;
+	rdfs:label	"heterogeneous sets of properties"	.
 
-local:flexible	rdfs:label	"flexible"	.
+local:heterogeneous_sets	a	rdf:Class	;
+	rdfs:label	"heterogeneous sets"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:flexible_querying_of_rdf_data	rdfs:label	"flexible querying of rdf data"	.
+local:heterogeneous	a	rdf:Class	;
+	rdfs:label	"heterogeneous"	.
 
-local:aim	rdfs:label	"aim"	.
+local:sets	a	rdf:Class	;
+	rdfs:label	"sets"	.
 
-local:making	rdfs:label	"making"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:possible	rdfs:label	"possible"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:return_data	rdfs:label	"return data"	.
+local:data_objects_have_heterogeneous_sets_of_properties	a	rdf:Class	;
+	rdfs:label	"data objects have heterogeneous sets of properties"	.
 
-local:return	rdfs:label	"return"	.
+local:application_in_scenarios	a	rdf:Class	;
+	rdfs:label	"application in scenarios"	.
 
-local:query_satisfy	rdfs:label	"query satisfy"	.
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
 
-local:satisfy	rdfs:label	"satisfy"	.
+local:scenarios	a	rdf:Class	;
+	rdfs:label	"scenarios"	.
 
-local:query	rdfs:label	"query"	.
+local:heterogeneous_sets_of_irregular_structures	a	rdf:Class	;
+	rdfs:label	"heterogeneous sets of irregular structures"	.
 
-local:query_conditions	rdfs:label	"query conditions"	.
+local:irregular_structures	a	rdf:Class	;
+	rdfs:label	"irregular structures"	.
 
-local:conditions	rdfs:label	"conditions"	.
+local:irregular	a	rdf:Class	;
+	rdfs:label	"irregular"	.
 
-local:closely_satisfy	rdfs:label	"closely satisfy"	.
+local:structures	a	rdf:Class	;
+	rdfs:label	"structures"	.
 
-local:how_closely_satisfy	rdfs:label	"how closely satisfy"	.
+local:data_objects_have_heterogeneous_sets_of_irregular_structures	a	rdf:Class	;
+	rdfs:label	"data objects have heterogeneous sets of irregular structures"	.
 
-local:results_of_query	rdfs:label	"results of query"	.
+local:query_processing_algorithm	a	rdf:Class	;
+	rdfs:label	"query processing algorithm"	.
 
-local:results	rdfs:label	"results"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:rank	rdfs:label	"rank"	.
+local:query_processing	a	rdf:Class	;
+	rdfs:label	"query processing"	.
 
-local:depending	rdfs:label	"depending"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:”	rdfs:label	"”"	.
+local:processing	a	rdf:Class	;
+	rdfs:label	"processing"	.
 
-local:closely	rdfs:label	"closely"	.
+local:processing_algorithm	a	rdf:Class	;
+	rdfs:label	"processing algorithm"	.
 
-local:satisfying	rdfs:label	"satisfying"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:varying_degrees	rdfs:label	"varying degrees"	.
+local:relaxed_answer_of_a_query	a	rdf:Class	;
+	rdfs:label	"relaxed answer of a query"	.
 
-local:degrees	rdfs:label	"degrees"	.
+local:relaxed_answer	a	rdf:Class	;
+	rdfs:label	"relaxed answer"	.
 
-local:query_conditions_with_varying_degrees	rdfs:label	"query conditions with varying degrees"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:varying_degrees_of_exactness	rdfs:label	"varying degrees of exactness"	.
+local:relaxed	a	rdf:Class	;
+	rdfs:label	"relaxed"	.
 
-local:exactness	rdfs:label	"exactness"	.
+local:relaxed_answer_of_query	a	rdf:Class	;
+	rdfs:label	"relaxed answer of query"	.
 
-local:make	rdfs:label	"make"	.
+local:incrementally	a	rdf:Class	;
+	rdfs:label	"incrementally"	.
 
-local:queries	rdfs:label	"queries"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:rdfs_ontologies	rdfs:label	"rdfs ontologies"	.
+local:incrementally_computing_the_relaxed_answer_of_a_query	a	rdf:Class	;
+	rdfs:label	"incrementally computing the relaxed answer of a query"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:incrementally_computing	a	rdf:Class	;
+	rdfs:label	"incrementally computing"	.
 
-local:logical_relaxation	rdfs:label	"logical relaxation"	.
+local:computing	a	rdf:Class	;
+	rdfs:label	"computing"	.
 
-local:relaxation	rdfs:label	"relaxation"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:logical	rdfs:label	"logical"	.
+local:notion_of_ranking_of_query_answers	a	rdf:Class	;
+	rdfs:label	"notion of ranking of query answers"	.
 
-local:rdfs	rdfs:label	"rdfs"	.
+local:notion	a	rdf:Class	;
+	rdfs:label	"notion"	.
 
-local:flexible_by_logical_relaxation	rdfs:label	"flexible by logical relaxation"	.
+local:query_answers	a	rdf:Class	;
+	rdfs:label	"query answers"	.
 
-local:logical_relaxation_of_query_conditions	rdfs:label	"logical relaxation of query conditions"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:query_conditions_based	rdfs:label	"query conditions based"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:based	rdfs:label	"based"	.
+local:notion_of_ranking	a	rdf:Class	;
+	rdfs:label	"notion of ranking"	.
 
-local:based_on_rdfs_ontologies	rdfs:label	"based on rdfs ontologies"	.
+local:ranking_of_query_answers	a	rdf:Class	;
+	rdfs:label	"ranking of query answers"	.
 
-local:rdfs_entailment	rdfs:label	"rdfs entailment"	.
+local:query_conditions	a	rdf:Class	;
+	rdfs:label	"query conditions"	.
 
-local:entailment	rdfs:label	"entailment"	.
+local:conditions	a	rdf:Class	;
+	rdfs:label	"conditions"	.
 
-local:based_on_rdfs_entailment	rdfs:label	"based on rdfs entailment"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:present	rdfs:label	"present"	.
+local:rdfs_entailment	a	rdf:Class	;
+	rdfs:label	"rdfs entailment"	.
 
-local:query_processing	rdfs:label	"query processing"	.
+local:entailment	a	rdf:Class	;
+	rdfs:label	"entailment"	.
 
-local:processing	rdfs:label	"processing"	.
+local:rdfs	a	rdf:Class	;
+	rdfs:label	"rdfs"	.
 
-local:query_processing_algorithm	rdfs:label	"query processing algorithm"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:queries_flexible_by_logical_relaxation_of_a_query_conditions_based_on_rdfs_entailment	a	rdf:Class	;
+	rdfs:label	"queries flexible by logical relaxation of a query conditions based on rdfs entailment"	.
 
-local:processing_algorithm	rdfs:label	"processing algorithm"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:relaxed	rdfs:label	"relaxed"	.
+local:logical_relaxation	a	rdf:Class	;
+	rdfs:label	"logical relaxation"	.
 
-local:relaxed_answer	rdfs:label	"relaxed answer"	.
+local:logical	a	rdf:Class	;
+	rdfs:label	"logical"	.
 
-local:answer	rdfs:label	"answer"	.
+local:relaxation	a	rdf:Class	;
+	rdfs:label	"relaxation"	.
 
-local:incrementally_computing	rdfs:label	"incrementally computing"	.
+local:flexible_queries	a	rdf:Class	;
+	rdfs:label	"flexible queries"	.
 
-local:computing	rdfs:label	"computing"	.
+local:flexible_by_logical_relaxation	a	rdf:Class	;
+	rdfs:label	"flexible by logical relaxation"	.
 
-local:relaxed_answer_of_query	rdfs:label	"relaxed answer of query"	.
+local:flexible	a	rdf:Class	;
+	rdfs:label	"flexible"	.
 
-local:incrementally	rdfs:label	"incrementally"	.
+local:logical_relaxation_of_query_conditions	a	rdf:Class	;
+	rdfs:label	"logical relaxation of query conditions"	.
 
-local:develop	rdfs:label	"develop"	.
+local:query_conditions_based_on_rdfs_entailment	a	rdf:Class	;
+	rdfs:label	"query conditions based_on rdfs entailment"	.
 
-local:query_answers	rdfs:label	"query answers"	.
+local:rdfs_ontologies	a	rdf:Class	;
+	rdfs:label	"rdfs ontologies"	.
 
-local:answers	rdfs:label	"answers"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:notion_of_ranking	rdfs:label	"notion of ranking"	.
+local:queries_flexible	a	rdf:Class	;
+	rdfs:label	"queries flexible"	.
 
-local:notion	rdfs:label	"notion"	.
+local:logical_relaxation_of_a_query_conditions_based_on_rdfs_ontologies	a	rdf:Class	;
+	rdfs:label	"logical relaxation of a query conditions based on rdfs ontologies"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:query_conditions_based_on_rdfs_ontologies	a	rdf:Class	;
+	rdfs:label	"query conditions based_on rdfs ontologies"	.
 
-local:ranking_of_query_answers	rdfs:label	"ranking of query answers"	.
+local:satisfy	a	rdf:Class	;
+	rdfs:label	"satisfy"	.
 
-local:approach	rdfs:label	"approach"	.
+local:query_conditions_with_varying_degrees_of_exactness	a	rdf:Class	;
+	rdfs:label	"query conditions with varying degrees of exactness"	.
 
-local:irregular	rdfs:label	"irregular"	.
+local:exactness	a	rdf:Class	;
+	rdfs:label	"exactness"	.
 
-local:irregular_structures	rdfs:label	"irregular structures"	.
+local:degrees	a	rdf:Class	;
+	rdfs:label	"degrees"	.
 
-local:structures	rdfs:label	"structures"	.
+local:varying_degrees	a	rdf:Class	;
+	rdfs:label	"varying degrees"	.
 
-local:heterogeneous_sets	rdfs:label	"heterogeneous sets"	.
+local:query_conditions_with_varying_degrees	a	rdf:Class	;
+	rdfs:label	"query conditions with varying degrees"	.
 
-local:sets	rdfs:label	"sets"	.
+local:varying_degrees_of_exactness	a	rdf:Class	;
+	rdfs:label	"varying degrees of exactness"	.
 
-local:heterogeneous	rdfs:label	"heterogeneous"	.
+local:return	a	rdf:Class	;
+	rdfs:label	"return"	.
 
-local:data_objects	rdfs:label	"data objects"	.
+local:return_data_possible	a	rdf:Class	;
+	rdfs:label	"return data possible"	.
 
-local:objects	rdfs:label	"objects"	.
+local:possible_data	a	rdf:Class	;
+	rdfs:label	"possible data"	.
 
-local:heterogeneous_sets_of_irregular_structures	rdfs:label	"heterogeneous sets of irregular structures"	.
+local:return_possible_data	a	rdf:Class	;
+	rdfs:label	"return possible data"	.
 
-local:have	rdfs:label	"have"	.
+local:explore	a	rdf:Class	;
+	rdfs:label	"explore"	.
 
-local:application_in_scenarios	rdfs:label	"application in scenarios"	.
+local:flexible_querying_of_rdf_data	a	rdf:Class	;
+	rdfs:label	"flexible querying of rdf data"	.
 
-local:application	rdfs:label	"application"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:scenarios	rdfs:label	"scenarios"	.
+local:flexible_querying	a	rdf:Class	;
+	rdfs:label	"flexible querying"	.
 
-local:has	rdfs:label	"has"	.
+local:querying	a	rdf:Class	;
+	rdfs:label	"querying"	.
 
-local:underlying	rdfs:label	"underlying"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:aim_of_making_it_possible_to_return_data	a	rdf:Class	;
+	rdfs:label	"aim of making it possible to return data"	.
 
-local:heterogeneous_sets_of_properties	rdfs:label	"heterogeneous sets of properties"	.
+local:aim	a	rdf:Class	;
+	rdfs:label	"aim"	.
 
-local:properties	rdfs:label	"properties"	.
+local:closely	a	rdf:Class	;
+	rdfs:label	"closely"	.
 
-#### Properties ####
+local:depend	a	rdf:Class	;
+	rdfs:label	"depend"	.
+
+local:results_of_a_query	a	rdf:Class	;
+	rdfs:label	"results of a query"	.
+
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
+
+local:results_of_query	a	rdf:Class	;
+	rdfs:label	"results of query"	.
+
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
+
+local:rank_the_results_of_a_query_possible	a	rdf:Class	;
+	rdfs:label	"rank the results of a query possible"	.
+
+local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	a	rdf:Class	;
+	rdfs:label	"aim of making it possible to rank the results of a query depending on how closely a query satisfy the query conditions"	.
+
+local:query_satisfy	a	rdf:Class	;
+	rdfs:label	"query satisfy"	.
+
+local:closely_satisfy	a	rdf:Class	;
+	rdfs:label	"closely satisfy"	.
+
+local:how_closely	a	rdf:Class	;
+	rdfs:label	"how closely"	.
 
 #### Mapped Relations ####
 
-local:rdf_data	owl:sameAs	cso:rdf_data	.
-cso:rdf_data	rdfs:label	"rdf data"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:query_processing	rdfs:label	"query processing"	.
-local:query_processing	owl:sameAs	cso:query_processing	.
 cso:ontologies	rdfs:label	"ontologies"	.
-local:ontology	owl:sameAs	cso:ontology	.
-cso:ontology	rdfs:label	"ontology"	.
+local:query_processing	owl:sameAs	cso:query_processing	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:rdf_data	rdfs:label	"rdf data"	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+cso:query_processing	rdfs:label	"query processing"	.
 
 #### Relations ####
 
-local:present	local:AM-PNC	local:incrementally_computing	.
-local:return	rdfs:member	local:return_data	.
-local:heterogeneous_sets_of_irregular_structures	local:of_irregularstructures	local:heterogeneous_sets	.
-local:query_conditions_based	local:_based	local:query_conditions	.
-local:making	vn.role:Material	local:return_data	.
-local:present	vn.role:Agent	local:we	.
-local:approach	local:AM-LOC	local:have	.
-local:heterogeneous_sets_of_properties	local:of_properties	local:heterogeneous_sets	.
-local:notion_of_ranking	local:of_ranking	local:notion	.
-local:make	vn.role:Agent	local:we	.
-local:ranking_of_query_answers	local:ranking_of	local:query_answers	.
-local:query_processing_algorithm	rdfs:subClassOf	local:algorithm	.
-local:processing	rdfs:member	local:processing_algorithm	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:based	vn.role:indirect_object	local:rdfs_entailment	.
-local:computing	vn.role:Product	local:relaxed_answer_of_query	.
-local:rdfs_entailment	rdfs:subClassOf	local:entailment	.
-local:has	vn.role:Stimulus	local:application_in_scenarios	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:data_objects	rdfs:subClassOf	local:objects	.
-local:flexible_querying	rdfs:subClassOf	local:querying	.
-local:explore	vn.role:Agent	local:we	.
-local:rdfs_ontologies	rdfs:subClassOf	local:ontologies	.
-local:flexible	rdfs:member	local:flexible_querying	.
-local:query_conditions_based	local:queryconditions_	local:based	.
-local:flexible_by_logical_relaxation	local:flexible_by	local:logical_relaxation	.
-local:making	vn.role:Product	local:possible	.
-local:logical_relaxation_of_query_conditions	local:logicalrelaxation_of	local:query_conditions	.
-local:present	vn.role:Theme	local:query_processing_algorithm	.
-local:have	vn.role:Stimulus	local:heterogeneous_sets_of_properties	.
-local:based	vn.role:Cause	local:query_conditions	.
-local:satisfying	vn.role:Experiencer	local:data	.
-local:varying_degrees_of_exactness	local:varyingdegrees_of	local:exactness	.
-local:notion_of_ranking	local:notion_of	local:ranking	.
-local:approach	vn.role:indirect_object	local:application_in_scenarios	.
-local:make	vn.role:Product	local:flexible_by_logical_relaxation	.
-local:query	rdfs:member	local:query_satisfy	.
-local:have	vn.role:Stimulus	local:heterogeneous_sets_of_irregular_structures	.
-local:data	rdfs:member	local:data_objects	.
-local:flexible_by_logical_relaxation	local:by_logicalrelaxation	local:flexible	.
+local:results_of_a_query	rdfs:member	local:query	.
+local:s9	rdf:subject	local:we	.
+local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	rdfs:member	local:query_satisfy	.
+local:flexible_queries	rdfs:subClassOf	local:queries	.
+local:data_objects_have_heterogeneous_sets_of_irregular_structures	rdfs:member	local:irregular_structures	.
+local:s0	rdf:predicate	local:explore	.
+local:return_possible_data	rdfs:subClassOf	local:possible_data	.
+local:s1.1	rdf:predicate	local:make	.
+local:s6	rdf:predicate	local:present	.
 local:query_answers	rdfs:subClassOf	local:answers	.
-local:approach	vn.role:indirect_object	local:have	.
-local:query_processing_algorithm	rdfs:subClassOf	local:processing_algorithm	.
-local:incrementally_computing	rdfs:subClassOf	local:computing	.
-local:relaxed_answer_of_query	local:relaxedanswer_of	local:query	.
-local:rank	vn.role:Theme	local:results_of_query	.
-local:making	vn.role:Agent	local:we	.
-local:computing	vn.role:Agent	local:query_processing_algorithm	.
-local:flexible_querying_of_rdf_data	local:of_rdfdata	local:flexible_querying	.
-local:satisfy	vn.role:Cause	local:query_conditions	.
-local:logical_relaxation_of_query_conditions	local:of_queryconditions	local:logical_relaxation	.
-local:based_on_rdfs_ontologies	local:on_rdfsontologies	local:based	.
-local:depending	vn.role:Location	local:closely_satisfy	.
-local:heterogeneous_sets	rdfs:subClassOf	local:sets	.
-local:satisfy	vn.role:Experiencer	local:query	.
-local:heterogeneous	rdfs:member	local:heterogeneous_sets	.
-local:based_on_rdfs_entailment	local:on_rdfsentailment	local:based	.
-local:logical_relaxation	rdfs:subClassOf	local:relaxation	.
-local:computing	local:AM-MNR	local:incrementally	.
-local:computing	vn.role:Agent	local:we	.
-local:heterogeneous_sets_of_irregular_structures	local:heterogeneoussets_of	local:irregular_structures	.
-local:underlying	vn.role:Theme1	local:ontology	.
-local:varying_degrees_of_exactness	local:of_exactness	local:varying_degrees	.
-local:based_on_rdfs_ontologies	local:based_on	local:rdfs_ontologies	.
-local:query_conditions	rdfs:subClassOf	local:conditions	.
-local:application_in_scenarios	local:application_in	local:scenarios	.
-local:processing_algorithm	rdfs:subClassOf	local:algorithm	.
-local:irregular_structures	rdfs:subClassOf	local:structures	.
-local:query_processing	rdfs:member	local:query_processing_algorithm	.
-local:rdfs	rdfs:member	local:rdfs_ontologies	.
-local:query	rdfs:member	local:query_processing	.
-local:query_satisfy	rdfs:subClassOf	local:satisfy	.
+local:s11	rdf:subject	local:data	.
+local:rank_the_results_of_a_query_possible	rdfs:member	local:results	.
+local:rdfs_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s5	rdf:predicate	local:develop	.
+local:flexible_by_logical_relaxation	rdfs:member	local:flexible	.
+local:rank_the_results_of_a_query_possible	rdfs:member	local:query	.
+local:s7	rdf:subject	local:we	.
+local:s10	rdf:subject	local:we	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:flexible_by_logical_relaxation	rdfs:member	local:logical_relaxation	.
+local:queries_flexible_by_logical_relaxation_of_a_query_conditions_based_on_rdfs_entailment	rdfs:member	local:queries	.
+local:logical_relaxation_of_query_conditions	rdfs:member	local:logical_relaxation	.
+local:notion_of_ranking	rdfs:member	local:ranking	.
+local:query_processing_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s9	rdf:predicate	local:approach	.
+local:query_processing	rdfs:member	local:query	.
+local:logical_relaxation_of_a_query_conditions_based_on_rdfs_ontologies	rdfs:member	local:rdfs_ontologies	.
+local:s1	rdf:object	local:flexible_querying_of_rdf_data	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:results_of_query	rdfs:member	local:results	.
+local:s4.1	rdf:subject	local:query_conditions	.
+local:flexible_querying_of_rdf_data	rdfs:member	local:flexible_querying	.
+local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	rdfs:member	local:query_conditions	.
+local:logical_relaxation_of_a_query_conditions_based_on_rdfs_ontologies	rdfs:member	local:query_conditions	.
+local:notion_of_ranking_of_query_answers	rdfs:member	local:query_answers	.
+local:s1.1	rdf:subject	local:we	.
+local:s9	rdf:object	local:application_in_scenarios	.
+local:heterogeneous_sets	rdfs:member	local:heterogeneous	.
 local:relaxed_answer	rdfs:subClassOf	local:answer	.
-local:”	local:AM-MNR	local:closely	.
-local:flexible_querying_of_rdf_data	local:flexiblequerying_of	local:rdf_data	.
-local:query	rdfs:member	local:query_answers	.
-local:ranking_of_query_answers	local:of_queryanswers	local:ranking	.
-local:relaxed	rdfs:member	local:relaxed_answer	.
-local:based_on_rdfs_entailment	local:based_on	local:rdfs_entailment	.
-local:return	vn.role:Theme	local:data	.
-local:underlying	vn.role:Theme1	local:data	.
-local:closely_satisfy	rdfs:subClassOf	local:satisfy	.
-local:query_conditions_with_varying_degrees	local:queryconditions_with	local:varying_degrees	.
-local:make	vn.role:Material	local:queries	.
+local:s2	rdf:object	local:query_conditions_with_varying_degrees_of_exactness	.
+local:s1.2	rdf:subject	local:data	.
+local:s3	rdf:object	local:queries_flexible	.
+local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	rdfs:member	local:aim	.
+local:s6	rdf:object	local:query_processing_algorithm	.
+local:data_objects_have_heterogeneous_sets_of_irregular_structures	rdfs:member	local:data_objects	.
+local:query_satisfy	rdfs:member	local:query	.
+local:results_of_query	rdfs:member	local:query	.
+local:irregular_structures	rdfs:member	local:irregular	.
+local:s5	rdf:subject	local:we	.
+local:s0.4	rdf:predicate	local:satisfy	.
+local:how_closely	rdfs:subClassOf	local:closely	.
+local:query_conditions	rdfs:subClassOf	local:conditions	.
+local:ranking_of_query_answers	rdfs:member	local:query_answers	.
+local:s3.1	rdf:predicate	local:base	.
+local:heterogeneous_sets_of_irregular_structures	rdfs:member	local:heterogeneous_sets	.
+local:query_conditions	rdfs:member	local:query	.
+local:application_in_scenarios	rdfs:member	local:application	.
+local:notion_of_ranking_of_query_answers	rdfs:member	local:ranking	.
+local:s7	local:AM-LOC	local:data_objects_have_heterogeneous_sets_of_irregular_structures	.
+local:query_conditions_with_varying_degrees	rdfs:member	local:query_conditions	.
+local:query_processing_algorithm	rdfs:subClassOf	local:processing_algorithm	.
+local:s7.1	rdf:subject	local:data_objects	.
+local:varying_degrees_of_exactness	rdfs:member	local:exactness	.
+local:s10	local:AM-LOC	local:data_objects_have_heterogeneous_sets_of_properties	.
+local:aim_of_making_it_possible_to_return_data	rdfs:member	local:aim	.
+local:queries_flexible_by_logical_relaxation_of_a_query_conditions_based_on_rdfs_entailment	rdfs:member	local:rdfs_entailment	.
+local:flexible_querying	rdfs:subClassOf	local:querying	.
+local:incrementally_computing_the_relaxed_answer_of_a_query	rdfs:member	local:query	.
+local:s0.4	rdf:subject	local:query	.
+local:s10.1	rdf:predicate	local:have	.
+local:s2	rdf:subject	local:data	.
+local:s4	rdf:subject	local:we	.
+local:s1.2	rdfs:subClassOf	local:data	.
+local:s0	rdf:subject	local:we	.
+local:incrementally_computing	rdfs:subClassOf	local:computing	.
+local:s1.2	rdf:predicate	local:return	.
+local:rdfs_entailment	rdfs:subClassOf	local:entailment	.
+local:s5	rdf:object	local:notion_of_ranking_of_query_answers	.
+local:query_processing_algorithm	rdfs:member	local:query_processing	.
+local:s1	rdf:subject	local:we	.
 local:query_processing	rdfs:subClassOf	local:processing	.
-local:logical	rdfs:member	local:logical_relaxation	.
-local:explore	local:AM-PNC	local:aim	.
-local:satisfying	vn.role:Cause	local:query_conditions_with_varying_degrees	.
-local:relaxed_answer_of_query	local:of_query	local:relaxed_answer	.
-local:approach	vn.role:object	local:we	.
-local:query	rdfs:member	local:query_conditions	.
-local:how_closely_satisfy	rdfs:subClassOf	local:closely_satisfy	.
-local:making	vn.role:Material	local:rank	.
-local:develop	vn.role:Theme	local:we	.
-local:results_of_query	local:of_query	local:results	.
-local:return_data	rdfs:subClassOf	local:data	.
-local:have	vn.role:Experiencer	local:data_objects	.
-local:explore	vn.role:Location	local:flexible_querying_of_rdf_data	.
-local:irregular	rdfs:member	local:irregular_structures	.
+local:s1	rdf:predicate	local:explore	.
+local:query_conditions_with_varying_degrees_of_exactness	rdfs:member	local:exactness	.
+local:s0.1	rdf:predicate	local:make	.
+local:flexible_querying_of_rdf_data	rdfs:member	local:rdf_data	.
+local:s3	rdf:subject	local:we	.
+local:flexible_querying	rdfs:member	local:flexible	.
+local:closely_satisfy	rdfs:subClassOf	local:satisfy	.
+local:s0	rdf:object	local:flexible_querying_of_rdf_data	.
+local:rdfs_entailment	rdfs:member	local:rdfs	.
+local:data_objects_have_heterogeneous_sets_of_irregular_structures	rdfs:member	local:heterogeneous_sets	.
+local:s0.1	rdf:subject	local:we	.
+local:query_conditions_based_on_rdfs_entailment	rdfs:member	local:rdfs_entailment	.
+local:data_objects_have_heterogeneous_sets_of_properties	rdfs:member	local:data_objects	.
+local:s2	rdf:predicate	local:satisfy	.
+local:aim_of_making_it_possible_to_return_data	rdfs:member	local:data	.
+local:relaxed_answer_of_query	rdfs:member	local:relaxed_answer	.
+local:s7	rdf:predicate	local:approach	.
+local:logical_relaxation	rdfs:member	local:logical	.
+local:query_conditions_based_on_rdfs_entailment	rdfs:member	local:query_conditions	.
+local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	rdfs:member	local:query	.
+local:varying_degrees_of_exactness	rdfs:member	local:varying_degrees	.
+local:data_objects_have_heterogeneous_sets_of_properties	rdfs:member	local:heterogeneous_sets	.
+local:s0.2	rdf:subject	local:results_of_a_query	.
+local:s3.1	rdf:subject	local:query_conditions	.
+local:s0.4	local:AM-MNR	local:closely	.
+local:s4.1	rdf:object	local:rdfs_entailment	.
+local:s6	local:AM-PNC	local:incrementally_computing_the_relaxed_answer_of_a_query	.
+local:processing_algorithm	rdfs:member	local:processing	.
+local:s6.1	rdf:subject	local:query_processing_algorithm	.
+local:processing_algorithm	rdfs:subClassOf	local:algorithm	.
+local:relaxed_answer	rdfs:member	local:relaxed	.
+local:s0.4	rdf:object	local:query_conditions	.
+local:s0.2	rdf:predicate	local:rank	.
+local:s6.1	local:AM-MNR	local:incrementally	.
+local:logical_relaxation_of_query_conditions	rdfs:member	local:query_conditions	.
+local:queries_flexible_by_logical_relaxation_of_a_query_conditions_based_on_rdfs_entailment	rdfs:member	local:logical_relaxation	.
+local:query_satisfy	rdfs:subClassOf	local:satisfy	.
+local:s6	rdf:subject	local:we	.
+local:notion_of_ranking	rdfs:member	local:notion	.
+local:s10.1	rdf:object	local:heterogeneous_sets_of_properties	.
+local:s6.1	rdf:object	local:relaxed_answer_of_a_query	.
+local:query_conditions_based_on_rdfs_ontologies	rdfs:member	local:query_conditions	.
 local:varying_degrees	rdfs:subClassOf	local:degrees	.
-local:application_in_scenarios	local:in_scenarios	local:application	.
-local:heterogeneous_sets_of_properties	local:heterogeneoussets_of	local:properties	.
-local:”	vn.role:object	local:query	.
-local:rdfs	rdfs:member	local:rdfs_entailment	.
-local:query_conditions_with_varying_degrees	local:with_varyingdegrees	local:query_conditions	.
-local:based	vn.role:indirect_object	local:rdfs_ontologies	.
-local:results_of_query	local:results_of	local:query	.
-local:develop	vn.role:Location	local:notion_of_ranking	.
+local:application_in_scenarios	rdfs:member	local:scenarios	.
+local:query_answers	rdfs:member	local:query	.
+local:s9.1	rdf:subject	local:application_in_scenarios	.
+local:relaxed_answer_of_a_query	rdfs:member	local:relaxed_answer	.
+local:data_objects_have_heterogeneous_sets_of_properties	rdfs:member	local:properties	.
+local:rdfs_ontologies	rdfs:member	local:rdfs	.
+local:data_objects	rdfs:subClassOf	local:objects	.
+local:ranking_of_query_answers	rdfs:member	local:ranking	.
+local:s10.1	rdf:subject	local:data_objects	.
+local:heterogeneous_sets	rdfs:subClassOf	local:sets	.
+local:s10	rdf:predicate	local:approach	.
+local:s1.1	rdf:object	local:return_data_possible	.
+local:s7.1	rdf:object	local:heterogeneous_sets_of_irregular_structures	.
+local:s3.1	local:AM-LOC	local:rdfs_ontologies	.
+local:s9.1	rdf:predicate	local:have	.
+local:incrementally_computing_the_relaxed_answer_of_a_query	rdfs:member	local:relaxed_answer	.
+local:s3	local:AM-MNR	local:logical_relaxation_of_a_query_conditions_based_on_rdfs_ontologies	.
+local:s4.1	rdf:predicate	local:base	.
+local:logical_relaxation_of_a_query_conditions_based_on_rdfs_ontologies	rdfs:member	local:logical_relaxation	.
+local:s7.1	rdf:predicate	local:have	.
+local:query_conditions_with_varying_degrees_of_exactness	rdfs:member	local:query_conditions	.
+local:data_objects	rdfs:member	local:data	.
+local:query_conditions_based_on_rdfs_ontologies	rdfs:member	local:rdfs_ontologies	.
+local:query_conditions_with_varying_degrees_of_exactness	rdfs:member	local:degrees	.
+local:heterogeneous_sets_of_properties	rdfs:member	local:heterogeneous_sets	.
+local:s0.1	rdf:object	local:rank_the_results_of_a_query_possible	.
+local:logical_relaxation	rdfs:subClassOf	local:relaxation	.
+local:s6.1	rdf:predicate	local:compute	.
+local:query_conditions_with_varying_degrees	rdfs:member	local:varying_degrees	.
+local:possible_data	rdfs:subClassOf	local:data	.
+local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	rdfs:member	local:results	.
+local:s4	rdf:object	local:queries_flexible_by_logical_relaxation_of_a_query_conditions_based_on_rdfs_entailment	.
+local:s1.2	rdfs:member	local:return	.
+local:s1	local:AM-PNC	local:aim_of_making_it_possible_to_return_data	.
+local:relaxed_answer_of_query	rdfs:member	local:query	.
+local:s0	local:AM-PNC	local:aim_of_making_it_possible_to_rank_the_results_of_a_query_depending_on_how_closely_a_query_satisfy_the_query_conditions	.
+local:heterogeneous_sets_of_properties	rdfs:member	local:properties	.
+local:s0.3	rdf:predicate	local:depend	.
+local:relaxed_answer_of_a_query	rdfs:member	local:query	.
+local:results_of_a_query	rdfs:member	local:results	.
+local:s11	rdf:predicate	local:underlie	.
+local:s3	rdf:predicate	local:make	.
+local:s4	rdf:predicate	local:make	.
+local:irregular_structures	rdfs:subClassOf	local:structures	.
+local:notion_of_ranking_of_query_answers	rdfs:member	local:notion	.
+local:heterogeneous_sets_of_irregular_structures	rdfs:member	local:irregular_structures	.
+local:queries_flexible_by_logical_relaxation_of_a_query_conditions_based_on_rdfs_entailment	rdfs:member	local:query_conditions	.

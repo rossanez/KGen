@@ -1,355 +1,552 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"existing relevant approaches"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"experimental evaluation shows that the rs2d search mechanism is robust with reasonably high precision compared to other existing relevant approaches"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"existing relevant approaches"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"changes in the network compared to other existing relevant approaches"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"experimental evaluation shows that the rs2d search mechanism is robust against changes in the network compared to other existing relevant approaches"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"estimated semantic gain"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"doing so in terms of estimated semantic gain"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"each service agent dynamically learns the averaged queryanswer behavior of each service agent neighbor peers and forwards service requests to those with minimal mixed bayesian risk of doing so in terms of estimated semantic gain"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"doing so in terms of commmunication cost"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"each service agent dynamically learns the averaged queryanswer behavior of each service agent neighbor peers and forwards service requests to those with minimal mixed bayesian risk of doing so in terms of commmunication cost"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"an approach called rs2d v1"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in this paper we present an approach to adaptive probabilistic search for semantic web services in unstructured p2p networks"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:relevant_approaches	a	rdf:Class	;
+	rdfs:label	"relevant approaches"	.
 
-local:paper	rdfs:label	"paper"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:we	rdfs:label	"we"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:semantic_web_services	rdfs:label	"semantic web services"	.
+local:experimental_evaluation	a	rdf:Class	;
+	rdfs:label	"experimental evaluation"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:web_services	rdfs:label	"web services"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:services	rdfs:label	"services"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:p2p_networks	rdfs:label	"p2p networks"	.
+local:rs2d_search_mechanism_is_robust_with_reasonably_high_precision_compared_to_other_existing_relevant_approaches	a	rdf:Class	;
+	rdfs:label	"rs2d search mechanism is robust with reasonably high precision compared to other existing relevant approaches"	.
 
-local:networks	rdfs:label	"networks"	.
+local:rs2d_search_mechanism	a	rdf:Class	;
+	rdfs:label	"rs2d search mechanism"	.
 
-local:unstructured	rdfs:label	"unstructured"	.
+local:reasonably_high_precision	a	rdf:Class	;
+	rdfs:label	"reasonably high precision"	.
 
-local:unstructured_p2p	rdfs:label	"unstructured p2p"	.
+local:rs2d_search	a	rdf:Class	;
+	rdfs:label	"rs2d search"	.
 
-local:p2p	rdfs:label	"p2p"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:probabilistic	rdfs:label	"probabilistic"	.
+local:reasonably_high	a	rdf:Class	;
+	rdfs:label	"reasonably high"	.
 
-local:probabilistic_search	rdfs:label	"probabilistic search"	.
+local:high	a	rdf:Class	;
+	rdfs:label	"high"	.
 
-local:web	rdfs:label	"web"	.
+local:rs2d	a	rdf:Class	;
+	rdfs:label	"rs2d"	.
 
-local:unstructured_p2p_networks	rdfs:label	"unstructured p2p networks"	.
+local:mechanism	a	rdf:Class	;
+	rdfs:label	"mechanism"	.
 
-local:search	rdfs:label	"search"	.
+local:high_precision	a	rdf:Class	;
+	rdfs:label	"high precision"	.
 
-local:adaptive_probabilistic_search	rdfs:label	"adaptive probabilistic search"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:approach_to_adaptive_probabilistic_search	rdfs:label	"approach to adaptive probabilistic search"	.
+local:reasonably	a	rdf:Class	;
+	rdfs:label	"reasonably"	.
 
-local:approach	rdfs:label	"approach"	.
+local:search_mechanism	a	rdf:Class	;
+	rdfs:label	"search mechanism"	.
 
-local:adaptive_probabilistic_search_for_semantic_web_services	rdfs:label	"adaptive probabilistic search for semantic web services"	.
+local:other_existing_relevant_approaches	a	rdf:Class	;
+	rdfs:label	"other existing relevant approaches"	.
 
-local:adaptive_probabilistic_search_for_semantic_web_services_in_unstructured_p2p_networks	rdfs:label	"adaptive probabilistic search for semantic web services in unstructured p2p networks"	.
+local:robust_with_high_precision	a	rdf:Class	;
+	rdfs:label	"robust with high precision"	.
 
-local:called	rdfs:label	"called"	.
+local:robust	a	rdf:Class	;
+	rdfs:label	"robust"	.
 
-local:rs2d	rdfs:label	"rs2d"	.
+local:changes_in_the_network	a	rdf:Class	;
+	rdfs:label	"changes in the network"	.
 
-local:rs2d_v1	rdfs:label	"rs2d v1"	.
+local:changes	a	rdf:Class	;
+	rdfs:label	"changes"	.
 
-local:v1	rdfs:label	"v1"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:service_agent	rdfs:label	"service agent"	.
+local:changes_in_network	a	rdf:Class	;
+	rdfs:label	"changes in network"	.
 
-local:agent	rdfs:label	"agent"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:service	rdfs:label	"service"	.
+local:rs2d_search_mechanism_is_robust_against_changes_in_the_network_compared_to_other_existing_relevant_approaches	a	rdf:Class	;
+	rdfs:label	"rs2d search mechanism is robust against changes in the network compared to other existing relevant approaches"	.
 
-local:learns	rdfs:label	"learns"	.
+local:robust_against_changes	a	rdf:Class	;
+	rdfs:label	"robust against changes"	.
 
-local:dynamically	rdfs:label	"dynamically"	.
+local:semantic_gain	a	rdf:Class	;
+	rdfs:label	"semantic gain"	.
 
-local:service_agent_neighbor	rdfs:label	"service agent neighbor"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:service_agent_neighbor_peers	rdfs:label	"service agent neighbor peers"	.
+local:gain	a	rdf:Class	;
+	rdfs:label	"gain"	.
 
-local:agent_neighbor	rdfs:label	"agent neighbor"	.
+local:estimate	a	rdf:Class	;
+	rdfs:label	"estimate"	.
 
-local:service_requests	rdfs:label	"service requests"	.
+local:so	a	rdf:Class	;
+	rdfs:label	"so"	.
 
-local:forwards_service	rdfs:label	"forwards service"	.
+local:do	a	rdf:Class	;
+	rdfs:label	"do"	.
 
-local:neighbor	rdfs:label	"neighbor"	.
+local:terms_of_estimated_semantic_gain	a	rdf:Class	;
+	rdfs:label	"terms of estimated semantic gain"	.
 
-local:mixed_bayesian_risk	rdfs:label	"mixed bayesian risk"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:risk	rdfs:label	"risk"	.
+local:service_agent	a	rdf:Class	;
+	rdfs:label	"service agent"	.
 
-local:forwards	rdfs:label	"forwards"	.
+local:agent	a	rdf:Class	;
+	rdfs:label	"agent"	.
 
-local:bayesian	rdfs:label	"bayesian"	.
+local:service	a	rdf:Class	;
+	rdfs:label	"service"	.
 
-local:bayesian_risk	rdfs:label	"bayesian risk"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:minimal_mixed_bayesian_risk	rdfs:label	"minimal mixed bayesian risk"	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	a	rdf:Class	;
+	rdfs:label	"averaged queryanswer behavior of each service agent neighbor peers and forwards service requests to those with minimal mixed bayesian risk of doing so in terms of estimated semantic gain"	.
 
-local:neighbor_peers	rdfs:label	"neighbor peers"	.
+local:forwards_service_requests	a	rdf:Class	;
+	rdfs:label	"forwards service requests"	.
 
-local:mixed_bayesian	rdfs:label	"mixed bayesian"	.
+local:minimal_mixed_bayesian_risk	a	rdf:Class	;
+	rdfs:label	"minimal mixed bayesian risk"	.
 
-local:agent_neighbor_peers	rdfs:label	"agent neighbor peers"	.
+local:service_agent_neighbor_peers	a	rdf:Class	;
+	rdfs:label	"service agent neighbor peers"	.
 
-local:peers	rdfs:label	"peers"	.
+local:queryanswer_behavior	a	rdf:Class	;
+	rdfs:label	"queryanswer behavior"	.
 
-local:minimal_mixed	rdfs:label	"minimal mixed"	.
+local:forwards_service	a	rdf:Class	;
+	rdfs:label	"forwards service"	.
 
-local:minimal_mixed_bayesian	rdfs:label	"minimal mixed bayesian"	.
+local:forwards	a	rdf:Class	;
+	rdfs:label	"forwards"	.
 
-local:forwards_service_requests	rdfs:label	"forwards service requests"	.
+local:mixed_bayesian_risk	a	rdf:Class	;
+	rdfs:label	"mixed bayesian risk"	.
 
-local:commmunication_cost	rdfs:label	"commmunication cost"	.
+local:risk	a	rdf:Class	;
+	rdfs:label	"risk"	.
 
-local:cost	rdfs:label	"cost"	.
+local:service_agent_neighbor	a	rdf:Class	;
+	rdfs:label	"service agent neighbor"	.
 
-local:commmunication	rdfs:label	"commmunication"	.
+local:peers	a	rdf:Class	;
+	rdfs:label	"peers"	.
 
-local:requests	rdfs:label	"requests"	.
+local:agent_neighbor	a	rdf:Class	;
+	rdfs:label	"agent neighbor"	.
 
-local:mixed	rdfs:label	"mixed"	.
+local:minimal_mixed_bayesian	a	rdf:Class	;
+	rdfs:label	"minimal mixed bayesian"	.
 
-local:queryanswer_behavior	rdfs:label	"query-answer behavior"	.
+local:minimal_mixed	a	rdf:Class	;
+	rdfs:label	"minimal mixed"	.
 
-local:behavior	rdfs:label	"behavior"	.
+local:requests	a	rdf:Class	;
+	rdfs:label	"requests"	.
 
-local:queryanswer	rdfs:label	"query-answer"	.
+local:neighbor	a	rdf:Class	;
+	rdfs:label	"neighbor"	.
 
-local:minimal	rdfs:label	"minimal"	.
+local:neighbor_peers	a	rdf:Class	;
+	rdfs:label	"neighbor peers"	.
 
-local:so_doing	rdfs:label	"so doing"	.
+local:minimal	a	rdf:Class	;
+	rdfs:label	"minimal"	.
 
-local:doing	rdfs:label	"doing"	.
+local:mixed_bayesian	a	rdf:Class	;
+	rdfs:label	"mixed bayesian"	.
 
-local:queryanswer_behavior_of_service_agent_neighbor_peers	rdfs:label	"query-answer behavior of service agent neighbor peers"	.
+local:bayesian	a	rdf:Class	;
+	rdfs:label	"bayesian"	.
 
-local:forwards_service_requests_to_those	rdfs:label	"forwards service requests to those"	.
+local:behavior	a	rdf:Class	;
+	rdfs:label	"behavior"	.
 
-local:those	rdfs:label	"those"	.
+local:service_requests	a	rdf:Class	;
+	rdfs:label	"service requests"	.
 
-local:those_with_minimal_mixed_bayesian_risk	rdfs:label	"those with minimal mixed bayesian risk"	.
+local:agent_neighbor_peers	a	rdf:Class	;
+	rdfs:label	"agent neighbor peers"	.
 
-local:so_doing_in_terms	rdfs:label	"so doing in terms"	.
+local:bayesian_risk	a	rdf:Class	;
+	rdfs:label	"bayesian risk"	.
 
-local:terms	rdfs:label	"terms"	.
+local:mixed	a	rdf:Class	;
+	rdfs:label	"mixed"	.
 
-local:terms_of_commmunication_cost	rdfs:label	"terms of commmunication cost"	.
+local:queryanswer	a	rdf:Class	;
+	rdfs:label	"queryanswer"	.
 
-local:averaged	rdfs:label	"averaged"	.
+local:so_doing	a	rdf:Class	;
+	rdfs:label	"so doing"	.
 
-local:so	rdfs:label	"so"	.
+local:doing	a	rdf:Class	;
+	rdfs:label	"doing"	.
 
-local:semantic_gain	rdfs:label	"semantic gain"	.
+local:queryanswer_behavior_of_service_agent_neighbor_peers	a	rdf:Class	;
+	rdfs:label	"queryanswer behavior of service agent neighbor peers"	.
 
-local:gain	rdfs:label	"gain"	.
+local:queryanswer_behavior_of_service_agent_neighbor_peers_of_forwards_service_requests	a	rdf:Class	;
+	rdfs:label	"queryanswer behavior of service agent neighbor peers of forwards service requests"	.
 
-local:estimated_semantic_gain	rdfs:label	"estimated semantic gain"	.
+local:forwards_service_requests_to_those	a	rdf:Class	;
+	rdfs:label	"forwards service requests to those"	.
 
-local:terms_of_estimated_semantic_gain	rdfs:label	"terms of estimated semantic gain"	.
+local:those	a	rdf:Class	;
+	rdfs:label	"those"	.
 
-local:estimated	rdfs:label	"estimated"	.
+local:those_with_minimal_mixed_bayesian_risk	a	rdf:Class	;
+	rdfs:label	"those with minimal mixed bayesian risk"	.
 
-local:experimental_evaluation	rdfs:label	"experimental evaluation"	.
+local:so_doing_in_terms	a	rdf:Class	;
+	rdfs:label	"so doing in terms"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:dynamically	a	rdf:Class	;
+	rdfs:label	"dynamically"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:terms_of_commmunication_cost	a	rdf:Class	;
+	rdfs:label	"terms of commmunication cost"	.
 
-local:shows	rdfs:label	"shows"	.
+local:commmunication_cost	a	rdf:Class	;
+	rdfs:label	"commmunication cost"	.
 
-local:high_precision	rdfs:label	"high precision"	.
+local:commmunication	a	rdf:Class	;
+	rdfs:label	"commmunication"	.
 
-local:precision	rdfs:label	"precision"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:reasonably_high_precision	rdfs:label	"reasonably high precision"	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	a	rdf:Class	;
+	rdfs:label	"averaged queryanswer behavior of each service agent neighbor peers and forwards service requests to those with minimal mixed bayesian risk of doing so in terms of commmunication cost"	.
 
-local:reasonably_high	rdfs:label	"reasonably high"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:rs2d_search_mechanism	rdfs:label	"rs2d search mechanism"	.
+local:call	a	rdf:Class	;
+	rdfs:label	"call"	.
 
-local:mechanism	rdfs:label	"mechanism"	.
+local:rs2d_v1	a	rdf:Class	;
+	rdfs:label	"rs2d v1"	.
 
-local:relevant_approaches	rdfs:label	"relevant approaches"	.
+local:v1	a	rdf:Class	;
+	rdfs:label	"v1"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:rs2d_search	rdfs:label	"rs2d search"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:search_mechanism	rdfs:label	"search mechanism"	.
+local:approach_to_adaptive_probabilistic_search_for_semantic_web_services	a	rdf:Class	;
+	rdfs:label	"approach to adaptive probabilistic search for semantic web services"	.
 
-local:high	rdfs:label	"high"	.
+local:probabilistic_search	a	rdf:Class	;
+	rdfs:label	"probabilistic search"	.
 
-local:reasonably	rdfs:label	"reasonably"	.
+local:semantic_web_services	a	rdf:Class	;
+	rdfs:label	"semantic web services"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:web_services	a	rdf:Class	;
+	rdfs:label	"web services"	.
 
-local:existing_relevant_approaches	rdfs:label	"existing relevant approaches"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:other_existing_relevant_approaches	rdfs:label	"other existing relevant approaches"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:robust_with_high_precision	rdfs:label	"robust with high precision"	.
+local:services	a	rdf:Class	;
+	rdfs:label	"services"	.
 
-local:robust	rdfs:label	"robust"	.
+local:probabilistic	a	rdf:Class	;
+	rdfs:label	"probabilistic"	.
 
-local:existing	rdfs:label	"existing"	.
+local:adaptive_probabilistic_search	a	rdf:Class	;
+	rdfs:label	"adaptive probabilistic search"	.
 
-local:robust_against_changes	rdfs:label	"robust against changes"	.
+local:approach_to_adaptive_probabilistic_search	a	rdf:Class	;
+	rdfs:label	"approach to adaptive probabilistic search"	.
 
-local:changes	rdfs:label	"changes"	.
+local:adaptive_probabilistic_search_for_semantic_web_services	a	rdf:Class	;
+	rdfs:label	"adaptive probabilistic search for semantic web services"	.
 
-local:changes_in_network	rdfs:label	"changes in network"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:network	rdfs:label	"network"	.
+local:unstructured_p2p_networks	a	rdf:Class	;
+	rdfs:label	"unstructured p2p networks"	.
 
-local:compared	rdfs:label	"compared"	.
+local:unstructured_p2p	a	rdf:Class	;
+	rdfs:label	"unstructured p2p"	.
 
-#### Properties ####
+local:p2p_networks	a	rdf:Class	;
+	rdfs:label	"p2p networks"	.
+
+local:p2p	a	rdf:Class	;
+	rdfs:label	"p2p"	.
+
+local:networks	a	rdf:Class	;
+	rdfs:label	"networks"	.
+
+local:unstructured	a	rdf:Class	;
+	rdfs:label	"unstructured"	.
 
 #### Mapped Relations ####
 
-cso:semantic_web_services	rdfs:label	"semantic web services"	.
-local:bayesian	owl:sameAs	cso:bayesian	.
-cso:bayesian	rdfs:label	"bayesian"	.
 local:unstructured_p2p_networks	owl:sameAs	cso:unstructured_p2p_network	.
-local:semantic	owl:sameAs	cso:semantics	.
 cso:unstructured_p2p_network	rdfs:label	"unstructured p2p networks"	.
-cso:communication_cost	rdfs:label	"commmunication cost"	.
+local:bayesian	owl:sameAs	cso:bayesian	.
 local:commmunication_cost	owl:sameAs	cso:communication_cost	.
+local:semantic	owl:sameAs	cso:semantics	.
 local:semantic_web_services	owl:sameAs	cso:semantic_web_services	.
+cso:bayesian	rdfs:label	"bayesian"	.
 cso:semantics	rdfs:label	"semantic"	.
+cso:communication_cost	rdfs:label	"commmunication cost"	.
+cso:semantic_web_services	rdfs:label	"semantic web services"	.
 
 #### Relations ####
 
-local:those_with_minimal_mixed_bayesian_risk	local:those_with	local:minimal_mixed_bayesian_risk	.
-local:unstructured_p2p_networks	rdfs:subClassOf	local:networks	.
-local:reasonably	rdfs:member	local:reasonably_high	.
-local:mixed_bayesian	rdfs:subClassOf	local:bayesian	.
-local:semantic_web	rdfs:member	local:semantic_web_services	.
-local:terms_of_commmunication_cost	local:terms_of	local:commmunication_cost	.
-local:called	vn.role:Agent	local:approach	.
-local:adaptive_probabilistic_search	rdfs:subClassOf	local:probabilistic_search	.
-local:service	rdfs:member	local:service_requests	.
-local:semantic_web_services	rdfs:subClassOf	local:services	.
-local:adaptive_probabilistic_search_for_semantic_web_services	local:for_semanticwebservices	local:adaptive_probabilistic_search	.
-local:minimal	rdfs:member	local:minimal_mixed	.
-local:forwards_service_requests	rdfs:subClassOf	local:service_requests	.
-local:called	vn.role:Theme	local:rs2d_v1	.
-local:semantic_gain	rdfs:subClassOf	local:gain	.
-local:minimal_mixed	rdfs:subClassOf	local:mixed	.
-local:doing	local:AM-PNC	local:terms_of_commmunication_cost	.
-local:unstructured_p2p	rdfs:member	local:unstructured_p2p_networks	.
-local:service_requests	rdfs:subClassOf	local:requests	.
-local:minimal_mixed_bayesian	rdfs:subClassOf	local:bayesian	.
-local:web_services	rdfs:subClassOf	local:services	.
-local:rs2d_search_mechanism	rdfs:subClassOf	local:mechanism	.
-local:forwards_service	rdfs:member	local:forwards_service_requests	.
-local:adaptive_probabilistic_search_for_semantic_web_services	local:adaptiveprobabilisticsearch_for	local:semantic_web_services	.
-local:relevant	rdfs:member	local:relevant_approaches	.
-local:other_existing_relevant_approaches	rdfs:subClassOf	local:existing_relevant_approaches	.
-local:service_agent_neighbor_peers	rdfs:subClassOf	local:peers	.
-local:present	vn.role:Agent	local:we	.
-local:mixed_bayesian_risk	rdfs:subClassOf	local:bayesian_risk	.
-local:p2p_networks	rdfs:subClassOf	local:networks	.
-local:unstructured_p2p_networks	rdfs:subClassOf	local:p2p_networks	.
-local:reasonably_high_precision	rdfs:subClassOf	local:precision	.
-local:forwards_service_requests_to_those	local:forwardsservicerequests_to	local:those	.
-local:p2p	rdfs:member	local:p2p_networks	.
-local:neighbor	rdfs:member	local:neighbor_peers	.
-local:robust_with_high_precision	local:with_highprecision	local:robust	.
-local:relevant_approaches	rdfs:subClassOf	local:approaches	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:semantic_web_services	rdfs:subClassOf	local:web_services	.
+local:queryanswer_behavior_of_service_agent_neighbor_peers_of_forwards_service_requests	rdfs:member	local:queryanswer_behavior_of_service_agent_neighbor_peers	.
+local:s3.1	local:AM-PNC	local:terms_of_estimated_semantic_gain	.
+local:s5	rdf:object	local:rs2d_search_mechanism_is_robust_with_reasonably_high_precision_compared_to_other_existing_relevant_approaches	.
 local:minimal_mixed_bayesian_risk	rdfs:subClassOf	local:mixed_bayesian_risk	.
-local:doing	local:AM-PNC	local:terms_of_estimated_semantic_gain	.
-local:forwards_service_requests_to_those	local:to_those	local:forwards_service_requests	.
-local:existing_relevant_approaches	rdfs:subClassOf	local:relevant_approaches	.
-local:estimated	vn.role:Theme	local:semantic_gain	.
-local:rs2d_v1	rdfs:subClassOf	local:v1	.
-local:terms_of_estimated_semantic_gain	local:terms_of	local:estimated_semantic_gain	.
-local:search	rdfs:member	local:search_mechanism	.
-local:semantic	rdfs:member	local:semantic_gain	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:learns	vn.role:Theme	local:averaged	.
-local:those_with_minimal_mixed_bayesian_risk	local:with_minimalmixedbayesianrisk	local:those	.
-local:search_mechanism	rdfs:subClassOf	local:mechanism	.
-local:adaptive_probabilistic_search_for_semantic_web_services_in_unstructured_p2p_networks	local:in_unstructuredp2pnetworks	local:adaptive_probabilistic_search_for_semantic_web_services	.
-local:shows	vn.role:Agent	local:experimental_evaluation	.
-local:service_agent_neighbor	rdfs:member	local:service_agent_neighbor_peers	.
-local:probabilistic	rdfs:member	local:probabilistic_search	.
-local:so_doing	rdfs:subClassOf	local:doing	.
-local:service_agent	rdfs:subClassOf	local:agent	.
-local:service	rdfs:member	local:service_agent	.
-local:service_agent	rdfs:member	local:service_agent_neighbor	.
-local:mixed	rdfs:member	local:mixed_bayesian	.
-local:neighbor_peers	rdfs:subClassOf	local:peers	.
-local:forwards	rdfs:member	local:forwards_service	.
-local:rs2d	rdfs:member	local:rs2d_search	.
-local:minimal_mixed	rdfs:member	local:minimal_mixed_bayesian	.
-local:doing	vn.role:object	local:so	.
-local:estimated_semantic_gain	rdfs:subClassOf	local:semantic_gain	.
-local:shows	vn.role:Theme	local:robust_against_changes	.
-local:queryanswer_behavior	rdfs:subClassOf	local:behavior	.
-local:minimal_mixed_bayesian	rdfs:member	local:minimal_mixed_bayesian_risk	.
-local:existing	vn.role:Location	local:relevant_approaches	.
-local:mixed_bayesian	rdfs:member	local:mixed_bayesian_risk	.
-local:agent	rdfs:member	local:agent_neighbor	.
-local:compared	vn.role:Agent	local:existing_relevant_approaches	.
-local:so_doing_in_terms	local:in_terms	local:so_doing	.
-local:high_precision	rdfs:subClassOf	local:precision	.
-local:mixed_bayesian_risk	rdfs:subClassOf	local:risk	.
-local:rs2d_search	rdfs:member	local:rs2d_search_mechanism	.
-local:service_agent_neighbor	rdfs:subClassOf	local:neighbor	.
-local:bayesian_risk	rdfs:subClassOf	local:risk	.
-local:robust_against_changes	local:robust_against	local:changes	.
-local:rs2d	rdfs:member	local:rs2d_v1	.
-local:forwards_service	rdfs:subClassOf	local:service	.
-local:queryanswer_behavior_of_service_agent_neighbor_peers	local:query-answerbehavior_of	local:service_agent_neighbor_peers	.
-local:bayesian	rdfs:member	local:bayesian_risk	.
-local:agent_neighbor	rdfs:subClassOf	local:neighbor	.
-local:commmunication_cost	rdfs:subClassOf	local:cost	.
-local:queryanswer_behavior_of_service_agent_neighbor_peers	local:of_serviceagentneighborpeers	local:queryanswer_behavior	.
-local:learns	vn.role:Agent	local:service_agent	.
-local:high	rdfs:member	local:high_precision	.
-local:reasonably_high	rdfs:member	local:reasonably_high_precision	.
-local:compared	vn.role:Patient2	local:changes_in_network	.
-local:service_agent_neighbor_peers	rdfs:subClassOf	local:agent_neighbor_peers	.
-local:so_doing_in_terms	local:sodoing_in	local:terms	.
-local:shows	vn.role:Theme	local:robust_with_high_precision	.
-local:present	local:AM-LOC	local:paper	.
-local:experimental	rdfs:member	local:experimental_evaluation	.
-local:robust_with_high_precision	local:robust_with	local:high_precision	.
-local:learns	local:AM-MNR	local:dynamically	.
-local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
-local:reasonably_high	rdfs:subClassOf	local:high	.
-local:web	rdfs:member	local:web_services	.
-local:agent_neighbor_peers	rdfs:subClassOf	local:peers	.
+local:service_agent	rdfs:member	local:service	.
+local:commmunication_cost	rdfs:member	local:commmunication	.
+local:rs2d_search_mechanism_is_robust_against_changes_in_the_network_compared_to_other_existing_relevant_approaches	rdfs:member	local:changes	.
 local:minimal_mixed_bayesian_risk	rdfs:subClassOf	local:risk	.
-local:unstructured_p2p	rdfs:subClassOf	local:p2p	.
-local:commmunication	rdfs:member	local:commmunication_cost	.
-local:terms_of_commmunication_cost	local:of_commmunicationcost	local:terms	.
-local:terms_of_estimated_semantic_gain	local:of_estimatedsemanticgain	local:terms	.
-local:changes_in_network	local:changes_in	local:network	.
-local:unstructured	rdfs:member	local:unstructured_p2p	.
-local:agent_neighbor_peers	rdfs:subClassOf	local:neighbor_peers	.
-local:approach_to_adaptive_probabilistic_search	local:to_adaptiveprobabilisticsearch	local:approach	.
-local:changes_in_network	local:in_network	local:changes	.
-local:forwards_service_requests	rdfs:subClassOf	local:requests	.
-local:rs2d_search	rdfs:subClassOf	local:search	.
-local:adaptive_probabilistic_search_for_semantic_web_services_in_unstructured_p2p_networks	local:adaptiveprobabilisticsearchforsemanticwebservices_in	local:unstructured_p2p_networks	.
-local:present	vn.role:Theme	local:approach_to_adaptive_probabilistic_search	.
-local:queryanswer	rdfs:member	local:queryanswer_behavior	.
-local:robust_against_changes	local:against_changes	local:robust	.
+local:mixed_bayesian	rdfs:member	local:mixed	.
+local:terms_of_commmunication_cost	rdfs:member	local:commmunication_cost	.
+local:s4	rdf:subject	local:experimental_evaluation	.
+local:reasonably_high_precision	rdfs:subClassOf	local:precision	.
+local:mixed_bayesian_risk	rdfs:subClassOf	local:risk	.
+local:approach_to_adaptive_probabilistic_search	rdfs:member	local:approach	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	rdfs:member	local:queryanswer_behavior	.
+local:service_agent_neighbor_peers	rdfs:member	local:service_agent_neighbor	.
+local:s0	local:AM-LOC	local:unstructured_p2p_networks	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:rs2d_search_mechanism_is_robust_with_reasonably_high_precision_compared_to_other_existing_relevant_approaches	rdfs:member	local:relevant_approaches	.
+local:semantic_gain	rdfs:subClassOf	local:gain	.
+local:service_agent_neighbor	rdfs:member	local:service_agent	.
+local:s1	rdf:predicate	local:call	.
+local:so_doing_in_terms	rdfs:member	local:so_doing	.
+local:service_agent_neighbor	rdfs:subClassOf	local:neighbor	.
+local:s2	rdf:predicate	local:learn	.
+local:forwards_service	rdfs:member	local:forwards	.
+local:s5	rdf:subject	local:experimental_evaluation	.
 local:rs2d_search_mechanism	rdfs:subClassOf	local:search_mechanism	.
+local:mixed_bayesian_risk	rdfs:member	local:mixed_bayesian	.
+local:queryanswer_behavior_of_service_agent_neighbor_peers	rdfs:member	local:queryanswer_behavior	.
+local:web_services	rdfs:member	local:web	.
 local:probabilistic_search	rdfs:subClassOf	local:search	.
-local:agent_neighbor	rdfs:member	local:agent_neighbor_peers	.
-local:approach_to_adaptive_probabilistic_search	local:approach_to	local:adaptive_probabilistic_search	.
+local:unstructured_p2p	rdfs:member	local:unstructured	.
+local:terms_of_estimated_semantic_gain	rdfs:member	local:s3.2	.
+local:changes_in_network	rdfs:member	local:changes	.
+local:agent_neighbor	rdfs:member	local:agent	.
+local:queryanswer_behavior_of_service_agent_neighbor_peers_of_forwards_service_requests	rdfs:member	local:forwards_service_requests	.
+local:forwards_service_requests_to_those	rdfs:member	local:forwards_service_requests	.
+local:robust_against_changes	rdfs:member	local:robust	.
+local:forwards_service_requests_to_those	rdfs:member	local:those	.
+local:adaptive_probabilistic_search_for_semantic_web_services	rdfs:member	local:semantic_web_services	.
+local:s3	local:AM-MNR	local:dynamically	.
+local:experimental_evaluation	rdfs:member	local:experimental	.
+local:s3.2	rdf:predicate	local:estimate	.
+local:s2.1	local:AM-PNC	local:terms_of_commmunication_cost	.
+local:terms_of_estimated_semantic_gain	rdfs:member	local:terms	.
+local:rs2d_search_mechanism_is_robust_against_changes_in_the_network_compared_to_other_existing_relevant_approaches	rdfs:member	local:network	.
+local:rs2d_v1	rdfs:subClassOf	local:v1	.
+local:approach_to_adaptive_probabilistic_search_for_semantic_web_services	rdfs:member	local:semantic_web_services	.
+local:relevant_approaches	rdfs:subClassOf	local:approaches	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:adaptive_probabilistic_search_for_semantic_web_services	rdfs:member	local:adaptive_probabilistic_search	.
+local:unstructured_p2p_networks	rdfs:subClassOf	local:p2p_networks	.
+local:s3.2	rdf:subject	local:semantic_gain	.
+local:neighbor_peers	rdfs:subClassOf	local:peers	.
+local:rs2d_search_mechanism_is_robust_against_changes_in_the_network_compared_to_other_existing_relevant_approaches	rdfs:member	local:relevant_approaches	.
+local:rs2d_search_mechanism_is_robust_with_reasonably_high_precision_compared_to_other_existing_relevant_approaches	rdfs:member	local:reasonably_high_precision	.
+local:reasonably_high	rdfs:subClassOf	local:high	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	rdfs:member	local:service_agent_neighbor_peers	.
+local:high_precision	rdfs:subClassOf	local:precision	.
+local:search_mechanism	rdfs:subClassOf	local:mechanism	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	rdfs:member	local:terms	.
+local:rs2d_search_mechanism	rdfs:subClassOf	local:mechanism	.
+local:reasonably_high	rdfs:member	local:reasonably	.
+local:semantic_gain	rdfs:member	local:semantic	.
+local:p2p_networks	rdfs:member	local:p2p	.
+local:p2p_networks	rdfs:subClassOf	local:networks	.
+local:s3.2	rdfs:subClassOf	local:semantic_gain	.
+local:minimal_mixed	rdfs:member	local:minimal	.
+local:s5.1	rdf:predicate	local:exist	.
+local:other_existing_relevant_approaches	rdfs:subClassOf	local:s5.1	.
+local:rs2d_search_mechanism_is_robust_against_changes_in_the_network_compared_to_other_existing_relevant_approaches	rdfs:member	local:rs2d_search_mechanism	.
+local:robust_against_changes	rdfs:member	local:changes	.
+local:s4.2	rdf:subject	local:relevant_approaches	.
+local:s3	rdf:object	local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	.
+local:s0	local:AM-LOC	local:paper	.
+local:forwards_service	rdfs:subClassOf	local:service	.
+local:s0	rdf:subject	local:we	.
+local:terms_of_estimated_semantic_gain	rdfs:member	local:semantic_gain	.
+local:s5	rdf:predicate	local:show	.
+local:approach_to_adaptive_probabilistic_search_for_semantic_web_services	rdfs:member	local:approach	.
+local:changes_in_the_network	rdfs:member	local:network	.
+local:s5.1	rdfs:subClassOf	local:relevant_approaches	.
+local:terms_of_commmunication_cost	rdfs:member	local:terms	.
+local:s4.2	rdf:predicate	local:exist	.
+local:rs2d_search_mechanism	rdfs:member	local:rs2d_search	.
+local:queryanswer_behavior	rdfs:member	local:queryanswer	.
+local:semantic_web_services	rdfs:subClassOf	local:web_services	.
+local:rs2d_search	rdfs:subClassOf	local:search	.
+local:s4.1	rdf:predicate	local:compare	.
+local:bayesian_risk	rdfs:member	local:bayesian	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:robust_with_high_precision	rdfs:member	local:high_precision	.
+local:s0	rdf:object	local:approach_to_adaptive_probabilistic_search_for_semantic_web_services	.
+local:s2.1	rdf:predicate	local:do	.
+local:agent_neighbor_peers	rdfs:subClassOf	local:neighbor_peers	.
+local:other_existing_relevant_approaches	rdfs:subClassOf	local:s4.2	.
+local:s5.1	rdf:subject	local:relevant_approaches	.
+local:unstructured_p2p	rdfs:subClassOf	local:p2p	.
+local:s1	rdf:object	local:rs2d_v1	.
+local:rs2d_v1	rdfs:member	local:rs2d	.
+local:s3.1	rdf:predicate	local:do	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	rdfs:member	local:queryanswer_behavior	.
+local:search_mechanism	rdfs:member	local:search	.
+local:s4.2	rdfs:subClassOf	local:relevant_approaches	.
+local:changes_in_the_network	rdfs:member	local:changes	.
+local:s2	rdf:object	local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	.
+local:changes_in_network	rdfs:member	local:network	.
+local:minimal_mixed_bayesian	rdfs:member	local:minimal_mixed	.
+local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
+local:service_agent	rdfs:subClassOf	local:agent	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	rdfs:member	local:forwards_service_requests	.
+local:s2	local:AM-MNR	local:dynamically	.
+local:semantic_web_services	rdfs:member	local:semantic_web	.
+local:minimal_mixed_bayesian_risk	rdfs:member	local:minimal_mixed_bayesian	.
+local:agent_neighbor_peers	rdfs:member	local:agent_neighbor	.
+local:forwards_service_requests	rdfs:member	local:forwards_service	.
+local:unstructured_p2p_networks	rdfs:subClassOf	local:networks	.
+local:reasonably_high_precision	rdfs:member	local:reasonably_high	.
+local:s3	rdf:subject	local:service_agent	.
+local:s4	rdf:predicate	local:show	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	rdfs:member	local:forwards_service_requests	.
+local:queryanswer_behavior_of_service_agent_neighbor_peers	rdfs:member	local:service_agent_neighbor_peers	.
+local:s0	rdf:predicate	local:present	.
+local:forwards_service_requests	rdfs:subClassOf	local:service_requests	.
+local:commmunication_cost	rdfs:subClassOf	local:cost	.
+local:s3	rdf:predicate	local:learn	.
+local:neighbor_peers	rdfs:member	local:neighbor	.
+local:service_requests	rdfs:member	local:service	.
+local:forwards_service_requests	rdfs:subClassOf	local:requests	.
+local:unstructured_p2p_networks	rdfs:member	local:unstructured_p2p	.
+local:s1	rdf:subject	local:approach	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	rdfs:member	local:service_agent_neighbor_peers	.
+local:s2	rdf:subject	local:service_agent	.
+local:rs2d_search_mechanism_is_robust_with_reasonably_high_precision_compared_to_other_existing_relevant_approaches	rdfs:member	local:rs2d_search_mechanism	.
+local:probabilistic_search	rdfs:member	local:probabilistic	.
+local:so_doing_in_terms	rdfs:member	local:terms	.
+local:rs2d_search	rdfs:member	local:rs2d	.
+local:so_doing	rdfs:subClassOf	local:doing	.
+local:minimal_mixed_bayesian	rdfs:subClassOf	local:bayesian	.
+local:high_precision	rdfs:member	local:high	.
+local:semantic_web_services	rdfs:subClassOf	local:services	.
+local:service_agent_neighbor_peers	rdfs:subClassOf	local:peers	.
+local:bayesian_risk	rdfs:subClassOf	local:risk	.
+local:agent_neighbor_peers	rdfs:subClassOf	local:peers	.
+local:adaptive_probabilistic_search	rdfs:subClassOf	local:probabilistic_search	.
+local:s4	rdf:object	local:rs2d_search_mechanism_is_robust_against_changes_in_the_network_compared_to_other_existing_relevant_approaches	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	rdfs:member	local:commmunication_cost	.
+local:those_with_minimal_mixed_bayesian_risk	rdfs:member	local:those	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_commmunication_cost	rdfs:member	local:minimal_mixed_bayesian_risk	.
+local:robust_with_high_precision	rdfs:member	local:robust	.
+local:service_agent_neighbor_peers	rdfs:subClassOf	local:agent_neighbor_peers	.
+local:mixed_bayesian_risk	rdfs:subClassOf	local:bayesian_risk	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	rdfs:member	local:semantic_gain	.
+local:s3.1	rdf:subject	local:so	.
+local:relevant_approaches	rdfs:member	local:relevant	.
+local:s2.1	rdf:subject	local:so	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	rdfs:member	local:minimal_mixed_bayesian_risk	.
+local:queryanswer_behavior	rdfs:subClassOf	local:behavior	.
+local:minimal_mixed	rdfs:subClassOf	local:mixed	.
+local:service_requests	rdfs:subClassOf	local:requests	.
+local:mixed_bayesian	rdfs:subClassOf	local:bayesian	.
+local:approach_to_adaptive_probabilistic_search_for_semantic_web_services	rdfs:member	local:probabilistic_search	.
+local:s4.1	rdf:subject	local:changes_in_the_network	.
+local:approach_to_adaptive_probabilistic_search	rdfs:member	local:adaptive_probabilistic_search	.
+local:agent_neighbor	rdfs:subClassOf	local:neighbor	.
+local:those_with_minimal_mixed_bayesian_risk	rdfs:member	local:minimal_mixed_bayesian_risk	.
+local:averaged_queryanswer_behavior_of_each_service_agent_neighbor_peers_and_forwards_service_requests_to_those_with_minimal_mixed_bayesian_risk_of_doing_so_in_terms_of_estimated_semantic_gain	rdfs:member	local:terms	.
+local:s4.1	rdf:object	local:s4.2	.

@@ -1,329 +1,577 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"a large clinical data set"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we show our approach is practical"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we conducted a preliminary experiment to show our approach"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"we using a large clinical data"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"we approach using a large clinical data"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"we evaluate"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we conducted a preliminary experiment to evaluate we approach using a large clinical data"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a practical approach for conjunctive query answering can implemented with query"	.
+
+local:s3.3	a	rdf:Statement	;
+	rdfs:label	"any existing relational database management system do the abox data completion"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"existing relational database management system"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"leveraging any existing relational database management system to do the abox data completion"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"a practical approach for conjunctive query answering can implemented with low cost by leveraging any existing relational database management system to do the abox data completion"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"answering in a fragment of el namely acyclic el"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose a practical approach for conjunctive query answering in a fragment of el namely acyclic el"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"namely acyclic el that supports role inclusions"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"conjunctive query answering for el ontologies has recently drawn much attention as the description logic el captures the expressivity of many large ontologies in the biomedical domain"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"conjunctive query answering for el ontologies recently drawn much attention as the description logic el"	.
+
+
 #### Classes ####
 
-local:el	rdfs:label	"el"	.
+local:large_clinical_data	a	rdf:Class	;
+	rdfs:label	"large clinical data"	.
 
-local:el_ontologies	rdfs:label	"el ontologies"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:large_clinical	a	rdf:Class	;
+	rdfs:label	"large clinical"	.
 
-local:conjunctive	rdfs:label	"conjunctive"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:conjunctive_query	rdfs:label	"conjunctive query"	.
+local:clinical_data	a	rdf:Class	;
+	rdfs:label	"clinical data"	.
 
-local:query	rdfs:label	"query"	.
+local:clinical	a	rdf:Class	;
+	rdfs:label	"clinical"	.
 
-local:conjunctive_query_answering	rdfs:label	"conjunctive query answering"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:answering	rdfs:label	"answering"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:answering_for_el_ontologies	rdfs:label	"answering for el ontologies"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:drawn	rdfs:label	"drawn"	.
+local:approach_is_practical	a	rdf:Class	;
+	rdfs:label	"approach is practical"	.
 
-local:recently	rdfs:label	"recently"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:much	rdfs:label	"much"	.
+local:preliminary_experiment	a	rdf:Class	;
+	rdfs:label	"preliminary experiment"	.
 
-local:much_attention	rdfs:label	"much attention"	.
+local:experiment	a	rdf:Class	;
+	rdfs:label	"experiment"	.
 
-local:attention	rdfs:label	"attention"	.
+local:preliminary	a	rdf:Class	;
+	rdfs:label	"preliminary"	.
 
-local:logic_el	rdfs:label	"logic el"	.
+local:show_our_approach	a	rdf:Class	;
+	rdfs:label	"show our approach"	.
 
-local:description_logic_el	rdfs:label	"description logic el"	.
+local:our_approach	a	rdf:Class	;
+	rdfs:label	"our approach"	.
 
-local:description_logic	rdfs:label	"description logic"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:logic	rdfs:label	"logic"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:description	rdfs:label	"description"	.
+local:using_a_large_clinical_data	a	rdf:Class	;
+	rdfs:label	"using a large clinical data"	.
 
-local:recently_drawn	rdfs:label	"recently drawn"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:has_recently_drawn	rdfs:label	"has recently drawn"	.
+local:evaluate_we_approach_using_a_large_clinical_data	a	rdf:Class	;
+	rdfs:label	"evaluate we approach using a large clinical data"	.
 
-local:has_recently_drawn_as_description_logic_el	rdfs:label	"has recently drawn as description logic el"	.
+local:practical_approach_for_conjunctive_query_answering	a	rdf:Class	;
+	rdfs:label	"practical approach for conjunctive query answering"	.
 
-local:captures	rdfs:label	"captures"	.
+local:practical_approach	a	rdf:Class	;
+	rdfs:label	"practical approach"	.
 
-local:many_large	rdfs:label	"many large"	.
+local:conjunctive_query_answering	a	rdf:Class	;
+	rdfs:label	"conjunctive query answering"	.
 
-local:many_large_ontologies	rdfs:label	"many large ontologies"	.
+local:conjunctive_query	a	rdf:Class	;
+	rdfs:label	"conjunctive query"	.
 
-local:biomedical_domain	rdfs:label	"biomedical domain"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:domain	rdfs:label	"domain"	.
+local:conjunctive	a	rdf:Class	;
+	rdfs:label	"conjunctive"	.
 
-local:large_ontologies	rdfs:label	"large ontologies"	.
+local:practical	a	rdf:Class	;
+	rdfs:label	"practical"	.
 
-local:biomedical	rdfs:label	"biomedical"	.
+local:query_answering	a	rdf:Class	;
+	rdfs:label	"query answering"	.
 
-local:large	rdfs:label	"large"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-local:many	rdfs:label	"many"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:expressivity_of_many_large_ontologies	rdfs:label	"expressivity of many large ontologies"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:expressivity	rdfs:label	"expressivity"	.
+local:existing_relational_database_management_system	a	rdf:Class	;
+	rdfs:label	"existing relational database management system"	.
 
-local:expressivity_of_many_large_ontologies_in_biomedical_domain	rdfs:label	"expressivity of many large ontologies in biomedical domain"	.
+local:relational_database_management	a	rdf:Class	;
+	rdfs:label	"relational database management"	.
 
-local:acyclic_el	rdfs:label	"acyclic el"	.
+local:management	a	rdf:Class	;
+	rdfs:label	"management"	.
 
-local:namely_acyclic	rdfs:label	"namely acyclic"	.
+local:management_system	a	rdf:Class	;
+	rdfs:label	"management system"	.
 
-local:acyclic	rdfs:label	"acyclic"	.
+local:relational_database	a	rdf:Class	;
+	rdfs:label	"relational database"	.
 
-local:namely_acyclic_el	rdfs:label	"namely acyclic el"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:namely	rdfs:label	"namely"	.
+local:database_management	a	rdf:Class	;
+	rdfs:label	"database management"	.
 
-local:supports	rdfs:label	"supports"	.
+local:database	a	rdf:Class	;
+	rdfs:label	"database"	.
 
-local:role	rdfs:label	"role"	.
+local:relational_database_management_system	a	rdf:Class	;
+	rdfs:label	"relational database management system"	.
 
-local:role_inclusions	rdfs:label	"role inclusions"	.
+local:database_management_system	a	rdf:Class	;
+	rdfs:label	"database management system"	.
 
-local:inclusions	rdfs:label	"inclusions"	.
+local:relational	a	rdf:Class	;
+	rdfs:label	"relational"	.
 
-local:propose	rdfs:label	"propose"	.
+local:do	a	rdf:Class	;
+	rdfs:label	"do"	.
 
-local:paper	rdfs:label	"paper"	.
+local:abox_data_completion	a	rdf:Class	;
+	rdfs:label	"abox data completion"	.
 
-local:we	rdfs:label	"we"	.
+local:abox_data	a	rdf:Class	;
+	rdfs:label	"abox data"	.
 
-local:query_answering	rdfs:label	"query answering"	.
+local:abox	a	rdf:Class	;
+	rdfs:label	"abox"	.
 
-local:practical	rdfs:label	"practical"	.
+local:data_completion	a	rdf:Class	;
+	rdfs:label	"data completion"	.
 
-local:practical_approach	rdfs:label	"practical approach"	.
+local:completion	a	rdf:Class	;
+	rdfs:label	"completion"	.
 
-local:approach	rdfs:label	"approach"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:practical_approach_for_conjunctive_query_answering	rdfs:label	"practical approach for conjunctive query answering"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:fragment_of_el	rdfs:label	"fragment of el"	.
+local:low_cost_by_leveraging_any_existing_relational_database_management_system_to_do_the_abox_data_completion	a	rdf:Class	;
+	rdfs:label	"low cost by leveraging any existing relational database management system to do the abox data completion"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:low_cost	a	rdf:Class	;
+	rdfs:label	"low cost"	.
 
-local:fragment_of_el_acyclic_el	rdfs:label	"fragment of el acyclic el"	.
+local:low	a	rdf:Class	;
+	rdfs:label	"low"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:can	rdfs:label	"can"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:relational_database_management	rdfs:label	"relational database management"	.
+local:fragment_of_el_namely_acyclic_el	a	rdf:Class	;
+	rdfs:label	"fragment of el namely acyclic el"	.
 
-local:relational_database_management_system	rdfs:label	"relational database management system"	.
+local:el	a	rdf:Class	;
+	rdfs:label	"el"	.
 
-local:data_completion	rdfs:label	"data completion"	.
+local:namely_acyclic_el	a	rdf:Class	;
+	rdfs:label	"namely acyclic el"	.
 
-local:completion	rdfs:label	"completion"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-local:abox	rdfs:label	"abox"	.
+local:acyclic_el	a	rdf:Class	;
+	rdfs:label	"acyclic el"	.
 
-local:abox_data	rdfs:label	"abox data"	.
+local:acyclic	a	rdf:Class	;
+	rdfs:label	"acyclic"	.
 
-local:management	rdfs:label	"management"	.
+local:namely_acyclic	a	rdf:Class	;
+	rdfs:label	"namely acyclic"	.
 
-local:management_system	rdfs:label	"management system"	.
+local:namely	a	rdf:Class	;
+	rdfs:label	"namely"	.
 
-local:relational_database	rdfs:label	"relational database"	.
+local:el_acyclic_el	a	rdf:Class	;
+	rdfs:label	"el acyclic el"	.
 
-local:database	rdfs:label	"database"	.
+local:fragment_of_el_acyclic_el	a	rdf:Class	;
+	rdfs:label	"fragment of el acyclic el"	.
 
-local:system	rdfs:label	"system"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:data	rdfs:label	"data"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:relational	rdfs:label	"relational"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:low	rdfs:label	"low"	.
+local:role_inclusions	a	rdf:Class	;
+	rdfs:label	"role inclusions"	.
 
-local:low_cost	rdfs:label	"low cost"	.
+local:inclusions	a	rdf:Class	;
+	rdfs:label	"inclusions"	.
 
-local:database_management	rdfs:label	"database management"	.
+local:role	a	rdf:Class	;
+	rdfs:label	"role"	.
 
-local:database_management_system	rdfs:label	"database management system"	.
+local:conjunctive_query_answering_for_el_ontologies_has_recently_drawn_much_attention_as_the_description_logic_el	a	rdf:Class	;
+	rdfs:label	"conjunctive query answering for el ontologies has recently drawn much attention as the description logic el"	.
 
-local:abox_data_completion	rdfs:label	"abox data completion"	.
+local:el_ontologies	a	rdf:Class	;
+	rdfs:label	"el ontologies"	.
 
-local:cost	rdfs:label	"cost"	.
+local:much_attention	a	rdf:Class	;
+	rdfs:label	"much attention"	.
 
-local:existing_relational_database_management_system	rdfs:label	"existing relational database management system"	.
+local:description_logic_el	a	rdf:Class	;
+	rdfs:label	"description logic el"	.
 
-local:leveraging	rdfs:label	"leveraging"	.
+local:attention	a	rdf:Class	;
+	rdfs:label	"attention"	.
 
-local:existing	rdfs:label	"existing"	.
+local:much	a	rdf:Class	;
+	rdfs:label	"much"	.
 
-local:do	rdfs:label	"do"	.
+local:description_logic	a	rdf:Class	;
+	rdfs:label	"description logic"	.
 
-local:conducted	rdfs:label	"conducted"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:preliminary_experiment	rdfs:label	"preliminary experiment"	.
+local:logic_el	a	rdf:Class	;
+	rdfs:label	"logic el"	.
 
-local:experiment	rdfs:label	"experiment"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:preliminary	rdfs:label	"preliminary"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:clinical_data	rdfs:label	"clinical data"	.
+local:recently_drawn	a	rdf:Class	;
+	rdfs:label	"recently drawn"	.
 
-local:large_clinical	rdfs:label	"large clinical"	.
+local:drawn	a	rdf:Class	;
+	rdfs:label	"drawn"	.
 
-local:large_clinical_data	rdfs:label	"large clinical data"	.
+local:has_recently_drawn	a	rdf:Class	;
+	rdfs:label	"has recently drawn"	.
 
-local:clinical	rdfs:label	"clinical"	.
+local:answering_for_el_ontologies	a	rdf:Class	;
+	rdfs:label	"answering for el ontologies"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:has_recently_drawn_as_description_logic_el	a	rdf:Class	;
+	rdfs:label	"has recently drawn as description logic el"	.
 
-local:using	rdfs:label	"using"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-local:our_approach	rdfs:label	"our approach"	.
+local:expressivity_of_many_large_ontologies_in_the_biomedical_domain	a	rdf:Class	;
+	rdfs:label	"expressivity of many large ontologies in the biomedical domain"	.
 
-local:show	rdfs:label	"show"	.
+local:expressivity	a	rdf:Class	;
+	rdfs:label	"expressivity"	.
 
-#### Properties ####
+local:biomedical_domain	a	rdf:Class	;
+	rdfs:label	"biomedical domain"	.
+
+local:many_large_ontologies	a	rdf:Class	;
+	rdfs:label	"many large ontologies"	.
+
+local:many_large	a	rdf:Class	;
+	rdfs:label	"many large"	.
+
+local:large_ontologies	a	rdf:Class	;
+	rdfs:label	"large ontologies"	.
+
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
+
+local:biomedical	a	rdf:Class	;
+	rdfs:label	"biomedical"	.
+
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
+
+local:expressivity_of_many_large_ontologies	a	rdf:Class	;
+	rdfs:label	"expressivity of many large ontologies"	.
+
+local:expressivity_of_many_large_ontologies_in_biomedical_domain	a	rdf:Class	;
+	rdfs:label	"expressivity of many large ontologies in biomedical domain"	.
+
+local:conjunctive_query_answering_for_el_ontologies	a	rdf:Class	;
+	rdfs:label	"conjunctive query answering for el ontologies"	.
+
+local:draw	a	rdf:Class	;
+	rdfs:label	"draw"	.
+
+local:much_attention_description_logic_el	a	rdf:Class	;
+	rdfs:label	"much attention description logic el"	.
+
+local:much_attention_description	a	rdf:Class	;
+	rdfs:label	"much attention description"	.
+
+local:attention_description_logic	a	rdf:Class	;
+	rdfs:label	"attention description logic"	.
+
+local:much_attention_description_logic	a	rdf:Class	;
+	rdfs:label	"much attention description logic"	.
+
+local:attention_description_logic_el	a	rdf:Class	;
+	rdfs:label	"attention description logic el"	.
+
+local:attention_description	a	rdf:Class	;
+	rdfs:label	"attention description"	.
+
+local:recently	a	rdf:Class	;
+	rdfs:label	"recently"	.
 
 #### Mapped Relations ####
 
-local:database_management_system	owl:sameAs	cso:database_management_system	.
-cso:query_answering	rdfs:label	"query answering"	.
-cso:ontologies	rdfs:label	"ontologies"	.
 cso:database_management_system	rdfs:label	"database management system"	.
+cso:description_logic	rdfs:label	"description logic"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:database_management_system	owl:sameAs	cso:database_management_system	.
+local:description_logic	owl:sameAs	cso:description_logic	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 local:relational_database	owl:sameAs	cso:relational_database	.
 local:query_answering	owl:sameAs	cso:query_answering	.
-cso:description_logic	rdfs:label	"description logic"	.
-local:description_logic	owl:sameAs	cso:description_logic	.
+cso:query_answering	rdfs:label	"query answering"	.
 cso:relational_database	rdfs:label	"relational database"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
 
 #### Relations ####
 
-local:captures	vn.role:Agent	local:has_recently_drawn_as_description_logic_el	.
-local:conjunctive_query	rdfs:member	local:conjunctive_query_answering	.
-local:description_logic	rdfs:subClassOf	local:logic	.
-local:namely_acyclic_el	rdfs:subClassOf	local:el	.
-local:show	vn.role:Agent	local:we	.
-local:relational_database_management_system	rdfs:subClassOf	local:system	.
-local:database_management	rdfs:member	local:database_management_system	.
-local:existing_relational_database_management_system	rdfs:subClassOf	local:relational_database_management_system	.
-local:conducted	local:AM-PNC	local:show	.
-local:implemented	local:AM-MNR	local:low_cost	.
-local:acyclic	rdfs:member	local:acyclic_el	.
-local:conjunctive_query_answering	local:conjunctivequery_	local:answering	.
-local:recently_drawn	rdfs:subClassOf	local:drawn	.
-local:conducted	vn.role:Agent	local:we	.
-local:database_management_system	rdfs:subClassOf	local:system	.
-local:many_large_ontologies	rdfs:subClassOf	local:large_ontologies	.
-local:relational_database	rdfs:member	local:relational_database_management	.
-local:description	rdfs:member	local:description_logic	.
-local:many_large	rdfs:subClassOf	local:large	.
-local:expressivity_of_many_large_ontologies	local:of_manylargeontologies	local:expressivity	.
-local:role	rdfs:member	local:role_inclusions	.
-local:large_clinical	rdfs:subClassOf	local:clinical	.
-local:answering_for_el_ontologies	local:for_elontologies	local:answering	.
-local:conducted	vn.role:Theme	local:preliminary_experiment	.
-local:management	rdfs:member	local:management_system	.
-local:description_logic	rdfs:member	local:description_logic_el	.
-local:database	rdfs:member	local:database_management	.
-local:using	vn.role:Agent	local:we	.
-local:data_completion	rdfs:subClassOf	local:completion	.
-local:abox_data	rdfs:member	local:abox_data_completion	.
-local:relational_database_management_system	rdfs:subClassOf	local:database_management_system	.
-local:show	vn.role:Theme	local:approach	.
-local:propose	local:AM-LOC	local:fragment_of_el_acyclic_el	.
-local:relational	rdfs:member	local:relational_database	.
-local:low_cost	rdfs:subClassOf	local:cost	.
-local:acyclic_el	rdfs:subClassOf	local:el	.
-local:many	rdfs:member	local:many_large	.
-local:expressivity_of_many_large_ontologies_in_biomedical_domain	local:in_biomedicaldomain	local:expressivity_of_many_large_ontologies	.
-local:preliminary_experiment	rdfs:subClassOf	local:experiment	.
-local:do	vn.role:Instrument	local:existing_relational_database_management_system	.
-local:propose	vn.role:Agent	local:we	.
-local:drawn	local:AM-TMP	local:recently	.
-local:captures	vn.role:Theme	local:expressivity_of_many_large_ontologies_in_biomedical_domain	.
-local:relational_database_management	rdfs:subClassOf	local:management	.
-local:implemented	vn.role:Theme	local:practical_approach_for_conjunctive_query_answering	.
-local:do	vn.role:object	local:abox_data_completion	.
-local:large	rdfs:member	local:large_ontologies	.
-local:biomedical	rdfs:member	local:biomedical_domain	.
-local:much	rdfs:member	local:much_attention	.
-local:description_logic_el	rdfs:subClassOf	local:el	.
-local:el_ontologies	rdfs:subClassOf	local:ontologies	.
-local:conjunctive_query_answering	rdfs:subClassOf	local:answering	.
-local:much_attention	rdfs:subClassOf	local:attention	.
-local:propose	local:AM-TMP	local:paper	.
-local:management_system	rdfs:subClassOf	local:system	.
-local:practical	rdfs:member	local:practical_approach	.
-local:fragment_of_el_acyclic_el	local:_acyclicel	local:fragment_of_el	.
-local:has_recently_drawn_as_description_logic_el	local:hasrecentlydrawn_as	local:description_logic_el	.
-local:fragment_of_el	local:fragment_of	local:el	.
-local:el	rdfs:member	local:el_ontologies	.
-local:leveraging	vn.role:Theme	local:existing_relational_database_management_system	.
-local:query	rdfs:member	local:query_answering	.
-local:large_clinical	rdfs:member	local:large_clinical_data	.
-local:abox_data	rdfs:subClassOf	local:data	.
-local:practical_approach_for_conjunctive_query_answering	local:practicalapproach_for	local:conjunctive_query_answering	.
-local:implemented	local:AM-MOD	local:can	.
-local:using	vn.role:Theme	local:large_clinical_data	.
 local:database_management_system	rdfs:subClassOf	local:management_system	.
-local:preliminary	rdfs:member	local:preliminary_experiment	.
-local:conducted	local:AM-PNC	local:evaluate	.
-local:large_clinical_data	rdfs:subClassOf	local:clinical_data	.
-local:fragment_of_el_acyclic_el	local:fragmentofel_	local:acyclic_el	.
-local:expressivity_of_many_large_ontologies	local:expressivity_of	local:many_large_ontologies	.
-local:drawn	vn.role:Patient	local:much_attention	.
-local:data	rdfs:member	local:data_completion	.
-local:drawn	vn.role:Proposition	local:description_logic_el	.
-local:large_clinical_data	rdfs:subClassOf	local:data	.
-local:query_answering	rdfs:subClassOf	local:answering	.
-local:database_management	rdfs:subClassOf	local:management	.
-local:abox	rdfs:member	local:abox_data	.
-local:namely_acyclic	rdfs:subClassOf	local:acyclic	.
-local:answering_for_el_ontologies	local:answering_for	local:el_ontologies	.
-local:leveraging	local:AM-PNC	local:abox_data_completion	.
-local:relational_database_management	rdfs:member	local:relational_database_management_system	.
-local:abox_data_completion	rdfs:subClassOf	local:completion	.
-local:namely	rdfs:member	local:namely_acyclic	.
-local:supports	vn.role:Experiencer	local:role_inclusions	.
-local:namely_acyclic	rdfs:member	local:namely_acyclic_el	.
-local:existing	vn.role:Location	local:relational_database_management_system	.
-local:propose	vn.role:Topic	local:practical_approach_for_conjunctive_query_answering	.
-local:large	rdfs:member	local:large_clinical	.
-local:practical_approach	rdfs:subClassOf	local:approach	.
+local:abox_data	rdfs:member	local:abox	.
+local:expressivity_of_many_large_ontologies_in_biomedical_domain	rdfs:member	local:expressivity_of_many_large_ontologies	.
+local:s5.2	rdf:object	local:using_a_large_clinical_data	.
+local:s0.1	rdf:subject	local:conjunctive_query_answering_for_el_ontologies_has_recently_drawn_much_attention_as_the_description_logic_el	.
 local:conjunctive_query_answering	rdfs:subClassOf	local:query_answering	.
-local:clinical	rdfs:member	local:clinical_data	.
-local:role_inclusions	rdfs:subClassOf	local:inclusions	.
-local:biomedical_domain	rdfs:subClassOf	local:domain	.
-local:expressivity_of_many_large_ontologies_in_biomedical_domain	local:expressivityofmanylargeontologies_in	local:biomedical_domain	.
-local:approach	vn.role:object	local:we	.
-local:conjunctive_query	rdfs:subClassOf	local:query	.
-local:our_approach	rdfs:subClassOf	local:approach	.
-local:implemented	local:AM-MNR	local:query_answering	.
-local:has_recently_drawn	rdfs:subClassOf	local:recently_drawn	.
-local:logic	rdfs:member	local:logic_el	.
-local:has_recently_drawn_as_description_logic_el	local:as_descriptionlogicel	local:has_recently_drawn	.
-local:conjunctive_query_answering	local:_answering	local:conjunctive_query	.
-local:description_logic_el	rdfs:subClassOf	local:logic_el	.
-local:fragment_of_el	local:of_el	local:fragment	.
-local:evaluate	vn.role:Agent	local:we	.
-local:approach	vn.role:indirect_object	local:using	.
-local:conjunctive	rdfs:member	local:conjunctive_query	.
-local:abox_data_completion	rdfs:subClassOf	local:data_completion	.
-local:practical_approach_for_conjunctive_query_answering	local:for_conjunctivequeryanswering	local:practical_approach	.
-local:large_ontologies	rdfs:subClassOf	local:ontologies	.
-local:supports	vn.role:Theme	local:acyclic_el	.
-local:drawn	vn.role:Agent	local:conjunctive_query_answering	.
-local:logic_el	rdfs:subClassOf	local:el	.
-local:many_large_ontologies	rdfs:subClassOf	local:ontologies	.
-local:many_large	rdfs:member	local:many_large_ontologies	.
-local:low	rdfs:member	local:low_cost	.
-local:relational_database	rdfs:subClassOf	local:database	.
+local:relational_database_management_system	rdfs:subClassOf	local:database_management_system	.
 local:clinical_data	rdfs:subClassOf	local:data	.
+local:s2.1	rdf:predicate	local:answer	.
+local:s5.3	rdf:subject	local:we	.
+local:expressivity_of_many_large_ontologies	rdfs:member	local:expressivity	.
+local:low_cost_by_leveraging_any_existing_relational_database_management_system_to_do_the_abox_data_completion	rdfs:member	local:low_cost	.
+local:fragment_of_el_namely_acyclic_el	rdfs:member	local:fragment	.
+local:query_answering	rdfs:member	local:query	.
+local:existing_relational_database_management_system	rdfs:subClassOf	local:relational_database_management_system	.
+local:fragment_of_el_acyclic_el	rdfs:member	local:fragment	.
+local:large_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s3.3	rdf:predicate	local:do	.
+local:s0	rdf:predicate	local:draw	.
+local:s5.1	rdf:subject	local:we	.
+local:many_large_ontologies	rdfs:subClassOf	local:ontologies	.
+local:database_management_system	rdfs:member	local:database_management	.
+local:el_acyclic_el	rdfs:subClassOf	local:acyclic_el	.
+local:s6.1	rdf:subject	local:we	.
+local:s4	rdf:subject	local:practical_approach_for_conjunctive_query_answering	.
+local:has_recently_drawn_as_description_logic_el	rdfs:member	local:has_recently_drawn	.
+local:expressivity_of_many_large_ontologies_in_the_biomedical_domain	rdfs:member	local:expressivity	.
+local:evaluate_we_approach_using_a_large_clinical_data	rdfs:member	local:large_clinical_data	.
+local:namely_acyclic	rdfs:member	local:namely	.
+local:relational_database_management_system	rdfs:member	local:relational_database_management	.
+local:low_cost	rdfs:member	local:low	.
+local:s5	rdf:object	local:preliminary_experiment	.
+local:conjunctive_query_answering_for_el_ontologies_has_recently_drawn_much_attention_as_the_description_logic_el	rdfs:member	local:el_ontologies	.
+local:much_attention_description_logic	rdfs:member	local:much_attention_description	.
+local:s3.2	rdf:subject	local:relational_database_management_system	.
+local:fragment_of_el_namely_acyclic_el	rdfs:member	local:namely_acyclic_el	.
+local:description_logic_el	rdfs:subClassOf	local:logic_el	.
+local:much_attention	rdfs:member	local:much	.
+local:acyclic_el	rdfs:member	local:acyclic	.
+local:s2	rdf:object	local:practical_approach_for_conjunctive_query_answering	.
+local:s3.1	rdf:predicate	local:leverage	.
+local:large_clinical_data	rdfs:member	local:large_clinical	.
+local:practical_approach	rdfs:member	local:practical	.
+local:conjunctive_query_answering_for_el_ontologies_has_recently_drawn_much_attention_as_the_description_logic_el	rdfs:member	local:description_logic_el	.
+local:preliminary_experiment	rdfs:member	local:preliminary	.
+local:large_clinical_data	rdfs:subClassOf	local:data	.
+local:practical_approach	rdfs:subClassOf	local:approach	.
+local:relational_database_management	rdfs:member	local:relational_database	.
+local:s3	rdf:subject	local:practical_approach_for_conjunctive_query_answering	.
+local:s5	rdf:subject	local:we	.
+local:s0	rdf:object	local:much_attention_description_logic_el	.
+local:s3	local:AM-MOD	local:can	.
+local:s0	local:AM-TMP	local:recently	.
+local:fragment_of_el_acyclic_el	rdfs:member	local:el_acyclic_el	.
+local:much_attention_description_logic_el	rdfs:member	local:much_attention_description_logic	.
+local:relational_database	rdfs:subClassOf	local:database	.
+local:s1	rdf:object	local:role_inclusions	.
+local:abox_data	rdfs:subClassOf	local:data	.
+local:s4	rdf:predicate	local:implement	.
+local:database_management_system	rdfs:subClassOf	local:system	.
+local:data_completion	rdfs:subClassOf	local:completion	.
+local:attention_description_logic_el	rdfs:subClassOf	local:description_logic_el	.
+local:conjunctive_query_answering	rdfs:subClassOf	local:answering	.
+local:abox_data_completion	rdfs:subClassOf	local:completion	.
+local:many_large_ontologies	rdfs:subClassOf	local:large_ontologies	.
+local:s3.1	rdf:subject	local:s3.2	.
+local:conjunctive_query_answering_for_el_ontologies_has_recently_drawn_much_attention_as_the_description_logic_el	rdfs:member	local:conjunctive_query	.
+local:s6	local:AM-PNC	local:show_our_approach	.
+local:database_management	rdfs:subClassOf	local:management	.
+local:practical_approach_for_conjunctive_query_answering	rdfs:member	local:conjunctive_query_answering	.
+local:attention_description	rdfs:member	local:attention	.
+local:s0	rdf:subject	local:conjunctive_query_answering_for_el_ontologies	.
+local:s3.2	rdfs:subClassOf	local:relational_database_management_system	.
+local:has_recently_drawn_as_description_logic_el	rdfs:member	local:description_logic_el	.
+local:attention_description_logic	rdfs:subClassOf	local:logic	.
+local:attention_description	rdfs:subClassOf	local:description	.
+local:namely_acyclic	rdfs:subClassOf	local:acyclic	.
+local:s6.1	rdf:object	local:approach_is_practical	.
+local:relational_database	rdfs:member	local:relational	.
+local:description_logic_el	rdfs:subClassOf	local:el	.
+local:much_attention	rdfs:subClassOf	local:attention	.
+local:namely_acyclic_el	rdfs:subClassOf	local:el	.
+local:much_attention_description_logic	rdfs:subClassOf	local:logic	.
+local:much_attention_description_logic_el	rdfs:subClassOf	local:el	.
+local:conjunctive_query_answering_for_el_ontologies_has_recently_drawn_much_attention_as_the_description_logic_el	rdfs:member	local:much_attention	.
+local:much_attention_description	rdfs:member	local:much_attention	.
+local:s5.2	rdf:predicate	local:approach	.
+local:s0.1	rdf:object	local:expressivity_of_many_large_ontologies_in_the_biomedical_domain	.
+local:role_inclusions	rdfs:subClassOf	local:inclusions	.
+local:s0.1	rdf:predicate	local:capture	.
+local:s6	rdf:object	local:preliminary_experiment	.
+local:namely_acyclic_el	rdfs:member	local:namely_acyclic	.
+local:s2.1	local:AM-LOC	local:fragment_of_el_namely_acyclic_el	.
+local:management_system	rdfs:member	local:management	.
+local:large_clinical_data	rdfs:subClassOf	local:clinical_data	.
+local:role_inclusions	rdfs:member	local:role	.
+local:s1	rdf:subject	local:namely_acyclic_el	.
+local:description_logic	rdfs:member	local:description	.
+local:data_completion	rdfs:member	local:data	.
+local:expressivity_of_many_large_ontologies_in_biomedical_domain	rdfs:member	local:biomedical_domain	.
+local:acyclic_el	rdfs:subClassOf	local:el	.
+local:s6	rdf:predicate	local:conduct	.
+local:s5.2	rdf:subject	local:we	.
+local:s3.1	local:AM-PNC	local:abox_data_completion	.
+local:much_attention_description	rdfs:subClassOf	local:description	.
+local:expressivity_of_many_large_ontologies_in_the_biomedical_domain	rdfs:member	local:many_large_ontologies	.
+local:much_attention_description_logic_el	rdfs:subClassOf	local:attention_description_logic_el	.
+local:s3.2	rdf:predicate	local:exist	.
+local:answering_for_el_ontologies	rdfs:member	local:el_ontologies	.
+local:expressivity_of_many_large_ontologies	rdfs:member	local:many_large_ontologies	.
+local:many_large_ontologies	rdfs:member	local:many_large	.
+local:biomedical_domain	rdfs:member	local:biomedical	.
+local:s3	local:AM-MNR	local:low_cost_by_leveraging_any_existing_relational_database_management_system_to_do_the_abox_data_completion	.
+local:el_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s6	rdf:subject	local:we	.
+local:s3.3	rdf:subject	local:existing_relational_database_management_system	.
+local:biomedical_domain	rdfs:subClassOf	local:domain	.
+local:s2	rdf:subject	local:we	.
+local:s4	local:AM-MNR	local:query	.
+local:abox_data_completion	rdfs:member	local:abox_data	.
+local:s2	local:AM-LOC	local:fragment_of_el_namely_acyclic_el	.
+local:description_logic	rdfs:subClassOf	local:logic	.
+local:s7	rdf:predicate	local:set	.
+local:conjunctive_query_answering	rdfs:member	local:answering	.
+local:s5	local:AM-PNC	local:evaluate_we_approach_using_a_large_clinical_data	.
+local:low_cost_by_leveraging_any_existing_relational_database_management_system_to_do_the_abox_data_completion	rdfs:member	local:relational_database_management_system	.
+local:conjunctive_query_answering_for_el_ontologies	rdfs:member	local:el_ontologies	.
+local:relational_database_management	rdfs:subClassOf	local:management	.
+local:answering_for_el_ontologies	rdfs:member	local:answering	.
+local:s5.3	rdf:object	local:large_clinical_data	.
+local:has_recently_drawn	rdfs:subClassOf	local:recently_drawn	.
+local:our_approach	rdfs:subClassOf	local:approach	.
+local:s2	local:AM-LOC	local:paper	.
+local:s5	rdf:predicate	local:conduct	.
+local:s2	rdf:predicate	local:propose	.
+local:practical_approach_for_conjunctive_query_answering	rdfs:member	local:practical_approach	.
+local:conjunctive_query	rdfs:subClassOf	local:query	.
+local:s5.1	rdf:predicate	local:evaluate	.
+local:expressivity_of_many_large_ontologies_in_the_biomedical_domain	rdfs:member	local:biomedical_domain	.
+local:conjunctive_query_answering_for_el_ontologies	rdfs:member	local:conjunctive_query	.
+local:database_management	rdfs:member	local:database	.
+local:el_ontologies	rdfs:member	local:el	.
+local:many_large	rdfs:member	local:many	.
+local:s3.3	rdf:object	local:abox_data_completion	.
+local:attention_description_logic_el	rdfs:subClassOf	local:el	.
+local:s6.1	rdf:predicate	local:show	.
+local:conjunctive_query_answering	rdfs:member	local:conjunctive_query	.
+local:low_cost_by_leveraging_any_existing_relational_database_management_system_to_do_the_abox_data_completion	rdfs:member	local:abox_data_completion	.
+local:logic_el	rdfs:subClassOf	local:el	.
+local:logic_el	rdfs:member	local:logic	.
+local:preliminary_experiment	rdfs:subClassOf	local:experiment	.
+local:many_large	rdfs:subClassOf	local:large	.
+local:clinical_data	rdfs:member	local:clinical	.
+local:relational_database_management_system	rdfs:subClassOf	local:system	.
+local:s1	rdf:predicate	local:support	.
+local:large_ontologies	rdfs:member	local:large	.
+local:evaluate_we_approach_using_a_large_clinical_data	rdfs:member	local:evaluate	.
+local:s7	rdf:subject	local:large_clinical_data	.
+local:fragment_of_el_namely_acyclic_el	rdfs:member	local:el	.
+local:description_logic_el	rdfs:member	local:description_logic	.
+local:s3	rdf:predicate	local:implement	.
+local:conjunctive_query	rdfs:member	local:conjunctive	.
+local:large_clinical	rdfs:subClassOf	local:clinical	.
+local:attention_description_logic_el	rdfs:member	local:attention_description_logic	.
+local:abox_data_completion	rdfs:subClassOf	local:data_completion	.
+local:attention_description_logic	rdfs:member	local:attention_description	.
+local:s4	local:AM-MOD	local:can	.
+local:management_system	rdfs:subClassOf	local:system	.
+local:recently_drawn	rdfs:subClassOf	local:drawn	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:s5.3	rdf:predicate	local:use	.
+local:low_cost	rdfs:subClassOf	local:cost	.
+local:large_clinical	rdfs:member	local:large	.

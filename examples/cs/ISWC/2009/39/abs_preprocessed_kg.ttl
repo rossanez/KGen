@@ -1,302 +1,518 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s7.3	a	rdf:Statement	;
+	rdfs:label	"published approach"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"us the web producing 30b triples in less than two hours faster than any other published approach"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"us compute the rdfs closure of 865m triples from the web producing 30b triples in less than two hours faster than any other published approach"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we algorithm allows us to compute the rdfs closure of 865m triples from the web producing 30b triples in less than two hours faster than any other published approach"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we show that a naive implementation on top of mapreduce is straightforward"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"we present several nontrivial optimisations"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we show that we present several nontrivial optimisations"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a naive implementation on top of mapreduce performs badly"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we show that a naive implementation on top of mapreduce performs badly"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we deployed hadoop on a compute cluster of up to 64 commodity machines"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"we approach on top of hadoop"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we implemented we approach on top of hadoop"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"scalable distributed reasoning"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we address the problem of scalable distributed reasoning"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"based on mapreduce"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"materialising the closure of an rdf graph based on mapreduce"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"scalable distributed reasoning proposing a technique for materialising the closure of an rdf graph based on mapreduce"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"distributed reasoning"	.
+
+
 #### Classes ####
 
-local:distributed	rdfs:label	"distributed"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:publish	a	rdf:Class	;
+	rdfs:label	"publish"	.
 
-local:distributed_reasoning	rdfs:label	"distributed reasoning"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:scalable_distributed_reasoning	rdfs:label	"scalable distributed reasoning"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:proposing	rdfs:label	"proposing"	.
+local:30b_triples	a	rdf:Class	;
+	rdfs:label	"30b triples"	.
 
-local:rdf_graph	rdfs:label	"rdf graph"	.
+local:triples	a	rdf:Class	;
+	rdfs:label	"triples"	.
 
-local:graph	rdfs:label	"graph"	.
+local:faster_than_any_other_published_approach	a	rdf:Class	;
+	rdfs:label	"faster than any other published approach"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:other_published_approach	a	rdf:Class	;
+	rdfs:label	"other published approach"	.
 
-local:closure_of_rdf_graph	rdfs:label	"closure of rdf graph"	.
+local:faster_than_other_published_approach	a	rdf:Class	;
+	rdfs:label	"faster than other published approach"	.
 
-local:closure	rdfs:label	"closure"	.
+local:faster	a	rdf:Class	;
+	rdfs:label	"faster"	.
 
-local:rdf_graph_based	rdfs:label	"rdf graph based"	.
+local:less_than_two_hours	a	rdf:Class	;
+	rdfs:label	"less than two hours"	.
 
-local:based	rdfs:label	"based"	.
+local:two_hours	a	rdf:Class	;
+	rdfs:label	"two hours"	.
 
-local:based_on_mapreduce	rdfs:label	"based on mapreduce"	.
+local:hours	a	rdf:Class	;
+	rdfs:label	"hours"	.
 
-local:mapreduce	rdfs:label	"mapreduce"	.
+local:less_two	a	rdf:Class	;
+	rdfs:label	"less two"	.
 
-local:technique	rdfs:label	"technique"	.
+local:two	a	rdf:Class	;
+	rdfs:label	"two"	.
 
-local:closure_of_rdf_graph_based	rdfs:label	"closure of rdf graph based"	.
+local:us	a	rdf:Class	;
+	rdfs:label	"us"	.
 
-local:materialising	rdfs:label	"materialising"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:address	rdfs:label	"address"	.
+local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	a	rdf:Class	;
+	rdfs:label	"rdfs closure of 865m triples web producing 30b triples in less than two hours faster than any other published approach"	.
 
-local:we	rdfs:label	"we"	.
+local:rdfs_closure	a	rdf:Class	;
+	rdfs:label	"rdfs closure"	.
 
-local:scalable_distributed	rdfs:label	"scalable distributed"	.
+local:triples_web	a	rdf:Class	;
+	rdfs:label	"triples web"	.
 
-local:scalable	rdfs:label	"scalable"	.
+local:closure	a	rdf:Class	;
+	rdfs:label	"closure"	.
 
-local:problem_of_scalable_distributed_reasoning	rdfs:label	"problem of scalable distributed reasoning"	.
+local:rdfs	a	rdf:Class	;
+	rdfs:label	"rdfs"	.
 
-local:problem	rdfs:label	"problem"	.
+local:faster_hours	a	rdf:Class	;
+	rdfs:label	"faster hours"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:two_faster_hours	a	rdf:Class	;
+	rdfs:label	"two faster hours"	.
 
-local:approach_ontopof_hadoop	rdfs:label	"approach on_top_of hadoop"	.
+local:865m_triples_web	a	rdf:Class	;
+	rdfs:label	"865m triples web"	.
 
-local:approach	rdfs:label	"approach"	.
+local:rdfs_closure_of_865m_triples_web	a	rdf:Class	;
+	rdfs:label	"rdfs closure of 865m triples web"	.
 
-local:hadoop	rdfs:label	"hadoop"	.
+local:865m_triples_web_producing	a	rdf:Class	;
+	rdfs:label	"865m triples web producing"	.
 
-local:top_of_hadoop	rdfs:label	"top of hadoop"	.
+local:producing	a	rdf:Class	;
+	rdfs:label	"producing"	.
 
-local:top	rdfs:label	"top"	.
+local:producing_in_two_faster_hours	a	rdf:Class	;
+	rdfs:label	"producing in two faster hours"	.
 
-local:deployed	rdfs:label	"deployed"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:commodity	rdfs:label	"commodity"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:commodity_machines	rdfs:label	"commodity machines"	.
+local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	a	rdf:Class	;
+	rdfs:label	"us to compute the rdfs closure of 865m triples from the web producing 30b triples in less than two hours faster than any other published approach"	.
 
-local:machines	rdfs:label	"machines"	.
+local:865m_30b_triples	a	rdf:Class	;
+	rdfs:label	"865m 30b triples"	.
 
-local:compute	rdfs:label	"compute"	.
+local:rdfs_closure_of_865m_30b_triples	a	rdf:Class	;
+	rdfs:label	"rdfs closure of 865m 30b triples"	.
 
-local:compute_cluster	rdfs:label	"compute cluster"	.
+local:compute_from_web	a	rdf:Class	;
+	rdfs:label	"compute from web"	.
 
-local:cluster	rdfs:label	"cluster"	.
+local:web_producing	a	rdf:Class	;
+	rdfs:label	"web producing"	.
 
-local:64_commodity_machines	rdfs:label	"64 commodity machines"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:cluster_of_64_commodity_machines	rdfs:label	"cluster of 64 commodity machines"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:show	rdfs:label	"show"	.
+local:naive_implementation_on_top_of_mapreduce_is_straightforward	a	rdf:Class	;
+	rdfs:label	"naive implementation on top of mapreduce is straightforward"	.
 
-local:naive	rdfs:label	"naive"	.
+local:naive_implementation	a	rdf:Class	;
+	rdfs:label	"naive implementation"	.
 
-local:naive_implementation	rdfs:label	"naive implementation"	.
+local:mapreduce	a	rdf:Class	;
+	rdfs:label	"mapreduce"	.
 
-local:implementation	rdfs:label	"implementation"	.
+local:top	a	rdf:Class	;
+	rdfs:label	"top"	.
 
-local:naive_implementation_ontopof_mapreduce	rdfs:label	"naive implementation on_top_of mapreduce"	.
+local:naive	a	rdf:Class	;
+	rdfs:label	"naive"	.
 
-local:straightforward	rdfs:label	"straightforward"	.
+local:implementation	a	rdf:Class	;
+	rdfs:label	"implementation"	.
 
-local:nontrivial	rdfs:label	"non-trivial"	.
+local:naive_implementation_on_top_of_mapreduce	a	rdf:Class	;
+	rdfs:label	"naive implementation on_top_of mapreduce"	.
 
-local:nontrivial_optimisations	rdfs:label	"non-trivial optimisations"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:present_several	rdfs:label	"present several"	.
+local:several_nontrivial_optimisations	a	rdf:Class	;
+	rdfs:label	"several nontrivial optimisations"	.
 
-local:several	rdfs:label	"several"	.
+local:several_nontrivial	a	rdf:Class	;
+	rdfs:label	"several nontrivial"	.
 
-local:present_several_nontrivial	rdfs:label	"present several non-trivial"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:present_several_nontrivial_optimisations	rdfs:label	"present several non-trivial optimisations"	.
+local:optimisations	a	rdf:Class	;
+	rdfs:label	"optimisations"	.
 
-local:several_nontrivial	rdfs:label	"several non-trivial"	.
+local:nontrivial_optimisations	a	rdf:Class	;
+	rdfs:label	"nontrivial optimisations"	.
 
-local:several_nontrivial_optimisations	rdfs:label	"several non-trivial optimisations"	.
+local:nontrivial	a	rdf:Class	;
+	rdfs:label	"nontrivial"	.
 
-local:present	rdfs:label	"present"	.
+local:present_several_nontrivial_optimisations	a	rdf:Class	;
+	rdfs:label	"present several nontrivial optimisations"	.
 
-local:optimisations	rdfs:label	"optimisations"	.
+local:present_several_nontrivial	a	rdf:Class	;
+	rdfs:label	"present several nontrivial"	.
 
-local:mapreduce_performs	rdfs:label	"mapreduce performs"	.
+local:present_several	a	rdf:Class	;
+	rdfs:label	"present several"	.
 
-local:performs	rdfs:label	"performs"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:badly_performs	rdfs:label	"badly performs"	.
+local:badly	a	rdf:Class	;
+	rdfs:label	"badly"	.
 
-local:badly	rdfs:label	"badly"	.
+local:naive_implementation_on_top_of_mapreduce_performs_badly	a	rdf:Class	;
+	rdfs:label	"naive implementation on top of mapreduce performs badly"	.
 
-local:allows	rdfs:label	"allows"	.
+local:mapreduce_performs	a	rdf:Class	;
+	rdfs:label	"mapreduce performs"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:performs	a	rdf:Class	;
+	rdfs:label	"performs"	.
 
-local:rdfs_closure	rdfs:label	"rdfs closure"	.
+local:badly_performs	a	rdf:Class	;
+	rdfs:label	"badly performs"	.
 
-local:rdfs	rdfs:label	"rdfs"	.
+local:deploy	a	rdf:Class	;
+	rdfs:label	"deploy"	.
 
-local:published_approach	rdfs:label	"published approach"	.
+local:hadoop_compute_cluster_of_up_to_64_commodity_machines	a	rdf:Class	;
+	rdfs:label	"hadoop compute cluster of up to 64 commodity machines"	.
 
-local:other_published_approach	rdfs:label	"other published approach"	.
+local:commodity_machines	a	rdf:Class	;
+	rdfs:label	"commodity machines"	.
 
-local:faster_us	rdfs:label	"faster us"	.
+local:hadoop_compute_cluster	a	rdf:Class	;
+	rdfs:label	"hadoop compute cluster"	.
 
-local:us	rdfs:label	"us"	.
+local:hadoop_compute	a	rdf:Class	;
+	rdfs:label	"hadoop compute"	.
 
-local:two_hours	rdfs:label	"two hours"	.
+local:commodity	a	rdf:Class	;
+	rdfs:label	"commodity"	.
 
-local:hours	rdfs:label	"hours"	.
+local:cluster	a	rdf:Class	;
+	rdfs:label	"cluster"	.
 
-local:less_two	rdfs:label	"less two"	.
+local:hadoop	a	rdf:Class	;
+	rdfs:label	"hadoop"	.
 
-local:two	rdfs:label	"two"	.
+local:compute_cluster	a	rdf:Class	;
+	rdfs:label	"compute cluster"	.
 
-local:30b_triples	rdfs:label	"30b triples"	.
+local:machines	a	rdf:Class	;
+	rdfs:label	"machines"	.
 
-local:triples	rdfs:label	"triples"	.
+local:64_commodity_machines	a	rdf:Class	;
+	rdfs:label	"64 commodity machines"	.
 
-local:865m_30b_triples	rdfs:label	"865m 30b triples"	.
+local:cluster_of_64_commodity_machines	a	rdf:Class	;
+	rdfs:label	"cluster of 64 commodity machines"	.
 
-local:rdfs_closure_of_865m_30b_triples	rdfs:label	"rdfs closure of 865m 30b triples"	.
+local:top_of_hadoop	a	rdf:Class	;
+	rdfs:label	"top of hadoop"	.
 
-local:compute_from_web	rdfs:label	"compute from web"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:web	rdfs:label	"web"	.
+local:approach_on_top_of_hadoop	a	rdf:Class	;
+	rdfs:label	"approach on_top_of hadoop"	.
 
-local:compute_from_web_in_two_hours	rdfs:label	"compute from web in two hours"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:faster_than_other_published_approach	rdfs:label	"faster than other published approach"	.
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
-local:faster	rdfs:label	"faster"	.
+local:scalable	a	rdf:Class	;
+	rdfs:label	"scalable"	.
 
-local:865m_triples	rdfs:label	"865m triples"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:rdfs_closure_of_865m_triples	rdfs:label	"rdfs closure of 865m triples"	.
+local:problem_of_scalable_distributed_reasoning	a	rdf:Class	;
+	rdfs:label	"problem of scalable distributed reasoning"	.
 
-local:faster_hours	rdfs:label	"faster hours"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:two_faster_hours	rdfs:label	"two faster hours"	.
+local:distributed_reasoning	a	rdf:Class	;
+	rdfs:label	"distributed reasoning"	.
 
-local:web_in_two_faster_hours	rdfs:label	"web in two faster hours"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:producing	rdfs:label	"producing"	.
+local:closure_of_an_rdf_graph_based_on_mapreduce	a	rdf:Class	;
+	rdfs:label	"closure of an rdf graph based on mapreduce"	.
 
-local:published	rdfs:label	"published"	.
+local:rdf_graph	a	rdf:Class	;
+	rdfs:label	"rdf graph"	.
 
-#### Properties ####
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
+
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
+
+local:closure_of_rdf_graph	a	rdf:Class	;
+	rdfs:label	"closure of rdf graph"	.
+
+local:rdf_graph_based	a	rdf:Class	;
+	rdfs:label	"rdf graph based"	.
+
+local:based	a	rdf:Class	;
+	rdfs:label	"based"	.
+
+local:materialise	a	rdf:Class	;
+	rdfs:label	"materialise"	.
+
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
+
+local:technique_for_materialising_the_closure_of_an_rdf_graph_based_on_mapreduce	a	rdf:Class	;
+	rdfs:label	"technique for materialising the closure of an rdf graph based on mapreduce"	.
+
+local:technique	a	rdf:Class	;
+	rdfs:label	"technique"	.
 
 #### Mapped Relations ####
 
-cso:rdf_graph	rdfs:label	"rdf graph"	.
-cso:hadoop	rdfs:label	"hadoop"	.
-cso:reasoning	rdfs:label	"reasoning"	.
-cso:mapreduce	rdfs:label	"mapreduce"	.
-local:rdf_graph	owl:sameAs	cso:rdf_graph	.
-local:reasoning	owl:sameAs	cso:reasoning	.
-local:mapreduce	owl:sameAs	cso:mapreduce	.
 local:hadoop	owl:sameAs	cso:hadoop	.
+cso:rdf_graph	rdfs:label	"rdf graph"	.
+local:mapreduce	owl:sameAs	cso:mapreduce	.
+cso:hadoop	rdfs:label	"hadoop"	.
+cso:mapreduce	rdfs:label	"mapreduce"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+local:rdf_graph	owl:sameAs	cso:rdf_graph	.
+cso:reasoning	rdfs:label	"reasoning"	.
 
 #### Relations ####
 
-local:top_of_hadoop	local:of_hadoop	local:top	.
-local:distributed	rdfs:member	local:distributed_reasoning	.
-local:distributed	vn.role:Theme	local:reasoning	.
-local:based	local:AM-LOC	local:mapreduce	.
-local:show	vn.role:Theme	local:badly_performs	.
-local:deployed	vn.role:Agent	local:we	.
-local:approach_ontopof_hadoop	local:approach_on_top_of	local:hadoop	.
-local:mapreduce_performs	rdfs:subClassOf	local:performs	.
-local:approach_ontopof_hadoop	local:on_top_of_hadoop	local:approach	.
-local:naive_implementation_ontopof_mapreduce	local:on_top_of_mapreduce	local:naive_implementation	.
-local:present_several_nontrivial_optimisations	rdfs:subClassOf	local:several_nontrivial_optimisations	.
-local:compute	vn.role:Product	local:rdfs_closure_of_865m_triples	.
-local:two_hours	rdfs:subClassOf	local:hours	.
-local:published_approach	rdfs:subClassOf	local:approach	.
-local:problem_of_scalable_distributed_reasoning	local:problem_of	local:scalable_distributed_reasoning	.
-local:865m_30b_triples	rdfs:subClassOf	local:30b_triples	.
-local:compute_from_web	local:compute_from	local:web	.
-local:present	vn.role:Agent	local:we	.
-local:cluster_of_64_commodity_machines	local:of_64commoditymachines	local:cluster	.
-local:rdfs_closure_of_865m_30b_triples	local:rdfsclosure_of	local:865m_30b_triples	.
-local:scalable_distributed	rdfs:member	local:scalable_distributed_reasoning	.
-local:approach	vn.role:object	local:we	.
-local:rdfs_closure_of_865m_triples	local:rdfsclosure_of	local:865m_triples	.
-local:based_on_mapreduce	local:based_on	local:mapreduce	.
-local:allows	vn.role:Agent	local:algorithm	.
-local:faster_us	rdfs:subClassOf	local:us	.
-local:faster_than_other_published_approach	local:than_otherpublishedapproach	local:faster	.
-local:faster_hours	rdfs:subClassOf	local:hours	.
-local:compute_cluster	rdfs:subClassOf	local:cluster	.
-local:rdfs	rdfs:member	local:rdfs_closure	.
-local:several_nontrivial_optimisations	rdfs:subClassOf	local:nontrivial_optimisations	.
-local:deployed	vn.role:Destination	local:compute	.
-local:865m_triples	rdfs:subClassOf	local:triples	.
-local:scalable_distributed	rdfs:subClassOf	local:distributed	.
-local:scalable	rdfs:member	local:scalable_distributed	.
-local:present_several_nontrivial	rdfs:subClassOf	local:nontrivial	.
-local:implemented	vn.role:Theme	local:approach_ontopof_hadoop	.
-local:approach	vn.role:indirect_object	local:top_of_hadoop	.
-local:rdf_graph	rdfs:subClassOf	local:graph	.
-local:compute	vn.role:Beneficiary	local:web_in_two_faster_hours	.
-local:performs	vn.role:Theme	local:badly	.
-local:compute	vn.role:Agent	local:us	.
-local:several	rdfs:member	local:several_nontrivial	.
-local:other_published_approach	rdfs:subClassOf	local:published_approach	.
-local:rdf_graph_based	local:_based	local:rdf_graph	.
-local:30b_triples	rdfs:subClassOf	local:triples	.
+local:closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:mapreduce	.
+local:s5	rdf:object	local:present_several_nontrivial_optimisations	.
+local:faster_than_other_published_approach	rdfs:member	local:faster	.
+local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:web	.
+local:s5.1	rdf:predicate	local:present	.
+local:web_producing	rdfs:member	local:web	.
+local:naive_implementation_on_top_of_mapreduce	rdfs:member	local:naive_implementation	.
+local:hadoop_compute_cluster_of_up_to_64_commodity_machines	rdfs:member	local:hadoop_compute_cluster	.
+local:s7.2	rdf:subject	local:web	.
+local:s7.1	rdf:subject	local:us	.
+local:s7	rdf:predicate	local:allow	.
+local:s4	rdf:subject	local:we	.
+local:producing_in_two_faster_hours	rdfs:member	local:two_faster_hours	.
+local:hadoop_compute	rdfs:member	local:hadoop	.
+local:naive_implementation_on_top_of_mapreduce	rdfs:member	local:mapreduce	.
+local:nontrivial_optimisations	rdfs:member	local:nontrivial	.
+local:naive_implementation_on_top_of_mapreduce	rdfs:member	local:top	.
+local:cluster_of_64_commodity_machines	rdfs:member	local:cluster	.
+local:s6	rdf:predicate	local:show	.
+local:s5.1	rdf:object	local:several_nontrivial_optimisations	.
 local:commodity_machines	rdfs:subClassOf	local:machines	.
-local:present_several_nontrivial	rdfs:member	local:present_several_nontrivial_optimisations	.
-local:allows	vn.role:Theme	local:faster_us	.
-local:closure_of_rdf_graph_based	local:_based	local:closure_of_rdf_graph	.
-local:rdfs_closure	rdfs:subClassOf	local:closure	.
-local:proposing	vn.role:Topic	local:technique	.
-local:several_nontrivial	rdfs:member	local:several_nontrivial_optimisations	.
-local:scalable_distributed_reasoning	rdfs:subClassOf	local:distributed_reasoning	.
-local:implemented	vn.role:Agent	local:we	.
-local:compute_from_web_in_two_hours	local:computefromweb_in	local:two_hours	.
-local:show	vn.role:Theme	local:straightforward	.
-local:present	rdfs:member	local:present_several	.
-local:producing	vn.role:Product	local:30b_triples	.
-local:faster_than_other_published_approach	local:faster_than	local:other_published_approach	.
-local:show	vn.role:Theme	local:present_several_nontrivial_optimisations	.
-local:two_faster_hours	rdfs:subClassOf	local:faster_hours	.
-local:naive_implementation_ontopof_mapreduce	local:naiveimplementation_on_top_of	local:mapreduce	.
-local:present_several	rdfs:member	local:present_several_nontrivial	.
-local:based_on_mapreduce	local:on_mapreduce	local:based	.
-local:cluster_of_64_commodity_machines	local:cluster_of	local:64_commodity_machines	.
-local:rdfs_closure_of_865m_30b_triples	local:of_865m30btriples	local:rdfs_closure	.
-local:present	vn.role:Theme	local:several_nontrivial_optimisations	.
-local:badly_performs	rdfs:subClassOf	local:performs	.
-local:materialising	vn.role:Location	local:closure_of_rdf_graph_based	.
-local:naive	rdfs:member	local:naive_implementation	.
-local:performs	vn.role:Agent	local:naive_implementation_ontopof_mapreduce	.
-local:less_two	rdfs:subClassOf	local:two	.
-local:mapreduce	rdfs:member	local:mapreduce_performs	.
-local:nontrivial	rdfs:member	local:nontrivial_optimisations	.
-local:problem_of_scalable_distributed_reasoning	local:of_scalabledistributedreasoning	local:problem	.
-local:naive_implementation	rdfs:subClassOf	local:implementation	.
-local:compute_from_web	local:from_web	local:compute	.
-local:top_of_hadoop	local:top_of	local:hadoop	.
-local:several_nontrivial_optimisations	rdfs:subClassOf	local:optimisations	.
-local:commodity	rdfs:member	local:commodity_machines	.
-local:web_in_two_faster_hours	local:in_twofasterhours	local:web	.
-local:proposing	vn.role:Agent	local:scalable_distributed_reasoning	.
-local:present_several_nontrivial_optimisations	rdfs:subClassOf	local:optimisations	.
-local:address	vn.role:Theme	local:problem_of_scalable_distributed_reasoning	.
-local:present_several	rdfs:subClassOf	local:several	.
-local:closure_of_rdf_graph	local:of_rdfgraph	local:closure	.
-local:published	vn.role:Product	local:approach	.
-local:rdf_graph_based	local:rdfgraph_	local:based	.
-local:distributed	local:AM-MNR	local:scalable	.
-local:compute	rdfs:member	local:compute_cluster	.
-local:compute_from_web_in_two_hours	local:in_twohours	local:compute_from_web	.
-local:64_commodity_machines	rdfs:subClassOf	local:commodity_machines	.
-local:several_nontrivial	rdfs:subClassOf	local:nontrivial	.
-local:scalable_distributed_reasoning	rdfs:subClassOf	local:reasoning	.
-local:show	vn.role:Agent	local:we	.
-local:closure_of_rdf_graph	local:closure_of	local:rdf_graph	.
-local:deployed	vn.role:Theme	local:hadoop	.
-local:producing	vn.role:Agent	local:us	.
-local:rdfs_closure_of_865m_triples	local:of_865mtriples	local:rdfs_closure	.
-local:address	vn.role:Agent	local:we	.
+local:other_published_approach	rdfs:subClassOf	local:s7.3	.
+local:s1.1	rdf:predicate	local:distribute	.
+local:problem_of_scalable_distributed_reasoning	rdfs:member	local:reasoning	.
+local:hadoop_compute_cluster_of_up_to_64_commodity_machines	rdfs:member	local:commodity_machines	.
+local:s5	rdf:subject	local:we	.
+local:s1.1	rdfs:subClassOf	local:distributed_reasoning	.
 local:nontrivial_optimisations	rdfs:subClassOf	local:optimisations	.
-local:rdf	rdfs:member	local:rdf_graph	.
+local:s2	rdf:subject	local:we	.
+local:naive_implementation_on_top_of_mapreduce_performs_badly	rdfs:member	local:top	.
+local:s7.2	local:AM-TMP	local:less_than_two_hours	.
+local:s2.1	rdf:object	local:top_of_hadoop	.
+local:s3	rdf:predicate	local:deploy	.
+local:s0	rdf:subject	local:reasoning	.
+local:rdfs_closure_of_865m_triples_web	rdfs:member	local:865m_triples_web	.
+local:commodity_machines	rdfs:member	local:commodity	.
+local:naive_implementation	rdfs:member	local:naive	.
+local:s7	rdf:subject	local:algorithm	.
+local:rdfs_closure_of_865m_30b_triples	rdfs:member	local:rdfs_closure	.
+local:s0.2	rdf:predicate	local:materialise	.
+local:present_several_nontrivial_optimisations	rdfs:member	local:present_several_nontrivial	.
+local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:triples	.
+local:s7.3	rdfs:subClassOf	local:approach	.
+local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:triples_web	.
+local:s0.3	rdfs:member	local:based	.
+local:present_several	rdfs:subClassOf	local:several	.
+local:s2	rdf:object	local:approach_on_top_of_hadoop	.
+local:naive_implementation_on_top_of_mapreduce_performs_badly	rdfs:member	local:naive_implementation	.
+local:s7.2	rdf:predicate	local:produce	.
+local:present_several_nontrivial_optimisations	rdfs:subClassOf	local:several_nontrivial_optimisations	.
+local:naive_implementation_on_top_of_mapreduce_is_straightforward	rdfs:member	local:top	.
+local:s5.1	rdf:subject	local:we	.
+local:top_of_hadoop	rdfs:member	local:top	.
+local:rdfs_closure_of_865m_30b_triples	rdfs:member	local:865m_30b_triples	.
+local:several_nontrivial	rdfs:subClassOf	local:nontrivial	.
+local:web_producing	rdfs:member	local:producing	.
+local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:hours	.
+local:s2.1	rdf:predicate	local:approach	.
+local:s1	rdf:predicate	local:address	.
+local:approach_on_top_of_hadoop	rdfs:member	local:top	.
+local:technique_for_materialising_the_closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:rdf_graph	.
+local:s0.3	rdfs:member	local:mapreduce	.
+local:top_of_hadoop	rdfs:member	local:hadoop	.
+local:s0.2	rdf:subject	local:closure_of_an_rdf_graph_based_on_mapreduce	.
+local:two_hours	rdfs:subClassOf	local:hours	.
+local:hadoop_compute_cluster	rdfs:subClassOf	local:cluster	.
+local:compute_cluster	rdfs:member	local:compute	.
+local:present_several_nontrivial_optimisations	rdfs:subClassOf	local:optimisations	.
+local:several_nontrivial_optimisations	rdfs:subClassOf	local:optimisations	.
+local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:rdfs_closure	.
+local:technique_for_materialising_the_closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:closure	.
+local:865m_triples_web_producing	rdfs:member	local:producing	.
+local:rdfs_closure_of_865m_triples_web	rdfs:member	local:rdfs_closure	.
+local:producing_in_two_faster_hours	rdfs:member	local:producing	.
+local:less_two	rdfs:subClassOf	local:two	.
+local:closure_of_rdf_graph	rdfs:member	local:rdf_graph	.
 local:distributed_reasoning	rdfs:subClassOf	local:reasoning	.
-local:web_in_two_faster_hours	local:web_in	local:two_faster_hours	.
-local:closure_of_rdf_graph_based	local:closureofrdfgraph_	local:based	.
+local:s7.3	rdf:subject	local:approach	.
+local:s1	rdf:subject	local:we	.
+local:closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:rdf_graph	.
+local:s3	rdf:object	local:hadoop_compute_cluster_of_up_to_64_commodity_machines	.
+local:s7.2	rdf:object	local:30b_triples	.
+local:rdf_graph	rdfs:member	local:rdf	.
+local:s7.1	rdf:predicate	local:compute	.
+local:64_commodity_machines	rdfs:subClassOf	local:commodity_machines	.
+local:rdf_graph_based	rdfs:member	local:based	.
+local:s4.1	local:AM-MNR	local:badly	.
+local:rdf_graph_based	rdfs:member	local:rdf_graph	.
+local:naive_implementation_on_top_of_mapreduce_is_straightforward	rdfs:member	local:mapreduce	.
+local:s0.3	local:AM-LOC	local:mapreduce	.
+local:s1.1	local:AM-MNR	local:scalable	.
+local:several_nontrivial	rdfs:member	local:several	.
+local:865m_triples_web_producing	rdfs:member	local:865m_triples_web	.
+local:naive_implementation	rdfs:subClassOf	local:implementation	.
+local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:rdfs_closure	.
+local:problem_of_scalable_distributed_reasoning	rdfs:member	local:s1.1	.
+local:mapreduce_performs	rdfs:subClassOf	local:performs	.
+local:present_several	rdfs:member	local:present	.
+local:mapreduce_performs	rdfs:member	local:mapreduce	.
+local:s4	rdf:object	local:naive_implementation_on_top_of_mapreduce_performs_badly	.
+local:s2.1	rdf:subject	local:we	.
+local:naive_implementation_on_top_of_mapreduce_performs_badly	rdfs:member	local:mapreduce_performs	.
+local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:approach	.
+local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:approach	.
+local:present_several_nontrivial	rdfs:subClassOf	local:nontrivial	.
+local:s4.1	rdf:subject	local:naive_implementation_on_top_of_mapreduce	.
+local:compute_cluster	rdfs:subClassOf	local:cluster	.
+local:hadoop_compute_cluster	rdfs:member	local:hadoop_compute	.
+local:compute_from_web	rdfs:member	local:web	.
+local:s4	rdf:predicate	local:show	.
+local:s1.1	rdf:subject	local:reasoning	.
+local:technique_for_materialising_the_closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:technique	.
+local:closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:closure	.
+local:rdfs_closure	rdfs:member	local:rdfs	.
+local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:hours	.
+local:s0.1	rdf:object	local:technique_for_materialising_the_closure_of_an_rdf_graph_based_on_mapreduce	.
+local:hadoop_compute	rdfs:subClassOf	local:compute	.
+local:s2	rdf:predicate	local:implement	.
+local:compute_from_web	rdfs:member	local:compute	.
+local:present_several_nontrivial	rdfs:member	local:present_several	.
+local:badly_performs	rdfs:subClassOf	local:performs	.
+local:several_nontrivial_optimisations	rdfs:member	local:several_nontrivial	.
+local:problem_of_scalable_distributed_reasoning	rdfs:member	local:problem	.
+local:s0	rdf:predicate	local:distribute	.
+local:triples_web	rdfs:member	local:triples	.
+local:approach_on_top_of_hadoop	rdfs:member	local:hadoop	.
+local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	rdfs:member	local:triples	.
+local:faster_than_other_published_approach	rdfs:member	local:other_published_approach	.
+local:865m_triples_web	rdfs:subClassOf	local:triples_web	.
+local:s0.1	rdf:subject	local:s1.1	.
+local:s6	rdf:subject	local:we	.
+local:cluster_of_64_commodity_machines	rdfs:member	local:64_commodity_machines	.
+local:triples_web	rdfs:subClassOf	local:web	.
+local:naive_implementation_on_top_of_mapreduce_is_straightforward	rdfs:member	local:naive_implementation	.
+local:s6	rdf:object	local:naive_implementation_on_top_of_mapreduce_is_straightforward	.
+local:s0.3	rdf:predicate	local:base	.
+local:s7.2	local:AM-MNR	local:faster_than_any_other_published_approach	.
+local:technique_for_materialising_the_closure_of_an_rdf_graph_based_on_mapreduce	rdfs:member	local:mapreduce	.
+local:s7.1	rdf:object	local:rdfs_closure_of_865m_triples_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	.
+local:865m_30b_triples	rdfs:subClassOf	local:30b_triples	.
+local:s3	rdf:subject	local:we	.
+local:two_faster_hours	rdfs:subClassOf	local:faster_hours	.
+local:s4.1	rdf:predicate	local:perform	.
+local:s7.3	rdf:predicate	local:publish	.
+local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:approach_on_top_of_hadoop	rdfs:member	local:approach	.
+local:several_nontrivial_optimisations	rdfs:subClassOf	local:nontrivial_optimisations	.
+local:s1	rdf:object	local:problem_of_scalable_distributed_reasoning	.
+local:closure_of_rdf_graph	rdfs:member	local:closure	.
+local:faster_hours	rdfs:subClassOf	local:hours	.
+local:s0.1	rdf:predicate	local:propose	.
+local:30b_triples	rdfs:subClassOf	local:triples	.
+local:s7	rdf:object	local:us_to_compute_the_rdfs_closure_of_865m_triples_from_the_web_producing_30b_triples_in_less_than_two_hours_faster_than_any_other_published_approach	.
+local:rdfs_closure	rdfs:subClassOf	local:closure	.
+local:s5	rdf:predicate	local:show	.

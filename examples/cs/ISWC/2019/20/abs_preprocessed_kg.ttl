@@ -1,383 +1,749 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"the stateoftheart produces more novel extractions"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"extracting mostly redundant facts"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the bias observed in extracting mostly redundant facts since the stateoftheart produces more novel extractions"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"has a higher recall during the interpretation process than the stateoftheart"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we approach has a higher recall during the interpretation process than the stateoftheart"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we experiments show that we approach has a higher recall during the interpretation process than the stateoftheart"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"we approach"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we experiments show that we approach is more resistant against the bias"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the enabling of a finegrained tuning of the precisionrecall tradeoff extracted facts"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"enabling of a finegrained tuning of the precisionrecall tradeoff of extracted facts"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"underlying a knowledge graph"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"a knowledge graph embeddings as additional ranking method"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"using a knowledge graph embeddings as additional ranking method"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a scalable graphical model using entity similarities"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"table interpretation based on a scalable graphical model"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we introduce a new technique for table interpretation based on a scalable graphical model"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"we method find more novel facts"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we method aims to find more novel facts"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"focusing on information knowledge graph"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"existing techniques interpret tables by focusing on information knowledge graph"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"existing techniques tend to interpret tables by focusing on information knowledge graph"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"existing techniques extract many redundant facts"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"existing techniques tend to extract many redundant facts"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"we extending a knowledge graph from tables"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we propose a new endtoend method for extending a knowledge graph from tables"	.
+
+
 #### Classes ####
 
-local:propose	rdfs:label	"propose"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:we	rdfs:label	"we"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:endtoend	rdfs:label	"end-to-end"	.
+local:novel_extractions	a	rdf:Class	;
+	rdfs:label	"novel extractions"	.
 
-local:endtoend_method	rdfs:label	"end-to-end method"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:new	rdfs:label	"new"	.
+local:extractions	a	rdf:Class	;
+	rdfs:label	"extractions"	.
 
-local:new_endtoend	rdfs:label	"new end-to-end"	.
+local:mostly_redundant_facts	a	rdf:Class	;
+	rdfs:label	"mostly redundant facts"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:redundant_facts	a	rdf:Class	;
+	rdfs:label	"redundant facts"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:redundant	a	rdf:Class	;
+	rdfs:label	"redundant"	.
 
-local:method	rdfs:label	"method"	.
+local:facts	a	rdf:Class	;
+	rdfs:label	"facts"	.
 
-local:new_endtoend_method	rdfs:label	"new end-to-end method"	.
+local:mostly_redundant	a	rdf:Class	;
+	rdfs:label	"mostly redundant"	.
 
-local:graph	rdfs:label	"graph"	.
+local:mostly	a	rdf:Class	;
+	rdfs:label	"mostly"	.
 
-local:extending_from_tables	rdfs:label	"extending from tables"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:extending	rdfs:label	"extending"	.
+local:bias	a	rdf:Class	;
+	rdfs:label	"bias"	.
 
-local:tables	rdfs:label	"tables"	.
+local:observe	a	rdf:Class	;
+	rdfs:label	"observe"	.
 
-local:tend	rdfs:label	"tend"	.
+local:since_the_stateoftheart_produces_more_novel_extractions	a	rdf:Class	;
+	rdfs:label	"since the stateoftheart produces more novel extractions"	.
 
-local:existing	rdfs:label	"existing"	.
+local:more_novel_extractions	a	rdf:Class	;
+	rdfs:label	"more novel extractions"	.
 
-local:techniques_techniques	rdfs:label	"techniques techniques"	.
+local:more_novel	a	rdf:Class	;
+	rdfs:label	"more novel"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
 
-local:existing_techniques	rdfs:label	"existing techniques"	.
+local:higher_recall_during_the_interpretation_process_than_the_stateoftheart	a	rdf:Class	;
+	rdfs:label	"higher recall during the interpretation process than the stateoftheart"	.
 
-local:interpret_tables	rdfs:label	"interpret tables"	.
+local:higher_recall	a	rdf:Class	;
+	rdfs:label	"higher recall"	.
 
-local:interpret	rdfs:label	"interpret"	.
+local:interpretation_process	a	rdf:Class	;
+	rdfs:label	"interpretation process"	.
 
-local:focusing_on_information	rdfs:label	"focusing on information"	.
+local:interpretation	a	rdf:Class	;
+	rdfs:label	"interpretation"	.
 
-local:focusing	rdfs:label	"focusing"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:information	rdfs:label	"information"	.
+local:higher	a	rdf:Class	;
+	rdfs:label	"higher"	.
 
-local:therefore_graph	rdfs:label	"therefore graph"	.
+local:recall	a	rdf:Class	;
+	rdfs:label	"recall"	.
 
-local:knowledge_therefore_graph	rdfs:label	"knowledge therefore graph"	.
+local:higher_recall_during_interpretation_process	a	rdf:Class	;
+	rdfs:label	"higher recall during interpretation process"	.
 
-local:already_knowledge_therefore_graph	rdfs:label	"already knowledge therefore graph"	.
+local:higher_recall_during_interpretation_process_than_stateoftheart	a	rdf:Class	;
+	rdfs:label	"higher recall during interpretation process than stateoftheart"	.
 
-local:therefore_tend	rdfs:label	"therefore tend"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:therefore	rdfs:label	"therefore"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:many_many_redundant_redundant_facts	rdfs:label	"many many redundant redundant facts"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:facts	rdfs:label	"facts"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:redundant_redundant_facts	rdfs:label	"redundant redundant facts"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:redundant_facts	rdfs:label	"redundant facts"	.
+local:approach_has_a_higher_recall_during_the_interpretation_process_than_the_stateoftheart	a	rdf:Class	;
+	rdfs:label	"approach has a higher recall during the interpretation process than the stateoftheart"	.
 
-local:redundant	rdfs:label	"redundant"	.
+local:approach_is_more_resistant_against_the_bias	a	rdf:Class	;
+	rdfs:label	"approach is more resistant against the bias"	.
 
-local:many_redundant_redundant	rdfs:label	"many redundant redundant"	.
+local:more_resistant	a	rdf:Class	;
+	rdfs:label	"more resistant"	.
 
-local:many	rdfs:label	"many"	.
+local:resistant	a	rdf:Class	;
+	rdfs:label	"resistant"	.
 
-local:many_many	rdfs:label	"many many"	.
+local:more_resistant_against_bias	a	rdf:Class	;
+	rdfs:label	"more resistant against bias"	.
 
-local:many_many_redundant	rdfs:label	"many many redundant"	.
+local:enabling_of_a_finegrained_tuning_of_the_precisionrecall_tradeoff	a	rdf:Class	;
+	rdfs:label	"enabling of a finegrained tuning of the precisionrecall tradeoff"	.
 
-local:many_many_redundant_redundant	rdfs:label	"many many redundant redundant"	.
+local:finegrained_tuning	a	rdf:Class	;
+	rdfs:label	"finegrained tuning"	.
 
-local:redundant_redundant	rdfs:label	"redundant redundant"	.
+local:enabling	a	rdf:Class	;
+	rdfs:label	"enabling"	.
 
-local:many_redundant	rdfs:label	"many redundant"	.
+local:precisionrecall_tradeoff	a	rdf:Class	;
+	rdfs:label	"precisionrecall tradeoff"	.
 
-local:many_redundant_redundant_facts	rdfs:label	"many redundant redundant facts"	.
+local:tuning	a	rdf:Class	;
+	rdfs:label	"tuning"	.
 
-local:extract	rdfs:label	"extract"	.
+local:tradeoff	a	rdf:Class	;
+	rdfs:label	"tradeoff"	.
 
-local:many_redundant_facts	rdfs:label	"many redundant facts"	.
+local:finegrained	a	rdf:Class	;
+	rdfs:label	"finegrained"	.
 
-local:already_knowledge_graph	rdfs:label	"already knowledge graph"	.
+local:precisionrecall	a	rdf:Class	;
+	rdfs:label	"precisionrecall"	.
 
-local:aims	rdfs:label	"aims"	.
+local:enabling_of_finegrained_tuning	a	rdf:Class	;
+	rdfs:label	"enabling of finegrained tuning"	.
 
-local:novel_facts	rdfs:label	"novel facts"	.
+local:finegrained_tuning_of_precisionrecall_tradeoff	a	rdf:Class	;
+	rdfs:label	"finegrained tuning of precisionrecall tradeoff"	.
 
-local:more_novel	rdfs:label	"more novel"	.
+local:finegrained_tuning_of_the_precisionrecall_tradeoff_of_extracted_facts	a	rdf:Class	;
+	rdfs:label	"finegrained tuning of the precisionrecall tradeoff of extracted facts"	.
 
-local:more_novel_facts	rdfs:label	"more novel facts"	.
+local:extracted_facts	a	rdf:Class	;
+	rdfs:label	"extracted facts"	.
 
-local:novel	rdfs:label	"novel"	.
+local:extracted	a	rdf:Class	;
+	rdfs:label	"extracted"	.
 
-local:more	rdfs:label	"more"	.
+local:precisionrecall_tradeoff_of_extracted_facts	a	rdf:Class	;
+	rdfs:label	"precisionrecall tradeoff of extracted facts"	.
 
-local:find	rdfs:label	"find"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:introduce	rdfs:label	"introduce"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:table	rdfs:label	"table"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:table_interpretation	rdfs:label	"table interpretation"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:new_technique	rdfs:label	"new technique"	.
+local:underlie	a	rdf:Class	;
+	rdfs:label	"underlie"	.
 
-local:technique	rdfs:label	"technique"	.
+local:embeddings	a	rdf:Class	;
+	rdfs:label	"embeddings"	.
 
-local:interpretation	rdfs:label	"interpretation"	.
+local:additional_ranking_method	a	rdf:Class	;
+	rdfs:label	"additional ranking method"	.
 
-local:new_technique_for_table_interpretation	rdfs:label	"new technique for table interpretation"	.
+local:ranking_method	a	rdf:Class	;
+	rdfs:label	"ranking method"	.
 
-local:entity_similarities	rdfs:label	"entity similarities"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:similarities	rdfs:label	"similarities"	.
+local:additional_ranking	a	rdf:Class	;
+	rdfs:label	"additional ranking"	.
 
-local:entity	rdfs:label	"entity"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:based	rdfs:label	"based"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:using	rdfs:label	"using"	.
+local:knowledge_graph_embeddings_as_additional_ranking_method	a	rdf:Class	;
+	rdfs:label	"knowledge graph embeddings as additional ranking method"	.
 
-local:additional_ranking	rdfs:label	"additional ranking"	.
+local:knowledge_graph_embeddings	a	rdf:Class	;
+	rdfs:label	"knowledge graph embeddings"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:graph_embeddings	a	rdf:Class	;
+	rdfs:label	"graph embeddings"	.
 
-local:graph_embeddings	rdfs:label	"graph embeddings"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:additional_ranking_method	rdfs:label	"additional ranking method"	.
+local:scalable_graphical_model	a	rdf:Class	;
+	rdfs:label	"scalable graphical model"	.
 
-local:additional	rdfs:label	"additional"	.
+local:graphical_model	a	rdf:Class	;
+	rdfs:label	"graphical model"	.
 
-local:knowledge_graph_embeddings	rdfs:label	"knowledge graph embeddings"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:embeddings	rdfs:label	"embeddings"	.
+local:scalable_graphical	a	rdf:Class	;
+	rdfs:label	"scalable graphical"	.
 
-local:ranking_method	rdfs:label	"ranking method"	.
+local:graphical	a	rdf:Class	;
+	rdfs:label	"graphical"	.
 
-local:knowledge_graph_embeddings_as_additional_ranking_method	rdfs:label	"knowledge graph embeddings as additional ranking method"	.
+local:scalable	a	rdf:Class	;
+	rdfs:label	"scalable"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:entity_similarities	a	rdf:Class	;
+	rdfs:label	"entity similarities"	.
 
-local:extracted_facts	rdfs:label	"extracted facts"	.
+local:similarities	a	rdf:Class	;
+	rdfs:label	"similarities"	.
 
-local:precisionrecall	rdfs:label	"precision/recall"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:precisionrecall_tradeoff	rdfs:label	"precision/recall trade-off"	.
+local:table_interpretation	a	rdf:Class	;
+	rdfs:label	"table interpretation"	.
 
-local:finegrained	rdfs:label	"fine-grained"	.
+local:table	a	rdf:Class	;
+	rdfs:label	"table"	.
 
-local:finegrained_tuning	rdfs:label	"fine-grained tuning"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:tradeoff	rdfs:label	"trade-off"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:tuning	rdfs:label	"tuning"	.
+local:new_technique_for_table_interpretation	a	rdf:Class	;
+	rdfs:label	"new technique for table interpretation"	.
 
-local:finegrained_tuning_of_precisionrecall_tradeoff	rdfs:label	"fine-grained tuning of precision/recall trade-off"	.
+local:new_technique	a	rdf:Class	;
+	rdfs:label	"new technique"	.
 
-local:precisionrecall_tradeoff_of_extracted_facts	rdfs:label	"precision/recall trade-off of extracted facts"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:enabling	rdfs:label	"enabling"	.
+local:technique	a	rdf:Class	;
+	rdfs:label	"technique"	.
 
-local:underlying	rdfs:label	"underlying"	.
+local:based_on_a_scalable_graphical_model	a	rdf:Class	;
+	rdfs:label	"based on a scalable graphical model"	.
 
-local:show	rdfs:label	"show"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:novel_facts	a	rdf:Class	;
+	rdfs:label	"novel facts"	.
 
-local:interpretation_process	rdfs:label	"interpretation process"	.
+local:aim	a	rdf:Class	;
+	rdfs:label	"aim"	.
 
-local:process	rdfs:label	"process"	.
+local:find_more_novel_facts	a	rdf:Class	;
+	rdfs:label	"find more novel facts"	.
 
-local:higher	rdfs:label	"higher"	.
+local:more_novel_facts	a	rdf:Class	;
+	rdfs:label	"more novel facts"	.
 
-local:higher_recall	rdfs:label	"higher recall"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:recall	rdfs:label	"recall"	.
+local:information_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"information knowledge graph"	.
 
-local:higher_recall_during_interpretation_process	rdfs:label	"higher recall during interpretation process"	.
+local:information_knowledge	a	rdf:Class	;
+	rdfs:label	"information knowledge"	.
 
-local:higher_recall_during_interpretation_process_than_stateoftheart	rdfs:label	"higher recall during interpretation process than state-of-the-art"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:existing_techniques	a	rdf:Class	;
+	rdfs:label	"existing techniques"	.
 
-local:has	rdfs:label	"has"	.
+local:interpret	a	rdf:Class	;
+	rdfs:label	"interpret"	.
 
-local:approach	rdfs:label	"approach"	.
+local:tables	a	rdf:Class	;
+	rdfs:label	"tables"	.
 
-local:mostly_redundant_facts	rdfs:label	"mostly redundant facts"	.
+local:focusing_on_information_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"focusing on information knowledge graph"	.
 
-local:mostly_redundant	rdfs:label	"mostly redundant"	.
+local:focusing	a	rdf:Class	;
+	rdfs:label	"focusing"	.
 
-local:mostly	rdfs:label	"mostly"	.
+local:tend	a	rdf:Class	;
+	rdfs:label	"tend"	.
 
-local:novel_extractions	rdfs:label	"novel extractions"	.
+local:interpret_tables_by_focusing_on_information_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"interpret tables by focusing on information knowledge graph"	.
 
-local:extractions	rdfs:label	"extractions"	.
+local:interpret_tables	a	rdf:Class	;
+	rdfs:label	"interpret tables"	.
 
-local:more_novel_extractions	rdfs:label	"more novel extractions"	.
+local:many_redundant_facts	a	rdf:Class	;
+	rdfs:label	"many redundant facts"	.
 
-local:more_resistant	rdfs:label	"more resistant"	.
+local:many_redundant	a	rdf:Class	;
+	rdfs:label	"many redundant"	.
 
-local:resistant	rdfs:label	"resistant"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:extracting	rdfs:label	"extracting"	.
+local:existing	a	rdf:Class	;
+	rdfs:label	"existing"	.
 
-local:produces	rdfs:label	"produces"	.
+local:existing_techniques_techniques_tend_to_extract_extract_many_many_redundant_redundant_facts_facts	a	rdf:Class	;
+	rdfs:label	"existing techniques techniques tend to extract extract many many redundant redundant facts facts"	.
 
-#### Properties ####
+local:techniques_techniques	a	rdf:Class	;
+	rdfs:label	"techniques techniques"	.
+
+local:extract_many_many_redundant_redundant_facts_facts	a	rdf:Class	;
+	rdfs:label	"extract many many redundant redundant facts facts"	.
+
+local:extract_many_many_redundant	a	rdf:Class	;
+	rdfs:label	"extract many many redundant"	.
+
+local:extract_many_many	a	rdf:Class	;
+	rdfs:label	"extract many many"	.
+
+local:many_redundant_redundant_facts_facts	a	rdf:Class	;
+	rdfs:label	"many redundant redundant facts facts"	.
+
+local:many_redundant_redundant_facts	a	rdf:Class	;
+	rdfs:label	"many redundant redundant facts"	.
+
+local:many_many_redundant_redundant	a	rdf:Class	;
+	rdfs:label	"many many redundant redundant"	.
+
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
+
+local:redundant_redundant_facts_facts	a	rdf:Class	;
+	rdfs:label	"redundant redundant facts facts"	.
+
+local:many_redundant_redundant	a	rdf:Class	;
+	rdfs:label	"many redundant redundant"	.
+
+local:extract_many	a	rdf:Class	;
+	rdfs:label	"extract many"	.
+
+local:many_many_redundant	a	rdf:Class	;
+	rdfs:label	"many many redundant"	.
+
+local:many_many	a	rdf:Class	;
+	rdfs:label	"many many"	.
+
+local:extract_many_many_redundant_redundant_facts	a	rdf:Class	;
+	rdfs:label	"extract many many redundant redundant facts"	.
+
+local:extract_many_many_redundant_redundant	a	rdf:Class	;
+	rdfs:label	"extract many many redundant redundant"	.
+
+local:many_many_redundant_redundant_facts	a	rdf:Class	;
+	rdfs:label	"many many redundant redundant facts"	.
+
+local:redundant_facts_facts	a	rdf:Class	;
+	rdfs:label	"redundant facts facts"	.
+
+local:facts_facts	a	rdf:Class	;
+	rdfs:label	"facts facts"	.
+
+local:redundant_redundant	a	rdf:Class	;
+	rdfs:label	"redundant redundant"	.
+
+local:redundant_redundant_facts	a	rdf:Class	;
+	rdfs:label	"redundant redundant facts"	.
+
+local:many_many_redundant_redundant_facts_facts	a	rdf:Class	;
+	rdfs:label	"many many redundant redundant facts facts"	.
+
+local:existing_techniques_techniques	a	rdf:Class	;
+	rdfs:label	"existing techniques techniques"	.
+
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
+
+local:knowledge_graph_tables	a	rdf:Class	;
+	rdfs:label	"knowledge graph tables"	.
+
+local:graph_tables	a	rdf:Class	;
+	rdfs:label	"graph tables"	.
+
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
+
+local:new_endtoend_method	a	rdf:Class	;
+	rdfs:label	"new endtoend method"	.
+
+local:endtoend_method	a	rdf:Class	;
+	rdfs:label	"endtoend method"	.
+
+local:endtoend	a	rdf:Class	;
+	rdfs:label	"endtoend"	.
+
+local:new_endtoend	a	rdf:Class	;
+	rdfs:label	"new endtoend"	.
+
+local:extending_a_knowledge_graph_from_tables	a	rdf:Class	;
+	rdfs:label	"extending a knowledge graph from tables"	.
+
+local:knowledge_graph_from_tables	a	rdf:Class	;
+	rdfs:label	"knowledge graph from tables"	.
 
 #### Mapped Relations ####
 
 cso:graph_embeddings	rdfs:label	"graph embeddings"	.
 local:graph_embeddings	owl:sameAs	cso:graph_embeddings	.
+cso:graphical_model	rdfs:label	"graphical model"	.
+local:graphical_model	owl:sameAs	cso:graphical_model	.
 
 #### Relations ####
 
-local:knowledge_graph_embeddings	rdfs:subClassOf	local:embeddings	.
-local:finegrained	rdfs:member	local:finegrained_tuning	.
-local:more_novel_extractions	rdfs:subClassOf	local:extractions	.
-local:techniques	rdfs:member	local:techniques_techniques	.
-local:many_redundant	rdfs:subClassOf	local:redundant	.
-local:ranking	rdfs:member	local:ranking_method	.
-local:find	vn.role:Theme	local:novel_facts	.
-local:based	vn.role:indirect_object	local:using	.
-local:tend	vn.role:indirect_object	local:interpret	.
-local:enabling	vn.role:Patient	local:finegrained_tuning_of_precisionrecall_tradeoff	.
-local:many_many_redundant_redundant	rdfs:subClassOf	local:redundant	.
-local:precisionrecall_tradeoff	rdfs:subClassOf	local:tradeoff	.
-local:finegrained_tuning	rdfs:subClassOf	local:tuning	.
-local:many_redundant_redundant_facts	rdfs:subClassOf	local:facts	.
-local:already_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
-local:using	vn.role:Theme	local:knowledge_graph_embeddings_as_additional_ranking_method	.
-local:knowledge_graph_embeddings_as_additional_ranking_method	local:as_additionalrankingmethod	local:knowledge_graph_embeddings	.
-local:aims	vn.role:Theme	local:find	.
-local:extracted_facts	rdfs:subClassOf	local:facts	.
-local:already_knowledge_therefore_graph	rdfs:subClassOf	local:knowledge_therefore_graph	.
-local:additional_ranking	rdfs:member	local:additional_ranking_method	.
-local:interpretation	rdfs:member	local:interpretation_process	.
-local:interpretation_process	rdfs:subClassOf	local:process	.
-local:show	vn.role:Theme	local:more_resistant	.
-local:knowledge_graph	rdfs:member	local:knowledge_graph_embeddings	.
-local:graph_embeddings	rdfs:subClassOf	local:embeddings	.
-local:additional	rdfs:member	local:additional_ranking	.
-local:introduce	vn.role:Patient	local:new_technique_for_table_interpretation	.
-local:therefore	rdfs:member	local:therefore_tend	.
-local:focusing	vn.role:indirect_object	local:information	.
-local:many_many	rdfs:subClassOf	local:many	.
-local:tend	vn.role:Location	local:techniques	.
-local:ranking_method	rdfs:subClassOf	local:method	.
-local:interpret	vn.role:Theme	local:tables	.
-local:focusing_on_information	local:focusing_on	local:information	.
-local:extracted	rdfs:member	local:extracted_facts	.
-local:introduce	local:AM-MNR	local:based	.
-local:based	vn.role:Cause	local:table_interpretation	.
-local:entity_similarities	rdfs:subClassOf	local:similarities	.
-local:tend	vn.role:indirect_object	local:information	.
-local:extending_from_tables	local:from_tables	local:extending	.
-local:endtoend	rdfs:member	local:endtoend_method	.
-local:new_technique_for_table_interpretation	local:newtechnique_for	local:table_interpretation	.
-local:more_novel	rdfs:member	local:more_novel_extractions	.
-local:many_redundant_redundant	rdfs:subClassOf	local:redundant	.
-local:many	rdfs:member	local:many_many	.
-local:interpret	vn.role:Predicate	local:focusing_on_information	.
-local:embeddings	vn.role:subject	local:knowledge_graph	.
-local:show	vn.role:Agent	local:experiments	.
-local:propose	vn.role:Agent	local:we	.
-local:knowledge_graph_embeddings	rdfs:subClassOf	local:graph_embeddings	.
-local:focusing_on_information	local:on_information	local:focusing	.
-local:new_technique_for_table_interpretation	local:for_tableinterpretation	local:new_technique	.
-local:more_resistant	rdfs:subClassOf	local:resistant	.
-local:more_novel	rdfs:member	local:more_novel_facts	.
-local:propose	vn.role:Topic	local:new_endtoend_method	.
-local:many_redundant_facts	rdfs:subClassOf	local:facts	.
-local:knowledge_graph_embeddings_as_additional_ranking_method	local:knowledgegraphembeddings_as	local:additional_ranking_method	.
-local:table_interpretation	rdfs:subClassOf	local:interpretation	.
-local:precisionrecall_tradeoff_of_extracted_facts	local:of_extractedfacts	local:precisionrecall_tradeoff	.
-local:table	rdfs:member	local:table_interpretation	.
-local:many_redundant	rdfs:member	local:many_redundant_redundant	.
-local:extract	vn.role:Theme	local:many_redundant_facts	.
-local:many_many_redundant_redundant	rdfs:member	local:many_many_redundant_redundant_facts	.
-local:higher_recall_during_interpretation_process	local:higherrecall_during	local:interpretation_process	.
-local:mostly_redundant_facts	rdfs:subClassOf	local:facts	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:techniques_techniques	rdfs:subClassOf	local:techniques	.
-local:interpret_tables	rdfs:subClassOf	local:tables	.
-local:produces	vn.role:Product	local:novel_extractions	.
-local:tend	vn.role:indirect_object	local:therefore_tend	.
+local:s1.1	rdf:predicate	local:extract	.
+local:enabling_of_finegrained_tuning	rdfs:member	local:finegrained_tuning	.
+local:knowledge_graph_embeddings_as_additional_ranking_method	rdfs:member	local:knowledge_graph_embeddings	.
 local:new_endtoend	rdfs:subClassOf	local:endtoend	.
-local:approach	vn.role:object	local:we	.
-local:many_many	rdfs:member	local:many_many_redundant	.
-local:many_redundant	rdfs:member	local:many_redundant_facts	.
+local:s11	rdf:object	local:approach_has_a_higher_recall_during_the_interpretation_process_than_the_stateoftheart	.
+local:s11.2	rdf:predicate	local:have	.
+local:many_redundant	rdfs:subClassOf	local:redundant	.
+local:many_many_redundant_redundant_facts	rdfs:subClassOf	local:facts	.
+local:s12	rdf:predicate	local:observe	.
+local:s12	local:AM-LOC	local:s12.1	.
+local:many_many_redundant	rdfs:member	local:many_many	.
+local:extract_many_many_redundant	rdfs:subClassOf	local:redundant	.
+local:s0	local:AM-PNC	local:extending_a_knowledge_graph_from_tables	.
+local:endtoend_method	rdfs:member	local:endtoend	.
+local:s8	rdf:predicate	local:underlie	.
+local:scalable_graphical_model	rdfs:member	local:scalable_graphical	.
+local:s6	rdf:subject	local:scalable_graphical_model	.
+local:s5	local:AM-MNR	local:based_on_a_scalable_graphical_model	.
+local:additional_ranking_method	rdfs:member	local:additional_ranking	.
+local:s2	rdf:predicate	local:tend	.
+local:many_redundant_redundant_facts	rdfs:member	local:many_redundant_redundant	.
+local:many_redundant_facts	rdfs:member	local:many_redundant	.
+local:higher_recall	rdfs:subClassOf	local:recall	.
+local:existing_techniques_techniques_tend_to_extract_extract_many_many_redundant_redundant_facts_facts	rdfs:member	local:techniques_techniques	.
+local:s9.1	rdf:predicate	local:extract	.
+local:s2.2	rdfs:member	local:information_knowledge_graph	.
+local:ranking_method	rdfs:member	local:ranking	.
+local:mostly_redundant_facts	rdfs:subClassOf	local:facts	.
+local:s4.1	rdf:subject	local:method	.
+local:s4.1	rdf:object	local:novel_facts	.
+local:s5	rdf:predicate	local:introduce	.
+local:many_redundant_redundant_facts	rdfs:subClassOf	local:redundant_redundant_facts	.
+local:new_technique	rdfs:subClassOf	local:technique	.
+local:s10	rdf:object	local:approach_is_more_resistant_against_the_bias	.
+local:new_endtoend_method	rdfs:member	local:new_endtoend	.
+local:extract_many_many_redundant_redundant	rdfs:member	local:extract_many_many_redundant	.
+local:s9	rdf:predicate	local:enable	.
+local:many_redundant_facts	rdfs:subClassOf	local:redundant_facts	.
+local:additional_ranking_method	rdfs:subClassOf	local:ranking_method	.
+local:interpretation_process	rdfs:member	local:interpretation	.
+local:s5	rdf:subject	local:we	.
+local:s5	rdf:object	local:new_technique_for_table_interpretation	.
+local:mostly_redundant_facts	rdfs:member	local:mostly_redundant	.
+local:redundant_facts	rdfs:subClassOf	local:facts	.
+local:higher_recall_during_interpretation_process_than_stateoftheart	rdfs:member	local:higher_recall_during_interpretation_process	.
+local:s9.1	rdf:subject	local:enabling_of_a_finegrained_tuning_of_the_precisionrecall_tradeoff	.
+local:finegrained_tuning	rdfs:subClassOf	local:tuning	.
+local:s9.1	rdf:object	local:facts	.
+local:redundant_facts_facts	rdfs:subClassOf	local:facts	.
+local:redundant_facts	rdfs:member	local:redundant	.
+local:more_novel_extractions	rdfs:member	local:more_novel	.
+local:entity_similarities	rdfs:member	local:entity	.
+local:redundant_redundant_facts	rdfs:member	local:redundant_redundant	.
+local:finegrained_tuning_of_the_precisionrecall_tradeoff_of_extracted_facts	rdfs:member	local:precisionrecall_tradeoff	.
+local:facts_facts	rdfs:subClassOf	local:facts	.
+local:s4	rdf:object	local:find_more_novel_facts	.
+local:s11.1	rdf:object	local:higher_recall_during_the_interpretation_process_than_the_stateoftheart	.
+local:precisionrecall_tradeoff	rdfs:member	local:precisionrecall	.
+local:many_many_redundant	rdfs:subClassOf	local:redundant	.
+local:new_technique_for_table_interpretation	rdfs:member	local:table_interpretation	.
+local:additional_ranking_method	rdfs:subClassOf	local:method	.
+local:many_many_redundant_redundant_facts	rdfs:member	local:many_many_redundant_redundant	.
+local:s1.1	rdf:object	local:many_redundant_facts	.
+local:extract_many	rdfs:subClassOf	local:many	.
+local:higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:interpretation_process	.
+local:extract_many_many	rdfs:subClassOf	local:many	.
+local:redundant_redundant	rdfs:member	local:redundant	.
+local:extending_a_knowledge_graph_from_tables	rdfs:member	local:tables	.
+local:existing_techniques_techniques	rdfs:subClassOf	local:techniques_techniques	.
+local:information_knowledge	rdfs:subClassOf	local:knowledge	.
+local:mostly_redundant	rdfs:subClassOf	local:redundant	.
+local:many_many_redundant_redundant_facts_facts	rdfs:member	local:many_many_redundant_redundant_facts	.
+local:extracted_facts	rdfs:subClassOf	local:facts	.
+local:extract_many_many_redundant_redundant_facts	rdfs:subClassOf	local:facts	.
+local:s10	rdf:predicate	local:show	.
+local:more_novel_extractions	rdfs:subClassOf	local:extractions	.
+local:approach_has_a_higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:approach	.
+local:information_knowledge	rdfs:member	local:information	.
+local:precisionrecall_tradeoff_of_extracted_facts	rdfs:member	local:extracted_facts	.
+local:knowledge_graph_embeddings	rdfs:subClassOf	local:graph_embeddings	.
+local:s4.1	rdf:predicate	local:find	.
+local:techniques_techniques	rdfs:member	local:techniques	.
+local:finegrained_tuning_of_precisionrecall_tradeoff	rdfs:member	local:precisionrecall_tradeoff	.
+local:additional_ranking	rdfs:member	local:additional	.
+local:entity_similarities	rdfs:subClassOf	local:similarities	.
+local:approach_has_a_higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:stateoftheart	.
+local:new_technique	rdfs:member	local:new	.
+local:new_endtoend_method	rdfs:subClassOf	local:endtoend_method	.
+local:many_many	rdfs:subClassOf	local:many	.
+local:graph_embeddings	rdfs:subClassOf	local:embeddings	.
+local:enabling_of_finegrained_tuning	rdfs:member	local:enabling	.
+local:graphical_model	rdfs:member	local:graphical	.
+local:table_interpretation	rdfs:subClassOf	local:interpretation	.
+local:knowledge_graph_embeddings_as_additional_ranking_method	rdfs:member	local:additional_ranking_method	.
+local:s7.1	rdf:predicate	local:embeddings	.
+local:redundant_redundant_facts_facts	rdfs:subClassOf	local:facts	.
+local:techniques_techniques	rdfs:subClassOf	local:techniques	.
+local:s1	rdf:predicate	local:tend	.
+local:s2.2	rdfs:member	local:focusing	.
+local:s11.1	rdf:predicate	local:approach	.
+local:many_many_redundant_redundant	rdfs:subClassOf	local:redundant	.
+local:higher_recall_during_interpretation_process_than_stateoftheart	rdfs:member	local:stateoftheart	.
+local:s5.1	rdf:subject	local:table_interpretation	.
+local:s2.2	rdf:predicate	local:focus	.
+local:many_redundant_redundant_facts_facts	rdfs:subClassOf	local:facts	.
+local:many_redundant	rdfs:member	local:many	.
+local:interpret_tables_by_focusing_on_information_knowledge_graph	rdfs:member	local:interpret_tables	.
+local:scalable_graphical	rdfs:member	local:scalable	.
+local:s1.1	rdf:subject	local:existing_techniques	.
+local:finegrained_tuning_of_precisionrecall_tradeoff	rdfs:member	local:finegrained_tuning	.
+local:more_novel	rdfs:member	local:more	.
+local:graphical_model	rdfs:subClassOf	local:model	.
+local:s10.1	rdf:subject	local:we	.
+local:extending_a_knowledge_graph_from_tables	rdfs:member	local:knowledge_graph	.
+local:s1	rdf:subject	local:existing	.
+local:many_redundant_redundant	rdfs:subClassOf	local:redundant	.
+local:existing_techniques_techniques_tend_to_extract_extract_many_many_redundant_redundant_facts_facts	rdfs:member	local:extract_many_many_redundant_redundant_facts_facts	.
+local:approach_has_a_higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:higher_recall	.
+local:more_resistant_against_bias	rdfs:member	local:more_resistant	.
+local:s1	rdf:object	local:existing_techniques_techniques_tend_to_extract_extract_many_many_redundant_redundant_facts_facts	.
+local:s8	rdf:subject	local:knowledge_graph	.
+local:graph_tables	rdfs:subClassOf	local:tables	.
+local:approach_has_a_higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:interpretation_process	.
+local:since_the_stateoftheart_produces_more_novel_extractions	rdfs:member	local:stateoftheart	.
+local:s10	rdf:subject	local:experiments	.
+local:s12.2	rdf:subject	local:stateoftheart	.
+local:extract_many_many_redundant_redundant_facts	rdfs:member	local:extract_many_many_redundant_redundant	.
+local:interpret_tables	rdfs:subClassOf	local:tables	.
+local:interpretation_process	rdfs:subClassOf	local:process	.
+local:s4	rdf:subject	local:method	.
+local:since_the_stateoftheart_produces_more_novel_extractions	rdfs:member	local:more_novel_extractions	.
+local:s0.1	rdf:subject	local:we	.
+local:graph_tables	rdfs:member	local:graph	.
+local:precisionrecall_tradeoff	rdfs:subClassOf	local:tradeoff	.
 local:redundant_redundant_facts	rdfs:subClassOf	local:redundant_facts	.
 local:more_novel	rdfs:subClassOf	local:novel	.
-local:new_endtoend_method	rdfs:subClassOf	local:endtoend_method	.
-local:additional_ranking_method	rdfs:subClassOf	local:ranking_method	.
-local:higher_recall_during_interpretation_process	local:during_interpretationprocess	local:higher_recall	.
-local:novel	rdfs:member	local:novel_extractions	.
-local:new_endtoend_method	rdfs:subClassOf	local:method	.
-local:tend	vn.role:indirect_object	local:facts	.
-local:additional_ranking_method	rdfs:subClassOf	local:method	.
-local:higher_recall	rdfs:subClassOf	local:recall	.
-local:interpret	rdfs:member	local:interpret_tables	.
-local:finegrained_tuning_of_precisionrecall_tradeoff	local:fine-grainedtuning_of	local:precisionrecall_tradeoff	.
-local:mostly	rdfs:member	local:mostly_redundant	.
-local:new	rdfs:member	local:new_technique	.
-local:many_many_redundant	rdfs:subClassOf	local:redundant	.
-local:graph	rdfs:member	local:graph_embeddings	.
-local:many_redundant_facts	rdfs:subClassOf	local:redundant_facts	.
-local:aims	vn.role:Experiencer	local:method	.
-local:higher_recall_during_interpretation_process_than_stateoftheart	local:than_state-of-the-art	local:higher_recall_during_interpretation_process	.
-local:redundant	rdfs:member	local:redundant_redundant	.
-local:extracted	vn.role:Theme	local:finegrained_tuning_of_precisionrecall_tradeoff	.
-local:more_novel_facts	rdfs:subClassOf	local:facts	.
-local:many_redundant_redundant_facts	rdfs:subClassOf	local:redundant_redundant_facts	.
-local:redundant_facts	rdfs:subClassOf	local:facts	.
-local:introduce	vn.role:Agent	local:we	.
-local:redundant	rdfs:member	local:redundant_facts	.
-local:many_many_redundant_redundant_facts	rdfs:subClassOf	local:many_redundant_redundant_facts	.
-local:extending	vn.role:Agent	local:we	.
-local:precisionrecall_tradeoff_of_extracted_facts	local:precision/recalltrade-off_of	local:extracted_facts	.
-local:higher_recall_during_interpretation_process_than_stateoftheart	local:higherrecallduringinterpretationprocess_than	local:stateoftheart	.
-local:extending	vn.role:Theme	local:knowledge_graph	.
-local:extending	vn.role:Recipient	local:tables	.
-local:redundant_redundant_facts	rdfs:subClassOf	local:facts	.
-local:existing_techniques	rdfs:subClassOf	local:techniques	.
-local:endtoend_method	rdfs:subClassOf	local:method	.
+local:s6	rdf:object	local:entity_similarities	.
+local:more_novel_facts	rdfs:member	local:more_novel	.
+local:many_redundant_redundant_facts	rdfs:subClassOf	local:facts	.
+local:s12	rdf:subject	local:bias	.
+local:higher_recall_during_interpretation_process	rdfs:member	local:higher_recall	.
+local:enabling_of_a_finegrained_tuning_of_the_precisionrecall_tradeoff	rdfs:member	local:finegrained_tuning	.
+local:s9	rdf:subject	local:finegrained_tuning_of_the_precisionrecall_tradeoff_of_extracted_facts	.
+local:s11.1	rdf:subject	local:we	.
 local:novel_facts	rdfs:subClassOf	local:facts	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:higher	rdfs:member	local:higher_recall	.
-local:find	vn.role:Agent	local:method	.
-local:many	rdfs:member	local:many_redundant	.
-local:finegrained_tuning_of_precisionrecall_tradeoff	local:of_precision/recalltrade-off	local:finegrained_tuning	.
-local:more_novel_extractions	rdfs:subClassOf	local:novel_extractions	.
-local:extract	vn.role:Agent	local:information	.
-local:novel	rdfs:member	local:novel_facts	.
-local:tend	vn.role:indirect_object	local:extract	.
-local:approach	vn.role:indirect_object	local:higher_recall_during_interpretation_process_than_stateoftheart	.
-local:extracted	vn.role:Theme	local:facts	.
-local:using	vn.role:Theme	local:entity_similarities	.
-local:show	vn.role:Theme	local:has	.
-local:mostly_redundant	rdfs:member	local:mostly_redundant_facts	.
-local:new	rdfs:member	local:new_endtoend	.
-local:novel_extractions	rdfs:subClassOf	local:extractions	.
-local:new_endtoend	rdfs:member	local:new_endtoend_method	.
-local:interpret	vn.role:Agent	local:existing_techniques	.
-local:extending_from_tables	local:extending_from	local:tables	.
-local:therefore_graph	rdfs:subClassOf	local:graph	.
-local:entity	rdfs:member	local:entity_similarities	.
-local:many_many_redundant_redundant_facts	rdfs:subClassOf	local:facts	.
-local:tend	vn.role:Location	local:existing	.
-local:many_redundant_redundant	rdfs:member	local:many_redundant_redundant_facts	.
-local:new_technique	rdfs:subClassOf	local:technique	.
-local:precisionrecall	rdfs:member	local:precisionrecall_tradeoff	.
-local:tend	vn.role:indirect_object	local:already_knowledge_therefore_graph	.
-local:embeddings	vn.role:indirect_object	local:additional_ranking_method	.
-local:more	rdfs:member	local:more_novel	.
-local:extracting	vn.role:Theme	local:redundant_facts	.
-local:produces	vn.role:Agent	local:stateoftheart	.
 local:redundant_redundant	rdfs:subClassOf	local:redundant	.
-local:redundant_redundant	rdfs:member	local:redundant_redundant_facts	.
-local:has	vn.role:Stimulus	local:higher_recall_during_interpretation_process_than_stateoftheart	.
-local:therefore_tend	rdfs:subClassOf	local:tend	.
-local:knowledge_therefore_graph	rdfs:subClassOf	local:therefore_graph	.
+local:extract_many_many_redundant_redundant	rdfs:subClassOf	local:redundant	.
+local:redundant_facts_facts	rdfs:member	local:redundant_facts	.
+local:endtoend_method	rdfs:subClassOf	local:method	.
+local:higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:higher_recall	.
+local:scalable_graphical	rdfs:subClassOf	local:graphical	.
+local:s2.2	rdf:object	local:information_knowledge_graph	.
+local:s12.2	rdf:object	local:novel_extractions	.
+local:novel_facts	rdfs:member	local:novel	.
+local:many_many	rdfs:member	local:many	.
+local:s12.1	rdf:subject	local:mostly_redundant_facts	.
+local:interpret_tables	rdfs:member	local:interpret	.
+local:enabling_of_a_finegrained_tuning_of_the_precisionrecall_tradeoff	rdfs:member	local:enabling	.
+local:extract_many_many_redundant_redundant_facts_facts	rdfs:member	local:extract_many_many_redundant_redundant_facts	.
+local:precisionrecall_tradeoff_of_extracted_facts	rdfs:member	local:precisionrecall_tradeoff	.
+local:finegrained_tuning_of_the_precisionrecall_tradeoff_of_extracted_facts	rdfs:member	local:tuning	.
+local:facts_facts	rdfs:member	local:facts	.
+local:approach_is_more_resistant_against_the_bias	rdfs:member	local:bias	.
+local:mostly_redundant	rdfs:member	local:mostly	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:interpret_tables_by_focusing_on_information_knowledge_graph	rdfs:member	local:information_knowledge_graph	.
+local:s7	rdf:subject	local:knowledge_graph_embeddings_as_additional_ranking_method	.
+local:information_knowledge_graph	rdfs:subClassOf	local:graph	.
+local:higher_recall_during_the_interpretation_process_than_the_stateoftheart	rdfs:member	local:stateoftheart	.
+local:higher_recall	rdfs:member	local:higher	.
+local:many_many_redundant_redundant	rdfs:member	local:many_many_redundant	.
+local:ranking_method	rdfs:subClassOf	local:method	.
+local:s2.1	rdf:object	local:tables	.
+local:new_endtoend_method	rdfs:subClassOf	local:method	.
+local:extract_many_many	rdfs:member	local:extract_many	.
+local:s5.1	rdf:object	local:scalable_graphical_model	.
+local:many_many_redundant_redundant_facts	rdfs:subClassOf	local:many_redundant_redundant_facts	.
+local:s7.1	rdf:subject	local:knowledge_graph	.
+local:s12.1	rdf:predicate	local:extract	.
+local:knowledge_graph_tables	rdfs:subClassOf	local:tables	.
+local:knowledge_graph_from_tables	rdfs:member	local:tables	.
+local:s11.2	rdf:subject	local:higher_recall_during_the_interpretation_process_than_the_stateoftheart	.
+local:knowledge_graph_tables	rdfs:member	local:knowledge_graph	.
+local:s0.1	rdf:object	local:knowledge_graph_tables	.
+local:many_many_redundant_redundant_facts_facts	rdfs:subClassOf	local:facts	.
+local:new_endtoend	rdfs:member	local:new	.
 local:additional_ranking	rdfs:subClassOf	local:ranking	.
-local:many_many_redundant	rdfs:member	local:many_many_redundant_redundant	.
-local:mostly_redundant	rdfs:subClassOf	local:redundant	.
-local:underlying	vn.role:Theme1	local:knowledge_graph	.
+local:many_redundant_redundant	rdfs:member	local:many_redundant	.
+local:s11	rdf:predicate	local:show	.
+local:knowledge_graph_from_tables	rdfs:member	local:knowledge_graph	.
+local:approach_is_more_resistant_against_the_bias	rdfs:member	local:approach	.
+local:s2	rdf:object	local:interpret_tables_by_focusing_on_information_knowledge_graph	.
+local:higher_recall_during_interpretation_process	rdfs:member	local:interpretation_process	.
+local:extract_many_many_redundant	rdfs:member	local:extract_many_many	.
+local:novel_extractions	rdfs:member	local:novel	.
+local:information_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
+local:s7.1	rdf:object	local:additional_ranking_method	.
+local:many_redundant_facts	rdfs:subClassOf	local:facts	.
+local:extract_many_many_redundant_redundant_facts_facts	rdfs:subClassOf	local:facts	.
+local:s4	rdf:predicate	local:aim	.
+local:extract_many	rdfs:member	local:extract	.
+local:s2.1	local:AM-MNR	local:focusing_on_information_knowledge_graph	.
+local:finegrained_tuning_of_the_precisionrecall_tradeoff_of_extracted_facts	rdfs:member	local:extracted_facts	.
+local:s2.1	rdf:subject	local:existing_techniques	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:scalable_graphical_model	rdfs:subClassOf	local:graphical_model	.
+local:novel_extractions	rdfs:subClassOf	local:extractions	.
+local:s7	rdf:predicate	local:use	.
+local:redundant_redundant_facts_facts	rdfs:member	local:redundant_redundant_facts	.
+local:scalable_graphical_model	rdfs:subClassOf	local:model	.
+local:s0.1	rdf:predicate	local:extend	.
+local:s0	rdf:subject	local:we	.
+local:s5.1	rdf:predicate	local:base	.
+local:knowledge_graph_embeddings	rdfs:member	local:knowledge_graph	.
+local:extracted_facts	rdfs:member	local:extracted	.
+local:redundant_redundant_facts	rdfs:subClassOf	local:facts	.
+local:s2.1	rdf:predicate	local:interpret	.
+local:s10.1	rdf:predicate	local:approach	.
+local:knowledge_graph_embeddings	rdfs:subClassOf	local:embeddings	.
+local:s2	rdf:subject	local:existing_techniques	.
+local:many_redundant_redundant_facts_facts	rdfs:member	local:many_redundant_redundant_facts	.
+local:s11	rdf:subject	local:experiments	.
+local:more_resistant_against_bias	rdfs:member	local:bias	.
+local:table_interpretation	rdfs:member	local:table	.
+local:s6	rdf:predicate	local:use	.
+local:enabling_of_a_finegrained_tuning_of_the_precisionrecall_tradeoff	rdfs:member	local:precisionrecall_tradeoff	.
+local:s12.2	rdf:predicate	local:produce	.
+local:finegrained_tuning	rdfs:member	local:finegrained	.
+local:more_novel_facts	rdfs:subClassOf	local:facts	.
+local:knowledge_graph_tables	rdfs:subClassOf	local:graph_tables	.
+local:s12	local:AM-TMP	local:since_the_stateoftheart_produces_more_novel_extractions	.
+local:graph_embeddings	rdfs:member	local:graph	.
+local:new_technique_for_table_interpretation	rdfs:member	local:new_technique	.
+local:s0	rdf:object	local:new_endtoend_method	.
+local:s0	rdf:predicate	local:propose	.
+local:information_knowledge_graph	rdfs:member	local:information_knowledge	.
+local:more_resistant	rdfs:subClassOf	local:resistant	.

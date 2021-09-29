@@ -1,312 +1,551 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"in addition rul supports finegrained updates at property instance level setoriented updates with a deterministic semantics"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"restricting the range of variables to arcs of rdf graphs"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"in addition rul takes benefit of the full expressive power of rql for restricting the range of variables to arcs of rdf graphs"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"in addition rul supports finegrained updates at the class setoriented updates with a deterministic semantics"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"restricting the range of variables to nodes of rdf graphs"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"in addition rul takes benefit of the full expressive power of rql for restricting the range of variables to nodes of rdf graphs"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"our language called rul"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"given rdfs schema"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"violates the semantics of the given rdfs schema"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"our language ensures that the execution of the violates the semantics of the given rdfs schema"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"violates the semantics of the rdf model"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"our language ensures that the execution of the violates the semantics of the rdf model"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"our language ensures that the execution of the update primitives on nodes"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"our language ensures that the execution of the update primitives on arcs"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"rdf graphs which based on the paradigms of query languages rql"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we propose a declarative update language for rdf graphs"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"rdf graphs which based on the paradigms of view languages rql"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"rdf graphs which based on the paradigms of rvl"	.
+
+
 #### Classes ####
 
-local:rdf	rdfs:label	"rdf"	.
+local:rul	a	rdf:Class	;
+	rdfs:label	"rul"	.
 
-local:rdf_graphs	rdfs:label	"rdf graphs"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:finegrained_updates	a	rdf:Class	;
+	rdfs:label	"finegrained updates"	.
 
-local:based	rdfs:label	"based"	.
+local:updates	a	rdf:Class	;
+	rdfs:label	"updates"	.
 
-local:view_languages	rdfs:label	"view languages"	.
+local:addition	a	rdf:Class	;
+	rdfs:label	"addition"	.
 
-local:languages	rdfs:label	"languages"	.
+local:property_instance_level_setoriented_updates	a	rdf:Class	;
+	rdfs:label	"property instance level setoriented updates"	.
 
-local:view	rdfs:label	"view"	.
+local:property_instance_level	a	rdf:Class	;
+	rdfs:label	"property instance level"	.
 
-local:languages_rql	rdfs:label	"languages rql"	.
+local:property_instance	a	rdf:Class	;
+	rdfs:label	"property instance"	.
 
-local:rql	rdfs:label	"rql"	.
+local:level	a	rdf:Class	;
+	rdfs:label	"level"	.
 
-local:view_languages_rql	rdfs:label	"view languages rql"	.
+local:instance_level	a	rdf:Class	;
+	rdfs:label	"instance level"	.
 
-local:paradigms_of_view_languages_rql	rdfs:label	"paradigms of view languages rql"	.
+local:instance	a	rdf:Class	;
+	rdfs:label	"instance"	.
 
-local:paradigms	rdfs:label	"paradigms"	.
+local:property	a	rdf:Class	;
+	rdfs:label	"property"	.
 
-local:query	rdfs:label	"query"	.
+local:deterministic_semantics	a	rdf:Class	;
+	rdfs:label	"deterministic semantics"	.
 
-local:query_languages	rdfs:label	"query languages"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:query_languages_rql	rdfs:label	"query languages rql"	.
+local:deterministic	a	rdf:Class	;
+	rdfs:label	"deterministic"	.
 
-local:paradigms_of_query_languages_rql	rdfs:label	"paradigms of query languages rql"	.
+local:range_of_variables	a	rdf:Class	;
+	rdfs:label	"range of variables"	.
 
-local:propose	rdfs:label	"propose"	.
+local:variables	a	rdf:Class	;
+	rdfs:label	"variables"	.
 
-local:we	rdfs:label	"we"	.
+local:range	a	rdf:Class	;
+	rdfs:label	"range"	.
 
-local:declarative	rdfs:label	"declarative"	.
+local:restrict	a	rdf:Class	;
+	rdfs:label	"restrict"	.
 
-local:declarative_update	rdfs:label	"declarative update"	.
+local:arcs_of_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"arcs of rdf graphs"	.
 
-local:declarative_update_language	rdfs:label	"declarative update language"	.
+local:rdf_graphs	a	rdf:Class	;
+	rdfs:label	"rdf graphs"	.
 
-local:language	rdfs:label	"language"	.
+local:arcs	a	rdf:Class	;
+	rdfs:label	"arcs"	.
 
-local:update	rdfs:label	"update"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:update_language	rdfs:label	"update language"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:language_for_rdf_graphs	rdfs:label	"language for rdf graphs"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:paradigms_of_rvl	rdfs:label	"paradigms of rvl"	.
+local:benefit_full_expressive_power_of_rql	a	rdf:Class	;
+	rdfs:label	"benefit full expressive power of rql"	.
 
-local:rvl	rdfs:label	"rvl"	.
+local:full_expressive_power	a	rdf:Class	;
+	rdfs:label	"full expressive power"	.
 
-local:ensures	rdfs:label	"ensures"	.
+local:benefit	a	rdf:Class	;
+	rdfs:label	"benefit"	.
 
-local:update_primitives	rdfs:label	"update primitives"	.
+local:rql	a	rdf:Class	;
+	rdfs:label	"rql"	.
 
-local:primitives	rdfs:label	"primitives"	.
+local:expressive_power	a	rdf:Class	;
+	rdfs:label	"expressive power"	.
 
-local:execution_of_update_primitives	rdfs:label	"execution of update primitives"	.
+local:power	a	rdf:Class	;
+	rdfs:label	"power"	.
 
-local:execution	rdfs:label	"execution"	.
+local:expressive	a	rdf:Class	;
+	rdfs:label	"expressive"	.
 
-local:execution_of_update_primitives_on_nodes	rdfs:label	"execution of update primitives on nodes"	.
+local:full_expressive	a	rdf:Class	;
+	rdfs:label	"full expressive"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:full	a	rdf:Class	;
+	rdfs:label	"full"	.
 
-local:rdf_model	rdfs:label	"rdf model"	.
+local:benefit_full_expressive_power	a	rdf:Class	;
+	rdfs:label	"benefit full expressive power"	.
 
-local:model	rdfs:label	"model"	.
+local:restricting_the_range_of_variables_to_arcs_of_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"restricting the range of variables to arcs of rdf graphs"	.
 
-local:execution_of_violates	rdfs:label	"execution of violates"	.
+local:restricting_to_arcs	a	rdf:Class	;
+	rdfs:label	"restricting to arcs"	.
 
-local:violates	rdfs:label	"violates"	.
+local:restricting	a	rdf:Class	;
+	rdfs:label	"restricting"	.
 
-local:semantics_of_rdf_model	rdfs:label	"semantics of rdf model"	.
+local:finegrained_updates_at_the_class_setoriented_updates_with_a_deterministic_semantics	a	rdf:Class	;
+	rdfs:label	"finegrained updates at the class setoriented updates with a deterministic semantics"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:class	a	rdf:Class	;
+	rdfs:label	"class"	.
 
-local:execution_of_update_primitives_on_arcs	rdfs:label	"execution of update primitives on arcs"	.
+local:setoriented_updates	a	rdf:Class	;
+	rdfs:label	"setoriented updates"	.
 
-local:arcs	rdfs:label	"arcs"	.
+local:class_setoriented_updates	a	rdf:Class	;
+	rdfs:label	"class setoriented updates"	.
 
-local:called	rdfs:label	"called"	.
+local:finegrained_updates_at_class_setoriented_updates	a	rdf:Class	;
+	rdfs:label	"finegrained updates at class setoriented updates"	.
 
-local:rul	rdfs:label	"rul"	.
+local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	a	rdf:Class	;
+	rdfs:label	"finegrained updates at class setoriented updates with deterministic semantics"	.
 
-local:rdfs_schema	rdfs:label	"rdfs schema"	.
+local:nodes_of_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"nodes of rdf graphs"	.
 
-local:schema	rdfs:label	"schema"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:rdfs	rdfs:label	"rdfs"	.
+local:restricting_the_range_of_variables_to_nodes_of_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"restricting the range of variables to nodes of rdf graphs"	.
 
-local:given_rdfs_schema	rdfs:label	"given rdfs schema"	.
+local:restricting_to_nodes	a	rdf:Class	;
+	rdfs:label	"restricting to nodes"	.
 
-local:semantics_of_given_rdfs_schema	rdfs:label	"semantics of given rdfs schema"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:given	rdfs:label	"given"	.
+local:call	a	rdf:Class	;
+	rdfs:label	"call"	.
 
-local:supports	rdfs:label	"supports"	.
+local:rdfs_schema	a	rdf:Class	;
+	rdfs:label	"rdfs schema"	.
 
-local:setoriented_updates	rdfs:label	"set-oriented updates"	.
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
 
-local:updates	rdfs:label	"updates"	.
+local:rdfs	a	rdf:Class	;
+	rdfs:label	"rdfs"	.
 
-local:finegrained	rdfs:label	"fine-grained"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:finegrained_updates	rdfs:label	"fine-grained updates"	.
+local:semantics_of_the_given_rdfs_schema	a	rdf:Class	;
+	rdfs:label	"semantics of the given rdfs schema"	.
 
-local:deterministic	rdfs:label	"deterministic"	.
+local:semantics_of_given_rdfs_schema	a	rdf:Class	;
+	rdfs:label	"semantics of given rdfs schema"	.
 
-local:deterministic_semantics	rdfs:label	"deterministic semantics"	.
+local:violate	a	rdf:Class	;
+	rdfs:label	"violate"	.
 
-local:setoriented	rdfs:label	"set-oriented"	.
+local:ensure	a	rdf:Class	;
+	rdfs:label	"ensure"	.
 
-local:class_setoriented_updates	rdfs:label	"class set-oriented updates"	.
+local:execution_of_the_violates_the_semantics_of_the_given_rdfs_schema	a	rdf:Class	;
+	rdfs:label	"execution of the violates the semantics of the given rdfs schema"	.
 
-local:finegrained_updates_at_class_setoriented_updates	rdfs:label	"fine-grained updates at class set-oriented updates"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	rdfs:label	"fine-grained updates at class set-oriented updates with deterministic semantics"	.
+local:violates	a	rdf:Class	;
+	rdfs:label	"violates"	.
 
-local:takes	rdfs:label	"takes"	.
+local:execution_of_violates	a	rdf:Class	;
+	rdfs:label	"execution of violates"	.
 
-local:full_expressive	rdfs:label	"full expressive"	.
+local:semantics_of_the_rdf_model	a	rdf:Class	;
+	rdfs:label	"semantics of the rdf model"	.
 
-local:full_expressive_power	rdfs:label	"full expressive power"	.
+local:rdf_model	a	rdf:Class	;
+	rdfs:label	"rdf model"	.
 
-local:expressive	rdfs:label	"expressive"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:expressive_power	rdfs:label	"expressive power"	.
+local:semantics_of_rdf_model	a	rdf:Class	;
+	rdfs:label	"semantics of rdf model"	.
 
-local:full	rdfs:label	"full"	.
+local:execution_of_the_violates_the_semantics_of_the_rdf_model	a	rdf:Class	;
+	rdfs:label	"execution of the violates the semantics of the rdf model"	.
 
-local:power	rdfs:label	"power"	.
+local:execution_of_the_update_primitives_on_nodes	a	rdf:Class	;
+	rdfs:label	"execution of the update primitives on nodes"	.
 
-local:benefit_of_full_expressive_power	rdfs:label	"benefit of full expressive power"	.
+local:update_primitives	a	rdf:Class	;
+	rdfs:label	"update primitives"	.
 
-local:benefit	rdfs:label	"benefit"	.
+local:update	a	rdf:Class	;
+	rdfs:label	"update"	.
 
-local:full_expressive_power_of_rql	rdfs:label	"full expressive power of rql"	.
+local:primitives	a	rdf:Class	;
+	rdfs:label	"primitives"	.
 
-local:range_of_variables	rdfs:label	"range of variables"	.
+local:execution_of_update_primitives	a	rdf:Class	;
+	rdfs:label	"execution of update primitives"	.
 
-local:range	rdfs:label	"range"	.
+local:execution_of_update_primitives_on_nodes	a	rdf:Class	;
+	rdfs:label	"execution of update primitives on nodes"	.
 
-local:variables	rdfs:label	"variables"	.
+local:execution_of_the_update_primitives_on_arcs	a	rdf:Class	;
+	rdfs:label	"execution of the update primitives on arcs"	.
 
-local:restricting_to_arcs	rdfs:label	"restricting to arcs"	.
+local:execution_of_update_primitives_on_arcs	a	rdf:Class	;
+	rdfs:label	"execution of update primitives on arcs"	.
 
-local:restricting	rdfs:label	"restricting"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:arcs_of_rdf_graphs	rdfs:label	"arcs of rdf graphs"	.
+local:paradigms_of_query_languages_rql	a	rdf:Class	;
+	rdfs:label	"paradigms of query languages rql"	.
 
-local:nodes_of_rdf_graphs	rdfs:label	"nodes of rdf graphs"	.
+local:paradigms	a	rdf:Class	;
+	rdfs:label	"paradigms"	.
 
-local:property_instance	rdfs:label	"property instance"	.
+local:query_languages_rql	a	rdf:Class	;
+	rdfs:label	"query languages rql"	.
 
-local:property_instance_level	rdfs:label	"property instance level"	.
+local:languages_rql	a	rdf:Class	;
+	rdfs:label	"languages rql"	.
 
-local:property	rdfs:label	"property"	.
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
 
-local:instance	rdfs:label	"instance"	.
+local:query_languages	a	rdf:Class	;
+	rdfs:label	"query languages"	.
 
-local:instance_level	rdfs:label	"instance level"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:level	rdfs:label	"level"	.
+local:paradigms_of_query_languages	a	rdf:Class	;
+	rdfs:label	"paradigms of query languages"	.
 
-local:level_setoriented_updates	rdfs:label	"level set-oriented updates"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:instance_level_setoriented_updates	rdfs:label	"instance level set-oriented updates"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:property_instance_level_setoriented_updates	rdfs:label	"property instance level set-oriented updates"	.
+local:declarative_update_language_for_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"declarative update language for rdf graphs"	.
 
-local:property_instance_level_setoriented_updates_with_deterministic_semantics	rdfs:label	"property instance level set-oriented updates with deterministic semantics"	.
+local:declarative_update_language	a	rdf:Class	;
+	rdfs:label	"declarative update language"	.
 
-#### Properties ####
+local:update_language	a	rdf:Class	;
+	rdfs:label	"update language"	.
+
+local:declarative_update	a	rdf:Class	;
+	rdfs:label	"declarative update"	.
+
+local:declarative	a	rdf:Class	;
+	rdfs:label	"declarative"	.
+
+local:paradigms_of_view_languages_rql	a	rdf:Class	;
+	rdfs:label	"paradigms of view languages rql"	.
+
+local:view_languages_rql	a	rdf:Class	;
+	rdfs:label	"view languages rql"	.
+
+local:view_languages	a	rdf:Class	;
+	rdfs:label	"view languages"	.
+
+local:view	a	rdf:Class	;
+	rdfs:label	"view"	.
+
+local:paradigms_of_view_languages	a	rdf:Class	;
+	rdfs:label	"paradigms of view languages"	.
+
+local:paradigms_of_rvl	a	rdf:Class	;
+	rdfs:label	"paradigms of rvl"	.
+
+local:rvl	a	rdf:Class	;
+	rdfs:label	"rvl"	.
 
 #### Mapped Relations ####
 
-cso:deterministic	rdfs:label	"deterministic"	.
-local:deterministic	owl:sameAs	cso:deterministic	.
-cso:semantics	rdfs:label	"semantics"	.
-local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
-cso:rdf	rdfs:label	"rdf"	.
-local:semantics	owl:sameAs	cso:semantics	.
-local:rdf	owl:sameAs	cso:rdf	.
-cso:query_languages	rdfs:label	"query languages"	.
 cso:rdf_graph	rdfs:label	"rdf graphs"	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:query_languages	rdfs:label	"query languages"	.
+local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
 local:query_languages	owl:sameAs	cso:query_languages	.
+cso:semantics	rdfs:label	"semantics"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:semantics	owl:sameAs	cso:semantics	.
+local:deterministic	owl:sameAs	cso:deterministic	.
+cso:deterministic	rdfs:label	"deterministic"	.
 
 #### Relations ####
 
-local:rdf	rdfs:member	local:rdf_model	.
-local:instance	rdfs:member	local:instance_level	.
-local:full	rdfs:member	local:full_expressive	.
-local:nodes_of_rdf_graphs	local:nodes_of	local:rdf_graphs	.
-local:full_expressive	rdfs:subClassOf	local:expressive	.
-local:full_expressive_power	rdfs:subClassOf	local:power	.
-local:paradigms_of_query_languages_rql	local:paradigms_of	local:query_languages_rql	.
-local:restricting	vn.role:Proposition	local:nodes_of_rdf_graphs	.
-local:propose	vn.role:Agent	local:we	.
-local:property	rdfs:member	local:property_instance	.
-local:property_instance_level_setoriented_updates_with_deterministic_semantics	local:propertyinstancelevelset-orientedupdates_with	local:deterministic_semantics	.
-local:update	rdfs:member	local:update_language	.
-local:takes	vn.role:Theme	local:rdf_graphs	.
-local:paradigms_of_query_languages_rql	local:of_querylanguagesrql	local:paradigms	.
-local:instance_level_setoriented_updates	rdfs:subClassOf	local:level_setoriented_updates	.
-local:full_expressive_power	rdfs:subClassOf	local:expressive_power	.
-local:view_languages_rql	rdfs:subClassOf	local:languages_rql	.
-local:finegrained	rdfs:member	local:finegrained_updates	.
-local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	local:with_deterministicsemantics	local:finegrained_updates_at_class_setoriented_updates	.
-local:semantics_of_rdf_model	local:of_rdfmodel	local:semantics	.
-local:finegrained_updates	rdfs:subClassOf	local:updates	.
-local:update_language	rdfs:subClassOf	local:language	.
+local:s4	rdf:object	local:execution_of_the_update_primitives_on_arcs	.
+local:semantics_of_given_rdfs_schema	rdfs:member	local:s7.2	.
+local:execution_of_update_primitives	rdfs:member	local:update_primitives	.
+local:restricting_to_nodes	rdfs:member	local:restricting	.
+local:nodes_of_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:execution_of_the_violates_the_semantics_of_the_given_rdfs_schema	rdfs:member	local:semantics	.
+local:s3	rdf:object	local:paradigms_of_query_languages_rql	.
+local:s12	local:AM-DIS	local:addition	.
+local:paradigms_of_view_languages	rdfs:member	local:paradigms	.
+local:execution_of_update_primitives_on_arcs	rdfs:member	local:execution_of_update_primitives	.
+local:s9	rdf:subject	local:rul	.
+local:s9.1	rdfs:member	local:range	.
+local:s0	rdf:subject	local:rdf_graphs	.
+local:benefit_full_expressive_power_of_rql	rdfs:member	local:benefit	.
+local:property_instance_level_setoriented_updates	rdfs:member	local:property_instance_level	.
+local:property_instance_level_setoriented_updates	rdfs:member	local:updates	.
+local:languages_rql	rdfs:member	local:languages	.
+local:query_languages	rdfs:member	local:query	.
+local:s7.2	rdfs:subClassOf	local:rdfs_schema	.
+local:execution_of_the_update_primitives_on_nodes	rdfs:member	local:execution	.
+local:execution_of_the_violates_the_semantics_of_the_rdf_model	rdfs:member	local:rdf_model	.
+local:s9.1	rdfs:member	local:rdf_graphs	.
+local:s9	rdf:predicate	local:take	.
+local:s1	rdf:object	local:paradigms_of_view_languages_rql	.
+local:s6	rdf:subject	local:language	.
+local:rdfs_schema	rdfs:member	local:rdfs	.
+local:s8	rdf:predicate	local:call	.
+local:s12	rdf:subject	local:rul	.
+local:full_expressive_power	rdfs:member	local:full_expressive	.
+local:s10	local:AM-DIS	local:addition	.
+local:view_languages_rql	rdfs:subClassOf	local:rql	.
+local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	rdfs:member	local:finegrained_updates_at_class_setoriented_updates	.
 local:instance_level	rdfs:subClassOf	local:level	.
-local:arcs_of_rdf_graphs	local:arcs_of	local:rdf_graphs	.
-local:finegrained_updates_at_class_setoriented_updates	local:at_classset-orientedupdates	local:finegrained_updates	.
-local:rdfs_schema	rdfs:subClassOf	local:schema	.
-local:ensures	vn.role:Agent	local:language	.
-local:rdfs	rdfs:member	local:rdfs_schema	.
-local:query	rdfs:member	local:query_languages	.
-local:ensures	vn.role:Theme	local:execution_of_update_primitives_on_nodes	.
-local:based	vn.role:indirect_object	local:paradigms_of_query_languages_rql	.
-local:update	rdfs:member	local:update_primitives	.
-local:takes	vn.role:Agent	local:rul	.
-local:ensures	vn.role:Theme	local:execution_of_violates	.
-local:called	vn.role:Agent	local:language	.
-local:execution_of_violates	local:execution_of	local:violates	.
-local:deterministic	rdfs:member	local:deterministic_semantics	.
-local:full_expressive_power_of_rql	local:fullexpressivepower_of	local:rql	.
-local:execution_of_violates	local:of_violates	local:execution	.
-local:execution_of_update_primitives_on_arcs	local:executionofupdateprimitives_on	local:arcs	.
-local:class_setoriented_updates	rdfs:subClassOf	local:setoriented_updates	.
-local:view_languages	rdfs:subClassOf	local:languages	.
-local:supports	vn.role:Experiencer	local:finegrained_updates	.
-local:languages_rql	rdfs:subClassOf	local:rql	.
-local:benefit_of_full_expressive_power	local:of_fullexpressivepower	local:benefit	.
-local:benefit_of_full_expressive_power	local:benefit_of	local:full_expressive_power	.
-local:restricting_to_arcs	local:to_arcs	local:restricting	.
-local:execution_of_update_primitives_on_nodes	local:on_nodes	local:execution_of_update_primitives	.
-local:declarative_update	rdfs:member	local:declarative_update_language	.
-local:ensures	vn.role:Theme	local:execution_of_update_primitives_on_arcs	.
-local:based	vn.role:Cause	local:rdf_graphs	.
-local:arcs_of_rdf_graphs	local:of_rdfgraphs	local:arcs	.
-local:property_instance	rdfs:member	local:property_instance_level	.
-local:restricting_to_arcs	local:restricting_to	local:arcs	.
-local:violates	vn.role:Patient	local:semantics_of_rdf_model	.
-local:view	rdfs:member	local:view_languages	.
-local:expressive_power	rdfs:subClassOf	local:power	.
-local:execution_of_update_primitives_on_arcs	local:on_arcs	local:execution_of_update_primitives	.
-local:semantics_of_given_rdfs_schema	local:semantics_of	local:given_rdfs_schema	.
-local:nodes_of_rdf_graphs	local:of_rdfgraphs	local:nodes	.
-local:declarative_update_language	rdfs:subClassOf	local:language	.
-local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	local:fine-grainedupdatesatclassset-orientedupdates_with	local:deterministic_semantics	.
-local:takes	local:AM-PNC	local:restricting	.
-local:setoriented	rdfs:member	local:setoriented_updates	.
-local:level_setoriented_updates	rdfs:subClassOf	local:setoriented_updates	.
-local:full_expressive	rdfs:member	local:full_expressive_power	.
-local:query_languages_rql	rdfs:subClassOf	local:languages_rql	.
-local:query_languages	rdfs:subClassOf	local:languages	.
-local:property_instance_level_setoriented_updates	rdfs:subClassOf	local:instance_level_setoriented_updates	.
-local:paradigms_of_view_languages_rql	local:paradigms_of	local:view_languages_rql	.
-local:execution_of_update_primitives	local:of_updateprimitives	local:execution	.
+local:s7	rdf:subject	local:language	.
+local:semantics_of_rdf_model	rdfs:member	local:semantics	.
+local:finegrained_updates_at_class_setoriented_updates	rdfs:member	local:class_setoriented_updates	.
+local:s11	rdf:predicate	local:take	.
+local:s6	rdf:object	local:execution_of_the_violates_the_semantics_of_the_rdf_model	.
+local:s11.1	rdf:subject	local:range_of_variables	.
+local:execution_of_the_update_primitives_on_nodes	rdfs:member	local:update_primitives	.
+local:declarative_update_language_for_rdf_graphs	rdfs:member	local:declarative_update_language	.
+local:s7.1	rdf:predicate	local:violate	.
+local:s9.1	rdf:predicate	local:restrict	.
 local:property_instance_level	rdfs:subClassOf	local:level	.
-local:supports	local:AM-LOC	local:rul	.
-local:language_for_rdf_graphs	local:language_for	local:rdf_graphs	.
-local:propose	vn.role:Topic	local:update	.
-local:rdf	rdfs:member	local:rdf_graphs	.
-local:execution_of_update_primitives	local:execution_of	local:update_primitives	.
-local:called	vn.role:Theme	local:rul	.
-local:violates	vn.role:Patient	local:semantics_of_given_rdfs_schema	.
-local:full_expressive_power_of_rql	local:of_rql	local:full_expressive_power	.
-local:semantics_of_rdf_model	local:semantics_of	local:rdf_model	.
-local:property_instance	rdfs:subClassOf	local:instance	.
-local:supports	vn.role:Experiencer	local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	.
-local:based	vn.role:indirect_object	local:paradigms_of_view_languages_rql	.
-local:rdf_graphs	rdfs:subClassOf	local:graphs	.
-local:semantics_of_given_rdfs_schema	local:of_givenrdfsschema	local:semantics	.
-local:range_of_variables	local:range_of	local:variables	.
-local:property_instance_level_setoriented_updates_with_deterministic_semantics	local:with_deterministicsemantics	local:property_instance_level_setoriented_updates	.
+local:instance_level	rdfs:member	local:instance	.
+local:rdf_graphs	rdfs:member	local:rdf	.
+local:semantics_of_given_rdfs_schema	rdfs:member	local:semantics	.
+local:paradigms_of_view_languages_rql	rdfs:member	local:paradigms	.
+local:execution_of_the_violates_the_semantics_of_the_given_rdfs_schema	rdfs:member	local:execution	.
+local:s3	rdf:predicate	local:base	.
+local:declarative_update	rdfs:member	local:declarative	.
+local:view_languages	rdfs:member	local:view	.
+local:execution_of_the_violates_the_semantics_of_the_given_rdfs_schema	rdfs:member	local:rdfs_schema	.
 local:setoriented_updates	rdfs:subClassOf	local:updates	.
-local:declarative	rdfs:member	local:declarative_update	.
-local:takes	local:AM-PNC	local:restricting_to_arcs	.
-local:paradigms_of_view_languages_rql	local:of_viewlanguagesrql	local:paradigms	.
-local:paradigms_of_rvl	local:of_rvl	local:paradigms	.
-local:restricting	vn.role:Proposition	local:arcs_of_rdf_graphs	.
-local:execution_of_update_primitives_on_nodes	local:executionofupdateprimitives_on	local:nodes	.
-local:finegrained_updates_at_class_setoriented_updates	local:fine-grainedupdates_at	local:class_setoriented_updates	.
-local:deterministic_semantics	rdfs:subClassOf	local:semantics	.
-local:restricting	vn.role:Patient	local:range_of_variables	.
-local:based	vn.role:indirect_object	local:paradigms_of_rvl	.
-local:supports	local:AM-LOC	local:property_instance_level_setoriented_updates_with_deterministic_semantics	.
-local:expressive	rdfs:member	local:expressive_power	.
-local:paradigms_of_rvl	local:paradigms_of	local:rvl	.
-local:given_rdfs_schema	rdfs:subClassOf	local:rdfs_schema	.
-local:takes	vn.role:Theme	local:benefit_of_full_expressive_power	.
-local:update_primitives	rdfs:subClassOf	local:primitives	.
-local:given	vn.role:object	local:rdfs_schema	.
-local:rdf_model	rdfs:subClassOf	local:model	.
+local:s10	rdf:object	local:finegrained_updates_at_the_class_setoriented_updates_with_a_deterministic_semantics	.
+local:s11.1	rdfs:member	local:range	.
+local:execution_of_violates	rdfs:member	local:violates	.
+local:declarative_update_language_for_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:rdfs_schema	rdfs:subClassOf	local:schema	.
+local:full_expressive	rdfs:subClassOf	local:expressive	.
+local:execution_of_the_update_primitives_on_arcs	rdfs:member	local:update_primitives	.
+local:restricting_to_nodes	rdfs:member	local:nodes	.
+local:benefit_full_expressive_power_of_rql	rdfs:member	local:rql	.
+local:update_language	rdfs:member	local:update	.
+local:s0	rdf:object	local:paradigms_of_rvl	.
+local:full_expressive_power	rdfs:subClassOf	local:power	.
+local:s4	rdf:subject	local:language	.
+local:s6	rdf:predicate	local:ensure	.
+local:s11.1	rdfs:member	local:rdf_graphs	.
+local:execution_of_update_primitives_on_arcs	rdfs:member	local:arcs	.
+local:full_expressive_power	rdfs:subClassOf	local:expressive_power	.
+local:paradigms_of_view_languages_rql	rdfs:member	local:view_languages_rql	.
+local:execution_of_the_violates_the_semantics_of_the_rdf_model	rdfs:member	local:execution	.
+local:class_setoriented_updates	rdfs:subClassOf	local:setoriented_updates	.
+local:deterministic_semantics	rdfs:member	local:deterministic	.
+local:s11.1	rdf:object	local:arcs_of_rdf_graphs	.
+local:execution_of_the_update_primitives_on_arcs	rdfs:member	local:execution	.
+local:query_languages_rql	rdfs:member	local:query_languages	.
+local:s11.1	rdf:predicate	local:restrict	.
+local:declarative_update_language	rdfs:subClassOf	local:language	.
+local:finegrained_updates	rdfs:subClassOf	local:updates	.
+local:s5	rdf:predicate	local:ensure	.
+local:paradigms_of_query_languages	rdfs:member	local:paradigms	.
+local:s11	rdf:object	local:benefit_full_expressive_power_of_rql	.
+local:s2	rdf:predicate	local:propose	.
+local:view_languages	rdfs:subClassOf	local:languages	.
+local:s4	rdf:predicate	local:ensure	.
+local:s9.1	rdfs:member	local:variables	.
+local:view_languages_rql	rdfs:member	local:view_languages	.
+local:paradigms_of_rvl	rdfs:member	local:rvl	.
+local:benefit_full_expressive_power	rdfs:subClassOf	local:full_expressive_power	.
+local:restricting_to_arcs	rdfs:member	local:restricting	.
+local:execution_of_update_primitives	rdfs:member	local:execution	.
+local:s9	rdf:object	local:benefit_full_expressive_power_of_rql	.
+local:property_instance_level	rdfs:subClassOf	local:instance_level	.
+local:paradigms_of_query_languages_rql	rdfs:member	local:query_languages_rql	.
+local:execution_of_the_violates_the_semantics_of_the_given_rdfs_schema	rdfs:member	local:violates	.
+local:semantics_of_rdf_model	rdfs:member	local:rdf_model	.
+local:benefit_full_expressive_power_of_rql	rdfs:member	local:full_expressive_power	.
+local:s1	rdf:subject	local:rdf_graphs	.
+local:s8	rdf:subject	local:language	.
+local:execution_of_the_update_primitives_on_arcs	rdfs:member	local:arcs	.
+local:finegrained_updates_at_the_class_setoriented_updates_with_a_deterministic_semantics	rdfs:member	local:updates	.
+local:finegrained_updates_at_the_class_setoriented_updates_with_a_deterministic_semantics	rdfs:member	local:deterministic_semantics	.
 local:declarative_update	rdfs:subClassOf	local:update	.
-local:range_of_variables	local:of_variables	local:range	.
-local:language_for_rdf_graphs	local:for_rdfgraphs	local:language	.
+local:update_primitives	rdfs:subClassOf	local:primitives	.
+local:s9.1	rdf:subject	local:range_of_variables	.
+local:s11	local:AM-DIS	local:addition	.
+local:s12	local:AM-MNR	local:deterministic_semantics	.
+local:s1	rdf:predicate	local:base	.
+local:expressive_power	rdfs:member	local:expressive	.
+local:property_instance	rdfs:subClassOf	local:instance	.
+local:execution_of_violates	rdfs:member	local:execution	.
+local:semantics_of_the_given_rdfs_schema	rdfs:member	local:semantics	.
+local:s6.1	rdf:subject	local:semantics_of_the_rdf_model	.
+local:update_primitives	rdfs:member	local:update	.
+local:query_languages	rdfs:subClassOf	local:languages	.
+local:s2	rdf:object	local:declarative_update_language_for_rdf_graphs	.
+local:declarative_update_language	rdfs:member	local:declarative_update	.
+local:s9	local:AM-PNC	local:restricting_the_range_of_variables_to_nodes_of_rdf_graphs	.
+local:s8	rdf:object	local:rul	.
+local:declarative_update_language	rdfs:subClassOf	local:update_language	.
+local:finegrained_updates_at_class_setoriented_updates_with_deterministic_semantics	rdfs:member	local:deterministic_semantics	.
+local:s11	local:AM-PNC	local:restricting_the_range_of_variables_to_arcs_of_rdf_graphs	.
+local:languages_rql	rdfs:subClassOf	local:rql	.
+local:execution_of_update_primitives_on_nodes	rdfs:member	local:execution_of_update_primitives	.
+local:s7.2	rdf:subject	local:rdfs_schema	.
+local:restricting_to_arcs	rdfs:member	local:arcs	.
+local:range_of_variables	rdfs:member	local:variables	.
+local:s7.1	rdf:subject	local:semantics_of_the_given_rdfs_schema	.
+local:s6.1	rdf:predicate	local:violate	.
+local:execution_of_the_update_primitives_on_nodes	rdfs:member	local:nodes	.
+local:finegrained_updates_at_class_setoriented_updates	rdfs:member	local:finegrained_updates	.
+local:semantics_of_the_given_rdfs_schema	rdfs:member	local:rdfs_schema	.
+local:paradigms_of_view_languages	rdfs:member	local:view_languages	.
+local:rdf_model	rdfs:subClassOf	local:model	.
+local:rdf_model	rdfs:member	local:rdf	.
+local:s11	rdf:subject	local:rul	.
+local:rdf_graphs	rdfs:subClassOf	local:graphs	.
+local:s2	rdf:subject	local:we	.
+local:property_instance	rdfs:member	local:property	.
+local:expressive_power	rdfs:subClassOf	local:power	.
+local:semantics_of_the_rdf_model	rdfs:member	local:rdf_model	.
+local:query_languages_rql	rdfs:subClassOf	local:rql	.
+local:s10	rdf:predicate	local:support	.
+local:execution_of_update_primitives_on_nodes	rdfs:member	local:nodes	.
+local:full_expressive	rdfs:member	local:full	.
+local:execution_of_the_violates_the_semantics_of_the_rdf_model	rdfs:member	local:semantics	.
+local:execution_of_the_violates_the_semantics_of_the_rdf_model	rdfs:member	local:violates	.
+local:paradigms_of_rvl	rdfs:member	local:paradigms	.
+local:s7.2	rdf:predicate	local:give	.
+local:s7	rdf:predicate	local:ensure	.
+local:s5	rdf:subject	local:language	.
+local:s12	rdf:predicate	local:support	.
+local:paradigms_of_query_languages	rdfs:member	local:query_languages	.
+local:arcs_of_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:s9.1	rdfs:member	local:nodes	.
+local:deterministic_semantics	rdfs:subClassOf	local:semantics	.
+local:s12	rdf:object	local:finegrained_updates	.
+local:nodes_of_rdf_graphs	rdfs:member	local:nodes	.
+local:semantics_of_the_rdf_model	rdfs:member	local:semantics	.
+local:property_instance_level	rdfs:member	local:property_instance	.
+local:s0	rdf:predicate	local:base	.
+local:range_of_variables	rdfs:member	local:range	.
+local:s12	local:AM-LOC	local:property_instance_level_setoriented_updates	.
+local:s7	rdf:object	local:execution_of_the_violates_the_semantics_of_the_given_rdfs_schema	.
+local:s5	rdf:object	local:execution_of_the_update_primitives_on_nodes	.
+local:s10	rdf:subject	local:rul	.
+local:s3	rdf:subject	local:rdf_graphs	.
+local:s9.1	rdf:object	local:nodes_of_rdf_graphs	.
+local:update_language	rdfs:subClassOf	local:language	.
+local:arcs_of_rdf_graphs	rdfs:member	local:arcs	.
+local:s11.1	rdfs:member	local:variables	.
+local:paradigms_of_query_languages_rql	rdfs:member	local:paradigms	.
+local:finegrained_updates_at_the_class_setoriented_updates_with_a_deterministic_semantics	rdfs:member	local:class	.
+local:s9	local:AM-DIS	local:addition	.
+local:benefit_full_expressive_power_of_rql	rdfs:member	local:benefit_full_expressive_power	.

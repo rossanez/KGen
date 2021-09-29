@@ -1,583 +1,915 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"a substantial performance improvement reducing the execution time of hybrid queries by more than an order of magnitude"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"we optimization techniques can lead to a substantial performance improvement reducing the execution time of hybrid queries by more than an order of magnitude"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"in experiments we demonstrate that we optimization techniques can lead to a substantial performance improvement reducing the execution time of hybrid queries by more than an order of magnitude"	.
+
+local:s9.3	a	rdf:Statement	;
+	rdfs:label	"we approach suitable for topk hybrid search across multiple data sources"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"the communication costs making"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"query clauses we reduce significantly the communication costs"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"performing intelligent grouping of query clauses we"	.
+
+local:s8.3	a	rdf:Statement	;
+	rdfs:label	"we approach suitable for topk hybrid search across multiple data sources"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"the communication costs making"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"we reduce significantly the communication costs"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"performing onthefly adaptation of the query execution plan we"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the sparql algebra incorporate keyword search clauses as firstclass citizens"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we extend the sparql algebra to incorporate keyword search clauses as firstclass citizens"	.
+
+local:s6.3	a	rdf:Statement	;
+	rdfs:label	"we maintaining a meaningful ranking of results"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"improve the query processing efficiency while maintaining a meaningful ranking of results"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"apply novel optimization techniques to improve the query processing efficiency while maintaining a meaningful ranking of results"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we extend the sparql algebra to apply novel optimization techniques to improve the query processing efficiency while maintaining a meaningful ranking of results"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"to address these challenges we present fedsearch"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"address these challenges we"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"we present a novel hybrid query engine"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"address these challenges we"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"based on the sparql federation framework fedx"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"however executing hybrid search queries in a federation of multiple data sources presents a number of challenges due to data source heterogeneity and lack of statistical data about keyword selectivity"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"executing hybrid search queries in a federation of multiple data sources"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"combining structured queries with fulltext search provides a powerful means to access"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"combining structured queries with fulltext search"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"access distributed linked data"	.
+
+
 #### Classes ####
 
-local:fulltext_search	rdfs:label	"full-text search"	.
+local:substantial_performance_improvement	a	rdf:Class	;
+	rdfs:label	"substantial performance improvement"	.
 
-local:search	rdfs:label	"search"	.
+local:performance_improvement	a	rdf:Class	;
+	rdfs:label	"performance improvement"	.
 
-local:structured	rdfs:label	"structured"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:structured_queries	rdfs:label	"structured queries"	.
+local:improvement	a	rdf:Class	;
+	rdfs:label	"improvement"	.
 
-local:queries	rdfs:label	"queries"	.
+local:substantial_performance	a	rdf:Class	;
+	rdfs:label	"substantial performance"	.
 
-local:fulltext	rdfs:label	"full-text"	.
+local:substantial	a	rdf:Class	;
+	rdfs:label	"substantial"	.
 
-local:structured_queries_with_fulltext_search	rdfs:label	"structured queries with full-text search"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:combining	rdfs:label	"combining"	.
+local:execution_time_of_hybrid_queries	a	rdf:Class	;
+	rdfs:label	"execution time of hybrid queries"	.
 
-local:provides	rdfs:label	"provides"	.
+local:hybrid_queries	a	rdf:Class	;
+	rdfs:label	"hybrid queries"	.
 
-local:powerful	rdfs:label	"powerful"	.
+local:execution_time	a	rdf:Class	;
+	rdfs:label	"execution time"	.
 
-local:powerful_means	rdfs:label	"powerful means"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:means	rdfs:label	"means"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:access	rdfs:label	"access"	.
+local:hybrid	a	rdf:Class	;
+	rdfs:label	"hybrid"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:linked	rdfs:label	"linked"	.
+local:order_of_magnitude	a	rdf:Class	;
+	rdfs:label	"order of magnitude"	.
 
-local:data	rdfs:label	"data"	.
+local:magnitude	a	rdf:Class	;
+	rdfs:label	"magnitude"	.
 
-local:executing	rdfs:label	"executing"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:however	rdfs:label	"however"	.
+local:optimization_techniques	a	rdf:Class	;
+	rdfs:label	"optimization techniques"	.
 
-local:search_queries	rdfs:label	"search queries"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:hybrid	rdfs:label	"hybrid"	.
+local:optimization	a	rdf:Class	;
+	rdfs:label	"optimization"	.
 
-local:hybrid_search	rdfs:label	"hybrid search"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:hybrid_search_queries	rdfs:label	"hybrid search queries"	.
+local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	a	rdf:Class	;
+	rdfs:label	"substantial performance improvement reducing the execution time of hybrid queries by more than an order of magnitude"	.
 
-local:multiple_data_sources	rdfs:label	"multiple data sources"	.
+local:more_order	a	rdf:Class	;
+	rdfs:label	"more order"	.
 
-local:sources	rdfs:label	"sources"	.
+local:substantial_performance_improvement_reducing	a	rdf:Class	;
+	rdfs:label	"substantial performance improvement reducing"	.
 
-local:multiple_data	rdfs:label	"multiple data"	.
+local:reducing	a	rdf:Class	;
+	rdfs:label	"reducing"	.
 
-local:multiple	rdfs:label	"multiple"	.
+local:reducing_by_more_order	a	rdf:Class	;
+	rdfs:label	"reducing by more order"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:more_order_of_magnitude	a	rdf:Class	;
+	rdfs:label	"more order of magnitude"	.
 
-local:federation_of_multiple_data_sources	rdfs:label	"federation of multiple data sources"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:federation	rdfs:label	"federation"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:executing_in_federation	rdfs:label	"executing in federation"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:presents	rdfs:label	"presents"	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	a	rdf:Class	;
+	rdfs:label	"optimization techniques can lead to a substantial performance improvement reducing the execution time of hybrid queries by more than an order of magnitude"	.
 
-local:source	rdfs:label	"source"	.
+local:can_lead	a	rdf:Class	;
+	rdfs:label	"can lead"	.
 
-local:source_heterogeneity	rdfs:label	"source heterogeneity"	.
+local:can_lead_to_substantial_performance_improvement	a	rdf:Class	;
+	rdfs:label	"can lead to substantial performance improvement"	.
 
-local:statistical_data	rdfs:label	"statistical data"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:keyword	rdfs:label	"keyword"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:keyword_selectivity	rdfs:label	"keyword selectivity"	.
+local:suitable_for_topk_hybrid_search_across_multiple_data_sources	a	rdf:Class	;
+	rdfs:label	"suitable for topk hybrid search across multiple data sources"	.
 
-local:data_source_heterogeneity	rdfs:label	"data source heterogeneity"	.
+local:multiple_data_sources	a	rdf:Class	;
+	rdfs:label	"multiple data sources"	.
 
-local:heterogeneity	rdfs:label	"heterogeneity"	.
+local:topk_hybrid_search	a	rdf:Class	;
+	rdfs:label	"topk hybrid search"	.
 
-local:data_source	rdfs:label	"data source"	.
+local:topk_hybrid	a	rdf:Class	;
+	rdfs:label	"topk hybrid"	.
 
-local:statistical	rdfs:label	"statistical"	.
+local:multiple_data	a	rdf:Class	;
+	rdfs:label	"multiple data"	.
 
-local:selectivity	rdfs:label	"selectivity"	.
+local:hybrid_search	a	rdf:Class	;
+	rdfs:label	"hybrid search"	.
 
-local:number_of_challenges	rdfs:label	"number of challenges"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:number	rdfs:label	"number"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:challenges	rdfs:label	"challenges"	.
+local:multiple	a	rdf:Class	;
+	rdfs:label	"multiple"	.
 
-local:challenges_dueto_data_source_heterogeneity	rdfs:label	"challenges due_to data source heterogeneity"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:challenges_dueto_data_source_heterogeneity_dueto_lack	rdfs:label	"challenges due_to data source heterogeneity due_to lack"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:lack	rdfs:label	"lack"	.
+local:topk	a	rdf:Class	;
+	rdfs:label	"topk"	.
 
-local:lack_of_statistical_data	rdfs:label	"lack of statistical data"	.
+local:suitable_for_topk_hybrid_search	a	rdf:Class	;
+	rdfs:label	"suitable for topk hybrid search"	.
 
-local:statistical_data_about_keyword_selectivity	rdfs:label	"statistical data about keyword selectivity"	.
+local:suitable	a	rdf:Class	;
+	rdfs:label	"suitable"	.
 
-local:address	rdfs:label	"address"	.
+local:topk_hybrid_search_across_multiple_data_sources	a	rdf:Class	;
+	rdfs:label	"topk hybrid search across multiple data sources"	.
 
-local:we	rdfs:label	"we"	.
+local:communication_costs	a	rdf:Class	;
+	rdfs:label	"communication costs"	.
 
-local:federation_framework	rdfs:label	"federation framework"	.
+local:communication	a	rdf:Class	;
+	rdfs:label	"communication"	.
 
-local:novel_hybrid	rdfs:label	"novel hybrid"	.
+local:costs	a	rdf:Class	;
+	rdfs:label	"costs"	.
 
-local:sparql_federation_framework_fedx	rdfs:label	"sparql federation framework fedx"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:fedx	rdfs:label	"fedx"	.
+local:significantly	a	rdf:Class	;
+	rdfs:label	"significantly"	.
 
-local:hybrid_query	rdfs:label	"hybrid query"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:framework_fedx	rdfs:label	"framework fedx"	.
+local:intelligent_grouping_of_query_clauses	a	rdf:Class	;
+	rdfs:label	"intelligent grouping of query clauses"	.
 
-local:sparql_federation_framework	rdfs:label	"sparql federation framework"	.
+local:intelligent_grouping	a	rdf:Class	;
+	rdfs:label	"intelligent grouping"	.
 
-local:framework	rdfs:label	"framework"	.
+local:query_clauses	a	rdf:Class	;
+	rdfs:label	"query clauses"	.
 
-local:novel_hybrid_query	rdfs:label	"novel hybrid query"	.
+local:clauses	a	rdf:Class	;
+	rdfs:label	"clauses"	.
 
-local:query	rdfs:label	"query"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:novel_hybrid_query_engine	rdfs:label	"novel hybrid query engine"	.
+local:intelligent	a	rdf:Class	;
+	rdfs:label	"intelligent"	.
 
-local:engine	rdfs:label	"engine"	.
+local:grouping	a	rdf:Class	;
+	rdfs:label	"grouping"	.
 
-local:query_engine	rdfs:label	"query engine"	.
+local:onthefly_adaptation_of_the_query_execution_plan	a	rdf:Class	;
+	rdfs:label	"onthefly adaptation of the query execution plan"	.
 
-local:federation_framework_fedx	rdfs:label	"federation framework fedx"	.
+local:onthefly_adaptation	a	rdf:Class	;
+	rdfs:label	"onthefly adaptation"	.
 
-local:hybrid_query_engine	rdfs:label	"hybrid query engine"	.
+local:query_execution_plan	a	rdf:Class	;
+	rdfs:label	"query execution plan"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:plan	a	rdf:Class	;
+	rdfs:label	"plan"	.
 
-local:sparql_federation	rdfs:label	"sparql federation"	.
+local:adaptation	a	rdf:Class	;
+	rdfs:label	"adaptation"	.
 
-local:novel	rdfs:label	"novel"	.
+local:execution_plan	a	rdf:Class	;
+	rdfs:label	"execution plan"	.
 
-local:novel_hybrid_query_engine_basedon_sparql_federation_framework_fedx	rdfs:label	"novel hybrid query engine based_on sparql federation framework fedx"	.
+local:onthefly	a	rdf:Class	;
+	rdfs:label	"onthefly"	.
 
-local:fedsearch	rdfs:label	"fedsearch"	.
+local:query_execution	a	rdf:Class	;
+	rdfs:label	"query execution"	.
 
-local:present	rdfs:label	"present"	.
+local:onthefly_adaptation_of_query_execution_plan	a	rdf:Class	;
+	rdfs:label	"onthefly adaptation of query execution plan"	.
 
-local:based	rdfs:label	"based"	.
+local:sparql_algebra	a	rdf:Class	;
+	rdfs:label	"sparql algebra"	.
 
-local:extend	rdfs:label	"extend"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:sparql_algebra	rdfs:label	"sparql algebra"	.
+local:algebra	a	rdf:Class	;
+	rdfs:label	"algebra"	.
 
-local:algebra	rdfs:label	"algebra"	.
+local:incorporate	a	rdf:Class	;
+	rdfs:label	"incorporate"	.
 
-local:incorporate_keyword	rdfs:label	"incorporate keyword"	.
+local:keyword_search_clauses_firstclass_citizens	a	rdf:Class	;
+	rdfs:label	"keyword search clauses firstclass citizens"	.
 
-local:incorporate_keyword_search	rdfs:label	"incorporate keyword search"	.
+local:firstclass_citizens	a	rdf:Class	;
+	rdfs:label	"firstclass citizens"	.
 
-local:keyword_search	rdfs:label	"keyword search"	.
+local:keyword_search	a	rdf:Class	;
+	rdfs:label	"keyword search"	.
 
-local:firstclass	rdfs:label	"first-class"	.
+local:keyword	a	rdf:Class	;
+	rdfs:label	"keyword"	.
 
-local:firstclass_citizens	rdfs:label	"first-class citizens"	.
+local:firstclass	a	rdf:Class	;
+	rdfs:label	"firstclass"	.
 
-local:incorporate	rdfs:label	"incorporate"	.
+local:citizens	a	rdf:Class	;
+	rdfs:label	"citizens"	.
 
-local:citizens	rdfs:label	"citizens"	.
+local:search_clauses	a	rdf:Class	;
+	rdfs:label	"search clauses"	.
 
-local:search_clauses	rdfs:label	"search clauses"	.
+local:keyword_search_clauses	a	rdf:Class	;
+	rdfs:label	"keyword search clauses"	.
 
-local:clauses	rdfs:label	"clauses"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:keyword_search_clauses	rdfs:label	"keyword search clauses"	.
+local:incorporate_keyword_search_clauses_as_firstclass_citizens	a	rdf:Class	;
+	rdfs:label	"incorporate keyword search clauses as firstclass citizens"	.
 
-local:incorporate_as_firstclass_citizens	rdfs:label	"incorporate as first-class citizens"	.
+local:incorporate_keyword_search	a	rdf:Class	;
+	rdfs:label	"incorporate keyword search"	.
 
-local:novel_optimization_techniques	rdfs:label	"novel optimization techniques"	.
+local:incorporate_keyword	a	rdf:Class	;
+	rdfs:label	"incorporate keyword"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:incorporate_as_firstclass_citizens	a	rdf:Class	;
+	rdfs:label	"incorporate as firstclass citizens"	.
 
-local:query_processing	rdfs:label	"query processing"	.
+local:maintain	a	rdf:Class	;
+	rdfs:label	"maintain"	.
 
-local:query_processing_efficiency	rdfs:label	"query processing efficiency"	.
+local:meaningful_ranking_of_results	a	rdf:Class	;
+	rdfs:label	"meaningful ranking of results"	.
 
-local:processing_efficiency	rdfs:label	"processing efficiency"	.
+local:meaningful_ranking	a	rdf:Class	;
+	rdfs:label	"meaningful ranking"	.
 
-local:efficiency	rdfs:label	"efficiency"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:apply_novel	rdfs:label	"apply novel"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:apply_novel_optimization	rdfs:label	"apply novel optimization"	.
+local:meaningful	a	rdf:Class	;
+	rdfs:label	"meaningful"	.
 
-local:optimization	rdfs:label	"optimization"	.
+local:query_processing_efficiency	a	rdf:Class	;
+	rdfs:label	"query processing efficiency"	.
 
-local:optimization_techniques	rdfs:label	"optimization techniques"	.
+local:query_processing	a	rdf:Class	;
+	rdfs:label	"query processing"	.
 
-local:apply_novel_optimization_techniques	rdfs:label	"apply novel optimization techniques"	.
+local:efficiency	a	rdf:Class	;
+	rdfs:label	"efficiency"	.
 
-local:processing	rdfs:label	"processing"	.
+local:processing_efficiency	a	rdf:Class	;
+	rdfs:label	"processing efficiency"	.
 
-local:meaningful	rdfs:label	"meaningful"	.
+local:processing	a	rdf:Class	;
+	rdfs:label	"processing"	.
 
-local:meaningful_ranking	rdfs:label	"meaningful ranking"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:apply	rdfs:label	"apply"	.
+local:maintaining_a_meaningful_ranking_of_results	a	rdf:Class	;
+	rdfs:label	"maintaining a meaningful ranking of results"	.
 
-local:novel_optimization	rdfs:label	"novel optimization"	.
+local:novel_optimization_techniques_to_improve_the_query_processing_efficiency	a	rdf:Class	;
+	rdfs:label	"novel optimization techniques to improve the query processing efficiency"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:novel_optimization_techniques	a	rdf:Class	;
+	rdfs:label	"novel optimization techniques"	.
 
-local:meaningful_ranking_of_results	rdfs:label	"meaningful ranking of results"	.
+local:novel_optimization	a	rdf:Class	;
+	rdfs:label	"novel optimization"	.
 
-local:results	rdfs:label	"results"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:maintaining	rdfs:label	"maintaining"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:improve	rdfs:label	"improve"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:intelligent	rdfs:label	"intelligent"	.
+local:fedsearch	a	rdf:Class	;
+	rdfs:label	"fedsearch"	.
 
-local:intelligent_grouping	rdfs:label	"intelligent grouping"	.
+local:address_these_challenges	a	rdf:Class	;
+	rdfs:label	"address these challenges"	.
 
-local:query_clauses	rdfs:label	"query clauses"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:grouping	rdfs:label	"grouping"	.
+local:challenges	a	rdf:Class	;
+	rdfs:label	"challenges"	.
 
-local:intelligent_grouping_of_query_clauses	rdfs:label	"intelligent grouping of query clauses"	.
+local:novel_hybrid_query_engine	a	rdf:Class	;
+	rdfs:label	"novel hybrid query engine"	.
 
-local:performing	rdfs:label	"performing"	.
+local:novel_hybrid_query	a	rdf:Class	;
+	rdfs:label	"novel hybrid query"	.
 
-local:reduce	rdfs:label	"reduce"	.
+local:hybrid_query	a	rdf:Class	;
+	rdfs:label	"hybrid query"	.
 
-local:significantly	rdfs:label	"significantly"	.
+local:query_engine	a	rdf:Class	;
+	rdfs:label	"query engine"	.
 
-local:communication	rdfs:label	"communication"	.
+local:engine	a	rdf:Class	;
+	rdfs:label	"engine"	.
 
-local:communication_costs	rdfs:label	"communication costs"	.
+local:novel_hybrid	a	rdf:Class	;
+	rdfs:label	"novel hybrid"	.
 
-local:costs	rdfs:label	"costs"	.
+local:hybrid_query_engine	a	rdf:Class	;
+	rdfs:label	"hybrid query engine"	.
 
-local:making	rdfs:label	"making"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:approach	rdfs:label	"approach"	.
+local:sparql_federation_framework_fedx	a	rdf:Class	;
+	rdfs:label	"sparql federation framework fedx"	.
 
-local:topk_hybrid	rdfs:label	"top-k hybrid"	.
+local:federation_framework_fedx	a	rdf:Class	;
+	rdfs:label	"federation framework fedx"	.
 
-local:topk	rdfs:label	"top-k"	.
+local:fedx	a	rdf:Class	;
+	rdfs:label	"fedx"	.
 
-local:topk_hybrid_search	rdfs:label	"top-k hybrid search"	.
+local:sparql_federation	a	rdf:Class	;
+	rdfs:label	"sparql federation"	.
 
-local:suitable_for_topk_hybrid_search	rdfs:label	"suitable for top-k hybrid search"	.
+local:federation	a	rdf:Class	;
+	rdfs:label	"federation"	.
 
-local:suitable	rdfs:label	"suitable"	.
+local:federation_framework	a	rdf:Class	;
+	rdfs:label	"federation framework"	.
 
-local:topk_hybrid_search_across_multiple_data_sources	rdfs:label	"top-k hybrid search across multiple data sources"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:query_execution	rdfs:label	"query execution"	.
+local:framework_fedx	a	rdf:Class	;
+	rdfs:label	"framework fedx"	.
 
-local:query_execution_plan	rdfs:label	"query execution plan"	.
+local:sparql_federation_framework	a	rdf:Class	;
+	rdfs:label	"sparql federation framework"	.
 
-local:execution	rdfs:label	"execution"	.
+local:executing_hybrid_search_queries_in_a_federation_of_multiple_data_sources	a	rdf:Class	;
+	rdfs:label	"executing hybrid search queries in a federation of multiple data sources"	.
 
-local:plan	rdfs:label	"plan"	.
+local:hybrid_search_queries	a	rdf:Class	;
+	rdfs:label	"hybrid search queries"	.
 
-local:onthefly	rdfs:label	"on-the-fly"	.
+local:search_queries	a	rdf:Class	;
+	rdfs:label	"search queries"	.
 
-local:onthefly_adaptation	rdfs:label	"on-the-fly adaptation"	.
+local:executing_in_federation	a	rdf:Class	;
+	rdfs:label	"executing in federation"	.
 
-local:adaptation	rdfs:label	"adaptation"	.
+local:executing	a	rdf:Class	;
+	rdfs:label	"executing"	.
 
-local:execution_plan	rdfs:label	"execution plan"	.
+local:federation_of_multiple_data_sources	a	rdf:Class	;
+	rdfs:label	"federation of multiple data sources"	.
 
-local:onthefly_adaptation_of_query_execution_plan	rdfs:label	"on-the-fly adaptation of query execution plan"	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	a	rdf:Class	;
+	rdfs:label	"number of challenges due to data source heterogeneity and lack of statistical data about keyword selectivity"	.
 
-local:communication_costs_making	rdfs:label	"communication costs making"	.
+local:data_source_heterogeneity	a	rdf:Class	;
+	rdfs:label	"data source heterogeneity"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:keyword_selectivity	a	rdf:Class	;
+	rdfs:label	"keyword selectivity"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:lack	a	rdf:Class	;
+	rdfs:label	"lack"	.
 
-local:performance_improvement	rdfs:label	"performance improvement"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:improvement	rdfs:label	"improvement"	.
+local:statistical_data	a	rdf:Class	;
+	rdfs:label	"statistical data"	.
 
-local:execution_time	rdfs:label	"execution time"	.
+local:data_source	a	rdf:Class	;
+	rdfs:label	"data source"	.
 
-local:performance	rdfs:label	"performance"	.
+local:statistical	a	rdf:Class	;
+	rdfs:label	"statistical"	.
 
-local:substantial_performance	rdfs:label	"substantial performance"	.
+local:source_heterogeneity	a	rdf:Class	;
+	rdfs:label	"source heterogeneity"	.
 
-local:substantial_performance_improvement	rdfs:label	"substantial performance improvement"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:time	rdfs:label	"time"	.
+local:heterogeneity	a	rdf:Class	;
+	rdfs:label	"heterogeneity"	.
 
-local:substantial	rdfs:label	"substantial"	.
+local:selectivity	a	rdf:Class	;
+	rdfs:label	"selectivity"	.
 
-local:hybrid_queries	rdfs:label	"hybrid queries"	.
+local:number_of_challenges	a	rdf:Class	;
+	rdfs:label	"number of challenges"	.
 
-local:more_order	rdfs:label	"more order"	.
+local:challenges_due_to_data_source_heterogeneity	a	rdf:Class	;
+	rdfs:label	"challenges due_to data source heterogeneity"	.
 
-local:order	rdfs:label	"order"	.
+local:challenges_due_to_data_source_heterogeneity_due_to_lack	a	rdf:Class	;
+	rdfs:label	"challenges due_to data source heterogeneity due_to lack"	.
 
-local:can_lead	rdfs:label	"can lead"	.
+local:lack_of_statistical_data	a	rdf:Class	;
+	rdfs:label	"lack of statistical data"	.
 
-local:lead	rdfs:label	"lead"	.
+local:statistical_data_about_keyword_selectivity	a	rdf:Class	;
+	rdfs:label	"statistical data about keyword selectivity"	.
 
-local:can_lead_to_substantial_performance_improvement	rdfs:label	"can lead to substantial performance improvement"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:execution_time_of_hybrid_queries	rdfs:label	"execution time of hybrid queries"	.
+local:execute	a	rdf:Class	;
+	rdfs:label	"execute"	.
 
-local:reducing_by_more_order	rdfs:label	"reducing by more order"	.
+local:hybrid_search_queries_in_a_federation	a	rdf:Class	;
+	rdfs:label	"hybrid search queries in a federation"	.
 
-local:reducing	rdfs:label	"reducing"	.
+local:hybrid_search_queries_in_federation	a	rdf:Class	;
+	rdfs:label	"hybrid search queries in federation"	.
 
-local:more_order_of_magnitude	rdfs:label	"more order of magnitude"	.
+local:combining_structured_queries_with_fulltext_search	a	rdf:Class	;
+	rdfs:label	"combining structured queries with fulltext search"	.
 
-local:magnitude	rdfs:label	"magnitude"	.
+local:fulltext_search	a	rdf:Class	;
+	rdfs:label	"fulltext search"	.
 
-local:can	rdfs:label	"can"	.
+local:fulltext	a	rdf:Class	;
+	rdfs:label	"fulltext"	.
 
-local:substantial_performance_improvement_reducing	rdfs:label	"substantial performance improvement reducing"	.
+local:structured_queries	a	rdf:Class	;
+	rdfs:label	"structured queries"	.
 
-local:order_of_magnitude	rdfs:label	"order of magnitude"	.
+local:structured_queries_with_fulltext_search	a	rdf:Class	;
+	rdfs:label	"structured queries with fulltext search"	.
 
-#### Properties ####
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
+
+local:powerful_means_access	a	rdf:Class	;
+	rdfs:label	"powerful means access"	.
+
+local:powerful_means	a	rdf:Class	;
+	rdfs:label	"powerful means"	.
+
+local:means	a	rdf:Class	;
+	rdfs:label	"means"	.
+
+local:structured	a	rdf:Class	;
+	rdfs:label	"structured"	.
+
+local:combining	a	rdf:Class	;
+	rdfs:label	"combining"	.
+
+local:link	a	rdf:Class	;
+	rdfs:label	"link"	.
+
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
+
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
 #### Mapped Relations ####
 
-cso:optimization_techniques	rdfs:label	"optimization techniques"	.
-local:optimization_techniques	owl:sameAs	cso:optimization_techniques	.
-cso:communication_cost	rdfs:label	"communication costs"	.
 cso:optimization	rdfs:label	"optimization"	.
-local:keyword_search	owl:sameAs	cso:keyword_search	.
-cso:engine	rdfs:label	"engine"	.
-local:structured_queries	owl:sameAs	cso:structured_queries	.
-cso:sparql	rdfs:label	"sparql"	.
 local:engine	owl:sameAs	cso:engine	.
-cso:search_queries	rdfs:label	"search queries"	.
-local:query_processing	owl:sameAs	cso:query_processing	.
-local:optimization	owl:sameAs	cso:optimization	.
-local:sparql	owl:sameAs	cso:sparql	.
-cso:keyword_search	rdfs:label	"keyword search"	.
-cso:structured_queries	rdfs:label	"structured queries"	.
-cso:query_execution	rdfs:label	"query execution"	.
 local:search_queries	owl:sameAs	cso:search_queries	.
-local:communication_costs	owl:sameAs	cso:communication_cost	.
 local:query_execution	owl:sameAs	cso:query_execution	.
 cso:query_processing	rdfs:label	"query processing"	.
+cso:communication_cost	rdfs:label	"communication costs"	.
+cso:structured_queries	rdfs:label	"structured queries"	.
+local:query_processing	owl:sameAs	cso:query_processing	.
+local:structured_queries	owl:sameAs	cso:structured_queries	.
+cso:query_execution	rdfs:label	"query execution"	.
+local:keyword_search	owl:sameAs	cso:keyword_search	.
+local:communication_costs	owl:sameAs	cso:communication_cost	.
+local:sparql	owl:sameAs	cso:sparql	.
+cso:search_queries	rdfs:label	"search queries"	.
+cso:optimization_techniques	rdfs:label	"optimization techniques"	.
+local:optimization_techniques	owl:sameAs	cso:optimization_techniques	.
+local:optimization	owl:sameAs	cso:optimization	.
+cso:sparql	rdfs:label	"sparql"	.
+cso:engine	rdfs:label	"engine"	.
+cso:keyword_search	rdfs:label	"keyword search"	.
 
 #### Relations ####
 
-local:challenges_dueto_data_source_heterogeneity	local:due_to_datasourceheterogeneity	local:challenges	.
-local:novel	rdfs:member	local:novel_optimization	.
-local:executing_in_federation	local:executing_in	local:federation	.
-local:order_of_magnitude	local:of_magnitude	local:order	.
-local:novel_hybrid	rdfs:member	local:novel_hybrid_query	.
-local:novel_optimization	rdfs:subClassOf	local:optimization	.
-local:reduce	vn.role:Patient	local:communication_costs	.
-local:query	rdfs:member	local:query_engine	.
-local:topk_hybrid	rdfs:member	local:topk_hybrid_search	.
-local:incorporate_as_firstclass_citizens	local:incorporate_as	local:firstclass_citizens	.
-local:incorporate	vn.role:indirect_object	local:firstclass_citizens	.
-local:sparql_federation_framework_fedx	rdfs:subClassOf	local:federation_framework_fedx	.
-local:performing	vn.role:Theme	local:intelligent_grouping_of_query_clauses	.
-local:demonstrate	vn.role:Recipient	local:we	.
-local:statistical_data_about_keyword_selectivity	local:about_keywordselectivity	local:statistical_data	.
-local:novel_hybrid_query	rdfs:member	local:novel_hybrid_query_engine	.
-local:firstclass_citizens	rdfs:subClassOf	local:citizens	.
-local:onthefly_adaptation_of_query_execution_plan	local:of_queryexecutionplan	local:onthefly_adaptation	.
-local:lack_of_statistical_data	local:of_statisticaldata	local:lack	.
-local:provides	vn.role:Recipient	local:combining	.
-local:hybrid_query	rdfs:subClassOf	local:query	.
-local:query_processing	rdfs:member	local:query_processing_efficiency	.
-local:lead	vn.role:Destination	local:substantial_performance_improvement_reducing	.
-local:search_clauses	rdfs:subClassOf	local:clauses	.
-local:query_processing_efficiency	rdfs:subClassOf	local:processing_efficiency	.
-local:presents	vn.role:Agent	local:however	.
-local:hybrid_query_engine	rdfs:subClassOf	local:engine	.
-local:performing	vn.role:Agent	local:we	.
-local:demonstrate	local:AM-LOC	local:experiments	.
-local:onthefly_adaptation_of_query_execution_plan	local:on-the-flyadaptation_of	local:query_execution_plan	.
-local:distributed	vn.role:Theme	local:access	.
-local:query_execution_plan	rdfs:subClassOf	local:plan	.
-local:extend	local:AM-PNC	local:apply	.
-local:extend	vn.role:Agent	local:we	.
-local:multiple_data_sources	rdfs:subClassOf	local:data_sources	.
-local:apply	rdfs:member	local:apply_novel	.
-local:execution_time_of_hybrid_queries	local:of_hybridqueries	local:execution_time	.
-local:keyword_selectivity	rdfs:subClassOf	local:selectivity	.
-local:search	rdfs:member	local:search_clauses	.
-local:topk_hybrid	rdfs:subClassOf	local:hybrid	.
-local:challenges_dueto_data_source_heterogeneity	local:challenges_due_to	local:data_source_heterogeneity	.
-local:federation_of_multiple_data_sources	local:federation_of	local:multiple_data_sources	.
-local:performance	rdfs:member	local:performance_improvement	.
-local:substantial_performance_improvement	rdfs:subClassOf	local:improvement	.
-local:query	rdfs:member	local:query_clauses	.
-local:demonstrate	vn.role:Cause	local:can_lead_to_substantial_performance_improvement	.
-local:execution	rdfs:member	local:execution_plan	.
-local:incorporate_as_firstclass_citizens	local:as_first-classcitizens	local:incorporate	.
-local:meaningful	rdfs:member	local:meaningful_ranking	.
-local:source	rdfs:member	local:source_heterogeneity	.
-local:communication_costs	rdfs:subClassOf	local:costs	.
-local:search_queries	rdfs:subClassOf	local:queries	.
-local:sparql	rdfs:member	local:sparql_algebra	.
-local:hybrid_search_queries	rdfs:subClassOf	local:search_queries	.
-local:sparql_federation_framework	rdfs:member	local:sparql_federation_framework_fedx	.
-local:query	rdfs:member	local:query_execution	.
-local:approach	vn.role:object	local:we	.
-local:sparql_algebra	rdfs:subClassOf	local:algebra	.
-local:incorporate	vn.role:Patient1	local:sparql_algebra	.
-local:firstclass	rdfs:member	local:firstclass_citizens	.
-local:keyword_search_clauses	rdfs:subClassOf	local:search_clauses	.
-local:reducing	vn.role:Cause	local:substantial_performance_improvement	.
-local:communication_costs_making	local:communicationcosts_	local:making	.
-local:reducing	local:AM-MNR	local:order_of_magnitude	.
-local:query_processing	rdfs:subClassOf	local:processing	.
-local:meaningful_ranking_of_results	local:of_results	local:meaningful_ranking	.
-local:topk_hybrid_search	rdfs:subClassOf	local:search	.
-local:combining	vn.role:Patient	local:structured_queries_with_fulltext_search	.
-local:hybrid	rdfs:member	local:hybrid_queries	.
-local:novel_optimization_techniques	rdfs:subClassOf	local:techniques	.
-local:multiple	rdfs:member	local:multiple_data	.
-local:search	rdfs:member	local:search_queries	.
-local:can_lead_to_substantial_performance_improvement	local:to_substantialperformanceimprovement	local:can_lead	.
-local:federation_framework_fedx	rdfs:subClassOf	local:fedx	.
-local:provides	vn.role:Agent	local:powerful_means	.
-local:execution_time	rdfs:subClassOf	local:time	.
-local:maintaining	vn.role:Agent	local:we	.
-local:hybrid_search_queries	rdfs:subClassOf	local:queries	.
-local:data_source	rdfs:member	local:data_source_heterogeneity	.
-local:apply_novel	rdfs:member	local:apply_novel_optimization	.
-local:executing	local:AM-LOC	local:federation_of_multiple_data_sources	.
-local:address	vn.role:Theme	local:challenges	.
-local:onthefly	rdfs:member	local:onthefly_adaptation	.
-local:hybrid_query	rdfs:member	local:hybrid_query_engine	.
-local:intelligent_grouping_of_query_clauses	local:intelligentgrouping_of	local:query_clauses	.
-local:execution_plan	rdfs:subClassOf	local:plan	.
-local:performing	vn.role:Theme	local:onthefly_adaptation_of_query_execution_plan	.
-local:number_of_challenges	local:of_challenges	local:number	.
-local:novel_hybrid_query_engine_basedon_sparql_federation_framework_fedx	local:based_on_sparqlfederationframeworkfedx	local:novel_hybrid_query_engine	.
-local:reducing_by_more_order	local:reducing_by	local:more_order	.
-local:reduce	local:AM-MNR	local:significantly	.
-local:lack_of_statistical_data	local:lack_of	local:statistical_data	.
-local:novel_hybrid_query_engine	rdfs:subClassOf	local:engine	.
-local:data	rdfs:member	local:data_sources	.
-local:hybrid_search	rdfs:subClassOf	local:search	.
-local:federation_framework_fedx	rdfs:subClassOf	local:framework_fedx	.
-local:lead	vn.role:Agent	local:optimization_techniques	.
-local:keyword	rdfs:member	local:keyword_selectivity	.
-local:address	vn.role:Theme	local:fedsearch	.
-local:processing_efficiency	rdfs:subClassOf	local:efficiency	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:challenges_dueto_data_source_heterogeneity_dueto_lack	local:due_to_lack	local:challenges_dueto_data_source_heterogeneity	.
-local:execution	rdfs:member	local:execution_time	.
-local:presents	vn.role:Theme	local:number_of_challenges	.
-local:based	vn.role:indirect_object	local:sparql_federation_framework_fedx	.
-local:substantial_performance_improvement	rdfs:subClassOf	local:performance_improvement	.
-local:intelligent_grouping_of_query_clauses	local:of_queryclauses	local:intelligent_grouping	.
-local:powerful	rdfs:member	local:powerful_means	.
-local:address	vn.role:Agent	local:we	.
-local:onthefly_adaptation	rdfs:subClassOf	local:adaptation	.
-local:substantial_performance_improvement_reducing	local:substantialperformanceimprovement_	local:reducing	.
-local:can_lead_to_substantial_performance_improvement	local:canlead_to	local:substantial_performance_improvement	.
-local:executing_in_federation	local:in_federation	local:executing	.
-local:query_clauses	rdfs:subClassOf	local:clauses	.
-local:improve	vn.role:Patient	local:query_processing_efficiency	.
-local:approach	vn.role:indirect_object	local:suitable_for_topk_hybrid_search	.
-local:hybrid_search	rdfs:member	local:hybrid_search_queries	.
-local:reduce	vn.role:Patient	local:communication_costs_making	.
-local:more_order_of_magnitude	local:of_magnitude	local:more_order	.
-local:maintaining	vn.role:Theme	local:meaningful_ranking_of_results	.
-local:substantial_performance_improvement_reducing	local:_reducing	local:substantial_performance_improvement	.
-local:apply_novel	rdfs:subClassOf	local:novel	.
-local:incorporate_keyword	rdfs:subClassOf	local:keyword	.
-local:apply_novel_optimization	rdfs:member	local:apply_novel_optimization_techniques	.
-local:suitable_for_topk_hybrid_search	local:for_top-khybridsearch	local:suitable	.
-local:data	rdfs:member	local:data_source	.
-local:present	local:AM-PNC	local:address	.
-local:executing	vn.role:Patient	local:hybrid_search_queries	.
-local:lead	local:AM-MOD	local:can	.
-local:sparql_federation_framework	rdfs:subClassOf	local:framework	.
-local:optimization_techniques	rdfs:subClassOf	local:techniques	.
-local:sparql_federation	rdfs:subClassOf	local:federation	.
-local:improve	local:AM-TMP	local:maintaining	.
-local:query_execution	rdfs:subClassOf	local:execution	.
-local:incorporate_keyword_search	rdfs:subClassOf	local:search	.
-local:apply_novel_optimization_techniques	rdfs:subClassOf	local:techniques	.
-local:multiple_data	rdfs:subClassOf	local:data	.
-local:linked	vn.role:Patient	local:access	.
-local:reducing_by_more_order	local:by_moreorder	local:reducing	.
-local:novel_optimization_techniques	rdfs:subClassOf	local:optimization_techniques	.
-local:hybrid_query_engine	rdfs:subClassOf	local:query_engine	.
-local:sparql	rdfs:member	local:sparql_federation	.
-local:novel_hybrid_query	rdfs:subClassOf	local:query	.
-local:hybrid	rdfs:member	local:hybrid_search	.
-local:challenges_dueto_data_source_heterogeneity_dueto_lack	local:challengesdue_todatasourceheterogeneity_due_to	local:lack	.
-local:query_engine	rdfs:subClassOf	local:engine	.
-local:keyword_search	rdfs:subClassOf	local:search	.
-local:structured	rdfs:member	local:structured_queries	.
-local:novel_hybrid	rdfs:subClassOf	local:hybrid	.
-local:suitable_for_topk_hybrid_search	local:suitable_for	local:topk_hybrid_search	.
-local:substantial	rdfs:member	local:substantial_performance	.
-local:substantial_performance	rdfs:subClassOf	local:performance	.
-local:query_execution	rdfs:member	local:query_execution_plan	.
-local:intelligent_grouping	rdfs:subClassOf	local:grouping	.
-local:extend	vn.role:Theme	local:sparql_algebra	.
-local:query	rdfs:member	local:query_processing	.
-local:incorporate	vn.role:Patient2	local:keyword_search_clauses	.
-local:reduce	vn.role:Cause	local:we	.
-local:execution_time_of_hybrid_queries	local:executiontime_of	local:hybrid_queries	.
-local:federation_framework	rdfs:member	local:federation_framework_fedx	.
-local:optimization	rdfs:member	local:optimization_techniques	.
-local:reduce	vn.role:Patient	local:query_clauses	.
-local:data_source_heterogeneity	rdfs:subClassOf	local:heterogeneity	.
-local:novel_hybrid_query_engine	rdfs:subClassOf	local:hybrid_query_engine	.
-local:statistical	rdfs:member	local:statistical_data	.
-local:order_of_magnitude	local:order_of	local:magnitude	.
-local:structured_queries	rdfs:subClassOf	local:queries	.
-local:making	vn.role:Agent	local:communication_costs	.
-local:linked	vn.role:Patient	local:data	.
-local:present	vn.role:Agent	local:we	.
-local:novel_optimization	rdfs:member	local:novel_optimization_techniques	.
-local:topk_hybrid_search_across_multiple_data_sources	local:top-khybridsearch_across	local:multiple_data_sources	.
-local:data_source	rdfs:subClassOf	local:source	.
-local:topk	rdfs:member	local:topk_hybrid	.
-local:keyword_search_clauses	rdfs:subClassOf	local:clauses	.
-local:number_of_challenges	local:number_of	local:challenges	.
-local:provides	vn.role:Recipient	local:access	.
-local:statistical_data_about_keyword_selectivity	local:statisticaldata_about	local:keyword_selectivity	.
-local:framework	rdfs:member	local:framework_fedx	.
-local:source_heterogeneity	rdfs:subClassOf	local:heterogeneity	.
-local:keyword_search	rdfs:member	local:keyword_search_clauses	.
-local:hybrid_queries	rdfs:subClassOf	local:queries	.
-local:fulltext	rdfs:member	local:fulltext_search	.
-local:meaningful_ranking_of_results	local:meaningfulranking_of	local:results	.
-local:framework_fedx	rdfs:subClassOf	local:fedx	.
-local:hybrid	rdfs:member	local:hybrid_query	.
-local:sparql_federation	rdfs:member	local:sparql_federation_framework	.
-local:processing	rdfs:member	local:processing_efficiency	.
-local:incorporate_keyword	rdfs:member	local:incorporate_keyword_search	.
-local:substantial_performance	rdfs:member	local:substantial_performance_improvement	.
-local:intelligent	rdfs:member	local:intelligent_grouping	.
-local:topk_hybrid_search_across_multiple_data_sources	local:across_multipledatasources	local:topk_hybrid_search	.
-local:more_order_of_magnitude	local:moreorder_of	local:magnitude	.
-local:federation_of_multiple_data_sources	local:of_multipledatasources	local:federation	.
-local:powerful_means	rdfs:subClassOf	local:means	.
-local:data_source_heterogeneity	rdfs:subClassOf	local:source_heterogeneity	.
-local:novel	rdfs:member	local:novel_hybrid	.
+local:s3	rdf:object	local:sparql_federation_framework_fedx	.
+local:fulltext_search	rdfs:member	local:fulltext	.
+local:s5.1	rdf:subject	local:we	.
+local:execution_time	rdfs:member	local:execution	.
+local:data_source_heterogeneity	rdfs:member	local:data_source	.
 local:statistical_data	rdfs:subClassOf	local:data	.
-local:apply_novel_optimization	rdfs:subClassOf	local:optimization	.
-local:performance_improvement	rdfs:subClassOf	local:improvement	.
-local:communication	rdfs:member	local:communication_costs	.
-local:query_execution_plan	rdfs:subClassOf	local:execution_plan	.
-local:communication_costs_making	local:_making	local:communication_costs	.
-local:apply	local:AM-TMP	local:maintaining	.
-local:extend	local:AM-PNC	local:incorporate_as_firstclass_citizens	.
-local:incorporate	rdfs:member	local:incorporate_keyword	.
-local:novel_hybrid_query_engine_basedon_sparql_federation_framework_fedx	local:novelhybridqueryengine_based_on	local:sparql_federation_framework_fedx	.
-local:apply	vn.role:Theme	local:novel_optimization_techniques	.
-local:topk_hybrid_search	rdfs:subClassOf	local:hybrid_search	.
-local:keyword	rdfs:member	local:keyword_search	.
-local:multiple_data	rdfs:member	local:multiple_data_sources	.
-local:federation	rdfs:member	local:federation_framework	.
-local:reducing	vn.role:Patient	local:execution_time_of_hybrid_queries	.
-local:query_processing_efficiency	rdfs:subClassOf	local:efficiency	.
-local:meaningful_ranking	rdfs:subClassOf	local:ranking	.
-local:more_order	rdfs:subClassOf	local:order	.
+local:suitable_for_topk_hybrid_search	rdfs:member	local:suitable	.
+local:incorporate_keyword	rdfs:subClassOf	local:keyword	.
+local:substantial_performance_improvement	rdfs:member	local:substantial_performance	.
+local:s9.1	rdf:predicate	local:reduce	.
+local:number_of_challenges	rdfs:member	local:number	.
+local:s7	rdf:object	local:sparql_algebra	.
+local:s6.2	rdf:subject	local:query_processing_efficiency	.
+local:hybrid_search_queries_in_a_federation	rdfs:member	local:federation	.
+local:performance_improvement	rdfs:member	local:performance	.
+local:novel_hybrid_query_engine	rdfs:subClassOf	local:engine	.
+local:data_sources	rdfs:member	local:data	.
+local:statistical_data_about_keyword_selectivity	rdfs:member	local:keyword_selectivity	.
+local:maintaining_a_meaningful_ranking_of_results	rdfs:member	local:results	.
+local:s10.2	rdf:subject	local:substantial_performance_improvement	.
+local:s4.1	rdf:predicate	local:present	.
+local:hybrid_query	rdfs:member	local:hybrid	.
+local:reducing_by_more_order	rdfs:member	local:more_order	.
+local:lack_of_statistical_data	rdfs:member	local:lack	.
+local:s10	rdf:predicate	local:demonstrate	.
 local:multiple_data_sources	rdfs:subClassOf	local:sources	.
-local:fulltext_search	rdfs:subClassOf	local:search	.
-local:can_lead	rdfs:subClassOf	local:lead	.
-local:executing	vn.role:Agent	local:however	.
+local:s0.1	rdf:subject	local:data	.
+local:structured_queries_with_fulltext_search	rdfs:member	local:structured_queries	.
+local:s5	rdf:subject	local:we	.
+local:topk_hybrid_search	rdfs:member	local:topk_hybrid	.
+local:substantial_performance	rdfs:subClassOf	local:performance	.
+local:order_of_magnitude	rdfs:member	local:magnitude	.
+local:s9.3	rdf:object	local:suitable_for_topk_hybrid_search_across_multiple_data_sources	.
+local:incorporate_as_firstclass_citizens	rdfs:member	local:incorporate	.
+local:s8.1	rdf:predicate	local:reduce	.
+local:meaningful_ranking	rdfs:member	local:meaningful	.
+local:executing_in_federation	rdfs:member	local:executing	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	rdfs:member	local:number	.
+local:federation_of_multiple_data_sources	rdfs:member	local:multiple_data_sources	.
+local:more_order	rdfs:subClassOf	local:order	.
+local:s4	rdf:subject	local:we	.
+local:keyword_selectivity	rdfs:subClassOf	local:selectivity	.
+local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:order	.
+local:hybrid_query_engine	rdfs:subClassOf	local:query_engine	.
+local:hybrid_search_queries_in_federation	rdfs:member	local:hybrid_search_queries	.
+local:reducing_by_more_order	rdfs:member	local:reducing	.
+local:s1	rdf:predicate	local:combining	.
+local:number_of_challenges	rdfs:member	local:challenges	.
+local:s0	rdf:subject	local:access	.
+local:s2	rdf:object	local:hybrid_search_queries_in_a_federation	.
+local:multiple_data	rdfs:subClassOf	local:data	.
+local:framework_fedx	rdfs:member	local:framework	.
+local:structured_queries	rdfs:subClassOf	local:queries	.
+local:suitable_for_topk_hybrid_search	rdfs:member	local:topk_hybrid_search	.
+local:s9.1	rdf:subject	local:we	.
+local:onthefly_adaptation	rdfs:subClassOf	local:adaptation	.
+local:query_processing_efficiency	rdfs:subClassOf	local:efficiency	.
+local:s6.2	local:AM-TMP	local:maintaining_a_meaningful_ranking_of_results	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:execution_time	.
+local:s8.1	rdf:subject	local:we	.
+local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:magnitude	.
+local:search_queries	rdfs:subClassOf	local:queries	.
+local:s6.3	rdf:subject	local:we	.
+local:powerful_means	rdfs:subClassOf	local:means	.
+local:incorporate_keyword	rdfs:member	local:incorporate	.
+local:substantial_performance_improvement	rdfs:subClassOf	local:improvement	.
+local:query_clauses	rdfs:subClassOf	local:clauses	.
+local:data_source_heterogeneity	rdfs:subClassOf	local:source_heterogeneity	.
+local:novel_optimization	rdfs:subClassOf	local:optimization	.
+local:novel_optimization_techniques_to_improve_the_query_processing_efficiency	rdfs:member	local:novel_optimization_techniques	.
+local:keyword_search	rdfs:subClassOf	local:search	.
+local:topk_hybrid_search_across_multiple_data_sources	rdfs:member	local:multiple_data_sources	.
+local:keyword_selectivity	rdfs:member	local:keyword	.
+local:query_processing	rdfs:member	local:query	.
+local:meaningful_ranking_of_results	rdfs:member	local:results	.
+local:s9	rdf:predicate	local:perform	.
+local:onthefly_adaptation_of_query_execution_plan	rdfs:member	local:query_execution_plan	.
 local:sparql_federation_framework_fedx	rdfs:subClassOf	local:fedx	.
-local:present	vn.role:Theme	local:fedsearch	.
+local:s10.2	rdf:object	local:execution_time_of_hybrid_queries	.
+local:novel_optimization_techniques	rdfs:member	local:novel_optimization	.
+local:source_heterogeneity	rdfs:member	local:source	.
+local:s10	local:AM-LOC	local:experiments	.
+local:keyword_search_clauses	rdfs:subClassOf	local:search_clauses	.
+local:s6	rdf:predicate	local:extend	.
+local:s10.1	local:AM-MOD	local:can	.
+local:hybrid_search	rdfs:member	local:hybrid	.
+local:structured_queries	rdfs:member	local:structured	.
+local:s0.1	rdf:predicate	local:link	.
+local:s0	rdf:object	local:s0.1	.
+local:structured_queries_with_fulltext_search	rdfs:member	local:fulltext_search	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:substantial_performance_improvement	.
+local:s6	rdf:object	local:sparql_algebra	.
+local:federation_framework_fedx	rdfs:subClassOf	local:framework_fedx	.
+local:source_heterogeneity	rdfs:subClassOf	local:heterogeneity	.
+local:topk_hybrid	rdfs:member	local:topk	.
+local:s7	local:AM-PNC	local:incorporate_keyword_search_clauses_as_firstclass_citizens	.
+local:s6.3	rdf:predicate	local:maintain	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	rdfs:member	local:lack	.
+local:intelligent_grouping	rdfs:subClassOf	local:grouping	.
+local:query_execution_plan	rdfs:member	local:query_execution	.
+local:s9.2	rdf:subject	local:communication_costs	.
+local:hybrid_search	rdfs:subClassOf	local:search	.
+local:s6	local:AM-PNC	local:s6.1	.
+local:substantial_performance_improvement_reducing	rdfs:member	local:substantial_performance_improvement	.
+local:processing_efficiency	rdfs:member	local:processing	.
+local:s8.1	rdf:object	local:communication_costs	.
+local:query_execution_plan	rdfs:subClassOf	local:plan	.
+local:s5.1	rdf:predicate	local:present	.
+local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:execution_time	.
+local:multiple_data_sources	rdfs:subClassOf	local:data_sources	.
+local:hybrid_query	rdfs:subClassOf	local:query	.
+local:search_queries	rdfs:member	local:search	.
+local:s2.1	rdf:subject	local:executing_hybrid_search_queries_in_a_federation_of_multiple_data_sources	.
+local:optimization_techniques	rdfs:member	local:optimization	.
+local:onthefly_adaptation_of_the_query_execution_plan	rdfs:member	local:onthefly_adaptation	.
+local:query_processing_efficiency	rdfs:subClassOf	local:processing_efficiency	.
+local:s6.1	rdf:predicate	local:apply	.
+local:s1.1	rdf:subject	local:combining_structured_queries_with_fulltext_search	.
+local:s6.3	rdf:object	local:meaningful_ranking_of_results	.
+local:query_execution	rdfs:member	local:query	.
+local:s9	rdf:subject	local:we	.
+local:incorporate_keyword_search_clauses_as_firstclass_citizens	rdfs:member	local:incorporate_keyword_search	.
+local:incorporate_keyword_search	rdfs:subClassOf	local:search	.
+local:novel_hybrid_query_engine	rdfs:member	local:novel_hybrid_query	.
+local:sparql_federation_framework_fedx	rdfs:subClassOf	local:federation_framework_fedx	.
+local:performance_improvement	rdfs:subClassOf	local:improvement	.
+local:suitable_for_topk_hybrid_search_across_multiple_data_sources	rdfs:member	local:multiple_data_sources	.
+local:query_processing_efficiency	rdfs:member	local:query_processing	.
+local:firstclass_citizens	rdfs:member	local:firstclass	.
+local:s2.1	rdf:object	local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	.
+local:s10.1	rdf:predicate	local:lead	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	rdfs:member	local:keyword_selectivity	.
+local:query_engine	rdfs:member	local:query	.
+local:sparql_federation	rdfs:subClassOf	local:federation	.
+local:can_lead_to_substantial_performance_improvement	rdfs:member	local:substantial_performance_improvement	.
+local:s7.1	rdf:predicate	local:incorporate	.
+local:s7.1	rdf:subject	local:sparql_algebra	.
+local:challenges_due_to_data_source_heterogeneity	rdfs:member	local:challenges	.
+local:intelligent_grouping	rdfs:member	local:intelligent	.
+local:s8.3	rdf:object	local:suitable_for_topk_hybrid_search_across_multiple_data_sources	.
+local:sparql_algebra	rdfs:subClassOf	local:algebra	.
+local:novel_hybrid_query	rdfs:member	local:novel_hybrid	.
+local:novel_optimization_techniques	rdfs:subClassOf	local:optimization_techniques	.
+local:combining_structured_queries_with_fulltext_search	rdfs:member	local:fulltext_search	.
+local:novel_hybrid	rdfs:member	local:novel	.
+local:s1.1	rdf:object	local:powerful_means_access	.
+local:hybrid_query_engine	rdfs:subClassOf	local:engine	.
+local:challenges_due_to_data_source_heterogeneity_due_to_lack	rdfs:member	local:challenges_due_to_data_source_heterogeneity	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:s5.1	local:AM-PNC	local:address_these_challenges	.
+local:s5	rdf:predicate	local:address	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:hybrid_queries	.
+local:s10.2	local:AM-MNR	local:order_of_magnitude	.
+local:s8.2	rdf:subject	local:communication_costs	.
+local:sparql_federation_framework_fedx	rdfs:member	local:sparql_federation_framework	.
+local:executing_hybrid_search_queries_in_a_federation_of_multiple_data_sources	rdfs:member	local:federation	.
+local:search_clauses	rdfs:subClassOf	local:clauses	.
+local:query_processing	rdfs:subClassOf	local:processing	.
+local:s8	rdf:object	local:onthefly_adaptation_of_the_query_execution_plan	.
+local:s8.2	rdf:predicate	local:make	.
+local:executing_hybrid_search_queries_in_a_federation_of_multiple_data_sources	rdfs:member	local:hybrid_search_queries	.
+local:executing_hybrid_search_queries_in_a_federation_of_multiple_data_sources	rdfs:member	local:multiple_data_sources	.
+local:lack_of_statistical_data	rdfs:member	local:statistical_data	.
+local:can_lead	rdfs:subClassOf	local:lead	.
+local:incorporate_keyword_search_clauses_as_firstclass_citizens	rdfs:member	local:firstclass_citizens	.
+local:multiple_data_sources	rdfs:member	local:multiple_data	.
+local:onthefly_adaptation_of_the_query_execution_plan	rdfs:member	local:query_execution_plan	.
+local:novel_optimization	rdfs:member	local:novel	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:order	.
+local:hybrid_search_queries	rdfs:member	local:hybrid_search	.
+local:query_engine	rdfs:subClassOf	local:engine	.
+local:framework_fedx	rdfs:subClassOf	local:fedx	.
+local:s9	rdf:object	local:intelligent_grouping_of_query_clauses	.
+local:execution_plan	rdfs:subClassOf	local:plan	.
+local:hybrid_search_queries	rdfs:subClassOf	local:search_queries	.
+local:s5.1	rdf:object	local:fedsearch	.
+local:s10.1	rdf:object	local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	.
+local:topk_hybrid	rdfs:subClassOf	local:hybrid	.
+local:federation_framework_fedx	rdfs:member	local:federation_framework	.
+local:s3	rdf:predicate	local:base	.
+local:more_order_of_magnitude	rdfs:member	local:more_order	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	rdfs:member	local:challenges	.
+local:combining_structured_queries_with_fulltext_search	rdfs:member	local:queries	.
+local:s0	rdf:predicate	local:distribute	.
+local:executing_in_federation	rdfs:member	local:federation	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	rdfs:member	local:statistical_data	.
+local:meaningful_ranking_of_results	rdfs:member	local:meaningful_ranking	.
+local:hybrid_search_queries	rdfs:subClassOf	local:queries	.
+local:topk_hybrid_search	rdfs:subClassOf	local:hybrid_search	.
+local:s9.1	local:AM-MNR	local:significantly	.
+local:s8.3	rdf:subject	local:we	.
+local:processing_efficiency	rdfs:subClassOf	local:efficiency	.
+local:s9.3	rdf:predicate	local:approach	.
+local:execution_time	rdfs:subClassOf	local:time	.
+local:firstclass_citizens	rdfs:subClassOf	local:citizens	.
+local:novel_hybrid_query	rdfs:subClassOf	local:query	.
+local:statistical_data	rdfs:member	local:statistical	.
+local:s8	rdf:subject	local:we	.
+local:s1.1	rdf:predicate	local:provide	.
+local:incorporate_keyword_search	rdfs:member	local:incorporate_keyword	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:optimization_techniques	.
+local:multiple_data	rdfs:member	local:multiple	.
+local:onthefly_adaptation_of_query_execution_plan	rdfs:member	local:onthefly_adaptation	.
+local:onthefly_adaptation	rdfs:member	local:onthefly	.
+local:sparql_federation_framework	rdfs:subClassOf	local:framework	.
+local:maintaining_a_meaningful_ranking_of_results	rdfs:member	local:meaningful_ranking	.
+local:communication_costs	rdfs:member	local:communication	.
+local:incorporate_as_firstclass_citizens	rdfs:member	local:firstclass_citizens	.
+local:s5	rdf:object	local:challenges	.
+local:novel_hybrid_query_engine	rdfs:subClassOf	local:hybrid_query_engine	.
+local:execution_time_of_hybrid_queries	rdfs:member	local:hybrid_queries	.
 local:federation_framework	rdfs:subClassOf	local:framework	.
-local:structured_queries_with_fulltext_search	local:structuredqueries_with	local:fulltext_search	.
-local:structured_queries_with_fulltext_search	local:with_full-textsearch	local:structured_queries	.
+local:meaningful_ranking	rdfs:subClassOf	local:ranking	.
+local:s8.3	rdf:predicate	local:approach	.
+local:s2	rdf:predicate	local:execute	.
+local:substantial_performance_improvement_reducing	rdfs:member	local:reducing	.
+local:keyword_search_clauses_firstclass_citizens	rdfs:member	local:keyword_search	.
+local:hybrid_queries	rdfs:subClassOf	local:queries	.
+local:execution_plan	rdfs:member	local:execution	.
+local:data_source	rdfs:member	local:data	.
+local:novel_optimization_techniques_to_improve_the_query_processing_efficiency	rdfs:member	local:query_processing_efficiency	.
+local:challenges_due_to_data_source_heterogeneity_due_to_lack	rdfs:member	local:lack	.
+local:federation_framework	rdfs:member	local:federation	.
+local:query_execution	rdfs:subClassOf	local:execution	.
+local:novel_optimization_techniques	rdfs:subClassOf	local:techniques	.
+local:s4	rdf:object	local:challenges	.
+local:data_source_heterogeneity	rdfs:subClassOf	local:heterogeneity	.
+local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:hybrid_queries	.
+local:substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:substantial_performance_improvement	.
+local:query_execution_plan	rdfs:subClassOf	local:execution_plan	.
+local:hybrid_query_engine	rdfs:member	local:hybrid_query	.
+local:novel_hybrid	rdfs:subClassOf	local:hybrid	.
+local:s9.1	rdf:object	local:communication_costs	.
+local:keyword_search_clauses_firstclass_citizens	rdfs:member	local:firstclass_citizens	.
+local:topk_hybrid_search	rdfs:subClassOf	local:search	.
+local:federation_of_multiple_data_sources	rdfs:member	local:federation	.
+local:sparql_algebra	rdfs:member	local:sparql	.
+local:s8	rdf:predicate	local:perform	.
+local:s2	rdf:subject	local:multiple_data_sources	.
+local:challenges_due_to_data_source_heterogeneity	rdfs:member	local:data_source_heterogeneity	.
+local:s9.3	rdf:subject	local:we	.
+local:can_lead_to_substantial_performance_improvement	rdfs:member	local:can_lead	.
+local:s7	rdf:subject	local:we	.
+local:query_clauses	rdfs:member	local:query	.
+local:data_source	rdfs:subClassOf	local:source	.
+local:fulltext_search	rdfs:subClassOf	local:search	.
+local:s6.2	rdf:predicate	local:improve	.
+local:intelligent_grouping_of_query_clauses	rdfs:member	local:query_clauses	.
+local:s6.1	rdf:subject	local:novel_optimization_techniques_to_improve_the_query_processing_efficiency	.
+local:hybrid_queries	rdfs:member	local:hybrid	.
+local:s10.2	rdf:predicate	local:reduce	.
+local:keyword_search	rdfs:member	local:keyword	.
+local:suitable_for_topk_hybrid_search_across_multiple_data_sources	rdfs:member	local:topk_hybrid_search	.
+local:s6	rdf:subject	local:we	.
+local:s4	rdf:predicate	local:address	.
+local:hybrid_search_queries_in_federation	rdfs:member	local:federation	.
+local:substantial_performance	rdfs:member	local:substantial	.
+local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	rdfs:member	local:magnitude	.
+local:s7.1	rdf:object	local:keyword_search_clauses_firstclass_citizens	.
+local:intelligent_grouping_of_query_clauses	rdfs:member	local:intelligent_grouping	.
+local:number_of_challenges_due_to_data_source_heterogeneity_and_lack_of_statistical_data_about_keyword_selectivity	rdfs:member	local:data_source_heterogeneity	.
+local:statistical_data_about_keyword_selectivity	rdfs:member	local:statistical_data	.
+local:topk_hybrid_search_across_multiple_data_sources	rdfs:member	local:topk_hybrid_search	.
+local:hybrid_search_queries_in_a_federation	rdfs:member	local:hybrid_search_queries	.
+local:sparql_federation	rdfs:member	local:sparql	.
+local:s4.1	rdf:subject	local:we	.
+local:s8.1	local:AM-MNR	local:significantly	.
+local:optimization_techniques	rdfs:subClassOf	local:techniques	.
+local:s10.1	rdf:subject	local:optimization_techniques	.
+local:federation_framework_fedx	rdfs:subClassOf	local:fedx	.
+local:sparql_federation_framework	rdfs:member	local:sparql_federation	.
+local:s2.1	rdf:predicate	local:present	.
+local:execution_time_of_hybrid_queries	rdfs:member	local:execution_time	.
+local:s10	rdf:subject	local:we	.
+local:substantial_performance_improvement	rdfs:subClassOf	local:performance_improvement	.
+local:communication_costs	rdfs:subClassOf	local:costs	.
+local:more_order_of_magnitude	rdfs:member	local:magnitude	.
+local:s1	rdf:subject	local:structured_queries_with_fulltext_search	.
+local:s7	rdf:predicate	local:extend	.
+local:s2.1	local:AM-DIS	local:however	.
+local:s6.1	local:AM-TMP	local:maintaining_a_meaningful_ranking_of_results	.
+local:s4.1	rdf:object	local:novel_hybrid_query_engine	.
+local:order_of_magnitude	rdfs:member	local:order	.
+local:s9.2	rdf:predicate	local:make	.
+local:s10	rdf:object	local:optimization_techniques_can_lead_to_a_substantial_performance_improvement_reducing_the_execution_time_of_hybrid_queries_by_more_than_an_order_of_magnitude	.

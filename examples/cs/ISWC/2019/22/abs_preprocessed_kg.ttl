@@ -1,513 +1,978 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"accessing empty lists"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"code that will not encounter runtime errors with usual exceptions as type checking can not prevent accessing empty lists"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"code that will not encounter runtime errors with usual exceptions as type checking"	.
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"simplified type checked code"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"a programmer process rdf data with simplified type checked code"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"a programmer can use we method in order to process rdf data with simplified type checked code"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"we provide the formal underpinnings"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we provide a proof of type safety for shacl"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"the shapes constraint language integrate calculus"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"to this end we derive the shapes constraint language integrate calculus"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"the shapes constraint language integrate"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"to this end we derive the shapes constraint language integrate query shapes as types into a lambda"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the shapes constraint language shapes from queries"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"to this end we derive the shapes constraint language shapes from queries"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the shapes constraint language integrate data shapes as types into a lambda"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"this end we derive the shapes constraint language integrate data shapes as types into a lambda"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"type using shacl"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"type checking using shacl"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"using the shapes constraint language"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"type checking using the shapes constraint language"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"checking for type checking code"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we approach type checking for type checking code"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we present we approach type checking for type checking code"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"rdf data graphs validated by a the shapes constraint language shape graph"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"type checking code that queries rdf data graphs validated by a the shapes constraint language shape graph"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"checking code"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"the shapes constraint language enforce constraints on otherwise random data structures"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the shapes constraint language devised to enforce constraints on otherwise random data structures"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"avoid runtime errors program code might be setvalued"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"avoid runtime errors program code might be possibly not available"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"which"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"it must always include the most general case in which attributes"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"program code that processes highlyflexible data representations exhibits the difficulty that it must always include the most general case in which attributes"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"program code that processes highlyflexible data representations"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"representing data"	.
+
+
 #### Classes ####
 
-local:representing	rdfs:label	"representing"	.
+local:empty_lists	a	rdf:Class	;
+	rdfs:label	"empty lists"	.
 
-local:data	rdfs:label	"data"	.
+local:lists	a	rdf:Class	;
+	rdfs:label	"lists"	.
 
-local:highlyflexible_data	rdfs:label	"highly-flexible data"	.
+local:empty	a	rdf:Class	;
+	rdfs:label	"empty"	.
 
-local:program	rdfs:label	"program"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:program_code	rdfs:label	"program code"	.
+local:code_that_will_not_encounter_runtime_errors_with_usual_exceptions_as_type_checking	a	rdf:Class	;
+	rdfs:label	"code that will not encounter runtime errors with usual exceptions as type checking"	.
 
-local:data_representations	rdfs:label	"data representations"	.
+local:runtime_errors	a	rdf:Class	;
+	rdfs:label	"runtime errors"	.
 
-local:representations	rdfs:label	"representations"	.
+local:type_checking	a	rdf:Class	;
+	rdfs:label	"type checking"	.
 
-local:highlyflexible	rdfs:label	"highly-flexible"	.
+local:usual_exceptions	a	rdf:Class	;
+	rdfs:label	"usual exceptions"	.
 
-local:runtime_errors	rdfs:label	"run-time errors"	.
+local:code	a	rdf:Class	;
+	rdfs:label	"code"	.
 
-local:errors	rdfs:label	"errors"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:code	rdfs:label	"code"	.
+local:checking	a	rdf:Class	;
+	rdfs:label	"checking"	.
 
-local:general	rdfs:label	"general"	.
+local:exceptions	a	rdf:Class	;
+	rdfs:label	"exceptions"	.
 
-local:general_case	rdfs:label	"general case"	.
+local:usual	a	rdf:Class	;
+	rdfs:label	"usual"	.
 
-local:most_general_case	rdfs:label	"most general case"	.
+local:errors	a	rdf:Class	;
+	rdfs:label	"errors"	.
 
-local:case	rdfs:label	"case"	.
+local:runtime	a	rdf:Class	;
+	rdfs:label	"runtime"	.
 
-local:most_general	rdfs:label	"most general"	.
+local:not_encounter	a	rdf:Class	;
+	rdfs:label	"not encounter"	.
 
-local:highlyflexible_data_representations	rdfs:label	"highly-flexible data representations"	.
+local:encounter	a	rdf:Class	;
+	rdfs:label	"encounter"	.
 
-local:most	rdfs:label	"most"	.
+local:will_not_encounter	a	rdf:Class	;
+	rdfs:label	"will not encounter"	.
 
-local:runtime	rdfs:label	"run-time"	.
+local:runtime_errors_with_usual_exceptions	a	rdf:Class	;
+	rdfs:label	"runtime errors with usual exceptions"	.
 
-local:not_available	rdfs:label	"not available"	.
+local:usual_exceptions_as_type_checking	a	rdf:Class	;
+	rdfs:label	"usual exceptions as type checking"	.
 
-local:available	rdfs:label	"available"	.
+local:not_prevent	a	rdf:Class	;
+	rdfs:label	"not prevent"	.
 
-local:possibly_not_available	rdfs:label	"possibly not available"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:might_setvalued	rdfs:label	"might set-valued"	.
+local:runtime_errors_with_usual_exceptions_as_type_checking	a	rdf:Class	;
+	rdfs:label	"runtime errors with usual exceptions as type checking"	.
 
-local:setvalued	rdfs:label	"set-valued"	.
+local:will	a	rdf:Class	;
+	rdfs:label	"will"	.
 
-local:always_include	rdfs:label	"always include"	.
+local:simplified_type	a	rdf:Class	;
+	rdfs:label	"simplified type"	.
 
-local:include	rdfs:label	"include"	.
+local:check	a	rdf:Class	;
+	rdfs:label	"check"	.
 
-local:must_always_include	rdfs:label	"must always include"	.
+local:programmer	a	rdf:Class	;
+	rdfs:label	"programmer"	.
 
-local:runtime_errors_program_code	rdfs:label	"run-time errors program code"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:might_setvalued_in_general_case	rdfs:label	"might set-valued in general case"	.
+local:rdf_data_with_simplified_type_checked_code	a	rdf:Class	;
+	rdfs:label	"rdf data with simplified type checked code"	.
 
-local:avoid	rdfs:label	"avoid"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:exhibits	rdfs:label	"exhibits"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:processes	rdfs:label	"processes"	.
+local:simplified	a	rdf:Class	;
+	rdfs:label	"simplified"	.
 
-local:difficulty	rdfs:label	"difficulty"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:it	rdfs:label	"it"	.
+local:rdf_data_with_simplified_type	a	rdf:Class	;
+	rdfs:label	"rdf data with simplified type"	.
 
-local:must	rdfs:label	"must"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:always	rdfs:label	"always"	.
+local:method_order_to_process_rdf_data_with_simplified_type_checked_code	a	rdf:Class	;
+	rdfs:label	"method order to process rdf data with simplified type checked code"	.
 
-local:shapes_constraint_language	rdfs:label	"shapes constraint language"	.
+local:method_order	a	rdf:Class	;
+	rdfs:label	"method order"	.
 
-local:language	rdfs:label	"language"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:constraint	rdfs:label	"constraint"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:constraint_language	rdfs:label	"constraint language"	.
+local:process_with_simplified_type	a	rdf:Class	;
+	rdfs:label	"process with simplified type"	.
 
-local:shapes_constraint	rdfs:label	"shapes constraint"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:shapes	rdfs:label	"shapes"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:devised	rdfs:label	"devised"	.
+local:formal_underpinnings	a	rdf:Class	;
+	rdfs:label	"formal underpinnings"	.
 
-local:random	rdfs:label	"random"	.
+local:formal	a	rdf:Class	;
+	rdfs:label	"formal"	.
 
-local:random_data	rdfs:label	"random data"	.
+local:underpinnings	a	rdf:Class	;
+	rdfs:label	"underpinnings"	.
 
-local:otherwise_random_data_structures	rdfs:label	"otherwise random data structures"	.
+local:proof_of_type_safety_for_shacl	a	rdf:Class	;
+	rdfs:label	"proof of type safety for shacl"	.
 
-local:structures	rdfs:label	"structures"	.
+local:proof	a	rdf:Class	;
+	rdfs:label	"proof"	.
 
-local:otherwise	rdfs:label	"otherwise"	.
+local:type_safety	a	rdf:Class	;
+	rdfs:label	"type safety"	.
 
-local:otherwise_random	rdfs:label	"otherwise random"	.
+local:shacl	a	rdf:Class	;
+	rdfs:label	"shacl"	.
 
-local:data_structures	rdfs:label	"data structures"	.
+local:safety	a	rdf:Class	;
+	rdfs:label	"safety"	.
 
-local:enforce_constraints	rdfs:label	"enforce constraints"	.
+local:proof_of_type_safety	a	rdf:Class	;
+	rdfs:label	"proof of type safety"	.
 
-local:constraints	rdfs:label	"constraints"	.
+local:shapes_constraint_language	a	rdf:Class	;
+	rdfs:label	"shapes constraint language"	.
 
-local:otherwise_random_data	rdfs:label	"otherwise random data"	.
+local:constraint_language	a	rdf:Class	;
+	rdfs:label	"constraint language"	.
 
-local:random_data_structures	rdfs:label	"random data structures"	.
+local:constraint	a	rdf:Class	;
+	rdfs:label	"constraint"	.
 
-local:enforce	rdfs:label	"enforce"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:constraints_on_random_data_structures	rdfs:label	"constraints on random data structures"	.
+local:shapes_constraint	a	rdf:Class	;
+	rdfs:label	"shapes constraint"	.
 
-local:present	rdfs:label	"present"	.
+local:shapes	a	rdf:Class	;
+	rdfs:label	"shapes"	.
 
-local:we	rdfs:label	"we"	.
+local:integrate	a	rdf:Class	;
+	rdfs:label	"integrate"	.
 
-local:shacl	rdfs:label	"shacl"	.
+local:calculus	a	rdf:Class	;
+	rdfs:label	"calculus"	.
 
-local:shacl_rrb	rdfs:label	"shacl -rrb-"	.
+local:derive	a	rdf:Class	;
+	rdfs:label	"derive"	.
 
-local:language_lrb_shacl_rrb	rdfs:label	"language -lrb- shacl -rrb-"	.
+local:shapes_constraint_language_integrate_calculus	a	rdf:Class	;
+	rdfs:label	"shapes constraint language integrate calculus"	.
 
-local:rrb	rdfs:label	"-rrb-"	.
+local:integrate_calculus	a	rdf:Class	;
+	rdfs:label	"integrate calculus"	.
 
-local:language_lrb_shacl	rdfs:label	"language -lrb- shacl"	.
+local:shapes_constraint_language_integrate	a	rdf:Class	;
+	rdfs:label	"shapes constraint language integrate"	.
 
-local:lrb_shacl	rdfs:label	"-lrb- shacl"	.
+local:language_integrate	a	rdf:Class	;
+	rdfs:label	"language integrate"	.
 
-local:lrb_shacl_rrb	rdfs:label	"-lrb- shacl -rrb-"	.
+local:constraint_language_integrate_calculus	a	rdf:Class	;
+	rdfs:label	"constraint language integrate calculus"	.
 
-local:shapes_constraint_language_lrb	rdfs:label	"shapes constraint language -lrb-"	.
+local:language_integrate_calculus	a	rdf:Class	;
+	rdfs:label	"language integrate calculus"	.
 
-local:shapes_constraint_language_lrb_shacl	rdfs:label	"shapes constraint language -lrb- shacl"	.
+local:constraint_language_integrate	a	rdf:Class	;
+	rdfs:label	"constraint language integrate"	.
 
-local:lrb	rdfs:label	"-lrb-"	.
+local:end	a	rdf:Class	;
+	rdfs:label	"end"	.
 
-local:constraint_language_lrb_shacl	rdfs:label	"constraint language -lrb- shacl"	.
+local:shapes_constraint_language_integrate_query_shapes_as_types_into_a_lambda	a	rdf:Class	;
+	rdfs:label	"shapes constraint language integrate query shapes as types into a lambda"	.
 
-local:constraint_language_lrb_shacl_rrb	rdfs:label	"constraint language -lrb- shacl -rrb-"	.
+local:lambda	a	rdf:Class	;
+	rdfs:label	"lambda"	.
 
-local:constraint_language_lrb	rdfs:label	"constraint language -lrb-"	.
+local:query_shapes	a	rdf:Class	;
+	rdfs:label	"query shapes"	.
 
-local:language_lrb	rdfs:label	"language -lrb-"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:shapes_constraint_language_lrb_shacl_rrb	rdfs:label	"shapes constraint language -lrb- shacl -rrb-"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:type_checking	rdfs:label	"type checking"	.
+local:integrate_as_types	a	rdf:Class	;
+	rdfs:label	"integrate as types"	.
 
-local:checking	rdfs:label	"checking"	.
+local:types_into_lambda	a	rdf:Class	;
+	rdfs:label	"types into lambda"	.
 
-local:type_checking_using	rdfs:label	"type checking using"	.
+local:shape	a	rdf:Class	;
+	rdfs:label	"shape"	.
 
-local:using	rdfs:label	"using"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:approach	rdfs:label	"approach,"	.
+local:shapes_constraint_language_shapes_from_queries	a	rdf:Class	;
+	rdfs:label	"shapes constraint language shapes from queries"	.
 
-local:language_shape	rdfs:label	"language shape"	.
+local:language_shapes	a	rdf:Class	;
+	rdfs:label	"language shapes"	.
 
-local:shape	rdfs:label	"shape"	.
+local:constraint_language_shapes	a	rdf:Class	;
+	rdfs:label	"constraint language shapes"	.
 
-local:language_shape_graph	rdfs:label	"language shape graph"	.
+local:shapes_constraint_language_shapes	a	rdf:Class	;
+	rdfs:label	"shapes constraint language shapes"	.
 
-local:shapes_constraint_language_shape_graph	rdfs:label	"shapes constraint language shape graph"	.
+local:data_shapes_as_types_lambda	a	rdf:Class	;
+	rdfs:label	"data shapes as types lambda"	.
 
-local:graph	rdfs:label	"graph"	.
+local:data_shapes	a	rdf:Class	;
+	rdfs:label	"data shapes"	.
 
-local:shape_graph	rdfs:label	"shape graph"	.
+local:types_lambda	a	rdf:Class	;
+	rdfs:label	"types lambda"	.
 
-local:constraint_language_shape	rdfs:label	"constraint language shape"	.
+local:shapes_constraint_language_integrate_data_shapes_as_types_into_a_lambda	a	rdf:Class	;
+	rdfs:label	"shapes constraint language integrate data shapes as types into a lambda"	.
 
-local:data_graphs	rdfs:label	"data graphs"	.
+local:shapes_constraint_language_integrate_data_shapes	a	rdf:Class	;
+	rdfs:label	"shapes constraint language integrate data shapes"	.
 
-local:constraint_language_shape_graph	rdfs:label	"constraint language shape graph"	.
+local:integrate_data_shapes	a	rdf:Class	;
+	rdfs:label	"integrate data shapes"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:integrate_data	a	rdf:Class	;
+	rdfs:label	"integrate data"	.
 
-local:shapes_constraint_language_shape	rdfs:label	"shapes constraint language shape"	.
+local:language_integrate_data_shapes	a	rdf:Class	;
+	rdfs:label	"language integrate data shapes"	.
 
-local:rdf_data_graphs	rdfs:label	"rdf data graphs"	.
+local:language_integrate_data	a	rdf:Class	;
+	rdfs:label	"language integrate data"	.
 
-local:checking_code	rdfs:label	"checking code"	.
+local:shapes_constraint_language_integrate_data	a	rdf:Class	;
+	rdfs:label	"shapes constraint language integrate data"	.
 
-local:type_checking_code	rdfs:label	"type checking code"	.
+local:constraint_language_integrate_data	a	rdf:Class	;
+	rdfs:label	"constraint language integrate data"	.
 
-local:rdf_data_graphs_validated	rdfs:label	"rdf data graphs validated"	.
+local:constraint_language_integrate_data_shapes	a	rdf:Class	;
+	rdfs:label	"constraint language integrate data shapes"	.
 
-local:validated	rdfs:label	"validated"	.
+local:using_shacl	a	rdf:Class	;
+	rdfs:label	"using shacl"	.
 
-local:validated_by_shapes_constraint_language_shape_graph	rdfs:label	"validated by shapes constraint language shape graph"	.
+local:using_the_shapes_constraint_language	a	rdf:Class	;
+	rdfs:label	"using the shapes constraint language"	.
 
-local:type	rdfs:label	"type"	.
+local:type_checking_code	a	rdf:Class	;
+	rdfs:label	"type checking code"	.
 
-local:queries	rdfs:label	"queries"	.
+local:checking_code	a	rdf:Class	;
+	rdfs:label	"checking code"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:type_checking_for_type_checking_code	a	rdf:Class	;
+	rdfs:label	"type checking for type checking code"	.
 
-local:derive	rdfs:label	"derive"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:shapes_constraint_language_shapes	rdfs:label	"shapes constraint language shapes"	.
+local:approach_type_checking_for_type_checking_code	a	rdf:Class	;
+	rdfs:label	"approach type checking for type checking code"	.
 
-local:language_shapes	rdfs:label	"language shapes"	.
+local:approach_type_checking	a	rdf:Class	;
+	rdfs:label	"approach type checking"	.
 
-local:constraint_language_shapes	rdfs:label	"constraint language shapes"	.
+local:approach_type	a	rdf:Class	;
+	rdfs:label	"approach type"	.
 
-local:data_shapes	rdfs:label	"data shapes"	.
+local:shapes_constraint_language_shape_graph	a	rdf:Class	;
+	rdfs:label	"shapes constraint language shape graph"	.
 
-local:integrate	rdfs:label	"integrate"	.
+local:constraint_language_shape_graph	a	rdf:Class	;
+	rdfs:label	"constraint language shape graph"	.
 
-local:provide	rdfs:label	"provide"	.
+local:constraint_language_shape	a	rdf:Class	;
+	rdfs:label	"constraint language shape"	.
 
-local:type_safety	rdfs:label	"type safety"	.
+local:language_shape_graph	a	rdf:Class	;
+	rdfs:label	"language shape graph"	.
 
-local:safety	rdfs:label	"safety"	.
+local:language_shape	a	rdf:Class	;
+	rdfs:label	"language shape"	.
 
-local:proof_of_type_safety	rdfs:label	"proof of type safety"	.
+local:shapes_constraint_language_shape	a	rdf:Class	;
+	rdfs:label	"shapes constraint language shape"	.
 
-local:proof	rdfs:label	"proof"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:proof_of_type_safety_for_shacl	rdfs:label	"proof of type safety for shacl"	.
+local:shape_graph	a	rdf:Class	;
+	rdfs:label	"shape graph"	.
 
-local:formal_underpinnings	rdfs:label	"formal underpinnings"	.
+local:validate	a	rdf:Class	;
+	rdfs:label	"validate"	.
 
-local:underpinnings	rdfs:label	"underpinnings"	.
+local:rdf_data_graphs	a	rdf:Class	;
+	rdfs:label	"rdf data graphs"	.
 
-local:formal	rdfs:label	"formal"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:use	rdfs:label	"use"	.
+local:data_graphs	a	rdf:Class	;
+	rdfs:label	"data graphs"	.
 
-local:programmer	rdfs:label	"programmer"	.
+local:rdf_data_graphs_validated_by_a_the_shapes_constraint_language_shape_graph	a	rdf:Class	;
+	rdfs:label	"rdf data graphs validated by a the shapes constraint language shape graph"	.
 
-local:can	rdfs:label	"can"	.
+local:rdf_data_graphs_validated	a	rdf:Class	;
+	rdfs:label	"rdf data graphs validated"	.
 
-local:method	rdfs:label	"method"	.
+local:validated	a	rdf:Class	;
+	rdfs:label	"validated"	.
 
-local:empty_lists	rdfs:label	"empty lists"	.
+local:validated_by_shapes_constraint_language_shape_graph	a	rdf:Class	;
+	rdfs:label	"validated by shapes constraint language shape graph"	.
 
-local:lists	rdfs:label	"lists"	.
+local:enforce	a	rdf:Class	;
+	rdfs:label	"enforce"	.
 
-local:usual	rdfs:label	"usual"	.
+local:constraints_on_otherwise_random_data_structures	a	rdf:Class	;
+	rdfs:label	"constraints on otherwise random data structures"	.
 
-local:usual_exceptions	rdfs:label	"usual exceptions"	.
+local:otherwise_random_data_structures	a	rdf:Class	;
+	rdfs:label	"otherwise random data structures"	.
 
-local:empty	rdfs:label	"empty"	.
+local:constraints	a	rdf:Class	;
+	rdfs:label	"constraints"	.
 
-local:exceptions	rdfs:label	"exceptions"	.
+local:otherwise_random_data	a	rdf:Class	;
+	rdfs:label	"otherwise random data"	.
 
-local:not_prevent	rdfs:label	"not prevent"	.
+local:otherwise_random	a	rdf:Class	;
+	rdfs:label	"otherwise random"	.
 
-local:prevent	rdfs:label	"prevent"	.
+local:random_data_structures	a	rdf:Class	;
+	rdfs:label	"random data structures"	.
 
-local:can_not_prevent	rdfs:label	"can not prevent"	.
+local:random_data	a	rdf:Class	;
+	rdfs:label	"random data"	.
 
-local:lrb_errors	rdfs:label	"-lrb- errors"	.
+local:structures	a	rdf:Class	;
+	rdfs:label	"structures"	.
 
-local:runtime_lrb_errors	rdfs:label	"run-time -lrb- errors"	.
+local:data_structures	a	rdf:Class	;
+	rdfs:label	"data structures"	.
 
-local:not_encounter	rdfs:label	"not encounter"	.
+local:random	a	rdf:Class	;
+	rdfs:label	"random"	.
 
-local:encounter	rdfs:label	"encounter"	.
+local:otherwise	a	rdf:Class	;
+	rdfs:label	"otherwise"	.
 
-local:will_not_encounter	rdfs:label	"will not encounter"	.
+local:constraints_on_random_data_structures	a	rdf:Class	;
+	rdfs:label	"constraints on random data structures"	.
 
-local:checked_code	rdfs:label	"checked code"	.
+local:devise	a	rdf:Class	;
+	rdfs:label	"devise"	.
 
-local:type_checked_code	rdfs:label	"type checked code"	.
+local:enforce_constraints_on_otherwise_random_data_structures	a	rdf:Class	;
+	rdfs:label	"enforce constraints on otherwise random data structures"	.
 
-local:lrb_with_usual_exceptions	rdfs:label	"-lrb- with usual exceptions"	.
+local:enforce_constraints	a	rdf:Class	;
+	rdfs:label	"enforce constraints"	.
 
-local:usual_exceptions_as_type_checking	rdfs:label	"usual exceptions as type checking"	.
+local:runtime_errors_program_code_might_be_setvalued	a	rdf:Class	;
+	rdfs:label	"runtime errors program code might be setvalued"	.
 
-local:order	rdfs:label	"order"	.
+local:errors_program	a	rdf:Class	;
+	rdfs:label	"errors program"	.
 
-local:process	rdfs:label	"process"	.
+local:program	a	rdf:Class	;
+	rdfs:label	"program"	.
 
-local:checked	rdfs:label	"checked"	.
+local:errors_program_code	a	rdf:Class	;
+	rdfs:label	"errors program code"	.
 
-local:will	rdfs:label	"will"	.
+local:program_code	a	rdf:Class	;
+	rdfs:label	"program code"	.
 
-local:not	rdfs:label	"not"	.
+local:runtime_errors_program	a	rdf:Class	;
+	rdfs:label	"runtime errors program"	.
 
-local:accessing	rdfs:label	"accessing"	.
+local:runtime_errors_program_code	a	rdf:Class	;
+	rdfs:label	"runtime errors program code"	.
 
-#### Properties ####
+local:might_setvalued	a	rdf:Class	;
+	rdfs:label	"might setvalued"	.
+
+local:setvalued	a	rdf:Class	;
+	rdfs:label	"setvalued"	.
+
+local:avoid	a	rdf:Class	;
+	rdfs:label	"avoid"	.
+
+local:runtime_errors_program_code_might_be_possibly_not_available	a	rdf:Class	;
+	rdfs:label	"runtime errors program code might be possibly not available"	.
+
+local:not_available	a	rdf:Class	;
+	rdfs:label	"not available"	.
+
+local:available	a	rdf:Class	;
+	rdfs:label	"available"	.
+
+local:possibly_not_available	a	rdf:Class	;
+	rdfs:label	"possibly not available"	.
+
+local:might_possibly_not_available	a	rdf:Class	;
+	rdfs:label	"might possibly not available"	.
+
+local:attribute	a	rdf:Class	;
+	rdfs:label	"attribute"	.
+
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
+
+local:include	a	rdf:Class	;
+	rdfs:label	"include"	.
+
+local:general_case_in_which_attributes	a	rdf:Class	;
+	rdfs:label	"general case in which attributes"	.
+
+local:general_case	a	rdf:Class	;
+	rdfs:label	"general case"	.
+
+local:attributes	a	rdf:Class	;
+	rdfs:label	"attributes"	.
+
+local:case	a	rdf:Class	;
+	rdfs:label	"case"	.
+
+local:general	a	rdf:Class	;
+	rdfs:label	"general"	.
+
+local:attributes_in_general_case	a	rdf:Class	;
+	rdfs:label	"attributes in general case"	.
+
+local:must	a	rdf:Class	;
+	rdfs:label	"must"	.
+
+local:always	a	rdf:Class	;
+	rdfs:label	"always"	.
+
+local:program_code_that_processes_highlyflexible_data_representations	a	rdf:Class	;
+	rdfs:label	"program code that processes highlyflexible data representations"	.
+
+local:highlyflexible_data_representations	a	rdf:Class	;
+	rdfs:label	"highlyflexible data representations"	.
+
+local:highlyflexible_data	a	rdf:Class	;
+	rdfs:label	"highlyflexible data"	.
+
+local:highlyflexible	a	rdf:Class	;
+	rdfs:label	"highlyflexible"	.
+
+local:data_representations	a	rdf:Class	;
+	rdfs:label	"data representations"	.
+
+local:representations	a	rdf:Class	;
+	rdfs:label	"representations"	.
+
+local:exhibit	a	rdf:Class	;
+	rdfs:label	"exhibit"	.
+
+local:difficulty_that_it_must_always_include_the_most_general_case_in_which_attributes	a	rdf:Class	;
+	rdfs:label	"difficulty that it must always include the most general case in which attributes"	.
+
+local:most_general_case	a	rdf:Class	;
+	rdfs:label	"most general case"	.
+
+local:difficulty	a	rdf:Class	;
+	rdfs:label	"difficulty"	.
+
+local:most_general	a	rdf:Class	;
+	rdfs:label	"most general"	.
+
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
+
+local:always_include	a	rdf:Class	;
+	rdfs:label	"always include"	.
+
+local:must_always_include	a	rdf:Class	;
+	rdfs:label	"must always include"	.
+
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
 #### Mapped Relations ####
 
-cso:type_safety	rdfs:label	"type safety"	.
+local:rdf	owl:sameAs	cso:rdf	.
 local:constraint_language	owl:sameAs	cso:constraint_language	.
 cso:constraint_language	rdfs:label	"constraint language"	.
-local:type_safety	owl:sameAs	cso:type_safety	.
-cso:typechecking	rdfs:label	"type checking"	.
-local:rdf	owl:sameAs	cso:rdf	.
 cso:rdf_data	rdfs:label	"rdf data"	.
 local:rdf_data	owl:sameAs	cso:rdf_data	.
+local:integrate_data	owl:sameAs	cso:integrated_data	.
+local:type_safety	owl:sameAs	cso:type_safety	.
+cso:integrated_data	rdfs:label	"integrate data"	.
+cso:type_safety	rdfs:label	"type safety"	.
 cso:rdf	rdfs:label	"rdf"	.
-local:type_checking	owl:sameAs	cso:typechecking	.
 
 #### Relations ####
 
-local:program_code	rdfs:subClassOf	local:code	.
-local:devised	local:AM-PNC	local:enforce	.
-local:lrb_with_usual_exceptions	local:with_usualexceptions	local:lrb	.
-local:random	rdfs:member	local:random_data	.
-local:usual_exceptions_as_type_checking	local:as_typechecking	local:usual_exceptions	.
-local:data_representations	rdfs:subClassOf	local:representations	.
-local:queries	vn.role:Agent	local:type_checking_code	.
-local:shapes_constraint_language_shape_graph	rdfs:subClassOf	local:graph	.
-local:language	rdfs:member	local:language_shapes	.
-local:encounter	local:AM-NEG	local:not	.
-local:validated	vn.role:Agent	local:shapes_constraint_language_shape_graph	.
-local:usual_exceptions_as_type_checking	local:usualexceptions_as	local:type_checking	.
-local:language_shapes	rdfs:subClassOf	local:shapes	.
-local:highlyflexible_data_representations	rdfs:subClassOf	local:data_representations	.
-local:general_case	rdfs:subClassOf	local:case	.
-local:shapes_constraint_language_shapes	rdfs:subClassOf	local:shapes	.
-local:prevent	vn.role:Theme	local:accessing	.
-local:constraint_language_lrb_shacl	rdfs:member	local:constraint_language_lrb_shacl_rrb	.
-local:lrb_shacl	rdfs:subClassOf	local:shacl	.
-local:process	vn.role:Location	local:can_not_prevent	.
-local:enforce_constraints	rdfs:subClassOf	local:constraints	.
-local:might_setvalued_in_general_case	local:mightset-valued_in	local:general_case	.
-local:random_data_structures	rdfs:subClassOf	local:structures	.
-local:devised	vn.role:Product	local:shapes_constraint_language	.
-local:use	local:AM-MOD	local:can	.
-local:proof_of_type_safety	local:of_typesafety	local:proof	.
-local:present	vn.role:Agent	local:we	.
-local:use	vn.role:Theme	local:method	.
-local:shacl	rdfs:member	local:shacl_rrb	.
-local:otherwise	rdfs:member	local:otherwise_random	.
-local:data_graphs	rdfs:subClassOf	local:graphs	.
-local:shapes_constraint	rdfs:subClassOf	local:constraint	.
-local:encounter	vn.role:Patient	local:runtime_errors	.
-local:constraint_language_shape_graph	rdfs:subClassOf	local:graph	.
-local:type	rdfs:member	local:type_safety	.
-local:can_not_prevent	rdfs:subClassOf	local:not_prevent	.
-local:type_checking_using	local:typechecking_	local:using	.
-local:most_general_case	rdfs:subClassOf	local:case	.
-local:use	vn.role:Recipient	local:order	.
-local:runtime_lrb_errors	rdfs:subClassOf	local:lrb_errors	.
-local:exhibits	vn.role:Theme	local:runtime_errors_program_code	.
-local:most	rdfs:member	local:most_general	.
-local:constraint_language	rdfs:member	local:constraint_language_lrb	.
-local:language	rdfs:member	local:language_shape	.
-local:constraint_language_shape	rdfs:subClassOf	local:shape	.
+local:method_order_to_process_rdf_data_with_simplified_type_checked_code	rdfs:member	local:simplified_type	.
+local:s8.1	rdf:predicate	local:use	.
+local:constraint_language_integrate	rdfs:subClassOf	local:integrate	.
+local:s15.2	rdf:subject	local:simplified_type	.
+local:s1.1	rdf:predicate	local:exhibit	.
+local:s16.1	rdf:predicate	local:not_prevent	.
+local:s11	rdf:object	local:shapes_constraint_language_integrate_query_shapes_as_types_into_a_lambda	.
+local:approach_type_checking_for_type_checking_code	rdfs:member	local:type_checking_code	.
+local:checking_code	rdfs:member	local:checking	.
+local:proof_of_type_safety_for_shacl	rdfs:member	local:shacl	.
+local:s6	rdf:subject	local:we	.
+local:s1.1	rdf:subject	local:program_code_that_processes_highlyflexible_data_representations	.
 local:language_shape_graph	rdfs:subClassOf	local:shape_graph	.
-local:approach	vn.role:object	local:type_checking_using	.
-local:include	local:AM-MOD	local:must	.
-local:type_checking_code	rdfs:subClassOf	local:code	.
-local:shapes_constraint_language_lrb_shacl	rdfs:member	local:shapes_constraint_language_lrb_shacl_rrb	.
-local:constraint_language_lrb_shacl_rrb	rdfs:subClassOf	local:language_lrb_shacl_rrb	.
-local:type_checking	rdfs:member	local:type_checking_code	.
-local:provide	vn.role:Agent	local:formal_underpinnings	.
-local:checked	vn.role:Stimulus	local:can_not_prevent	.
-local:shapes_constraint_language	rdfs:subClassOf	local:language	.
-local:constraint_language_shapes	rdfs:subClassOf	local:language_shapes	.
-local:type_checking_code	rdfs:subClassOf	local:checking_code	.
-local:approach	vn.role:other	local:type_checking_code	.
-local:general	rdfs:member	local:general_case	.
-local:language_shape_graph	rdfs:subClassOf	local:graph	.
-local:shapes_constraint_language	rdfs:subClassOf	local:constraint_language	.
-local:language_lrb_shacl_rrb	rdfs:subClassOf	local:rrb	.
-local:shapes_constraint_language_lrb_shacl	rdfs:subClassOf	local:shacl	.
-local:validated	vn.role:Theme	local:rdf_data_graphs	.
-local:constraint_language_shapes	rdfs:subClassOf	local:shapes	.
-local:runtime_errors_program_code	local:_programcode	local:runtime_errors	.
-local:representing	vn.role:Theme	local:data	.
-local:shapes_constraint_language_shape	rdfs:subClassOf	local:shape	.
-local:checking_code	rdfs:subClassOf	local:code	.
-local:shapes_constraint	rdfs:member	local:shapes_constraint_language	.
-local:rdf_data_graphs_validated	local:rdfdatagraphs_	local:validated	.
-local:shapes_constraint_language_lrb	rdfs:member	local:shapes_constraint_language_lrb_shacl	.
-local:processes	vn.role:Theme	local:exhibits	.
-local:type_checking	rdfs:subClassOf	local:checking	.
-local:shapes_constraint_language_shape	rdfs:member	local:shapes_constraint_language_shape_graph	.
-local:encounter	local:AM-MOD	local:will	.
-local:otherwise_random_data_structures	rdfs:subClassOf	local:structures	.
-local:program	rdfs:member	local:program_code	.
-local:include	local:AM-TMP	local:always	.
-local:checked	vn.role:Experiencer	local:rdf_data	.
-local:possibly_not_available	rdfs:subClassOf	local:not_available	.
-local:constraint_language	rdfs:member	local:constraint_language_shape	.
-local:prevent	vn.role:Agent	local:type_checking	.
-local:derive	vn.role:indirect_object	local:queries	.
-local:shapes_constraint_language_lrb_shacl_rrb	rdfs:subClassOf	local:constraint_language_lrb_shacl_rrb	.
-local:derive	vn.role:Theme	local:we	.
-local:proof_of_type_safety_for_shacl	local:proofoftypesafety_for	local:shacl	.
-local:always_include	rdfs:subClassOf	local:include	.
-local:will_not_encounter	rdfs:subClassOf	local:not_encounter	.
-local:proof_of_type_safety_for_shacl	local:for_shacl	local:proof_of_type_safety	.
-local:lrb	rdfs:member	local:lrb_shacl	.
-local:random_data	rdfs:member	local:random_data_structures	.
-local:present	local:AM-EXT	local:type_checking_code	.
-local:checking	vn.role:Stimulus	local:using	.
-local:using	vn.role:Recipient	local:type_checking_code	.
-local:constraint_language	rdfs:subClassOf	local:language	.
-local:language_lrb_shacl	rdfs:subClassOf	local:shacl	.
-local:derive	vn.role:Location	local:shapes_constraint_language_shapes	.
-local:using	vn.role:Theme	local:shapes_constraint_language_lrb_shacl_rrb	.
-local:rdf_data_graphs	rdfs:subClassOf	local:data_graphs	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:shapes_constraint_language	rdfs:member	local:shapes_constraint_language_shape	.
-local:language_shape	rdfs:subClassOf	local:shape	.
-local:type_safety	rdfs:subClassOf	local:safety	.
-local:shapes_constraint_language_shape_graph	rdfs:subClassOf	local:constraint_language_shape_graph	.
-local:lrb_errors	rdfs:subClassOf	local:errors	.
-local:lrb_shacl_rrb	rdfs:subClassOf	local:shacl_rrb	.
-local:queries	vn.role:Theme	local:rdf_data_graphs_validated	.
-local:highlyflexible	rdfs:member	local:highlyflexible_data	.
-local:constraints_on_random_data_structures	local:constraints_on	local:random_data_structures	.
-local:prevent	local:AM-MOD	local:can	.
-local:language_lrb_shacl_rrb	rdfs:subClassOf	local:lrb_shacl_rrb	.
-local:rdf_data	rdfs:member	local:rdf_data_graphs	.
-local:checked_code	rdfs:subClassOf	local:code	.
-local:exhibits	vn.role:Agent	local:difficulty	.
-local:type_checked_code	rdfs:subClassOf	local:checked_code	.
-local:prevent	local:AM-NEG	local:not	.
-local:shapes_constraint_language_lrb	rdfs:subClassOf	local:lrb	.
-local:constraint_language_lrb_shacl_rrb	rdfs:subClassOf	local:rrb	.
-local:empty	rdfs:member	local:empty_lists	.
-local:present	vn.role:Theme	local:approach	.
-local:shacl_rrb	rdfs:subClassOf	local:rrb	.
-local:constraint_language_shape	rdfs:member	local:constraint_language_shape_graph	.
-local:provide	vn.role:Recipient	local:we	.
-local:process	vn.role:Agent	local:programmer	.
-local:might_setvalued_in_general_case	local:in_generalcase	local:might_setvalued	.
-local:constraint_language	rdfs:member	local:constraint_language_shapes	.
-local:not_encounter	rdfs:subClassOf	local:encounter	.
-local:data_structures	rdfs:subClassOf	local:structures	.
-local:usual	rdfs:member	local:usual_exceptions	.
-local:include	vn.role:Agent	local:it	.
-local:not_prevent	rdfs:subClassOf	local:prevent	.
-local:approach	vn.role:subject	local:we	.
-local:data	rdfs:member	local:data_graphs	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:highlyflexible_data_representations	rdfs:subClassOf	local:representations	.
-local:type_checking_using	local:_using	local:type_checking	.
-local:highlyflexible_data	rdfs:member	local:highlyflexible_data_representations	.
-local:must_always_include	rdfs:subClassOf	local:always_include	.
-local:otherwise_random_data	rdfs:member	local:otherwise_random_data_structures	.
-local:language_lrb	rdfs:subClassOf	local:lrb	.
-local:use	vn.role:Agent	local:programmer	.
-local:most_general	rdfs:member	local:most_general_case	.
-local:constraint_language_lrb	rdfs:subClassOf	local:lrb	.
-local:runtime_errors_program_code	local:run-timeerrors_	local:program_code	.
-local:constraint_language_lrb	rdfs:member	local:constraint_language_lrb_shacl	.
-local:shapes_constraint_language_lrb_shacl_rrb	rdfs:subClassOf	local:rrb	.
-local:shape	rdfs:member	local:shape_graph	.
-local:constraint_language_shape_graph	rdfs:subClassOf	local:language_shape_graph	.
-local:shapes_constraint_language_shapes	rdfs:subClassOf	local:constraint_language_shapes	.
-local:shape_graph	rdfs:subClassOf	local:graph	.
-local:otherwise_random	rdfs:member	local:otherwise_random_data	.
-local:integrate	vn.role:Patient2	local:data_shapes	.
-local:random_data_structures	rdfs:subClassOf	local:data_structures	.
-local:otherwise_random_data	rdfs:subClassOf	local:data	.
-local:shapes	vn.role:Product	local:shapes_constraint_language	.
-local:empty_lists	rdfs:subClassOf	local:lists	.
-local:type	rdfs:member	local:type_checking	.
-local:accessing	vn.role:Patient	local:rrb	.
-local:highlyflexible_data	rdfs:subClassOf	local:data	.
-local:constraint	rdfs:member	local:constraint_language	.
-local:shapes	vn.role:Product	local:queries	.
-local:constraints_on_random_data_structures	local:on_randomdatastructures	local:constraints	.
-local:processes	vn.role:Agent	local:runtime_errors_program_code	.
-local:runtime_errors	rdfs:subClassOf	local:errors	.
-local:not_available	rdfs:subClassOf	local:available	.
-local:rdf_data_graphs	rdfs:subClassOf	local:graphs	.
 local:data_shapes	rdfs:subClassOf	local:shapes	.
-local:rdf_data_graphs_validated	local:_validated	local:rdf_data_graphs	.
-local:proof_of_type_safety	local:proof_of	local:type_safety	.
-local:enforce	vn.role:Theme	local:constraints_on_random_data_structures	.
-local:lrb_shacl_rrb	rdfs:subClassOf	local:rrb	.
-local:language_lrb_shacl	rdfs:member	local:language_lrb_shacl_rrb	.
-local:enforce	vn.role:Agent	local:shapes_constraint_language	.
-local:most_general	rdfs:subClassOf	local:general	.
-local:language	rdfs:member	local:language_lrb	.
-local:language_shape	rdfs:member	local:language_shape_graph	.
-local:constraint_language_lrb_shacl	rdfs:subClassOf	local:shacl	.
-local:validated_by_shapes_constraint_language_shape_graph	local:validated_by	local:shapes_constraint_language_shape_graph	.
-local:usual_exceptions	rdfs:subClassOf	local:exceptions	.
-local:lrb_shacl	rdfs:member	local:lrb_shacl_rrb	.
-local:checking	vn.role:Experiencer	local:code	.
-local:shapes_constraint_language	rdfs:member	local:shapes_constraint_language_shapes	.
-local:enforce	rdfs:member	local:enforce_constraints	.
-local:shapes_constraint_language	rdfs:member	local:shapes_constraint_language_lrb	.
-local:checking	rdfs:member	local:checking_code	.
-local:data	rdfs:member	local:data_representations	.
-local:data	rdfs:member	local:data_shapes	.
-local:language_lrb	rdfs:member	local:language_lrb_shacl	.
-local:shapes	rdfs:member	local:shapes_constraint	.
-local:otherwise_random	rdfs:subClassOf	local:random	.
-local:avoid	vn.role:Location	local:exhibits	.
-local:include	vn.role:Theme	local:general_case	.
-local:random_data	rdfs:subClassOf	local:data	.
-local:lrb_with_usual_exceptions	local:-lrb-_with	local:usual_exceptions	.
-local:data	rdfs:member	local:data_structures	.
-local:provide	vn.role:Agent	local:proof_of_type_safety_for_shacl	.
-local:formal	rdfs:member	local:formal_underpinnings	.
+local:s12.1	rdf:object	local:calculus	.
+local:process_with_simplified_type	rdfs:member	local:simplified_type	.
+local:otherwise_random_data_structures	rdfs:member	local:otherwise_random_data	.
+local:otherwise_random_data	rdfs:member	local:otherwise_random	.
+local:approach_type_checking	rdfs:member	local:checking	.
+local:s8	local:AM-MNR	local:using_shacl	.
+local:process_with_simplified_type	rdfs:member	local:process	.
+local:method_order_to_process_rdf_data_with_simplified_type_checked_code	rdfs:member	local:method_order	.
+local:constraint_language_integrate_calculus	rdfs:subClassOf	local:calculus	.
+local:s2	rdf:subject	local:runtime_errors_program_code_might_be_possibly_not_available	.
+local:s15.2	rdf:predicate	local:check	.
+local:rdf_data_graphs_validated	rdfs:member	local:validated	.
+local:integrate_as_types	rdfs:member	local:types	.
+local:s15.1	rdf:subject	local:programmer	.
+local:otherwise_random_data	rdfs:subClassOf	local:data	.
+local:rdf_data_with_simplified_type_checked_code	rdfs:member	local:simplified_type	.
+local:rdf_data_with_simplified_type_checked_code	rdfs:member	local:rdf_data	.
+local:might_possibly_not_available	rdfs:subClassOf	local:possibly_not_available	.
+local:language_integrate_data	rdfs:subClassOf	local:data	.
+local:s1.2	rdf:object	local:general_case_in_which_attributes	.
+local:s5.2	rdf:subject	local:shapes_constraint_language_shape_graph	.
+local:runtime_errors_with_usual_exceptions	rdfs:member	local:runtime_errors	.
+local:integrate_as_types	rdfs:member	local:integrate	.
+local:s1.2	local:AM-MOD	local:must	.
+local:proof_of_type_safety	rdfs:member	local:type_safety	.
+local:data_shapes_as_types_lambda	rdfs:member	local:types	.
+local:language_shape_graph	rdfs:subClassOf	local:graph	.
+local:shapes_constraint_language_shapes_from_queries	rdfs:member	local:queries	.
+local:s1.2	rdf:predicate	local:include	.
+local:language_integrate_calculus	rdfs:subClassOf	local:calculus	.
+local:s11.1	rdf:subject	local:shapes_constraint_language	.
+local:program_code_that_processes_highlyflexible_data_representations	rdfs:member	local:highlyflexible_data_representations	.
+local:approach_type_checking	rdfs:subClassOf	local:checking	.
+local:highlyflexible_data_representations	rdfs:subClassOf	local:data_representations	.
+local:s5.2	rdfs:member	local:shapes_constraint_language_shape_graph	.
+local:validated_by_shapes_constraint_language_shape_graph	rdfs:member	local:shapes_constraint_language_shape_graph	.
+local:s5.2	rdf:object	local:rdf_data_graphs	.
+local:type_checking_code	rdfs:member	local:type_checking	.
+local:difficulty_that_it_must_always_include_the_most_general_case_in_which_attributes	rdfs:member	local:attributes	.
+local:s6.1	rdf:predicate	local:approach	.
+local:constraint_language_integrate_data_shapes	rdfs:member	local:constraint_language_integrate_data	.
+local:general_case_in_which_attributes	rdfs:member	local:attributes	.
+local:highlyflexible_data_representations	rdfs:subClassOf	local:representations	.
+local:shapes_constraint_language_shape_graph	rdfs:subClassOf	local:constraint_language_shape_graph	.
+local:type_checking_for_type_checking_code	rdfs:member	local:type_checking	.
+local:shapes_constraint_language_shape_graph	rdfs:subClassOf	local:graph	.
+local:runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:type_checking	.
+local:language_integrate_data_shapes	rdfs:subClassOf	local:shapes	.
 local:might_setvalued	rdfs:subClassOf	local:setvalued	.
-local:validated_by_shapes_constraint_language_shape_graph	local:by_shapesconstraintlanguageshapegraph	local:validated	.
+local:type_safety	rdfs:member	local:type	.
+local:type_checking_for_type_checking_code	rdfs:member	local:type_checking_code	.
+local:rdf_data_graphs_validated	rdfs:member	local:rdf_data_graphs	.
+local:s16.1	local:AM-MOD	local:can	.
+local:random_data	rdfs:subClassOf	local:data	.
+local:s16.2	rdf:predicate	local:access	.
+local:program_code	rdfs:member	local:program	.
+local:shapes_constraint	rdfs:subClassOf	local:constraint	.
+local:method_order	rdfs:member	local:method	.
+local:s16	rdf:object	local:runtime_errors_with_usual_exceptions_as_type_checking	.
+local:s11	rdf:predicate	local:derive	.
+local:constraint_language_shapes	rdfs:subClassOf	local:language_shapes	.
+local:data_shapes_as_types_lambda	rdfs:member	local:data_shapes	.
+local:shapes_constraint_language_integrate_data_shapes_as_types_into_a_lambda	rdfs:member	local:shapes_constraint_language_integrate_data_shapes	.
+local:shapes_constraint_language_integrate_data_shapes	rdfs:member	local:shapes_constraint_language_integrate_data	.
+local:method_order_to_process_rdf_data_with_simplified_type_checked_code	rdfs:member	local:code	.
+local:language_integrate	rdfs:member	local:language	.
+local:validated_by_shapes_constraint_language_shape_graph	rdfs:member	local:validated	.
+local:integrate_data	rdfs:member	local:integrate	.
+local:rdf_data_with_simplified_type	rdfs:member	local:rdf_data	.
+local:s9.1	rdf:subject	local:shapes_constraint_language	.
+local:random_data	rdfs:member	local:random	.
+local:rdf_data_graphs	rdfs:subClassOf	local:graphs	.
+local:attributes_in_general_case	rdfs:member	local:general_case	.
+local:runtime_errors	rdfs:member	local:runtime	.
+local:enforce_constraints	rdfs:member	local:enforce	.
+local:runtime_errors_program	rdfs:subClassOf	local:program	.
+local:s16.1	rdf:subject	local:code_that_will_not_encounter_runtime_errors_with_usual_exceptions_as_type_checking	.
+local:type_checking_for_type_checking_code	rdfs:member	local:type	.
+local:approach_type	rdfs:subClassOf	local:type	.
+local:s8	rdf:predicate	local:check	.
+local:not_available	rdfs:subClassOf	local:available	.
+local:shapes_constraint_language_integrate_query_shapes_as_types_into_a_lambda	rdfs:member	local:lambda	.
+local:s9	local:AM-TMP	local:end	.
+local:proof_of_type_safety_for_shacl	rdfs:member	local:proof	.
+local:s10	rdf:predicate	local:derive	.
+local:s6.1	rdf:subject	local:we	.
+local:s12	local:AM-TMP	local:end	.
+local:shapes_constraint_language_integrate_data_shapes_as_types_into_a_lambda	rdfs:member	local:types	.
+local:data_representations	rdfs:subClassOf	local:representations	.
+local:s10	rdf:object	local:shapes_constraint_language_shapes_from_queries	.
+local:shapes_constraint_language_integrate_query_shapes_as_types_into_a_lambda	rdfs:member	local:types	.
+local:s16	rdf:subject	local:code	.
+local:s6.2	rdfs:member	local:checking	.
+local:program_code	rdfs:subClassOf	local:code	.
+local:s1	rdf:object	local:highlyflexible_data_representations	.
+local:constraint_language_integrate_data	rdfs:subClassOf	local:data	.
+local:runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:usual_exceptions	.
+local:s15.1	rdf:object	local:rdf_data_with_simplified_type_checked_code	.
+local:s14	rdf:object	local:formal_underpinnings	.
+local:s10.1	rdf:predicate	local:shape	.
+local:constraint_language_shape	rdfs:subClassOf	local:shape	.
+local:s16	rdf:predicate	local:not_encounter	.
+local:s15	rdf:object	local:method_order_to_process_rdf_data_with_simplified_type_checked_code	.
+local:general_case	rdfs:subClassOf	local:case	.
+local:language_integrate_data	rdfs:member	local:language_integrate	.
+local:runtime_errors_program_code	rdfs:member	local:runtime_errors_program	.
+local:usual_exceptions	rdfs:member	local:usual	.
+local:general_case_in_which_attributes	rdfs:member	local:general_case	.
+local:shapes_constraint_language_integrate_data_shapes	rdfs:subClassOf	local:shapes	.
+local:s5.2	rdf:predicate	local:validate	.
+local:attributes_in_general_case	rdfs:member	local:attributes	.
+local:method_order	rdfs:subClassOf	local:order	.
+local:errors_program	rdfs:subClassOf	local:program	.
+local:general_case	rdfs:member	local:general	.
+local:shapes_constraint_language	rdfs:subClassOf	local:language	.
+local:shapes_constraint_language_integrate_calculus	rdfs:subClassOf	local:calculus	.
+local:s1	rdf:predicate	local:process	.
+local:usual_exceptions	rdfs:subClassOf	local:exceptions	.
+local:empty_lists	rdfs:subClassOf	local:lists	.
+local:s5	rdf:predicate	local:check	.
+local:runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:runtime_errors	.
+local:s6	rdf:object	local:approach_type_checking_for_type_checking_code	.
+local:s0	rdf:subject	local:data	.
+local:not_encounter	rdfs:subClassOf	local:encounter	.
+local:language_integrate_data_shapes	rdfs:member	local:language_integrate_data	.
+local:shapes_constraint_language	rdfs:member	local:shapes_constraint	.
+local:s11	rdf:subject	local:we	.
+local:s1.2	local:AM-TMP	local:always	.
+local:shapes_constraint	rdfs:member	local:shapes	.
+local:data_structures	rdfs:subClassOf	local:structures	.
+local:shapes_constraint_language_integrate_query_shapes_as_types_into_a_lambda	rdfs:member	local:shapes_constraint_language	.
+local:data_structures	rdfs:member	local:data	.
+local:integrate_data_shapes	rdfs:subClassOf	local:shapes	.
+local:s1.2	rdf:subject	local:it	.
+local:shapes_constraint_language_integrate	rdfs:subClassOf	local:integrate	.
+local:language_shapes	rdfs:subClassOf	local:shapes	.
+local:s14	rdf:predicate	local:provide	.
+local:data_graphs	rdfs:member	local:data	.
+local:s6.2	rdfs:member	local:type_checking_code	.
+local:otherwise_random	rdfs:member	local:otherwise	.
+local:language_integrate_calculus	rdfs:member	local:language_integrate	.
+local:program_code_that_processes_highlyflexible_data_representations	rdfs:member	local:program_code	.
+local:s7	rdf:object	local:using_the_shapes_constraint_language	.
+local:random_data_structures	rdfs:member	local:random_data	.
+local:constraints_on_random_data_structures	rdfs:member	local:random_data_structures	.
+local:most_general	rdfs:member	local:most	.
+local:constraint_language_integrate_calculus	rdfs:member	local:constraint_language_integrate	.
+local:data_shapes	rdfs:member	local:data	.
+local:constraint_language	rdfs:member	local:constraint	.
+local:empty_lists	rdfs:member	local:empty	.
+local:constraints_on_random_data_structures	rdfs:member	local:constraints	.
+local:rdf_data_with_simplified_type_checked_code	rdfs:member	local:code	.
+local:constraint_language	rdfs:subClassOf	local:language	.
+local:s5.2	rdfs:member	local:rdf_data_graphs	.
+local:s16.2	rdf:subject	local:empty_lists	.
+local:types_into_lambda	rdfs:member	local:lambda	.
+local:possibly_not_available	rdfs:subClassOf	local:not_available	.
+local:shapes_constraint_language_shape_graph	rdfs:member	local:shapes_constraint_language_shape	.
+local:types_into_lambda	rdfs:member	local:types	.
+local:s12	rdf:predicate	local:derive	.
+local:rdf_data_graphs	rdfs:member	local:rdf_data	.
+local:rdf_data_graphs	rdfs:subClassOf	local:data_graphs	.
+local:s9	rdf:object	local:shapes_constraint_language_integrate_data_shapes_as_types_into_a_lambda	.
+local:s12.1	rdf:predicate	local:integrate	.
+local:runtime_errors_program	rdfs:member	local:runtime_errors	.
+local:s13	rdf:object	local:proof_of_type_safety_for_shacl	.
+local:shapes_constraint_language_shapes	rdfs:subClassOf	local:constraint_language_shapes	.
+local:s15.2	rdf:object	local:code	.
+local:s16	local:AM-MOD	local:will	.
+local:integrate_calculus	rdfs:member	local:integrate	.
+local:integrate_calculus	rdfs:subClassOf	local:calculus	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:s8	rdf:subject	local:type	.
+local:shapes_constraint_language_integrate	rdfs:member	local:shapes_constraint_language	.
+local:s5	rdf:subject	local:code	.
+local:types_lambda	rdfs:subClassOf	local:lambda	.
+local:approach_type	rdfs:member	local:approach	.
+local:s2	rdf:predicate	local:avoid	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:s13	rdf:predicate	local:provide	.
+local:random_data_structures	rdfs:subClassOf	local:structures	.
+local:s4	rdf:predicate	local:devise	.
+local:s10.1	rdf:subject	local:shapes_constraint_language	.
+local:shapes_constraint_language_integrate_query_shapes_as_types_into_a_lambda	rdfs:member	local:query_shapes	.
+local:type_checking	rdfs:subClassOf	local:checking	.
+local:approach_type_checking	rdfs:member	local:approach_type	.
+local:s15.1	rdf:predicate	local:process	.
+local:shapes_constraint_language_shape	rdfs:member	local:shapes_constraint_language	.
+local:data_graphs	rdfs:subClassOf	local:graphs	.
+local:s1.1	rdf:object	local:difficulty_that_it_must_always_include_the_most_general_case_in_which_attributes	.
+local:s1	rdf:subject	local:program_code	.
+local:s6.2	rdf:subject	local:type_checking_code	.
+local:code_that_will_not_encounter_runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:usual_exceptions	.
+local:errors_program	rdfs:member	local:errors	.
+local:language_shape	rdfs:subClassOf	local:shape	.
+local:shape_graph	rdfs:member	local:shape	.
+local:usual_exceptions_as_type_checking	rdfs:member	local:type_checking	.
+local:integrate_data_shapes	rdfs:member	local:integrate_data	.
+local:s6.2	rdf:predicate	local:check	.
+local:constraints_on_otherwise_random_data_structures	rdfs:member	local:otherwise_random_data_structures	.
+local:s15	rdf:subject	local:programmer	.
+local:enforce_constraints_on_otherwise_random_data_structures	rdfs:member	local:enforce_constraints	.
+local:shapes_constraint_language_integrate_data	rdfs:member	local:shapes_constraint_language_integrate	.
+local:highlyflexible_data	rdfs:subClassOf	local:data	.
+local:s5.1	rdf:predicate	local:query	.
+local:shapes_constraint_language_shapes_from_queries	rdfs:member	local:shapes_constraint_language_shapes	.
+local:errors_program_code	rdfs:subClassOf	local:code	.
+local:will_not_encounter	rdfs:subClassOf	local:not_encounter	.
+local:checking_code	rdfs:subClassOf	local:code	.
+local:s13	rdf:subject	local:we	.
+local:usual_exceptions_as_type_checking	rdfs:member	local:usual_exceptions	.
+local:s8.1	rdf:subject	local:shacl	.
+local:highlyflexible_data_representations	rdfs:member	local:highlyflexible_data	.
+local:otherwise_random_data_structures	rdfs:subClassOf	local:structures	.
+local:shapes_constraint_language	rdfs:subClassOf	local:constraint_language	.
+local:s7.1	rdf:subject	local:shapes_constraint_language	.
+local:s12.1	rdf:subject	local:shapes_constraint_language	.
+local:s7	rdf:predicate	local:check	.
+local:proof_of_type_safety_for_shacl	rdfs:member	local:proof_of_type_safety	.
+local:s9	rdf:subject	local:we	.
+local:proof_of_type_safety	rdfs:member	local:proof	.
+local:most_general_case	rdfs:member	local:most_general	.
+local:s3	rdf:predicate	local:avoid	.
+local:type_checking	rdfs:member	local:type	.
+local:code_that_will_not_encounter_runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:runtime_errors	.
+local:type_checking_code	rdfs:subClassOf	local:code	.
+local:runtime_errors_program_code	rdfs:subClassOf	local:code	.
+local:formal_underpinnings	rdfs:member	local:formal	.
+local:language_integrate	rdfs:subClassOf	local:integrate	.
+local:runtime_errors_with_usual_exceptions	rdfs:member	local:usual_exceptions	.
+local:s11	local:AM-TMP	local:end	.
+local:most_general	rdfs:subClassOf	local:general	.
+local:runtime_errors	rdfs:subClassOf	local:errors	.
+local:s9.1	rdf:object	local:data_shapes_as_types_lambda	.
+local:enforce_constraints	rdfs:subClassOf	local:constraints	.
+local:s10	rdf:subject	local:we	.
+local:rdf_data_with_simplified_type	rdfs:member	local:simplified_type	.
+local:s16.1	rdf:object	local:s16.2	.
+local:random_data_structures	rdfs:subClassOf	local:data_structures	.
+local:shapes_constraint_language_integrate_calculus	rdfs:member	local:shapes_constraint_language_integrate	.
+local:shapes_constraint_language_shapes_from_queries	rdfs:member	local:shapes_constraint_language	.
+local:difficulty_that_it_must_always_include_the_most_general_case_in_which_attributes	rdfs:member	local:most_general_case	.
+local:data_representations	rdfs:member	local:data	.
+local:constraint_language_shape	rdfs:member	local:constraint_language	.
+local:s7	rdf:subject	local:type	.
+local:highlyflexible_data	rdfs:member	local:highlyflexible	.
+local:integrate_data	rdfs:subClassOf	local:data	.
+local:s12	rdf:subject	local:we	.
+local:constraints_on_otherwise_random_data_structures	rdfs:member	local:constraints	.
+local:s4.1	rdf:predicate	local:enforce	.
+local:shapes_constraint_language_shape	rdfs:subClassOf	local:shape	.
+local:s4	local:AM-PNC	local:enforce_constraints_on_otherwise_random_data_structures	.
+local:type_checking_code	rdfs:subClassOf	local:checking_code	.
+local:s3	rdf:subject	local:runtime_errors_program_code_might_be_setvalued	.
+local:s9.1	rdf:predicate	local:integrate	.
+local:errors_program_code	rdfs:subClassOf	local:program_code	.
+local:runtime_errors_program_code	rdfs:subClassOf	local:errors_program_code	.
+local:otherwise_random	rdfs:subClassOf	local:random	.
+local:s11.1	rdf:predicate	local:integrate	.
+local:errors_program_code	rdfs:member	local:errors_program	.
+local:must_always_include	rdfs:subClassOf	local:always_include	.
+local:shapes_constraint_language_integrate_data_shapes_as_types_into_a_lambda	rdfs:member	local:lambda	.
 local:formal_underpinnings	rdfs:subClassOf	local:underpinnings	.
-local:process	vn.role:Theme	local:rdf_data	.
-local:runtime	rdfs:member	local:runtime_errors	.
+local:language_shape_graph	rdfs:member	local:language_shape	.
+local:approach_type_checking_for_type_checking_code	rdfs:member	local:approach_type_checking	.
+local:simplified_type	rdfs:subClassOf	local:type	.
+local:s10	local:AM-TMP	local:end	.
+local:s12	rdf:object	local:shapes_constraint_language_integrate_calculus	.
+local:s6.1	rdf:object	local:type_checking_for_type_checking_code	.
+local:data_shapes_as_types_lambda	rdfs:member	local:types_lambda	.
+local:method_order_to_process_rdf_data_with_simplified_type_checked_code	rdfs:member	local:rdf_data	.
+local:s10.1	rdf:object	local:queries	.
+local:simplified_type	rdfs:member	local:simplified	.
+local:constraint_language_integrate_data	rdfs:member	local:constraint_language_integrate	.
+local:s5.1	rdf:subject	local:type_checking_code	.
+local:s5.1	rdf:object	local:rdf_data_graphs_validated_by_a_the_shapes_constraint_language_shape_graph	.
+local:s4.1	rdf:subject	local:shapes_constraint_language	.
+local:s4	rdf:subject	local:shapes_constraint_language	.
+local:s9	rdf:predicate	local:derive	.
+local:enforce_constraints_on_otherwise_random_data_structures	rdfs:member	local:otherwise_random_data_structures	.
+local:s0	rdf:predicate	local:represent	.
+local:s14	rdf:subject	local:we	.
+local:code_that_will_not_encounter_runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:code	.
+local:proof_of_type_safety_for_shacl	rdfs:member	local:type_safety	.
+local:s4.1	rdf:object	local:constraints_on_otherwise_random_data_structures	.
+local:s15	rdf:predicate	local:use	.
+local:shapes_constraint_language_integrate_data	rdfs:subClassOf	local:data	.
+local:language_shape	rdfs:member	local:language	.
+local:s7.1	rdf:predicate	local:use	.
+local:constraint_language_shape_graph	rdfs:subClassOf	local:language_shape_graph	.
+local:s1.3	rdf:predicate	local:attribute	.
+local:code_that_will_not_encounter_runtime_errors_with_usual_exceptions_as_type_checking	rdfs:member	local:type_checking	.
+local:shape_graph	rdfs:subClassOf	local:graph	.
+local:constraint_language_shape_graph	rdfs:subClassOf	local:graph	.
+local:always_include	rdfs:subClassOf	local:include	.
+local:s15	local:AM-MOD	local:can	.
+local:query_shapes	rdfs:subClassOf	local:shapes	.
+local:constraint_language_integrate_data_shapes	rdfs:subClassOf	local:shapes	.
+local:s6	rdf:predicate	local:present	.
+local:most_general_case	rdfs:subClassOf	local:case	.
+local:query_shapes	rdfs:member	local:query	.
+local:difficulty_that_it_must_always_include_the_most_general_case_in_which_attributes	rdfs:member	local:difficulty	.
+local:type_safety	rdfs:subClassOf	local:safety	.
+local:constraint_language_shape_graph	rdfs:member	local:constraint_language_shape	.
+local:constraint_language_integrate	rdfs:member	local:constraint_language	.

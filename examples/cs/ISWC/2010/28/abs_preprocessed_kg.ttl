@@ -1,402 +1,819 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"our implementation of the mixed strategy not requiring complete knowledge"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"our implementation of the mixed strategy leads to early reporting of results and thus more responsive query processing while not requiring complete knowledge"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"in experiments we show that our implementation of the mixed strategy leads to early reporting of results and thus more responsive query processing while not requiring complete knowledge"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"distributed data environment"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"deal with the unpredictable nature of data access in the distributed linked data environment"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"additionally we propose the adoption of streambased query processing to deal with the unpredictable nature of data access in the distributed linked data environment"	.
+
+local:s11.4	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"query processing called correct source"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"knowledge an additional step explicitly scheduled during query processing"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"knowledge we propose an additional step explicitly scheduled during query processing called correct source ranking"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"exploit knowledge we"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"knowledge discovered at runtime"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we systematically discuss three main strategies a topdown strategy"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"a topdown strategy that new sources select relevant sources"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"a topdown strategy that relies on complete knowledge about new sources to select relevant sources"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we systematically discuss three main strategies a bottomup strategy"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a mixed strategy that assumes some incomplete knowledge"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we systematically discuss three main strategies a mixed strategy"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a bottomup strategy that following links between sources"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"a bottomup strategy that discovers new sources during query processing by following links between sources"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"a mixed strategy that discovers new sources at runtime"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"a topdown strategy that relies on complete knowledge about new sources process relevant sources"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"a topdown strategy that relies on complete knowledge about new sources to process relevant sources"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"recently processing of queries on linked data gained attention"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"recently processing of queries on linked data"	.
+
+
 #### Classes ####
 
-local:linked	rdfs:label	"linked"	.
+local:implementation_of_the_mixed_strategy	a	rdf:Class	;
+	rdfs:label	"implementation of the mixed strategy"	.
 
-local:data	rdfs:label	"data"	.
+local:implementation	a	rdf:Class	;
+	rdfs:label	"implementation"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:mixed_strategy	a	rdf:Class	;
+	rdfs:label	"mixed strategy"	.
 
-local:processing_of_queries	rdfs:label	"processing of queries"	.
+local:strategy	a	rdf:Class	;
+	rdfs:label	"strategy"	.
 
-local:processing	rdfs:label	"processing"	.
+local:mixed	a	rdf:Class	;
+	rdfs:label	"mixed"	.
 
-local:queries	rdfs:label	"queries"	.
+local:implementation_of_mixed_strategy	a	rdf:Class	;
+	rdfs:label	"implementation of mixed strategy"	.
 
-local:processing_of_queries_on_linked_data	rdfs:label	"processing of queries on linked data"	.
+local:not_require	a	rdf:Class	;
+	rdfs:label	"not require"	.
 
-local:gained	rdfs:label	"gained"	.
+local:complete_knowledge	a	rdf:Class	;
+	rdfs:label	"complete knowledge"	.
 
-local:recently	rdfs:label	"recently"	.
+local:complete	a	rdf:Class	;
+	rdfs:label	"complete"	.
 
-local:attention	rdfs:label	"attention"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:topdown_strategy	rdfs:label	"top-down strategy"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:strategy	rdfs:label	"strategy"	.
+local:early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	a	rdf:Class	;
+	rdfs:label	"early reporting of results and thus more responsive query processing while not requiring complete knowledge"	.
 
-local:topdown	rdfs:label	"top-down"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:relies	rdfs:label	"relies"	.
+local:thus_more_responsive_query_processing	a	rdf:Class	;
+	rdfs:label	"thus more responsive query processing"	.
 
-local:complete	rdfs:label	"complete"	.
+local:early_reporting	a	rdf:Class	;
+	rdfs:label	"early reporting"	.
 
-local:complete_knowledge	rdfs:label	"complete knowledge"	.
+local:responsive_query	a	rdf:Class	;
+	rdfs:label	"responsive query"	.
 
-local:new_sources	rdfs:label	"new sources"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:sources	rdfs:label	"sources"	.
+local:more_responsive	a	rdf:Class	;
+	rdfs:label	"more responsive"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
 
-local:new	rdfs:label	"new"	.
+local:thus_more	a	rdf:Class	;
+	rdfs:label	"thus more"	.
 
-local:complete_knowledge_about_new_sources	rdfs:label	"complete knowledge about new sources"	.
+local:early	a	rdf:Class	;
+	rdfs:label	"early"	.
 
-local:select	rdfs:label	"select"	.
+local:thus_more_responsive	a	rdf:Class	;
+	rdfs:label	"thus more responsive"	.
 
-local:select_relevant	rdfs:label	"select relevant"	.
+local:more_responsive_query_processing	a	rdf:Class	;
+	rdfs:label	"more responsive query processing"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:processing	a	rdf:Class	;
+	rdfs:label	"processing"	.
 
-local:relevant_sources	rdfs:label	"relevant sources"	.
+local:reporting	a	rdf:Class	;
+	rdfs:label	"reporting"	.
 
-local:select_relevant_sources	rdfs:label	"select relevant sources"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:bottomup_strategy	rdfs:label	"bottom-up strategy"	.
+local:responsive	a	rdf:Class	;
+	rdfs:label	"responsive"	.
 
-local:bottomup	rdfs:label	"bottom-up"	.
+local:responsive_query_processing	a	rdf:Class	;
+	rdfs:label	"responsive query processing"	.
 
-local:discovers	rdfs:label	"discovers"	.
+local:more_responsive_query	a	rdf:Class	;
+	rdfs:label	"more responsive query"	.
 
-local:query_processing	rdfs:label	"query processing"	.
+local:thus_more_responsive_query	a	rdf:Class	;
+	rdfs:label	"thus more responsive query"	.
 
-local:query	rdfs:label	"query"	.
+local:query_processing	a	rdf:Class	;
+	rdfs:label	"query processing"	.
 
-local:new_sources_during_query_processing	rdfs:label	"new sources during query processing"	.
+local:not_requiring	a	rdf:Class	;
+	rdfs:label	"not requiring"	.
 
-local:links_between_sources	rdfs:label	"links between sources"	.
+local:requiring	a	rdf:Class	;
+	rdfs:label	"requiring"	.
 
-local:links	rdfs:label	"links"	.
+local:early_reporting_of_results	a	rdf:Class	;
+	rdfs:label	"early reporting of results"	.
 
-local:following	rdfs:label	"following"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:we	rdfs:label	"we"	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	a	rdf:Class	;
+	rdfs:label	"implementation of the mixed strategy leads to early reporting of results and thus more responsive query processing while not requiring complete knowledge"	.
 
-local:systematically	rdfs:label	"systematically"	.
+local:leads_to_early_reporting	a	rdf:Class	;
+	rdfs:label	"leads to early reporting"	.
 
-local:main	rdfs:label	"main"	.
+local:leads	a	rdf:Class	;
+	rdfs:label	"leads"	.
 
-local:main_strategies	rdfs:label	"main strategies"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:data_environment	a	rdf:Class	;
+	rdfs:label	"data environment"	.
 
-local:three_main_strategies	rdfs:label	"three main strategies"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:mixed	rdfs:label	"mixed"	.
+local:environment	a	rdf:Class	;
+	rdfs:label	"environment"	.
 
-local:mixed_strategy	rdfs:label	"mixed strategy"	.
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
-local:assumes	rdfs:label	"assumes"	.
+local:unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	a	rdf:Class	;
+	rdfs:label	"unpredictable nature of data access in the distributed linked data environment"	.
 
-local:incomplete	rdfs:label	"incomplete"	.
+local:data_access	a	rdf:Class	;
+	rdfs:label	"data access"	.
 
-local:incomplete_knowledge	rdfs:label	"incomplete knowledge"	.
+local:unpredictable_nature	a	rdf:Class	;
+	rdfs:label	"unpredictable nature"	.
 
-local:runtime	rdfs:label	"run-time"	.
+local:distributed_linked_data_environment	a	rdf:Class	;
+	rdfs:label	"distributed linked data environment"	.
 
-local:process_relevant_sources	rdfs:label	"process relevant sources"	.
+local:distributed_linked_data	a	rdf:Class	;
+	rdfs:label	"distributed linked data"	.
 
-local:relies_on_complete_knowledge	rdfs:label	"relies on complete knowledge"	.
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
 
-local:process	rdfs:label	"process"	.
+local:distributed_linked	a	rdf:Class	;
+	rdfs:label	"distributed linked"	.
 
-local:exploit	rdfs:label	"exploit"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:propose	rdfs:label	"propose"	.
+local:distributed	a	rdf:Class	;
+	rdfs:label	"distributed"	.
 
-local:additional	rdfs:label	"additional"	.
+local:linked_data_environment	a	rdf:Class	;
+	rdfs:label	"linked data environment"	.
 
-local:additional_step	rdfs:label	"additional step"	.
+local:unpredictable	a	rdf:Class	;
+	rdfs:label	"unpredictable"	.
 
-local:correct_source_ranking	rdfs:label	"correct source ranking"	.
+local:nature	a	rdf:Class	;
+	rdfs:label	"nature"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:source_ranking	rdfs:label	"source ranking"	.
+local:unpredictable_nature_of_data_access	a	rdf:Class	;
+	rdfs:label	"unpredictable nature of data access"	.
 
-local:correct	rdfs:label	"correct"	.
+local:data_access_in_distributed_linked_data_environment	a	rdf:Class	;
+	rdfs:label	"data access in distributed linked data environment"	.
 
-local:correct_source	rdfs:label	"correct source"	.
+local:deal	a	rdf:Class	;
+	rdfs:label	"deal"	.
 
-local:source	rdfs:label	"source"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:step	rdfs:label	"step"	.
+local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	a	rdf:Class	;
+	rdfs:label	"adoption of streambased query processing to deal with the unpredictable nature of data access in the distributed linked data environment"	.
 
-local:explicitly_scheduled	rdfs:label	"explicitly scheduled"	.
+local:streambased_query_processing	a	rdf:Class	;
+	rdfs:label	"streambased query processing"	.
 
-local:scheduled	rdfs:label	"scheduled"	.
+local:adoption	a	rdf:Class	;
+	rdfs:label	"adoption"	.
 
-local:additional_step_explicitly_scheduled	rdfs:label	"additional step explicitly scheduled"	.
+local:streambased_query	a	rdf:Class	;
+	rdfs:label	"streambased query"	.
 
-local:explicitly_scheduled_during_query_processing	rdfs:label	"explicitly scheduled during query processing"	.
+local:streambased	a	rdf:Class	;
+	rdfs:label	"streambased"	.
 
-local:additional_step_explicitly_scheduled_called	rdfs:label	"additional step explicitly scheduled called"	.
+local:adoption_of_streambased_query_processing	a	rdf:Class	;
+	rdfs:label	"adoption of streambased query processing"	.
 
-local:called	rdfs:label	"called"	.
+local:deal_with_unpredictable_nature	a	rdf:Class	;
+	rdfs:label	"deal with unpredictable nature"	.
 
-local:explicitly	rdfs:label	"explicitly"	.
+local:additionally	a	rdf:Class	;
+	rdfs:label	"additionally"	.
 
-local:query_processing_called	rdfs:label	"query processing called"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:discovered	rdfs:label	"discovered"	.
+local:call	a	rdf:Class	;
+	rdfs:label	"call"	.
 
-local:streambased_query_processing	rdfs:label	"stream-based query processing"	.
+local:correct_source	a	rdf:Class	;
+	rdfs:label	"correct source"	.
 
-local:streambased_query	rdfs:label	"stream-based query"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:streambased	rdfs:label	"stream-based"	.
+local:correct	a	rdf:Class	;
+	rdfs:label	"correct"	.
 
-local:adoption_of_streambased_query_processing	rdfs:label	"adoption of stream-based query processing"	.
+local:schedule	a	rdf:Class	;
+	rdfs:label	"schedule"	.
 
-local:adoption	rdfs:label	"adoption"	.
+local:additional_step_query_processing	a	rdf:Class	;
+	rdfs:label	"additional step query processing"	.
 
-local:data_environment	rdfs:label	"data environment"	.
+local:step_query	a	rdf:Class	;
+	rdfs:label	"step query"	.
 
-local:environment	rdfs:label	"environment"	.
+local:additional_step_query	a	rdf:Class	;
+	rdfs:label	"additional step query"	.
 
-local:unpredictable_nature	rdfs:label	"unpredictable nature"	.
+local:additional_step	a	rdf:Class	;
+	rdfs:label	"additional step"	.
 
-local:nature	rdfs:label	"nature"	.
+local:step	a	rdf:Class	;
+	rdfs:label	"step"	.
 
-local:unpredictable	rdfs:label	"unpredictable"	.
+local:step_query_processing	a	rdf:Class	;
+	rdfs:label	"step query processing"	.
 
-local:data_access	rdfs:label	"data access"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:access	rdfs:label	"access"	.
+local:explicitly	a	rdf:Class	;
+	rdfs:label	"explicitly"	.
 
-local:linked_data_environment	rdfs:label	"linked data environment"	.
+local:additional_step_explicitly_scheduled_during_query_processing_called_correct_source_ranking	a	rdf:Class	;
+	rdfs:label	"additional step explicitly scheduled during query processing called correct source ranking"	.
 
-local:distributed_linked_data_environment	rdfs:label	"distributed linked data environment"	.
+local:correct_source_ranking	a	rdf:Class	;
+	rdfs:label	"correct source ranking"	.
 
-local:deal_with_unpredictable_nature	rdfs:label	"deal with unpredictable nature"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:deal	rdfs:label	"deal"	.
+local:source_ranking	a	rdf:Class	;
+	rdfs:label	"source ranking"	.
 
-local:unpredictable_nature_of_data_access	rdfs:label	"unpredictable nature of data access"	.
+local:explicitly_scheduled	a	rdf:Class	;
+	rdfs:label	"explicitly scheduled"	.
 
-local:data_access_in_distributed_linked_data_environment	rdfs:label	"data access in distributed linked data environment"	.
+local:scheduled	a	rdf:Class	;
+	rdfs:label	"scheduled"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:additional_step_explicitly_scheduled	a	rdf:Class	;
+	rdfs:label	"additional step explicitly scheduled"	.
 
-local:show	rdfs:label	"show"	.
+local:explicitly_scheduled_during_query_processing	a	rdf:Class	;
+	rdfs:label	"explicitly scheduled during query processing"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:query_processing_called	a	rdf:Class	;
+	rdfs:label	"query processing called"	.
 
-local:responsive_query	rdfs:label	"responsive query"	.
+local:called	a	rdf:Class	;
+	rdfs:label	"called"	.
 
-local:responsive_query_processing	rdfs:label	"responsive query processing"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:more	rdfs:label	"more"	.
+local:discover	a	rdf:Class	;
+	rdfs:label	"discover"	.
 
-local:more_responsive	rdfs:label	"more responsive"	.
+local:runtime	a	rdf:Class	;
+	rdfs:label	"runtime"	.
 
-local:early_reporting	rdfs:label	"early reporting"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:reporting	rdfs:label	"reporting"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:more_responsive_query	rdfs:label	"more responsive query"	.
+local:three_main_strategies_a_topdown_strategy	a	rdf:Class	;
+	rdfs:label	"three main strategies a topdown strategy"	.
 
-local:more_responsive_query_processing	rdfs:label	"more responsive query processing"	.
+local:main_strategies	a	rdf:Class	;
+	rdfs:label	"main strategies"	.
 
-local:early	rdfs:label	"early"	.
+local:topdown_strategy	a	rdf:Class	;
+	rdfs:label	"topdown strategy"	.
 
-local:responsive	rdfs:label	"responsive"	.
+local:main	a	rdf:Class	;
+	rdfs:label	"main"	.
 
-local:not_requiring	rdfs:label	"not requiring"	.
+local:topdown	a	rdf:Class	;
+	rdfs:label	"topdown"	.
 
-local:requiring	rdfs:label	"requiring"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:thus_leads	rdfs:label	"thus leads"	.
+local:three_main_strategies	a	rdf:Class	;
+	rdfs:label	"three main strategies"	.
 
-local:leads	rdfs:label	"leads"	.
+local:systematically	a	rdf:Class	;
+	rdfs:label	"systematically"	.
 
-local:implementation_of_mixed_strategy	rdfs:label	"implementation of mixed strategy"	.
+local:new_sources	a	rdf:Class	;
+	rdfs:label	"new sources"	.
 
-local:implementation	rdfs:label	"implementation"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:thus_leads_to_early_reporting	rdfs:label	"thus leads to early reporting"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:early_reporting_of_results	rdfs:label	"early reporting of results"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:results	rdfs:label	"results"	.
+local:relevant_sources	a	rdf:Class	;
+	rdfs:label	"relevant sources"	.
 
-local:thus_reporting	rdfs:label	"thus reporting"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:early_thus_reporting	rdfs:label	"early thus reporting"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:early_thus_reporting_of_results	rdfs:label	"early thus reporting of results"	.
+local:complete_knowledge_about_new_sources_select_relevant_sources	a	rdf:Class	;
+	rdfs:label	"complete knowledge about new sources select relevant sources"	.
 
-local:not	rdfs:label	"not"	.
+local:select_relevant_sources	a	rdf:Class	;
+	rdfs:label	"select relevant sources"	.
 
-#### Properties ####
+local:complete_knowledge_about_new_sources	a	rdf:Class	;
+	rdfs:label	"complete knowledge about new sources"	.
+
+local:three_main_strategies_a_bottomup_strategy	a	rdf:Class	;
+	rdfs:label	"three main strategies a bottomup strategy"	.
+
+local:bottomup_strategy	a	rdf:Class	;
+	rdfs:label	"bottomup strategy"	.
+
+local:bottomup	a	rdf:Class	;
+	rdfs:label	"bottomup"	.
+
+local:assume	a	rdf:Class	;
+	rdfs:label	"assume"	.
+
+local:incomplete_knowledge	a	rdf:Class	;
+	rdfs:label	"incomplete knowledge"	.
+
+local:incomplete	a	rdf:Class	;
+	rdfs:label	"incomplete"	.
+
+local:three_main_strategies_a_mixed_strategy	a	rdf:Class	;
+	rdfs:label	"three main strategies a mixed strategy"	.
+
+local:follow	a	rdf:Class	;
+	rdfs:label	"follow"	.
+
+local:links_between_sources	a	rdf:Class	;
+	rdfs:label	"links between sources"	.
+
+local:links	a	rdf:Class	;
+	rdfs:label	"links"	.
+
+local:new_sources_during_query_processing	a	rdf:Class	;
+	rdfs:label	"new sources during query processing"	.
+
+local:following_links_between_sources	a	rdf:Class	;
+	rdfs:label	"following links between sources"	.
+
+local:topdown_strategy_that_relies_on_complete_knowledge_about_new_sources	a	rdf:Class	;
+	rdfs:label	"topdown strategy that relies on complete knowledge about new sources"	.
+
+local:relies_on_complete_knowledge	a	rdf:Class	;
+	rdfs:label	"relies on complete knowledge"	.
+
+local:relies	a	rdf:Class	;
+	rdfs:label	"relies"	.
+
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
+
+local:complete_knowledge_about_new_sources_process_relevant_sources	a	rdf:Class	;
+	rdfs:label	"complete knowledge about new sources process relevant sources"	.
+
+local:new_sources_process_relevant_sources	a	rdf:Class	;
+	rdfs:label	"new sources process relevant sources"	.
+
+local:process_relevant_sources	a	rdf:Class	;
+	rdfs:label	"process relevant sources"	.
+
+local:new_sources_process	a	rdf:Class	;
+	rdfs:label	"new sources process"	.
+
+local:sources_process	a	rdf:Class	;
+	rdfs:label	"sources process"	.
+
+local:new_sources_process_relevant	a	rdf:Class	;
+	rdfs:label	"new sources process relevant"	.
+
+local:sources_process_relevant_sources	a	rdf:Class	;
+	rdfs:label	"sources process relevant sources"	.
+
+local:sources_process_relevant	a	rdf:Class	;
+	rdfs:label	"sources process relevant"	.
+
+local:process_relevant	a	rdf:Class	;
+	rdfs:label	"process relevant"	.
+
+local:complete_knowledge_about_new_sources_process	a	rdf:Class	;
+	rdfs:label	"complete knowledge about new sources process"	.
+
+local:processing_of_queries_on_linked_data	a	rdf:Class	;
+	rdfs:label	"processing of queries on linked data"	.
+
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
+
+local:processing_of_queries	a	rdf:Class	;
+	rdfs:label	"processing of queries"	.
+
+local:gain	a	rdf:Class	;
+	rdfs:label	"gain"	.
+
+local:attention	a	rdf:Class	;
+	rdfs:label	"attention"	.
+
+local:recently	a	rdf:Class	;
+	rdfs:label	"recently"	.
+
+local:link	a	rdf:Class	;
+	rdfs:label	"link"	.
+
+local:queries_on_linked_data	a	rdf:Class	;
+	rdfs:label	"queries on linked data"	.
 
 #### Mapped Relations ####
 
-cso:mixed_strategy	rdfs:label	"mixed strategy"	.
-local:query_processing	owl:sameAs	cso:query_processing	.
 cso:linked_data	rdfs:label	"linked data"	.
-local:linked_data	owl:sameAs	cso:linked_data	.
-cso:query_processing	rdfs:label	"query processing"	.
 local:mixed_strategy	owl:sameAs	cso:mixed_strategy	.
+local:linked_data	owl:sameAs	cso:linked_data	.
+local:query_processing	owl:sameAs	cso:query_processing	.
+cso:query_processing	rdfs:label	"query processing"	.
+cso:mixed_strategy	rdfs:label	"mixed strategy"	.
 
 #### Relations ####
 
-local:linked_data_environment	rdfs:subClassOf	local:data_environment	.
-local:streambased	rdfs:member	local:streambased_query	.
-local:incomplete	rdfs:member	local:incomplete_knowledge	.
-local:new_sources_during_query_processing	local:newsources_during	local:query_processing	.
-local:relevant_sources	rdfs:subClassOf	local:sources	.
-local:new	rdfs:member	local:new_sources	.
-local:early	rdfs:member	local:early_reporting	.
-local:select	rdfs:member	local:select_relevant	.
-local:discovered	local:AM-LOC	local:runtime	.
-local:streambased_query_processing	rdfs:subClassOf	local:processing	.
-local:streambased_query	rdfs:member	local:streambased_query_processing	.
-local:leads	local:AM-TMP	local:requiring	.
-local:main	rdfs:member	local:main_strategies	.
-local:assumes	vn.role:Theme	local:incomplete_knowledge	.
-local:show	vn.role:Theme	local:thus_leads_to_early_reporting	.
-local:more_responsive_query_processing	rdfs:subClassOf	local:processing	.
-local:incomplete_knowledge	rdfs:subClassOf	local:knowledge	.
-local:additional_step_explicitly_scheduled_called	local:_called	local:additional_step_explicitly_scheduled	.
-local:query_processing_called	local:queryprocessing_	local:called	.
-local:relies	vn.role:indirect_object	local:select_relevant_sources	.
-local:assumes	vn.role:Agent	local:mixed_strategy	.
-local:complete_knowledge	rdfs:subClassOf	local:knowledge	.
-local:implementation_of_mixed_strategy	local:implementation_of	local:mixed_strategy	.
-local:show	local:AM-LOC	local:experiments	.
-local:discuss	vn.role:Patient1	local:we	.
-local:more_responsive	rdfs:member	local:more_responsive_query	.
-local:select	vn.role:Agent	local:topdown_strategy	.
-local:early_reporting_of_results	local:earlyreporting_of	local:results	.
-local:responsive_query	rdfs:subClassOf	local:query	.
+local:s3	rdf:subject	local:bottomup_strategy	.
+local:s3	local:AM-TMP	local:following_links_between_sources	.
+local:s6	rdf:object	local:three_main_strategies_a_bottomup_strategy	.
+local:s11.2	local:AM-MNR	local:explicitly	.
+local:processing_of_queries_on_linked_data	rdfs:member	local:processing	.
+local:linked_data	rdfs:member	local:linked	.
+local:thus_more_responsive_query_processing	rdfs:member	local:thus_more_responsive_query	.
+local:links_between_sources	rdfs:member	local:links	.
+local:s11.4	rdf:predicate	local:rank	.
+local:distributed_linked_data_environment	rdfs:subClassOf	local:environment	.
+local:additional_step	rdfs:member	local:additional	.
+local:process_relevant_sources	rdfs:subClassOf	local:sources	.
 local:more_responsive_query	rdfs:subClassOf	local:query	.
-local:explicitly_scheduled_during_query_processing	local:explicitlyscheduled_during	local:query_processing	.
-local:processing_of_queries_on_linked_data	local:on_linkeddata	local:processing_of_queries	.
-local:new_sources_during_query_processing	local:during_queryprocessing	local:new_sources	.
-local:more_responsive	rdfs:subClassOf	local:responsive	.
-local:additional_step_explicitly_scheduled	local:_explicitlyscheduled	local:additional_step	.
-local:process_relevant_sources	rdfs:subClassOf	local:relevant_sources	.
-local:leads	vn.role:Agent	local:implementation_of_mixed_strategy	.
-local:processing_of_queries_on_linked_data	local:processingofqueries_on	local:linked_data	.
-local:explicitly_scheduled_during_query_processing	local:during_queryprocessing	local:explicitly_scheduled	.
-local:bottomup	rdfs:member	local:bottomup_strategy	.
-local:correct_source_ranking	rdfs:subClassOf	local:source_ranking	.
-local:complete	rdfs:member	local:complete_knowledge	.
-local:select_relevant	rdfs:member	local:select_relevant_sources	.
-local:following	vn.role:Agent	local:bottomup_strategy	.
-local:leads	vn.role:Destination	local:early_thus_reporting_of_results	.
-local:responsive	rdfs:member	local:responsive_query	.
-local:topdown_strategy	rdfs:subClassOf	local:strategy	.
-local:source_ranking	rdfs:subClassOf	local:ranking	.
-local:gained	vn.role:Attribute	local:recently	.
-local:scheduled	local:AM-MNR	local:explicitly	.
-local:propose	vn.role:Topic	local:knowledge	.
-local:new_sources	rdfs:subClassOf	local:sources	.
-local:correct	rdfs:member	local:correct_source	.
-local:unpredictable_nature_of_data_access	local:of_dataaccess	local:unpredictable_nature	.
-local:discuss	vn.role:Patient2	local:three_main_strategies	.
-local:query_processing_called	local:_called	local:query_processing	.
-local:discovers	vn.role:Agent	local:bottomup_strategy	.
-local:responsive_query	rdfs:member	local:responsive_query_processing	.
-local:process	vn.role:Agent	local:topdown_strategy	.
-local:unpredictable_nature_of_data_access	local:unpredictablenature_of	local:data_access	.
-local:more_responsive_query	rdfs:member	local:more_responsive_query_processing	.
-local:called	vn.role:Agent	local:additional_step_explicitly_scheduled	.
-local:implementation_of_mixed_strategy	local:of_mixedstrategy	local:implementation	.
-local:data_environment	rdfs:subClassOf	local:environment	.
-local:query_processing	rdfs:subClassOf	local:processing	.
-local:relies_on_complete_knowledge	local:on_completeknowledge	local:relies	.
-local:data	rdfs:member	local:data_environment	.
+local:complete_knowledge_about_new_sources	rdfs:member	local:complete_knowledge	.
 local:explicitly_scheduled	rdfs:subClassOf	local:scheduled	.
-local:additional_step_explicitly_scheduled	local:additionalstep_	local:explicitly_scheduled	.
-local:discovers	vn.role:Theme	local:new_sources	.
-local:show	vn.role:Agent	local:we	.
-local:additional_step	rdfs:subClassOf	local:step	.
-local:discovered	vn.role:Theme	local:knowledge	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:correct_source	rdfs:member	local:correct_source_ranking	.
-local:requiring	vn.role:Patient	local:complete_knowledge	.
-local:additional_step_explicitly_scheduled_called	local:additionalstepexplicitlyscheduled_	local:called	.
-local:distributed	vn.role:Theme	local:linked_data_environment	.
-local:topdown	rdfs:member	local:topdown_strategy	.
-local:not_requiring	rdfs:subClassOf	local:requiring	.
-local:exploit	vn.role:Predicate	local:knowledge	.
-local:streambased_query_processing	rdfs:subClassOf	local:query_processing	.
-local:propose	local:AM-PNC	local:deal_with_unpredictable_nature	.
-local:distributed_linked_data_environment	rdfs:subClassOf	local:linked_data_environment	.
-local:complete_knowledge_about_new_sources	local:completeknowledge_about	local:new_sources	.
-local:thus_leads_to_early_reporting	local:thusleads_to	local:early_reporting	.
-local:gained	vn.role:Extent	local:attention	.
-local:mixed_strategy	rdfs:subClassOf	local:strategy	.
-local:early_reporting_of_results	local:of_results	local:early_reporting	.
-local:links_between_sources	local:between_sources	local:links	.
-local:discovers	local:AM-LOC	local:runtime	.
-local:unpredictable_nature	rdfs:subClassOf	local:nature	.
-local:data	rdfs:member	local:data_access	.
+local:responsive_query	rdfs:member	local:responsive	.
+local:correct_source_ranking	rdfs:member	local:correct_source	.
+local:sources_process	rdfs:member	local:sources	.
+local:step_query	rdfs:subClassOf	local:query	.
+local:s10	local:AM-LOC	local:runtime	.
+local:implementation_of_the_mixed_strategy	rdfs:member	local:implementation	.
+local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:unpredictable_nature	.
+local:step_query_processing	rdfs:subClassOf	local:query_processing	.
+local:streambased_query_processing	rdfs:member	local:streambased_query	.
+local:complete_knowledge_about_new_sources_select_relevant_sources	rdfs:member	local:complete_knowledge	.
+local:early_reporting_of_results	rdfs:member	local:early_reporting	.
+local:processing_of_queries_on_linked_data	rdfs:member	local:linked_data	.
+local:s8	rdf:object	local:three_main_strategies_a_topdown_strategy	.
+local:topdown_strategy_that_relies_on_complete_knowledge_about_new_sources	rdfs:member	local:topdown_strategy	.
+local:process_relevant	rdfs:member	local:process	.
+local:early_reporting	rdfs:member	local:early	.
+local:more_responsive_query	rdfs:member	local:more_responsive	.
+local:linked_data_environment	rdfs:subClassOf	local:data_environment	.
+local:additional_step_query_processing	rdfs:subClassOf	local:processing	.
+local:more_responsive_query_processing	rdfs:member	local:more_responsive_query	.
+local:s11.3	rdf:object	local:correct_source	.
+local:s13	rdf:subject	local:we	.
+local:query_processing_called	rdfs:member	local:query_processing	.
+local:s12	local:AM-DIS	local:additionally	.
+local:s13.2	rdf:predicate	local:not_require	.
+local:s13	rdf:object	local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	.
+local:s8	local:AM-MNR	local:systematically	.
+local:topdown_strategy_that_relies_on_complete_knowledge_about_new_sources	rdfs:member	local:complete_knowledge	.
+local:s2	rdf:predicate	local:discover	.
+local:new_sources_process	rdfs:subClassOf	local:process	.
+local:early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:thus_more_responsive_query_processing	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:thus_more_responsive_query_processing	.
 local:select_relevant_sources	rdfs:subClassOf	local:relevant_sources	.
-local:main_strategies	rdfs:subClassOf	local:strategies	.
-local:correct_source	rdfs:subClassOf	local:source	.
-local:called	vn.role:Theme	local:correct_source_ranking	.
-local:scheduled	local:AM-TMP	local:query_processing_called	.
-local:source	rdfs:member	local:source_ranking	.
-local:early_thus_reporting_of_results	local:earlythusreporting_of	local:results	.
-local:deal	vn.role:Theme	local:unpredictable_nature_of_data_access	.
-local:early_reporting	rdfs:subClassOf	local:reporting	.
-local:select_relevant_sources	rdfs:subClassOf	local:sources	.
-local:exploit	vn.role:Agent	local:we	.
-local:data_access	rdfs:subClassOf	local:access	.
-local:propose	vn.role:Agent	local:we	.
-local:data_access_in_distributed_linked_data_environment	local:dataaccess_in	local:distributed_linked_data_environment	.
-local:requiring	vn.role:Agent	local:implementation_of_mixed_strategy	.
-local:responsive_query_processing	rdfs:subClassOf	local:processing	.
-local:additional	rdfs:member	local:additional_step	.
-local:select	vn.role:Theme	local:relevant_sources	.
-local:relies	vn.role:indirect_object	local:process_relevant_sources	.
-local:bottomup_strategy	rdfs:subClassOf	local:strategy	.
-local:scheduled	vn.role:Product	local:additional_step	.
-local:early_thus_reporting_of_results	local:of_results	local:early_thus_reporting	.
-local:query	rdfs:member	local:query_processing	.
-local:requiring	local:AM-NEG	local:not	.
-local:linked	vn.role:Patient	local:data	.
-local:links_between_sources	local:links_between	local:sources	.
+local:s8	rdf:predicate	local:discuss	.
+local:relevant_sources	rdfs:member	local:relevant	.
+local:s3	rdf:predicate	local:discover	.
+local:explicitly_scheduled_during_query_processing	rdfs:member	local:query_processing	.
+local:unpredictable_nature_of_data_access	rdfs:member	local:data_access	.
+local:s7.1	rdf:predicate	local:select	.
+local:query_processing	rdfs:member	local:query	.
 local:three_main_strategies	rdfs:subClassOf	local:main_strategies	.
-local:following	vn.role:Location	local:links_between_sources	.
+local:data_environment	rdfs:subClassOf	local:environment	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:mixed_strategy	.
+local:topdown_strategy_that_relies_on_complete_knowledge_about_new_sources	rdfs:member	local:new_sources	.
+local:s0.2	rdf:predicate	local:gain	.
+local:new_sources_process_relevant	rdfs:member	local:new_sources_process	.
+local:complete_knowledge_about_new_sources_select_relevant_sources	rdfs:member	local:new_sources	.
+local:correct_source	rdfs:member	local:correct	.
+local:sources_process	rdfs:subClassOf	local:process	.
+local:complete_knowledge_about_new_sources_select_relevant_sources	rdfs:member	local:relevant_sources	.
+local:additional_step_query	rdfs:subClassOf	local:query	.
+local:process_relevant	rdfs:subClassOf	local:relevant	.
+local:responsive_query_processing	rdfs:subClassOf	local:processing	.
+local:complete_knowledge_about_new_sources_process	rdfs:member	local:new_sources_process	.
+local:s0.1	rdfs:subClassOf	local:data	.
+local:additional_step_explicitly_scheduled_during_query_processing_called_correct_source_ranking	rdfs:member	local:query_processing	.
+local:s3.1	rdf:subject	local:bottomup_strategy	.
+local:more_responsive	rdfs:member	local:more	.
+local:new_sources	rdfs:member	local:new	.
+local:streambased_query_processing	rdfs:subClassOf	local:query_processing	.
+local:early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:complete_knowledge	.
+local:s13.1	rdf:object	local:early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	.
+local:thus_more	rdfs:member	local:thus	.
+local:s4	rdf:predicate	local:discuss	.
+local:new_sources_during_query_processing	rdfs:member	local:query_processing	.
+local:complete_knowledge_about_new_sources_process_relevant_sources	rdfs:member	local:complete_knowledge	.
+local:s10	rdf:predicate	local:discover	.
+local:process_relevant_sources	rdfs:member	local:process_relevant	.
+local:additional_step_explicitly_scheduled	rdfs:member	local:additional_step	.
+local:source_ranking	rdfs:subClassOf	local:ranking	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:results	.
+local:additional_step_explicitly_scheduled	rdfs:member	local:explicitly_scheduled	.
+local:not_requiring	rdfs:subClassOf	local:requiring	.
+local:s3.1	rdf:object	local:links_between_sources	.
+local:sources_process_relevant	rdfs:subClassOf	local:relevant	.
+local:new_sources_process_relevant_sources	rdfs:member	local:new_sources_process_relevant	.
+local:s0.1	rdf:predicate	local:link	.
+local:s7	rdf:object	local:complete_knowledge_about_new_sources_select_relevant_sources	.
+local:s9	rdf:predicate	local:identify	.
+local:s12.2	rdf:predicate	local:distribute	.
+local:s11	rdf:subject	local:we	.
+local:responsive_query_processing	rdfs:member	local:responsive_query	.
+local:s11.2	rdf:predicate	local:schedule	.
+local:thus_more_responsive	rdfs:subClassOf	local:more_responsive	.
+local:sources_process_relevant_sources	rdfs:subClassOf	local:sources	.
+local:data_access	rdfs:member	local:data	.
+local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:data_access	.
+local:adoption_of_streambased_query_processing	rdfs:member	local:streambased_query_processing	.
+local:s6	rdf:subject	local:we	.
+local:s6	rdf:predicate	local:discuss	.
+local:new_sources_during_query_processing	rdfs:member	local:new_sources	.
+local:explicitly_scheduled_during_query_processing	rdfs:member	local:explicitly_scheduled	.
+local:s11	rdf:object	local:knowledge	.
+local:unpredictable_nature_of_data_access	rdfs:member	local:unpredictable_nature	.
+local:distributed_linked	rdfs:subClassOf	local:linked	.
+local:early_reporting_of_results	rdfs:member	local:results	.
+local:sources_process_relevant	rdfs:member	local:sources_process	.
+local:thus_more_responsive_query_processing	rdfs:subClassOf	local:processing	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:implementation	.
+local:queries_on_linked_data	rdfs:member	local:queries	.
+local:s11.1	rdf:predicate	local:propose	.
+local:s0.2	local:AM-TMP	local:recently	.
+local:s13.2	rdf:object	local:complete_knowledge	.
+local:processing_of_queries_on_linked_data	rdfs:member	local:queries	.
+local:unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:unpredictable_nature	.
+local:relies_on_complete_knowledge	rdfs:member	local:relies	.
+local:three_main_strategies_a_bottomup_strategy	rdfs:member	local:main_strategies	.
+local:early_reporting	rdfs:subClassOf	local:reporting	.
+local:additional_step_query	rdfs:member	local:additional_step	.
+local:s7.1	rdf:object	local:relevant_sources	.
+local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:streambased_query_processing	.
+local:s3.1	rdf:predicate	local:follow	.
+local:complete_knowledge_about_new_sources_process	rdfs:member	local:complete_knowledge	.
+local:implementation_of_the_mixed_strategy	rdfs:member	local:mixed_strategy	.
+local:complete_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s7	rdf:subject	local:topdown_strategy	.
+local:s0	local:AM-TMP	local:recently	.
+local:implementation_of_mixed_strategy	rdfs:member	local:mixed_strategy	.
+local:s12.2	rdf:subject	local:data_environment	.
+local:processing_of_queries_on_linked_data	rdfs:member	local:processing_of_queries	.
+local:three_main_strategies_a_topdown_strategy	rdfs:member	local:main_strategies	.
+local:streambased_query_processing	rdfs:subClassOf	local:processing	.
+local:data_access_in_distributed_linked_data_environment	rdfs:member	local:data_access	.
+local:linked_data_environment	rdfs:subClassOf	local:environment	.
+local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:adoption	.
+local:s13.2	rdf:subject	local:implementation_of_the_mixed_strategy	.
+local:additional_step_query_processing	rdfs:member	local:additional_step_query	.
+local:main_strategies	rdfs:subClassOf	local:strategies	.
+local:s12	rdf:subject	local:we	.
+local:relevant_sources	rdfs:subClassOf	local:sources	.
+local:processing_of_queries_on_linked_data	rdfs:member	local:data	.
+local:s13.1	rdf:subject	local:implementation_of_the_mixed_strategy	.
+local:three_main_strategies_a_bottomup_strategy	rdfs:member	local:bottomup_strategy	.
+local:correct_source	rdfs:subClassOf	local:source	.
+local:s3	rdf:object	local:new_sources_during_query_processing	.
+local:relies_on_complete_knowledge	rdfs:member	local:complete_knowledge	.
+local:s0.1	rdf:subject	local:data	.
+local:leads_to_early_reporting	rdfs:member	local:leads	.
+local:three_main_strategies_a_mixed_strategy	rdfs:member	local:main_strategies	.
+local:s11.1	rdf:object	local:additional_step_explicitly_scheduled_during_query_processing_called_correct_source_ranking	.
+local:step_query_processing	rdfs:member	local:step_query	.
+local:queries_on_linked_data	rdfs:member	local:data	.
+local:new_sources	rdfs:subClassOf	local:sources	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:early_reporting	.
+local:s1	rdf:predicate	local:rely	.
+local:deal_with_unpredictable_nature	rdfs:member	local:unpredictable_nature	.
+local:new_sources_process	rdfs:member	local:new_sources	.
+local:s1.1	rdf:object	local:relevant_sources	.
+local:linked_data_environment	rdfs:member	local:linked_data	.
+local:early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:early_reporting	.
+local:distributed_linked_data	rdfs:member	local:distributed_linked	.
+local:streambased_query	rdfs:member	local:streambased	.
+local:main_strategies	rdfs:member	local:main	.
+local:thus_more_responsive	rdfs:subClassOf	local:responsive	.
+local:s11.3	rdf:subject	local:query_processing	.
+local:s5	rdf:predicate	local:assume	.
+local:s12	rdf:object	local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	.
+local:complete_knowledge_about_new_sources	rdfs:member	local:new_sources	.
+local:s0	rdf:predicate	local:process	.
+local:s10	rdf:subject	local:knowledge	.
+local:s13	rdf:predicate	local:show	.
+local:additional_step_explicitly_scheduled_during_query_processing_called_correct_source_ranking	rdfs:member	local:additional_step	.
+local:complete_knowledge_about_new_sources_process_relevant_sources	rdfs:member	local:new_sources_process_relevant_sources	.
+local:s9	rdf:subject	local:we	.
+local:incomplete_knowledge	rdfs:member	local:incomplete	.
+local:s4	local:AM-MNR	local:systematically	.
+local:new_sources_process_relevant	rdfs:subClassOf	local:relevant	.
+local:s12.1	rdf:subject	local:unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	.
+local:s11.1	rdf:subject	local:we	.
+local:s0.2	rdf:subject	local:processing_of_queries_on_linked_data	.
+local:data_environment	rdfs:member	local:data	.
+local:queries_on_linked_data	rdfs:member	local:s0.1	.
+local:topdown_strategy	rdfs:member	local:topdown	.
+local:processing_of_queries	rdfs:member	local:queries	.
+local:new_sources_process_relevant_sources	rdfs:subClassOf	local:sources	.
+local:more_responsive_query_processing	rdfs:subClassOf	local:processing	.
 local:responsive_query_processing	rdfs:subClassOf	local:query_processing	.
-local:adoption_of_streambased_query_processing	local:adoption_of	local:streambased_query_processing	.
-local:relevant	rdfs:member	local:relevant_sources	.
-local:thus_leads_to_early_reporting	local:to_earlyreporting	local:thus_leads	.
-local:select_relevant	rdfs:subClassOf	local:relevant	.
-local:discovers	vn.role:Agent	local:mixed_strategy	.
-local:thus_reporting	rdfs:subClassOf	local:reporting	.
-local:process	vn.role:Theme	local:relevant_sources	.
-local:discovers	vn.role:Theme	local:new_sources_during_query_processing	.
-local:unpredictable	rdfs:member	local:unpredictable_nature	.
-local:relies_on_complete_knowledge	local:relies_on	local:complete_knowledge	.
-local:relies	vn.role:Theme	local:complete_knowledge_about_new_sources	.
+local:leads_to_early_reporting	rdfs:member	local:early_reporting	.
+local:early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:results	.
+local:s13.1	rdf:predicate	local:lead	.
+local:s5	rdf:object	local:incomplete_knowledge	.
+local:following_links_between_sources	rdfs:member	local:sources	.
+local:distributed_linked_data	rdfs:subClassOf	local:data	.
+local:distributed_linked_data_environment	rdfs:member	local:distributed_linked_data	.
+local:s0.2	rdf:object	local:attention	.
+local:unpredictable_nature	rdfs:subClassOf	local:nature	.
+local:mixed_strategy	rdfs:subClassOf	local:strategy	.
+local:adoption_of_streambased_query_processing	rdfs:member	local:adoption	.
+local:s2	rdf:subject	local:new_sources	.
+local:s12	rdf:predicate	local:propose	.
+local:thus_more_responsive	rdfs:member	local:thus_more	.
+local:implementation_of_the_mixed_strategy_leads_to_early_reporting_of_results_and_thus_more_responsive_query_processing_while_not_requiring_complete_knowledge	rdfs:member	local:complete_knowledge	.
+local:thus_more_responsive_query	rdfs:member	local:thus_more_responsive	.
+local:s5	rdf:subject	local:mixed_strategy	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:new_sources_process	rdfs:subClassOf	local:sources_process	.
+local:distributed_linked	rdfs:member	local:distributed	.
+local:more_responsive	rdfs:subClassOf	local:responsive	.
+local:bottomup_strategy	rdfs:member	local:bottomup	.
+local:s11.3	rdf:predicate	local:call	.
+local:s7	rdf:predicate	local:rely	.
+local:thus_more	rdfs:subClassOf	local:more	.
+local:s1	rdf:subject	local:topdown_strategy	.
+local:responsive_query	rdfs:subClassOf	local:query	.
+local:s12.1	rdf:predicate	local:deal	.
+local:s1.1	rdf:predicate	local:process	.
+local:query_processing	rdfs:subClassOf	local:processing	.
+local:source_ranking	rdfs:member	local:source	.
+local:s2	local:AM-LOC	local:runtime	.
+local:data_access	rdfs:subClassOf	local:access	.
 local:streambased_query	rdfs:subClassOf	local:query	.
-local:deal_with_unpredictable_nature	local:deal_with	local:unpredictable_nature	.
-local:discuss	local:AM-MNR	local:systematically	.
-local:relies	vn.role:Agent	local:topdown_strategy	.
-local:propose	vn.role:Topic	local:adoption_of_streambased_query_processing	.
-local:propose	vn.role:Topic	local:additional_step_explicitly_scheduled_called	.
-local:mixed	rdfs:member	local:mixed_strategy	.
-local:early_thus_reporting	rdfs:subClassOf	local:thus_reporting	.
+local:s1	rdf:object	local:complete_knowledge_about_new_sources_process_relevant_sources	.
+local:data_access_in_distributed_linked_data_environment	rdfs:member	local:distributed_linked_data_environment	.
+local:s11	rdf:predicate	local:exploit	.
+local:unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:distributed_linked_data_environment	.
+local:distributed_linked_data_environment	rdfs:subClassOf	local:linked_data_environment	.
+local:deal_with_unpredictable_nature	rdfs:member	local:deal	.
+local:three_main_strategies_a_topdown_strategy	rdfs:member	local:topdown_strategy	.
+local:unpredictable_nature	rdfs:member	local:unpredictable	.
+local:topdown_strategy	rdfs:subClassOf	local:strategy	.
+local:incomplete_knowledge	rdfs:subClassOf	local:knowledge	.
+local:links_between_sources	rdfs:member	local:sources	.
+local:following_links_between_sources	rdfs:member	local:links	.
+local:additional_step_explicitly_scheduled_during_query_processing_called_correct_source_ranking	rdfs:member	local:correct_source_ranking	.
+local:thus_more_responsive_query	rdfs:subClassOf	local:query	.
+local:step_query	rdfs:member	local:step	.
+local:sources_process_relevant_sources	rdfs:member	local:sources_process_relevant	.
+local:s0	rdf:subject	local:queries_on_linked_data	.
+local:adoption_of_streambased_query_processing_to_deal_with_the_unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:distributed_linked_data_environment	.
+local:s13	local:AM-LOC	local:experiments	.
+local:query_processing_called	rdfs:member	local:called	.
+local:s11.2	rdf:subject	local:knowledge	.
+local:processing_of_queries	rdfs:member	local:processing	.
+local:implementation_of_mixed_strategy	rdfs:member	local:implementation	.
+local:correct_source_ranking	rdfs:subClassOf	local:source_ranking	.
+local:bottomup_strategy	rdfs:subClassOf	local:strategy	.
+local:s11.2	rdf:object	local:additional_step_query_processing	.
+local:mixed_strategy	rdfs:member	local:mixed	.
+local:s8	rdf:subject	local:we	.
+local:additional_step_query_processing	rdfs:subClassOf	local:step_query_processing	.
+local:s6	local:AM-MNR	local:systematically	.
+local:step_query_processing	rdfs:subClassOf	local:processing	.
+local:s4	rdf:subject	local:we	.
+local:s4	rdf:object	local:three_main_strategies_a_mixed_strategy	.
+local:complete_knowledge	rdfs:member	local:complete	.
+local:additional_step	rdfs:subClassOf	local:step	.
+local:unpredictable_nature_of_data_access_in_the_distributed_linked_data_environment	rdfs:member	local:data_access	.
 local:correct_source_ranking	rdfs:subClassOf	local:ranking	.
-local:complete_knowledge_about_new_sources	local:about_newsources	local:complete_knowledge	.
-local:deal_with_unpredictable_nature	local:with_unpredictablenature	local:deal	.
-local:processing_of_queries	local:of_queries	local:processing	.
-local:data_access_in_distributed_linked_data_environment	local:in_distributedlinkeddataenvironment	local:data_access	.
-local:adoption_of_streambased_query_processing	local:of_stream-basedqueryprocessing	local:adoption	.
-local:thus_leads	rdfs:subClassOf	local:leads	.
-local:processing_of_queries	local:processing_of	local:queries	.
-local:more	rdfs:member	local:more_responsive	.
+local:s7.1	rdf:subject	local:new_sources	.
+local:s1.1	rdf:subject	local:topdown_strategy_that_relies_on_complete_knowledge_about_new_sources	.
+local:three_main_strategies_a_mixed_strategy	rdfs:member	local:mixed_strategy	.

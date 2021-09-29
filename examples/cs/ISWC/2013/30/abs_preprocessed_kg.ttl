@@ -1,534 +1,1036 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s20	a	rdf:Statement	;
+	rdfs:label	"the resource made available in an open format"	.
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"45978 wikipedia infobox attributes to dbpedia properties in 14 different languages"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"specifically we mapped 45978 wikipedia infobox attributes to dbpedia properties in 14 different languages"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"the ones obtained by a human annotator in term of precision"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"we leads to a significant improvement in speed"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"we approach leads to a significant improvement in speed"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we report results comparable to the ones"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"we leads to a significant improvement in recall"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"we approach leads to a significant improvement in recall"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"a random sample reannotated by the authors"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"we results with the current mappings on a random sample reannotated by the authors"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we compared we results with the current mappings on a random sample reannotated by the authors"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the evaluation performed on the italian mappings"	.
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"languages not covered in the current version"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"we extending the coverage of building from scratch versions for languages not covered in the current version"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we automatically mapping infobox attributes to properties"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"in this paper we focus on the problem of automatically mapping infobox attributes to properties into the dbpedia ontology for extending the coverage of building from scratch versions for languages not covered in the current version"	.
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"existing localized versions"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"we extending the coverage of the existing localized versions"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"we automatically mapping infobox attributes to properties into the dbpedia ontology for extending the coverage of the existing localized versions"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"in this paper we focus on the problem of automatically mapping infobox attributes to properties into the dbpedia ontology for extending the coverage of the existing localized versions"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"furthermore mappings need maintenance due to the constant changes of wikipedia articles"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"furthermore mappings need maintenance due to the quick changes of wikipedia articles"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"however the number of accomplished mappings still limited to most frequent infoboxes"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"other languages create the localized versions of dbpedia"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"consequently the same procedure applied to other languages to create the localized versions of dbpedia"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"thanks to a large number of infoboxes mapped in the english dbpedia"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"thanks to crowdsourcing mapped in the english dbpedia"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the extraction procedure manually map wikipedia infoboxes into the dbpedia ontology"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the extraction procedure requires to manually map wikipedia infoboxes into the dbpedia ontology"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"a largescale knowledge base that exploits wikipedia as primary data source"	.
+
+
 #### Classes ####
 
-local:largescale_knowledge	rdfs:label	"large-scale knowledge"	.
+local:resource	a	rdf:Class	;
+	rdfs:label	"resource"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:largescale_knowledge_base	rdfs:label	"large-scale knowledge base"	.
+local:available	a	rdf:Class	;
+	rdfs:label	"available"	.
 
-local:knowledge_base	rdfs:label	"knowledge base"	.
+local:open_format	a	rdf:Class	;
+	rdfs:label	"open format"	.
 
-local:base	rdfs:label	"base"	.
+local:format	a	rdf:Class	;
+	rdfs:label	"format"	.
 
-local:largescale	rdfs:label	"large-scale"	.
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
 
-local:exploits	rdfs:label	"exploits"	.
+local:45978_wikipedia_infobox	a	rdf:Class	;
+	rdfs:label	"45978 wikipedia infobox"	.
 
-local:wikipedia	rdfs:label	"wikipedia"	.
+local:wikipedia_infobox	a	rdf:Class	;
+	rdfs:label	"wikipedia infobox"	.
 
-local:primary_data	rdfs:label	"primary data"	.
+local:infobox	a	rdf:Class	;
+	rdfs:label	"infobox"	.
 
-local:data	rdfs:label	"data"	.
+local:wikipedia	a	rdf:Class	;
+	rdfs:label	"wikipedia"	.
 
-local:primary	rdfs:label	"primary"	.
+local:attribute	a	rdf:Class	;
+	rdfs:label	"attribute"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:14_different_languages_dbpedia_properties	a	rdf:Class	;
+	rdfs:label	"14 different languages dbpedia properties"	.
 
-local:extraction_procedure	rdfs:label	"extraction procedure"	.
+local:different_languages	a	rdf:Class	;
+	rdfs:label	"different languages"	.
 
-local:procedure	rdfs:label	"procedure"	.
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
 
-local:requires	rdfs:label	"requires"	.
+local:languages_dbpedia	a	rdf:Class	;
+	rdfs:label	"languages dbpedia"	.
 
-local:wikipedia_infoboxes	rdfs:label	"wikipedia infoboxes"	.
+local:dbpedia_properties	a	rdf:Class	;
+	rdfs:label	"dbpedia properties"	.
 
-local:dbpedia_ontology	rdfs:label	"dbpedia ontology"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:map_wikipedia_infoboxes	rdfs:label	"map wikipedia infoboxes"	.
+local:languages_dbpedia_properties	a	rdf:Class	;
+	rdfs:label	"languages dbpedia properties"	.
 
-local:infoboxes	rdfs:label	"infoboxes"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:different_languages_dbpedia_properties	a	rdf:Class	;
+	rdfs:label	"different languages dbpedia properties"	.
 
-local:manually_map_wikipedia	rdfs:label	"manually map wikipedia"	.
+local:different_languages_dbpedia	a	rdf:Class	;
+	rdfs:label	"different languages dbpedia"	.
 
-local:manually_map_wikipedia_infoboxes	rdfs:label	"manually map wikipedia infoboxes"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:map_wikipedia	rdfs:label	"map wikipedia"	.
+local:map	a	rdf:Class	;
+	rdfs:label	"map"	.
 
-local:manually_map	rdfs:label	"manually map"	.
+local:45978_wikipedia_infobox_attributes_to_dbpedia_properties	a	rdf:Class	;
+	rdfs:label	"45978 wikipedia infobox attributes to dbpedia properties"	.
 
-local:map	rdfs:label	"map"	.
+local:attributes_to_dbpedia_properties	a	rdf:Class	;
+	rdfs:label	"attributes to dbpedia properties"	.
 
-local:manually	rdfs:label	"manually"	.
+local:attributes	a	rdf:Class	;
+	rdfs:label	"attributes"	.
 
-local:manually_map_into_dbpedia_ontology	rdfs:label	"manually map into dbpedia ontology"	.
+local:specifically	a	rdf:Class	;
+	rdfs:label	"specifically"	.
 
-local:large	rdfs:label	"large"	.
+local:14_different_languages	a	rdf:Class	;
+	rdfs:label	"14 different languages"	.
 
-local:large_number	rdfs:label	"large number"	.
+local:human_annotator_in_term_of_precision	a	rdf:Class	;
+	rdfs:label	"human annotator in term of precision"	.
 
-local:number	rdfs:label	"number"	.
+local:term	a	rdf:Class	;
+	rdfs:label	"term"	.
 
-local:thanks_to_large_number	rdfs:label	"thanks to large number"	.
+local:human_annotator	a	rdf:Class	;
+	rdfs:label	"human annotator"	.
 
-local:thanks	rdfs:label	"thanks"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:large_number_of_infoboxes	rdfs:label	"large number of infoboxes"	.
+local:annotator	a	rdf:Class	;
+	rdfs:label	"annotator"	.
 
-local:mapped	rdfs:label	"mapped"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:english_dbpedia	rdfs:label	"english dbpedia"	.
+local:human_annotator_in_term	a	rdf:Class	;
+	rdfs:label	"human annotator in term"	.
 
-local:english	rdfs:label	"english"	.
+local:term_of_precision	a	rdf:Class	;
+	rdfs:label	"term of precision"	.
 
-local:same_procedure	rdfs:label	"same procedure"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:same	rdfs:label	"same"	.
+local:ones	a	rdf:Class	;
+	rdfs:label	"ones"	.
 
-local:consequently_same_procedure	rdfs:label	"consequently same procedure"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:applied	rdfs:label	"applied"	.
+local:significant_improvement_in_speed	a	rdf:Class	;
+	rdfs:label	"significant improvement in speed"	.
 
-local:languages	rdfs:label	"languages"	.
+local:significant_improvement	a	rdf:Class	;
+	rdfs:label	"significant improvement"	.
 
-local:localized	rdfs:label	"localized"	.
+local:speed	a	rdf:Class	;
+	rdfs:label	"speed"	.
 
-local:localized_versions	rdfs:label	"localized versions"	.
+local:significant	a	rdf:Class	;
+	rdfs:label	"significant"	.
 
-local:versions	rdfs:label	"versions"	.
+local:improvement	a	rdf:Class	;
+	rdfs:label	"improvement"	.
 
-local:localized_versions_of_dbpedia	rdfs:label	"localized versions of dbpedia"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:create	rdfs:label	"create"	.
+local:leads_to_a_significant_improvement_in_speed	a	rdf:Class	;
+	rdfs:label	"leads to a significant improvement in speed"	.
 
-local:accomplished	rdfs:label	"accomplished"	.
+local:leads	a	rdf:Class	;
+	rdfs:label	"leads"	.
 
-local:accomplished_mappings	rdfs:label	"accomplished mappings"	.
+local:leads_to_significant_improvement	a	rdf:Class	;
+	rdfs:label	"leads to significant improvement"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:report	a	rdf:Class	;
+	rdfs:label	"report"	.
 
-local:number_of_accomplished_mappings	rdfs:label	"number of accomplished mappings"	.
+local:results_comparable_to_the_ones	a	rdf:Class	;
+	rdfs:label	"results comparable to the ones"	.
 
-local:limited	rdfs:label	"limited"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:however	rdfs:label	"however"	.
+local:comparable_results	a	rdf:Class	;
+	rdfs:label	"comparable results"	.
 
-local:still	rdfs:label	"still"	.
+local:comparable_to_ones	a	rdf:Class	;
+	rdfs:label	"comparable to ones"	.
 
-local:frequent_infoboxes	rdfs:label	"frequent infoboxes"	.
+local:comparable	a	rdf:Class	;
+	rdfs:label	"comparable"	.
 
-local:frequent	rdfs:label	"frequent"	.
+local:significant_improvement_in_recall	a	rdf:Class	;
+	rdfs:label	"significant improvement in recall"	.
 
-local:furthermore_mappings	rdfs:label	"furthermore mappings"	.
+local:recall	a	rdf:Class	;
+	rdfs:label	"recall"	.
 
-local:need	rdfs:label	"need"	.
+local:leads_to_a_significant_improvement_in_recall	a	rdf:Class	;
+	rdfs:label	"leads to a significant improvement in recall"	.
 
-local:quick_changes	rdfs:label	"quick changes"	.
+local:authors	a	rdf:Class	;
+	rdfs:label	"authors"	.
 
-local:changes	rdfs:label	"changes"	.
+local:reannotated	a	rdf:Class	;
+	rdfs:label	"reannotated"	.
 
-local:wikipedia_articles	rdfs:label	"wikipedia articles"	.
+local:random_sample	a	rdf:Class	;
+	rdfs:label	"random sample"	.
 
-local:quick	rdfs:label	"quick"	.
+local:random	a	rdf:Class	;
+	rdfs:label	"random"	.
 
-local:articles	rdfs:label	"articles"	.
+local:sample	a	rdf:Class	;
+	rdfs:label	"sample"	.
 
-local:maintenance_dueto_quick_changes	rdfs:label	"maintenance due_to quick changes"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:maintenance	rdfs:label	"maintenance"	.
+local:current_mappings_on_a_random_sample_reannotated_by_the_authors	a	rdf:Class	;
+	rdfs:label	"current mappings on a random sample reannotated by the authors"	.
 
-local:quick_changes_of_wikipedia_articles	rdfs:label	"quick changes of wikipedia articles"	.
+local:current_mappings	a	rdf:Class	;
+	rdfs:label	"current mappings"	.
 
-local:constant	rdfs:label	"constant"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:constant_changes	rdfs:label	"constant changes"	.
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
 
-local:maintenance_dueto_constant_changes	rdfs:label	"maintenance due_to constant changes"	.
+local:current_mappings_on_random_sample	a	rdf:Class	;
+	rdfs:label	"current mappings on random sample"	.
 
-local:constant_changes_of_wikipedia_articles	rdfs:label	"constant changes of wikipedia articles"	.
+local:random_sample_reannotated	a	rdf:Class	;
+	rdfs:label	"random sample reannotated"	.
 
-local:focus	rdfs:label	"focus"	.
+local:reannotated_by_authors	a	rdf:Class	;
+	rdfs:label	"reannotated by authors"	.
 
-local:paper	rdfs:label	"paper"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:we	rdfs:label	"we"	.
+local:results_with_the_current_mappings_on_a_random_sample_reannotated_by_the_authors	a	rdf:Class	;
+	rdfs:label	"results with the current mappings on a random sample reannotated by the authors"	.
 
-local:scratch_versions	rdfs:label	"scratch versions"	.
+local:results_with_current_mappings	a	rdf:Class	;
+	rdfs:label	"results with current mappings"	.
 
-local:current	rdfs:label	"current"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:current_version	rdfs:label	"current version"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:infobox_attributes	rdfs:label	"infobox attributes"	.
+local:italian_mappings	a	rdf:Class	;
+	rdfs:label	"italian mappings"	.
 
-local:attributes	rdfs:label	"attributes"	.
+local:italian	a	rdf:Class	;
+	rdfs:label	"italian"	.
 
-local:scratch	rdfs:label	"scratch"	.
+local:not_cover	a	rdf:Class	;
+	rdfs:label	"not cover"	.
 
-local:version	rdfs:label	"version"	.
+local:current_version	a	rdf:Class	;
+	rdfs:label	"current version"	.
 
-local:infobox	rdfs:label	"infobox"	.
+local:version	a	rdf:Class	;
+	rdfs:label	"version"	.
 
-local:not_covered	rdfs:label	"not covered"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:covered	rdfs:label	"covered"	.
+local:coverage_of_building_scratch_versions_for_languages_not_covered_in_the_current_version	a	rdf:Class	;
+	rdfs:label	"coverage of building scratch versions for languages not covered in the current version"	.
 
-local:automatically_mapping	rdfs:label	"automatically mapping"	.
+local:coverage	a	rdf:Class	;
+	rdfs:label	"coverage"	.
 
-local:mapping	rdfs:label	"mapping"	.
+local:building_scratch_versions	a	rdf:Class	;
+	rdfs:label	"building scratch versions"	.
 
-local:attributes_to_properties	rdfs:label	"attributes to properties"	.
+local:building_scratch	a	rdf:Class	;
+	rdfs:label	"building scratch"	.
 
-local:properties	rdfs:label	"properties"	.
+local:building	a	rdf:Class	;
+	rdfs:label	"building"	.
 
-local:properties_into_dbpedia_ontology	rdfs:label	"properties into dbpedia ontology"	.
+local:scratch	a	rdf:Class	;
+	rdfs:label	"scratch"	.
 
-local:coverage_of_building	rdfs:label	"coverage of building"	.
+local:scratch_versions	a	rdf:Class	;
+	rdfs:label	"scratch versions"	.
 
-local:coverage	rdfs:label	"coverage"	.
+local:versions	a	rdf:Class	;
+	rdfs:label	"versions"	.
 
-local:building	rdfs:label	"building"	.
+local:not_covered	a	rdf:Class	;
+	rdfs:label	"not covered"	.
 
-local:extending_from_scratch_versions	rdfs:label	"extending from scratch versions"	.
+local:covered	a	rdf:Class	;
+	rdfs:label	"covered"	.
 
-local:extending	rdfs:label	"extending"	.
+local:coverage_of_building_scratch_versions	a	rdf:Class	;
+	rdfs:label	"coverage of building scratch versions"	.
 
-local:scratch_versions_for_languages	rdfs:label	"scratch versions for languages"	.
+local:coverage_of_building_scratch_versions_for_languages	a	rdf:Class	;
+	rdfs:label	"coverage of building scratch versions for languages"	.
 
-local:languages_not_covered	rdfs:label	"languages not covered"	.
+local:languages_not_covered	a	rdf:Class	;
+	rdfs:label	"languages not covered"	.
 
-local:not_covered_in_current_version	rdfs:label	"not covered in current version"	.
+local:not_covered_in_current_version	a	rdf:Class	;
+	rdfs:label	"not covered in current version"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:infobox_attributes_properties	a	rdf:Class	;
+	rdfs:label	"infobox attributes properties"	.
 
-local:not	rdfs:label	"not"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:existing_localized_versions	rdfs:label	"existing localized versions"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:coverage_of_existing_localized_versions	rdfs:label	"coverage of existing localized versions"	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	a	rdf:Class	;
+	rdfs:label	"problem of automatically mapping infobox attributes to properties into the dbpedia ontology for extending the coverage of building from scratch versions for languages not covered in the current version"	.
 
-local:existing	rdfs:label	"existing"	.
+local:infobox_attributes	a	rdf:Class	;
+	rdfs:label	"infobox attributes"	.
 
-local:performed	rdfs:label	"performed"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:dbpedia_ontology	a	rdf:Class	;
+	rdfs:label	"dbpedia ontology"	.
 
-local:italian_mappings	rdfs:label	"italian mappings"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:italian	rdfs:label	"italian"	.
+local:automatically_mapping	a	rdf:Class	;
+	rdfs:label	"automatically mapping"	.
 
-local:compared	rdfs:label	"compared"	.
+local:mapping	a	rdf:Class	;
+	rdfs:label	"mapping"	.
 
-local:current_mappings	rdfs:label	"current mappings"	.
+local:attributes_to_properties	a	rdf:Class	;
+	rdfs:label	"attributes to properties"	.
 
-local:random_sample	rdfs:label	"random sample"	.
+local:properties_into_dbpedia_ontology	a	rdf:Class	;
+	rdfs:label	"properties into dbpedia ontology"	.
 
-local:sample	rdfs:label	"sample"	.
+local:coverage_of_building	a	rdf:Class	;
+	rdfs:label	"coverage of building"	.
 
-local:results_with_current_mappings	rdfs:label	"results with current mappings"	.
+local:extending_from_scratch_versions	a	rdf:Class	;
+	rdfs:label	"extending from scratch versions"	.
 
-local:results	rdfs:label	"results"	.
+local:extending	a	rdf:Class	;
+	rdfs:label	"extending"	.
 
-local:current_mappings_on_random_sample	rdfs:label	"current mappings on random sample"	.
+local:scratch_versions_for_languages	a	rdf:Class	;
+	rdfs:label	"scratch versions for languages"	.
 
-local:random_sample_reannotated	rdfs:label	"random sample re-annotated"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:reannotated	rdfs:label	"re-annotated"	.
+local:localized_versions	a	rdf:Class	;
+	rdfs:label	"localized versions"	.
 
-local:reannotated_by_authors	rdfs:label	"re-annotated by authors"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:authors	rdfs:label	"authors"	.
+local:coverage_of_the_existing_localized_versions	a	rdf:Class	;
+	rdfs:label	"coverage of the existing localized versions"	.
 
-local:random	rdfs:label	"random"	.
+local:localized	a	rdf:Class	;
+	rdfs:label	"localized"	.
 
-local:approach	rdfs:label	"approach"	.
+local:coverage_of_existing_localized_versions	a	rdf:Class	;
+	rdfs:label	"coverage of existing localized versions"	.
 
-local:significant	rdfs:label	"significant"	.
+local:dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions_properties	a	rdf:Class	;
+	rdfs:label	"dbpedia ontology for extending the coverage of the existing localized versions properties"	.
 
-local:significant_improvement	rdfs:label	"significant improvement"	.
+local:localized_versions_properties	a	rdf:Class	;
+	rdfs:label	"localized versions properties"	.
 
-local:improvement	rdfs:label	"improvement"	.
+local:versions_properties	a	rdf:Class	;
+	rdfs:label	"versions properties"	.
 
-local:leads_to_significant_improvement	rdfs:label	"leads to significant improvement"	.
+local:existing_localized_versions_properties	a	rdf:Class	;
+	rdfs:label	"existing localized versions properties"	.
 
-local:leads	rdfs:label	"leads"	.
+local:coverage_of_existing_localized_versions_properties	a	rdf:Class	;
+	rdfs:label	"coverage of existing localized versions properties"	.
 
-local:significant_improvement_in_speed	rdfs:label	"significant improvement in speed"	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	a	rdf:Class	;
+	rdfs:label	"problem of automatically mapping infobox attributes to properties into the dbpedia ontology for extending the coverage of the existing localized versions"	.
 
-local:speed	rdfs:label	"speed"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:maintenance_due_to_the_constant_changes_of_wikipedia_articles	a	rdf:Class	;
+	rdfs:label	"maintenance due to the constant changes of wikipedia articles"	.
 
-local:ones	rdfs:label	"ones"	.
+local:wikipedia_articles	a	rdf:Class	;
+	rdfs:label	"wikipedia articles"	.
 
-local:human	rdfs:label	"human"	.
+local:maintenance	a	rdf:Class	;
+	rdfs:label	"maintenance"	.
 
-local:human_annotator	rdfs:label	"human annotator"	.
+local:constant_changes	a	rdf:Class	;
+	rdfs:label	"constant changes"	.
 
-local:annotator	rdfs:label	"annotator"	.
+local:constant	a	rdf:Class	;
+	rdfs:label	"constant"	.
 
-local:human_annotator_in_term	rdfs:label	"human annotator in term"	.
+local:changes	a	rdf:Class	;
+	rdfs:label	"changes"	.
 
-local:term	rdfs:label	"term"	.
+local:articles	a	rdf:Class	;
+	rdfs:label	"articles"	.
 
-local:term_of_precision	rdfs:label	"term of precision"	.
+local:maintenance_due_to_constant_changes	a	rdf:Class	;
+	rdfs:label	"maintenance due_to constant changes"	.
 
-local:precision	rdfs:label	"precision"	.
+local:constant_changes_of_wikipedia_articles	a	rdf:Class	;
+	rdfs:label	"constant changes of wikipedia articles"	.
 
-local:report	rdfs:label	"report"	.
+local:furthermore	a	rdf:Class	;
+	rdfs:label	"furthermore"	.
 
-local:comparable_results	rdfs:label	"comparable results"	.
+local:maintenance_due_to_the_quick_changes_of_wikipedia_articles	a	rdf:Class	;
+	rdfs:label	"maintenance due to the quick changes of wikipedia articles"	.
 
-local:comparable_to_ones	rdfs:label	"comparable to ones"	.
+local:quick_changes	a	rdf:Class	;
+	rdfs:label	"quick changes"	.
 
-local:comparable	rdfs:label	"comparable"	.
+local:quick	a	rdf:Class	;
+	rdfs:label	"quick"	.
 
-local:significant_improvement_in_recall	rdfs:label	"significant improvement in recall"	.
+local:maintenance_due_to_quick_changes	a	rdf:Class	;
+	rdfs:label	"maintenance due_to quick changes"	.
 
-local:recall	rdfs:label	"recall"	.
+local:quick_changes_of_wikipedia_articles	a	rdf:Class	;
+	rdfs:label	"quick changes of wikipedia articles"	.
 
-local:specifically	rdfs:label	"specifically"	.
+local:number_of_accomplished_mappings	a	rdf:Class	;
+	rdfs:label	"number of accomplished mappings"	.
 
-local:different	rdfs:label	"different"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:different_languages	rdfs:label	"different languages"	.
+local:accomplished_mappings	a	rdf:Class	;
+	rdfs:label	"accomplished mappings"	.
 
-local:wikipedia_infobox	rdfs:label	"wikipedia infobox"	.
+local:accomplished	a	rdf:Class	;
+	rdfs:label	"accomplished"	.
 
-local:14_different_languages	rdfs:label	"14 different languages"	.
+local:limit	a	rdf:Class	;
+	rdfs:label	"limit"	.
 
-local:dbpedia_properties	rdfs:label	"dbpedia properties"	.
+local:frequent_infoboxes	a	rdf:Class	;
+	rdfs:label	"frequent infoboxes"	.
 
-local:45978_wikipedia_infobox	rdfs:label	"45,978 wikipedia infobox"	.
+local:infoboxes	a	rdf:Class	;
+	rdfs:label	"infoboxes"	.
 
-local:attributes_to_dbpedia_properties	rdfs:label	"attributes to dbpedia properties"	.
+local:frequent	a	rdf:Class	;
+	rdfs:label	"frequent"	.
 
-local:attributes_to_dbpedia_properties_in_14_different_languages	rdfs:label	"attributes to dbpedia properties in 14 different languages"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:specifically_mapped	rdfs:label	"specifically mapped"	.
+local:still	a	rdf:Class	;
+	rdfs:label	"still"	.
 
-local:made	rdfs:label	"made"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:resource	rdfs:label	"resource"	.
+local:localized_versions_of_dbpedia	a	rdf:Class	;
+	rdfs:label	"localized versions of dbpedia"	.
 
-local:available	rdfs:label	"available"	.
+local:procedure	a	rdf:Class	;
+	rdfs:label	"procedure"	.
 
-local:open_format	rdfs:label	"open format"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:format	rdfs:label	"format"	.
+local:consequently	a	rdf:Class	;
+	rdfs:label	"consequently"	.
 
-local:open	rdfs:label	"open"	.
+local:create_the_localized_versions_of_dbpedia	a	rdf:Class	;
+	rdfs:label	"create the localized versions of dbpedia"	.
 
-#### Properties ####
+local:thanks_to_a_large_number_of_infoboxes	a	rdf:Class	;
+	rdfs:label	"thanks to a large number of infoboxes"	.
+
+local:large_number	a	rdf:Class	;
+	rdfs:label	"large number"	.
+
+local:thanks	a	rdf:Class	;
+	rdfs:label	"thanks"	.
+
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
+
+local:thanks_to_large_number	a	rdf:Class	;
+	rdfs:label	"thanks to large number"	.
+
+local:large_number_of_infoboxes	a	rdf:Class	;
+	rdfs:label	"large number of infoboxes"	.
+
+local:english_dbpedia	a	rdf:Class	;
+	rdfs:label	"english dbpedia"	.
+
+local:english	a	rdf:Class	;
+	rdfs:label	"english"	.
+
+local:thanks_to_crowdsourcing	a	rdf:Class	;
+	rdfs:label	"thanks to crowdsourcing"	.
+
+local:extraction_procedure	a	rdf:Class	;
+	rdfs:label	"extraction procedure"	.
+
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
+
+local:wikipedia_infoboxes_dbpedia_ontology	a	rdf:Class	;
+	rdfs:label	"wikipedia infoboxes dbpedia ontology"	.
+
+local:wikipedia_infoboxes	a	rdf:Class	;
+	rdfs:label	"wikipedia infoboxes"	.
+
+local:infoboxes_dbpedia	a	rdf:Class	;
+	rdfs:label	"infoboxes dbpedia"	.
+
+local:wikipedia_infoboxes_dbpedia	a	rdf:Class	;
+	rdfs:label	"wikipedia infoboxes dbpedia"	.
+
+local:infoboxes_dbpedia_ontology	a	rdf:Class	;
+	rdfs:label	"infoboxes dbpedia ontology"	.
+
+local:manually	a	rdf:Class	;
+	rdfs:label	"manually"	.
+
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
+
+local:manually_map_wikipedia_infoboxes_into_the_dbpedia_ontology	a	rdf:Class	;
+	rdfs:label	"manually map wikipedia infoboxes into the dbpedia ontology"	.
+
+local:manually_map_wikipedia_infoboxes	a	rdf:Class	;
+	rdfs:label	"manually map wikipedia infoboxes"	.
+
+local:map_wikipedia_infoboxes	a	rdf:Class	;
+	rdfs:label	"map wikipedia infoboxes"	.
+
+local:manually_map_wikipedia	a	rdf:Class	;
+	rdfs:label	"manually map wikipedia"	.
+
+local:manually_map	a	rdf:Class	;
+	rdfs:label	"manually map"	.
+
+local:map_wikipedia	a	rdf:Class	;
+	rdfs:label	"map wikipedia"	.
+
+local:manually_map_into_dbpedia_ontology	a	rdf:Class	;
+	rdfs:label	"manually map into dbpedia ontology"	.
+
+local:largescale_knowledge_base	a	rdf:Class	;
+	rdfs:label	"largescale knowledge base"	.
+
+local:largescale_knowledge	a	rdf:Class	;
+	rdfs:label	"largescale knowledge"	.
+
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
+
+local:knowledge_base	a	rdf:Class	;
+	rdfs:label	"knowledge base"	.
+
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
+
+local:largescale	a	rdf:Class	;
+	rdfs:label	"largescale"	.
+
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
+
+local:wikipedia_primary_data_source	a	rdf:Class	;
+	rdfs:label	"wikipedia primary data source"	.
+
+local:primary_data_source	a	rdf:Class	;
+	rdfs:label	"primary data source"	.
+
+local:primary_data	a	rdf:Class	;
+	rdfs:label	"primary data"	.
+
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
+
+local:primary	a	rdf:Class	;
+	rdfs:label	"primary"	.
+
+local:data_source	a	rdf:Class	;
+	rdfs:label	"data source"	.
+
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
 #### Mapped Relations ####
 
 cso:knowledge_base	rdfs:label	"knowledge base"	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
-cso:ontology	rdfs:label	"ontology"	.
 cso:dbpedia	rdfs:label	"dbpedia"	.
 local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
 local:knowledge_base	owl:sameAs	cso:knowledge_base	.
 
 #### Relations ####
 
-local:languages_not_covered	local:languages_	local:not_covered	.
-local:italian	rdfs:member	local:italian_mappings	.
-local:results_with_current_mappings	local:results_with	local:current_mappings	.
-local:comparable_to_ones	local:to_ones	local:comparable	.
-local:map_wikipedia	rdfs:member	local:map_wikipedia_infoboxes	.
-local:constant_changes_of_wikipedia_articles	local:constantchanges_of	local:wikipedia_articles	.
-local:create	vn.role:Agent	local:languages	.
-local:leads	vn.role:Agent	local:we	.
-local:leads	vn.role:Destination	local:significant_improvement_in_recall	.
-local:largescale_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
-local:specifically_mapped	rdfs:subClassOf	local:mapped	.
-local:current_mappings_on_random_sample	local:currentmappings_on	local:random_sample	.
-local:extending	vn.role:Theme	local:coverage_of_existing_localized_versions	.
-local:reannotated_by_authors	local:by_authors	local:reannotated	.
-local:extending_from_scratch_versions	local:from_scratchversions	local:extending	.
-local:wikipedia	rdfs:member	local:wikipedia_infobox	.
-local:mapping	vn.role:Predicate	local:dbpedia_ontology	.
-local:manually_map_into_dbpedia_ontology	local:manuallymap_into	local:dbpedia_ontology	.
-local:comparable_results	rdfs:subClassOf	local:results	.
-local:extending	vn.role:Recipient	local:scratch_versions_for_languages	.
-local:covered	vn.role:indirect_object	local:current_version	.
-local:covered	vn.role:Theme2	local:languages	.
-local:localized_versions_of_dbpedia	local:of_dbpedia	local:localized_versions	.
-local:large_number_of_infoboxes	local:of_infoboxes	local:large_number	.
-local:compared	vn.role:Patient1	local:we	.
-local:quick_changes_of_wikipedia_articles	local:of_wikipediaarticles	local:quick_changes	.
-local:term_of_precision	local:term_of	local:precision	.
-local:large_number	rdfs:subClassOf	local:number	.
-local:results	vn.role:Location	local:current_mappings_on_random_sample	.
-local:thanks_to_large_number	local:thanks_to	local:large_number	.
-local:manually_map_wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
-local:maintenance_dueto_quick_changes	local:maintenance_due_to	local:quick_changes	.
-local:scratch_versions	rdfs:subClassOf	local:versions	.
-local:largescale_knowledge	rdfs:subClassOf	local:knowledge	.
-local:extraction_procedure	rdfs:subClassOf	local:procedure	.
-local:maintenance_dueto_constant_changes	local:due_to_constantchanges	local:maintenance	.
-local:45978_wikipedia_infobox	rdfs:subClassOf	local:wikipedia_infobox	.
-local:obtained	vn.role:Asset	local:human_annotator_in_term	.
-local:14_different_languages	rdfs:subClassOf	local:different_languages	.
-local:maintenance_dueto_quick_changes	local:due_to_quickchanges	local:maintenance	.
-local:leads	vn.role:Destination	local:significant_improvement_in_speed	.
-local:reannotated_by_authors	local:re-annotated_by	local:authors	.
-local:create	vn.role:Product	local:localized_versions_of_dbpedia	.
-local:made	local:AM-LOC	local:open_format	.
-local:existing	vn.role:Location	local:localized_versions	.
-local:significant_improvement_in_speed	local:significantimprovement_in	local:speed	.
-local:quick_changes_of_wikipedia_articles	local:quickchanges_of	local:wikipedia_articles	.
-local:extending_from_scratch_versions	local:extending_from	local:scratch_versions	.
-local:made	vn.role:Material	local:resource	.
-local:quick_changes	rdfs:subClassOf	local:changes	.
-local:infobox_attributes	rdfs:subClassOf	local:attributes	.
-local:term_of_precision	local:of_precision	local:term	.
-local:exploits	vn.role:Predicate	local:wikipedia	.
-local:wikipedia	rdfs:member	local:wikipedia_infoboxes	.
-local:existing_localized_versions	rdfs:subClassOf	local:localized_versions	.
-local:current	rdfs:member	local:current_mappings	.
-local:attributes_to_dbpedia_properties	local:to_dbpediaproperties	local:attributes	.
-local:attributes_to_dbpedia_properties_in_14_different_languages	local:in_14differentlanguages	local:attributes_to_dbpedia_properties	.
-local:open	rdfs:member	local:open_format	.
-local:extraction	rdfs:member	local:extraction_procedure	.
-local:map	vn.role:indirect_object	local:dbpedia_ontology	.
-local:need	vn.role:Patient	local:maintenance_dueto_constant_changes	.
-local:not_covered_in_current_version	local:notcovered_in	local:current_version	.
-local:human_annotator_in_term	local:in_term	local:human_annotator	.
-local:approach	vn.role:object	local:we	.
-local:coverage_of_building	local:of_building	local:coverage	.
-local:constant_changes	rdfs:subClassOf	local:changes	.
-local:dbpedia	rdfs:member	local:dbpedia_ontology	.
-local:applied	vn.role:Theme	local:consequently_same_procedure	.
-local:manually_map	rdfs:subClassOf	local:map	.
-local:frequent_infoboxes	rdfs:subClassOf	local:infoboxes	.
-local:manually_map_wikipedia	rdfs:subClassOf	local:wikipedia	.
-local:furthermore_mappings	rdfs:subClassOf	local:mappings	.
-local:comparable_to_ones	local:comparable_to	local:ones	.
-local:coverage_of_existing_localized_versions	local:coverage_of	local:existing_localized_versions	.
-local:current_version	rdfs:subClassOf	local:version	.
-local:wikipedia_articles	rdfs:subClassOf	local:articles	.
-local:significant_improvement_in_recall	local:significantimprovement_in	local:recall	.
-local:mapped	local:AM-LOC	local:english_dbpedia	.
-local:same	rdfs:member	local:same_procedure	.
-local:accomplished	rdfs:member	local:accomplished_mappings	.
-local:reannotated	vn.role:subject	local:authors	.
-local:map	local:AM-MNR	local:manually	.
-local:knowledge_base	rdfs:subClassOf	local:base	.
-local:mapping	local:AM-PNC	local:extending_from_scratch_versions	.
-local:extending	vn.role:Agent	local:we	.
-local:random_sample_reannotated	local:_re-annotated	local:random_sample	.
-local:mapped	vn.role:Predicate	local:attributes_to_dbpedia_properties_in_14_different_languages	.
-local:not_covered	rdfs:subClassOf	local:covered	.
-local:leads_to_significant_improvement	local:leads_to	local:significant_improvement	.
-local:localized	rdfs:member	local:localized_versions	.
-local:dbpedia_properties	rdfs:subClassOf	local:properties	.
-local:applied	local:AM-PNC	local:create	.
-local:maintenance_dueto_constant_changes	local:maintenance_due_to	local:constant_changes	.
-local:results	vn.role:Theme	local:we	.
-local:mapping	local:AM-MNR	local:automatically	.
-local:requires	vn.role:Patient	local:manually_map_into_dbpedia_ontology	.
-local:focus	vn.role:Experiencer	local:we	.
-local:properties_into_dbpedia_ontology	local:properties_into	local:dbpedia_ontology	.
-local:attributes	vn.role:Agent	local:specifically_mapped	.
-local:manually	rdfs:member	local:manually_map	.
-local:largescale	rdfs:member	local:largescale_knowledge	.
-local:primary_data	rdfs:subClassOf	local:data	.
-local:italian_mappings	rdfs:subClassOf	local:mappings	.
-local:localized_versions	rdfs:subClassOf	local:versions	.
-local:compared	vn.role:Agent	local:results_with_current_mappings	.
-local:significant	rdfs:member	local:significant_improvement	.
-local:human_annotator_in_term	local:humanannotator_in	local:term	.
-local:significant_improvement	rdfs:subClassOf	local:improvement	.
-local:manually_map	rdfs:member	local:manually_map_wikipedia	.
-local:primary	rdfs:member	local:primary_data	.
-local:number_of_accomplished_mappings	local:of_accomplishedmappings	local:number	.
-local:attributes	vn.role:Theme	local:14_different_languages	.
-local:large	rdfs:member	local:large_number	.
-local:manually_map_into_dbpedia_ontology	local:into_dbpediaontology	local:manually_map	.
-local:frequent	rdfs:member	local:frequent_infoboxes	.
-local:constant	rdfs:member	local:constant_changes	.
-local:made	vn.role:Product	local:available	.
-local:map	vn.role:Predicate	local:wikipedia_infoboxes	.
-local:attributes_to_properties	local:attributes_to	local:properties	.
-local:reannotated	vn.role:object	local:random_sample	.
-local:knowledge	rdfs:member	local:knowledge_base	.
-local:open_format	rdfs:subClassOf	local:format	.
-local:dbpedia	rdfs:member	local:dbpedia_properties	.
-local:human	rdfs:member	local:human_annotator	.
-local:wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
-local:largescale_knowledge_base	rdfs:subClassOf	local:base	.
-local:human_annotator	rdfs:subClassOf	local:annotator	.
-local:mapped	vn.role:Predicate	local:specifically	.
-local:mapping	vn.role:Predicate	local:infobox_attributes	.
-local:not_covered_in_current_version	local:in_currentversion	local:not_covered	.
-local:covered	local:AM-NEG	local:not	.
-local:scratch	rdfs:member	local:scratch_versions	.
-local:focus	vn.role:indirect_object	local:attributes_to_properties	.
-local:accomplished_mappings	rdfs:subClassOf	local:mappings	.
-local:localized_versions_of_dbpedia	local:localizedversions_of	local:dbpedia	.
-local:attributes_to_properties	local:to_properties	local:attributes	.
-local:map_wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
-local:infobox	rdfs:member	local:infobox_attributes	.
-local:mapped	vn.role:Predicate	local:thanks	.
-local:performed	vn.role:Theme	local:evaluation	.
-local:need	vn.role:Patient	local:maintenance_dueto_quick_changes	.
-local:automatically_mapping	rdfs:subClassOf	local:mapping	.
-local:scratch_versions_for_languages	local:scratchversions_for	local:languages	.
-local:limited	vn.role:Proposition	local:frequent_infoboxes	.
-local:map	rdfs:member	local:map_wikipedia	.
-local:english	rdfs:member	local:english_dbpedia	.
-local:extending	vn.role:Theme	local:coverage_of_building	.
-local:requires	vn.role:Agent	local:extraction_procedure	.
-local:random_sample_reannotated	local:randomsample_	local:reannotated	.
-local:wikipedia	rdfs:member	local:wikipedia_articles	.
-local:thanks_to_large_number	local:to_largenumber	local:thanks	.
-local:map	vn.role:Agent	local:extraction_procedure	.
-local:largescale_knowledge	rdfs:member	local:largescale_knowledge_base	.
-local:map_wikipedia	rdfs:subClassOf	local:wikipedia	.
-local:mapping	vn.role:indirect_object	local:properties	.
-local:manually_map_wikipedia	rdfs:member	local:manually_map_wikipedia_infoboxes	.
+local:s18.1	rdf:predicate	local:attribute	.
 local:dbpedia_ontology	rdfs:subClassOf	local:ontology	.
-local:consequently_same_procedure	rdfs:subClassOf	local:same_procedure	.
-local:attributes_to_dbpedia_properties_in_14_different_languages	local:attributestodbpediaproperties_in	local:14_different_languages	.
-local:results_with_current_mappings	local:with_currentmappings	local:results	.
-local:mapped	vn.role:Agent	local:we	.
-local:mapping	vn.role:Agent	local:we	.
-local:mapped	vn.role:Predicate	local:thanks_to_large_number	.
-local:focus	local:AM-LOC	local:paper	.
-local:attributes_to_dbpedia_properties	local:attributes_to	local:dbpedia_properties	.
-local:exploits	vn.role:Agent	local:largescale_knowledge_base	.
-local:current_mappings_on_random_sample	local:on_randomsample	local:current_mappings	.
-local:number_of_accomplished_mappings	local:number_of	local:accomplished_mappings	.
-local:constant_changes_of_wikipedia_articles	local:of_wikipediaarticles	local:constant_changes	.
-local:need	vn.role:Agent	local:furthermore_mappings	.
-local:random_sample	rdfs:subClassOf	local:sample	.
-local:attributes	vn.role:Recipient	local:dbpedia_properties	.
-local:exploits	vn.role:indirect_object	local:primary_data	.
-local:applied	vn.role:Recipient	local:languages	.
-local:leads_to_significant_improvement	local:to_significantimprovement	local:leads	.
-local:significant_improvement_in_speed	local:in_speed	local:significant_improvement	.
-local:approach	vn.role:indirect_object	local:leads_to_significant_improvement	.
-local:same_procedure	rdfs:subClassOf	local:procedure	.
-local:random	rdfs:member	local:random_sample	.
-local:languages_not_covered	local:_notcovered	local:languages	.
+local:human_annotator_in_term	rdfs:member	local:term	.
+local:s14.1	rdf:predicate	local:lead	.
+local:thanks_to_a_large_number_of_infoboxes	rdfs:member	local:thanks	.
+local:infobox_attributes_properties	rdfs:member	local:properties	.
+local:quick_changes	rdfs:subClassOf	local:changes	.
+local:s11	rdf:object	local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	.
+local:coverage_of_building_scratch_versions_for_languages	rdfs:member	local:coverage_of_building_scratch_versions	.
+local:human_annotator_in_term_of_precision	rdfs:member	local:human_annotator	.
+local:s5	rdf:subject	local:procedure	.
+local:s14	rdf:subject	local:we	.
+local:s4	local:AM-LOC	local:english_dbpedia	.
+local:large_number	rdfs:member	local:large	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:infobox_attributes	.
+local:leads_to_a_significant_improvement_in_speed	rdfs:member	local:significant_improvement	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:dbpedia_ontology	.
+local:wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
+local:current_mappings_on_random_sample	rdfs:member	local:random_sample	.
+local:s18	rdf:subject	local:we	.
+local:s6	rdf:subject	local:number_of_accomplished_mappings	.
+local:languages_dbpedia_properties	rdfs:member	local:languages_dbpedia	.
+local:s18.1	rdf:object	local:14_different_languages_dbpedia_properties	.
+local:results_with_the_current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:authors	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	rdfs:member	local:localized_versions	.
+local:accomplished_mappings	rdfs:member	local:accomplished	.
+local:s3	rdf:predicate	local:map	.
+local:leads_to_a_significant_improvement_in_speed	rdfs:member	local:leads	.
+local:coverage_of_building_scratch_versions_for_languages	rdfs:member	local:languages	.
+local:infobox_attributes_properties	rdfs:member	local:infobox	.
+local:comparable_to_ones	rdfs:member	local:comparable	.
+local:s11.3	rdf:predicate	local:not_cover	.
 local:current_mappings	rdfs:subClassOf	local:mappings	.
-local:report	vn.role:Theme	local:comparable_results	.
-local:properties_into_dbpedia_ontology	local:into_dbpediaontology	local:properties	.
-local:performed	local:AM-LOC	local:italian_mappings	.
-local:obtained	vn.role:object	local:ones	.
-local:limited	local:AM-TMP	local:still	.
-local:limited	vn.role:Patient	local:however	.
-local:quick	rdfs:member	local:quick_changes	.
-local:large_number_of_infoboxes	local:largenumber_of	local:infoboxes	.
-local:current	rdfs:member	local:current_version	.
-local:report	vn.role:Agent	local:we	.
-local:coverage_of_existing_localized_versions	local:of_existinglocalizedversions	local:coverage	.
+local:current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:random_sample	.
+local:languages_not_covered	rdfs:member	local:languages	.
+local:random_sample	rdfs:subClassOf	local:sample	.
+local:dbpedia_ontology	rdfs:member	local:dbpedia	.
+local:s14	rdf:predicate	local:approach	.
+local:s2	rdf:object	local:manually_map_wikipedia_infoboxes_into_the_dbpedia_ontology	.
+local:current_version	rdfs:member	local:current	.
+local:s10.1	rdf:subject	local:we	.
+local:attributes_to_properties	rdfs:member	local:attributes	.
+local:coverage_of_existing_localized_versions	rdfs:member	local:coverage	.
+local:s15	rdf:subject	local:we	.
+local:large_number_of_infoboxes	rdfs:member	local:infoboxes	.
+local:largescale_knowledge_base	rdfs:subClassOf	local:base	.
+local:s13.2	rdf:predicate	local:reannotated	.
+local:extraction_procedure	rdfs:member	local:extraction	.
+local:maintenance_due_to_constant_changes	rdfs:member	local:maintenance	.
+local:s6	local:AM-DIS	local:however	.
+local:scratch_versions_for_languages	rdfs:member	local:scratch_versions	.
+local:s10.2	rdf:object	local:coverage_of_the_existing_localized_versions	.
+local:s2.1	rdf:predicate	local:map	.
+local:largescale_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s18	rdf:object	local:45978_wikipedia_infobox_attributes_to_dbpedia_properties	.
+local:primary_data_source	rdfs:subClassOf	local:data_source	.
+local:create_the_localized_versions_of_dbpedia	rdfs:member	local:dbpedia	.
+local:leads_to_significant_improvement	rdfs:member	local:leads	.
+local:s5.1	rdf:subject	local:languages	.
+local:s11.2	rdf:subject	local:we	.
+local:map_wikipedia	rdfs:member	local:map	.
+local:s11.1	rdf:object	local:infobox_attributes_properties	.
+local:properties_into_dbpedia_ontology	rdfs:member	local:properties	.
+local:s8	local:AM-DIS	local:furthermore	.
+local:significant_improvement_in_recall	rdfs:member	local:recall	.
+local:s11.3	rdf:object	local:current_version	.
+local:maintenance_due_to_constant_changes	rdfs:member	local:constant_changes	.
+local:s5	rdf:object	local:languages	.
+local:results_with_current_mappings	rdfs:member	local:current_mappings	.
+local:s13	rdf:subject	local:we	.
+local:data_source	rdfs:subClassOf	local:source	.
+local:wikipedia_articles	rdfs:member	local:wikipedia	.
+local:results_with_current_mappings	rdfs:member	local:results	.
+local:45978_wikipedia_infobox	rdfs:subClassOf	local:wikipedia_infobox	.
+local:leads_to_a_significant_improvement_in_speed	rdfs:member	local:speed	.
+local:not_covered_in_current_version	rdfs:member	local:not_covered	.
+local:different_languages_dbpedia_properties	rdfs:subClassOf	local:properties	.
+local:wikipedia_primary_data_source	rdfs:subClassOf	local:primary_data_source	.
+local:large_number_of_infoboxes	rdfs:member	local:large_number	.
+local:random_sample_reannotated	rdfs:member	local:reannotated	.
+local:s2	rdf:subject	local:extraction_procedure	.
+local:number_of_accomplished_mappings	rdfs:member	local:accomplished_mappings	.
+local:coverage_of_building_scratch_versions	rdfs:member	local:building_scratch_versions	.
+local:quick_changes_of_wikipedia_articles	rdfs:member	local:quick_changes	.
+local:attributes_to_dbpedia_properties	rdfs:member	local:attributes	.
+local:wikipedia_infobox	rdfs:member	local:wikipedia	.
+local:localized_versions_properties	rdfs:member	local:localized_versions	.
+local:coverage_of_the_existing_localized_versions	rdfs:member	local:coverage	.
+local:term_of_precision	rdfs:member	local:precision	.
+local:manually_map_into_dbpedia_ontology	rdfs:member	local:dbpedia_ontology	.
+local:current_mappings_on_random_sample	rdfs:member	local:current_mappings	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:properties	.
+local:s18	local:AM-LOC	local:14_different_languages	.
+local:accomplished_mappings	rdfs:subClassOf	local:mappings	.
+local:s8	rdf:subject	local:mappings	.
+local:languages_dbpedia	rdfs:subClassOf	local:dbpedia	.
+local:infoboxes_dbpedia	rdfs:subClassOf	local:dbpedia	.
+local:significant_improvement_in_speed	rdfs:member	local:significant_improvement	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:current_version	.
+local:s10	rdf:subject	local:we	.
+local:quick_changes	rdfs:member	local:quick	.
+local:manually_map_into_dbpedia_ontology	rdfs:member	local:manually_map	.
+local:s18.1	rdf:subject	local:45978_wikipedia_infobox	.
+local:current_mappings	rdfs:member	local:current	.
+local:s10	local:AM-LOC	local:paper	.
+local:s12	rdf:subject	local:evaluation	.
+local:s11.2	rdf:object	local:coverage_of_building_scratch_versions_for_languages_not_covered_in_the_current_version	.
+local:coverage_of_building_scratch_versions	rdfs:member	local:coverage	.
+local:s17	rdf:object	local:ones	.
+local:wikipedia_articles	rdfs:subClassOf	local:articles	.
+local:wikipedia_infoboxes	rdfs:member	local:wikipedia	.
+local:s13	rdf:object	local:results_with_the_current_mappings_on_a_random_sample_reannotated_by_the_authors	.
+local:s14	rdf:object	local:leads_to_a_significant_improvement_in_recall	.
+local:s20	rdf:predicate	local:make	.
+local:wikipedia_infoboxes_dbpedia_ontology	rdfs:member	local:wikipedia_infoboxes_dbpedia	.
+local:largescale_knowledge	rdfs:member	local:largescale	.
+local:attributes_to_properties	rdfs:member	local:properties	.
+local:localized_versions_properties	rdfs:subClassOf	local:versions_properties	.
+local:s8	rdf:predicate	local:need	.
+local:human_annotator_in_term_of_precision	rdfs:member	local:precision	.
+local:wikipedia_infoboxes_dbpedia_ontology	rdfs:subClassOf	local:ontology	.
+local:s9	rdf:predicate	local:need	.
+local:s5	rdf:predicate	local:apply	.
+local:different_languages_dbpedia	rdfs:member	local:different_languages	.
+local:map_wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
+local:maintenance_due_to_the_constant_changes_of_wikipedia_articles	rdfs:member	local:constant_changes	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:scratch_versions	.
+local:coverage_of_building_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:coverage	.
+local:localized_versions_properties	rdfs:subClassOf	local:properties	.
+local:s13.1	rdf:predicate	local:result	.
+local:thanks_to_large_number	rdfs:member	local:large_number	.
+local:attributes_to_dbpedia_properties	rdfs:member	local:dbpedia_properties	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	rdfs:member	local:dbpedia_ontology	.
+local:not_covered_in_current_version	rdfs:member	local:current_version	.
+local:s14.1	rdf:subject	local:we	.
+local:not_covered	rdfs:subClassOf	local:covered	.
+local:frequent_infoboxes	rdfs:subClassOf	local:infoboxes	.
+local:english_dbpedia	rdfs:member	local:english	.
+local:s6	local:AM-TMP	local:still	.
+local:existing_localized_versions_properties	rdfs:subClassOf	local:localized_versions_properties	.
+local:italian_mappings	rdfs:member	local:italian	.
+local:significant_improvement	rdfs:member	local:significant	.
+local:s3	local:AM-LOC	local:english_dbpedia	.
+local:s10	rdf:object	local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	.
+local:building_scratch	rdfs:subClassOf	local:scratch	.
+local:results_with_the_current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:random_sample	.
+local:current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:current_mappings	.
+local:s11.2	rdf:predicate	local:extend	.
+local:s2.1	rdf:object	local:wikipedia_infoboxes_dbpedia_ontology	.
+local:s17	rdf:subject	local:human_annotator_in_term_of_precision	.
+local:versions_properties	rdfs:member	local:versions	.
+local:s16.1	rdf:object	local:significant_improvement_in_speed	.
+local:s18	local:AM-ADV	local:specifically	.
+local:s10.1	local:AM-MNR	local:automatically	.
+local:significant_improvement_in_speed	rdfs:member	local:speed	.
+local:results_comparable_to_the_ones	rdfs:member	local:ones	.
+local:s16	rdf:subject	local:we	.
+local:s10.3	rdf:predicate	local:exist	.
+local:wikipedia_infoboxes_dbpedia	rdfs:subClassOf	local:dbpedia	.
+local:scratch_versions_for_languages	rdfs:member	local:languages	.
+local:14_different_languages_dbpedia_properties	rdfs:subClassOf	local:different_languages_dbpedia_properties	.
+local:properties_into_dbpedia_ontology	rdfs:member	local:dbpedia_ontology	.
+local:infoboxes_dbpedia	rdfs:member	local:infoboxes	.
+local:human_annotator	rdfs:member	local:human	.
+local:coverage_of_building	rdfs:member	local:coverage	.
+local:s13.2	rdf:object	local:random_sample	.
+local:s11.1	rdf:predicate	local:map	.
+local:different_languages_dbpedia	rdfs:subClassOf	local:dbpedia	.
+local:maintenance_due_to_the_quick_changes_of_wikipedia_articles	rdfs:member	local:maintenance	.
+local:term_of_precision	rdfs:member	local:term	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	rdfs:member	local:coverage	.
+local:s13.1	rdf:object	local:current_mappings_on_a_random_sample_reannotated_by_the_authors	.
+local:s12	local:AM-LOC	local:italian_mappings	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:building	.
+local:automatically_mapping	rdfs:subClassOf	local:mapping	.
+local:human_annotator	rdfs:subClassOf	local:annotator	.
+local:s5	local:AM-ADV	local:consequently	.
+local:localized_versions_of_dbpedia	rdfs:member	local:localized_versions	.
+local:open_format	rdfs:subClassOf	local:format	.
+local:dbpedia_properties	rdfs:subClassOf	local:properties	.
+local:maintenance_due_to_the_quick_changes_of_wikipedia_articles	rdfs:member	local:wikipedia_articles	.
+local:scratch_versions	rdfs:subClassOf	local:versions	.
+local:versions_properties	rdfs:subClassOf	local:properties	.
+local:manually_map_wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
+local:s9	rdf:object	local:maintenance_due_to_the_constant_changes_of_wikipedia_articles	.
+local:map_wikipedia_infoboxes	rdfs:member	local:map_wikipedia	.
+local:s5.1	rdf:predicate	local:create	.
+local:s5	local:AM-PNC	local:create_the_localized_versions_of_dbpedia	.
+local:different_languages_dbpedia_properties	rdfs:member	local:different_languages_dbpedia	.
+local:s16.1	rdf:predicate	local:lead	.
+local:s20	rdf:subject	local:resource	.
+local:s16	rdf:predicate	local:approach	.
+local:primary_data_source	rdfs:subClassOf	local:source	.
+local:create_the_localized_versions_of_dbpedia	rdfs:member	local:localized_versions	.
+local:building_scratch_versions	rdfs:member	local:building_scratch	.
+local:coverage_of_existing_localized_versions_properties	rdfs:member	local:existing_localized_versions_properties	.
+local:dbpedia_properties	rdfs:member	local:dbpedia	.
+local:s13.2	rdf:subject	local:authors	.
+local:comparable_to_ones	rdfs:member	local:ones	.
+local:maintenance_due_to_quick_changes	rdfs:member	local:quick_changes	.
+local:coverage_of_existing_localized_versions_properties	rdfs:member	local:coverage	.
+local:primary_data	rdfs:member	local:primary	.
+local:italian_mappings	rdfs:subClassOf	local:mappings	.
+local:14_different_languages	rdfs:subClassOf	local:different_languages	.
+local:coverage_of_existing_localized_versions	rdfs:member	local:s10.3	.
+local:s4	rdf:subject	local:thanks_to_a_large_number_of_infoboxes	.
+local:45978_wikipedia_infobox_attributes_to_dbpedia_properties	rdfs:member	local:wikipedia_infobox	.
+local:leads_to_a_significant_improvement_in_recall	rdfs:member	local:recall	.
+local:primary_data	rdfs:subClassOf	local:data	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	rdfs:member	local:properties	.
+local:s17	rdf:predicate	local:obtain	.
+local:quick_changes_of_wikipedia_articles	rdfs:member	local:wikipedia_articles	.
+local:different_languages_dbpedia_properties	rdfs:subClassOf	local:languages_dbpedia_properties	.
+local:current_version	rdfs:subClassOf	local:version	.
+local:thanks_to_large_number	rdfs:member	local:thanks	.
+local:coverage_of_building_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:current_version	.
+local:languages_not_covered	rdfs:member	local:not_covered	.
+local:s16.1	rdf:subject	local:we	.
+local:maintenance_due_to_the_quick_changes_of_wikipedia_articles	rdfs:member	local:quick_changes	.
+local:large_number	rdfs:subClassOf	local:number	.
+local:s2.1	local:AM-MNR	local:manually	.
+local:s11	local:AM-LOC	local:paper	.
+local:comparable_results	rdfs:subClassOf	local:results	.
+local:knowledge_base	rdfs:member	local:knowledge	.
+local:s10.2	rdf:predicate	local:extend	.
+local:open_format	rdfs:member	local:open	.
+local:human_annotator_in_term	rdfs:member	local:human_annotator	.
+local:s8	rdf:object	local:maintenance_due_to_the_quick_changes_of_wikipedia_articles	.
+local:dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions_properties	rdfs:member	local:localized_versions_properties	.
+local:maintenance_due_to_the_constant_changes_of_wikipedia_articles	rdfs:member	local:wikipedia_articles	.
+local:manually_map_wikipedia	rdfs:subClassOf	local:wikipedia	.
+local:manually_map_wikipedia_infoboxes_into_the_dbpedia_ontology	rdfs:member	local:manually_map_wikipedia_infoboxes	.
+local:maintenance_due_to_the_constant_changes_of_wikipedia_articles	rdfs:member	local:maintenance	.
+local:extending_from_scratch_versions	rdfs:member	local:scratch_versions	.
+local:infobox_attributes	rdfs:subClassOf	local:attributes	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	rdfs:member	local:infobox_attributes	.
+local:scratch_versions	rdfs:member	local:scratch	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:problem	.
+local:s6	rdf:predicate	local:limit	.
+local:s10	rdf:predicate	local:focus	.
+local:s10.1	rdf:predicate	local:map	.
+local:s4	rdf:predicate	local:map	.
+local:s18	rdf:predicate	local:map	.
+local:wikipedia_primary_data_source	rdfs:member	local:wikipedia	.
+local:s11	rdf:predicate	local:focus	.
+local:coverage_of_building	rdfs:member	local:building	.
+local:s12	rdf:predicate	local:perform	.
+local:s20	rdf:object	local:available	.
 local:english_dbpedia	rdfs:subClassOf	local:dbpedia	.
-local:significant_improvement_in_recall	local:in_recall	local:significant_improvement	.
-local:scratch_versions_for_languages	local:for_languages	local:scratch_versions	.
+local:manually_map_wikipedia_infoboxes	rdfs:member	local:manually_map_wikipedia	.
+local:wikipedia_primary_data_source	rdfs:member	local:primary_data_source	.
 local:wikipedia_infobox	rdfs:subClassOf	local:infobox	.
+local:s11.3	rdf:subject	local:languages	.
+local:s6	rdf:object	local:frequent_infoboxes	.
+local:wikipedia_infoboxes_dbpedia	rdfs:member	local:wikipedia_infoboxes	.
+local:map_wikipedia	rdfs:subClassOf	local:wikipedia	.
+local:reannotated_by_authors	rdfs:member	local:authors	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:languages	.
+local:s2	rdf:predicate	local:require	.
+local:s10.3	rdfs:subClassOf	local:localized_versions	.
+local:s13.1	rdf:subject	local:we	.
+local:results_comparable_to_the_ones	rdfs:member	local:results	.
+local:coverage_of_the_existing_localized_versions	rdfs:member	local:localized_versions	.
+local:extraction_procedure	rdfs:subClassOf	local:procedure	.
+local:results_with_the_current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:current_mappings	.
+local:random_sample	rdfs:member	local:random	.
+local:s15	rdf:predicate	local:report	.
+local:s15	rdf:object	local:results_comparable_to_the_ones	.
+local:largescale_knowledge_base	rdfs:member	local:largescale_knowledge	.
+local:data_source	rdfs:member	local:data	.
+local:thanks_to_a_large_number_of_infoboxes	rdfs:member	local:infoboxes	.
+local:current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:authors	.
+local:s0	rdf:object	local:wikipedia_primary_data_source	.
+local:extending_from_scratch_versions	rdfs:member	local:extending	.
+local:frequent_infoboxes	rdfs:member	local:frequent	.
+local:significant_improvement	rdfs:subClassOf	local:improvement	.
+local:leads_to_a_significant_improvement_in_recall	rdfs:member	local:significant_improvement	.
+local:results_with_the_current_mappings_on_a_random_sample_reannotated_by_the_authors	rdfs:member	local:results	.
+local:s5.1	rdf:object	local:localized_versions_of_dbpedia	.
+local:s10.1	rdf:object	local:dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions_properties	.
+local:manually_map_wikipedia_infoboxes_into_the_dbpedia_ontology	rdfs:member	local:dbpedia_ontology	.
+local:coverage_of_building_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:languages	.
+local:human_annotator_in_term_of_precision	rdfs:member	local:term	.
+local:s9	local:AM-DIS	local:furthermore	.
+local:number_of_accomplished_mappings	rdfs:member	local:number	.
+local:building_scratch_versions	rdfs:subClassOf	local:versions	.
+local:infobox_attributes	rdfs:member	local:infobox	.
+local:dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions_properties	rdfs:member	local:dbpedia_ontology	.
+local:coverage_of_building_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:building_scratch_versions	.
+local:dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions_properties	rdfs:member	local:coverage	.
+local:languages_dbpedia	rdfs:member	local:languages	.
+local:different_languages	rdfs:member	local:different	.
 local:different_languages	rdfs:subClassOf	local:languages	.
-local:coverage_of_building	local:coverage_of	local:building	.
-local:different	rdfs:member	local:different_languages	.
+local:languages_dbpedia_properties	rdfs:subClassOf	local:dbpedia_properties	.
+local:s11.1	rdf:subject	local:we	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:languages_dbpedia_properties	rdfs:subClassOf	local:properties	.
+local:infoboxes_dbpedia_ontology	rdfs:subClassOf	local:ontology	.
+local:s10.3	rdf:subject	local:localized_versions	.
+local:manually_map_wikipedia	rdfs:member	local:manually_map	.
+local:s16	rdf:object	local:leads_to_a_significant_improvement_in_speed	.
+local:maintenance_due_to_quick_changes	rdfs:member	local:maintenance	.
+local:significant_improvement_in_recall	rdfs:member	local:significant_improvement	.
+local:s20	local:AM-LOC	local:open_format	.
+local:thanks_to_a_large_number_of_infoboxes	rdfs:member	local:large_number	.
+local:s9	rdf:subject	local:mappings	.
+local:s14.1	rdf:object	local:significant_improvement_in_recall	.
+local:building_scratch	rdfs:member	local:building	.
+local:constant_changes	rdfs:member	local:constant	.
+local:constant_changes_of_wikipedia_articles	rdfs:member	local:wikipedia_articles	.
+local:s10.2	rdf:subject	local:we	.
+local:localized_versions	rdfs:member	local:localized	.
+local:45978_wikipedia_infobox_attributes_to_dbpedia_properties	rdfs:member	local:dbpedia_properties	.
+local:reannotated_by_authors	rdfs:member	local:reannotated	.
+local:largescale_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
+local:s2.1	rdf:subject	local:extraction_procedure	.
+local:infoboxes_dbpedia_ontology	rdfs:member	local:infoboxes_dbpedia	.
+local:s0	rdf:predicate	local:exploit	.
+local:localized_versions	rdfs:subClassOf	local:versions	.
+local:building_scratch_versions	rdfs:subClassOf	local:scratch_versions	.
+local:localized_versions_of_dbpedia	rdfs:member	local:dbpedia	.
+local:s11.1	local:AM-MNR	local:automatically	.
+local:leads_to_significant_improvement	rdfs:member	local:significant_improvement	.
+local:s13	rdf:predicate	local:compare	.
+local:leads_to_a_significant_improvement_in_recall	rdfs:member	local:leads	.
+local:manually_map	rdfs:subClassOf	local:map	.
+local:constant_changes	rdfs:subClassOf	local:changes	.
+local:primary_data_source	rdfs:member	local:primary_data	.
+local:s3	rdf:subject	local:thanks_to_crowdsourcing	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_building_from_scratch_versions_for_languages_not_covered_in_the_current_version	rdfs:member	local:coverage	.
+local:constant_changes_of_wikipedia_articles	rdfs:member	local:constant_changes	.
+local:manually_map	rdfs:member	local:manually	.
+local:random_sample_reannotated	rdfs:member	local:random_sample	.
+local:problem_of_automatically_mapping_infobox_attributes_to_properties_into_the_dbpedia_ontology_for_extending_the_coverage_of_the_existing_localized_versions	rdfs:member	local:problem	.
+local:s11	rdf:subject	local:we	.
+local:s0	rdf:subject	local:largescale_knowledge_base	.

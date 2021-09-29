@@ -1,326 +1,559 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"both synthetically generated"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"evaluation of the approach carried out on both synthetically"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"evaluation of the approach carried out on realword datasets"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the generation of correspondences matching the subgraph from the source alignment to the lexically similar surroundings of the instances from the target ontology"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the generation of correspondences performed by matching the subgraph from the source alignment to the lexically similar surroundings of the instances from the target ontology"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the approach takes as input a set of cqas as sparql queries over the source ontology"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"the user knowledge reducing the alignment scope"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"the user knowledge aims at reducing the alignment scope"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a alignment expresses the user knowledge aims at reducing the alignment scope"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"the user knowledge needs in terms of alignment"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a alignment expresses the user knowledge needs in terms of alignment"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"generating complex correspondences"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"this paper presents an approach for generating complex correspondences"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"complex correspondences that relies on the notion of competency questions for alignment"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"better address the different kinds of ontology heterogeneities"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"while most approaches have addressed the generation of simple correspondences more expressiveness required to better address the different kinds of ontology heterogeneities"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"most approaches addressed the generation of simple correspondences more expressiveness"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"making different ontologies interoperable"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"ontology matching aims"	.
+
+
 #### Classes ####
 
-local:matching	rdfs:label	"matching"	.
+local:both	a	rdf:Class	;
+	rdfs:label	"both"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:aims	rdfs:label	"aims"	.
+local:synthetically	a	rdf:Class	;
+	rdfs:label	"synthetically"	.
 
-local:different_ontologies	rdfs:label	"different ontologies"	.
+local:evaluation_of_the_approach	a	rdf:Class	;
+	rdfs:label	"evaluation of the approach"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:different	rdfs:label	"different"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:making	rdfs:label	"making"	.
+local:evaluation_of_approach	a	rdf:Class	;
+	rdfs:label	"evaluation of approach"	.
 
-local:interoperable	rdfs:label	"interoperable"	.
+local:carry	a	rdf:Class	;
+	rdfs:label	"carry"	.
 
-local:addressed	rdfs:label	"addressed"	.
+local:realword_datasets	a	rdf:Class	;
+	rdfs:label	"realword datasets"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:realword	a	rdf:Class	;
+	rdfs:label	"realword"	.
 
-local:simple_correspondences	rdfs:label	"simple correspondences"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:correspondences	rdfs:label	"correspondences"	.
+local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	a	rdf:Class	;
+	rdfs:label	"subgraph from the source alignment to the lexically similar surroundings of the instances from the target ontology"	.
 
-local:simple	rdfs:label	"simple"	.
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
 
-local:generation_of_simple_correspondences	rdfs:label	"generation of simple correspondences"	.
+local:lexically_similar_surroundings	a	rdf:Class	;
+	rdfs:label	"lexically similar surroundings"	.
 
-local:generation	rdfs:label	"generation"	.
+local:target_ontology	a	rdf:Class	;
+	rdfs:label	"target ontology"	.
 
-local:expressiveness	rdfs:label	"expressiveness"	.
+local:source_alignment	a	rdf:Class	;
+	rdfs:label	"source alignment"	.
 
-local:have_addressed	rdfs:label	"have addressed"	.
+local:subgraph	a	rdf:Class	;
+	rdfs:label	"subgraph"	.
 
-local:required	rdfs:label	"required"	.
+local:alignment	a	rdf:Class	;
+	rdfs:label	"alignment"	.
 
-local:different_kinds	rdfs:label	"different kinds"	.
+local:lexically_similar	a	rdf:Class	;
+	rdfs:label	"lexically similar"	.
 
-local:kinds	rdfs:label	"kinds"	.
+local:target	a	rdf:Class	;
+	rdfs:label	"target"	.
 
-local:better_address	rdfs:label	"better address"	.
+local:surroundings	a	rdf:Class	;
+	rdfs:label	"surroundings"	.
 
-local:address	rdfs:label	"address"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:ontology_heterogeneities	rdfs:label	"ontology heterogeneities"	.
+local:similar_surroundings	a	rdf:Class	;
+	rdfs:label	"similar surroundings"	.
 
-local:heterogeneities	rdfs:label	"heterogeneities"	.
+local:similar	a	rdf:Class	;
+	rdfs:label	"similar"	.
 
-local:better	rdfs:label	"better"	.
+local:lexically	a	rdf:Class	;
+	rdfs:label	"lexically"	.
 
-local:different_kinds_of_ontology_heterogeneities	rdfs:label	"different kinds of ontology heterogeneities"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:presents	rdfs:label	"presents"	.
+local:subgraph_from_source_alignment	a	rdf:Class	;
+	rdfs:label	"subgraph from source alignment"	.
 
-local:paper	rdfs:label	"paper"	.
+local:subgraph_from_source_alignment_to_similar_surroundings	a	rdf:Class	;
+	rdfs:label	"subgraph from source alignment to similar surroundings"	.
 
-local:complex_correspondences	rdfs:label	"complex correspondences"	.
+local:similar_surroundings_of_instances	a	rdf:Class	;
+	rdfs:label	"similar surroundings of instances"	.
 
-local:complex	rdfs:label	"complex"	.
+local:instances_from_target_ontology	a	rdf:Class	;
+	rdfs:label	"instances from target ontology"	.
 
-local:approach	rdfs:label	"approach"	.
+local:match	a	rdf:Class	;
+	rdfs:label	"match"	.
 
-local:generating	rdfs:label	"generating"	.
+local:generation_of_correspondences	a	rdf:Class	;
+	rdfs:label	"generation of correspondences"	.
 
-local:relies	rdfs:label	"relies"	.
+local:correspondences	a	rdf:Class	;
+	rdfs:label	"correspondences"	.
 
-local:competency_questions	rdfs:label	"competency questions"	.
+local:generation	a	rdf:Class	;
+	rdfs:label	"generation"	.
 
-local:questions	rdfs:label	"questions"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:competency	rdfs:label	"competency"	.
+local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	a	rdf:Class	;
+	rdfs:label	"matching the subgraph from the source alignment to the lexically similar surroundings of the instances from the target ontology"	.
 
-local:notion_of_competency_questions	rdfs:label	"notion of competency questions"	.
+local:matching_from_source_alignment	a	rdf:Class	;
+	rdfs:label	"matching from source alignment"	.
 
-local:notion	rdfs:label	"notion"	.
+local:matching	a	rdf:Class	;
+	rdfs:label	"matching"	.
 
-local:competency_questions_for_alignment	rdfs:label	"competency questions for alignment"	.
+local:matching_from_source_alignment_to_similar_surroundings	a	rdf:Class	;
+	rdfs:label	"matching from source alignment to similar surroundings"	.
 
-local:alignment	rdfs:label	"alignment"	.
+local:similar_surroundings_of_instances_from_target_ontology	a	rdf:Class	;
+	rdfs:label	"similar surroundings of instances from target ontology"	.
 
-local:expresses	rdfs:label	"expresses"	.
+local:input_a_set_of_cqas_as_sparql_queries_over_the_source_ontology	a	rdf:Class	;
+	rdfs:label	"input a set of cqas as sparql queries over the source ontology"	.
 
-local:user	rdfs:label	"user"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:user_knowledge	rdfs:label	"user knowledge"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:user_knowledge_needs	rdfs:label	"user knowledge needs"	.
+local:cqas	a	rdf:Class	;
+	rdfs:label	"cqas"	.
 
-local:needs	rdfs:label	"needs"	.
+local:source_ontology	a	rdf:Class	;
+	rdfs:label	"source ontology"	.
 
-local:knowledge_needs	rdfs:label	"knowledge needs"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:needs_in_terms	rdfs:label	"needs in terms"	.
+local:set_of_cqas	a	rdf:Class	;
+	rdfs:label	"set of cqas"	.
 
-local:terms	rdfs:label	"terms"	.
+local:set_of_cqas_as_sparql_queries	a	rdf:Class	;
+	rdfs:label	"set of cqas as sparql queries"	.
 
-local:terms_of_alignment	rdfs:label	"terms of alignment"	.
+local:sparql_queries_over_source_ontology	a	rdf:Class	;
+	rdfs:label	"sparql queries over source ontology"	.
 
-local:knowledge_aims	rdfs:label	"knowledge aims"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:user_knowledge_aims	rdfs:label	"user knowledge aims"	.
+local:user_knowledge	a	rdf:Class	;
+	rdfs:label	"user knowledge"	.
 
-local:alignment_scope	rdfs:label	"alignment scope"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:scope	rdfs:label	"scope"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:reducing	rdfs:label	"reducing"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:takes	rdfs:label	"takes"	.
+local:alignment_scope	a	rdf:Class	;
+	rdfs:label	"alignment scope"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:scope	a	rdf:Class	;
+	rdfs:label	"scope"	.
 
-local:queries	rdfs:label	"queries"	.
+local:aim	a	rdf:Class	;
+	rdfs:label	"aim"	.
 
-local:source_ontology	rdfs:label	"source ontology"	.
+local:reducing_the_alignment_scope	a	rdf:Class	;
+	rdfs:label	"reducing the alignment scope"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:source	rdfs:label	"source"	.
+local:user_knowledge_aims_at_reducing_the_alignment_scope	a	rdf:Class	;
+	rdfs:label	"user knowledge aims at reducing the alignment scope"	.
 
-local:set_of_cqas	rdfs:label	"set of cqas"	.
+local:user_knowledge_aims	a	rdf:Class	;
+	rdfs:label	"user knowledge aims"	.
 
-local:set	rdfs:label	"set"	.
+local:knowledge_aims	a	rdf:Class	;
+	rdfs:label	"knowledge aims"	.
 
-local:cqas	rdfs:label	"cqas"	.
+local:aims	a	rdf:Class	;
+	rdfs:label	"aims"	.
 
-local:set_of_cqas_as_sparql_queries	rdfs:label	"set of cqas as sparql queries"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:sparql_queries_over_source_ontology	rdfs:label	"sparql queries over source ontology"	.
+local:terms_of_alignment	a	rdf:Class	;
+	rdfs:label	"terms of alignment"	.
 
-local:input	rdfs:label	"input"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:generation_of_correspondences	rdfs:label	"generation of correspondences"	.
+local:user_knowledge_needs_in_terms_of_alignment	a	rdf:Class	;
+	rdfs:label	"user knowledge needs in terms of alignment"	.
 
-local:performed	rdfs:label	"performed"	.
+local:user_knowledge_needs	a	rdf:Class	;
+	rdfs:label	"user knowledge needs"	.
 
-local:similar_surroundings	rdfs:label	"similar surroundings"	.
+local:knowledge_needs	a	rdf:Class	;
+	rdfs:label	"knowledge needs"	.
 
-local:surroundings	rdfs:label	"surroundings"	.
+local:needs	a	rdf:Class	;
+	rdfs:label	"needs"	.
 
-local:lexically_similar	rdfs:label	"lexically similar"	.
+local:needs_in_terms	a	rdf:Class	;
+	rdfs:label	"needs in terms"	.
 
-local:similar	rdfs:label	"similar"	.
+local:complex_correspondences	a	rdf:Class	;
+	rdfs:label	"complex correspondences"	.
 
-local:lexically	rdfs:label	"lexically"	.
+local:complex	a	rdf:Class	;
+	rdfs:label	"complex"	.
 
-local:lexically_similar_surroundings	rdfs:label	"lexically similar surroundings"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:source_alignment	rdfs:label	"source alignment"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:target_ontology	rdfs:label	"target ontology"	.
+local:approach_for_generating_complex_correspondences	a	rdf:Class	;
+	rdfs:label	"approach for generating complex correspondences"	.
 
-local:target	rdfs:label	"target"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:matching_from_source_alignment	rdfs:label	"matching from source alignment"	.
+local:notion_of_competency_questions_for_alignment	a	rdf:Class	;
+	rdfs:label	"notion of competency questions for alignment"	.
 
-local:matching_from_source_alignment_to_similar_surroundings	rdfs:label	"matching from source alignment to similar surroundings"	.
+local:competency_questions	a	rdf:Class	;
+	rdfs:label	"competency questions"	.
 
-local:similar_surroundings_of_instances	rdfs:label	"similar surroundings of instances"	.
+local:notion	a	rdf:Class	;
+	rdfs:label	"notion"	.
 
-local:instances	rdfs:label	"instances"	.
+local:competency	a	rdf:Class	;
+	rdfs:label	"competency"	.
 
-local:similar_surroundings_of_instances_from_target_ontology	rdfs:label	"similar surroundings of instances from target ontology"	.
+local:questions	a	rdf:Class	;
+	rdfs:label	"questions"	.
 
-local:subgraph_from_source_alignment	rdfs:label	"subgraph from source alignment"	.
+local:notion_of_competency_questions	a	rdf:Class	;
+	rdfs:label	"notion of competency questions"	.
 
-local:subgraph	rdfs:label	"subgraph"	.
+local:competency_questions_for_alignment	a	rdf:Class	;
+	rdfs:label	"competency questions for alignment"	.
 
-local:subgraph_from_source_alignment_to_similar_surroundings	rdfs:label	"subgraph from source alignment to similar surroundings"	.
+local:different_kinds_of_ontology_heterogeneities	a	rdf:Class	;
+	rdfs:label	"different kinds of ontology heterogeneities"	.
 
-local:instances_from_target_ontology	rdfs:label	"instances from target ontology"	.
+local:ontology_heterogeneities	a	rdf:Class	;
+	rdfs:label	"ontology heterogeneities"	.
 
-local:evaluation_of_approach	rdfs:label	"evaluation of approach"	.
+local:different_kinds	a	rdf:Class	;
+	rdfs:label	"different kinds"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:kinds	a	rdf:Class	;
+	rdfs:label	"kinds"	.
 
-local:carried	rdfs:label	"carried"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:synthetically_generated	rdfs:label	"synthetically generated"	.
+local:heterogeneities	a	rdf:Class	;
+	rdfs:label	"heterogeneities"	.
 
-local:generated	rdfs:label	"generated"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:realword_datasets	rdfs:label	"real-word datasets"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:expressiveness	a	rdf:Class	;
+	rdfs:label	"expressiveness"	.
 
-local:realword	rdfs:label	"real-word"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-#### Properties ####
+local:approaches_have_addressed_the_generation_of_simple_correspondences	a	rdf:Class	;
+	rdfs:label	"approaches have addressed the generation of simple correspondences"	.
+
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
+
+local:simple_correspondences	a	rdf:Class	;
+	rdfs:label	"simple correspondences"	.
+
+local:simple	a	rdf:Class	;
+	rdfs:label	"simple"	.
+
+local:have_addressed	a	rdf:Class	;
+	rdfs:label	"have addressed"	.
+
+local:addressed	a	rdf:Class	;
+	rdfs:label	"addressed"	.
+
+local:generation_of_simple_correspondences	a	rdf:Class	;
+	rdfs:label	"generation of simple correspondences"	.
+
+local:different_ontologies	a	rdf:Class	;
+	rdfs:label	"different ontologies"	.
+
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
+
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
+
+local:interoperable	a	rdf:Class	;
+	rdfs:label	"interoperable"	.
 
 #### Mapped Relations ####
 
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-local:ontology	owl:sameAs	cso:ontology	.
 cso:sparql_queries	rdfs:label	"sparql queries"	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+cso:ontologies	rdfs:label	"ontologies"	.
 cso:ontology	rdfs:label	"ontology"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+local:ontology	owl:sameAs	cso:ontology	.
 
 #### Relations ####
 
-local:address	vn.role:Theme	local:different_kinds_of_ontology_heterogeneities	.
-local:user_knowledge	rdfs:member	local:user_knowledge_needs	.
-local:carried	local:AM-MNR	local:realword_datasets	.
-local:generation_of_simple_correspondences	local:generation_of	local:simple_correspondences	.
-local:complex_correspondences	rdfs:subClassOf	local:correspondences	.
-local:different_kinds_of_ontology_heterogeneities	local:differentkinds_of	local:ontology_heterogeneities	.
-local:performed	vn.role:Theme	local:generation_of_correspondences	.
-local:needs_in_terms	local:in_terms	local:needs	.
-local:ontology	rdfs:member	local:ontology_heterogeneities	.
-local:matching_from_source_alignment	local:from_sourcealignment	local:matching	.
-local:notion_of_competency_questions	local:notion_of	local:competency_questions	.
-local:user_knowledge	rdfs:subClassOf	local:knowledge	.
-local:evaluation_of_approach	local:evaluation_of	local:approach	.
-local:similar	rdfs:member	local:similar_surroundings	.
-local:have_addressed	rdfs:subClassOf	local:addressed	.
-local:similar_surroundings	rdfs:subClassOf	local:surroundings	.
-local:relies	vn.role:Theme	local:notion_of_competency_questions	.
-local:sparql_queries_over_source_ontology	local:over_sourceontology	local:sparql_queries	.
-local:simple_correspondences	rdfs:subClassOf	local:correspondences	.
-local:addressed	vn.role:Agent	local:approaches	.
-local:aims	vn.role:indirect_object	local:reducing	.
-local:subgraph_from_source_alignment_to_similar_surroundings	local:to_similarsurroundings	local:subgraph_from_source_alignment	.
-local:making	vn.role:Material	local:different_ontologies	.
-local:reducing	vn.role:Patient	local:alignment	.
-local:competency_questions_for_alignment	local:for_alignment	local:competency_questions	.
-local:competency	rdfs:member	local:competency_questions	.
-local:expresses	vn.role:Agent	local:needs_in_terms	.
-local:similar_surroundings_of_instances_from_target_ontology	local:from_targetontology	local:similar_surroundings_of_instances	.
-local:different_kinds	rdfs:subClassOf	local:kinds	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:matching	vn.role:Patient2	local:aims	.
-local:set_of_cqas_as_sparql_queries	local:setofcqas_as	local:sparql_queries	.
-local:realword	rdfs:member	local:realword_datasets	.
-local:carried	vn.role:Theme	local:synthetically_generated	.
-local:better	rdfs:member	local:better_address	.
-local:relies	vn.role:Agent	local:complex_correspondences	.
-local:sparql_queries_over_source_ontology	local:sparqlqueries_over	local:source_ontology	.
-local:different	rdfs:member	local:different_ontologies	.
-local:subgraph_from_source_alignment_to_similar_surroundings	local:subgraphfromsourcealignment_to	local:similar_surroundings	.
-local:aims	vn.role:Experiencer	local:user_knowledge	.
 local:realword_datasets	rdfs:subClassOf	local:datasets	.
-local:addressed	vn.role:Theme	local:generation_of_simple_correspondences	.
-local:reducing	vn.role:Cause	local:user_knowledge	.
-local:lexically_similar	rdfs:member	local:lexically_similar_surroundings	.
-local:takes	vn.role:Agent	local:input	.
-local:knowledge	rdfs:member	local:knowledge_aims	.
-local:set_of_cqas	local:of_cqas	local:set	.
-local:user	rdfs:member	local:user_knowledge	.
-local:matching_from_source_alignment	local:matching_from	local:source_alignment	.
-local:needs	vn.role:Agent	local:user_knowledge	.
-local:source_ontology	rdfs:subClassOf	local:ontology	.
-local:set_of_cqas	local:set_of	local:cqas	.
-local:source	rdfs:member	local:source_ontology	.
-local:matching	vn.role:Patient2	local:subgraph_from_source_alignment_to_similar_surroundings	.
-local:similar_surroundings_of_instances	local:similarsurroundings_of	local:instances	.
-local:required	local:AM-PNC	local:better_address	.
-local:notion_of_competency_questions	local:of_competencyquestions	local:notion	.
-local:target	rdfs:member	local:target_ontology	.
-local:source	rdfs:member	local:source_alignment	.
-local:generation_of_correspondences	local:generation_of	local:correspondences	.
-local:knowledge	rdfs:member	local:knowledge_needs	.
-local:simple	rdfs:member	local:simple_correspondences	.
-local:alignment	rdfs:member	local:alignment_scope	.
-local:user_knowledge_aims	rdfs:subClassOf	local:aims	.
-local:alignment_scope	rdfs:subClassOf	local:scope	.
-local:presents	vn.role:Theme	local:approach	.
-local:subgraph_from_source_alignment	local:from_sourcealignment	local:subgraph	.
-local:user_knowledge	rdfs:member	local:user_knowledge_aims	.
-local:similar_surroundings_of_instances_from_target_ontology	local:similarsurroundingsofinstances_from	local:target_ontology	.
-local:source_alignment	rdfs:subClassOf	local:alignment	.
-local:generating	vn.role:Theme2	local:complex_correspondences	.
-local:lexically_similar_surroundings	rdfs:subClassOf	local:surroundings	.
-local:terms_of_alignment	local:of_alignment	local:terms	.
-local:complex	rdfs:member	local:complex_correspondences	.
-local:takes	vn.role:Agent	local:approach	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:knowledge_aims	rdfs:subClassOf	local:aims	.
-local:target_ontology	rdfs:subClassOf	local:ontology	.
-local:matching_from_source_alignment_to_similar_surroundings	local:matchingfromsourcealignment_to	local:similar_surroundings	.
-local:competency_questions_for_alignment	local:competencyquestions_for	local:alignment	.
-local:expresses	vn.role:Agent	local:aims	.
-local:making	vn.role:Product	local:interoperable	.
-local:competency_questions	rdfs:subClassOf	local:questions	.
-local:needs_in_terms	local:needs_in	local:terms	.
-local:required	local:AM-ADV	local:have_addressed	.
-local:lexically_similar	rdfs:subClassOf	local:similar	.
-local:terms_of_alignment	local:terms_of	local:alignment	.
-local:generation_of_simple_correspondences	local:of_simplecorrespondences	local:generation	.
-local:similar_surroundings_of_instances	local:of_instances	local:similar_surroundings	.
-local:different_kinds_of_ontology_heterogeneities	local:of_ontologyheterogeneities	local:different_kinds	.
-local:subgraph_from_source_alignment	local:subgraph_from	local:source_alignment	.
-local:matching	vn.role:Patient2	local:ontology	.
-local:expresses	vn.role:Theme	local:alignment	.
-local:lexically	rdfs:member	local:lexically_similar	.
-local:synthetically_generated	rdfs:subClassOf	local:generated	.
-local:knowledge_needs	rdfs:subClassOf	local:needs	.
-local:set_of_cqas_as_sparql_queries	local:as_sparqlqueries	local:set_of_cqas	.
-local:better_address	rdfs:subClassOf	local:address	.
-local:ontology_heterogeneities	rdfs:subClassOf	local:heterogeneities	.
-local:generation_of_correspondences	local:of_correspondences	local:generation	.
-local:required	vn.role:Patient	local:expressiveness	.
-local:address	local:AM-MNR	local:better	.
-local:performed	local:AM-MNR	local:matching_from_source_alignment_to_similar_surroundings	.
-local:needs	local:AM-LOC	local:terms_of_alignment	.
-local:instances_from_target_ontology	local:from_targetontology	local:instances	.
-local:different	rdfs:member	local:different_kinds	.
-local:carried	vn.role:Theme	local:evaluation_of_approach	.
+local:user_knowledge_needs_in_terms_of_alignment	rdfs:member	local:user_knowledge_needs	.
+local:s6	rdf:object	local:user_knowledge_aims_at_reducing_the_alignment_scope	.
+local:lexically_similar_surroundings	rdfs:member	local:lexically_similar	.
 local:user_knowledge_needs	rdfs:subClassOf	local:needs	.
-local:instances_from_target_ontology	local:instances_from	local:target_ontology	.
-local:addressed	local:AM-MNR	local:expressiveness	.
-local:evaluation_of_approach	local:of_approach	local:evaluation	.
-local:presents	vn.role:Agent	local:paper	.
+local:different_kinds	rdfs:member	local:different	.
+local:needs_in_terms	rdfs:member	local:needs	.
+local:approach_for_generating_complex_correspondences	rdfs:member	local:complex_correspondences	.
+local:notion_of_competency_questions_for_alignment	rdfs:member	local:alignment	.
+local:s3	rdf:subject	local:complex_correspondences	.
+local:different_kinds_of_ontology_heterogeneities	rdfs:member	local:ontology_heterogeneities	.
+local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:instances	.
+local:source_ontology	rdfs:member	local:source	.
+local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:instances	.
+local:similar_surroundings_of_instances	rdfs:member	local:instances	.
+local:have_addressed	rdfs:subClassOf	local:addressed	.
+local:s6.1	rdf:object	local:reducing_the_alignment_scope	.
+local:knowledge_aims	rdfs:member	local:knowledge	.
+local:s1.1	rdf:subject	local:different_ontologies	.
+local:s2	local:AM-MNR	local:expressiveness	.
+local:target_ontology	rdfs:member	local:target	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:s5.1	rdf:subject	local:user_knowledge	.
+local:s5	rdf:subject	local:alignment	.
+local:competency_questions_for_alignment	rdfs:member	local:alignment	.
+local:s7	rdf:subject	local:input_a_set_of_cqas_as_sparql_queries_over_the_source_ontology	.
+local:source_ontology	rdfs:subClassOf	local:ontology	.
+local:approach_for_generating_complex_correspondences	rdfs:member	local:approach	.
+local:set_of_cqas_as_sparql_queries	rdfs:member	local:set_of_cqas	.
+local:user_knowledge_aims_at_reducing_the_alignment_scope	rdfs:member	local:user_knowledge_aims	.
+local:s9	local:AM-MNR	local:realword_datasets	.
+local:alignment_scope	rdfs:subClassOf	local:scope	.
+local:user_knowledge_aims_at_reducing_the_alignment_scope	rdfs:member	local:alignment_scope	.
+local:s8.1	rdf:predicate	local:match	.
+local:similar_surroundings_of_instances_from_target_ontology	rdfs:member	local:similar_surroundings_of_instances	.
+local:s1	rdf:object	local:ontology	.
+local:similar_surroundings_of_instances	rdfs:member	local:similar_surroundings	.
+local:target_ontology	rdfs:subClassOf	local:ontology	.
+local:user_knowledge_needs_in_terms_of_alignment	rdfs:member	local:alignment	.
+local:competency_questions	rdfs:subClassOf	local:questions	.
+local:notion_of_competency_questions	rdfs:member	local:notion	.
+local:user_knowledge_needs_in_terms_of_alignment	rdfs:member	local:terms	.
+local:s9	rdf:subject	local:evaluation_of_the_approach	.
+local:s5.1	rdf:predicate	local:need	.
+local:s3	rdf:predicate	local:rely	.
+local:approaches_have_addressed_the_generation_of_simple_correspondences	rdfs:member	local:simple_correspondences	.
+local:different_kinds	rdfs:subClassOf	local:kinds	.
+local:approaches_have_addressed_the_generation_of_simple_correspondences	rdfs:member	local:approaches	.
+local:similar_surroundings_of_instances_from_target_ontology	rdfs:member	local:target_ontology	.
+local:competency_questions	rdfs:member	local:competency	.
+local:generation_of_simple_correspondences	rdfs:member	local:simple_correspondences	.
+local:s1	rdf:predicate	local:match	.
+local:subgraph_from_source_alignment	rdfs:member	local:subgraph	.
+local:s2.1	rdf:predicate	local:require	.
+local:input_a_set_of_cqas_as_sparql_queries_over_the_source_ontology	rdfs:member	local:cqas	.
+local:s2.1	rdf:subject	local:expressiveness	.
+local:s10	rdf:predicate	local:carry	.
+local:similar_surroundings	rdfs:member	local:similar	.
+local:notion_of_competency_questions	rdfs:member	local:competency_questions	.
+local:s2.2	rdf:subject	local:different_kinds_of_ontology_heterogeneities	.
+local:s1.1	rdf:object	local:interoperable	.
+local:evaluation_of_approach	rdfs:member	local:approach	.
+local:evaluation_of_approach	rdfs:member	local:evaluation	.
+local:sparql_queries_over_source_ontology	rdfs:member	local:source_ontology	.
+local:input_a_set_of_cqas_as_sparql_queries_over_the_source_ontology	rdfs:member	local:source_ontology	.
+local:simple_correspondences	rdfs:member	local:simple	.
+local:generation_of_correspondences	rdfs:member	local:correspondences	.
+local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:lexically_similar_surroundings	.
+local:s10.1	rdf:subject	local:both	.
+local:s8	rdf:predicate	local:perform	.
+local:source_alignment	rdfs:subClassOf	local:alignment	.
+local:s2	rdf:predicate	local:address	.
+local:different_ontologies	rdfs:member	local:different	.
+local:s8.1	rdf:object	local:generation_of_correspondences	.
+local:matching_from_source_alignment_to_similar_surroundings	rdfs:member	local:matching_from_source_alignment	.
+local:knowledge_aims	rdfs:subClassOf	local:aims	.
+local:s5	rdf:predicate	local:express	.
+local:complex_correspondences	rdfs:member	local:complex	.
+local:lexically_similar	rdfs:subClassOf	local:similar	.
+local:matching_from_source_alignment	rdfs:member	local:source_alignment	.
+local:notion_of_competency_questions_for_alignment	rdfs:member	local:notion	.
+local:competency_questions_for_alignment	rdfs:member	local:competency_questions	.
+local:s2	rdf:object	local:generation_of_simple_correspondences	.
+local:s6.1	rdf:predicate	local:aim	.
+local:alignment_scope	rdfs:member	local:alignment	.
+local:different_kinds_of_ontology_heterogeneities	rdfs:member	local:different_kinds	.
+local:s6.2	rdf:subject	local:user_knowledge	.
+local:s6	rdf:predicate	local:express	.
+local:s10	rdf:subject	local:evaluation_of_the_approach	.
+local:s2.1	local:AM-PNC	local:s2.2	.
+local:instances_from_target_ontology	rdfs:member	local:target_ontology	.
+local:set_of_cqas	rdfs:member	local:set	.
+local:matching_from_source_alignment_to_similar_surroundings	rdfs:member	local:similar_surroundings	.
+local:s8.1	rdf:subject	local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	.
+local:s10.1	local:AM-MNR	local:synthetically	.
+local:realword_datasets	rdfs:member	local:realword	.
+local:input_a_set_of_cqas_as_sparql_queries_over_the_source_ontology	rdfs:member	local:sparql	.
 local:different_ontologies	rdfs:subClassOf	local:ontologies	.
-local:matching_from_source_alignment_to_similar_surroundings	local:to_similarsurroundings	local:matching_from_source_alignment	.
+local:terms_of_alignment	rdfs:member	local:alignment	.
+local:lexically_similar_surroundings	rdfs:subClassOf	local:surroundings	.
+local:approaches_have_addressed_the_generation_of_simple_correspondences	rdfs:member	local:generation	.
+local:s2	rdf:subject	local:approaches	.
+local:subgraph_from_source_alignment_to_similar_surroundings	rdfs:member	local:subgraph_from_source_alignment	.
+local:evaluation_of_the_approach	rdfs:member	local:evaluation	.
+local:user_knowledge_aims	rdfs:member	local:user_knowledge	.
+local:ontology_heterogeneities	rdfs:subClassOf	local:heterogeneities	.
+local:s4.1	rdf:predicate	local:generate	.
+local:s9	rdf:predicate	local:carry	.
+local:matching_from_source_alignment	rdfs:member	local:matching	.
+local:source_alignment	rdfs:member	local:source	.
+local:s1.1	rdf:predicate	local:make	.
+local:s5.1	local:AM-LOC	local:terms_of_alignment	.
+local:s8	rdf:subject	local:generation_of_correspondences	.
+local:s1	rdf:subject	local:aims	.
+local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:subgraph	.
+local:set_of_cqas	rdfs:member	local:cqas	.
+local:user_knowledge_needs	rdfs:member	local:user_knowledge	.
+local:user_knowledge_aims	rdfs:subClassOf	local:aims	.
+local:s4	rdf:subject	local:paper	.
+local:user_knowledge	rdfs:member	local:user	.
+local:s6.2	rdf:predicate	local:reduce	.
+local:s2.1	local:AM-ADV	local:approaches_have_addressed_the_generation_of_simple_correspondences	.
+local:subgraph_from_source_alignment	rdfs:member	local:source_alignment	.
+local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:subgraph	.
+local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:source_alignment	.
+local:simple_correspondences	rdfs:subClassOf	local:correspondences	.
+local:lexically_similar	rdfs:member	local:lexically	.
+local:knowledge_needs	rdfs:subClassOf	local:needs	.
+local:set_of_cqas_as_sparql_queries	rdfs:member	local:sparql_queries	.
+local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:target_ontology	.
+local:s2.2	rdf:predicate	local:address	.
+local:similar_surroundings	rdfs:subClassOf	local:surroundings	.
+local:generation_of_simple_correspondences	rdfs:member	local:generation	.
+local:knowledge_needs	rdfs:member	local:knowledge	.
+local:s4	rdf:object	local:approach_for_generating_complex_correspondences	.
+local:instances_from_target_ontology	rdfs:member	local:instances	.
+local:complex_correspondences	rdfs:subClassOf	local:correspondences	.
+local:s4.1	rdf:subject	local:complex_correspondences	.
+local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:target_ontology	.
+local:evaluation_of_the_approach	rdfs:member	local:approach	.
+local:subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:source_alignment	.
+local:s7	rdf:predicate	local:take	.
+local:ontology_heterogeneities	rdfs:member	local:ontology	.
+local:s3	rdf:object	local:notion_of_competency_questions_for_alignment	.
+local:s6	rdf:subject	local:alignment	.
+local:sparql_queries_over_source_ontology	rdfs:member	local:sparql_queries	.
+local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	rdfs:member	local:lexically_similar_surroundings	.
+local:input_a_set_of_cqas_as_sparql_queries_over_the_source_ontology	rdfs:member	local:set	.
+local:s10.1	rdf:predicate	local:generate	.
+local:needs_in_terms	rdfs:member	local:terms	.
+local:notion_of_competency_questions_for_alignment	rdfs:member	local:competency_questions	.
+local:s8	local:AM-MNR	local:matching_the_subgraph_from_the_source_alignment_to_the_lexically_similar_surroundings_of_the_instances_from_the_target_ontology	.
+local:generation_of_correspondences	rdfs:member	local:generation	.
+local:s5	rdf:object	local:user_knowledge_needs_in_terms_of_alignment	.
+local:s10	local:AM-MNR	local:synthetically	.
+local:s6.2	rdf:object	local:alignment_scope	.
+local:s6.1	rdf:subject	local:user_knowledge	.
+local:s4	rdf:predicate	local:present	.
+local:subgraph_from_source_alignment_to_similar_surroundings	rdfs:member	local:similar_surroundings	.
+local:s2.2	local:AM-MNR	local:better	.
+local:terms_of_alignment	rdfs:member	local:terms	.
+local:user_knowledge	rdfs:subClassOf	local:knowledge	.

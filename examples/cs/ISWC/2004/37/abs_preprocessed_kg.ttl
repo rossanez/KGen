@@ -1,478 +1,925 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17.2	a	rdf:Statement	;
+	rdfs:label	"dlsafe rules based on the reduction to disjunctive datalog"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"shiq extended with dlsafe rules based on the reduction to disjunctive datalog"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"finally we present an algorithm for query answering in shiq extended with dlsafe rules based on the reduction to disjunctive datalog"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"combined logic expressive power"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"we discuss query answering in such a combined logic expressive power by means of a nontrivial example"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"combined logic"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we show that query answering in such a combined logic is decidable"	.
+
+local:s14.4	a	rdf:Statement	;
+	rdfs:label	"a rule occur in a nondlatom in the rule body"	.
+
+local:s14.3	a	rdf:Statement	;
+	rdfs:label	"dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"decidability socalled dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"decidability restricting rules to socalled dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"decidability obtained by restricting rules to socalled dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"similar decidable combinations proposed so far"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a decidable such combination which is to the best of we knowledge more general than similar decidable combinations"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"here we present a decidable such combination"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"however such a combination might easily lead to the undecidability of interesting reasoning problems"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"several such combinations already"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"building semantic web ontologies"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"building semantic web ontologies"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"from the description logic perspective rules restricted to universal quantification"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"from the description logic perspective rules allow for the interaction of variables in arbitrary ways"	.
+
+local:s3.3	a	rdf:Statement	;
+	rdfs:label	"universally quantified full monotonic negation"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"functionfree horn rules owldl provides both existentially and universally quantified full monotonic negation"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"owldl restricted to treelike rules"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"yet orthogonal expressive power"	.
+
+local:s2.3	a	rdf:Statement	;
+	rdfs:label	"universally quantified variables"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"functionfree horn rules owldl provides both existentially and universally quantified variables"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"owldl restricted to treelike rules"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"yet orthogonal expressive power"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"universally quantified full monotonic negation"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"owldl provides both existentially and universally quantified full monotonic negation"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the rules perspective owldl restricted to treelike rules"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"yet orthogonal expressive power"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"universally quantified variables"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"owldl provides both existentially and universally quantified variables"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"the rules perspective owldl restricted to treelike rules"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"yet orthogonal expressive power"	.
+
+
 #### Classes ####
 
-local:rules_perspective	rdfs:label	"rules perspective"	.
+local:dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"dlsafe rules"	.
 
-local:perspective	rdfs:label	"perspective"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:rules_perspective_owldl	rdfs:label	"rules perspective owl-dl"	.
+local:dlsafe	a	rdf:Class	;
+	rdfs:label	"dlsafe"	.
 
-local:owldl	rdfs:label	"owl-dl"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:restricted	rdfs:label	"restricted"	.
+local:reduction_to_disjunctive_datalog	a	rdf:Class	;
+	rdfs:label	"reduction to disjunctive datalog"	.
 
-local:treelike_rules	rdfs:label	"tree-like rules"	.
+local:reduction	a	rdf:Class	;
+	rdfs:label	"reduction"	.
 
-local:rules	rdfs:label	"rules"	.
+local:datalog	a	rdf:Class	;
+	rdfs:label	"datalog"	.
 
-local:treelike	rdfs:label	"tree-like"	.
+local:disjunctive_datalog	a	rdf:Class	;
+	rdfs:label	"disjunctive datalog"	.
 
-local:functionfree_horn	rdfs:label	"function-free horn"	.
+local:shiq	a	rdf:Class	;
+	rdfs:label	"shiq"	.
 
-local:horn	rdfs:label	"horn"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:functionfree_horn_rules	rdfs:label	"function-free horn rules"	.
+local:dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	a	rdf:Class	;
+	rdfs:label	"dlsafe rules based on the reduction to disjunctive datalog"	.
 
-local:functionfree	rdfs:label	"function-free"	.
+local:dlsafe_rules_based_on_reduction	a	rdf:Class	;
+	rdfs:label	"dlsafe rules based_on reduction"	.
 
-local:horn_rules	rdfs:label	"horn rules"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:provides	rdfs:label	"provides"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:monotonic_negation	rdfs:label	"monotonic negation"	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	a	rdf:Class	;
+	rdfs:label	"algorithm for query answering in shiq extended with dlsafe rules based on the reduction to disjunctive datalog"	.
 
-local:negation	rdfs:label	"negation"	.
+local:query_answering	a	rdf:Class	;
+	rdfs:label	"query answering"	.
 
-local:monotonic	rdfs:label	"monotonic"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:full_monotonic_negation	rdfs:label	"full monotonic negation"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:universally_quantified	rdfs:label	"universally quantified"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-local:quantified	rdfs:label	"quantified"	.
+local:algorithm_for_query_answering	a	rdf:Class	;
+	rdfs:label	"algorithm for query answering"	.
 
-local:existentially_universally_quantified	rdfs:label	"existentially universally quantified"	.
+local:query_answering_in_shiq	a	rdf:Class	;
+	rdfs:label	"query answering in shiq"	.
 
-local:universally	rdfs:label	"universally"	.
+local:extended_with_dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"extended with dlsafe rules"	.
 
-local:universally_quantified_variables	rdfs:label	"universally quantified variables"	.
+local:extended	a	rdf:Class	;
+	rdfs:label	"extended"	.
 
-local:quantified_variables	rdfs:label	"quantified variables"	.
+local:finally	a	rdf:Class	;
+	rdfs:label	"finally"	.
 
-local:variables	rdfs:label	"variables"	.
+local:logic_expressive_power	a	rdf:Class	;
+	rdfs:label	"logic expressive power"	.
 
-local:description	rdfs:label	"description"	.
+local:logic_expressive	a	rdf:Class	;
+	rdfs:label	"logic expressive"	.
 
-local:description_logic	rdfs:label	"description logic"	.
+local:expressive	a	rdf:Class	;
+	rdfs:label	"expressive"	.
 
-local:logic	rdfs:label	"logic"	.
+local:power	a	rdf:Class	;
+	rdfs:label	"power"	.
 
-local:perspective_rules	rdfs:label	"perspective rules"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:universal	rdfs:label	"universal"	.
+local:expressive_power	a	rdf:Class	;
+	rdfs:label	"expressive power"	.
 
-local:universal_quantification	rdfs:label	"universal quantification"	.
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
 
-local:quantification	rdfs:label	"quantification"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:logic_perspective	rdfs:label	"logic perspective"	.
+local:query_answering_in_such_a_combined_logic_expressive_power_means_of_a_nontrivial_example	a	rdf:Class	;
+	rdfs:label	"query answering in such a combined logic expressive power means of a nontrivial example"	.
 
-local:description_logic_perspective	rdfs:label	"description logic perspective"	.
+local:expressive_power_means	a	rdf:Class	;
+	rdfs:label	"expressive power means"	.
 
-local:description_logic_perspective_rules	rdfs:label	"description logic perspective rules"	.
+local:combined_logic	a	rdf:Class	;
+	rdfs:label	"combined logic"	.
 
-local:allow	rdfs:label	"allow"	.
+local:nontrivial_example	a	rdf:Class	;
+	rdfs:label	"nontrivial example"	.
 
-local:arbitrary_ways	rdfs:label	"arbitrary ways"	.
+local:means	a	rdf:Class	;
+	rdfs:label	"means"	.
 
-local:ways	rdfs:label	"ways"	.
+local:combined	a	rdf:Class	;
+	rdfs:label	"combined"	.
 
-local:arbitrary	rdfs:label	"arbitrary"	.
+local:power_means	a	rdf:Class	;
+	rdfs:label	"power means"	.
 
-local:interaction_of_variables	rdfs:label	"interaction of variables"	.
+local:nontrivial	a	rdf:Class	;
+	rdfs:label	"nontrivial"	.
 
-local:interaction	rdfs:label	"interaction"	.
+local:example	a	rdf:Class	;
+	rdfs:label	"example"	.
 
-local:interaction_of_variables_in_arbitrary_ways	rdfs:label	"interaction of variables in arbitrary ways"	.
+local:logic_expressive_power_means	a	rdf:Class	;
+	rdfs:label	"logic expressive power means"	.
 
-local:semantic_web_ontologies	rdfs:label	"semantic web ontologies"	.
+local:combined_logic_expressive_power_means	a	rdf:Class	;
+	rdfs:label	"combined logic expressive power means"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:such_combined_logic_expressive_power_means	a	rdf:Class	;
+	rdfs:label	"such combined logic expressive power means"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:query_answering_in_such_combined_logic_expressive_power_means	a	rdf:Class	;
+	rdfs:label	"query answering in such combined logic expressive power means"	.
 
-local:web	rdfs:label	"web"	.
+local:such_combined_logic_expressive_power_means_of_nontrivial_example	a	rdf:Class	;
+	rdfs:label	"such combined logic expressive power means of nontrivial example"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:web_ontologies	rdfs:label	"web ontologies"	.
+local:query_answering_in_such_a_combined_logic_is_decidable	a	rdf:Class	;
+	rdfs:label	"query answering in such a combined logic is decidable"	.
 
-local:building	rdfs:label	"building"	.
+local:such_combined_logic	a	rdf:Class	;
+	rdfs:label	"such combined logic"	.
 
-local:however_combination	rdfs:label	"however combination"	.
+local:query_answering_in_such_combined_logic	a	rdf:Class	;
+	rdfs:label	"query answering in such combined logic"	.
 
-local:combination	rdfs:label	"combination"	.
+local:rule	a	rdf:Class	;
+	rdfs:label	"rule"	.
 
-local:lead	rdfs:label	"lead"	.
+local:occur	a	rdf:Class	;
+	rdfs:label	"occur"	.
 
-local:might	rdfs:label	"might"	.
+local:nondlatom_in_the_rule_body	a	rdf:Class	;
+	rdfs:label	"nondlatom in the rule body"	.
 
-local:easily	rdfs:label	"easily"	.
+local:rule_body	a	rdf:Class	;
+	rdfs:label	"rule body"	.
 
-local:reasoning_problems	rdfs:label	"reasoning problems"	.
+local:nondlatom	a	rdf:Class	;
+	rdfs:label	"nondlatom"	.
 
-local:problems	rdfs:label	"problems"	.
+local:body	a	rdf:Class	;
+	rdfs:label	"body"	.
 
-local:interesting_reasoning_problems	rdfs:label	"interesting reasoning problems"	.
+local:nondlatom_in_rule_body	a	rdf:Class	;
+	rdfs:label	"nondlatom in rule body"	.
 
-local:undecidability_of_interesting_reasoning_problems	rdfs:label	"undecidability of interesting reasoning problems"	.
+local:dlsafe_ones	a	rdf:Class	;
+	rdfs:label	"dlsafe ones"	.
 
-local:undecidability	rdfs:label	"undecidability"	.
+local:ones	a	rdf:Class	;
+	rdfs:label	"ones"	.
 
-local:similar	rdfs:label	"similar"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:similar_decidable	rdfs:label	"similar decidable"	.
+local:variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	a	rdf:Class	;
+	rdfs:label	"variable in a rule to occur in a nondlatom in the rule body"	.
 
-local:similar_decidable_combinations	rdfs:label	"similar decidable combinations"	.
+local:variable	a	rdf:Class	;
+	rdfs:label	"variable"	.
 
-local:combinations	rdfs:label	"combinations"	.
+local:variable_in_rule	a	rdf:Class	;
+	rdfs:label	"variable in rule"	.
 
-local:decidable_combinations	rdfs:label	"decidable combinations"	.
+local:occur_in_nondlatom	a	rdf:Class	;
+	rdfs:label	"occur in nondlatom"	.
 
-local:decidable	rdfs:label	"decidable"	.
+local:decidability	a	rdf:Class	;
+	rdfs:label	"decidability"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:socalled	a	rdf:Class	;
+	rdfs:label	"socalled"	.
 
-local:far	rdfs:label	"far"	.
+local:dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	a	rdf:Class	;
+	rdfs:label	"dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
 
-local:present	rdfs:label	"present"	.
+local:dlsafe_ones_requiring	a	rdf:Class	;
+	rdfs:label	"dlsafe ones requiring"	.
 
-local:here	rdfs:label	"here"	.
+local:requiring	a	rdf:Class	;
+	rdfs:label	"requiring"	.
 
-local:we	rdfs:label	"we"	.
+local:requiring_in_rule	a	rdf:Class	;
+	rdfs:label	"requiring in rule"	.
 
-local:such_combination	rdfs:label	"such combination"	.
+local:restrict	a	rdf:Class	;
+	rdfs:label	"restrict"	.
 
-local:such	rdfs:label	"such"	.
+local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	a	rdf:Class	;
+	rdfs:label	"socalled dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
 
-local:decidable_such	rdfs:label	"decidable such"	.
+local:socalled_dlsafe_ones	a	rdf:Class	;
+	rdfs:label	"socalled dlsafe ones"	.
 
-local:decidable_such_combination	rdfs:label	"decidable such combination"	.
+local:socalled_dlsafe_ones_requiring	a	rdf:Class	;
+	rdfs:label	"socalled dlsafe ones requiring"	.
 
-local:best_of_we	rdfs:label	"best of we"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:best	rdfs:label	"best"	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	a	rdf:Class	;
+	rdfs:label	"restricting rules to socalled dlsafe ones requiring each variable in a rule to occur in a nondlatom in the rule body"	.
 
-local:knowledge	rdfs:label	"knowledge,"	.
+local:restricting_to_socalled_dlsafe_ones	a	rdf:Class	;
+	rdfs:label	"restricting to socalled dlsafe ones"	.
 
-local:general_than_similar_decidable_combinations	rdfs:label	"general than similar decidable combinations"	.
+local:restricting	a	rdf:Class	;
+	rdfs:label	"restricting"	.
 
-local:general	rdfs:label	"general"	.
+local:similar_decidable_combinations	a	rdf:Class	;
+	rdfs:label	"similar decidable combinations"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:decidable_combinations	a	rdf:Class	;
+	rdfs:label	"decidable combinations"	.
 
-local:decidability	rdfs:label	"decidability"	.
+local:combinations	a	rdf:Class	;
+	rdfs:label	"combinations"	.
 
-local:dlsafe_ones	rdfs:label	"dl-safe ones"	.
+local:similar_decidable	a	rdf:Class	;
+	rdfs:label	"similar decidable"	.
 
-local:ones	rdfs:label	"ones"	.
+local:decidable	a	rdf:Class	;
+	rdfs:label	"decidable"	.
 
-local:socalled	rdfs:label	"so-called"	.
+local:similar	a	rdf:Class	;
+	rdfs:label	"similar"	.
 
-local:socalled_dlsafe	rdfs:label	"so-called dl-safe"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:dlsafe	rdfs:label	"dl-safe"	.
+local:far	a	rdf:Class	;
+	rdfs:label	"far"	.
 
-local:socalled_dlsafe_ones	rdfs:label	"so-called dl-safe ones"	.
+local:decidable_such_combination_which_is_to_the_best_of_we	a	rdf:Class	;
+	rdfs:label	"decidable such combination which is to the best of we"	.
 
-local:rule_body	rdfs:label	"rule body"	.
+local:such_combination	a	rdf:Class	;
+	rdfs:label	"such combination"	.
 
-local:body	rdfs:label	"body"	.
+local:combination	a	rdf:Class	;
+	rdfs:label	"combination"	.
 
-local:rule	rdfs:label	"rule"	.
+local:decidable_such	a	rdf:Class	;
+	rdfs:label	"decidable such"	.
 
-local:restricting_to_socalled_dlsafe_ones	rdfs:label	"restricting to so-called dl-safe ones"	.
+local:such	a	rdf:Class	;
+	rdfs:label	"such"	.
 
-local:restricting	rdfs:label	"restricting"	.
+local:decidable_such_combination	a	rdf:Class	;
+	rdfs:label	"decidable such combination"	.
 
-local:requiring_in_rule	rdfs:label	"requiring in rule"	.
+local:best_of_we	a	rdf:Class	;
+	rdfs:label	"best of we"	.
 
-local:requiring	rdfs:label	"requiring"	.
+local:best	a	rdf:Class	;
+	rdfs:label	"best"	.
 
-local:occur_in_nondlatom	rdfs:label	"occur in non-dl-atom"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:occur	rdfs:label	"occur"	.
+local:general_than_similar_decidable_combinations	a	rdf:Class	;
+	rdfs:label	"general than similar decidable combinations"	.
 
-local:nondlatom	rdfs:label	"non-dl-atom"	.
+local:general	a	rdf:Class	;
+	rdfs:label	"general"	.
 
-local:nondlatom_in_rule_body	rdfs:label	"non-dl-atom in rule body"	.
+local:here	a	rdf:Class	;
+	rdfs:label	"here"	.
 
-local:nondlatom_in_rule	rdfs:label	"non-dl-atom in rule"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:variable_in_rule	rdfs:label	"variable in rule"	.
+local:undecidability_of_interesting_reasoning_problems	a	rdf:Class	;
+	rdfs:label	"undecidability of interesting reasoning problems"	.
 
-local:variable	rdfs:label	"variable"	.
+local:undecidability	a	rdf:Class	;
+	rdfs:label	"undecidability"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:problems	a	rdf:Class	;
+	rdfs:label	"problems"	.
 
-local:combined_logic	rdfs:label	"combined logic"	.
+local:reasoning_problems	a	rdf:Class	;
+	rdfs:label	"reasoning problems"	.
 
-local:combined	rdfs:label	"combined"	.
+local:interesting_reasoning_problems	a	rdf:Class	;
+	rdfs:label	"interesting reasoning problems"	.
 
-local:expressive	rdfs:label	"expressive"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:expressive_power	rdfs:label	"expressive power"	.
+local:easily	a	rdf:Class	;
+	rdfs:label	"easily"	.
 
-local:power	rdfs:label	"power"	.
+local:might	a	rdf:Class	;
+	rdfs:label	"might"	.
 
-local:logic_expressive_power	rdfs:label	"logic expressive power"	.
+local:several_such_combinations	a	rdf:Class	;
+	rdfs:label	"several such combinations"	.
 
-local:combined_logic_expressive_power	rdfs:label	"combined logic expressive power"	.
+local:several_such	a	rdf:Class	;
+	rdfs:label	"several such"	.
 
-local:such_combined_logic_expressive_power	rdfs:label	"such combined logic expressive power"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:query_answering	rdfs:label	"query answering"	.
+local:such_combinations	a	rdf:Class	;
+	rdfs:label	"such combinations"	.
 
-local:answering	rdfs:label	"answering"	.
+local:already	a	rdf:Class	;
+	rdfs:label	"already"	.
 
-local:query_answering_in_such_combined_logic_expressive_power	rdfs:label	"query answering in such combined logic expressive power"	.
+local:semantic_web_ontologies	a	rdf:Class	;
+	rdfs:label	"semantic web ontologies"	.
 
-local:nontrivial_example	rdfs:label	"non-trivial example"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:example	rdfs:label	"example"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:nontrivial	rdfs:label	"non-trivial"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:means_of_nontrivial_example	rdfs:label	"means of non-trivial example"	.
+local:web_ontologies	a	rdf:Class	;
+	rdfs:label	"web ontologies"	.
 
-local:means	rdfs:label	"means"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:logic_expressive	rdfs:label	"logic expressive"	.
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
 
-local:show	rdfs:label	"show"	.
+local:description_logic_perspective_rules	a	rdf:Class	;
+	rdfs:label	"description logic perspective rules"	.
 
-local:such_combined_logic	rdfs:label	"such combined logic"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:query_answering_in_such_combined_logic	rdfs:label	"query answering in such combined logic"	.
+local:logic_perspective_rules	a	rdf:Class	;
+	rdfs:label	"logic perspective rules"	.
 
-local:finally	rdfs:label	"finally"	.
+local:logic_perspective	a	rdf:Class	;
+	rdfs:label	"logic perspective"	.
 
-local:dlsafe_rules	rdfs:label	"dl-safe rules"	.
+local:perspective	a	rdf:Class	;
+	rdfs:label	"perspective"	.
 
-local:query	rdfs:label	"query"	.
+local:perspective_rules	a	rdf:Class	;
+	rdfs:label	"perspective rules"	.
 
-local:disjunctive_datalog	rdfs:label	"disjunctive datalog"	.
+local:universal_quantification	a	rdf:Class	;
+	rdfs:label	"universal quantification"	.
 
-local:datalog	rdfs:label	"datalog"	.
+local:universal	a	rdf:Class	;
+	rdfs:label	"universal"	.
 
-local:algorithm_for_query_answering	rdfs:label	"algorithm for query answering"	.
+local:quantification	a	rdf:Class	;
+	rdfs:label	"quantification"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:algorithm_for_query_answering_in_shiq	rdfs:label	"algorithm for query answering in shiq"	.
+local:interaction_of_variables_in_arbitrary_ways	a	rdf:Class	;
+	rdfs:label	"interaction of variables in arbitrary ways"	.
 
-local:shiq	rdfs:label	"shiq"	.
+local:interaction	a	rdf:Class	;
+	rdfs:label	"interaction"	.
 
-local:shiq_extended	rdfs:label	"shiq extended"	.
+local:arbitrary_ways	a	rdf:Class	;
+	rdfs:label	"arbitrary ways"	.
 
-local:extended	rdfs:label	"extended"	.
+local:variables	a	rdf:Class	;
+	rdfs:label	"variables"	.
 
-local:extended_with_dlsafe_rules	rdfs:label	"extended with dl-safe rules"	.
+local:ways	a	rdf:Class	;
+	rdfs:label	"ways"	.
 
-local:dlsafe_rules_basedon_reduction	rdfs:label	"dl-safe rules based_on reduction"	.
+local:arbitrary	a	rdf:Class	;
+	rdfs:label	"arbitrary"	.
 
-local:reduction	rdfs:label	"reduction"	.
+local:interaction_of_variables	a	rdf:Class	;
+	rdfs:label	"interaction of variables"	.
 
-local:reduction_to_disjunctive_datalog	rdfs:label	"reduction to disjunctive datalog"	.
+local:full_monotonic_negation	a	rdf:Class	;
+	rdfs:label	"full monotonic negation"	.
 
-local:based	rdfs:label	"based"	.
+local:full_monotonic	a	rdf:Class	;
+	rdfs:label	"full monotonic"	.
 
-#### Properties ####
+local:full	a	rdf:Class	;
+	rdfs:label	"full"	.
+
+local:monotonic_negation	a	rdf:Class	;
+	rdfs:label	"monotonic negation"	.
+
+local:negation	a	rdf:Class	;
+	rdfs:label	"negation"	.
+
+local:monotonic	a	rdf:Class	;
+	rdfs:label	"monotonic"	.
+
+local:quantify	a	rdf:Class	;
+	rdfs:label	"quantify"	.
+
+local:universally	a	rdf:Class	;
+	rdfs:label	"universally"	.
+
+local:owldl	a	rdf:Class	;
+	rdfs:label	"owldl"	.
+
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
+
+local:existentially_and_universally_quantified_full_monotonic_negation	a	rdf:Class	;
+	rdfs:label	"existentially and universally quantified full monotonic negation"	.
+
+local:universally_quantified_full_monotonic	a	rdf:Class	;
+	rdfs:label	"universally quantified full monotonic"	.
+
+local:universally_quantified_full	a	rdf:Class	;
+	rdfs:label	"universally quantified full"	.
+
+local:quantified_full_monotonic_negation	a	rdf:Class	;
+	rdfs:label	"quantified full monotonic negation"	.
+
+local:quantified_full	a	rdf:Class	;
+	rdfs:label	"quantified full"	.
+
+local:quantified	a	rdf:Class	;
+	rdfs:label	"quantified"	.
+
+local:universally_quantified	a	rdf:Class	;
+	rdfs:label	"universally quantified"	.
+
+local:quantified_full_monotonic	a	rdf:Class	;
+	rdfs:label	"quantified full monotonic"	.
+
+local:existentially_universally_quantified	a	rdf:Class	;
+	rdfs:label	"existentially universally quantified"	.
+
+local:treelike_rules	a	rdf:Class	;
+	rdfs:label	"treelike rules"	.
+
+local:treelike	a	rdf:Class	;
+	rdfs:label	"treelike"	.
+
+local:orthogonal	a	rdf:Class	;
+	rdfs:label	"orthogonal"	.
+
+local:yet	a	rdf:Class	;
+	rdfs:label	"yet"	.
+
+local:existentially_and_universally_quantified_variables	a	rdf:Class	;
+	rdfs:label	"existentially and universally quantified variables"	.
+
+local:rules_perspective_owldl	a	rdf:Class	;
+	rdfs:label	"rules perspective owldl"	.
+
+local:perspective_owldl	a	rdf:Class	;
+	rdfs:label	"perspective owldl"	.
 
 #### Mapped Relations ####
 
-cso:semantics	rdfs:label	"semantic"	.
-cso:query_answering	rdfs:label	"query answering"	.
+local:reasoning_problems	owl:sameAs	cso:reasoning_problems	.
+local:query_answering	owl:sameAs	cso:query_answering	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 local:datalog	owl:sameAs	cso:datalog	.
 cso:ontologies	rdfs:label	"ontologies"	.
-cso:datalog	rdfs:label	"datalog"	.
-local:reasoning_problems	owl:sameAs	cso:reasoning_problems	.
-local:description_logic	owl:sameAs	cso:description_logic	.
-cso:description_logic	rdfs:label	"description logic"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:semantic_web	rdfs:label	"semantic web"	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:semantic_web	owl:sameAs	cso:semantic_web	.
 cso:reasoning_problems	rdfs:label	"reasoning problems"	.
-local:query_answering	owl:sameAs	cso:query_answering	.
+cso:query_answering	rdfs:label	"query answering"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:datalog	rdfs:label	"datalog"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
 
 #### Relations ####
 
 local:nontrivial_example	rdfs:subClassOf	local:example	.
-local:based	vn.role:indirect_object	local:reduction_to_disjunctive_datalog	.
-local:dlsafe_rules_basedon_reduction	local:dl-saferules_based_on	local:reduction	.
-local:extended	vn.role:Theme	local:shiq	.
-local:socalled_dlsafe_ones	rdfs:subClassOf	local:ones	.
-local:means_of_nontrivial_example	local:means_of	local:nontrivial_example	.
-local:undecidability_of_interesting_reasoning_problems	local:of_interestingreasoningproblems	local:undecidability	.
-local:description_logic_perspective_rules	local:descriptionlogicperspective_	local:rules	.
-local:interesting_reasoning_problems	rdfs:subClassOf	local:reasoning_problems	.
-local:allow	vn.role:Agent	local:description_logic_perspective_rules	.
-local:requiring_in_rule	local:in_rule	local:requiring	.
-local:discuss	vn.role:Patient1	local:we	.
-local:lead	local:AM-MNR	local:easily	.
-local:similar_decidable_combinations	rdfs:subClassOf	local:combinations	.
-local:query	rdfs:member	local:query_answering	.
-local:query_answering_in_such_combined_logic	local:queryanswering_in	local:such_combined_logic	.
-local:discuss	vn.role:indirect_object	local:means_of_nontrivial_example	.
-local:provides	vn.role:Recipient	local:owldl	.
-local:dlsafe	rdfs:member	local:dlsafe_rules	.
-local:monotonic	rdfs:member	local:monotonic_negation	.
-local:functionfree	rdfs:member	local:functionfree_horn	.
-local:algorithm_for_query_answering_in_shiq	local:algorithmforqueryanswering_in	local:shiq	.
-local:knowledge	vn.role:object	local:general_than_similar_decidable_combinations	.
-local:building	vn.role:Material	local:semantic_web_ontologies	.
-local:such_combined_logic_expressive_power	rdfs:subClassOf	local:combined_logic_expressive_power	.
-local:full_monotonic_negation	rdfs:subClassOf	local:monotonic_negation	.
-local:quantified	rdfs:member	local:quantified_variables	.
-local:universally_quantified_variables	rdfs:subClassOf	local:variables	.
-local:dlsafe_rules_basedon_reduction	local:based_on_reduction	local:dlsafe_rules	.
-local:quantified_variables	rdfs:subClassOf	local:variables	.
-local:logic_perspective	rdfs:subClassOf	local:perspective	.
-local:decidable_such	rdfs:subClassOf	local:such	.
-local:extended	vn.role:Recipient	local:dlsafe_rules_basedon_reduction	.
-local:undecidability_of_interesting_reasoning_problems	local:undecidability_of	local:interesting_reasoning_problems	.
-local:monotonic_negation	rdfs:subClassOf	local:negation	.
-local:such_combination	rdfs:subClassOf	local:combination	.
-local:interaction_of_variables	local:interaction_of	local:variables	.
-local:decidable_combinations	rdfs:subClassOf	local:combinations	.
-local:semantic_web_ontologies	rdfs:subClassOf	local:ontologies	.
-local:restricting	vn.role:Cause	local:decidability	.
-local:extended_with_dlsafe_rules	local:with_dl-saferules	local:extended	.
-local:reasoning_problems	rdfs:subClassOf	local:problems	.
-local:rule_body	rdfs:subClassOf	local:body	.
-local:restricted	vn.role:Proposition	local:universal_quantification	.
-local:universal	rdfs:member	local:universal_quantification	.
-local:combined	vn.role:Patient	local:logic_expressive_power	.
-local:best_of_we	local:best_of	local:we	.
-local:rules_perspective	rdfs:subClassOf	local:perspective	.
-local:quantified	vn.role:Theme	local:variables	.
-local:existentially_universally_quantified	rdfs:subClassOf	local:universally_quantified	.
-local:present	vn.role:Theme	local:decidable_such_combination	.
-local:best_of_we	local:of_we	local:best	.
-local:algorithm_for_query_answering	local:algorithm_for	local:query_answering	.
-local:functionfree_horn_rules	rdfs:subClassOf	local:horn_rules	.
-local:horn	rdfs:member	local:horn_rules	.
-local:obtained	vn.role:Asset	local:restricting_to_socalled_dlsafe_ones	.
-local:present	vn.role:Agent	local:we	.
-local:query_answering_in_such_combined_logic	local:in_suchcombinedlogic	local:query_answering	.
-local:similar_decidable_combinations	rdfs:subClassOf	local:decidable_combinations	.
-local:web_ontologies	rdfs:subClassOf	local:ontologies	.
-local:combined_logic	rdfs:subClassOf	local:logic	.
-local:proposed	local:AM-MNR	local:far	.
-local:description	rdfs:member	local:description_logic	.
-local:dlsafe_rules	rdfs:subClassOf	local:rules	.
-local:universally_quantified	rdfs:member	local:universally_quantified_variables	.
-local:universal_quantification	rdfs:subClassOf	local:quantification	.
-local:treelike_rules	rdfs:subClassOf	local:rules	.
-local:decidable	rdfs:member	local:decidable_such	.
-local:occur	local:AM-LOC	local:nondlatom_in_rule	.
-local:algorithm_for_query_answering	local:for_queryanswering	local:algorithm	.
-local:means_of_nontrivial_example	local:of_non-trivialexample	local:means	.
-local:horn_rules	rdfs:subClassOf	local:rules	.
-local:logic	rdfs:member	local:logic_expressive	.
-local:semantic_web	rdfs:member	local:semantic_web_ontologies	.
-local:rule	rdfs:member	local:rule_body	.
-local:knowledge	vn.role:subject	local:decidable_such_combination	.
-local:occur	vn.role:Location	local:rule	.
-local:algorithm_for_query_answering_in_shiq	local:in_shiq	local:algorithm_for_query_answering	.
-local:functionfree_horn_rules	rdfs:subClassOf	local:rules	.
-local:decidable_such	rdfs:member	local:decidable_such_combination	.
-local:similar_decidable	rdfs:member	local:similar_decidable_combinations	.
-local:show	vn.role:Theme	local:decidable	.
-local:socalled	rdfs:member	local:socalled_dlsafe	.
-local:allow	vn.role:Theme	local:interaction_of_variables_in_arbitrary_ways	.
-local:rules_perspective_owldl	local:_owl-dl	local:rules_perspective	.
-local:decidable	rdfs:member	local:decidable_combinations	.
-local:description_logic_perspective_rules	local:_rules	local:description_logic_perspective	.
-local:shiq_extended	local:shiq_	local:extended	.
-local:query_answering	rdfs:subClassOf	local:answering	.
-local:obtained	vn.role:object	local:decidability	.
-local:decidable_such_combination	rdfs:subClassOf	local:such_combination	.
-local:similar_decidable	rdfs:subClassOf	local:decidable	.
-local:restricting_to_socalled_dlsafe_ones	local:to_so-calleddl-safeones	local:restricting	.
-local:logic_expressive_power	rdfs:subClassOf	local:power	.
-local:socalled_dlsafe	rdfs:subClassOf	local:dlsafe	.
-local:description_logic	rdfs:subClassOf	local:logic	.
-local:nondlatom_in_rule_body	local:in_rulebody	local:nondlatom	.
-local:perspective_rules	rdfs:subClassOf	local:rules	.
-local:restricted	vn.role:Proposition	local:treelike_rules	.
-local:combined_logic_expressive_power	rdfs:subClassOf	local:logic_expressive_power	.
-local:functionfree_horn	rdfs:subClassOf	local:horn	.
-local:however_combination	rdfs:subClassOf	local:combination	.
-local:present	vn.role:Recipient	local:finally	.
-local:present	vn.role:Theme	local:algorithm_for_query_answering_in_shiq	.
-local:socalled_dlsafe_ones	rdfs:subClassOf	local:dlsafe_ones	.
-local:expressive	rdfs:member	local:expressive_power	.
-local:interaction_of_variables	local:of_variables	local:interaction	.
-local:treelike	rdfs:member	local:treelike_rules	.
-local:universally_quantified	rdfs:subClassOf	local:quantified	.
-local:logic_expressive_power	rdfs:subClassOf	local:expressive_power	.
-local:show	vn.role:Agent	local:we	.
-local:restricting	vn.role:Proposition	local:socalled_dlsafe_ones	.
-local:dlsafe	rdfs:member	local:dlsafe_ones	.
-local:semantic_web_ontologies	rdfs:subClassOf	local:web_ontologies	.
-local:requiring	vn.role:Agent	local:socalled_dlsafe_ones	.
-local:query_answering_in_such_combined_logic_expressive_power	local:queryanswering_in	local:such_combined_logic_expressive_power	.
-local:nondlatom_in_rule_body	local:non-dl-atom_in	local:rule_body	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:variable_in_rule	local:variable_in	local:rule	.
-local:web	rdfs:member	local:web_ontologies	.
-local:general_than_similar_decidable_combinations	local:general_than	local:similar_decidable_combinations	.
-local:dlsafe_ones	rdfs:subClassOf	local:ones	.
-local:arbitrary	rdfs:member	local:arbitrary_ways	.
-local:similar	rdfs:member	local:similar_decidable	.
-local:combined	vn.role:Patient2	local:logic	.
-local:extended_with_dlsafe_rules	local:extended_with	local:dlsafe_rules	.
-local:socalled_dlsafe	rdfs:member	local:socalled_dlsafe_ones	.
-local:variable_in_rule	local:in_rule	local:variable	.
-local:occur_in_nondlatom	local:in_non-dl-atom	local:occur	.
-local:restricting_to_socalled_dlsafe_ones	local:restricting_to	local:socalled_dlsafe_ones	.
-local:lead	vn.role:Destination	local:undecidability_of_interesting_reasoning_problems	.
-local:present	vn.role:Recipient	local:here	.
-local:such	rdfs:member	local:such_combination	.
-local:interaction_of_variables_in_arbitrary_ways	local:interactionofvariables_in	local:arbitrary_ways	.
-local:proposed	vn.role:Agent	local:similar_decidable_combinations	.
-local:nondlatom_in_rule	local:in_rule	local:nondlatom	.
-local:occur_in_nondlatom	local:occur_in	local:nondlatom	.
-local:such_combined_logic	rdfs:subClassOf	local:combined_logic	.
-local:reduction_to_disjunctive_datalog	local:to_disjunctivedatalog	local:reduction	.
-local:provides	vn.role:Recipient	local:functionfree_horn_rules	.
-local:restricted	local:AM-MNR	local:description_logic	.
-local:disjunctive_datalog	rdfs:subClassOf	local:datalog	.
-local:universally	rdfs:member	local:universally_quantified	.
-local:reduction_to_disjunctive_datalog	local:reduction_to	local:disjunctive_datalog	.
+local:s12	rdf:subject	local:decidable_such_combination_which_is_to_the_best_of_we	.
+local:s0.2	rdf:predicate	local:provide	.
+local:s1.3	rdf:subject	local:full_monotonic_negation	.
+local:s3.1	rdf:predicate	local:restrict	.
+local:s3	local:AM-TMP	local:yet	.
+local:interaction_of_variables	rdfs:member	local:variables	.
+local:s15.1	rdf:object	local:logic	.
+local:universally_quantified_full_monotonic	rdfs:member	local:universally_quantified_full	.
+local:s11	rdf:subject	local:we	.
+local:s2.1	rdf:predicate	local:restrict	.
 local:expressive_power	rdfs:subClassOf	local:power	.
-local:logic	rdfs:member	local:logic_perspective	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:logic_expressive	rdfs:subClassOf	local:expressive	.
-local:general_than_similar_decidable_combinations	local:than_similardecidablecombinations	local:general	.
-local:lead	local:AM-MOD	local:might	.
-local:combined	rdfs:member	local:combined_logic	.
-local:restricted	vn.role:Patient	local:rules_perspective_owldl	.
-local:rules_perspective_owldl	local:rulesperspective_	local:owldl	.
-local:lead	vn.role:Agent	local:however_combination	.
-local:provides	vn.role:Agent	local:existentially_universally_quantified	.
-local:restricted	vn.role:Patient	local:perspective_rules	.
-local:logic_expressive	rdfs:member	local:logic_expressive_power	.
-local:quantified	local:AM-MNR	local:universally	.
-local:requiring_in_rule	local:requiring_in	local:rule	.
-local:shiq_extended	local:_extended	local:shiq	.
-local:arbitrary_ways	rdfs:subClassOf	local:ways	.
-local:restricting	vn.role:Patient	local:rules	.
-local:query_answering_in_such_combined_logic_expressive_power	local:in_suchcombinedlogicexpressivepower	local:query_answering	.
-local:description_logic_perspective	rdfs:subClassOf	local:logic_perspective	.
-local:nondlatom_in_rule	local:non-dl-atom_in	local:rule	.
-local:functionfree_horn	rdfs:member	local:functionfree_horn_rules	.
-local:discuss	vn.role:Patient2	local:query_answering_in_such_combined_logic_expressive_power	.
+local:undecidability_of_interesting_reasoning_problems	rdfs:member	local:interesting_reasoning_problems	.
+local:s17.2	rdf:subject	local:dlsafe_rules	.
+local:restricting_to_socalled_dlsafe_ones	rdfs:member	local:socalled_dlsafe_ones	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	rdfs:member	local:dlsafe_rules	.
+local:undecidability_of_interesting_reasoning_problems	rdfs:member	local:undecidability	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	rdfs:member	local:reduction	.
+local:s14	local:AM-MNR	local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	.
+local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:variable	.
+local:s8	rdf:subject	local:several_such_combinations	.
+local:description_logic_perspective_rules	rdfs:member	local:logic_perspective_rules	.
+local:s16	rdf:object	local:query_answering_in_such_a_combined_logic_expressive_power_means_of_a_nontrivial_example	.
+local:s14.3	rdfs:member	local:rule	.
+local:combined_logic_expressive_power_means	rdfs:subClassOf	local:logic_expressive_power_means	.
+local:nondlatom_in_rule_body	rdfs:member	local:rule_body	.
+local:s1	rdf:subject	local:expressive_power	.
+local:monotonic_negation	rdfs:subClassOf	local:negation	.
+local:s3.3	rdf:subject	local:full_monotonic_negation	.
+local:s1.1	rdf:predicate	local:restrict	.
+local:s0.3	local:AM-MNR	local:universally	.
+local:occur_in_nondlatom	rdfs:member	local:occur	.
+local:dlsafe_rules	rdfs:member	local:dlsafe	.
+local:s6	rdf:predicate	local:build	.
+local:query_answering	rdfs:member	local:query	.
+local:decidable_combinations	rdfs:subClassOf	local:combinations	.
+local:decidable_such_combination	rdfs:member	local:decidable_such	.
+local:s2.2	rdf:predicate	local:provide	.
+local:variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rule	.
+local:dlsafe_ones	rdfs:subClassOf	local:ones	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:s10	local:AM-DIS	local:however	.
+local:such_combined_logic_expressive_power_means_of_nontrivial_example	rdfs:member	local:such_combined_logic_expressive_power_means	.
+local:quantified_full	rdfs:member	local:quantified	.
+local:s17	local:AM-TMP	local:finally	.
+local:s0.3	rdf:predicate	local:quantify	.
+local:s14.2	rdf:object	local:dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	.
+local:interaction_of_variables_in_arbitrary_ways	rdfs:member	local:interaction_of_variables	.
+local:s5	rdf:object	local:universal_quantification	.
+local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rule_body	.
+local:several_such_combinations	rdfs:subClassOf	local:such_combinations	.
+local:interaction_of_variables_in_arbitrary_ways	rdfs:member	local:arbitrary_ways	.
+local:several_such_combinations	rdfs:subClassOf	local:combinations	.
+local:s17.1	rdf:object	local:dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	.
+local:socalled_dlsafe_ones	rdfs:subClassOf	local:dlsafe_ones	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	rdfs:member	local:shiq	.
+local:s17.2	rdf:predicate	local:base	.
 local:decidable_such_combination	rdfs:subClassOf	local:combination	.
-local:requiring	vn.role:Patient	local:variable_in_rule	.
-local:interaction_of_variables_in_arbitrary_ways	local:in_arbitraryways	local:interaction_of_variables	.
-local:nontrivial	rdfs:member	local:nontrivial_example	.
-local:quantified	vn.role:Theme	local:full_monotonic_negation	.
+local:query_answering_in_such_a_combined_logic_expressive_power_means_of_a_nontrivial_example	rdfs:member	local:expressive_power_means	.
+local:query_answering_in_such_a_combined_logic_is_decidable	rdfs:member	local:query	.
+local:logic_perspective	rdfs:subClassOf	local:perspective	.
+local:s2.1	rdf:object	local:treelike_rules	.
+local:perspective_rules	rdfs:subClassOf	local:rules	.
+local:perspective_rules	rdfs:member	local:perspective	.
+local:s14.3	rdfs:member	local:rule_body	.
+local:interesting_reasoning_problems	rdfs:subClassOf	local:reasoning_problems	.
+local:s3.1	rdf:subject	local:owldl	.
+local:s1.1	rdf:object	local:treelike_rules	.
+local:nondlatom_in_rule_body	rdfs:member	local:nondlatom	.
+local:s14.3	rdf:subject	local:dlsafe_ones	.
+local:s14.4	rdf:predicate	local:occur	.
+local:s14.3	rdfs:member	local:dlsafe_ones	.
+local:universal_quantification	rdfs:member	local:universal	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rule_body	.
+local:logic_expressive_power	rdfs:member	local:logic_expressive	.
+local:query_answering_in_such_combined_logic_expressive_power_means	rdfs:member	local:such_combined_logic_expressive_power_means	.
+local:logic_perspective_rules	rdfs:member	local:logic_perspective	.
+local:s1.1	rdf:subject	local:rules_perspective_owldl	.
+local:interaction_of_variables_in_arbitrary_ways	rdfs:member	local:variables	.
+local:s3.1	rdf:object	local:treelike_rules	.
+local:s2	rdf:predicate	local:orthogonal	.
+local:socalled_dlsafe_ones_requiring	rdfs:member	local:socalled_dlsafe_ones	.
+local:s12	rdf:predicate	local:knowledge	.
+local:s17.2	rdf:object	local:reduction_to_disjunctive_datalog	.
+local:existentially_universally_quantified	rdfs:subClassOf	local:universally_quantified	.
+local:rules_perspective_owldl	rdfs:member	local:owldl	.
+local:logic_expressive	rdfs:member	local:logic	.
+local:query_answering_in_such_combined_logic	rdfs:member	local:such_combined_logic	.
+local:s1.3	rdfs:subClassOf	local:negation	.
+local:s17.2	rdfs:member	local:datalog	.
+local:s17	rdf:predicate	local:present	.
+local:s14.1	local:AM-PNC	local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	.
+local:s1.2	rdf:predicate	local:provide	.
+local:such_combinations	rdfs:subClassOf	local:combinations	.
+local:such_combined_logic_expressive_power_means_of_nontrivial_example	rdfs:member	local:nontrivial_example	.
+local:similar_decidable	rdfs:member	local:similar	.
+local:s0	rdf:subject	local:expressive_power	.
+local:universally_quantified	rdfs:subClassOf	local:quantified	.
+local:extended_with_dlsafe_rules	rdfs:member	local:dlsafe_rules	.
+local:full_monotonic_negation	rdfs:subClassOf	local:negation	.
+local:logic_perspective	rdfs:member	local:logic	.
+local:s3.3	local:AM-MNR	local:universally	.
+local:rule_body	rdfs:subClassOf	local:body	.
+local:query_answering_in_such_a_combined_logic_expressive_power_means_of_a_nontrivial_example	rdfs:member	local:combined_logic	.
+local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rule	.
+local:variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:nondlatom	.
+local:s13	rdf:subject	local:similar_decidable_combinations	.
+local:s15.1	rdf:predicate	local:combine	.
+local:arbitrary_ways	rdfs:member	local:arbitrary	.
+local:interaction_of_variables	rdfs:member	local:interaction	.
+local:s10	rdf:object	local:undecidability_of_interesting_reasoning_problems	.
+local:such_combination	rdfs:subClassOf	local:combination	.
+local:s2.2	rdf:subject	local:owldl	.
+local:several_such_combinations	rdfs:member	local:several_such	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rule	.
+local:such_combined_logic_expressive_power_means	rdfs:subClassOf	local:combined_logic_expressive_power_means	.
+local:s17.1	rdf:predicate	local:extend	.
+local:s17	rdf:object	local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	.
+local:expressive_power_means	rdfs:subClassOf	local:power_means	.
+local:s14.1	rdf:object	local:rules	.
+local:s4	rdf:predicate	local:allow	.
+local:web_ontologies	rdfs:subClassOf	local:ontologies	.
+local:query_answering_in_such_a_combined_logic_is_decidable	rdfs:member	local:s15.1	.
+local:universally_quantified_full	rdfs:member	local:universally_quantified	.
+local:s0.2	rdf:object	local:existentially_and_universally_quantified_variables	.
+local:dlsafe_rules_based_on_reduction	rdfs:member	local:dlsafe_rules	.
+local:best_of_we	rdfs:member	local:best	.
+local:s2.3	rdf:subject	local:variables	.
+local:reduction_to_disjunctive_datalog	rdfs:member	local:disjunctive_datalog	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:s14.3	rdfs:member	local:nondlatom	.
+local:nondlatom_in_the_rule_body	rdfs:member	local:nondlatom	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:s13	rdf:predicate	local:propose	.
+local:interaction_of_variables_in_arbitrary_ways	rdfs:member	local:interaction	.
+local:query_answering_in_shiq	rdfs:member	local:query_answering	.
+local:s14.2	rdf:subject	local:decidability	.
+local:quantified_full	rdfs:subClassOf	local:full	.
+local:treelike_rules	rdfs:subClassOf	local:rules	.
+local:monotonic_negation	rdfs:member	local:monotonic	.
+local:s3.2	rdf:object	local:existentially_and_universally_quantified_full_monotonic_negation	.
+local:full_monotonic	rdfs:member	local:full	.
+local:s1.3	local:AM-MNR	local:universally	.
+local:variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:variable	.
+local:s15.1	rdfs:member	local:combined	.
+local:similar_decidable_combinations	rdfs:subClassOf	local:decidable_combinations	.
+local:s12	rdf:object	local:general_than_similar_decidable_combinations	.
+local:treelike_rules	rdfs:member	local:treelike	.
+local:s0	local:AM-TMP	local:yet	.
+local:query_answering_in_such_a_combined_logic_expressive_power_means_of_a_nontrivial_example	rdfs:member	local:query	.
+local:decidable_such	rdfs:subClassOf	local:such	.
+local:expressive_power	rdfs:member	local:expressive	.
+local:general_than_similar_decidable_combinations	rdfs:member	local:general	.
+local:s10	local:AM-MNR	local:easily	.
+local:web_ontologies	rdfs:member	local:web	.
+local:semantic_web_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s15	rdf:predicate	local:show	.
+local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:nondlatom	.
+local:similar_decidable_combinations	rdfs:member	local:similar_decidable	.
+local:s17	rdf:subject	local:we	.
+local:socalled_dlsafe_ones_requiring	rdfs:member	local:requiring	.
+local:s5	rdf:predicate	local:restrict	.
+local:s4	rdf:object	local:interaction_of_variables_in_arbitrary_ways	.
+local:decidable_such	rdfs:member	local:decidable	.
+local:s2.1	rdf:subject	local:owldl	.
+local:s1.2	rdf:subject	local:owldl	.
+local:such_combined_logic	rdfs:subClassOf	local:s15.1	.
+local:query_answering_in_shiq	rdfs:member	local:shiq	.
+local:nontrivial_example	rdfs:member	local:nontrivial	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rules	.
+local:semantic_web_ontologies	rdfs:subClassOf	local:web_ontologies	.
+local:s3.3	rdfs:subClassOf	local:negation	.
+local:universally_quantified_full_monotonic	rdfs:subClassOf	local:monotonic	.
+local:algorithm_for_query_answering	rdfs:member	local:query_answering	.
+local:s10	rdf:predicate	local:lead	.
+local:s0.2	rdf:subject	local:owldl	.
+local:power_means	rdfs:member	local:power	.
+local:s10	local:AM-MOD	local:might	.
+local:s14.1	rdf:predicate	local:restrict	.
+local:s3.3	rdf:predicate	local:quantify	.
+local:s0.1	rdf:object	local:treelike_rules	.
+local:s0.3	rdf:subject	local:variables	.
+local:dlsafe_rules	rdfs:subClassOf	local:rules	.
+local:rules_perspective_owldl	rdfs:subClassOf	local:perspective_owldl	.
+local:s3.3	rdfs:member	local:universally_quantified_full_monotonic	.
+local:s14	rdf:subject	local:decidability	.
+local:arbitrary_ways	rdfs:subClassOf	local:ways	.
+local:s15	rdf:object	local:query_answering_in_such_a_combined_logic_is_decidable	.
+local:s2	local:AM-TMP	local:yet	.
+local:s16.1	rdf:predicate	local:combine	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:nondlatom	.
+local:quantified_full_monotonic_negation	rdfs:member	local:quantified_full_monotonic	.
+local:dlsafe_ones_requiring	rdfs:member	local:requiring	.
+local:dlsafe_ones	rdfs:member	local:dlsafe	.
+local:s17.1	rdf:subject	local:shiq	.
+local:power_means	rdfs:subClassOf	local:means	.
+local:s1.3	rdfs:member	local:universally_quantified_full_monotonic	.
+local:algorithm_for_query_answering	rdfs:member	local:algorithm	.
+local:s16	rdf:subject	local:we	.
+local:reduction_to_disjunctive_datalog	rdfs:member	local:datalog	.
+local:s14.3	rdf:predicate	local:require	.
+local:disjunctive_datalog	rdfs:subClassOf	local:datalog	.
+local:s3	rdf:predicate	local:orthogonal	.
+local:general_than_similar_decidable_combinations	rdfs:member	local:similar_decidable_combinations	.
+local:universally_quantified_full	rdfs:subClassOf	local:full	.
+local:s14.1	rdf:subject	local:decidability	.
+local:s14	rdf:predicate	local:obtain	.
+local:universal_quantification	rdfs:subClassOf	local:quantification	.
+local:nondlatom_in_the_rule_body	rdfs:member	local:rule_body	.
+local:quantified_full_monotonic	rdfs:subClassOf	local:monotonic	.
+local:s1.2	rdf:object	local:existentially_and_universally_quantified_full_monotonic_negation	.
+local:such_combinations	rdfs:member	local:such	.
+local:s0	rdf:predicate	local:orthogonal	.
+local:similar_decidable_combinations	rdfs:subClassOf	local:combinations	.
+local:similar_decidable	rdfs:subClassOf	local:decidable	.
+local:s6	rdf:subject	local:semantic_web_ontologies	.
+local:combined_logic	rdfs:subClassOf	local:logic	.
+local:such_combination	rdfs:member	local:such	.
+local:logic_perspective_rules	rdfs:subClassOf	local:perspective_rules	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:variable	.
+local:s15	rdf:subject	local:we	.
+local:s16	rdf:predicate	local:discuss	.
+local:logic_expressive_power	rdfs:subClassOf	local:expressive_power	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	rdfs:member	local:query_answering	.
+local:query_answering_in_such_combined_logic_expressive_power_means	rdfs:member	local:query_answering	.
+local:s16.1	rdf:subject	local:logic_expressive_power	.
+local:undecidability_of_interesting_reasoning_problems	rdfs:member	local:problems	.
+local:restricting_rules_to_socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:dlsafe_ones	.
+local:s17.2	rdfs:member	local:dlsafe_rules	.
+local:s14.3	rdfs:member	local:variable	.
+local:s11	rdf:predicate	local:present	.
+local:extended_with_dlsafe_rules	rdfs:member	local:extended	.
+local:decidable_such_combination	rdfs:subClassOf	local:such_combination	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	rdfs:member	local:datalog	.
+local:reasoning_problems	rdfs:subClassOf	local:problems	.
+local:algorithm_for_query_answering_in_shiq_extended_with_dlsafe_rules_based_on_the_reduction_to_disjunctive_datalog	rdfs:member	local:algorithm	.
+local:s1.3	rdf:predicate	local:quantify	.
+local:expressive_power_means	rdfs:member	local:expressive_power	.
+local:description_logic_perspective_rules	rdfs:subClassOf	local:logic_perspective_rules	.
+local:s14.4	rdf:subject	local:rule	.
+local:socalled_dlsafe_ones_requiring_each_variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:dlsafe_ones	.
+local:s0.1	rdf:subject	local:rules_perspective_owldl	.
+local:several_such	rdfs:subClassOf	local:such	.
+local:dlsafe_rules_based_on_reduction	rdfs:member	local:reduction	.
+local:variable_in_rule	rdfs:member	local:variable	.
+local:s8	rdf:predicate	local:discuss	.
+local:semantic_web_ontologies	rdfs:member	local:semantic_web	.
+local:s7	rdf:predicate	local:build	.
+local:description_logic_perspective_rules	rdfs:member	local:description	.
+local:universally_quantified	rdfs:member	local:universally	.
+local:s2	rdf:subject	local:expressive_power	.
+local:s0.1	rdf:predicate	local:restrict	.
+local:s13	local:AM-TMP	local:far	.
+local:s14.4	local:AM-LOC	local:nondlatom_in_the_rule_body	.
+local:logic_expressive_power	rdfs:subClassOf	local:power	.
+local:variable_in_rule	rdfs:member	local:rule	.
+local:decidable_combinations	rdfs:member	local:decidable	.
+local:requiring_in_rule	rdfs:member	local:rule	.
+local:best_of_we	rdfs:member	local:we	.
+local:rules_perspective_owldl	rdfs:member	local:rules	.
+local:s7	rdf:subject	local:semantic_web_ontologies	.
+local:full_monotonic_negation	rdfs:subClassOf	local:monotonic_negation	.
+local:s1	rdf:predicate	local:orthogonal	.
+local:requiring_in_rule	rdfs:member	local:requiring	.
+local:s11	rdf:object	local:decidable_such_combination	.
+local:expressive_power_means	rdfs:subClassOf	local:means	.
+local:s3.2	rdf:subject	local:owldl	.
+local:s11	local:AM-LOC	local:here	.
+local:several_such	rdfs:member	local:several	.
+local:full_monotonic_negation	rdfs:member	local:full_monotonic	.
+local:query_answering_in_such_a_combined_logic_expressive_power_means_of_a_nontrivial_example	rdfs:member	local:nontrivial_example	.
+local:rule_body	rdfs:member	local:rule	.
+local:variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	rdfs:member	local:rule_body	.
+local:s8	local:AM-TMP	local:already	.
+local:s5	rdf:subject	local:description_logic_perspective_rules	.
+local:quantified_full_monotonic	rdfs:member	local:quantified_full	.
+local:logic_expressive	rdfs:subClassOf	local:expressive	.
+local:s1	local:AM-TMP	local:yet	.
+local:s15.1	rdfs:subClassOf	local:logic	.
+local:s2.2	rdf:object	local:existentially_and_universally_quantified_variables	.
+local:logic_expressive_power_means	rdfs:subClassOf	local:expressive_power_means	.
+local:s14.3	rdf:object	local:variable_in_a_rule_to_occur_in_a_nondlatom_in_the_rule_body	.
+local:s10	rdf:subject	local:combination	.
+local:s3	rdf:subject	local:expressive_power	.
+local:full_monotonic	rdfs:subClassOf	local:monotonic	.
+local:s17.2	rdfs:member	local:reduction	.
+local:reduction_to_disjunctive_datalog	rdfs:member	local:reduction	.
+local:s4	rdf:subject	local:description_logic_perspective_rules	.
+local:s14.2	rdf:predicate	local:socalled	.
+local:dlsafe_ones_requiring	rdfs:member	local:dlsafe_ones	.
+local:restricting_to_socalled_dlsafe_ones	rdfs:member	local:restricting	.
+local:s2.3	rdf:predicate	local:quantify	.
+local:occur_in_nondlatom	rdfs:member	local:nondlatom	.
+local:combined_logic	rdfs:member	local:combined	.
+local:s2.3	local:AM-MNR	local:universally	.
+local:quantified_full_monotonic_negation	rdfs:subClassOf	local:negation	.
+local:perspective_owldl	rdfs:subClassOf	local:owldl	.
+local:logic_perspective_rules	rdfs:subClassOf	local:rules	.
+local:s3.2	rdf:predicate	local:provide	.
+local:query_answering_in_such_combined_logic	rdfs:member	local:query_answering	.

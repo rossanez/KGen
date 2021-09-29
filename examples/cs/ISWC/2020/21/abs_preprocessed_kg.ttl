@@ -1,414 +1,682 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"methods only using either of rule learning and gnns"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"substantial improvement compared to methods only using either of rule learning and gnns"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"gnns achieves substantial improvement compared to methods only using either of rule learning and gnns"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we show the effectiveness of rgrec on three realworld datasets"	.
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"better encode various information"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"then it rules captures the connectivity between entities by aggregation to better encode various information"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"rules model the explicit longrange semantics"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"then it automatically learns rules to model the explicit longrange semantics"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"rgrec first adds users as new entities"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"rule learning for recommendation"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"rgrec which combines rule learning for recommendation"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose rgrec"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"rgrec which combines gnns for recommendation"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"rgrec which combines graph neural networks for recommendation"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"users meanwhile consider various connectivity between items"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"however existing work can not capture the explicit longrange semantics between users meanwhile consider various connectivity between items"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"existing work"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"items meanwhile consider various connectivity between items"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"however existing work can not capture the explicit longrange semantics between items meanwhile consider various connectivity between items"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"existing work"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"existing work incorporated with knowledge graphs"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"existing work"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"the cold start problem caused by collaborative filtering in recommender systems"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"to alleviate the cold start problem knowledge graphs increasingly employed by many methods as auxiliary resources"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"alleviate the cold start problem knowledge graphs"	.
+
+
 #### Classes ####
 
-local:cold	rdfs:label	"cold"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:cold_start	rdfs:label	"cold start"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:start_problem_knowledge	rdfs:label	"start problem knowledge"	.
+local:either_of_rule_learning_and_gnns	a	rdf:Class	;
+	rdfs:label	"either of rule learning and gnns"	.
 
-local:start_problem_knowledge_graphs	rdfs:label	"start problem knowledge graphs"	.
+local:gnns	a	rdf:Class	;
+	rdfs:label	"gnns"	.
 
-local:cold_start_problem	rdfs:label	"cold start problem"	.
+local:rule_learning	a	rdf:Class	;
+	rdfs:label	"rule learning"	.
 
-local:cold_start_problem_knowledge	rdfs:label	"cold start problem knowledge"	.
+local:rule	a	rdf:Class	;
+	rdfs:label	"rule"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:learning	a	rdf:Class	;
+	rdfs:label	"learning"	.
 
-local:problem_knowledge_graphs	rdfs:label	"problem knowledge graphs"	.
+local:either_of_rule_learning	a	rdf:Class	;
+	rdfs:label	"either of rule learning"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:either	a	rdf:Class	;
+	rdfs:label	"either"	.
 
-local:problem_knowledge	rdfs:label	"problem knowledge"	.
+local:either_of_rule_learning_of_gnns	a	rdf:Class	;
+	rdfs:label	"either of rule learning of gnns"	.
 
-local:start	rdfs:label	"start"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:start_problem	rdfs:label	"start problem"	.
+local:substantial_improvement	a	rdf:Class	;
+	rdfs:label	"substantial improvement"	.
 
-local:problem	rdfs:label	"problem"	.
+local:substantial	a	rdf:Class	;
+	rdfs:label	"substantial"	.
 
-local:cold_start_problem_knowledge_graphs	rdfs:label	"cold start problem knowledge graphs"	.
+local:improvement	a	rdf:Class	;
+	rdfs:label	"improvement"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:alleviate	rdfs:label	"alleviate"	.
+local:methods_only_using_either_of_rule_learning_and_gnns	a	rdf:Class	;
+	rdfs:label	"methods only using either of rule learning and gnns"	.
 
-local:employed	rdfs:label	"employed"	.
+local:only_using	a	rdf:Class	;
+	rdfs:label	"only using"	.
 
-local:increasingly	rdfs:label	"increasingly"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:auxiliary_resources	rdfs:label	"auxiliary resources"	.
+local:methods_only_using	a	rdf:Class	;
+	rdfs:label	"methods only using"	.
 
-local:resources	rdfs:label	"resources"	.
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
 
-local:many	rdfs:label	"many"	.
+local:substantial_improvement_compared_to_methods_only_using_either_of_rule_learning_and_gnns	a	rdf:Class	;
+	rdfs:label	"substantial improvement compared to methods only using either of rule learning and gnns"	.
 
-local:many_methods	rdfs:label	"many methods"	.
+local:substantial_improvement_compared	a	rdf:Class	;
+	rdfs:label	"substantial improvement compared"	.
 
-local:auxiliary	rdfs:label	"auxiliary"	.
+local:compared	a	rdf:Class	;
+	rdfs:label	"compared"	.
 
-local:methods	rdfs:label	"methods"	.
+local:compared_to_methods	a	rdf:Class	;
+	rdfs:label	"compared to methods"	.
 
-local:many_methods_as_auxiliary_resources	rdfs:label	"many methods as auxiliary resources"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:caused	rdfs:label	"caused"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:collaborative_filtering	rdfs:label	"collaborative filtering"	.
+local:effectiveness_of_rgrec	a	rdf:Class	;
+	rdfs:label	"effectiveness of rgrec"	.
 
-local:filtering	rdfs:label	"filtering"	.
+local:effectiveness	a	rdf:Class	;
+	rdfs:label	"effectiveness"	.
 
-local:collaborative	rdfs:label	"collaborative"	.
+local:rgrec	a	rdf:Class	;
+	rdfs:label	"rgrec"	.
 
-local:recommender_systems	rdfs:label	"recommender systems"	.
+local:three_realworld_datasets	a	rdf:Class	;
+	rdfs:label	"three realworld datasets"	.
 
-local:systems	rdfs:label	"systems"	.
+local:realworld_datasets	a	rdf:Class	;
+	rdfs:label	"realworld datasets"	.
 
-local:recommender	rdfs:label	"recommender"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:collaborative_filtering_in_recommender_systems	rdfs:label	"collaborative filtering in recommender systems"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:existing	rdfs:label	"existing"	.
+local:various_information	a	rdf:Class	;
+	rdfs:label	"various information"	.
 
-local:work	rdfs:label	"work"	.
+local:various	a	rdf:Class	;
+	rdfs:label	"various"	.
 
-local:existing_work	rdfs:label	"existing work"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:however_existing_work	rdfs:label	"however existing work"	.
+local:encode	a	rdf:Class	;
+	rdfs:label	"encode"	.
 
-local:capture	rdfs:label	"capture"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:can	rdfs:label	"can"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:not	rdfs:label	"not"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-local:explicit_longrange	rdfs:label	"explicit long-range"	.
+local:connectivity_between_entities_by_aggregation_to_better_encode_various_information	a	rdf:Class	;
+	rdfs:label	"connectivity between entities by aggregation to better encode various information"	.
 
-local:longrange	rdfs:label	"long-range"	.
+local:aggregation	a	rdf:Class	;
+	rdfs:label	"aggregation"	.
 
-local:explicit_longrange_semantics	rdfs:label	"explicit long-range semantics"	.
+local:connectivity	a	rdf:Class	;
+	rdfs:label	"connectivity"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:longrange_semantics	rdfs:label	"long-range semantics"	.
+local:better_encode	a	rdf:Class	;
+	rdfs:label	"better encode"	.
 
-local:explicit	rdfs:label	"explicit"	.
+local:connectivity_between_entities	a	rdf:Class	;
+	rdfs:label	"connectivity between entities"	.
 
-local:various_connectivity	rdfs:label	"various connectivity"	.
+local:connectivity_between_entities_by_aggregation	a	rdf:Class	;
+	rdfs:label	"connectivity between entities by aggregation"	.
 
-local:connectivity	rdfs:label	"connectivity"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:various	rdfs:label	"various"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:meanwhile_consider	rdfs:label	"meanwhile consider"	.
+local:explicit_longrange_semantics	a	rdf:Class	;
+	rdfs:label	"explicit longrange semantics"	.
 
-local:consider	rdfs:label	"consider"	.
+local:longrange_semantics	a	rdf:Class	;
+	rdfs:label	"longrange semantics"	.
 
-local:various_connectivity_between_items	rdfs:label	"various connectivity between items"	.
+local:longrange	a	rdf:Class	;
+	rdfs:label	"longrange"	.
 
-local:items	rdfs:label	"items"	.
+local:explicit_longrange	a	rdf:Class	;
+	rdfs:label	"explicit longrange"	.
 
-local:meanwhile	rdfs:label	"meanwhile"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:incorporated	rdfs:label	"incorporated"	.
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
 
-local:explicit_longrange_semantics_between_users	rdfs:label	"explicit long-range semantics between users"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:users	rdfs:label	"users"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:combines	rdfs:label	"combines"	.
+local:rules_to_model_the_explicit_longrange_semantics	a	rdf:Class	;
+	rdfs:label	"rules to model the explicit longrange semantics"	.
 
-local:rgrec	rdfs:label	"rgrec"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:gnns	rdfs:label	"gnns"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:recommendation	rdfs:label	"recommendation"	.
+local:users_new_entities	a	rdf:Class	;
+	rdfs:label	"users new entities"	.
 
-local:neural	rdfs:label	"neural"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:neural_networks	rdfs:label	"neural networks"	.
+local:new_entities	a	rdf:Class	;
+	rdfs:label	"new entities"	.
 
-local:networks	rdfs:label	"networks"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:graph_neural_networks	rdfs:label	"graph neural networks"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:graph_neural	rdfs:label	"graph neural"	.
+local:recommendation	a	rdf:Class	;
+	rdfs:label	"recommendation"	.
 
-local:graph	rdfs:label	"graph"	.
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
 
-local:graph_neural_networks_for_recommendation	rdfs:label	"graph neural networks for recommendation"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:rule_learning	rdfs:label	"rule learning"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:learning	rdfs:label	"learning"	.
+local:graph_neural_networks	a	rdf:Class	;
+	rdfs:label	"graph neural networks"	.
 
-local:propose	rdfs:label	"propose"	.
+local:networks	a	rdf:Class	;
+	rdfs:label	"networks"	.
 
-local:paper	rdfs:label	"paper"	.
+local:neural_networks	a	rdf:Class	;
+	rdfs:label	"neural networks"	.
 
-local:we	rdfs:label	"we"	.
+local:neural	a	rdf:Class	;
+	rdfs:label	"neural"	.
 
-local:adds	rdfs:label	"adds"	.
+local:graph_neural	a	rdf:Class	;
+	rdfs:label	"graph neural"	.
 
-local:first	rdfs:label	"first"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:new	rdfs:label	"new"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:new_entities	rdfs:label	"new entities"	.
+local:various_connectivity_between_items	a	rdf:Class	;
+	rdfs:label	"various connectivity between items"	.
 
-local:entities	rdfs:label	"entities"	.
+local:items	a	rdf:Class	;
+	rdfs:label	"items"	.
 
-local:learns	rdfs:label	"learns"	.
+local:various_connectivity	a	rdf:Class	;
+	rdfs:label	"various connectivity"	.
 
-local:then	rdfs:label	"then"	.
+local:meanwhile	a	rdf:Class	;
+	rdfs:label	"meanwhile"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:existing_work	a	rdf:Class	;
+	rdfs:label	"existing work"	.
 
-local:rules	rdfs:label	"rules"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:model	rdfs:label	"model"	.
+local:not_capture	a	rdf:Class	;
+	rdfs:label	"not capture"	.
 
-local:captures	rdfs:label	"captures"	.
+local:explicit_longrange_semantics_between_users_meanwhile_consider_various_connectivity_between_items	a	rdf:Class	;
+	rdfs:label	"explicit longrange semantics between users meanwhile consider various connectivity between items"	.
 
-local:various_information	rdfs:label	"various information"	.
+local:meanwhile_consider	a	rdf:Class	;
+	rdfs:label	"meanwhile consider"	.
 
-local:information	rdfs:label	"information"	.
+local:explicit_longrange_semantics_between_users	a	rdf:Class	;
+	rdfs:label	"explicit longrange semantics between users"	.
 
-local:better_encode	rdfs:label	"better encode"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:encode	rdfs:label	"encode"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:connectivity_between_entities	rdfs:label	"connectivity between entities"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:connectivity_between_entities_by_aggregation	rdfs:label	"connectivity between entities by aggregation"	.
+local:explicit_longrange_semantics_between_items_meanwhile_consider_various_connectivity_between_items	a	rdf:Class	;
+	rdfs:label	"explicit longrange semantics between items meanwhile consider various connectivity between items"	.
 
-local:aggregation	rdfs:label	"aggregation"	.
+local:explicit_longrange_semantics_between_items	a	rdf:Class	;
+	rdfs:label	"explicit longrange semantics between items"	.
 
-local:better	rdfs:label	"better"	.
+local:incorporate	a	rdf:Class	;
+	rdfs:label	"incorporate"	.
 
-local:show	rdfs:label	"show"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:effectiveness_of_rgrec	rdfs:label	"effectiveness of rgrec"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:effectiveness	rdfs:label	"effectiveness"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:collaborative_filtering_in_recommender_systems	a	rdf:Class	;
+	rdfs:label	"collaborative filtering in recommender systems"	.
 
-local:realworld_datasets	rdfs:label	"real-world datasets"	.
+local:recommender_systems	a	rdf:Class	;
+	rdfs:label	"recommender systems"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:collaborative_filtering	a	rdf:Class	;
+	rdfs:label	"collaborative filtering"	.
 
-local:three_realworld_datasets	rdfs:label	"three real-world datasets"	.
+local:collaborative	a	rdf:Class	;
+	rdfs:label	"collaborative"	.
 
-local:rule	rdfs:label	"rule"	.
+local:filtering	a	rdf:Class	;
+	rdfs:label	"filtering"	.
 
-local:combination_of_rule_learning	rdfs:label	"combination of rule learning"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:combination	rdfs:label	"combination"	.
+local:recommender	a	rdf:Class	;
+	rdfs:label	"recommender"	.
 
-local:combination_of_rule_learning_of_gnns	rdfs:label	"combination of rule learning of gnns"	.
+local:cause	a	rdf:Class	;
+	rdfs:label	"cause"	.
 
-local:achieves	rdfs:label	"achieves"	.
+local:cold_start_problem	a	rdf:Class	;
+	rdfs:label	"cold start problem"	.
 
-local:particularly	rdfs:label	"particularly"	.
+local:start_problem	a	rdf:Class	;
+	rdfs:label	"start problem"	.
 
-local:substantial_improvement	rdfs:label	"substantial improvement"	.
+local:start	a	rdf:Class	;
+	rdfs:label	"start"	.
 
-local:improvement	rdfs:label	"improvement"	.
+local:cold_start	a	rdf:Class	;
+	rdfs:label	"cold start"	.
 
-local:substantial	rdfs:label	"substantial"	.
+local:cold	a	rdf:Class	;
+	rdfs:label	"cold"	.
 
-local:only_using	rdfs:label	"only using"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:using	rdfs:label	"using"	.
+local:many_methods_as_auxiliary_resources	a	rdf:Class	;
+	rdfs:label	"many methods as auxiliary resources"	.
 
-local:substantial_improvement_compared	rdfs:label	"substantial improvement compared"	.
+local:many_methods	a	rdf:Class	;
+	rdfs:label	"many methods"	.
 
-local:compared	rdfs:label	"compared"	.
+local:auxiliary_resources	a	rdf:Class	;
+	rdfs:label	"auxiliary resources"	.
 
-local:compared_to_methods	rdfs:label	"compared to methods"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:methods_only_using	rdfs:label	"methods only using"	.
+local:resources	a	rdf:Class	;
+	rdfs:label	"resources"	.
 
-local:either_of_rule_learning	rdfs:label	"either of rule learning"	.
+local:auxiliary	a	rdf:Class	;
+	rdfs:label	"auxiliary"	.
 
-local:either	rdfs:label	"either"	.
+local:employ	a	rdf:Class	;
+	rdfs:label	"employ"	.
 
-local:either_of_rule_learning_of_gnns	rdfs:label	"either of rule learning of gnns"	.
+local:increasingly	a	rdf:Class	;
+	rdfs:label	"increasingly"	.
 
-local:only	rdfs:label	"only"	.
+local:alleviate_the_cold_start_problem_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"alleviate the cold start problem knowledge graphs"	.
 
-#### Properties ####
+local:problem_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"problem knowledge graphs"	.
+
+local:cold_start_problem_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"cold start problem knowledge graphs"	.
+
+local:cold_start_problem_knowledge	a	rdf:Class	;
+	rdfs:label	"cold start problem knowledge"	.
+
+local:problem_knowledge	a	rdf:Class	;
+	rdfs:label	"problem knowledge"	.
+
+local:start_problem_knowledge	a	rdf:Class	;
+	rdfs:label	"start problem knowledge"	.
+
+local:start_problem_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"start problem knowledge graphs"	.
+
+local:alleviate	a	rdf:Class	;
+	rdfs:label	"alleviate"	.
 
 #### Mapped Relations ####
 
+cso:recommendation	rdfs:label	"recommendation"	.
 cso:cold_start_problems	rdfs:label	"cold start problem"	.
+local:recommender_systems	owl:sameAs	cso:recommender_systems	.
+local:neural_networks	owl:sameAs	cso:neural_networks	.
+local:cold_start_problem	owl:sameAs	cso:cold_start_problems	.
+local:recommendation	owl:sameAs	cso:recommendation	.
 cso:cold_start	rdfs:label	"cold start"	.
 local:semantics	owl:sameAs	cso:semantics	.
-local:cold_start	owl:sameAs	cso:cold_start	.
 cso:recommender_systems	rdfs:label	"recommender systems"	.
-local:neural_networks	owl:sameAs	cso:neural_networks	.
 local:collaborative_filtering	owl:sameAs	cso:collaborative_filtering	.
-cso:recommendation	rdfs:label	"recommendation"	.
+cso:semantics	rdfs:label	"semantics"	.
 cso:neural_networks	rdfs:label	"neural networks"	.
 cso:collaborative_filtering	rdfs:label	"collaborative filtering"	.
-local:recommendation	owl:sameAs	cso:recommendation	.
-local:recommender_systems	owl:sameAs	cso:recommender_systems	.
-cso:semantics	rdfs:label	"semantics"	.
-local:cold_start_problem	owl:sameAs	cso:cold_start_problems	.
+local:cold_start	owl:sameAs	cso:cold_start	.
 
 #### Relations ####
 
-local:using	vn.role:Agent	local:methods	.
-local:adds	vn.role:Patient1	local:new_entities	.
-local:methods_only_using	local:_onlyusing	local:methods	.
-local:however_existing_work	rdfs:subClassOf	local:existing_work	.
-local:propose	vn.role:Topic	local:rgrec	.
-local:learns	vn.role:Agent	local:then	.
-local:consider	vn.role:Agent	local:users	.
-local:collaborative_filtering_in_recommender_systems	local:collaborativefiltering_in	local:recommender_systems	.
-local:compared_to_methods	local:compared_to	local:methods	.
-local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:capture	local:AM-MOD	local:can	.
-local:explicit_longrange_semantics	rdfs:subClassOf	local:longrange_semantics	.
-local:meanwhile_consider	rdfs:subClassOf	local:consider	.
-local:neural	rdfs:member	local:neural_networks	.
-local:various	rdfs:member	local:various_information	.
-local:collaborative_filtering	rdfs:subClassOf	local:filtering	.
-local:achieves	vn.role:Agent	local:particularly	.
-local:cold_start_problem	rdfs:subClassOf	local:start_problem	.
-local:connectivity_between_entities	local:connectivity_between	local:entities	.
-local:cold_start	rdfs:member	local:cold_start_problem	.
-local:alleviate	vn.role:Cause	local:cold_start_problem_knowledge_graphs	.
-local:cold_start_problem_knowledge	rdfs:member	local:cold_start_problem_knowledge_graphs	.
-local:incorporated	local:AM-MNR	local:knowledge_graphs	.
-local:many_methods	rdfs:subClassOf	local:methods	.
-local:caused	vn.role:Theme1	local:collaborative_filtering_in_recommender_systems	.
-local:start_problem	rdfs:subClassOf	local:problem	.
-local:start_problem_knowledge	rdfs:member	local:start_problem_knowledge_graphs	.
-local:combination_of_rule_learning	local:combination_of	local:rule_learning	.
-local:combines	vn.role:Patient	local:rule_learning	.
-local:employed	vn.role:Agent	local:many_methods_as_auxiliary_resources	.
-local:cold_start_problem_knowledge	rdfs:subClassOf	local:knowledge	.
-local:capture	local:AM-NEG	local:not	.
-local:longrange	rdfs:member	local:longrange_semantics	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:problem_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:start_problem_knowledge_graphs	rdfs:subClassOf	local:problem_knowledge_graphs	.
-local:cold_start_problem_knowledge_graphs	rdfs:subClassOf	local:start_problem_knowledge_graphs	.
-local:captures	vn.role:Agent	local:rules	.
-local:model	vn.role:Theme	local:explicit_longrange_semantics	.
-local:graph_neural_networks_for_recommendation	local:graphneuralnetworks_for	local:recommendation	.
-local:consider	local:AM-TMP	local:meanwhile	.
-local:start_problem_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:recommender_systems	rdfs:subClassOf	local:systems	.
-local:show	vn.role:Theme	local:effectiveness_of_rgrec	.
-local:graph_neural_networks	rdfs:subClassOf	local:neural_networks	.
-local:methods_only_using	local:methods_	local:only_using	.
-local:new	rdfs:member	local:new_entities	.
-local:adds	local:AM-TMP	local:first	.
-local:auxiliary_resources	rdfs:subClassOf	local:resources	.
-local:effectiveness_of_rgrec	local:effectiveness_of	local:rgrec	.
-local:connectivity_between_entities_by_aggregation	local:connectivitybetweenentities_by	local:aggregation	.
-local:explicit_longrange_semantics_between_users	local:between_users	local:explicit_longrange_semantics	.
-local:three_realworld_datasets	rdfs:subClassOf	local:realworld_datasets	.
-local:substantial_improvement_compared	local:_compared	local:substantial_improvement	.
-local:longrange_semantics	rdfs:subClassOf	local:semantics	.
-local:many	rdfs:member	local:many_methods	.
-local:combines	vn.role:Patient1	local:rgrec	.
-local:neural_networks	rdfs:subClassOf	local:networks	.
-local:graph_neural	rdfs:subClassOf	local:neural	.
-local:rule_learning	rdfs:subClassOf	local:learning	.
+local:s13.2	rdf:predicate	local:use	.
+local:s4.1	local:AM-MOD	local:can	.
+local:explicit_longrange_semantics	rdfs:member	local:explicit_longrange	.
+local:s8.1	rdf:predicate	local:learn	.
+local:problem_knowledge_graphs	rdfs:member	local:problem_knowledge	.
+local:s6	rdf:object	local:rgrec	.
 local:various_connectivity	rdfs:subClassOf	local:connectivity	.
-local:compared	vn.role:Agent	local:methods_only_using	.
-local:recommender	rdfs:member	local:recommender_systems	.
-local:cold_start_problem	rdfs:member	local:cold_start_problem_knowledge	.
-local:combines	vn.role:Agent	local:rgrec	.
-local:substantial_improvement	rdfs:subClassOf	local:improvement	.
-local:propose	local:AM-LOC	local:paper	.
-local:adds	vn.role:Agent	local:rgrec	.
-local:using	vn.role:Theme	local:either_of_rule_learning_of_gnns	.
-local:realworld	rdfs:member	local:realworld_datasets	.
-local:model	vn.role:Agent	local:rules	.
-local:realworld_datasets	rdfs:subClassOf	local:datasets	.
-local:cold	rdfs:member	local:cold_start	.
-local:explicit_longrange_semantics_between_users	local:explicitlong-rangesemantics_between	local:users	.
-local:propose	vn.role:Agent	local:we	.
-local:capture	vn.role:Theme	local:meanwhile_consider	.
-local:compared	vn.role:Patient2	local:substantial_improvement	.
-local:start	rdfs:member	local:start_problem	.
-local:using	local:AM-ADV	local:only	.
-local:learns	local:AM-MNR	local:automatically	.
-local:graph_neural_networks	rdfs:subClassOf	local:networks	.
-local:employed	local:AM-PNC	local:alleviate	.
-local:explicit	rdfs:member	local:explicit_longrange	.
-local:graph_neural	rdfs:member	local:graph_neural_networks	.
-local:cold_start	rdfs:subClassOf	local:start	.
-local:combination_of_rule_learning	local:of_rulelearning	local:combination	.
-local:cold_start_problem_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:employed	local:AM-MNR	local:increasingly	.
-local:consider	vn.role:Agent	local:items	.
-local:problem_knowledge	rdfs:member	local:problem_knowledge_graphs	.
-local:various_connectivity_between_items	local:variousconnectivity_between	local:items	.
-local:connectivity_between_entities	local:between_entities	local:connectivity	.
-local:caused	vn.role:Theme2	local:cold_start_problem	.
-local:encode	local:AM-MNR	local:better	.
-local:problem_knowledge	rdfs:subClassOf	local:knowledge	.
-local:either_of_rule_learning	local:of_rulelearning	local:either	.
-local:collaborative	rdfs:member	local:collaborative_filtering	.
-local:existing	vn.role:Location	local:work	.
-local:compared_to_methods	local:to_methods	local:compared	.
-local:show	vn.role:Agent	local:we	.
-local:many_methods_as_auxiliary_resources	local:as_auxiliaryresources	local:many_methods	.
-local:combines	local:AM-ADV	local:recommendation	.
-local:various_connectivity_between_items	local:between_items	local:various_connectivity	.
-local:connectivity_between_entities_by_aggregation	local:by_aggregation	local:connectivity_between_entities	.
-local:either_of_rule_learning_of_gnns	local:of_gnns	local:either_of_rule_learning	.
-local:capture	vn.role:Agent	local:however_existing_work	.
-local:graph_neural_networks_for_recommendation	local:for_recommendation	local:graph_neural_networks	.
-local:graph	rdfs:member	local:graph_neural	.
-local:achieves	vn.role:Theme	local:substantial_improvement_compared	.
-local:many_methods_as_auxiliary_resources	local:manymethods_as	local:auxiliary_resources	.
-local:problem_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
-local:learns	vn.role:Theme	local:rules	.
-local:cold_start_problem	rdfs:subClassOf	local:problem	.
-local:combines	vn.role:Patient	local:gnns	.
-local:start_problem_knowledge	rdfs:subClassOf	local:knowledge	.
-local:consider	local:AM-TMP	local:items	.
-local:combines	local:AM-PNC	local:recommendation	.
-local:combines	vn.role:Patient	local:graph_neural_networks_for_recommendation	.
-local:better_encode	rdfs:subClassOf	local:encode	.
-local:substantial	rdfs:member	local:substantial_improvement	.
-local:collaborative_filtering_in_recommender_systems	local:in_recommendersystems	local:collaborative_filtering	.
-local:either_of_rule_learning	local:either_of	local:rule_learning	.
-local:problem	rdfs:member	local:problem_knowledge	.
-local:either_of_rule_learning_of_gnns	local:eitherofrulelearning_of	local:gnns	.
-local:auxiliary	rdfs:member	local:auxiliary_resources	.
-local:capture	vn.role:Theme	local:explicit_longrange_semantics	.
-local:existing_work	rdfs:subClassOf	local:work	.
-local:adds	vn.role:Patient	local:users	.
-local:captures	vn.role:Theme	local:connectivity_between_entities_by_aggregation	.
-local:start_problem	rdfs:member	local:start_problem_knowledge	.
-local:new_entities	rdfs:subClassOf	local:entities	.
-local:substantial_improvement_compared	local:substantialimprovement_	local:compared	.
-local:effectiveness_of_rgrec	local:of_rgrec	local:effectiveness	.
-local:explicit_longrange_semantics	rdfs:subClassOf	local:semantics	.
-local:consider	vn.role:Theme	local:various_connectivity	.
-local:captures	vn.role:Agent	local:then	.
-local:explicit_longrange	rdfs:member	local:explicit_longrange_semantics	.
-local:rule	rdfs:member	local:rule_learning	.
-local:incorporated	vn.role:Patient2	local:existing_work	.
-local:only_using	rdfs:subClassOf	local:using	.
-local:combination_of_rule_learning_of_gnns	local:of_gnns	local:combination_of_rule_learning	.
-local:show	local:AM-LOC	local:three_realworld_datasets	.
-local:encode	vn.role:Patient	local:various_information	.
-local:combination_of_rule_learning_of_gnns	local:combinationofrulelearning_of	local:gnns	.
-local:various_information	rdfs:subClassOf	local:information	.
-local:various	rdfs:member	local:various_connectivity	.
+local:s2	rdf:subject	local:work	.
+local:s1	rdf:subject	local:collaborative_filtering_in_recommender_systems	.
+local:s0.1	local:AM-MNR	local:increasingly	.
+local:various_information	rdfs:member	local:various	.
+local:s6	rdf:subject	local:gnns	.
+local:s5	rdf:object	local:graph_neural_networks	.
+local:s2.1	local:AM-MNR	local:knowledge_graphs	.
+local:s12	local:AM-LOC	local:three_realworld_datasets	.
+local:explicit_longrange_semantics	rdfs:subClassOf	local:longrange_semantics	.
+local:s11	local:AM-TMP	local:then	.
 local:explicit_longrange	rdfs:subClassOf	local:longrange	.
-local:capture	local:AM-TMP	local:meanwhile_consider	.
+local:neural_networks	rdfs:member	local:neural	.
+local:s4.2	rdf:object	local:various_connectivity_between_items	.
+local:s13.2	rdfs:member	local:rule_learning	.
+local:s11.2	rdf:object	local:connectivity_between_entities_by_aggregation_to_better_encode_various_information	.
+local:explicit_longrange_semantics_between_users_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:explicit_longrange_semantics	.
+local:s0	rdf:subject	local:cold_start_problem_knowledge_graphs	.
+local:rule_learning	rdfs:subClassOf	local:learning	.
+local:s8	rdf:subject	local:rgrec	.
+local:new_entities	rdfs:member	local:new	.
+local:start_problem_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s3.1	rdf:subject	local:s4	.
+local:problem_knowledge	rdfs:member	local:problem	.
+local:s10	rdf:object	local:users_new_entities	.
+local:s11.3	rdf:predicate	local:encode	.
+local:s3.1	rdf:object	local:explicit_longrange_semantics_between_items_meanwhile_consider_various_connectivity_between_items	.
+local:explicit_longrange_semantics_between_items_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:items	.
+local:methods_only_using	rdfs:member	local:methods	.
+local:s11	local:AM-MNR	local:automatically	.
+local:s5	local:AM-PNC	local:recommendation	.
+local:various_information	rdfs:subClassOf	local:information	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:s0.1	local:AM-PNC	local:alleviate_the_cold_start_problem_knowledge_graphs	.
+local:users_new_entities	rdfs:subClassOf	local:new_entities	.
+local:graph_neural	rdfs:subClassOf	local:neural	.
+local:methods_only_using	rdfs:member	local:only_using	.
+local:s0.1	rdf:subject	local:many_methods_as_auxiliary_resources	.
+local:s13.1	rdfs:member	local:rule_learning	.
+local:s3.2	rdf:subject	local:items	.
+local:s3.1	local:AM-MOD	local:can	.
+local:connectivity_between_entities_by_aggregation_to_better_encode_various_information	rdfs:member	local:various_information	.
+local:recommender_systems	rdfs:subClassOf	local:systems	.
+local:cold_start_problem	rdfs:subClassOf	local:start_problem	.
+local:problem_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:connectivity_between_entities_by_aggregation	rdfs:member	local:connectivity_between_entities	.
+local:s8	rdf:predicate	local:combine	.
+local:cold_start_problem_knowledge_graphs	rdfs:member	local:cold_start_problem_knowledge	.
+local:s11.2	rdf:subject	local:rules	.
+local:either_of_rule_learning_and_gnns	rdfs:member	local:gnns	.
+local:s13.1	rdf:subject	local:substantial_improvement	.
+local:substantial_improvement	rdfs:member	local:substantial	.
+local:s10	rdf:predicate	local:add	.
+local:s8.1	local:AM-PNC	local:recommendation	.
+local:explicit_longrange_semantics_between_items	rdfs:member	local:explicit_longrange_semantics	.
+local:s3.1	rdf:predicate	local:not_capture	.
+local:either_of_rule_learning_of_gnns	rdfs:member	local:gnns	.
+local:many_methods	rdfs:member	local:many	.
+local:start_problem_knowledge	rdfs:member	local:start_problem	.
+local:only_using	rdfs:subClassOf	local:using	.
+local:s2	rdf:predicate	local:exist	.
+local:cold_start_problem_knowledge	rdfs:member	local:cold_start_problem	.
+local:auxiliary_resources	rdfs:member	local:auxiliary	.
+local:effectiveness_of_rgrec	rdfs:member	local:effectiveness	.
+local:s11.3	rdf:subject	local:various_information	.
+local:collaborative_filtering	rdfs:member	local:collaborative	.
+local:start_problem_knowledge_graphs	rdfs:member	local:start_problem_knowledge	.
+local:realworld_datasets	rdfs:subClassOf	local:datasets	.
+local:graph_neural_networks	rdfs:member	local:graph_neural	.
+local:cold_start_problem_knowledge_graphs	rdfs:subClassOf	local:start_problem_knowledge_graphs	.
+local:s11	rdf:subject	local:it	.
+local:s3.2	rdf:object	local:various_connectivity	.
+local:s1	rdf:predicate	local:cause	.
+local:s10	local:AM-TMP	local:first	.
+local:s12	rdf:predicate	local:show	.
+local:s13.1	rdf:predicate	local:compare	.
+local:existing_work	rdfs:subClassOf	local:work	.
+local:graph_neural	rdfs:member	local:graph	.
+local:s13.2	rdf:object	local:either_of_rule_learning_and_gnns	.
+local:connectivity_between_entities_by_aggregation_to_better_encode_various_information	rdfs:member	local:connectivity	.
+local:s4.2	local:AM-TMP	local:meanwhile	.
+local:rule_learning	rdfs:member	local:rule	.
+local:s10	rdf:subject	local:rgrec	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s11.2	rdf:predicate	local:capture	.
+local:connectivity_between_entities_by_aggregation	rdfs:member	local:aggregation	.
+local:start_problem_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s13.1	rdf:object	local:methods_only_using_either_of_rule_learning_and_gnns	.
+local:compared_to_methods	rdfs:member	local:compared	.
+local:s11.2	local:AM-DIS	local:then	.
+local:various_connectivity_between_items	rdfs:member	local:various_connectivity	.
+local:s0.1	rdf:predicate	local:employ	.
+local:s12	rdf:subject	local:we	.
+local:users_new_entities	rdfs:member	local:new_entities	.
+local:explicit_longrange	rdfs:member	local:explicit	.
+local:explicit_longrange_semantics	rdfs:subClassOf	local:semantics	.
+local:s7	rdf:object	local:rgrec	.
+local:s4	rdf:predicate	local:exist	.
+local:s3	rdf:predicate	local:exist	.
+local:s11.3	local:AM-MNR	local:better	.
+local:compared_to_methods	rdfs:member	local:methods	.
+local:longrange_semantics	rdfs:subClassOf	local:semantics	.
+local:graph_neural_networks	rdfs:subClassOf	local:neural_networks	.
+local:s4.1	rdf:subject	local:existing_work	.
+local:better_encode	rdfs:subClassOf	local:encode	.
+local:s13.2	rdfs:member	local:methods	.
+local:problem_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s8	rdf:object	local:s8.1	.
+local:connectivity_between_entities_by_aggregation_to_better_encode_various_information	rdfs:member	local:aggregation	.
+local:auxiliary_resources	rdfs:subClassOf	local:resources	.
+local:s1	rdf:object	local:cold_start_problem	.
+local:substantial_improvement	rdfs:subClassOf	local:improvement	.
+local:s7	rdf:predicate	local:propose	.
+local:s7	local:AM-LOC	local:paper	.
+local:cold_start_problem_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s13.2	local:AM-ADV	local:only	.
+local:connectivity_between_entities	rdfs:member	local:connectivity	.
+local:explicit_longrange_semantics_between_users_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:various_connectivity	.
+local:collaborative_filtering_in_recommender_systems	rdfs:member	local:collaborative_filtering	.
+local:either_of_rule_learning	rdfs:member	local:rule_learning	.
+local:substantial_improvement_compared	rdfs:member	local:compared	.
+local:s6	local:AM-PNC	local:recommendation	.
+local:many_methods_as_auxiliary_resources	rdfs:member	local:auxiliary_resources	.
+local:start_problem_knowledge_graphs	rdfs:subClassOf	local:problem_knowledge_graphs	.
+local:explicit_longrange_semantics_between_items	rdfs:member	local:items	.
+local:s4.2	rdf:subject	local:users	.
+local:s3.1	local:AM-DIS	local:however	.
+local:collaborative_filtering_in_recommender_systems	rdfs:member	local:recommender_systems	.
+local:users_new_entities	rdfs:member	local:users	.
+local:s3.2	local:AM-TMP	local:meanwhile	.
+local:explicit_longrange_semantics_between_items_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:explicit_longrange_semantics	.
+local:longrange_semantics	rdfs:member	local:longrange	.
+local:s13.1	rdfs:member	local:gnns	.
+local:s2.1	rdf:subject	local:s3	.
+local:s11	rdf:predicate	local:learn	.
+local:s11	rdf:object	local:rules_to_model_the_explicit_longrange_semantics	.
+local:various_connectivity_between_items	rdfs:member	local:items	.
+local:three_realworld_datasets	rdfs:subClassOf	local:realworld_datasets	.
+local:explicit_longrange_semantics_between_users	rdfs:member	local:explicit_longrange_semantics	.
+local:s13.2	rdf:subject	local:methods	.
+local:s11.1	rdf:subject	local:rules	.
+local:s5	rdf:subject	local:rgrec	.
+local:s13	rdf:object	local:substantial_improvement_compared_to_methods_only_using_either_of_rule_learning_and_gnns	.
+local:connectivity_between_entities	rdfs:member	local:entities	.
+local:either_of_rule_learning_of_gnns	rdfs:member	local:either_of_rule_learning	.
+local:cold_start_problem_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s4.1	rdf:object	local:explicit_longrange_semantics_between_users_meanwhile_consider_various_connectivity_between_items	.
+local:s13	rdf:predicate	local:achieve	.
+local:cold_start	rdfs:subClassOf	local:start	.
+local:s12	rdf:object	local:effectiveness_of_rgrec	.
+local:many_methods_as_auxiliary_resources	rdfs:member	local:many_methods	.
+local:explicit_longrange_semantics_between_items_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:various_connectivity	.
+local:rules_to_model_the_explicit_longrange_semantics	rdfs:member	local:rules	.
+local:s3	rdf:subject	local:work	.
+local:start_problem	rdfs:subClassOf	local:problem	.
+local:explicit_longrange_semantics_between_users_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:users	.
+local:many_methods	rdfs:subClassOf	local:methods	.
+local:cold_start_problem	rdfs:member	local:cold_start	.
+local:s8.1	rdf:subject	local:rule	.
+local:neural_networks	rdfs:subClassOf	local:networks	.
+local:start_problem	rdfs:member	local:start	.
+local:s13.2	rdfs:member	local:gnns	.
+local:various_connectivity	rdfs:member	local:various	.
+local:s13.1	rdfs:member	local:methods	.
+local:realworld_datasets	rdfs:member	local:realworld	.
+local:recommender_systems	rdfs:member	local:recommender	.
+local:s4.1	rdf:predicate	local:not_capture	.
+local:cold_start	rdfs:member	local:cold	.
+local:s13.1	rdfs:member	local:substantial_improvement	.
+local:explicit_longrange_semantics_between_users	rdfs:member	local:users	.
+local:either_of_rule_learning	rdfs:member	local:either	.
+local:s13	rdf:subject	local:gnns	.
+local:effectiveness_of_rgrec	rdfs:member	local:rgrec	.
+local:s3.2	local:AM-LOC	local:items	.
+local:s3.2	rdf:predicate	local:consider	.
+local:s2.1	rdf:predicate	local:incorporate	.
+local:s4.2	rdf:predicate	local:consider	.
+local:graph_neural_networks	rdfs:subClassOf	local:networks	.
+local:meanwhile_consider	rdfs:subClassOf	local:consider	.
+local:new_entities	rdfs:subClassOf	local:entities	.
+local:explicit_longrange_semantics_between_users_meanwhile_consider_various_connectivity_between_items	rdfs:member	local:items	.
+local:s5	rdf:predicate	local:combine	.
+local:s6	rdf:predicate	local:combine	.
+local:s7	rdf:subject	local:we	.
+local:s11.1	rdf:object	local:explicit_longrange_semantics	.
+local:rules_to_model_the_explicit_longrange_semantics	rdfs:member	local:explicit_longrange_semantics	.
+local:substantial_improvement_compared	rdfs:member	local:substantial_improvement	.
+local:s4.1	local:AM-DIS	local:however	.
+local:either_of_rule_learning_and_gnns	rdfs:member	local:rule_learning	.
+local:s0	rdf:predicate	local:alleviate	.
+local:s4	rdf:subject	local:work	.
+local:collaborative_filtering	rdfs:subClassOf	local:filtering	.
+local:s11.1	rdf:predicate	local:model	.
+local:cold_start_problem	rdfs:subClassOf	local:problem	.
+local:problem_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
+local:connectivity_between_entities_by_aggregation_to_better_encode_various_information	rdfs:member	local:entities	.

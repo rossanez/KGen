@@ -1,334 +1,526 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"statements collected from the web"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we evaluate the system on a dataset with 430 million statements"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"synthetically generated statements"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"provide scaleup experiments on 7 billion synthetically generated statements"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"in particular we study parallel query evaluation methods on a cluster of computers"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"in particular we study distributed indexing methods for graphstructured data"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we study distributed indexing methods for graphstructured data"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"interlinked data collected from many disparate sources on the web"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"interlinked data"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"data collected from many disparate sources on the web"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"interactive query answering over structured data"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"an endtoend semantic search engine that enable interactive query answering over structured data"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"an endtoend semantic search engine that uses a graph data model to enable interactive query answering over structured data"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"an endtoend semantic search engine that enable interactive query answering over interlinked data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"an endtoend semantic search engine that uses a graph data model to enable interactive query answering over interlinked data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we present the architecture of an endtoend semantic search engine"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:statements	a	rdf:Class	;
+	rdfs:label	"statements"	.
 
-local:we	rdfs:label	"we"	.
+local:collect	a	rdf:Class	;
+	rdfs:label	"collect"	.
 
-local:semantic_search	rdfs:label	"semantic search"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:search	rdfs:label	"search"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:endtoend_semantic_search	rdfs:label	"end-to-end semantic search"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:endtoend_semantic	rdfs:label	"end-to-end semantic"	.
+local:system_on_a_dataset_with_430_million_statements	a	rdf:Class	;
+	rdfs:label	"system on a dataset with 430 million statements"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:endtoend_semantic_search_engine	rdfs:label	"end-to-end semantic search engine"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:engine	rdfs:label	"engine"	.
+local:million_statements	a	rdf:Class	;
+	rdfs:label	"million statements"	.
 
-local:endtoend	rdfs:label	"end-to-end"	.
+local:430_million	a	rdf:Class	;
+	rdfs:label	"430 million"	.
 
-local:semantic_search_engine	rdfs:label	"semantic search engine"	.
+local:million	a	rdf:Class	;
+	rdfs:label	"million"	.
 
-local:search_engine	rdfs:label	"search engine"	.
+local:system_on_dataset	a	rdf:Class	;
+	rdfs:label	"system on dataset"	.
 
-local:architecture_of_endtoend_semantic_search_engine	rdfs:label	"architecture of end-to-end semantic search engine"	.
+local:dataset_with_million_statements	a	rdf:Class	;
+	rdfs:label	"dataset with million statements"	.
 
-local:architecture	rdfs:label	"architecture"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:uses	rdfs:label	"uses"	.
+local:synthetically	a	rdf:Class	;
+	rdfs:label	"synthetically"	.
 
-local:data_model	rdfs:label	"data model"	.
+local:scaleup_experiments_on_7_billion_synthetically_generated_statements	a	rdf:Class	;
+	rdfs:label	"scaleup experiments on 7 billion synthetically generated statements"	.
 
-local:model	rdfs:label	"model"	.
+local:scaleup_experiments	a	rdf:Class	;
+	rdfs:label	"scaleup experiments"	.
 
-local:graph_data_model	rdfs:label	"graph data model"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:data	rdfs:label	"data"	.
+local:scaleup	a	rdf:Class	;
+	rdfs:label	"scaleup"	.
 
-local:graph_data	rdfs:label	"graph data"	.
+local:generated_statements	a	rdf:Class	;
+	rdfs:label	"generated statements"	.
 
-local:graph	rdfs:label	"graph"	.
+local:synthetically_generated	a	rdf:Class	;
+	rdfs:label	"synthetically generated"	.
 
-local:interactive_query_answering	rdfs:label	"interactive query answering"	.
+local:generated	a	rdf:Class	;
+	rdfs:label	"generated"	.
 
-local:answering	rdfs:label	"answering"	.
+local:billion_generated_statements	a	rdf:Class	;
+	rdfs:label	"billion generated statements"	.
 
-local:enable_interactive	rdfs:label	"enable interactive"	.
+local:7_billion	a	rdf:Class	;
+	rdfs:label	"7 billion"	.
 
-local:interactive	rdfs:label	"interactive"	.
+local:billion	a	rdf:Class	;
+	rdfs:label	"billion"	.
 
-local:enable_interactive_query_answering	rdfs:label	"enable interactive query answering"	.
+local:scaleup_experiments_on_billion_generated_statements	a	rdf:Class	;
+	rdfs:label	"scaleup experiments on billion generated statements"	.
 
-local:enable	rdfs:label	"enable"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:query_answering	rdfs:label	"query answering"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:query	rdfs:label	"query"	.
+local:parallel_query_evaluation_methods_on_a_cluster_of_computers	a	rdf:Class	;
+	rdfs:label	"parallel query evaluation methods on a cluster of computers"	.
 
-local:interactive_query	rdfs:label	"interactive query"	.
+local:parallel_query_evaluation_methods	a	rdf:Class	;
+	rdfs:label	"parallel query evaluation methods"	.
 
-local:enable_interactive_query	rdfs:label	"enable interactive query"	.
+local:computers	a	rdf:Class	;
+	rdfs:label	"computers"	.
 
-local:structured_data	rdfs:label	"structured data"	.
+local:cluster	a	rdf:Class	;
+	rdfs:label	"cluster"	.
 
-local:enable_over_structured_data	rdfs:label	"enable over structured data"	.
+local:query_evaluation	a	rdf:Class	;
+	rdfs:label	"query evaluation"	.
 
-local:interactive_query_answering_over_structured_data	rdfs:label	"interactive query answering over structured data"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:interlinked	rdfs:label	"interlinked"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:interlinked_data	rdfs:label	"interlinked data"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:enable_over_interlinked_data	rdfs:label	"enable over interlinked data"	.
+local:parallel_query_evaluation	a	rdf:Class	;
+	rdfs:label	"parallel query evaluation"	.
 
-local:interactive_query_answering_over_interlinked_data	rdfs:label	"interactive query answering over interlinked data"	.
+local:parallel_query	a	rdf:Class	;
+	rdfs:label	"parallel query"	.
 
-local:collected	rdfs:label	"collected"	.
+local:query_evaluation_methods	a	rdf:Class	;
+	rdfs:label	"query evaluation methods"	.
 
-local:disparate	rdfs:label	"disparate"	.
+local:evaluation_methods	a	rdf:Class	;
+	rdfs:label	"evaluation methods"	.
 
-local:disparate_sources	rdfs:label	"disparate sources"	.
+local:parallel	a	rdf:Class	;
+	rdfs:label	"parallel"	.
 
-local:many	rdfs:label	"many"	.
+local:parallel_query_evaluation_methods_on_cluster	a	rdf:Class	;
+	rdfs:label	"parallel query evaluation methods on cluster"	.
 
-local:many_disparate	rdfs:label	"many disparate"	.
+local:cluster_of_computers	a	rdf:Class	;
+	rdfs:label	"cluster of computers"	.
 
-local:many_disparate_sources	rdfs:label	"many disparate sources"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:sources	rdfs:label	"sources"	.
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
-local:many_disparate_sources_on_web	rdfs:label	"many disparate sources on web"	.
+local:indexing_methods_graphstructured_data	a	rdf:Class	;
+	rdfs:label	"indexing methods graphstructured data"	.
 
-local:web	rdfs:label	"web"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:study	rdfs:label	"study"	.
+local:indexing_methods	a	rdf:Class	;
+	rdfs:label	"indexing methods"	.
 
-local:particular	rdfs:label	"particular"	.
+local:distributed_indexing_methods_for_graphstructured_data	a	rdf:Class	;
+	rdfs:label	"distributed indexing methods for graphstructured data"	.
 
-local:graphstructured_data	rdfs:label	"graph-structured data"	.
+local:graphstructured_data	a	rdf:Class	;
+	rdfs:label	"graphstructured data"	.
 
-local:graphstructured	rdfs:label	"graph-structured"	.
+local:distributed_indexing_methods	a	rdf:Class	;
+	rdfs:label	"distributed indexing methods"	.
 
-local:indexing_methods	rdfs:label	"indexing methods"	.
+local:interlinked_data	a	rdf:Class	;
+	rdfs:label	"interlinked data"	.
 
-local:methods	rdfs:label	"methods"	.
+local:many_disparate_sources_on_the_web	a	rdf:Class	;
+	rdfs:label	"many disparate sources on the web"	.
 
-local:distributed_indexing_methods	rdfs:label	"distributed indexing methods"	.
+local:many_disparate_sources	a	rdf:Class	;
+	rdfs:label	"many disparate sources"	.
 
-local:distributed_indexing_methods_for_graphstructured_data	rdfs:label	"distributed indexing methods for graph-structured data"	.
+local:many_disparate	a	rdf:Class	;
+	rdfs:label	"many disparate"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:parallel_query_evaluation	rdfs:label	"parallel query evaluation"	.
+local:disparate_sources	a	rdf:Class	;
+	rdfs:label	"disparate sources"	.
 
-local:parallel_query_evaluation_methods	rdfs:label	"parallel query evaluation methods"	.
+local:disparate	a	rdf:Class	;
+	rdfs:label	"disparate"	.
 
-local:parallel	rdfs:label	"parallel"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:parallel_query	rdfs:label	"parallel query"	.
+local:many_disparate_sources_on_web	a	rdf:Class	;
+	rdfs:label	"many disparate sources on web"	.
 
-local:query_evaluation	rdfs:label	"query evaluation"	.
+local:interlink	a	rdf:Class	;
+	rdfs:label	"interlink"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:interactive_query	a	rdf:Class	;
+	rdfs:label	"interactive query"	.
 
-local:evaluation_methods	rdfs:label	"evaluation methods"	.
+local:interactive	a	rdf:Class	;
+	rdfs:label	"interactive"	.
 
-local:query_evaluation_methods	rdfs:label	"query evaluation methods"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:parallel_query_evaluation_methods_on_cluster	rdfs:label	"parallel query evaluation methods on cluster"	.
+local:structured_data	a	rdf:Class	;
+	rdfs:label	"structured data"	.
 
-local:cluster	rdfs:label	"cluster"	.
+local:endtoend_semantic_search_engine	a	rdf:Class	;
+	rdfs:label	"endtoend semantic search engine"	.
 
-local:cluster_of_computers	rdfs:label	"cluster of computers"	.
+local:semantic_search_engine	a	rdf:Class	;
+	rdfs:label	"semantic search engine"	.
 
-local:computers	rdfs:label	"computers"	.
+local:semantic_search	a	rdf:Class	;
+	rdfs:label	"semantic search"	.
 
-local:generated_statements	rdfs:label	"generated statements"	.
+local:search_engine	a	rdf:Class	;
+	rdfs:label	"search engine"	.
 
-local:statements	rdfs:label	"statements"	.
+local:engine	a	rdf:Class	;
+	rdfs:label	"engine"	.
 
-local:generated	rdfs:label	"generated"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:synthetically_generated_statements	rdfs:label	"synthetically generated statements"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:synthetically_generated	rdfs:label	"synthetically generated"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:synthetically	rdfs:label	"synthetically"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:scaleup_experiments	rdfs:label	"scale-up experiments"	.
+local:graph_data_model	a	rdf:Class	;
+	rdfs:label	"graph data model"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:scaleup	rdfs:label	"scale-up"	.
+local:graph_data	a	rdf:Class	;
+	rdfs:label	"graph data"	.
 
-local:billion_generated_statements	rdfs:label	"billion generated statements"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:7_billion	rdfs:label	"7 billion"	.
+local:data_model	a	rdf:Class	;
+	rdfs:label	"data model"	.
 
-local:billion	rdfs:label	"billion"	.
+local:enable_interactive_query_answering_over_structured_data	a	rdf:Class	;
+	rdfs:label	"enable interactive query answering over structured data"	.
 
-local:scaleup_experiments_on_billion_generated_statements	rdfs:label	"scale-up experiments on billion generated statements"	.
+local:enable_interactive_query_answering	a	rdf:Class	;
+	rdfs:label	"enable interactive query answering"	.
 
-local:provide	rdfs:label	"provide"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-local:scaleup_experiments_on_7_billion	rdfs:label	"scale-up experiments on 7 billion"	.
+local:interactive_query_answering	a	rdf:Class	;
+	rdfs:label	"interactive query answering"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:enable_interactive	a	rdf:Class	;
+	rdfs:label	"enable interactive"	.
 
-local:million_statements	rdfs:label	"million statements"	.
+local:enable_interactive_query	a	rdf:Class	;
+	rdfs:label	"enable interactive query"	.
 
-local:430_million	rdfs:label	"430 million"	.
+local:query_answering	a	rdf:Class	;
+	rdfs:label	"query answering"	.
 
-local:million	rdfs:label	"million"	.
+local:enable_over_structured_data	a	rdf:Class	;
+	rdfs:label	"enable over structured data"	.
 
-local:system_on_dataset	rdfs:label	"system on dataset"	.
+local:interactive_query_answering_over_interlinked_data	a	rdf:Class	;
+	rdfs:label	"interactive query answering over interlinked data"	.
 
-local:system	rdfs:label	"system"	.
+local:interlinked	a	rdf:Class	;
+	rdfs:label	"interlinked"	.
 
-local:dataset	rdfs:label	"dataset"	.
+local:enable_interactive_query_answering_over_interlinked_data	a	rdf:Class	;
+	rdfs:label	"enable interactive query answering over interlinked data"	.
 
-local:dataset_with_million_statements	rdfs:label	"dataset with million statements"	.
+local:enable_over_interlinked_data	a	rdf:Class	;
+	rdfs:label	"enable over interlinked data"	.
 
-#### Properties ####
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
+
+local:architecture_of_an_endtoend_semantic_search_engine	a	rdf:Class	;
+	rdfs:label	"architecture of an endtoend semantic search engine"	.
+
+local:architecture	a	rdf:Class	;
+	rdfs:label	"architecture"	.
+
+local:endtoend_semantic_search	a	rdf:Class	;
+	rdfs:label	"endtoend semantic search"	.
+
+local:endtoend_semantic	a	rdf:Class	;
+	rdfs:label	"endtoend semantic"	.
+
+local:endtoend	a	rdf:Class	;
+	rdfs:label	"endtoend"	.
+
+local:architecture_of_endtoend_semantic_search_engine	a	rdf:Class	;
+	rdfs:label	"architecture of endtoend semantic search engine"	.
 
 #### Mapped Relations ####
 
-local:query_answering	owl:sameAs	cso:query_answering	.
-cso:query_evaluation	rdfs:label	"query evaluation"	.
 local:query_evaluation	owl:sameAs	cso:query_evaluation	.
-local:semantic_search_engine	owl:sameAs	cso:semantic_search_engine	.
 cso:query_answering	rdfs:label	"query answering"	.
+local:query_answering	owl:sameAs	cso:query_answering	.
+local:semantic_search_engine	owl:sameAs	cso:semantic_search_engine	.
 cso:semantic_search_engine	rdfs:label	"semantic search engine"	.
+cso:query_evaluation	rdfs:label	"query evaluation"	.
 
 #### Relations ####
 
-local:structured_data	rdfs:subClassOf	local:data	.
-local:system_on_dataset	local:system_on	local:dataset	.
-local:semantic_search_engine	rdfs:subClassOf	local:search_engine	.
-local:scaleup_experiments	rdfs:subClassOf	local:experiments	.
-local:query	rdfs:member	local:query_answering	.
-local:parallel_query_evaluation_methods	rdfs:subClassOf	local:query_evaluation_methods	.
-local:generated	local:AM-MNR	local:synthetically	.
-local:uses	vn.role:Theme	local:graph_data_model	.
-local:semantic	rdfs:member	local:semantic_search	.
-local:interactive_query	rdfs:member	local:interactive_query_answering	.
-local:uses	local:AM-PNC	local:enable_over_structured_data	.
-local:generated	vn.role:Theme2	local:statements	.
-local:generated_statements	rdfs:subClassOf	local:statements	.
-local:enable	vn.role:Patient	local:interactive_query_answering_over_interlinked_data	.
-local:generated	vn.role:Theme2	local:scaleup_experiments_on_7_billion	.
-local:parallel_query	rdfs:member	local:parallel_query_evaluation	.
+local:dataset_with_million_statements	rdfs:member	local:million_statements	.
 local:enable_interactive_query_answering	rdfs:subClassOf	local:answering	.
-local:endtoend	rdfs:member	local:endtoend_semantic	.
-local:interactive_query	rdfs:subClassOf	local:query	.
-local:distributed_indexing_methods	rdfs:subClassOf	local:indexing_methods	.
-local:graph	rdfs:member	local:graph_data	.
-local:synthetically	rdfs:member	local:synthetically_generated	.
-local:enable	rdfs:member	local:enable_interactive	.
-local:enable_interactive	rdfs:member	local:enable_interactive_query	.
-local:distributed	vn.role:Theme	local:indexing_methods	.
-local:parallel	rdfs:member	local:parallel_query	.
-local:graph_data	rdfs:subClassOf	local:data	.
-local:dataset_with_million_statements	local:dataset_with	local:million_statements	.
-local:scaleup_experiments_on_billion_generated_statements	local:on_billiongeneratedstatements	local:scaleup_experiments	.
-local:million_statements	rdfs:subClassOf	local:statements	.
-local:semantic_search_engine	rdfs:subClassOf	local:engine	.
-local:indexing_methods	rdfs:subClassOf	local:methods	.
-local:search	rdfs:member	local:search_engine	.
-local:many_disparate	rdfs:member	local:many_disparate_sources	.
-local:enable_interactive_query	rdfs:member	local:enable_interactive_query_answering	.
-local:enable_over_interlinked_data	local:over_interlinkeddata	local:enable	.
-local:graphstructured_data	rdfs:subClassOf	local:data	.
-local:cluster_of_computers	local:cluster_of	local:computers	.
-local:evaluation_methods	rdfs:subClassOf	local:methods	.
-local:collected	vn.role:indirect_object	local:many_disparate_sources_on_web	.
-local:endtoend_semantic_search	rdfs:subClassOf	local:search	.
-local:architecture_of_endtoend_semantic_search_engine	local:architecture_of	local:endtoend_semantic_search_engine	.
-local:interlinked_data	rdfs:subClassOf	local:data	.
-local:data	rdfs:member	local:data_model	.
-local:generated	rdfs:member	local:generated_statements	.
-local:distributed_indexing_methods_for_graphstructured_data	local:distributedindexingmethods_for	local:graphstructured_data	.
-local:billion_generated_statements	rdfs:subClassOf	local:generated_statements	.
-local:interlinked	rdfs:member	local:interlinked_data	.
-local:endtoend_semantic_search	rdfs:member	local:endtoend_semantic_search_engine	.
-local:collected	vn.role:Theme	local:data	.
-local:graph_data_model	rdfs:subClassOf	local:data_model	.
-local:semantic_search	rdfs:member	local:semantic_search_engine	.
-local:scaleup_experiments_on_billion_generated_statements	local:scale-upexperiments_on	local:billion_generated_statements	.
-local:scaleup_experiments_on_7_billion	local:on_7billion	local:scaleup_experiments	.
-local:interactive_query_answering	rdfs:subClassOf	local:query_answering	.
-local:endtoend_semantic	rdfs:member	local:endtoend_semantic_search	.
-local:interlinked	vn.role:Patient2	local:data	.
-local:provide	vn.role:Agent	local:scaleup_experiments_on_billion_generated_statements	.
-local:collected	vn.role:Theme	local:interlinked_data	.
-local:interactive_query_answering_over_interlinked_data	local:interactivequeryanswering_over	local:interlinked_data	.
-local:many	rdfs:member	local:many_disparate	.
-local:query	rdfs:member	local:query_evaluation	.
-local:disparate	rdfs:member	local:disparate_sources	.
-local:answering	local:AM-MNR	local:structured_data	.
-local:graphstructured	rdfs:member	local:graphstructured_data	.
-local:study	vn.role:Agent	local:we	.
-local:search_engine	rdfs:subClassOf	local:engine	.
-local:synthetically_generated_statements	rdfs:subClassOf	local:statements	.
-local:many_disparate_sources	rdfs:subClassOf	local:sources	.
-local:system_on_dataset	local:on_dataset	local:system	.
-local:synthetically_generated	rdfs:member	local:synthetically_generated_statements	.
-local:present	vn.role:Agent	local:we	.
-local:parallel_query_evaluation_methods_on_cluster	local:parallelqueryevaluationmethods_on	local:cluster	.
-local:scaleup	rdfs:member	local:scaleup_experiments	.
-local:uses	vn.role:Recipient	local:enable_over_interlinked_data	.
-local:parallel_query_evaluation_methods_on_cluster	local:on_cluster	local:parallel_query_evaluation_methods	.
-local:enable_interactive_query	rdfs:subClassOf	local:query	.
-local:query_evaluation_methods	rdfs:subClassOf	local:evaluation_methods	.
-local:enable_over_structured_data	local:enable_over	local:structured_data	.
-local:dataset_with_million_statements	local:with_millionstatements	local:dataset	.
-local:interactive_query_answering_over_interlinked_data	local:over_interlinkeddata	local:interactive_query_answering	.
-local:enable	vn.role:Agent	local:endtoend_semantic_search_engine	.
-local:many_disparate_sources_on_web	local:on_web	local:many_disparate_sources	.
+local:parallel_query_evaluation_methods_on_cluster	rdfs:member	local:parallel_query_evaluation_methods	.
+local:graph_data_model	rdfs:member	local:graph_data	.
+local:many_disparate_sources_on_web	rdfs:member	local:many_disparate_sources	.
+local:s2	local:AM-PNC	local:enable_interactive_query_answering_over_structured_data	.
+local:system_on_dataset	rdfs:member	local:system	.
+local:parallel_query_evaluation_methods	rdfs:member	local:parallel_query_evaluation	.
+local:s6	rdf:subject	local:we	.
 local:query_answering	rdfs:subClassOf	local:answering	.
-local:disparate_sources	rdfs:subClassOf	local:sources	.
-local:7_billion	rdfs:subClassOf	local:billion	.
-local:study	local:AM-LOC	local:particular	.
-local:endtoend_semantic	rdfs:subClassOf	local:semantic	.
-local:study	vn.role:Theme	local:parallel_query_evaluation_methods_on_cluster	.
-local:query_evaluation	rdfs:subClassOf	local:evaluation	.
-local:query_evaluation_methods	rdfs:subClassOf	local:methods	.
-local:enable_over_interlinked_data	local:enable_over	local:interlinked_data	.
-local:collected	vn.role:Theme	local:statements	.
-local:architecture_of_endtoend_semantic_search_engine	local:of_end-to-endsemanticsearchengine	local:architecture	.
-local:evaluate	vn.role:Agent	local:we	.
-local:cluster_of_computers	local:of_computers	local:cluster	.
-local:distributed	vn.role:Recipient	local:graphstructured_data	.
-local:synthetically_generated	rdfs:subClassOf	local:generated	.
-local:interactive_query_answering	rdfs:subClassOf	local:answering	.
-local:enable	vn.role:Patient	local:interactive_query_answering_over_structured_data	.
-local:scaleup_experiments_on_7_billion	local:scale-upexperiments_on	local:7_billion	.
-local:interactive_query_answering_over_structured_data	local:over_structureddata	local:interactive_query_answering	.
-local:parallel_query_evaluation	rdfs:member	local:parallel_query_evaluation_methods	.
+local:graph_data	rdfs:member	local:graph	.
+local:s5	rdf:object	local:distributed_indexing_methods_for_graphstructured_data	.
+local:s2	rdf:predicate	local:use	.
+local:s2	rdf:subject	local:endtoend_semantic_search_engine	.
+local:architecture_of_an_endtoend_semantic_search_engine	rdfs:member	local:endtoend_semantic_search_engine	.
+local:search_engine	rdfs:subClassOf	local:engine	.
+local:system_on_a_dataset_with_430_million_statements	rdfs:member	local:system	.
+local:interactive_query	rdfs:member	local:interactive	.
+local:enable_interactive_query	rdfs:subClassOf	local:query	.
+local:parallel_query_evaluation_methods_on_a_cluster_of_computers	rdfs:member	local:computers	.
 local:data_model	rdfs:subClassOf	local:model	.
-local:430_million	rdfs:subClassOf	local:million	.
-local:present	vn.role:Theme	local:architecture_of_endtoend_semantic_search_engine	.
-local:parallel_query	rdfs:subClassOf	local:query	.
-local:evaluation	rdfs:member	local:evaluation_methods	.
-local:uses	vn.role:Agent	local:endtoend_semantic_search_engine	.
-local:distributed_indexing_methods_for_graphstructured_data	local:for_graph-structureddata	local:distributed_indexing_methods	.
-local:many_disparate_sources	rdfs:subClassOf	local:disparate_sources	.
-local:study	vn.role:Theme	local:distributed_indexing_methods_for_graphstructured_data	.
-local:answering	vn.role:Agent	local:interactive_query	.
-local:interactive_query_answering_over_structured_data	local:interactivequeryanswering_over	local:structured_data	.
-local:endtoend_semantic_search_engine	rdfs:subClassOf	local:engine	.
-local:semantic_search	rdfs:subClassOf	local:search	.
-local:collected	vn.role:indirect_object	local:web	.
+local:cluster_of_computers	rdfs:member	local:cluster	.
+local:s5	rdf:predicate	local:study	.
+local:parallel_query_evaluation_methods	rdfs:subClassOf	local:query_evaluation_methods	.
+local:interactive_query_answering_over_interlinked_data	rdfs:member	local:interactive_query_answering	.
+local:endtoend_semantic_search_engine	rdfs:member	local:endtoend_semantic_search	.
+local:interlinked_data	rdfs:subClassOf	local:data	.
+local:enable_interactive	rdfs:member	local:enable	.
+local:enable_over_structured_data	rdfs:member	local:enable	.
+local:data_model	rdfs:member	local:data	.
+local:system_on_a_dataset_with_430_million_statements	rdfs:member	local:dataset	.
+local:s4	rdfs:subClassOf	local:data	.
+local:endtoend_semantic	rdfs:member	local:endtoend	.
+local:endtoend_semantic_search	rdfs:member	local:endtoend_semantic	.
+local:s2	rdf:object	local:graph_data_model	.
+local:interactive_query	rdfs:subClassOf	local:query	.
+local:generated_statements	rdfs:subClassOf	local:statements	.
+local:s2.2	rdf:predicate	local:answer	.
+local:enable_over_structured_data	rdfs:member	local:structured_data	.
+local:scaleup_experiments_on_billion_generated_statements	rdfs:member	local:scaleup_experiments	.
 local:graph_data_model	rdfs:subClassOf	local:model	.
-local:distributed	local:AM-LOC	local:study	.
-local:many_disparate	rdfs:subClassOf	local:disparate	.
-local:interactive	rdfs:member	local:interactive_query	.
-local:enable_over_structured_data	local:over_structureddata	local:enable	.
-local:parallel_query_evaluation_methods	rdfs:subClassOf	local:methods	.
+local:graph_data	rdfs:subClassOf	local:data	.
+local:s1	local:AM-PNC	local:enable_interactive_query_answering_over_interlinked_data	.
+local:scaleup_experiments_on_7_billion_synthetically_generated_statements	rdfs:member	local:statements	.
+local:endtoend_semantic_search	rdfs:subClassOf	local:search	.
+local:s6	rdf:object	local:parallel_query_evaluation_methods_on_a_cluster_of_computers	.
+local:enable_interactive_query_answering	rdfs:member	local:enable_interactive_query	.
+local:many_disparate	rdfs:member	local:many	.
+local:architecture_of_endtoend_semantic_search_engine	rdfs:member	local:endtoend_semantic_search_engine	.
+local:distributed_indexing_methods_for_graphstructured_data	rdfs:member	local:methods	.
 local:enable_interactive	rdfs:subClassOf	local:interactive	.
-local:query_evaluation	rdfs:member	local:query_evaluation_methods	.
-local:many_disparate_sources_on_web	local:manydisparatesources_on	local:web	.
-local:endtoend_semantic_search_engine	rdfs:subClassOf	local:semantic_search_engine	.
-local:graph_data	rdfs:member	local:graph_data_model	.
-local:evaluate	vn.role:Theme	local:system_on_dataset	.
+local:million_statements	rdfs:subClassOf	local:statements	.
+local:system_on_dataset	rdfs:member	local:dataset	.
+local:s8	rdf:object	local:system_on_a_dataset_with_430_million_statements	.
+local:enable_interactive_query	rdfs:member	local:enable_interactive	.
+local:architecture_of_endtoend_semantic_search_engine	rdfs:member	local:architecture	.
+local:s7.1	local:AM-MNR	local:synthetically	.
+local:s9	rdf:predicate	local:collect	.
+local:indexing_methods_graphstructured_data	rdfs:member	local:data	.
+local:indexing_methods	rdfs:subClassOf	local:methods	.
+local:s5.1	rdf:subject	local:study	.
+local:evaluation_methods	rdfs:member	local:evaluation	.
+local:semantic_search	rdfs:member	local:semantic	.
+local:enable_interactive_query_answering_over_structured_data	rdfs:member	local:data	.
+local:parallel_query	rdfs:member	local:parallel	.
+local:parallel_query_evaluation_methods_on_cluster	rdfs:member	local:cluster	.
+local:semantic_search_engine	rdfs:subClassOf	local:search_engine	.
+local:query_evaluation_methods	rdfs:member	local:query_evaluation	.
+local:graphstructured_data	rdfs:subClassOf	local:data	.
+local:s1.1	rdf:object	local:interactive_query_answering_over_interlinked_data	.
+local:parallel_query	rdfs:subClassOf	local:query	.
+local:enable_interactive_query_answering_over_structured_data	rdfs:member	local:enable_interactive_query_answering	.
+local:s1.1	rdf:predicate	local:enable	.
+local:query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:distributed_indexing_methods	rdfs:subClassOf	local:indexing_methods	.
+local:many_disparate_sources	rdfs:subClassOf	local:disparate_sources	.
+local:billion_generated_statements	rdfs:subClassOf	local:generated_statements	.
+local:scaleup_experiments	rdfs:member	local:scaleup	.
+local:430_million	rdfs:subClassOf	local:million	.
+local:enable_over_interlinked_data	rdfs:member	local:enable	.
+local:disparate_sources	rdfs:subClassOf	local:sources	.
+local:s2.1	rdf:subject	local:endtoend_semantic_search_engine	.
+local:semantic_search_engine	rdfs:member	local:semantic_search	.
+local:s4	rdf:predicate	local:interlink	.
+local:s0	rdf:predicate	local:present	.
+local:s0	rdf:object	local:architecture_of_an_endtoend_semantic_search_engine	.
+local:distributed_indexing_methods_for_graphstructured_data	rdfs:member	local:data	.
+local:scaleup_experiments_on_7_billion_synthetically_generated_statements	rdfs:member	local:scaleup_experiments	.
+local:many_disparate_sources	rdfs:member	local:many_disparate	.
+local:indexing_methods_graphstructured_data	rdfs:member	local:methods	.
+local:many_disparate	rdfs:subClassOf	local:disparate	.
+local:parallel_query_evaluation_methods	rdfs:subClassOf	local:methods	.
+local:endtoend_semantic_search_engine	rdfs:subClassOf	local:engine	.
+local:s8	rdf:subject	local:we	.
+local:s7.1	rdf:predicate	local:generate	.
+local:s2.1	rdf:predicate	local:enable	.
 local:parallel_query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:synthetically_generated	rdfs:subClassOf	local:generated	.
+local:s0	rdf:subject	local:we	.
+local:search_engine	rdfs:member	local:search	.
+local:s2.2	local:AM-MNR	local:structured_data	.
+local:structured_data	rdfs:subClassOf	local:data	.
+local:s4.1	rdf:subject	local:interlinked_data	.
+local:s4.1	rdf:object	local:many_disparate_sources_on_the_web	.
+local:enable_interactive_query_answering_over_interlinked_data	rdfs:member	local:enable_interactive_query_answering	.
+local:s4.1	rdf:predicate	local:collect	.
+local:s8	rdf:predicate	local:evaluate	.
+local:s1.1	rdf:subject	local:endtoend_semantic_search_engine	.
+local:interactive_query_answering	rdfs:subClassOf	local:answering	.
+local:scaleup_experiments_on_billion_generated_statements	rdfs:member	local:billion_generated_statements	.
+local:enable_over_interlinked_data	rdfs:member	local:s4	.
+local:s4	rdf:subject	local:data	.
+local:s2.1	rdf:object	local:s2.2	.
+local:interactive_query_answering_over_interlinked_data	rdfs:member	local:s4	.
+local:s1	rdf:predicate	local:use	.
+local:query_evaluation	rdfs:member	local:query	.
+local:s7.1	rdf:subject	local:statements	.
+local:endtoend_semantic_search_engine	rdfs:subClassOf	local:semantic_search_engine	.
+local:disparate_sources	rdfs:member	local:disparate	.
+local:many_disparate_sources	rdfs:subClassOf	local:sources	.
+local:interactive_query_answering	rdfs:member	local:interactive_query	.
+local:many_disparate_sources_on_the_web	rdfs:member	local:web	.
+local:7_billion	rdfs:subClassOf	local:billion	.
+local:dataset_with_million_statements	rdfs:member	local:dataset	.
+local:s2.2	rdf:subject	local:interactive_query	.
+local:architecture_of_an_endtoend_semantic_search_engine	rdfs:member	local:architecture	.
+local:distributed_indexing_methods_for_graphstructured_data	rdfs:member	local:graphstructured_data	.
+local:s7	rdf:predicate	local:provide	.
+local:s1	rdf:object	local:graph_data_model	.
+local:many_disparate_sources_on_web	rdfs:member	local:web	.
+local:many_disparate_sources_on_the_web	rdfs:member	local:many_disparate_sources	.
+local:s6	local:AM-DIS	local:particular	.
+local:evaluation_methods	rdfs:subClassOf	local:methods	.
+local:scaleup_experiments	rdfs:subClassOf	local:experiments	.
+local:s5.1	rdf:predicate	local:distribute	.
+local:s3	rdf:object	local:many_disparate_sources_on_the_web	.
+local:enable_interactive_query_answering_over_interlinked_data	rdfs:member	local:s4	.
+local:parallel_query_evaluation_methods_on_a_cluster_of_computers	rdfs:member	local:cluster	.
+local:parallel_query_evaluation	rdfs:member	local:parallel_query	.
+local:semantic_search	rdfs:subClassOf	local:search	.
+local:distributed_indexing_methods_for_graphstructured_data	rdfs:member	local:distributed_indexing_methods	.
+local:s5	rdf:subject	local:we	.
+local:s4	rdfs:member	local:interlinked	.
+local:s6	rdf:predicate	local:study	.
+local:parallel_query_evaluation_methods_on_a_cluster_of_computers	rdfs:member	local:parallel_query_evaluation_methods	.
+local:endtoend_semantic	rdfs:subClassOf	local:semantic	.
+local:s5.1	local:AM-ADV	local:particular	.
+local:interactive_query_answering	rdfs:subClassOf	local:query_answering	.
+local:system_on_a_dataset_with_430_million_statements	rdfs:member	local:statements	.
+local:s9	rdf:object	local:web	.
+local:s1	rdf:subject	local:endtoend_semantic_search_engine	.
+local:semantic_search_engine	rdfs:subClassOf	local:engine	.
+local:query_evaluation_methods	rdfs:subClassOf	local:evaluation_methods	.
+local:s3	rdf:subject	local:data	.
+local:query_answering	rdfs:member	local:query	.
+local:s5.1	rdf:object	local:indexing_methods_graphstructured_data	.
+local:s9	rdf:subject	local:statements	.
+local:s3	rdf:predicate	local:collect	.
+local:graph_data_model	rdfs:subClassOf	local:data_model	.
+local:query_evaluation_methods	rdfs:subClassOf	local:methods	.
+local:cluster_of_computers	rdfs:member	local:computers	.
+local:s7	rdf:subject	local:scaleup_experiments_on_7_billion_synthetically_generated_statements	.

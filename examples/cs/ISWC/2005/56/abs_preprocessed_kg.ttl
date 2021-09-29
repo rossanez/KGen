@@ -1,384 +1,670 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"the framework tested in a bioinformatics application"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"a bioinformatics application that performs protein compressibility analysis"	.
+
+local:s17.2	a	rdf:Statement	;
+	rdfs:label	"results generated"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"thus results generated are meaningful"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"this validation process ensures thus results generated are meaningful"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"experiments performed correctly"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"this validation process ensures experiments are performed correctly"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"services advertised in a registry"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"this paper relies on reasoning over the documented provenance of experiment results"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"this paper relies on reasoning over semantic descriptions of services"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"validating workflow executions"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"this paper introduces a platformindependent framework for validating workflow executions"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"error checking performed by the services"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"users have rely on error checking"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"therefore have"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"users have adopt other ad hoc methods"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"users therefore have to adopt other ad hoc methods"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"validating such experiments in todays escience systems"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"experiments performed by scientists colleagues"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"scientists verify experiments"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"scientists may also want to verify experiments"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"scientists review experiments"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"scientists may also want to review experiments"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"the execution performed correctly"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a scientist verify that the execution was performed correctly"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"after an experiment executed it"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"existing experimental criteria"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a scientist verify that the execution is compatible with some existing experimental criteria"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"after an experiment executed it"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"a scientist verify that the execution is compatible with standards"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"after an experiment executed it"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"many distributed services maintained by different organisations"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"distributed services"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"distributed services"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"escience experiments typically involve many distributed services"	.
+
+
 #### Classes ####
 
-local:escience	rdfs:label	"e-science"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:escience_experiments	rdfs:label	"e-science experiments"	.
+local:test	a	rdf:Class	;
+	rdfs:label	"test"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:bioinformatics_application	a	rdf:Class	;
+	rdfs:label	"bioinformatics application"	.
 
-local:involve	rdfs:label	"involve"	.
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
 
-local:typically	rdfs:label	"typically"	.
+local:bioinformatics	a	rdf:Class	;
+	rdfs:label	"bioinformatics"	.
 
-local:distributed_services	rdfs:label	"distributed services"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:services	rdfs:label	"services"	.
+local:protein_compressibility_analysis	a	rdf:Class	;
+	rdfs:label	"protein compressibility analysis"	.
 
-local:many_distributed_services	rdfs:label	"many distributed services"	.
+local:protein_compressibility	a	rdf:Class	;
+	rdfs:label	"protein compressibility"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:compressibility	a	rdf:Class	;
+	rdfs:label	"compressibility"	.
 
-local:maintained	rdfs:label	"maintained"	.
+local:protein	a	rdf:Class	;
+	rdfs:label	"protein"	.
 
-local:different	rdfs:label	"different"	.
+local:compressibility_analysis	a	rdf:Class	;
+	rdfs:label	"compressibility analysis"	.
 
-local:different_organisations	rdfs:label	"different organisations"	.
+local:analysis	a	rdf:Class	;
+	rdfs:label	"analysis"	.
 
-local:organisations	rdfs:label	"organisations"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:executed	rdfs:label	"executed,"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:experiment	rdfs:label	"experiment"	.
+local:generated_are_meaningful	a	rdf:Class	;
+	rdfs:label	"generated are meaningful"	.
 
-local:it	rdfs:label	"it"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:verify	rdfs:label	"verify"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:scientist	rdfs:label	"scientist"	.
+local:validation_process	a	rdf:Class	;
+	rdfs:label	"validation process"	.
 
-local:experimental_criteria	rdfs:label	"experimental criteria"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:criteria	rdfs:label	"criteria"	.
+local:validation	a	rdf:Class	;
+	rdfs:label	"validation"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:ensure	a	rdf:Class	;
+	rdfs:label	"ensure"	.
 
-local:existing_experimental_criteria	rdfs:label	"existing experimental criteria"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:compatible_with_existing_experimental_criteria	rdfs:label	"compatible with existing experimental criteria"	.
+local:correctly	a	rdf:Class	;
+	rdfs:label	"correctly"	.
 
-local:compatible	rdfs:label	"compatible"	.
+local:experiments_are_performed_correctly	a	rdf:Class	;
+	rdfs:label	"experiments are performed correctly"	.
 
-local:existing	rdfs:label	"existing"	.
+local:correctly_performed	a	rdf:Class	;
+	rdfs:label	"correctly performed"	.
 
-local:correctly_performed	rdfs:label	"correctly performed"	.
+local:performed	a	rdf:Class	;
+	rdfs:label	"performed"	.
 
-local:performed	rdfs:label	"performed"	.
+local:services	a	rdf:Class	;
+	rdfs:label	"services"	.
 
-local:execution	rdfs:label	"execution"	.
+local:advertise	a	rdf:Class	;
+	rdfs:label	"advertise"	.
 
-local:correctly	rdfs:label	"correctly"	.
+local:registry	a	rdf:Class	;
+	rdfs:label	"registry"	.
 
-local:compatible_with_standards	rdfs:label	"compatible with standards"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:standards	rdfs:label	"standards"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:want	rdfs:label	"want"	.
+local:reasoning_over_the_documented_provenance_of_experiment_results	a	rdf:Class	;
+	rdfs:label	"reasoning over the documented provenance of experiment results"	.
 
-local:scientists	rdfs:label	"scientists"	.
+local:documented_provenance	a	rdf:Class	;
+	rdfs:label	"documented provenance"	.
 
-local:may	rdfs:label	"may"	.
+local:experiment_results	a	rdf:Class	;
+	rdfs:label	"experiment results"	.
 
-local:also	rdfs:label	"also"	.
+local:experiment	a	rdf:Class	;
+	rdfs:label	"experiment"	.
 
-local:verify_experiments	rdfs:label	"verify experiments"	.
+local:provenance	a	rdf:Class	;
+	rdfs:label	"provenance"	.
 
-local:review_experiments	rdfs:label	"review experiments"	.
+local:documented	a	rdf:Class	;
+	rdfs:label	"documented"	.
 
-local:review	rdfs:label	"review"	.
+local:reasoning_over_documented_provenance	a	rdf:Class	;
+	rdfs:label	"reasoning over documented provenance"	.
 
-local:validating	rdfs:label	"validating"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:escience_systems	rdfs:label	"e-science systems"	.
+local:documented_provenance_of_experiment_results	a	rdf:Class	;
+	rdfs:label	"documented provenance of experiment results"	.
 
-local:systems	rdfs:label	"systems"	.
+local:reasoning_over_semantic_descriptions_of_services	a	rdf:Class	;
+	rdfs:label	"reasoning over semantic descriptions of services"	.
 
-local:today	rdfs:label	"today"	.
+local:over_semantic_descriptions	a	rdf:Class	;
+	rdfs:label	"over semantic descriptions"	.
 
-local:today_’	rdfs:label	"today ’"	.
+local:semantic_descriptions	a	rdf:Class	;
+	rdfs:label	"semantic descriptions"	.
 
-local:’	rdfs:label	"’"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:today_escience_systems	rdfs:label	"today e-science systems"	.
+local:descriptions	a	rdf:Class	;
+	rdfs:label	"descriptions"	.
 
-local:have	rdfs:label	"have"	.
+local:over_semantic	a	rdf:Class	;
+	rdfs:label	"over semantic"	.
 
-local:users	rdfs:label	"users"	.
+local:over	a	rdf:Class	;
+	rdfs:label	"over"	.
 
-local:therefore	rdfs:label	"therefore"	.
+local:reasoning_over_semantic_descriptions	a	rdf:Class	;
+	rdfs:label	"reasoning over semantic descriptions"	.
 
-local:ad_hoc	rdfs:label	"ad hoc"	.
+local:semantic_descriptions_of_services	a	rdf:Class	;
+	rdfs:label	"semantic descriptions of services"	.
 
-local:hoc	rdfs:label	"hoc"	.
+local:workflow_executions	a	rdf:Class	;
+	rdfs:label	"workflow executions"	.
 
-local:other_ad_hoc_methods	rdfs:label	"other ad hoc methods"	.
+local:executions	a	rdf:Class	;
+	rdfs:label	"executions"	.
 
-local:methods	rdfs:label	"methods"	.
+local:workflow	a	rdf:Class	;
+	rdfs:label	"workflow"	.
 
-local:other	rdfs:label	"other"	.
+local:validate	a	rdf:Class	;
+	rdfs:label	"validate"	.
 
-local:other_ad	rdfs:label	"other ad"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:other_ad_hoc	rdfs:label	"other ad hoc"	.
+local:platformindependent_framework	a	rdf:Class	;
+	rdfs:label	"platformindependent framework"	.
 
-local:ad_hoc_methods	rdfs:label	"ad hoc methods"	.
+local:platformindependent	a	rdf:Class	;
+	rdfs:label	"platformindependent"	.
 
-local:hoc_methods	rdfs:label	"hoc methods"	.
+local:check	a	rdf:Class	;
+	rdfs:label	"check"	.
 
-local:ad	rdfs:label	"ad"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:adopt	rdfs:label	"adopt"	.
+local:error_checking	a	rdf:Class	;
+	rdfs:label	"error checking"	.
 
-local:error	rdfs:label	"error"	.
+local:checking	a	rdf:Class	;
+	rdfs:label	"checking"	.
 
-local:error_checking	rdfs:label	"error checking"	.
+local:error	a	rdf:Class	;
+	rdfs:label	"error"	.
 
-local:checking	rdfs:label	"checking"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:rely	rdfs:label	"rely"	.
+local:therefore	a	rdf:Class	;
+	rdfs:label	"therefore"	.
 
-local:introduces	rdfs:label	"introduces"	.
+local:adopt	a	rdf:Class	;
+	rdfs:label	"adopt"	.
 
-local:paper	rdfs:label	"paper"	.
+local:ad_hoc_methods	a	rdf:Class	;
+	rdfs:label	"ad hoc methods"	.
 
-local:workflow	rdfs:label	"workflow"	.
+local:hoc_methods	a	rdf:Class	;
+	rdfs:label	"hoc methods"	.
 
-local:workflow_executions	rdfs:label	"workflow executions"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:platformindependent_framework	rdfs:label	"platform-independent framework"	.
+local:hoc	a	rdf:Class	;
+	rdfs:label	"hoc"	.
 
-local:framework	rdfs:label	"framework"	.
+local:ad_hoc	a	rdf:Class	;
+	rdfs:label	"ad hoc"	.
 
-local:executions	rdfs:label	"executions"	.
+local:ad	a	rdf:Class	;
+	rdfs:label	"ad"	.
 
-local:platformindependent	rdfs:label	"platform-independent"	.
+local:adopt_other_ad_hoc_methods	a	rdf:Class	;
+	rdfs:label	"adopt other ad hoc methods"	.
 
-local:relies	rdfs:label	"relies"	.
+local:other_ad_hoc	a	rdf:Class	;
+	rdfs:label	"other ad hoc"	.
 
-local:experiment_results	rdfs:label	"experiment results"	.
+local:other_ad_hoc_methods	a	rdf:Class	;
+	rdfs:label	"other ad hoc methods"	.
 
-local:results	rdfs:label	"results"	.
+local:other_ad	a	rdf:Class	;
+	rdfs:label	"other ad"	.
 
-local:documented	rdfs:label	"documented"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:documented_provenance	rdfs:label	"documented provenance"	.
+local:todays_escience_systems	a	rdf:Class	;
+	rdfs:label	"todays escience systems"	.
 
-local:provenance	rdfs:label	"provenance"	.
+local:todays_escience	a	rdf:Class	;
+	rdfs:label	"todays escience"	.
 
-local:reasoning_over_documented_provenance	rdfs:label	"reasoning over documented provenance"	.
+local:todays	a	rdf:Class	;
+	rdfs:label	"todays"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:documented_provenance_of_experiment_results	rdfs:label	"documented provenance of experiment results"	.
+local:escience	a	rdf:Class	;
+	rdfs:label	"escience"	.
 
-local:advertised	rdfs:label	"advertised"	.
+local:escience_systems	a	rdf:Class	;
+	rdfs:label	"escience systems"	.
 
-local:registry	rdfs:label	"registry"	.
+local:scientists_colleagues	a	rdf:Class	;
+	rdfs:label	"scientists colleagues"	.
 
-local:over	rdfs:label	"over"	.
+local:scientists	a	rdf:Class	;
+	rdfs:label	"scientists"	.
 
-local:over_semantic	rdfs:label	"over semantic"	.
+local:colleagues	a	rdf:Class	;
+	rdfs:label	"colleagues"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:verify	a	rdf:Class	;
+	rdfs:label	"verify"	.
 
-local:semantic_descriptions	rdfs:label	"semantic descriptions"	.
+local:want	a	rdf:Class	;
+	rdfs:label	"want"	.
 
-local:descriptions	rdfs:label	"descriptions"	.
+local:verify_experiments	a	rdf:Class	;
+	rdfs:label	"verify experiments"	.
 
-local:over_semantic_descriptions	rdfs:label	"over semantic descriptions"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:reasoning_over_semantic_descriptions	rdfs:label	"reasoning over semantic descriptions"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:semantic_descriptions_of_services	rdfs:label	"semantic descriptions of services"	.
+local:review	a	rdf:Class	;
+	rdfs:label	"review"	.
 
-local:validation	rdfs:label	"validation"	.
+local:review_experiments	a	rdf:Class	;
+	rdfs:label	"review experiments"	.
 
-local:validation_process	rdfs:label	"validation process"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:process	rdfs:label	"process"	.
+local:scientist	a	rdf:Class	;
+	rdfs:label	"scientist"	.
 
-local:ensures	rdfs:label	"ensures"	.
+local:execution_was_performed_correctly	a	rdf:Class	;
+	rdfs:label	"execution was performed correctly"	.
 
-local:thus	rdfs:label	"thus"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:thus_results	rdfs:label	"thus results"	.
+local:execute	a	rdf:Class	;
+	rdfs:label	"execute"	.
 
-local:results_generated	rdfs:label	"results generated"	.
+local:experimental_criteria	a	rdf:Class	;
+	rdfs:label	"experimental criteria"	.
 
-local:generated	rdfs:label	"generated"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:thus_results_generated	rdfs:label	"thus results generated"	.
+local:criteria	a	rdf:Class	;
+	rdfs:label	"criteria"	.
 
-local:meaningful	rdfs:label	"meaningful"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:tested	rdfs:label	"tested"	.
+local:execution_is_compatible_with_some_existing_experimental_criteria	a	rdf:Class	;
+	rdfs:label	"execution is compatible with some existing experimental criteria"	.
 
-local:bioinformatics	rdfs:label	"bioinformatics"	.
+local:compatible_with_existing_experimental_criteria	a	rdf:Class	;
+	rdfs:label	"compatible with existing experimental criteria"	.
 
-local:bioinformatics_application	rdfs:label	"bioinformatics application"	.
+local:compatible	a	rdf:Class	;
+	rdfs:label	"compatible"	.
 
-local:application	rdfs:label	"application"	.
+local:execution_is_compatible_with_standards	a	rdf:Class	;
+	rdfs:label	"execution is compatible with standards"	.
 
-local:performs	rdfs:label	"performs"	.
+local:standards	a	rdf:Class	;
+	rdfs:label	"standards"	.
 
-local:protein_compressibility	rdfs:label	"protein compressibility"	.
+local:compatible_with_standards	a	rdf:Class	;
+	rdfs:label	"compatible with standards"	.
 
-local:compressibility	rdfs:label	"compressibility"	.
+local:different_organisations	a	rdf:Class	;
+	rdfs:label	"different organisations"	.
 
-local:protein_compressibility_analysis	rdfs:label	"protein compressibility analysis"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:analysis	rdfs:label	"analysis"	.
+local:organisations	a	rdf:Class	;
+	rdfs:label	"organisations"	.
 
-local:compressibility_analysis	rdfs:label	"compressibility analysis"	.
+local:maintain	a	rdf:Class	;
+	rdfs:label	"maintain"	.
 
-local:protein	rdfs:label	"protein"	.
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
-#### Properties ####
+local:many_distributed_services	a	rdf:Class	;
+	rdfs:label	"many distributed services"	.
+
+local:involve	a	rdf:Class	;
+	rdfs:label	"involve"	.
+
+local:escience_experiments	a	rdf:Class	;
+	rdfs:label	"escience experiments"	.
+
+local:typically	a	rdf:Class	;
+	rdfs:label	"typically"	.
 
 #### Mapped Relations ####
 
 local:semantic_descriptions	owl:sameAs	cso:semantic_descriptions	.
-local:validation_process	owl:sameAs	cso:validation_process	.
 cso:semantic_descriptions	rdfs:label	"semantic descriptions"	.
-cso:e-science	rdfs:label	"e-science"	.
-cso:bioinformatics	rdfs:label	"bioinformatics"	.
-cso:reasoning	rdfs:label	"reasoning"	.
-local:validation	owl:sameAs	cso:validation	.
-cso:validation_process	rdfs:label	"validation process"	.
-local:escience	owl:sameAs	cso:e-science	.
 cso:validation	rdfs:label	"validation"	.
+cso:validation_process	rdfs:label	"validation process"	.
+cso:bioinformatics	rdfs:label	"bioinformatics"	.
+local:validation_process	owl:sameAs	cso:validation_process	.
 local:bioinformatics	owl:sameAs	cso:bioinformatics	.
+cso:escience	rdfs:label	"escience"	.
+local:escience	owl:sameAs	cso:escience	.
+local:validation	owl:sameAs	cso:validation	.
+cso:reasoning	rdfs:label	"reasoning"	.
 local:reasoning	owl:sameAs	cso:reasoning	.
 
 #### Relations ####
 
-local:correctly_performed	rdfs:subClassOf	local:performed	.
-local:ad_hoc_methods	rdfs:subClassOf	local:hoc_methods	.
-local:experimental_criteria	rdfs:subClassOf	local:criteria	.
-local:reasoning_over_semantic_descriptions	local:over_semanticdescriptions	local:reasoning	.
-local:semantic_descriptions_of_services	local:semanticdescriptions_of	local:services	.
-local:performed	vn.role:Theme	local:experiments	.
-local:want	vn.role:Theme	local:verify	.
-local:rely	vn.role:Theme	local:error	.
-local:other_ad_hoc_methods	rdfs:subClassOf	local:ad_hoc_methods	.
-local:validation	rdfs:member	local:validation_process	.
-local:ad_hoc	rdfs:member	local:ad_hoc_methods	.
-local:want	vn.role:Theme	local:review_experiments	.
-local:involve	local:AM-TMP	local:typically	.
-local:semantic_descriptions	rdfs:subClassOf	local:descriptions	.
+local:s16	rdf:object	local:experiments_are_performed_correctly	.
+local:s10.2	rdf:predicate	local:check	.
+local:s4.2	rdf:predicate	local:perform	.
+local:s10	rdf:predicate	local:have	.
 local:experiment_results	rdfs:subClassOf	local:results	.
-local:results	vn.role:Location	local:meaningful	.
+local:s16.1	rdf:subject	local:experiments	.
 local:compressibility_analysis	rdfs:subClassOf	local:analysis	.
-local:documented	rdfs:member	local:documented_provenance	.
-local:protein_compressibility_analysis	rdfs:subClassOf	local:compressibility_analysis	.
-local:today_escience_systems	rdfs:subClassOf	local:escience_systems	.
-local:over_semantic	rdfs:subClassOf	local:semantic	.
-local:verify	vn.role:Theme	local:scientists	.
-local:review	rdfs:member	local:review_experiments	.
-local:error	rdfs:member	local:error_checking	.
-local:performed	vn.role:Agent	local:scientists	.
-local:ensures	vn.role:Agent	local:validation_process	.
-local:compatible_with_existing_experimental_criteria	local:with_existingexperimentalcriteria	local:compatible	.
-local:protein	rdfs:member	local:protein_compressibility	.
-local:adopt	vn.role:Theme	local:ad_hoc_methods	.
-local:results	local:AM-DIS	local:thus	.
-local:rely	local:AM-MOD	local:have	.
-local:escience_experiments	rdfs:subClassOf	local:experiments	.
-local:compatible_with_standards	local:compatible_with	local:standards	.
-local:thus_results_generated	rdfs:subClassOf	local:results_generated	.
-local:today	rdfs:member	local:today_’	.
-local:verify	vn.role:Experiencer	local:correctly_performed	.
-local:documented_provenance	rdfs:subClassOf	local:provenance	.
-local:results_generated	rdfs:subClassOf	local:generated	.
-local:introduces	vn.role:Agent	local:paper	.
-local:documented_provenance_of_experiment_results	local:of_experimentresults	local:documented_provenance	.
-local:verify	rdfs:member	local:verify_experiments	.
-local:today_’	rdfs:subClassOf	local:’	.
-local:compressibility	rdfs:member	local:compressibility_analysis	.
-local:workflow_executions	rdfs:subClassOf	local:executions	.
-local:compatible_with_standards	local:with_standards	local:compatible	.
-local:over_semantic_descriptions	rdfs:subClassOf	local:descriptions	.
-local:escience	rdfs:member	local:escience_systems	.
-local:other_ad_hoc_methods	rdfs:subClassOf	local:methods	.
-local:verify	vn.role:Theme	local:scientist	.
-local:executed	vn.role:subject	local:experiment	.
-local:escience	rdfs:member	local:escience_experiments	.
-local:review	vn.role:Theme	local:experiments	.
-local:hoc_methods	rdfs:subClassOf	local:methods	.
-local:protein_compressibility_analysis	rdfs:subClassOf	local:analysis	.
-local:tested	local:AM-LOC	local:bioinformatics_application	.
-local:documented_provenance_of_experiment_results	local:documentedprovenance_of	local:experiment_results	.
-local:have	vn.role:Experiencer	local:users	.
-local:bioinformatics	rdfs:member	local:bioinformatics_application	.
-local:adopt	vn.role:Agent	local:users	.
-local:platformindependent_framework	rdfs:subClassOf	local:framework	.
-local:validation_process	rdfs:subClassOf	local:process	.
-local:other_ad	rdfs:member	local:other_ad_hoc	.
-local:existing_experimental_criteria	rdfs:subClassOf	local:experimental_criteria	.
-local:platformindependent	rdfs:member	local:platformindependent_framework	.
-local:many_distributed_services	rdfs:subClassOf	local:distributed_services	.
-local:reasoning_over_documented_provenance	local:over_documentedprovenance	local:reasoning	.
-local:performed	vn.role:Theme	local:correctly	.
-local:other	rdfs:member	local:other_ad	.
-local:bioinformatics_application	rdfs:subClassOf	local:application	.
-local:want	vn.role:Agent	local:scientists	.
-local:review	vn.role:Agent	local:scientists	.
-local:executed	vn.role:object	local:it	.
-local:validating	vn.role:Theme	local:workflow_executions	.
-local:verify	vn.role:Experiencer	local:experiments	.
-local:relies	vn.role:Theme	local:reasoning_over_semantic_descriptions	.
-local:generated	vn.role:Theme2	local:results	.
-local:verify_experiments	rdfs:subClassOf	local:experiments	.
-local:performs	vn.role:Agent	local:bioinformatics_application	.
-local:verify	vn.role:Experiencer	local:compatible_with_existing_experimental_criteria	.
-local:rely	vn.role:Agent	local:users	.
-local:want	local:AM-DIS	local:also	.
-local:have	vn.role:Stimulus	local:adopt	.
-local:ensures	vn.role:Theme	local:meaningful	.
-local:want	local:AM-MOD	local:may	.
-local:reasoning_over_semantic_descriptions	local:reasoning_over	local:semantic_descriptions	.
-local:protein_compressibility	rdfs:member	local:protein_compressibility_analysis	.
-local:workflow	rdfs:member	local:workflow_executions	.
-local:error_checking	rdfs:subClassOf	local:checking	.
-local:performed	vn.role:Theme	local:execution	.
-local:thus_results	rdfs:subClassOf	local:results	.
-local:protein_compressibility	rdfs:subClassOf	local:compressibility	.
-local:different_organisations	rdfs:subClassOf	local:organisations	.
-local:performed	vn.role:Agent	local:services	.
-local:validating	vn.role:Location	local:today_escience_systems	.
-local:experimental	rdfs:member	local:experimental_criteria	.
-local:maintained	vn.role:Agent	local:distributed	.
-local:ad_hoc_methods	rdfs:subClassOf	local:methods	.
-local:tested	vn.role:Location	local:framework	.
-local:thus	rdfs:member	local:thus_results	.
-local:distributed	vn.role:Theme	local:services	.
-local:over_semantic	rdfs:member	local:over_semantic_descriptions	.
-local:semantic	rdfs:member	local:semantic_descriptions	.
-local:maintained	vn.role:Agent	local:different_organisations	.
-local:ad	rdfs:member	local:ad_hoc	.
-local:rely	vn.role:Agent	local:checking	.
-local:experiment	rdfs:member	local:experiment_results	.
-local:escience_systems	rdfs:subClassOf	local:systems	.
-local:other_ad_hoc	rdfs:member	local:other_ad_hoc_methods	.
-local:verify	vn.role:Experiencer	local:compatible_with_standards	.
-local:over	rdfs:member	local:over_semantic	.
-local:relies	vn.role:Agent	local:paper	.
-local:involve	vn.role:Cause	local:many_distributed_services	.
-local:performed	vn.role:Theme	local:error_checking	.
-local:adopt	local:AM-MOD	local:have	.
-local:compatible_with_existing_experimental_criteria	local:compatible_with	local:existing_experimental_criteria	.
-local:distributed_services	rdfs:subClassOf	local:services	.
-local:ad_hoc	rdfs:subClassOf	local:hoc	.
-local:introduces	vn.role:Patient	local:platformindependent_framework	.
-local:have	local:AM-DIS	local:therefore	.
-local:validating	vn.role:Theme	local:experiments	.
-local:involve	vn.role:Topic	local:escience_experiments	.
-local:advertised	vn.role:Location	local:services	.
-local:reasoning_over_documented_provenance	local:reasoning_over	local:documented_provenance	.
-local:existing	vn.role:Location	local:experimental_criteria	.
-local:semantic_descriptions_of_services	local:of_services	local:semantic_descriptions	.
-local:advertised	local:AM-MNR	local:registry	.
-local:performs	vn.role:Theme	local:protein_compressibility_analysis	.
-local:review_experiments	rdfs:subClassOf	local:experiments	.
-local:ensures	vn.role:Theme	local:correctly_performed	.
-local:relies	vn.role:Theme	local:reasoning_over_documented_provenance	.
-local:different	rdfs:member	local:different_organisations	.
+local:s18	rdf:subject	local:bioinformatics_application	.
+local:semantic_descriptions	rdfs:member	local:semantic	.
+local:todays_escience_systems	rdfs:member	local:todays_escience	.
+local:s1.1	rdf:subject	local:different_organisations	.
+local:scientists_colleagues	rdfs:subClassOf	local:colleagues	.
+local:s2	local:AM-TMP	local:experiment	.
+local:s12	rdf:subject	local:paper	.
 local:other_ad_hoc	rdfs:subClassOf	local:hoc	.
+local:s17.1	local:AM-DIS	local:thus	.
+local:s14	rdf:predicate	local:rely	.
+local:bioinformatics_application	rdfs:member	local:bioinformatics	.
+local:different_organisations	rdfs:member	local:different	.
+local:review_experiments	rdfs:member	local:review	.
+local:s16.1	local:AM-MNR	local:correctly	.
+local:s4	rdf:subject	local:it	.
+local:correctly_performed	rdfs:subClassOf	local:performed	.
+local:experimental_criteria	rdfs:subClassOf	local:criteria	.
+local:documented_provenance_of_experiment_results	rdfs:member	local:documented_provenance	.
+local:verify_experiments	rdfs:member	local:verify	.
+local:hoc_methods	rdfs:subClassOf	local:methods	.
+local:s5	rdf:subject	local:scientists	.
+local:s0.1	rdf:subject	local:services	.
+local:s3.2	rdf:predicate	local:exist	.
+local:s2.1	rdf:predicate	local:verify	.
+local:protein_compressibility	rdfs:subClassOf	local:compressibility	.
+local:s16	rdf:predicate	local:ensure	.
+local:todays_escience_systems	rdfs:subClassOf	local:systems	.
+local:reasoning_over_semantic_descriptions_of_services	rdfs:member	local:services	.
+local:bioinformatics_application	rdfs:subClassOf	local:application	.
+local:platformindependent_framework	rdfs:subClassOf	local:framework	.
+local:reasoning_over_semantic_descriptions_of_services	rdfs:member	local:over_semantic_descriptions	.
+local:ad_hoc_methods	rdfs:subClassOf	local:hoc_methods	.
+local:s10	local:AM-DIS	local:therefore	.
+local:s9	rdf:subject	local:users	.
+local:s1.1	rdf:predicate	local:maintain	.
+local:s12	rdf:predicate	local:introduce	.
+local:todays_escience_systems	rdfs:subClassOf	local:escience_systems	.
+local:s0.1	rdf:predicate	local:distribute	.
+local:other_ad_hoc	rdfs:member	local:other_ad	.
+local:reasoning_over_documented_provenance	rdfs:member	local:reasoning	.
+local:s1	rdf:predicate	local:distribute	.
+local:s3.1	rdf:object	local:execution_is_compatible_with_some_existing_experimental_criteria	.
+local:reasoning_over_the_documented_provenance_of_experiment_results	rdfs:member	local:experiment_results	.
+local:verify_experiments	rdfs:subClassOf	local:experiments	.
+local:s12.1	rdf:subject	local:workflow_executions	.
+local:s11	rdf:subject	local:services	.
+local:s13	rdf:object	local:reasoning_over_semantic_descriptions_of_services	.
+local:different_organisations	rdfs:subClassOf	local:organisations	.
+local:s0	rdf:subject	local:many_distributed_services	.
+local:s19	local:AM-LOC	local:bioinformatics_application	.
+local:s17	rdf:object	local:s17.1	.
+local:s15	local:AM-LOC	local:registry	.
+local:semantic_descriptions_of_services	rdfs:member	local:semantic_descriptions	.
+local:s5.1	rdf:object	local:experiments	.
+local:semantic_descriptions_of_services	rdfs:member	local:services	.
+local:s0	local:AM-TMP	local:typically	.
+local:s11	rdf:predicate	local:perform	.
+local:s8	rdf:predicate	local:validate	.
+local:review_experiments	rdfs:subClassOf	local:experiments	.
+local:compatible_with_existing_experimental_criteria	rdfs:member	local:s3.2	.
+local:s14	rdf:subject	local:paper	.
+local:ad_hoc	rdfs:subClassOf	local:hoc	.
+local:s5	rdf:object	local:review_experiments	.
+local:s3.1	rdf:predicate	local:verify	.
+local:over_semantic	rdfs:member	local:over	.
+local:s7	rdf:subject	local:scientists_colleagues	.
 local:other_ad	rdfs:subClassOf	local:ad	.
-local:hoc	rdfs:member	local:hoc_methods	.
+local:s15	rdf:subject	local:services	.
+local:s3.2	rdf:subject	local:experimental_criteria	.
+local:s9.1	rdf:subject	local:users	.
+local:escience_systems	rdfs:member	local:escience	.
+local:s16.1	rdf:predicate	local:perform	.
+local:s6	local:AM-MOD	local:may	.
+local:reasoning_over_the_documented_provenance_of_experiment_results	rdfs:member	local:documented_provenance	.
+local:s4.1	rdf:object	local:execution_was_performed_correctly	.
+local:s18	rdf:object	local:protein_compressibility_analysis	.
+local:semantic_descriptions	rdfs:subClassOf	local:descriptions	.
+local:s6.1	rdf:subject	local:scientists	.
+local:s4.2	rdf:subject	local:execution	.
+local:s17.2	rdf:subject	local:results	.
+local:todays_escience	rdfs:subClassOf	local:escience	.
+local:over_semantic_descriptions	rdfs:member	local:over_semantic	.
+local:s14	rdf:object	local:reasoning_over_the_documented_provenance_of_experiment_results	.
+local:other_ad	rdfs:member	local:other	.
+local:s6.1	rdf:predicate	local:verify	.
+local:s10.1	local:AM-MOD	local:have	.
+local:s5.1	rdf:subject	local:scientists	.
+local:s3	rdf:subject	local:it	.
+local:compressibility_analysis	rdfs:member	local:compressibility	.
+local:ad_hoc	rdfs:member	local:ad	.
+local:s18	rdf:predicate	local:perform	.
+local:s15	rdf:predicate	local:advertise	.
+local:over_semantic_descriptions	rdfs:subClassOf	local:descriptions	.
+local:s17	rdf:predicate	local:ensure	.
+local:other_ad_hoc_methods	rdfs:subClassOf	local:methods	.
+local:s7	rdf:object	local:experiments	.
+local:s6	rdf:object	local:verify_experiments	.
+local:other_ad_hoc_methods	rdfs:member	local:other_ad_hoc	.
+local:s6	local:AM-DIS	local:also	.
+local:s5	local:AM-MOD	local:may	.
+local:ad_hoc_methods	rdfs:subClassOf	local:methods	.
+local:s9.1	rdf:object	local:ad_hoc_methods	.
+local:s5	local:AM-DIS	local:also	.
+local:s2.1	rdf:object	local:execution_is_compatible_with_standards	.
+local:s3.2	rdfs:subClassOf	local:experimental_criteria	.
+local:s5	rdf:predicate	local:want	.
+local:s4	rdf:predicate	local:execute	.
+local:reasoning_over_semantic_descriptions	rdfs:member	local:semantic_descriptions	.
+local:s17.2	rdf:predicate	local:generate	.
+local:reasoning_over_documented_provenance	rdfs:member	local:documented_provenance	.
+local:s12	local:AM-PNC	local:s12.1	.
+local:s0	rdf:predicate	local:involve	.
+local:s2	rdf:predicate	local:execute	.
+local:reasoning_over_semantic_descriptions	rdfs:member	local:reasoning	.
+local:compatible_with_standards	rdfs:member	local:standards	.
+local:error_checking	rdfs:member	local:error	.
+local:compatible_with_existing_experimental_criteria	rdfs:member	local:compatible	.
+local:s10.1	rdf:subject	local:users	.
+local:hoc_methods	rdfs:member	local:hoc	.
+local:s4.2	local:AM-MNR	local:correctly	.
+local:s6	rdf:predicate	local:want	.
+local:escience_experiments	rdfs:subClassOf	local:experiments	.
+local:s8	rdf:object	local:todays_escience_systems	.
+local:execution_is_compatible_with_standards	rdfs:member	local:standards	.
+local:s0	rdf:object	local:escience_experiments	.
+local:todays_escience	rdfs:member	local:todays	.
+local:documented_provenance_of_experiment_results	rdfs:member	local:experiment_results	.
+local:s4.1	rdf:predicate	local:verify	.
+local:s5.1	rdf:predicate	local:review	.
+local:workflow_executions	rdfs:member	local:workflow	.
+local:other_ad_hoc_methods	rdfs:subClassOf	local:ad_hoc_methods	.
+local:platformindependent_framework	rdfs:member	local:platformindependent	.
+local:protein_compressibility_analysis	rdfs:subClassOf	local:compressibility_analysis	.
+local:s4.1	rdf:subject	local:scientist	.
+local:s9.1	local:AM-MOD	local:have	.
+local:s12.1	rdf:predicate	local:validate	.
+local:experimental_criteria	rdfs:member	local:experimental	.
+local:scientists_colleagues	rdfs:member	local:scientists	.
+local:experiment_results	rdfs:member	local:experiment	.
+local:s9	rdf:object	local:adopt_other_ad_hoc_methods	.
+local:protein_compressibility_analysis	rdfs:subClassOf	local:analysis	.
+local:validation_process	rdfs:subClassOf	local:process	.
+local:s13	rdf:predicate	local:rely	.
+local:execution_is_compatible_with_some_existing_experimental_criteria	rdfs:member	local:experimental_criteria	.
+local:s19	rdf:subject	local:framework	.
+local:documented_provenance	rdfs:subClassOf	local:provenance	.
+local:s3	local:AM-TMP	local:experiment	.
+local:s17.1	rdf:subject	local:generated_are_meaningful	.
+local:escience_systems	rdfs:subClassOf	local:systems	.
+local:s9	rdf:predicate	local:have	.
+local:s10.1	rdf:predicate	local:rely	.
+local:ad_hoc_methods	rdfs:member	local:ad_hoc	.
+local:s6.1	rdf:object	local:experiments	.
+local:execution_is_compatible_with_some_existing_experimental_criteria	rdfs:member	local:execution	.
+local:s2	rdf:subject	local:it	.
+local:s8	rdf:subject	local:experiments	.
+local:s17	rdf:subject	local:validation_process	.
+local:s17.1	rdf:predicate	local:result	.
+local:protein_compressibility_analysis	rdfs:member	local:protein_compressibility	.
+local:s12	rdf:object	local:platformindependent_framework	.
+local:s16	rdf:subject	local:validation_process	.
+local:execution_is_compatible_with_standards	rdfs:member	local:execution	.
+local:s3.1	rdf:subject	local:scientist	.
+local:documented_provenance	rdfs:member	local:documented	.
+local:error_checking	rdfs:subClassOf	local:checking	.
+local:over_semantic	rdfs:subClassOf	local:semantic	.
+local:s6	rdf:subject	local:scientists	.
+local:s9.1	rdf:predicate	local:adopt	.
+local:s3	rdf:predicate	local:execute	.
+local:s2.1	rdf:subject	local:scientist	.
+local:s19	rdf:predicate	local:test	.
+local:workflow_executions	rdfs:subClassOf	local:executions	.
+local:s4	local:AM-TMP	local:experiment	.
+local:s7	rdf:predicate	local:perform	.
+local:validation_process	rdfs:member	local:validation	.
+local:s1	rdf:subject	local:services	.
+local:protein_compressibility	rdfs:member	local:protein	.
+local:s9	local:AM-DIS	local:therefore	.
+local:compatible_with_standards	rdfs:member	local:compatible	.
+local:s13	rdf:subject	local:paper	.
+local:escience_experiments	rdfs:member	local:escience	.
+local:s10.1	rdf:object	local:error_checking	.

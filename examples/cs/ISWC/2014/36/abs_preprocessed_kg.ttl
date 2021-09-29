@@ -1,439 +1,721 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"us query rdf data under owl ql entailment without preprocessing owl axioms"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"this allows us to query rdf data under owl ql entailment without preprocessing owl axioms"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"us extracting owl axioms"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"us query rdf data under owl ql entailment without extracting owl axioms"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"this allows us to query rdf data under owl ql entailment without extracting owl axioms"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"schemaagnostic query rewriting where arbitrary conjunctive queries over owl ql"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"using additional sparql 11 features we develop a new method of schemaagnostic query rewriting where arbitrary conjunctive queries over owl ql"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"using additional sparql 11 features we a new method of schemaagnostic query rewriting where arbitrary conjunctive queries over owl ql"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"sparql 11 implement a fullfledged owl ql reasoner in a single query"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we find that sparql 11 is powerful enough to implement a fullfledged owl ql reasoner in a single query"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"how this can exploited in query rewriting"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we ask how this can be exploited in query rewriting"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"rdf databases answering much more expressive queries directly"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"a conjunctive query into an equivalent set of queries answered against the nonschema part of the data"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"rewrite a conjunctive query into an equivalent set of queries to be answered against the nonschema part of the data"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"typical implementations use the owl ql schema to rewrite a conjunctive query into an equivalent set of queries to be answered against the nonschema part of the data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"owl 2 provides a dedicated fragment owl ql for this purpose"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"enrich query results with logical entailments"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"sparql 11 supports the use of ontologies to enrich query results with logical entailments"	.
+
+
 #### Classes ####
 
-local:2_owl	rdfs:label	"2 owl"	.
+local:us	a	rdf:Class	;
+	rdfs:label	"us"	.
 
-local:owl	rdfs:label	"owl"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:provides	rdfs:label	"provides"	.
+local:rdf_data_owl_ql_entailment	a	rdf:Class	;
+	rdfs:label	"rdf data owl ql entailment"	.
 
-local:owl_ql	rdfs:label	"owl ql"	.
+local:rdf_data_owl_ql	a	rdf:Class	;
+	rdfs:label	"rdf data owl ql"	.
 
-local:ql	rdfs:label	"ql"	.
+local:ql	a	rdf:Class	;
+	rdfs:label	"ql"	.
 
-local:fragment_owl_ql	rdfs:label	"fragment owl ql"	.
+local:ql_entailment	a	rdf:Class	;
+	rdfs:label	"ql entailment"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:data_owl_ql_entailment	a	rdf:Class	;
+	rdfs:label	"data owl ql entailment"	.
 
-local:fragment_owl	rdfs:label	"fragment owl"	.
+local:entailment	a	rdf:Class	;
+	rdfs:label	"entailment"	.
 
-local:dedicated_fragment_owl_ql	rdfs:label	"dedicated fragment owl ql"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:purpose	rdfs:label	"purpose"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:11_sparql	rdfs:label	"1.1 sparql"	.
+local:data_owl_ql	a	rdf:Class	;
+	rdfs:label	"data owl ql"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:rdf_data_owl	a	rdf:Class	;
+	rdfs:label	"rdf data owl"	.
 
-local:supports	rdfs:label	"supports"	.
+local:data_owl	a	rdf:Class	;
+	rdfs:label	"data owl"	.
 
-local:use_of_ontologies	rdfs:label	"use of ontologies"	.
+local:owl_ql_entailment	a	rdf:Class	;
+	rdfs:label	"owl ql entailment"	.
 
-local:use	rdfs:label	"use"	.
+local:owl_ql	a	rdf:Class	;
+	rdfs:label	"owl ql"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:enrich_query_results	rdfs:label	"enrich query results"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:results	rdfs:label	"results"	.
+local:without_preprocessing_owl_axioms	a	rdf:Class	;
+	rdfs:label	"without preprocessing owl axioms"	.
 
-local:enrich	rdfs:label	"enrich"	.
+local:owl_axioms	a	rdf:Class	;
+	rdfs:label	"owl axioms"	.
 
-local:enrich_query	rdfs:label	"enrich query"	.
+local:axioms	a	rdf:Class	;
+	rdfs:label	"axioms"	.
 
-local:logical_entailments	rdfs:label	"logical entailments"	.
+local:this	a	rdf:Class	;
+	rdfs:label	"this"	.
 
-local:entailments	rdfs:label	"entailments"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:query	rdfs:label	"query"	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_preprocessing_owl_axioms	a	rdf:Class	;
+	rdfs:label	"us to query rdf data under owl ql entailment without preprocessing owl axioms"	.
 
-local:query_results	rdfs:label	"query results"	.
+local:query_under_owl_ql_entailment	a	rdf:Class	;
+	rdfs:label	"query under owl ql entailment"	.
 
-local:logical	rdfs:label	"logical"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:query_results_with_logical_entailments	rdfs:label	"query results with logical entailments"	.
+local:without_extracting_owl_axioms	a	rdf:Class	;
+	rdfs:label	"without extracting owl axioms"	.
 
-local:results_with_logical_entailments	rdfs:label	"results with logical entailments"	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_extracting_owl_axioms	a	rdf:Class	;
+	rdfs:label	"us to query rdf data under owl ql entailment without extracting owl axioms"	.
 
-local:typical_implementations	rdfs:label	"typical implementations"	.
+local:schemaagnostic_query	a	rdf:Class	;
+	rdfs:label	"schemaagnostic query"	.
 
-local:implementations	rdfs:label	"implementations"	.
+local:schemaagnostic	a	rdf:Class	;
+	rdfs:label	"schemaagnostic"	.
 
-local:typical	rdfs:label	"typical"	.
+local:rewrite	a	rdf:Class	;
+	rdfs:label	"rewrite"	.
 
-local:ql_schema	rdfs:label	"ql schema"	.
+local:arbitrary_conjunctive_queries_over_owl_ql	a	rdf:Class	;
+	rdfs:label	"arbitrary conjunctive queries over owl ql"	.
 
-local:schema	rdfs:label	"schema"	.
+local:arbitrary_conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"arbitrary conjunctive queries"	.
 
-local:owl_ql_schema	rdfs:label	"owl ql schema"	.
+local:arbitrary_conjunctive	a	rdf:Class	;
+	rdfs:label	"arbitrary conjunctive"	.
 
-local:conjunctive_query	rdfs:label	"conjunctive query"	.
+local:arbitrary	a	rdf:Class	;
+	rdfs:label	"arbitrary"	.
 
-local:nonschema	rdfs:label	"non-schema"	.
+local:conjunctive	a	rdf:Class	;
+	rdfs:label	"conjunctive"	.
 
-local:nonschema_part	rdfs:label	"non-schema part"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:part	rdfs:label	"part"	.
+local:conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"conjunctive queries"	.
 
-local:equivalent	rdfs:label	"equivalent"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:equivalent_set	rdfs:label	"equivalent set"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:conjunctive	rdfs:label	"conjunctive"	.
+local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	a	rdf:Class	;
+	rdfs:label	"new method of schemaagnostic query rewriting where arbitrary conjunctive queries over owl ql"	.
 
-local:set	rdfs:label	"set"	.
+local:new_method	a	rdf:Class	;
+	rdfs:label	"new method"	.
 
-local:rewrite_into_equivalent_set	rdfs:label	"rewrite into equivalent set"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:rewrite	rdfs:label	"rewrite"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:equivalent_set_of_queries	rdfs:label	"equivalent set of queries"	.
+local:new_method_of_schemaagnostic_query	a	rdf:Class	;
+	rdfs:label	"new method of schemaagnostic query"	.
 
-local:queries	rdfs:label	"queries"	.
+local:schemaagnostic_query_rewriting	a	rdf:Class	;
+	rdfs:label	"schemaagnostic query rewriting"	.
 
-local:answered_against_nonschema_part	rdfs:label	"answered against non-schema part"	.
+local:rewriting	a	rdf:Class	;
+	rdfs:label	"rewriting"	.
 
-local:answered	rdfs:label	"answered"	.
+local:using_additional_sparql_11_features	a	rdf:Class	;
+	rdfs:label	"using additional sparql 11 features"	.
 
-local:nonschema_part_of_data	rdfs:label	"non-schema part of data"	.
+local:additional_sparql	a	rdf:Class	;
+	rdfs:label	"additional sparql"	.
 
-local:data	rdfs:label	"data"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:conjunctive_query_into_equivalent_set	rdfs:label	"conjunctive query into equivalent set"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:rdf_databases	rdfs:label	"rdf databases"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:databases	rdfs:label	"databases"	.
+local:11_features	a	rdf:Class	;
+	rdfs:label	"11 features"	.
 
-local:however_rdf_databases	rdfs:label	"however rdf databases"	.
+local:sparql_11_features	a	rdf:Class	;
+	rdfs:label	"sparql 11 features"	.
 
-local:answering	rdfs:label	"answering"	.
+local:additional_sparql_11_features	a	rdf:Class	;
+	rdfs:label	"additional sparql 11 features"	.
 
-local:much_more_expressive	rdfs:label	"much more expressive"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:expressive	rdfs:label	"expressive"	.
+local:sparql_11	a	rdf:Class	;
+	rdfs:label	"sparql 11"	.
 
-local:much	rdfs:label	"much"	.
+local:11_sparql	a	rdf:Class	;
+	rdfs:label	"11 sparql"	.
 
-local:much_more	rdfs:label	"much more"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:more_expressive	rdfs:label	"more expressive"	.
+local:fullfledged_owl_ql_reasoner	a	rdf:Class	;
+	rdfs:label	"fullfledged owl ql reasoner"	.
 
-local:more_expressive_queries	rdfs:label	"more expressive queries"	.
+local:ql_reasoner	a	rdf:Class	;
+	rdfs:label	"ql reasoner"	.
 
-local:more	rdfs:label	"more"	.
+local:reasoner	a	rdf:Class	;
+	rdfs:label	"reasoner"	.
 
-local:much_more_expressive_queries	rdfs:label	"much more expressive queries"	.
+local:owl_ql_reasoner	a	rdf:Class	;
+	rdfs:label	"owl ql reasoner"	.
 
-local:expressive_queries	rdfs:label	"expressive queries"	.
+local:single_query	a	rdf:Class	;
+	rdfs:label	"single query"	.
 
-local:directly	rdfs:label	"directly"	.
+local:single	a	rdf:Class	;
+	rdfs:label	"single"	.
 
-local:ask	rdfs:label	"ask"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:we	rdfs:label	"we"	.
+local:sparql_11_is_powerful_enough_to_implement_a_fullfledged_owl_ql_reasoner_in_a_single_query	a	rdf:Class	;
+	rdfs:label	"sparql 11 is powerful enough to implement a fullfledged owl ql reasoner in a single query"	.
 
-local:query_rewriting	rdfs:label	"query rewriting"	.
+local:fullfledged_owl	a	rdf:Class	;
+	rdfs:label	"fullfledged owl"	.
 
-local:rewriting	rdfs:label	"rewriting"	.
+local:fullfledged_owl_ql	a	rdf:Class	;
+	rdfs:label	"fullfledged owl ql"	.
 
-local:exploited_in_query	rdfs:label	"exploited in query"	.
+local:fullfledged	a	rdf:Class	;
+	rdfs:label	"fullfledged"	.
 
-local:exploited	rdfs:label	"exploited"	.
+local:enough_powerful	a	rdf:Class	;
+	rdfs:label	"enough powerful"	.
 
-local:this	rdfs:label	"this"	.
+local:powerful	a	rdf:Class	;
+	rdfs:label	"powerful"	.
 
-local:can	rdfs:label	"can"	.
+local:implement_in_single_query	a	rdf:Class	;
+	rdfs:label	"implement in single query"	.
 
-local:find	rdfs:label	"find"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:fullfledged_owl	rdfs:label	"full-fledged owl"	.
+local:query_rewriting	a	rdf:Class	;
+	rdfs:label	"query rewriting"	.
 
-local:fullfledged_owl_ql	rdfs:label	"full-fledged owl ql"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:fullfledged	rdfs:label	"full-fledged"	.
+local:ask	a	rdf:Class	;
+	rdfs:label	"ask"	.
 
-local:single_query	rdfs:label	"single query"	.
+local:exploited_in_query_rewriting	a	rdf:Class	;
+	rdfs:label	"exploited in query rewriting"	.
 
-local:ql_reasoner	rdfs:label	"ql reasoner"	.
+local:exploited_in_query	a	rdf:Class	;
+	rdfs:label	"exploited in query"	.
 
-local:reasoner	rdfs:label	"reasoner"	.
+local:exploited	a	rdf:Class	;
+	rdfs:label	"exploited"	.
 
-local:owl_ql_reasoner	rdfs:label	"owl ql reasoner"	.
+local:rdf_databases	a	rdf:Class	;
+	rdfs:label	"rdf databases"	.
 
-local:fullfledged_owl_ql_reasoner	rdfs:label	"full-fledged owl ql reasoner"	.
+local:databases	a	rdf:Class	;
+	rdfs:label	"databases"	.
 
-local:single	rdfs:label	"single"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:enough_powerful	rdfs:label	"enough powerful"	.
+local:much_more_expressive_queries	a	rdf:Class	;
+	rdfs:label	"much more expressive queries"	.
 
-local:powerful	rdfs:label	"powerful"	.
+local:expressive_queries	a	rdf:Class	;
+	rdfs:label	"expressive queries"	.
 
-local:implement_in_single_query	rdfs:label	"implement in single query"	.
+local:expressive	a	rdf:Class	;
+	rdfs:label	"expressive"	.
 
-local:implement	rdfs:label	"implement"	.
+local:more_expressive	a	rdf:Class	;
+	rdfs:label	"more expressive"	.
 
-local:“	rdfs:label	"“"	.
+local:much_more	a	rdf:Class	;
+	rdfs:label	"much more"	.
 
-local:fullfledged_owl_ql_reasoner_in_single_query	rdfs:label	"full-fledged owl ql reasoner in single query"	.
+local:much	a	rdf:Class	;
+	rdfs:label	"much"	.
 
-local:additional_sparql	rdfs:label	"additional sparql"	.
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
 
-local:additional	rdfs:label	"additional"	.
+local:more_expressive_queries	a	rdf:Class	;
+	rdfs:label	"more expressive queries"	.
 
-local:additional_11_sparql	rdfs:label	"additional 1.1 sparql"	.
+local:much_more_expressive	a	rdf:Class	;
+	rdfs:label	"much more expressive"	.
 
-local:using	rdfs:label	"using"	.
+local:directly	a	rdf:Class	;
+	rdfs:label	"directly"	.
 
-local:features	rdfs:label	"features"	.
+local:conjunctive_query_into_an_equivalent_set_of_queries	a	rdf:Class	;
+	rdfs:label	"conjunctive query into an equivalent set of queries"	.
 
-local:arbitrary_conjunctive_queries	rdfs:label	"arbitrary conjunctive queries"	.
+local:equivalent_set	a	rdf:Class	;
+	rdfs:label	"equivalent set"	.
 
-local:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+local:conjunctive_query	a	rdf:Class	;
+	rdfs:label	"conjunctive query"	.
 
-local:arbitrary_conjunctive	rdfs:label	"arbitrary conjunctive"	.
+local:equivalent	a	rdf:Class	;
+	rdfs:label	"equivalent"	.
 
-local:schemaagnostic_query	rdfs:label	"schema-agnostic query"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:schemaagnostic_query_rewriting	rdfs:label	"schema-agnostic query rewriting"	.
+local:conjunctive_query_into_equivalent_set	a	rdf:Class	;
+	rdfs:label	"conjunctive query into equivalent set"	.
 
-local:new	rdfs:label	"new"	.
+local:equivalent_set_of_queries	a	rdf:Class	;
+	rdfs:label	"equivalent set of queries"	.
 
-local:new_method	rdfs:label	"new method"	.
+local:nonschema_part_of_the_data	a	rdf:Class	;
+	rdfs:label	"nonschema part of the data"	.
 
-local:method	rdfs:label	"method"	.
+local:nonschema_part	a	rdf:Class	;
+	rdfs:label	"nonschema part"	.
 
-local:schemaagnostic	rdfs:label	"schema-agnostic"	.
+local:part	a	rdf:Class	;
+	rdfs:label	"part"	.
 
-local:arbitrary	rdfs:label	"arbitrary"	.
+local:nonschema	a	rdf:Class	;
+	rdfs:label	"nonschema"	.
 
-local:new_method_of_schemaagnostic_query	rdfs:label	"new method of schema-agnostic query"	.
+local:nonschema_part_of_data	a	rdf:Class	;
+	rdfs:label	"nonschema part of data"	.
 
-local:arbitrary_conjunctive_queries_over_owl_ql	rdfs:label	"arbitrary conjunctive queries over owl ql"	.
+local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	a	rdf:Class	;
+	rdfs:label	"conjunctive query into an equivalent set of queries to be answered against the nonschema part of the data"	.
 
-local:11_features	rdfs:label	"1.1 features"	.
+local:answered_against_nonschema_part	a	rdf:Class	;
+	rdfs:label	"answered against nonschema part"	.
 
-local:sparql_11_features	rdfs:label	"sparql 1.1 features"	.
+local:answered	a	rdf:Class	;
+	rdfs:label	"answered"	.
 
-local:additional_sparql_11_features	rdfs:label	"additional sparql 1.1 features"	.
+local:typical_implementations	a	rdf:Class	;
+	rdfs:label	"typical implementations"	.
 
-local:develop	rdfs:label	"develop"	.
+local:implementations	a	rdf:Class	;
+	rdfs:label	"implementations"	.
 
-local:allows	rdfs:label	"allows"	.
+local:typical	a	rdf:Class	;
+	rdfs:label	"typical"	.
 
-local:ql_entailment	rdfs:label	"ql entailment"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:entailment	rdfs:label	"entailment"	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	a	rdf:Class	;
+	rdfs:label	"owl ql schema rewrite a conjunctive query into an equivalent set of queries to be answered against the nonschema part of the data"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:ql_schema	a	rdf:Class	;
+	rdfs:label	"ql schema"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
 
-local:owl_axioms	rdfs:label	"owl axioms"	.
+local:owl_ql_schema	a	rdf:Class	;
+	rdfs:label	"owl ql schema"	.
 
-local:axioms	rdfs:label	"axioms"	.
+local:rewrite_into_equivalent_set	a	rdf:Class	;
+	rdfs:label	"rewrite into equivalent set"	.
 
-local:owl_ql_entailment	rdfs:label	"owl ql entailment"	.
+local:owl_2	a	rdf:Class	;
+	rdfs:label	"owl 2"	.
 
-local:query_under_owl_ql_entailment	rdfs:label	"query under owl ql entailment"	.
+local:2_owl	a	rdf:Class	;
+	rdfs:label	"2 owl"	.
 
-local:us	rdfs:label	"us"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:preprocessing	rdfs:label	"preprocessing"	.
+local:dedicated_fragment_owl_ql	a	rdf:Class	;
+	rdfs:label	"dedicated fragment owl ql"	.
 
-local:extracting	rdfs:label	"extracting"	.
+local:fragment_owl_ql	a	rdf:Class	;
+	rdfs:label	"fragment owl ql"	.
 
-#### Properties ####
+local:fragment_owl	a	rdf:Class	;
+	rdfs:label	"fragment owl"	.
+
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
+
+local:purpose	a	rdf:Class	;
+	rdfs:label	"purpose"	.
+
+local:query_results_with_logical_entailments	a	rdf:Class	;
+	rdfs:label	"query results with logical entailments"	.
+
+local:logical_entailments	a	rdf:Class	;
+	rdfs:label	"logical entailments"	.
+
+local:query_results	a	rdf:Class	;
+	rdfs:label	"query results"	.
+
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
+
+local:entailments	a	rdf:Class	;
+	rdfs:label	"entailments"	.
+
+local:logical	a	rdf:Class	;
+	rdfs:label	"logical"	.
+
+local:results_with_logical_entailments	a	rdf:Class	;
+	rdfs:label	"results with logical entailments"	.
+
+local:enrich	a	rdf:Class	;
+	rdfs:label	"enrich"	.
+
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
+
+local:use_of_ontologies	a	rdf:Class	;
+	rdfs:label	"use of ontologies"	.
+
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
 #### Mapped Relations ####
 
-local:owl	owl:sameAs	cso:owl	.
-cso:reasoner	rdfs:label	"reasoner"	.
-local:query_rewriting	owl:sameAs	cso:query_rewriting	.
-local:rdf	owl:sameAs	cso:rdf	.
-cso:query_results	rdfs:label	"query results"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:sparql	rdfs:label	"sparql"	.
 local:databases	owl:sameAs	cso:database	.
-cso:conjunctive_queries	rdfs:label	"conjunctive queries"	.
-cso:query_rewriting	rdfs:label	"query rewriting"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:rdf_data	owl:sameAs	cso:rdf_data	.
-local:reasoner	owl:sameAs	cso:reasoner	.
 cso:rdf_data	rdfs:label	"rdf data"	.
-local:query_results	owl:sameAs	cso:query_results	.
-local:sparql	owl:sameAs	cso:sparql	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+local:owl	owl:sameAs	cso:owl	.
+cso:query_results	rdfs:label	"query results"	.
 cso:rdf	rdfs:label	"rdf"	.
-cso:database	rdfs:label	"databases"	.
 cso:owl	rdfs:label	"owl"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:reasoner	owl:sameAs	cso:reasoner	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 local:conjunctive_queries	owl:sameAs	cso:conjunctive_queries	.
+cso:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+local:query_results	owl:sameAs	cso:query_results	.
+cso:reasoner	rdfs:label	"reasoner"	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:query_rewriting	rdfs:label	"query rewriting"	.
+cso:database	rdfs:label	"databases"	.
+local:sparql	owl:sameAs	cso:sparql	.
+local:query_rewriting	owl:sameAs	cso:query_rewriting	.
+cso:sparql	rdfs:label	"sparql"	.
 
 #### Relations ####
 
-local:conjunctive	rdfs:member	local:conjunctive_queries	.
-local:supports	vn.role:Experiencer	local:use_of_ontologies	.
-local:exploited_in_query	local:exploited_in	local:query	.
-local:provides	local:AM-PNC	local:purpose	.
-local:implement_in_single_query	local:implement_in	local:single_query	.
-local:single	rdfs:member	local:single_query	.
-local:typical_implementations	rdfs:subClassOf	local:implementations	.
-local:dedicated_fragment_owl_ql	rdfs:subClassOf	local:fragment_owl_ql	.
-local:answered	local:AM-MNR	local:nonschema_part_of_data	.
-local:enrich_query	rdfs:subClassOf	local:query	.
-local:enrich_query	rdfs:member	local:enrich_query_results	.
-local:query_under_owl_ql_entailment	local:under_owlqlentailment	local:query	.
-local:equivalent_set_of_queries	local:of_queries	local:equivalent_set	.
-local:11_features	rdfs:subClassOf	local:features	.
-local:equivalent	rdfs:member	local:equivalent_set	.
-local:exploited	vn.role:indirect_object	local:rewriting	.
-local:schemaagnostic	rdfs:member	local:schemaagnostic_query	.
-local:fragment	rdfs:member	local:fragment_owl	.
-local:query	rdfs:member	local:query_results	.
-local:use	vn.role:Recipient	local:rewrite_into_equivalent_set	.
+local:s5	rdf:object	local:exploited_in_query_rewriting	.
 local:owl_ql_reasoner	rdfs:subClassOf	local:reasoner	.
-local:rewrite_into_equivalent_set	local:into_equivalentset	local:rewrite	.
+local:rdf_data_owl	rdfs:member	local:rdf_data	.
+local:data_owl	rdfs:member	local:data	.
+local:more_expressive_queries	rdfs:member	local:more_expressive	.
+local:expressive_queries	rdfs:member	local:expressive	.
+local:s9.2	rdf:object	local:owl_axioms	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:queries	.
+local:s5.1	rdf:predicate	local:exploit	.
 local:fragment_owl_ql	rdfs:subClassOf	local:ql	.
-local:using	vn.role:Agent	local:new_method_of_schemaagnostic_query	.
-local:owl_axioms	rdfs:subClassOf	local:axioms	.
-local:answered_against_nonschema_part	local:against_non-schemapart	local:answered	.
-local:provides	vn.role:Recipient	local:2_owl	.
-local:schemaagnostic_query	rdfs:subClassOf	local:query	.
-local:answering	vn.role:Predicate	local:expressive_queries	.
-local:owl_ql	rdfs:member	local:owl_ql_schema	.
-local:ql_entailment	rdfs:subClassOf	local:entailment	.
-local:arbitrary_conjunctive	rdfs:subClassOf	local:conjunctive	.
-local:much_more_expressive	rdfs:member	local:much_more_expressive_queries	.
-local:expressive_queries	rdfs:subClassOf	local:queries	.
-local:logical	rdfs:member	local:logical_entailments	.
-local:arbitrary	rdfs:member	local:arbitrary_conjunctive	.
-local:answering	vn.role:Agent	local:directly	.
-local:11_sparql	rdfs:subClassOf	local:sparql	.
-local:ql	rdfs:member	local:ql_entailment	.
-local:nonschema_part_of_data	local:non-schemapart_of	local:data	.
-local:fullfledged_owl_ql	rdfs:subClassOf	local:ql	.
-local:schemaagnostic_query	rdfs:member	local:schemaagnostic_query_rewriting	.
-local:much_more	rdfs:member	local:much_more_expressive	.
-local:provides	vn.role:Agent	local:dedicated_fragment_owl_ql	.
-local:single_query	rdfs:subClassOf	local:query	.
-local:conjunctive_query	rdfs:subClassOf	local:query	.
-local:find	vn.role:Theme	local:enough_powerful	.
-local:fullfledged_owl	rdfs:member	local:fullfledged_owl_ql	.
-local:much_more_expressive	rdfs:subClassOf	local:expressive	.
-local:more_expressive	rdfs:subClassOf	local:expressive	.
-local:new_method_of_schemaagnostic_query	local:of_schema-agnosticquery	local:new_method	.
-local:sparql_11_features	rdfs:subClassOf	local:11_features	.
-local:equivalent_set	rdfs:subClassOf	local:set	.
+local:results_with_logical_entailments	rdfs:member	local:logical_entailments	.
+local:rdf_data_owl_ql_entailment	rdfs:subClassOf	local:data_owl_ql_entailment	.
+local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	rdfs:member	local:owl_ql	.
+local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	rdfs:member	local:schemaagnostic_query	.
 local:fullfledged_owl_ql_reasoner	rdfs:subClassOf	local:reasoner	.
-local:owl_ql	rdfs:member	local:owl_ql_reasoner	.
-local:results_with_logical_entailments	local:results_with	local:logical_entailments	.
-local:fullfledged	rdfs:member	local:fullfledged_owl	.
-local:enrich	rdfs:member	local:enrich_query	.
-local:extracting	vn.role:Theme	local:owl_axioms	.
-local:conjunctive_queries	rdfs:subClassOf	local:queries	.
-local:equivalent_set_of_queries	local:equivalentset_of	local:queries	.
-local:additional	rdfs:member	local:additional_sparql	.
-local:develop	local:AM-MNR	local:using	.
-local:query	vn.role:Agent	local:us	.
-local:arbitrary_conjunctive_queries_over_owl_ql	local:arbitraryconjunctivequeries_over	local:owl_ql	.
-local:logical_entailments	rdfs:subClassOf	local:entailments	.
-local:nonschema	rdfs:member	local:nonschema_part	.
-local:fullfledged_owl_ql_reasoner_in_single_query	local:in_singlequery	local:fullfledged_owl_ql_reasoner	.
-local:nonschema_part	rdfs:subClassOf	local:part	.
-local:using	vn.role:Agent	local:we	.
-local:exploited	vn.role:Predicate	local:this	.
-local:answering	vn.role:Agent	local:however_rdf_databases	.
-local:more_expressive_queries	rdfs:subClassOf	local:queries	.
-local:query_results_with_logical_entailments	local:with_logicalentailments	local:query_results	.
-local:use_of_ontologies	local:of_ontologies	local:use	.
-local:“	vn.role:subject	local:11_sparql	.
-local:owl	rdfs:member	local:owl_axioms	.
-local:expressive	rdfs:member	local:expressive_queries	.
-local:owl_ql_entailment	rdfs:subClassOf	local:ql_entailment	.
-local:query_results	rdfs:subClassOf	local:results	.
-local:arbitrary_conjunctive_queries	rdfs:subClassOf	local:conjunctive_queries	.
-local:rewrite	local:AM-PNC	local:answered_against_nonschema_part	.
-local:allows	vn.role:Theme	local:us	.
-local:allows	vn.role:Agent	local:this	.
-local:enrich_query_results	rdfs:subClassOf	local:results	.
-local:query	vn.role:Predicate	local:owl_ql_entailment	.
-local:implement	vn.role:Agent	local:11_sparql	.
-local:implement_in_single_query	local:in_singlequery	local:implement	.
-local:query_rewriting	local:_rewriting	local:query	.
-local:fullfledged_owl_ql	rdfs:member	local:fullfledged_owl_ql_reasoner	.
-local:enrich	vn.role:Theme	local:results_with_logical_entailments	.
-local:fullfledged_owl_ql_reasoner	rdfs:subClassOf	local:owl_ql_reasoner	.
-local:rewrite	vn.role:Topic	local:conjunctive_query_into_equivalent_set	.
-local:query	local:AM-MNR	local:extracting	.
-local:fragment_owl	rdfs:subClassOf	local:owl	.
-local:owl_ql_schema	rdfs:subClassOf	local:schema	.
-local:ask	vn.role:Recipient	local:exploited_in_query	.
-local:exploited	local:AM-MOD	local:can	.
-local:fullfledged_owl	rdfs:subClassOf	local:owl	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:much_more	rdfs:subClassOf	local:more	.
-local:additional_sparql_11_features	rdfs:subClassOf	local:sparql_11_features	.
-local:answered_against_nonschema_part	local:answered_against	local:nonschema_part	.
-local:query_under_owl_ql_entailment	local:query_under	local:owl_ql_entailment	.
-local:answered	vn.role:Predicate	local:equivalent_set_of_queries	.
-local:conjunctive_query_into_equivalent_set	local:conjunctivequery_into	local:equivalent_set	.
-local:develop	vn.role:Theme	local:we	.
-local:exploited_in_query	local:in_query	local:exploited	.
-local:fullfledged_owl_ql_reasoner_in_single_query	local:full-fledgedowlqlreasoner_in	local:single_query	.
-local:use_of_ontologies	local:use_of	local:ontologies	.
-local:new_method	rdfs:subClassOf	local:method	.
-local:new	rdfs:member	local:new_method	.
-local:enough_powerful	rdfs:subClassOf	local:powerful	.
-local:much	rdfs:member	local:much_more	.
-local:conjunctive_query_into_equivalent_set	local:into_equivalentset	local:conjunctive_query	.
-local:query_rewriting	local:query_	local:rewriting	.
-local:conjunctive	rdfs:member	local:conjunctive_query	.
-local:find	vn.role:Agent	local:we	.
-local:however_rdf_databases	rdfs:subClassOf	local:rdf_databases	.
-local:implement	local:AM-LOC	local:single_query	.
-local:ql_schema	rdfs:subClassOf	local:schema	.
-local:more_expressive	rdfs:member	local:more_expressive_queries	.
-local:2_owl	rdfs:subClassOf	local:owl	.
-local:more	rdfs:member	local:more_expressive	.
-local:arbitrary_conjunctive	rdfs:member	local:arbitrary_conjunctive_queries	.
-local:“	vn.role:object	local:implement	.
-local:query_results_with_logical_entailments	local:queryresults_with	local:logical_entailments	.
-local:query	vn.role:Theme	local:rdf_data	.
-local:additional_sparql	rdfs:subClassOf	local:sparql	.
-local:use	vn.role:Theme	local:owl_ql_schema	.
-local:use	vn.role:Agent	local:typical_implementations	.
-local:additional_11_sparql	rdfs:subClassOf	local:11_sparql	.
-local:results_with_logical_entailments	local:with_logicalentailments	local:results	.
-local:implement	vn.role:Theme	local:fullfledged_owl_ql_reasoner	.
-local:arbitrary_conjunctive_queries_over_owl_ql	local:over_owlql	local:arbitrary_conjunctive_queries	.
-local:ql	rdfs:member	local:ql_reasoner	.
-local:supports	vn.role:Theme	local:11_sparql	.
-local:fragment_owl	rdfs:member	local:fragment_owl_ql	.
-local:ql	rdfs:member	local:ql_schema	.
-local:query	rdfs:member	local:query_rewriting	.
-local:owl_ql_schema	rdfs:subClassOf	local:ql_schema	.
-local:using	vn.role:Theme	local:features	.
-local:develop	vn.role:Location	local:new_method_of_schemaagnostic_query	.
-local:new_method_of_schemaagnostic_query	local:newmethod_of	local:schemaagnostic_query	.
+local:results_with_logical_entailments	rdfs:member	local:results	.
+local:much_more_expressive	rdfs:subClassOf	local:expressive	.
+local:new_method	rdfs:member	local:new	.
+local:s5.1	local:AM-MOD	local:can	.
+local:much_more	rdfs:member	local:much	.
+local:equivalent_set_of_queries	rdfs:member	local:equivalent_set	.
+local:fullfledged_owl_ql_reasoner	rdfs:member	local:fullfledged_owl_ql	.
+local:rdf_data_owl	rdfs:subClassOf	local:owl	.
 local:rdf_data	rdfs:subClassOf	local:data	.
-local:query_rewriting	rdfs:subClassOf	local:rewriting	.
-local:query	local:AM-MNR	local:preprocessing	.
-local:owl_ql	rdfs:subClassOf	local:ql	.
-local:owl	rdfs:member	local:owl_ql	.
-local:ask	vn.role:Agent	local:we	.
-local:nonschema_part_of_data	local:of_data	local:nonschema_part	.
+local:s7.2	rdf:object	local:arbitrary_conjunctive_queries_over_owl_ql	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:equivalent_set	.
+local:s5.1	rdf:subject	local:this	.
+local:more_expressive_queries	rdfs:subClassOf	local:queries	.
+local:s10	rdf:predicate	local:allow	.
+local:owl_axioms	rdfs:subClassOf	local:axioms	.
+local:arbitrary_conjunctive_queries	rdfs:subClassOf	local:conjunctive_queries	.
+local:more_expressive	rdfs:member	local:more	.
+local:arbitrary_conjunctive	rdfs:member	local:arbitrary	.
+local:typical_implementations	rdfs:member	local:typical	.
+local:owl_ql_entailment	rdfs:subClassOf	local:ql_entailment	.
+local:11_features	rdfs:subClassOf	local:features	.
 local:much_more_expressive_queries	rdfs:subClassOf	local:queries	.
-local:fragment_owl_ql	rdfs:subClassOf	local:owl_ql	.
-local:supports	local:AM-PNC	local:enrich	.
-local:typical	rdfs:member	local:typical_implementations	.
-local:rewrite_into_equivalent_set	local:rewrite_into	local:equivalent_set	.
-local:owl_ql_reasoner	rdfs:subClassOf	local:ql_reasoner	.
+local:conjunctive_query_into_equivalent_set	rdfs:member	local:conjunctive_query	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:nonschema_part	.
+local:much_more_expressive_queries	rdfs:member	local:much_more_expressive	.
+local:typical_implementations	rdfs:subClassOf	local:implementations	.
+local:using_additional_sparql_11_features	rdfs:member	local:additional_sparql	.
+local:nonschema_part	rdfs:subClassOf	local:part	.
+local:rewrite_into_equivalent_set	rdfs:member	local:rewrite	.
+local:schemaagnostic_query_rewriting	rdfs:member	local:schemaagnostic_query	.
+local:equivalent_set	rdfs:subClassOf	local:set	.
+local:arbitrary_conjunctive	rdfs:subClassOf	local:conjunctive	.
+local:s10.1	local:AM-MNR	local:without_preprocessing_owl_axioms	.
+local:much_more_expressive	rdfs:member	local:much_more	.
+local:s4	local:AM-MNR	local:directly	.
+local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	rdfs:member	local:arbitrary_conjunctive_queries	.
+local:query_rewriting	rdfs:member	local:query	.
+local:s10	rdf:subject	local:this	.
+local:s5.2	rdf:predicate	local:rewrite	.
+local:owl_ql_entailment	rdfs:subClassOf	local:entailment	.
+local:query_under_owl_ql_entailment	rdfs:member	local:query	.
+local:s4	rdf:subject	local:rdf_databases	.
+local:expressive_queries	rdfs:subClassOf	local:queries	.
 local:rdf_databases	rdfs:subClassOf	local:databases	.
+local:conjunctive_query_into_an_equivalent_set_of_queries	rdfs:member	local:conjunctive_query	.
+local:s7.1	local:AM-ADV	local:using_additional_sparql_11_features	.
+local:ql_entailment	rdfs:member	local:ql	.
+local:s4	rdf:object	local:much_more_expressive_queries	.
+local:s7.1	rdf:predicate	local:develop	.
+local:s1	local:AM-PNC	local:purpose	.
+local:s9.2	rdf:subject	local:us	.
+local:s6	rdf:subject	local:we	.
+local:using_additional_sparql_11_features	rdfs:member	local:features	.
+local:fragment_owl	rdfs:subClassOf	local:owl	.
+local:conjunctive_queries	rdfs:subClassOf	local:queries	.
+local:query_rewriting	rdfs:member	local:rewriting	.
+local:fragment_owl_ql	rdfs:member	local:fragment_owl	.
+local:answered_against_nonschema_part	rdfs:member	local:answered	.
+local:s1	rdf:object	local:dedicated_fragment_owl_ql	.
+local:owl_ql	rdfs:subClassOf	local:ql	.
+local:s9	rdf:subject	local:this	.
+local:s7.1	rdf:subject	local:we	.
+local:logical_entailments	rdfs:member	local:logical	.
+local:s7	rdf:object	local:additional_sparql_11_features	.
+local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:equivalent_set	.
+local:fullfledged_owl_ql	rdfs:subClassOf	local:ql	.
+local:conjunctive_query	rdfs:member	local:conjunctive	.
+local:sparql_11_is_powerful_enough_to_implement_a_fullfledged_owl_ql_reasoner_in_a_single_query	rdfs:member	local:fullfledged_owl_ql_reasoner	.
+local:equivalent_set_of_queries	rdfs:member	local:queries	.
+local:s9.2	rdf:predicate	local:extract	.
+local:exploited_in_query	rdfs:member	local:query	.
+local:fullfledged_owl	rdfs:subClassOf	local:owl	.
+local:implement_in_single_query	rdfs:member	local:single_query	.
+local:data_owl_ql	rdfs:subClassOf	local:ql	.
+local:exploited_in_query	rdfs:member	local:exploited	.
+local:single_query	rdfs:subClassOf	local:query	.
+local:2_owl	rdfs:subClassOf	local:owl	.
+local:s6.1	rdf:predicate	local:implement	.
+local:s10.1	rdf:subject	local:us	.
+local:additional_sparql	rdfs:member	local:additional	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:data	.
+local:rdf_databases	rdfs:member	local:rdf	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:owl_ql	.
+local:owl_ql_entailment	rdfs:member	local:owl_ql	.
+local:conjunctive_query	rdfs:subClassOf	local:query	.
+local:ql_entailment	rdfs:subClassOf	local:entailment	.
+local:s10	rdf:object	local:us_to_query_rdf_data_under_owl_ql_entailment_without_preprocessing_owl_axioms	.
+local:more_expressive	rdfs:subClassOf	local:expressive	.
+local:nonschema_part_of_data	rdfs:member	local:nonschema_part	.
+local:data_owl_ql_entailment	rdfs:member	local:data_owl_ql	.
+local:s9.1	rdf:object	local:rdf_data_owl_ql_entailment	.
+local:s0	local:AM-PNC	local:s0.1	.
+local:query_results_with_logical_entailments	rdfs:member	local:query_results	.
+local:fragment_owl	rdfs:member	local:fragment	.
+local:data_owl	rdfs:subClassOf	local:owl	.
+local:rdf_data_owl_ql	rdfs:member	local:rdf_data_owl	.
+local:owl_ql_reasoner	rdfs:subClassOf	local:ql_reasoner	.
+local:s6.1	rdf:subject	local:sparql_11	.
+local:s5	rdf:predicate	local:ask	.
+local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:conjunctive_query	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:schemaagnostic_query_rewriting	rdfs:member	local:rewriting	.
+local:s6	rdf:object	local:sparql_11_is_powerful_enough_to_implement_a_fullfledged_owl_ql_reasoner_in_a_single_query	.
+local:s2	rdf:predicate	local:use	.
+local:conjunctive_query_into_an_equivalent_set_of_queries	rdfs:member	local:equivalent_set	.
+local:s1	rdf:subject	local:owl_2	.
+local:arbitrary_conjunctive_queries_over_owl_ql	rdfs:member	local:owl_ql	.
+local:s2	rdf:subject	local:typical_implementations	.
+local:s5	rdf:subject	local:we	.
+local:query_results	rdfs:member	local:query	.
+local:s7.2	rdf:subject	local:schemaagnostic_query	.
+local:additional_sparql_11_features	rdfs:member	local:features	.
+local:query_results	rdfs:subClassOf	local:results	.
+local:s0	rdf:object	local:use_of_ontologies	.
+local:s7.1	rdf:object	local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	.
+local:data_owl_ql	rdfs:member	local:data_owl	.
+local:11_sparql	rdfs:subClassOf	local:sparql	.
+local:conjunctive_query_into_equivalent_set	rdfs:member	local:equivalent_set	.
+local:owl_ql_schema	rdfs:subClassOf	local:ql_schema	.
+local:sparql_11_is_powerful_enough_to_implement_a_fullfledged_owl_ql_reasoner_in_a_single_query	rdfs:member	local:single_query	.
+local:rewrite_into_equivalent_set	rdfs:member	local:equivalent_set	.
+local:s0.1	rdf:predicate	local:enrich	.
+local:logical_entailments	rdfs:subClassOf	local:entailments	.
+local:s4	rdf:predicate	local:answer	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_preprocessing_owl_axioms	rdfs:member	local:owl_axioms	.
+local:s9	rdf:predicate	local:allow	.
+local:enough_powerful	rdfs:subClassOf	local:powerful	.
+local:conjunctive_queries	rdfs:member	local:conjunctive	.
+local:nonschema_part_of_the_data	rdfs:member	local:nonschema_part	.
+local:data_owl_ql_entailment	rdfs:subClassOf	local:entailment	.
+local:s7.2	rdf:predicate	local:rewrite	.
+local:query_results_with_logical_entailments	rdfs:member	local:logical_entailments	.
+local:nonschema_part_of_data	rdfs:member	local:data	.
+local:rdf_data_owl_ql	rdfs:subClassOf	local:ql	.
+local:s10.1	rdf:object	local:rdf_data_owl_ql_entailment	.
+local:query_rewriting	rdfs:subClassOf	local:rewriting	.
+local:s1	rdf:predicate	local:provide	.
+local:equivalent_set	rdfs:member	local:equivalent	.
+local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	rdfs:member	local:new_method	.
+local:s0	rdf:predicate	local:support	.
+local:query_under_owl_ql_entailment	rdfs:member	local:owl_ql_entailment	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_preprocessing_owl_axioms	rdfs:member	local:owl_ql_entailment	.
+local:new_method_of_schemaagnostic_query	rdfs:member	local:new_method	.
+local:fullfledged_owl	rdfs:member	local:fullfledged	.
+local:additional_sparql_11_features	rdfs:subClassOf	local:sparql_11_features	.
+local:arbitrary_conjunctive_queries_over_owl_ql	rdfs:member	local:arbitrary_conjunctive_queries	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_preprocessing_owl_axioms	rdfs:member	local:rdf_data	.
+local:s6.1	rdf:object	local:fullfledged_owl_ql_reasoner	.
+local:s2.1	rdf:predicate	local:rewrite	.
+local:owl_axioms	rdfs:member	local:owl	.
+local:ql_schema	rdfs:subClassOf	local:schema	.
+local:additional_sparql	rdfs:subClassOf	local:sparql	.
+local:data_owl_ql_entailment	rdfs:subClassOf	local:owl_ql_entailment	.
+local:s6	rdf:predicate	local:find	.
 local:arbitrary_conjunctive_queries	rdfs:subClassOf	local:queries	.
+local:implement_in_single_query	rdfs:member	local:implement	.
+local:nonschema_part_of_the_data	rdfs:member	local:data	.
+local:s6.1	local:AM-LOC	local:single_query	.
+local:rdf_data_owl_ql_entailment	rdfs:member	local:rdf_data_owl_ql	.
+local:s9.1	rdf:subject	local:us	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_extracting_owl_axioms	rdfs:member	local:rdf_data	.
+local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:data	.
+local:fullfledged_owl_ql	rdfs:member	local:fullfledged_owl	.
+local:s0.1	rdf:subject	local:query_results_with_logical_entailments	.
+local:s2.2	local:AM-MNR	local:nonschema_part_of_the_data	.
+local:s2	rdf:object	local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	.
+local:sparql_11_features	rdfs:subClassOf	local:11_features	.
+local:conjunctive_query_into_an_equivalent_set_of_queries	rdfs:member	local:queries	.
+local:s9.1	local:AM-MNR	local:without_extracting_owl_axioms	.
+local:additional_sparql_11_features	rdfs:member	local:additional_sparql	.
+local:answered_against_nonschema_part	rdfs:member	local:nonschema_part	.
 local:ql_reasoner	rdfs:subClassOf	local:reasoner	.
-local:schemaagnostic_query_rewriting	rdfs:subClassOf	local:rewriting	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_extracting_owl_axioms	rdfs:member	local:owl_ql_entailment	.
+local:ql_reasoner	rdfs:member	local:ql	.
+local:single_query	rdfs:member	local:single	.
+local:s2.2	rdf:subject	local:conjunctive_query_into_an_equivalent_set_of_queries	.
+local:owl_ql_schema_rewrite_a_conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:conjunctive_query	.
+local:fragment_owl_ql	rdfs:subClassOf	local:owl_ql	.
+local:use_of_ontologies	rdfs:member	local:use	.
+local:new_method	rdfs:subClassOf	local:method	.
+local:s10.1	rdf:predicate	local:query	.
+local:us_to_query_rdf_data_under_owl_ql_entailment_without_extracting_owl_axioms	rdfs:member	local:owl_axioms	.
+local:s2.1	rdf:subject	local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	.
+local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:nonschema_part	.
+local:schemaagnostic_query	rdfs:subClassOf	local:query	.
+local:conjunctive_query_into_an_equivalent_set_of_queries_to_be_answered_against_the_nonschema_part_of_the_data	rdfs:member	local:queries	.
+local:s2.2	rdf:predicate	local:answer	.
+local:fullfledged_owl_ql_reasoner	rdfs:subClassOf	local:owl_ql_reasoner	.
+local:new_method_of_schemaagnostic_query	rdfs:member	local:schemaagnostic_query	.
+local:s7	rdf:subject	local:new_method_of_schemaagnostic_query_rewriting_where_arbitrary_conjunctive_queries_over_owl_ql	.
+local:sparql_11_is_powerful_enough_to_implement_a_fullfledged_owl_ql_reasoner_in_a_single_query	rdfs:member	local:sparql	.
+local:dedicated_fragment_owl_ql	rdfs:subClassOf	local:fragment_owl_ql	.
+local:use_of_ontologies	rdfs:member	local:ontologies	.
+local:rdf_data_owl_ql_entailment	rdfs:subClassOf	local:entailment	.
+local:nonschema_part	rdfs:member	local:nonschema	.
+local:arbitrary_conjunctive_queries	rdfs:member	local:arbitrary_conjunctive	.
+local:owl_ql_reasoner	rdfs:member	local:owl_ql	.
+local:s0	rdf:subject	local:sparql_11	.
+local:s9.1	rdf:predicate	local:query	.
+local:s9	rdf:object	local:us_to_query_rdf_data_under_owl_ql_entailment_without_extracting_owl_axioms	.
+local:s5.1	rdf:object	local:query_rewriting	.
+local:owl_ql	rdfs:member	local:owl	.
+local:s7	rdf:predicate	local:using	.
+local:much_more	rdfs:subClassOf	local:more	.
+local:schemaagnostic_query	rdfs:member	local:schemaagnostic	.

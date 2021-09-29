@@ -1,400 +1,683 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s21.3	a	rdf:Statement	;
+	rdfs:label	"editors find bad references"	.
+
+local:s21.2	a	rdf:Statement	;
+	rdfs:label	"help editors find bad references"	.
+
+local:s21.1	a	rdf:Statement	;
+	rdfs:label	"further work implementing our approach in wikidata to help editors find bad references"	.
+
+local:s21	a	rdf:Statement	;
+	rdfs:label	"further work should focus on implementing our approach in wikidata to help editors find bad references"	.
+
+local:s20	a	rdf:Statement	;
+	rdfs:label	"the machine learning models"	.
+
+local:s19.1	a	rdf:Statement	;
+	rdfs:label	"the machine learning models accurately predict nonauthoritative references"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"the machine learning models"	.
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"the machine learning models accurately predict nonrelevant references"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"the machine learning models"	.
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"links that pointed to other pages"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"links that working other pages"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"links that stopped working"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"links that changed"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the references evaluated"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the references evaluated"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"the triples referred"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"editing the triples"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"the features learning models related to reference editing the triples referred to"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"learning models"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the features chosen for the machine"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"the triples the triples referred"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the features learning models related to reference the semantics of the triples the triples referred to"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"learning models"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"a machine learning model predict reference quality on a largescale"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"a machine learning model"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"train a machine"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the judgements collected in the first stage to train a machine"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we use the judgements"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"first we perform a crowdsourced evaluation of references"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we follow a twostaged approach"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we analyse one aspect of wikidata quality provenance in terms of authoritativeness of wikidata external references"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we analyse one aspect of wikidata quality provenance in terms of relevance of wikidata external references"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"wikidata widespread adoption"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"understanding the quality of wikidata"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"add provenance information"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"subjectpropertyvalue triples which can enhanced with references to add provenance information"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"graph wikidata expresses knowledge in the form of subjectpropertyvalue triples"	.
+
+
 #### Classes ####
 
-local:collaborativelyedited_knowledge	rdfs:label	"collaboratively-edited knowledge"	.
+local:editors	a	rdf:Class	;
+	rdfs:label	"editors"	.
 
-local:collaborativelyedited_knowledge_graph	rdfs:label	"collaboratively-edited knowledge graph"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:collaborativelyedited	rdfs:label	"collaboratively-edited"	.
+local:bad_references	a	rdf:Class	;
+	rdfs:label	"bad references"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:bad	a	rdf:Class	;
+	rdfs:label	"bad"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:references	a	rdf:Class	;
+	rdfs:label	"references"	.
 
-local:graph	rdfs:label	"graph"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:expresses	rdfs:label	"expresses"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:subjectpropertyvalue	rdfs:label	"subject-property-value"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:subjectpropertyvalue_triples	rdfs:label	"subject-property-value triples"	.
+local:approach_in_wikidata	a	rdf:Class	;
+	rdfs:label	"approach in wikidata"	.
 
-local:provenance	rdfs:label	"provenance"	.
+local:wikidata	a	rdf:Class	;
+	rdfs:label	"wikidata"	.
 
-local:provenance_information	rdfs:label	"provenance information"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:triples	rdfs:label	"triples"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:information	rdfs:label	"information"	.
+local:implementing_our_approach_in_wikidata_to_help_editors_find_bad_references	a	rdf:Class	;
+	rdfs:label	"implementing our approach in wikidata to help editors find bad references"	.
 
-local:can_enhanced	rdfs:label	"can enhanced"	.
+local:our_approach	a	rdf:Class	;
+	rdfs:label	"our approach"	.
 
-local:enhanced	rdfs:label	"enhanced"	.
+local:our_approach_in_wikidata	a	rdf:Class	;
+	rdfs:label	"our approach in wikidata"	.
 
-local:knowledge_in_form	rdfs:label	"knowledge in form"	.
+local:should	a	rdf:Class	;
+	rdfs:label	"should"	.
 
-local:form	rdfs:label	"form"	.
+local:models	a	rdf:Class	;
+	rdfs:label	"models"	.
 
-local:form_of_subjectpropertyvalue_triples	rdfs:label	"form of subject-property-value triples"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:can_enhanced_with_references	rdfs:label	"can enhanced with references"	.
+local:machine_learning_models	a	rdf:Class	;
+	rdfs:label	"machine learning models"	.
 
-local:references	rdfs:label	"references"	.
+local:machine_learning	a	rdf:Class	;
+	rdfs:label	"machine learning"	.
 
-local:can	rdfs:label	"can"	.
+local:learning	a	rdf:Class	;
+	rdfs:label	"learning"	.
 
-local:add	rdfs:label	"add"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:quality_of_wikidata	rdfs:label	"quality of wikidata"	.
+local:learning_models	a	rdf:Class	;
+	rdfs:label	"learning models"	.
 
-local:quality	rdfs:label	"quality"	.
+local:predict	a	rdf:Class	;
+	rdfs:label	"predict"	.
 
-local:wikidata	rdfs:label	"wikidata"	.
+local:nonauthoritative_references	a	rdf:Class	;
+	rdfs:label	"nonauthoritative references"	.
 
-local:understanding	rdfs:label	"understanding"	.
+local:nonauthoritative	a	rdf:Class	;
+	rdfs:label	"nonauthoritative"	.
 
-local:widespread_adoption	rdfs:label	"widespread adoption"	.
+local:accurately	a	rdf:Class	;
+	rdfs:label	"accurately"	.
 
-local:adoption	rdfs:label	"adoption"	.
+local:nonrelevant_references	a	rdf:Class	;
+	rdfs:label	"nonrelevant references"	.
 
-local:widespread	rdfs:label	"widespread"	.
+local:nonrelevant	a	rdf:Class	;
+	rdfs:label	"nonrelevant"	.
 
-local:analyse	rdfs:label	"analyse"	.
+local:links	a	rdf:Class	;
+	rdfs:label	"links"	.
 
-local:we	rdfs:label	"we"	.
+local:point	a	rdf:Class	;
+	rdfs:label	"point"	.
 
-local:wikidata_quality	rdfs:label	"wikidata quality"	.
+local:pages	a	rdf:Class	;
+	rdfs:label	"pages"	.
 
-local:one_aspect	rdfs:label	"one aspect"	.
+local:stop	a	rdf:Class	;
+	rdfs:label	"stop"	.
 
-local:aspect	rdfs:label	"aspect"	.
+local:working	a	rdf:Class	;
+	rdfs:label	"working"	.
 
-local:one_aspect_of_wikidata_quality	rdfs:label	"one aspect of wikidata quality"	.
+local:change	a	rdf:Class	;
+	rdfs:label	"change"	.
 
-local:wikidata_quality_provenance	rdfs:label	"wikidata quality provenance"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:wikidata_external	rdfs:label	"wikidata external"	.
+local:triples	a	rdf:Class	;
+	rdfs:label	"triples"	.
 
-local:external	rdfs:label	"external"	.
+local:refer	a	rdf:Class	;
+	rdfs:label	"refer"	.
 
-local:wikidata_external_references	rdfs:label	"wikidata external references"	.
+local:edit	a	rdf:Class	;
+	rdfs:label	"edit"	.
 
-local:external_references	rdfs:label	"external references"	.
+local:features_learning_models	a	rdf:Class	;
+	rdfs:label	"features learning models"	.
 
-local:terms_of_authoritativeness	rdfs:label	"terms of authoritativeness"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:terms	rdfs:label	"terms"	.
+local:features_learning	a	rdf:Class	;
+	rdfs:label	"features learning"	.
 
-local:authoritativeness	rdfs:label	"authoritativeness"	.
+local:relate	a	rdf:Class	;
+	rdfs:label	"relate"	.
 
-local:authoritativeness_of_wikidata_external_references	rdfs:label	"authoritativeness of wikidata external references"	.
+local:reference_editing_the_triples_referred_to	a	rdf:Class	;
+	rdfs:label	"reference editing the triples referred to"	.
 
-local:terms_of_relevance	rdfs:label	"terms of relevance"	.
+local:reference	a	rdf:Class	;
+	rdfs:label	"reference"	.
 
-local:relevance	rdfs:label	"relevance"	.
+local:to_referred	a	rdf:Class	;
+	rdfs:label	"to referred"	.
 
-local:relevance_of_wikidata_external_references	rdfs:label	"relevance of wikidata external references"	.
+local:referred	a	rdf:Class	;
+	rdfs:label	"referred"	.
 
-local:follow	rdfs:label	"follow"	.
+local:reference_editing	a	rdf:Class	;
+	rdfs:label	"reference editing"	.
 
-local:twostaged	rdfs:label	"two-staged"	.
+local:editing	a	rdf:Class	;
+	rdfs:label	"editing"	.
 
-local:twostaged_approach	rdfs:label	"two-staged approach"	.
+local:choose	a	rdf:Class	;
+	rdfs:label	"choose"	.
 
-local:approach	rdfs:label	"approach"	.
+local:reference_the_semantics_of_the_triples_the_triples_referred_to	a	rdf:Class	;
+	rdfs:label	"reference the semantics of the triples the triples referred to"	.
 
-local:perform	rdfs:label	"perform"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:crowdsourced_evaluation	rdfs:label	"crowdsourced evaluation"	.
+local:semantics_of_triples	a	rdf:Class	;
+	rdfs:label	"semantics of triples"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:machine_learning_model	a	rdf:Class	;
+	rdfs:label	"machine learning model"	.
 
-local:crowdsourced	rdfs:label	"crowdsourced"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:crowdsourced_evaluation_of_references	rdfs:label	"crowdsourced evaluation of references"	.
+local:learning_model	a	rdf:Class	;
+	rdfs:label	"learning model"	.
 
-local:use	rdfs:label	"use"	.
+local:reference_quality_on_a_largescale	a	rdf:Class	;
+	rdfs:label	"reference quality on a largescale"	.
 
-local:first_stage	rdfs:label	"first stage"	.
+local:reference_quality	a	rdf:Class	;
+	rdfs:label	"reference quality"	.
 
-local:stage	rdfs:label	"stage"	.
+local:largescale	a	rdf:Class	;
+	rdfs:label	"largescale"	.
 
-local:first	rdfs:label	"first"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:collected_in_first_stage	rdfs:label	"collected in first stage"	.
+local:reference_quality_on_largescale	a	rdf:Class	;
+	rdfs:label	"reference quality on largescale"	.
 
-local:collected	rdfs:label	"collected"	.
+local:train	a	rdf:Class	;
+	rdfs:label	"train"	.
 
-local:reference	rdfs:label	"reference"	.
+local:judgements	a	rdf:Class	;
+	rdfs:label	"judgements"	.
 
-local:reference_quality	rdfs:label	"reference quality"	.
+local:collect	a	rdf:Class	;
+	rdfs:label	"collect"	.
 
-local:learning_model	rdfs:label	"learning model"	.
+local:first_stage	a	rdf:Class	;
+	rdfs:label	"first stage"	.
 
-local:model	rdfs:label	"model"	.
+local:stage	a	rdf:Class	;
+	rdfs:label	"stage"	.
 
-local:train_learning_model	rdfs:label	"train learning model"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:predict_on_largescale	rdfs:label	"predict on large-scale"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:predict	rdfs:label	"predict"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:largescale	rdfs:label	"large-scale"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:second	rdfs:label	"second"	.
+local:crowdsourced_evaluation_of_references	a	rdf:Class	;
+	rdfs:label	"crowdsourced evaluation of references"	.
 
-local:train	rdfs:label	"train"	.
+local:crowdsourced_evaluation	a	rdf:Class	;
+	rdfs:label	"crowdsourced evaluation"	.
 
-local:reference_quality_on_largescale	rdfs:label	"reference quality on large-scale"	.
+local:crowdsourced	a	rdf:Class	;
+	rdfs:label	"crowdsourced"	.
 
-local:learning	rdfs:label	"learning"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:predict_reference_quality	rdfs:label	"predict reference quality"	.
+local:follow	a	rdf:Class	;
+	rdfs:label	"follow"	.
 
-local:predict_reference	rdfs:label	"predict reference"	.
+local:twostaged_approach	a	rdf:Class	;
+	rdfs:label	"twostaged approach"	.
 
-local:learning_models	rdfs:label	"learning models"	.
+local:analyse	a	rdf:Class	;
+	rdfs:label	"analyse"	.
 
-local:models	rdfs:label	"models"	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	a	rdf:Class	;
+	rdfs:label	"one aspect of wikidata quality provenance in terms of authoritativeness of wikidata external references"	.
 
-local:machine_learning	rdfs:label	"machine learning"	.
+local:external_references	a	rdf:Class	;
+	rdfs:label	"external references"	.
 
-local:machine_learning_models	rdfs:label	"machine learning models"	.
+local:authoritativeness	a	rdf:Class	;
+	rdfs:label	"authoritativeness"	.
 
-local:machine	rdfs:label	"machine"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:chosen	rdfs:label	"chosen"	.
+local:wikidata_quality_provenance	a	rdf:Class	;
+	rdfs:label	"wikidata quality provenance"	.
 
-local:related	rdfs:label	"related"	.
+local:aspect	a	rdf:Class	;
+	rdfs:label	"aspect"	.
 
-local:to_referred	rdfs:label	"to referred"	.
+local:wikidata_quality	a	rdf:Class	;
+	rdfs:label	"wikidata quality"	.
 
-local:referred	rdfs:label	"referred"	.
+local:external	a	rdf:Class	;
+	rdfs:label	"external"	.
 
-local:reference_editing	rdfs:label	"reference editing"	.
+local:quality_provenance	a	rdf:Class	;
+	rdfs:label	"quality provenance"	.
 
-local:editing	rdfs:label	"editing"	.
+local:provenance	a	rdf:Class	;
+	rdfs:label	"provenance"	.
 
-local:to	rdfs:label	"to"	.
+local:wikidata_external_references	a	rdf:Class	;
+	rdfs:label	"wikidata external references"	.
 
-local:semantics_of_triples	rdfs:label	"semantics of triples"	.
+local:one_aspect	a	rdf:Class	;
+	rdfs:label	"one aspect"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:one_aspect_of_wikidata_quality_provenance	a	rdf:Class	;
+	rdfs:label	"one aspect of wikidata quality provenance"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms	a	rdf:Class	;
+	rdfs:label	"one aspect of wikidata quality provenance in terms"	.
 
-local:stopped	rdfs:label	"stopped"	.
+local:terms_of_authoritativeness	a	rdf:Class	;
+	rdfs:label	"terms of authoritativeness"	.
 
-local:working	rdfs:label	"working"	.
+local:authoritativeness_of_wikidata_external_references	a	rdf:Class	;
+	rdfs:label	"authoritativeness of wikidata external references"	.
 
-local:bad	rdfs:label	"bad"	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	a	rdf:Class	;
+	rdfs:label	"one aspect of wikidata quality provenance in terms of relevance of wikidata external references"	.
 
-local:bad_references	rdfs:label	"bad references"	.
+local:relevance	a	rdf:Class	;
+	rdfs:label	"relevance"	.
 
-local:pointed	rdfs:label	"pointed"	.
+local:terms_of_relevance	a	rdf:Class	;
+	rdfs:label	"terms of relevance"	.
 
-local:links	rdfs:label	"links"	.
+local:relevance_of_wikidata_external_references	a	rdf:Class	;
+	rdfs:label	"relevance of wikidata external references"	.
 
-local:pages	rdfs:label	"pages"	.
+local:widespread_adoption	a	rdf:Class	;
+	rdfs:label	"widespread adoption"	.
 
-local:accurately	rdfs:label	"accurately"	.
+local:adoption	a	rdf:Class	;
+	rdfs:label	"adoption"	.
 
-local:nonauthoritative	rdfs:label	"non-authoritative"	.
+local:widespread	a	rdf:Class	;
+	rdfs:label	"widespread"	.
 
-local:nonauthoritative_references	rdfs:label	"non-authoritative references"	.
+local:quality_of_wikidata	a	rdf:Class	;
+	rdfs:label	"quality of wikidata"	.
 
-local:nonrelevant_references	rdfs:label	"non-relevant references"	.
+local:understanding	a	rdf:Class	;
+	rdfs:label	"understanding"	.
 
-local:nonrelevant	rdfs:label	"non-relevant"	.
+local:provenance_information	a	rdf:Class	;
+	rdfs:label	"provenance information"	.
 
-local:focus	rdfs:label	"focus"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:work	rdfs:label	"work"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:should	rdfs:label	"should"	.
+local:subjectpropertyvalue_triples	a	rdf:Class	;
+	rdfs:label	"subjectpropertyvalue triples"	.
 
-local:our_approach	rdfs:label	"our approach"	.
+local:subjectpropertyvalue	a	rdf:Class	;
+	rdfs:label	"subjectpropertyvalue"	.
 
-local:our_approach_in_wikidata	rdfs:label	"our approach in wikidata"	.
+local:enhance	a	rdf:Class	;
+	rdfs:label	"enhance"	.
 
-local:implementing	rdfs:label	"implementing"	.
+local:references_to_add_provenance_information	a	rdf:Class	;
+	rdfs:label	"references to add provenance information"	.
 
-local:approach_in_wikidata	rdfs:label	"approach in wikidata"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:help	rdfs:label	"help"	.
+local:graph_wikidata	a	rdf:Class	;
+	rdfs:label	"graph wikidata"	.
 
-local:help_editors	rdfs:label	"help editors"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:editors	rdfs:label	"editors"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:find	rdfs:label	"find"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-#### Properties ####
+local:form_of_subjectpropertyvalue_triples	a	rdf:Class	;
+	rdfs:label	"form of subjectpropertyvalue triples"	.
+
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
 
 #### Mapped Relations ####
 
-local:reference	rdfs:member	local:reference	.
-local:references	rdfs:member	local:references	.
-local:references	rdfs:member	local:reference	.
 cso:semantics	rdfs:label	"semantics"	.
-local:references	rdfs:label	"references"	.
 local:semantics	owl:sameAs	cso:semantics	.
 cso:machine_learning	rdfs:label	"machine learning"	.
 local:machine_learning	owl:sameAs	cso:machine_learning	.
-local:reference	rdfs:label	"reference"	.
-local:reference	rdfs:member	local:references	.
 
 #### Relations ####
 
-local:widespread	rdfs:member	local:widespread_adoption	.
-local:reference_quality	rdfs:subClassOf	local:quality	.
-local:terms_of_relevance	local:of_relevance	local:terms	.
-local:crowdsourced_evaluation_of_references	local:of_references	local:crowdsourced_evaluation	.
-local:semantics_of_triples	local:semantics_of	local:triples	.
-local:provenance	rdfs:member	local:provenance_information	.
-local:pointed	vn.role:Patient	local:bad_references	.
-local:predict_reference_quality	rdfs:subClassOf	local:quality	.
-local:chosen	vn.role:Beneficiary	local:machine_learning_models	.
-local:collaborativelyedited_knowledge	rdfs:subClassOf	local:knowledge	.
-local:crowdsourced_evaluation	rdfs:subClassOf	local:evaluation	.
-local:predict	vn.role:Cause	local:reference_quality_on_largescale	.
-local:use	local:AM-PNC	local:train_learning_model	.
-local:perform	vn.role:Agent	local:we	.
-local:nonrelevant_references	rdfs:subClassOf	local:references	.
-local:wikidata_quality_provenance	local:_provenance	local:wikidata_quality	.
-local:predict	rdfs:member	local:predict_reference	.
-local:referred	vn.role:Agent	local:semantics_of_triples	.
-local:implementing	local:AM-PNC	local:find	.
-local:can_enhanced_with_references	local:canenhanced_with	local:references	.
-local:nonauthoritative_references	rdfs:subClassOf	local:references	.
-local:predict	local:AM-MNR	local:accurately	.
-local:wikidata_quality_provenance	local:wikidataquality_	local:provenance	.
-local:wikidata	rdfs:member	local:wikidata_external	.
-local:collected	local:AM-PNC	local:train_learning_model	.
-local:learning	vn.role:Agent	local:models	.
-local:bad	rdfs:member	local:bad_references	.
-local:quality_of_wikidata	local:of_wikidata	local:quality	.
-local:knowledge_in_form	local:knowledge_in	local:form	.
-local:collaborativelyedited	rdfs:member	local:collaborativelyedited_knowledge	.
-local:enhanced	vn.role:Instrument	local:references	.
-local:crowdsourced	rdfs:member	local:crowdsourced_evaluation	.
-local:predict_reference	rdfs:member	local:predict_reference_quality	.
-local:machine_learning_models	rdfs:subClassOf	local:learning_models	.
-local:find	vn.role:Theme	local:bad_references	.
-local:form_of_subjectpropertyvalue_triples	local:of_subject-property-valuetriples	local:form	.
-local:learning_models	rdfs:subClassOf	local:models	.
-local:reference_quality_on_largescale	local:referencequality_on	local:largescale	.
-local:subjectpropertyvalue	rdfs:member	local:subjectpropertyvalue_triples	.
-local:predict_on_largescale	local:predict_on	local:largescale	.
-local:predict	vn.role:Cause	local:nonrelevant_references	.
-local:perform	vn.role:Theme	local:crowdsourced_evaluation_of_references	.
-local:terms_of_authoritativeness	local:of_authoritativeness	local:terms	.
-local:predict	vn.role:Recipient	local:machine_learning_models	.
-local:expresses	vn.role:Agent	local:knowledge_in_form	.
-local:reference_editing	rdfs:subClassOf	local:editing	.
-local:analyse	vn.role:Theme	local:one_aspect_of_wikidata_quality	.
-local:focus	vn.role:Experiencer	local:work	.
-local:authoritativeness_of_wikidata_external_references	local:authoritativeness_of	local:wikidata_external_references	.
-local:terms_of_authoritativeness	local:terms_of	local:authoritativeness	.
-local:nonrelevant	rdfs:member	local:nonrelevant_references	.
-local:learning	vn.role:Agent	local:predict	.
-local:collaborativelyedited_knowledge	rdfs:member	local:collaborativelyedited_knowledge_graph	.
-local:focus	vn.role:indirect_object	local:implementing	.
-local:first	rdfs:member	local:first_stage	.
-local:semantics_of_triples	local:of_triples	local:semantics	.
-local:pointed	vn.role:Theme	local:pages	.
-local:can_enhanced_with_references	local:with_references	local:can_enhanced	.
-local:add	vn.role:Patient	local:provenance_information	.
-local:wikidata_external	rdfs:member	local:wikidata_external_references	.
-local:wikidata_external_references	rdfs:subClassOf	local:external_references	.
-local:analyse	local:AM-MNR	local:terms_of_relevance	.
-local:quality_of_wikidata	local:quality_of	local:wikidata	.
-local:form_of_subjectpropertyvalue_triples	local:form_of	local:subjectpropertyvalue_triples	.
-local:wikidata	vn.role:object	local:widespread_adoption	.
-local:twostaged_approach	rdfs:subClassOf	local:approach	.
-local:approach_in_wikidata	local:approach_in	local:wikidata	.
-local:predict_reference	rdfs:subClassOf	local:reference	.
-local:twostaged	rdfs:member	local:twostaged_approach	.
-local:pointed	vn.role:Patient	local:links	.
-local:our_approach	rdfs:subClassOf	local:approach	.
-local:provenance_information	rdfs:subClassOf	local:information	.
-local:analyse	local:AM-LOC	local:terms_of_authoritativeness	.
-local:to_referred	rdfs:subClassOf	local:referred	.
-local:machine_learning	rdfs:subClassOf	local:learning	.
-local:subjectpropertyvalue_triples	rdfs:subClassOf	local:triples	.
-local:editing	vn.role:Patient	local:triples	.
-local:approach_in_wikidata	local:in_wikidata	local:approach	.
-local:expresses	vn.role:Theme	local:collaborativelyedited_knowledge_graph	.
-local:one_aspect_of_wikidata_quality	local:of_wikidataquality	local:one_aspect	.
-local:machine_learning	rdfs:member	local:machine_learning_models	.
-local:learning	vn.role:Agent	local:we	.
-local:find	vn.role:Agent	local:editors	.
-local:related	vn.role:Recipient	local:reference_editing	.
-local:wikidata_external	rdfs:subClassOf	local:external	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:predict_on_largescale	local:on_large-scale	local:predict	.
-local:external_references	rdfs:subClassOf	local:references	.
-local:enhanced	local:AM-MOD	local:can	.
-local:collaborativelyedited_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
-local:our_approach_in_wikidata	local:in_wikidata	local:our_approach	.
-local:one_aspect	rdfs:subClassOf	local:aspect	.
-local:use	vn.role:Agent	local:we	.
-local:wikidata	rdfs:member	local:wikidata_quality	.
-local:collected	vn.role:Theme	local:second	.
-local:relevance_of_wikidata_external_references	local:of_wikidataexternalreferences	local:relevance	.
-local:our_approach_in_wikidata	local:ourapproach_in	local:wikidata	.
-local:collected	local:AM-TMP	local:first_stage	.
-local:wikidata_external_references	rdfs:subClassOf	local:references	.
-local:follow	vn.role:Agent	local:we	.
-local:understanding	vn.role:Proposition	local:quality_of_wikidata	.
-local:reference_quality_on_largescale	local:on_large-scale	local:reference_quality	.
-local:collaborativelyedited_knowledge_graph	rdfs:subClassOf	local:graph	.
-local:train	vn.role:Theme	local:learning	.
-local:machine	rdfs:member	local:machine_learning	.
-local:help	rdfs:member	local:help_editors	.
-local:external	rdfs:member	local:external_references	.
-local:focus	local:AM-MOD	local:should	.
-local:learning	vn.role:Agent	local:machine	.
-local:evaluated	vn.role:Theme	local:references	.
-local:referred	vn.role:Theme	local:to	.
-local:implementing	vn.role:Agent	local:work	.
-local:follow	vn.role:Theme	local:twostaged_approach	.
-local:bad_references	rdfs:subClassOf	local:references	.
-local:learning	rdfs:member	local:learning_models	.
-local:stopped	vn.role:Theme	local:working	.
-local:learning_model	rdfs:subClassOf	local:model	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:related	vn.role:Recipient	local:reference	.
-local:nonauthoritative	rdfs:member	local:nonauthoritative_references	.
-local:crowdsourced_evaluation_of_references	local:crowdsourcedevaluation_of	local:references	.
-local:help	vn.role:Beneficiary	local:find	.
-local:predict	vn.role:Cause	local:nonauthoritative_references	.
-local:knowledge_in_form	local:in_form	local:knowledge	.
-local:terms_of_relevance	local:terms_of	local:relevance	.
-local:can_enhanced	rdfs:subClassOf	local:enhanced	.
-local:one_aspect_of_wikidata_quality	local:oneaspect_of	local:wikidata_quality	.
-local:collected_in_first_stage	local:in_firststage	local:collected	.
-local:help_editors	rdfs:subClassOf	local:editors	.
-local:analyse	vn.role:Agent	local:we	.
-local:train	vn.role:Agent	local:we	.
-local:wikidata_quality	rdfs:subClassOf	local:quality	.
-local:implementing	vn.role:Theme	local:approach_in_wikidata	.
-local:first_stage	rdfs:subClassOf	local:stage	.
-local:use	vn.role:Theme	local:collected_in_first_stage	.
-local:referred	vn.role:Agent	local:triples	.
-local:related	vn.role:Topic	local:machine_learning_models	.
-local:reference	rdfs:member	local:reference_quality	.
-local:chosen	vn.role:Theme	local:related	.
-local:relevance_of_wikidata_external_references	local:relevance_of	local:wikidata_external_references	.
-local:learning	vn.role:Theme	local:model	.
-local:authoritativeness_of_wikidata_external_references	local:of_wikidataexternalreferences	local:authoritativeness	.
-local:train_learning_model	rdfs:subClassOf	local:learning_model	.
-local:collected_in_first_stage	local:collected_in	local:first_stage	.
-local:widespread_adoption	rdfs:subClassOf	local:adoption	.
 local:machine_learning_models	rdfs:subClassOf	local:models	.
+local:implementing_our_approach_in_wikidata_to_help_editors_find_bad_references	rdfs:member	local:approach	.
+local:s8.1	rdf:subject	local:machine	.
+local:nonrelevant_references	rdfs:subClassOf	local:references	.
+local:to_referred	rdfs:subClassOf	local:referred	.
+local:quality_of_wikidata	rdfs:member	local:quality	.
+local:wikidata_quality	rdfs:subClassOf	local:quality	.
+local:s7	rdf:predicate	local:use	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	rdfs:member	local:terms	.
+local:terms_of_relevance	rdfs:member	local:terms	.
+local:s8	local:AM-PNC	local:s8.1	.
+local:s11	rdf:subject	local:features	.
+local:features_learning	rdfs:member	local:learning	.
+local:s19.1	rdf:object	local:nonauthoritative_references	.
+local:machine_learning	rdfs:member	local:machine	.
+local:s18	rdf:subject	local:models	.
+local:s16	rdf:predicate	local:stop	.
+local:machine_learning_models	rdfs:subClassOf	local:learning_models	.
+local:reference_editing_the_triples_referred_to	rdfs:member	local:reference	.
+local:s4	rdf:subject	local:we	.
+local:one_aspect	rdfs:subClassOf	local:aspect	.
+local:s10.1	rdf:object	local:reference_the_semantics_of_the_triples_the_triples_referred_to	.
+local:s12.3	rdf:subject	local:triples	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	rdfs:member	local:relevance	.
+local:s21.3	rdf:object	local:bad_references	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	rdfs:member	local:external_references	.
+local:s18.1	rdf:predicate	local:predict	.
+local:widespread_adoption	rdfs:member	local:widespread	.
+local:s18	rdf:predicate	local:learn	.
+local:s6	rdf:predicate	local:perform	.
+local:s13	rdf:predicate	local:evaluate	.
+local:s15	rdf:subject	local:links	.
+local:s10.2	rdf:object	local:triples	.
+local:s21.3	rdf:subject	local:editors	.
+local:s6	local:AM-TMP	local:first	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	rdfs:member	local:aspect	.
+local:s21.1	rdf:predicate	local:implement	.
+local:wikidata_quality_provenance	rdfs:subClassOf	local:quality_provenance	.
+local:s19	rdf:subject	local:models	.
+local:machine_learning_model	rdfs:member	local:model	.
+local:s16.1	rdf:subject	local:links	.
+local:s8	rdf:subject	local:judgements	.
+local:s12.2	rdf:subject	local:triples	.
+local:s5	rdf:subject	local:we	.
+local:wikidata_quality_provenance	rdfs:member	local:wikidata_quality	.
+local:s21.1	rdf:subject	local:work	.
+local:reference_the_semantics_of_the_triples_the_triples_referred_to	rdfs:member	local:semantics	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms	rdfs:member	local:one_aspect_of_wikidata_quality_provenance	.
+local:s19.1	rdf:predicate	local:predict	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	rdfs:member	local:aspect	.
+local:s9.1	rdf:object	local:reference_quality_on_a_largescale	.
+local:s11	rdf:predicate	local:choose	.
+local:form_of_subjectpropertyvalue_triples	rdfs:member	local:subjectpropertyvalue_triples	.
+local:relevance_of_wikidata_external_references	rdfs:member	local:wikidata_external_references	.
+local:wikidata_quality	rdfs:member	local:wikidata	.
+local:s21	rdf:subject	local:work	.
+local:s19	rdf:predicate	local:learn	.
+local:s6	rdf:subject	local:we	.
+local:implementing_our_approach_in_wikidata_to_help_editors_find_bad_references	rdfs:member	local:bad_references	.
+local:provenance_information	rdfs:subClassOf	local:information	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	rdfs:member	local:wikidata	.
+local:provenance_information	rdfs:member	local:provenance	.
+local:s9.1	rdf:subject	local:machine_learning_model	.
+local:s6	rdf:object	local:crowdsourced_evaluation_of_references	.
+local:subjectpropertyvalue_triples	rdfs:member	local:subjectpropertyvalue	.
+local:s7	rdf:subject	local:we	.
+local:external_references	rdfs:subClassOf	local:references	.
+local:s1	rdf:subject	local:subjectpropertyvalue_triples	.
+local:s10.1	rdf:predicate	local:relate	.
+local:s12.2	rdf:predicate	local:edit	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms	rdfs:member	local:terms	.
+local:s16.2	rdf:object	local:pages	.
+local:s16.2	rdf:predicate	local:point	.
+local:s21.1	rdf:object	local:approach_in_wikidata	.
+local:s2.1	rdf:predicate	local:wikidata	.
+local:machine_learning_model	rdfs:member	local:machine	.
+local:reference_quality_on_a_largescale	rdfs:member	local:reference_quality	.
+local:s8	local:AM-TMP	local:first_stage	.
+local:s13	rdf:subject	local:references	.
+local:s14	rdf:predicate	local:evaluate	.
+local:s12.3	rdf:predicate	local:refer	.
+local:crowdsourced_evaluation_of_references	rdfs:member	local:references	.
+local:s10	rdf:subject	local:models	.
+local:s8.1	rdf:predicate	local:train	.
+local:s7	rdf:object	local:judgements	.
+local:s14	rdf:subject	local:references	.
+local:s8	rdf:predicate	local:collect	.
+local:s10	rdf:predicate	local:learn	.
+local:approach_in_wikidata	rdfs:member	local:wikidata	.
+local:s1	local:AM-MOD	local:can	.
+local:learning_models	rdfs:subClassOf	local:models	.
+local:machine_learning_model	rdfs:subClassOf	local:learning_model	.
+local:s19.1	rdf:subject	local:machine_learning_models	.
+local:nonauthoritative_references	rdfs:subClassOf	local:references	.
+local:nonrelevant_references	rdfs:member	local:nonrelevant	.
+local:s18.1	local:AM-MNR	local:accurately	.
+local:features_learning	rdfs:member	local:features	.
+local:s11	rdf:object	local:machine	.
+local:quality_provenance	rdfs:member	local:quality	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	rdfs:member	local:wikidata_quality_provenance	.
+local:terms_of_authoritativeness	rdfs:member	local:authoritativeness	.
+local:s0	rdf:subject	local:graph_wikidata	.
+local:reference_quality_on_largescale	rdfs:member	local:largescale	.
+local:crowdsourced_evaluation_of_references	rdfs:member	local:crowdsourced_evaluation	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	rdfs:member	local:authoritativeness	.
+local:s16.1	rdf:predicate	local:work	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	rdfs:member	local:external_references	.
+local:s3	rdf:predicate	local:analyse	.
+local:s16.2	rdf:subject	local:links	.
+local:s16.1	rdf:object	local:pages	.
+local:s20	rdf:subject	local:models	.
+local:first_stage	rdfs:subClassOf	local:stage	.
+local:s9.1	rdf:predicate	local:predict	.
+local:one_aspect_of_wikidata_quality_provenance	rdfs:member	local:wikidata_quality_provenance	.
+local:terms_of_relevance	rdfs:member	local:relevance	.
+local:s1.1	rdf:predicate	local:add	.
+local:subjectpropertyvalue_triples	rdfs:subClassOf	local:triples	.
+local:semantics_of_triples	rdfs:member	local:semantics	.
+local:s21.2	rdf:predicate	local:help	.
+local:s2.1	rdf:subject	local:widespread_adoption	.
+local:s9	rdf:predicate	local:learn	.
+local:authoritativeness_of_wikidata_external_references	rdfs:member	local:authoritativeness	.
+local:reference_quality	rdfs:member	local:reference	.
+local:s0	local:AM-LOC	local:form_of_subjectpropertyvalue_triples	.
+local:s18.1	rdf:subject	local:machine_learning_models	.
+local:machine_learning_models	rdfs:member	local:machine_learning	.
+local:s21	local:AM-MOD	local:should	.
+local:crowdsourced_evaluation	rdfs:subClassOf	local:evaluation	.
+local:s4	rdf:predicate	local:analyse	.
+local:terms_of_authoritativeness	rdfs:member	local:terms	.
+local:s10.2	rdf:subject	local:triples	.
+local:references_to_add_provenance_information	rdfs:member	local:provenance_information	.
+local:s15	rdf:predicate	local:change	.
+local:s3	rdf:subject	local:we	.
+local:s12	rdf:predicate	local:learn	.
+local:implementing_our_approach_in_wikidata_to_help_editors_find_bad_references	rdfs:member	local:editors	.
+local:our_approach_in_wikidata	rdfs:member	local:wikidata	.
+local:s21.2	rdf:subject	local:s21.3	.
+local:s9	rdf:subject	local:model	.
+local:s10.1	rdf:subject	local:features_learning_models	.
+local:bad_references	rdfs:subClassOf	local:references	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	rdfs:member	local:terms	.
+local:quality_of_wikidata	rdfs:member	local:wikidata	.
+local:wikidata_external_references	rdfs:subClassOf	local:external_references	.
+local:learning_model	rdfs:subClassOf	local:model	.
+local:s16	rdf:subject	local:links	.
+local:s12.1	rdf:subject	local:features_learning_models	.
+local:s0	rdf:predicate	local:express	.
+local:s21	rdf:object	local:implementing_our_approach_in_wikidata_to_help_editors_find_bad_references	.
+local:s0	rdf:object	local:knowledge	.
+local:references_to_add_provenance_information	rdfs:member	local:references	.
+local:s10.2	rdf:predicate	local:refer	.
+local:graph_wikidata	rdfs:member	local:graph	.
+local:reference_editing	rdfs:subClassOf	local:editing	.
+local:features_learning_models	rdfs:member	local:models	.
+local:graph_wikidata	rdfs:subClassOf	local:wikidata	.
+local:features_learning_models	rdfs:member	local:features	.
+local:authoritativeness_of_wikidata_external_references	rdfs:member	local:wikidata_external_references	.
+local:relevance_of_wikidata_external_references	rdfs:member	local:relevance	.
+local:twostaged_approach	rdfs:subClassOf	local:approach	.
+local:s5	rdf:object	local:twostaged_approach	.
+local:s16	rdf:object	local:working	.
+local:quality_provenance	rdfs:subClassOf	local:provenance	.
+local:s20	rdf:predicate	local:learn	.
+local:reference_quality_on_a_largescale	rdfs:member	local:largescale	.
+local:s21.3	rdf:predicate	local:find	.
+local:first_stage	rdfs:member	local:first	.
+local:implementing_our_approach_in_wikidata_to_help_editors_find_bad_references	rdfs:member	local:wikidata	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	rdfs:member	local:wikidata_quality_provenance	.
+local:bad_references	rdfs:member	local:bad	.
+local:s5	rdf:predicate	local:follow	.
+local:s18.1	rdf:object	local:nonrelevant_references	.
+local:our_approach_in_wikidata	rdfs:member	local:our_approach	.
+local:nonauthoritative_references	rdfs:member	local:nonauthoritative	.
+local:s12.1	rdf:object	local:reference_editing_the_triples_referred_to	.
+local:form_of_subjectpropertyvalue_triples	rdfs:member	local:form	.
+local:s1	rdf:object	local:references_to_add_provenance_information	.
+local:s2	rdf:predicate	local:understanding	.
+local:s12	rdf:subject	local:models	.
+local:s1	rdf:predicate	local:enhance	.
+local:reference_quality_on_largescale	rdfs:member	local:reference_quality	.
+local:s19.1	local:AM-MNR	local:accurately	.
+local:reference_quality	rdfs:subClassOf	local:quality	.
+local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	rdfs:member	local:wikidata	.
+local:machine_learning	rdfs:subClassOf	local:learning	.
+local:s12.1	rdf:predicate	local:relate	.
+local:s1.1	rdf:subject	local:provenance_information	.
+local:learning_models	rdfs:member	local:learning	.
+local:reference_editing_the_triples_referred_to	rdfs:member	local:triples	.
+local:s21.1	local:AM-PNC	local:s21.2	.
+local:approach_in_wikidata	rdfs:member	local:approach	.
+local:semantics_of_triples	rdfs:member	local:triples	.
+local:s21	rdf:predicate	local:focus	.
+local:crowdsourced_evaluation	rdfs:member	local:crowdsourced	.
+local:s2	rdf:subject	local:quality_of_wikidata	.
+local:external_references	rdfs:member	local:external	.
+local:reference_the_semantics_of_the_triples_the_triples_referred_to	rdfs:member	local:triples	.
+local:widespread_adoption	rdfs:subClassOf	local:adoption	.
+local:reference_the_semantics_of_the_triples_the_triples_referred_to	rdfs:member	local:reference	.
+local:s3	rdf:object	local:one_aspect_of_wikidata_quality_provenance_in_terms_of_relevance_of_wikidata_external_references	.
+local:s4	rdf:object	local:one_aspect_of_wikidata_quality_provenance_in_terms_of_authoritativeness_of_wikidata_external_references	.
+local:our_approach	rdfs:subClassOf	local:approach	.
+local:wikidata_quality_provenance	rdfs:subClassOf	local:provenance	.
+local:one_aspect_of_wikidata_quality_provenance	rdfs:member	local:one_aspect	.

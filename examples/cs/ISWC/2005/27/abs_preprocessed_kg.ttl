@@ -1,385 +1,718 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"how an agent can learn preferences on call literals if an agent is part of a web of trusted agents"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"finally we show how an agent can learn preferences on call literals if an agent is part of a web of trusted agents"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"it can express preferences on call literals"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"it consider some sources more reliable than others"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"it can alternatively express preferences on call literals"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"own knowledge encoded in the program it call literals"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"an agent believe it own knowledge encoded in the program it can alternatively express preferences on call literals"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"allowing in addition for an agent to express its preference for the satisfaction of certain rules over others we can then induce a preference order on those strategies"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"an agent express its preference for the satisfaction of certain rules over others we"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"allowing in addition for an agent to express its preference for the satisfaction of certain rules over others we can then induce a preference order on those strategies"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"solving those conflicts"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"semantics which can provide different strategies for solving those conflicts"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"different knowledge sources we use the extended answer"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"those conflicts may arise from reasoning"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"the extended answer set semantics"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"an agent pose yesno queries to arbitrary knowledge sources on the semantic web without conditions"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"such call literals enable an agent to pose yesno queries to arbitrary knowledge sources on the semantic web without conditions on"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"an agent pose yesno queries to arbitrary knowledge sources on the semantic web without the representation language of those sources"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"such call literals enable an agent to pose yesno queries to arbitrary knowledge sources on the semantic web without the representation language of those sources"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"initially we encode the knowledge of an agent as a logic program"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"a logic program equipped with call literals"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"based on logic programming"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we introduce a framework for preferential reasoning with agents on the semantic web"	.
+
+
 #### Classes ####
 
-local:introduce	rdfs:label	"introduce"	.
+local:agent	a	rdf:Class	;
+	rdfs:label	"agent"	.
 
-local:we	rdfs:label	"we"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:preferential_reasoning	rdfs:label	"preferential reasoning"	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	a	rdf:Class	;
+	rdfs:label	"preferences on call literals if an agent is part of a web of trusted agents"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:preferential	rdfs:label	"preferential"	.
+local:preferences	a	rdf:Class	;
+	rdfs:label	"preferences"	.
 
-local:framework_for_preferential_reasoning	rdfs:label	"framework for preferential reasoning"	.
+local:trusted_agents	a	rdf:Class	;
+	rdfs:label	"trusted agents"	.
 
-local:framework	rdfs:label	"framework"	.
+local:call_literals	a	rdf:Class	;
+	rdfs:label	"call literals"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:part	a	rdf:Class	;
+	rdfs:label	"part"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:trusted	a	rdf:Class	;
+	rdfs:label	"trusted"	.
 
-local:web	rdfs:label	"web"	.
+local:literals	a	rdf:Class	;
+	rdfs:label	"literals"	.
 
-local:agents_on_semantic_web	rdfs:label	"agents on semantic web"	.
+local:call	a	rdf:Class	;
+	rdfs:label	"call"	.
 
-local:agents	rdfs:label	"agents"	.
+local:agents	a	rdf:Class	;
+	rdfs:label	"agents"	.
 
-local:logic_programming	rdfs:label	"logic programming"	.
+local:preferences_on_call_literals	a	rdf:Class	;
+	rdfs:label	"preferences on call literals"	.
 
-local:programming	rdfs:label	"programming"	.
+local:part_of_web	a	rdf:Class	;
+	rdfs:label	"part of web"	.
 
-local:logic	rdfs:label	"logic"	.
+local:web_of_trusted_agents	a	rdf:Class	;
+	rdfs:label	"web of trusted agents"	.
 
-local:based	rdfs:label	"based"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:encode	rdfs:label	"encode"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:knowledge_of_agent	rdfs:label	"knowledge of agent"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	a	rdf:Class	;
+	rdfs:label	"agent can learn preferences on call literals if an agent is part of a web of trusted agents"	.
 
-local:agent	rdfs:label	"agent"	.
+local:can_learn	a	rdf:Class	;
+	rdfs:label	"can learn"	.
 
-local:logic_program	rdfs:label	"logic program"	.
+local:finally	a	rdf:Class	;
+	rdfs:label	"finally"	.
 
-local:program	rdfs:label	"program"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:equipped	rdfs:label	"equipped"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:call	rdfs:label	"call"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:call_literals	rdfs:label	"call literals"	.
+local:sources_reliable_than_others	a	rdf:Class	;
+	rdfs:label	"sources reliable than others"	.
 
-local:literals	rdfs:label	"literals"	.
+local:others	a	rdf:Class	;
+	rdfs:label	"others"	.
 
-local:enable	rdfs:label	"enable"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:yesno_queries	rdfs:label	"yesno queries"	.
+local:reliable_sources	a	rdf:Class	;
+	rdfs:label	"reliable sources"	.
 
-local:queries	rdfs:label	"queries"	.
+local:reliable_than_others	a	rdf:Class	;
+	rdfs:label	"reliable than others"	.
 
-local:knowledge_sources	rdfs:label	"knowledge sources"	.
+local:reliable	a	rdf:Class	;
+	rdfs:label	"reliable"	.
 
-local:sources	rdfs:label	"sources"	.
+local:alternatively	a	rdf:Class	;
+	rdfs:label	"alternatively"	.
 
-local:yesno	rdfs:label	"yesno"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:arbitrary_knowledge_sources	rdfs:label	"arbitrary knowledge sources"	.
+local:encode	a	rdf:Class	;
+	rdfs:label	"encode"	.
 
-local:pose_to_arbitrary_knowledge_sources	rdfs:label	"pose to arbitrary knowledge sources"	.
+local:program	a	rdf:Class	;
+	rdfs:label	"program"	.
 
-local:pose	rdfs:label	"pose"	.
+local:believe	a	rdf:Class	;
+	rdfs:label	"believe"	.
 
-local:arbitrary_knowledge_sources_on_semantic_web	rdfs:label	"arbitrary knowledge sources on semantic web"	.
+local:knowledge_encoded_in_the_program_it_can_alternatively_express_preferences_on_call_literals	a	rdf:Class	;
+	rdfs:label	"knowledge encoded in the program it can alternatively express preferences on call literals"	.
 
-local:conditions_on	rdfs:label	"conditions on"	.
+local:alternatively_express	a	rdf:Class	;
+	rdfs:label	"alternatively express"	.
 
-local:conditions	rdfs:label	"conditions"	.
+local:can_alternatively_express	a	rdf:Class	;
+	rdfs:label	"can alternatively express"	.
 
-local:on	rdfs:label	"on"	.
+local:knowledge_encoded	a	rdf:Class	;
+	rdfs:label	"knowledge encoded"	.
 
-local:arbitrary_knowledge	rdfs:label	"arbitrary knowledge"	.
+local:encoded	a	rdf:Class	;
+	rdfs:label	"encoded"	.
 
-local:arbitrary	rdfs:label	"arbitrary"	.
+local:encoded_in_program	a	rdf:Class	;
+	rdfs:label	"encoded in program"	.
 
-local:on_conditions	rdfs:label	"on conditions"	.
+local:induce	a	rdf:Class	;
+	rdfs:label	"induce"	.
 
-local:representation	rdfs:label	"representation"	.
+local:preference_order_on_those_strategies	a	rdf:Class	;
+	rdfs:label	"preference order on those strategies"	.
 
-local:representation_language	rdfs:label	"representation language"	.
+local:preference_order	a	rdf:Class	;
+	rdfs:label	"preference order"	.
 
-local:language	rdfs:label	"language"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:agent_without_representation_language	rdfs:label	"agent without representation language"	.
+local:preference	a	rdf:Class	;
+	rdfs:label	"preference"	.
 
-local:representation_language_of_sources	rdfs:label	"representation language of sources"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	rdfs:label	"arbitrary knowledge sources on semantic web without representation language"	.
+local:preference_order_on_strategies	a	rdf:Class	;
+	rdfs:label	"preference order on strategies"	.
 
-local:extended_answer	rdfs:label	"extended answer"	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	a	rdf:Class	;
+	rdfs:label	"allowing in addition for an agent to express its preference for the satisfaction of certain rules over others"	.
 
-local:answer	rdfs:label	"answer"	.
+local:addition	a	rdf:Class	;
+	rdfs:label	"addition"	.
 
-local:set	rdfs:label	"set"	.
+local:certain_rules	a	rdf:Class	;
+	rdfs:label	"certain rules"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:satisfaction	a	rdf:Class	;
+	rdfs:label	"satisfaction"	.
 
-local:provide	rdfs:label	"provide"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:can	rdfs:label	"can"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:different_strategies	rdfs:label	"different strategies"	.
+local:its_preference	a	rdf:Class	;
+	rdfs:label	"its preference"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:allowing_in_addition	a	rdf:Class	;
+	rdfs:label	"allowing in addition"	.
 
-local:different	rdfs:label	"different"	.
+local:allowing	a	rdf:Class	;
+	rdfs:label	"allowing"	.
 
-local:solving	rdfs:label	"solving"	.
+local:addition_for_agent	a	rdf:Class	;
+	rdfs:label	"addition for agent"	.
 
-local:conflicts	rdfs:label	"conflicts"	.
+local:its_preference_for_satisfaction	a	rdf:Class	;
+	rdfs:label	"its preference for satisfaction"	.
 
-local:arise	rdfs:label	"arise"	.
+local:satisfaction_of_certain_rules	a	rdf:Class	;
+	rdfs:label	"satisfaction of certain rules"	.
 
-local:may	rdfs:label	"may"	.
+local:satisfaction_of_certain_rules_over_others	a	rdf:Class	;
+	rdfs:label	"satisfaction of certain rules over others"	.
 
-local:different_knowledge_sources	rdfs:label	"different knowledge sources"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:extended	rdfs:label	"extended"	.
+local:preference_for_the_satisfaction_of_certain_rules_over_others	a	rdf:Class	;
+	rdfs:label	"preference for the satisfaction of certain rules over others"	.
 
-local:different_knowledge	rdfs:label	"different knowledge"	.
+local:preference_for_satisfaction	a	rdf:Class	;
+	rdfs:label	"preference for satisfaction"	.
 
-local:use	rdfs:label	"use"	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	a	rdf:Class	;
+	rdfs:label	"addition for an agent to express its preference for the satisfaction of certain rules over others we can then induce a preference order on those strategies"	.
 
-local:express	rdfs:label	"express"	.
+local:then_induce	a	rdf:Class	;
+	rdfs:label	"then induce"	.
 
-local:allowing	rdfs:label	"allowing"	.
+local:can_then_induce	a	rdf:Class	;
+	rdfs:label	"can then induce"	.
 
-local:certain	rdfs:label	"certain"	.
+local:express_over_others	a	rdf:Class	;
+	rdfs:label	"express over others"	.
 
-local:certain_rules	rdfs:label	"certain rules"	.
+local:conflicts	a	rdf:Class	;
+	rdfs:label	"conflicts"	.
 
-local:rules	rdfs:label	"rules"	.
+local:solve	a	rdf:Class	;
+	rdfs:label	"solve"	.
 
-local:preference_for_satisfaction	rdfs:label	"preference for satisfaction"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:preference	rdfs:label	"preference"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:satisfaction	rdfs:label	"satisfaction"	.
+local:different_strategies_solving_those_conflicts	a	rdf:Class	;
+	rdfs:label	"different strategies solving those conflicts"	.
 
-local:satisfaction_of_certain_rules	rdfs:label	"satisfaction of certain rules"	.
+local:different_strategies	a	rdf:Class	;
+	rdfs:label	"different strategies"	.
 
-local:certain_rules_over_others	rdfs:label	"certain rules over others"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:others	rdfs:label	"others"	.
+local:different_strategies_solving	a	rdf:Class	;
+	rdfs:label	"different strategies solving"	.
 
-local:its_preference	rdfs:label	"its preference"	.
+local:solving	a	rdf:Class	;
+	rdfs:label	"solving"	.
 
-local:express_in_addition	rdfs:label	"express in addition"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:addition	rdfs:label	"addition"	.
+local:extended_answer_different_knowledge_sources	a	rdf:Class	;
+	rdfs:label	"extended answer different knowledge sources"	.
 
-local:its_preference_for_satisfaction	rdfs:label	"its preference for satisfaction"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:induce	rdfs:label	"induce"	.
+local:different_knowledge_sources	a	rdf:Class	;
+	rdfs:label	"different knowledge sources"	.
 
-local:then	rdfs:label	"then"	.
+local:different_knowledge	a	rdf:Class	;
+	rdfs:label	"different knowledge"	.
 
-local:preference_order	rdfs:label	"preference order"	.
+local:knowledge_sources	a	rdf:Class	;
+	rdfs:label	"knowledge sources"	.
 
-local:order	rdfs:label	"order"	.
+local:arise	a	rdf:Class	;
+	rdfs:label	"arise"	.
 
-local:preference_order_on_strategies	rdfs:label	"preference order on strategies"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:believe	rdfs:label	"believe"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:knowledge_encoded	rdfs:label	"knowledge encoded"	.
+local:extended_answer	a	rdf:Class	;
+	rdfs:label	"extended answer"	.
 
-local:encoded	rdfs:label	"encoded"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:encoded_in_program	rdfs:label	"encoded in program"	.
+local:pose	a	rdf:Class	;
+	rdfs:label	"pose"	.
 
-local:it	rdfs:label	"it"	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"yesno queries arbitrary knowledge sources on the semantic web"	.
 
-local:alternatively	rdfs:label	"alternatively"	.
+local:yesno_queries	a	rdf:Class	;
+	rdfs:label	"yesno queries"	.
 
-local:preferences_on_call_literals	rdfs:label	"preferences on call literals"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:preferences	rdfs:label	"preferences"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:consider	rdfs:label	"consider"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:alternatively_express	rdfs:label	"alternatively express"	.
+local:yesno	a	rdf:Class	;
+	rdfs:label	"yesno"	.
 
-local:can_alternatively_express	rdfs:label	"can alternatively express"	.
+local:arbitrary_knowledge_sources	a	rdf:Class	;
+	rdfs:label	"arbitrary knowledge sources"	.
 
-local:reliable_than_others	rdfs:label	"reliable than others"	.
+local:arbitrary_knowledge_sources_on_semantic_web	a	rdf:Class	;
+	rdfs:label	"arbitrary knowledge sources on semantic web"	.
 
-local:reliable	rdfs:label	"reliable"	.
+local:without_conditions	a	rdf:Class	;
+	rdfs:label	"without conditions"	.
 
-local:can_alternatively_express_on_call_literals	rdfs:label	"can alternatively express on call literals"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:show	rdfs:label	"show"	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	a	rdf:Class	;
+	rdfs:label	"agent to pose yesno queries to arbitrary knowledge sources on the semantic web without conditions on"	.
 
-local:finally	rdfs:label	"finally"	.
+local:conditions	a	rdf:Class	;
+	rdfs:label	"conditions"	.
 
-local:trusted	rdfs:label	"trusted"	.
+local:pose_to_arbitrary_knowledge_sources	a	rdf:Class	;
+	rdfs:label	"pose to arbitrary knowledge sources"	.
 
-local:trusted_agents	rdfs:label	"trusted agents"	.
+local:pose_to_arbitrary_knowledge_sources_without_conditions	a	rdf:Class	;
+	rdfs:label	"pose to arbitrary knowledge sources without conditions"	.
 
-local:can_learn	rdfs:label	"can learn"	.
+local:conditions_on	a	rdf:Class	;
+	rdfs:label	"conditions on"	.
 
-local:learn	rdfs:label	"learn"	.
+local:on	a	rdf:Class	;
+	rdfs:label	"on"	.
 
-local:part_of_web	rdfs:label	"part of web"	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	a	rdf:Class	;
+	rdfs:label	"yesno queries arbitrary knowledge sources on the semantic web without the representation language of those sources"	.
 
-local:part	rdfs:label	"part"	.
+local:representation_language	a	rdf:Class	;
+	rdfs:label	"representation language"	.
 
-local:web_of_trusted_agents	rdfs:label	"web of trusted agents"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-#### Properties ####
+local:representation	a	rdf:Class	;
+	rdfs:label	"representation"	.
+
+local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	a	rdf:Class	;
+	rdfs:label	"arbitrary knowledge sources on semantic web without representation language"	.
+
+local:representation_language_of_sources	a	rdf:Class	;
+	rdfs:label	"representation language of sources"	.
+
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	a	rdf:Class	;
+	rdfs:label	"agent to pose yesno queries to arbitrary knowledge sources on the semantic web without the representation language of those sources"	.
+
+local:pose_to_arbitrary_knowledge_sources_without_representation_language	a	rdf:Class	;
+	rdfs:label	"pose to arbitrary knowledge sources without representation language"	.
+
+local:knowledge_of_an_agent	a	rdf:Class	;
+	rdfs:label	"knowledge of an agent"	.
+
+local:knowledge_of_agent	a	rdf:Class	;
+	rdfs:label	"knowledge of agent"	.
+
+local:logic_program	a	rdf:Class	;
+	rdfs:label	"logic program"	.
+
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
+
+local:initially	a	rdf:Class	;
+	rdfs:label	"initially"	.
+
+local:equip	a	rdf:Class	;
+	rdfs:label	"equip"	.
+
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
+
+local:logic_programming	a	rdf:Class	;
+	rdfs:label	"logic programming"	.
+
+local:programming	a	rdf:Class	;
+	rdfs:label	"programming"	.
+
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
+
+local:framework_for_preferential_reasoning	a	rdf:Class	;
+	rdfs:label	"framework for preferential reasoning"	.
+
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
+
+local:preferential_reasoning	a	rdf:Class	;
+	rdfs:label	"preferential reasoning"	.
+
+local:preferential	a	rdf:Class	;
+	rdfs:label	"preferential"	.
+
+local:agents_on_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"agents on the semantic web"	.
+
+local:agents_on_semantic_web	a	rdf:Class	;
+	rdfs:label	"agents on semantic web"	.
 
 #### Mapped Relations ####
 
-cso:logic_programming	rdfs:label	"logic programming"	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:semantic_web	owl:sameAs	cso:semantic_web	.
-cso:semantics	rdfs:label	"semantic"	.
-local:logic_programming	owl:sameAs	cso:logic_programming	.
-cso:logic_programs	rdfs:label	"logic program"	.
-cso:semantic_web	rdfs:label	"semantic web"	.
 local:reasoning	owl:sameAs	cso:reasoning	.
+cso:logic_programming	rdfs:label	"logic programming"	.
 cso:reasoning	rdfs:label	"reasoning"	.
-cso:semantics	rdfs:label	"semantics"	.
+local:logic_programming	owl:sameAs	cso:logic_programming	.
 local:logic_program	owl:sameAs	cso:logic_programs	.
+local:semantic	owl:sameAs	cso:semantics	.
 local:semantics	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:logic_programs	rdfs:label	"logic program"	.
+cso:semantics	rdfs:label	"semantics"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
 
 #### Relations ####
 
-local:believe	vn.role:Theme	local:agent	.
-local:express	local:AM-ADV	local:alternatively	.
-local:use	vn.role:Recipient	local:different_knowledge_sources	.
-local:pose	vn.role:indirect_object	local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	.
-local:can_alternatively_express_on_call_literals	local:canalternativelyexpress_on	local:call_literals	.
-local:agent_without_representation_language	local:without_representationlanguage	local:agent	.
-local:certain_rules	rdfs:subClassOf	local:rules	.
-local:arbitrary_knowledge_sources	rdfs:subClassOf	local:knowledge_sources	.
-local:on_conditions	rdfs:subClassOf	local:conditions	.
-local:call	rdfs:member	local:call_literals	.
-local:can_learn	rdfs:subClassOf	local:learn	.
-local:learn	local:AM-MOD	local:can	.
-local:arbitrary_knowledge	rdfs:subClassOf	local:knowledge	.
-local:its_preference	rdfs:subClassOf	local:preference	.
-local:believe	vn.role:Experiencer	local:knowledge_encoded	.
-local:web_of_trusted_agents	local:of_trustedagents	local:web	.
-local:representation_language_of_sources	local:representationlanguage_of	local:sources	.
-local:encode	local:AM-MNR	local:logic_program	.
-local:consider	vn.role:Predicate	local:can_alternatively_express_on_call_literals	.
-local:different_knowledge	rdfs:member	local:different_knowledge_sources	.
-local:part_of_web	local:part_of	local:web	.
-local:certain_rules_over_others	local:over_others	local:certain_rules	.
-local:framework_for_preferential_reasoning	local:for_preferentialreasoning	local:framework	.
-local:extended	rdfs:member	local:extended_answer	.
-local:introduce	vn.role:Agent	local:we	.
-local:set	vn.role:indirect_object	local:semantics	.
-local:knowledge	rdfs:member	local:knowledge_sources	.
-local:logic_programming	rdfs:subClassOf	local:programming	.
-local:different_strategies	rdfs:subClassOf	local:strategies	.
-local:arbitrary_knowledge	rdfs:member	local:arbitrary_knowledge_sources	.
-local:arbitrary_knowledge_sources	rdfs:subClassOf	local:sources	.
-local:part_of_web	local:of_web	local:part	.
-local:different	rdfs:member	local:different_knowledge	.
-local:encoded_in_program	local:encoded_in	local:program	.
-local:can_alternatively_express_on_call_literals	local:on_callliterals	local:can_alternatively_express	.
-local:use	vn.role:Agent	local:we	.
-local:express	vn.role:Theme	local:it	.
-local:preferential_reasoning	rdfs:subClassOf	local:reasoning	.
-local:alternatively_express	rdfs:subClassOf	local:express	.
-local:representation	rdfs:member	local:representation_language	.
-local:trusted_agents	rdfs:subClassOf	local:agents	.
-local:express	vn.role:Agent	local:preferences_on_call_literals	.
-local:different	rdfs:member	local:different_strategies	.
-local:encode	vn.role:Patient	local:knowledge_of_agent	.
-local:arbitrary_knowledge_sources_on_semantic_web	local:on_semanticweb	local:arbitrary_knowledge_sources	.
-local:preference_for_satisfaction	local:preference_for	local:satisfaction	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:preference_order_on_strategies	local:on_strategies	local:preference_order	.
-local:knowledge_encoded	local:knowledge_	local:encoded	.
-local:introduce	vn.role:Patient	local:framework_for_preferential_reasoning	.
-local:induce	vn.role:Patient	local:preference_order_on_strategies	.
-local:framework_for_preferential_reasoning	local:framework_for	local:preferential_reasoning	.
-local:satisfaction_of_certain_rules	local:satisfaction_of	local:certain_rules	.
-local:its_preference_for_satisfaction	local:for_satisfaction	local:its_preference	.
-local:preference_order_on_strategies	local:preferenceorder_on	local:strategies	.
-local:logic	rdfs:member	local:logic_programming	.
-local:trusted	rdfs:member	local:trusted_agents	.
-local:satisfaction_of_certain_rules	local:of_certainrules	local:satisfaction	.
-local:preferences_on_call_literals	local:on_callliterals	local:preferences	.
-local:conditions_on	local:conditions_	local:on	.
-local:different_knowledge_sources	rdfs:subClassOf	local:knowledge_sources	.
-local:pose_to_arbitrary_knowledge_sources	local:to_arbitraryknowledgesources	local:pose	.
-local:arise	vn.role:Location	local:conflicts	.
-local:logic_program	rdfs:subClassOf	local:program	.
-local:logic	rdfs:member	local:logic_program	.
-local:enable	vn.role:Patient	local:agent_without_representation_language	.
-local:certain_rules_over_others	local:certainrules_over	local:others	.
-local:call_literals	rdfs:subClassOf	local:literals	.
-local:arbitrary_knowledge_sources_on_semantic_web	local:arbitraryknowledgesources_on	local:semantic_web	.
-local:its_preference_for_satisfaction	local:itspreference_for	local:satisfaction	.
-local:preferences_on_call_literals	local:preferences_on	local:call_literals	.
-local:can_alternatively_express	rdfs:subClassOf	local:alternatively_express	.
-local:set	vn.role:Agent	local:extended_answer	.
-local:pose	vn.role:Predicate	local:yesno_queries	.
-local:induce	local:AM-TMP	local:then	.
-local:consider	vn.role:Theme	local:sources	.
-local:enable	vn.role:Agent	local:call_literals	.
-local:provide	vn.role:Agent	local:different_strategies	.
-local:equipped	vn.role:Recipient	local:call_literals	.
-local:encode	vn.role:Agent	local:we	.
-local:enable	vn.role:Patient	local:agent	.
-local:use	vn.role:Theme	local:extended_answer	.
-local:express	vn.role:Theme	local:agent	.
-local:knowledge_of_agent	local:of_agent	local:knowledge	.
-local:learn	vn.role:Agent	local:agent	.
-local:agents_on_semantic_web	local:agents_on	local:semantic_web	.
-local:yesno	rdfs:member	local:yesno_queries	.
-local:equipped	vn.role:Theme	local:logic_program	.
-local:encoded	local:AM-LOC	local:program	.
-local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	local:arbitraryknowledgesourcesonsemanticweb_without	local:representation_language	.
-local:encoded	vn.role:Patient	local:knowledge	.
-local:yesno_queries	rdfs:subClassOf	local:queries	.
-local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	local:without_representationlanguage	local:arbitrary_knowledge_sources_on_semantic_web	.
-local:web_of_trusted_agents	local:web_of	local:trusted_agents	.
-local:provide	local:AM-MOD	local:can	.
-local:reliable_than_others	local:than_others	local:reliable	.
-local:knowledge_encoded	local:_encoded	local:knowledge	.
-local:express	vn.role:Theme	local:allowing	.
-local:show	vn.role:Agent	local:finally	.
-local:preference	rdfs:member	local:preference_order	.
-local:encoded_in_program	local:in_program	local:encoded	.
-local:different_knowledge	rdfs:subClassOf	local:knowledge	.
-local:express_in_addition	local:express_in	local:addition	.
-local:knowledge_of_agent	local:knowledge_of	local:agent	.
-local:arise	vn.role:indirect_object	local:reasoning	.
-local:arise	local:AM-MOD	local:may	.
-local:representation_language_of_sources	local:of_sources	local:representation_language	.
-local:preferential	rdfs:member	local:preferential_reasoning	.
-local:certain	rdfs:member	local:certain_rules	.
-local:express	local:AM-MOD	local:can	.
-local:show	vn.role:Theme	local:can_learn	.
-local:agents_on_semantic_web	local:on_semanticweb	local:agents	.
-local:pose_to_arbitrary_knowledge_sources	local:pose_to	local:arbitrary_knowledge_sources	.
-local:reliable_than_others	local:reliable_than	local:others	.
-local:introduce	local:AM-MNR	local:agents_on_semantic_web	.
-local:solving	vn.role:object	local:conflicts	.
-local:knowledge_sources	rdfs:subClassOf	local:sources	.
-local:induce	local:AM-ADV	local:express_in_addition	.
-local:agent_without_representation_language	local:agent_without	local:representation_language	.
-local:consider	vn.role:Agent	local:it	.
-local:pose	vn.role:indirect_object	local:arbitrary_knowledge_sources_on_semantic_web	.
-local:conditions_on	local:_on	local:conditions	.
-local:pose	vn.role:Agent	local:agent	.
-local:provide	vn.role:Recipient	local:semantics	.
-local:extended_answer	rdfs:subClassOf	local:answer	.
-local:express	vn.role:Agent	local:preference_for_satisfaction	.
-local:induce	vn.role:Agent	local:we	.
-local:induce	local:AM-MOD	local:can	.
-local:preference_order	rdfs:subClassOf	local:order	.
-local:different_knowledge_sources	rdfs:subClassOf	local:sources	.
-local:express	vn.role:Theme	local:we	.
-local:learn	vn.role:Theme	local:preferences_on_call_literals	.
-local:arbitrary	rdfs:member	local:arbitrary_knowledge	.
 local:semantic_web	rdfs:subClassOf	local:web	.
-local:provide	vn.role:indirect_object	local:solving	.
-local:arise	local:AM-ADV	local:use	.
-local:based	vn.role:indirect_object	local:logic_programming	.
-local:preference_for_satisfaction	local:for_satisfaction	local:preference	.
-local:express_in_addition	local:in_addition	local:express	.
-local:pose	local:AM-MNR	local:on_conditions	.
+local:express_over_others	rdfs:member	local:express	.
+local:s10	rdf:predicate	local:believe	.
+local:preferential_reasoning	rdfs:subClassOf	local:reasoning	.
+local:s11.1	rdf:predicate	local:express	.
+local:preference_order	rdfs:member	local:preference	.
+local:s12	rdf:object	local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	.
+local:can_learn	rdfs:subClassOf	local:learn	.
+local:s11.1	local:AM-MOD	local:can	.
+local:s10.2	rdf:subject	local:it	.
+local:s9.2	local:AM-TMP	local:then	.
+local:s7.1	rdf:object	local:extended_answer_different_knowledge_sources	.
+local:different_knowledge	rdfs:member	local:different	.
+local:s5.1	rdf:subject	local:agent	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	rdfs:member	local:semantic_web	.
+local:agents_on_semantic_web	rdfs:member	local:agents	.
+local:logic_program	rdfs:member	local:logic	.
+local:s9.2	rdf:object	local:preference_order_on_those_strategies	.
+local:different_strategies_solving_those_conflicts	rdfs:member	local:conflicts	.
+local:s7	rdf:object	local:reasoning	.
+local:pose_to_arbitrary_knowledge_sources_without_representation_language	rdfs:member	local:pose_to_arbitrary_knowledge_sources	.
+local:knowledge_of_agent	rdfs:member	local:agent	.
+local:s8	local:AM-MOD	local:can	.
+local:s5.1	local:AM-MNR	local:without_conditions	.
+local:s8.1	rdf:predicate	local:solve	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web	rdfs:member	local:semantic_web	.
+local:s4.1	rdf:predicate	local:pose	.
+local:representation_language_of_sources	rdfs:member	local:sources	.
+local:framework_for_preferential_reasoning	rdfs:member	local:preferential_reasoning	.
+local:pose_to_arbitrary_knowledge_sources_without_conditions	rdfs:member	local:conditions	.
+local:representation_language_of_sources	rdfs:member	local:representation_language	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:certain_rules	.
+local:s10.2	rdf:predicate	local:express	.
+local:s5.1	rdf:object	local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web	.
+local:satisfaction_of_certain_rules	rdfs:member	local:satisfaction	.
+local:logic_programming	rdfs:subClassOf	local:programming	.
+local:agents_on_the_semantic_web	rdfs:member	local:agents	.
+local:encoded_in_program	rdfs:member	local:encoded	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:strategies	.
+local:s9.2	local:AM-ADV	local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	.
+local:satisfaction_of_certain_rules_over_others	rdfs:member	local:satisfaction_of_certain_rules	.
+local:pose_to_arbitrary_knowledge_sources_without_representation_language	rdfs:member	local:representation_language	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	rdfs:member	local:knowledge_sources	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:agent	.
+local:arbitrary_knowledge_sources	rdfs:subClassOf	local:knowledge_sources	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	rdfs:member	local:conditions	.
+local:s11.1	rdf:object	local:preferences_on_call_literals	.
+local:s10.1	rdf:subject	local:knowledge	.
+local:yesno_queries	rdfs:subClassOf	local:queries	.
+local:knowledge_sources	rdfs:member	local:knowledge	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:representation_language	.
+local:agents_on_the_semantic_web	rdfs:member	local:semantic_web	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:preferences	.
+local:s6	rdf:predicate	local:set	.
+local:logic_programming	rdfs:member	local:logic	.
+local:preferences_on_call_literals	rdfs:member	local:call_literals	.
+local:web_of_trusted_agents	rdfs:member	local:trusted_agents	.
+local:s5	rdf:predicate	local:enable	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:semantic_web	.
+local:s3	rdf:object	local:knowledge_of_an_agent	.
+local:preference_order_on_those_strategies	rdfs:member	local:preference_order	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:addition	.
+local:extended_answer_different_knowledge_sources	rdfs:member	local:answer	.
+local:s0	rdf:object	local:framework_for_preferential_reasoning	.
+local:preference_order_on_strategies	rdfs:member	local:strategies	.
+local:s9.2	local:AM-MOD	local:can	.
+local:s0	local:AM-MNR	local:agents_on_the_semantic_web	.
+local:logic_program	rdfs:subClassOf	local:program	.
+local:s12.1	rdf:predicate	local:learn	.
+local:s12.1	local:AM-MOD	local:can	.
+local:s7.1	rdf:predicate	local:use	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:agent	.
+local:s1	local:AM-LOC	local:logic_programming	.
+local:s9.1	rdf:subject	local:we	.
+local:certain_rules	rdfs:member	local:certain	.
+local:s10	rdf:subject	local:agent	.
+local:s10.1	local:AM-LOC	local:program	.
+local:reliable_sources	rdfs:subClassOf	local:sources	.
+local:knowledge_of_agent	rdfs:member	local:knowledge	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:call_literals	.
+local:framework_for_preferential_reasoning	rdfs:member	local:framework	.
+local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	rdfs:member	local:arbitrary_knowledge_sources_on_semantic_web	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:sources	.
+local:preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:satisfaction	.
+local:s11	rdf:predicate	local:consider	.
+local:s4	rdf:predicate	local:enable	.
+local:call_literals	rdfs:subClassOf	local:literals	.
+local:pose_to_arbitrary_knowledge_sources	rdfs:member	local:arbitrary_knowledge_sources	.
+local:its_preference_for_satisfaction	rdfs:member	local:satisfaction	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:yesno_queries	.
+local:s10.2	local:AM-MOD	local:can	.
+local:can_then_induce	rdfs:subClassOf	local:then_induce	.
+local:s6	rdf:subject	local:extended_answer	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:certain_rules	.
+local:allowing_in_addition	rdfs:member	local:addition	.
+local:s3	rdf:predicate	local:encode	.
+local:preference_for_satisfaction	rdfs:member	local:preference	.
+local:part_of_web	rdfs:member	local:web	.
+local:preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:certain_rules	.
+local:encoded_in_program	rdfs:member	local:program	.
+local:knowledge_sources	rdfs:subClassOf	local:sources	.
+local:then_induce	rdfs:subClassOf	local:induce	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web	rdfs:member	local:knowledge_sources	.
+local:yesno_queries	rdfs:member	local:yesno	.
+local:s2	rdf:object	local:call_literals	.
+local:s0	rdf:predicate	local:introduce	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:agent	.
+local:call_literals	rdfs:member	local:call	.
+local:s12	local:AM-TMP	local:finally	.
+local:different_knowledge_sources	rdfs:subClassOf	local:knowledge_sources	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:satisfaction	.
+local:knowledge_of_an_agent	rdfs:member	local:agent	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:agent	.
+local:preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:preference	.
+local:preference_order_on_those_strategies	rdfs:member	local:strategies	.
+local:knowledge_encoded_in_the_program_it_can_alternatively_express_preferences_on_call_literals	rdfs:member	local:knowledge	.
+local:s9.1	rdf:object	local:preference_for_the_satisfaction_of_certain_rules_over_others	.
+local:extended_answer_different_knowledge_sources	rdfs:member	local:different_knowledge_sources	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:trusted_agents	.
+local:s4.1	rdf:subject	local:agent	.
 local:representation_language	rdfs:subClassOf	local:language	.
+local:s3	rdf:subject	local:we	.
+local:extended_answer	rdfs:subClassOf	local:answer	.
+local:different_knowledge_sources	rdfs:member	local:different_knowledge	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:semantic_web	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:agent	.
+local:s7	rdf:subject	local:conflicts	.
+local:s7.1	rdf:subject	local:we	.
+local:s12.1	rdf:subject	local:agent	.
+local:s8	rdf:subject	local:semantics	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web	rdfs:member	local:yesno_queries	.
+local:express_over_others	rdfs:member	local:others	.
+local:s2	rdf:subject	local:logic_program	.
+local:different_strategies_solving	rdfs:member	local:solving	.
+local:trusted_agents	rdfs:subClassOf	local:agents	.
+local:s10.1	rdf:predicate	local:encode	.
+local:different_knowledge	rdfs:subClassOf	local:knowledge	.
+local:sources_reliable_than_others	rdfs:member	local:others	.
+local:allowing_in_addition	rdfs:member	local:allowing	.
+local:addition_for_agent	rdfs:member	local:addition	.
+local:alternatively_express	rdfs:subClassOf	local:express	.
+local:sources_reliable_than_others	rdfs:member	local:sources	.
+local:addition_for_agent	rdfs:member	local:agent	.
+local:s7	rdf:predicate	local:arise	.
+local:s9.1	rdf:predicate	local:express	.
+local:can_alternatively_express	rdfs:subClassOf	local:alternatively_express	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:preference_order	.
+local:s7	local:AM-MOD	local:may	.
+local:agents_on_semantic_web	rdfs:member	local:semantic_web	.
+local:knowledge_encoded_in_the_program_it_can_alternatively_express_preferences_on_call_literals	rdfs:member	local:program	.
+local:different_strategies_solving	rdfs:member	local:different_strategies	.
+local:s8	rdf:predicate	local:provide	.
+local:preference_order_on_strategies	rdfs:member	local:preference_order	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:web	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:part	.
+local:knowledge_encoded	rdfs:member	local:knowledge	.
+local:preference_order	rdfs:subClassOf	local:order	.
+local:preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:others	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:conditions_on	rdfs:member	local:conditions	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:preference	.
+local:knowledge_encoded	rdfs:member	local:encoded	.
+local:s12.1	rdf:object	local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	.
+local:its_preference_for_satisfaction	rdfs:member	local:its_preference	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:knowledge_sources	.
+local:reliable_than_others	rdfs:member	local:others	.
+local:s4	rdf:object	local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:trusted_agents	.
+local:reliable_than_others	rdfs:member	local:reliable	.
+local:s9.2	rdf:predicate	local:induce	.
+local:its_preference	rdfs:subClassOf	local:preference	.
+local:arbitrary_knowledge_sources_on_semantic_web	rdfs:member	local:arbitrary_knowledge_sources	.
+local:s10	rdf:object	local:knowledge_encoded_in_the_program_it_can_alternatively_express_preferences_on_call_literals	.
+local:knowledge_encoded_in_the_program_it_can_alternatively_express_preferences_on_call_literals	rdfs:member	local:preferences	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:others	.
+local:s5	rdf:subject	local:call_literals	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:others	.
+local:preference_for_satisfaction	rdfs:member	local:satisfaction	.
+local:s11.1	rdf:subject	local:it	.
+local:s9	rdf:predicate	local:allowing	.
+local:s2	rdf:predicate	local:equip	.
+local:different_strategies_solving_those_conflicts	rdfs:member	local:different_strategies	.
+local:s5.1	rdf:predicate	local:pose	.
+local:s3	local:AM-MNR	local:logic_program	.
+local:pose_to_arbitrary_knowledge_sources	rdfs:member	local:pose	.
+local:satisfaction_of_certain_rules	rdfs:member	local:certain_rules	.
+local:s0	rdf:subject	local:we	.
+local:s8	rdf:object	local:different_strategies_solving_those_conflicts	.
+local:s11	rdf:subject	local:it	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:sources	.
+local:s10.1	rdf:object	local:call_literals	.
+local:part_of_web	rdfs:member	local:part	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	rdfs:member	local:yesno_queries	.
+local:s4.1	rdf:object	local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	.
+local:s11	rdf:object	local:sources_reliable_than_others	.
+local:different_strategies	rdfs:member	local:different	.
+local:knowledge_of_an_agent	rdfs:member	local:knowledge	.
+local:s8.1	rdf:subject	local:conflicts	.
+local:s12	rdf:subject	local:we	.
+local:s5	rdf:object	local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	.
+local:s3	local:AM-TMP	local:initially	.
+local:different_knowledge_sources	rdfs:subClassOf	local:sources	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:call_literals	.
+local:s9.2	rdf:subject	local:we	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:addition	.
+local:arbitrary_knowledge_sources_on_semantic_web	rdfs:member	local:semantic_web	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:yesno_queries	.
+local:s10.2	rdf:object	local:preferences_on_call_literals	.
+local:knowledge_encoded_in_the_program_it_can_alternatively_express_preferences_on_call_literals	rdfs:member	local:call_literals	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:knowledge_sources	.
+local:pose_to_arbitrary_knowledge_sources_without_conditions	rdfs:member	local:pose_to_arbitrary_knowledge_sources	.
+local:s6	rdf:object	local:semantics	.
+local:conditions_on	rdfs:member	local:on	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:web	.
+local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	rdfs:member	local:preference	.
+local:web_of_trusted_agents	rdfs:member	local:web	.
+local:preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:part	.
+local:s10.2	local:AM-ADV	local:alternatively	.
+local:allowing_in_addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others	rdfs:member	local:satisfaction	.
+local:s9	rdf:subject	local:addition_for_an_agent_to_express_its_preference_for_the_satisfaction_of_certain_rules_over_others_we_can_then_induce_a_preference_order_on_those_strategies	.
+local:yesno_queries_arbitrary_knowledge_sources_on_the_semantic_web_without_the_representation_language_of_those_sources	rdfs:member	local:representation_language	.
+local:s1	rdf:predicate	local:base	.
+local:different_strategies	rdfs:subClassOf	local:strategies	.
+local:satisfaction_of_certain_rules_over_others	rdfs:member	local:others	.
+local:s12	rdf:predicate	local:show	.
+local:certain_rules	rdfs:subClassOf	local:rules	.
+local:agent_can_learn_preferences_on_call_literals_if_an_agent_is_part_of_a_web_of_trusted_agents	rdfs:member	local:preferences	.
+local:agent_to_pose_yesno_queries_to_arbitrary_knowledge_sources_on_the_semantic_web_without_conditions_on	rdfs:member	local:agent	.
+local:preferential_reasoning	rdfs:member	local:preferential	.
+local:preferences_on_call_literals	rdfs:member	local:preferences	.
+local:arbitrary_knowledge_sources_on_semantic_web_without_representation_language	rdfs:member	local:representation_language	.
+local:trusted_agents	rdfs:member	local:trusted	.
+local:representation_language	rdfs:member	local:representation	.
+local:s4	rdf:subject	local:call_literals	.

@@ -1,306 +1,548 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10.5	a	rdf:Statement	;
+	rdfs:label	"the data her"	.
+
+local:s10.4	a	rdf:Statement	;
+	rdfs:label	"her needs wrt the data her"	.
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"the licenses composition strategy which better suits her needs wrt the data her"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"choosing the licenses composition strategy which better suits her needs wrt the data her"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"some heuristics support the data publisher in choosing the licenses composition strategy which better suits her needs wrt the data her"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"some heuristics proposed to support the data publisher in choosing the licenses composition strategy which better suits her needs wrt the data her"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"us define the deontic components of obligations"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"a deontic logic semantics which allows us to define the deontic components of obligations"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"us define the deontic components of permissions"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a deontic logic semantics which allows us to define the deontic components of permissions"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"this paper proposes a deontic logic semantics"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"us define the deontic components of prohibitions"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a deontic logic semantics which allows us to define the deontic components of prohibitions"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"us define the deontic components of the licenses"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a deontic logic semantics which allows us to define the deontic components of the licenses"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"this paper evaluates a deontic logic semantics"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"composed different licenses"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"us generate a composite license compliant with the licensing items of the composed different licenses"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"a deontic logic semantics which allows us to generate a composite license compliant with the licensing items of the composed different licenses"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the licensing terms associated to data"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"heterogeneous distributed sources"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"data coming from heterogeneous distributed sources"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"automated frameworks generate the licensing terms"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"developing automated frameworks able to generate the licensing terms"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in the domain of linked open data a need emerging for developing automated frameworks able to generate the licensing terms"	.
+
+
 #### Classes ####
 
-local:licensing	rdfs:label	"licensing"	.
+local:her	a	rdf:Class	;
+	rdfs:label	"her"	.
 
-local:licensing_terms	rdfs:label	"licensing terms"	.
+local:publish	a	rdf:Class	;
+	rdfs:label	"publish"	.
 
-local:terms	rdfs:label	"terms"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:associated	rdfs:label	"associated"	.
+local:needs	a	rdf:Class	;
+	rdfs:label	"needs"	.
 
-local:data	rdfs:label	"data"	.
+local:wrt	a	rdf:Class	;
+	rdfs:label	"wrt"	.
 
-local:open_data	rdfs:label	"open data"	.
+local:data_her	a	rdf:Class	;
+	rdfs:label	"data her"	.
 
-local:open	rdfs:label	"open"	.
+local:suit	a	rdf:Class	;
+	rdfs:label	"suit"	.
 
-local:linked_open_data	rdfs:label	"linked open data"	.
+local:licenses_composition_strategy_wrt_the_data_her	a	rdf:Class	;
+	rdfs:label	"licenses composition strategy wrt the data her"	.
 
-local:domain_of_linked_open_data	rdfs:label	"domain of linked open data"	.
+local:licenses_composition_strategy	a	rdf:Class	;
+	rdfs:label	"licenses composition strategy"	.
 
-local:domain	rdfs:label	"domain"	.
+local:composition_strategy	a	rdf:Class	;
+	rdfs:label	"composition strategy"	.
 
-local:emerging	rdfs:label	"emerging"	.
+local:strategy	a	rdf:Class	;
+	rdfs:label	"strategy"	.
 
-local:need	rdfs:label	"need"	.
+local:licenses_composition	a	rdf:Class	;
+	rdfs:label	"licenses composition"	.
 
-local:able_frameworks	rdfs:label	"able frameworks"	.
+local:composition	a	rdf:Class	;
+	rdfs:label	"composition"	.
 
-local:frameworks	rdfs:label	"frameworks"	.
+local:licenses	a	rdf:Class	;
+	rdfs:label	"licenses"	.
 
-local:automated_able_frameworks	rdfs:label	"automated able frameworks"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:developing_automated_able_frameworks	rdfs:label	"developing automated able frameworks"	.
+local:licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	a	rdf:Class	;
+	rdfs:label	"licenses composition strategy which better suits her needs wrt the data her"	.
 
-local:developing	rdfs:label	"developing"	.
+local:better_suits	a	rdf:Class	;
+	rdfs:label	"better suits"	.
 
-local:automated_frameworks	rdfs:label	"automated frameworks"	.
+local:suits	a	rdf:Class	;
+	rdfs:label	"suits"	.
 
-local:generate	rdfs:label	"generate"	.
+local:her_needs	a	rdf:Class	;
+	rdfs:label	"her needs"	.
 
-local:coming	rdfs:label	"coming"	.
+local:choose	a	rdf:Class	;
+	rdfs:label	"choose"	.
 
-local:distributed_sources	rdfs:label	"distributed sources"	.
+local:heuristics	a	rdf:Class	;
+	rdfs:label	"heuristics"	.
 
-local:sources	rdfs:label	"sources"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:heterogeneous_distributed_sources	rdfs:label	"heterogeneous distributed sources"	.
+local:data_publisher	a	rdf:Class	;
+	rdfs:label	"data publisher"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:publisher	a	rdf:Class	;
+	rdfs:label	"publisher"	.
 
-local:heterogeneous	rdfs:label	"heterogeneous"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:deontic_logic	rdfs:label	"deontic logic"	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	a	rdf:Class	;
+	rdfs:label	"support the data publisher in choosing the licenses composition strategy which better suits her needs wrt the data her"	.
 
-local:logic	rdfs:label	"logic"	.
+local:us	a	rdf:Class	;
+	rdfs:label	"us"	.
 
-local:deontic_logic_semantics	rdfs:label	"deontic logic semantics"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-local:deontic	rdfs:label	"deontic"	.
+local:deontic_components_of_obligations	a	rdf:Class	;
+	rdfs:label	"deontic components of obligations"	.
 
-local:logic_semantics	rdfs:label	"logic semantics"	.
+local:obligations	a	rdf:Class	;
+	rdfs:label	"obligations"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:deontic_components	a	rdf:Class	;
+	rdfs:label	"deontic components"	.
 
-local:allows	rdfs:label	"allows"	.
+local:components	a	rdf:Class	;
+	rdfs:label	"components"	.
 
-local:deontic_components	rdfs:label	"deontic components"	.
+local:deontic	a	rdf:Class	;
+	rdfs:label	"deontic"	.
 
-local:components	rdfs:label	"components"	.
+local:deontic_logic_semantics	a	rdf:Class	;
+	rdfs:label	"deontic logic semantics"	.
 
-local:deontic_components_of_obligations	rdfs:label	"deontic components of obligations"	.
+local:logic_semantics	a	rdf:Class	;
+	rdfs:label	"logic semantics"	.
 
-local:obligations	rdfs:label	"obligations"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:define	rdfs:label	"define"	.
+local:deontic_logic	a	rdf:Class	;
+	rdfs:label	"deontic logic"	.
 
-local:us	rdfs:label	"us"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:evaluates	rdfs:label	"evaluates"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:paper	rdfs:label	"paper"	.
+local:us_to_define_the_deontic_components_of_obligations	a	rdf:Class	;
+	rdfs:label	"us to define the deontic components of obligations"	.
 
-local:composed	rdfs:label	"composed"	.
+local:deontic_components_of_permissions	a	rdf:Class	;
+	rdfs:label	"deontic components of permissions"	.
 
-local:composed_different	rdfs:label	"composed different"	.
+local:permissions	a	rdf:Class	;
+	rdfs:label	"permissions"	.
 
-local:composed_different_licenses	rdfs:label	"composed different licenses"	.
+local:us_to_define_the_deontic_components_of_permissions	a	rdf:Class	;
+	rdfs:label	"us to define the deontic components of permissions"	.
 
-local:licenses	rdfs:label	"licenses"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:different	rdfs:label	"different"	.
+local:deontic_components_of_prohibitions	a	rdf:Class	;
+	rdfs:label	"deontic components of prohibitions"	.
 
-local:different_licenses	rdfs:label	"different licenses"	.
+local:prohibitions	a	rdf:Class	;
+	rdfs:label	"prohibitions"	.
 
-local:composite_license_compliant	rdfs:label	"composite license compliant"	.
+local:us_to_define_the_deontic_components_of_prohibitions	a	rdf:Class	;
+	rdfs:label	"us to define the deontic components of prohibitions"	.
 
-local:compliant	rdfs:label	"compliant"	.
+local:deontic_components_of_the_licenses	a	rdf:Class	;
+	rdfs:label	"deontic components of the licenses"	.
 
-local:licensing_items	rdfs:label	"licensing items"	.
+local:deontic_components_of_licenses	a	rdf:Class	;
+	rdfs:label	"deontic components of licenses"	.
 
-local:items	rdfs:label	"items"	.
+local:us_to_define_the_deontic_components_of_the_licenses	a	rdf:Class	;
+	rdfs:label	"us to define the deontic components of the licenses"	.
 
-local:license	rdfs:label	"license"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:license_compliant	rdfs:label	"license compliant"	.
+local:different_licenses	a	rdf:Class	;
+	rdfs:label	"different licenses"	.
 
-local:composite_license	rdfs:label	"composite license"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:composite	rdfs:label	"composite"	.
+local:compose	a	rdf:Class	;
+	rdfs:label	"compose"	.
 
-local:compliant_license	rdfs:label	"compliant license"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:composite_compliant_license	rdfs:label	"composite compliant license"	.
+local:composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	a	rdf:Class	;
+	rdfs:label	"composite license compliant with the licensing items of the composed different licenses"	.
 
-local:compliant_with_licensing_items	rdfs:label	"compliant with licensing items"	.
+local:licensing_items	a	rdf:Class	;
+	rdfs:label	"licensing items"	.
 
-local:licensing_items_of_composed_different_licenses	rdfs:label	"licensing items of composed different licenses"	.
+local:composite_license_compliant	a	rdf:Class	;
+	rdfs:label	"composite license compliant"	.
 
-local:deontic_components_of_permissions	rdfs:label	"deontic components of permissions"	.
+local:composite_license	a	rdf:Class	;
+	rdfs:label	"composite license"	.
 
-local:permissions	rdfs:label	"permissions"	.
+local:composite	a	rdf:Class	;
+	rdfs:label	"composite"	.
 
-local:deontic_components_of_prohibitions	rdfs:label	"deontic components of prohibitions"	.
+local:composed_different	a	rdf:Class	;
+	rdfs:label	"composed different"	.
 
-local:prohibitions	rdfs:label	"prohibitions"	.
+local:composed	a	rdf:Class	;
+	rdfs:label	"composed"	.
 
-local:deontic_components_of_licenses	rdfs:label	"deontic components of licenses"	.
+local:items	a	rdf:Class	;
+	rdfs:label	"items"	.
 
-local:proposes	rdfs:label	"proposes"	.
+local:compliant	a	rdf:Class	;
+	rdfs:label	"compliant"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:license	a	rdf:Class	;
+	rdfs:label	"license"	.
 
-local:heuristics	rdfs:label	"heuristics"	.
+local:licensing	a	rdf:Class	;
+	rdfs:label	"licensing"	.
 
-local:licenses_composition	rdfs:label	"licenses composition"	.
+local:license_compliant	a	rdf:Class	;
+	rdfs:label	"license compliant"	.
 
-local:needs_wrt	rdfs:label	"needs w.r.t"	.
+local:compliant_license	a	rdf:Class	;
+	rdfs:label	"compliant license"	.
 
-local:wrt	rdfs:label	"w.r.t."	.
+local:composite_compliant_license	a	rdf:Class	;
+	rdfs:label	"composite compliant license"	.
 
-local:licenses_composition_strategy	rdfs:label	"licenses composition strategy"	.
+local:compliant_with_licensing_items	a	rdf:Class	;
+	rdfs:label	"compliant with licensing items"	.
 
-local:better_suits	rdfs:label	"better suits"	.
+local:licensing_items_of_composed_different_licenses	a	rdf:Class	;
+	rdfs:label	"licensing items of composed different licenses"	.
 
-local:suits	rdfs:label	"suits"	.
+local:us_to_generate_a_composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	a	rdf:Class	;
+	rdfs:label	"us to generate a composite license compliant with the licensing items of the composed different licenses"	.
 
-local:data_publisher	rdfs:label	"data publisher"	.
+local:licensing_terms	a	rdf:Class	;
+	rdfs:label	"licensing terms"	.
 
-local:publisher	rdfs:label	"publisher"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:strategy	rdfs:label	"strategy"	.
+local:associate	a	rdf:Class	;
+	rdfs:label	"associate"	.
 
-local:needs	rdfs:label	"needs"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:composition_strategy	rdfs:label	"composition strategy"	.
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
-local:better	rdfs:label	"better"	.
+local:heterogeneous	a	rdf:Class	;
+	rdfs:label	"heterogeneous"	.
 
-local:composition	rdfs:label	"composition"	.
+local:come	a	rdf:Class	;
+	rdfs:label	"come"	.
 
-local:data_her	rdfs:label	"data her"	.
+local:automated_frameworks	a	rdf:Class	;
+	rdfs:label	"automated frameworks"	.
 
-local:her	rdfs:label	"her"	.
+local:frameworks	a	rdf:Class	;
+	rdfs:label	"frameworks"	.
 
-local:is_publishing	rdfs:label	"is publishing"	.
+local:automated_frameworks_able_to_generate_the_licensing_terms	a	rdf:Class	;
+	rdfs:label	"automated frameworks able to generate the licensing terms"	.
 
-local:publishing	rdfs:label	"publishing"	.
+local:able_frameworks	a	rdf:Class	;
+	rdfs:label	"able frameworks"	.
 
-local:her_needs	rdfs:label	"her needs"	.
+local:automated_able_frameworks	a	rdf:Class	;
+	rdfs:label	"automated able frameworks"	.
 
-local:support	rdfs:label	"support"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:choosing	rdfs:label	"choosing"	.
+local:emerge	a	rdf:Class	;
+	rdfs:label	"emerge"	.
 
-#### Properties ####
+local:domain_of_linked_open_data	a	rdf:Class	;
+	rdfs:label	"domain of linked open data"	.
+
+local:linked_open_data	a	rdf:Class	;
+	rdfs:label	"linked open data"	.
+
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
+
+local:linked_open	a	rdf:Class	;
+	rdfs:label	"linked open"	.
+
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
+
+local:open_data	a	rdf:Class	;
+	rdfs:label	"open data"	.
+
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
 #### Mapped Relations ####
 
-local:deontic_logic	owl:sameAs	cso:deontic_logic	.
-local:deontic	owl:sameAs	cso:deontic	.
-local:semantics	owl:sameAs	cso:semantics	.
-cso:semantics	rdfs:label	"semantics"	.
 cso:deontic	rdfs:label	"deontic"	.
-cso:deontic_logic	rdfs:label	"deontic logic"	.
-cso:distributed_resources	rdfs:label	"distributed sources"	.
+cso:semantics	rdfs:label	"semantics"	.
 cso:linked_open_data	rdfs:label	"linked open data"	.
-local:distributed_sources	owl:sameAs	cso:distributed_resources	.
 local:linked_open_data	owl:sameAs	cso:linked_open_data	.
+local:deontic	owl:sameAs	cso:deontic	.
+cso:deontic_logic	rdfs:label	"deontic logic"	.
+local:deontic_logic	owl:sameAs	cso:deontic_logic	.
+local:semantics	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:is_publishing	rdfs:subClassOf	local:publishing	.
-local:deontic_components	rdfs:subClassOf	local:components	.
-local:license	rdfs:member	local:license_compliant	.
-local:wrt	vn.role:subject	local:needs	.
-local:data	rdfs:member	local:data_her	.
-local:coming	vn.role:Location	local:data	.
-local:associated	vn.role:Agent	local:data	.
-local:compliant_with_licensing_items	local:with_licensingitems	local:compliant	.
-local:composition_strategy	rdfs:subClassOf	local:strategy	.
-local:proposes	vn.role:Agent	local:paper	.
-local:allows	vn.role:Theme	local:define	.
-local:distributed_sources	rdfs:subClassOf	local:sources	.
-local:composite_license	rdfs:member	local:composite_license_compliant	.
-local:deontic_logic_semantics	rdfs:subClassOf	local:semantics	.
-local:needs_wrt	rdfs:subClassOf	local:wrt	.
-local:developing_automated_able_frameworks	rdfs:subClassOf	local:automated_able_frameworks	.
-local:open	rdfs:member	local:open_data	.
-local:proposed	local:AM-PNC	local:wrt	.
-local:licensing_items_of_composed_different_licenses	local:licensingitems_of	local:composed_different_licenses	.
-local:composite_compliant_license	rdfs:subClassOf	local:compliant_license	.
-local:better	rdfs:member	local:better_suits	.
-local:suits	vn.role:indirect_object	local:wrt	.
-local:deontic	rdfs:member	local:deontic_logic	.
-local:data_her	rdfs:subClassOf	local:her	.
-local:automated_frameworks	rdfs:subClassOf	local:frameworks	.
-local:suits	vn.role:Patient	local:needs	.
-local:logic_semantics	rdfs:subClassOf	local:semantics	.
-local:deontic_components_of_obligations	local:of_obligations	local:deontic_components	.
-local:deontic_components_of_permissions	local:deonticcomponents_of	local:permissions	.
-local:associated	vn.role:Patient2	local:licensing_terms	.
-local:define	vn.role:Theme	local:deontic_components_of_licenses	.
-local:define	vn.role:Theme	local:deontic_components_of_permissions	.
-local:choosing	vn.role:Theme	local:wrt	.
-local:support	local:AM-MNR	local:wrt	.
-local:wrt	vn.role:object	local:data	.
-local:distributed	vn.role:Theme	local:sources	.
-local:composition	rdfs:member	local:composition_strategy	.
-local:suits	vn.role:indirect_object	local:licenses_composition_strategy	.
-local:licenses_composition	rdfs:subClassOf	local:composition	.
-local:licensing_items	rdfs:subClassOf	local:items	.
-local:allows	vn.role:Agent	local:deontic_logic_semantics	.
-local:deontic_logic	rdfs:subClassOf	local:logic	.
-local:automated_able_frameworks	rdfs:subClassOf	local:able_frameworks	.
+local:s0.2	rdf:object	local:licensing_terms	.
+local:licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:needs	.
 local:different_licenses	rdfs:subClassOf	local:licenses	.
-local:emerging	local:AM-LOC	local:domain_of_linked_open_data	.
-local:composite	rdfs:member	local:composite_license	.
-local:define	vn.role:Theme	local:deontic_components_of_prohibitions	.
-local:deontic_components_of_licenses	local:of_licenses	local:deontic_components	.
-local:different	rdfs:member	local:different_licenses	.
-local:licensing	rdfs:member	local:licensing_terms	.
-local:distributed	local:AM-MNR	local:heterogeneous	.
-local:deontic_logic_semantics	rdfs:subClassOf	local:logic_semantics	.
-local:deontic_components_of_licenses	local:deonticcomponents_of	local:licenses	.
-local:support	vn.role:Experiencer	local:data_publisher	.
-local:deontic_components_of_prohibitions	local:of_prohibitions	local:deontic_components	.
-local:composed	rdfs:member	local:composed_different	.
-local:emerging	vn.role:Theme	local:need	.
-local:compliant_license	rdfs:subClassOf	local:license	.
-local:composite_license_compliant	rdfs:subClassOf	local:compliant	.
-local:generate	vn.role:Theme2	local:licensing_terms	.
-local:heterogeneous_distributed_sources	rdfs:subClassOf	local:distributed_sources	.
-local:licenses	rdfs:member	local:licenses_composition	.
-local:generate	vn.role:Theme1	local:us	.
-local:composed_different_licenses	rdfs:subClassOf	local:licenses	.
-local:suits	local:AM-MNR	local:better	.
-local:her_needs	rdfs:subClassOf	local:needs	.
-local:licensing_terms	rdfs:subClassOf	local:terms	.
-local:allows	vn.role:Theme	local:generate	.
-local:needs	rdfs:member	local:needs_wrt	.
-local:licensing_items_of_composed_different_licenses	local:of_composeddifferentlicenses	local:licensing_items	.
-local:evaluates	vn.role:Agent	local:paper	.
-local:able_frameworks	rdfs:subClassOf	local:frameworks	.
-local:proposed	vn.role:Topic	local:heuristics	.
-local:data	rdfs:member	local:data_publisher	.
-local:deontic	rdfs:member	local:deontic_components	.
-local:composed_different	rdfs:member	local:composed_different_licenses	.
-local:better_suits	rdfs:subClassOf	local:suits	.
-local:generate	vn.role:Theme1	local:automated_frameworks	.
-local:compliant_with_licensing_items	local:compliant_with	local:licensing_items	.
-local:licenses_composition	rdfs:member	local:licenses_composition_strategy	.
-local:composed	vn.role:Product	local:different_licenses	.
-local:licenses_composition_strategy	rdfs:subClassOf	local:strategy	.
-local:linked_open_data	rdfs:subClassOf	local:open_data	.
-local:define	vn.role:Agent	local:us	.
-local:composed_different	rdfs:subClassOf	local:different	.
-local:data	vn.role:object	local:licensing_terms	.
-local:deontic_logic	rdfs:member	local:deontic_logic_semantics	.
-local:composed_different_licenses	rdfs:subClassOf	local:different_licenses	.
-local:deontic_components_of_obligations	local:deonticcomponents_of	local:obligations	.
-local:coming	vn.role:indirect_object	local:heterogeneous_distributed_sources	.
-local:support	vn.role:Theme	local:heuristics	.
-local:domain_of_linked_open_data	local:domain_of	local:linked_open_data	.
-local:licenses_composition_strategy	rdfs:subClassOf	local:composition_strategy	.
-local:open_data	rdfs:subClassOf	local:data	.
-local:developing	vn.role:Location	local:automated_able_frameworks	.
-local:domain_of_linked_open_data	local:of_linkedopendata	local:domain	.
-local:data_publisher	rdfs:subClassOf	local:publisher	.
-local:define	vn.role:Theme	local:deontic_components_of_obligations	.
-local:evaluates	vn.role:Theme	local:deontic_logic_semantics	.
+local:s10.3	local:AM-MNR	local:better	.
+local:linked_open_data	rdfs:subClassOf	local:data	.
+local:s5	rdf:subject	local:deontic_logic_semantics	.
+local:s5	rdf:object	local:us_to_define_the_deontic_components_of_the_licenses	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:data_her	.
+local:composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	rdfs:member	local:s3.2	.
+local:s0	rdf:subject	local:s0.1	.
 local:license_compliant	rdfs:subClassOf	local:compliant	.
-local:deontic_components_of_prohibitions	local:deonticcomponents_of	local:prohibitions	.
-local:proposes	vn.role:Topic	local:deontic_logic_semantics	.
-local:licensing	rdfs:member	local:licensing_items	.
+local:linked_open	rdfs:member	local:linked	.
+local:automated_frameworks_able_to_generate_the_licensing_terms	rdfs:member	local:licensing_terms	.
+local:licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:licenses_composition_strategy	.
+local:composition_strategy	rdfs:subClassOf	local:strategy	.
+local:automated_able_frameworks	rdfs:subClassOf	local:able_frameworks	.
+local:license_compliant	rdfs:member	local:license	.
+local:s0	local:AM-LOC	local:domain_of_linked_open_data	.
+local:s0.1	rdf:predicate	local:develop	.
+local:s10	rdf:predicate	local:propose	.
+local:s7	rdf:object	local:deontic_logic_semantics	.
+local:licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:better_suits	.
+local:s6.1	rdf:object	local:deontic_components_of_prohibitions	.
+local:compliant_with_licensing_items	rdfs:member	local:licensing_items	.
+local:us_to_generate_a_composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	rdfs:member	local:composite_license_compliant	.
+local:s9.1	rdf:object	local:deontic_components_of_obligations	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:needs	.
+local:s10.5	rdf:subject	local:her	.
+local:us_to_define_the_deontic_components_of_the_licenses	rdfs:member	local:deontic_components	.
+local:s10.4	rdf:subject	local:needs	.
+local:licensing_items_of_composed_different_licenses	rdfs:member	local:licensing_items	.
+local:data_her	rdfs:member	local:data	.
+local:deontic_components_of_licenses	rdfs:member	local:licenses	.
+local:s6.1	rdf:subject	local:us	.
+local:s10.2	rdf:predicate	local:choose	.
+local:better_suits	rdfs:subClassOf	local:suits	.
+local:s9.1	rdf:subject	local:us	.
+local:s1	rdf:object	local:s1.1	.
+local:us_to_define_the_deontic_components_of_permissions	rdfs:member	local:deontic_components	.
+local:deontic_components_of_obligations	rdfs:member	local:obligations	.
+local:composite_license_compliant	rdfs:member	local:composite_license	.
+local:deontic_logic	rdfs:subClassOf	local:logic	.
+local:s3	rdf:subject	local:deontic_logic_semantics	.
+local:licenses_composition_strategy_wrt_the_data_her	rdfs:member	local:licenses_composition_strategy	.
+local:s5.1	rdf:object	local:deontic_components_of_the_licenses	.
+local:us_to_define_the_deontic_components_of_prohibitions	rdfs:member	local:deontic_components	.
+local:different_licenses	rdfs:member	local:different	.
+local:linked_open_data	rdfs:member	local:linked_open	.
+local:licenses_composition_strategy	rdfs:subClassOf	local:composition_strategy	.
+local:licensing_terms	rdfs:subClassOf	local:terms	.
+local:deontic_components_of_the_licenses	rdfs:member	local:deontic_components	.
+local:linked_open_data	rdfs:subClassOf	local:open_data	.
+local:s0.2	rdf:subject	local:automated_frameworks	.
+local:s3.1	rdf:object	local:composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	.
+local:s9	rdf:predicate	local:allow	.
+local:s10.3	rdf:subject	local:needs	.
+local:deontic_components_of_permissions	rdfs:member	local:permissions	.
+local:s10.3	rdf:predicate	local:suit	.
+local:automated_frameworks_able_to_generate_the_licensing_terms	rdfs:member	local:frameworks	.
+local:licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:data_her	.
+local:s4	rdf:subject	local:paper	.
+local:s10.5	rdf:object	local:data	.
+local:deontic_components_of_prohibitions	rdfs:member	local:prohibitions	.
+local:s5	rdf:predicate	local:allow	.
+local:s9.1	rdf:predicate	local:define	.
+local:data_her	rdfs:subClassOf	local:her	.
+local:s3	rdf:predicate	local:allow	.
+local:s9	rdf:object	local:us_to_define_the_deontic_components_of_obligations	.
+local:us_to_define_the_deontic_components_of_the_licenses	rdfs:member	local:licenses	.
+local:s10.3	rdf:object	local:licenses_composition_strategy_wrt_the_data_her	.
+local:better_suits	rdfs:member	local:better	.
+local:logic_semantics	rdfs:member	local:logic	.
+local:deontic_logic_semantics	rdfs:subClassOf	local:semantics	.
+local:automated_frameworks	rdfs:subClassOf	local:frameworks	.
+local:deontic_logic_semantics	rdfs:member	local:deontic_logic	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:support	.
+local:s3.2	rdf:predicate	local:compose	.
+local:licenses_composition_strategy	rdfs:subClassOf	local:strategy	.
+local:s8	rdf:object	local:us_to_define_the_deontic_components_of_permissions	.
+local:data_publisher	rdfs:subClassOf	local:publisher	.
+local:s1.1	rdf:predicate	local:distribute	.
+local:licensing_items	rdfs:member	local:licensing	.
+local:s2	rdf:predicate	local:associate	.
+local:s3.2	rdf:subject	local:different_licenses	.
+local:deontic_components_of_obligations	rdfs:member	local:deontic_components	.
+local:deontic_components	rdfs:member	local:deontic	.
+local:s10.1	rdf:subject	local:heuristics	.
 local:composite_license	rdfs:subClassOf	local:license	.
-local:emerging	vn.role:Theme	local:developing_automated_able_frameworks	.
-local:generate	vn.role:Theme2	local:composite_compliant_license	.
-local:deontic_components_of_permissions	local:of_permissions	local:deontic_components	.
-local:logic	rdfs:member	local:logic_semantics	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:licenses_composition_strategy	.
+local:s10.1	local:AM-MNR	local:s10.2	.
+local:s8	rdf:predicate	local:allow	.
+local:domain_of_linked_open_data	rdfs:member	local:linked_open_data	.
+local:compliant_license	rdfs:subClassOf	local:license	.
+local:s10	rdf:subject	local:heuristics	.
+local:composed_different	rdfs:subClassOf	local:different	.
+local:s10.5	rdf:predicate	local:publish	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:data_publisher	.
+local:able_frameworks	rdfs:subClassOf	local:frameworks	.
+local:licensing_items_of_composed_different_licenses	rdfs:member	local:s3.2	.
+local:us_to_define_the_deontic_components_of_prohibitions	rdfs:member	local:prohibitions	.
+local:composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	rdfs:member	local:composite_license_compliant	.
+local:s4	rdf:predicate	local:evaluate	.
+local:us_to_define_the_deontic_components_of_permissions	rdfs:member	local:permissions	.
+local:s6.1	rdf:predicate	local:define	.
+local:s3.2	rdfs:member	local:composed_different	.
+local:s1	rdf:predicate	local:come	.
+local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	rdfs:member	local:better_suits	.
+local:composite_license	rdfs:member	local:composite	.
+local:s1.1	local:AM-MNR	local:heterogeneous	.
+local:licenses_composition	rdfs:member	local:licenses	.
+local:s9	rdf:subject	local:deontic_logic_semantics	.
+local:s6	rdf:predicate	local:allow	.
+local:open_data	rdfs:subClassOf	local:data	.
+local:s3	rdf:object	local:us_to_generate_a_composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	.
+local:us_to_generate_a_composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	rdfs:member	local:licensing_items	.
+local:s2	rdf:subject	local:licensing_terms	.
+local:composed_different	rdfs:member	local:composed	.
+local:data_publisher	rdfs:member	local:data	.
+local:deontic_components	rdfs:subClassOf	local:components	.
+local:deontic_logic_semantics	rdfs:subClassOf	local:logic_semantics	.
+local:composition_strategy	rdfs:member	local:composition	.
+local:deontic_logic	rdfs:member	local:deontic	.
+local:s10.2	rdf:subject	local:licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	.
+local:s0.2	rdf:predicate	local:generate	.
+local:deontic_components_of_the_licenses	rdfs:member	local:licenses	.
+local:logic_semantics	rdfs:subClassOf	local:semantics	.
+local:licenses_composition_strategy_wrt_the_data_her	rdfs:member	local:data_her	.
+local:s10.4	rdf:predicate	local:wrt	.
+local:s8.1	rdf:object	local:deontic_components_of_permissions	.
+local:her_needs	rdfs:subClassOf	local:needs	.
+local:s7	rdf:predicate	local:propose	.
+local:composite_compliant_license	rdfs:subClassOf	local:compliant_license	.
+local:s0	rdf:predicate	local:emerge	.
+local:s8.1	rdf:predicate	local:define	.
+local:s3.1	rdf:predicate	local:generate	.
+local:compliant_with_licensing_items	rdfs:member	local:compliant	.
+local:s3.1	rdf:subject	local:us	.
+local:s10.1	rdf:predicate	local:support	.
+local:s10.4	rdf:object	local:data_her	.
+local:licenses_composition_strategy	rdfs:member	local:licenses_composition	.
+local:deontic_components_of_prohibitions	rdfs:member	local:deontic_components	.
+local:licensing_items	rdfs:subClassOf	local:items	.
+local:us_to_generate_a_composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	rdfs:member	local:s3.2	.
+local:licensing_terms	rdfs:member	local:licensing	.
+local:linked_open	rdfs:subClassOf	local:open	.
+local:us_to_define_the_deontic_components_of_obligations	rdfs:member	local:deontic_components	.
+local:licenses_composition	rdfs:subClassOf	local:composition	.
+local:us_to_define_the_deontic_components_of_obligations	rdfs:member	local:obligations	.
+local:open_data	rdfs:member	local:open	.
+local:s8.1	rdf:subject	local:us	.
+local:composite_license_compliant_with_the_licensing_items_of_the_composed_different_licenses	rdfs:member	local:licensing_items	.
+local:s1.1	rdf:subject	local:sources	.
+local:domain_of_linked_open_data	rdfs:member	local:domain	.
+local:s1	rdf:subject	local:data	.
+local:s0.1	rdf:subject	local:automated_frameworks_able_to_generate_the_licensing_terms	.
+local:s6	rdf:object	local:us_to_define_the_deontic_components_of_prohibitions	.
+local:s3.2	rdfs:subClassOf	local:different_licenses	.
+local:s2	rdf:object	local:data	.
+local:s6	rdf:subject	local:deontic_logic_semantics	.
+local:s10.1	rdf:object	local:data_publisher	.
+local:s5.1	rdf:subject	local:us	.
+local:composite_license_compliant	rdfs:subClassOf	local:compliant	.
+local:s7	rdf:subject	local:paper	.
+local:s3.2	rdfs:subClassOf	local:licenses	.
+local:s10	local:AM-PNC	local:support_the_data_publisher_in_choosing_the_licenses_composition_strategy_which_better_suits_her_needs_wrt_the_data_her	.
+local:s4	rdf:object	local:deontic_logic_semantics	.
+local:s5.1	rdf:predicate	local:define	.
+local:deontic_components_of_licenses	rdfs:member	local:deontic_components	.
+local:deontic_components_of_permissions	rdfs:member	local:deontic_components	.
+local:s8	rdf:subject	local:deontic_logic_semantics	.

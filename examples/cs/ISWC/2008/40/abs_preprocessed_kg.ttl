@@ -1,364 +1,592 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"dlsafe rules based on the description logic"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"dlsafe rules losing tractability"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"dlsafe rules can admitted in extelp without losing tractability"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"while reasoning with dlsafe rules as such is already highly intractable we show that dlsafe rules can be admitted in extelp without losing tractability"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a translation of extelp to datalog also enables the seamless integration of dlsafe rules into extelp"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"a reasoning algorithm based on a translation of extelp to datalog"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we present a reasoning algorithm based on a translation of extelp to datalog"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"features introduced by the forthcoming owl 2 such as certain range restrictions"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"features introduced by the forthcoming owl 2 such as the universal role"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"features introduced by the forthcoming owl 2 such as local reflexivity"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"features introduced by the forthcoming owl 2 such as disjoint roles"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"thus extelp extends el with a number of features"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"extelp based on the tractable description logic el"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"recently proposed dl rules"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"extelp encompasses an extended notion of the recently proposed dl rules for that logic"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we introduce extelp as a decidable fragment of the semantic web rule language"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the semantic web rule language that admits reasoning in polynomial time"	.
+
+
 #### Classes ####
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"dlsafe rules"	.
 
-local:semantic_web_rule	rdfs:label	"semantic web rule"	.
+local:dlsafe	a	rdf:Class	;
+	rdfs:label	"dlsafe"	.
 
-local:rule_language	rdfs:label	"rule language"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:language	rdfs:label	"language"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:web_rule_language	rdfs:label	"web rule language"	.
+local:description_logic	a	rdf:Class	;
+	rdfs:label	"description logic"	.
 
-local:web	rdfs:label	"web"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:web_rule	rdfs:label	"web rule"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:rule	rdfs:label	"rule"	.
+local:lose	a	rdf:Class	;
+	rdfs:label	"lose"	.
 
-local:semantic_web_rule_language	rdfs:label	"semantic web rule language"	.
+local:tractability	a	rdf:Class	;
+	rdfs:label	"tractability"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:admit	a	rdf:Class	;
+	rdfs:label	"admit"	.
 
-local:admits	rdfs:label	"admits"	.
+local:extelp	a	rdf:Class	;
+	rdfs:label	"extelp"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:without_losing_tractability	a	rdf:Class	;
+	rdfs:label	"without losing tractability"	.
 
-local:polynomial_time	rdfs:label	"polynomial time"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:time	rdfs:label	"time"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:polynomial	rdfs:label	"polynomial"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:introduce	rdfs:label	"introduce"	.
+local:dlsafe_rules_can_be_admitted_in_extelp_without_losing_tractability	a	rdf:Class	;
+	rdfs:label	"dlsafe rules can be admitted in extelp without losing tractability"	.
 
-local:we	rdfs:label	"we"	.
+local:can_admitted	a	rdf:Class	;
+	rdfs:label	"can admitted"	.
 
-local:extelp	rdfs:label	"extelp"	.
+local:admitted	a	rdf:Class	;
+	rdfs:label	"admitted"	.
 
-local:decidable	rdfs:label	"decidable"	.
+local:can_admitted_in_extelp	a	rdf:Class	;
+	rdfs:label	"can admitted in extelp"	.
 
-local:decidable_fragment	rdfs:label	"decidable fragment"	.
+local:reasoning_with_dlsafe_rules_as_such_is_already_highly_intractable	a	rdf:Class	;
+	rdfs:label	"reasoning with dlsafe rules as such is already highly intractable"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:highly_intractable	a	rdf:Class	;
+	rdfs:label	"highly intractable"	.
 
-local:decidable_fragment_of_semantic_web_rule_language	rdfs:label	"decidable fragment of semantic web rule language"	.
+local:intractable	a	rdf:Class	;
+	rdfs:label	"intractable"	.
 
-local:encompasses	rdfs:label	"encompasses"	.
+local:already_highly_intractable	a	rdf:Class	;
+	rdfs:label	"already highly intractable"	.
 
-local:extended_notion	rdfs:label	"extended notion"	.
+local:reasoning_with_dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"reasoning with dlsafe rules"	.
 
-local:notion	rdfs:label	"notion"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:extended	rdfs:label	"extended"	.
+local:translation_of_extelp_to_datalog	a	rdf:Class	;
+	rdfs:label	"translation of extelp to datalog"	.
 
-local:dl_rules	rdfs:label	"dl rules"	.
+local:translation	a	rdf:Class	;
+	rdfs:label	"translation"	.
 
-local:rules	rdfs:label	"rules"	.
+local:translation_of_extelp	a	rdf:Class	;
+	rdfs:label	"translation of extelp"	.
 
-local:dl	rdfs:label	"dl"	.
+local:datalog	a	rdf:Class	;
+	rdfs:label	"datalog"	.
 
-local:proposed_dl_rules	rdfs:label	"proposed dl rules"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:recently_proposed	rdfs:label	"recently proposed"	.
+local:seamless_integration_of_dlsafe_rules_into_extelp	a	rdf:Class	;
+	rdfs:label	"seamless integration of dlsafe rules into extelp"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:seamless_integration	a	rdf:Class	;
+	rdfs:label	"seamless integration"	.
 
-local:extended_notion_of_proposed_dl_rules	rdfs:label	"extended notion of proposed dl rules"	.
+local:seamless	a	rdf:Class	;
+	rdfs:label	"seamless"	.
 
-local:proposed_dl_rules_for_logic	rdfs:label	"proposed dl rules for logic"	.
+local:integration	a	rdf:Class	;
+	rdfs:label	"integration"	.
 
-local:logic	rdfs:label	"logic"	.
+local:seamless_integration_of_dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"seamless integration of dlsafe rules"	.
 
-local:recently	rdfs:label	"recently"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:based	rdfs:label	"based"	.
+local:reasoning_algorithm	a	rdf:Class	;
+	rdfs:label	"reasoning algorithm"	.
 
-local:tractable_description_logic	rdfs:label	"tractable description logic"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:tractable_description	rdfs:label	"tractable description"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:description_logic_el	rdfs:label	"description logic el"	.
+local:reasoning_algorithm_based_on_a_translation_of_extelp_to_datalog	a	rdf:Class	;
+	rdfs:label	"reasoning algorithm based on a translation of extelp to datalog"	.
 
-local:el	rdfs:label	"el"	.
+local:reasoning_algorithm_based_on_translation	a	rdf:Class	;
+	rdfs:label	"reasoning algorithm based_on translation"	.
 
-local:description	rdfs:label	"description"	.
+local:forthcoming_owl_2_such_as_certain_range_restrictions	a	rdf:Class	;
+	rdfs:label	"forthcoming owl 2 such as certain range restrictions"	.
 
-local:description_logic	rdfs:label	"description logic"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:tractable	rdfs:label	"tractable"	.
+local:certain_range_restrictions	a	rdf:Class	;
+	rdfs:label	"certain range restrictions"	.
 
-local:tractable_description_logic_el	rdfs:label	"tractable description logic el"	.
+local:certain_range	a	rdf:Class	;
+	rdfs:label	"certain range"	.
 
-local:logic_el	rdfs:label	"logic el"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:introduced	rdfs:label	"introduced"	.
+local:restrictions	a	rdf:Class	;
+	rdfs:label	"restrictions"	.
 
-local:features	rdfs:label	"features"	.
+local:range_restrictions	a	rdf:Class	;
+	rdfs:label	"range restrictions"	.
 
-local:forthcoming_owl	rdfs:label	"forthcoming owl"	.
+local:range	a	rdf:Class	;
+	rdfs:label	"range"	.
 
-local:owl	rdfs:label	"owl"	.
+local:2_owl	a	rdf:Class	;
+	rdfs:label	"2 owl"	.
 
-local:forthcoming	rdfs:label	"forthcoming"	.
+local:forthcoming_2_owl	a	rdf:Class	;
+	rdfs:label	"forthcoming 2 owl"	.
 
-local:features_introduced	rdfs:label	"features introduced"	.
+local:forthcoming_2_owl_such_as_certain_range_restrictions	a	rdf:Class	;
+	rdfs:label	"forthcoming 2 owl such_as certain range restrictions"	.
 
-local:introduced_by_forthcoming_owl	rdfs:label	"introduced by forthcoming owl"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:2	rdfs:label	"2,"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:local_reflexivity	rdfs:label	"local reflexivity"	.
+local:forthcoming_owl_2_such_as_the_universal_role	a	rdf:Class	;
+	rdfs:label	"forthcoming owl 2 such as the universal role"	.
 
-local:reflexivity	rdfs:label	"reflexivity"	.
+local:universal_role	a	rdf:Class	;
+	rdfs:label	"universal role"	.
 
-local:local	rdfs:label	"local"	.
+local:role	a	rdf:Class	;
+	rdfs:label	"role"	.
 
-local:certain	rdfs:label	"certain"	.
+local:universal	a	rdf:Class	;
+	rdfs:label	"universal"	.
 
-local:certain_range	rdfs:label	"certain range"	.
+local:forthcoming_2_owl_such_as_universal_role	a	rdf:Class	;
+	rdfs:label	"forthcoming 2 owl such_as universal role"	.
 
-local:certain_range_restrictions	rdfs:label	"certain range restrictions"	.
+local:forthcoming_owl_2_such_as_local_reflexivity	a	rdf:Class	;
+	rdfs:label	"forthcoming owl 2 such as local reflexivity"	.
 
-local:range_restrictions	rdfs:label	"range restrictions"	.
+local:local_reflexivity	a	rdf:Class	;
+	rdfs:label	"local reflexivity"	.
 
-local:restrictions	rdfs:label	"restrictions"	.
+local:reflexivity	a	rdf:Class	;
+	rdfs:label	"reflexivity"	.
 
-local:range	rdfs:label	"range"	.
+local:local	a	rdf:Class	;
+	rdfs:label	"local"	.
 
-local:disjoint	rdfs:label	"disjoint"	.
+local:forthcoming_2_owl_such_as_local_reflexivity	a	rdf:Class	;
+	rdfs:label	"forthcoming 2 owl such_as local reflexivity"	.
 
-local:disjoint_roles	rdfs:label	"disjoint roles"	.
+local:forthcoming_owl_2_such_as_disjoint_roles	a	rdf:Class	;
+	rdfs:label	"forthcoming owl 2 such as disjoint roles"	.
 
-local:roles	rdfs:label	"roles"	.
+local:disjoint_roles	a	rdf:Class	;
+	rdfs:label	"disjoint roles"	.
 
-local:universal_role	rdfs:label	"universal role"	.
+local:roles	a	rdf:Class	;
+	rdfs:label	"roles"	.
 
-local:role	rdfs:label	"role"	.
+local:disjoint	a	rdf:Class	;
+	rdfs:label	"disjoint"	.
 
-local:universal	rdfs:label	"universal"	.
+local:forthcoming_2_owl_such_as_disjoint_roles	a	rdf:Class	;
+	rdfs:label	"forthcoming 2 owl such_as disjoint roles"	.
 
-local:extends	rdfs:label	"extends"	.
+local:el	a	rdf:Class	;
+	rdfs:label	"el"	.
 
-local:thus	rdfs:label	"thus"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:number_of_features	rdfs:label	"number of features"	.
+local:number_of_features	a	rdf:Class	;
+	rdfs:label	"number of features"	.
 
-local:number	rdfs:label	"number"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:translation_of_extelp	rdfs:label	"translation of extelp"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:translation	rdfs:label	"translation"	.
+local:tractable_description_logic_el	a	rdf:Class	;
+	rdfs:label	"tractable description logic el"	.
 
-local:translation_of_extelp_to_datalog	rdfs:label	"translation of extelp to datalog"	.
+local:description_logic_el	a	rdf:Class	;
+	rdfs:label	"description logic el"	.
 
-local:datalog	rdfs:label	"datalog"	.
+local:tractable_description	a	rdf:Class	;
+	rdfs:label	"tractable description"	.
 
-local:enables	rdfs:label	"enables"	.
+local:tractable	a	rdf:Class	;
+	rdfs:label	"tractable"	.
 
-local:also	rdfs:label	"also"	.
+local:tractable_description_logic	a	rdf:Class	;
+	rdfs:label	"tractable description logic"	.
 
-local:seamless	rdfs:label	"seamless"	.
+local:logic_el	a	rdf:Class	;
+	rdfs:label	"logic el"	.
 
-local:seamless_integration	rdfs:label	"seamless integration"	.
+local:dl_rules	a	rdf:Class	;
+	rdfs:label	"dl rules"	.
 
-local:dlsafe	rdfs:label	"dl-safe"	.
+local:dl	a	rdf:Class	;
+	rdfs:label	"dl"	.
 
-local:dlsafe_rules	rdfs:label	"dl-safe rules"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:integration	rdfs:label	"integration"	.
+local:recently	a	rdf:Class	;
+	rdfs:label	"recently"	.
 
-local:seamless_integration_of_dlsafe_rules	rdfs:label	"seamless integration of dl-safe rules"	.
+local:encompass	a	rdf:Class	;
+	rdfs:label	"encompass"	.
 
-local:seamless_integration_of_dlsafe_rules_into_extelp	rdfs:label	"seamless integration of dl-safe rules into extelp"	.
+local:extended_notion_of_the_recently_proposed_dl_rules_for_that_logic	a	rdf:Class	;
+	rdfs:label	"extended notion of the recently proposed dl rules for that logic"	.
 
-local:present	rdfs:label	"present"	.
+local:extended_notion	a	rdf:Class	;
+	rdfs:label	"extended notion"	.
 
-local:reasoning_algorithm	rdfs:label	"reasoning algorithm"	.
+local:extended	a	rdf:Class	;
+	rdfs:label	"extended"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:notion	a	rdf:Class	;
+	rdfs:label	"notion"	.
 
-local:reasoning_algorithm_basedon_translation	rdfs:label	"reasoning algorithm based_on translation"	.
+local:proposed_dl_rules	a	rdf:Class	;
+	rdfs:label	"proposed dl rules"	.
 
-local:extelp_to_datalog	rdfs:label	"extelp to datalog"	.
+local:recently_proposed	a	rdf:Class	;
+	rdfs:label	"recently proposed"	.
 
-local:highly_intractable	rdfs:label	"highly intractable"	.
+local:proposed	a	rdf:Class	;
+	rdfs:label	"proposed"	.
 
-local:intractable	rdfs:label	"intractable"	.
+local:extended_notion_of_proposed_dl_rules	a	rdf:Class	;
+	rdfs:label	"extended notion of proposed dl rules"	.
 
-local:already_highly_intractable	rdfs:label	"already highly intractable"	.
+local:proposed_dl_rules_for_logic	a	rdf:Class	;
+	rdfs:label	"proposed dl rules for logic"	.
 
-local:reasoning_with_dlsafe_rules	rdfs:label	"reasoning with dl-safe rules"	.
+local:extelp_decidable_fragment_of_the_semantic_web_rule_language	a	rdf:Class	;
+	rdfs:label	"extelp decidable fragment of the semantic web rule language"	.
 
-local:show	rdfs:label	"show"	.
+local:decidable_fragment	a	rdf:Class	;
+	rdfs:label	"decidable fragment"	.
 
-local:can_admitted	rdfs:label	"can admitted"	.
+local:semantic_web_rule_language	a	rdf:Class	;
+	rdfs:label	"semantic web rule language"	.
 
-local:admitted	rdfs:label	"admitted"	.
+local:semantic_web_rule	a	rdf:Class	;
+	rdfs:label	"semantic web rule"	.
 
-local:can_admitted_in_extelp	rdfs:label	"can admitted in extelp"	.
+local:rule	a	rdf:Class	;
+	rdfs:label	"rule"	.
 
-local:can	rdfs:label	"can"	.
+local:web_rule_language	a	rdf:Class	;
+	rdfs:label	"web rule language"	.
 
-local:losing	rdfs:label	"losing"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:tractability	rdfs:label	"tractability"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-#### Properties ####
+local:rule_language	a	rdf:Class	;
+	rdfs:label	"rule language"	.
+
+local:web_rule	a	rdf:Class	;
+	rdfs:label	"web rule"	.
+
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
+
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
+
+local:decidable	a	rdf:Class	;
+	rdfs:label	"decidable"	.
+
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
+
+local:extelp_decidable_fragment	a	rdf:Class	;
+	rdfs:label	"extelp decidable fragment"	.
+
+local:extelp_decidable_fragment_of_semantic_web_rule_language	a	rdf:Class	;
+	rdfs:label	"extelp decidable fragment of semantic web rule language"	.
+
+local:polynomial_time	a	rdf:Class	;
+	rdfs:label	"polynomial time"	.
+
+local:polynomial	a	rdf:Class	;
+	rdfs:label	"polynomial"	.
+
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
 #### Mapped Relations ####
 
-cso:owl	rdfs:label	"owl"	.
-local:semantic_web	owl:sameAs	cso:semantic_web	.
-cso:semantics	rdfs:label	"semantic"	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:owl	owl:sameAs	cso:owl	.
-local:reasoning_algorithm	owl:sameAs	cso:reasoning_algorithms	.
 cso:semantic_web	rdfs:label	"semantic web"	.
-local:datalog	owl:sameAs	cso:datalog	.
-cso:description_logic	rdfs:label	"description logic"	.
-cso:datalog	rdfs:label	"datalog"	.
-cso:reasoning_algorithms	rdfs:label	"reasoning algorithm"	.
+cso:semantics	rdfs:label	"semantic"	.
 local:reasoning	owl:sameAs	cso:reasoning	.
-cso:reasoning	rdfs:label	"reasoning"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:description_logic	rdfs:label	"description logic"	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
 local:description_logic	owl:sameAs	cso:description_logic	.
+cso:reasoning_algorithms	rdfs:label	"reasoning algorithm"	.
+cso:reasoning	rdfs:label	"reasoning"	.
+local:reasoning_algorithm	owl:sameAs	cso:reasoning_algorithms	.
 
 #### Relations ####
 
-local:admits	vn.role:Theme	local:reasoning	.
-local:logic_el	rdfs:subClassOf	local:el	.
-local:semantic_web_rule	rdfs:subClassOf	local:rule	.
-local:admits	vn.role:Agent	local:semantic_web_rule_language	.
-local:reasoning_algorithm_basedon_translation	local:based_on_translation	local:reasoning_algorithm	.
-local:decidable	rdfs:member	local:decidable_fragment	.
-local:features_introduced	local:features_	local:introduced	.
-local:extelp_to_datalog	local:extelp_to	local:datalog	.
-local:encompasses	vn.role:Theme1	local:extelp	.
-local:based	vn.role:indirect_object	local:tractable_description_logic_el	.
-local:2	vn.role:object	local:universal_role	.
-local:reasoning_algorithm_basedon_translation	local:reasoningalgorithm_based_on	local:translation	.
-local:admitted	local:AM-LOC	local:extelp	.
-local:tractable_description_logic	rdfs:member	local:tractable_description_logic_el	.
-local:dlsafe_rules	rdfs:subClassOf	local:rules	.
-local:web_rule	rdfs:member	local:web_rule_language	.
-local:proposed_dl_rules_for_logic	local:proposeddlrules_for	local:logic	.
-local:proposed_dl_rules	rdfs:subClassOf	local:dl_rules	.
-local:rule	rdfs:member	local:rule_language	.
-local:based	local:AM-LOC	local:description_logic	.
-local:introduced	vn.role:Patient	local:features	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:can_admitted_in_extelp	local:canadmitted_in	local:extelp	.
-local:proposed	local:AM-TMP	local:recently	.
-local:losing	vn.role:Theme	local:tractability	.
-local:seamless	rdfs:member	local:seamless_integration	.
-local:certain	rdfs:member	local:certain_range	.
-local:number_of_features	local:of_features	local:number	.
-local:reasoning_with_dlsafe_rules	local:with_dl-saferules	local:reasoning	.
-local:web_rule_language	rdfs:subClassOf	local:language	.
-local:admits	local:AM-LOC	local:polynomial_time	.
-local:local	rdfs:member	local:local_reflexivity	.
-local:tractable_description_logic	rdfs:subClassOf	local:logic	.
-local:enables	vn.role:Patient	local:seamless_integration_of_dlsafe_rules_into_extelp	.
-local:description_logic	rdfs:member	local:description_logic_el	.
-local:2	vn.role:object	local:disjoint_roles	.
-local:2	vn.role:object	local:local_reflexivity	.
-local:already_highly_intractable	rdfs:subClassOf	local:highly_intractable	.
-local:tractable_description	rdfs:member	local:tractable_description_logic	.
 local:universal_role	rdfs:subClassOf	local:role	.
-local:extends	vn.role:Theme	local:el	.
-local:translation_of_extelp	local:translation_of	local:extelp	.
-local:extended	rdfs:member	local:extended_notion	.
-local:certain_range_restrictions	rdfs:subClassOf	local:restrictions	.
-local:certain_range_restrictions	rdfs:subClassOf	local:range_restrictions	.
-local:rule_language	rdfs:subClassOf	local:language	.
-local:encompasses	vn.role:Theme2	local:extended_notion_of_proposed_dl_rules	.
-local:range_restrictions	rdfs:subClassOf	local:restrictions	.
-local:local_reflexivity	rdfs:subClassOf	local:reflexivity	.
-local:universal	rdfs:member	local:universal_role	.
-local:certain_range	rdfs:subClassOf	local:range	.
-local:show	vn.role:Agent	local:we	.
-local:introduce	vn.role:Patient1	local:decidable_fragment_of_semantic_web_rule_language	.
-local:polynomial_time	rdfs:subClassOf	local:time	.
-local:2	vn.role:subject	local:features_introduced	.
-local:range	rdfs:member	local:range_restrictions	.
-local:extends	local:AM-MNR	local:extelp	.
-local:web_rule_language	rdfs:subClassOf	local:rule_language	.
-local:extended_notion	rdfs:subClassOf	local:notion	.
-local:extelp_to_datalog	local:to_datalog	local:extelp	.
-local:disjoint	rdfs:member	local:disjoint_roles	.
-local:losing	vn.role:Agent	local:dlsafe_rules	.
-local:tractable_description_logic_el	rdfs:subClassOf	local:el	.
-local:forthcoming_owl	rdfs:subClassOf	local:owl	.
-local:description_logic_el	rdfs:subClassOf	local:el	.
-local:tractable_description_logic_el	rdfs:subClassOf	local:description_logic_el	.
-local:translation_of_extelp_to_datalog	local:translationofextelp_to	local:datalog	.
-local:certain_range	rdfs:member	local:certain_range_restrictions	.
-local:tractable_description	rdfs:subClassOf	local:description	.
-local:introduced_by_forthcoming_owl	local:introduced_by	local:forthcoming_owl	.
-local:introduce	vn.role:Agent	local:we	.
-local:forthcoming	rdfs:member	local:forthcoming_owl	.
-local:proposed	vn.role:Topic	local:dl_rules	.
-local:introduced	vn.role:Agent	local:forthcoming_owl	.
-local:enables	local:AM-DIS	local:also	.
-local:introduce	vn.role:Patient	local:extelp	.
-local:present	vn.role:Theme	local:reasoning_algorithm_basedon_translation	.
-local:highly_intractable	rdfs:subClassOf	local:intractable	.
-local:reasoning_algorithm	rdfs:subClassOf	local:algorithm	.
-local:based	vn.role:Cause	local:reasoning_algorithm	.
-local:dl	rdfs:member	local:dl_rules	.
-local:2	vn.role:object	local:certain_range_restrictions	.
-local:show	local:AM-ADV	local:already_highly_intractable	.
-local:features_introduced	local:_introduced	local:features	.
-local:based	vn.role:indirect_object	local:translation_of_extelp_to_datalog	.
-local:disjoint_roles	rdfs:subClassOf	local:roles	.
-local:admitted	local:AM-MOD	local:can	.
-local:semantic_web_rule	rdfs:member	local:semantic_web_rule_language	.
-local:admitted	vn.role:Theme	local:dlsafe_rules	.
-local:tractable	rdfs:member	local:tractable_description	.
-local:semantic_web_rule_language	rdfs:subClassOf	local:web_rule_language	.
+local:tractable_description_logic	rdfs:member	local:tractable_description	.
+local:dlsafe_rules_can_be_admitted_in_extelp_without_losing_tractability	rdfs:member	local:extelp	.
+local:proposed_dl_rules_for_logic	rdfs:member	local:proposed_dl_rules	.
+local:seamless_integration_of_dlsafe_rules_into_extelp	rdfs:member	local:dlsafe_rules	.
+local:s6	rdf:object	local:features	.
+local:s4	rdf:subject	local:el	.
+local:semantic_web_rule	rdfs:subClassOf	local:rule	.
+local:reasoning_algorithm_based_on_a_translation_of_extelp_to_datalog	rdfs:member	local:translation	.
+local:s11	local:AM-ADV	local:reasoning_with_dlsafe_rules_as_such_is_already_highly_intractable	.
+local:extended_notion_of_proposed_dl_rules	rdfs:member	local:proposed_dl_rules	.
+local:s2.1	rdf:subject	local:dl_rules	.
+local:number_of_features	rdfs:member	local:number	.
+local:extelp_decidable_fragment_of_semantic_web_rule_language	rdfs:member	local:extelp_decidable_fragment	.
+local:seamless_integration_of_dlsafe_rules_into_extelp	rdfs:member	local:extelp	.
 local:description_logic	rdfs:subClassOf	local:logic	.
-local:decidable_fragment_of_semantic_web_rule_language	local:decidablefragment_of	local:semantic_web_rule_language	.
-local:extended_notion_of_proposed_dl_rules	local:extendednotion_of	local:proposed_dl_rules	.
-local:proposed_dl_rules_for_logic	local:for_logic	local:proposed_dl_rules	.
-local:translation_of_extelp	local:of_extelp	local:translation	.
-local:seamless_integration_of_dlsafe_rules_into_extelp	local:seamlessintegrationofdl-saferules_into	local:extelp	.
-local:admitted	local:AM-MNR	local:losing	.
-local:can_admitted	rdfs:subClassOf	local:admitted	.
-local:introduced_by_forthcoming_owl	local:by_forthcomingowl	local:introduced	.
-local:number_of_features	local:number_of	local:features	.
-local:enables	vn.role:Agent	local:translation_of_extelp_to_datalog	.
-local:can_admitted_in_extelp	local:in_extelp	local:can_admitted	.
-local:web	rdfs:member	local:web_rule	.
-local:decidable_fragment_of_semantic_web_rule_language	local:of_semanticwebrulelanguage	local:decidable_fragment	.
-local:reasoning_with_dlsafe_rules	local:reasoning_with	local:dlsafe_rules	.
-local:seamless_integration_of_dlsafe_rules	local:seamlessintegration_of	local:dlsafe_rules	.
-local:based	vn.role:Cause	local:extelp	.
-local:polynomial	rdfs:member	local:polynomial_time	.
+local:s11.1	rdf:predicate	local:admit	.
+local:reasoning_algorithm	rdfs:subClassOf	local:algorithm	.
+local:reasoning_algorithm_based_on_translation	rdfs:member	local:translation	.
+local:forthcoming_owl_2_such_as_the_universal_role	rdfs:member	local:universal_role	.
+local:description_logic	rdfs:member	local:description	.
+local:s7	rdf:object	local:features	.
+local:extelp_decidable_fragment_of_the_semantic_web_rule_language	rdfs:member	local:extelp	.
+local:s11.1	local:AM-LOC	local:extelp	.
+local:tractable_description	rdfs:subClassOf	local:description	.
+local:reasoning_algorithm_based_on_a_translation_of_extelp_to_datalog	rdfs:member	local:algorithm	.
+local:s2	rdf:object	local:extended_notion_of_the_recently_proposed_dl_rules_for_that_logic	.
+local:forthcoming_2_owl_such_as_disjoint_roles	rdfs:member	local:disjoint_roles	.
+local:translation_of_extelp	rdfs:member	local:extelp	.
+local:forthcoming_owl_2_such_as_local_reflexivity	rdfs:member	local:owl	.
+local:logic_el	rdfs:subClassOf	local:el	.
+local:forthcoming_owl_2_such_as_local_reflexivity	rdfs:member	local:local_reflexivity	.
+local:s10	rdf:predicate	local:enable	.
+local:dl_rules	rdfs:member	local:dl	.
+local:s2.1	rdf:predicate	local:propose	.
+local:extended_notion_of_the_recently_proposed_dl_rules_for_that_logic	rdfs:member	local:logic	.
+local:certain_range	rdfs:subClassOf	local:range	.
+local:s5	rdf:object	local:features	.
+local:disjoint_roles	rdfs:member	local:disjoint	.
+local:extelp_decidable_fragment_of_the_semantic_web_rule_language	rdfs:member	local:decidable_fragment	.
+local:s2	rdf:predicate	local:encompass	.
 local:recently_proposed	rdfs:subClassOf	local:proposed	.
-local:seamless_integration_of_dlsafe_rules_into_extelp	local:into_extelp	local:seamless_integration_of_dlsafe_rules	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:seamless_integration	rdfs:subClassOf	local:integration	.
-local:seamless_integration_of_dlsafe_rules	local:of_dl-saferules	local:seamless_integration	.
-local:logic	rdfs:member	local:logic_el	.
-local:based	vn.role:Cause	local:dlsafe_rules	.
-local:extends	local:AM-DIS	local:thus	.
-local:dlsafe	rdfs:member	local:dlsafe_rules	.
-local:semantic_web	rdfs:member	local:semantic_web_rule	.
-local:decidable_fragment	rdfs:subClassOf	local:fragment	.
-local:extended_notion_of_proposed_dl_rules	local:of_proposeddlrules	local:extended_notion	.
-local:web_rule	rdfs:subClassOf	local:rule	.
-local:show	vn.role:Theme	local:can_admitted_in_extelp	.
-local:dl_rules	rdfs:subClassOf	local:rules	.
-local:translation_of_extelp_to_datalog	local:to_datalog	local:translation_of_extelp	.
-local:extends	vn.role:Recipient	local:number_of_features	.
-local:description	rdfs:member	local:description_logic	.
-local:description_logic_el	rdfs:subClassOf	local:logic_el	.
-local:present	vn.role:Agent	local:we	.
+local:seamless_integration_of_dlsafe_rules_into_extelp	rdfs:member	local:seamless_integration_of_dlsafe_rules	.
+local:certain_range_restrictions	rdfs:subClassOf	local:range_restrictions	.
+local:certain_range	rdfs:member	local:certain	.
+local:can_admitted_in_extelp	rdfs:member	local:can_admitted	.
+local:universal_role	rdfs:member	local:universal	.
+local:forthcoming_owl_2_such_as_disjoint_roles	rdfs:member	local:disjoint_roles	.
+local:s0	rdf:predicate	local:admit	.
 local:semantic_web_rule_language	rdfs:subClassOf	local:language	.
+local:extended_notion_of_the_recently_proposed_dl_rules_for_that_logic	rdfs:member	local:dl_rules	.
+local:can_admitted_in_extelp	rdfs:member	local:extelp	.
+local:s12	rdf:predicate	local:base	.
+local:s3	rdf:subject	local:extelp	.
+local:forthcoming_owl_2_such_as_certain_range_restrictions	rdfs:member	local:certain_range_restrictions	.
+local:s11.1	local:AM-MNR	local:without_losing_tractability	.
+local:reasoning_with_dlsafe_rules	rdfs:member	local:dlsafe_rules	.
+local:forthcoming_2_owl_such_as_local_reflexivity	rdfs:member	local:forthcoming_2_owl	.
+local:s4	local:AM-DIS	local:thus	.
+local:rule_language	rdfs:member	local:rule	.
+local:s3	rdf:object	local:tractable_description_logic_el	.
+local:dlsafe_rules	rdfs:subClassOf	local:rules	.
+local:s6	rdf:subject	local:forthcoming_owl_2_such_as_local_reflexivity	.
+local:semantic_web_rule	rdfs:member	local:semantic_web	.
+local:extended_notion_of_proposed_dl_rules	rdfs:member	local:extended_notion	.
+local:s11.2	rdf:predicate	local:lose	.
+local:s1	rdf:predicate	local:introduce	.
+local:s9	rdf:subject	local:we	.
+local:s12	local:AM-LOC	local:description_logic	.
+local:s12	rdf:subject	local:dlsafe_rules	.
+local:s0	local:AM-TMP	local:polynomial_time	.
+local:web_rule_language	rdfs:subClassOf	local:rule_language	.
+local:range_restrictions	rdfs:member	local:range	.
+local:s4	rdf:object	local:number_of_features	.
+local:web_rule_language	rdfs:subClassOf	local:language	.
+local:translation_of_extelp	rdfs:member	local:translation	.
+local:seamless_integration_of_dlsafe_rules_into_extelp	rdfs:member	local:seamless_integration	.
+local:web_rule	rdfs:subClassOf	local:rule	.
+local:dlsafe_rules_can_be_admitted_in_extelp_without_losing_tractability	rdfs:member	local:tractability	.
+local:web_rule	rdfs:member	local:web	.
+local:s1	rdf:object	local:extelp_decidable_fragment_of_the_semantic_web_rule_language	.
+local:decidable_fragment	rdfs:member	local:decidable	.
+local:semantic_web_rule_language	rdfs:subClassOf	local:web_rule_language	.
+local:description_logic_el	rdfs:subClassOf	local:el	.
+local:tractable_description	rdfs:member	local:tractable	.
+local:local_reflexivity	rdfs:subClassOf	local:reflexivity	.
+local:s11.2	rdf:subject	local:dlsafe_rules	.
+local:certain_range_restrictions	rdfs:subClassOf	local:restrictions	.
+local:dlsafe_rules_can_be_admitted_in_extelp_without_losing_tractability	rdfs:member	local:dlsafe_rules	.
+local:s10	rdf:subject	local:translation_of_extelp_to_datalog	.
+local:proposed_dl_rules	rdfs:subClassOf	local:dl_rules	.
+local:extelp_decidable_fragment_of_the_semantic_web_rule_language	rdfs:member	local:semantic_web_rule_language	.
+local:s4	rdf:predicate	local:extend	.
+local:reasoning_with_dlsafe_rules	rdfs:member	local:reasoning	.
+local:web_rule_language	rdfs:member	local:web_rule	.
+local:already_highly_intractable	rdfs:subClassOf	local:highly_intractable	.
+local:s9	rdf:predicate	local:present	.
+local:tractable_description_logic_el	rdfs:subClassOf	local:el	.
+local:translation_of_extelp_to_datalog	rdfs:member	local:translation	.
+local:extended_notion_of_the_recently_proposed_dl_rules_for_that_logic	rdfs:member	local:extended_notion	.
+local:certain_range_restrictions	rdfs:member	local:certain_range	.
+local:extended_notion	rdfs:member	local:extended	.
+local:s4	local:AM-MNR	local:extelp	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:forthcoming_2_owl_such_as_certain_range_restrictions	rdfs:member	local:forthcoming_2_owl	.
+local:s11.1	rdf:subject	local:dlsafe_rules	.
+local:translation_of_extelp_to_datalog	rdfs:member	local:extelp	.
+local:tractable_description_logic_el	rdfs:member	local:tractable_description_logic	.
+local:s7	rdf:subject	local:forthcoming_owl_2_such_as_the_universal_role	.
+local:forthcoming_owl_2_such_as_certain_range_restrictions	rdfs:member	local:owl	.
+local:extelp_decidable_fragment_of_semantic_web_rule_language	rdfs:member	local:semantic_web_rule_language	.
+local:forthcoming_2_owl_such_as_disjoint_roles	rdfs:member	local:forthcoming_2_owl	.
+local:dl_rules	rdfs:subClassOf	local:rules	.
+local:s11.2	rdf:object	local:tractability	.
+local:s9.1	rdf:subject	local:reasoning_algorithm	.
+local:proposed_dl_rules_for_logic	rdfs:member	local:logic	.
+local:dlsafe_rules	rdfs:member	local:dlsafe	.
+local:forthcoming_2_owl_such_as_universal_role	rdfs:member	local:forthcoming_2_owl	.
+local:translation_of_extelp_to_datalog	rdfs:member	local:datalog	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:s11	rdf:predicate	local:show	.
+local:decidable_fragment	rdfs:subClassOf	local:fragment	.
+local:can_admitted	rdfs:subClassOf	local:admitted	.
+local:tractable_description_logic_el	rdfs:subClassOf	local:description_logic_el	.
+local:extended_notion	rdfs:subClassOf	local:notion	.
+local:disjoint_roles	rdfs:subClassOf	local:roles	.
+local:s8	rdf:subject	local:forthcoming_owl_2_such_as_certain_range_restrictions	.
+local:s3	rdf:predicate	local:base	.
+local:s11	rdf:object	local:dlsafe_rules_can_be_admitted_in_extelp_without_losing_tractability	.
+local:s1	rdf:subject	local:we	.
+local:s8	rdf:object	local:features	.
+local:extelp_decidable_fragment	rdfs:subClassOf	local:decidable_fragment	.
+local:translation_of_extelp_to_datalog	rdfs:member	local:translation_of_extelp	.
+local:seamless_integration	rdfs:subClassOf	local:integration	.
+local:s9.1	rdf:predicate	local:base	.
+local:s2	rdf:subject	local:extelp	.
+local:seamless_integration_of_dlsafe_rules	rdfs:member	local:seamless_integration	.
+local:forthcoming_2_owl_such_as_certain_range_restrictions	rdfs:member	local:certain_range_restrictions	.
+local:s5	rdf:subject	local:forthcoming_owl_2_such_as_disjoint_roles	.
+local:reasoning_algorithm_based_on_translation	rdfs:member	local:reasoning_algorithm	.
+local:s9	rdf:object	local:reasoning_algorithm_based_on_a_translation_of_extelp_to_datalog	.
+local:forthcoming_owl_2_such_as_the_universal_role	rdfs:member	local:owl	.
+local:tractable_description_logic	rdfs:subClassOf	local:logic	.
+local:local_reflexivity	rdfs:member	local:local	.
+local:s6	rdf:predicate	local:introduce	.
+local:number_of_features	rdfs:member	local:features	.
+local:polynomial_time	rdfs:subClassOf	local:time	.
+local:forthcoming_owl_2_such_as_disjoint_roles	rdfs:member	local:owl	.
+local:s9.1	rdf:object	local:translation_of_extelp_to_datalog	.
+local:s11	rdf:subject	local:we	.
+local:2_owl	rdfs:subClassOf	local:owl	.
+local:forthcoming_2_owl_such_as_local_reflexivity	rdfs:member	local:local_reflexivity	.
+local:s11.1	local:AM-MOD	local:can	.
+local:s10	local:AM-DIS	local:also	.
+local:s7	rdf:predicate	local:introduce	.
+local:s5	rdf:predicate	local:introduce	.
+local:logic_el	rdfs:member	local:logic	.
+local:description_logic_el	rdfs:member	local:description_logic	.
+local:s2.1	local:AM-TMP	local:recently	.
+local:range_restrictions	rdfs:subClassOf	local:restrictions	.
+local:forthcoming_2_owl	rdfs:subClassOf	local:2_owl	.
+local:rule_language	rdfs:subClassOf	local:language	.
+local:semantic_web_rule_language	rdfs:member	local:semantic_web_rule	.
+local:s10	rdf:object	local:seamless_integration_of_dlsafe_rules_into_extelp	.
+local:seamless_integration	rdfs:member	local:seamless	.
+local:forthcoming_2_owl_such_as_universal_role	rdfs:member	local:universal_role	.
+local:s8	rdf:predicate	local:introduce	.
+local:reasoning_algorithm_based_on_a_translation_of_extelp_to_datalog	rdfs:member	local:extelp	.
+local:s0	rdf:object	local:reasoning	.
+local:seamless_integration_of_dlsafe_rules	rdfs:member	local:dlsafe_rules	.
+local:polynomial_time	rdfs:member	local:polynomial	.
+local:description_logic_el	rdfs:subClassOf	local:logic_el	.
+local:highly_intractable	rdfs:subClassOf	local:intractable	.
+local:s0	rdf:subject	local:semantic_web_rule_language	.

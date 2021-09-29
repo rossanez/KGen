@@ -1,116 +1,236 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"considering large data volumes"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"given input"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"this context materializing every possible implicit derivation from a given input"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"using semantically annotated data deriving implicit knowledge from explicit information"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"semantically annotated data deriving implicit knowledge from explicit information"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"machines can reason on one of the main advantages of using semantically annotated data deriving implicit knowledge from explicit information"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"machines using semantically annotated data deriving implicit knowledge from explicit information"	.
+
+
 #### Classes ####
 
-local:annotated_data	rdfs:label	"annotated data"	.
+local:large_data_volumes	a	rdf:Class	;
+	rdfs:label	"large data volumes"	.
 
-local:data	rdfs:label	"data"	.
+local:data_volumes	a	rdf:Class	;
+	rdfs:label	"data volumes"	.
 
-local:semantically_annotated	rdfs:label	"semantically annotated"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:annotated	rdfs:label	"annotated"	.
+local:volumes	a	rdf:Class	;
+	rdfs:label	"volumes"	.
 
-local:using	rdfs:label	"using"	.
+local:large_data	a	rdf:Class	;
+	rdfs:label	"large data"	.
 
-local:machines	rdfs:label	"machines"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:explicit	rdfs:label	"explicit"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:explicit_information	rdfs:label	"explicit information"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:implicit_knowledge	rdfs:label	"implicit knowledge"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:information	rdfs:label	"information"	.
+local:materialize	a	rdf:Class	;
+	rdfs:label	"materialize"	.
 
-local:implicit	rdfs:label	"implicit"	.
+local:every_possible_implicit_derivation_from_a_given_input	a	rdf:Class	;
+	rdfs:label	"every possible implicit derivation from a given input"	.
 
-local:semantically_annotated_data	rdfs:label	"semantically annotated data"	.
+local:possible_implicit_derivation	a	rdf:Class	;
+	rdfs:label	"possible implicit derivation"	.
 
-local:semantically_annotated_data_deriving	rdfs:label	"semantically annotated data deriving"	.
+local:implicit_derivation	a	rdf:Class	;
+	rdfs:label	"implicit derivation"	.
 
-local:deriving	rdfs:label	"deriving"	.
+local:implicit	a	rdf:Class	;
+	rdfs:label	"implicit"	.
 
-local:deriving_from_explicit_information	rdfs:label	"deriving from explicit information"	.
+local:derivation	a	rdf:Class	;
+	rdfs:label	"derivation"	.
 
-local:reason	rdfs:label	"reason"	.
+local:possible_implicit	a	rdf:Class	;
+	rdfs:label	"possible implicit"	.
 
-local:can	rdfs:label	"can"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:main_advantages	rdfs:label	"main advantages"	.
+local:possible_implicit_derivation_from_given_input	a	rdf:Class	;
+	rdfs:label	"possible implicit derivation from given input"	.
 
-local:advantages	rdfs:label	"advantages"	.
+local:using_semantically_annotated_data	a	rdf:Class	;
+	rdfs:label	"using semantically annotated data"	.
 
-local:main	rdfs:label	"main"	.
+local:annotated_data	a	rdf:Class	;
+	rdfs:label	"annotated data"	.
 
-local:one_main_advantages	rdfs:label	"one main advantages"	.
+local:semantically_annotated	a	rdf:Class	;
+	rdfs:label	"semantically annotated"	.
 
-local:semantically	rdfs:label	"semantically"	.
+local:annotated	a	rdf:Class	;
+	rdfs:label	"annotated"	.
 
-local:implicit_knowledge_from_explicit_information	rdfs:label	"implicit knowledge from explicit information"	.
+local:derive	a	rdf:Class	;
+	rdfs:label	"derive"	.
 
-local:given	rdfs:label	"given"	.
+local:implicit_knowledge_from_explicit_information	a	rdf:Class	;
+	rdfs:label	"implicit knowledge from explicit information"	.
 
-local:input	rdfs:label	"input"	.
+local:explicit_information	a	rdf:Class	;
+	rdfs:label	"explicit information"	.
 
-local:large	rdfs:label	"large"	.
+local:implicit_knowledge	a	rdf:Class	;
+	rdfs:label	"implicit knowledge"	.
 
-local:large_data	rdfs:label	"large data"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:large_data_volumes	rdfs:label	"large data volumes"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:volumes	rdfs:label	"volumes"	.
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
 
-local:data_volumes	rdfs:label	"data volumes"	.
+local:data_deriving_implicit_knowledge_from_explicit_information	a	rdf:Class	;
+	rdfs:label	"data deriving implicit knowledge from explicit information"	.
 
-local:considering	rdfs:label	"considering"	.
+local:data_deriving	a	rdf:Class	;
+	rdfs:label	"data deriving"	.
 
-#### Properties ####
+local:deriving	a	rdf:Class	;
+	rdfs:label	"deriving"	.
 
-#### Mapped Relations ####
+local:deriving_from_explicit_information	a	rdf:Class	;
+	rdfs:label	"deriving from explicit information"	.
+
+local:annotate	a	rdf:Class	;
+	rdfs:label	"annotate"	.
+
+local:semantically	a	rdf:Class	;
+	rdfs:label	"semantically"	.
+
+local:machines	a	rdf:Class	;
+	rdfs:label	"machines"	.
+
+local:reason	a	rdf:Class	;
+	rdfs:label	"reason"	.
+
+local:one_of_the_main_advantages_of_using_semantically_annotated_data_deriving_implicit_knowledge_from_explicit_information	a	rdf:Class	;
+	rdfs:label	"one of the main advantages of using semantically annotated data deriving implicit knowledge from explicit information"	.
+
+local:main_advantages	a	rdf:Class	;
+	rdfs:label	"main advantages"	.
+
+local:main	a	rdf:Class	;
+	rdfs:label	"main"	.
+
+local:advantages	a	rdf:Class	;
+	rdfs:label	"advantages"	.
+
+local:one_main_advantages	a	rdf:Class	;
+	rdfs:label	"one main advantages"	.
+
+local:annotated_data_deriving	a	rdf:Class	;
+	rdfs:label	"annotated data deriving"	.
+
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
+
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
 
 #### Relations ####
 
-local:main	rdfs:member	local:main_advantages	.
-local:using	vn.role:Theme	local:annotated_data	.
-local:semantically_annotated	rdfs:subClassOf	local:annotated	.
-local:reason	local:AM-MOD	local:can	.
-local:main_advantages	rdfs:subClassOf	local:advantages	.
-local:given	vn.role:object	local:input	.
-local:large_data	rdfs:member	local:large_data_volumes	.
-local:data_volumes	rdfs:subClassOf	local:volumes	.
-local:using	vn.role:Theme	local:semantically_annotated_data_deriving	.
-local:annotated	local:AM-MNR	local:semantically	.
-local:large_data	rdfs:subClassOf	local:data	.
-local:annotated_data	rdfs:subClassOf	local:data	.
-local:annotated	local:AM-ADV	local:deriving_from_explicit_information	.
 local:explicit_information	rdfs:subClassOf	local:information	.
-local:deriving	vn.role:Location	local:implicit_knowledge_from_explicit_information	.
-local:deriving_from_explicit_information	local:deriving_from	local:explicit_information	.
-local:using	vn.role:Agent	local:machines	.
-local:deriving	vn.role:Theme	local:semantically_annotated_data	.
-local:data	rdfs:member	local:data_volumes	.
+local:annotated_data_deriving	rdfs:member	local:deriving	.
+local:s0.1	local:AM-MOD	local:can	.
+local:s1.1	rdf:subject	local:input	.
+local:implicit_knowledge	rdfs:member	local:implicit	.
 local:large_data_volumes	rdfs:subClassOf	local:data_volumes	.
-local:deriving_from_explicit_information	local:from_explicitinformation	local:deriving	.
-local:annotated	vn.role:Theme	local:data	.
-local:explicit	rdfs:member	local:explicit_information	.
-local:implicit	rdfs:member	local:implicit_knowledge	.
-local:semantically_annotated_data_deriving	local:semanticallyannotateddata_	local:deriving	.
-local:implicit_knowledge	rdfs:subClassOf	local:knowledge	.
-local:implicit_knowledge_from_explicit_information	local:implicitknowledge_from	local:explicit_information	.
-local:large	rdfs:member	local:large_data	.
-local:implicit_knowledge_from_explicit_information	local:from_explicitinformation	local:implicit_knowledge	.
-local:considering	vn.role:Theme	local:large_data_volumes	.
-local:semantically_annotated_data	rdfs:subClassOf	local:annotated_data	.
-local:reason	vn.role:Theme1	local:machines	.
+local:s1	rdf:subject	local:context	.
+local:s1	rdf:object	local:every_possible_implicit_derivation_from_a_given_input	.
+local:deriving_from_explicit_information	rdfs:member	local:deriving	.
+local:s0	rdf:predicate	local:use	.
+local:implicit_knowledge_from_explicit_information	rdfs:member	local:implicit_knowledge	.
+local:possible_implicit_derivation_from_given_input	rdfs:member	local:s1.1	.
+local:large_data	rdfs:subClassOf	local:data	.
+local:large_data_volumes	rdfs:member	local:large_data	.
+local:data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:implicit_knowledge	.
+local:one_of_the_main_advantages_of_using_semantically_annotated_data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:explicit_information	.
+local:explicit_information	rdfs:member	local:explicit	.
+local:data_volumes	rdfs:member	local:data	.
+local:data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:explicit_information	.
+local:annotated_data	rdfs:subClassOf	local:data	.
+local:s0.2	rdf:subject	local:data_deriving_implicit_knowledge_from_explicit_information	.
+local:possible_implicit_derivation	rdfs:subClassOf	local:implicit_derivation	.
+local:s0.1	rdf:subject	local:machines	.
+local:data_deriving	rdfs:member	local:data	.
+local:one_of_the_main_advantages_of_using_semantically_annotated_data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:main_advantages	.
+local:data_volumes	rdfs:subClassOf	local:volumes	.
+local:s1.1	rdfs:subClassOf	local:input	.
+local:implicit_knowledge_from_explicit_information	rdfs:member	local:explicit_information	.
 local:one_main_advantages	rdfs:subClassOf	local:main_advantages	.
-local:semantically_annotated_data_deriving	local:_deriving	local:semantically_annotated_data	.
-local:reason	vn.role:Theme2	local:one_main_advantages	.
+local:deriving_from_explicit_information	rdfs:member	local:explicit_information	.
+local:s0	rdf:object	local:s0.2	.
+local:main_advantages	rdfs:member	local:main	.
+local:s1.2	rdf:predicate	local:consider	.
+local:annotated_data_deriving	rdfs:member	local:annotated_data	.
+local:data_deriving	rdfs:member	local:deriving	.
+local:s0	rdf:subject	local:machines	.
+local:s0.3	rdf:predicate	local:derive	.
+local:s0.1	rdf:predicate	local:reason	.
+local:one_of_the_main_advantages_of_using_semantically_annotated_data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:data	.
 local:large_data_volumes	rdfs:subClassOf	local:volumes	.
+local:possible_implicit_derivation_from_given_input	rdfs:member	local:possible_implicit_derivation	.
+local:s0.1	rdf:object	local:one_of_the_main_advantages_of_using_semantically_annotated_data_deriving_implicit_knowledge_from_explicit_information	.
+local:possible_implicit	rdfs:subClassOf	local:implicit	.
+local:one_of_the_main_advantages_of_using_semantically_annotated_data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:implicit_knowledge	.
+local:s1.2	rdf:subject	local:large_data_volumes	.
+local:s0.2	rdf:predicate	local:annotate	.
+local:s0.2	local:AM-MNR	local:semantically	.
+local:implicit_knowledge	rdfs:subClassOf	local:knowledge	.
+local:implicit_derivation	rdfs:member	local:implicit	.
+local:s1.1	rdf:predicate	local:give	.
+local:possible_implicit_derivation	rdfs:member	local:possible_implicit	.
+local:s1	rdf:predicate	local:materialize	.
+local:main_advantages	rdfs:subClassOf	local:advantages	.
+local:data_deriving_implicit_knowledge_from_explicit_information	rdfs:member	local:data	.
+local:possible_implicit_derivation	rdfs:subClassOf	local:derivation	.
+local:s0.3	rdf:object	local:implicit_knowledge_from_explicit_information	.
+local:every_possible_implicit_derivation_from_a_given_input	rdfs:member	local:possible_implicit_derivation	.
+local:implicit_derivation	rdfs:subClassOf	local:derivation	.
+local:possible_implicit	rdfs:member	local:possible	.
+local:every_possible_implicit_derivation_from_a_given_input	rdfs:member	local:input	.
+local:semantically_annotated	rdfs:subClassOf	local:annotated	.
+local:large_data	rdfs:member	local:large	.
+local:s0.3	rdf:subject	local:using_semantically_annotated_data	.

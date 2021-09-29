@@ -1,400 +1,669 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"we present some indications on practical feasibility"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"we implemented all semantics prototypically on top of an offtheshelf triple store"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"rdf stores which store all"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"any rdf triples entailed by others already"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"in particular we materialised rdf stores redundancyfree rdf stores"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"in particular we reduced rdf stores"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"redundancyfree rdf stores that not store any rdf triples"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"all entailed triples explicitly"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"in particular we treat both redundancyfree rdf stores"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"implementing potential strategies"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we discuss possible semantics along with potential strategies for implementing potential strategies"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"language dealing with updates both of abox and of tbox statements"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"sparql basic graph patterns corresponding to dllite"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we define a fragment of sparql basic graph patterns corresponding to dllite"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"we close this gap"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in this paper we take a first step to close this gap"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"even the w3c sparql 11 update explicitly exclude a standard behaviour for entailment regimes other than simple entailment in the context of updates"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"sparql 11 entailment regimes specifications explicitly exclude a standard behaviour for entailment regimes other than simple entailment in the context of updates"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"however computing usually treated orthogonally to updates in triple stores"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"computing entailed answers by ontologies"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"updates in rdf stores recently standardised in the sparql 11 update specification"	.
+
+
 #### Classes ####
 
-local:rdf	rdfs:label	"rdf"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:rdf_stores	rdfs:label	"rdf stores"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:stores	rdfs:label	"stores"	.
+local:indications	a	rdf:Class	;
+	rdfs:label	"indications"	.
 
-local:updates_in_rdf_stores	rdfs:label	"updates in rdf stores"	.
+local:practical_feasibility	a	rdf:Class	;
+	rdfs:label	"practical feasibility"	.
 
-local:updates	rdfs:label	"updates"	.
+local:feasibility	a	rdf:Class	;
+	rdfs:label	"feasibility"	.
 
-local:standardised	rdfs:label	"standardised"	.
+local:practical	a	rdf:Class	;
+	rdfs:label	"practical"	.
 
-local:recently	rdfs:label	"recently"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:update	rdfs:label	"update"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:update_specification	rdfs:label	"update specification"	.
+local:top_of_an_offtheshelf_triple_store	a	rdf:Class	;
+	rdfs:label	"top of an offtheshelf triple store"	.
 
-local:specification	rdfs:label	"specification"	.
+local:offtheshelf_triple_store	a	rdf:Class	;
+	rdfs:label	"offtheshelf triple store"	.
 
-local:11_sparql	rdfs:label	"1.1 sparql"	.
+local:top	a	rdf:Class	;
+	rdfs:label	"top"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:triple_store	a	rdf:Class	;
+	rdfs:label	"triple store"	.
 
-local:entailed	rdfs:label	"entailed"	.
+local:store	a	rdf:Class	;
+	rdfs:label	"store"	.
 
-local:computing	rdfs:label	"computing"	.
+local:offtheshelf_triple	a	rdf:Class	;
+	rdfs:label	"offtheshelf triple"	.
 
-local:answers	rdfs:label	"answers"	.
+local:triple	a	rdf:Class	;
+	rdfs:label	"triple"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:offtheshelf	a	rdf:Class	;
+	rdfs:label	"offtheshelf"	.
 
-local:however_computing	rdfs:label	"however computing"	.
+local:top_of_offtheshelf_triple_store	a	rdf:Class	;
+	rdfs:label	"top of offtheshelf triple store"	.
 
-local:treated	rdfs:label	"treated"	.
+local:prototypically	a	rdf:Class	;
+	rdfs:label	"prototypically"	.
 
-local:usually	rdfs:label	"usually"	.
+local:rdf_stores	a	rdf:Class	;
+	rdfs:label	"rdf stores"	.
 
-local:orthogonally	rdfs:label	"orthogonally"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:triple_stores	rdfs:label	"triple stores"	.
+local:stores	a	rdf:Class	;
+	rdfs:label	"stores"	.
 
-local:triple	rdfs:label	"triple"	.
+local:all	a	rdf:Class	;
+	rdfs:label	"all"	.
 
-local:updates_in_triple_stores	rdfs:label	"updates in triple stores"	.
+local:others	a	rdf:Class	;
+	rdfs:label	"others"	.
 
-local:w3c_11_sparql	rdfs:label	"w3c 1.1 sparql"	.
+local:entail	a	rdf:Class	;
+	rdfs:label	"entail"	.
 
-local:even_w3c_11_sparql	rdfs:label	"even w3c 1.1 sparql"	.
+local:rdf_triples	a	rdf:Class	;
+	rdfs:label	"rdf triples"	.
 
-local:exclude	rdfs:label	"exclude"	.
+local:triples	a	rdf:Class	;
+	rdfs:label	"triples"	.
 
-local:explicitly	rdfs:label	"explicitly"	.
+local:already	a	rdf:Class	;
+	rdfs:label	"already"	.
 
-local:entailment_regimes	rdfs:label	"entailment regimes"	.
+local:materialise	a	rdf:Class	;
+	rdfs:label	"materialise"	.
 
-local:regimes	rdfs:label	"regimes"	.
+local:rdf_stores_redundancyfree_rdf_stores	a	rdf:Class	;
+	rdfs:label	"rdf stores redundancyfree rdf stores"	.
 
-local:standard	rdfs:label	"standard"	.
+local:redundancyfree_rdf_stores	a	rdf:Class	;
+	rdfs:label	"redundancyfree rdf stores"	.
 
-local:standard_behaviour	rdfs:label	"standard behaviour"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:behaviour	rdfs:label	"behaviour"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:entailment	rdfs:label	"entailment"	.
+local:redundancyfree_rdf	a	rdf:Class	;
+	rdfs:label	"redundancyfree rdf"	.
 
-local:simple	rdfs:label	"simple"	.
+local:redundancyfree	a	rdf:Class	;
+	rdfs:label	"redundancyfree"	.
 
-local:simple_entailment	rdfs:label	"simple entailment"	.
+local:not_store	a	rdf:Class	;
+	rdfs:label	"not store"	.
 
-local:other_regimes	rdfs:label	"other regimes"	.
+local:triples_explicitly	a	rdf:Class	;
+	rdfs:label	"triples explicitly"	.
 
-local:entailment_other_regimes	rdfs:label	"entailment other regimes"	.
+local:explicitly_triples	a	rdf:Class	;
+	rdfs:label	"explicitly triples"	.
 
-local:standard_behaviour_for_entailment_other_regimes	rdfs:label	"standard behaviour for entailment other regimes"	.
+local:treat	a	rdf:Class	;
+	rdfs:label	"treat"	.
 
-local:other_than_simple_entailment	rdfs:label	"other than simple entailment"	.
+local:potential_strategies	a	rdf:Class	;
+	rdfs:label	"potential strategies"	.
 
-local:other	rdfs:label	"other"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:standard_behaviour_for_entailment_other_regimes_in_context	rdfs:label	"standard behaviour for entailment other regimes in context"	.
+local:potential	a	rdf:Class	;
+	rdfs:label	"potential"	.
 
-local:context	rdfs:label	"context"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:context_of_updates	rdfs:label	"context of updates"	.
+local:possible_semantics_along_with_potential_strategies_for_implementing_potential_strategies	a	rdf:Class	;
+	rdfs:label	"possible semantics along with potential strategies for implementing potential strategies"	.
 
-local:regimes_specifications	rdfs:label	"regimes specifications"	.
+local:possible_semantics	a	rdf:Class	;
+	rdfs:label	"possible semantics"	.
 
-local:specifications	rdfs:label	"specifications"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:entailment_regimes_specifications	rdfs:label	"entailment regimes specifications"	.
+local:potential_potential_strategies	a	rdf:Class	;
+	rdfs:label	"potential potential strategies"	.
 
-local:11_entailment	rdfs:label	"1.1 entailment"	.
+local:possible_semantics_along_with_potential_potential_strategies	a	rdf:Class	;
+	rdfs:label	"possible semantics along_with potential potential strategies"	.
 
-local:sparql_11_entailment	rdfs:label	"sparql 1.1 entailment"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:take	rdfs:label	"take"	.
+local:deal	a	rdf:Class	;
+	rdfs:label	"deal"	.
 
-local:paper	rdfs:label	"paper"	.
+local:updates_both_of_abox_and_of_tbox_statements	a	rdf:Class	;
+	rdfs:label	"updates both of abox and of tbox statements"	.
 
-local:we	rdfs:label	"we"	.
+local:tbox_statements	a	rdf:Class	;
+	rdfs:label	"tbox statements"	.
 
-local:first_step	rdfs:label	"first step"	.
+local:updates	a	rdf:Class	;
+	rdfs:label	"updates"	.
 
-local:step	rdfs:label	"step"	.
+local:abox	a	rdf:Class	;
+	rdfs:label	"abox"	.
 
-local:first	rdfs:label	"first"	.
+local:statements	a	rdf:Class	;
+	rdfs:label	"statements"	.
 
-local:close	rdfs:label	"close"	.
+local:tbox	a	rdf:Class	;
+	rdfs:label	"tbox"	.
 
-local:gap	rdfs:label	"gap"	.
+local:updates_of_abox	a	rdf:Class	;
+	rdfs:label	"updates of abox"	.
 
-local:dealing	rdfs:label	"dealing"	.
+local:updates_of_abox_of_tbox_statements	a	rdf:Class	;
+	rdfs:label	"updates of abox of tbox statements"	.
 
-local:language	rdfs:label	"language"	.
+local:sparql_basic_graph_patterns	a	rdf:Class	;
+	rdfs:label	"sparql basic graph patterns"	.
 
-local:tbox_statements	rdfs:label	"tbox statements"	.
+local:basic_graph_patterns	a	rdf:Class	;
+	rdfs:label	"basic graph patterns"	.
 
-local:statements	rdfs:label	"statements"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:tbox	rdfs:label	"tbox"	.
+local:basic_graph	a	rdf:Class	;
+	rdfs:label	"basic graph"	.
 
-local:updates_of_abox	rdfs:label	"updates of abox"	.
+local:basic	a	rdf:Class	;
+	rdfs:label	"basic"	.
 
-local:abox	rdfs:label	"abox"	.
+local:graph_patterns	a	rdf:Class	;
+	rdfs:label	"graph patterns"	.
 
-local:updates_of_abox_of_tbox_statements	rdfs:label	"updates of abox of tbox statements"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:define	rdfs:label	"define"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:basic_graph	rdfs:label	"basic graph"	.
+local:correspond	a	rdf:Class	;
+	rdfs:label	"correspond"	.
 
-local:graph	rdfs:label	"graph"	.
+local:dllite	a	rdf:Class	;
+	rdfs:label	"dllite"	.
 
-local:basic_graph_patterns	rdfs:label	"basic graph patterns"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-local:patterns	rdfs:label	"patterns"	.
+local:fragment_of_sparql_basic_graph_patterns_corresponding_to_dllite	a	rdf:Class	;
+	rdfs:label	"fragment of sparql basic graph patterns corresponding to dllite"	.
 
-local:sparql_basic_graph_patterns	rdfs:label	"sparql basic graph patterns"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-local:graph_patterns	rdfs:label	"graph patterns"	.
+local:fragment_of_sparql_basic_graph_patterns	a	rdf:Class	;
+	rdfs:label	"fragment of sparql basic graph patterns"	.
 
-local:basic	rdfs:label	"basic"	.
+local:sparql_basic_graph_patterns_corresponding	a	rdf:Class	;
+	rdfs:label	"sparql basic graph patterns corresponding"	.
 
-local:sparql_basic	rdfs:label	"sparql basic"	.
+local:corresponding	a	rdf:Class	;
+	rdfs:label	"corresponding"	.
 
-local:sparql_basic_graph	rdfs:label	"sparql basic graph"	.
+local:corresponding_to_dllite	a	rdf:Class	;
+	rdfs:label	"corresponding to dllite"	.
 
-local:fragment_of_sparql_basic_graph_patterns	rdfs:label	"fragment of sparql basic graph patterns"	.
+local:close	a	rdf:Class	;
+	rdfs:label	"close"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:gap	a	rdf:Class	;
+	rdfs:label	"gap"	.
 
-local:sparql_basic_graph_patterns_corresponding	rdfs:label	"sparql basic graph patterns corresponding"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:corresponding	rdfs:label	"corresponding"	.
+local:first_step_to_close_this_gap	a	rdf:Class	;
+	rdfs:label	"first step to close this gap"	.
 
-local:dllite	rdfs:label	"dl-lite"	.
+local:first_step	a	rdf:Class	;
+	rdfs:label	"first step"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:step	a	rdf:Class	;
+	rdfs:label	"step"	.
 
-local:potential	rdfs:label	"potential"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:potential_strategies	rdfs:label	"potential strategies"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:possible_semantics	rdfs:label	"possible semantics"	.
+local:even_the_w3c_sparql_11_update	a	rdf:Class	;
+	rdfs:label	"even the w3c sparql 11 update"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:update	a	rdf:Class	;
+	rdfs:label	"update"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:w3c_sparql	a	rdf:Class	;
+	rdfs:label	"w3c sparql"	.
 
-local:possible	rdfs:label	"possible"	.
+local:w3c	a	rdf:Class	;
+	rdfs:label	"w3c"	.
 
-local:potential_potential_strategies	rdfs:label	"potential potential strategies"	.
+local:11_update	a	rdf:Class	;
+	rdfs:label	"11 update"	.
 
-local:possible_semantics_alongwith_potential_potential_strategies	rdfs:label	"possible semantics along_with potential potential strategies"	.
+local:sparql_11_update	a	rdf:Class	;
+	rdfs:label	"sparql 11 update"	.
 
-local:implementing	rdfs:label	"implementing"	.
+local:w3c_sparql_11_update	a	rdf:Class	;
+	rdfs:label	"w3c sparql 11 update"	.
 
-local:redundancyfree_rdf	rdfs:label	"redundancy-free rdf"	.
+local:even_w3c_sparql_11_update	a	rdf:Class	;
+	rdfs:label	"even w3c sparql 11 update"	.
 
-local:redundancyfree_rdf_stores	rdfs:label	"redundancy-free rdf stores"	.
+local:exclude	a	rdf:Class	;
+	rdfs:label	"exclude"	.
 
-local:redundancyfree	rdfs:label	"redundancy-free"	.
+local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	a	rdf:Class	;
+	rdfs:label	"standard behaviour for entailment regimes other than simple entailment in the context of updates"	.
 
-local:store	rdfs:label	"store"	.
+local:entailment_regimes	a	rdf:Class	;
+	rdfs:label	"entailment regimes"	.
 
-local:not	rdfs:label	"not"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:rdf_triples	rdfs:label	"rdf triples"	.
+local:standard_behaviour	a	rdf:Class	;
+	rdfs:label	"standard behaviour"	.
 
-local:triples	rdfs:label	"triples"	.
+local:simple_entailment	a	rdf:Class	;
+	rdfs:label	"simple entailment"	.
 
-local:materialised	rdfs:label	"materialised"	.
+local:regimes	a	rdf:Class	;
+	rdfs:label	"regimes"	.
 
-local:particular	rdfs:label	"particular"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:all	rdfs:label	"all"	.
+local:behaviour	a	rdf:Class	;
+	rdfs:label	"behaviour"	.
 
-local:treat	rdfs:label	"treat"	.
+local:entailment	a	rdf:Class	;
+	rdfs:label	"entailment"	.
 
-local:already_others	rdfs:label	"already others"	.
+local:simple	a	rdf:Class	;
+	rdfs:label	"simple"	.
 
-local:others	rdfs:label	"others"	.
+local:other_regimes	a	rdf:Class	;
+	rdfs:label	"other regimes"	.
 
-local:explicitly_triples	rdfs:label	"explicitly triples"	.
+local:entailment_other_regimes	a	rdf:Class	;
+	rdfs:label	"entailment other regimes"	.
 
-local:reduced	rdfs:label	"reduced"	.
+local:standard_behaviour_for_entailment_other_regimes	a	rdf:Class	;
+	rdfs:label	"standard behaviour for entailment other regimes"	.
 
-local:present	rdfs:label	"present"	.
+local:other_than_simple_entailment	a	rdf:Class	;
+	rdfs:label	"other than simple entailment"	.
 
-local:indications	rdfs:label	"indications"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:practical	rdfs:label	"practical"	.
+local:standard_behaviour_for_entailment_other_regimes_in_context	a	rdf:Class	;
+	rdfs:label	"standard behaviour for entailment other regimes in context"	.
 
-local:practical_feasibility	rdfs:label	"practical feasibility"	.
+local:context_of_updates	a	rdf:Class	;
+	rdfs:label	"context of updates"	.
 
-local:feasibility	rdfs:label	"feasibility"	.
+local:explicitly	a	rdf:Class	;
+	rdfs:label	"explicitly"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:sparql_11_entailment_regimes_specifications	a	rdf:Class	;
+	rdfs:label	"sparql 11 entailment regimes specifications"	.
 
-local:prototypically	rdfs:label	"prototypically"	.
+local:entailment_regimes_specifications	a	rdf:Class	;
+	rdfs:label	"entailment regimes specifications"	.
 
-local:offtheshelf_triple	rdfs:label	"off-the-shelf triple"	.
+local:regimes_specifications	a	rdf:Class	;
+	rdfs:label	"regimes specifications"	.
 
-local:offtheshelf_triple_store	rdfs:label	"off-the-shelf triple store"	.
+local:specifications	a	rdf:Class	;
+	rdfs:label	"specifications"	.
 
-local:offtheshelf	rdfs:label	"off-the-shelf"	.
+local:11_entailment_regimes_specifications	a	rdf:Class	;
+	rdfs:label	"11 entailment regimes specifications"	.
 
-local:triple_store	rdfs:label	"triple store"	.
+local:computing	a	rdf:Class	;
+	rdfs:label	"computing"	.
 
-local:top_of_offtheshelf_triple_store	rdfs:label	"top of off-the-shelf triple store"	.
+local:updates_in_triple_stores	a	rdf:Class	;
+	rdfs:label	"updates in triple stores"	.
 
-local:top	rdfs:label	"top"	.
+local:triple_stores	a	rdf:Class	;
+	rdfs:label	"triple stores"	.
 
-#### Properties ####
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
+
+local:orthogonally	a	rdf:Class	;
+	rdfs:label	"orthogonally"	.
+
+local:usually	a	rdf:Class	;
+	rdfs:label	"usually"	.
+
+local:answers_by_ontologies	a	rdf:Class	;
+	rdfs:label	"answers by ontologies"	.
+
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
+
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
+
+local:updates_in_rdf_stores	a	rdf:Class	;
+	rdfs:label	"updates in rdf stores"	.
+
+local:standardise	a	rdf:Class	;
+	rdfs:label	"standardise"	.
+
+local:sparql_11_update_specification	a	rdf:Class	;
+	rdfs:label	"sparql 11 update specification"	.
+
+local:update_specification	a	rdf:Class	;
+	rdfs:label	"update specification"	.
+
+local:specification	a	rdf:Class	;
+	rdfs:label	"specification"	.
+
+local:11_update_specification	a	rdf:Class	;
+	rdfs:label	"11 update specification"	.
+
+local:recently	a	rdf:Class	;
+	rdfs:label	"recently"	.
 
 #### Mapped Relations ####
 
-local:sparql	owl:sameAs	cso:sparql	.
 cso:semantics	rdfs:label	"semantics"	.
-cso:sparql	rdfs:label	"sparql"	.
 local:rdf	owl:sameAs	cso:rdf	.
 cso:rdf	rdfs:label	"rdf"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
+local:sparql	owl:sameAs	cso:sparql	.
 cso:ontologies	rdfs:label	"ontologies"	.
 local:semantics	owl:sameAs	cso:semantics	.
+cso:sparql	rdfs:label	"sparql"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 
 #### Relations ####
 
-local:standardised	vn.role:Instrument	local:update	.
-local:other_than_simple_entailment	local:than_simpleentailment	local:other	.
-local:11_entailment	rdfs:subClassOf	local:entailment	.
-local:simple_entailment	rdfs:subClassOf	local:entailment	.
-local:fragment_of_sparql_basic_graph_patterns	local:fragment_of	local:sparql_basic_graph_patterns	.
-local:basic_graph	rdfs:member	local:basic_graph_patterns	.
-local:possible	rdfs:member	local:possible_semantics	.
-local:standard_behaviour_for_entailment_other_regimes	local:standardbehaviour_for	local:entailment_other_regimes	.
-local:standard_behaviour_for_entailment_other_regimes_in_context	local:standardbehaviourforentailmentotherregimes_in	local:context	.
-local:other_than_simple_entailment	local:other_than	local:simple_entailment	.
-local:take	vn.role:Theme	local:first_step	.
-local:updates_of_abox	local:of_abox	local:updates	.
-local:potential	rdfs:member	local:potential_strategies	.
-local:treated	vn.role:Theme	local:however_computing	.
-local:practical_feasibility	rdfs:subClassOf	local:feasibility	.
-local:basic_graph	rdfs:subClassOf	local:graph	.
-local:potential_strategies	rdfs:subClassOf	local:strategies	.
-local:treated	local:AM-MNR	local:orthogonally	.
-local:present	vn.role:Agent	local:we	.
-local:discuss	vn.role:Patient1	local:we	.
-local:offtheshelf_triple	rdfs:subClassOf	local:triple	.
-local:standard_behaviour_for_entailment_other_regimes	local:for_entailmentotherregimes	local:standard_behaviour	.
-local:updates_in_triple_stores	local:updates_in	local:triple_stores	.
-local:triple_stores	rdfs:subClassOf	local:stores	.
-local:entailment_other_regimes	rdfs:subClassOf	local:other_regimes	.
-local:rdf_triples	rdfs:subClassOf	local:triples	.
-local:take	vn.role:Agent	local:we	.
-local:define	vn.role:Theme	local:fragment_of_sparql_basic_graph_patterns	.
-local:offtheshelf_triple	rdfs:member	local:offtheshelf_triple_store	.
-local:dealing	vn.role:Theme	local:updates_of_abox_of_tbox_statements	.
-local:store	local:AM-NEG	local:not	.
-local:tbox_statements	rdfs:subClassOf	local:statements	.
-local:entailed	vn.role:indirect_object	local:all	.
-local:store	vn.role:Value	local:all	.
-local:first_step	rdfs:subClassOf	local:step	.
-local:entailment	rdfs:member	local:entailment_regimes	.
-local:triple_store	rdfs:subClassOf	local:store	.
-local:sparql_basic_graph	rdfs:subClassOf	local:graph	.
-local:entailed	vn.role:object	local:answers	.
-local:standard_behaviour	rdfs:subClassOf	local:behaviour	.
-local:rdf	rdfs:member	local:rdf_triples	.
-local:redundancyfree_rdf_stores	rdfs:subClassOf	local:stores	.
-local:entailment_regimes_specifications	rdfs:subClassOf	local:specifications	.
-local:entailed	local:AM-MNR	local:ontologies	.
-local:store	vn.role:Agent	local:rdf_stores	.
-local:sparql_basic_graph_patterns_corresponding	local:sparqlbasicgraphpatterns_	local:corresponding	.
-local:sparql_basic_graph	rdfs:member	local:sparql_basic_graph_patterns	.
-local:treated	local:AM-TMP	local:usually	.
-local:standardised	local:AM-TMP	local:recently	.
-local:entailed	vn.role:object	local:computing	.
-local:w3c_11_sparql	rdfs:subClassOf	local:11_sparql	.
-local:treat	vn.role:Theme	local:redundancyfree_rdf_stores	.
-local:rdf_stores	rdfs:subClassOf	local:stores	.
-local:entailed	vn.role:object	local:explicitly_triples	.
-local:implemented	local:AM-MNR	local:prototypically	.
-local:entailed	vn.role:object	local:rdf_triples	.
-local:updates_in_rdf_stores	local:updates_in	local:rdf_stores	.
-local:11_sparql	rdfs:subClassOf	local:sparql	.
+local:updates_both_of_abox_and_of_tbox_statements	rdfs:member	local:tbox_statements	.
+local:s7	rdf:predicate	local:define	.
+local:sparql_basic_graph_patterns_corresponding	rdfs:member	local:sparql_basic_graph_patterns	.
+local:w3c_sparql_11_update	rdfs:subClassOf	local:sparql_11_update	.
+local:sparql_basic_graph_patterns	rdfs:member	local:basic_graph_patterns	.
+local:even_w3c_sparql_11_update	rdfs:subClassOf	local:w3c_sparql_11_update	.
+local:s18	rdf:predicate	local:present	.
 local:entailment_regimes	rdfs:subClassOf	local:regimes	.
-local:treated	vn.role:Predicate	local:updates_in_triple_stores	.
-local:treat	local:AM-LOC	local:particular	.
-local:implemented	vn.role:Theme	local:semantics	.
-local:redundancyfree_rdf	rdfs:member	local:redundancyfree_rdf_stores	.
-local:reduced	local:AM-LOC	local:particular	.
-local:exclude	vn.role:Theme	local:standard_behaviour_for_entailment_other_regimes_in_context	.
-local:exclude	vn.role:Agent	local:regimes	.
-local:triple	rdfs:member	local:triple_stores	.
-local:entailment_regimes	rdfs:member	local:entailment_regimes_specifications	.
-local:discuss	vn.role:Patient2	local:possible_semantics_alongwith_potential_potential_strategies	.
-local:context_of_updates	local:context_of	local:updates	.
-local:treat	vn.role:Agent	local:we	.
-local:redundancyfree_rdf	rdfs:subClassOf	local:rdf	.
-local:take	local:AM-LOC	local:paper	.
-local:updates_of_abox	local:updates_of	local:abox	.
-local:dealing	vn.role:Agent	local:language	.
-local:potential_potential_strategies	rdfs:subClassOf	local:potential_strategies	.
-local:updates_of_abox_of_tbox_statements	local:updatesofabox_of	local:tbox_statements	.
-local:even_w3c_11_sparql	rdfs:subClassOf	local:w3c_11_sparql	.
-local:corresponding	vn.role:Actor1	local:sparql_basic_graph_patterns	.
-local:redundancyfree	rdfs:member	local:redundancyfree_rdf	.
-local:sparql	rdfs:member	local:sparql_basic	.
-local:context_of_updates	local:of_updates	local:context	.
-local:updates_in_rdf_stores	local:in_rdfstores	local:updates	.
-local:basic_graph_patterns	rdfs:subClassOf	local:graph_patterns	.
-local:implemented	local:AM-EXT	local:top_of_offtheshelf_triple_store	.
-local:simple	rdfs:member	local:simple_entailment	.
-local:sparql_basic_graph_patterns_corresponding	local:_corresponding	local:sparql_basic_graph_patterns	.
-local:top_of_offtheshelf_triple_store	local:of_off-the-shelftriplestore	local:top	.
-local:implemented	vn.role:Agent	local:we	.
-local:standardised	vn.role:Patient	local:updates_in_rdf_stores	.
-local:fragment_of_sparql_basic_graph_patterns	local:of_sparqlbasicgraphpatterns	local:fragment	.
-local:close	vn.role:Patient	local:gap	.
-local:reduced	vn.role:Cause	local:we	.
-local:basic	rdfs:member	local:basic_graph	.
-local:materialised	vn.role:Location	local:rdf_stores	.
-local:rdf	rdfs:member	local:rdf_stores	.
-local:reduced	vn.role:Patient	local:rdf_stores	.
-local:reduced	vn.role:other	local:redundancyfree_rdf_stores	.
-local:updates_in_triple_stores	local:in_triplestores	local:updates	.
-local:exclude	local:AM-MNR	local:explicitly	.
-local:graph_patterns	rdfs:subClassOf	local:patterns	.
-local:update_specification	rdfs:subClassOf	local:specification	.
-local:sparql_basic	rdfs:member	local:sparql_basic_graph	.
-local:sparql_basic	rdfs:subClassOf	local:basic	.
-local:store	vn.role:Agent	local:redundancyfree_rdf_stores	.
-local:present	vn.role:Theme	local:indications	.
-local:practical	rdfs:member	local:practical_feasibility	.
-local:graph	rdfs:member	local:graph_patterns	.
-local:sparql_basic_graph_patterns	rdfs:subClassOf	local:basic_graph_patterns	.
-local:offtheshelf	rdfs:member	local:offtheshelf_triple	.
-local:first	rdfs:member	local:first_step	.
-local:already_others	rdfs:subClassOf	local:others	.
-local:present	local:AM-MNR	local:practical_feasibility	.
-local:regimes_specifications	rdfs:subClassOf	local:specifications	.
-local:top_of_offtheshelf_triple_store	local:top_of	local:offtheshelf_triple_store	.
-local:possible_semantics	rdfs:subClassOf	local:semantics	.
-local:store	vn.role:Value	local:rdf_triples	.
-local:redundancyfree_rdf_stores	rdfs:subClassOf	local:rdf_stores	.
-local:update	rdfs:member	local:update_specification	.
-local:other_regimes	rdfs:subClassOf	local:regimes	.
-local:possible_semantics_alongwith_potential_potential_strategies	local:possiblesemantics_along_with	local:potential_potential_strategies	.
-local:basic_graph_patterns	rdfs:subClassOf	local:patterns	.
-local:regimes	rdfs:member	local:regimes_specifications	.
-local:implementing	vn.role:Theme	local:potential_strategies	.
 local:offtheshelf_triple_store	rdfs:subClassOf	local:triple_store	.
-local:standard	rdfs:member	local:standard_behaviour	.
-local:define	vn.role:Agent	local:we	.
-local:exclude	vn.role:Agent	local:update	.
+local:tbox_statements	rdfs:subClassOf	local:statements	.
+local:s12	rdf:subject	local:redundancyfree_rdf_stores	.
+local:s7.1	rdf:subject	local:sparql_basic_graph_patterns	.
+local:updates_in_rdf_stores	rdfs:member	local:rdf_stores	.
+local:even_the_w3c_sparql_11_update	rdfs:member	local:update	.
+local:triple_store	rdfs:subClassOf	local:store	.
+local:s14	rdf:object	local:rdf_stores_redundancyfree_rdf_stores	.
+local:basic_graph	rdfs:member	local:basic	.
+local:s9	rdf:predicate	local:discuss	.
+local:s11	rdf:predicate	local:entail	.
+local:s5	rdf:object	local:first_step_to_close_this_gap	.
+local:s15	rdf:predicate	local:entail	.
+local:s0	rdf:predicate	local:standardise	.
+local:entailment_regimes_specifications	rdfs:subClassOf	local:specifications	.
+local:sparql_11_update_specification	rdfs:member	local:sparql	.
+local:s5.1	rdf:subject	local:we	.
+local:s5.1	rdf:predicate	local:close	.
+local:offtheshelf_triple_store	rdfs:member	local:offtheshelf_triple	.
+local:s13	local:AM-DIS	local:particular	.
+local:s16	rdf:object	local:all	.
+local:potential_strategies	rdfs:subClassOf	local:strategies	.
+local:s16	rdf:subject	local:rdf_stores	.
+local:s17	rdf:object	local:semantics	.
+local:possible_semantics	rdfs:subClassOf	local:semantics	.
+local:s11	rdf:subject	local:triples_explicitly	.
+local:simple_entailment	rdfs:subClassOf	local:entailment	.
+local:s17	rdf:predicate	local:implement	.
+local:s2	local:AM-MNR	local:orthogonally	.
+local:s2	rdf:object	local:updates_in_triple_stores	.
+local:rdf_triples	rdfs:member	local:rdf	.
+local:tbox_statements	rdfs:member	local:tbox	.
+local:sparql_11_update_specification	rdfs:subClassOf	local:11_update_specification	.
+local:fragment_of_sparql_basic_graph_patterns	rdfs:member	local:fragment	.
+local:s17	local:AM-LOC	local:top_of_an_offtheshelf_triple_store	.
+local:first_step_to_close_this_gap	rdfs:member	local:first_step	.
+local:first_step	rdfs:member	local:first	.
+local:triple_store	rdfs:member	local:triple	.
+local:updates_of_abox_of_tbox_statements	rdfs:member	local:tbox_statements	.
+local:first_step_to_close_this_gap	rdfs:member	local:gap	.
+local:s5	rdf:predicate	local:take	.
+local:s17	rdf:subject	local:we	.
+local:s10	rdf:predicate	local:treat	.
+local:s8	rdf:subject	local:language	.
+local:s3	rdf:subject	local:sparql_11_entailment_regimes_specifications	.
+local:s8	rdf:predicate	local:deal	.
+local:answers_by_ontologies	rdfs:member	local:ontologies	.
+local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	rdfs:member	local:standard_behaviour	.
+local:s15	rdf:subject	local:others	.
+local:entailment_regimes	rdfs:member	local:entailment	.
+local:sparql_basic_graph_patterns	rdfs:member	local:sparql	.
+local:s5.1	local:AM-TMP	local:gap	.
+local:11_update	rdfs:subClassOf	local:update	.
+local:triple_stores	rdfs:member	local:triple	.
+local:s1	rdf:predicate	local:entail	.
+local:s3	rdf:predicate	local:exclude	.
+local:entailment_regimes_specifications	rdfs:subClassOf	local:regimes_specifications	.
+local:corresponding_to_dllite	rdfs:member	local:corresponding	.
+local:s4	rdf:predicate	local:exclude	.
+local:s18	rdf:subject	local:we	.
+local:s2	local:AM-DIS	local:however	.
+local:s7.1	rdf:object	local:dllite	.
+local:basic_graph_patterns	rdfs:member	local:basic_graph	.
+local:s7	rdf:object	local:fragment_of_sparql_basic_graph_patterns_corresponding_to_dllite	.
+local:11_entailment_regimes_specifications	rdfs:subClassOf	local:entailment_regimes_specifications	.
+local:standard_behaviour_for_entailment_other_regimes_in_context	rdfs:member	local:standard_behaviour_for_entailment_other_regimes	.
+local:s10	rdf:object	local:redundancyfree_rdf_stores	.
+local:s16	rdf:predicate	local:store	.
+local:fragment_of_sparql_basic_graph_patterns_corresponding_to_dllite	rdfs:member	local:sparql	.
+local:standard_behaviour_for_entailment_other_regimes_in_context	rdfs:member	local:context	.
+local:11_update_specification	rdfs:subClassOf	local:update_specification	.
+local:context_of_updates	rdfs:member	local:context	.
+local:s18	rdf:object	local:indications	.
+local:s5	local:AM-LOC	local:paper	.
+local:rdf_triples	rdfs:subClassOf	local:triples	.
+local:s14	rdf:predicate	local:materialise	.
+local:offtheshelf_triple	rdfs:subClassOf	local:triple	.
+local:sparql_11_entailment_regimes_specifications	rdfs:subClassOf	local:11_entailment_regimes_specifications	.
+local:answers_by_ontologies	rdfs:member	local:answers	.
+local:s8	rdf:object	local:updates_both_of_abox_and_of_tbox_statements	.
+local:update_specification	rdfs:member	local:update	.
+local:s2	rdf:predicate	local:treat	.
+local:s13	rdf:subject	local:we	.
+local:sparql_11_update_specification	rdfs:member	local:update_specification	.
+local:s4	local:AM-MNR	local:explicitly	.
+local:s1	rdf:subject	local:computing	.
+local:top_of_offtheshelf_triple_store	rdfs:member	local:top	.
+local:standard_behaviour_for_entailment_other_regimes	rdfs:member	local:standard_behaviour	.
+local:possible_semantics_along_with_potential_strategies_for_implementing_potential_strategies	rdfs:member	local:possible_semantics	.
+local:regimes_specifications	rdfs:subClassOf	local:specifications	.
+local:s10	rdf:subject	local:we	.
+local:s5	rdf:subject	local:we	.
+local:s15	local:AM-TMP	local:already	.
+local:redundancyfree_rdf_stores	rdfs:subClassOf	local:stores	.
+local:top_of_an_offtheshelf_triple_store	rdfs:member	local:offtheshelf_triple_store	.
+local:context_of_updates	rdfs:member	local:updates	.
+local:s0	rdf:object	local:sparql_11_update_specification	.
+local:standard_behaviour	rdfs:subClassOf	local:behaviour	.
+local:offtheshelf_triple	rdfs:member	local:offtheshelf	.
+local:updates_in_rdf_stores	rdfs:member	local:updates	.
+local:practical_feasibility	rdfs:subClassOf	local:feasibility	.
+local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	rdfs:member	local:updates	.
+local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	rdfs:member	local:simple_entailment	.
+local:standard_behaviour	rdfs:member	local:standard	.
+local:entailment_regimes_specifications	rdfs:member	local:entailment_regimes	.
+local:updates_in_triple_stores	rdfs:member	local:updates	.
+local:s12	rdf:object	local:rdf_triples	.
+local:s3	local:AM-MNR	local:explicitly	.
 local:offtheshelf_triple_store	rdfs:subClassOf	local:store	.
-local:however_computing	rdfs:subClassOf	local:computing	.
-local:standard_behaviour_for_entailment_other_regimes_in_context	local:in_context	local:standard_behaviour_for_entailment_other_regimes	.
-local:sparql_11_entailment	rdfs:subClassOf	local:11_entailment	.
+local:redundancyfree_rdf_stores	rdfs:member	local:redundancyfree_rdf	.
+local:potential_strategies	rdfs:member	local:potential	.
+local:sparql_11_entailment_regimes_specifications	rdfs:member	local:sparql	.
+local:updates_both_of_abox_and_of_tbox_statements	rdfs:member	local:abox	.
+local:first_step	rdfs:subClassOf	local:step	.
+local:redundancyfree_rdf	rdfs:subClassOf	local:rdf	.
+local:even_the_w3c_sparql_11_update	rdfs:member	local:w3c_sparql	.
+local:redundancyfree_rdf_stores	rdfs:subClassOf	local:rdf_stores	.
+local:s0	local:AM-TMP	local:recently	.
+local:potential_potential_strategies	rdfs:subClassOf	local:potential_strategies	.
+local:possible_semantics	rdfs:member	local:possible	.
+local:s2	rdf:subject	local:computing	.
+local:fragment_of_sparql_basic_graph_patterns	rdfs:member	local:sparql_basic_graph_patterns	.
+local:updates_of_abox_of_tbox_statements	rdfs:member	local:updates_of_abox	.
+local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	rdfs:member	local:entailment_regimes	.
+local:graph_patterns	rdfs:subClassOf	local:patterns	.
+local:fragment_of_sparql_basic_graph_patterns_corresponding_to_dllite	rdfs:member	local:fragment	.
+local:other_than_simple_entailment	rdfs:member	local:simple_entailment	.
+local:s0	rdf:subject	local:updates_in_rdf_stores	.
+local:s11	rdf:object	local:all	.
+local:s14	rdf:subject	local:we	.
+local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	rdfs:member	local:context	.
+local:simple_entailment	rdfs:member	local:simple	.
+local:corresponding_to_dllite	rdfs:member	local:dllite	.
+local:sparql_11_entailment_regimes_specifications	rdfs:member	local:entailment_regimes_specifications	.
+local:s1	rdf:object	local:answers_by_ontologies	.
+local:sparql_basic_graph_patterns	rdfs:subClassOf	local:basic_graph_patterns	.
+local:s10	local:AM-ADV	local:particular	.
 local:explicitly_triples	rdfs:subClassOf	local:triples	.
-local:tbox	rdfs:member	local:tbox_statements	.
-local:materialised	local:AM-LOC	local:particular	.
-local:possible_semantics_alongwith_potential_potential_strategies	local:along_with_potentialpotentialstrategies	local:possible_semantics	.
-local:triple	rdfs:member	local:triple_store	.
-local:materialised	vn.role:Location	local:we	.
-local:updates_of_abox_of_tbox_statements	local:of_tboxstatements	local:updates_of_abox	.
-local:entailed	vn.role:indirect_object	local:already_others	.
-local:sparql_basic_graph_patterns	rdfs:subClassOf	local:patterns	.
-local:corresponding	vn.role:Actor2	local:dllite	.
+local:top_of_an_offtheshelf_triple_store	rdfs:member	local:top	.
+local:s13	rdf:predicate	local:reduce	.
+local:update_specification	rdfs:subClassOf	local:specification	.
+local:s14	local:AM-ADV	local:particular	.
+local:s13	rdf:object	local:rdf_stores	.
+local:s17	local:AM-MNR	local:prototypically	.
+local:basic_graph_patterns	rdfs:subClassOf	local:graph_patterns	.
+local:s9	rdf:subject	local:we	.
+local:w3c_sparql	rdfs:member	local:w3c	.
+local:sparql_11_update	rdfs:subClassOf	local:11_update	.
+local:updates_in_triple_stores	rdfs:member	local:triple_stores	.
+local:updates_of_abox	rdfs:member	local:updates	.
+local:entailment_other_regimes	rdfs:subClassOf	local:other_regimes	.
+local:standard_behaviour_for_entailment_other_regimes	rdfs:member	local:entailment_other_regimes	.
+local:s9.1	rdf:subject	local:potential_strategies	.
+local:s9	rdf:object	local:possible_semantics_along_with_potential_strategies_for_implementing_potential_strategies	.
+local:rdf_stores	rdfs:member	local:rdf	.
+local:basic_graph_patterns	rdfs:subClassOf	local:patterns	.
+local:s7	rdf:subject	local:we	.
+local:updates_both_of_abox_and_of_tbox_statements	rdfs:member	local:updates	.
+local:practical_feasibility	rdfs:member	local:practical	.
+local:s4	rdf:object	local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	.
+local:top_of_offtheshelf_triple_store	rdfs:member	local:offtheshelf_triple_store	.
+local:sparql_basic_graph_patterns_corresponding	rdfs:member	local:corresponding	.
+local:possible_semantics_along_with_potential_strategies_for_implementing_potential_strategies	rdfs:member	local:potential_strategies	.
+local:updates_of_abox	rdfs:member	local:abox	.
+local:s2	local:AM-TMP	local:usually	.
+local:s9.1	rdf:predicate	local:implement	.
+local:w3c_sparql	rdfs:subClassOf	local:sparql	.
+local:rdf_stores	rdfs:subClassOf	local:stores	.
+local:s4	rdf:subject	local:even_the_w3c_sparql_11_update	.
+local:s7.1	rdf:predicate	local:correspond	.
+local:fragment_of_sparql_basic_graph_patterns_corresponding_to_dllite	rdfs:member	local:basic_graph_patterns	.
+local:s3	rdf:object	local:standard_behaviour_for_entailment_regimes_other_than_simple_entailment_in_the_context_of_updates	.
+local:basic_graph	rdfs:subClassOf	local:graph	.
+local:redundancyfree_rdf	rdfs:member	local:redundancyfree	.
+local:s18	local:AM-MNR	local:practical_feasibility	.
+local:s12	rdf:predicate	local:not_store	.
+local:possible_semantics_along_with_potential_potential_strategies	rdfs:member	local:potential_potential_strategies	.
+local:other_than_simple_entailment	rdfs:member	local:other	.
+local:triple_stores	rdfs:subClassOf	local:stores	.
+local:possible_semantics_along_with_potential_potential_strategies	rdfs:member	local:possible_semantics	.
+local:other_regimes	rdfs:subClassOf	local:regimes	.
+local:s15	rdf:object	local:rdf_triples	.
+local:graph_patterns	rdfs:member	local:graph	.
+local:regimes_specifications	rdfs:member	local:regimes	.

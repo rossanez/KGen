@@ -1,290 +1,625 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.4	a	rdf:Statement	;
+	rdfs:label	"searching process"	.
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"an ontology such that other important sources for determining the relevance of results can considered the structure of the characteristics of the searching process"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"determining the relevance of results can be considered the structure of the characteristics of the searching process"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"on the other hand in the semantic web the querying process supported by an ontology such that other important sources for determining the relevance of results can be considered the structure of the characteristics of the searching process"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"querying process"	.
+
+local:s10.4	a	rdf:Statement	;
+	rdfs:label	"underlying domain"	.
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"an ontology such that other important sources for determining the relevance of results can considered the structure of the underlying domain"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"determining the relevance of results can be considered the structure of the underlying domain"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"on the other hand in the semantic web the querying process supported by an ontology such that other important sources for determining the relevance of results can be considered the structure of the underlying domain"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"querying process"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"repository which leads to the weak relevance model"	.
+
+local:s8.3	a	rdf:Statement	;
+	rdfs:label	"underlying information repository"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"analysing the underlying information repository"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the relevance of the results determined only"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in traditional ir approaches the relevance of the results is determined only by analysing the underlying information repository"	.
+
+local:s7.3	a	rdf:Statement	;
+	rdfs:label	"underlying information hyperlink structure"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"analysing the underlying information hyperlink structure"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the relevance of the results determined only by analysing the underlying information hyperlink structure"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in traditional ir approaches the relevance of the results is determined only by analysing the underlying information hyperlink structure"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"hyperlink structure which leads to the weak relevance model"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"underlying information content structure"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"analysing the underlying information content structure"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"the relevance of the results determined only by analysing the underlying information content structure"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in traditional ir approaches the relevance of the results is determined only by analysing the underlying information content structure"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"content structure which leads to the weak relevance model"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"users make typically very short queries"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"retrieved results"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"users make 23 terms"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"retrieved results"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"searching for information"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"users consider only the first ten results"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"users tend to consider only the first ten results"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"retrieved results"	.
+
+
 #### Classes ####
 
-local:retrieved	rdfs:label	"retrieved"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:results	rdfs:label	"results"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:make	rdfs:label	"make"	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	a	rdf:Class	;
+	rdfs:label	"ontology such that other important sources for determining the relevance of results"	.
 
-local:users	rdfs:label	"users"	.
+local:relevance	a	rdf:Class	;
+	rdfs:label	"relevance"	.
 
-local:typically	rdfs:label	"typically"	.
+local:other_important_sources	a	rdf:Class	;
+	rdfs:label	"other important sources"	.
 
-local:short	rdfs:label	"short"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:short_queries	rdfs:label	"short queries"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:queries	rdfs:label	"queries"	.
+local:other_important	a	rdf:Class	;
+	rdfs:label	"other important"	.
 
-local:23	rdfs:label	"2-3"	.
+local:important	a	rdf:Class	;
+	rdfs:label	"important"	.
 
-local:23_terms	rdfs:label	"2-3 terms"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:terms	rdfs:label	"terms"	.
+local:important_sources	a	rdf:Class	;
+	rdfs:label	"important sources"	.
 
-local:rrb	rdfs:label	"-rrb-"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:tend	rdfs:label	"tend"	.
+local:relevance_of_results	a	rdf:Class	;
+	rdfs:label	"relevance of results"	.
 
-local:first_ten	rdfs:label	"first ten"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:ten	rdfs:label	"ten"	.
+local:structure_of_the_characteristics_of_the_searching_process	a	rdf:Class	;
+	rdfs:label	"structure of the characteristics of the searching process"	.
 
-local:first	rdfs:label	"first"	.
+local:characteristics	a	rdf:Class	;
+	rdfs:label	"characteristics"	.
 
-local:first_ten_results	rdfs:label	"first ten results"	.
+local:structure	a	rdf:Class	;
+	rdfs:label	"structure"	.
 
-local:ten_results	rdfs:label	"ten results"	.
+local:searching	a	rdf:Class	;
+	rdfs:label	"searching"	.
 
-local:only_first_ten_results	rdfs:label	"only first ten results"	.
+local:structure_of_characteristics	a	rdf:Class	;
+	rdfs:label	"structure of characteristics"	.
 
-local:consider	rdfs:label	"consider"	.
+local:characteristics_of_searching_process	a	rdf:Class	;
+	rdfs:label	"characteristics of searching process"	.
 
-local:searching	rdfs:label	"searching"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:information	rdfs:label	"information"	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	a	rdf:Class	;
+	rdfs:label	"relevance of results can be considered the structure of the characteristics of the searching process"	.
 
-local:traditional	rdfs:label	"traditional"	.
+local:can_considered	a	rdf:Class	;
+	rdfs:label	"can considered"	.
 
-local:traditional_ir	rdfs:label	"traditional ir"	.
+local:considered	a	rdf:Class	;
+	rdfs:label	"considered"	.
 
-local:ir	rdfs:label	"ir"	.
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	a	rdf:Class	;
+	rdfs:label	"ontology such that other important sources for determining the relevance of results can be considered the structure of the characteristics of the searching process"	.
 
-local:underlying_information	rdfs:label	"underlying information"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:content	rdfs:label	"content"	.
+local:querying_process	a	rdf:Class	;
+	rdfs:label	"querying process"	.
 
-local:content_structure	rdfs:label	"content structure"	.
+local:hand_in_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"hand in the semantic web"	.
 
-local:information_content	rdfs:label	"information content"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:underlying_information_content	rdfs:label	"underlying information content"	.
+local:hand	a	rdf:Class	;
+	rdfs:label	"hand"	.
 
-local:underlying	rdfs:label	"underlying"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:information_content_structure	rdfs:label	"information content structure"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:underlying_information_content_structure	rdfs:label	"underlying information content structure"	.
+local:hand_in_semantic_web	a	rdf:Class	;
+	rdfs:label	"hand in semantic web"	.
 
-local:structure	rdfs:label	"structure"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:only_analysing	rdfs:label	"only analysing"	.
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
 
-local:analysing	rdfs:label	"analysing"	.
+local:underlie	a	rdf:Class	;
+	rdfs:label	"underlie"	.
 
-local:relevance_of_results	rdfs:label	"relevance of results"	.
+local:structure_of_the_underlying_domain	a	rdf:Class	;
+	rdfs:label	"structure of the underlying domain"	.
 
-local:relevance	rdfs:label	"relevance"	.
+local:structure_of_underlying_domain	a	rdf:Class	;
+	rdfs:label	"structure of underlying domain"	.
 
-local:determined	rdfs:label	"determined"	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	a	rdf:Class	;
+	rdfs:label	"relevance of results can be considered the structure of the underlying domain"	.
 
-local:only	rdfs:label	"only"	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	a	rdf:Class	;
+	rdfs:label	"ontology such that other important sources for determining the relevance of results can be considered the structure of the underlying domain"	.
 
-local:information_hyperlink	rdfs:label	"information hyperlink"	.
+local:repository	a	rdf:Class	;
+	rdfs:label	"repository"	.
 
-local:information_hyperlink_structure	rdfs:label	"information hyperlink structure"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:hyperlink	rdfs:label	"hyperlink"	.
+local:weak_relevance_model	a	rdf:Class	;
+	rdfs:label	"weak relevance model"	.
 
-local:hyperlink_structure	rdfs:label	"hyperlink structure"	.
+local:relevance_model	a	rdf:Class	;
+	rdfs:label	"relevance model"	.
 
-local:underlying_information_hyperlink_structure	rdfs:label	"underlying information hyperlink structure"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:leads	rdfs:label	"leads"	.
+local:weak_relevance	a	rdf:Class	;
+	rdfs:label	"weak relevance"	.
 
-local:relevance_model	rdfs:label	"relevance model"	.
+local:weak	a	rdf:Class	;
+	rdfs:label	"weak"	.
 
-local:model	rdfs:label	"model"	.
+local:information_repository	a	rdf:Class	;
+	rdfs:label	"information repository"	.
 
-local:weak_relevance_model	rdfs:label	"weak relevance model"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:weak_relevance	rdfs:label	"weak relevance"	.
+local:analyse	a	rdf:Class	;
+	rdfs:label	"analyse"	.
 
-local:weak	rdfs:label	"weak"	.
+local:relevance_of_the_results	a	rdf:Class	;
+	rdfs:label	"relevance of the results"	.
 
-local:information_repository	rdfs:label	"information repository"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:repository	rdfs:label	"repository"	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_repository	a	rdf:Class	;
+	rdfs:label	"relevance of the results is determined only by analysing the underlying information repository"	.
 
-local:underlying_information_repository	rdfs:label	"underlying information repository"	.
+local:underlying_information	a	rdf:Class	;
+	rdfs:label	"underlying information"	.
 
-local:querying	rdfs:label	"querying"	.
+local:only_analysing	a	rdf:Class	;
+	rdfs:label	"only analysing"	.
 
-local:process	rdfs:label	"process"	.
+local:analysing	a	rdf:Class	;
+	rdfs:label	"analysing"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:traditional_ir	a	rdf:Class	;
+	rdfs:label	"traditional ir"	.
 
-local:web	rdfs:label	"web"	.
+local:ir	a	rdf:Class	;
+	rdfs:label	"ir"	.
 
-local:hand_in_semantic_web	rdfs:label	"hand in semantic web"	.
+local:traditional	a	rdf:Class	;
+	rdfs:label	"traditional"	.
 
-local:hand	rdfs:label	"hand"	.
+local:information_hyperlink_structure	a	rdf:Class	;
+	rdfs:label	"information hyperlink structure"	.
 
-local:supported	rdfs:label	"supported"	.
+local:hyperlink_structure	a	rdf:Class	;
+	rdfs:label	"hyperlink structure"	.
 
-local:important_sources	rdfs:label	"important sources"	.
+local:hyperlink	a	rdf:Class	;
+	rdfs:label	"hyperlink"	.
 
-local:sources	rdfs:label	"sources"	.
+local:information_hyperlink	a	rdf:Class	;
+	rdfs:label	"information hyperlink"	.
 
-local:other_important_sources	rdfs:label	"other important sources"	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_hyperlink_structure	a	rdf:Class	;
+	rdfs:label	"relevance of the results is determined only by analysing the underlying information hyperlink structure"	.
 
-local:other	rdfs:label	"other"	.
+local:information_content_structure	a	rdf:Class	;
+	rdfs:label	"information content structure"	.
 
-local:other_important	rdfs:label	"other important"	.
+local:content_structure	a	rdf:Class	;
+	rdfs:label	"content structure"	.
 
-local:important	rdfs:label	"important"	.
+local:content	a	rdf:Class	;
+	rdfs:label	"content"	.
 
-local:searching_process	rdfs:label	"searching process"	.
+local:information_content	a	rdf:Class	;
+	rdfs:label	"information content"	.
 
-local:can_considered	rdfs:label	"can considered"	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_content_structure	a	rdf:Class	;
+	rdfs:label	"relevance of the results is determined only by analysing the underlying information content structure"	.
 
-local:considered	rdfs:label	"considered"	.
+local:underlying_information_content	a	rdf:Class	;
+	rdfs:label	"underlying information content"	.
 
-local:structure_of_characteristics	rdfs:label	"structure of characteristics"	.
+local:underlying	a	rdf:Class	;
+	rdfs:label	"underlying"	.
 
-local:characteristics	rdfs:label	"characteristics"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:characteristics_of_searching_process	rdfs:label	"characteristics of searching process"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:typically_very_short_queries	a	rdf:Class	;
+	rdfs:label	"typically very short queries"	.
 
-local:determining	rdfs:label	"determining"	.
+local:short_queries	a	rdf:Class	;
+	rdfs:label	"short queries"	.
 
-local:underlying_domain	rdfs:label	"underlying domain"	.
+local:short	a	rdf:Class	;
+	rdfs:label	"short"	.
 
-local:domain	rdfs:label	"domain"	.
+local:typically_very_short	a	rdf:Class	;
+	rdfs:label	"typically very short"	.
 
-local:structure_of_underlying_domain	rdfs:label	"structure of underlying domain"	.
+local:very_short_queries	a	rdf:Class	;
+	rdfs:label	"very short queries"	.
 
-#### Properties ####
+local:very_short	a	rdf:Class	;
+	rdfs:label	"very short"	.
+
+local:typically_very	a	rdf:Class	;
+	rdfs:label	"typically very"	.
+
+local:very	a	rdf:Class	;
+	rdfs:label	"very"	.
+
+local:typically	a	rdf:Class	;
+	rdfs:label	"typically"	.
+
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
+
+local:retrieve	a	rdf:Class	;
+	rdfs:label	"retrieve"	.
+
+local:23_terms	a	rdf:Class	;
+	rdfs:label	"23 terms"	.
+
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
+
+local:first_ten_results	a	rdf:Class	;
+	rdfs:label	"first ten results"	.
+
+local:ten_results	a	rdf:Class	;
+	rdfs:label	"ten results"	.
+
+local:ten	a	rdf:Class	;
+	rdfs:label	"ten"	.
+
+local:first_ten	a	rdf:Class	;
+	rdfs:label	"first ten"	.
+
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
+
+local:tend	a	rdf:Class	;
+	rdfs:label	"tend"	.
+
+local:consider_only_the_first_ten_results	a	rdf:Class	;
+	rdfs:label	"consider only the first ten results"	.
+
+local:only_first_ten_results	a	rdf:Class	;
+	rdfs:label	"only first ten results"	.
 
 #### Mapped Relations ####
 
-cso:information_content	rdfs:label	"information content"	.
-local:semantic_web	owl:sameAs	cso:semantic_web	.
-cso:ontology	rdfs:label	"ontology"	.
-local:information_content	owl:sameAs	cso:information_content	.
-local:hyperlink	owl:sameAs	cso:hyperlink	.
+cso:semantic_web	rdfs:label	"semantic web"	.
 cso:relevance_models	rdfs:label	"relevance model"	.
 local:relevance_model	owl:sameAs	cso:relevance_models	.
-cso:semantic_web	rdfs:label	"semantic web"	.
 cso:hyperlink	rdfs:label	"hyperlink"	.
 local:ontology	owl:sameAs	cso:ontology	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:information_content	rdfs:label	"information content"	.
+local:information_content	owl:sameAs	cso:information_content	.
+local:hyperlink	owl:sameAs	cso:hyperlink	.
+cso:ontology	rdfs:label	"ontology"	.
 
 #### Relations ####
 
-local:supported	vn.role:Theme	local:ontology	.
-local:searching	vn.role:Agent	local:process	.
-local:characteristics_of_searching_process	local:characteristics_of	local:searching_process	.
-local:searching	vn.role:Location	local:information	.
-local:approaches	local:AM-MNR	local:analysing	.
-local:other_important	rdfs:subClassOf	local:important	.
-local:first_ten_results	rdfs:subClassOf	local:results	.
-local:underlying	vn.role:Theme1	local:information_content_structure	.
-local:traditional_ir	rdfs:subClassOf	local:ir	.
-local:weak_relevance	rdfs:subClassOf	local:relevance	.
-local:supported	vn.role:Experiencer	local:querying	.
-local:underlying_information_hyperlink_structure	rdfs:subClassOf	local:information_hyperlink_structure	.
-local:hand_in_semantic_web	local:hand_in	local:semantic_web	.
-local:weak_relevance_model	rdfs:subClassOf	local:model	.
-local:analysing	vn.role:Theme	local:underlying_information_content_structure	.
-local:only_first_ten_results	rdfs:subClassOf	local:first_ten_results	.
-local:underlying_information_content_structure	rdfs:subClassOf	local:information_content_structure	.
-local:leads	vn.role:Agent	local:content_structure	.
-local:other	rdfs:member	local:other_important	.
-local:searching_process	rdfs:subClassOf	local:process	.
-local:other_important_sources	rdfs:subClassOf	local:important_sources	.
-local:first_ten	rdfs:subClassOf	local:ten	.
-local:weak_relevance	rdfs:member	local:weak_relevance_model	.
-local:23_terms	rdfs:subClassOf	local:terms	.
-local:determined	local:AM-ADV	local:only	.
-local:determined	vn.role:Theme	local:results	.
-local:information_hyperlink_structure	rdfs:subClassOf	local:structure	.
-local:important_sources	rdfs:subClassOf	local:sources	.
-local:approaches	local:AM-LOC	local:traditional_ir	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:information_content_structure	rdfs:subClassOf	local:structure	.
-local:ten	rdfs:member	local:ten_results	.
-local:underlying	vn.role:Theme1	local:information_hyperlink_structure	.
-local:relevance	rdfs:member	local:relevance_model	.
-local:tend	vn.role:Location	local:users	.
-local:underlying_information_content_structure	rdfs:subClassOf	local:structure	.
-local:underlying_information_content	rdfs:subClassOf	local:content	.
-local:ten_results	rdfs:subClassOf	local:results	.
-local:determined	vn.role:Agent	local:analysing	.
-local:underlying_domain	rdfs:subClassOf	local:domain	.
-local:relevance_model	rdfs:subClassOf	local:model	.
-local:23	rdfs:member	local:23_terms	.
-local:information_content_structure	rdfs:subClassOf	local:content_structure	.
+local:s10	rdf:subject	local:process	.
+local:hand_in_the_semantic_web	rdfs:member	local:hand	.
+local:information_content	rdfs:member	local:information	.
+local:s8.3	rdf:subject	local:information_repository	.
+local:s7.2	rdf:subject	local:s7.3	.
+local:s6	rdf:predicate	local:lead	.
+local:s11.3	rdf:object	local:structure_of_the_characteristics_of_the_searching_process	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:characteristics	.
+local:information_hyperlink	rdfs:member	local:information	.
+local:s3	rdf:subject	local:results	.
+local:s7.1	local:AM-ADV	local:only	.
+local:s10.4	rdf:predicate	local:underlie	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:results	.
+local:s10.1	rdf:subject	local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	.
+local:s5.2	rdf:subject	local:s5.3	.
+local:characteristics_of_searching_process	rdfs:member	local:s11.4	.
+local:s11.1	rdf:object	local:querying_process	.
+local:s9	rdf:predicate	local:lead	.
+local:s10.1	rdf:predicate	local:support	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:structure	.
 local:content_structure	rdfs:subClassOf	local:structure	.
-local:consider	vn.role:Agent	local:users	.
-local:first_ten_results	rdfs:subClassOf	local:ten_results	.
-local:underlying	vn.role:Theme1	local:information_repository	.
-local:determined	vn.role:Theme	local:relevance_of_results	.
-local:tend	vn.role:indirect_object	local:consider	.
-local:information_content	rdfs:subClassOf	local:content	.
-local:leads	vn.role:Agent	local:hyperlink_structure	.
-local:information	rdfs:member	local:information_content	.
-local:underlying	vn.role:Theme1	local:domain	.
-local:first_ten	rdfs:member	local:first_ten_results	.
-local:make	vn.role:Product	local:rrb	.
-local:hyperlink	rdfs:member	local:hyperlink_structure	.
-local:information_hyperlink_structure	rdfs:subClassOf	local:hyperlink_structure	.
-local:content	rdfs:member	local:content_structure	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:underlying_information	rdfs:subClassOf	local:information	.
-local:analysing	vn.role:Theme	local:underlying_information_hyperlink_structure	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:structure	.
+local:typically_very_short_queries	rdfs:subClassOf	local:queries	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_content_structure	rdfs:member	local:relevance	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	rdfs:member	local:ontology	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_repository	rdfs:member	local:results	.
+local:structure_of_underlying_domain	rdfs:member	local:s10.4	.
+local:first_ten	rdfs:subClassOf	local:ten	.
+local:s10.1	rdf:object	local:s11	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:s11	rdf:subject	local:process	.
+local:other_important_sources	rdfs:member	local:other_important	.
 local:hyperlink_structure	rdfs:subClassOf	local:structure	.
-local:underlying_information	rdfs:member	local:underlying_information_content	.
-local:information	rdfs:member	local:information_repository	.
-local:weak_relevance_model	rdfs:subClassOf	local:relevance_model	.
-local:determining	vn.role:Theme	local:can_considered	.
-local:information	rdfs:member	local:information_hyperlink	.
-local:make	vn.role:Agent	local:users	.
-local:information_hyperlink	rdfs:member	local:information_hyperlink_structure	.
-local:relevance_of_results	local:relevance_of	local:results	.
-local:underlying_information_content	rdfs:member	local:underlying_information_content_structure	.
-local:hand_in_semantic_web	local:in_semanticweb	local:hand	.
-local:make	vn.role:Material	local:short_queries	.
-local:make	vn.role:Material	local:23_terms	.
-local:can_considered	rdfs:subClassOf	local:considered	.
-local:relevance_of_results	local:of_results	local:relevance	.
-local:short_queries	rdfs:subClassOf	local:queries	.
-local:important	rdfs:member	local:important_sources	.
-local:other_important	rdfs:member	local:other_important_sources	.
-local:short	rdfs:member	local:short_queries	.
-local:underlying_information_repository	rdfs:subClassOf	local:information_repository	.
-local:structure_of_characteristics	local:structure_of	local:characteristics	.
-local:querying	vn.role:Agent	local:process	.
-local:analysing	vn.role:Theme	local:underlying_information_repository	.
-local:approaches	vn.role:object	local:determined	.
-local:underlying	rdfs:member	local:underlying_information	.
-local:structure_of_underlying_domain	local:of_underlyingdomain	local:structure	.
-local:leads	vn.role:Agent	local:repository	.
-local:leads	vn.role:Destination	local:weak_relevance_model	.
-local:retrieved	vn.role:Theme	local:results	.
-local:other_important_sources	rdfs:subClassOf	local:sources	.
-local:only_analysing	rdfs:subClassOf	local:analysing	.
-local:information_hyperlink	rdfs:subClassOf	local:hyperlink	.
-local:make	local:AM-ADV	local:typically	.
-local:supported	local:AM-LOC	local:hand_in_semantic_web	.
-local:weak	rdfs:member	local:weak_relevance	.
-local:structure_of_underlying_domain	local:structure_of	local:underlying_domain	.
-local:traditional	rdfs:member	local:traditional_ir	.
-local:structure_of_characteristics	local:of_characteristics	local:structure	.
-local:consider	vn.role:Theme	local:first_ten_results	.
+local:s9	rdf:subject	local:repository	.
+local:s11.1	local:AM-LOC	local:hand_in_the_semantic_web	.
+local:information_content_structure	rdfs:member	local:information_content	.
+local:information_hyperlink_structure	rdfs:subClassOf	local:structure	.
+local:structure_of_characteristics	rdfs:member	local:characteristics	.
+local:s9	rdf:object	local:weak_relevance_model	.
+local:s1	rdf:subject	local:information	.
+local:s11.4	rdfs:subClassOf	local:process	.
+local:relevance_of_results	rdfs:member	local:results	.
+local:s11.4	rdf:subject	local:process	.
+local:s7.3	rdf:subject	local:information_hyperlink_structure	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:ontology	.
+local:s2.1	rdf:predicate	local:make	.
+local:underlying_information	rdfs:member	local:underlying	.
+local:s0	rdf:predicate	local:retrieve	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:relevance	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:ontology	.
+local:s8.2	rdf:predicate	local:analyse	.
+local:structure_of_characteristics	rdfs:member	local:structure	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:structure	.
+local:relevance_model	rdfs:subClassOf	local:model	.
+local:relevance_of_the_results	rdfs:member	local:relevance	.
+local:first_ten_results	rdfs:subClassOf	local:ten_results	.
+local:important_sources	rdfs:member	local:important	.
+local:s0	rdf:subject	local:results	.
+local:s11.1	rdf:subject	local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	.
+local:s11.4	rdfs:member	local:searching	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_hyperlink_structure	rdfs:member	local:relevance	.
+local:s5.3	rdf:predicate	local:underlie	.
+local:traditional_ir	rdfs:subClassOf	local:ir	.
+local:s5.2	rdf:predicate	local:analyse	.
+local:s5.1	rdf:object	local:relevance_of_the_results	.
+local:s3.1	rdf:predicate	local:make	.
+local:typically_very_short_queries	rdfs:member	local:typically_very_short	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:s11.4	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:relevance	.
+local:relevance_of_the_results	rdfs:member	local:results	.
+local:s5.3	rdfs:subClassOf	local:information_content_structure	.
+local:very_short	rdfs:member	local:very	.
 local:information_repository	rdfs:subClassOf	local:repository	.
-local:information_content	rdfs:member	local:information_content_structure	.
-local:characteristics_of_searching_process	local:of_searchingprocess	local:characteristics	.
-local:first	rdfs:member	local:first_ten	.
+local:s7.1	rdf:predicate	local:determine	.
+local:s0.2	rdf:predicate	local:consider	.
+local:structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:characteristics	.
+local:s2.1	rdf:object	local:23_terms	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:other_important_sources	.
+local:s0.2	rdf:object	local:first_ten_results	.
+local:s5.1	rdf:subject	local:s5.2	.
+local:s11.2	rdf:subject	local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	.
+local:underlying_information	rdfs:subClassOf	local:information	.
+local:information_content_structure	rdfs:subClassOf	local:structure	.
+local:information_repository	rdfs:member	local:information	.
+local:s0.1	rdf:predicate	local:tend	.
+local:weak_relevance	rdfs:subClassOf	local:relevance	.
+local:s5	rdf:object	local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_content_structure	.
+local:23_terms	rdfs:subClassOf	local:terms	.
+local:s10.3	rdf:predicate	local:consider	.
+local:s7	rdf:object	local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_hyperlink_structure	.
+local:s5.3	rdfs:member	local:underlying_information_content	.
+local:other_important	rdfs:member	local:other	.
+local:relevance_of_results	rdfs:member	local:relevance	.
+local:s8	rdf:subject	local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_repository	.
+local:s3.1	local:AM-MNR	local:typically_very_short_queries	.
+local:characteristics_of_searching_process	rdfs:member	local:characteristics	.
+local:hand_in_semantic_web	rdfs:member	local:hand	.
+local:structure_of_the_underlying_domain	rdfs:member	local:structure	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:structure	.
+local:s10.2	rdf:predicate	local:determine	.
+local:s8.1	local:AM-ADV	local:only	.
+local:typically_very	rdfs:member	local:typically	.
+local:weak_relevance_model	rdfs:member	local:weak_relevance	.
+local:weak_relevance_model	rdfs:subClassOf	local:relevance_model	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:results	.
+local:first_ten	rdfs:member	local:first	.
+local:information_content	rdfs:subClassOf	local:content	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:other_important_sources	.
+local:s4	rdf:subject	local:content_structure	.
+local:only_first_ten_results	rdfs:subClassOf	local:first_ten_results	.
+local:s5.3	rdf:subject	local:information_content_structure	.
+local:structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:structure	.
+local:s8	local:AM-LOC	local:traditional_ir	.
+local:very_short_queries	rdfs:member	local:very_short	.
+local:s2	rdf:predicate	local:retrieve	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:results	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:relevance	.
+local:s7	rdf:predicate	local:approach	.
+local:s5	rdf:predicate	local:approach	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_content_structure	rdfs:member	local:s5.3	.
+local:s10.3	rdf:subject	local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	.
+local:s10.3	rdf:object	local:structure_of_the_underlying_domain	.
+local:ten_results	rdfs:member	local:ten	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:relevance	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_repository	rdfs:member	local:information_repository	.
+local:s8.3	rdf:predicate	local:underlie	.
+local:s0.1	rdf:subject	local:users	.
+local:s4	rdf:predicate	local:lead	.
+local:information_hyperlink_structure	rdfs:subClassOf	local:hyperlink_structure	.
+local:s2	rdf:subject	local:results	.
+local:s1	rdf:predicate	local:search	.
+local:very_short	rdfs:subClassOf	local:short	.
+local:hyperlink_structure	rdfs:member	local:hyperlink	.
+local:s11.1	rdf:predicate	local:support	.
+local:traditional_ir	rdfs:member	local:traditional	.
+local:important_sources	rdfs:subClassOf	local:sources	.
+local:s5.1	rdf:predicate	local:determine	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_repository	rdfs:member	local:relevance	.
+local:other_important	rdfs:subClassOf	local:important	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:domain	.
+local:typically_very_short	rdfs:subClassOf	local:very_short	.
+local:underlying_information_content	rdfs:member	local:underlying_information	.
+local:structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:s11.4	.
+local:underlying_information_content	rdfs:subClassOf	local:content	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:domain	.
+local:s11.4	rdf:predicate	local:search	.
+local:short_queries	rdfs:member	local:short	.
+local:s5.3	rdfs:subClassOf	local:structure	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_hyperlink_structure	rdfs:member	local:results	.
+local:relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:characteristics	.
+local:s10.4	rdfs:subClassOf	local:domain	.
+local:s7.1	rdf:subject	local:s7.2	.
+local:s3.1	rdf:subject	local:users	.
+local:ten_results	rdfs:subClassOf	local:results	.
+local:first_ten_results	rdfs:member	local:first_ten	.
+local:s11.2	rdf:predicate	local:determine	.
+local:weak_relevance_model	rdfs:subClassOf	local:model	.
+local:only_analysing	rdfs:subClassOf	local:analysing	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	rdfs:member	local:other_important_sources	.
+local:structure_of_the_underlying_domain	rdfs:member	local:domain	.
+local:s11.3	rdf:subject	local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	.
+local:typically_very_short	rdfs:member	local:typically_very	.
+local:s10	rdf:predicate	local:query	.
+local:s8.2	rdf:subject	local:s8.3	.
+local:can_considered	rdfs:subClassOf	local:considered	.
+local:s8.1	rdf:subject	local:relevance_of_the_results	.
+local:s5.1	local:AM-ADV	local:only	.
+local:first_ten_results	rdfs:subClassOf	local:results	.
+local:structure_of_underlying_domain	rdfs:member	local:structure	.
+local:s0.2	rdf:subject	local:users	.
+local:information_hyperlink_structure	rdfs:member	local:information_hyperlink	.
+local:s6	rdf:subject	local:hyperlink_structure	.
+local:hand_in_semantic_web	rdfs:member	local:semantic_web	.
+local:s11.3	rdf:predicate	local:consider	.
+local:s7	local:AM-LOC	local:traditional_ir	.
+local:s7.3	rdfs:subClassOf	local:information_hyperlink_structure	.
+local:s6	rdf:object	local:weak_relevance_model	.
+local:s4	rdf:object	local:weak_relevance_model	.
+local:short_queries	rdfs:subClassOf	local:queries	.
+local:information_content_structure	rdfs:subClassOf	local:content_structure	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	rdfs:member	local:results	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_content_structure	rdfs:member	local:results	.
+local:s7.3	rdf:predicate	local:underlie	.
+local:content_structure	rdfs:member	local:content	.
+local:relevance_model	rdfs:member	local:relevance	.
+local:weak_relevance	rdfs:member	local:weak	.
+local:s2.1	rdf:subject	local:users	.
+local:typically_very	rdfs:subClassOf	local:very	.
+local:s11	rdf:predicate	local:query	.
+local:typically_very_short	rdfs:subClassOf	local:short	.
+local:other_important_sources	rdfs:subClassOf	local:sources	.
+local:s5	local:AM-LOC	local:traditional_ir	.
+local:s10.4	rdf:subject	local:domain	.
+local:information_hyperlink	rdfs:subClassOf	local:hyperlink	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results	rdfs:member	local:relevance	.
+local:hand_in_the_semantic_web	rdfs:member	local:semantic_web	.
+local:s7.2	rdf:predicate	local:analyse	.
+local:s10.3	local:AM-MOD	local:can	.
+local:very_short_queries	rdfs:subClassOf	local:queries	.
+local:other_important_sources	rdfs:subClassOf	local:important_sources	.
+local:s3	rdf:predicate	local:retrieve	.
+local:relevance_of_the_results_is_determined_only_by_analysing_the_underlying_information_hyperlink_structure	rdfs:member	local:information_hyperlink_structure	.
+local:s10.2	rdf:subject	local:relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	.
+local:s8.1	rdf:predicate	local:determine	.
+local:s7.1	rdf:object	local:relevance_of_the_results	.
+local:s0.1	rdf:object	local:consider_only_the_first_ten_results	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:s10.1	local:AM-LOC	local:hand_in_the_semantic_web	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_characteristics_of_the_searching_process	rdfs:member	local:s11.4	.
+local:s8	rdf:predicate	local:approach	.
+local:s11.3	local:AM-MOD	local:can	.
+local:ontology_such_that_other_important_sources_for_determining_the_relevance_of_results_can_be_considered_the_structure_of_the_underlying_domain	rdfs:member	local:results	.

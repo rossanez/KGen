@@ -1,362 +1,569 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"finding umls concepts in medical documents"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"the evaluation based on previous umls annotations of medical forms shows that the new approaches outperform a baseline approach for finding umls concepts in medical documents"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the evaluation based on previous umls annotations of medical forms"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"finding umls concepts in medical documents"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"the evaluation based on previous umls annotations of medical forms shows that the new approaches outperform the use of the metamap tool for finding umls concepts in medical documents"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the evaluation based on previous umls annotations of medical forms"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a new contextbased strategy that considers the cooccurrence relatedness of annotating concepts"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the final annotations selected according to a new contextbased strategy"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a new contextbased strategy that considers the semantic relatedness of annotating concepts"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"items in documents such as medical forms determine candidate annotations for new items"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"items in documents such as medical forms uses similar medical documents to determine candidate annotations for new items"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we propose a reusebased annotation approach"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"a reusebased annotation approach that annotate similar medical documents"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a reusebased annotation approach that utilizes previous annotations to annotate similar medical documents"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"support human annotators"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a difficult process making automatic annotation methods highly desirable to support human annotators"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"many documents not annotated at all"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"annotations semantically enrich documents"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"annotations semantically enrich other datasets with concepts of standardized vocabularies and ontologies"	.
+
+
 #### Classes ####
 
-local:enrich	rdfs:label	"enrich"	.
+local:umls_concepts	a	rdf:Class	;
+	rdfs:label	"umls concepts"	.
 
-local:annotations	rdfs:label	"annotations"	.
+local:umls	a	rdf:Class	;
+	rdfs:label	"umls"	.
 
-local:semantically	rdfs:label	"semantically"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:standardized	rdfs:label	"standardized"	.
+local:medical_documents	a	rdf:Class	;
+	rdfs:label	"medical documents"	.
 
-local:standardized_vocabularies	rdfs:label	"standardized vocabularies"	.
+local:documents	a	rdf:Class	;
+	rdfs:label	"documents"	.
 
-local:vocabularies	rdfs:label	"vocabularies"	.
+local:medical	a	rdf:Class	;
+	rdfs:label	"medical"	.
 
-local:concepts_of_standardized_vocabularies	rdfs:label	"concepts of standardized vocabularies"	.
+local:evaluation_based_on_previous_umls_annotations_of_medical_forms	a	rdf:Class	;
+	rdfs:label	"evaluation based on previous umls annotations of medical forms"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:medical_forms	a	rdf:Class	;
+	rdfs:label	"medical forms"	.
 
-local:concepts_of_standardized_vocabularies_of_ontologies	rdfs:label	"concepts of standardized vocabularies of ontologies"	.
+local:previous_umls_annotations	a	rdf:Class	;
+	rdfs:label	"previous umls annotations"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:documents	rdfs:label	"documents"	.
+local:umls_annotations	a	rdf:Class	;
+	rdfs:label	"umls annotations"	.
 
-local:many_documents	rdfs:label	"many documents"	.
+local:annotations	a	rdf:Class	;
+	rdfs:label	"annotations"	.
 
-local:many	rdfs:label	"many"	.
+local:forms	a	rdf:Class	;
+	rdfs:label	"forms"	.
 
-local:annotated	rdfs:label	"annotated"	.
+local:previous_umls	a	rdf:Class	;
+	rdfs:label	"previous umls"	.
 
-local:not	rdfs:label	"not"	.
+local:previous	a	rdf:Class	;
+	rdfs:label	"previous"	.
 
-local:all	rdfs:label	"all"	.
+local:evaluation_based_on_previous_umls_annotations	a	rdf:Class	;
+	rdfs:label	"evaluation based_on previous umls annotations"	.
 
-local:difficult_process	rdfs:label	"difficult process"	.
+local:previous_umls_annotations_of_medical_forms	a	rdf:Class	;
+	rdfs:label	"previous umls annotations of medical forms"	.
 
-local:process	rdfs:label	"process"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:difficult	rdfs:label	"difficult"	.
+local:new_approaches_outperform_a_baseline_approach_for_finding_umls_concepts_in_medical_documents	a	rdf:Class	;
+	rdfs:label	"new approaches outperform a baseline approach for finding umls concepts in medical documents"	.
 
-local:making	rdfs:label	"making"	.
+local:new_approaches	a	rdf:Class	;
+	rdfs:label	"new approaches"	.
 
-local:automatic_annotation	rdfs:label	"automatic annotation"	.
+local:baseline_approach	a	rdf:Class	;
+	rdfs:label	"baseline approach"	.
 
-local:annotation	rdfs:label	"annotation"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:automatic_annotation_methods	rdfs:label	"automatic annotation methods"	.
+local:baseline	a	rdf:Class	;
+	rdfs:label	"baseline"	.
 
-local:methods	rdfs:label	"methods"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:annotation_methods	rdfs:label	"annotation methods"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:human_annotators	rdfs:label	"human annotators"	.
+local:finding_in_medical_documents	a	rdf:Class	;
+	rdfs:label	"finding in medical documents"	.
 
-local:annotators	rdfs:label	"annotators"	.
+local:finding	a	rdf:Class	;
+	rdfs:label	"finding"	.
 
-local:automatic	rdfs:label	"automatic"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:human	rdfs:label	"human"	.
+local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	a	rdf:Class	;
+	rdfs:label	"new approaches outperform the use of the metamap tool for finding umls concepts in medical documents"	.
 
-local:desirable_methods	rdfs:label	"desirable methods"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:highly_desirable	rdfs:label	"highly desirable"	.
+local:metamap_tool	a	rdf:Class	;
+	rdfs:label	"metamap tool"	.
 
-local:desirable	rdfs:label	"desirable"	.
+local:metamap	a	rdf:Class	;
+	rdfs:label	"metamap"	.
 
-local:annotation_desirable_methods	rdfs:label	"annotation desirable methods"	.
+local:tool	a	rdf:Class	;
+	rdfs:label	"tool"	.
 
-local:automatic_annotation_desirable_methods	rdfs:label	"automatic annotation desirable methods"	.
+local:use_of_metamap_tool	a	rdf:Class	;
+	rdfs:label	"use of metamap tool"	.
 
-local:support	rdfs:label	"support"	.
+local:new_contextbased_strategy	a	rdf:Class	;
+	rdfs:label	"new contextbased strategy"	.
 
-local:propose	rdfs:label	"propose"	.
+local:contextbased_strategy	a	rdf:Class	;
+	rdfs:label	"contextbased strategy"	.
 
-local:we	rdfs:label	"we"	.
+local:strategy	a	rdf:Class	;
+	rdfs:label	"strategy"	.
 
-local:annotation_approach	rdfs:label	"annotation approach"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:reusebased_annotation	rdfs:label	"reuse-based annotation"	.
+local:cooccurrence_relatedness_of_annotating_concepts	a	rdf:Class	;
+	rdfs:label	"cooccurrence relatedness of annotating concepts"	.
 
-local:reusebased_annotation_approach	rdfs:label	"reuse-based annotation approach"	.
+local:cooccurrence_relatedness	a	rdf:Class	;
+	rdfs:label	"cooccurrence relatedness"	.
 
-local:approach	rdfs:label	"approach"	.
+local:cooccurrence	a	rdf:Class	;
+	rdfs:label	"cooccurrence"	.
 
-local:reusebased	rdfs:label	"reuse-based"	.
+local:relatedness	a	rdf:Class	;
+	rdfs:label	"relatedness"	.
 
-local:utilizes	rdfs:label	"utilizes"	.
+local:final_annotations	a	rdf:Class	;
+	rdfs:label	"final annotations"	.
 
-local:similar_medical	rdfs:label	"similar medical"	.
+local:final	a	rdf:Class	;
+	rdfs:label	"final"	.
 
-local:medical	rdfs:label	"medical"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:similar_medical_documents	rdfs:label	"similar medical documents"	.
+local:according_to_a_new_contextbased_strategy	a	rdf:Class	;
+	rdfs:label	"according to a new contextbased strategy"	.
 
-local:previous	rdfs:label	"previous"	.
+local:semantic_relatedness_of_annotating_concepts	a	rdf:Class	;
+	rdfs:label	"semantic relatedness of annotating concepts"	.
 
-local:previous_annotations	rdfs:label	"previous annotations"	.
+local:semantic_relatedness	a	rdf:Class	;
+	rdfs:label	"semantic relatedness"	.
 
-local:similar	rdfs:label	"similar"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:medical_documents	rdfs:label	"medical documents"	.
+local:items_in_documents_such_as_medical_forms	a	rdf:Class	;
+	rdfs:label	"items in documents such as medical forms"	.
 
-local:annotate	rdfs:label	"annotate"	.
+local:items	a	rdf:Class	;
+	rdfs:label	"items"	.
 
-local:medical_forms	rdfs:label	"medical forms"	.
+local:items_in_documents	a	rdf:Class	;
+	rdfs:label	"items in documents"	.
 
-local:forms	rdfs:label	"forms"	.
+local:documents_such_as_medical_forms	a	rdf:Class	;
+	rdfs:label	"documents such_as medical forms"	.
 
-local:items_in_documents	rdfs:label	"items in documents"	.
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
 
-local:items	rdfs:label	"items"	.
+local:candidate_annotations_for_new_items	a	rdf:Class	;
+	rdfs:label	"candidate annotations for new items"	.
 
-local:documents_suchas_medical_forms	rdfs:label	"documents such_as medical forms"	.
+local:new_items	a	rdf:Class	;
+	rdfs:label	"new items"	.
 
-local:uses	rdfs:label	"uses"	.
+local:candidate_annotations	a	rdf:Class	;
+	rdfs:label	"candidate annotations"	.
 
-local:new_items	rdfs:label	"new items"	.
+local:candidate	a	rdf:Class	;
+	rdfs:label	"candidate"	.
 
-local:candidate_annotations	rdfs:label	"candidate annotations"	.
+local:similar_medical_documents	a	rdf:Class	;
+	rdfs:label	"similar medical documents"	.
 
-local:determine_candidate	rdfs:label	"determine candidate"	.
+local:similar_medical	a	rdf:Class	;
+	rdfs:label	"similar medical"	.
 
-local:candidate	rdfs:label	"candidate"	.
+local:similar	a	rdf:Class	;
+	rdfs:label	"similar"	.
 
-local:determine	rdfs:label	"determine"	.
+local:determine_candidate_annotations_for_new_items	a	rdf:Class	;
+	rdfs:label	"determine candidate annotations for new items"	.
 
-local:new	rdfs:label	"new"	.
+local:determine_candidate_annotations	a	rdf:Class	;
+	rdfs:label	"determine candidate annotations"	.
 
-local:determine_candidate_annotations	rdfs:label	"determine candidate annotations"	.
+local:determine_candidate	a	rdf:Class	;
+	rdfs:label	"determine candidate"	.
 
-local:candidate_annotations_for_new_items	rdfs:label	"candidate annotations for new items"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:new_contextbased	rdfs:label	"new context-based"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:contextbased	rdfs:label	"context-based"	.
+local:reusebased_annotation_approach	a	rdf:Class	;
+	rdfs:label	"reusebased annotation approach"	.
 
-local:new_contextbased_strategy	rdfs:label	"new context-based strategy"	.
+local:annotation_approach	a	rdf:Class	;
+	rdfs:label	"annotation approach"	.
 
-local:strategy	rdfs:label	"strategy"	.
+local:annotation	a	rdf:Class	;
+	rdfs:label	"annotation"	.
 
-local:contextbased_strategy	rdfs:label	"context-based strategy"	.
+local:annotate	a	rdf:Class	;
+	rdfs:label	"annotate"	.
 
-local:considers	rdfs:label	"considers"	.
+local:utilize	a	rdf:Class	;
+	rdfs:label	"utilize"	.
 
-local:cooccurrence	rdfs:label	"co-occurrence"	.
+local:previous_annotations_to_annotate_similar_medical_documents	a	rdf:Class	;
+	rdfs:label	"previous annotations to annotate similar medical documents"	.
 
-local:cooccurrence_relatedness	rdfs:label	"co-occurrence relatedness"	.
+local:previous_annotations	a	rdf:Class	;
+	rdfs:label	"previous annotations"	.
 
-local:relatedness	rdfs:label	"relatedness"	.
+local:human_annotators	a	rdf:Class	;
+	rdfs:label	"human annotators"	.
 
-local:annotating_concepts	rdfs:label	"annotating concepts"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:cooccurrence_relatedness_of_annotating_concepts	rdfs:label	"co-occurrence relatedness of annotating concepts"	.
+local:annotators	a	rdf:Class	;
+	rdfs:label	"annotators"	.
 
-local:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:difficult_process	a	rdf:Class	;
+	rdfs:label	"difficult process"	.
 
-local:semantic_relatedness_of_annotating_concepts	rdfs:label	"semantic relatedness of annotating concepts"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:final	rdfs:label	"final"	.
+local:difficult	a	rdf:Class	;
+	rdfs:label	"difficult"	.
 
-local:final_annotations	rdfs:label	"final annotations"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:selected	rdfs:label	"selected"	.
+local:automatic_annotation_methods_highly_desirable_to_support_human_annotators	a	rdf:Class	;
+	rdfs:label	"automatic annotation methods highly desirable to support human annotators"	.
 
-local:based	rdfs:label	"based"	.
+local:automatic_annotation_methods	a	rdf:Class	;
+	rdfs:label	"automatic annotation methods"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:automatic_annotation	a	rdf:Class	;
+	rdfs:label	"automatic annotation"	.
 
-local:previous_umls_annotations	rdfs:label	"previous umls annotations"	.
+local:annotation_methods	a	rdf:Class	;
+	rdfs:label	"annotation methods"	.
 
-local:umls	rdfs:label	"umls"	.
+local:automatic	a	rdf:Class	;
+	rdfs:label	"automatic"	.
 
-local:umls_annotations	rdfs:label	"umls annotations"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:previous_umls	rdfs:label	"previous umls"	.
+local:desirable_methods	a	rdf:Class	;
+	rdfs:label	"desirable methods"	.
 
-local:previous_umls_annotations_of_medical_forms	rdfs:label	"previous umls annotations of medical forms"	.
+local:highly_desirable	a	rdf:Class	;
+	rdfs:label	"highly desirable"	.
 
-local:evaluation_basedon_previous_umls_annotations	rdfs:label	"evaluation based_on previous umls annotations"	.
+local:desirable	a	rdf:Class	;
+	rdfs:label	"desirable"	.
 
-local:shows	rdfs:label	"shows"	.
+local:annotation_desirable_methods	a	rdf:Class	;
+	rdfs:label	"annotation desirable methods"	.
 
-local:new_approaches	rdfs:label	"new approaches"	.
+local:automatic_annotation_desirable_methods	a	rdf:Class	;
+	rdfs:label	"automatic annotation desirable methods"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:many_documents	a	rdf:Class	;
+	rdfs:label	"many documents"	.
 
-local:umls_concepts	rdfs:label	"umls concepts"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:baseline_approach	rdfs:label	"baseline approach"	.
+local:not_annotate	a	rdf:Class	;
+	rdfs:label	"not annotate"	.
 
-local:baseline	rdfs:label	"baseline"	.
+local:all	a	rdf:Class	;
+	rdfs:label	"all"	.
 
-local:finding_in_medical_documents	rdfs:label	"finding in medical documents"	.
+local:enrich	a	rdf:Class	;
+	rdfs:label	"enrich"	.
 
-local:finding	rdfs:label	"finding"	.
+local:semantically	a	rdf:Class	;
+	rdfs:label	"semantically"	.
 
-local:outperform	rdfs:label	"outperform"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:metamap_tool	rdfs:label	"metamap tool"	.
+local:concepts_of_standardized_vocabularies_and_ontologies	a	rdf:Class	;
+	rdfs:label	"concepts of standardized vocabularies and ontologies"	.
 
-local:tool	rdfs:label	"tool"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:metamap	rdfs:label	"metamap"	.
+local:standardized_vocabularies	a	rdf:Class	;
+	rdfs:label	"standardized vocabularies"	.
 
-local:use_of_metamap_tool	rdfs:label	"use of metamap tool"	.
+local:standardized	a	rdf:Class	;
+	rdfs:label	"standardized"	.
 
-local:use	rdfs:label	"use"	.
+local:vocabularies	a	rdf:Class	;
+	rdfs:label	"vocabularies"	.
 
-#### Properties ####
+local:concepts_of_standardized_vocabularies	a	rdf:Class	;
+	rdfs:label	"concepts of standardized vocabularies"	.
+
+local:concepts_of_standardized_vocabularies_of_ontologies	a	rdf:Class	;
+	rdfs:label	"concepts of standardized vocabularies of ontologies"	.
 
 #### Mapped Relations ####
 
-local:contextbased	owl:sameAs	cso:context-based	.
-cso:context-based	rdfs:label	"context-based"	.
+cso:semantic_relatedness	rdfs:label	"semantic relatedness"	.
 local:semantic_relatedness	owl:sameAs	cso:semantic_relatedness	.
-cso:umls	rdfs:label	"umls"	.
 local:ontologies	owl:sameAs	cso:ontologies	.
 cso:ontologies	rdfs:label	"ontologies"	.
-cso:semantic_relatedness	rdfs:label	"semantic relatedness"	.
 local:umls	owl:sameAs	cso:umls	.
+cso:umls	rdfs:label	"umls"	.
 
 #### Relations ####
 
-local:medical	rdfs:member	local:medical_documents	.
-local:use_of_metamap_tool	local:use_of	local:metamap_tool	.
-local:making	vn.role:Material	local:automatic_annotation_desirable_methods	.
-local:finding	vn.role:Theme	local:umls_concepts	.
-local:annotating_concepts	rdfs:subClassOf	local:concepts	.
-local:candidate_annotations_for_new_items	local:for_newitems	local:candidate_annotations	.
-local:evaluation_basedon_previous_umls_annotations	local:based_on_previousumlsannotations	local:evaluation	.
-local:finding_in_medical_documents	local:finding_in	local:medical_documents	.
-local:finding_in_medical_documents	local:in_medicaldocuments	local:finding	.
-local:annotation	rdfs:member	local:annotation_methods	.
-local:similar_medical	rdfs:member	local:similar_medical_documents	.
-local:previous_umls_annotations	rdfs:subClassOf	local:umls_annotations	.
-local:standardized	rdfs:member	local:standardized_vocabularies	.
-local:umls_concepts	rdfs:subClassOf	local:concepts	.
-local:enrich	local:AM-MNR	local:concepts_of_standardized_vocabularies_of_ontologies	.
-local:new_contextbased_strategy	rdfs:subClassOf	local:strategy	.
-local:reusebased_annotation	rdfs:subClassOf	local:annotation	.
-local:uses	vn.role:Agent	local:items_in_documents	.
-local:enrich	vn.role:Agent	local:annotations	.
-local:umls	rdfs:member	local:umls_annotations	.
-local:automatic_annotation_desirable_methods	rdfs:subClassOf	local:annotation_desirable_methods	.
-local:reusebased	rdfs:member	local:reusebased_annotation	.
-local:selected	vn.role:Theme	local:final_annotations	.
-local:baseline_approach	rdfs:subClassOf	local:approach	.
-local:items_in_documents	local:items_in	local:documents	.
-local:annotate	vn.role:Theme	local:similar_medical_documents	.
-local:finding	local:AM-LOC	local:medical_documents	.
-local:candidate_annotations_for_new_items	local:candidateannotations_for	local:new_items	.
-local:previous	rdfs:member	local:previous_annotations	.
-local:support	vn.role:Experiencer	local:human_annotators	.
-local:semantic	rdfs:member	local:semantic_relatedness	.
-local:reusebased_annotation	rdfs:member	local:reusebased_annotation_approach	.
-local:new_contextbased	rdfs:member	local:new_contextbased_strategy	.
-local:automatic_annotation	rdfs:member	local:automatic_annotation_methods	.
-local:human_annotators	rdfs:subClassOf	local:annotators	.
-local:propose	vn.role:Agent	local:we	.
-local:concepts_of_standardized_vocabularies_of_ontologies	local:conceptsofstandardizedvocabularies_of	local:ontologies	.
-local:reusebased_annotation_approach	rdfs:subClassOf	local:approach	.
-local:reusebased_annotation_approach	rdfs:subClassOf	local:annotation_approach	.
-local:previous_umls	rdfs:subClassOf	local:umls	.
-local:annotation_desirable_methods	rdfs:subClassOf	local:desirable_methods	.
-local:new_contextbased_strategy	rdfs:subClassOf	local:contextbased_strategy	.
-local:annotation	rdfs:member	local:annotation_approach	.
-local:annotate	vn.role:Agent	local:reusebased_annotation_approach	.
-local:use_of_metamap_tool	local:of_metamaptool	local:use	.
-local:previous_umls_annotations_of_medical_forms	local:previousumlsannotations_of	local:medical_forms	.
-local:new_items	rdfs:subClassOf	local:items	.
-local:previous_umls_annotations	rdfs:subClassOf	local:annotations	.
-local:utilizes	vn.role:Agent	local:reusebased_annotation_approach	.
-local:final	rdfs:member	local:final_annotations	.
-local:candidate	rdfs:member	local:candidate_annotations	.
-local:new	rdfs:member	local:new_items	.
-local:determine_candidate_annotations	rdfs:subClassOf	local:annotations	.
-local:contextbased	rdfs:member	local:contextbased_strategy	.
-local:similar	rdfs:member	local:similar_medical	.
-local:medical_forms	rdfs:subClassOf	local:forms	.
-local:items_in_documents	local:in_documents	local:items	.
-local:uses	local:AM-PNC	local:determine	.
-local:annotation_methods	rdfs:subClassOf	local:methods	.
-local:concepts_of_standardized_vocabularies	local:of_standardizedvocabularies	local:concepts	.
-local:automatic_annotation	rdfs:subClassOf	local:annotation	.
-local:metamap_tool	rdfs:subClassOf	local:tool	.
-local:cooccurrence_relatedness_of_annotating_concepts	local:of_annotatingconcepts	local:cooccurrence_relatedness	.
-local:determine	vn.role:Theme	local:candidate_annotations_for_new_items	.
-local:new	rdfs:member	local:new_contextbased	.
-local:umls_annotations	rdfs:subClassOf	local:annotations	.
-local:cooccurrence_relatedness_of_annotating_concepts	local:co-occurrencerelatedness_of	local:annotating_concepts	.
-local:shows	vn.role:Theme	local:outperform	.
-local:uses	vn.role:Theme	local:similar_medical_documents	.
-local:evaluation_basedon_previous_umls_annotations	local:evaluation_based_on	local:previous_umls_annotations	.
-local:cooccurrence_relatedness	rdfs:subClassOf	local:relatedness	.
-local:based	vn.role:indirect_object	local:previous_umls_annotations_of_medical_forms	.
-local:semantic_relatedness_of_annotating_concepts	local:of_annotatingconcepts	local:semantic_relatedness	.
-local:determine	vn.role:Agent	local:items_in_documents	.
-local:based	vn.role:Cause	local:evaluation	.
-local:enrich	local:AM-MNR	local:semantically	.
-local:annotated	vn.role:Theme	local:many_documents	.
-local:determine_candidate	rdfs:member	local:determine_candidate_annotations	.
-local:final_annotations	rdfs:subClassOf	local:annotations	.
-local:selected	local:AM-MNR	local:new_contextbased_strategy	.
-local:medical_documents	rdfs:subClassOf	local:documents	.
-local:difficult_process	rdfs:subClassOf	local:process	.
-local:making	vn.role:Agent	local:difficult_process	.
-local:automatic	rdfs:member	local:automatic_annotation	.
-local:semantic_relatedness	rdfs:subClassOf	local:relatedness	.
-local:previous	rdfs:member	local:previous_umls	.
-local:highly_desirable	rdfs:subClassOf	local:desirable	.
-local:candidate_annotations	rdfs:subClassOf	local:annotations	.
-local:enrich	vn.role:Theme	local:datasets	.
-local:concepts_of_standardized_vocabularies_of_ontologies	local:of_ontologies	local:concepts_of_standardized_vocabularies	.
-local:difficult	rdfs:member	local:difficult_process	.
+local:s4	rdf:predicate	local:not_annotate	.
+local:human_annotators	rdfs:member	local:human	.
+local:s11	local:AM-MNR	local:according_to_a_new_contextbased_strategy	.
 local:similar_medical_documents	rdfs:subClassOf	local:documents	.
-local:similar_medical_documents	rdfs:subClassOf	local:medical_documents	.
-local:considers	vn.role:Agent	local:new_contextbased_strategy	.
 local:previous_annotations	rdfs:subClassOf	local:annotations	.
-local:cooccurrence	rdfs:member	local:cooccurrence_relatedness	.
-local:previous_umls_annotations_of_medical_forms	local:of_medicalforms	local:previous_umls_annotations	.
-local:annotated	local:AM-LOC	local:all	.
-local:documents_suchas_medical_forms	local:documents_such_as	local:medical_forms	.
-local:concepts_of_standardized_vocabularies	local:concepts_of	local:standardized_vocabularies	.
-local:automatic_annotation_methods	rdfs:subClassOf	local:methods	.
-local:semantic_relatedness_of_annotating_concepts	local:semanticrelatedness_of	local:annotating_concepts	.
-local:standardized_vocabularies	rdfs:subClassOf	local:vocabularies	.
-local:medical	rdfs:member	local:medical_forms	.
-local:new_approaches	rdfs:subClassOf	local:approaches	.
+local:cooccurrence_relatedness_of_annotating_concepts	rdfs:member	local:cooccurrence_relatedness	.
+local:automatic_annotation_methods_highly_desirable_to_support_human_annotators	rdfs:member	local:automatic_annotation_methods	.
+local:s4	local:AM-LOC	local:all	.
+local:new_contextbased_strategy	rdfs:subClassOf	local:contextbased_strategy	.
+local:highly_desirable	rdfs:subClassOf	local:desirable	.
+local:s14	rdf:object	local:previous_umls_annotations_of_medical_forms	.
+local:umls_annotations	rdfs:subClassOf	local:annotations	.
 local:determine_candidate	rdfs:subClassOf	local:candidate	.
-local:metamap	rdfs:member	local:metamap_tool	.
-local:enrich	vn.role:Theme	local:documents	.
-local:human	rdfs:member	local:human_annotators	.
-local:utilizes	vn.role:Theme	local:previous_annotations	.
-local:contextbased_strategy	rdfs:subClassOf	local:strategy	.
-local:annotation_approach	rdfs:subClassOf	local:approach	.
-local:shows	vn.role:Agent	local:evaluation_basedon_previous_umls_annotations	.
+local:s12	rdf:object	local:cooccurrence_relatedness_of_annotating_concepts	.
+local:s6	rdf:predicate	local:utilize	.
+local:s5	rdf:subject	local:difficult_process	.
+local:automatic_annotation_methods	rdfs:member	local:automatic_annotation	.
+local:s1	local:AM-MNR	local:semantically	.
+local:s14.1	rdf:subject	local:evaluation_based_on_previous_umls_annotations_of_medical_forms	.
 local:similar_medical	rdfs:subClassOf	local:medical	.
-local:documents_suchas_medical_forms	local:such_as_medicalforms	local:documents	.
-local:many_documents	rdfs:subClassOf	local:documents	.
-local:umls	rdfs:member	local:umls_concepts	.
+local:previous_umls	rdfs:member	local:previous	.
+local:s13.2	rdf:predicate	local:find	.
+local:s13	rdf:object	local:previous_umls_annotations_of_medical_forms	.
+local:candidate_annotations	rdfs:subClassOf	local:annotations	.
+local:concepts_of_standardized_vocabularies_and_ontologies	rdfs:member	local:ontologies	.
+local:s5	rdf:object	local:automatic_annotation_methods_highly_desirable_to_support_human_annotators	.
+local:s14.2	local:AM-LOC	local:medical_documents	.
+local:medical_forms	rdfs:member	local:medical	.
+local:s0	rdf:object	local:datasets	.
+local:new_approaches_outperform_a_baseline_approach_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:new_approaches	.
+local:s5.1	rdf:predicate	local:support	.
+local:automatic_annotation	rdfs:member	local:automatic	.
+local:s6.1	rdf:predicate	local:annotate	.
+local:items_in_documents_such_as_medical_forms	rdfs:member	local:medical_forms	.
+local:s0	rdf:predicate	local:enrich	.
+local:many_documents	rdfs:member	local:many	.
+local:previous_annotations_to_annotate_similar_medical_documents	rdfs:member	local:similar_medical_documents	.
+local:concepts_of_standardized_vocabularies_and_ontologies	rdfs:member	local:standardized_vocabularies	.
+local:items_in_documents_such_as_medical_forms	rdfs:member	local:items	.
+local:cooccurrence_relatedness	rdfs:member	local:cooccurrence	.
+local:determine_candidate_annotations	rdfs:subClassOf	local:annotations	.
+local:similar_medical_documents	rdfs:subClassOf	local:medical_documents	.
+local:semantic_relatedness	rdfs:member	local:semantic	.
+local:new_items	rdfs:member	local:new	.
+local:previous_umls_annotations_of_medical_forms	rdfs:member	local:medical_forms	.
+local:previous_umls	rdfs:subClassOf	local:umls	.
+local:concepts_of_standardized_vocabularies_of_ontologies	rdfs:member	local:concepts_of_standardized_vocabularies	.
+local:s9.1	rdf:object	local:candidate_annotations_for_new_items	.
+local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:metamap_tool	.
+local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:use	.
+local:new_items	rdfs:subClassOf	local:items	.
+local:evaluation_based_on_previous_umls_annotations	rdfs:member	local:previous_umls_annotations	.
+local:documents_such_as_medical_forms	rdfs:member	local:documents	.
+local:cooccurrence_relatedness_of_annotating_concepts	rdfs:member	local:concepts	.
+local:previous_umls_annotations_of_medical_forms	rdfs:member	local:previous_umls_annotations	.
+local:s9	rdf:object	local:similar_medical_documents	.
+local:human_annotators	rdfs:subClassOf	local:annotators	.
+local:determine_candidate_annotations	rdfs:member	local:determine_candidate	.
+local:s13.1	rdf:subject	local:evaluation_based_on_previous_umls_annotations_of_medical_forms	.
+local:s1	rdf:subject	local:annotations	.
+local:evaluation_based_on_previous_umls_annotations_of_medical_forms	rdfs:member	local:evaluation	.
+local:similar_medical_documents	rdfs:member	local:similar_medical	.
+local:baseline_approach	rdfs:member	local:baseline	.
+local:previous_umls_annotations	rdfs:subClassOf	local:annotations	.
+local:new_approaches_outperform_a_baseline_approach_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:umls_concepts	.
+local:s11	rdf:predicate	local:select	.
+local:candidate_annotations_for_new_items	rdfs:member	local:new_items	.
+local:s14.1	rdf:object	local:new_approaches_outperform_a_baseline_approach_for_finding_umls_concepts_in_medical_documents	.
+local:final_annotations	rdfs:subClassOf	local:annotations	.
+local:difficult_process	rdfs:subClassOf	local:process	.
+local:items_in_documents	rdfs:member	local:documents	.
+local:umls_concepts	rdfs:subClassOf	local:concepts	.
+local:s0	rdf:subject	local:annotations	.
+local:s5	rdf:predicate	local:make	.
+local:s6	rdf:object	local:previous_annotations_to_annotate_similar_medical_documents	.
+local:s7	rdf:predicate	local:propose	.
+local:s13.2	local:AM-LOC	local:medical_documents	.
+local:contextbased_strategy	rdfs:subClassOf	local:strategy	.
+local:metamap_tool	rdfs:member	local:metamap	.
+local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:new_approaches	.
+local:items_in_documents	rdfs:member	local:items	.
+local:s9	rdf:predicate	local:use	.
+local:s12	rdf:predicate	local:consider	.
+local:concepts_of_standardized_vocabularies_of_ontologies	rdfs:member	local:ontologies	.
+local:s6.1	rdf:subject	local:reusebased_annotation_approach	.
+local:s14.1	rdf:predicate	local:show	.
+local:standardized_vocabularies	rdfs:subClassOf	local:vocabularies	.
+local:s7	rdf:object	local:reusebased_annotation_approach	.
+local:previous_annotations	rdfs:member	local:previous	.
+local:documents_such_as_medical_forms	rdfs:member	local:medical_forms	.
+local:candidate_annotations	rdfs:member	local:candidate	.
+local:s0	local:AM-MNR	local:concepts_of_standardized_vocabularies_and_ontologies	.
+local:evaluation_based_on_previous_umls_annotations_of_medical_forms	rdfs:member	local:previous_umls_annotations	.
+local:finding_in_medical_documents	rdfs:member	local:finding	.
+local:determine_candidate_annotations_for_new_items	rdfs:member	local:determine_candidate_annotations	.
+local:annotation_desirable_methods	rdfs:subClassOf	local:desirable_methods	.
+local:s4	rdf:subject	local:many_documents	.
+local:semantic_relatedness	rdfs:subClassOf	local:relatedness	.
+local:use_of_metamap_tool	rdfs:member	local:use	.
+local:automatic_annotation_desirable_methods	rdfs:subClassOf	local:annotation_desirable_methods	.
+local:s14.2	rdf:predicate	local:find	.
+local:s13.1	rdf:object	local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	.
+local:s6.1	rdf:object	local:similar_medical_documents	.
+local:s0	local:AM-MNR	local:semantically	.
 local:desirable_methods	rdfs:subClassOf	local:methods	.
-local:considers	vn.role:Predicate	local:semantic_relatedness_of_annotating_concepts	.
-local:considers	vn.role:Predicate	local:cooccurrence_relatedness_of_annotating_concepts	.
-local:propose	vn.role:Topic	local:reusebased_annotation_approach	.
-local:previous_umls	rdfs:member	local:previous_umls_annotations	.
-local:many	rdfs:member	local:many_documents	.
-local:determine	rdfs:member	local:determine_candidate	.
-local:annotated	local:AM-NEG	local:not	.
-local:new_contextbased	rdfs:subClassOf	local:contextbased	.
-local:new	rdfs:member	local:new_approaches	.
-local:baseline	rdfs:member	local:baseline_approach	.
+local:s1	rdf:predicate	local:enrich	.
+local:evaluation_based_on_previous_umls_annotations_of_medical_forms	rdfs:member	local:medical_forms	.
+local:candidate_annotations_for_new_items	rdfs:member	local:candidate_annotations	.
+local:s13	rdf:subject	local:evaluation	.
+local:s6	rdf:subject	local:reusebased_annotation_approach	.
+local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:umls_concepts	.
+local:umls_annotations	rdfs:member	local:umls	.
+local:finding_in_medical_documents	rdfs:member	local:medical_documents	.
+local:new_approaches_outperform_the_use_of_the_metamap_tool_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:medical_documents	.
+local:many_documents	rdfs:subClassOf	local:documents	.
+local:s10	rdf:object	local:semantic_relatedness_of_annotating_concepts	.
+local:s14.2	rdf:subject	local:umls_concepts	.
+local:s14	rdf:subject	local:evaluation	.
+local:automatic_annotation_methods_highly_desirable_to_support_human_annotators	rdfs:member	local:human_annotators	.
+local:evaluation_based_on_previous_umls_annotations	rdfs:member	local:evaluation	.
+local:medical_documents	rdfs:subClassOf	local:documents	.
+local:final_annotations	rdfs:member	local:final	.
+local:umls_concepts	rdfs:member	local:umls	.
+local:s14	rdf:predicate	local:base	.
+local:new_approaches	rdfs:subClassOf	local:approaches	.
+local:s9	rdf:subject	local:items_in_documents_such_as_medical_forms	.
+local:s9.1	rdf:subject	local:items_in_documents_such_as_medical_forms	.
+local:determine_candidate_annotations_for_new_items	rdfs:member	local:new_items	.
+local:automatic_annotation_methods	rdfs:subClassOf	local:methods	.
+local:new_approaches_outperform_a_baseline_approach_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:medical_documents	.
+local:s10	rdf:predicate	local:consider	.
+local:cooccurrence_relatedness	rdfs:subClassOf	local:relatedness	.
+local:medical_documents	rdfs:member	local:medical	.
+local:s11	rdf:subject	local:final_annotations	.
+local:s5.1	rdf:subject	local:human_annotators	.
+local:medical_forms	rdfs:subClassOf	local:forms	.
+local:s13.2	rdf:subject	local:umls_concepts	.
+local:standardized_vocabularies	rdfs:member	local:standardized	.
+local:previous_umls_annotations	rdfs:subClassOf	local:umls_annotations	.
+local:annotation_methods	rdfs:member	local:annotation	.
+local:previous_annotations_to_annotate_similar_medical_documents	rdfs:member	local:previous_annotations	.
+local:concepts_of_standardized_vocabularies	rdfs:member	local:standardized_vocabularies	.
+local:s13.1	rdf:predicate	local:show	.
+local:new_approaches_outperform_a_baseline_approach_for_finding_umls_concepts_in_medical_documents	rdfs:member	local:baseline_approach	.
+local:annotation_approach	rdfs:member	local:annotation	.
+local:items_in_documents_such_as_medical_forms	rdfs:member	local:documents	.
+local:new_approaches	rdfs:member	local:new	.
+local:semantic_relatedness_of_annotating_concepts	rdfs:member	local:semantic_relatedness	.
+local:determine_candidate	rdfs:member	local:determine	.
+local:previous_umls_annotations	rdfs:member	local:previous_umls	.
+local:automatic_annotation	rdfs:subClassOf	local:annotation	.
+local:reusebased_annotation_approach	rdfs:subClassOf	local:annotation_approach	.
+local:annotation_methods	rdfs:subClassOf	local:methods	.
+local:s9	local:AM-PNC	local:determine_candidate_annotations_for_new_items	.
+local:semantic_relatedness_of_annotating_concepts	rdfs:member	local:concepts	.
+local:s9.1	rdf:predicate	local:determine	.
+local:difficult_process	rdfs:member	local:difficult	.
+local:concepts_of_standardized_vocabularies	rdfs:member	local:concepts	.
+local:s7	rdf:subject	local:we	.
+local:concepts_of_standardized_vocabularies_and_ontologies	rdfs:member	local:concepts	.
+local:similar_medical	rdfs:member	local:similar	.
+local:s1	rdf:object	local:documents	.
+local:use_of_metamap_tool	rdfs:member	local:metamap_tool	.
+local:metamap_tool	rdfs:subClassOf	local:tool	.
+local:s12	rdf:subject	local:new_contextbased_strategy	.
+local:annotation_approach	rdfs:subClassOf	local:approach	.
+local:s10	rdf:subject	local:new_contextbased_strategy	.
+local:s13	rdf:predicate	local:base	.
+local:baseline_approach	rdfs:subClassOf	local:approach	.

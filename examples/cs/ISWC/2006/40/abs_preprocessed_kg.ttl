@@ -1,325 +1,526 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s20.1	a	rdf:Statement	;
+	rdfs:label	"the space requirement of reasoning affecting the completeness"	.
+
+local:s20	a	rdf:Statement	;
+	rdfs:label	"thus the space requirement of reasoning reduced without affecting the completeness"	.
+
+local:s19.1	a	rdf:Statement	;
+	rdfs:label	"the space requirement of reasoning affecting the soundness"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"thus the space requirement of reasoning reduced without affecting the soundness"	.
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"type statements relying on subclass relations"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"inferred type statements relying on subclass relations"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"inferred type statements"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"a syntactic transformation reduces the number of inferred type statements"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"a syntactic transformation that based on novel individual grouping constructs"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"a syntactic transformation that based on novel individual grouping constructs"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose a syntactic transformation"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the type statements relying on subclass statements"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"in brief a major part of closure computation deriving the type statements"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"other statements in particular type statements gives rise to an excess of inferred type statements"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"particular type statements relying on this increase"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"other statements in particular type statements gives rise to cyclic repetition"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"type statements show a significant percentage in most ontologies"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a common approach for reasoning reduces the run time complexity"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a common approach for reasoning increases the space requirements"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"using the rules"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"a common approach for reasoning compute the deductive closure of an ontology"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"a common approach for reasoning work on the closure at query time"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the rules"	.
+
+
 #### Classes ####
 
-local:common	rdfs:label	"common"	.
+local:space_requirement_of_reasoning	a	rdf:Class	;
+	rdfs:label	"space requirement of reasoning"	.
 
-local:common_approach	rdfs:label	"common approach"	.
+local:space_requirement	a	rdf:Class	;
+	rdfs:label	"space requirement"	.
 
-local:approach	rdfs:label	"approach"	.
+local:requirement	a	rdf:Class	;
+	rdfs:label	"requirement"	.
 
-local:common_approach_for_reasoning	rdfs:label	"common approach for reasoning"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:compute	rdfs:label	"compute"	.
+local:affect	a	rdf:Class	;
+	rdfs:label	"affect"	.
 
-local:deductive_closure	rdfs:label	"deductive closure"	.
+local:completeness	a	rdf:Class	;
+	rdfs:label	"completeness"	.
 
-local:closure	rdfs:label	"closure"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:deductive	rdfs:label	"deductive"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:deductive_closure_of_ontology	rdfs:label	"deductive closure of ontology"	.
+local:without_affecting_the_completeness	a	rdf:Class	;
+	rdfs:label	"without affecting the completeness"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:soundness	a	rdf:Class	;
+	rdfs:label	"soundness"	.
 
-local:query_time	rdfs:label	"query time"	.
+local:without_affecting_the_soundness	a	rdf:Class	;
+	rdfs:label	"without affecting the soundness"	.
 
-local:time	rdfs:label	"time"	.
+local:type_statements	a	rdf:Class	;
+	rdfs:label	"type statements"	.
 
-local:query	rdfs:label	"query"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:closure_at_query_time	rdfs:label	"closure at query time"	.
+local:statements	a	rdf:Class	;
+	rdfs:label	"statements"	.
 
-local:work	rdfs:label	"work"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:using	rdfs:label	"using"	.
+local:subclass_relations	a	rdf:Class	;
+	rdfs:label	"subclass relations"	.
 
-local:rules	rdfs:label	"rules"	.
+local:subclass	a	rdf:Class	;
+	rdfs:label	"subclass"	.
 
-local:increases	rdfs:label	"increases"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:space	rdfs:label	"space"	.
+local:infer	a	rdf:Class	;
+	rdfs:label	"infer"	.
 
-local:space_requirements	rdfs:label	"space requirements"	.
+local:syntactic_transformation	a	rdf:Class	;
+	rdfs:label	"syntactic transformation"	.
 
-local:requirements	rdfs:label	"requirements"	.
+local:transformation	a	rdf:Class	;
+	rdfs:label	"transformation"	.
 
-local:reduces	rdfs:label	"reduces"	.
+local:syntactic	a	rdf:Class	;
+	rdfs:label	"syntactic"	.
 
-local:run	rdfs:label	"run"	.
+local:number_of_inferred_type_statements	a	rdf:Class	;
+	rdfs:label	"number of inferred type statements"	.
 
-local:run_time	rdfs:label	"run time"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:run_time_complexity	rdfs:label	"run time complexity"	.
+local:inferred_type	a	rdf:Class	;
+	rdfs:label	"inferred type"	.
 
-local:time_complexity	rdfs:label	"time complexity"	.
+local:inferred	a	rdf:Class	;
+	rdfs:label	"inferred"	.
 
-local:complexity	rdfs:label	"complexity"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:type	rdfs:label	"type"	.
+local:novel_individual_grouping_constructs	a	rdf:Class	;
+	rdfs:label	"novel individual grouping constructs"	.
 
-local:type_statements	rdfs:label	"type statements"	.
+local:grouping_constructs	a	rdf:Class	;
+	rdfs:label	"grouping constructs"	.
 
-local:statements	rdfs:label	"statements"	.
+local:grouping	a	rdf:Class	;
+	rdfs:label	"grouping"	.
 
-local:show	rdfs:label	"show"	.
+local:individual_grouping	a	rdf:Class	;
+	rdfs:label	"individual grouping"	.
 
-local:most_ontologies	rdfs:label	"most ontologies"	.
+local:novel_individual	a	rdf:Class	;
+	rdfs:label	"novel individual"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:most	rdfs:label	"most"	.
+local:constructs	a	rdf:Class	;
+	rdfs:label	"constructs"	.
 
-local:significant_percentage	rdfs:label	"significant percentage"	.
+local:individual_grouping_constructs	a	rdf:Class	;
+	rdfs:label	"individual grouping constructs"	.
 
-local:percentage	rdfs:label	"percentage"	.
+local:individual	a	rdf:Class	;
+	rdfs:label	"individual"	.
 
-local:significant	rdfs:label	"significant"	.
+local:novel_individual_grouping	a	rdf:Class	;
+	rdfs:label	"novel individual grouping"	.
 
-local:significant_percentage_in_most_ontologies	rdfs:label	"significant percentage in most ontologies"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:gives	rdfs:label	"gives"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:rise	rdfs:label	"rise"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:inferred_type	rdfs:label	"inferred type"	.
+local:subclass_statements	a	rdf:Class	;
+	rdfs:label	"subclass statements"	.
 
-local:inferred_type_statements	rdfs:label	"inferred type statements"	.
+local:derive	a	rdf:Class	;
+	rdfs:label	"derive"	.
 
-local:inferred	rdfs:label	"inferred"	.
+local:brief_a_major_part_of_closure_computation	a	rdf:Class	;
+	rdfs:label	"brief a major part of closure computation"	.
 
-local:excess_of_inferred_type_statements	rdfs:label	"excess of inferred type statements"	.
+local:brief	a	rdf:Class	;
+	rdfs:label	"brief"	.
 
-local:excess	rdfs:label	"excess"	.
+local:closure_computation	a	rdf:Class	;
+	rdfs:label	"closure computation"	.
 
-local:cyclic_repetition	rdfs:label	"cyclic repetition"	.
+local:major_part	a	rdf:Class	;
+	rdfs:label	"major part"	.
 
-local:repetition	rdfs:label	"repetition"	.
+local:major	a	rdf:Class	;
+	rdfs:label	"major"	.
 
-local:cyclic	rdfs:label	"cyclic"	.
+local:part	a	rdf:Class	;
+	rdfs:label	"part"	.
 
-local:particular	rdfs:label	"particular"	.
+local:closure	a	rdf:Class	;
+	rdfs:label	"closure"	.
 
-local:particular_type	rdfs:label	"particular type"	.
+local:computation	a	rdf:Class	;
+	rdfs:label	"computation"	.
 
-local:particular_type_statements	rdfs:label	"particular type statements"	.
+local:major_part_of_closure_computation	a	rdf:Class	;
+	rdfs:label	"major part of closure computation"	.
 
-local:relying	rdfs:label	"relying"	.
+local:statements_in_particular_type_statements	a	rdf:Class	;
+	rdfs:label	"statements in particular type statements"	.
 
-local:increase	rdfs:label	"increase"	.
+local:particular_type_statements	a	rdf:Class	;
+	rdfs:label	"particular type statements"	.
 
-local:deriving	rdfs:label	"deriving"	.
+local:particular_type	a	rdf:Class	;
+	rdfs:label	"particular type"	.
 
-local:brief	rdfs:label	"brief"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:closure_computation	rdfs:label	"closure computation"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:computation	rdfs:label	"computation"	.
+local:rise_excess_of_inferred_type_statements	a	rdf:Class	;
+	rdfs:label	"rise excess of inferred type statements"	.
 
-local:major	rdfs:label	"major"	.
+local:rise_excess	a	rdf:Class	;
+	rdfs:label	"rise excess"	.
 
-local:major_part	rdfs:label	"major part"	.
+local:rise	a	rdf:Class	;
+	rdfs:label	"rise"	.
 
-local:part	rdfs:label	"part"	.
+local:excess	a	rdf:Class	;
+	rdfs:label	"excess"	.
 
-local:major_part_of_closure_computation	rdfs:label	"major part of closure computation"	.
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
 
-local:subclass_statements	rdfs:label	"subclass statements"	.
+local:rise_cyclic_repetition	a	rdf:Class	;
+	rdfs:label	"rise cyclic repetition"	.
 
-local:subclass	rdfs:label	"subclass"	.
+local:cyclic_repetition	a	rdf:Class	;
+	rdfs:label	"cyclic repetition"	.
 
-local:syntactic_transformation	rdfs:label	"syntactic transformation"	.
+local:repetition	a	rdf:Class	;
+	rdfs:label	"repetition"	.
 
-local:transformation	rdfs:label	"transformation"	.
+local:cyclic	a	rdf:Class	;
+	rdfs:label	"cyclic"	.
 
-local:syntactic	rdfs:label	"syntactic"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:based	rdfs:label	"based"	.
+local:significant_percentage	a	rdf:Class	;
+	rdfs:label	"significant percentage"	.
 
-local:novel_individual	rdfs:label	"novel individual"	.
+local:significant	a	rdf:Class	;
+	rdfs:label	"significant"	.
 
-local:individual	rdfs:label	"individual"	.
+local:percentage	a	rdf:Class	;
+	rdfs:label	"percentage"	.
 
-local:individual_grouping_constructs	rdfs:label	"individual grouping constructs"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:constructs	rdfs:label	"constructs"	.
+local:common_approach_for_reasoning	a	rdf:Class	;
+	rdfs:label	"common approach for reasoning"	.
 
-local:individual_grouping	rdfs:label	"individual grouping"	.
+local:common_approach	a	rdf:Class	;
+	rdfs:label	"common approach"	.
 
-local:grouping	rdfs:label	"grouping"	.
+local:common	a	rdf:Class	;
+	rdfs:label	"common"	.
 
-local:grouping_constructs	rdfs:label	"grouping constructs"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:novel_individual_grouping	rdfs:label	"novel individual grouping"	.
+local:run_time_complexity	a	rdf:Class	;
+	rdfs:label	"run time complexity"	.
 
-local:novel_individual_grouping_constructs	rdfs:label	"novel individual grouping constructs"	.
+local:time_complexity	a	rdf:Class	;
+	rdfs:label	"time complexity"	.
 
-local:novel	rdfs:label	"novel"	.
+local:complexity	a	rdf:Class	;
+	rdfs:label	"complexity"	.
 
-local:propose	rdfs:label	"propose"	.
+local:run_time	a	rdf:Class	;
+	rdfs:label	"run time"	.
 
-local:paper	rdfs:label	"paper"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:we	rdfs:label	"we"	.
+local:run	a	rdf:Class	;
+	rdfs:label	"run"	.
 
-local:number_of_inferred_type_statements	rdfs:label	"number of inferred type statements"	.
+local:space_requirements	a	rdf:Class	;
+	rdfs:label	"space requirements"	.
 
-local:number	rdfs:label	"number"	.
+local:requirements	a	rdf:Class	;
+	rdfs:label	"requirements"	.
 
-local:subclass_relations	rdfs:label	"subclass relations"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:relations	rdfs:label	"relations"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:type_statements_relying	rdfs:label	"type statements relying"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:relying_on_subclass_relations	rdfs:label	"relying on subclass relations"	.
+local:deductive_closure_of_an_ontology	a	rdf:Class	;
+	rdfs:label	"deductive closure of an ontology"	.
 
-local:space_requirement	rdfs:label	"space requirement"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:requirement	rdfs:label	"requirement"	.
+local:deductive_closure	a	rdf:Class	;
+	rdfs:label	"deductive closure"	.
 
-local:space_requirement_of_reasoning	rdfs:label	"space requirement of reasoning"	.
+local:deductive	a	rdf:Class	;
+	rdfs:label	"deductive"	.
 
-local:reduced	rdfs:label	"reduced"	.
+local:deductive_closure_of_ontology	a	rdf:Class	;
+	rdfs:label	"deductive closure of ontology"	.
 
-local:thus	rdfs:label	"thus"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:affecting	rdfs:label	"affecting"	.
+local:query_time	a	rdf:Class	;
+	rdfs:label	"query time"	.
 
-local:soundness	rdfs:label	"soundness"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:completeness	rdfs:label	"completeness"	.
-
-#### Properties ####
+local:specify	a	rdf:Class	;
+	rdfs:label	"specify"	.
 
 #### Mapped Relations ####
 
-local:ontology	owl:sameAs	cso:ontology	.
-local:syntactic	owl:sameAs	cso:syntactics	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
 cso:syntactics	rdfs:label	"syntactic"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:syntactic	owl:sameAs	cso:syntactics	.
 cso:ontology	rdfs:label	"ontology"	.
 
 #### Relations ####
 
-local:major_part_of_closure_computation	local:majorpart_of	local:closure_computation	.
-local:inferred_type	rdfs:subClassOf	local:type	.
-local:novel_individual_grouping_constructs	rdfs:subClassOf	local:constructs	.
-local:relying	vn.role:Agent	local:type_statements	.
-local:reduces	vn.role:Cause	local:syntactic_transformation	.
-local:increases	vn.role:Patient	local:common_approach_for_reasoning	.
-local:space	rdfs:member	local:space_requirements	.
-local:gives	vn.role:indirect_object	local:excess_of_inferred_type_statements	.
-local:run	rdfs:member	local:run_time	.
-local:space_requirement	rdfs:subClassOf	local:requirement	.
-local:particular_type_statements	rdfs:subClassOf	local:statements	.
-local:based	vn.role:indirect_object	local:novel_individual_grouping_constructs	.
-local:common_approach	rdfs:subClassOf	local:approach	.
-local:significant_percentage_in_most_ontologies	local:significantpercentage_in	local:most_ontologies	.
-local:propose	vn.role:Agent	local:we	.
-local:gives	vn.role:indirect_object	local:cyclic_repetition	.
-local:most_ontologies	rdfs:subClassOf	local:ontologies	.
-local:reduced	local:AM-MNR	local:affecting	.
-local:major_part	rdfs:subClassOf	local:part	.
-local:affecting	vn.role:Cause	local:soundness	.
-local:inferred_type_statements	rdfs:subClassOf	local:type_statements	.
-local:relying_on_subclass_relations	local:relying_on	local:subclass_relations	.
-local:propose	vn.role:Topic	local:syntactic_transformation	.
-local:affecting	vn.role:Cause	local:completeness	.
-local:query_time	rdfs:subClassOf	local:time	.
-local:inferred_type	rdfs:member	local:inferred_type_statements	.
-local:excess_of_inferred_type_statements	local:of_inferredtypestatements	local:excess	.
-local:deductive_closure	rdfs:subClassOf	local:closure	.
-local:run_time	rdfs:subClassOf	local:time	.
-local:closure	rdfs:member	local:closure_computation	.
-local:show	vn.role:Agent	local:type_statements	.
-local:time_complexity	rdfs:subClassOf	local:complexity	.
-local:using	vn.role:Theme	local:rules	.
-local:reduced	vn.role:Patient	local:thus	.
-local:deductive	rdfs:member	local:deductive_closure	.
-local:space_requirement_of_reasoning	local:of_reasoning	local:space_requirement	.
-local:deductive_closure_of_ontology	local:deductiveclosure_of	local:ontology	.
-local:type_statements	rdfs:subClassOf	local:statements	.
-local:deriving	local:AM-LOC	local:brief	.
-local:reduces	vn.role:Patient	local:number_of_inferred_type_statements	.
-local:increases	vn.role:Attribute	local:space_requirements	.
-local:gives	vn.role:object	local:rise	.
-local:individual_grouping_constructs	rdfs:subClassOf	local:grouping_constructs	.
+local:s9	rdf:object	local:rise_cyclic_repetition	.
+local:s19.1	rdf:object	local:soundness	.
+local:rise_cyclic_repetition	rdfs:member	local:cyclic_repetition	.
 local:particular_type	rdfs:subClassOf	local:type	.
-local:query	rdfs:member	local:query_time	.
-local:excess_of_inferred_type_statements	local:excess_of	local:inferred_type_statements	.
-local:work	local:AM-LOC	local:closure_at_query_time	.
-local:space_requirement_of_reasoning	local:spacerequirement_of	local:reasoning	.
-local:novel_individual_grouping_constructs	rdfs:subClassOf	local:individual_grouping_constructs	.
-local:closure_at_query_time	local:closure_at	local:query_time	.
-local:subclass	rdfs:member	local:subclass_relations	.
-local:significant	rdfs:member	local:significant_percentage	.
-local:individual_grouping_constructs	rdfs:subClassOf	local:constructs	.
-local:individual_grouping	rdfs:member	local:individual_grouping_constructs	.
-local:novel_individual_grouping	rdfs:member	local:novel_individual_grouping_constructs	.
-local:deriving	vn.role:Theme	local:major_part_of_closure_computation	.
-local:grouping	rdfs:member	local:grouping_constructs	.
-local:individual_grouping	rdfs:subClassOf	local:grouping	.
-local:relying	vn.role:Theme	local:increase	.
-local:deductive_closure_of_ontology	local:of_ontology	local:deductive_closure	.
-local:number_of_inferred_type_statements	local:of_inferredtypestatements	local:number	.
-local:individual	rdfs:member	local:individual_grouping	.
-local:show	vn.role:Theme	local:significant_percentage_in_most_ontologies	.
-local:cyclic	rdfs:member	local:cyclic_repetition	.
-local:novel_individual	rdfs:member	local:novel_individual_grouping	.
-local:reduces	vn.role:Patient	local:run	.
-local:subclass	rdfs:member	local:subclass_statements	.
-local:particular	rdfs:member	local:particular_type	.
-local:run_time	rdfs:member	local:run_time_complexity	.
-local:time	rdfs:member	local:time_complexity	.
-local:affecting	vn.role:Experiencer	local:thus	.
-local:common	rdfs:member	local:common_approach	.
-local:number_of_inferred_type_statements	local:number_of	local:inferred_type_statements	.
-local:novel_individual_grouping	rdfs:subClassOf	local:grouping	.
-local:significant_percentage_in_most_ontologies	local:in_mostontologies	local:significant_percentage	.
-local:common_approach_for_reasoning	local:for_reasoning	local:common_approach	.
-local:compute	vn.role:Product	local:deductive_closure_of_ontology	.
-local:particular_type_statements	rdfs:subClassOf	local:type_statements	.
-local:type	rdfs:member	local:type_statements	.
-local:novel_individual	rdfs:subClassOf	local:individual	.
-local:gives	vn.role:Asset	local:type_statements	.
-local:relying	vn.role:indirect_object	local:subclass_statements	.
-local:compute	vn.role:Agent	local:common_approach_for_reasoning	.
-local:relying_on_subclass_relations	local:on_subclassrelations	local:relying	.
-local:inferred_type_statements	rdfs:subClassOf	local:statements	.
-local:subclass_statements	rdfs:subClassOf	local:statements	.
-local:based	vn.role:Cause	local:syntactic_transformation	.
-local:most	rdfs:member	local:most_ontologies	.
-local:major_part_of_closure_computation	local:of_closurecomputation	local:major_part	.
-local:syntactic	rdfs:member	local:syntactic_transformation	.
-local:grouping_constructs	rdfs:subClassOf	local:constructs	.
-local:reduces	vn.role:Cause	local:common_approach_for_reasoning	.
-local:syntactic_transformation	rdfs:subClassOf	local:transformation	.
-local:propose	local:AM-LOC	local:paper	.
-local:particular_type	rdfs:member	local:particular_type_statements	.
-local:subclass_relations	rdfs:subClassOf	local:relations	.
-local:type_statements_relying	local:_relying	local:type_statements	.
-local:type_statements_relying	local:typestatements_	local:relying	.
-local:inferred	vn.role:Theme	local:type_statements_relying	.
+local:s0	rdf:subject	local:rules	.
+local:s15	rdf:subject	local:syntactic_transformation	.
+local:number_of_inferred_type_statements	rdfs:member	local:s17.1	.
 local:closure_computation	rdfs:subClassOf	local:computation	.
+local:s1	local:AM-TMP	local:query_time	.
+local:s1	rdf:object	local:closure	.
+local:query_time	rdfs:subClassOf	local:time	.
+local:s16	rdf:predicate	local:base	.
+local:space_requirement_of_reasoning	rdfs:member	local:space_requirement	.
+local:major_part	rdfs:subClassOf	local:part	.
+local:s10	rdf:subject	local:particular_type_statements	.
+local:brief_a_major_part_of_closure_computation	rdfs:member	local:closure_computation	.
+local:particular_type_statements	rdfs:subClassOf	local:type_statements	.
+local:space_requirement	rdfs:subClassOf	local:requirement	.
+local:s4	rdf:subject	local:common_approach_for_reasoning	.
+local:s12	rdf:subject	local:type_statements	.
+local:rise_cyclic_repetition	rdfs:subClassOf	local:cyclic_repetition	.
+local:s19.1	rdf:predicate	local:affect	.
+local:major_part_of_closure_computation	rdfs:member	local:major_part	.
+local:s14	local:AM-LOC	local:paper	.
+local:s17.1	rdf:predicate	local:infer	.
+local:s4	rdf:predicate	local:increase	.
+local:s9	rdf:subject	local:statements_in_particular_type_statements	.
+local:common_approach_for_reasoning	rdfs:member	local:reasoning	.
+local:s20	local:AM-DIS	local:thus	.
+local:s17	rdf:subject	local:syntactic_transformation	.
+local:s14	rdf:subject	local:we	.
+local:s11	rdf:object	local:rise_excess_of_inferred_type_statements	.
+local:cyclic_repetition	rdfs:member	local:cyclic	.
+local:run_time_complexity	rdfs:member	local:run_time	.
+local:s20.1	rdf:predicate	local:affect	.
+local:s1	rdf:predicate	local:work	.
+local:s20	rdf:subject	local:space_requirement_of_reasoning	.
+local:s18.1	rdf:subject	local:type_statements	.
+local:s17	rdf:object	local:number_of_inferred_type_statements	.
+local:s18	rdf:subject	local:s18.1	.
+local:individual_grouping	rdfs:subClassOf	local:grouping	.
+local:s13	rdf:predicate	local:rely	.
+local:particular_type	rdfs:member	local:particular	.
+local:common_approach_for_reasoning	rdfs:member	local:common_approach	.
+local:s11	rdf:subject	local:statements_in_particular_type_statements	.
+local:s18	rdf:predicate	local:infer	.
+local:s12	rdf:predicate	local:derive	.
+local:s19	rdf:predicate	local:reduce	.
+local:s2	rdf:predicate	local:compute	.
+local:particular_type_statements	rdfs:member	local:particular_type	.
+local:syntactic_transformation	rdfs:member	local:syntactic	.
+local:novel_individual_grouping	rdfs:member	local:novel_individual	.
+local:s18.1	rdf:object	local:subclass_relations	.
+local:s10	rdf:predicate	local:rely	.
+local:s0	rdf:predicate	local:specify	.
+local:major_part	rdfs:member	local:major	.
+local:s17.1	rdfs:subClassOf	local:type_statements	.
+local:s3	rdf:predicate	local:use	.
+local:number_of_inferred_type_statements	rdfs:member	local:number	.
+local:deductive_closure	rdfs:member	local:deductive	.
+local:s20	rdf:predicate	local:reduce	.
+local:novel_individual_grouping_constructs	rdfs:subClassOf	local:individual_grouping_constructs	.
+local:space_requirement_of_reasoning	rdfs:member	local:reasoning	.
+local:s19	local:AM-DIS	local:thus	.
 local:space_requirements	rdfs:subClassOf	local:requirements	.
-local:relying	vn.role:Agent	local:particular_type_statements	.
-local:cyclic_repetition	rdfs:subClassOf	local:repetition	.
+local:s10	rdf:object	local:increase	.
+local:individual_grouping_constructs	rdfs:subClassOf	local:grouping_constructs	.
+local:novel_individual_grouping	rdfs:subClassOf	local:grouping	.
 local:significant_percentage	rdfs:subClassOf	local:percentage	.
-local:closure_at_query_time	local:at_querytime	local:closure	.
-local:relying	vn.role:indirect_object	local:subclass_relations	.
-local:deriving	vn.role:Location	local:type_statements	.
-local:inferred	rdfs:member	local:inferred_type	.
-local:common_approach_for_reasoning	local:commonapproach_for	local:reasoning	.
-local:major	rdfs:member	local:major_part	.
+local:s5	rdf:subject	local:common_approach_for_reasoning	.
+local:significant_percentage	rdfs:member	local:significant	.
+local:type_statements	rdfs:member	local:type	.
+local:subclass_relations	rdfs:subClassOf	local:relations	.
+local:particular_type_statements	rdfs:subClassOf	local:statements	.
+local:s8	rdf:object	local:significant_percentage	.
+local:rise_excess_of_inferred_type_statements	rdfs:member	local:rise_excess	.
+local:s15	rdf:object	local:novel_individual_grouping_constructs	.
+local:inferred_type	rdfs:member	local:inferred	.
+local:closure_computation	rdfs:member	local:closure	.
+local:s8	local:AM-LOC	local:ontologies	.
+local:s14	rdf:object	local:syntactic_transformation	.
+local:deductive_closure_of_an_ontology	rdfs:member	local:deductive_closure	.
+local:s8	rdf:subject	local:type_statements	.
+local:s19.1	rdf:subject	local:space_requirement_of_reasoning	.
+local:s9	rdf:predicate	local:give	.
+local:s17	rdf:predicate	local:reduce	.
+local:run_time	rdfs:member	local:run	.
+local:common_approach	rdfs:member	local:common	.
+local:subclass_statements	rdfs:member	local:subclass	.
+local:s3	rdf:subject	local:rules	.
+local:subclass_relations	rdfs:member	local:subclass	.
+local:grouping_constructs	rdfs:subClassOf	local:constructs	.
+local:rise_cyclic_repetition	rdfs:member	local:rise	.
+local:s5	rdf:predicate	local:reduce	.
+local:s16	rdf:subject	local:syntactic_transformation	.
+local:individual_grouping_constructs	rdfs:member	local:individual_grouping	.
+local:s17.1	rdfs:member	local:inferred_type	.
+local:deductive_closure_of_an_ontology	rdfs:member	local:ontology	.
+local:novel_individual	rdfs:member	local:novel	.
+local:individual_grouping	rdfs:member	local:individual	.
+local:s19	local:AM-MNR	local:without_affecting_the_soundness	.
+local:s17.1	rdf:subject	local:type_statements	.
+local:s1	rdf:subject	local:common_approach_for_reasoning	.
+local:brief_a_major_part_of_closure_computation	rdfs:member	local:major_part	.
+local:s5	rdf:object	local:run_time_complexity	.
 local:run_time_complexity	rdfs:subClassOf	local:complexity	.
-local:novel	rdfs:member	local:novel_individual	.
-local:space	rdfs:member	local:space_requirement	.
+local:subclass_statements	rdfs:subClassOf	local:statements	.
+local:rise_excess_of_inferred_type_statements	rdfs:member	local:s17.1	.
+local:time_complexity	rdfs:member	local:time	.
+local:run_time	rdfs:subClassOf	local:time	.
+local:statements_in_particular_type_statements	rdfs:member	local:statements	.
+local:novel_individual_grouping_constructs	rdfs:subClassOf	local:constructs	.
+local:syntactic_transformation	rdfs:subClassOf	local:transformation	.
+local:s14	rdf:predicate	local:propose	.
+local:deductive_closure_of_ontology	rdfs:member	local:ontology	.
+local:s2	rdf:subject	local:common_approach_for_reasoning	.
+local:major_part_of_closure_computation	rdfs:member	local:closure_computation	.
+local:s13	rdf:subject	local:type_statements	.
+local:brief_a_major_part_of_closure_computation	rdfs:member	local:brief	.
+local:s2	rdf:object	local:deductive_closure_of_an_ontology	.
+local:inferred_type	rdfs:subClassOf	local:type	.
+local:grouping_constructs	rdfs:member	local:grouping	.
+local:s12	local:AM-LOC	local:brief_a_major_part_of_closure_computation	.
+local:s18.1	rdf:predicate	local:rely	.
+local:s4	rdf:object	local:space_requirements	.
+local:type_statements	rdfs:subClassOf	local:statements	.
+local:common_approach	rdfs:subClassOf	local:approach	.
+local:s20	local:AM-MNR	local:without_affecting_the_completeness	.
+local:space_requirement	rdfs:member	local:space	.
+local:cyclic_repetition	rdfs:subClassOf	local:repetition	.
+local:individual_grouping_constructs	rdfs:subClassOf	local:constructs	.
+local:s20.1	rdf:object	local:completeness	.
+local:s13	rdf:object	local:subclass_statements	.
+local:deductive_closure_of_ontology	rdfs:member	local:deductive_closure	.
+local:s8	rdf:predicate	local:show	.
+local:novel_individual_grouping_constructs	rdfs:member	local:novel_individual_grouping	.
+local:statements_in_particular_type_statements	rdfs:member	local:particular_type_statements	.
+local:s16	rdf:object	local:novel_individual_grouping_constructs	.
+local:rise_excess	rdfs:member	local:rise	.
+local:time_complexity	rdfs:subClassOf	local:complexity	.
+local:rise_excess	rdfs:subClassOf	local:excess	.
+local:deductive_closure	rdfs:subClassOf	local:closure	.
+local:novel_individual	rdfs:subClassOf	local:individual	.
+local:space_requirements	rdfs:member	local:space	.
+local:s20.1	rdf:subject	local:space_requirement_of_reasoning	.
+local:s15	rdf:predicate	local:base	.
+local:s17.1	rdfs:subClassOf	local:statements	.
+local:s11	rdf:predicate	local:give	.
+local:query_time	rdfs:member	local:query	.
+local:s19	rdf:subject	local:space_requirement_of_reasoning	.

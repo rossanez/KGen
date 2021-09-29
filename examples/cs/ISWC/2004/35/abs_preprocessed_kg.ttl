@@ -1,263 +1,413 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"users explore the ontology"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"most ontologies help users explore the ontology"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the navigational support offered by the semantic relations in most ontologies to help users explore the ontology"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"within the same setting we study retrieval methods"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"retrieval methods that complement the navigational support"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we evaluate we methods within the setting of digital library project"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"methods within the setting of digital library project using information retrieval evaluation methodology"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"we suggest new concepts"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we use collocationbased keyword extraction to suggest new concepts"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"automate the population of ontologies with instances"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"we study the generation of hyperlinks to automate the population of ontologies with instances"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we use collocationbased keyword extraction to study the generation of hyperlinks to automate the population of ontologies with instances"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"information retrieval can contribute towards the effective usage of ontologies"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"information retrieval can contribute towards the construction of ontologies"	.
+
+
 #### Classes ####
 
-local:information	rdfs:label	"information"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:information_retrieval	rdfs:label	"information retrieval"	.
+local:explore	a	rdf:Class	;
+	rdfs:label	"explore"	.
 
-local:retrieval	rdfs:label	"retrieval"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:contribute	rdfs:label	"contribute"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:can	rdfs:label	"can"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:construction_of_ontologies	rdfs:label	"construction of ontologies"	.
+local:semantic_relations	a	rdf:Class	;
+	rdfs:label	"semantic relations"	.
 
-local:construction	rdfs:label	"construction"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:effective_usage	rdfs:label	"effective usage"	.
+local:offer	a	rdf:Class	;
+	rdfs:label	"offer"	.
 
-local:usage	rdfs:label	"usage"	.
+local:navigational_support	a	rdf:Class	;
+	rdfs:label	"navigational support"	.
 
-local:effective	rdfs:label	"effective"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:effective_usage_of_ontologies	rdfs:label	"effective usage of ontologies"	.
+local:navigational	a	rdf:Class	;
+	rdfs:label	"navigational"	.
 
-local:use	rdfs:label	"use"	.
+local:help_users_explore_the_ontology	a	rdf:Class	;
+	rdfs:label	"help users explore the ontology"	.
 
-local:we	rdfs:label	"we"	.
+local:help_users	a	rdf:Class	;
+	rdfs:label	"help users"	.
 
-local:collocationbased_keyword	rdfs:label	"collocation-based keyword"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:collocationbased_keyword_extraction	rdfs:label	"collocation-based keyword extraction"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:keyword_extraction	rdfs:label	"keyword extraction"	.
+local:retrieval_methods	a	rdf:Class	;
+	rdfs:label	"retrieval methods"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:keyword	rdfs:label	"keyword"	.
+local:retrieval	a	rdf:Class	;
+	rdfs:label	"retrieval"	.
 
-local:collocationbased	rdfs:label	"collocation-based"	.
+local:within_the_same_setting	a	rdf:Class	;
+	rdfs:label	"within the same setting"	.
 
-local:generation_of_hyperlinks	rdfs:label	"generation of hyperlinks"	.
+local:same_setting	a	rdf:Class	;
+	rdfs:label	"same setting"	.
 
-local:generation	rdfs:label	"generation"	.
+local:same	a	rdf:Class	;
+	rdfs:label	"same"	.
 
-local:hyperlinks	rdfs:label	"hyperlinks"	.
+local:setting	a	rdf:Class	;
+	rdfs:label	"setting"	.
 
-local:population_of_ontologies	rdfs:label	"population of ontologies"	.
+local:complement	a	rdf:Class	;
+	rdfs:label	"complement"	.
 
-local:population	rdfs:label	"population"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:automate_with_instances	rdfs:label	"automate with instances"	.
+local:methods_within_the_setting_of_digital_library_project	a	rdf:Class	;
+	rdfs:label	"methods within the setting of digital library project"	.
 
-local:automate	rdfs:label	"automate"	.
+local:digital_library_project	a	rdf:Class	;
+	rdfs:label	"digital library project"	.
 
-local:instances	rdfs:label	"instances"	.
+local:project	a	rdf:Class	;
+	rdfs:label	"project"	.
 
-local:study	rdfs:label	"study"	.
+local:library_project	a	rdf:Class	;
+	rdfs:label	"library project"	.
 
-local:new_concepts	rdfs:label	"new concepts"	.
+local:library	a	rdf:Class	;
+	rdfs:label	"library"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:digital_library	a	rdf:Class	;
+	rdfs:label	"digital library"	.
 
-local:suggest_new_concepts	rdfs:label	"suggest new concepts"	.
+local:digital	a	rdf:Class	;
+	rdfs:label	"digital"	.
 
-local:new	rdfs:label	"new"	.
+local:methods_within_setting	a	rdf:Class	;
+	rdfs:label	"methods within setting"	.
 
-local:suggest_new	rdfs:label	"suggest new"	.
+local:setting_of_digital_library_project	a	rdf:Class	;
+	rdfs:label	"setting of digital library project"	.
 
-local:suggest	rdfs:label	"suggest"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:digital	rdfs:label	"digital"	.
+local:information_retrieval_evaluation_methodology	a	rdf:Class	;
+	rdfs:label	"information retrieval evaluation methodology"	.
 
-local:digital_library	rdfs:label	"digital library"	.
+local:retrieval_evaluation_methodology	a	rdf:Class	;
+	rdfs:label	"retrieval evaluation methodology"	.
 
-local:digital_library_project	rdfs:label	"digital library project"	.
+local:methodology	a	rdf:Class	;
+	rdfs:label	"methodology"	.
 
-local:library	rdfs:label	"library"	.
+local:information_retrieval	a	rdf:Class	;
+	rdfs:label	"information retrieval"	.
 
-local:library_project	rdfs:label	"library project"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:project	rdfs:label	"project"	.
+local:information_retrieval_evaluation	a	rdf:Class	;
+	rdfs:label	"information retrieval evaluation"	.
 
-local:methods_within_setting	rdfs:label	"methods within setting"	.
+local:retrieval_evaluation	a	rdf:Class	;
+	rdfs:label	"retrieval evaluation"	.
 
-local:methods	rdfs:label	"methods"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:setting	rdfs:label	"setting"	.
+local:evaluation_methodology	a	rdf:Class	;
+	rdfs:label	"evaluation methodology"	.
 
-local:setting_of_digital_library_project	rdfs:label	"setting of digital library project"	.
+local:suggest	a	rdf:Class	;
+	rdfs:label	"suggest"	.
 
-local:using	rdfs:label	"using"	.
+local:new_concepts	a	rdf:Class	;
+	rdfs:label	"new concepts"	.
 
-local:retrieval_evaluation_methodology	rdfs:label	"retrieval evaluation methodology"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:methodology	rdfs:label	"methodology"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:information_retrieval_evaluation	rdfs:label	"information retrieval evaluation"	.
+local:collocationbased_keyword_extraction	a	rdf:Class	;
+	rdfs:label	"collocationbased keyword extraction"	.
 
-local:retrieval_evaluation	rdfs:label	"retrieval evaluation"	.
+local:keyword_extraction	a	rdf:Class	;
+	rdfs:label	"keyword extraction"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:evaluation_methodology	rdfs:label	"evaluation methodology"	.
+local:keyword	a	rdf:Class	;
+	rdfs:label	"keyword"	.
 
-local:information_retrieval_evaluation_methodology	rdfs:label	"information retrieval evaluation methodology"	.
+local:suggest_new_concepts	a	rdf:Class	;
+	rdfs:label	"suggest new concepts"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:suggest_new	a	rdf:Class	;
+	rdfs:label	"suggest new"	.
 
-local:navigational	rdfs:label	"navigational"	.
+local:population_of_ontologies	a	rdf:Class	;
+	rdfs:label	"population of ontologies"	.
 
-local:navigational_support	rdfs:label	"navigational support"	.
+local:population	a	rdf:Class	;
+	rdfs:label	"population"	.
 
-local:support	rdfs:label	"support"	.
+local:automate	a	rdf:Class	;
+	rdfs:label	"automate"	.
 
-local:offered	rdfs:label	"offered"	.
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:generation_of_hyperlinks	a	rdf:Class	;
+	rdfs:label	"generation of hyperlinks"	.
 
-local:semantic_relations	rdfs:label	"semantic relations"	.
+local:hyperlinks	a	rdf:Class	;
+	rdfs:label	"hyperlinks"	.
 
-local:relations	rdfs:label	"relations"	.
+local:generation	a	rdf:Class	;
+	rdfs:label	"generation"	.
 
-local:help_users	rdfs:label	"help users"	.
+local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	a	rdf:Class	;
+	rdfs:label	"study the generation of hyperlinks to automate the population of ontologies with instances"	.
 
-local:users	rdfs:label	"users"	.
+local:automate_with_instances	a	rdf:Class	;
+	rdfs:label	"automate with instances"	.
 
-local:help	rdfs:label	"help"	.
+local:contribute	a	rdf:Class	;
+	rdfs:label	"contribute"	.
 
-local:explore	rdfs:label	"explore"	.
+local:towards_the_effective_usage_of_ontologies	a	rdf:Class	;
+	rdfs:label	"towards the effective usage of ontologies"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:effective_usage	a	rdf:Class	;
+	rdfs:label	"effective usage"	.
 
-local:same_setting	rdfs:label	"same setting"	.
+local:usage	a	rdf:Class	;
+	rdfs:label	"usage"	.
 
-local:same	rdfs:label	"same"	.
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
 
-local:retrieval_methods	rdfs:label	"retrieval methods"	.
+local:effective_usage_of_ontologies	a	rdf:Class	;
+	rdfs:label	"effective usage of ontologies"	.
 
-local:complement	rdfs:label	"complement"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-#### Properties ####
+local:towards_the_construction_of_ontologies	a	rdf:Class	;
+	rdfs:label	"towards the construction of ontologies"	.
+
+local:construction	a	rdf:Class	;
+	rdfs:label	"construction"	.
+
+local:construction_of_ontologies	a	rdf:Class	;
+	rdfs:label	"construction of ontologies"	.
 
 #### Mapped Relations ####
 
-cso:retrieval_methods	rdfs:label	"retrieval methods"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-cso:hyperlinks	rdfs:label	"hyperlinks"	.
-cso:semantic_relations	rdfs:label	"semantic relations"	.
-local:ontology	owl:sameAs	cso:ontology	.
-local:retrieval_methods	owl:sameAs	cso:retrieval_methods	.
 local:hyperlinks	owl:sameAs	cso:hyperlinks	.
-cso:digital_library	rdfs:label	"digital library"	.
-local:digital_library	owl:sameAs	cso:digital_library	.
-local:ontologies	owl:sameAs	cso:ontologies	.
+cso:semantic_relations	rdfs:label	"semantic relations"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:library	rdfs:label	"library"	.
 local:semantic_relations	owl:sameAs	cso:semantic_relations	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:retrieval_methods	rdfs:label	"retrieval methods"	.
+local:library	owl:sameAs	cso:library	.
+cso:digital_library	rdfs:label	"digital library"	.
 local:information_retrieval	owl:sameAs	cso:information_retrieval	.
 cso:information_retrieval	rdfs:label	"information retrieval"	.
-cso:library	rdfs:label	"library"	.
+cso:hyperlinks	rdfs:label	"hyperlinks"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 cso:ontology	rdfs:label	"ontology"	.
-local:library	owl:sameAs	cso:library	.
+local:digital_library	owl:sameAs	cso:digital_library	.
+local:retrieval_methods	owl:sameAs	cso:retrieval_methods	.
 
 #### Relations ####
 
-local:suggest_new	rdfs:member	local:suggest_new_concepts	.
-local:semantic	rdfs:member	local:semantic_relations	.
-local:evaluation	rdfs:member	local:evaluation_methodology	.
-local:navigational	rdfs:member	local:navigational_support	.
-local:collocationbased	rdfs:member	local:collocationbased_keyword	.
-local:contribute	vn.role:indirect_object	local:effective_usage_of_ontologies	.
-local:use	vn.role:Theme	local:collocationbased_keyword_extraction	.
-local:information_retrieval_evaluation	rdfs:member	local:information_retrieval_evaluation_methodology	.
-local:retrieval	rdfs:member	local:retrieval_methods	.
-local:suggest	rdfs:member	local:suggest_new	.
-local:new	rdfs:member	local:new_concepts	.
-local:information_retrieval	rdfs:member	local:information_retrieval_evaluation	.
-local:help	vn.role:Beneficiary	local:explore	.
-local:explore	vn.role:Agent	local:users	.
-local:using	vn.role:Theme	local:information_retrieval_evaluation_methodology	.
-local:retrieval_methods	rdfs:subClassOf	local:methods	.
-local:contribute	vn.role:indirect_object	local:construction_of_ontologies	.
-local:automate_with_instances	local:with_instances	local:automate	.
-local:generation_of_hyperlinks	local:of_hyperlinks	local:generation	.
-local:collocationbased_keyword	rdfs:member	local:collocationbased_keyword_extraction	.
-local:suggest_new	rdfs:subClassOf	local:new	.
-local:complement	vn.role:Predicate	local:retrieval_methods	.
-local:setting_of_digital_library_project	local:of_digitallibraryproject	local:setting	.
-local:new_concepts	rdfs:subClassOf	local:concepts	.
-local:effective_usage_of_ontologies	local:effectiveusage_of	local:ontologies	.
-local:help	rdfs:member	local:help_users	.
-local:effective_usage	rdfs:subClassOf	local:usage	.
-local:same_setting	rdfs:subClassOf	local:setting	.
-local:retrieval_evaluation	rdfs:member	local:retrieval_evaluation_methodology	.
-local:explore	vn.role:Location	local:ontology	.
-local:help_users	rdfs:subClassOf	local:users	.
+local:population_of_ontologies	rdfs:member	local:ontologies	.
+local:suggest_new	rdfs:member	local:suggest	.
+local:s1	local:AM-MOD	local:can	.
+local:semantic_relations	rdfs:member	local:semantic	.
+local:s2.1	local:AM-PNC	local:s2.2	.
+local:towards_the_construction_of_ontologies	rdfs:member	local:construction	.
 local:information_retrieval_evaluation_methodology	rdfs:subClassOf	local:retrieval_evaluation_methodology	.
-local:evaluate	vn.role:Theme	local:methods_within_setting	.
-local:same	rdfs:member	local:same_setting	.
-local:study	local:AM-PNC	local:automate_with_instances	.
-local:methods_within_setting	local:within_setting	local:methods	.
-local:offered	local:AM-LOC	local:ontologies	.
-local:study	vn.role:Agent	local:we	.
-local:library_project	rdfs:subClassOf	local:project	.
-local:use	vn.role:Agent	local:we	.
-local:generation_of_hyperlinks	local:generation_of	local:hyperlinks	.
-local:automate	local:AM-MNR	local:instances	.
-local:collocationbased_keyword_extraction	rdfs:subClassOf	local:extraction	.
-local:using	vn.role:Agent	local:methods_within_setting	.
-local:methods_within_setting	local:methods_within	local:setting	.
-local:automate_with_instances	local:automate_with	local:instances	.
-local:keyword	rdfs:member	local:keyword_extraction	.
-local:setting_of_digital_library_project	local:setting_of	local:digital_library_project	.
-local:complement	vn.role:indirect_object	local:navigational_support	.
-local:suggest	vn.role:Theme	local:we	.
-local:collocationbased_keyword	rdfs:subClassOf	local:keyword	.
-local:evaluation_methodology	rdfs:subClassOf	local:methodology	.
-local:digital_library	rdfs:subClassOf	local:library	.
-local:retrieval_evaluation	rdfs:subClassOf	local:evaluation	.
-local:contribute	vn.role:Theme1	local:information_retrieval	.
-local:information_retrieval	rdfs:subClassOf	local:retrieval	.
-local:navigational_support	rdfs:subClassOf	local:support	.
-local:study	local:AM-LOC	local:same_setting	.
-local:offered	vn.role:Agent	local:semantic_relations	.
-local:digital	rdfs:member	local:digital_library	.
-local:population_of_ontologies	local:population_of	local:ontologies	.
-local:use	local:AM-PNC	local:suggest	.
-local:evaluate	vn.role:Agent	local:we	.
-local:digital_library	rdfs:member	local:digital_library_project	.
-local:retrieval_evaluation_methodology	rdfs:subClassOf	local:evaluation_methodology	.
-local:digital_library_project	rdfs:subClassOf	local:project	.
-local:retrieval	rdfs:member	local:retrieval_evaluation	.
-local:collocationbased_keyword_extraction	rdfs:subClassOf	local:keyword_extraction	.
-local:offered	vn.role:Theme	local:navigational_support	.
-local:population_of_ontologies	local:of_ontologies	local:population	.
-local:automate	vn.role:Patient	local:population_of_ontologies	.
-local:effective	rdfs:member	local:effective_usage	.
-local:information_retrieval_evaluation	rdfs:subClassOf	local:evaluation	.
-local:library	rdfs:member	local:library_project	.
-local:information	rdfs:member	local:information_retrieval	.
-local:suggest_new_concepts	rdfs:subClassOf	local:concepts	.
-local:keyword_extraction	rdfs:subClassOf	local:extraction	.
-local:study	vn.role:Theme	local:retrieval_methods	.
+local:s2	rdf:subject	local:we	.
+local:population_of_ontologies	rdfs:member	local:population	.
+local:s8.2	rdf:subject	local:users	.
+local:methods_within_the_setting_of_digital_library_project	rdfs:member	local:methods	.
+local:s1	rdf:predicate	local:contribute	.
+local:s4	rdf:object	local:information_retrieval_evaluation_methodology	.
 local:semantic_relations	rdfs:subClassOf	local:relations	.
-local:digital_library_project	rdfs:subClassOf	local:library_project	.
-local:effective_usage_of_ontologies	local:of_ontologies	local:effective_usage	.
-local:construction_of_ontologies	local:of_ontologies	local:construction	.
-local:study	vn.role:Theme	local:generation_of_hyperlinks	.
-local:help	vn.role:Agent	local:ontologies	.
+local:retrieval_evaluation_methodology	rdfs:subClassOf	local:evaluation_methodology	.
+local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	rdfs:member	local:hyperlinks	.
+local:library_project	rdfs:subClassOf	local:project	.
+local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	rdfs:member	local:generation	.
+local:retrieval_evaluation	rdfs:member	local:retrieval	.
+local:effective_usage_of_ontologies	rdfs:member	local:effective_usage	.
+local:s8	rdf:subject	local:semantic_relations	.
+local:s3.1	rdf:subject	local:we	.
+local:s0	rdf:subject	local:information_retrieval	.
+local:s8	local:AM-PNC	local:help_users_explore_the_ontology	.
+local:digital_library	rdfs:member	local:digital	.
+local:s6	rdf:predicate	local:complement	.
+local:s3.1	rdf:object	local:new_concepts	.
+local:s2.2	rdf:subject	local:population_of_ontologies	.
+local:s8.2	rdf:predicate	local:explore	.
+local:effective_usage	rdfs:member	local:effective	.
+local:construction_of_ontologies	rdfs:member	local:construction	.
+local:s5	rdf:predicate	local:evaluate	.
+local:s5	rdf:subject	local:we	.
 local:information_retrieval_evaluation_methodology	rdfs:subClassOf	local:methodology	.
-local:construction_of_ontologies	local:construction_of	local:ontologies	.
-local:contribute	local:AM-MOD	local:can	.
-local:use	local:AM-PNC	local:study	.
-local:suggest	vn.role:Agent	local:new_concepts	.
-local:offered	local:AM-PNC	local:help	.
+local:suggest_new_concepts	rdfs:subClassOf	local:concepts	.
+local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	rdfs:member	local:instances	.
+local:help_users_explore_the_ontology	rdfs:member	local:ontology	.
+local:s7	rdf:object	local:retrieval_methods	.
+local:s6	rdf:subject	local:retrieval_methods	.
+local:generation_of_hyperlinks	rdfs:member	local:generation	.
+local:new_concepts	rdfs:member	local:new	.
+local:information_retrieval_evaluation	rdfs:member	local:information_retrieval	.
+local:same_setting	rdfs:member	local:same	.
+local:methods_within_setting	rdfs:member	local:setting	.
+local:s3.1	rdf:predicate	local:suggest	.
+local:s6	rdf:object	local:navigational_support	.
+local:navigational_support	rdfs:member	local:navigational	.
+local:library_project	rdfs:member	local:library	.
+local:s7	rdf:subject	local:we	.
+local:suggest_new	rdfs:subClassOf	local:new	.
+local:new_concepts	rdfs:subClassOf	local:concepts	.
+local:methods_within_the_setting_of_digital_library_project	rdfs:member	local:digital_library_project	.
+local:keyword_extraction	rdfs:subClassOf	local:extraction	.
+local:construction_of_ontologies	rdfs:member	local:ontologies	.
+local:s3	rdf:predicate	local:use	.
+local:information_retrieval_evaluation	rdfs:subClassOf	local:evaluation	.
+local:s3	local:AM-PNC	local:suggest_new_concepts	.
+local:s4	rdf:predicate	local:use	.
+local:retrieval_methods	rdfs:subClassOf	local:methods	.
+local:s8.2	rdf:object	local:ontology	.
+local:help_users	rdfs:member	local:help	.
+local:s0	rdf:object	local:towards_the_construction_of_ontologies	.
+local:help_users_explore_the_ontology	rdfs:member	local:help_users	.
+local:s2	rdf:predicate	local:use	.
+local:s1	rdf:object	local:towards_the_effective_usage_of_ontologies	.
+local:retrieval_evaluation_methodology	rdfs:member	local:retrieval_evaluation	.
+local:s8	local:AM-LOC	local:ontologies	.
+local:s2.2	rdf:predicate	local:automate	.
+local:retrieval_evaluation	rdfs:subClassOf	local:evaluation	.
+local:evaluation_methodology	rdfs:subClassOf	local:methodology	.
+local:towards_the_effective_usage_of_ontologies	rdfs:member	local:ontologies	.
+local:generation_of_hyperlinks	rdfs:member	local:hyperlinks	.
 local:retrieval_evaluation_methodology	rdfs:subClassOf	local:methodology	.
+local:towards_the_construction_of_ontologies	rdfs:member	local:ontologies	.
+local:s3	rdf:object	local:collocationbased_keyword_extraction	.
+local:s0	rdf:predicate	local:contribute	.
+local:information_retrieval	rdfs:member	local:information	.
+local:collocationbased_keyword_extraction	rdfs:subClassOf	local:keyword_extraction	.
+local:s8.1	rdf:subject	local:ontologies	.
+local:automate_with_instances	rdfs:member	local:automate	.
+local:digital_library_project	rdfs:subClassOf	local:library_project	.
+local:digital_library_project	rdfs:subClassOf	local:project	.
+local:s7	rdf:predicate	local:study	.
+local:retrieval_methods	rdfs:member	local:retrieval	.
+local:automate_with_instances	rdfs:member	local:instances	.
+local:s3	rdf:subject	local:we	.
+local:s2.2	local:AM-MNR	local:instances	.
+local:methods_within_setting	rdfs:member	local:methods	.
+local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	rdfs:member	local:ontologies	.
+local:same_setting	rdfs:subClassOf	local:setting	.
+local:effective_usage	rdfs:subClassOf	local:usage	.
+local:evaluation_methodology	rdfs:member	local:evaluation	.
+local:s8.1	rdf:predicate	local:help	.
+local:suggest_new_concepts	rdfs:member	local:suggest_new	.
+local:s2	rdf:object	local:collocationbased_keyword_extraction	.
+local:help_users	rdfs:subClassOf	local:users	.
+local:digital_library	rdfs:subClassOf	local:library	.
+local:setting_of_digital_library_project	rdfs:member	local:digital_library_project	.
+local:s7	local:AM-LOC	local:within_the_same_setting	.
+local:s1	rdf:subject	local:information_retrieval	.
+local:s2.1	rdf:object	local:generation_of_hyperlinks	.
+local:s5	rdf:object	local:methods_within_the_setting_of_digital_library_project	.
+local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	rdfs:member	local:population	.
+local:keyword_extraction	rdfs:member	local:keyword	.
+local:s2	local:AM-PNC	local:study_the_generation_of_hyperlinks_to_automate_the_population_of_ontologies_with_instances	.
+local:s8.1	rdf:object	local:s8.2	.
+local:s8	rdf:predicate	local:offer	.
+local:towards_the_effective_usage_of_ontologies	rdfs:member	local:effective_usage	.
+local:s8	rdf:object	local:navigational_support	.
+local:methods_within_the_setting_of_digital_library_project	rdfs:member	local:setting	.
+local:navigational_support	rdfs:subClassOf	local:support	.
+local:effective_usage_of_ontologies	rdfs:member	local:ontologies	.
+local:s2.1	rdf:predicate	local:study	.
+local:s0	local:AM-MOD	local:can	.
+local:setting_of_digital_library_project	rdfs:member	local:setting	.
+local:digital_library_project	rdfs:member	local:digital_library	.
+local:s2.1	rdf:subject	local:we	.
+local:information_retrieval_evaluation_methodology	rdfs:member	local:information_retrieval_evaluation	.
+local:information_retrieval	rdfs:subClassOf	local:retrieval	.
+local:s4	rdf:subject	local:methods_within_the_setting_of_digital_library_project	.

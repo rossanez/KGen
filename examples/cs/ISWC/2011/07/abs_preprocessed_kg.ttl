@@ -1,388 +1,731 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"the baselines shown to be useful in a concrete task"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"in experiments involving realworld data sets our approach outperforms the baselines shown to be useful in a concrete task"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"in experiments involving realworld data sets our approach the baselines shown to be useful in a concrete task"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"experiments involving realworld data"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"the baselines shown to be useful in a concrete task"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"in experiments involving users our approach outperforms the baselines shown to be useful in a concrete task"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"experiments involving users our approach"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the baselines producing summaries that better match handcrafted ones"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"the baselines producing summaries that better match handcrafted ones and further"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we present an implementation of this conceptual model"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"this conceptual model which captures the semantics of description elements"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"based on information theory concepts"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"based on linguistic theory concepts"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"as a solution to this novel problem of entity summarization we propose a variant of the random surfer model"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"as a solution to this novel problem of entity summarization we propose relin"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the random surfer model that leverages the relatedness and informativeness of description elements for ranking"	.
+
+local:s1.4	a	rdf:Statement	;
+	rdfs:label	"underlying entity"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"quickly identifying the underlying entity"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"a lengthy description can tailored to the task of quickly identifying the underlying entity"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"an emerging problem in many web applications making use of data like linked data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"emerging problem"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"linked data developing towards a large global repository for structured interlinked descriptions of realworld entities"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+
 #### Classes ####
 
-local:linked	rdfs:label	"linked"	.
+local:baselines	a	rdf:Class	;
+	rdfs:label	"baselines"	.
 
-local:data	rdfs:label	"data"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:developing	rdfs:label	"developing"	.
+local:outperform	a	rdf:Class	;
+	rdfs:label	"outperform"	.
 
-local:global_repository	rdfs:label	"global repository"	.
+local:baselines_shown_to_be_useful_in_a_concrete_task	a	rdf:Class	;
+	rdfs:label	"baselines shown to be useful in a concrete task"	.
 
-local:repository	rdfs:label	"repository"	.
+local:concrete_task	a	rdf:Class	;
+	rdfs:label	"concrete task"	.
 
-local:realworld_entities	rdfs:label	"real-world entities"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:entities	rdfs:label	"entities"	.
+local:concrete	a	rdf:Class	;
+	rdfs:label	"concrete"	.
 
-local:interlinked_descriptions	rdfs:label	"interlinked descriptions"	.
+local:baselines_shown	a	rdf:Class	;
+	rdfs:label	"baselines shown"	.
 
-local:descriptions	rdfs:label	"descriptions"	.
+local:shown	a	rdf:Class	;
+	rdfs:label	"shown"	.
 
-local:global	rdfs:label	"global"	.
+local:useful_in_concrete_task	a	rdf:Class	;
+	rdfs:label	"useful in concrete task"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:useful	a	rdf:Class	;
+	rdfs:label	"useful"	.
 
-local:interlinked	rdfs:label	"interlinked"	.
+local:experiments_involving_realworld_data_sets	a	rdf:Class	;
+	rdfs:label	"experiments involving realworld data sets"	.
 
-local:structured_interlinked_descriptions	rdfs:label	"structured interlinked descriptions"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:large_global_repository	rdfs:label	"large global repository"	.
+local:realworld_data_sets	a	rdf:Class	;
+	rdfs:label	"realworld data sets"	.
 
-local:large_global_repository_for_structured_interlinked_descriptions	rdfs:label	"large global repository for structured interlinked descriptions"	.
+local:data_sets	a	rdf:Class	;
+	rdfs:label	"data sets"	.
 
-local:structured_interlinked_descriptions_of_realworld_entities	rdfs:label	"structured interlinked descriptions of real-world entities"	.
+local:sets	a	rdf:Class	;
+	rdfs:label	"sets"	.
 
-local:emerging	rdfs:label	"emerging"	.
+local:realworld_data	a	rdf:Class	;
+	rdfs:label	"realworld data"	.
 
-local:problem	rdfs:label	"problem"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:web_applications	rdfs:label	"web applications"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:applications	rdfs:label	"applications"	.
+local:experiments_involving	a	rdf:Class	;
+	rdfs:label	"experiments involving"	.
 
-local:many_web_applications	rdfs:label	"many web applications"	.
+local:involving	a	rdf:Class	;
+	rdfs:label	"involving"	.
 
-local:many_web	rdfs:label	"many web"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:web	rdfs:label	"web"	.
+local:experiments_involving_realworld_data	a	rdf:Class	;
+	rdfs:label	"experiments involving realworld data"	.
 
-local:many	rdfs:label	"many"	.
+local:involve	a	rdf:Class	;
+	rdfs:label	"involve"	.
 
-local:emerging_problem	rdfs:label	"emerging problem"	.
+local:experiments_involving_users	a	rdf:Class	;
+	rdfs:label	"experiments involving users"	.
 
-local:emerging_problem_in_many_web_applications	rdfs:label	"emerging problem in many web applications"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:making	rdfs:label	"making"	.
+local:users_our_approach	a	rdf:Class	;
+	rdfs:label	"users our approach"	.
 
-local:use_of_data	rdfs:label	"use of data"	.
+local:our_approach	a	rdf:Class	;
+	rdfs:label	"our approach"	.
 
-local:use	rdfs:label	"use"	.
+local:baselines_producing_summaries	a	rdf:Class	;
+	rdfs:label	"baselines producing summaries"	.
 
-local:data_like_linked_data	rdfs:label	"data like linked data"	.
+local:summaries	a	rdf:Class	;
+	rdfs:label	"summaries"	.
 
-local:lengthy_description	rdfs:label	"lengthy description"	.
+local:baselines_producing	a	rdf:Class	;
+	rdfs:label	"baselines producing"	.
 
-local:description	rdfs:label	"description"	.
+local:producing	a	rdf:Class	;
+	rdfs:label	"producing"	.
 
-local:lengthy	rdfs:label	"lengthy"	.
+local:match	a	rdf:Class	;
+	rdfs:label	"match"	.
 
-local:tailored	rdfs:label	"tailored"	.
+local:handcrafted_ones	a	rdf:Class	;
+	rdfs:label	"handcrafted ones"	.
 
-local:can	rdfs:label	"can"	.
+local:ones	a	rdf:Class	;
+	rdfs:label	"ones"	.
 
-local:underlying_entity	rdfs:label	"underlying entity"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:entity	rdfs:label	"entity"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:underlying	rdfs:label	"underlying"	.
+local:summaries_that_better_match_handcrafted_ones_and_further	a	rdf:Class	;
+	rdfs:label	"summaries that better match handcrafted ones and further"	.
 
-local:quickly_identifying	rdfs:label	"quickly identifying"	.
+local:further_ones	a	rdf:Class	;
+	rdfs:label	"further ones"	.
 
-local:identifying	rdfs:label	"identifying"	.
+local:handcrafted_further_ones	a	rdf:Class	;
+	rdfs:label	"handcrafted further ones"	.
 
-local:task	rdfs:label	"task"	.
+local:match_handcrafted_further_ones	a	rdf:Class	;
+	rdfs:label	"match handcrafted further ones"	.
 
-local:quickly	rdfs:label	"quickly"	.
+local:better_match_handcrafted_further_ones	a	rdf:Class	;
+	rdfs:label	"better match handcrafted further ones"	.
 
-local:entity_summarization	rdfs:label	"entity summarization"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:novel	rdfs:label	"novel"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:novel_problem	rdfs:label	"novel problem"	.
+local:implementation_of_this_conceptual_model	a	rdf:Class	;
+	rdfs:label	"implementation of this conceptual model"	.
 
-local:summarization	rdfs:label	"summarization"	.
+local:implementation	a	rdf:Class	;
+	rdfs:label	"implementation"	.
 
-local:solution_to_novel_problem	rdfs:label	"solution to novel problem"	.
+local:conceptual_model	a	rdf:Class	;
+	rdfs:label	"conceptual model"	.
 
-local:solution	rdfs:label	"solution"	.
+local:conceptual	a	rdf:Class	;
+	rdfs:label	"conceptual"	.
 
-local:novel_problem_of_entity_summarization	rdfs:label	"novel problem of entity summarization"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:propose	rdfs:label	"propose"	.
+local:implementation_of_conceptual_model	a	rdf:Class	;
+	rdfs:label	"implementation of conceptual model"	.
 
-local:we	rdfs:label	"we"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-local:relin	rdfs:label	"relin"	.
+local:semantics_of_description_elements	a	rdf:Class	;
+	rdfs:label	"semantics of description elements"	.
 
-local:random	rdfs:label	"random"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:random_surfer	rdfs:label	"random surfer"	.
+local:description_elements	a	rdf:Class	;
+	rdfs:label	"description elements"	.
 
-local:random_surfer_model	rdfs:label	"random surfer model"	.
+local:elements	a	rdf:Class	;
+	rdfs:label	"elements"	.
 
-local:model	rdfs:label	"model"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:surfer_model	rdfs:label	"surfer model"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:surfer	rdfs:label	"surfer"	.
+local:information_theory_concepts	a	rdf:Class	;
+	rdfs:label	"information theory concepts"	.
 
-local:leverages	rdfs:label	"leverages"	.
+local:information_theory	a	rdf:Class	;
+	rdfs:label	"information theory"	.
 
-local:description_elements	rdfs:label	"description elements"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:elements	rdfs:label	"elements"	.
+local:theory_concepts	a	rdf:Class	;
+	rdfs:label	"theory concepts"	.
 
-local:relatedness_of_description_elements	rdfs:label	"relatedness of description elements"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:relatedness	rdfs:label	"relatedness"	.
+local:theory	a	rdf:Class	;
+	rdfs:label	"theory"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:linguistic_theory_concepts	a	rdf:Class	;
+	rdfs:label	"linguistic theory concepts"	.
 
-local:variant_of_random_surfer_model	rdfs:label	"variant of random surfer model"	.
+local:linguistic_theory	a	rdf:Class	;
+	rdfs:label	"linguistic theory"	.
 
-local:variant	rdfs:label	"variant"	.
+local:linguistic	a	rdf:Class	;
+	rdfs:label	"linguistic"	.
 
-local:linguistic	rdfs:label	"linguistic"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:linguistic_theory	rdfs:label	"linguistic theory"	.
+local:variant_of_the_random_surfer_model	a	rdf:Class	;
+	rdfs:label	"variant of the random surfer model"	.
 
-local:linguistic_theory_concepts	rdfs:label	"linguistic theory concepts"	.
+local:random_surfer_model	a	rdf:Class	;
+	rdfs:label	"random surfer model"	.
 
-local:theory_concepts	rdfs:label	"theory concepts"	.
+local:variant	a	rdf:Class	;
+	rdfs:label	"variant"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:surfer_model	a	rdf:Class	;
+	rdfs:label	"surfer model"	.
 
-local:theory	rdfs:label	"theory"	.
+local:surfer	a	rdf:Class	;
+	rdfs:label	"surfer"	.
 
-local:based	rdfs:label	"based"	.
+local:random_surfer	a	rdf:Class	;
+	rdfs:label	"random surfer"	.
 
-local:information_theory_concepts	rdfs:label	"information theory concepts"	.
+local:random	a	rdf:Class	;
+	rdfs:label	"random"	.
 
-local:information_theory	rdfs:label	"information theory"	.
+local:variant_of_random_surfer_model	a	rdf:Class	;
+	rdfs:label	"variant of random surfer model"	.
 
-local:information	rdfs:label	"information"	.
+local:solution_to_this_novel_problem_of_entity_summarization	a	rdf:Class	;
+	rdfs:label	"solution to this novel problem of entity summarization"	.
 
-local:present	rdfs:label	"present"	.
+local:solution	a	rdf:Class	;
+	rdfs:label	"solution"	.
 
-local:conceptual	rdfs:label	"conceptual"	.
+local:entity_summarization	a	rdf:Class	;
+	rdfs:label	"entity summarization"	.
 
-local:conceptual_model	rdfs:label	"conceptual model"	.
+local:novel_problem	a	rdf:Class	;
+	rdfs:label	"novel problem"	.
 
-local:implementation_of_conceptual_model	rdfs:label	"implementation of conceptual model"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:implementation	rdfs:label	"implementation"	.
+local:summarization	a	rdf:Class	;
+	rdfs:label	"summarization"	.
 
-local:captures	rdfs:label	"captures"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:semantics_of_description_elements	rdfs:label	"semantics of description elements"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:solution_to_novel_problem	a	rdf:Class	;
+	rdfs:label	"solution to novel problem"	.
 
-local:involving	rdfs:label	"involving"	.
+local:novel_problem_of_entity_summarization	a	rdf:Class	;
+	rdfs:label	"novel problem of entity summarization"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:relin	a	rdf:Class	;
+	rdfs:label	"relin"	.
 
-local:our_approach	rdfs:label	"our approach"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:approach	rdfs:label	"approach"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:users	rdfs:label	"users"	.
+local:relatedness_and_informativeness_of_description_elements_ranking	a	rdf:Class	;
+	rdfs:label	"relatedness and informativeness of description elements ranking"	.
 
-local:experiments_involving	rdfs:label	"experiments involving"	.
+local:informativeness	a	rdf:Class	;
+	rdfs:label	"informativeness"	.
 
-local:outperforms	rdfs:label	"outperforms"	.
+local:relatedness	a	rdf:Class	;
+	rdfs:label	"relatedness"	.
 
-local:concrete_task	rdfs:label	"concrete task"	.
+local:relatedness_of_description_elements	a	rdf:Class	;
+	rdfs:label	"relatedness of description elements"	.
 
-local:concrete	rdfs:label	"concrete"	.
+local:description_elements_ranking	a	rdf:Class	;
+	rdfs:label	"description elements ranking"	.
 
-local:baselines_shown	rdfs:label	"baselines shown"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:baselines	rdfs:label	"baselines"	.
+local:underlie	a	rdf:Class	;
+	rdfs:label	"underlie"	.
 
-local:shown	rdfs:label	"shown"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:useful_in_concrete_task	rdfs:label	"useful in concrete task"	.
+local:quickly	a	rdf:Class	;
+	rdfs:label	"quickly"	.
 
-local:useful	rdfs:label	"useful"	.
+local:lengthy_description	a	rdf:Class	;
+	rdfs:label	"lengthy description"	.
 
-local:realworld_data	rdfs:label	"real-world data"	.
+local:lengthy	a	rdf:Class	;
+	rdfs:label	"lengthy"	.
 
-local:sets	rdfs:label	"sets"	.
+local:tailor	a	rdf:Class	;
+	rdfs:label	"tailor"	.
 
-local:realworld_data_sets	rdfs:label	"real-world data sets"	.
+local:task_of_quickly_identifying_the_underlying_entity	a	rdf:Class	;
+	rdfs:label	"task of quickly identifying the underlying entity"	.
 
-local:data_sets	rdfs:label	"data sets"	.
+local:underlying	a	rdf:Class	;
+	rdfs:label	"underlying"	.
 
-local:producing	rdfs:label	"producing"	.
+local:quickly_identifying	a	rdf:Class	;
+	rdfs:label	"quickly identifying"	.
 
-local:further_ones	rdfs:label	"further ones"	.
+local:identifying	a	rdf:Class	;
+	rdfs:label	"identifying"	.
 
-local:ones	rdfs:label	"ones"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:handcrafted_further_ones	rdfs:label	"handcrafted further ones"	.
+local:emerging_problem_in_many_web_applications	a	rdf:Class	;
+	rdfs:label	"emerging problem in many web applications"	.
 
-local:match_handcrafted_further_ones	rdfs:label	"match handcrafted further ones"	.
+local:many_web_applications	a	rdf:Class	;
+	rdfs:label	"many web applications"	.
 
-local:better_match_handcrafted_further_ones	rdfs:label	"better match handcrafted further ones"	.
+local:many_web	a	rdf:Class	;
+	rdfs:label	"many web"	.
 
-local:summaries	rdfs:label	"summaries"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:baselines_producing	rdfs:label	"baselines producing"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:match	rdfs:label	"match"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:better	rdfs:label	"better"	.
+local:web_applications	a	rdf:Class	;
+	rdfs:label	"web applications"	.
 
-#### Properties ####
+local:emerging_problem	a	rdf:Class	;
+	rdfs:label	"emerging problem"	.
+
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
+
+local:use_of_data_like_linked_data	a	rdf:Class	;
+	rdfs:label	"use of data like linked data"	.
+
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
+
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
+
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
+
+local:use_of_data	a	rdf:Class	;
+	rdfs:label	"use of data"	.
+
+local:data_like_linked_data	a	rdf:Class	;
+	rdfs:label	"data like linked data"	.
+
+local:emerge	a	rdf:Class	;
+	rdfs:label	"emerge"	.
+
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
+
+local:towards_a_large_global_repository_for_structured_interlinked_descriptions_of_realworld_entities	a	rdf:Class	;
+	rdfs:label	"towards a large global repository for structured interlinked descriptions of realworld entities"	.
+
+local:large_global_repository	a	rdf:Class	;
+	rdfs:label	"large global repository"	.
+
+local:towards	a	rdf:Class	;
+	rdfs:label	"towards"	.
+
+local:realworld_entities	a	rdf:Class	;
+	rdfs:label	"realworld entities"	.
+
+local:structured_interlinked_descriptions	a	rdf:Class	;
+	rdfs:label	"structured interlinked descriptions"	.
+
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
+
+local:large_global	a	rdf:Class	;
+	rdfs:label	"large global"	.
+
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
+
+local:repository	a	rdf:Class	;
+	rdfs:label	"repository"	.
+
+local:global	a	rdf:Class	;
+	rdfs:label	"global"	.
+
+local:global_repository	a	rdf:Class	;
+	rdfs:label	"global repository"	.
+
+local:structured_interlinked	a	rdf:Class	;
+	rdfs:label	"structured interlinked"	.
+
+local:interlinked	a	rdf:Class	;
+	rdfs:label	"interlinked"	.
+
+local:interlinked_descriptions	a	rdf:Class	;
+	rdfs:label	"interlinked descriptions"	.
+
+local:structured	a	rdf:Class	;
+	rdfs:label	"structured"	.
+
+local:descriptions	a	rdf:Class	;
+	rdfs:label	"descriptions"	.
+
+local:large_global_repository_for_structured_interlinked_descriptions	a	rdf:Class	;
+	rdfs:label	"large global repository for structured interlinked descriptions"	.
+
+local:structured_interlinked_descriptions_of_realworld_entities	a	rdf:Class	;
+	rdfs:label	"structured interlinked descriptions of realworld entities"	.
 
 #### Mapped Relations ####
 
-local:linguistic	owl:sameAs	cso:linguistics	.
-local:semantics	owl:sameAs	cso:semantics	.
-cso:linguistics	rdfs:label	"linguistic"	.
-cso:semantics	rdfs:label	"semantics"	.
-local:linked_data	owl:sameAs	cso:linked_data	.
+local:information_theory	owl:sameAs	cso:information_theory	.
 local:web_applications	owl:sameAs	cso:web_applications	.
+cso:web_applications	rdfs:label	"web applications"	.
+cso:linguistics	rdfs:label	"linguistic"	.
+local:semantics	owl:sameAs	cso:semantics	.
 cso:linked_data	rdfs:label	"linked data"	.
 cso:information_theory	rdfs:label	"information theory"	.
-cso:web_applications	rdfs:label	"web applications"	.
-local:information_theory	owl:sameAs	cso:information_theory	.
+cso:semantics	rdfs:label	"semantics"	.
+local:linked_data	owl:sameAs	cso:linked_data	.
+local:linguistic	owl:sameAs	cso:linguistics	.
 
 #### Relations ####
 
-local:many_web	rdfs:member	local:many_web_applications	.
-local:description	rdfs:member	local:description_elements	.
-local:propose	local:AM-ADV	local:solution_to_novel_problem	.
-local:information_theory	rdfs:subClassOf	local:theory	.
-local:based	vn.role:indirect_object	local:linguistic_theory_concepts	.
-local:linguistic	rdfs:member	local:linguistic_theory	.
-local:relatedness_of_description_elements	local:of_descriptionelements	local:relatedness	.
-local:outperforms	local:AM-LOC	local:experiments_involving	.
-local:linguistic_theory	rdfs:subClassOf	local:theory	.
-local:identifying	vn.role:Theme	local:underlying_entity	.
-local:variant_of_random_surfer_model	local:of_randomsurfermodel	local:variant	.
-local:theory	rdfs:member	local:theory_concepts	.
-local:sets	vn.role:Patient	local:approach	.
-local:emerging	vn.role:Theme	local:problem	.
-local:variant_of_random_surfer_model	local:variant_of	local:random_surfer_model	.
-local:data_like_linked_data	local:data_like	local:linked_data	.
-local:conceptual	rdfs:member	local:conceptual_model	.
-local:based	vn.role:Cause	local:description_elements	.
-local:experiments_involving	local:_involving	local:experiments	.
-local:baselines_shown	local:baselines_	local:shown	.
-local:lengthy	rdfs:member	local:lengthy_description	.
-local:emerging_problem_in_many_web_applications	local:in_manywebapplications	local:emerging_problem	.
-local:tailored	vn.role:Theme	local:lengthy_description	.
-local:shown	local:AM-LOC	local:concrete_task	.
-local:developing	vn.role:Location	local:large_global_repository_for_structured_interlinked_descriptions	.
-local:many_web	rdfs:subClassOf	local:web	.
-local:surfer	rdfs:member	local:surfer_model	.
-local:many_web_applications	rdfs:subClassOf	local:applications	.
-local:relatedness_of_description_elements	local:relatedness_of	local:description_elements	.
-local:global_repository	rdfs:subClassOf	local:repository	.
-local:use_of_data	local:use_of	local:data	.
-local:captures	vn.role:Agent	local:conceptual_model	.
-local:useful_in_concrete_task	local:useful_in	local:concrete_task	.
-local:concrete	rdfs:member	local:concrete_task	.
-local:propose	vn.role:Agent	local:we	.
-local:realworld_data_sets	rdfs:subClassOf	local:sets	.
-local:producing	vn.role:Agent	local:baselines	.
-local:entity_summarization	rdfs:subClassOf	local:summarization	.
-local:large_global_repository_for_structured_interlinked_descriptions	local:for_structuredinterlinkeddescriptions	local:large_global_repository	.
-local:match	local:AM-MNR	local:better	.
-local:involving	vn.role:Cause	local:realworld_data	.
-local:tailored	local:AM-MOD	local:can	.
-local:random_surfer_model	rdfs:subClassOf	local:model	.
-local:semantics_of_description_elements	local:semantics_of	local:description_elements	.
-local:realworld_data	rdfs:subClassOf	local:data	.
-local:making	vn.role:Product	local:use_of_data	.
-local:entity	rdfs:member	local:entity_summarization	.
-local:interlinked	rdfs:member	local:interlinked_descriptions	.
-local:outperforms	vn.role:Theme1	local:approach	.
-local:leverages	vn.role:Agent	local:random_surfer_model	.
-local:tailored	vn.role:other	local:task	.
-local:captures	vn.role:Theme	local:semantics_of_description_elements	.
-local:leverages	vn.role:Location	local:ranking	.
-local:information_theory_concepts	rdfs:subClassOf	local:concepts	.
-local:use_of_data	local:of_data	local:use	.
-local:experiments_involving	local:experiments_	local:involving	.
-local:theory_concepts	rdfs:subClassOf	local:concepts	.
-local:concrete_task	rdfs:subClassOf	local:task	.
-local:implementation_of_conceptual_model	local:implementation_of	local:conceptual_model	.
-local:useful_in_concrete_task	local:in_concretetask	local:useful	.
-local:underlying	rdfs:member	local:underlying_entity	.
-local:underlying	vn.role:Theme1	local:entity	.
-local:information_theory	rdfs:member	local:information_theory_concepts	.
-local:interlinked_descriptions	rdfs:subClassOf	local:descriptions	.
-local:random	rdfs:member	local:random_surfer	.
-local:many	rdfs:member	local:many_web	.
-local:leverages	vn.role:Theme	local:relatedness_of_description_elements	.
-local:propose	vn.role:Topic	local:variant_of_random_surfer_model	.
-local:identifying	local:AM-MNR	local:quickly	.
-local:novel_problem_of_entity_summarization	local:novelproblem_of	local:entity_summarization	.
-local:match_handcrafted_further_ones	rdfs:subClassOf	local:handcrafted_further_ones	.
-local:realworld	rdfs:member	local:realworld_entities	.
-local:underlying_entity	rdfs:subClassOf	local:entity	.
-local:baselines_producing	local:baselines_	local:producing	.
-local:large_global_repository	rdfs:subClassOf	local:global_repository	.
-local:outperforms	vn.role:Theme2	local:baselines_shown	.
-local:handcrafted_further_ones	rdfs:subClassOf	local:further_ones	.
-local:present	vn.role:Agent	local:we	.
-local:realworld_entities	rdfs:subClassOf	local:entities	.
-local:match	vn.role:Patient2	local:handcrafted_further_ones	.
-local:novel	rdfs:member	local:novel_problem	.
-local:involving	vn.role:Topic	local:experiments	.
-local:our_approach	rdfs:subClassOf	local:approach	.
-local:data	rdfs:member	local:data_sets	.
-local:structured_interlinked_descriptions_of_realworld_entities	local:structuredinterlinkeddescriptions_of	local:realworld_entities	.
-local:semantics_of_description_elements	local:of_descriptionelements	local:semantics	.
-local:structured_interlinked_descriptions_of_realworld_entities	local:of_real-worldentities	local:structured_interlinked_descriptions	.
-local:random_surfer	rdfs:member	local:random_surfer_model	.
-local:novel_problem	rdfs:subClassOf	local:problem	.
-local:propose	local:AM-MNR	local:solution_to_novel_problem	.
-local:shown	vn.role:Theme	local:baselines	.
+local:s0	rdf:subject	local:data	.
+local:s3	rdf:object	local:relin	.
+local:relatedness_and_informativeness_of_description_elements_ranking	rdfs:member	local:relatedness	.
+local:experiments_involving_realworld_data_sets	rdfs:member	local:realworld_data_sets	.
+local:emerging_problem_in_many_web_applications	rdfs:member	local:problem	.
+local:data_like_linked_data	rdfs:member	local:data	.
+local:s10.1	rdf:predicate	local:outperform	.
 local:realworld_data_sets	rdfs:subClassOf	local:data_sets	.
-local:information	rdfs:member	local:information_theory	.
-local:realworld	rdfs:member	local:realworld_data	.
-local:based	vn.role:indirect_object	local:information_theory_concepts	.
-local:baselines_producing	local:_producing	local:baselines	.
-local:emerging_problem	rdfs:subClassOf	local:problem	.
-local:sets	vn.role:Patient	local:baselines_shown	.
-local:linguistic_theory_concepts	rdfs:subClassOf	local:theory_concepts	.
-local:solution_to_novel_problem	local:to_novelproblem	local:solution	.
-local:many_web_applications	rdfs:subClassOf	local:web_applications	.
-local:producing	vn.role:Product	local:summaries	.
-local:global	rdfs:member	local:global_repository	.
-local:linked	vn.role:Patient	local:data	.
-local:web_applications	rdfs:subClassOf	local:applications	.
-local:emerging_problem_in_many_web_applications	local:emergingproblem_in	local:many_web_applications	.
-local:making	vn.role:Agent	local:emerging_problem_in_many_web_applications	.
-local:random_surfer_model	rdfs:subClassOf	local:surfer_model	.
-local:linguistic_theory	rdfs:member	local:linguistic_theory_concepts	.
-local:present	vn.role:Theme	local:implementation_of_conceptual_model	.
-local:description_elements	rdfs:subClassOf	local:elements	.
-local:better_match_handcrafted_further_ones	rdfs:subClassOf	local:match_handcrafted_further_ones	.
-local:propose	vn.role:Topic	local:relin	.
-local:linguistic_theory_concepts	rdfs:subClassOf	local:concepts	.
-local:developing	vn.role:Location	local:linked_data	.
-local:implementation_of_conceptual_model	local:of_conceptualmodel	local:implementation	.
-local:further_ones	rdfs:subClassOf	local:ones	.
-local:sets	local:AM-LOC	local:experiments_involving	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:conceptual_model	rdfs:subClassOf	local:model	.
-local:data_sets	rdfs:subClassOf	local:sets	.
-local:surfer_model	rdfs:subClassOf	local:model	.
-local:realworld_data	rdfs:member	local:realworld_data_sets	.
+local:solution_to_this_novel_problem_of_entity_summarization	rdfs:member	local:entity_summarization	.
+local:baselines_shown	rdfs:member	local:baselines	.
+local:structured_interlinked_descriptions_of_realworld_entities	rdfs:member	local:realworld_entities	.
+local:information_theory	rdfs:subClassOf	local:theory	.
+local:random_surfer_model	rdfs:member	local:random_surfer	.
+local:structured_interlinked	rdfs:subClassOf	local:interlinked	.
+local:emerging_problem_in_many_web_applications	rdfs:member	local:many_web_applications	.
+local:many_web_applications	rdfs:member	local:many_web	.
+local:s10	rdf:subject	local:users_our_approach	.
+local:information_theory_concepts	rdfs:member	local:information_theory	.
+local:relatedness_of_description_elements	rdfs:member	local:description_elements	.
 local:lengthy_description	rdfs:subClassOf	local:description	.
-local:quickly_identifying	rdfs:subClassOf	local:identifying	.
-local:structured_interlinked_descriptions	rdfs:subClassOf	local:interlinked_descriptions	.
-local:data_like_linked_data	local:like_linkeddata	local:data	.
-local:match	vn.role:Patient2	local:baselines_producing	.
-local:random_surfer	rdfs:subClassOf	local:surfer	.
+local:realworld_data	rdfs:member	local:realworld	.
+local:s5	rdf:predicate	local:base	.
+local:s1.3	rdf:predicate	local:identify	.
+local:users_our_approach	rdfs:member	local:users	.
+local:entity_summarization	rdfs:member	local:entity	.
+local:s0.1	rdf:subject	local:linked_data	.
+local:handcrafted_ones	rdfs:subClassOf	local:ones	.
+local:realworld_data_sets	rdfs:member	local:realworld_data	.
+local:s0.1	rdf:object	local:towards_a_large_global_repository_for_structured_interlinked_descriptions_of_realworld_entities	.
+local:novel_problem	rdfs:subClassOf	local:problem	.
+local:use_of_data_like_linked_data	rdfs:member	local:use	.
+local:description_elements	rdfs:subClassOf	local:elements	.
+local:s10	rdf:object	local:experiments	.
+local:baselines_shown_to_be_useful_in_a_concrete_task	rdfs:member	local:concrete_task	.
+local:s1.4	rdf:predicate	local:underlie	.
+local:many_web_applications	rdfs:subClassOf	local:web_applications	.
+local:realworld_entities	rdfs:member	local:realworld	.
+local:s9.1	rdf:predicate	local:match	.
+local:realworld_data	rdfs:subClassOf	local:data	.
+local:theory_concepts	rdfs:member	local:theory	.
+local:solution_to_this_novel_problem_of_entity_summarization	rdfs:member	local:solution	.
+local:solution_to_novel_problem	rdfs:member	local:novel_problem	.
+local:s5	rdf:object	local:linguistic_theory_concepts	.
+local:s4	local:AM-MNR	local:solution_to_this_novel_problem_of_entity_summarization	.
+local:s9.1	local:AM-MNR	local:better	.
+local:baselines_producing	rdfs:member	local:baselines	.
+local:implementation_of_conceptual_model	rdfs:member	local:implementation	.
+local:description_elements_ranking	rdfs:member	local:ranking	.
+local:large_global_repository	rdfs:member	local:large_global	.
+local:structured_interlinked_descriptions	rdfs:subClassOf	local:descriptions	.
+local:experiments_involving_users	rdfs:member	local:users	.
+local:match_handcrafted_further_ones	rdfs:subClassOf	local:handcrafted_further_ones	.
 local:information_theory_concepts	rdfs:subClassOf	local:theory_concepts	.
-local:involving	vn.role:Cause	local:users	.
-local:baselines_shown	local:_shown	local:baselines	.
-local:web	rdfs:member	local:web_applications	.
-local:solution_to_novel_problem	local:solution_to	local:novel_problem	.
-local:large_global_repository_for_structured_interlinked_descriptions	local:largeglobalrepository_for	local:structured_interlinked_descriptions	.
-local:novel_problem_of_entity_summarization	local:of_entitysummarization	local:novel_problem	.
+local:linked_data	rdfs:member	local:linked	.
+local:s6	rdf:object	local:information_theory_concepts	.
+local:description_elements	rdfs:member	local:description	.
+local:s9	rdf:predicate	local:produce	.
+local:linguistic_theory_concepts	rdfs:member	local:linguistic_theory	.
+local:information_theory	rdfs:member	local:information	.
+local:s11	rdf:object	local:experiments	.
+local:implementation_of_conceptual_model	rdfs:member	local:conceptual_model	.
+local:variant_of_random_surfer_model	rdfs:member	local:random_surfer_model	.
+local:s1.1	rdf:subject	local:emerging_problem_in_many_web_applications	.
+local:many_web_applications	rdfs:subClassOf	local:applications	.
+local:global_repository	rdfs:member	local:global	.
+local:realworld_entities	rdfs:subClassOf	local:entities	.
+local:s10.2	rdf:predicate	local:show	.
+local:s3	rdf:predicate	local:propose	.
+local:s2.1	rdf:predicate	local:rank	.
+local:solution_to_this_novel_problem_of_entity_summarization	rdfs:member	local:novel_problem	.
+local:information_theory_concepts	rdfs:subClassOf	local:concepts	.
+local:s1.3	rdf:subject	local:s1.4	.
+local:data_sets	rdfs:subClassOf	local:sets	.
+local:use_of_data	rdfs:member	local:data	.
+local:s7	rdf:object	local:semantics_of_description_elements	.
+local:s9	rdf:object	local:summaries_that_better_match_handcrafted_ones_and_further	.
+local:baselines_producing_summaries	rdfs:member	local:summaries	.
+local:data_sets	rdfs:member	local:data	.
+local:linguistic_theory_concepts	rdfs:subClassOf	local:theory_concepts	.
+local:s4	rdf:object	local:variant_of_the_random_surfer_model	.
+local:s1.3	local:AM-MNR	local:quickly	.
+local:s10	rdf:predicate	local:involve	.
+local:s4	rdf:subject	local:we	.
+local:quickly_identifying	rdfs:subClassOf	local:identifying	.
+local:task_of_quickly_identifying_the_underlying_entity	rdfs:member	local:s1.4	.
+local:s1.4	rdf:subject	local:entity	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:random_surfer	rdfs:subClassOf	local:surfer	.
+local:s1.4	rdfs:member	local:underlying	.
+local:baselines_shown	rdfs:member	local:shown	.
+local:many_web	rdfs:subClassOf	local:web	.
+local:data_like_linked_data	rdfs:member	local:linked_data	.
+local:s11.1	rdf:object	local:baselines_shown_to_be_useful_in_a_concrete_task	.
+local:relatedness_of_description_elements	rdfs:member	local:relatedness	.
+local:s11	rdf:subject	local:realworld_data	.
+local:surfer_model	rdfs:subClassOf	local:model	.
+local:our_approach	rdfs:subClassOf	local:approach	.
+local:s1.2	rdf:subject	local:lengthy_description	.
+local:novel_problem	rdfs:member	local:novel	.
+local:large_global	rdfs:member	local:large	.
+local:s9	rdf:subject	local:baselines	.
+local:structured_interlinked_descriptions	rdfs:subClassOf	local:interlinked_descriptions	.
+local:s1.2	local:AM-MOD	local:can	.
+local:s11.1	local:AM-LOC	local:experiments_involving_realworld_data	.
+local:s3	local:AM-MNR	local:solution_to_this_novel_problem_of_entity_summarization	.
+local:s9.1	rdf:subject	local:baselines_producing_summaries	.
+local:s2	rdf:object	local:relatedness_and_informativeness_of_description_elements_ranking	.
+local:use_of_data_like_linked_data	rdfs:member	local:linked_data	.
+local:s6	rdf:predicate	local:base	.
+local:s1.1	rdf:object	local:use_of_data_like_linked_data	.
+local:large_global_repository	rdfs:subClassOf	local:repository	.
+local:linguistic_theory_concepts	rdfs:subClassOf	local:concepts	.
+local:novel_problem_of_entity_summarization	rdfs:member	local:novel_problem	.
+local:s11.3	rdf:predicate	local:show	.
+local:s1.2	rdf:object	local:task_of_quickly_identifying_the_underlying_entity	.
+local:implementation_of_this_conceptual_model	rdfs:member	local:implementation	.
+local:large_global_repository_for_structured_interlinked_descriptions	rdfs:member	local:structured_interlinked_descriptions	.
+local:s10.1	rdf:subject	local:approach	.
+local:further_ones	rdfs:subClassOf	local:ones	.
+local:description_elements_ranking	rdfs:member	local:description_elements	.
+local:towards_a_large_global_repository_for_structured_interlinked_descriptions_of_realworld_entities	rdfs:member	local:towards	.
+local:s1	rdf:subject	local:problem	.
+local:random_surfer_model	rdfs:subClassOf	local:surfer_model	.
+local:concrete_task	rdfs:member	local:concrete	.
+local:variant_of_random_surfer_model	rdfs:member	local:variant	.
+local:s1.2	rdf:predicate	local:tailor	.
+local:conceptual_model	rdfs:subClassOf	local:model	.
+local:s1.4	rdfs:subClassOf	local:entity	.
+local:many_web	rdfs:member	local:many	.
+local:web_applications	rdfs:member	local:web	.
+local:semantics_of_description_elements	rdfs:member	local:semantics	.
+local:s7	rdf:predicate	local:capture	.
+local:s7	rdf:subject	local:conceptual_model	.
+local:s11.1	rdf:subject	local:approach	.
+local:s2	rdf:predicate	local:leverage	.
+local:use_of_data_like_linked_data	rdfs:member	local:data	.
+local:large_global_repository	rdfs:subClassOf	local:global_repository	.
+local:s1.1	rdf:predicate	local:make	.
+local:structured_interlinked_descriptions_of_realworld_entities	rdfs:member	local:structured_interlinked_descriptions	.
+local:s1	rdf:predicate	local:emerge	.
+local:experiments_involving	rdfs:member	local:involving	.
+local:structured_interlinked_descriptions	rdfs:member	local:structured_interlinked	.
+local:s10.1	local:AM-LOC	local:experiments_involving_users	.
+local:useful_in_concrete_task	rdfs:member	local:useful	.
+local:linguistic_theory	rdfs:member	local:linguistic	.
+local:solution_to_novel_problem	rdfs:member	local:solution	.
+local:s11	rdf:predicate	local:involve	.
+local:s11.3	rdf:subject	local:baselines	.
+local:random_surfer	rdfs:member	local:random	.
+local:experiments_involving_realworld_data	rdfs:member	local:realworld_data	.
+local:emerging_problem_in_many_web_applications	rdfs:member	local:emerging_problem	.
+local:s8	rdf:object	local:implementation_of_this_conceptual_model	.
+local:s8	rdf:subject	local:we	.
+local:users_our_approach	rdfs:member	local:approach	.
+local:summaries_that_better_match_handcrafted_ones_and_further	rdfs:member	local:summaries	.
+local:random_surfer_model	rdfs:subClassOf	local:model	.
+local:s11.2	rdf:object	local:baselines_shown_to_be_useful_in_a_concrete_task	.
+local:experiments_involving	rdfs:member	local:experiments	.
+local:baselines_producing	rdfs:member	local:producing	.
+local:lengthy_description	rdfs:member	local:lengthy	.
+local:s10.2	rdf:subject	local:baselines	.
+local:s4	rdf:predicate	local:propose	.
+local:large_global_repository_for_structured_interlinked_descriptions	rdfs:member	local:large_global_repository	.
+local:concrete_task	rdfs:subClassOf	local:task	.
+local:better_match_handcrafted_further_ones	rdfs:subClassOf	local:match_handcrafted_further_ones	.
+local:conceptual_model	rdfs:member	local:conceptual	.
+local:use_of_data	rdfs:member	local:use	.
+local:variant_of_the_random_surfer_model	rdfs:member	local:variant	.
+local:s0	rdf:predicate	local:linked	.
+local:s9.1	rdf:object	local:handcrafted_ones	.
+local:s11.2	rdf:predicate	local:outperform	.
+local:handcrafted_further_ones	rdfs:subClassOf	local:further_ones	.
+local:theory_concepts	rdfs:subClassOf	local:concepts	.
+local:web_applications	rdfs:subClassOf	local:applications	.
+local:global_repository	rdfs:subClassOf	local:repository	.
+local:variant_of_the_random_surfer_model	rdfs:member	local:random_surfer_model	.
+local:towards_a_large_global_repository_for_structured_interlinked_descriptions_of_realworld_entities	rdfs:member	local:structured_interlinked_descriptions	.
+local:entity_summarization	rdfs:subClassOf	local:summarization	.
+local:experiments_involving_realworld_data	rdfs:member	local:experiments	.
+local:novel_problem_of_entity_summarization	rdfs:member	local:entity_summarization	.
+local:realworld_data_sets	rdfs:subClassOf	local:sets	.
+local:s10.1	rdf:object	local:baselines_shown_to_be_useful_in_a_concrete_task	.
+local:task_of_quickly_identifying_the_underlying_entity	rdfs:member	local:task	.
+local:s8	rdf:predicate	local:present	.
+local:s0.1	rdf:predicate	local:develop	.
+local:s3	rdf:subject	local:we	.
+local:interlinked_descriptions	rdfs:member	local:interlinked	.
+local:implementation_of_this_conceptual_model	rdfs:member	local:conceptual_model	.
+local:relatedness_and_informativeness_of_description_elements_ranking	rdfs:member	local:informativeness	.
+local:interlinked_descriptions	rdfs:subClassOf	local:descriptions	.
+local:experiments_involving_users	rdfs:member	local:experiments	.
+local:surfer_model	rdfs:member	local:surfer	.
+local:baselines_producing_summaries	rdfs:member	local:baselines	.
+local:structured_interlinked	rdfs:member	local:structured	.
+local:useful_in_concrete_task	rdfs:member	local:concrete_task	.
+local:summaries_that_better_match_handcrafted_ones_and_further	rdfs:member	local:match	.
+local:s2	rdf:subject	local:random_surfer_model	.
+local:emerging_problem	rdfs:subClassOf	local:problem	.
+local:towards_a_large_global_repository_for_structured_interlinked_descriptions_of_realworld_entities	rdfs:member	local:large_global_repository	.
+local:s11.2	rdf:subject	local:approach	.
+local:semantics_of_description_elements	rdfs:member	local:description_elements	.
+local:relatedness_and_informativeness_of_description_elements_ranking	rdfs:member	local:description_elements	.
+local:s11.1	rdf:predicate	local:set	.
+local:towards_a_large_global_repository_for_structured_interlinked_descriptions_of_realworld_entities	rdfs:member	local:realworld_entities	.
+local:experiments_involving_realworld_data_sets	rdfs:member	local:experiments	.
+local:large_global	rdfs:subClassOf	local:global	.
+local:summaries_that_better_match_handcrafted_ones_and_further	rdfs:member	local:ones	.
+local:linguistic_theory	rdfs:subClassOf	local:theory	.
+local:s11.2	local:AM-LOC	local:experiments_involving_realworld_data_sets	.
+local:baselines_shown_to_be_useful_in_a_concrete_task	rdfs:member	local:baselines	.

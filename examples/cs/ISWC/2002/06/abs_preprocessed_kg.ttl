@@ -1,62 +1,92 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"enriching the web with machineprocessable semantic data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"two w3c standards aimed at enriching the web with machineprocessable semantic data"	.
+
+
 #### Classes ####
 
-local:w3c_standards	rdfs:label	"w3c standards"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:standards	rdfs:label	"standards"	.
+local:enrich	a	rdf:Class	;
+	rdfs:label	"enrich"	.
 
-local:w3c	rdfs:label	"w3c"	.
+local:machineprocessable_semantic_data	a	rdf:Class	;
+	rdfs:label	"machineprocessable semantic data"	.
 
-local:two_w3c_standards	rdfs:label	"two w3c standards"	.
+local:machineprocessable_semantic	a	rdf:Class	;
+	rdfs:label	"machineprocessable semantic"	.
 
-local:aimed	rdfs:label	"aimed"	.
+local:machineprocessable	a	rdf:Class	;
+	rdfs:label	"machineprocessable"	.
 
-local:machineprocessable_semantic	rdfs:label	"machine-processable semantic"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:semantic_data	a	rdf:Class	;
+	rdfs:label	"semantic data"	.
 
-local:machineprocessable_semantic_data	rdfs:label	"machine-processable semantic data"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:machineprocessable	rdfs:label	"machine-processable"	.
+local:two_w3c_standards	a	rdf:Class	;
+	rdfs:label	"two w3c standards"	.
 
-local:semantic_data	rdfs:label	"semantic data"	.
+local:w3c_standards	a	rdf:Class	;
+	rdfs:label	"w3c standards"	.
 
-local:data	rdfs:label	"data"	.
+local:w3c	a	rdf:Class	;
+	rdfs:label	"w3c"	.
 
-local:enriching_with_machineprocessable_semantic_data	rdfs:label	"enriching with machine-processable semantic data"	.
+local:standards	a	rdf:Class	;
+	rdfs:label	"standards"	.
 
-local:enriching	rdfs:label	"enriching"	.
+local:aim	a	rdf:Class	;
+	rdfs:label	"aim"	.
 
-local:web	rdfs:label	"web"	.
+local:enriching_the_web_with_machineprocessable_semantic_data	a	rdf:Class	;
+	rdfs:label	"enriching the web with machineprocessable semantic data"	.
 
-#### Properties ####
+local:enriching_with_machineprocessable_semantic_data	a	rdf:Class	;
+	rdfs:label	"enriching with machineprocessable semantic data"	.
+
+local:enriching	a	rdf:Class	;
+	rdfs:label	"enriching"	.
 
 #### Mapped Relations ####
 
-local:semantic_data	owl:sameAs	cso:semantic_data	.
 cso:semantic_data	rdfs:label	"semantic data"	.
+local:semantic_data	owl:sameAs	cso:semantic_data	.
 
 #### Relations ####
 
-local:enriching	vn.role:Theme	local:web	.
-local:machineprocessable	rdfs:member	local:machineprocessable_semantic	.
-local:enriching_with_machineprocessable_semantic_data	local:with_machine-processablesemanticdata	local:enriching	.
-local:machineprocessable_semantic_data	rdfs:subClassOf	local:data	.
 local:semantic_data	rdfs:subClassOf	local:data	.
-local:aimed	vn.role:indirect_object	local:enriching_with_machineprocessable_semantic_data	.
-local:enriching_with_machineprocessable_semantic_data	local:enriching_with	local:machineprocessable_semantic_data	.
-local:w3c_standards	rdfs:subClassOf	local:standards	.
-local:aimed	vn.role:Theme	local:two_w3c_standards	.
-local:machineprocessable_semantic_data	rdfs:subClassOf	local:semantic_data	.
-local:machineprocessable_semantic	rdfs:subClassOf	local:semantic	.
-local:machineprocessable_semantic	rdfs:member	local:machineprocessable_semantic_data	.
-local:semantic	rdfs:member	local:semantic_data	.
-local:enriching	vn.role:Destination	local:machineprocessable_semantic_data	.
-local:w3c	rdfs:member	local:w3c_standards	.
 local:two_w3c_standards	rdfs:subClassOf	local:w3c_standards	.
+local:machineprocessable_semantic_data	rdfs:subClassOf	local:semantic_data	.
+local:w3c_standards	rdfs:subClassOf	local:standards	.
+local:s1.1	rdfs:member	local:web	.
+local:semantic_data	rdfs:member	local:semantic	.
+local:machineprocessable_semantic_data	rdfs:member	local:machineprocessable_semantic	.
+local:s1.1	rdfs:member	local:machineprocessable_semantic_data	.
+local:machineprocessable_semantic_data	rdfs:subClassOf	local:data	.
+local:s1	rdf:object	local:enriching_the_web_with_machineprocessable_semantic_data	.
+local:enriching_with_machineprocessable_semantic_data	rdfs:member	local:enriching	.
+local:enriching_with_machineprocessable_semantic_data	rdfs:member	local:machineprocessable_semantic_data	.
+local:s1	rdf:subject	local:two_w3c_standards	.
+local:w3c_standards	rdfs:member	local:w3c	.
+local:s1	rdf:predicate	local:aim	.
+local:s1.1	rdf:object	local:machineprocessable_semantic_data	.
+local:machineprocessable_semantic	rdfs:member	local:machineprocessable	.
+local:machineprocessable_semantic	rdfs:subClassOf	local:semantic	.
+local:s1.1	rdf:subject	local:web	.
+local:s1.1	rdf:predicate	local:enrich	.

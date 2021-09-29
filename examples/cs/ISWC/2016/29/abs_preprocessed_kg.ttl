@@ -1,557 +1,1001 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"we evaluation shows that feature vector representations of general knowledge graphs such as dbpedia can easily reused for different tasks"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we evaluation shows that feature vector representations of general knowledge graphs such as dbpedia can be easily reused for different tasks"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"we evaluation shows that feature vector representations of general knowledge graphs such as wikidata can easily reused for different tasks"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we evaluation shows that feature vector representations of general knowledge graphs such as wikidata can be easily reused for different tasks"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"different predictive machine learning tasks"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"existing techniques"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we evaluation shows that such vector representations outperform existing techniques for the propositionalization of rdf graphs on a variety of different predictive machine learning tasks"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"graph learn latent numerical representations of entities in rdf graphs"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"we leveraging local information from graph substructures"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we generate sequences by leveraging local information from graph substructures"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"graph substructures harvested by weisfeilerlehman subtree rdf graph kernels"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"graph walks"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"an approach that uses adapts language modeling approaches for unsupervised feature extraction to rdf graphs"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"an approach that uses adapts language modeling approaches for unsupervised feature extraction to rdf graphs"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in this paper we present rdf2vec an approach"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"an approach that uses language modeling approaches for unsupervised feature extraction from sequences of words for unsupervised feature extraction to rdf graphs"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"linked open data sources"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a vector of nominal features associated with an instance"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"however most data mining tools require a vector of nominal features associated with an instance while linked open data sources are graphs by nature"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"linked open data sources"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"propositional form associated with an instance"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"most data mining tools require features in propositional form associated with an instance while linked open data sources are graphs by nature"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"linked open data sources"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"a vector of numerical features associated with an instance"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"however most data mining tools require a vector of numerical features associated with an instance while linked open data sources are graphs by nature"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"open data recognized as a valuable source for background information in data mining"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"linked open data a valuable source for background information in data mining"	.
+
+
 #### Classes ####
 
-local:open_data	rdfs:label	"open data"	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_dbpedia	a	rdf:Class	;
+	rdfs:label	"evaluation shows that feature vector representations of general knowledge graphs such as dbpedia"	.
 
-local:data	rdfs:label	"data"	.
+local:general_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"general knowledge graphs"	.
 
-local:open	rdfs:label	"open"	.
+local:evaluation_shows	a	rdf:Class	;
+	rdfs:label	"evaluation shows"	.
 
-local:linked	rdfs:label	"linked"	.
+local:feature_vector_representations	a	rdf:Class	;
+	rdfs:label	"feature vector representations"	.
 
-local:valuable	rdfs:label	"valuable"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:valuable_source	rdfs:label	"valuable source"	.
+local:general_knowledge	a	rdf:Class	;
+	rdfs:label	"general knowledge"	.
 
-local:source	rdfs:label	"source"	.
+local:feature_vector	a	rdf:Class	;
+	rdfs:label	"feature vector"	.
 
-local:data_mining	rdfs:label	"data mining"	.
+local:feature	a	rdf:Class	;
+	rdfs:label	"feature"	.
 
-local:mining	rdfs:label	"mining"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:background	rdfs:label	"background"	.
+local:shows	a	rdf:Class	;
+	rdfs:label	"shows"	.
 
-local:background_information	rdfs:label	"background information"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:information	rdfs:label	"information"	.
+local:vector	a	rdf:Class	;
+	rdfs:label	"vector"	.
 
-local:valuable_source_for_background_information	rdfs:label	"valuable source for background information"	.
+local:vector_representations	a	rdf:Class	;
+	rdfs:label	"vector representations"	.
 
-local:background_information_in_data_mining	rdfs:label	"background information in data mining"	.
+local:representations	a	rdf:Class	;
+	rdfs:label	"representations"	.
 
-local:recognized	rdfs:label	"recognized"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:most	rdfs:label	"most"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:most_data	rdfs:label	"most data"	.
+local:general	a	rdf:Class	;
+	rdfs:label	"general"	.
 
-local:most_data_mining_tools	rdfs:label	"most data mining tools"	.
+local:feature_vector_representations_of_general_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"feature vector representations of general knowledge graphs"	.
 
-local:tools	rdfs:label	"tools"	.
+local:general_knowledge_graphs_such_as_dbpedia	a	rdf:Class	;
+	rdfs:label	"general knowledge graphs such_as dbpedia"	.
 
-local:most_data_mining	rdfs:label	"most data mining"	.
+local:reuse	a	rdf:Class	;
+	rdfs:label	"reuse"	.
 
-local:mining_tools	rdfs:label	"mining tools"	.
+local:easily	a	rdf:Class	;
+	rdfs:label	"easily"	.
 
-local:data_mining_tools	rdfs:label	"data mining tools"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:however_most_data_mining_tools	rdfs:label	"however most data mining tools"	.
+local:different_tasks	a	rdf:Class	;
+	rdfs:label	"different tasks"	.
 
-local:require	rdfs:label	"require"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:numerical	rdfs:label	"numerical"	.
+local:tasks	a	rdf:Class	;
+	rdfs:label	"tasks"	.
 
-local:numerical_features	rdfs:label	"numerical features"	.
+local:vector_representations_of_general_knowledge_graphs_such_as_dbpedia_can_be_easily_reused_for_different_tasks	a	rdf:Class	;
+	rdfs:label	"vector representations of general knowledge graphs such as dbpedia can be easily reused for different tasks"	.
 
-local:open_data_sources	rdfs:label	"open data sources"	.
+local:easily_reused	a	rdf:Class	;
+	rdfs:label	"easily reused"	.
 
-local:sources	rdfs:label	"sources"	.
+local:reused	a	rdf:Class	;
+	rdfs:label	"reused"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:can_easily_reused	a	rdf:Class	;
+	rdfs:label	"can easily reused"	.
 
-local:features	rdfs:label	"features"	.
+local:vector_representations_of_general_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"vector representations of general knowledge graphs"	.
 
-local:linked_open_data_sources	rdfs:label	"linked open data sources"	.
+local:can_easily_reused_for_different_tasks	a	rdf:Class	;
+	rdfs:label	"can easily reused for different tasks"	.
 
-local:vector_of_numerical_features	rdfs:label	"vector of numerical features"	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_wikidata	a	rdf:Class	;
+	rdfs:label	"evaluation shows that feature vector representations of general knowledge graphs such as wikidata"	.
 
-local:vector	rdfs:label	"vector"	.
+local:wikidata	a	rdf:Class	;
+	rdfs:label	"wikidata"	.
 
-local:numerical_features_associated	rdfs:label	"numerical features associated"	.
+local:general_knowledge_graphs_such_as_wikidata	a	rdf:Class	;
+	rdfs:label	"general knowledge graphs such_as wikidata"	.
 
-local:associated	rdfs:label	"associated"	.
+local:vector_representations_of_general_knowledge_graphs_such_as_wikidata_can_be_easily_reused_for_different_tasks	a	rdf:Class	;
+	rdfs:label	"vector representations of general knowledge graphs such as wikidata can be easily reused for different tasks"	.
 
-local:associated_with_instance	rdfs:label	"associated with instance"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:instance	rdfs:label	"instance"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:graphs_by_nature	rdfs:label	"graphs by nature"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:nature	rdfs:label	"nature"	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	a	rdf:Class	;
+	rdfs:label	"vector representations outperform existing techniques for the propositionalization of rdf graphs on a variety of different predictive machine learning tasks"	.
 
-local:nominal_features	rdfs:label	"nominal features"	.
+local:variety	a	rdf:Class	;
+	rdfs:label	"variety"	.
 
-local:nominal	rdfs:label	"nominal"	.
+local:rdf_graphs	a	rdf:Class	;
+	rdfs:label	"rdf graphs"	.
 
-local:vector_of_nominal_features	rdfs:label	"vector of nominal features"	.
+local:propositionalization	a	rdf:Class	;
+	rdfs:label	"propositionalization"	.
 
-local:nominal_features_associated	rdfs:label	"nominal features associated"	.
+local:different_predictive	a	rdf:Class	;
+	rdfs:label	"different predictive"	.
 
-local:propositional	rdfs:label	"propositional"	.
+local:predictive	a	rdf:Class	;
+	rdfs:label	"predictive"	.
 
-local:propositional_form	rdfs:label	"propositional form"	.
+local:predictive_machine	a	rdf:Class	;
+	rdfs:label	"predictive machine"	.
 
-local:form	rdfs:label	"form"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:features_in_propositional_form	rdfs:label	"features in propositional form"	.
+local:machine_learning	a	rdf:Class	;
+	rdfs:label	"machine learning"	.
 
-local:propositional_form_associated	rdfs:label	"propositional form associated"	.
+local:predictive_machine_learning	a	rdf:Class	;
+	rdfs:label	"predictive machine learning"	.
 
-local:present	rdfs:label	"present"	.
+local:machine_learning_tasks	a	rdf:Class	;
+	rdfs:label	"machine learning tasks"	.
 
-local:paper	rdfs:label	"paper"	.
+local:learning_tasks	a	rdf:Class	;
+	rdfs:label	"learning tasks"	.
 
-local:we	rdfs:label	"we"	.
+local:learning	a	rdf:Class	;
+	rdfs:label	"learning"	.
 
-local:rdf2vec	rdfs:label	"rdf2vec"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:approach	rdfs:label	"approach"	.
+local:different_predictive_machine_learning	a	rdf:Class	;
+	rdfs:label	"different predictive machine learning"	.
 
-local:uses	rdfs:label	"uses"	.
+local:different_predictive_machine	a	rdf:Class	;
+	rdfs:label	"different predictive machine"	.
 
-local:unsupervised_feature	rdfs:label	"unsupervised feature"	.
+local:predictive_machine_learning_tasks	a	rdf:Class	;
+	rdfs:label	"predictive machine learning tasks"	.
 
-local:feature	rdfs:label	"feature"	.
+local:machine_outperform	a	rdf:Class	;
+	rdfs:label	"machine outperform"	.
 
-local:feature_extraction	rdfs:label	"feature extraction"	.
+local:outperform	a	rdf:Class	;
+	rdfs:label	"outperform"	.
 
-local:modeling_approaches	rdfs:label	"modeling approaches"	.
+local:a_different_predictive_machine	a	rdf:Class	;
+	rdfs:label	"a different predictive machine"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:existing_techniques_for_propositionalization	a	rdf:Class	;
+	rdfs:label	"existing techniques for propositionalization"	.
 
-local:unsupervised_feature_extraction	rdfs:label	"unsupervised feature extraction"	.
+local:propositionalization_of_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"propositionalization of rdf graphs"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:a_different_predictive_machine_learning	a	rdf:Class	;
+	rdfs:label	"a different predictive machine learning"	.
 
-local:language_modeling	rdfs:label	"language modeling"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:language_modeling_approaches	rdfs:label	"language modeling approaches"	.
+local:latent_numerical_representations_of_entities_in_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"latent numerical representations of entities in rdf graphs"	.
 
-local:unsupervised	rdfs:label	"unsupervised"	.
+local:latent_numerical_representations	a	rdf:Class	;
+	rdfs:label	"latent numerical representations"	.
 
-local:modeling	rdfs:label	"modeling"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:language	rdfs:label	"language"	.
+local:latent_numerical	a	rdf:Class	;
+	rdfs:label	"latent numerical"	.
 
-local:language_modeling_approaches_for_unsupervised_feature_extraction	rdfs:label	"language modeling approaches for unsupervised feature extraction"	.
+local:numerical	a	rdf:Class	;
+	rdfs:label	"numerical"	.
 
-local:rdf_graphs	rdfs:label	"rdf graphs"	.
+local:latent	a	rdf:Class	;
+	rdfs:label	"latent"	.
 
-local:sequences_of_words	rdfs:label	"sequences of words"	.
+local:numerical_representations	a	rdf:Class	;
+	rdfs:label	"numerical representations"	.
 
-local:sequences	rdfs:label	"sequences"	.
+local:latent_numerical_representations_of_entities	a	rdf:Class	;
+	rdfs:label	"latent numerical representations of entities"	.
 
-local:words	rdfs:label	"words"	.
+local:entities_in_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"entities in rdf graphs"	.
 
-local:words_for_unsupervised_feature_extraction	rdfs:label	"words for unsupervised feature extraction"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:unsupervised_feature_extraction_to_rdf_graphs	rdfs:label	"unsupervised feature extraction to rdf graphs"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:adapts_language	rdfs:label	"adapts language"	.
+local:local_information_graph_substructures	a	rdf:Class	;
+	rdfs:label	"local information graph substructures"	.
 
-local:adapts_language_modeling	rdfs:label	"adapts language modeling"	.
+local:graph_substructures	a	rdf:Class	;
+	rdfs:label	"graph substructures"	.
 
-local:adapts	rdfs:label	"adapts"	.
+local:information_graph_substructures	a	rdf:Class	;
+	rdfs:label	"information graph substructures"	.
 
-local:adapts_language_modeling_approaches	rdfs:label	"adapts language modeling approaches"	.
+local:information_graph	a	rdf:Class	;
+	rdfs:label	"information graph"	.
 
-local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	rdfs:label	"adapts language modeling approaches for unsupervised feature extraction"	.
+local:local_information	a	rdf:Class	;
+	rdfs:label	"local information"	.
 
-local:generate	rdfs:label	"generate"	.
+local:local	a	rdf:Class	;
+	rdfs:label	"local"	.
 
-local:local	rdfs:label	"local"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:local_information	rdfs:label	"local information"	.
+local:local_information_graph	a	rdf:Class	;
+	rdfs:label	"local information graph"	.
 
-local:graph	rdfs:label	"graph"	.
+local:substructures	a	rdf:Class	;
+	rdfs:label	"substructures"	.
 
-local:graph_substructures	rdfs:label	"graph sub-structures"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:substructures	rdfs:label	"sub-structures"	.
+local:sequences	a	rdf:Class	;
+	rdfs:label	"sequences"	.
 
-local:local_information_from_graph_substructures	rdfs:label	"local information from graph sub-structures"	.
+local:leveraging_local_information_from_graph_substructures	a	rdf:Class	;
+	rdfs:label	"leveraging local information from graph substructures"	.
 
-local:leveraging	rdfs:label	"leveraging"	.
+local:local_information_from_graph_substructures	a	rdf:Class	;
+	rdfs:label	"local information from graph substructures"	.
 
-local:harvested	rdfs:label	"harvested"	.
+local:harvest	a	rdf:Class	;
+	rdfs:label	"harvest"	.
 
-local:weisfeilerlehman_subtree_rdf	rdfs:label	"weisfeiler-lehman subtree rdf"	.
+local:weisfeilerlehman_subtree_rdf_graph_kernels	a	rdf:Class	;
+	rdfs:label	"weisfeilerlehman subtree rdf graph kernels"	.
 
-local:weisfeilerlehman_subtree_rdf_graph	rdfs:label	"weisfeiler-lehman subtree rdf graph"	.
+local:rdf_graph	a	rdf:Class	;
+	rdfs:label	"rdf graph"	.
 
-local:subtree_rdf	rdfs:label	"subtree rdf"	.
+local:subtree_rdf_graph_kernels	a	rdf:Class	;
+	rdfs:label	"subtree rdf graph kernels"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:kernels	a	rdf:Class	;
+	rdfs:label	"kernels"	.
 
-local:rdf_graph_kernels	rdfs:label	"rdf graph kernels"	.
+local:weisfeilerlehman_subtree_rdf_graph	a	rdf:Class	;
+	rdfs:label	"weisfeilerlehman subtree rdf graph"	.
 
-local:kernels	rdfs:label	"kernels"	.
+local:subtree_rdf_graph	a	rdf:Class	;
+	rdfs:label	"subtree rdf graph"	.
 
-local:subtree_rdf_graph	rdfs:label	"subtree rdf graph"	.
+local:weisfeilerlehman_subtree_rdf	a	rdf:Class	;
+	rdfs:label	"weisfeilerlehman subtree rdf"	.
 
-local:graph_kernels	rdfs:label	"graph kernels"	.
+local:weisfeilerlehman_subtree	a	rdf:Class	;
+	rdfs:label	"weisfeilerlehman subtree"	.
 
-local:subtree_rdf_graph_kernels	rdfs:label	"subtree rdf graph kernels"	.
+local:subtree_rdf	a	rdf:Class	;
+	rdfs:label	"subtree rdf"	.
 
-local:weisfeilerlehman_subtree_rdf_graph_kernels	rdfs:label	"weisfeiler-lehman subtree rdf graph kernels"	.
+local:graph_kernels	a	rdf:Class	;
+	rdfs:label	"graph kernels"	.
 
-local:weisfeilerlehman	rdfs:label	"weisfeiler-lehman"	.
+local:weisfeilerlehman	a	rdf:Class	;
+	rdfs:label	"weisfeilerlehman"	.
 
-local:weisfeilerlehman_subtree	rdfs:label	"weisfeiler-lehman subtree"	.
+local:subtree	a	rdf:Class	;
+	rdfs:label	"subtree"	.
 
-local:rdf_graph	rdfs:label	"rdf graph"	.
+local:rdf_graph_kernels	a	rdf:Class	;
+	rdfs:label	"rdf graph kernels"	.
 
-local:subtree	rdfs:label	"subtree"	.
+local:walk	a	rdf:Class	;
+	rdfs:label	"walk"	.
 
-local:learn	rdfs:label	"learn"	.
+local:approach_that_uses	a	rdf:Class	;
+	rdfs:label	"approach that uses"	.
 
-local:latent_numerical_representations	rdfs:label	"latent numerical representations"	.
+local:adapt	a	rdf:Class	;
+	rdfs:label	"adapt"	.
 
-local:representations	rdfs:label	"representations"	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"language modeling approaches for unsupervised feature extraction to rdf graphs"	.
 
-local:latent_numerical	rdfs:label	"latent numerical"	.
+local:unsupervised_feature_extraction	a	rdf:Class	;
+	rdfs:label	"unsupervised feature extraction"	.
 
-local:numerical_representations	rdfs:label	"numerical representations"	.
+local:language_modeling_approaches	a	rdf:Class	;
+	rdfs:label	"language modeling approaches"	.
 
-local:latent	rdfs:label	"latent"	.
+local:unsupervised_feature	a	rdf:Class	;
+	rdfs:label	"unsupervised feature"	.
 
-local:latent_numerical_representations_of_entities	rdfs:label	"latent numerical representations of entities"	.
+local:unsupervised	a	rdf:Class	;
+	rdfs:label	"unsupervised"	.
 
-local:entities	rdfs:label	"entities"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:entities_in_rdf_graphs	rdfs:label	"entities in rdf graphs"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:feature_extraction	a	rdf:Class	;
+	rdfs:label	"feature extraction"	.
 
-local:evaluation_shows	rdfs:label	"evaluation shows"	.
+local:modeling_approaches	a	rdf:Class	;
+	rdfs:label	"modeling approaches"	.
 
-local:shows	rdfs:label	"shows"	.
+local:modeling	a	rdf:Class	;
+	rdfs:label	"modeling"	.
 
-local:different_tasks	rdfs:label	"different tasks"	.
+local:language_modeling	a	rdf:Class	;
+	rdfs:label	"language modeling"	.
 
-local:tasks	rdfs:label	"tasks"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:general_knowledge_graphs	rdfs:label	"general knowledge graphs"	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction	a	rdf:Class	;
+	rdfs:label	"language modeling approaches for unsupervised feature extraction"	.
 
-local:vector_representations	rdfs:label	"vector representations"	.
+local:unsupervised_feature_extraction_to_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"unsupervised feature extraction to rdf graphs"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:general_knowledge	rdfs:label	"general knowledge"	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"adapts language modeling approaches for unsupervised feature extraction to rdf graphs"	.
 
-local:different	rdfs:label	"different"	.
+local:adapts_language_modeling_approaches	a	rdf:Class	;
+	rdfs:label	"adapts language modeling approaches"	.
 
-local:general	rdfs:label	"general"	.
+local:adapts_language	a	rdf:Class	;
+	rdfs:label	"adapts language"	.
 
-local:easily_reused	rdfs:label	"easily reused"	.
+local:adapts_language_modeling	a	rdf:Class	;
+	rdfs:label	"adapts language modeling"	.
 
-local:reused	rdfs:label	"reused"	.
+local:adapts	a	rdf:Class	;
+	rdfs:label	"adapts"	.
 
-local:can_easily_reused	rdfs:label	"can easily reused"	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	a	rdf:Class	;
+	rdfs:label	"adapts language modeling approaches for unsupervised feature extraction"	.
 
-local:vector_representations_of_general_knowledge_graphs	rdfs:label	"vector representations of general knowledge graphs"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:general_knowledge_graphs_suchas_dbpedia	rdfs:label	"general knowledge graphs such_as dbpedia"	.
+local:rdf2vec_approach	a	rdf:Class	;
+	rdfs:label	"rdf2vec approach"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:rdf2vec	a	rdf:Class	;
+	rdfs:label	"rdf2vec"	.
 
-local:can_easily_reused_for_different_tasks	rdfs:label	"can easily reused for different tasks"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:feature_vector	rdfs:label	"feature vector"	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"language modeling approaches for unsupervised feature extraction sequences of words for unsupervised feature extraction to rdf graphs"	.
 
-local:feature_vector_representations	rdfs:label	"feature vector representations"	.
+local:unsupervised_feature_extraction_sequences	a	rdf:Class	;
+	rdfs:label	"unsupervised feature extraction sequences"	.
 
-local:feature_vector_representations_of_general_knowledge_graphs	rdfs:label	"feature vector representations of general knowledge graphs"	.
+local:words	a	rdf:Class	;
+	rdfs:label	"words"	.
 
-local:can	rdfs:label	"can"	.
+local:extraction_sequences	a	rdf:Class	;
+	rdfs:label	"extraction sequences"	.
 
-local:easily	rdfs:label	"easily"	.
+local:feature_extraction_sequences	a	rdf:Class	;
+	rdfs:label	"feature extraction sequences"	.
 
-local:general_knowledge_graphs_suchas_wikidata	rdfs:label	"general knowledge graphs such_as wikidata"	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences	a	rdf:Class	;
+	rdfs:label	"language modeling approaches for unsupervised feature extraction sequences"	.
 
-local:wikidata	rdfs:label	"wikidata"	.
+local:unsupervised_feature_extraction_sequences_of_words	a	rdf:Class	;
+	rdfs:label	"unsupervised feature extraction sequences of words"	.
 
-local:different_predictive_machine	rdfs:label	"different predictive machine"	.
+local:words_for_unsupervised_feature_extraction	a	rdf:Class	;
+	rdfs:label	"words for unsupervised feature extraction"	.
 
-local:machine	rdfs:label	"machine"	.
+local:open_data_sources	a	rdf:Class	;
+	rdfs:label	"open data sources"	.
 
-local:different_predictive	rdfs:label	"different predictive"	.
+local:open_data	a	rdf:Class	;
+	rdfs:label	"open data"	.
 
-local:predictive	rdfs:label	"predictive"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:predictive_machine	rdfs:label	"predictive machine"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:machine_outperform	rdfs:label	"machine outperform"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:outperform	rdfs:label	"outperform"	.
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
 
-local:a_different_predictive_machine	rdfs:label	"a different predictive machine"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:existing_techniques	rdfs:label	"existing techniques"	.
+local:vector_of_nominal_features	a	rdf:Class	;
+	rdfs:label	"vector of nominal features"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:nominal_features	a	rdf:Class	;
+	rdfs:label	"nominal features"	.
 
-local:existing_techniques_for_propositionalization	rdfs:label	"existing techniques for propositionalization"	.
+local:nominal	a	rdf:Class	;
+	rdfs:label	"nominal"	.
 
-local:propositionalization	rdfs:label	"propositionalization"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:propositionalization_of_rdf_graphs	rdfs:label	"propositionalization of rdf graphs"	.
+local:associate	a	rdf:Class	;
+	rdfs:label	"associate"	.
 
-local:a_different_predictive_machine_learning	rdfs:label	"a different predictive machine learning"	.
+local:instance	a	rdf:Class	;
+	rdfs:label	"instance"	.
 
-local:learning	rdfs:label	"learning"	.
+local:data_mining_tools	a	rdf:Class	;
+	rdfs:label	"data mining tools"	.
 
-local:existing	rdfs:label	"existing"	.
+local:mining_tools	a	rdf:Class	;
+	rdfs:label	"mining tools"	.
 
-local:machine_propositionalization	rdfs:label	"machine propositionalization"	.
+local:mining	a	rdf:Class	;
+	rdfs:label	"mining"	.
 
-local:machine_propositionalization_of_rdf_graphs	rdfs:label	"machine propositionalization of rdf graphs"	.
+local:data_mining	a	rdf:Class	;
+	rdfs:label	"data mining"	.
 
-#### Properties ####
+local:tools	a	rdf:Class	;
+	rdfs:label	"tools"	.
+
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
+
+local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	a	rdf:Class	;
+	rdfs:label	"vector of nominal features associated with an instance while linked open data sources are graphs by nature"	.
+
+local:nature	a	rdf:Class	;
+	rdfs:label	"nature"	.
+
+local:nominal_features_associated	a	rdf:Class	;
+	rdfs:label	"nominal features associated"	.
+
+local:associated	a	rdf:Class	;
+	rdfs:label	"associated"	.
+
+local:associated_with_instance	a	rdf:Class	;
+	rdfs:label	"associated with instance"	.
+
+local:graphs_by_nature	a	rdf:Class	;
+	rdfs:label	"graphs by nature"	.
+
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
+
+local:propositional_form	a	rdf:Class	;
+	rdfs:label	"propositional form"	.
+
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
+
+local:propositional	a	rdf:Class	;
+	rdfs:label	"propositional"	.
+
+local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	a	rdf:Class	;
+	rdfs:label	"features in propositional form associated with an instance while linked open data sources are graphs by nature"	.
+
+local:features_in_propositional_form	a	rdf:Class	;
+	rdfs:label	"features in propositional form"	.
+
+local:propositional_form_associated	a	rdf:Class	;
+	rdfs:label	"propositional form associated"	.
+
+local:vector_of_numerical_features	a	rdf:Class	;
+	rdfs:label	"vector of numerical features"	.
+
+local:numerical_features	a	rdf:Class	;
+	rdfs:label	"numerical features"	.
+
+local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	a	rdf:Class	;
+	rdfs:label	"vector of numerical features associated with an instance while linked open data sources are graphs by nature"	.
+
+local:numerical_features_associated	a	rdf:Class	;
+	rdfs:label	"numerical features associated"	.
+
+local:recognize	a	rdf:Class	;
+	rdfs:label	"recognize"	.
+
+local:valuable_source_for_background_information_in_data_mining	a	rdf:Class	;
+	rdfs:label	"valuable source for background information in data mining"	.
+
+local:background_information	a	rdf:Class	;
+	rdfs:label	"background information"	.
+
+local:valuable_source	a	rdf:Class	;
+	rdfs:label	"valuable source"	.
+
+local:background	a	rdf:Class	;
+	rdfs:label	"background"	.
+
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
+
+local:valuable	a	rdf:Class	;
+	rdfs:label	"valuable"	.
+
+local:valuable_source_for_background_information	a	rdf:Class	;
+	rdfs:label	"valuable source for background information"	.
+
+local:background_information_in_data_mining	a	rdf:Class	;
+	rdfs:label	"background information in data mining"	.
 
 #### Mapped Relations ####
 
-cso:rdf	rdfs:label	"rdf"	.
-local:language_modeling	owl:sameAs	cso:language_modeling	.
-local:rdf_graph	owl:sameAs	cso:rdf_graph	.
+cso:machine_learning	rdfs:label	"machine learning"	.
 local:dbpedia	owl:sameAs	cso:dbpedia	.
-cso:rdf_graph	rdfs:label	"rdf graphs"	.
-cso:rdf_graph	rdfs:label	"rdf graph"	.
-local:data_mining	owl:sameAs	cso:data_mining	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-cso:language_modeling	rdfs:label	"language modeling"	.
 local:rdf	owl:sameAs	cso:rdf	.
-local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
+cso:rdf_graph	rdfs:label	"rdf graph"	.
 cso:data_mining	rdfs:label	"data mining"	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
+cso:rdf_graph	rdfs:label	"rdf graphs"	.
+local:rdf_graph	owl:sameAs	cso:rdf_graph	.
+cso:rdf	rdfs:label	"rdf"	.
+local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
+local:machine_learning	owl:sameAs	cso:machine_learning	.
+local:language_modeling	owl:sameAs	cso:language_modeling	.
+cso:language_modeling	rdfs:label	"language modeling"	.
+local:data_mining	owl:sameAs	cso:data_mining	.
 
 #### Relations ####
 
-local:a_different_predictive_machine_learning	local:_learning	local:a_different_predictive_machine	.
-local:open_data_sources	rdfs:subClassOf	local:sources	.
-local:weisfeilerlehman_subtree	rdfs:subClassOf	local:subtree	.
-local:can_easily_reused	rdfs:subClassOf	local:easily_reused	.
-local:vector_representations_of_general_knowledge_graphs	local:vectorrepresentations_of	local:general_knowledge_graphs	.
-local:reused	local:AM-MNR	local:easily	.
-local:language_modeling_approaches	rdfs:subClassOf	local:approaches	.
-local:graph_kernels	rdfs:subClassOf	local:kernels	.
-local:machine_propositionalization	rdfs:subClassOf	local:propositionalization	.
-local:machine_propositionalization_of_rdf_graphs	local:machinepropositionalization_of	local:rdf_graphs	.
-local:reused	local:AM-PNC	local:different_tasks	.
-local:data	rdfs:member	local:data_sources	.
-local:most_data	rdfs:member	local:most_data_mining	.
-local:unsupervised_feature	rdfs:member	local:unsupervised_feature_extraction	.
-local:adapts_language	rdfs:subClassOf	local:language	.
-local:feature_vector_representations_of_general_knowledge_graphs	local:of_generalknowledgegraphs	local:feature_vector_representations	.
-local:shows	vn.role:Agent	local:evaluation	.
-local:easily_reused	rdfs:subClassOf	local:reused	.
-local:existing_techniques_for_propositionalization	local:for_propositionalization	local:existing_techniques	.
-local:linked	vn.role:Patient	local:valuable_source_for_background_information	.
-local:machine_propositionalization_of_rdf_graphs	local:of_rdfgraphs	local:machine_propositionalization	.
-local:general_knowledge	rdfs:subClassOf	local:knowledge	.
-local:unsupervised_feature_extraction_to_rdf_graphs	local:unsupervisedfeatureextraction_to	local:rdf_graphs	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:language_modeling_approaches	.
+local:feature_vector	rdfs:member	local:feature	.
+local:information_graph_substructures	rdfs:subClassOf	local:graph_substructures	.
+local:s11	rdf:object	local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	.
+local:unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:unsupervised_feature_extraction	.
+local:rdf_graphs	rdfs:member	local:rdf	.
+local:leveraging_local_information_from_graph_substructures	rdfs:member	local:local_information	.
+local:s10	rdf:subject	local:graph	.
+local:can_easily_reused_for_different_tasks	rdfs:member	local:can_easily_reused	.
+local:s6	rdf:subject	local:approach	.
+local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:nature	.
+local:s13	rdf:object	local:vector_representations_of_general_knowledge_graphs_such_as_dbpedia_can_be_easily_reused_for_different_tasks	.
+local:s9.1	rdf:subject	local:we	.
+local:s1.1	rdf:object	local:instance	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_wikidata	rdfs:member	local:wikidata	.
+local:s12.1	rdf:subject	local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_wikidata	.
+local:s1	rdf:subject	local:data_mining_tools	.
+local:s5	local:AM-LOC	local:paper	.
+local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:open_data_sources	.
 local:data_mining_tools	rdfs:subClassOf	local:mining_tools	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:associated_with_instance	local:associated_with	local:instance	.
-local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	local:adaptslanguagemodelingapproaches_for	local:unsupervised_feature_extraction	.
-local:general	rdfs:member	local:general_knowledge	.
-local:numerical_representations	rdfs:subClassOf	local:representations	.
-local:valuable_source_for_background_information	local:valuablesource_for	local:background_information	.
-local:background_information_in_data_mining	local:backgroundinformation_in	local:data_mining	.
-local:most_data_mining	rdfs:member	local:most_data_mining_tools	.
-local:require	vn.role:Patient	local:vector_of_nominal_features	.
+local:general_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:valuable_source	rdfs:member	local:valuable	.
+local:unsupervised_feature_extraction	rdfs:subClassOf	local:extraction	.
+local:information_graph_substructures	rdfs:member	local:information_graph	.
+local:weisfeilerlehman_subtree_rdf_graph	rdfs:subClassOf	local:graph	.
+local:modeling_approaches	rdfs:member	local:modeling	.
+local:s1.1	rdf:subject	local:vector_of_numerical_features	.
+local:predictive_machine_learning_tasks	rdfs:subClassOf	local:tasks	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences	rdfs:member	local:language_modeling_approaches	.
+local:subtree_rdf	rdfs:member	local:subtree	.
+local:vector_of_nominal_features	rdfs:member	local:nominal_features	.
+local:nominal_features_associated	rdfs:member	local:nominal_features	.
+local:s13.1	rdf:subject	local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_dbpedia	.
+local:s3.1	rdf:subject	local:vector_of_nominal_features	.
+local:s1.2	rdfs:subClassOf	local:open_data_sources	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_dbpedia	rdfs:member	local:dbpedia	.
+local:numerical_representations	rdfs:member	local:numerical	.
+local:valuable_source_for_background_information	rdfs:member	local:valuable_source	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_dbpedia	rdfs:member	local:feature_vector_representations	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:unsupervised_feature_extraction	.
+local:s2.2	rdf:predicate	local:linked	.
+local:weisfeilerlehman_subtree	rdfs:member	local:weisfeilerlehman	.
+local:vector_representations	rdfs:member	local:vector	.
+local:local_information_graph_substructures	rdfs:subClassOf	local:information_graph_substructures	.
 local:feature_vector	rdfs:subClassOf	local:vector	.
-local:shows	vn.role:Theme	local:machine_outperform	.
-local:language_modeling	rdfs:member	local:language_modeling_approaches	.
-local:linked	vn.role:Patient	local:open_data	.
-local:latent_numerical_representations	rdfs:subClassOf	local:representations	.
-local:general_knowledge	rdfs:member	local:general_knowledge_graphs	.
-local:unsupervised_feature_extraction	rdfs:subClassOf	local:feature_extraction	.
-local:local	rdfs:member	local:local_information	.
-local:local_information_from_graph_substructures	local:from_graphsub-structures	local:local_information	.
-local:weisfeilerlehman_subtree_rdf	rdfs:member	local:weisfeilerlehman_subtree_rdf_graph	.
-local:feature_vector_representations	rdfs:subClassOf	local:vector_representations	.
-local:mining	rdfs:member	local:mining_tools	.
-local:background_information	rdfs:subClassOf	local:information	.
+local:general_knowledge	rdfs:subClassOf	local:knowledge	.
+local:unsupervised_feature	rdfs:member	local:unsupervised	.
+local:s11.1	rdfs:subClassOf	local:techniques	.
+local:latent_numerical	rdfs:member	local:latent	.
+local:a_different_predictive_machine_learning	rdfs:member	local:learning	.
+local:s11.2	rdf:predicate	local:learn	.
+local:weisfeilerlehman_subtree_rdf_graph_kernels	rdfs:subClassOf	local:kernels	.
+local:open_data_sources	rdfs:member	local:open_data	.
+local:nominal_features	rdfs:member	local:nominal	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_wikidata	rdfs:member	local:evaluation_shows	.
+local:unsupervised_feature_extraction	rdfs:member	local:unsupervised_feature	.
+local:propositional_form	rdfs:member	local:propositional	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	rdfs:member	local:adapts_language_modeling_approaches	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	rdfs:member	local:unsupervised_feature_extraction	.
+local:s6	rdf:predicate	local:use	.
+local:s11.2	rdfs:member	local:different_predictive_machine_learning	.
+local:valuable_source_for_background_information	rdfs:member	local:background_information	.
 local:numerical_features	rdfs:subClassOf	local:features	.
 local:evaluation_shows	rdfs:subClassOf	local:shows	.
-local:words_for_unsupervised_feature_extraction	local:for_unsupervisedfeatureextraction	local:words	.
-local:reused	vn.role:Theme	local:shows	.
-local:modeling	rdfs:member	local:modeling_approaches	.
-local:data_mining	rdfs:subClassOf	local:mining	.
-local:language_modeling_approaches_for_unsupervised_feature_extraction	local:for_unsupervisedfeatureextraction	local:language_modeling_approaches	.
-local:open_data	rdfs:member	local:open_data_sources	.
-local:latent_numerical	rdfs:subClassOf	local:numerical	.
-local:linked	vn.role:Patient	local:open_data_sources	.
-local:weisfeilerlehman_subtree_rdf_graph_kernels	rdfs:subClassOf	local:kernels	.
-local:adapts_language_modeling_approaches	rdfs:subClassOf	local:approaches	.
-local:reused	local:AM-MOD	local:can	.
-local:weisfeilerlehman_subtree_rdf_graph	rdfs:member	local:weisfeilerlehman_subtree_rdf_graph_kernels	.
-local:mining_tools	rdfs:subClassOf	local:tools	.
-local:rdf	rdfs:member	local:rdf_graph	.
-local:associated	vn.role:Agent	local:instance	.
-local:most_data	rdfs:subClassOf	local:data	.
-local:learn	vn.role:Theme	local:latent_numerical_representations_of_entities	.
-local:existing	vn.role:Location	local:techniques	.
-local:present	local:AM-LOC	local:paper	.
-local:can_easily_reused_for_different_tasks	local:caneasilyreused_for	local:different_tasks	.
-local:existing_techniques	rdfs:subClassOf	local:techniques	.
-local:graph_substructures	rdfs:subClassOf	local:substructures	.
-local:adapts	vn.role:Agent	local:approach	.
-local:subtree_rdf	rdfs:member	local:subtree_rdf_graph	.
-local:language_modeling_approaches_for_unsupervised_feature_extraction	local:languagemodelingapproaches_for	local:unsupervised_feature_extraction	.
-local:general_knowledge_graphs_suchas_dbpedia	local:such_as_dbpedia	local:general_knowledge_graphs	.
-local:latent	rdfs:member	local:latent_numerical	.
-local:learning	vn.role:Agent	local:machine_propositionalization_of_rdf_graphs	.
-local:open	rdfs:member	local:open_data	.
-local:associated_with_instance	local:with_instance	local:associated	.
-local:require	vn.role:Agent	local:however_most_data_mining_tools	.
-local:subtree_rdf_graph_kernels	rdfs:subClassOf	local:kernels	.
-local:words_for_unsupervised_feature_extraction	local:words_for	local:unsupervised_feature_extraction	.
-local:adapts	vn.role:Patient	local:language_modeling_approaches_for_unsupervised_feature_extraction	.
-local:a_different_predictive_machine_learning	local:adifferentpredictivemachine_	local:learning	.
-local:unsupervised_feature_extraction	rdfs:subClassOf	local:extraction	.
-local:different_predictive_machine	rdfs:subClassOf	local:machine	.
-local:local_information	rdfs:subClassOf	local:information	.
-local:entities_in_rdf_graphs	local:in_rdfgraphs	local:entities	.
-local:vector_representations_of_general_knowledge_graphs	local:of_generalknowledgegraphs	local:vector_representations	.
-local:valuable	rdfs:member	local:valuable_source	.
-local:linked_open_data_sources	rdfs:subClassOf	local:open_data_sources	.
-local:most_data_mining	rdfs:subClassOf	local:mining	.
-local:nominal_features	rdfs:subClassOf	local:features	.
-local:feature	vn.role:Theme	local:evaluation_shows	.
-local:feature_vector_representations	rdfs:subClassOf	local:representations	.
-local:recognized	vn.role:Theme	local:open_data	.
-local:present	vn.role:Theme	local:rdf2vec	.
-local:require	vn.role:Patient	local:vector_of_numerical_features	.
-local:propositionalization_of_rdf_graphs	local:propositionalization_of	local:rdf_graphs	.
-local:nominal	rdfs:member	local:nominal_features	.
-local:different_predictive	rdfs:subClassOf	local:predictive	.
-local:general_knowledge_graphs_suchas_wikidata	local:generalknowledgegraphs_such_as	local:wikidata	.
-local:propositional	rdfs:member	local:propositional_form	.
-local:background_information_in_data_mining	local:in_datamining	local:background_information	.
-local:graph	rdfs:member	local:graph_substructures	.
-local:generate	local:AM-MNR	local:leveraging	.
-local:weisfeilerlehman	rdfs:member	local:weisfeilerlehman_subtree	.
-local:leveraging	vn.role:Agent	local:we	.
-local:feature_vector_representations_of_general_knowledge_graphs	local:featurevectorrepresentations_of	local:general_knowledge_graphs	.
-local:rdf_graph_kernels	rdfs:subClassOf	local:kernels	.
-local:unsupervised_feature_extraction_to_rdf_graphs	local:to_rdfgraphs	local:unsupervised_feature_extraction	.
-local:different_predictive	rdfs:member	local:different_predictive_machine	.
-local:data_mining_tools	rdfs:subClassOf	local:tools	.
-local:uses	vn.role:Agent	local:approach	.
-local:adapts_language	rdfs:member	local:adapts_language_modeling	.
-local:numerical	rdfs:member	local:numerical_representations	.
-local:associated	vn.role:Patient2	local:vector_of_nominal_features	.
-local:propositional_form_associated	local:_associated	local:propositional_form	.
-local:vector_representations	rdfs:subClassOf	local:representations	.
-local:predictive_machine	rdfs:subClassOf	local:machine	.
-local:uses	vn.role:Recipient	local:sequences_of_words	.
-local:subtree_rdf_graph	rdfs:subClassOf	local:graph	.
-local:different	rdfs:member	local:different_tasks	.
-local:nominal_features_associated	local:_associated	local:nominal_features	.
-local:leveraging	vn.role:Theme	local:local_information	.
-local:features_in_propositional_form	local:features_in	local:propositional_form	.
-local:machine_outperform	rdfs:subClassOf	local:outperform	.
-local:existing_techniques_for_propositionalization	local:existingtechniques_for	local:propositionalization	.
-local:adapts_language_modeling_approaches	rdfs:subClassOf	local:language_modeling_approaches	.
-local:subtree	rdfs:member	local:subtree_rdf	.
-local:latent_numerical	rdfs:member	local:latent_numerical_representations	.
-local:feature	rdfs:member	local:feature_extraction	.
-local:rdf_graph	rdfs:member	local:rdf_graph_kernels	.
-local:vector_of_nominal_features	local:of_nominalfeatures	local:vector	.
-local:uses	vn.role:Theme	local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	.
-local:most_data_mining_tools	rdfs:subClassOf	local:tools	.
-local:open_data_sources	rdfs:subClassOf	local:data_sources	.
-local:general_knowledge_graphs_suchas_wikidata	local:such_as_wikidata	local:general_knowledge_graphs	.
-local:vector_of_nominal_features	local:vector_of	local:nominal_features	.
-local:data	rdfs:member	local:data_mining	.
-local:vector_of_numerical_features	local:of_numericalfeatures	local:vector	.
-local:different	rdfs:member	local:different_predictive	.
-local:a_different_predictive_machine	rdfs:subClassOf	local:different_predictive_machine	.
-local:latent_numerical_representations_of_entities	local:latentnumericalrepresentations_of	local:entities	.
-local:open_data	rdfs:subClassOf	local:data	.
-local:most_data_mining_tools	rdfs:subClassOf	local:data_mining_tools	.
-local:unsupervised_feature	rdfs:subClassOf	local:feature	.
-local:generate	vn.role:Theme2	local:sequences	.
-local:language_modeling_approaches	rdfs:subClassOf	local:modeling_approaches	.
-local:graphs_by_nature	local:by_nature	local:graphs	.
-local:background	rdfs:member	local:background_information	.
-local:features_in_propositional_form	local:in_propositionalform	local:features	.
-local:subtree_rdf_graph_kernels	rdfs:subClassOf	local:rdf_graph_kernels	.
-local:associated	vn.role:Patient2	local:propositional_form	.
-local:harvested	vn.role:Patient	local:graph_substructures	.
-local:propositional_form_associated	local:propositionalform_	local:associated	.
-local:weisfeilerlehman_subtree_rdf	rdfs:subClassOf	local:rdf	.
-local:vector_of_numerical_features	local:vector_of	local:numerical_features	.
-local:evaluation	rdfs:member	local:evaluation_shows	.
-local:associated	vn.role:Patient2	local:vector_of_numerical_features	.
-local:present	vn.role:Agent	local:we	.
-local:numerical	rdfs:member	local:numerical_features	.
-local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction	local:for_unsupervisedfeatureextraction	local:adapts_language_modeling_approaches	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:rdf_graphs	rdfs:subClassOf	local:graphs	.
-local:recognized	vn.role:Predicate	local:valuable_source_for_background_information	.
-local:general_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:can_easily_reused_for_different_tasks	local:for_differenttasks	local:can_easily_reused	.
-local:require	vn.role:Patient	local:features_in_propositional_form	.
-local:feature_vector	rdfs:member	local:feature_vector_representations	.
-local:weisfeilerlehman_subtree_rdf_graph	rdfs:subClassOf	local:graph	.
-local:general_knowledge_graphs_suchas_dbpedia	local:generalknowledgegraphs_such_as	local:dbpedia	.
-local:feature	vn.role:object	local:can_easily_reused_for_different_tasks	.
-local:propositionalization_of_rdf_graphs	local:of_rdfgraphs	local:propositionalization	.
-local:latent_numerical_representations_of_entities	local:of_entities	local:latent_numerical_representations	.
-local:feature	rdfs:member	local:feature_vector	.
-local:adapts_language_modeling	rdfs:subClassOf	local:modeling	.
-local:most	rdfs:member	local:most_data	.
-local:weisfeilerlehman_subtree_rdf_graph_kernels	rdfs:subClassOf	local:subtree_rdf_graph_kernels	.
-local:rdf_graph_kernels	rdfs:subClassOf	local:graph_kernels	.
-local:unsupervised	rdfs:member	local:unsupervised_feature	.
-local:different_tasks	rdfs:subClassOf	local:tasks	.
-local:propositional_form	rdfs:subClassOf	local:form	.
-local:numerical_features_associated	local:numericalfeatures_	local:associated	.
-local:nominal_features_associated	local:nominalfeatures_	local:associated	.
-local:subtree_rdf	rdfs:subClassOf	local:rdf	.
-local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:unsupervised_feature_extraction_sequences_of_words	rdfs:member	local:words	.
+local:vector_representations_of_general_knowledge_graphs	rdfs:member	local:general_knowledge_graphs	.
+local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:propositional_form	.
+local:s6	rdf:object	local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	.
+local:machine_learning_tasks	rdfs:subClassOf	local:tasks	.
+local:evaluation_shows	rdfs:member	local:evaluation	.
+local:graph_substructures	rdfs:member	local:graph	.
+local:vector_representations_of_general_knowledge_graphs_such_as_dbpedia_can_be_easily_reused_for_different_tasks	rdfs:member	local:dbpedia	.
+local:latent_numerical_representations	rdfs:member	local:latent_numerical	.
 local:different_predictive_machine	rdfs:subClassOf	local:predictive_machine	.
-local:subtree_rdf_graph	rdfs:member	local:subtree_rdf_graph_kernels	.
-local:learning	vn.role:Agent	local:tasks	.
-local:valuable_source	rdfs:subClassOf	local:source	.
-local:adapts	rdfs:member	local:adapts_language	.
-local:general_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
-local:harvested	vn.role:Agent	local:weisfeilerlehman_subtree_rdf_graph_kernels	.
-local:local_information_from_graph_substructures	local:localinformation_from	local:graph_substructures	.
-local:learn	vn.role:Agent	local:graph	.
-local:uses	vn.role:Theme	local:language_modeling_approaches_for_unsupervised_feature_extraction	.
-local:modeling_approaches	rdfs:subClassOf	local:approaches	.
-local:data_mining	rdfs:member	local:data_mining_tools	.
-local:sequences_of_words	local:sequences_of	local:words	.
+local:vector_of_numerical_features	rdfs:member	local:vector	.
+local:s3.1	rdf:predicate	local:associate	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_dbpedia	rdfs:member	local:evaluation_shows	.
+local:information_graph	rdfs:subClassOf	local:graph	.
+local:s2.1	rdf:object	local:instance	.
+local:mining_tools	rdfs:member	local:mining	.
+local:numerical_representations	rdfs:subClassOf	local:representations	.
+local:machine_learning	rdfs:member	local:machine	.
+local:existing_techniques_for_propositionalization	rdfs:member	local:propositionalization	.
+local:rdf2vec_approach	rdfs:member	local:rdf2vec	.
+local:s0	rdf:object	local:valuable_source_for_background_information_in_data_mining	.
+local:data_mining_tools	rdfs:subClassOf	local:tools	.
+local:s6.1	rdf:object	local:language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	.
+local:s3.2	rdfs:subClassOf	local:open_data_sources	.
+local:s11.1	rdf:predicate	local:exist	.
+local:s3	rdf:subject	local:data_mining_tools	.
 local:latent_numerical_representations	rdfs:subClassOf	local:numerical_representations	.
-local:language	rdfs:member	local:language_modeling	.
-local:present	vn.role:Recipient	local:approach	.
-local:valuable_source_for_background_information	local:for_backgroundinformation	local:valuable_source	.
-local:feature_extraction	rdfs:subClassOf	local:extraction	.
-local:rdf	rdfs:member	local:rdf_graphs	.
-local:predictive	rdfs:member	local:predictive_machine	.
-local:however_most_data_mining_tools	rdfs:subClassOf	local:most_data_mining_tools	.
-local:entities_in_rdf_graphs	local:entities_in	local:rdf_graphs	.
-local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:graphs_by_nature	local:graphs_by	local:nature	.
+local:s9.1	rdf:object	local:local_information_graph_substructures	.
+local:data_mining	rdfs:member	local:data	.
+local:adapts_language_modeling_approaches	rdfs:subClassOf	local:language_modeling_approaches	.
+local:graph_kernels	rdfs:member	local:graph	.
+local:s7	rdf:predicate	local:walk	.
+local:s0	rdf:predicate	local:linked	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences	rdfs:member	local:unsupervised_feature_extraction_sequences	.
+local:rdf_graph_kernels	rdfs:subClassOf	local:kernels	.
+local:vector_representations_of_general_knowledge_graphs_such_as_dbpedia_can_be_easily_reused_for_different_tasks	rdfs:member	local:vector_representations	.
+local:weisfeilerlehman_subtree	rdfs:subClassOf	local:subtree	.
+local:s3	rdf:predicate	local:require	.
+local:predictive_machine	rdfs:subClassOf	local:machine	.
+local:different_tasks	rdfs:member	local:different	.
+local:propositional_form	rdfs:subClassOf	local:form	.
+local:s3	local:AM-DIS	local:however	.
+local:different_predictive_machine	rdfs:subClassOf	local:machine	.
+local:general_knowledge_graphs_such_as_dbpedia	rdfs:member	local:dbpedia	.
+local:s2.2	rdfs:subClassOf	local:open_data_sources	.
+local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:instance	.
+local:s5	rdf:subject	local:we	.
+local:predictive_machine	rdfs:member	local:predictive	.
+local:adapts_language_modeling	rdfs:subClassOf	local:modeling	.
+local:latent_numerical_representations_of_entities	rdfs:member	local:entities	.
+local:valuable_source	rdfs:subClassOf	local:source	.
+local:rdf_graph	rdfs:member	local:rdf	.
+local:background_information_in_data_mining	rdfs:member	local:data_mining	.
+local:s10	rdf:predicate	local:learn	.
+local:nominal_features_associated	rdfs:member	local:associated	.
+local:different_predictive	rdfs:member	local:different	.
+local:vector_of_nominal_features	rdfs:member	local:vector	.
+local:s1	rdf:predicate	local:require	.
+local:vector_representations	rdfs:subClassOf	local:representations	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:adapts_language_modeling_approaches	.
+local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:leveraging_local_information_from_graph_substructures	rdfs:member	local:graph_substructures	.
+local:rdf_graphs	rdfs:subClassOf	local:graphs	.
+local:latent_numerical	rdfs:subClassOf	local:numerical	.
+local:s2	rdf:predicate	local:require	.
+local:s8	rdf:subject	local:graph_substructures	.
+local:feature_extraction	rdfs:member	local:feature	.
+local:unsupervised_feature_extraction	rdfs:subClassOf	local:feature_extraction	.
+local:s0.1	rdf:subject	local:open_data	.
+local:learning_tasks	rdfs:subClassOf	local:tasks	.
+local:language_modeling	rdfs:member	local:language	.
+local:s13.1	rdf:predicate	local:reuse	.
+local:numerical_features_associated	rdfs:member	local:associated	.
+local:background_information	rdfs:subClassOf	local:information	.
+local:vector_representations_of_general_knowledge_graphs	rdfs:member	local:vector_representations	.
+local:s9	local:AM-MNR	local:leveraging_local_information_from_graph_substructures	.
+local:subtree_rdf_graph_kernels	rdfs:member	local:subtree_rdf_graph	.
+local:s7	rdf:subject	local:graph	.
+local:latent_numerical_representations	rdfs:subClassOf	local:representations	.
+local:general_knowledge_graphs_such_as_wikidata	rdfs:member	local:general_knowledge_graphs	.
+local:general_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
+local:different_tasks	rdfs:subClassOf	local:tasks	.
 local:language_modeling	rdfs:subClassOf	local:modeling	.
-local:leveraging	vn.role:Location	local:graph_substructures	.
-local:generate	vn.role:Theme1	local:we	.
-local:graph	rdfs:member	local:graph_kernels	.
-local:weisfeilerlehman_subtree	rdfs:member	local:weisfeilerlehman_subtree_rdf	.
-local:vector	rdfs:member	local:vector_representations	.
-local:numerical_features_associated	local:_associated	local:numerical_features	.
-local:sequences_of_words	local:of_words	local:sequences	.
-local:adapts_language_modeling	rdfs:member	local:adapts_language_modeling_approaches	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	rdfs:member	local:s11.2	.
+local:unsupervised_feature_extraction_sequences_of_words	rdfs:member	local:unsupervised_feature_extraction_sequences	.
+local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:instance	.
+local:vector_of_numerical_features	rdfs:member	local:numerical_features	.
+local:s4	rdf:object	local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	.
+local:s9	rdf:predicate	local:generate	.
+local:s2	rdf:object	local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	.
+local:information_graph_substructures	rdfs:subClassOf	local:substructures	.
+local:feature_vector_representations	rdfs:member	local:feature_vector	.
+local:s12	rdf:object	local:vector_representations_of_general_knowledge_graphs_such_as_wikidata_can_be_easily_reused_for_different_tasks	.
+local:adapts_language_modeling_approaches	rdfs:member	local:adapts_language_modeling	.
+local:s2.2	rdf:subject	local:open_data_sources	.
+local:s9	rdf:subject	local:we	.
+local:extraction_sequences	rdfs:member	local:extraction	.
+local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:open_data_sources	.
+local:numerical_features_associated	rdfs:member	local:numerical_features	.
+local:unsupervised_feature_extraction_sequences	rdfs:subClassOf	local:feature_extraction_sequences	.
+local:vector_representations_of_general_knowledge_graphs_such_as_dbpedia_can_be_easily_reused_for_different_tasks	rdfs:member	local:different_tasks	.
+local:s1.2	rdf:subject	local:open_data_sources	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction	rdfs:member	local:language_modeling_approaches	.
+local:s12	rdf:subject	local:evaluation_shows	.
+local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:nature	.
+local:subtree_rdf_graph	rdfs:member	local:subtree_rdf	.
+local:s8	rdf:predicate	local:harvest	.
+local:weisfeilerlehman_subtree_rdf	rdfs:subClassOf	local:rdf	.
+local:s4	rdf:subject	local:approach	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:unsupervised_feature_extraction_sequences	.
+local:propositional_form_associated	rdfs:member	local:associated	.
+local:valuable_source_for_background_information_in_data_mining	rdfs:member	local:data_mining	.
+local:machine_learning_tasks	rdfs:member	local:machine_learning	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:propositional_form_associated	rdfs:member	local:propositional_form	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:words	.
+local:subtree_rdf	rdfs:subClassOf	local:rdf	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:words_for_unsupervised_feature_extraction	rdfs:member	local:unsupervised_feature_extraction	.
+local:local_information_graph_substructures	rdfs:subClassOf	local:substructures	.
+local:information_graph	rdfs:member	local:information	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	rdfs:member	local:rdf_graphs	.
+local:open_data_sources	rdfs:subClassOf	local:data_sources	.
+local:can_easily_reused_for_different_tasks	rdfs:member	local:different_tasks	.
+local:s12.1	local:AM-MNR	local:easily	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	rdfs:member	local:techniques	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	rdfs:member	local:vector_representations	.
+local:s1	rdf:object	local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	.
+local:words_for_unsupervised_feature_extraction	rdfs:member	local:words	.
+local:local_information	rdfs:member	local:local	.
+local:rdf_graph_kernels	rdfs:member	local:rdf_graph	.
+local:data_mining	rdfs:subClassOf	local:mining	.
+local:s3.2	rdf:predicate	local:linked	.
+local:valuable_source_for_background_information_in_data_mining	rdfs:member	local:background_information	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:unsupervised_feature_extraction	.
+local:associated_with_instance	rdfs:member	local:associated	.
+local:s2	rdf:subject	local:data_mining_tools	.
+local:language_modeling_approaches	rdfs:subClassOf	local:modeling_approaches	.
+local:weisfeilerlehman_subtree_rdf_graph_kernels	rdfs:subClassOf	local:subtree_rdf_graph_kernels	.
+local:features_in_propositional_form	rdfs:member	local:features	.
+local:different_predictive_machine_learning	rdfs:subClassOf	local:learning	.
+local:local_information	rdfs:subClassOf	local:information	.
+local:latent_numerical_representations_of_entities	rdfs:member	local:latent_numerical_representations	.
+local:feature_vector_representations_of_general_knowledge_graphs	rdfs:member	local:general_knowledge_graphs	.
+local:weisfeilerlehman_subtree_rdf_graph_kernels	rdfs:member	local:weisfeilerlehman_subtree_rdf_graph	.
+local:weisfeilerlehman_subtree_rdf_graph	rdfs:member	local:weisfeilerlehman_subtree_rdf	.
+local:s3.1	rdf:object	local:instance	.
+local:feature_vector_representations	rdfs:subClassOf	local:vector_representations	.
+local:s11.1	rdf:subject	local:techniques	.
+local:s13.1	local:AM-MNR	local:easily	.
+local:associated_with_instance	rdfs:member	local:instance	.
+local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:nominal_features	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:numerical_features	rdfs:member	local:numerical	.
+local:latent_numerical_representations_of_entities_in_rdf_graphs	rdfs:member	local:entities	.
+local:adapts_language_modeling_approaches	rdfs:subClassOf	local:approaches	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_dbpedia	rdfs:member	local:general_knowledge_graphs	.
+local:background_information_in_data_mining	rdfs:member	local:background_information	.
+local:machine_learning	rdfs:subClassOf	local:learning	.
+local:s4	rdf:predicate	local:use	.
+local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:features	.
+local:unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_wikidata	rdfs:member	local:feature_vector_representations	.
+local:adapts_language_modeling	rdfs:member	local:adapts_language	.
+local:features_in_propositional_form_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:open_data_sources	.
+local:predictive_machine_learning	rdfs:member	local:predictive_machine	.
+local:s2.1	rdf:subject	local:propositional_form	.
+local:propositionalization_of_rdf_graphs	rdfs:member	local:propositionalization	.
+local:local_information_graph	rdfs:member	local:local_information	.
+local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:nature	.
+local:s9.1	rdf:predicate	local:leverage	.
+local:feature_extraction_sequences	rdfs:subClassOf	local:sequences	.
+local:latent_numerical_representations_of_entities_in_rdf_graphs	rdfs:member	local:latent_numerical_representations	.
+local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:instance	.
+local:modeling_approaches	rdfs:subClassOf	local:approaches	.
+local:s12.1	local:AM-PNC	local:different_tasks	.
+local:subtree_rdf_graph_kernels	rdfs:subClassOf	local:rdf_graph_kernels	.
+local:s11.2	rdfs:subClassOf	local:tasks	.
+local:adapts_language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:unsupervised_feature_extraction	.
+local:local_information_from_graph_substructures	rdfs:member	local:graph_substructures	.
+local:different_predictive_machine	rdfs:member	local:different_predictive	.
+local:s12.1	local:AM-MOD	local:can	.
+local:can_easily_reused	rdfs:subClassOf	local:easily_reused	.
+local:s11	rdf:predicate	local:show	.
+local:entities_in_rdf_graphs	rdfs:member	local:entities	.
+local:unsupervised_feature_extraction_sequences	rdfs:member	local:unsupervised_feature_extraction	.
+local:s13	rdf:subject	local:evaluation_shows	.
+local:predictive_machine_learning	rdfs:subClassOf	local:learning	.
+local:a_different_predictive_machine	rdfs:subClassOf	local:different_predictive_machine	.
+local:s13	rdf:predicate	local:feature	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:general_knowledge_graphs	rdfs:member	local:general_knowledge	.
+local:extraction_sequences	rdfs:subClassOf	local:sequences	.
+local:unsupervised_feature_extraction_sequences	rdfs:subClassOf	local:sequences	.
+local:s1.1	rdf:predicate	local:associate	.
+local:rdf2vec_approach	rdfs:subClassOf	local:approach	.
+local:s13.1	local:AM-MOD	local:can	.
+local:features_in_propositional_form	rdfs:member	local:propositional_form	.
+local:propositionalization_of_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:valuable_source_for_background_information_in_data_mining	rdfs:member	local:valuable_source	.
+local:adapts_language	rdfs:subClassOf	local:language	.
+local:s12	rdf:predicate	local:feature	.
+local:general_knowledge_graphs_such_as_wikidata	rdfs:member	local:wikidata	.
+local:language_modeling_approaches	rdfs:subClassOf	local:approaches	.
+local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:vector	.
+local:s12.1	rdf:predicate	local:reuse	.
+local:s0	rdf:subject	local:open_data	.
+local:s10	rdf:object	local:latent_numerical_representations_of_entities_in_rdf_graphs	.
+local:s1.2	rdf:predicate	local:linked	.
+local:s13.1	local:AM-PNC	local:different_tasks	.
+local:vector_representations_of_general_knowledge_graphs_such_as_wikidata_can_be_easily_reused_for_different_tasks	rdfs:member	local:different_tasks	.
+local:unsupervised_feature	rdfs:subClassOf	local:feature	.
+local:open_data	rdfs:member	local:open	.
+local:vector_of_numerical_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:numerical_features	.
+local:s0.1	rdf:object	local:valuable_source_for_background_information_in_data_mining	.
+local:s0.1	rdf:predicate	local:recognize	.
+local:vector_representations_of_general_knowledge_graphs_such_as_wikidata_can_be_easily_reused_for_different_tasks	rdfs:member	local:general_knowledge_graphs	.
+local:existing_techniques_for_propositionalization	rdfs:member	local:s11.1	.
+local:graphs_by_nature	rdfs:member	local:graphs	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:vector_representations_of_general_knowledge_graphs_such_as_dbpedia_can_be_easily_reused_for_different_tasks	rdfs:member	local:general_knowledge_graphs	.
+local:learning_tasks	rdfs:member	local:learning	.
+local:s11	rdf:subject	local:evaluation	.
+local:vector_representations_of_general_knowledge_graphs_such_as_wikidata_can_be_easily_reused_for_different_tasks	rdfs:member	local:wikidata	.
+local:evaluation_shows_that_feature_vector_representations_of_general_knowledge_graphs_such_as_wikidata	rdfs:member	local:general_knowledge_graphs	.
+local:machine_outperform	rdfs:subClassOf	local:outperform	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	rdfs:member	local:variety	.
+local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	rdfs:member	local:vector	.
+local:local_information_graph	rdfs:subClassOf	local:graph	.
+local:general_knowledge	rdfs:member	local:general	.
+local:s11.2	rdf:subject	local:tasks	.
+local:entities_in_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:data_mining_tools	rdfs:member	local:data_mining	.
+local:graph_kernels	rdfs:subClassOf	local:kernels	.
+local:s3	rdf:object	local:vector_of_nominal_features_associated_with_an_instance_while_linked_open_data_sources_are_graphs_by_nature	.
+local:s2.1	rdf:predicate	local:associate	.
+local:language_modeling_approaches	rdfs:member	local:language_modeling	.
+local:data_sources	rdfs:member	local:data	.
+local:s6.1	rdf:predicate	local:adapt	.
+local:graphs_by_nature	rdfs:member	local:nature	.
+local:s1	local:AM-DIS	local:however	.
+local:adapts_language	rdfs:member	local:adapts	.
+local:feature_vector_representations	rdfs:subClassOf	local:representations	.
+local:different_predictive_machine_learning	rdfs:member	local:different_predictive_machine	.
+local:graph_substructures	rdfs:subClassOf	local:substructures	.
+local:s5	rdf:predicate	local:present	.
+local:s5	rdf:object	local:rdf2vec_approach	.
+local:feature_extraction_sequences	rdfs:member	local:feature_extraction	.
+local:different_predictive	rdfs:subClassOf	local:predictive	.
+local:weisfeilerlehman_subtree_rdf	rdfs:member	local:weisfeilerlehman_subtree	.
+local:background_information	rdfs:member	local:background	.
+local:feature_vector_representations_of_general_knowledge_graphs	rdfs:member	local:feature_vector_representations	.
+local:vector_representations_outperform_existing_techniques_for_the_propositionalization_of_rdf_graphs_on_a_variety_of_different_predictive_machine_learning_tasks	rdfs:member	local:propositionalization	.
+local:feature_extraction	rdfs:subClassOf	local:extraction	.
+local:vector_representations_of_general_knowledge_graphs_such_as_wikidata_can_be_easily_reused_for_different_tasks	rdfs:member	local:vector_representations	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction_sequences_of_words_for_unsupervised_feature_extraction_to_rdf_graphs	rdfs:member	local:language_modeling_approaches	.
+local:language_modeling_approaches_for_unsupervised_feature_extraction	rdfs:member	local:unsupervised_feature_extraction	.
+local:s8	rdf:object	local:weisfeilerlehman_subtree_rdf_graph_kernels	.
+local:predictive_machine_learning_tasks	rdfs:member	local:predictive_machine_learning	.
+local:a_different_predictive_machine_learning	rdfs:member	local:a_different_predictive_machine	.
+local:subtree_rdf_graph_kernels	rdfs:subClassOf	local:kernels	.
+local:mining_tools	rdfs:subClassOf	local:tools	.
+local:local_information_graph_substructures	rdfs:member	local:local_information_graph	.
+local:latent_numerical_representations_of_entities_in_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:s9	rdf:object	local:sequences	.
+local:s3.2	rdf:subject	local:open_data_sources	.
+local:general_knowledge_graphs_such_as_dbpedia	rdfs:member	local:general_knowledge_graphs	.
+local:feature_extraction_sequences	rdfs:subClassOf	local:extraction_sequences	.
+local:local_information_from_graph_substructures	rdfs:member	local:local_information	.
+local:subtree_rdf_graph	rdfs:subClassOf	local:graph	.
+local:rdf_graph_kernels	rdfs:subClassOf	local:graph_kernels	.
+local:open_data_sources	rdfs:subClassOf	local:sources	.
+local:nominal_features	rdfs:subClassOf	local:features	.
+local:s6.1	rdf:subject	local:approach_that_uses	.
+local:easily_reused	rdfs:subClassOf	local:reused	.
+local:open_data	rdfs:subClassOf	local:data	.

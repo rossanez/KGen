@@ -1,692 +1,1138 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"approximate membership functions can partly improve the clientside query process with minimal impact on the server"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"this indicates that approximate membership functions can partly improve the clientside query process with minimal impact on the server"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"approximate membership functions can partly improve the clientside query process with minimal impact on the server interface"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"this indicates that approximate membership functions can partly improve the clientside query process with minimal impact on the server interface"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"query times however not improve likely due to slower metadata generation and transfer"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"half of the tested queries from a watdiv benchmark test set could executed with up to a third fewer http requests with only marginally higher server cost"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"tested queries"	.
+
+local:s14.4	a	rdf:Statement	;
+	rdfs:label	"temporarily allowing lower precision"	.
+
+local:s14.3	a	rdf:Statement	;
+	rdfs:label	"in addition to reducing http requests such functions allow to achieve full result recall earlier when temporarily allowing lower precision"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"such functions achieve full result"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"such functions allow to achieve full result recall earlier when temporarily allowing lower precision"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"reducing http requests such functions"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"providing approximate membership functions"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"one of these interfaces studies the impact of providing approximate membership functions as extra metadata"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"membership subqueries which check the presence of a specific triple"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"typical sparql query evaluations against triple pattern fragments require a significant portion of membership subqueries"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we noted that typical sparql query evaluations against triple pattern fragments require a significant portion of membership subqueries"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"typical sparql query evaluations against triple pattern fragments require a variable pattern"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we noted that typical sparql query evaluations against triple pattern fragments require a variable pattern"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"requests which can among others achieved through additional metadata in responses"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"increasing a clients efficiency lowering the number of requests"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"increasing a clients efficiency means lowering the number of requests"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"increasing a clients efficiency"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"clients execute sparql queries against lowcost servers at the cost of higher bandwidth"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"triple pattern fragments which allows clients to execute sparql queries against lowcost servers at the cost of higher bandwidth"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"between the sparql protocol lies a largely unexplored axis of possible interfaces to each with the sparql protocol own combination of tradeoffs"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"between uri dereferencing lies a largely unexplored axis of possible interfaces to each with the sparql protocol own combination of tradeoffs"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"between uri dereferencing lies a largely unexplored axis of possible interfaces to linked data own combination of tradeoffs"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"between the sparql protocol lies a largely unexplored axis of possible interfaces to linked data own combination of tradeoffs"	.
+
+
 #### Classes ####
 
-local:uri	rdfs:label	"uri"	.
+local:approximate_membership_functions	a	rdf:Class	;
+	rdfs:label	"approximate membership functions"	.
 
-local:uri_dereferencing	rdfs:label	"uri dereferencing"	.
+local:approximate_membership	a	rdf:Class	;
+	rdfs:label	"approximate membership"	.
 
-local:dereferencing	rdfs:label	"dereferencing"	.
+local:membership	a	rdf:Class	;
+	rdfs:label	"membership"	.
 
-local:lies	rdfs:label	"lies"	.
+local:membership_functions	a	rdf:Class	;
+	rdfs:label	"membership functions"	.
 
-local:unexplored_axis	rdfs:label	"unexplored axis"	.
+local:functions	a	rdf:Class	;
+	rdfs:label	"functions"	.
 
-local:axis	rdfs:label	"axis"	.
+local:approximate	a	rdf:Class	;
+	rdfs:label	"approximate"	.
 
-local:unexplored	rdfs:label	"unexplored"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:largely_unexplored	rdfs:label	"largely unexplored"	.
+local:clientside_query_process_with_minimal_impact_on_the_server	a	rdf:Class	;
+	rdfs:label	"clientside query process with minimal impact on the server"	.
 
-local:largely_unexplored_axis	rdfs:label	"largely unexplored axis"	.
+local:clientside_query_process	a	rdf:Class	;
+	rdfs:label	"clientside query process"	.
 
-local:possible	rdfs:label	"possible"	.
+local:minimal_impact	a	rdf:Class	;
+	rdfs:label	"minimal impact"	.
 
-local:possible_interfaces	rdfs:label	"possible interfaces"	.
+local:server	a	rdf:Class	;
+	rdfs:label	"server"	.
 
-local:own	rdfs:label	"own"	.
+local:query_process	a	rdf:Class	;
+	rdfs:label	"query process"	.
 
-local:own_combination	rdfs:label	"own combination"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:interfaces	rdfs:label	"interfaces"	.
+local:minimal	a	rdf:Class	;
+	rdfs:label	"minimal"	.
 
-local:combination	rdfs:label	"combination"	.
+local:clientside_query	a	rdf:Class	;
+	rdfs:label	"clientside query"	.
 
-local:largely	rdfs:label	"largely"	.
+local:impact	a	rdf:Class	;
+	rdfs:label	"impact"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:clientside	a	rdf:Class	;
+	rdfs:label	"clientside"	.
 
-local:data	rdfs:label	"data"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:unexplored_axis_of_possible_interfaces	rdfs:label	"unexplored axis of possible interfaces"	.
+local:clientside_query_process_with_minimal_impact	a	rdf:Class	;
+	rdfs:label	"clientside query process with minimal impact"	.
 
-local:unexplored_axis_of_possible_interfaces_to_linked_data	rdfs:label	"unexplored axis of possible interfaces to linked data"	.
+local:minimal_impact_on_server	a	rdf:Class	;
+	rdfs:label	"minimal impact on server"	.
 
-local:combination_of_tradeoffs	rdfs:label	"combination of trade-offs"	.
+local:partly	a	rdf:Class	;
+	rdfs:label	"partly"	.
 
-local:tradeoffs	rdfs:label	"trade-offs"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:each	rdfs:label	"each"	.
+local:this	a	rdf:Class	;
+	rdfs:label	"this"	.
 
-local:sparql_protocol	rdfs:label	"sparql protocol"	.
+local:indicate	a	rdf:Class	;
+	rdfs:label	"indicate"	.
 
-local:protocol	rdfs:label	"protocol"	.
+local:clientside_query_process_with_minimal_impact_on_the_server_interface	a	rdf:Class	;
+	rdfs:label	"clientside query process with minimal impact on the server interface"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:server_interface	a	rdf:Class	;
+	rdfs:label	"server interface"	.
 
-local:protocol_own_combination	rdfs:label	"protocol own combination"	.
+local:interface	a	rdf:Class	;
+	rdfs:label	"interface"	.
 
-local:sparql_protocol_own_combination	rdfs:label	"sparql protocol own combination"	.
+local:minimal_impact_on_server_interface	a	rdf:Class	;
+	rdfs:label	"minimal impact on server interface"	.
 
-local:sparql_protocol_own_combination_of_tradeoffs	rdfs:label	"sparql protocol own combination of trade-offs"	.
+local:query_times_however	a	rdf:Class	;
+	rdfs:label	"query times however"	.
 
-local:possible_interfaces_to_each	rdfs:label	"possible interfaces to each"	.
+local:query_times	a	rdf:Class	;
+	rdfs:label	"query times"	.
 
-local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	rdfs:label	"unexplored axis of possible interfaces with sparql protocol own combination"	.
+local:times	a	rdf:Class	;
+	rdfs:label	"times"	.
 
-local:pattern	rdfs:label	"pattern"	.
+local:however_times	a	rdf:Class	;
+	rdfs:label	"however times"	.
 
-local:pattern_fragments	rdfs:label	"pattern fragments"	.
+local:query_however_times	a	rdf:Class	;
+	rdfs:label	"query however times"	.
 
-local:triple_pattern_fragments	rdfs:label	"triple pattern fragments"	.
+local:not_improve	a	rdf:Class	;
+	rdfs:label	"not improve"	.
 
-local:fragments	rdfs:label	"fragments"	.
+local:likely_due_to_slower_metadata_generation_and_transfer	a	rdf:Class	;
+	rdfs:label	"likely due to slower metadata generation and transfer"	.
 
-local:triple_pattern	rdfs:label	"triple pattern"	.
+local:metadata_generation	a	rdf:Class	;
+	rdfs:label	"metadata generation"	.
 
-local:triple	rdfs:label	"triple"	.
+local:generation	a	rdf:Class	;
+	rdfs:label	"generation"	.
 
-local:allows	rdfs:label	"allows"	.
+local:metadata	a	rdf:Class	;
+	rdfs:label	"metadata"	.
 
-local:lowcost_servers	rdfs:label	"low-cost servers"	.
+local:slower_metadata_generation	a	rdf:Class	;
+	rdfs:label	"slower metadata generation"	.
 
-local:servers	rdfs:label	"servers"	.
+local:likely_slower_metadata_generation	a	rdf:Class	;
+	rdfs:label	"likely slower metadata generation"	.
 
-local:lowcost	rdfs:label	"low-cost"	.
+local:half_of_the_tested_queries_from_a_watdiv_benchmark_test_set	a	rdf:Class	;
+	rdfs:label	"half of the tested queries from a watdiv benchmark test set"	.
 
-local:higher	rdfs:label	"higher"	.
+local:half	a	rdf:Class	;
+	rdfs:label	"half"	.
 
-local:higher_bandwidth	rdfs:label	"higher bandwidth"	.
+local:tested_queries	a	rdf:Class	;
+	rdfs:label	"tested queries"	.
 
-local:bandwidth	rdfs:label	"bandwidth"	.
+local:watdiv_benchmark_test_set	a	rdf:Class	;
+	rdfs:label	"watdiv benchmark test set"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:test_set	a	rdf:Class	;
+	rdfs:label	"test set"	.
 
-local:queries	rdfs:label	"queries"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:execute_against_lowcost_servers	rdfs:label	"execute against low-cost servers"	.
+local:benchmark_test	a	rdf:Class	;
+	rdfs:label	"benchmark test"	.
 
-local:execute	rdfs:label	"execute"	.
+local:benchmark	a	rdf:Class	;
+	rdfs:label	"benchmark"	.
 
-local:clients_at_cost	rdfs:label	"clients at cost"	.
+local:test	a	rdf:Class	;
+	rdfs:label	"test"	.
 
-local:clients	rdfs:label	"clients"	.
+local:benchmark_test_set	a	rdf:Class	;
+	rdfs:label	"benchmark test set"	.
 
-local:cost	rdfs:label	"cost"	.
+local:tested	a	rdf:Class	;
+	rdfs:label	"tested"	.
 
-local:cost_of_higher_bandwidth	rdfs:label	"cost of higher bandwidth"	.
+local:watdiv_benchmark	a	rdf:Class	;
+	rdfs:label	"watdiv benchmark"	.
 
-local:lowcost_servers_at_cost	rdfs:label	"low-cost servers at cost"	.
+local:watdiv_benchmark_test	a	rdf:Class	;
+	rdfs:label	"watdiv benchmark test"	.
 
-local:client_’_s	rdfs:label	"client ’ s"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:s	rdfs:label	"s"	.
+local:watdiv	a	rdf:Class	;
+	rdfs:label	"watdiv"	.
 
-local:client_’	rdfs:label	"client ’"	.
+local:half_of_tested_queries	a	rdf:Class	;
+	rdfs:label	"half of tested queries"	.
 
-local:’	rdfs:label	"’"	.
+local:tested_queries_from_watdiv_benchmark_test_set	a	rdf:Class	;
+	rdfs:label	"tested queries from watdiv benchmark test set"	.
 
-local:s_efficiency	rdfs:label	"s efficiency"	.
+local:execute	a	rdf:Class	;
+	rdfs:label	"execute"	.
 
-local:efficiency	rdfs:label	"efficiency"	.
+local:third_fewer_http_requests_with_only_marginally_higher_server_cost	a	rdf:Class	;
+	rdfs:label	"third fewer http requests with only marginally higher server cost"	.
 
-local:client	rdfs:label	"client"	.
+local:third_fewer_http_requests	a	rdf:Class	;
+	rdfs:label	"third fewer http requests"	.
 
-local:client_’_s_efficiency	rdfs:label	"client ’ s efficiency"	.
+local:only_marginally_higher_server_cost	a	rdf:Class	;
+	rdfs:label	"only marginally higher server cost"	.
 
-local:’_s	rdfs:label	"’ s"	.
+local:fewer_http_requests	a	rdf:Class	;
+	rdfs:label	"fewer http requests"	.
 
-local:’_s_efficiency	rdfs:label	"’ s efficiency"	.
+local:requests	a	rdf:Class	;
+	rdfs:label	"requests"	.
 
-local:client_efficiency	rdfs:label	"client efficiency"	.
+local:marginally_higher	a	rdf:Class	;
+	rdfs:label	"marginally higher"	.
 
-local:increasing	rdfs:label	"increasing"	.
+local:higher	a	rdf:Class	;
+	rdfs:label	"higher"	.
 
-local:means	rdfs:label	"means"	.
+local:higher_server_cost	a	rdf:Class	;
+	rdfs:label	"higher server cost"	.
 
-local:number_of_requests	rdfs:label	"number of requests"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:number	rdfs:label	"number"	.
+local:marginally_higher_server_cost	a	rdf:Class	;
+	rdfs:label	"marginally higher server cost"	.
 
-local:requests	rdfs:label	"requests"	.
+local:http_requests	a	rdf:Class	;
+	rdfs:label	"http requests"	.
 
-local:lowering	rdfs:label	"lowering"	.
+local:marginally_higher_server	a	rdf:Class	;
+	rdfs:label	"marginally higher server"	.
 
-local:can_others	rdfs:label	"can others"	.
+local:only_marginally	a	rdf:Class	;
+	rdfs:label	"only marginally"	.
 
-local:others	rdfs:label	"others"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:achieved	rdfs:label	"achieved"	.
+local:only_marginally_higher_server	a	rdf:Class	;
+	rdfs:label	"only marginally higher server"	.
 
-local:additional	rdfs:label	"additional"	.
+local:only_marginally_higher	a	rdf:Class	;
+	rdfs:label	"only marginally higher"	.
 
-local:additional_metadata	rdfs:label	"additional metadata"	.
+local:higher_server	a	rdf:Class	;
+	rdfs:label	"higher server"	.
 
-local:metadata	rdfs:label	"metadata"	.
+local:fewer_http	a	rdf:Class	;
+	rdfs:label	"fewer http"	.
 
-local:responses	rdfs:label	"responses"	.
+local:marginally	a	rdf:Class	;
+	rdfs:label	"marginally"	.
 
-local:noted	rdfs:label	"noted"	.
+local:server_cost	a	rdf:Class	;
+	rdfs:label	"server cost"	.
 
-local:we	rdfs:label	"we"	.
+local:third_fewer	a	rdf:Class	;
+	rdfs:label	"third fewer"	.
 
-local:query	rdfs:label	"query"	.
+local:third	a	rdf:Class	;
+	rdfs:label	"third"	.
 
-local:query_evaluations	rdfs:label	"query evaluations"	.
+local:fewer	a	rdf:Class	;
+	rdfs:label	"fewer"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:http	a	rdf:Class	;
+	rdfs:label	"http"	.
 
-local:sparql_query_evaluations	rdfs:label	"sparql query evaluations"	.
+local:third_fewer_http	a	rdf:Class	;
+	rdfs:label	"third fewer http"	.
 
-local:typical_sparql	rdfs:label	"typical sparql"	.
+local:third_fewer_http_requests_with_higher_server_cost	a	rdf:Class	;
+	rdfs:label	"third fewer http requests with higher server cost"	.
 
-local:variable	rdfs:label	"variable"	.
+local:could	a	rdf:Class	;
+	rdfs:label	"could"	.
 
-local:variable_pattern	rdfs:label	"variable pattern"	.
+local:lower_precision	a	rdf:Class	;
+	rdfs:label	"lower precision"	.
 
-local:typical_sparql_query	rdfs:label	"typical sparql query"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:evaluations	rdfs:label	"evaluations"	.
+local:lower	a	rdf:Class	;
+	rdfs:label	"lower"	.
 
-local:typical_sparql_query_evaluations	rdfs:label	"typical sparql query evaluations"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:typical	rdfs:label	"typical"	.
+local:temporarily	a	rdf:Class	;
+	rdfs:label	"temporarily"	.
 
-local:typical_sparql_query_evaluations_against_triple_pattern_fragments	rdfs:label	"typical sparql query evaluations against triple pattern fragments"	.
+local:recall	a	rdf:Class	;
+	rdfs:label	"recall"	.
 
-local:require	rdfs:label	"require"	.
+local:addition_to_reducing_http_requests_such_functions_allow_to_achieve_full_result	a	rdf:Class	;
+	rdfs:label	"addition to reducing http requests such functions allow to achieve full result"	.
 
-local:membership	rdfs:label	"membership"	.
+local:such_functions	a	rdf:Class	;
+	rdfs:label	"such functions"	.
 
-local:membership_subqueries	rdfs:label	"membership subqueries"	.
+local:addition	a	rdf:Class	;
+	rdfs:label	"addition"	.
 
-local:significant_portion	rdfs:label	"significant portion"	.
+local:full_result	a	rdf:Class	;
+	rdfs:label	"full result"	.
 
-local:portion	rdfs:label	"portion"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:subqueries	rdfs:label	"subqueries"	.
+local:full	a	rdf:Class	;
+	rdfs:label	"full"	.
 
-local:significant	rdfs:label	"significant"	.
+local:such	a	rdf:Class	;
+	rdfs:label	"such"	.
 
-local:significant_portion_of_membership_subqueries	rdfs:label	"significant portion of membership subqueries"	.
+local:earlier_when_temporarily_allowing_lower_precision	a	rdf:Class	;
+	rdfs:label	"earlier when temporarily allowing lower precision"	.
 
-local:check	rdfs:label	"check"	.
+local:temporarily_allowing	a	rdf:Class	;
+	rdfs:label	"temporarily allowing"	.
 
-local:specific	rdfs:label	"specific"	.
+local:allowing	a	rdf:Class	;
+	rdfs:label	"allowing"	.
 
-local:specific_triple	rdfs:label	"specific triple"	.
+local:when_temporarily_allowing	a	rdf:Class	;
+	rdfs:label	"when temporarily allowing"	.
 
-local:presence_of_specific_triple	rdfs:label	"presence of specific triple"	.
+local:earlier_when_temporarily_allowing	a	rdf:Class	;
+	rdfs:label	"earlier when temporarily allowing"	.
 
-local:presence	rdfs:label	"presence"	.
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
 
-local:one_interfaces	rdfs:label	"one interfaces"	.
+local:achieve_full_result_recall_earlier_when_temporarily_allowing_lower_precision	a	rdf:Class	;
+	rdfs:label	"achieve full result recall earlier when temporarily allowing lower precision"	.
 
-local:studies	rdfs:label	"studies"	.
+local:achieve_full_result_recall	a	rdf:Class	;
+	rdfs:label	"achieve full result recall"	.
 
-local:extra_metadata	rdfs:label	"extra metadata"	.
+local:full_result_recall	a	rdf:Class	;
+	rdfs:label	"full result recall"	.
 
-local:membership_functions	rdfs:label	"membership functions"	.
+local:result_recall	a	rdf:Class	;
+	rdfs:label	"result recall"	.
 
-local:functions	rdfs:label	"functions"	.
+local:achieve_full_result	a	rdf:Class	;
+	rdfs:label	"achieve full result"	.
 
-local:approximate_membership	rdfs:label	"approximate membership"	.
+local:achieve_full	a	rdf:Class	;
+	rdfs:label	"achieve full"	.
 
-local:extra	rdfs:label	"extra"	.
+local:http_requests_such_functions	a	rdf:Class	;
+	rdfs:label	"http requests such functions"	.
 
-local:approximate_membership_functions	rdfs:label	"approximate membership functions"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:approximate	rdfs:label	"approximate"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:providing_as_extra_metadata	rdfs:label	"providing as extra metadata"	.
+local:one_of_these_interfaces	a	rdf:Class	;
+	rdfs:label	"one of these interfaces"	.
 
-local:providing	rdfs:label	"providing"	.
+local:one_interfaces	a	rdf:Class	;
+	rdfs:label	"one interfaces"	.
 
-local:impact	rdfs:label	"impact"	.
+local:interfaces	a	rdf:Class	;
+	rdfs:label	"interfaces"	.
 
-local:such	rdfs:label	"such"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:such_functions	rdfs:label	"such functions"	.
+local:impact_of_providing_approximate_membership_functions_as_extra_metadata	a	rdf:Class	;
+	rdfs:label	"impact of providing approximate membership functions as extra metadata"	.
 
-local:http_requests	rdfs:label	"http requests"	.
+local:extra_metadata	a	rdf:Class	;
+	rdfs:label	"extra metadata"	.
 
-local:http	rdfs:label	"http"	.
+local:extra	a	rdf:Class	;
+	rdfs:label	"extra"	.
 
-local:http_requests_such_functions	rdfs:label	"http requests such functions"	.
+local:providing_as_extra_metadata	a	rdf:Class	;
+	rdfs:label	"providing as extra metadata"	.
 
-local:reducing	rdfs:label	"reducing"	.
+local:providing	a	rdf:Class	;
+	rdfs:label	"providing"	.
 
-local:allow	rdfs:label	"allow"	.
+local:membership_subqueries	a	rdf:Class	;
+	rdfs:label	"membership subqueries"	.
 
-local:addition	rdfs:label	"addition"	.
+local:subqueries	a	rdf:Class	;
+	rdfs:label	"subqueries"	.
 
-local:achieve_full	rdfs:label	"achieve full"	.
+local:check	a	rdf:Class	;
+	rdfs:label	"check"	.
 
-local:achieve_full_result	rdfs:label	"achieve full result"	.
+local:presence_of_a_specific_triple	a	rdf:Class	;
+	rdfs:label	"presence of a specific triple"	.
 
-local:lower	rdfs:label	"lower"	.
+local:presence	a	rdf:Class	;
+	rdfs:label	"presence"	.
 
-local:lower_precision	rdfs:label	"lower precision"	.
+local:specific_triple	a	rdf:Class	;
+	rdfs:label	"specific triple"	.
 
-local:full_result_recall	rdfs:label	"full result recall"	.
+local:triple	a	rdf:Class	;
+	rdfs:label	"triple"	.
 
-local:recall	rdfs:label	"recall"	.
+local:specific	a	rdf:Class	;
+	rdfs:label	"specific"	.
 
-local:result_recall	rdfs:label	"result recall"	.
+local:presence_of_specific_triple	a	rdf:Class	;
+	rdfs:label	"presence of specific triple"	.
 
-local:precision	rdfs:label	"precision"	.
+local:typical_sparql_query_evaluations_against_triple_pattern_fragments	a	rdf:Class	;
+	rdfs:label	"typical sparql query evaluations against triple pattern fragments"	.
 
-local:full_result	rdfs:label	"full result"	.
+local:typical_sparql_query_evaluations	a	rdf:Class	;
+	rdfs:label	"typical sparql query evaluations"	.
 
-local:result	rdfs:label	"result"	.
+local:triple_pattern_fragments	a	rdf:Class	;
+	rdfs:label	"triple pattern fragments"	.
 
-local:full	rdfs:label	"full"	.
+local:sparql_query_evaluations	a	rdf:Class	;
+	rdfs:label	"sparql query evaluations"	.
 
-local:achieve_full_result_recall	rdfs:label	"achieve full result recall"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:achieve	rdfs:label	"achieve"	.
+local:typical_sparql	a	rdf:Class	;
+	rdfs:label	"typical sparql"	.
 
-local:temporarily_allowing	rdfs:label	"temporarily allowing"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:allowing	rdfs:label	"allowing"	.
+local:typical_sparql_query	a	rdf:Class	;
+	rdfs:label	"typical sparql query"	.
 
-local:when_temporarily_allowing	rdfs:label	"when temporarily allowing"	.
+local:pattern_fragments	a	rdf:Class	;
+	rdfs:label	"pattern fragments"	.
 
-local:earlier_when_temporarily_allowing	rdfs:label	"earlier when temporarily allowing"	.
+local:pattern	a	rdf:Class	;
+	rdfs:label	"pattern"	.
 
-local:temporarily	rdfs:label	"temporarily"	.
+local:query_evaluations	a	rdf:Class	;
+	rdfs:label	"query evaluations"	.
 
-local:tested	rdfs:label	"tested"	.
+local:typical	a	rdf:Class	;
+	rdfs:label	"typical"	.
 
-local:benchmark_test	rdfs:label	"benchmark test"	.
+local:fragments	a	rdf:Class	;
+	rdfs:label	"fragments"	.
 
-local:test	rdfs:label	"test"	.
+local:triple_pattern	a	rdf:Class	;
+	rdfs:label	"triple pattern"	.
 
-local:benchmark_test_set	rdfs:label	"benchmark test set"	.
+local:evaluations	a	rdf:Class	;
+	rdfs:label	"evaluations"	.
 
-local:set	rdfs:label	"set"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:watdiv	rdfs:label	"watdiv"	.
+local:significant_portion_of_membership_subqueries	a	rdf:Class	;
+	rdfs:label	"significant portion of membership subqueries"	.
 
-local:watdiv_benchmark	rdfs:label	"watdiv benchmark"	.
+local:significant_portion	a	rdf:Class	;
+	rdfs:label	"significant portion"	.
 
-local:watdiv_benchmark_test	rdfs:label	"watdiv benchmark test"	.
+local:portion	a	rdf:Class	;
+	rdfs:label	"portion"	.
 
-local:benchmark	rdfs:label	"benchmark"	.
+local:significant	a	rdf:Class	;
+	rdfs:label	"significant"	.
 
-local:test_set	rdfs:label	"test set"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:watdiv_benchmark_test_set	rdfs:label	"watdiv benchmark test set"	.
+local:note	a	rdf:Class	;
+	rdfs:label	"note"	.
 
-local:tested_queries	rdfs:label	"tested queries"	.
+local:typical_sparql_query_evaluations_against_triple_pattern_fragments_require_a_significant_portion_of_membership_subqueries	a	rdf:Class	;
+	rdfs:label	"typical sparql query evaluations against triple pattern fragments require a significant portion of membership subqueries"	.
 
-local:half_of_tested_queries	rdfs:label	"half of tested queries"	.
+local:variable_pattern	a	rdf:Class	;
+	rdfs:label	"variable pattern"	.
 
-local:half	rdfs:label	"half"	.
+local:variable	a	rdf:Class	;
+	rdfs:label	"variable"	.
 
-local:tested_queries_from_watdiv_benchmark_test_set	rdfs:label	"tested queries from watdiv benchmark test set"	.
+local:typical_sparql_query_evaluations_against_triple_pattern_fragments_require_a_variable_pattern	a	rdf:Class	;
+	rdfs:label	"typical sparql query evaluations against triple pattern fragments require a variable pattern"	.
 
-local:executed	rdfs:label	"executed"	.
+local:requests_which_can_among_others	a	rdf:Class	;
+	rdfs:label	"requests which can among others"	.
 
-local:could	rdfs:label	"could"	.
+local:others	a	rdf:Class	;
+	rdfs:label	"others"	.
 
-local:only_marginally_higher_server	rdfs:label	"only marginally higher server"	.
+local:can_others	a	rdf:Class	;
+	rdfs:label	"can others"	.
 
-local:server	rdfs:label	"server"	.
+local:responses	a	rdf:Class	;
+	rdfs:label	"responses"	.
 
-local:third_fewer_http	rdfs:label	"third fewer http"	.
+local:additional_metadata	a	rdf:Class	;
+	rdfs:label	"additional metadata"	.
 
-local:third_fewer_http_requests	rdfs:label	"third fewer http requests"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:only_marginally_higher	rdfs:label	"only marginally higher"	.
+local:increasing_a_clients_efficiency	a	rdf:Class	;
+	rdfs:label	"increasing a clients efficiency"	.
 
-local:fewer_http_requests	rdfs:label	"fewer http requests"	.
+local:clients_efficiency	a	rdf:Class	;
+	rdfs:label	"clients efficiency"	.
 
-local:marginally_higher_server_cost	rdfs:label	"marginally higher server cost"	.
+local:clients	a	rdf:Class	;
+	rdfs:label	"clients"	.
 
-local:only_marginally	rdfs:label	"only marginally"	.
+local:efficiency	a	rdf:Class	;
+	rdfs:label	"efficiency"	.
 
-local:fewer_http	rdfs:label	"fewer http"	.
+local:number_of_requests	a	rdf:Class	;
+	rdfs:label	"number of requests"	.
 
-local:higher_server	rdfs:label	"higher server"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:third_fewer	rdfs:label	"third fewer"	.
+local:mean	a	rdf:Class	;
+	rdfs:label	"mean"	.
 
-local:only_marginally_higher_server_cost	rdfs:label	"only marginally higher server cost"	.
+local:lowering_the_number_of_requests	a	rdf:Class	;
+	rdfs:label	"lowering the number of requests"	.
 
-local:marginally_higher_server	rdfs:label	"marginally higher server"	.
+local:increasing	a	rdf:Class	;
+	rdfs:label	"increasing"	.
 
-local:third	rdfs:label	"third"	.
+local:sparql_queries_against_lowcost_servers	a	rdf:Class	;
+	rdfs:label	"sparql queries against lowcost servers"	.
 
-local:marginally	rdfs:label	"marginally"	.
+local:lowcost_servers	a	rdf:Class	;
+	rdfs:label	"lowcost servers"	.
 
-local:marginally_higher	rdfs:label	"marginally higher"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:higher_server_cost	rdfs:label	"higher server cost"	.
+local:servers	a	rdf:Class	;
+	rdfs:label	"servers"	.
 
-local:fewer	rdfs:label	"fewer"	.
+local:lowcost	a	rdf:Class	;
+	rdfs:label	"lowcost"	.
 
-local:server_cost	rdfs:label	"server cost"	.
+local:cost_of_higher_bandwidth	a	rdf:Class	;
+	rdfs:label	"cost of higher bandwidth"	.
 
-local:only	rdfs:label	"only"	.
+local:higher_bandwidth	a	rdf:Class	;
+	rdfs:label	"higher bandwidth"	.
 
-local:third_fewer_http_requests_with_higher_server_cost	rdfs:label	"third fewer http requests with higher server cost"	.
+local:bandwidth	a	rdf:Class	;
+	rdfs:label	"bandwidth"	.
 
-local:indicates	rdfs:label	"indicates"	.
+local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	a	rdf:Class	;
+	rdfs:label	"clients to execute sparql queries against lowcost servers at the cost of higher bandwidth"	.
 
-local:this	rdfs:label	"this"	.
+local:execute_against_lowcost_servers	a	rdf:Class	;
+	rdfs:label	"execute against lowcost servers"	.
 
-local:query_process	rdfs:label	"query process"	.
+local:execute_against_lowcost_servers_at_cost	a	rdf:Class	;
+	rdfs:label	"execute against lowcost servers at cost"	.
 
-local:process	rdfs:label	"process"	.
+local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	a	rdf:Class	;
+	rdfs:label	"largely unexplored axis of possible interfaces to each with the sparql protocol own combination of tradeoffs"	.
 
-local:clientside	rdfs:label	"client-side"	.
+local:sparql_protocol	a	rdf:Class	;
+	rdfs:label	"sparql protocol"	.
 
-local:clientside_query	rdfs:label	"client-side query"	.
+local:largely_unexplored_axis	a	rdf:Class	;
+	rdfs:label	"largely unexplored axis"	.
 
-local:clientside_query_process	rdfs:label	"client-side query process"	.
+local:tradeoffs	a	rdf:Class	;
+	rdfs:label	"tradeoffs"	.
 
-local:minimal	rdfs:label	"minimal"	.
+local:own_combination	a	rdf:Class	;
+	rdfs:label	"own combination"	.
 
-local:minimal_impact	rdfs:label	"minimal impact"	.
+local:possible_interfaces	a	rdf:Class	;
+	rdfs:label	"possible interfaces"	.
 
-local:partly_improve	rdfs:label	"partly improve"	.
+local:unexplored_axis	a	rdf:Class	;
+	rdfs:label	"unexplored axis"	.
 
-local:improve	rdfs:label	"improve"	.
+local:unexplored	a	rdf:Class	;
+	rdfs:label	"unexplored"	.
 
-local:can_partly_improve	rdfs:label	"can partly improve"	.
+local:axis	a	rdf:Class	;
+	rdfs:label	"axis"	.
 
-local:can_partly_improve_with_minimal_impact	rdfs:label	"can partly improve with minimal impact"	.
+local:largely_unexplored	a	rdf:Class	;
+	rdfs:label	"largely unexplored"	.
 
-local:minimal_impact_on_server	rdfs:label	"minimal impact on server"	.
+local:combination	a	rdf:Class	;
+	rdfs:label	"combination"	.
 
-local:can	rdfs:label	"can"	.
+local:own	a	rdf:Class	;
+	rdfs:label	"own"	.
 
-local:partly	rdfs:label	"partly"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:clientside_query_process_with_minimal_impact	rdfs:label	"client-side query process with minimal impact"	.
+local:protocol	a	rdf:Class	;
+	rdfs:label	"protocol"	.
 
-local:server_interface	rdfs:label	"server interface"	.
+local:largely	a	rdf:Class	;
+	rdfs:label	"largely"	.
 
-local:interface	rdfs:label	"interface"	.
+local:protocol_own_combination	a	rdf:Class	;
+	rdfs:label	"protocol own combination"	.
 
-local:minimal_impact_on_server_interface	rdfs:label	"minimal impact on server interface"	.
+local:sparql_protocol_own_combination	a	rdf:Class	;
+	rdfs:label	"sparql protocol own combination"	.
 
-#### Properties ####
+local:unexplored_axis_of_possible_interfaces	a	rdf:Class	;
+	rdfs:label	"unexplored axis of possible interfaces"	.
+
+local:possible_interfaces_to_each	a	rdf:Class	;
+	rdfs:label	"possible interfaces to each"	.
+
+local:each	a	rdf:Class	;
+	rdfs:label	"each"	.
+
+local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	a	rdf:Class	;
+	rdfs:label	"unexplored axis of possible interfaces with sparql protocol own combination"	.
+
+local:sparql_protocol_own_combination_of_tradeoffs	a	rdf:Class	;
+	rdfs:label	"sparql protocol own combination of tradeoffs"	.
+
+local:lie	a	rdf:Class	;
+	rdfs:label	"lie"	.
+
+local:largely_unexplored_axis_of_possible_interfaces	a	rdf:Class	;
+	rdfs:label	"largely unexplored axis of possible interfaces"	.
+
+local:sparql_protocol_own_combination_of_tradeoffs_uri_dereferencing_each	a	rdf:Class	;
+	rdfs:label	"sparql protocol own combination of tradeoffs uri dereferencing each"	.
+
+local:tradeoffs_uri	a	rdf:Class	;
+	rdfs:label	"tradeoffs uri"	.
+
+local:uri	a	rdf:Class	;
+	rdfs:label	"uri"	.
+
+local:sparql_protocol_own_combination_of_tradeoffs_uri	a	rdf:Class	;
+	rdfs:label	"sparql protocol own combination of tradeoffs uri"	.
+
+local:tradeoffs_uri_dereferencing	a	rdf:Class	;
+	rdfs:label	"tradeoffs uri dereferencing"	.
+
+local:dereferencing	a	rdf:Class	;
+	rdfs:label	"dereferencing"	.
+
+local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	a	rdf:Class	;
+	rdfs:label	"largely unexplored axis of possible interfaces to linked data own combination of tradeoffs"	.
+
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
+
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
+
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
+
+local:data_own_combination	a	rdf:Class	;
+	rdfs:label	"data own combination"	.
+
+local:linked_data_own_combination	a	rdf:Class	;
+	rdfs:label	"linked data own combination"	.
+
+local:possible_interfaces_to_linked_data_own_combination	a	rdf:Class	;
+	rdfs:label	"possible interfaces to linked data own combination"	.
+
+local:linked_data_own_combination_of_tradeoffs	a	rdf:Class	;
+	rdfs:label	"linked data own combination of tradeoffs"	.
+
+local:uri_dereferencing	a	rdf:Class	;
+	rdfs:label	"uri dereferencing"	.
 
 #### Mapped Relations ####
 
 cso:http	rdfs:label	"http"	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
-cso:servers	rdfs:label	"servers"	.
-cso:sparql_queries	rdfs:label	"sparql queries"	.
-local:query_evaluations	owl:sameAs	cso:query_evaluation	.
-cso:bandwidth	rdfs:label	"bandwidth"	.
-local:servers	owl:sameAs	cso:servers	.
-cso:test_set	rdfs:label	"test set"	.
-local:http	owl:sameAs	cso:http	.
-local:linked_data	owl:sameAs	cso:linked_data	.
 cso:query_evaluation	rdfs:label	"query evaluations"	.
+local:query_evaluations	owl:sameAs	cso:query_evaluation	.
+local:servers	owl:sameAs	cso:servers	.
+cso:bandwidth	rdfs:label	"bandwidth"	.
 local:bandwidth	owl:sameAs	cso:bandwidth	.
-cso:linked_data	rdfs:label	"linked data"	.
-cso:sparql	rdfs:label	"sparql"	.
 local:sparql	owl:sameAs	cso:sparql	.
+local:linked_data	owl:sameAs	cso:linked_data	.
+cso:linked_data	rdfs:label	"linked data"	.
+cso:servers	rdfs:label	"servers"	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+local:http	owl:sameAs	cso:http	.
+cso:sparql	rdfs:label	"sparql"	.
+cso:sparql_queries	rdfs:label	"sparql queries"	.
 local:test_set	owl:sameAs	cso:test_set	.
+cso:test_set	rdfs:label	"test set"	.
 
 #### Relations ####
 
-local:pattern	rdfs:member	local:pattern_fragments	.
-local:providing_as_extra_metadata	local:as_extrametadata	local:providing	.
-local:marginally	rdfs:member	local:marginally_higher	.
-local:fewer_http_requests	rdfs:subClassOf	local:http_requests	.
-local:allow	vn.role:Agent	local:http_requests_such_functions	.
-local:test_set	rdfs:subClassOf	local:set	.
-local:executed	local:AM-MOD	local:could	.
-local:execute_against_lowcost_servers	local:against_low-costservers	local:execute	.
-local:half_of_tested_queries	local:half_of	local:tested_queries	.
-local:typical_sparql_query_evaluations	rdfs:subClassOf	local:evaluations	.
-local:one_interfaces	rdfs:subClassOf	local:interfaces	.
-local:improve	vn.role:Patient	local:clientside_query_process_with_minimal_impact	.
-local:achieved	local:AM-LOC	local:responses	.
-local:only_marginally	rdfs:member	local:only_marginally_higher	.
-local:lowcost_servers_at_cost	local:at_cost	local:lowcost_servers	.
-local:additional	rdfs:member	local:additional_metadata	.
-local:lower_precision	rdfs:subClassOf	local:precision	.
-local:watdiv_benchmark_test	rdfs:member	local:watdiv_benchmark_test_set	.
-local:providing_as_extra_metadata	local:providing_as	local:extra_metadata	.
-local:only	rdfs:member	local:only_marginally	.
-local:client	rdfs:member	local:client_’	.
-local:unexplored_axis_of_possible_interfaces_to_linked_data	local:to_linkeddata	local:unexplored_axis_of_possible_interfaces	.
-local:lies	vn.role:indirect_object	local:uri_dereferencing	.
-local:additional_metadata	rdfs:subClassOf	local:metadata	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:unexplored	rdfs:member	local:unexplored_axis	.
-local:lowcost_servers	rdfs:subClassOf	local:servers	.
-local:indicates	vn.role:Cause	local:can_partly_improve_with_minimal_impact	.
-local:’_s	rdfs:member	local:’_s_efficiency	.
-local:lies	vn.role:Location	local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	.
-local:third_fewer_http_requests	rdfs:subClassOf	local:fewer_http_requests	.
-local:clients_at_cost	local:clients_at	local:cost	.
-local:clientside_query_process	rdfs:subClassOf	local:process	.
-local:triple_pattern	rdfs:member	local:triple_pattern_fragments	.
-local:partly_improve	rdfs:subClassOf	local:improve	.
-local:approximate_membership	rdfs:subClassOf	local:membership	.
-local:lowering	vn.role:Attribute	local:number_of_requests	.
-local:benchmark	rdfs:member	local:benchmark_test	.
-local:tested	rdfs:member	local:tested_queries	.
-local:server	rdfs:member	local:server_cost	.
-local:query	rdfs:member	local:query_process	.
-local:only_marginally_higher	rdfs:member	local:only_marginally_higher_server	.
-local:check	vn.role:Experiencer	local:membership_subqueries	.
-local:execute	vn.role:Agent	local:clients	.
-local:sparql_query_evaluations	rdfs:subClassOf	local:query_evaluations	.
-local:providing	vn.role:Agent	local:approximate_membership_functions	.
-local:server	rdfs:member	local:server_interface	.
-local:only_marginally	rdfs:subClassOf	local:marginally	.
-local:execute	vn.role:Instrument	local:lowcost_servers_at_cost	.
-local:achieve_full_result	rdfs:member	local:achieve_full_result_recall	.
-local:specific	rdfs:member	local:specific_triple	.
-local:check	vn.role:Stimulus	local:presence_of_specific_triple	.
-local:query	rdfs:member	local:query_evaluations	.
-local:higher	rdfs:member	local:higher_bandwidth	.
-local:clientside_query	rdfs:subClassOf	local:query	.
-local:sparql_query	rdfs:member	local:sparql_query_evaluations	.
-local:cost_of_higher_bandwidth	local:of_higherbandwidth	local:cost	.
-local:improve	vn.role:Agent	local:approximate_membership_functions	.
-local:typical_sparql_query_evaluations_against_triple_pattern_fragments	local:typicalsparqlqueryevaluations_against	local:triple_pattern_fragments	.
-local:lies	vn.role:indirect_object	local:each	.
-local:lies	vn.role:indirect_object	local:sparql_protocol	.
-local:minimal_impact_on_server_interface	local:on_serverinterface	local:minimal_impact	.
-local:marginally_higher	rdfs:subClassOf	local:higher	.
-local:clientside_query_process_with_minimal_impact	local:with_minimalimpact	local:clientside_query_process	.
-local:largely_unexplored_axis	rdfs:subClassOf	local:axis	.
-local:can_others	rdfs:subClassOf	local:others	.
-local:sparql	rdfs:member	local:sparql_query	.
-local:fewer	rdfs:member	local:fewer_http	.
-local:only_marginally_higher	rdfs:subClassOf	local:marginally_higher	.
-local:noted	vn.role:Agent	local:we	.
-local:watdiv_benchmark_test	rdfs:subClassOf	local:test	.
-local:full_result	rdfs:subClassOf	local:result	.
-local:half_of_tested_queries	local:of_testedqueries	local:half	.
-local:approximate_membership	rdfs:member	local:approximate_membership_functions	.
-local:largely_unexplored	rdfs:subClassOf	local:unexplored	.
-local:unexplored_axis	rdfs:subClassOf	local:axis	.
-local:own	rdfs:member	local:own_combination	.
-local:sparql_protocol_own_combination	rdfs:subClassOf	local:protocol_own_combination	.
-local:third_fewer_http_requests_with_higher_server_cost	local:thirdfewerhttprequests_with	local:higher_server_cost	.
-local:achieved	vn.role:Theme	local:requests	.
-local:sparql_protocol	rdfs:subClassOf	local:protocol	.
-local:improve	local:AM-ADV	local:partly	.
-local:marginally_higher	rdfs:member	local:marginally_higher_server	.
-local:when_temporarily_allowing	rdfs:subClassOf	local:temporarily_allowing	.
-local:minimal_impact	rdfs:subClassOf	local:impact	.
-local:providing	vn.role:indirect_object	local:extra_metadata	.
-local:higher_server_cost	rdfs:subClassOf	local:server_cost	.
-local:client_efficiency	rdfs:subClassOf	local:efficiency	.
-local:minimal_impact_on_server	local:on_server	local:minimal_impact	.
-local:client_’	rdfs:subClassOf	local:’	.
-local:largely	rdfs:member	local:largely_unexplored	.
-local:achieve	vn.role:Theme	local:full_result	.
-local:lowering	vn.role:Patient	local:increasing	.
-local:only_marginally_higher_server_cost	rdfs:subClassOf	local:cost	.
-local:variable_pattern	rdfs:subClassOf	local:pattern	.
-local:client_’_s	rdfs:member	local:client_’_s_efficiency	.
-local:achieve	vn.role:Agent	local:http_requests_such_functions	.
-local:benchmark_test	rdfs:subClassOf	local:test	.
-local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	local:unexploredaxisofpossibleinterfaces_with	local:sparql_protocol_own_combination	.
-local:typical_sparql_query_evaluations_against_triple_pattern_fragments	local:against_triplepatternfragments	local:typical_sparql_query_evaluations	.
-local:significant_portion_of_membership_subqueries	local:of_membershipsubqueries	local:significant_portion	.
-local:studies	vn.role:Agent	local:one_interfaces	.
-local:clientside_query_process_with_minimal_impact	local:client-sidequeryprocess_with	local:minimal_impact	.
-local:membership	rdfs:member	local:membership_functions	.
-local:full	rdfs:member	local:full_result	.
-local:watdiv	rdfs:member	local:watdiv_benchmark	.
-local:achieve_full	rdfs:subClassOf	local:full	.
-local:lies	vn.role:Location	local:sparql_protocol_own_combination_of_tradeoffs	.
-local:variable	rdfs:member	local:variable_pattern	.
-local:typical_sparql	rdfs:member	local:typical_sparql_query	.
-local:’_s	rdfs:subClassOf	local:s	.
-local:lies	vn.role:Location	local:unexplored_axis_of_possible_interfaces	.
-local:recall	local:AM-TMP	local:earlier_when_temporarily_allowing	.
-local:third_fewer	rdfs:member	local:third_fewer_http	.
-local:require	vn.role:Agent	local:typical_sparql_query_evaluations_against_triple_pattern_fragments	.
-local:protocol_own_combination	rdfs:subClassOf	local:own_combination	.
-local:fewer_http	rdfs:subClassOf	local:http	.
-local:extra_metadata	rdfs:subClassOf	local:metadata	.
-local:clients_at_cost	local:at_cost	local:clients	.
-local:higher_bandwidth	rdfs:subClassOf	local:bandwidth	.
-local:membership_subqueries	rdfs:subClassOf	local:subqueries	.
-local:significant	rdfs:member	local:significant_portion	.
-local:watdiv_benchmark	rdfs:subClassOf	local:benchmark	.
-local:combination_of_tradeoffs	local:of_trade-offs	local:combination	.
-local:server_cost	rdfs:subClassOf	local:cost	.
-local:minimal	rdfs:member	local:minimal_impact	.
-local:triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
-local:client_’_s_efficiency	rdfs:subClassOf	local:efficiency	.
-local:presence_of_specific_triple	local:presence_of	local:specific_triple	.
-local:sparql_query_evaluations	rdfs:subClassOf	local:evaluations	.
-local:marginally_higher_server_cost	rdfs:subClassOf	local:cost	.
-local:s_efficiency	rdfs:subClassOf	local:efficiency	.
-local:watdiv_benchmark_test_set	rdfs:subClassOf	local:set	.
-local:’	rdfs:member	local:’_s	.
-local:achieved	local:AM-MNR	local:additional_metadata	.
-local:studies	vn.role:Theme	local:impact	.
-local:test	rdfs:member	local:test_set	.
-local:increasing	vn.role:Attribute	local:client_efficiency	.
-local:higher_server	rdfs:member	local:higher_server_cost	.
-local:pattern_fragments	rdfs:subClassOf	local:fragments	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:third_fewer_http_requests	rdfs:subClassOf	local:requests	.
-local:require	vn.role:Patient	local:significant_portion_of_membership_subqueries	.
-local:extra	rdfs:member	local:extra_metadata	.
-local:http_requests	rdfs:subClassOf	local:requests	.
-local:higher	rdfs:member	local:higher_server	.
-local:specific_triple	rdfs:subClassOf	local:triple	.
-local:only_marginally_higher_server	rdfs:member	local:only_marginally_higher_server_cost	.
-local:fewer_http	rdfs:member	local:fewer_http_requests	.
-local:benchmark_test_set	rdfs:subClassOf	local:set	.
-local:possible_interfaces	rdfs:subClassOf	local:interfaces	.
-local:possible_interfaces_to_each	local:to_each	local:possible_interfaces	.
-local:triple	rdfs:member	local:triple_pattern	.
-local:means	vn.role:Theme	local:lowering	.
-local:noted	vn.role:Topic	local:require	.
-local:allows	vn.role:Theme	local:clients_at_cost	.
-local:tested_queries_from_watdiv_benchmark_test_set	local:testedqueries_from	local:watdiv_benchmark_test_set	.
-local:can_partly_improve_with_minimal_impact	local:with_minimalimpact	local:can_partly_improve	.
-local:http_requests_such_functions	local:httprequests_	local:such_functions	.
-local:query_evaluations	rdfs:subClassOf	local:evaluations	.
-local:lowcost	rdfs:member	local:lowcost_servers	.
-local:achieve_full_result	rdfs:subClassOf	local:result	.
-local:reducing	vn.role:Patient	local:http_requests_such_functions	.
-local:unexplored_axis_of_possible_interfaces	local:of_possibleinterfaces	local:unexplored_axis	.
-local:uri	rdfs:member	local:uri_dereferencing	.
-local:own_combination	rdfs:subClassOf	local:combination	.
-local:lower	rdfs:member	local:lower_precision	.
-local:only_marginally_higher	rdfs:subClassOf	local:higher	.
-local:combination_of_tradeoffs	local:combination_of	local:tradeoffs	.
-local:triple_pattern	rdfs:subClassOf	local:pattern	.
-local:typical_sparql	rdfs:subClassOf	local:sparql	.
-local:approximate	rdfs:member	local:approximate_membership	.
-local:higher_server	rdfs:subClassOf	local:server	.
-local:lies	vn.role:Location	local:own	.
-local:cost_of_higher_bandwidth	local:cost_of	local:higher_bandwidth	.
-local:executed	vn.role:Instrument	local:third_fewer_http_requests_with_higher_server_cost	.
-local:triple_pattern_fragments	rdfs:subClassOf	local:pattern_fragments	.
-local:full_result	rdfs:member	local:full_result_recall	.
-local:benchmark_test_set	rdfs:subClassOf	local:test_set	.
-local:achieve_full_result_recall	rdfs:subClassOf	local:recall	.
-local:largely_unexplored	rdfs:member	local:largely_unexplored_axis	.
-local:allows	vn.role:Agent	local:triple_pattern_fragments	.
-local:execute	vn.role:Patient	local:sparql_queries	.
-local:require	vn.role:Patient	local:variable_pattern	.
-local:such	rdfs:member	local:such_functions	.
-local:watdiv_benchmark	rdfs:member	local:watdiv_benchmark_test	.
-local:typical	rdfs:member	local:typical_sparql	.
-local:improve	local:AM-MOD	local:can	.
-local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	local:with_sparqlprotocolowncombination	local:unexplored_axis_of_possible_interfaces	.
-local:marginally_higher_server	rdfs:member	local:marginally_higher_server_cost	.
-local:minimal_impact_on_server_interface	local:minimalimpact_on	local:server_interface	.
-local:unexplored_axis_of_possible_interfaces_to_linked_data	local:unexploredaxisofpossibleinterfaces_to	local:linked_data	.
-local:http_requests_such_functions	local:_suchfunctions	local:http_requests	.
-local:lowcost_servers_at_cost	local:low-costservers_at	local:cost	.
-local:presence_of_specific_triple	local:of_specifictriple	local:presence	.
-local:executed	vn.role:Patient	local:half_of_tested_queries	.
-local:membership_functions	rdfs:subClassOf	local:functions	.
-local:benchmark_test	rdfs:member	local:benchmark_test_set	.
-local:third_fewer_http	rdfs:member	local:third_fewer_http_requests	.
-local:approximate_membership_functions	rdfs:subClassOf	local:membership_functions	.
-local:allow	local:AM-ADV	local:addition	.
-local:such_functions	rdfs:subClassOf	local:functions	.
-local:result_recall	rdfs:subClassOf	local:recall	.
-local:allow	vn.role:Theme	local:achieve	.
-local:possible_interfaces_to_each	local:possibleinterfaces_to	local:each	.
-local:number_of_requests	local:of_requests	local:number	.
-local:client_’	rdfs:member	local:client_’_s	.
-local:sparql	rdfs:member	local:sparql_protocol	.
-local:achieve	rdfs:member	local:achieve_full	.
-local:only_marginally_higher_server	rdfs:subClassOf	local:server	.
-local:third	rdfs:member	local:third_fewer	.
-local:query_process	rdfs:subClassOf	local:process	.
-local:approximate_membership_functions	rdfs:subClassOf	local:functions	.
-local:allowing	local:AM-TMP	local:temporarily	.
-local:significant_portion_of_membership_subqueries	local:significantportion_of	local:membership_subqueries	.
-local:third_fewer_http	rdfs:subClassOf	local:http	.
-local:fewer_http_requests	rdfs:subClassOf	local:requests	.
-local:membership	rdfs:member	local:membership_subqueries	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:tested	vn.role:Location	local:queries	.
-local:minimal_impact_on_server	local:minimalimpact_on	local:server	.
-local:full_result_recall	rdfs:subClassOf	local:result_recall	.
-local:watdiv_benchmark_test_set	rdfs:subClassOf	local:benchmark_test_set	.
-local:s	rdfs:member	local:s_efficiency	.
-local:marginally_higher_server	rdfs:subClassOf	local:server	.
-local:clientside	rdfs:member	local:clientside_query	.
-local:third_fewer_http_requests_with_higher_server_cost	local:with_higherservercost	local:third_fewer_http_requests	.
-local:full_result_recall	rdfs:subClassOf	local:recall	.
-local:means	vn.role:Agent	local:increasing	.
-local:can_partly_improve_with_minimal_impact	local:canpartlyimprove_with	local:minimal_impact	.
-local:sparql_protocol_own_combination_of_tradeoffs	local:of_trade-offs	local:sparql_protocol_own_combination	.
-local:possible	rdfs:member	local:possible_interfaces	.
-local:temporarily_allowing	rdfs:subClassOf	local:allowing	.
-local:third_fewer	rdfs:subClassOf	local:fewer	.
-local:typical_sparql_query	rdfs:subClassOf	local:query	.
-local:achieve_full	rdfs:member	local:achieve_full_result	.
-local:server_interface	rdfs:subClassOf	local:interface	.
-local:significant_portion	rdfs:subClassOf	local:portion	.
-local:can_partly_improve	rdfs:subClassOf	local:partly_improve	.
-local:unexplored_axis_of_possible_interfaces	local:unexploredaxis_of	local:possible_interfaces	.
-local:’_s_efficiency	rdfs:subClassOf	local:efficiency	.
-local:result	rdfs:member	local:result_recall	.
-local:clientside_query_process	rdfs:subClassOf	local:query_process	.
-local:sparql_protocol_own_combination_of_tradeoffs	local:sparqlprotocolowncombination_of	local:tradeoffs	.
+local:s10	rdf:subject	local:membership_subqueries	.
+local:tested_queries_from_watdiv_benchmark_test_set	rdfs:member	local:tested_queries	.
 local:higher_server_cost	rdfs:subClassOf	local:cost	.
-local:execute_against_lowcost_servers	local:execute_against	local:lowcost_servers	.
+local:s14.2	rdf:subject	local:functions	.
+local:only_marginally_higher_server_cost	rdfs:subClassOf	local:cost	.
+local:sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:tradeoffs	.
+local:s9.1	rdfs:member	local:membership_subqueries	.
+local:tradeoffs_uri_dereferencing	rdfs:member	local:dereferencing	.
+local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	rdfs:member	local:unexplored_axis_of_possible_interfaces	.
+local:can_others	rdfs:subClassOf	local:others	.
+local:benchmark_test	rdfs:subClassOf	local:test	.
+local:s18.1	rdf:object	local:clientside_query_process_with_minimal_impact_on_the_server	.
+local:s15.1	local:AM-MOD	local:could	.
+local:s18	rdf:subject	local:this	.
+local:s4.1	rdf:subject	local:clients	.
+local:sparql_protocol_own_combination_of_tradeoffs_uri	rdfs:member	local:sparql_protocol_own_combination	.
+local:triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:s8	rdf:subject	local:we	.
+local:s9.1	rdf:predicate	local:require	.
+local:addition_to_reducing_http_requests_such_functions_allow_to_achieve_full_result	rdfs:member	local:full_result	.
+local:s9.1	rdf:subject	local:typical_sparql_query_evaluations_against_triple_pattern_fragments	.
+local:cost_of_higher_bandwidth	rdfs:member	local:cost	.
+local:possible_interfaces	rdfs:member	local:possible	.
+local:triple_pattern	rdfs:subClassOf	local:pattern	.
+local:presence_of_a_specific_triple	rdfs:member	local:presence	.
+local:clientside_query_process_with_minimal_impact	rdfs:member	local:minimal_impact	.
+local:clientside_query_process	rdfs:member	local:clientside_query	.
+local:providing_as_extra_metadata	rdfs:member	local:extra_metadata	.
+local:approximate_membership	rdfs:subClassOf	local:membership	.
+local:watdiv_benchmark_test_set	rdfs:subClassOf	local:benchmark_test_set	.
+local:fewer_http_requests	rdfs:member	local:fewer_http	.
+local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	rdfs:member	local:higher_bandwidth	.
+local:extra_metadata	rdfs:member	local:extra	.
+local:watdiv_benchmark	rdfs:member	local:watdiv	.
+local:marginally_higher_server	rdfs:subClassOf	local:server	.
+local:third_fewer_http_requests	rdfs:member	local:third_fewer_http	.
+local:clientside_query	rdfs:member	local:clientside	.
+local:full_result_recall	rdfs:member	local:full_result	.
+local:s9.1	rdf:object	local:significant_portion_of_membership_subqueries	.
+local:variable_pattern	rdfs:subClassOf	local:pattern	.
+local:benchmark_test_set	rdfs:subClassOf	local:test_set	.
+local:when_temporarily_allowing	rdfs:subClassOf	local:temporarily_allowing	.
+local:higher_server_cost	rdfs:member	local:higher_server	.
+local:higher_server_cost	rdfs:subClassOf	local:server_cost	.
+local:query_process	rdfs:subClassOf	local:process	.
+local:marginally_higher	rdfs:subClassOf	local:higher	.
+local:full_result_recall	rdfs:subClassOf	local:result_recall	.
+local:server_interface	rdfs:member	local:server	.
+local:s14.2	rdf:object	local:full_result	.
+local:s9.1	rdfs:member	local:significant_portion	.
+local:s18.1	rdf:subject	local:approximate_membership_functions	.
+local:s14.3	rdf:predicate	local:recall	.
+local:lowering_the_number_of_requests	rdfs:member	local:number	.
+local:s17.1	local:AM-ADV	local:partly	.
+local:such_functions	rdfs:member	local:such	.
+local:sparql_query_evaluations	rdfs:member	local:sparql_query	.
+local:unexplored_axis_of_possible_interfaces	rdfs:member	local:possible_interfaces	.
+local:half_of_tested_queries	rdfs:member	local:half	.
+local:watdiv_benchmark	rdfs:subClassOf	local:benchmark	.
+local:possible_interfaces_to_each	rdfs:member	local:possible_interfaces	.
+local:benchmark_test_set	rdfs:member	local:benchmark_test	.
+local:third_fewer_http_requests	rdfs:subClassOf	local:fewer_http_requests	.
+local:sparql_protocol_own_combination	rdfs:subClassOf	local:protocol_own_combination	.
+local:server_cost	rdfs:subClassOf	local:cost	.
+local:achieve_full_result_recall	rdfs:subClassOf	local:recall	.
+local:linked_data	rdfs:member	local:linked	.
+local:http_requests_such_functions	rdfs:member	local:http_requests	.
+local:only_marginally_higher_server	rdfs:subClassOf	local:server	.
+local:minimal_impact_on_server_interface	rdfs:member	local:minimal_impact	.
+local:s7	local:AM-MNR	local:additional_metadata	.
+local:s17.1	rdf:predicate	local:improve	.
+local:s15.1	rdf:object	local:third_fewer_http_requests_with_only_marginally_higher_server_cost	.
+local:s16	rdf:predicate	local:not_improve	.
+local:fewer_http_requests	rdfs:subClassOf	local:http_requests	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:clientside_query_process_with_minimal_impact_on_the_server_interface	rdfs:member	local:server_interface	.
+local:possible_interfaces_to_each	rdfs:member	local:each	.
+local:sparql_queries_against_lowcost_servers	rdfs:member	local:lowcost_servers	.
+local:query_however_times	rdfs:subClassOf	local:however_times	.
+local:s0	rdf:subject	local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	.
+local:s0	rdf:object	local:sparql_protocol	.
+local:http_requests	rdfs:member	local:http	.
+local:fewer_http	rdfs:subClassOf	local:http	.
+local:only_marginally_higher	rdfs:member	local:only_marginally	.
+local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	rdfs:member	local:possible_interfaces	.
+local:full_result	rdfs:member	local:full	.
+local:sparql_protocol	rdfs:member	local:sparql	.
+local:query_times	rdfs:subClassOf	local:times	.
+local:impact_of_providing_approximate_membership_functions_as_extra_metadata	rdfs:member	local:extra_metadata	.
+local:linked_data_own_combination	rdfs:subClassOf	local:data_own_combination	.
+local:approximate_membership_functions	rdfs:member	local:approximate_membership	.
+local:s14.4	local:AM-TMP	local:temporarily	.
+local:higher_server	rdfs:member	local:higher	.
+local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	rdfs:member	local:cost	.
+local:s9	rdf:predicate	local:note	.
+local:only_marginally_higher_server_cost	rdfs:member	local:only_marginally_higher_server	.
+local:typical_sparql	rdfs:member	local:typical	.
+local:s4.1	rdf:predicate	local:execute	.
+local:s17.1	rdf:object	local:clientside_query_process_with_minimal_impact_on_the_server_interface	.
+local:lowcost_servers	rdfs:member	local:lowcost	.
+local:s6.2	rdf:subject	local:increasing_a_clients_efficiency	.
+local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	rdfs:member	local:lowcost_servers	.
+local:largely_unexplored_axis	rdfs:subClassOf	local:axis	.
+local:s15	rdf:predicate	local:test	.
+local:only_marginally	rdfs:subClassOf	local:marginally	.
+local:s1	rdf:predicate	local:lie	.
+local:achieve_full_result	rdfs:subClassOf	local:result	.
+local:number_of_requests	rdfs:member	local:requests	.
+local:lower_precision	rdfs:member	local:lower	.
+local:membership_subqueries	rdfs:subClassOf	local:subqueries	.
+local:one_interfaces	rdfs:subClassOf	local:interfaces	.
+local:significant_portion	rdfs:subClassOf	local:portion	.
+local:query_evaluations	rdfs:subClassOf	local:evaluations	.
+local:third_fewer_http	rdfs:member	local:third_fewer	.
+local:s7	rdf:predicate	local:achieve	.
+local:s6	rdf:subject	local:clients_efficiency	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:http_requests_such_functions	rdfs:member	local:such_functions	.
+local:s1	rdf:subject	local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	.
+local:data_own_combination	rdfs:subClassOf	local:own_combination	.
+local:triple_pattern_fragments	rdfs:subClassOf	local:pattern_fragments	.
+local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:possible_interfaces	.
+local:s8	rdf:object	local:typical_sparql_query_evaluations_against_triple_pattern_fragments_require_a_variable_pattern	.
+local:s8	rdf:predicate	local:note	.
+local:approximate_membership_functions	rdfs:subClassOf	local:functions	.
+local:presence_of_a_specific_triple	rdfs:member	local:specific_triple	.
+local:typical_sparql_query	rdfs:member	local:typical_sparql	.
+local:own_combination	rdfs:subClassOf	local:combination	.
+local:extra_metadata	rdfs:subClassOf	local:metadata	.
+local:typical_sparql_query_evaluations_against_triple_pattern_fragments	rdfs:member	local:typical_sparql_query_evaluations	.
+local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:sparql_protocol	.
+local:s2	rdf:object	local:sparql_protocol_own_combination_of_tradeoffs_uri_dereferencing_each	.
+local:clientside_query_process_with_minimal_impact_on_the_server	rdfs:member	local:minimal_impact	.
+local:s8.1	rdfs:member	local:typical_sparql_query_evaluations	.
+local:such_functions	rdfs:subClassOf	local:functions	.
+local:significant_portion_of_membership_subqueries	rdfs:member	local:membership_subqueries	.
+local:s8.1	rdf:predicate	local:require	.
+local:possible_interfaces_to_linked_data_own_combination	rdfs:member	local:linked_data_own_combination	.
+local:s6	rdf:predicate	local:increasing	.
+local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	rdfs:member	local:largely_unexplored_axis	.
+local:triple_pattern	rdfs:member	local:triple	.
+local:s14	rdf:subject	local:http_requests_such_functions	.
+local:requests_which_can_among_others	rdfs:member	local:requests	.
+local:unexplored_axis_of_possible_interfaces_with_sparql_protocol_own_combination	rdfs:member	local:sparql_protocol_own_combination	.
+local:number_of_requests	rdfs:member	local:number	.
 local:tested_queries	rdfs:subClassOf	local:queries	.
-local:typical_sparql_query	rdfs:member	local:typical_sparql_query_evaluations	.
-local:recall	local:AM-ADV	local:allow	.
-local:indicates	vn.role:Recipient	local:this	.
-local:clientside_query	rdfs:member	local:clientside_query_process	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:uri_dereferencing	rdfs:subClassOf	local:dereferencing	.
-local:client_’_s	rdfs:subClassOf	local:s	.
-local:typical_sparql_query_evaluations	rdfs:subClassOf	local:sparql_query_evaluations	.
+local:only_marginally_higher_server	rdfs:member	local:only_marginally_higher	.
+local:minimal_impact	rdfs:subClassOf	local:impact	.
+local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	rdfs:member	local:tradeoffs	.
+local:s17.1	local:AM-MOD	local:can	.
+local:full_result	rdfs:subClassOf	local:result	.
+local:s8.1	rdfs:member	local:triple_pattern_fragments	.
+local:s6.1	rdf:predicate	local:mean	.
+local:clientside_query_process_with_minimal_impact_on_the_server	rdfs:member	local:clientside_query_process	.
+local:test_set	rdfs:subClassOf	local:set	.
+local:fewer_http	rdfs:member	local:fewer	.
+local:approximate_membership_functions	rdfs:subClassOf	local:membership_functions	.
+local:clientside_query_process	rdfs:subClassOf	local:process	.
+local:s15	rdf:subject	local:queries	.
+local:s18	rdf:predicate	local:indicate	.
+local:achieve_full_result	rdfs:member	local:achieve_full	.
+local:s11	rdf:predicate	local:study	.
+local:typical_sparql_query	rdfs:subClassOf	local:query	.
+local:slower_metadata_generation	rdfs:subClassOf	local:metadata_generation	.
+local:sparql_query_evaluations	rdfs:subClassOf	local:query_evaluations	.
+local:result_recall	rdfs:subClassOf	local:recall	.
+local:watdiv_benchmark_test	rdfs:subClassOf	local:test	.
+local:likely_slower_metadata_generation	rdfs:subClassOf	local:slower_metadata_generation	.
+local:membership_functions	rdfs:member	local:membership	.
+local:clientside_query_process_with_minimal_impact_on_the_server_interface	rdfs:member	local:clientside_query_process	.
+local:s7	local:AM-LOC	local:responses	.
+local:clients_efficiency	rdfs:member	local:clients	.
+local:clientside_query_process_with_minimal_impact	rdfs:member	local:clientside_query_process	.
+local:metadata_generation	rdfs:subClassOf	local:generation	.
+local:linked_data_own_combination_of_tradeoffs	rdfs:member	local:tradeoffs	.
+local:s17	rdf:predicate	local:indicate	.
+local:only_marginally_higher	rdfs:subClassOf	local:higher	.
+local:s6.1	rdf:object	local:lowering_the_number_of_requests	.
+local:membership_functions	rdfs:subClassOf	local:functions	.
+local:requests_which_can_among_others	rdfs:member	local:others	.
+local:s1	rdf:object	local:uri_dereferencing	.
+local:marginally_higher_server	rdfs:member	local:marginally_higher	.
+local:marginally_higher_server_cost	rdfs:member	local:marginally_higher_server	.
+local:sparql_protocol_own_combination_of_tradeoffs_uri_dereferencing_each	rdfs:member	local:tradeoffs	.
+local:s15.1	rdf:subject	local:half_of_the_tested_queries_from_a_watdiv_benchmark_test_set	.
+local:tradeoffs_uri_dereferencing	rdfs:member	local:tradeoffs_uri	.
+local:achieve_full	rdfs:subClassOf	local:full	.
+local:typical_sparql_query_evaluations_against_triple_pattern_fragments	rdfs:member	local:triple_pattern_fragments	.
+local:however_times	rdfs:subClassOf	local:times	.
+local:sparql_protocol_own_combination_of_tradeoffs_uri_dereferencing_each	rdfs:member	local:sparql_protocol	.
+local:s11	rdf:subject	local:one_of_these_interfaces	.
+local:benchmark_test	rdfs:member	local:benchmark	.
+local:half_of_the_tested_queries_from_a_watdiv_benchmark_test_set	rdfs:member	local:tested_queries	.
+local:http_requests	rdfs:subClassOf	local:requests	.
+local:s17.1	rdf:subject	local:approximate_membership_functions	.
+local:benchmark_test_set	rdfs:subClassOf	local:set	.
+local:metadata_generation	rdfs:member	local:metadata	.
+local:protocol_own_combination	rdfs:subClassOf	local:own_combination	.
+local:typical_sparql_query_evaluations	rdfs:subClassOf	local:evaluations	.
+local:clients_efficiency	rdfs:subClassOf	local:efficiency	.
+local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	rdfs:member	local:clients	.
+local:only_marginally	rdfs:member	local:only	.
+local:sparql_protocol_own_combination_of_tradeoffs_uri	rdfs:member	local:tradeoffs_uri	.
+local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	rdfs:member	local:linked_data	.
+local:higher_bandwidth	rdfs:subClassOf	local:bandwidth	.
+local:largely_unexplored_axis	rdfs:member	local:largely_unexplored	.
+local:s8.1	rdf:subject	local:typical_sparql_query_evaluations_against_triple_pattern_fragments	.
+local:s14.4	rdf:predicate	local:allow	.
+local:query_times	rdfs:member	local:query	.
+local:s10	rdf:predicate	local:check	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:s9	rdf:subject	local:we	.
+local:minimal_impact_on_server_interface	rdfs:member	local:server_interface	.
+local:third_fewer_http_requests_with_only_marginally_higher_server_cost	rdfs:member	local:only_marginally_higher_server_cost	.
+local:third_fewer	rdfs:subClassOf	local:fewer	.
+local:s17	rdf:object	local:s17.1	.
+local:execute_against_lowcost_servers	rdfs:member	local:execute	.
+local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:largely_unexplored_axis	.
+local:s15.1	rdf:predicate	local:execute	.
+local:possible_interfaces_to_linked_data_own_combination	rdfs:member	local:possible_interfaces	.
+local:s11.1	rdf:predicate	local:provide	.
+local:s17	rdf:subject	local:this	.
+local:cost_of_higher_bandwidth	rdfs:member	local:higher_bandwidth	.
+local:watdiv_benchmark_test_set	rdfs:member	local:watdiv_benchmark_test	.
+local:higher_server	rdfs:subClassOf	local:server	.
+local:typical_sparql_query_evaluations	rdfs:member	local:typical_sparql_query	.
+local:marginally_higher_server_cost	rdfs:subClassOf	local:cost	.
+local:s14.1	rdf:object	local:achieve_full_result_recall_earlier_when_temporarily_allowing_lower_precision	.
+local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:own_combination	.
+local:execute_against_lowcost_servers_at_cost	rdfs:member	local:execute_against_lowcost_servers	.
+local:largely_unexplored_axis_of_possible_interfaces_to_linked_data_own_combination_of_tradeoffs	rdfs:member	local:own_combination	.
+local:impact_of_providing_approximate_membership_functions_as_extra_metadata	rdfs:member	local:approximate_membership_functions	.
+local:half_of_the_tested_queries_from_a_watdiv_benchmark_test_set	rdfs:member	local:watdiv_benchmark_test_set	.
+local:third_fewer_http_requests_with_only_marginally_higher_server_cost	rdfs:member	local:third_fewer_http_requests	.
+local:higher_bandwidth	rdfs:member	local:higher	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:sparql_query_evaluations	rdfs:subClassOf	local:evaluations	.
+local:sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:sparql_protocol_own_combination	.
+local:s18	rdf:object	local:s18.1	.
+local:tradeoffs_uri	rdfs:subClassOf	local:uri	.
+local:execute_against_lowcost_servers	rdfs:member	local:lowcost_servers	.
+local:additional_metadata	rdfs:member	local:additional	.
+local:s9	rdf:object	local:typical_sparql_query_evaluations_against_triple_pattern_fragments_require_a_significant_portion_of_membership_subqueries	.
+local:s6.1	rdf:subject	local:increasing_a_clients_efficiency	.
+local:presence_of_specific_triple	rdfs:member	local:presence	.
+local:significant_portion	rdfs:member	local:significant	.
+local:s11.1	rdf:subject	local:approximate_membership_functions	.
+local:server_interface	rdfs:subClassOf	local:interface	.
+local:s3	rdf:predicate	local:lie	.
+local:third_fewer_http_requests_with_higher_server_cost	rdfs:member	local:third_fewer_http_requests	.
+local:sparql_protocol_own_combination_of_tradeoffs_uri_dereferencing_each	rdfs:member	local:own_combination	.
+local:largely_unexplored_axis_of_possible_interfaces	rdfs:member	local:largely_unexplored_axis	.
+local:s4	rdf:predicate	local:allow	.
+local:largely_unexplored_axis_of_possible_interfaces	rdfs:member	local:possible_interfaces	.
+local:server_cost	rdfs:member	local:server	.
+local:largely_unexplored	rdfs:subClassOf	local:unexplored	.
+local:sparql_protocol	rdfs:subClassOf	local:protocol	.
+local:unexplored_axis	rdfs:subClassOf	local:axis	.
+local:significant_portion_of_membership_subqueries	rdfs:member	local:significant_portion	.
+local:lowcost_servers	rdfs:subClassOf	local:servers	.
+local:s4.1	local:AM-MNR	local:cost_of_higher_bandwidth	.
+local:third_fewer_http	rdfs:subClassOf	local:http	.
+local:uri_dereferencing	rdfs:member	local:uri	.
+local:full_result_recall	rdfs:subClassOf	local:recall	.
+local:linked_data_own_combination_of_tradeoffs	rdfs:member	local:linked_data_own_combination	.
+local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	rdfs:member	local:sparql_queries	.
+local:temporarily_allowing	rdfs:subClassOf	local:allowing	.
+local:s16	rdf:subject	local:query_times_however	.
+local:s18.1	local:AM-ADV	local:partly	.
+local:variable_pattern	rdfs:member	local:variable	.
+local:sparql_queries_against_lowcost_servers	rdfs:member	local:sparql_queries	.
+local:s0	rdf:predicate	local:lie	.
+local:presence_of_specific_triple	rdfs:member	local:specific_triple	.
+local:only_marginally_higher	rdfs:subClassOf	local:marginally_higher	.
+local:addition_to_reducing_http_requests_such_functions_allow_to_achieve_full_result	rdfs:member	local:such_functions	.
+local:s14.1	rdf:predicate	local:allow	.
+local:watdiv_benchmark_test_set	rdfs:subClassOf	local:set	.
+local:clientside_query_process_with_minimal_impact_on_the_server	rdfs:member	local:server	.
+local:tested_queries	rdfs:member	local:tested	.
+local:test_set	rdfs:member	local:test	.
+local:s18.1	rdf:predicate	local:improve	.
+local:largely_unexplored	rdfs:member	local:largely	.
+local:s14.3	local:AM-ADV	local:addition_to_reducing_http_requests_such_functions_allow_to_achieve_full_result	.
+local:query_evaluations	rdfs:member	local:query	.
+local:s18.1	local:AM-MOD	local:can	.
+local:minimal_impact	rdfs:member	local:minimal	.
+local:s4	rdf:object	local:clients_to_execute_sparql_queries_against_lowcost_servers_at_the_cost_of_higher_bandwidth	.
+local:execute_against_lowcost_servers_at_cost	rdfs:member	local:cost	.
+local:impact_of_providing_approximate_membership_functions_as_extra_metadata	rdfs:member	local:impact	.
 local:earlier_when_temporarily_allowing	rdfs:subClassOf	local:when_temporarily_allowing	.
-local:allowing	vn.role:Theme	local:lower_precision	.
-local:tested_queries_from_watdiv_benchmark_test_set	local:from_watdivbenchmarktestset	local:tested_queries	.
-local:number_of_requests	local:number_of	local:requests	.
-local:http	rdfs:member	local:http_requests	.
+local:additional_metadata	rdfs:subClassOf	local:metadata	.
+local:clientside_query_process	rdfs:subClassOf	local:query_process	.
+local:achieve_full_result_recall_earlier_when_temporarily_allowing_lower_precision	rdfs:member	local:lower_precision	.
+local:s9.1	rdfs:member	local:typical_sparql_query_evaluations	.
+local:uri_dereferencing	rdfs:subClassOf	local:dereferencing	.
+local:s8.1	rdf:object	local:variable_pattern	.
+local:minimal_impact_on_server	rdfs:member	local:server	.
+local:s7	rdf:subject	local:requests_which_can_among_others	.
+local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	rdfs:member	local:tradeoffs	.
+local:pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:s3	rdf:subject	local:largely_unexplored_axis_of_possible_interfaces_to_each_with_the_sparql_protocol_own_combination_of_tradeoffs	.
+local:clientside_query	rdfs:subClassOf	local:query	.
+local:s14.1	rdf:subject	local:functions	.
+local:tested_queries_from_watdiv_benchmark_test_set	rdfs:member	local:watdiv_benchmark_test_set	.
+local:s6.2	rdf:object	local:number_of_requests	.
+local:achieve_full_result_recall	rdfs:member	local:achieve_full_result	.
+local:achieve_full_result_recall_earlier_when_temporarily_allowing_lower_precision	rdfs:member	local:achieve_full_result_recall	.
+local:s8.1	rdfs:member	local:variable_pattern	.
+local:watdiv_benchmark_test	rdfs:member	local:watdiv_benchmark	.
+local:lower_precision	rdfs:subClassOf	local:precision	.
+local:marginally_higher	rdfs:member	local:marginally	.
+local:third_fewer_http_requests_with_higher_server_cost	rdfs:member	local:higher_server_cost	.
+local:possible_interfaces	rdfs:subClassOf	local:interfaces	.
+local:membership_subqueries	rdfs:member	local:membership	.
+local:s2	rdf:predicate	local:lie	.
+local:lowering_the_number_of_requests	rdfs:member	local:requests	.
+local:s6.2	rdf:predicate	local:lower	.
+local:pattern_fragments	rdfs:member	local:pattern	.
+local:triple_pattern_fragments	rdfs:member	local:triple_pattern	.
+local:s16	rdf:object	local:likely_due_to_slower_metadata_generation_and_transfer	.
+local:s14.4	rdf:subject	local:lower_precision	.
+local:own_combination	rdfs:member	local:own	.
+local:typical_sparql_query_evaluations	rdfs:subClassOf	local:sparql_query_evaluations	.
+local:s9.1	rdfs:member	local:triple_pattern_fragments	.
+local:s10	rdf:object	local:presence_of_a_specific_triple	.
+local:achieve_full	rdfs:member	local:achieve	.
+local:fewer_http_requests	rdfs:subClassOf	local:requests	.
+local:third_fewer	rdfs:member	local:third	.
+local:s11	rdf:object	local:impact_of_providing_approximate_membership_functions_as_extra_metadata	.
+local:s4.1	rdf:object	local:sparql_queries_against_lowcost_servers	.
+local:clientside_query_process_with_minimal_impact_on_the_server_interface	rdfs:member	local:minimal_impact	.
+local:minimal_impact_on_server	rdfs:member	local:minimal_impact	.
+local:specific_triple	rdfs:member	local:specific	.
+local:unexplored_axis	rdfs:member	local:unexplored	.
+local:s14	rdf:predicate	local:reduce	.
+local:s2	rdf:subject	local:largely_unexplored_axis_of_possible_interfaces	.
+local:providing_as_extra_metadata	rdfs:member	local:providing	.
+local:s14.2	rdf:predicate	local:achieve	.
+local:result_recall	rdfs:member	local:result	.
+local:half_of_the_tested_queries_from_a_watdiv_benchmark_test_set	rdfs:member	local:half	.
+local:addition_to_reducing_http_requests_such_functions_allow_to_achieve_full_result	rdfs:member	local:http_requests	.
+local:specific_triple	rdfs:subClassOf	local:triple	.
+local:half_of_tested_queries	rdfs:member	local:tested_queries	.
+local:s3	rdf:object	local:sparql_protocol	.
+local:query_process	rdfs:member	local:query	.
+local:third_fewer_http_requests	rdfs:subClassOf	local:requests	.
+local:approximate_membership	rdfs:member	local:approximate	.
+local:addition_to_reducing_http_requests_such_functions_allow_to_achieve_full_result	rdfs:member	local:addition	.
+local:typical_sparql	rdfs:subClassOf	local:sparql	.
+local:unexplored_axis_of_possible_interfaces	rdfs:member	local:unexplored_axis	.
+local:s14.3	local:AM-TMP	local:earlier_when_temporarily_allowing_lower_precision	.
+local:s4	rdf:subject	local:triple_pattern_fragments	.

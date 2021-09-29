@@ -1,446 +1,822 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17.4	a	rdf:Statement	;
+	rdfs:label	"reducing the time"	.
+
+local:s17.3	a	rdf:Statement	;
+	rdfs:label	"fully cached results"	.
+
+local:s17.2	a	rdf:Statement	;
+	rdfs:label	"hybrid query execution can improve freshness vs fully cached results while reducing the time"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"we results show that hybrid query execution can improve freshness vs fully cached results while reducing the time"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"we results show that hybrid query execution can improve freshness vs fully cached results while reducing the time"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"the time taken vs fully live execution"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"the time taken"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"finally we evaluate different hybrid query plans"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"finally we evaluate split positions in a realworld setup"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"a subquery that should instead run"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a subquery for which the have good fresh coverage"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"we split a query into a subquery"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we using coherence estimates to split a query into a subquery"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we thus propose using coherence estimates to split a query into a subquery"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"we split a query into a subquery"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"we using coherence estimates to split a query into a subquery"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we thus propose using coherence estimates to split a query into a subquery"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"current versions of the linked data sources they cache cache results often"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"they cache cache results"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we first compare results from two public sparql stores against current versions of the linked data sources two public sparql stores against current versions of the linked data sources they cache cache results are often missing"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"they cache cache results"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we first compare results from two public sparql stores against current versions of the linked data sources two public sparql stores against current versions of the linked data sources they cache cache results are outofdate"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a hybrid query execution approach that returns fresher results from a broader range of sources vs the centralised scenario"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"we speeding up results"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"herein we propose a hybrid query execution approach while speeding up results vs the live scenario"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"centralised approaches that can efficiently answer queries over data"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"data cached from parts of the web"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"decentralised approaches that can provide fresher results over the entire web at the cost of slower response times"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"centralised approaches that can efficiently live decentralised approaches"	.
+
+
 #### Classes ####
 
-local:centralised_approaches	rdfs:label	"centralised approaches"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:live	rdfs:label	"live"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:can	rdfs:label	"can"	.
+local:cache	a	rdf:Class	;
+	rdfs:label	"cache"	.
 
-local:efficiently	rdfs:label	"efficiently"	.
+local:fully	a	rdf:Class	;
+	rdfs:label	"fully"	.
 
-local:decentralised_approaches	rdfs:label	"decentralised approaches"	.
+local:hybrid_query_execution	a	rdf:Class	;
+	rdfs:label	"hybrid query execution"	.
 
-local:decentralised	rdfs:label	"decentralised"	.
+local:query_execution	a	rdf:Class	;
+	rdfs:label	"query execution"	.
 
-local:cached	rdfs:label	"cached"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:data	rdfs:label	"data"	.
+local:hybrid_query	a	rdf:Class	;
+	rdfs:label	"hybrid query"	.
 
-local:parts_of_web	rdfs:label	"parts of web"	.
+local:hybrid	a	rdf:Class	;
+	rdfs:label	"hybrid"	.
 
-local:parts	rdfs:label	"parts"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:web	rdfs:label	"web"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:answer	rdfs:label	"answer"	.
+local:freshness_vs_fully_cached_results	a	rdf:Class	;
+	rdfs:label	"freshness vs fully cached results"	.
 
-local:queries_over_data	rdfs:label	"queries over data"	.
+local:freshness_vs	a	rdf:Class	;
+	rdfs:label	"freshness vs"	.
 
-local:queries	rdfs:label	"queries"	.
+local:freshness	a	rdf:Class	;
+	rdfs:label	"freshness"	.
 
-local:provide	rdfs:label	"provide"	.
+local:vs	a	rdf:Class	;
+	rdfs:label	"vs"	.
 
-local:entire	rdfs:label	"entire"	.
+local:cached_results	a	rdf:Class	;
+	rdfs:label	"cached results"	.
 
-local:entire_web	rdfs:label	"entire web"	.
+local:fully_cached	a	rdf:Class	;
+	rdfs:label	"fully cached"	.
 
-local:fresher_results	rdfs:label	"fresher results"	.
+local:cached	a	rdf:Class	;
+	rdfs:label	"cached"	.
 
-local:results	rdfs:label	"results"	.
+local:freshness_cached_results	a	rdf:Class	;
+	rdfs:label	"freshness cached results"	.
 
-local:fresher	rdfs:label	"fresher"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:fresher_results_over_entire_web	rdfs:label	"fresher results over entire web"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:response	rdfs:label	"response"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:response_times	rdfs:label	"response times"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:slower_response	rdfs:label	"slower response"	.
+local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	a	rdf:Class	;
+	rdfs:label	"show that hybrid query execution can improve freshness vs fully cached results while reducing the time"	.
 
-local:slower_response_times	rdfs:label	"slower response times"	.
+local:can_improve	a	rdf:Class	;
+	rdfs:label	"can improve"	.
 
-local:times	rdfs:label	"times"	.
+local:live	a	rdf:Class	;
+	rdfs:label	"live"	.
 
-local:slower	rdfs:label	"slower"	.
+local:time_taken_vs_fully	a	rdf:Class	;
+	rdfs:label	"time taken vs fully"	.
 
-local:cost_of_slower_response_times	rdfs:label	"cost of slower response times"	.
+local:fully_taken	a	rdf:Class	;
+	rdfs:label	"fully taken"	.
 
-local:cost	rdfs:label	"cost"	.
+local:taken	a	rdf:Class	;
+	rdfs:label	"taken"	.
 
-local:propose	rdfs:label	"propose"	.
+local:time_fully_taken	a	rdf:Class	;
+	rdfs:label	"time fully taken"	.
 
-local:we	rdfs:label	"we"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:execution_approach	rdfs:label	"execution approach"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:approach	rdfs:label	"approach"	.
+local:different_hybrid_query_plans	a	rdf:Class	;
+	rdfs:label	"different hybrid query plans"	.
 
-local:hybrid_query_execution	rdfs:label	"hybrid query execution"	.
+local:different_hybrid_query	a	rdf:Class	;
+	rdfs:label	"different hybrid query"	.
 
-local:execution	rdfs:label	"execution"	.
+local:different_hybrid	a	rdf:Class	;
+	rdfs:label	"different hybrid"	.
 
-local:query_execution_approach	rdfs:label	"query execution approach"	.
+local:plans	a	rdf:Class	;
+	rdfs:label	"plans"	.
 
-local:query_execution	rdfs:label	"query execution"	.
+local:query_plans	a	rdf:Class	;
+	rdfs:label	"query plans"	.
 
-local:query	rdfs:label	"query"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:hybrid_query_execution_approach	rdfs:label	"hybrid query execution approach"	.
+local:hybrid_query_plans	a	rdf:Class	;
+	rdfs:label	"hybrid query plans"	.
 
-local:hybrid	rdfs:label	"hybrid"	.
+local:finally	a	rdf:Class	;
+	rdfs:label	"finally"	.
 
-local:hybrid_query	rdfs:label	"hybrid query"	.
+local:split_positions	a	rdf:Class	;
+	rdfs:label	"split positions"	.
 
-local:live_scenario	rdfs:label	"live scenario"	.
+local:split	a	rdf:Class	;
+	rdfs:label	"split"	.
 
-local:scenario	rdfs:label	"scenario"	.
+local:positions	a	rdf:Class	;
+	rdfs:label	"positions"	.
 
-local:up_results	rdfs:label	"up results"	.
+local:realworld_setup	a	rdf:Class	;
+	rdfs:label	"realworld setup"	.
 
-local:up	rdfs:label	"up"	.
+local:setup	a	rdf:Class	;
+	rdfs:label	"setup"	.
 
-local:results_vs_live_scenario	rdfs:label	"results vs. live scenario"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:speeding	rdfs:label	"speeding"	.
+local:subquery	a	rdf:Class	;
+	rdfs:label	"subquery"	.
 
-local:herein	rdfs:label	"herein"	.
+local:run	a	rdf:Class	;
+	rdfs:label	"run"	.
 
-local:returns	rdfs:label	"returns"	.
+local:instead	a	rdf:Class	;
+	rdfs:label	"instead"	.
 
-local:centralised_scenario	rdfs:label	"centralised scenario"	.
+local:should	a	rdf:Class	;
+	rdfs:label	"should"	.
 
-local:broader	rdfs:label	"broader"	.
+local:subquery_for_which_the	a	rdf:Class	;
+	rdfs:label	"subquery for which the"	.
 
-local:broader_range	rdfs:label	"broader range"	.
+local:subquery_for_which	a	rdf:Class	;
+	rdfs:label	"subquery for which"	.
 
-local:centralised	rdfs:label	"centralised"	.
+local:which	a	rdf:Class	;
+	rdfs:label	"which"	.
 
-local:range	rdfs:label	"range"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:broader_range_of_sources	rdfs:label	"broader range of sources"	.
+local:good_fresh_coverage	a	rdf:Class	;
+	rdfs:label	"good fresh coverage"	.
 
-local:sources	rdfs:label	"sources"	.
+local:fresh_coverage	a	rdf:Class	;
+	rdfs:label	"fresh coverage"	.
 
-local:broader_range_of_sources_vs_centralised_scenario	rdfs:label	"broader range of sources vs. centralised scenario"	.
+local:coverage	a	rdf:Class	;
+	rdfs:label	"coverage"	.
 
-local:compare	rdfs:label	"compare"	.
+local:good_fresh	a	rdf:Class	;
+	rdfs:label	"good fresh"	.
 
-local:first	rdfs:label	"first"	.
+local:fresh	a	rdf:Class	;
+	rdfs:label	"fresh"	.
 
-local:current	rdfs:label	"current"	.
+local:good	a	rdf:Class	;
+	rdfs:label	"good"	.
 
-local:current_versions	rdfs:label	"current versions"	.
+local:query_subquery	a	rdf:Class	;
+	rdfs:label	"query subquery"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:public	rdfs:label	"public"	.
+local:coherence_estimates_to_split_a_query_into_a_subquery	a	rdf:Class	;
+	rdfs:label	"coherence estimates to split a query into a subquery"	.
 
-local:public_sparql	rdfs:label	"public sparql"	.
+local:coherence_estimates	a	rdf:Class	;
+	rdfs:label	"coherence estimates"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:coherence	a	rdf:Class	;
+	rdfs:label	"coherence"	.
 
-local:sparql_stores	rdfs:label	"sparql stores"	.
+local:estimates	a	rdf:Class	;
+	rdfs:label	"estimates"	.
 
-local:public_sparql_stores	rdfs:label	"public sparql stores"	.
+local:split_into_subquery	a	rdf:Class	;
+	rdfs:label	"split into subquery"	.
 
-local:stores	rdfs:label	"stores"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:versions	rdfs:label	"versions"	.
+local:using_coherence_estimates_to_split_a_query_into_a_subquery	a	rdf:Class	;
+	rdfs:label	"using coherence estimates to split a query into a subquery"	.
 
-local:often_missing	rdfs:label	"often missing"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:missing	rdfs:label	"missing"	.
+local:current_versions_of_the_linked_data_sources_they_cache_cache_results	a	rdf:Class	;
+	rdfs:label	"current versions of the linked data sources they cache cache results"	.
 
-local:are_often_missing	rdfs:label	"are often missing"	.
+local:current_versions	a	rdf:Class	;
+	rdfs:label	"current versions"	.
 
-local:cache_cache	rdfs:label	"cache cache"	.
+local:cache_results	a	rdf:Class	;
+	rdfs:label	"cache results"	.
 
-local:cache	rdfs:label	"cache"	.
+local:linked_data_sources	a	rdf:Class	;
+	rdfs:label	"linked data sources"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
 
-local:two_public_sparql_stores	rdfs:label	"two public sparql stores"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:results_from_two_public_sparql_stores	rdfs:label	"results from two public sparql stores"	.
+local:versions	a	rdf:Class	;
+	rdfs:label	"versions"	.
 
-local:two_public_sparql_stores_against_current_versions	rdfs:label	"two public sparql stores against current versions"	.
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
 
-local:current_versions_of_linked_data	rdfs:label	"current versions of linked data"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:they	rdfs:label	"they"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:thus	rdfs:label	"thus"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:coherence_estimates	rdfs:label	"coherence estimates"	.
+local:cache_cache_results	a	rdf:Class	;
+	rdfs:label	"cache cache results"	.
 
-local:estimates	rdfs:label	"estimates"	.
+local:current_versions_of_linked_data_sources	a	rdf:Class	;
+	rdfs:label	"current versions of linked data sources"	.
 
-local:coherence	rdfs:label	"coherence"	.
+local:miss	a	rdf:Class	;
+	rdfs:label	"miss"	.
 
-local:split_into_subquery	rdfs:label	"split into sub-query"	.
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
 
-local:split	rdfs:label	"split"	.
+local:they	a	rdf:Class	;
+	rdfs:label	"they"	.
 
-local:subquery	rdfs:label	"sub-query"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:using	rdfs:label	"using"	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	a	rdf:Class	;
+	rdfs:label	"results from two public sparql stores against current versions of the linked data sources two public sparql stores against current versions of the linked data sources they cache cache results are often missing"	.
 
-local:run	rdfs:label	"run"	.
+local:public_sparql_stores	a	rdf:Class	;
+	rdfs:label	"public sparql stores"	.
 
-local:should	rdfs:label	"should"	.
+local:public_sparql	a	rdf:Class	;
+	rdfs:label	"public sparql"	.
 
-local:instead	rdfs:label	"instead"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:subquery_for_which	rdfs:label	"sub-query for which"	.
+local:sparql_stores	a	rdf:Class	;
+	rdfs:label	"sparql stores"	.
 
-local:which	rdfs:label	"which"	.
+local:stores	a	rdf:Class	;
+	rdfs:label	"stores"	.
 
-local:have	rdfs:label	"have"	.
+local:public	a	rdf:Class	;
+	rdfs:label	"public"	.
 
-local:good_fresh	rdfs:label	"good fresh"	.
+local:often_missing	a	rdf:Class	;
+	rdfs:label	"often missing"	.
 
-local:good_fresh_coverage	rdfs:label	"good fresh coverage"	.
+local:missing	a	rdf:Class	;
+	rdfs:label	"missing"	.
 
-local:fresh	rdfs:label	"fresh"	.
+local:are_often_missing	a	rdf:Class	;
+	rdfs:label	"are often missing"	.
 
-local:fresh_coverage	rdfs:label	"fresh coverage"	.
+local:two_public_sparql_stores	a	rdf:Class	;
+	rdfs:label	"two public sparql stores"	.
 
-local:good	rdfs:label	"good"	.
+local:results_from_two_public_sparql_stores	a	rdf:Class	;
+	rdfs:label	"results from two public sparql stores"	.
 
-local:coverage	rdfs:label	"coverage"	.
+local:two_public_sparql_stores_against_current_versions	a	rdf:Class	;
+	rdfs:label	"two public sparql stores against current versions"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:query_plans	rdfs:label	"query plans"	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	a	rdf:Class	;
+	rdfs:label	"results from two public sparql stores against current versions of the linked data sources two public sparql stores against current versions of the linked data sources they cache cache results are outofdate"	.
 
-local:different_hybrid_query_plans	rdfs:label	"different hybrid query plans"	.
+local:hybrid_query_execution_approach	a	rdf:Class	;
+	rdfs:label	"hybrid query execution approach"	.
 
-local:plans	rdfs:label	"plans"	.
+local:query_execution_approach	a	rdf:Class	;
+	rdfs:label	"query execution approach"	.
 
-local:hybrid_query_plans	rdfs:label	"hybrid query plans"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:different_hybrid_query	rdfs:label	"different hybrid query"	.
+local:execution_approach	a	rdf:Class	;
+	rdfs:label	"execution approach"	.
 
-local:different_hybrid	rdfs:label	"different hybrid"	.
+local:return	a	rdf:Class	;
+	rdfs:label	"return"	.
 
-local:different	rdfs:label	"different"	.
+local:fresher_results_broader_range_of_sources_vs_the_centralised_scenario	a	rdf:Class	;
+	rdfs:label	"fresher results broader range of sources vs the centralised scenario"	.
 
-local:split_positions	rdfs:label	"split positions"	.
+local:fresher_results	a	rdf:Class	;
+	rdfs:label	"fresher results"	.
 
-local:positions	rdfs:label	"positions"	.
+local:centralised_scenario	a	rdf:Class	;
+	rdfs:label	"centralised scenario"	.
 
-local:realworld_setup	rdfs:label	"real-world setup"	.
+local:range	a	rdf:Class	;
+	rdfs:label	"range"	.
 
-local:setup	rdfs:label	"setup"	.
+local:fresher	a	rdf:Class	;
+	rdfs:label	"fresher"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:centralised	a	rdf:Class	;
+	rdfs:label	"centralised"	.
 
-local:taken	rdfs:label	"taken"	.
+local:scenario	a	rdf:Class	;
+	rdfs:label	"scenario"	.
 
-local:time	rdfs:label	"time"	.
+local:broader_range	a	rdf:Class	;
+	rdfs:label	"broader range"	.
 
-local:time_taken	rdfs:label	"time taken"	.
+local:broader_range_of_sources	a	rdf:Class	;
+	rdfs:label	"broader range of sources"	.
 
-local:fully	rdfs:label	"fully"	.
+local:broader_range_of_sources_of_centralised_scenario	a	rdf:Class	;
+	rdfs:label	"broader range of sources of centralised scenario"	.
 
-local:cached_results	rdfs:label	"cached results"	.
+local:speed	a	rdf:Class	;
+	rdfs:label	"speed"	.
 
-local:fully_cached	rdfs:label	"fully cached"	.
+local:herein	a	rdf:Class	;
+	rdfs:label	"herein"	.
 
-local:can_improve	rdfs:label	"can improve"	.
+local:speeding_up_results_vs_the_live_scenario	a	rdf:Class	;
+	rdfs:label	"speeding up results vs the live scenario"	.
 
-local:improve	rdfs:label	"improve"	.
+local:live_scenario	a	rdf:Class	;
+	rdfs:label	"live scenario"	.
 
-local:can_improve_vs_cached_results	rdfs:label	"can improve vs. cached results"	.
+local:up_results	a	rdf:Class	;
+	rdfs:label	"up results"	.
 
-local:show	rdfs:label	"show"	.
+local:up	a	rdf:Class	;
+	rdfs:label	"up"	.
 
-local:freshness_vs_cached_results	rdfs:label	"freshness vs. cached results"	.
+local:centralised_approaches	a	rdf:Class	;
+	rdfs:label	"centralised approaches"	.
 
-local:freshness	rdfs:label	"freshness"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:reducing	rdfs:label	"reducing"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-#### Properties ####
+local:queries_over_data	a	rdf:Class	;
+	rdfs:label	"queries over data"	.
+
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
+
+local:efficiently	a	rdf:Class	;
+	rdfs:label	"efficiently"	.
+
+local:parts_of_the_web	a	rdf:Class	;
+	rdfs:label	"parts of the web"	.
+
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
+
+local:parts	a	rdf:Class	;
+	rdfs:label	"parts"	.
+
+local:parts_of_web	a	rdf:Class	;
+	rdfs:label	"parts of web"	.
+
+local:decentralised_approaches	a	rdf:Class	;
+	rdfs:label	"decentralised approaches"	.
+
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
+
+local:fresher_results_over_the_entire_web_cost_of_slower_response_times	a	rdf:Class	;
+	rdfs:label	"fresher results over the entire web cost of slower response times"	.
+
+local:slower_response_times	a	rdf:Class	;
+	rdfs:label	"slower response times"	.
+
+local:entire_web_cost	a	rdf:Class	;
+	rdfs:label	"entire web cost"	.
+
+local:response_times	a	rdf:Class	;
+	rdfs:label	"response times"	.
+
+local:response	a	rdf:Class	;
+	rdfs:label	"response"	.
+
+local:web_cost	a	rdf:Class	;
+	rdfs:label	"web cost"	.
+
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
+
+local:slower_response	a	rdf:Class	;
+	rdfs:label	"slower response"	.
+
+local:times	a	rdf:Class	;
+	rdfs:label	"times"	.
+
+local:entire_web	a	rdf:Class	;
+	rdfs:label	"entire web"	.
+
+local:entire	a	rdf:Class	;
+	rdfs:label	"entire"	.
+
+local:slower	a	rdf:Class	;
+	rdfs:label	"slower"	.
+
+local:fresher_results_over_entire_web_cost	a	rdf:Class	;
+	rdfs:label	"fresher results over entire web cost"	.
+
+local:entire_web_cost_of_slower_response_times	a	rdf:Class	;
+	rdfs:label	"entire web cost of slower response times"	.
 
 #### Mapped Relations ####
 
-cso:query_execution	rdfs:label	"query execution"	.
-local:query_execution	owl:sameAs	cso:query_execution	.
-local:linked_data	owl:sameAs	cso:linked_data	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:linked_data	rdfs:label	"linked data"	.
 local:sparql	owl:sameAs	cso:sparql	.
+local:query_execution	owl:sameAs	cso:query_execution	.
+cso:query_execution	rdfs:label	"query execution"	.
+cso:sparql	rdfs:label	"sparql"	.
+local:linked_data	owl:sameAs	cso:linked_data	.
+cso:cache	rdfs:label	"cache"	.
+local:cache	owl:sameAs	cso:cache	.
+cso:linked_data	rdfs:label	"linked data"	.
 
 #### Relations ####
 
-local:cache	vn.role:Theme	local:cache	.
-local:provide	local:AM-MOD	local:can	.
-local:fully_cached	rdfs:subClassOf	local:cached	.
-local:cost_of_slower_response_times	local:of_slowerresponsetimes	local:cost	.
-local:returns	vn.role:Agent	local:hybrid_query_execution_approach	.
-local:parts_of_web	local:parts_of	local:web	.
-local:hybrid	rdfs:member	local:hybrid_query	.
-local:hybrid_query_execution	rdfs:subClassOf	local:execution	.
-local:returns	vn.role:other	local:broader_range_of_sources_vs_centralised_scenario	.
-local:subquery_for_which	local:for_which	local:subquery	.
-local:freshness_vs_cached_results	local:freshness_vs.	local:cached_results	.
-local:public_sparql_stores	rdfs:subClassOf	local:sparql_stores	.
-local:decentralised	rdfs:member	local:decentralised_approaches	.
-local:fresh	rdfs:member	local:fresh_coverage	.
-local:results	vn.role:Location	local:show	.
-local:time_taken	local:_taken	local:time	.
-local:hybrid_query_execution	rdfs:subClassOf	local:query_execution	.
-local:improve	vn.role:Agent	local:hybrid_query_execution	.
-local:subquery_for_which	local:sub-query_for	local:which	.
-local:run	local:AM-DIS	local:instead	.
-local:broader_range_of_sources_vs_centralised_scenario	local:vs._centralisedscenario	local:broader_range_of_sources	.
-local:live	vn.role:Location	local:decentralised_approaches	.
-local:run	vn.role:Theme	local:subquery	.
-local:parts_of_web	local:of_web	local:parts	.
-local:live	local:AM-MNR	local:efficiently	.
-local:propose	local:AM-DIS	local:thus	.
-local:can_improve_vs_cached_results	local:canimprove_vs.	local:cached_results	.
-local:speeding	vn.role:Agent	local:herein	.
-local:cached	vn.role:Theme	local:data	.
-local:slower_response	rdfs:subClassOf	local:response	.
-local:cached	vn.role:Theme	local:results	.
-local:answer	local:AM-MNR	local:efficiently	.
-local:live	vn.role:Location	local:execution	.
-local:results	vn.role:Theme	local:we	.
-local:hybrid_query	rdfs:member	local:hybrid_query_plans	.
-local:compare	vn.role:Patient1	local:we	.
-local:query_execution	rdfs:subClassOf	local:execution	.
-local:evaluate	local:AM-LOC	local:realworld_setup	.
-local:fresh_coverage	rdfs:subClassOf	local:coverage	.
-local:good_fresh_coverage	rdfs:subClassOf	local:fresh_coverage	.
-local:can_improve	rdfs:subClassOf	local:improve	.
-local:query_execution	rdfs:member	local:query_execution_approach	.
-local:realworld_setup	rdfs:subClassOf	local:setup	.
-local:evaluate	vn.role:Theme	local:split_positions	.
-local:live	local:AM-MOD	local:can	.
-local:are_often_missing	rdfs:subClassOf	local:often_missing	.
-local:taken	vn.role:Theme	local:time	.
-local:show	vn.role:Agent	local:results	.
-local:current_versions_of_linked_data	local:currentversions_of	local:linked_data	.
-local:hybrid_query_execution	rdfs:member	local:hybrid_query_execution_approach	.
-local:two_public_sparql_stores	rdfs:subClassOf	local:public_sparql_stores	.
-local:live	local:AM-MNR	local:fully	.
-local:answer	local:AM-MOD	local:can	.
-local:decentralised_approaches	rdfs:subClassOf	local:approaches	.
-local:execution_approach	rdfs:subClassOf	local:approach	.
-local:have	vn.role:Experiencer	local:subquery_for_which	.
-local:broader_range_of_sources	local:of_sources	local:broader_range	.
-local:split	rdfs:member	local:split_positions	.
-local:different_hybrid	rdfs:member	local:different_hybrid_query	.
-local:cached	vn.role:other	local:parts_of_web	.
-local:run	local:AM-MOD	local:should	.
-local:coherence_estimates	rdfs:subClassOf	local:estimates	.
-local:query_execution_approach	rdfs:subClassOf	local:execution_approach	.
-local:query_execution_approach	rdfs:subClassOf	local:approach	.
-local:compare	local:AM-TMP	local:first	.
-local:good_fresh	rdfs:member	local:good_fresh_coverage	.
-local:hybrid_query_execution_approach	rdfs:subClassOf	local:query_execution_approach	.
-local:results_from_two_public_sparql_stores	local:results_from	local:two_public_sparql_stores	.
-local:hybrid_query_execution_approach	rdfs:subClassOf	local:approach	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:fresher_results_over_entire_web	local:over_entireweb	local:fresher_results	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:time_taken	local:time_	local:taken	.
-local:different_hybrid_query_plans	rdfs:subClassOf	local:plans	.
-local:propose	vn.role:Topic	local:using	.
-local:fresher_results_over_entire_web	local:fresherresults_over	local:entire_web	.
-local:slower_response	rdfs:member	local:slower_response_times	.
-local:reducing	vn.role:Patient	local:time	.
-local:can_improve_vs_cached_results	local:vs._cachedresults	local:can_improve	.
-local:up_results	rdfs:subClassOf	local:results	.
-local:query	rdfs:member	local:query_execution	.
-local:slower_response_times	rdfs:subClassOf	local:response_times	.
-local:propose	vn.role:Agent	local:we	.
-local:cache	vn.role:Agent	local:they	.
-local:show	vn.role:Theme	local:can_improve_vs_cached_results	.
-local:freshness_vs_cached_results	local:vs._cachedresults	local:freshness	.
-local:queries_over_data	local:over_data	local:queries	.
-local:sparql_stores	rdfs:subClassOf	local:stores	.
-local:using	vn.role:Agent	local:we	.
-local:broader_range_of_sources	local:broaderrange_of	local:sources	.
-local:provide	vn.role:indirect_object	local:cost_of_slower_response_times	.
-local:hybrid_query_plans	rdfs:subClassOf	local:query_plans	.
-local:compare	vn.role:Patient2	local:results_from_two_public_sparql_stores	.
-local:propose	local:AM-TMP	local:speeding	.
-local:hybrid_query_plans	rdfs:subClassOf	local:plans	.
-local:improve	vn.role:Patient	local:freshness_vs_cached_results	.
-local:queries_over_data	local:queries_over	local:data	.
-local:response	rdfs:member	local:response_times	.
-local:cached_results	rdfs:subClassOf	local:results	.
-local:centralised	rdfs:member	local:centralised_scenario	.
-local:returns	vn.role:Theme	local:fresher_results	.
-local:propose	vn.role:Topic	local:hybrid_query_execution_approach	.
-local:fresher	rdfs:member	local:fresher_results	.
-local:current	rdfs:member	local:current_versions	.
-local:centralised_scenario	rdfs:subClassOf	local:scenario	.
-local:public_sparql	rdfs:subClassOf	local:sparql	.
-local:response_times	rdfs:subClassOf	local:times	.
-local:speeding	vn.role:Theme	local:results	.
-local:hybrid_query	rdfs:member	local:hybrid_query_execution	.
-local:live	vn.role:Theme	local:centralised_approaches	.
-local:broader	rdfs:member	local:broader_range	.
-local:two_public_sparql_stores_against_current_versions	local:against_currentversions	local:two_public_sparql_stores	.
-local:live	rdfs:member	local:live_scenario	.
-local:split	vn.role:Instrument	local:subquery	.
-local:using	vn.role:Theme	local:estimates	.
-local:fresher_results	rdfs:subClassOf	local:results	.
+local:s3	rdf:subject	local:data	.
+local:split_into_subquery	rdfs:member	local:split	.
 local:current_versions	rdfs:subClassOf	local:versions	.
-local:slower_response_times	rdfs:subClassOf	local:times	.
-local:different_hybrid_query	rdfs:member	local:different_hybrid_query_plans	.
-local:answer	vn.role:Predicate	local:queries_over_data	.
-local:public	rdfs:member	local:public_sparql	.
-local:sparql	rdfs:member	local:sparql_stores	.
-local:query	rdfs:member	local:query_plans	.
-local:answer	vn.role:Agent	local:centralised_approaches	.
-local:current_versions_of_linked_data	local:of_linkeddata	local:current_versions	.
-local:have	vn.role:Stimulus	local:good_fresh_coverage	.
-local:provide	vn.role:Agent	local:fresher_results_over_entire_web	.
-local:slower	rdfs:member	local:slower_response	.
-local:hybrid_query	rdfs:subClassOf	local:query	.
-local:split	vn.role:Agent	local:we	.
-local:centralised_approaches	rdfs:subClassOf	local:approaches	.
-local:evaluate	vn.role:Agent	local:we	.
-local:improve	local:AM-TMP	local:reducing	.
-local:different_hybrid_query_plans	rdfs:subClassOf	local:hybrid_query_plans	.
-local:cost_of_slower_response_times	local:cost_of	local:slower_response_times	.
-local:split	vn.role:Patient	local:query	.
-local:often_missing	rdfs:subClassOf	local:missing	.
-local:data	rdfs:member	local:data_sources	.
-local:split_into_subquery	local:into_sub-query	local:split	.
-local:live	local:AM-TMP	local:time_taken	.
-local:public_sparql_stores	rdfs:subClassOf	local:stores	.
-local:run	vn.role:Theme	local:live	.
-local:realworld	rdfs:member	local:realworld_setup	.
-local:different_hybrid_query	rdfs:subClassOf	local:query	.
-local:public_sparql	rdfs:member	local:public_sparql_stores	.
-local:provide	vn.role:Recipient	local:decentralised_approaches	.
-local:results_vs_live_scenario	local:results_vs.	local:live_scenario	.
-local:entire	rdfs:member	local:entire_web	.
-local:two_public_sparql_stores_against_current_versions	local:twopublicsparqlstores_against	local:current_versions	.
-local:broader_range	rdfs:subClassOf	local:range	.
-local:cache_cache	rdfs:subClassOf	local:cache	.
-local:different	rdfs:member	local:different_hybrid	.
-local:split_positions	rdfs:subClassOf	local:positions	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	rdfs:member	local:current_versions	.
+local:good_fresh_coverage	rdfs:member	local:good_fresh	.
+local:s14	rdf:object	local:split_positions	.
+local:hybrid_query_plans	rdfs:subClassOf	local:query_plans	.
+local:entire_web_cost	rdfs:subClassOf	local:cost	.
+local:s0	rdf:object	local:decentralised_approaches	.
+local:time_fully_taken	rdfs:member	local:fully_taken	.
+local:s17.4	rdf:predicate	local:reduce	.
+local:hybrid_query_plans	rdfs:subClassOf	local:plans	.
+local:different_hybrid	rdfs:member	local:different	.
+local:sparql_stores	rdfs:member	local:sparql	.
+local:current_versions_of_linked_data_sources	rdfs:member	local:current_versions	.
+local:s8.1	rdf:object	local:cache_results	.
+local:s8.2	rdf:subject	local:current_versions_of_the_linked_data_sources_they_cache_cache_results	.
+local:good_fresh	rdfs:member	local:good	.
+local:s15	local:AM-TMP	local:finally	.
+local:s3	rdf:object	local:parts_of_the_web	.
+local:s9	rdf:object	local:using_coherence_estimates_to_split_a_query_into_a_subquery	.
 local:entire_web	rdfs:subClassOf	local:web	.
-local:good_fresh	rdfs:subClassOf	local:fresh	.
-local:different_hybrid	rdfs:subClassOf	local:hybrid	.
-local:good_fresh_coverage	rdfs:subClassOf	local:coverage	.
+local:fully_taken	rdfs:subClassOf	local:taken	.
+local:realworld_setup	rdfs:member	local:realworld	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	rdfs:member	local:public_sparql_stores	.
+local:fresher_results_over_the_entire_web_cost_of_slower_response_times	rdfs:member	local:fresher_results	.
+local:s17	rdf:object	local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	.
+local:s14	rdf:predicate	local:evaluate	.
+local:s17	rdf:subject	local:we	.
+local:s11	rdf:object	local:using_coherence_estimates_to_split_a_query_into_a_subquery	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	rdfs:member	local:current_versions	.
+local:s16	rdf:subject	local:time	.
+local:s9.1	rdf:object	local:coherence_estimates_to_split_a_query_into_a_subquery	.
+local:fresher_results_broader_range_of_sources_vs_the_centralised_scenario	rdfs:member	local:centralised_scenario	.
+local:parts_of_web	rdfs:member	local:web	.
+local:s8	rdf:predicate	local:compare	.
+local:s11.1	rdf:subject	local:we	.
+local:coherence_estimates_to_split_a_query_into_a_subquery	rdfs:member	local:query	.
+local:coherence_estimates_to_split_a_query_into_a_subquery	rdfs:member	local:coherence_estimates	.
+local:current_versions_of_the_linked_data_sources_they_cache_cache_results	rdfs:member	local:current_versions	.
+local:entire_web_cost	rdfs:member	local:entire_web	.
+local:s5	local:AM-TMP	local:speeding_up_results_vs_the_live_scenario	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	rdfs:member	local:cache_results	.
+local:s4	local:AM-MOD	local:can	.
+local:broader_range_of_sources_of_centralised_scenario	rdfs:member	local:centralised_scenario	.
+local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	rdfs:member	local:results	.
+local:s14	local:AM-LOC	local:realworld_setup	.
+local:execution_approach	rdfs:subClassOf	local:approach	.
+local:s5	rdf:object	local:hybrid_query_execution_approach	.
+local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	rdfs:member	local:show	.
+local:s7	rdf:predicate	local:compare	.
+local:fresher_results_over_entire_web_cost	rdfs:member	local:fresher_results	.
+local:s5.1	rdf:predicate	local:speed	.
+local:s3	rdf:predicate	local:cache	.
+local:hybrid_query_execution_approach	rdfs:subClassOf	local:approach	.
+local:up_results	rdfs:subClassOf	local:results	.
+local:s15	rdf:subject	local:we	.
+local:response_times	rdfs:member	local:response	.
+local:slower_response	rdfs:member	local:slower	.
+local:time_taken_vs_fully	rdfs:member	local:time	.
+local:s9.1	rdf:subject	local:we	.
+local:freshness_vs_fully_cached_results	rdfs:member	local:results	.
+local:different_hybrid_query_plans	rdfs:member	local:different_hybrid_query	.
+local:s11.2	rdf:subject	local:we	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	rdfs:member	local:linked_data_sources	.
+local:broader_range_of_sources_of_centralised_scenario	rdfs:member	local:broader_range_of_sources	.
+local:response_times	rdfs:subClassOf	local:times	.
 local:live_scenario	rdfs:subClassOf	local:scenario	.
+local:s0	local:AM-MOD	local:can	.
+local:using_coherence_estimates_to_split_a_query_into_a_subquery	rdfs:member	local:query	.
+local:speeding_up_results_vs_the_live_scenario	rdfs:member	local:live_scenario	.
+local:fresher_results	rdfs:member	local:fresher	.
+local:freshness_cached_results	rdfs:subClassOf	local:cached_results	.
+local:linked_data_sources	rdfs:subClassOf	local:sources	.
+local:entire_web	rdfs:member	local:entire	.
+local:s11.2	rdf:predicate	local:split	.
+local:good_fresh_coverage	rdfs:subClassOf	local:coverage	.
+local:entire_web_cost_of_slower_response_times	rdfs:member	local:entire_web_cost	.
+local:s6	rdf:object	local:fresher_results_broader_range_of_sources_vs_the_centralised_scenario	.
+local:s9.1	rdf:predicate	local:use	.
+local:s5	local:AM-TMP	local:herein	.
+local:s17.4	rdf:subject	local:time	.
+local:s0	local:AM-MNR	local:efficiently	.
+local:s16	rdf:predicate	local:take	.
+local:s8	rdf:subject	local:we	.
+local:freshness_vs	rdfs:member	local:freshness	.
+local:s17.2	local:AM-TMP	local:s17.4	.
+local:current_versions_of_the_linked_data_sources_they_cache_cache_results	rdfs:member	local:cache_results	.
+local:two_public_sparql_stores	rdfs:subClassOf	local:public_sparql_stores	.
+local:fresher_results_broader_range_of_sources_vs_the_centralised_scenario	rdfs:member	local:sources	.
+local:web_cost	rdfs:member	local:web	.
+local:cache_results	rdfs:subClassOf	local:results	.
+local:s16.1	rdf:subject	local:execution	.
+local:different_hybrid_query_plans	rdfs:subClassOf	local:hybrid_query_plans	.
+local:hybrid_query_execution	rdfs:subClassOf	local:execution	.
+local:s17.1	rdf:predicate	local:show	.
+local:cache_results	rdfs:member	local:cache	.
+local:different_hybrid_query	rdfs:member	local:different_hybrid	.
+local:hybrid_query_execution	rdfs:member	local:hybrid_query	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	rdfs:member	local:results	.
+local:s14	rdf:subject	local:we	.
+local:s11	rdf:subject	local:we	.
+local:s8.1	rdf:predicate	local:cache	.
+local:s13	local:AM-DIS	local:instead	.
+local:linked_data	rdfs:member	local:linked	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	rdfs:member	local:results	.
+local:results_from_two_public_sparql_stores	rdfs:member	local:two_public_sparql_stores	.
+local:s9	local:AM-DIS	local:thus	.
+local:s13	local:AM-MOD	local:should	.
+local:are_often_missing	rdfs:subClassOf	local:often_missing	.
+local:s7	local:AM-TMP	local:first	.
+local:subquery_for_which	rdfs:member	local:which	.
+local:centralised_approaches	rdfs:subClassOf	local:approaches	.
+local:s8	rdf:object	local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	.
+local:queries_over_data	rdfs:member	local:queries	.
+local:s11.2	rdf:object	local:query_subquery	.
+local:s8.2	rdf:predicate	local:miss	.
+local:freshness_vs_fully_cached_results	rdfs:member	local:freshness_vs	.
+local:freshness_vs	rdfs:subClassOf	local:vs	.
+local:s17.1	rdf:subject	local:results	.
+local:coherence_estimates	rdfs:member	local:coherence	.
+local:s7	rdf:object	local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	.
+local:s7.1	rdf:predicate	local:cache	.
+local:up_results	rdfs:member	local:up	.
+local:s17.2	local:AM-MOD	local:can	.
+local:s5.1	rdf:subject	local:we	.
+local:broader_range_of_sources	rdfs:member	local:sources	.
+local:s17.1	rdf:object	local:s17.2	.
+local:s4	local:AM-MNR	local:efficiently	.
+local:slower_response	rdfs:subClassOf	local:response	.
+local:public_sparql_stores	rdfs:member	local:public_sparql	.
+local:query_subquery	rdfs:subClassOf	local:subquery	.
+local:s11.1	rdf:predicate	local:use	.
+local:s1	rdf:subject	local:decentralised_approaches	.
+local:s15	rdf:predicate	local:evaluate	.
+local:fresher_results_over_the_entire_web_cost_of_slower_response_times	rdfs:member	local:entire_web_cost	.
+local:s12	rdf:subject	local:subquery_for_which_the	.
+local:realworld_setup	rdfs:subClassOf	local:setup	.
+local:fresh_coverage	rdfs:subClassOf	local:coverage	.
+local:s9.2	rdf:predicate	local:split	.
+local:public_sparql_stores	rdfs:subClassOf	local:sparql_stores	.
+local:fresh_coverage	rdfs:member	local:fresh	.
+local:coherence_estimates	rdfs:subClassOf	local:estimates	.
+local:centralised_scenario	rdfs:member	local:centralised	.
+local:s5	rdf:predicate	local:propose	.
+local:s13	rdf:subject	local:subquery	.
+local:query_execution	rdfs:member	local:query	.
+local:time_taken_vs_fully	rdfs:member	local:vs	.
+local:s11	rdf:predicate	local:propose	.
+local:decentralised_approaches	rdfs:subClassOf	local:approaches	.
+local:results_from_two_public_sparql_stores	rdfs:member	local:results	.
+local:s11.1	rdf:object	local:coherence_estimates_to_split_a_query_into_a_subquery	.
+local:query_execution	rdfs:subClassOf	local:execution	.
+local:s7	rdf:subject	local:we	.
+local:two_public_sparql_stores_against_current_versions	rdfs:member	local:two_public_sparql_stores	.
+local:s0	rdf:subject	local:centralised_approaches	.
+local:s17.2	rdf:object	local:freshness_vs_fully_cached_results	.
+local:s15	rdf:object	local:different_hybrid_query_plans	.
+local:speeding_up_results_vs_the_live_scenario	rdfs:member	local:up_results	.
+local:s8.1	rdf:subject	local:they	.
+local:entire_web_cost	rdfs:subClassOf	local:web_cost	.
+local:cached_results	rdfs:subClassOf	local:results	.
+local:current_versions_of_the_linked_data_sources_they_cache_cache_results	rdfs:member	local:linked_data_sources	.
+local:current_versions	rdfs:member	local:current	.
+local:public_sparql	rdfs:member	local:public	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	rdfs:member	local:linked_data_sources	.
+local:s5.1	rdf:object	local:results	.
+local:query_execution_approach	rdfs:subClassOf	local:approach	.
+local:s17.3	rdf:subject	local:results	.
+local:s5	rdf:subject	local:we	.
+local:live_scenario	rdfs:member	local:live	.
+local:s6	rdf:subject	local:hybrid_query_execution_approach	.
+local:s1	rdf:predicate	local:provide	.
+local:parts_of_web	rdfs:member	local:parts	.
+local:s17.3	local:AM-MNR	local:fully	.
+local:s17.2	rdf:subject	local:hybrid_query_execution	.
+local:s17.3	rdf:predicate	local:cache	.
+local:s4	rdf:subject	local:centralised_approaches	.
+local:s9	rdf:subject	local:we	.
+local:s8	local:AM-TMP	local:first	.
+local:public_sparql_stores	rdfs:subClassOf	local:stores	.
+local:fresher_results	rdfs:subClassOf	local:results	.
+local:cache_cache_results	rdfs:subClassOf	local:cache_results	.
+local:s17	rdf:predicate	local:result	.
+local:s9	rdf:predicate	local:propose	.
+local:linked_data_sources	rdfs:subClassOf	local:data_sources	.
+local:web_cost	rdfs:subClassOf	local:cost	.
+local:entire_web_cost_of_slower_response_times	rdfs:member	local:slower_response_times	.
+local:fresher_results_over_entire_web_cost	rdfs:member	local:entire_web_cost	.
+local:parts_of_the_web	rdfs:member	local:parts	.
+local:s6	rdf:predicate	local:return	.
+local:hybrid_query_plans	rdfs:member	local:hybrid_query	.
+local:sparql_stores	rdfs:subClassOf	local:stores	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:subquery_for_which	rdfs:member	local:subquery	.
+local:using_coherence_estimates_to_split_a_query_into_a_subquery	rdfs:member	local:subquery	.
+local:s12	rdf:object	local:good_fresh_coverage	.
+local:s12	rdf:predicate	local:have	.
+local:good_fresh_coverage	rdfs:subClassOf	local:fresh_coverage	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_outofdate	rdfs:member	local:public_sparql_stores	.
+local:s11	local:AM-DIS	local:thus	.
+local:coherence_estimates_to_split_a_query_into_a_subquery	rdfs:member	local:subquery	.
+local:fresher_results_broader_range_of_sources_vs_the_centralised_scenario	rdfs:member	local:fresher_results	.
+local:s17.2	rdf:predicate	local:improve	.
+local:centralised_scenario	rdfs:subClassOf	local:scenario	.
+local:different_hybrid_query_plans	rdfs:subClassOf	local:plans	.
+local:different_hybrid_query	rdfs:subClassOf	local:query	.
+local:query_subquery	rdfs:member	local:query	.
+local:linked_data_sources	rdfs:member	local:linked_data	.
+local:current_versions_of_linked_data_sources	rdfs:member	local:linked_data_sources	.
+local:public_sparql	rdfs:subClassOf	local:sparql	.
+local:s16.1	rdf:predicate	local:live	.
+local:using_coherence_estimates_to_split_a_query_into_a_subquery	rdfs:member	local:coherence_estimates	.
+local:slower_response_times	rdfs:subClassOf	local:response_times	.
+local:hybrid_query_execution	rdfs:subClassOf	local:query_execution	.
+local:s0	rdf:predicate	local:live	.
+local:s13	rdf:predicate	local:run	.
+local:s9.2	rdf:object	local:query_subquery	.
+local:slower_response_times	rdfs:subClassOf	local:times	.
+local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	rdfs:member	local:execution	.
+local:hybrid_query_execution_approach	rdfs:member	local:hybrid_query_execution	.
+local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	rdfs:member	local:time	.
+local:s14	local:AM-TMP	local:finally	.
+local:slower_response_times	rdfs:member	local:slower_response	.
+local:s8.2	local:AM-TMP	local:often	.
+local:queries_over_data	rdfs:member	local:data	.
+local:fresher_results_over_the_entire_web_cost_of_slower_response_times	rdfs:member	local:slower_response_times	.
+local:query_execution_approach	rdfs:subClassOf	local:execution_approach	.
+local:fresher_results_broader_range_of_sources_vs_the_centralised_scenario	rdfs:member	local:range	.
+local:hybrid_query_execution_approach	rdfs:subClassOf	local:query_execution_approach	.
+local:results_from_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_two_public_sparql_stores_against_current_versions_of_the_linked_data_sources_they_cache_cache_results_are_often_missing	rdfs:member	local:cache_results	.
+local:often_missing	rdfs:subClassOf	local:missing	.
 local:query_plans	rdfs:subClassOf	local:plans	.
-local:evaluate	vn.role:Theme	local:different_hybrid_query_plans	.
-local:improve	local:AM-MOD	local:can	.
-local:good	rdfs:member	local:good_fresh	.
-local:coherence	rdfs:member	local:coherence_estimates	.
-local:cached	local:AM-MNR	local:fully	.
-local:up	rdfs:member	local:up_results	.
-local:split_into_subquery	local:split_into	local:subquery	.
-local:execution	rdfs:member	local:execution_approach	.
-local:results_vs_live_scenario	local:vs._livescenario	local:results	.
-local:broader_range_of_sources_vs_centralised_scenario	local:broaderrangeofsources_vs.	local:centralised_scenario	.
-local:results_from_two_public_sparql_stores	local:from_twopublicsparqlstores	local:results	.
+local:execution_approach	rdfs:member	local:execution	.
+local:s1	local:AM-MOD	local:can	.
+local:s1	rdf:object	local:fresher_results_over_the_entire_web_cost_of_slower_response_times	.
+local:s4	rdf:object	local:queries_over_data	.
+local:broader_range_of_sources	rdfs:member	local:broader_range	.
+local:hybrid_query	rdfs:subClassOf	local:query	.
+local:query_plans	rdfs:member	local:query	.
+local:different_hybrid	rdfs:subClassOf	local:hybrid	.
+local:data_sources	rdfs:member	local:data	.
+local:two_public_sparql_stores_against_current_versions	rdfs:member	local:current_versions	.
+local:s7.1	rdf:object	local:cache_results	.
+local:s4	rdf:predicate	local:answer	.
+local:hybrid_query	rdfs:member	local:hybrid	.
+local:time_fully_taken	rdfs:member	local:time	.
+local:query_execution_approach	rdfs:member	local:query_execution	.
+local:show_that_hybrid_query_execution_can_improve_freshness_vs_fully_cached_results_while_reducing_the_time	rdfs:member	local:freshness_vs	.
+local:split_positions	rdfs:subClassOf	local:positions	.
+local:split_into_subquery	rdfs:member	local:subquery	.
+local:s9.2	rdf:subject	local:we	.
+local:fully_cached	rdfs:subClassOf	local:cached	.
+local:good_fresh	rdfs:subClassOf	local:fresh	.
+local:can_improve	rdfs:subClassOf	local:improve	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:s16.1	local:AM-TMP	local:time_taken_vs_fully	.
+local:parts_of_the_web	rdfs:member	local:web	.
+local:broader_range	rdfs:subClassOf	local:range	.
+local:s7.1	rdf:subject	local:they	.
+local:split_positions	rdfs:member	local:split	.

@@ -1,413 +1,787 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally translates sparql queries to pig latin"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally executes them on a hadoop cluster"	.
+
+local:s17.2	a	rdf:Statement	;
+	rdfs:label	"exhibiting good loadbalancing properties"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"a system processing huge datasets without precomputed statistics while exhibiting good loadbalancing properties"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"we results indicate that a system is indeed capable of processing huge datasets without precomputed statistics while exhibiting good loadbalancing properties"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"rdf data crawled from the web"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"using rdf data"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"the effectiveness of we approach both on a synthetic benchmark as well as on a yahoo case of data analysis"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we evaluate the effectiveness of we approach both on a synthetic benchmark"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"a synthetic benchmark generate complex queries"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"a synthetic benchmark known to generate complex queries"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"a novel skewresistant join algorithm"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we developed a novel skewresistant join algorithm"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"algorithm that replicates tuples"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"tuples corresponding to popular keys"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally executes them on a hadoop cluster"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"based on statistics"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the next steps take based on statistics"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"query execution determining the next steps to take based on statistics"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally translates sparql queries to pig latin"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"based on data samples"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"take based on data samples"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"query execution determining the next steps to take based on data samples"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"statistics gathered during the previous step"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally executes them on a hadoop cluster"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"a system joins with unexpected highvalue skew"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"huge datasets avoiding job failures even in the case of joins with unexpected highvalue skew"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a system work efficiently on complex queries with many selfjoins over huge datasets avoiding job failures even in the case of joins with unexpected highvalue skew"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a system designed to work efficiently on complex queries with many selfjoins over huge datasets avoiding job failures even in the case of joins with unexpected highvalue skew"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally translates sparql queries to pig latin"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we describe a system"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally translates sparql queries to pig latin"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"a system that incrementally executes sparql queries on a hadoop cluster"	.
+
+
 #### Classes ####
 
-local:executes	rdfs:label	"executes"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:system	rdfs:label	"system"	.
+local:translate	a	rdf:Class	;
+	rdfs:label	"translate"	.
 
-local:incrementally	rdfs:label	"incrementally"	.
+local:sparql_queries_pig_latin	a	rdf:Class	;
+	rdfs:label	"sparql queries pig latin"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:pig_latin	a	rdf:Class	;
+	rdfs:label	"pig latin"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:pig	a	rdf:Class	;
+	rdfs:label	"pig"	.
 
-local:queries	rdfs:label	"queries"	.
+local:sparql_queries_pig	a	rdf:Class	;
+	rdfs:label	"sparql queries pig"	.
 
-local:hadoop_cluster	rdfs:label	"hadoop cluster"	.
+local:queries_pig_latin	a	rdf:Class	;
+	rdfs:label	"queries pig latin"	.
 
-local:cluster	rdfs:label	"cluster"	.
+local:latin	a	rdf:Class	;
+	rdfs:label	"latin"	.
 
-local:hadoop	rdfs:label	"hadoop"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:describe	rdfs:label	"describe"	.
+local:queries_pig	a	rdf:Class	;
+	rdfs:label	"queries pig"	.
 
-local:we	rdfs:label	"we"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:translates	rdfs:label	"translates"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:pig	rdfs:label	"pig"	.
+local:incrementally	a	rdf:Class	;
+	rdfs:label	"incrementally"	.
 
-local:pig_latin	rdfs:label	"pig latin"	.
+local:execute	a	rdf:Class	;
+	rdfs:label	"execute"	.
 
-local:latin	rdfs:label	"latin"	.
+local:them_hadoop_cluster	a	rdf:Class	;
+	rdfs:label	"them hadoop cluster"	.
 
-local:them	rdfs:label	"them"	.
+local:hadoop_cluster	a	rdf:Class	;
+	rdfs:label	"hadoop cluster"	.
 
-local:designed	rdfs:label	"designed"	.
+local:cluster	a	rdf:Class	;
+	rdfs:label	"cluster"	.
 
-local:huge	rdfs:label	"huge"	.
+local:hadoop	a	rdf:Class	;
+	rdfs:label	"hadoop"	.
 
-local:huge_datasets	rdfs:label	"huge datasets"	.
+local:good_loadbalancing_properties	a	rdf:Class	;
+	rdfs:label	"good loadbalancing properties"	.
 
-local:many	rdfs:label	"many"	.
+local:good_loadbalancing	a	rdf:Class	;
+	rdfs:label	"good loadbalancing"	.
 
-local:many_selfjoins	rdfs:label	"many self-joins"	.
+local:loadbalancing	a	rdf:Class	;
+	rdfs:label	"loadbalancing"	.
 
-local:complex	rdfs:label	"complex"	.
+local:good	a	rdf:Class	;
+	rdfs:label	"good"	.
 
-local:complex_queries	rdfs:label	"complex queries"	.
+local:loadbalancing_properties	a	rdf:Class	;
+	rdfs:label	"loadbalancing properties"	.
 
-local:unexpected_highvalue	rdfs:label	"unexpected high-value"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:unexpected_highvalue_skew	rdfs:label	"unexpected high-value skew"	.
+local:exhibit	a	rdf:Class	;
+	rdfs:label	"exhibit"	.
 
-local:skew	rdfs:label	"skew"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:unexpected	rdfs:label	"unexpected"	.
+local:huge_datasets	a	rdf:Class	;
+	rdfs:label	"huge datasets"	.
 
-local:job	rdfs:label	"job"	.
+local:huge	a	rdf:Class	;
+	rdfs:label	"huge"	.
 
-local:job_failures	rdfs:label	"job failures"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:without_precomputed_statistics	a	rdf:Class	;
+	rdfs:label	"without precomputed statistics"	.
 
-local:highvalue	rdfs:label	"high-value"	.
+local:precomputed_statistics	a	rdf:Class	;
+	rdfs:label	"precomputed statistics"	.
 
-local:highvalue_skew	rdfs:label	"high-value skew"	.
+local:statistics	a	rdf:Class	;
+	rdfs:label	"statistics"	.
 
-local:selfjoins	rdfs:label	"self-joins"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:failures	rdfs:label	"failures"	.
+local:indicate	a	rdf:Class	;
+	rdfs:label	"indicate"	.
 
-local:even_case	rdfs:label	"even case"	.
+local:system_is_indeed_capable_of_processing_huge_datasets_without_precomputed_statistics_while_exhibiting_good_loadbalancing_properties	a	rdf:Class	;
+	rdfs:label	"system is indeed capable of processing huge datasets without precomputed statistics while exhibiting good loadbalancing properties"	.
 
-local:case	rdfs:label	"case"	.
+local:indeed_capable	a	rdf:Class	;
+	rdfs:label	"indeed capable"	.
 
-local:efficiently_work	rdfs:label	"efficiently work"	.
+local:capable	a	rdf:Class	;
+	rdfs:label	"capable"	.
 
-local:work	rdfs:label	"work"	.
+local:processing_without_precomputed_statistics	a	rdf:Class	;
+	rdfs:label	"processing without precomputed statistics"	.
 
-local:efficiently_work_on_complex_queries	rdfs:label	"efficiently work on complex queries"	.
+local:processing	a	rdf:Class	;
+	rdfs:label	"processing"	.
 
-local:efficiently_work_on_complex_queries_with_many_selfjoins	rdfs:label	"efficiently work on complex queries with many self-joins"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:many_selfjoins_over_huge_datasets	rdfs:label	"many self-joins over huge datasets"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:efficiently_work_on_complex_queries_with_many_selfjoins_avoiding	rdfs:label	"efficiently work on complex queries with many self-joins avoiding"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:avoiding	rdfs:label	"avoiding"	.
+local:crawl	a	rdf:Class	;
+	rdfs:label	"crawl"	.
 
-local:avoiding_in_even_case	rdfs:label	"avoiding in even case"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:efficiently	rdfs:label	"efficiently"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:complex_queries_with_many_selfjoins	rdfs:label	"complex queries with many self-joins"	.
+local:effectiveness_of_we	a	rdf:Class	;
+	rdfs:label	"effectiveness of we"	.
 
-local:complex_queries_with_many_selfjoins_over_huge_datasets	rdfs:label	"complex queries with many self-joins over huge datasets"	.
+local:effectiveness	a	rdf:Class	;
+	rdfs:label	"effectiveness"	.
 
-local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding	rdfs:label	"complex queries with many self-joins over huge datasets avoiding"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:joins	rdfs:label	"joins"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:determining	rdfs:label	"determining"	.
+local:synthetic_benchmark_as_well_as_on_a_yahoo_case_of_data_analysis	a	rdf:Class	;
+	rdfs:label	"synthetic benchmark as well as on a yahoo case of data analysis"	.
 
-local:query_execution	rdfs:label	"query execution"	.
+local:yahoo_case	a	rdf:Class	;
+	rdfs:label	"yahoo case"	.
 
-local:execution	rdfs:label	"execution"	.
+local:data_analysis	a	rdf:Class	;
+	rdfs:label	"data analysis"	.
 
-local:query	rdfs:label	"query"	.
+local:synthetic_benchmark	a	rdf:Class	;
+	rdfs:label	"synthetic benchmark"	.
 
-local:next_steps	rdfs:label	"next steps"	.
+local:case	a	rdf:Class	;
+	rdfs:label	"case"	.
 
-local:steps	rdfs:label	"steps"	.
+local:synthetic	a	rdf:Class	;
+	rdfs:label	"synthetic"	.
 
-local:next	rdfs:label	"next"	.
+local:yahoo	a	rdf:Class	;
+	rdfs:label	"yahoo"	.
 
-local:take	rdfs:label	"take"	.
+local:analysis	a	rdf:Class	;
+	rdfs:label	"analysis"	.
 
-local:statistics	rdfs:label	"statistics"	.
+local:benchmark	a	rdf:Class	;
+	rdfs:label	"benchmark"	.
 
-local:based	rdfs:label	"based"	.
+local:yahoo_case_of_data_analysis	a	rdf:Class	;
+	rdfs:label	"yahoo case of data analysis"	.
 
-local:data_samples	rdfs:label	"data samples"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:samples	rdfs:label	"samples"	.
+local:effectiveness_of_we_approach_both_on_a_synthetic_benchmark	a	rdf:Class	;
+	rdfs:label	"effectiveness of we approach both on a synthetic benchmark"	.
 
-local:data	rdfs:label	"data"	.
+local:approach_on_synthetic_benchmark	a	rdf:Class	;
+	rdfs:label	"approach on synthetic benchmark"	.
 
-local:gathered	rdfs:label	"gathered"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:previous_step	rdfs:label	"previous step"	.
+local:complex_queries	a	rdf:Class	;
+	rdfs:label	"complex queries"	.
 
-local:step	rdfs:label	"step"	.
+local:complex	a	rdf:Class	;
+	rdfs:label	"complex"	.
 
-local:previous	rdfs:label	"previous"	.
+local:know	a	rdf:Class	;
+	rdfs:label	"know"	.
 
-local:developed	rdfs:label	"developed"	.
+local:generate_complex_queries	a	rdf:Class	;
+	rdfs:label	"generate complex queries"	.
 
-local:furthermore	rdfs:label	"furthermore"	.
+local:generate_complex	a	rdf:Class	;
+	rdfs:label	"generate complex"	.
 
-local:join_algorithm	rdfs:label	"join algorithm"	.
+local:novel_skewresistant	a	rdf:Class	;
+	rdfs:label	"novel skewresistant"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:novel_skewresistant_join_algorithm	rdfs:label	"novel skew-resistant join algorithm"	.
+local:skewresistant	a	rdf:Class	;
+	rdfs:label	"skewresistant"	.
 
-local:novel_skewresistant	rdfs:label	"novel skew-resistant"	.
+local:join	a	rdf:Class	;
+	rdfs:label	"join"	.
 
-local:skewresistant	rdfs:label	"skew-resistant"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:novel_skewresistant_join	rdfs:label	"novel skew-resistant join"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:skewresistant_join_algorithm	rdfs:label	"skew-resistant join algorithm"	.
+local:novel_skewresistant_join_algorithm	a	rdf:Class	;
+	rdfs:label	"novel skewresistant join algorithm"	.
 
-local:skewresistant_join	rdfs:label	"skew-resistant join"	.
+local:skewresistant_join_algorithm	a	rdf:Class	;
+	rdfs:label	"skewresistant join algorithm"	.
 
-local:join	rdfs:label	"join"	.
+local:skewresistant_join	a	rdf:Class	;
+	rdfs:label	"skewresistant join"	.
 
-local:novel	rdfs:label	"novel"	.
+local:join_algorithm	a	rdf:Class	;
+	rdfs:label	"join algorithm"	.
 
-local:replicates	rdfs:label	"replicates"	.
+local:replicate	a	rdf:Class	;
+	rdfs:label	"replicate"	.
 
-local:tuples	rdfs:label	"tuples"	.
+local:tuples	a	rdf:Class	;
+	rdfs:label	"tuples"	.
 
-local:corresponding	rdfs:label	"corresponding"	.
+local:correspond	a	rdf:Class	;
+	rdfs:label	"correspond"	.
 
-local:popular_keys	rdfs:label	"popular keys"	.
+local:popular_keys	a	rdf:Class	;
+	rdfs:label	"popular keys"	.
 
-local:keys	rdfs:label	"keys"	.
+local:keys	a	rdf:Class	;
+	rdfs:label	"keys"	.
 
-local:popular	rdfs:label	"popular"	.
+local:popular	a	rdf:Class	;
+	rdfs:label	"popular"	.
 
-local:synthetic	rdfs:label	"synthetic"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:synthetic_benchmark	rdfs:label	"synthetic benchmark"	.
+local:next_steps	a	rdf:Class	;
+	rdfs:label	"next steps"	.
 
-local:benchmark	rdfs:label	"benchmark"	.
+local:steps	a	rdf:Class	;
+	rdfs:label	"steps"	.
 
-local:known	rdfs:label	"known"	.
+local:next	a	rdf:Class	;
+	rdfs:label	"next"	.
 
-local:generate	rdfs:label	"generate"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:query_execution	a	rdf:Class	;
+	rdfs:label	"query execution"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:using	rdfs:label	"using"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:crawled	rdfs:label	"crawled"	.
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
 
-local:web	rdfs:label	"web"	.
+local:next_steps_to_take_based_on_statistics	a	rdf:Class	;
+	rdfs:label	"next steps to take based on statistics"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:data_samples	a	rdf:Class	;
+	rdfs:label	"data samples"	.
 
-local:effectiveness_of_we	rdfs:label	"effectiveness of we"	.
+local:samples	a	rdf:Class	;
+	rdfs:label	"samples"	.
 
-local:effectiveness	rdfs:label	"effectiveness"	.
+local:next_steps_to_take_based_on_data_samples	a	rdf:Class	;
+	rdfs:label	"next steps to take based on data samples"	.
 
-local:approach_on_synthetic_benchmark	rdfs:label	"approach on synthetic benchmark"	.
+local:gather	a	rdf:Class	;
+	rdfs:label	"gather"	.
 
-local:approach	rdfs:label	"approach"	.
+local:previous_step	a	rdf:Class	;
+	rdfs:label	"previous step"	.
 
-local:yahoo	rdfs:label	"yahoo"	.
+local:previous	a	rdf:Class	;
+	rdfs:label	"previous"	.
 
-local:yahoo_case	rdfs:label	"yahoo case"	.
+local:step	a	rdf:Class	;
+	rdfs:label	"step"	.
 
-local:data_analysis	rdfs:label	"data analysis"	.
+local:unexpected_highvalue_skew	a	rdf:Class	;
+	rdfs:label	"unexpected highvalue skew"	.
 
-local:analysis	rdfs:label	"analysis"	.
+local:unexpected_highvalue	a	rdf:Class	;
+	rdfs:label	"unexpected highvalue"	.
 
-local:yahoo_case_of_data_analysis	rdfs:label	"yahoo case of data analysis"	.
+local:highvalue	a	rdf:Class	;
+	rdfs:label	"highvalue"	.
 
-local:indicate	rdfs:label	"indicate"	.
+local:skew	a	rdf:Class	;
+	rdfs:label	"skew"	.
 
-local:results	rdfs:label	"results"	.
+local:highvalue_skew	a	rdf:Class	;
+	rdfs:label	"highvalue skew"	.
 
-local:good_loadbalancing	rdfs:label	"good load-balancing"	.
+local:unexpected	a	rdf:Class	;
+	rdfs:label	"unexpected"	.
 
-local:good_loadbalancing_properties	rdfs:label	"good load-balancing properties"	.
+local:avoid	a	rdf:Class	;
+	rdfs:label	"avoid"	.
 
-local:loadbalancing	rdfs:label	"load-balancing"	.
+local:job_failures	a	rdf:Class	;
+	rdfs:label	"job failures"	.
 
-local:loadbalancing_properties	rdfs:label	"load-balancing properties"	.
+local:job	a	rdf:Class	;
+	rdfs:label	"job"	.
 
-local:precomputed_statistics	rdfs:label	"pre-computed statistics"	.
+local:failures	a	rdf:Class	;
+	rdfs:label	"failures"	.
 
-local:good	rdfs:label	"good"	.
+local:even_in_the_case_of_joins_with_unexpected_highvalue_skew	a	rdf:Class	;
+	rdfs:label	"even in the case of joins with unexpected highvalue skew"	.
 
-local:properties	rdfs:label	"properties"	.
+local:joins	a	rdf:Class	;
+	rdfs:label	"joins"	.
 
-local:precomputed	rdfs:label	"pre-computed"	.
+local:even_case	a	rdf:Class	;
+	rdfs:label	"even case"	.
 
-local:indeed_capable	rdfs:label	"indeed capable"	.
+local:skew_in_even_case	a	rdf:Class	;
+	rdfs:label	"skew in even case"	.
 
-local:capable	rdfs:label	"capable"	.
+local:joins_with_unexpected_highvalue	a	rdf:Class	;
+	rdfs:label	"joins with unexpected highvalue"	.
 
-local:processing_without_precomputed_statistics	rdfs:label	"processing without pre-computed statistics"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:processing	rdfs:label	"processing"	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	a	rdf:Class	;
+	rdfs:label	"complex queries with many selfjoins over huge datasets avoiding job failures even in the case of joins with unexpected highvalue skew"	.
 
-local:exhibiting	rdfs:label	"exhibiting"	.
+local:many_selfjoins	a	rdf:Class	;
+	rdfs:label	"many selfjoins"	.
 
-#### Properties ####
+local:selfjoins	a	rdf:Class	;
+	rdfs:label	"selfjoins"	.
+
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
+
+local:complex_queries_with_many_selfjoins	a	rdf:Class	;
+	rdfs:label	"complex queries with many selfjoins"	.
+
+local:complex_queries_with_many_selfjoins_over_huge_datasets	a	rdf:Class	;
+	rdfs:label	"complex queries with many selfjoins over huge datasets"	.
+
+local:huge_datasets_avoiding	a	rdf:Class	;
+	rdfs:label	"huge datasets avoiding"	.
+
+local:avoiding	a	rdf:Class	;
+	rdfs:label	"avoiding"	.
+
+local:avoiding_in_even_case	a	rdf:Class	;
+	rdfs:label	"avoiding in even case"	.
+
+local:efficiently	a	rdf:Class	;
+	rdfs:label	"efficiently"	.
+
+local:design	a	rdf:Class	;
+	rdfs:label	"design"	.
+
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	a	rdf:Class	;
+	rdfs:label	"work efficiently on complex queries with many selfjoins over huge datasets avoiding job failures even in the case of joins with unexpected highvalue skew"	.
+
+local:efficiently_work	a	rdf:Class	;
+	rdfs:label	"efficiently work"	.
+
+local:efficiently_work_on_complex_queries	a	rdf:Class	;
+	rdfs:label	"efficiently work on complex queries"	.
+
+local:efficiently_work_on_complex_queries_with_many_selfjoins	a	rdf:Class	;
+	rdfs:label	"efficiently work on complex queries with many selfjoins"	.
+
+local:many_selfjoins_over_huge_datasets	a	rdf:Class	;
+	rdfs:label	"many selfjoins over huge datasets"	.
+
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
+
+local:sparql_queries_hadoop_cluster	a	rdf:Class	;
+	rdfs:label	"sparql queries hadoop cluster"	.
+
+local:queries_hadoop	a	rdf:Class	;
+	rdfs:label	"queries hadoop"	.
+
+local:sparql_queries_hadoop	a	rdf:Class	;
+	rdfs:label	"sparql queries hadoop"	.
+
+local:queries_hadoop_cluster	a	rdf:Class	;
+	rdfs:label	"queries hadoop cluster"	.
 
 #### Mapped Relations ####
 
-local:complex_queries	owl:sameAs	cso:complex_queries	.
+local:sparql	owl:sameAs	cso:sparql	.
 local:statistics	owl:sameAs	cso:statistics	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:query_execution	rdfs:label	"query execution"	.
-cso:rdf_data	rdfs:label	"rdf data"	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
 cso:statistics	rdfs:label	"statistics"	.
 cso:complex_queries	rdfs:label	"complex queries"	.
+local:complex_queries	owl:sameAs	cso:complex_queries	.
 local:query_execution	owl:sameAs	cso:query_execution	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
-local:hadoop	owl:sameAs	cso:hadoop	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:rdf_data	owl:sameAs	cso:rdf_data	.
 cso:sparql_queries	rdfs:label	"sparql queries"	.
+cso:rdf_data	rdfs:label	"rdf data"	.
 cso:hadoop	rdfs:label	"hadoop"	.
+cso:query_execution	rdfs:label	"query execution"	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+cso:sparql	rdfs:label	"sparql"	.
+local:hadoop	owl:sameAs	cso:hadoop	.
 
 #### Relations ####
 
-local:highvalue	rdfs:member	local:highvalue_skew	.
-local:precomputed_statistics	rdfs:subClassOf	local:statistics	.
-local:unexpected_highvalue	rdfs:member	local:unexpected_highvalue_skew	.
-local:joins	vn.role:Actor2	local:skew	.
-local:efficiently_work_on_complex_queries	local:on_complexqueries	local:efficiently_work	.
-local:executes	local:AM-MNR	local:incrementally	.
-local:based	vn.role:indirect_object	local:statistics	.
-local:skewresistant_join	rdfs:member	local:skewresistant_join_algorithm	.
-local:good_loadbalancing	rdfs:member	local:good_loadbalancing_properties	.
-local:effectiveness_of_we	local:effectiveness_of	local:we	.
-local:determining	vn.role:Theme	local:next_steps	.
-local:popular	rdfs:member	local:popular_keys	.
-local:developed	vn.role:Location	local:furthermore	.
-local:many_selfjoins	rdfs:subClassOf	local:selfjoins	.
-local:evaluate	vn.role:Theme	local:approach_on_synthetic_benchmark	.
-local:known	vn.role:Predicate	local:generate	.
-local:translates	vn.role:Agent	local:system	.
-local:unexpected	rdfs:member	local:unexpected_highvalue	.
-local:developed	vn.role:Theme	local:we	.
-local:query_execution	rdfs:subClassOf	local:execution	.
-local:novel_skewresistant_join	rdfs:member	local:novel_skewresistant_join_algorithm	.
-local:synthetic	rdfs:member	local:synthetic_benchmark	.
-local:translates	local:AM-MNR	local:incrementally	.
-local:previous_step	rdfs:subClassOf	local:step	.
-local:determining	vn.role:Agent	local:system	.
-local:joins	vn.role:Actor1	local:system	.
-local:executes	vn.role:Instrument	local:hadoop_cluster	.
-local:unexpected_highvalue_skew	rdfs:subClassOf	local:skew	.
-local:translates	vn.role:Patient	local:sparql_queries	.
-local:executes	vn.role:Patient	local:sparql_queries	.
-local:even_case	rdfs:subClassOf	local:case	.
-local:indeed_capable	rdfs:subClassOf	local:capable	.
-local:query	rdfs:member	local:query_execution	.
-local:yahoo_case_of_data_analysis	local:of_dataanalysis	local:yahoo_case	.
-local:complex_queries_with_many_selfjoins	local:with_manyself-joins	local:complex_queries	.
-local:efficiently_work_on_complex_queries	local:efficientlywork_on	local:complex_queries	.
-local:complex_queries_with_many_selfjoins_over_huge_datasets	local:over_hugedatasets	local:complex_queries_with_many_selfjoins	.
-local:skewresistant_join_algorithm	rdfs:subClassOf	local:algorithm	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:yahoo	rdfs:member	local:yahoo_case	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:novel	rdfs:member	local:novel_skewresistant	.
-local:using	vn.role:Theme	local:rdf_data	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:work	local:AM-MNR	local:efficiently	.
-local:crawled	vn.role:other	local:web	.
-local:avoiding_in_even_case	local:in_evencase	local:avoiding	.
-local:loadbalancing	rdfs:member	local:loadbalancing_properties	.
-local:complex_queries	rdfs:subClassOf	local:queries	.
-local:efficiently_work_on_complex_queries_with_many_selfjoins_avoiding	local:_avoiding	local:efficiently_work_on_complex_queries_with_many_selfjoins	.
-local:efficiently_work_on_complex_queries_with_many_selfjoins	local:efficientlyworkoncomplexqueries_with	local:many_selfjoins	.
-local:complex_queries_with_many_selfjoins_over_huge_datasets	local:complexquerieswithmanyself-joins_over	local:huge_datasets	.
-local:job	rdfs:member	local:job_failures	.
-local:processing_without_precomputed_statistics	local:processing_without	local:precomputed_statistics	.
-local:next	rdfs:member	local:next_steps	.
-local:replicates	vn.role:Location	local:tuples	.
-local:join	rdfs:member	local:join_algorithm	.
-local:generate	vn.role:Theme2	local:complex_queries	.
-local:data_analysis	rdfs:subClassOf	local:analysis	.
-local:avoiding	vn.role:Agent	local:system	.
-local:novel_skewresistant	rdfs:member	local:novel_skewresistant_join	.
-local:gathered	local:AM-TMP	local:previous_step	.
-local:processing	vn.role:Theme	local:huge_datasets	.
-local:processing	local:AM-TMP	local:exhibiting	.
-local:novel_skewresistant	rdfs:subClassOf	local:skewresistant	.
-local:novel_skewresistant_join	rdfs:subClassOf	local:join	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:avoiding	vn.role:Location	local:job_failures	.
-local:replicates	vn.role:indirect_object	local:algorithm	.
+local:s4.1	rdf:predicate	local:work	.
+local:complex_queries	rdfs:member	local:complex	.
+local:synthetic_benchmark_as_well_as_on_a_yahoo_case_of_data_analysis	rdfs:member	local:synthetic_benchmark	.
+local:good_loadbalancing	rdfs:member	local:good	.
+local:s2	rdf:object	local:system	.
 local:highvalue_skew	rdfs:subClassOf	local:skew	.
-local:join_algorithm	rdfs:subClassOf	local:algorithm	.
-local:processing_without_precomputed_statistics	local:without_pre-computedstatistics	local:processing	.
-local:yahoo_case_of_data_analysis	local:yahoocase_of	local:data_analysis	.
-local:approach_on_synthetic_benchmark	local:approach_on	local:synthetic_benchmark	.
-local:popular_keys	rdfs:subClassOf	local:keys	.
-local:approach	vn.role:indirect_object	local:synthetic_benchmark	.
-local:designed	vn.role:Beneficiary	local:efficiently_work_on_complex_queries_with_many_selfjoins_avoiding	.
-local:translates	vn.role:Product	local:pig_latin	.
-local:processing	local:AM-MNR	local:precomputed_statistics	.
-local:designed	vn.role:Product	local:system	.
-local:hadoop	rdfs:member	local:hadoop_cluster	.
-local:executes	vn.role:Agent	local:system	.
-local:avoiding	vn.role:Agent	local:many_selfjoins_over_huge_datasets	.
-local:determining	vn.role:Agent	local:query_execution	.
-local:approach	vn.role:object	local:effectiveness_of_we	.
-local:good_loadbalancing_properties	rdfs:subClassOf	local:loadbalancing_properties	.
-local:describe	vn.role:Agent	local:we	.
-local:job_failures	rdfs:subClassOf	local:failures	.
-local:avoiding	local:AM-LOC	local:even_case	.
-local:yahoo_case	rdfs:subClassOf	local:case	.
-local:skewresistant_join	rdfs:subClassOf	local:join	.
-local:huge	rdfs:member	local:huge_datasets	.
-local:data	rdfs:member	local:data_analysis	.
-local:complex_queries_with_many_selfjoins	local:complexqueries_with	local:many_selfjoins	.
-local:unexpected_highvalue	rdfs:subClassOf	local:highvalue	.
-local:corresponding	vn.role:Actor2	local:popular_keys	.
-local:loadbalancing_properties	rdfs:subClassOf	local:properties	.
-local:next_steps	rdfs:subClassOf	local:steps	.
-local:executes	vn.role:Patient	local:them	.
-local:processing	vn.role:Agent	local:system	.
-local:efficiently_work_on_complex_queries_with_many_selfjoins	local:with_manyself-joins	local:efficiently_work_on_complex_queries	.
-local:good_loadbalancing_properties	rdfs:subClassOf	local:properties	.
-local:precomputed	rdfs:member	local:precomputed_statistics	.
-local:many_selfjoins_over_huge_datasets	local:manyself-joins_over	local:huge_datasets	.
-local:hadoop_cluster	rdfs:subClassOf	local:cluster	.
-local:indicate	vn.role:Recipient	local:results	.
-local:avoiding_in_even_case	local:avoiding_in	local:even_case	.
-local:efficiently_work	rdfs:subClassOf	local:work	.
-local:previous	rdfs:member	local:previous_step	.
-local:corresponding	vn.role:Actor1	local:tuples	.
-local:known	vn.role:Theme	local:synthetic_benchmark	.
-local:approach_on_synthetic_benchmark	local:on_syntheticbenchmark	local:approach	.
-local:evaluate	vn.role:Agent	local:we	.
-local:describe	vn.role:Theme	local:system	.
-local:joins	vn.role:Actor1	local:huge_datasets	.
-local:skewresistant	rdfs:member	local:skewresistant_join	.
-local:good	rdfs:member	local:good_loadbalancing	.
-local:data_samples	rdfs:subClassOf	local:samples	.
-local:huge_datasets	rdfs:subClassOf	local:datasets	.
-local:join	vn.role:Actor1	local:novel_skewresistant	.
-local:gathered	vn.role:Theme	local:statistics	.
-local:join	vn.role:Actor2	local:algorithm	.
-local:work	vn.role:Actor1	local:system	.
-local:complex	rdfs:member	local:complex_queries	.
-local:developed	vn.role:Location	local:novel	.
-local:synthetic_benchmark	rdfs:subClassOf	local:benchmark	.
-local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding	local:complexquerieswithmanyself-joinsoverhugedatasets_	local:avoiding	.
+local:s16	rdf:predicate	local:use	.
+local:avoiding_in_even_case	rdfs:member	local:avoiding	.
+local:s18	rdf:object	local:them_hadoop_cluster	.
+local:s14.1	rdf:subject	local:synthetic_benchmark	.
+local:s4.2	rdf:predicate	local:avoid	.
+local:unexpected_highvalue_skew	rdfs:subClassOf	local:skew	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:job_failures	.
+local:s3	rdf:subject	local:system	.
+local:s17	rdf:predicate	local:indicate	.
+local:many_selfjoins	rdfs:subClassOf	local:selfjoins	.
+local:s9.1	rdf:predicate	local:take	.
+local:efficiently_work_on_complex_queries	rdfs:member	local:efficiently_work	.
+local:s1	rdf:subject	local:system	.
+local:s6	rdf:subject	local:statistics	.
+local:sparql_queries_pig_latin	rdfs:subClassOf	local:queries_pig_latin	.
+local:s4.3	rdf:object	local:unexpected_highvalue_skew	.
+local:s4	rdf:object	local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	.
+local:skewresistant_join_algorithm	rdfs:member	local:skewresistant_join	.
+local:sparql_queries_hadoop_cluster	rdfs:member	local:sparql_queries_hadoop	.
+local:s15	rdf:predicate	local:evaluate	.
+local:s14	rdf:predicate	local:know	.
+local:effectiveness_of_we	rdfs:member	local:effectiveness	.
+local:data_samples	rdfs:member	local:data	.
+local:s4.2	rdf:subject	local:huge_datasets	.
+local:even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:case	.
+local:efficiently_work_on_complex_queries	rdfs:member	local:complex_queries	.
+local:s0	rdf:object	local:sparql_queries_hadoop_cluster	.
+local:s4.1	rdf:subject	local:system	.
+local:approach_on_synthetic_benchmark	rdfs:member	local:synthetic_benchmark	.
+local:s0	rdf:subject	local:system	.
+local:good_loadbalancing_properties	rdfs:member	local:good_loadbalancing	.
+local:complex_queries_with_many_selfjoins	rdfs:member	local:complex_queries	.
+local:query_execution	rdfs:subClassOf	local:execution	.
+local:s19	rdf:predicate	local:translate	.
+local:s0	local:AM-MNR	local:incrementally	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:yahoo_case	rdfs:member	local:yahoo	.
+local:s17.1	rdf:subject	local:system	.
+local:s11	rdf:object	local:popular_keys	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:complex_queries	.
+local:hadoop_cluster	rdfs:member	local:hadoop	.
+local:queries_pig	rdfs:member	local:queries	.
+local:s9	rdf:subject	local:query_execution	.
+local:s15.1	rdf:predicate	local:approach	.
+local:join_algorithm	rdfs:member	local:join	.
+local:s4	rdf:predicate	local:design	.
+local:data_analysis	rdfs:subClassOf	local:analysis	.
+local:approach_on_synthetic_benchmark	rdfs:member	local:approach	.
+local:sparql_queries_hadoop_cluster	rdfs:subClassOf	local:cluster	.
+local:s11	rdf:subject	local:tuples	.
+local:avoiding_in_even_case	rdfs:member	local:even_case	.
+local:skew_in_even_case	rdfs:member	local:skew	.
+local:s16	rdf:subject	local:rdf_data	.
+local:s8	local:AM-MNR	local:incrementally	.
+local:next_steps	rdfs:member	local:next	.
+local:s15.1	rdf:object	local:synthetic_benchmark_as_well_as_on_a_yahoo_case_of_data_analysis	.
+local:s19	rdf:object	local:sparql_queries_pig_latin	.
+local:precomputed_statistics	rdfs:subClassOf	local:statistics	.
 local:good_loadbalancing	rdfs:subClassOf	local:loadbalancing	.
-local:novel_skewresistant_join_algorithm	rdfs:subClassOf	local:algorithm	.
+local:unexpected_highvalue_skew	rdfs:member	local:unexpected_highvalue	.
+local:huge_datasets	rdfs:member	local:huge	.
+local:joins_with_unexpected_highvalue	rdfs:member	local:unexpected_highvalue	.
+local:s13	rdf:subject	local:we	.
+local:novel_skewresistant	rdfs:subClassOf	local:skewresistant	.
+local:s8	rdf:object	local:sparql_queries_pig_latin	.
+local:previous_step	rdfs:subClassOf	local:step	.
+local:sparql_queries_pig_latin	rdfs:subClassOf	local:latin	.
+local:s10	rdf:subject	local:system	.
+local:s17.1	local:AM-TMP	local:s17.2	.
+local:s7.1	rdf:subject	local:s7.2	.
+local:s4.2	local:AM-LOC	local:even_in_the_case_of_joins_with_unexpected_highvalue_skew	.
+local:s2	rdf:subject	local:we	.
+local:unexpected_highvalue	rdfs:subClassOf	local:highvalue	.
+local:s16.1	rdf:subject	local:rdf_data	.
+local:s18	rdf:subject	local:system	.
+local:yahoo_case_of_data_analysis	rdfs:member	local:yahoo_case	.
+local:s13.1	rdf:subject	local:novel_skewresistant	.
+local:efficiently_work_on_complex_queries_with_many_selfjoins	rdfs:member	local:efficiently_work_on_complex_queries	.
+local:previous_step	rdfs:member	local:previous	.
+local:generate_complex_queries	rdfs:member	local:generate_complex	.
+local:s14	rdf:object	local:generate_complex_queries	.
+local:skewresistant_join_algorithm	rdfs:subClassOf	local:algorithm	.
+local:processing_without_precomputed_statistics	rdfs:member	local:processing	.
+local:skewresistant_join	rdfs:member	local:skewresistant	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets	rdfs:member	local:huge_datasets	.
+local:job_failures	rdfs:member	local:job	.
+local:huge_datasets_avoiding	rdfs:member	local:huge_datasets	.
+local:s8	rdf:predicate	local:translate	.
+local:queries_hadoop_cluster	rdfs:member	local:queries_hadoop	.
+local:novel_skewresistant_join_algorithm	rdfs:member	local:novel	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:job_failures	.
+local:generate_complex	rdfs:member	local:generate	.
+local:data_analysis	rdfs:member	local:data	.
+local:s13	rdf:predicate	local:develop	.
+local:queries_hadoop_cluster	rdfs:subClassOf	local:cluster	.
+local:s17.1	local:AM-MNR	local:without_precomputed_statistics	.
+local:s19	local:AM-MNR	local:incrementally	.
+local:s7	rdf:object	local:next_steps_to_take_based_on_data_samples	.
+local:next_steps_to_take_based_on_statistics	rdfs:member	local:next_steps	.
+local:s14	rdf:subject	local:synthetic_benchmark	.
+local:generate_complex	rdfs:subClassOf	local:complex	.
+local:s12	rdf:predicate	local:replicate	.
+local:skewresistant_join	rdfs:subClassOf	local:join	.
+local:s1	rdf:object	local:sparql_queries_pig_latin	.
+local:effectiveness_of_we_approach_both_on_a_synthetic_benchmark	rdfs:member	local:synthetic_benchmark	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:complex_queries	.
+local:joins_with_unexpected_highvalue	rdfs:member	local:joins	.
+local:unexpected_highvalue	rdfs:member	local:unexpected	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:s17	rdf:subject	local:results	.
+local:s9.2	rdf:predicate	local:base	.
+local:processing_without_precomputed_statistics	rdfs:member	local:precomputed_statistics	.
+local:system_is_indeed_capable_of_processing_huge_datasets_without_precomputed_statistics_while_exhibiting_good_loadbalancing_properties	rdfs:member	local:system	.
+local:s6	local:AM-TMP	local:previous_step	.
+local:s5	rdf:subject	local:system	.
+local:system_is_indeed_capable_of_processing_huge_datasets_without_precomputed_statistics_while_exhibiting_good_loadbalancing_properties	rdfs:member	local:statistics	.
+local:indeed_capable	rdfs:subClassOf	local:capable	.
+local:s3	rdf:predicate	local:translate	.
+local:s4.3	rdf:subject	local:system	.
+local:complex_queries	rdfs:subClassOf	local:queries	.
+local:next_steps_to_take_based_on_statistics	rdfs:member	local:statistics	.
+local:effectiveness_of_we	rdfs:member	local:we	.
+local:yahoo_case	rdfs:subClassOf	local:case	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:work	.
+local:novel_skewresistant	rdfs:member	local:novel	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:joins	.
+local:s17	rdf:object	local:system_is_indeed_capable_of_processing_huge_datasets_without_precomputed_statistics_while_exhibiting_good_loadbalancing_properties	.
+local:queries_pig_latin	rdfs:subClassOf	local:pig_latin	.
+local:sparql_queries_hadoop	rdfs:member	local:sparql_queries	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:many_selfjoins	.
+local:s3	rdf:object	local:sparql_queries_pig_latin	.
+local:s4	rdf:subject	local:system	.
+local:s19	rdf:subject	local:system	.
+local:sparql_queries_pig	rdfs:member	local:sparql_queries	.
+local:pig_latin	rdfs:member	local:pig	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:unexpected_highvalue_skew	.
+local:many_selfjoins_over_huge_datasets	rdfs:member	local:huge_datasets	.
+local:loadbalancing_properties	rdfs:subClassOf	local:properties	.
+local:s14.1	rdf:object	local:complex_queries	.
+local:s5	rdf:object	local:them_hadoop_cluster	.
+local:sparql_queries_pig_latin	rdfs:member	local:sparql_queries_pig	.
+local:system_is_indeed_capable_of_processing_huge_datasets_without_precomputed_statistics_while_exhibiting_good_loadbalancing_properties	rdfs:member	local:good_loadbalancing_properties	.
+local:s17.1	rdf:predicate	local:process	.
+local:s7	rdf:subject	local:query_execution	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets	rdfs:member	local:complex_queries_with_many_selfjoins	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:many_selfjoins	.
+local:s14.1	rdf:predicate	local:generate	.
+local:highvalue_skew	rdfs:member	local:highvalue	.
+local:s13.1	rdf:object	local:algorithm	.
+local:synthetic_benchmark_as_well_as_on_a_yahoo_case_of_data_analysis	rdfs:member	local:yahoo_case	.
+local:s15	rdf:object	local:effectiveness_of_we_approach_both_on_a_synthetic_benchmark	.
+local:efficiently_work	rdfs:subClassOf	local:work	.
 local:pig_latin	rdfs:subClassOf	local:latin	.
-local:indicate	vn.role:Cause	local:indeed_capable	.
-local:exhibiting	vn.role:Agent	local:good_loadbalancing_properties	.
-local:take	vn.role:Theme	local:statistics	.
-local:many	rdfs:member	local:many_selfjoins	.
-local:pig	rdfs:member	local:pig_latin	.
-local:efficiently_work_on_complex_queries_with_many_selfjoins_avoiding	local:efficientlyworkoncomplexquerieswithmanyself-joins_	local:avoiding	.
-local:data	rdfs:member	local:data_samples	.
-local:generate	vn.role:Theme1	local:synthetic_benchmark	.
-local:many_selfjoins_over_huge_datasets	local:over_hugedatasets	local:many_selfjoins	.
-local:effectiveness_of_we	local:of_we	local:effectiveness	.
-local:based	vn.role:indirect_object	local:data_samples	.
-local:crawled	vn.role:Theme	local:rdf_data	.
-local:work	vn.role:Theme	local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding	.
-local:take	vn.role:Theme	local:data_samples	.
-local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding	local:_avoiding	local:complex_queries_with_many_selfjoins_over_huge_datasets	.
+local:s10	local:AM-MNR	local:incrementally	.
+local:s5	local:AM-MNR	local:incrementally	.
+local:even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:unexpected_highvalue_skew	.
+local:generate_complex_queries	rdfs:subClassOf	local:queries	.
+local:sparql_queries_hadoop	rdfs:subClassOf	local:hadoop	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:unexpected_highvalue_skew	.
+local:novel_skewresistant_join_algorithm	rdfs:member	local:skewresistant_join_algorithm	.
+local:data_samples	rdfs:subClassOf	local:samples	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:huge_datasets	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:s13.1	rdf:predicate	local:join	.
+local:s9.1	rdf:subject	local:next_steps	.
+local:query_execution	rdfs:member	local:query	.
+local:huge_datasets	rdfs:subClassOf	local:datasets	.
+local:s3	local:AM-MNR	local:incrementally	.
+local:s1	rdf:predicate	local:translate	.
+local:hadoop_cluster	rdfs:subClassOf	local:cluster	.
+local:s9.1	rdf:object	local:s9.2	.
+local:s6	rdf:predicate	local:gather	.
+local:even_case	rdfs:subClassOf	local:case	.
+local:s8	rdf:subject	local:system	.
+local:s4.1	rdf:object	local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	.
+local:yahoo_case_of_data_analysis	rdfs:member	local:data_analysis	.
+local:good_loadbalancing_properties	rdfs:subClassOf	local:properties	.
+local:queries_pig_latin	rdfs:subClassOf	local:latin	.
+local:sparql_queries_pig	rdfs:subClassOf	local:pig	.
+local:s7.2	rdf:object	local:data_samples	.
+local:s0	rdf:predicate	local:execute	.
+local:synthetic_benchmark	rdfs:member	local:synthetic	.
+local:queries_pig_latin	rdfs:member	local:queries_pig	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:good_loadbalancing_properties	rdfs:subClassOf	local:loadbalancing_properties	.
+local:synthetic_benchmark_as_well_as_on_a_yahoo_case_of_data_analysis	rdfs:member	local:data_analysis	.
+local:s10	rdf:object	local:them_hadoop_cluster	.
+local:queries_hadoop	rdfs:subClassOf	local:hadoop	.
+local:skew_in_even_case	rdfs:member	local:even_case	.
+local:loadbalancing_properties	rdfs:member	local:loadbalancing	.
+local:s4.2	rdf:object	local:job_failures	.
+local:efficiently_work_on_complex_queries_with_many_selfjoins	rdfs:member	local:many_selfjoins	.
+local:job_failures	rdfs:subClassOf	local:failures	.
+local:next_steps_to_take_based_on_data_samples	rdfs:member	local:data_samples	.
+local:huge_datasets_avoiding	rdfs:member	local:avoiding	.
+local:s11	rdf:predicate	local:correspond	.
+local:s17.1	rdf:object	local:huge_datasets	.
+local:s13	rdf:object	local:novel_skewresistant_join_algorithm	.
+local:s1	local:AM-MNR	local:incrementally	.
+local:s15.1	rdf:subject	local:effectiveness_of_we	.
+local:s16.1	rdf:object	local:web	.
+local:many_selfjoins_over_huge_datasets	rdfs:member	local:many_selfjoins	.
+local:s18	rdf:predicate	local:execute	.
+local:s4.3	rdf:predicate	local:join	.
+local:many_selfjoins	rdfs:member	local:many	.
+local:s2	rdf:predicate	local:describe	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:joins	.
+local:s7	rdf:predicate	local:determine	.
+local:synthetic_benchmark	rdfs:subClassOf	local:benchmark	.
+local:s12	rdf:object	local:tuples	.
+local:s17.2	rdf:predicate	local:exhibit	.
+local:effectiveness_of_we_approach_both_on_a_synthetic_benchmark	rdfs:member	local:effectiveness	.
+local:next_steps_to_take_based_on_data_samples	rdfs:member	local:next_steps	.
+local:s4.1	local:AM-MNR	local:efficiently	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:case	.
+local:s5	rdf:predicate	local:execute	.
+local:complex_queries_with_many_selfjoins	rdfs:member	local:many_selfjoins	.
+local:system_is_indeed_capable_of_processing_huge_datasets_without_precomputed_statistics_while_exhibiting_good_loadbalancing_properties	rdfs:member	local:huge_datasets	.
+local:s10	rdf:predicate	local:execute	.
+local:s7.1	rdf:predicate	local:take	.
+local:s9.2	rdf:object	local:statistics	.
+local:s17.2	rdf:subject	local:good_loadbalancing_properties	.
+local:popular_keys	rdfs:member	local:popular	.
+local:even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:joins	.
+local:complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:case	.
+local:popular_keys	rdfs:subClassOf	local:keys	.
+local:s9	rdf:object	local:next_steps_to_take_based_on_statistics	.
+local:work_efficiently_on_complex_queries_with_many_selfjoins_over_huge_datasets_avoiding_job_failures_even_in_the_case_of_joins_with_unexpected_highvalue_skew	rdfs:member	local:huge_datasets	.
+local:queries_pig	rdfs:subClassOf	local:pig	.
+local:next_steps	rdfs:subClassOf	local:steps	.
+local:join_algorithm	rdfs:subClassOf	local:algorithm	.
+local:queries_hadoop	rdfs:member	local:queries	.
+local:s12	rdf:subject	local:algorithm	.
+local:s9	rdf:predicate	local:determine	.
+local:s16.1	rdf:predicate	local:crawl	.
+local:s18	local:AM-MNR	local:incrementally	.
+local:s15	rdf:subject	local:we	.
+local:s7.2	rdf:predicate	local:base	.

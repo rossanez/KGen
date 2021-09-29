@@ -1,486 +1,820 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"these results using the opensource mg4j framework"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we implement these results"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"we also propose a set of new index structures for efficient retrieval and ranking of these results"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"ranking rdf resources"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"rdf outperforms other stateoftheart methods in ranking rdf resources"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we demonstrate that rdf outperforms other stateoftheart methods in ranking rdf resources"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we describe an adaptation of the bm25f ranking function for rdf data"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"in this work we propose a method for effective entity search over rdf data"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"in this work we propose a method for efficient entity search over rdf data"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"rdf data using information retrieval methods"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"these factors combined"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"increased interest"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"these factors led to an increased interest in semantic search ie access to rdf data"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"at the same time the amount of data on the semantic web approaching the limits of the architectures"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the architectures that provide support for the full expressivity of sparql"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"the new end users of the semantic web searching over data"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the new end users of the semantic web however overwhelmingly prefer imprecise informal keyword queries for searching over data"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"using expressive formal query languages such as sparql"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"triple stores long provided rdf storage access"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"triple stores long provided data access"	.
+
+
 #### Classes ####
 
-local:triple	rdfs:label	"triple"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:triple_stores	rdfs:label	"triple stores"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:stores	rdfs:label	"stores"	.
+local:opensource_mg4j_framework	a	rdf:Class	;
+	rdfs:label	"opensource mg4j framework"	.
 
-local:provided	rdfs:label	"provided"	.
+local:opensource_mg4j	a	rdf:Class	;
+	rdfs:label	"opensource mg4j"	.
 
-local:long	rdfs:label	"long"	.
+local:mg4j_framework	a	rdf:Class	;
+	rdfs:label	"mg4j framework"	.
 
-local:rdf_storage_access	rdfs:label	"rdf storage access"	.
+local:mg4j	a	rdf:Class	;
+	rdfs:label	"mg4j"	.
 
-local:access	rdfs:label	"access"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:rdf_storage	rdfs:label	"rdf storage"	.
+local:opensource	a	rdf:Class	;
+	rdfs:label	"opensource"	.
 
-local:storage	rdfs:label	"storage"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:storage_access	rdfs:label	"storage access"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:data_access	rdfs:label	"data access"	.
+local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	a	rdf:Class	;
+	rdfs:label	"set of new index structures for efficient retrieval and ranking of these results"	.
 
-local:data	rdfs:label	"data"	.
+local:efficient_retrieval	a	rdf:Class	;
+	rdfs:label	"efficient retrieval"	.
 
-local:formal	rdfs:label	"formal"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:formal_query	rdfs:label	"formal query"	.
+local:new_index_structures	a	rdf:Class	;
+	rdfs:label	"new index structures"	.
 
-local:formal_query_languages	rdfs:label	"formal query languages"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:languages	rdfs:label	"languages"	.
+local:efficient	a	rdf:Class	;
+	rdfs:label	"efficient"	.
 
-local:query	rdfs:label	"query"	.
+local:retrieval	a	rdf:Class	;
+	rdfs:label	"retrieval"	.
 
-local:query_languages	rdfs:label	"query languages"	.
+local:structures	a	rdf:Class	;
+	rdfs:label	"structures"	.
 
-local:expressive_formal_query_languages	rdfs:label	"expressive formal query languages"	.
+local:index_structures	a	rdf:Class	;
+	rdfs:label	"index structures"	.
 
-local:expressive_formal_query_languages_suchas_sparql	rdfs:label	"expressive formal query languages such_as sparql"	.
+local:index	a	rdf:Class	;
+	rdfs:label	"index"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:new_index	a	rdf:Class	;
+	rdfs:label	"new index"	.
 
-local:using	rdfs:label	"using"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:new_end	rdfs:label	"new end"	.
+local:set_of_new_index_structures	a	rdf:Class	;
+	rdfs:label	"set of new index structures"	.
 
-local:new_end_users	rdfs:label	"new end users"	.
+local:set_of_new_index_structures_for_efficient_retrieval	a	rdf:Class	;
+	rdfs:label	"set of new index structures for efficient retrieval"	.
 
-local:end	rdfs:label	"end"	.
+local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	a	rdf:Class	;
+	rdfs:label	"set of new index structures for efficient retrieval for ranking"	.
 
-local:end_users	rdfs:label	"end users"	.
+local:efficient_retrieval_of_results	a	rdf:Class	;
+	rdfs:label	"efficient retrieval of results"	.
 
-local:users	rdfs:label	"users"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:rdf_resources	a	rdf:Class	;
+	rdfs:label	"rdf resources"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:web	rdfs:label	"web"	.
+local:resources	a	rdf:Class	;
+	rdfs:label	"resources"	.
 
-local:new	rdfs:label	"new"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:however_overwhelmingly	rdfs:label	"however overwhelmingly"	.
+local:outperform	a	rdf:Class	;
+	rdfs:label	"outperform"	.
 
-local:overwhelmingly	rdfs:label	"overwhelmingly"	.
+local:stateoftheart_methods	a	rdf:Class	;
+	rdfs:label	"stateoftheart methods"	.
 
-local:new_end_users_of_semantic_web	rdfs:label	"new end users of semantic web"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:prefer	rdfs:label	"prefer"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:informal_keyword	rdfs:label	"informal keyword"	.
+local:ranking_rdf_resources	a	rdf:Class	;
+	rdfs:label	"ranking rdf resources"	.
 
-local:keyword	rdfs:label	"keyword"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:informal_keyword_queries	rdfs:label	"informal keyword queries"	.
+local:rdf_outperforms_other_stateoftheart_methods_in_ranking_rdf_resources	a	rdf:Class	;
+	rdfs:label	"rdf outperforms other stateoftheart methods in ranking rdf resources"	.
 
-local:queries	rdfs:label	"queries"	.
+local:other_stateoftheart_methods	a	rdf:Class	;
+	rdfs:label	"other stateoftheart methods"	.
 
-local:keyword_queries	rdfs:label	"keyword queries"	.
+local:other_stateoftheart	a	rdf:Class	;
+	rdfs:label	"other stateoftheart"	.
 
-local:informal	rdfs:label	"informal"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:imprecise_informal_keyword_queries	rdfs:label	"imprecise informal keyword queries"	.
+local:other_stateoftheart_methods_in_ranking_rdf_resources	a	rdf:Class	;
+	rdfs:label	"other stateoftheart methods in ranking rdf resources"	.
 
-local:over	rdfs:label	"over"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:over_data	rdfs:label	"over data"	.
+local:adaptation_of_the_bm25f_ranking_function_for_rdf_data	a	rdf:Class	;
+	rdfs:label	"adaptation of the bm25f ranking function for rdf data"	.
 
-local:searching_over_data	rdfs:label	"searching over data"	.
+local:adaptation	a	rdf:Class	;
+	rdfs:label	"adaptation"	.
 
-local:searching	rdfs:label	"searching"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:provide	rdfs:label	"provide"	.
+local:bm25f_ranking_function	a	rdf:Class	;
+	rdfs:label	"bm25f ranking function"	.
 
-local:architectures	rdfs:label	"architectures"	.
+local:ranking_function	a	rdf:Class	;
+	rdfs:label	"ranking function"	.
 
-local:full_expressivity	rdfs:label	"full expressivity"	.
+local:function	a	rdf:Class	;
+	rdfs:label	"function"	.
 
-local:expressivity	rdfs:label	"expressivity"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:full	rdfs:label	"full"	.
+local:bm25f_ranking	a	rdf:Class	;
+	rdfs:label	"bm25f ranking"	.
 
-local:support_for_full_expressivity	rdfs:label	"support for full expressivity"	.
+local:bm25f	a	rdf:Class	;
+	rdfs:label	"bm25f"	.
 
-local:support	rdfs:label	"support"	.
+local:adaptation_of_bm25f_ranking_function	a	rdf:Class	;
+	rdfs:label	"adaptation of bm25f ranking function"	.
 
-local:full_expressivity_of_sparql	rdfs:label	"full expressivity of sparql"	.
+local:bm25f_ranking_function_for_rdf_data	a	rdf:Class	;
+	rdfs:label	"bm25f ranking function for rdf data"	.
 
-local:approaching	rdfs:label	"approaching"	.
+local:method_for_effective_entity_search_over_rdf_data	a	rdf:Class	;
+	rdfs:label	"method for effective entity search over rdf data"	.
 
-local:time	rdfs:label	"time"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:amount_of_data	rdfs:label	"amount of data"	.
+local:effective_entity_search	a	rdf:Class	;
+	rdfs:label	"effective entity search"	.
 
-local:amount	rdfs:label	"amount"	.
+local:effective_entity	a	rdf:Class	;
+	rdfs:label	"effective entity"	.
 
-local:amount_of_data_on_semantic_web	rdfs:label	"amount of data on semantic web"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:limits_of_architectures	rdfs:label	"limits of architectures"	.
+local:entity_search	a	rdf:Class	;
+	rdfs:label	"entity search"	.
 
-local:limits	rdfs:label	"limits"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
 
-local:retrieval	rdfs:label	"retrieval"	.
+local:method_for_effective_entity_search	a	rdf:Class	;
+	rdfs:label	"method for effective entity search"	.
 
-local:retrieval_methods	rdfs:label	"retrieval methods"	.
+local:effective_entity_search_over_rdf_data	a	rdf:Class	;
+	rdfs:label	"effective entity search over rdf data"	.
 
-local:information_retrieval	rdfs:label	"information retrieval"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:information_retrieval_methods	rdfs:label	"information retrieval methods"	.
+local:method_for_efficient_entity_search_over_rdf_data	a	rdf:Class	;
+	rdfs:label	"method for efficient entity search over rdf data"	.
 
-local:information	rdfs:label	"information"	.
+local:efficient_entity_search	a	rdf:Class	;
+	rdfs:label	"efficient entity search"	.
 
-local:methods	rdfs:label	"methods"	.
+local:efficient_entity	a	rdf:Class	;
+	rdfs:label	"efficient entity"	.
 
-local:led	rdfs:label	"led"	.
+local:method_for_efficient_entity_search	a	rdf:Class	;
+	rdfs:label	"method for efficient entity search"	.
 
-local:factors	rdfs:label	"factors"	.
+local:efficient_entity_search_over_rdf_data	a	rdf:Class	;
+	rdfs:label	"efficient entity search over rdf data"	.
 
-local:semantic_search	rdfs:label	"semantic search"	.
+local:information_retrieval_methods	a	rdf:Class	;
+	rdfs:label	"information retrieval methods"	.
 
-local:search	rdfs:label	"search"	.
+local:retrieval_methods	a	rdf:Class	;
+	rdfs:label	"retrieval methods"	.
 
-local:ie_search	rdfs:label	"i.e. search"	.
+local:information_retrieval	a	rdf:Class	;
+	rdfs:label	"information retrieval"	.
 
-local:semantic_ie_search	rdfs:label	"semantic i.e. search"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:increased_interest	rdfs:label	"increased interest"	.
+local:factors	a	rdf:Class	;
+	rdfs:label	"factors"	.
 
-local:interest	rdfs:label	"interest"	.
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
 
-local:increased_interest_in_semantic_ie_search	rdfs:label	"increased interest in semantic i.e. search"	.
+local:interest	a	rdf:Class	;
+	rdfs:label	"interest"	.
 
-local:access_to_rdf_data	rdfs:label	"access to rdf data"	.
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
 
-local:increased	rdfs:label	"increased"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:propose	rdfs:label	"propose"	.
+local:increased_interest_in_semantic_search_ie_access_to_rdf_data	a	rdf:Class	;
+	rdfs:label	"increased interest in semantic search ie access to rdf data"	.
 
-local:work	rdfs:label	"work"	.
+local:semantic_search_ie_access	a	rdf:Class	;
+	rdfs:label	"semantic search ie access"	.
 
-local:we	rdfs:label	"we"	.
+local:search_ie	a	rdf:Class	;
+	rdfs:label	"search ie"	.
 
-local:entity_search	rdfs:label	"entity search"	.
+local:ie	a	rdf:Class	;
+	rdfs:label	"ie"	.
 
-local:entity	rdfs:label	"entity"	.
+local:semantic_search_ie	a	rdf:Class	;
+	rdfs:label	"semantic search ie"	.
 
-local:efficient	rdfs:label	"efficient"	.
+local:semantic_search	a	rdf:Class	;
+	rdfs:label	"semantic search"	.
 
-local:efficient_entity	rdfs:label	"efficient entity"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:efficient_entity_search	rdfs:label	"efficient entity search"	.
+local:search_ie_access	a	rdf:Class	;
+	rdfs:label	"search ie access"	.
 
-local:method_for_efficient_entity_search	rdfs:label	"method for efficient entity search"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:method	rdfs:label	"method"	.
+local:ie_access	a	rdf:Class	;
+	rdfs:label	"ie access"	.
 
-local:efficient_entity_search_over_rdf_data	rdfs:label	"efficient entity search over rdf data"	.
+local:increased_interest_in_semantic_search	a	rdf:Class	;
+	rdfs:label	"increased interest in semantic search"	.
 
-local:effective_entity	rdfs:label	"effective entity"	.
+local:ie_access_to_rdf_data	a	rdf:Class	;
+	rdfs:label	"ie access to rdf data"	.
 
-local:effective_entity_search	rdfs:label	"effective entity search"	.
+local:amount_of_data_on_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"amount of data on the semantic web"	.
 
-local:effective	rdfs:label	"effective"	.
+local:amount	a	rdf:Class	;
+	rdfs:label	"amount"	.
 
-local:method_for_effective_entity_search	rdfs:label	"method for effective entity search"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:effective_entity_search_over_rdf_data	rdfs:label	"effective entity search over rdf data"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:describe	rdfs:label	"describe"	.
+local:amount_of_data	a	rdf:Class	;
+	rdfs:label	"amount of data"	.
 
-local:ranking_function	rdfs:label	"ranking function"	.
+local:amount_of_data_on_semantic_web	a	rdf:Class	;
+	rdfs:label	"amount of data on semantic web"	.
 
-local:function	rdfs:label	"function"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:bm25f_ranking_function	rdfs:label	"bm25f ranking function"	.
+local:limits_of_the_architectures	a	rdf:Class	;
+	rdfs:label	"limits of the architectures"	.
 
-local:adaptation_of_bm25f_ranking_function	rdfs:label	"adaptation of bm25f ranking function"	.
+local:architectures	a	rdf:Class	;
+	rdfs:label	"architectures"	.
 
-local:adaptation	rdfs:label	"adaptation"	.
+local:limits	a	rdf:Class	;
+	rdfs:label	"limits"	.
 
-local:bm25f_ranking_function_for_rdf_data	rdfs:label	"bm25f ranking function for rdf data"	.
+local:limits_of_architectures	a	rdf:Class	;
+	rdfs:label	"limits of architectures"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:other	rdfs:label	"other"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:other_stateoftheart	rdfs:label	"other state-of-the-art"	.
+local:support_for_the_full_expressivity_of_sparql	a	rdf:Class	;
+	rdfs:label	"support for the full expressivity of sparql"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:full_expressivity	a	rdf:Class	;
+	rdfs:label	"full expressivity"	.
 
-local:stateoftheart_methods	rdfs:label	"state-of-the-art methods"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:rdf_resources	rdfs:label	"rdf resources"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:other_stateoftheart_methods	rdfs:label	"other state-of-the-art methods"	.
+local:full	a	rdf:Class	;
+	rdfs:label	"full"	.
 
-local:resources	rdfs:label	"resources"	.
+local:expressivity	a	rdf:Class	;
+	rdfs:label	"expressivity"	.
 
-local:ranking_rdf_resources	rdfs:label	"ranking rdf resources"	.
+local:support_for_full_expressivity	a	rdf:Class	;
+	rdfs:label	"support for full expressivity"	.
 
-local:other_stateoftheart_methods_in_ranking_rdf_resources	rdfs:label	"other state-of-the-art methods in ranking rdf resources"	.
+local:full_expressivity_of_sparql	a	rdf:Class	;
+	rdfs:label	"full expressivity of sparql"	.
 
-local:outperforms	rdfs:label	"outperforms"	.
+local:new_end_users_of_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"new end users of the semantic web"	.
 
-local:stateoftheart_methods_in_ranking_rdf_resources	rdfs:label	"state-of-the-art methods in ranking rdf resources"	.
+local:new_end_users	a	rdf:Class	;
+	rdfs:label	"new end users"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:end_users	a	rdf:Class	;
+	rdfs:label	"end users"	.
 
-local:also	rdfs:label	"also"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:index_structures	rdfs:label	"index structures"	.
+local:new_end	a	rdf:Class	;
+	rdfs:label	"new end"	.
 
-local:structures	rdfs:label	"structures"	.
+local:end	a	rdf:Class	;
+	rdfs:label	"end"	.
 
-local:new_index	rdfs:label	"new index"	.
+local:new_end_users_of_semantic_web	a	rdf:Class	;
+	rdfs:label	"new end users of semantic web"	.
 
-local:new_index_structures	rdfs:label	"new index structures"	.
+local:new_end_users_of_the_semantic_web_however_overwhelmingly	a	rdf:Class	;
+	rdfs:label	"new end users of the semantic web however overwhelmingly"	.
 
-local:efficient_retrieval	rdfs:label	"efficient retrieval"	.
+local:however_overwhelmingly	a	rdf:Class	;
+	rdfs:label	"however overwhelmingly"	.
 
-local:index	rdfs:label	"index"	.
+local:overwhelmingly	a	rdf:Class	;
+	rdfs:label	"overwhelmingly"	.
 
-local:set_of_new_index_structures	rdfs:label	"set of new index structures"	.
+local:prefer	a	rdf:Class	;
+	rdfs:label	"prefer"	.
 
-local:set	rdfs:label	"set"	.
+local:imprecise_informal_keyword_queries	a	rdf:Class	;
+	rdfs:label	"imprecise informal keyword queries"	.
 
-local:set_of_new_index_structures_for_efficient_retrieval	rdfs:label	"set of new index structures for efficient retrieval"	.
+local:informal_keyword_queries	a	rdf:Class	;
+	rdfs:label	"informal keyword queries"	.
 
-local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	rdfs:label	"set of new index structures for efficient retrieval for ranking"	.
+local:imprecise	a	rdf:Class	;
+	rdfs:label	"imprecise"	.
 
-local:efficient_retrieval_of_results	rdfs:label	"efficient retrieval of results"	.
+local:informal_keyword	a	rdf:Class	;
+	rdfs:label	"informal keyword"	.
 
-local:results	rdfs:label	"results"	.
+local:keyword	a	rdf:Class	;
+	rdfs:label	"keyword"	.
 
-local:opensource_mg4j_framework	rdfs:label	"open-source mg4j framework"	.
+local:keyword_queries	a	rdf:Class	;
+	rdfs:label	"keyword queries"	.
 
-local:framework	rdfs:label	"framework"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:mg4j	rdfs:label	"mg4j"	.
+local:informal	a	rdf:Class	;
+	rdfs:label	"informal"	.
 
-local:mg4j_framework	rdfs:label	"mg4j framework"	.
+local:searching_over_data	a	rdf:Class	;
+	rdfs:label	"searching over data"	.
 
-local:opensource_mg4j	rdfs:label	"open-source mg4j"	.
+local:over_data	a	rdf:Class	;
+	rdfs:label	"over data"	.
 
-local:opensource	rdfs:label	"open-source"	.
+local:over	a	rdf:Class	;
+	rdfs:label	"over"	.
 
-local:implement	rdfs:label	"implement"	.
+local:searching	a	rdf:Class	;
+	rdfs:label	"searching"	.
 
-#### Properties ####
+local:expressive_formal_query_languages_such_as_sparql	a	rdf:Class	;
+	rdfs:label	"expressive formal query languages such_as sparql"	.
+
+local:expressive_formal_query_languages	a	rdf:Class	;
+	rdfs:label	"expressive formal query languages"	.
+
+local:expressive_formal	a	rdf:Class	;
+	rdfs:label	"expressive formal"	.
+
+local:formal	a	rdf:Class	;
+	rdfs:label	"formal"	.
+
+local:formal_query_languages	a	rdf:Class	;
+	rdfs:label	"formal query languages"	.
+
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
+
+local:query_languages	a	rdf:Class	;
+	rdfs:label	"query languages"	.
+
+local:formal_query	a	rdf:Class	;
+	rdfs:label	"formal query"	.
+
+local:expressive_formal_query	a	rdf:Class	;
+	rdfs:label	"expressive formal query"	.
+
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
+
+local:expressive	a	rdf:Class	;
+	rdfs:label	"expressive"	.
+
+local:triple_stores	a	rdf:Class	;
+	rdfs:label	"triple stores"	.
+
+local:triple	a	rdf:Class	;
+	rdfs:label	"triple"	.
+
+local:stores	a	rdf:Class	;
+	rdfs:label	"stores"	.
+
+local:rdf_storage_access	a	rdf:Class	;
+	rdfs:label	"rdf storage access"	.
+
+local:rdf_storage	a	rdf:Class	;
+	rdfs:label	"rdf storage"	.
+
+local:storage_access	a	rdf:Class	;
+	rdfs:label	"storage access"	.
+
+local:storage	a	rdf:Class	;
+	rdfs:label	"storage"	.
+
+local:long	a	rdf:Class	;
+	rdfs:label	"long"	.
+
+local:data_access	a	rdf:Class	;
+	rdfs:label	"data access"	.
 
 #### Mapped Relations ####
 
-cso:rdf_data	rdfs:label	"rdf data"	.
-local:sparql	owl:sameAs	cso:sparql	.
-cso:information_retrieval	rdfs:label	"information retrieval"	.
-cso:index_structure	rdfs:label	"index structures"	.
-cso:semantic_web	rdfs:label	"semantic web"	.
-local:information_retrieval	owl:sameAs	cso:information_retrieval	.
-cso:rdf	rdfs:label	"rdf"	.
-cso:semantic_search	rdfs:label	"semantic search"	.
-local:query_languages	owl:sameAs	cso:query_languages	.
-cso:retrieval_methods	rdfs:label	"retrieval methods"	.
-local:index_structures	owl:sameAs	cso:index_structure	.
-local:keyword_queries	owl:sameAs	cso:keyword_queries	.
-local:retrieval_methods	owl:sameAs	cso:retrieval_methods	.
-local:semantic_web	owl:sameAs	cso:semantic_web	.
-local:rdf_data	owl:sameAs	cso:rdf_data	.
-local:rdf	owl:sameAs	cso:rdf	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:semantic_search	owl:sameAs	cso:semantic_search	.
 cso:keyword_queries	rdfs:label	"keyword queries"	.
-cso:semantics	rdfs:label	"semantic"	.
+cso:information_retrieval	rdfs:label	"information retrieval"	.
+local:retrieval_methods	owl:sameAs	cso:retrieval_methods	.
 cso:query_languages	rdfs:label	"query languages"	.
+cso:semantic_web	rdfs:label	"semantic web"	.
+cso:rdf_data	rdfs:label	"rdf data"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:keyword_queries	owl:sameAs	cso:keyword_queries	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
+local:semantic_search	owl:sameAs	cso:semantic_search	.
+cso:retrieval_methods	rdfs:label	"retrieval methods"	.
+cso:index_structure	rdfs:label	"index structures"	.
 cso:sparql	rdfs:label	"sparql"	.
+cso:semantic_search	rdfs:label	"semantic search"	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+cso:rdf	rdfs:label	"rdf"	.
+local:information_retrieval	owl:sameAs	cso:information_retrieval	.
+local:index_structures	owl:sameAs	cso:index_structure	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantic"	.
+local:query_languages	owl:sameAs	cso:query_languages	.
+local:sparql	owl:sameAs	cso:sparql	.
 
 #### Relations ####
 
-local:led	vn.role:Destination	local:increased_interest_in_semantic_ie_search	.
-local:effective	rdfs:member	local:effective_entity	.
-local:new_index_structures	rdfs:subClassOf	local:index_structures	.
-local:data_access	rdfs:subClassOf	local:access	.
-local:ranking	vn.role:Theme	local:rdf_resources	.
-local:amount_of_data	local:amount_of	local:data	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:information_retrieval	rdfs:member	local:information_retrieval_methods	.
-local:formal_query	rdfs:subClassOf	local:query	.
-local:triple	rdfs:member	local:triple_stores	.
-local:formal	rdfs:member	local:formal_query	.
-local:end_users	rdfs:subClassOf	local:users	.
-local:set_of_new_index_structures_for_efficient_retrieval	local:setofnewindexstructures_for	local:efficient_retrieval	.
-local:adaptation_of_bm25f_ranking_function	local:adaptation_of	local:bm25f_ranking_function	.
+local:adaptation_of_the_bm25f_ranking_function_for_rdf_data	rdfs:member	local:bm25f_ranking_function	.
 local:opensource_mg4j_framework	rdfs:subClassOf	local:mg4j_framework	.
-local:using	vn.role:Theme	local:expressive_formal_query_languages_suchas_sparql	.
-local:provided	vn.role:Agent	local:data_access	.
-local:opensource	rdfs:member	local:opensource_mg4j	.
-local:efficient_entity_search	rdfs:subClassOf	local:search	.
-local:other_stateoftheart_methods_in_ranking_rdf_resources	local:otherstate-of-the-artmethods_in	local:ranking_rdf_resources	.
-local:rdf	rdfs:member	local:rdf_storage	.
-local:increased	vn.role:Attribute	local:interest	.
-local:effective_entity_search	rdfs:subClassOf	local:entity_search	.
-local:full_expressivity_of_sparql	local:fullexpressivity_of	local:sparql	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:formal_query	rdfs:member	local:formal_query_languages	.
-local:stateoftheart	rdfs:member	local:stateoftheart_methods	.
-local:provide	vn.role:Agent	local:support_for_full_expressivity	.
-local:method_for_effective_entity_search	local:for_effectiveentitysearch	local:method	.
-local:rdf_storage	rdfs:member	local:rdf_storage_access	.
-local:new_end_users	rdfs:subClassOf	local:users	.
-local:mg4j_framework	rdfs:subClassOf	local:framework	.
-local:opensource_mg4j	rdfs:subClassOf	local:mg4j	.
-local:semantic_search	rdfs:subClassOf	local:search	.
-local:effective_entity_search	rdfs:subClassOf	local:search	.
-local:new	rdfs:member	local:new_end	.
-local:efficient_retrieval	rdfs:subClassOf	local:retrieval	.
-local:keyword_queries	rdfs:subClassOf	local:queries	.
-local:approaching	vn.role:object	local:amount_of_data_on_semantic_web	.
-local:opensource_mg4j	rdfs:member	local:opensource_mg4j_framework	.
-local:formal_query_languages	rdfs:subClassOf	local:query_languages	.
-local:end	rdfs:member	local:end_users	.
-local:set_of_new_index_structures	local:set_of	local:new_index_structures	.
-local:outperforms	vn.role:Theme2	local:stateoftheart_methods_in_ranking_rdf_resources	.
-local:new_end_users_of_semantic_web	local:of_semanticweb	local:new_end_users	.
-local:bm25f_ranking_function_for_rdf_data	local:bm25frankingfunction_for	local:rdf_data	.
-local:new	rdfs:member	local:new_index	.
-local:demonstrate	vn.role:Cause	local:outperforms	.
-local:informal_keyword_queries	rdfs:subClassOf	local:keyword_queries	.
-local:efficient_entity	rdfs:member	local:efficient_entity_search	.
-local:informal_keyword	rdfs:subClassOf	local:keyword	.
-local:propose	local:AM-DIS	local:also	.
-local:limits_of_architectures	local:of_architectures	local:limits	.
-local:semantic	rdfs:member	local:semantic_search	.
-local:informal	rdfs:member	local:informal_keyword	.
-local:full_expressivity	rdfs:subClassOf	local:expressivity	.
-local:prefer	local:AM-PNC	local:searching_over_data	.
-local:increased_interest	rdfs:subClassOf	local:interest	.
-local:demonstrate	vn.role:Recipient	local:we	.
-local:efficient_retrieval_of_results	local:efficientretrieval_of	local:results	.
-local:efficient_entity_search	rdfs:subClassOf	local:entity_search	.
-local:storage_access	rdfs:subClassOf	local:access	.
-local:effective_entity	rdfs:member	local:effective_entity_search	.
-local:efficient	rdfs:member	local:efficient_entity	.
-local:other_stateoftheart_methods	rdfs:subClassOf	local:methods	.
-local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	local:for_ranking	local:set_of_new_index_structures_for_efficient_retrieval	.
-local:set_of_new_index_structures_for_efficient_retrieval	local:for_efficientretrieval	local:set_of_new_index_structures	.
-local:implement	vn.role:Theme	local:results	.
-local:opensource_mg4j_framework	rdfs:subClassOf	local:framework	.
-local:query_languages	rdfs:subClassOf	local:languages	.
-local:formal_query_languages	rdfs:subClassOf	local:languages	.
-local:support_for_full_expressivity	local:support_for	local:full_expressivity	.
-local:method_for_effective_entity_search	local:method_for	local:effective_entity_search	.
-local:effective_entity_search_over_rdf_data	local:over_rdfdata	local:effective_entity_search	.
-local:information_retrieval	rdfs:subClassOf	local:retrieval	.
-local:rdf	rdfs:member	local:rdf_resources	.
-local:stateoftheart_methods	rdfs:subClassOf	local:methods	.
-local:other_stateoftheart	rdfs:member	local:other_stateoftheart_methods	.
-local:ranking_function	rdfs:subClassOf	local:function	.
-local:support_for_full_expressivity	local:for_fullexpressivity	local:support	.
-local:rdf_storage	rdfs:subClassOf	local:storage	.
-local:full_expressivity_of_sparql	local:of_sparql	local:full_expressivity	.
-local:approaching	vn.role:indirect_object	local:limits_of_architectures	.
-local:propose	local:AM-LOC	local:work	.
-local:limits_of_architectures	local:limits_of	local:architectures	.
-local:imprecise_informal_keyword_queries	rdfs:subClassOf	local:informal_keyword_queries	.
-local:propose	vn.role:Agent	local:we	.
-local:index	rdfs:member	local:index_structures	.
-local:ie_search	rdfs:subClassOf	local:search	.
-local:informal_keyword	rdfs:member	local:informal_keyword_queries	.
-local:describe	vn.role:Agent	local:we	.
-local:expressive_formal_query_languages_suchas_sparql	local:expressiveformalquerylanguages_such_as	local:sparql	.
-local:query	rdfs:member	local:query_languages	.
-local:searching	vn.role:Location	local:data	.
-local:ranking_rdf_resources	rdfs:subClassOf	local:rdf_resources	.
-local:amount_of_data_on_semantic_web	local:on_semanticweb	local:amount_of_data	.
-local:method_for_efficient_entity_search	local:for_efficiententitysearch	local:method	.
-local:over_data	rdfs:subClassOf	local:data	.
-local:entity_search	rdfs:subClassOf	local:search	.
-local:rdf_storage_access	rdfs:subClassOf	local:storage_access	.
-local:triple_stores	rdfs:subClassOf	local:stores	.
-local:semantic_ie_search	rdfs:subClassOf	local:ie_search	.
-local:efficient_entity_search_over_rdf_data	local:efficiententitysearch_over	local:rdf_data	.
-local:efficient_entity_search_over_rdf_data	local:over_rdfdata	local:efficient_entity_search	.
-local:new_end_users	rdfs:subClassOf	local:end_users	.
-local:adaptation_of_bm25f_ranking_function	local:of_bm25frankingfunction	local:adaptation	.
-local:other_stateoftheart	rdfs:subClassOf	local:stateoftheart	.
-local:other_stateoftheart_methods	rdfs:subClassOf	local:stateoftheart_methods	.
-local:provided	vn.role:Agent	local:rdf_storage_access	.
-local:effective_entity	rdfs:subClassOf	local:entity	.
-local:index_structures	rdfs:subClassOf	local:structures	.
-local:using	vn.role:Theme	local:opensource_mg4j_framework	.
-local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	local:setofnewindexstructuresforefficientretrieval_for	local:ranking	.
-local:access_to_rdf_data	local:to_rdfdata	local:access	.
-local:provided	local:AM-TMP	local:long	.
-local:access_to_rdf_data	local:access_to	local:rdf_data	.
-local:stateoftheart_methods_in_ranking_rdf_resources	local:in_rankingrdfresources	local:stateoftheart_methods	.
-local:amount_of_data_on_semantic_web	local:amountofdata_on	local:semantic_web	.
-local:new_index	rdfs:member	local:new_index_structures	.
-local:other_stateoftheart_methods_in_ranking_rdf_resources	local:in_rankingrdfresources	local:other_stateoftheart_methods	.
-local:prefer	vn.role:Experiencer	local:imprecise_informal_keyword_queries	.
-local:information	rdfs:member	local:information_retrieval	.
-local:efficient	rdfs:member	local:efficient_retrieval	.
-local:led	vn.role:Agent	local:factors	.
-local:efficient_entity	rdfs:subClassOf	local:entity	.
-local:entity	rdfs:member	local:entity_search	.
-local:full	rdfs:member	local:full_expressivity	.
-local:using	vn.role:Agent	local:rdf_data	.
-local:increased_interest_in_semantic_ie_search	local:in_semantici.e.search	local:increased_interest	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:new_index	rdfs:subClassOf	local:index	.
-local:over	rdfs:member	local:over_data	.
-local:searching_over_data	local:over_data	local:searching	.
-local:implement	vn.role:Agent	local:we	.
-local:using	vn.role:Theme	local:information_retrieval_methods	.
-local:efficient_retrieval_of_results	local:of_results	local:efficient_retrieval	.
-local:new_end	rdfs:subClassOf	local:end	.
-local:retrieval_methods	rdfs:subClassOf	local:methods	.
-local:mg4j	rdfs:member	local:mg4j_framework	.
-local:provided	vn.role:Recipient	local:triple_stores	.
-local:new_end	rdfs:member	local:new_end_users	.
-local:new_end_users_of_semantic_web	local:newendusers_of	local:semantic_web	.
-local:searching_over_data	local:searching_over	local:data	.
-local:prefer	vn.role:Theme	local:however_overwhelmingly	.
-local:approaching	local:AM-LOC	local:time	.
-local:new_index_structures	rdfs:subClassOf	local:structures	.
-local:however_overwhelmingly	rdfs:subClassOf	local:overwhelmingly	.
-local:informal_keyword_queries	rdfs:subClassOf	local:queries	.
-local:propose	vn.role:Topic	local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	.
-local:propose	vn.role:Topic	local:method_for_effective_entity_search	.
-local:describe	vn.role:Theme	local:adaptation_of_bm25f_ranking_function	.
-local:effective_entity_search_over_rdf_data	local:effectiveentitysearch_over	local:rdf_data	.
-local:information_retrieval_methods	rdfs:subClassOf	local:methods	.
-local:provide	vn.role:Recipient	local:architectures	.
-local:propose	vn.role:Topic	local:method_for_efficient_entity_search	.
-local:storage	rdfs:member	local:storage_access	.
-local:retrieval	rdfs:member	local:retrieval_methods	.
-local:expressive_formal_query_languages_suchas_sparql	local:such_as_sparql	local:expressive_formal_query_languages	.
-local:using	vn.role:Agent	local:results	.
-local:data	rdfs:member	local:data_access	.
-local:expressive_formal_query_languages	rdfs:subClassOf	local:formal_query_languages	.
-local:stateoftheart_methods_in_ranking_rdf_resources	local:state-of-the-artmethods_in	local:ranking_rdf_resources	.
-local:rdf_storage_access	rdfs:subClassOf	local:access	.
-local:set_of_new_index_structures	local:of_newindexstructures	local:set	.
-local:keyword	rdfs:member	local:keyword_queries	.
-local:method_for_efficient_entity_search	local:method_for	local:efficient_entity_search	.
-local:bm25f_ranking_function_for_rdf_data	local:for_rdfdata	local:bm25f_ranking_function	.
-local:searching	vn.role:Agent	local:new_end_users_of_semantic_web	.
-local:rdf_resources	rdfs:subClassOf	local:resources	.
-local:increased_interest_in_semantic_ie_search	local:increasedinterest_in	local:semantic_ie_search	.
-local:amount_of_data	local:of_data	local:amount	.
-local:information_retrieval_methods	rdfs:subClassOf	local:retrieval_methods	.
-local:other	rdfs:member	local:other_stateoftheart	.
+local:s10	rdf:predicate	local:propose	.
 local:bm25f_ranking_function	rdfs:subClassOf	local:ranking_function	.
-local:outperforms	vn.role:Theme1	local:rdf	.
+local:full_expressivity_of_sparql	rdfs:member	local:full_expressivity	.
+local:new_end_users	rdfs:member	local:new_end	.
+local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	rdfs:member	local:results	.
+local:support_for_the_full_expressivity_of_sparql	rdfs:member	local:full_expressivity	.
+local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	rdfs:member	local:ranking	.
+local:efficient_entity	rdfs:subClassOf	local:entity	.
+local:semantic_search	rdfs:member	local:semantic	.
+local:method_for_efficient_entity_search_over_rdf_data	rdfs:member	local:rdf_data	.
+local:s5	rdf:subject	local:architectures	.
+local:effective_entity_search_over_rdf_data	rdfs:member	local:effective_entity_search	.
+local:s4.1	rdf:predicate	local:search	.
+local:s1	rdf:subject	local:triple_stores	.
+local:expressive_formal	rdfs:member	local:expressive	.
+local:adaptation_of_bm25f_ranking_function	rdfs:member	local:bm25f_ranking_function	.
+local:other_stateoftheart	rdfs:member	local:other	.
+local:expressive_formal_query_languages_such_as_sparql	rdfs:member	local:sparql	.
+local:s10	local:AM-LOC	local:work	.
+local:semantic_search_ie	rdfs:subClassOf	local:ie	.
+local:s4	rdf:object	local:imprecise_informal_keyword_queries	.
+local:semantic_search_ie_access	rdfs:subClassOf	local:access	.
+local:efficient_entity_search	rdfs:subClassOf	local:search	.
+local:s0	rdf:subject	local:triple_stores	.
+local:s6	local:AM-TMP	local:time	.
+local:mg4j_framework	rdfs:subClassOf	local:framework	.
+local:new_index	rdfs:member	local:new	.
+local:s13.2	rdfs:subClassOf	local:rdf_resources	.
+local:full_expressivity	rdfs:subClassOf	local:expressivity	.
+local:new_end_users	rdfs:subClassOf	local:end_users	.
+local:s13	rdf:subject	local:we	.
+local:mg4j_framework	rdfs:member	local:mg4j	.
+local:data_access	rdfs:subClassOf	local:access	.
+local:s13.1	rdfs:member	local:rdf	.
+local:formal_query	rdfs:subClassOf	local:query	.
+local:efficient_entity	rdfs:member	local:efficient	.
+local:s6	rdf:object	local:limits_of_the_architectures	.
+local:method_for_effective_entity_search	rdfs:member	local:method	.
+local:over_data	rdfs:member	local:over	.
+local:s14	rdf:predicate	local:propose	.
+local:s12	rdf:object	local:adaptation_of_the_bm25f_ranking_function_for_rdf_data	.
+local:s1	rdf:predicate	local:provide	.
+local:semantic_search	rdfs:subClassOf	local:search	.
+local:s13.1	rdfs:member	local:other_stateoftheart_methods	.
+local:support_for_the_full_expressivity_of_sparql	rdfs:member	local:sparql	.
+local:triple_stores	rdfs:subClassOf	local:stores	.
+local:effective_entity_search	rdfs:subClassOf	local:search	.
+local:efficient_retrieval	rdfs:member	local:efficient	.
+local:efficient_entity_search_over_rdf_data	rdfs:member	local:rdf_data	.
+local:expressive_formal_query	rdfs:subClassOf	local:query	.
+local:s15	rdf:subject	local:we	.
+local:increased_interest_in_semantic_search	rdfs:member	local:semantic_search	.
+local:informal_keyword	rdfs:subClassOf	local:keyword	.
+local:s14	rdf:object	local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	.
+local:full_expressivity_of_sparql	rdfs:member	local:sparql	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:other_stateoftheart_methods	rdfs:member	local:other_stateoftheart	.
+local:storage_access	rdfs:subClassOf	local:access	.
+local:method_for_effective_entity_search_over_rdf_data	rdfs:member	local:rdf_data	.
+local:method_for_efficient_entity_search_over_rdf_data	rdfs:member	local:efficient_entity_search	.
+local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	rdfs:member	local:efficient_retrieval	.
+local:imprecise_informal_keyword_queries	rdfs:member	local:imprecise	.
+local:increased_interest_in_semantic_search_ie_access_to_rdf_data	rdfs:member	local:semantic_search_ie_access	.
+local:search_ie	rdfs:subClassOf	local:ie	.
+local:s8	rdf:subject	local:factors	.
+local:information_retrieval_methods	rdfs:subClassOf	local:retrieval_methods	.
+local:efficient_retrieval_of_results	rdfs:member	local:results	.
+local:full_expressivity	rdfs:member	local:full	.
+local:new_end_users_of_the_semantic_web_however_overwhelmingly	rdfs:member	local:semantic_web	.
+local:informal_keyword_queries	rdfs:subClassOf	local:keyword_queries	.
+local:s6	rdf:predicate	local:approach	.
+local:formal_query_languages	rdfs:member	local:formal_query	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:s4	rdf:predicate	local:prefer	.
+local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	rdfs:member	local:set_of_new_index_structures_for_efficient_retrieval	.
+local:adaptation_of_the_bm25f_ranking_function_for_rdf_data	rdfs:member	local:adaptation	.
+local:however_overwhelmingly	rdfs:subClassOf	local:overwhelmingly	.
+local:method_for_efficient_entity_search	rdfs:member	local:method	.
+local:amount_of_data_on_semantic_web	rdfs:member	local:semantic_web	.
+local:method_for_effective_entity_search	rdfs:member	local:effective_entity_search	.
+local:effective_entity_search_over_rdf_data	rdfs:member	local:rdf_data	.
+local:new_end_users_of_the_semantic_web	rdfs:member	local:semantic_web	.
+local:new_end_users_of_semantic_web	rdfs:member	local:new_end_users	.
+local:s9	rdf:object	local:information_retrieval_methods	.
+local:other_stateoftheart_methods	rdfs:subClassOf	local:methods	.
+local:new_index_structures	rdfs:member	local:new_index	.
+local:semantic_search_ie_access	rdfs:member	local:semantic_search_ie	.
+local:query_languages	rdfs:member	local:query	.
+local:opensource_mg4j_framework	rdfs:member	local:opensource_mg4j	.
+local:expressive_formal	rdfs:subClassOf	local:formal	.
+local:entity_search	rdfs:subClassOf	local:search	.
+local:limits_of_architectures	rdfs:member	local:limits	.
+local:s13.1	rdf:subject	local:rdf	.
+local:rdf_storage	rdfs:subClassOf	local:storage	.
+local:s13	rdf:object	local:rdf_outperforms_other_stateoftheart_methods_in_ranking_rdf_resources	.
+local:end_users	rdfs:subClassOf	local:users	.
+local:set_of_new_index_structures	rdfs:member	local:set	.
+local:s6	rdf:subject	local:amount_of_data_on_the_semantic_web	.
+local:new_end_users_of_the_semantic_web	rdfs:member	local:new_end_users	.
+local:ie_access	rdfs:subClassOf	local:access	.
+local:support_for_the_full_expressivity_of_sparql	rdfs:member	local:support	.
+local:semantic_search_ie	rdfs:member	local:semantic_search	.
+local:ranking_function	rdfs:subClassOf	local:function	.
+local:ie_access	rdfs:member	local:ie	.
+local:s5	rdf:object	local:support_for_the_full_expressivity_of_sparql	.
+local:s0	rdf:predicate	local:provide	.
+local:new_index	rdfs:subClassOf	local:index	.
+local:s13.2	rdf:subject	local:rdf_resources	.
+local:entity_search	rdfs:member	local:entity	.
+local:informal_keyword	rdfs:member	local:informal	.
+local:searching_over_data	rdfs:member	local:data	.
+local:search_ie	rdfs:member	local:search	.
+local:method_for_efficient_entity_search_over_rdf_data	rdfs:member	local:method	.
+local:triple_stores	rdfs:member	local:triple	.
+local:rdf_storage_access	rdfs:member	local:rdf_storage	.
+local:s2	rdf:predicate	local:use	.
+local:new_end_users_of_semantic_web	rdfs:member	local:semantic_web	.
+local:s0	rdf:object	local:data_access	.
+local:effective_entity_search	rdfs:member	local:effective_entity	.
+local:s10	rdf:subject	local:we	.
+local:amount_of_data_on_the_semantic_web	rdfs:member	local:semantic_web	.
+local:new_index_structures	rdfs:subClassOf	local:index_structures	.
+local:s13	rdf:predicate	local:demonstrate	.
+local:s16	rdf:subject	local:results	.
+local:limits_of_architectures	rdfs:member	local:architectures	.
+local:s11	rdf:predicate	local:propose	.
+local:s11	rdf:subject	local:we	.
+local:rdf_storage_access	rdfs:subClassOf	local:storage_access	.
+local:s11	rdf:object	local:method_for_effective_entity_search_over_rdf_data	.
+local:s13.2	rdf:predicate	local:rank	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:retrieval_methods	rdfs:member	local:retrieval	.
+local:rdf_storage	rdfs:member	local:rdf	.
+local:s15	rdf:predicate	local:implement	.
+local:set_of_new_index_structures_for_efficient_retrieval	rdfs:member	local:efficient_retrieval	.
+local:searching_over_data	rdfs:member	local:searching	.
+local:s15	rdf:object	local:results	.
+local:s7	rdf:object	local:increased_interest_in_semantic_search_ie_access_to_rdf_data	.
+local:other_stateoftheart	rdfs:subClassOf	local:stateoftheart	.
+local:method_for_effective_entity_search_over_rdf_data	rdfs:member	local:effective_entity_search	.
+local:index_structures	rdfs:subClassOf	local:structures	.
+local:s7.1	rdf:predicate	local:increase	.
+local:information_retrieval_methods	rdfs:subClassOf	local:methods	.
+local:s13.1	rdf:object	local:stateoftheart_methods	.
+local:search_ie_access	rdfs:subClassOf	local:access	.
+local:new_end_users_of_the_semantic_web_however_overwhelmingly	rdfs:member	local:new_end_users	.
+local:effective_entity	rdfs:member	local:effective	.
+local:s11	local:AM-LOC	local:work	.
+local:increased_interest_in_semantic_search_ie_access_to_rdf_data	rdfs:member	local:rdf_data	.
+local:s5	rdf:predicate	local:provide	.
+local:s9	rdf:subject	local:rdf_data	.
+local:stateoftheart_methods	rdfs:subClassOf	local:methods	.
+local:method_for_efficient_entity_search	rdfs:member	local:efficient_entity_search	.
+local:information_retrieval	rdfs:subClassOf	local:retrieval	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:s16	rdf:object	local:opensource_mg4j_framework	.
+local:set_of_new_index_structures_for_efficient_retrieval	rdfs:member	local:set_of_new_index_structures	.
+local:other_stateoftheart_methods_in_ranking_rdf_resources	rdfs:member	local:other_stateoftheart_methods	.
+local:s9	rdf:predicate	local:use	.
+local:search_ie_access	rdfs:member	local:search_ie	.
+local:amount_of_data_on_the_semantic_web	rdfs:member	local:data	.
+local:s2	rdf:subject	local:expressive_formal_query_languages_such_as_sparql	.
+local:other_stateoftheart_methods_in_ranking_rdf_resources	rdfs:member	local:s13.2	.
+local:expressive_formal_query	rdfs:member	local:expressive_formal	.
+local:informal_keyword_queries	rdfs:subClassOf	local:queries	.
+local:expressive_formal_query_languages	rdfs:subClassOf	local:formal_query_languages	.
+local:efficient_retrieval	rdfs:subClassOf	local:retrieval	.
+local:amount_of_data	rdfs:member	local:amount	.
+local:retrieval_methods	rdfs:subClassOf	local:methods	.
+local:increased_interest_in_semantic_search	rdfs:member	local:s7.1	.
+local:imprecise_informal_keyword_queries	rdfs:subClassOf	local:informal_keyword_queries	.
+local:s1	local:AM-TMP	local:long	.
+local:s7.1	rdf:subject	local:interest	.
+local:increased_interest_in_semantic_search_ie_access_to_rdf_data	rdfs:member	local:interest	.
+local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	rdfs:member	local:set	.
+local:information_retrieval_methods	rdfs:member	local:information_retrieval	.
+local:effective_entity_search	rdfs:subClassOf	local:entity_search	.
+local:other_stateoftheart_methods	rdfs:subClassOf	local:stateoftheart_methods	.
+local:method_for_effective_entity_search_over_rdf_data	rdfs:member	local:method	.
+local:set_of_new_index_structures	rdfs:member	local:new_index_structures	.
+local:amount_of_data	rdfs:member	local:data	.
+local:efficient_entity_search_over_rdf_data	rdfs:member	local:efficient_entity_search	.
+local:adaptation_of_the_bm25f_ranking_function_for_rdf_data	rdfs:member	local:rdf_data	.
+local:support_for_full_expressivity	rdfs:member	local:support	.
+local:formal_query	rdfs:member	local:formal	.
+local:amount_of_data_on_semantic_web	rdfs:member	local:amount_of_data	.
+local:information_retrieval	rdfs:member	local:information	.
+local:s8	rdf:predicate	local:combine	.
+local:adaptation_of_bm25f_ranking_function	rdfs:member	local:adaptation	.
+local:rdf_resources	rdfs:subClassOf	local:resources	.
+local:formal_query_languages	rdfs:subClassOf	local:query_languages	.
+local:s12	rdf:subject	local:we	.
+local:s10	rdf:object	local:method_for_efficient_entity_search_over_rdf_data	.
+local:storage_access	rdfs:member	local:storage	.
+local:s13.1	local:AM-LOC	local:ranking_rdf_resources	.
+local:opensource_mg4j	rdfs:subClassOf	local:mg4j	.
+local:informal_keyword_queries	rdfs:member	local:informal_keyword	.
+local:s14	rdf:subject	local:we	.
+local:rdf_storage_access	rdfs:subClassOf	local:access	.
+local:s16	rdf:predicate	local:use	.
+local:opensource_mg4j_framework	rdfs:subClassOf	local:framework	.
+local:set_of_new_index_structures_for_efficient_retrieval_and_ranking_of_these_results	rdfs:member	local:new_index_structures	.
+local:bm25f_ranking	rdfs:member	local:bm25f	.
+local:bm25f_ranking_function_for_rdf_data	rdfs:member	local:bm25f_ranking_function	.
+local:ie_access_to_rdf_data	rdfs:member	local:ie_access	.
+local:amount_of_data_on_the_semantic_web	rdfs:member	local:amount	.
+local:bm25f_ranking_function	rdfs:member	local:bm25f_ranking	.
+local:bm25f_ranking	rdfs:subClassOf	local:ranking	.
+local:bm25f_ranking_function_for_rdf_data	rdfs:member	local:rdf_data	.
+local:keyword_queries	rdfs:member	local:keyword	.
+local:s1	rdf:object	local:rdf_storage_access	.
+local:rdf_resources	rdfs:member	local:rdf	.
+local:support_for_full_expressivity	rdfs:member	local:full_expressivity	.
+local:s4.1	rdf:object	local:data	.
+local:s7	rdf:predicate	local:lead	.
+local:s13.1	rdf:predicate	local:outperform	.
+local:s14	local:AM-DIS	local:also	.
+local:limits_of_the_architectures	rdfs:member	local:limits	.
+local:efficient_retrieval_of_results	rdfs:member	local:efficient_retrieval	.
+local:s7.1	rdfs:subClassOf	local:interest	.
+local:new_end_users	rdfs:subClassOf	local:users	.
+local:s4.1	rdf:subject	local:new_end_users_of_the_semantic_web	.
+local:s12	rdf:predicate	local:describe	.
+local:end_users	rdfs:member	local:end	.
+local:ie_access_to_rdf_data	rdfs:member	local:rdf_data	.
+local:imprecise_informal_keyword_queries	rdfs:member	local:informal_keyword_queries	.
+local:s4	rdf:subject	local:new_end_users_of_the_semantic_web_however_overwhelmingly	.
+local:new_end	rdfs:subClassOf	local:end	.
+local:expressive_formal_query_languages_such_as_sparql	rdfs:member	local:expressive_formal_query_languages	.
+local:keyword_queries	rdfs:subClassOf	local:queries	.
+local:opensource_mg4j	rdfs:member	local:opensource	.
+local:new_end	rdfs:member	local:new	.
+local:limits_of_the_architectures	rdfs:member	local:architectures	.
+local:index_structures	rdfs:member	local:index	.
+local:expressive_formal_query_languages	rdfs:member	local:expressive_formal_query	.
+local:s13.1	rdfs:member	local:rdf_resources	.
+local:s4	local:AM-PNC	local:searching_over_data	.
+local:over_data	rdfs:subClassOf	local:data	.
+local:bm25f_ranking_function	rdfs:subClassOf	local:function	.
+local:new_index_structures	rdfs:subClassOf	local:structures	.
+local:formal_query_languages	rdfs:subClassOf	local:languages	.
+local:effective_entity	rdfs:subClassOf	local:entity	.
+local:s0	local:AM-TMP	local:long	.
+local:efficient_entity_search	rdfs:member	local:efficient_entity	.
+local:s7	rdf:subject	local:factors	.
+local:query_languages	rdfs:subClassOf	local:languages	.
+local:ranking_function	rdfs:member	local:ranking	.
+local:expressive_formal_query_languages	rdfs:subClassOf	local:languages	.
+local:set_of_new_index_structures_for_efficient_retrieval_for_ranking	rdfs:member	local:ranking	.
+local:stateoftheart_methods	rdfs:member	local:stateoftheart	.
+local:efficient_entity_search	rdfs:subClassOf	local:entity_search	.
+local:data_access	rdfs:member	local:data	.

@@ -1,540 +1,899 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"alternatives to the best translation select the best translation"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"alternatives to the best translation might produce hence well suited to select the best translation"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"alternatives to the best translation might produce hence is well suited to select the best translation"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we experiments confirm that alternatives to the best translation might produce hence is well suited to select the best translation"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"queries that are orders of magnitude the cost model we"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"alternatives to the best translation might produce queries"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we experiments confirm that alternatives to the best translation might produce queries is faithful to the actual query evaluation cost"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"we devise a cost model together with a novel cardinality estimation"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"find the best translation we"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a novel cardinality estimation that takes into account all such sparql query answering in ontologybased data access components"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"under certain conditions on the interplay between the mappings alternative translations can evaluated much more efficiently"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in this work we show that under certain conditions on the interplay between the mappings alternative translations can be evaluated much more efficiently"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"under certain conditions on the interplay between the ontology alternative translations can evaluated much more efficiently"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in this work we show that under certain conditions on the interplay between the ontology alternative translations can be evaluated much more efficiently"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"in this work under certain conditions on the interplay between the statistics of the data alternative translations can evaluated much more efficiently"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"in this work we show that under certain conditions on the interplay between the statistics of the data alternative translations can be evaluated much more efficiently"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"translating to ucqs"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"in this work we show that translating to ucqs is not always the best choice"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"the heuristic argument that ucqs can efficiently evaluated by modern relational database engines"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"following the heuristic argument that ucqs can be efficiently evaluated by modern relational database engines"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"standard translation techniques transform the user query into a union of conjunctive queries following the heuristic argument that ucqs can be efficiently evaluated by modern relational database engines"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"standard translation techniques try to transform the user query into a union of conjunctive queries following the heuristic argument that ucqs can be efficiently evaluated by modern relational database engines"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"sparql query answering in ontologybased data access translating into sql queries over the data source"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"sparql query answering in ontologybased data access carried out by translating into sql queries over the data source"	.
+
+
 #### Classes ####
 
-local:ontologybased_data	rdfs:label	"ontology-based data"	.
+local:alternatives_to_the_best_translation	a	rdf:Class	;
+	rdfs:label	"alternatives to the best translation"	.
 
-local:ontologybased_data_access	rdfs:label	"ontology-based data access"	.
+local:best_translation	a	rdf:Class	;
+	rdfs:label	"best translation"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:alternatives	a	rdf:Class	;
+	rdfs:label	"alternatives"	.
 
-local:query	rdfs:label	"query"	.
+local:translation	a	rdf:Class	;
+	rdfs:label	"translation"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:best	a	rdf:Class	;
+	rdfs:label	"best"	.
 
-local:data	rdfs:label	"data"	.
+local:alternatives_to_best_translation	a	rdf:Class	;
+	rdfs:label	"alternatives to best translation"	.
 
-local:access	rdfs:label	"access"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:data_access	rdfs:label	"data access"	.
+local:alternatives_to_the_best_translation_might_produce_hence	a	rdf:Class	;
+	rdfs:label	"alternatives to the best translation might produce hence"	.
 
-local:ontologybased	rdfs:label	"ontology-based"	.
+local:hence	a	rdf:Class	;
+	rdfs:label	"hence"	.
 
-local:query_answering	rdfs:label	"query answering"	.
+local:hence_produce	a	rdf:Class	;
+	rdfs:label	"hence produce"	.
 
-local:answering	rdfs:label	"answering"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:sparql_query_answering	rdfs:label	"sparql query answering"	.
+local:might_hence_produce	a	rdf:Class	;
+	rdfs:label	"might hence produce"	.
 
-local:sparql_query_answering_in_ontologybased_data_access	rdfs:label	"sparql query answering in ontology-based data access"	.
+local:suit	a	rdf:Class	;
+	rdfs:label	"suit"	.
 
-local:carried	rdfs:label	"carried"	.
+local:select_the_best_translation	a	rdf:Class	;
+	rdfs:label	"select the best translation"	.
 
-local:data_source	rdfs:label	"data source"	.
+local:well	a	rdf:Class	;
+	rdfs:label	"well"	.
 
-local:source	rdfs:label	"source"	.
+local:might	a	rdf:Class	;
+	rdfs:label	"might"	.
 
-local:sql_queries	rdfs:label	"sql queries"	.
+local:hence_is_well_suited_to_select_the_best_translation	a	rdf:Class	;
+	rdfs:label	"hence is well suited to select the best translation"	.
 
-local:queries	rdfs:label	"queries"	.
+local:well_suited	a	rdf:Class	;
+	rdfs:label	"well suited"	.
 
-local:sql	rdfs:label	"sql"	.
+local:suited	a	rdf:Class	;
+	rdfs:label	"suited"	.
 
-local:translating_into_sql_queries	rdfs:label	"translating into sql queries"	.
+local:hence_well_suited	a	rdf:Class	;
+	rdfs:label	"hence well suited"	.
 
-local:translating	rdfs:label	"translating"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:sql_queries_over_data_source	rdfs:label	"sql queries over data source"	.
+local:confirm	a	rdf:Class	;
+	rdfs:label	"confirm"	.
 
-local:standard	rdfs:label	"standard"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:standard_translation	rdfs:label	"standard translation"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:translation	rdfs:label	"translation"	.
+local:queries_that_are_orders_of_magnitude_the_cost_model	a	rdf:Class	;
+	rdfs:label	"queries that are orders of magnitude the cost model"	.
 
-local:translation_techniques	rdfs:label	"translation techniques"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:orders	a	rdf:Class	;
+	rdfs:label	"orders"	.
 
-local:standard_translation_techniques	rdfs:label	"standard translation techniques"	.
+local:magnitude	a	rdf:Class	;
+	rdfs:label	"magnitude"	.
 
-local:try	rdfs:label	"try"	.
+local:cost_model	a	rdf:Class	;
+	rdfs:label	"cost model"	.
 
-local:database	rdfs:label	"database"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:database_engines	rdfs:label	"database engines"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:relational	rdfs:label	"relational"	.
+local:orders_of_magnitude	a	rdf:Class	;
+	rdfs:label	"orders of magnitude"	.
 
-local:relational_database	rdfs:label	"relational database"	.
+local:alternatives_to_the_best_translation_might_produce_queries_is_faithful_to_the_actual_query_evaluation_cost	a	rdf:Class	;
+	rdfs:label	"alternatives to the best translation might produce queries is faithful to the actual query evaluation cost"	.
 
-local:relational_database_engines	rdfs:label	"relational database engines"	.
+local:actual_query_evaluation_cost	a	rdf:Class	;
+	rdfs:label	"actual query evaluation cost"	.
 
-local:engines	rdfs:label	"engines"	.
+local:query_evaluation_cost	a	rdf:Class	;
+	rdfs:label	"query evaluation cost"	.
 
-local:user_query	rdfs:label	"user query"	.
+local:actual_query_evaluation	a	rdf:Class	;
+	rdfs:label	"actual query evaluation"	.
 
-local:modern_relational	rdfs:label	"modern relational"	.
+local:actual_query	a	rdf:Class	;
+	rdfs:label	"actual query"	.
 
-local:modern_relational_database	rdfs:label	"modern relational database"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:heuristic_argument	rdfs:label	"heuristic argument"	.
+local:actual	a	rdf:Class	;
+	rdfs:label	"actual"	.
 
-local:argument	rdfs:label	"argument"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:modern_relational_database_engines	rdfs:label	"modern relational database engines"	.
+local:evaluation_cost	a	rdf:Class	;
+	rdfs:label	"evaluation cost"	.
 
-local:conjunctive	rdfs:label	"conjunctive"	.
+local:query_evaluation	a	rdf:Class	;
+	rdfs:label	"query evaluation"	.
 
-local:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+local:might_produce	a	rdf:Class	;
+	rdfs:label	"might produce"	.
 
-local:modern	rdfs:label	"modern"	.
+local:faithful_to_actual_query_evaluation_cost	a	rdf:Class	;
+	rdfs:label	"faithful to actual query evaluation cost"	.
 
-local:heuristic	rdfs:label	"heuristic"	.
+local:faithful	a	rdf:Class	;
+	rdfs:label	"faithful"	.
 
-local:user	rdfs:label	"user"	.
+local:devise	a	rdf:Class	;
+	rdfs:label	"devise"	.
 
-local:efficiently_evaluated	rdfs:label	"efficiently evaluated"	.
+local:cost_model_together_with_a_novel_cardinality_estimation	a	rdf:Class	;
+	rdfs:label	"cost model together with a novel cardinality estimation"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:novel_cardinality_estimation	a	rdf:Class	;
+	rdfs:label	"novel cardinality estimation"	.
 
-local:can_efficiently_evaluated	rdfs:label	"can efficiently evaluated"	.
+local:novel_cardinality	a	rdf:Class	;
+	rdfs:label	"novel cardinality"	.
 
-local:transform_into_union	rdfs:label	"transform into union"	.
+local:cardinality	a	rdf:Class	;
+	rdfs:label	"cardinality"	.
 
-local:transform	rdfs:label	"transform"	.
+local:cardinality_estimation	a	rdf:Class	;
+	rdfs:label	"cardinality estimation"	.
 
-local:union	rdfs:label	"union"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:union_of_conjunctive_queries	rdfs:label	"union of conjunctive queries"	.
+local:estimation	a	rdf:Class	;
+	rdfs:label	"estimation"	.
 
-local:transform_into_union_following_heuristic_argument	rdfs:label	"transform into union following heuristic argument"	.
+local:together_model	a	rdf:Class	;
+	rdfs:label	"together model"	.
 
-local:can_efficiently_evaluated_agent_modern_relational_database_engines	rdfs:label	"can efficiently evaluated agent modern relational database engines"	.
+local:cost_together_model	a	rdf:Class	;
+	rdfs:label	"cost together model"	.
 
-local:can_efficiently_evaluated_following_heuristic_argument	rdfs:label	"can efficiently evaluated following heuristic argument"	.
+local:cost_together_model_with_novel_cardinality_estimation	a	rdf:Class	;
+	rdfs:label	"cost together model with novel cardinality estimation"	.
 
-local:can_efficiently_evaluated_following_heuristic_argument_agent_modern_relational_database_engines	rdfs:label	"can efficiently evaluated following heuristic argument agent modern relational database engines"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:following	rdfs:label	"following"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:ucqs	rdfs:label	"ucqs"	.
+local:sparql_query_answering_in_ontologybased_data_access_components_account	a	rdf:Class	;
+	rdfs:label	"sparql query answering in ontologybased data access components account"	.
 
-local:can	rdfs:label	"can"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:efficiently	rdfs:label	"efficiently"	.
+local:ontologybased_data_access_components	a	rdf:Class	;
+	rdfs:label	"ontologybased data access components"	.
 
-local:show	rdfs:label	"show"	.
+local:ontologybased_data_access	a	rdf:Class	;
+	rdfs:label	"ontologybased data access"	.
 
-local:work	rdfs:label	"work"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:we	rdfs:label	"we"	.
+local:data_access	a	rdf:Class	;
+	rdfs:label	"data access"	.
 
-local:best_choice	rdfs:label	"best choice"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:choice	rdfs:label	"choice"	.
+local:data_access_components	a	rdf:Class	;
+	rdfs:label	"data access components"	.
 
-local:best	rdfs:label	"best"	.
+local:components	a	rdf:Class	;
+	rdfs:label	"components"	.
 
-local:certain	rdfs:label	"certain"	.
+local:ontologybased_data	a	rdf:Class	;
+	rdfs:label	"ontologybased data"	.
 
-local:certain_conditions	rdfs:label	"certain conditions"	.
+local:ontologybased	a	rdf:Class	;
+	rdfs:label	"ontologybased"	.
 
-local:alternative	rdfs:label	"alternative"	.
+local:access_components	a	rdf:Class	;
+	rdfs:label	"access components"	.
 
-local:alternative_translations	rdfs:label	"alternative translations"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:conditions	rdfs:label	"conditions"	.
+local:query_answering	a	rdf:Class	;
+	rdfs:label	"query answering"	.
 
-local:translations	rdfs:label	"translations"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-local:more_efficiently	rdfs:label	"more efficiently"	.
+local:sparql_query_answering	a	rdf:Class	;
+	rdfs:label	"sparql query answering"	.
 
-local:much_more	rdfs:label	"much more"	.
+local:sparql_query_answering_in_ontologybased_data_access_components	a	rdf:Class	;
+	rdfs:label	"sparql query answering in ontologybased data access components"	.
 
-local:more	rdfs:label	"more"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:always_best_choice	rdfs:label	"always best choice"	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations	a	rdf:Class	;
+	rdfs:label	"certain conditions on the interplay between the mappings alternative translations"	.
 
-local:not_always_best_choice	rdfs:label	"not always best choice"	.
+local:certain_conditions	a	rdf:Class	;
+	rdfs:label	"certain conditions"	.
 
-local:translating_to_ucqs	rdfs:label	"translating to ucqs"	.
+local:alternative_translations	a	rdf:Class	;
+	rdfs:label	"alternative translations"	.
 
-local:can_efficiently_evaluated_under_certain_conditions	rdfs:label	"can efficiently evaluated under certain conditions"	.
+local:interplay	a	rdf:Class	;
+	rdfs:label	"interplay"	.
 
-local:certain_conditions_on_interplay	rdfs:label	"certain conditions on interplay"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:interplay	rdfs:label	"interplay"	.
+local:translations	a	rdf:Class	;
+	rdfs:label	"translations"	.
 
-local:interplay_between_ontology	rdfs:label	"interplay between ontology"	.
+local:alternative	a	rdf:Class	;
+	rdfs:label	"alternative"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:ontology_alternative_translations	rdfs:label	"ontology alternative translations"	.
+local:conditions	a	rdf:Class	;
+	rdfs:label	"conditions"	.
 
-local:interplay_between_mappings	rdfs:label	"interplay between mappings"	.
+local:mappings_alternative_translations	a	rdf:Class	;
+	rdfs:label	"mappings alternative translations"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:certain_conditions_on_interplay	a	rdf:Class	;
+	rdfs:label	"certain conditions on interplay"	.
 
-local:alternative_translations_under_certain_conditions	rdfs:label	"alternative translations under certain conditions"	.
+local:interplay_between_mappings_alternative_translations	a	rdf:Class	;
+	rdfs:label	"interplay between mappings alternative translations"	.
 
-local:interplay_between_statistics	rdfs:label	"interplay between statistics"	.
+local:much_more_efficiently	a	rdf:Class	;
+	rdfs:label	"much more efficiently"	.
 
-local:statistics	rdfs:label	"statistics"	.
+local:more_efficiently	a	rdf:Class	;
+	rdfs:label	"more efficiently"	.
 
-local:statistics_of_data	rdfs:label	"statistics of data"	.
+local:efficiently	a	rdf:Class	;
+	rdfs:label	"efficiently"	.
 
-local:data_alternative_translations	rdfs:label	"data alternative translations"	.
+local:much_more	a	rdf:Class	;
+	rdfs:label	"much more"	.
 
-local:best_translation	rdfs:label	"best translation"	.
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
 
-local:find	rdfs:label	"find"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:devise	rdfs:label	"devise"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:novel_cardinality	rdfs:label	"novel cardinality"	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations_can_be_evaluated_much_more_efficiently	a	rdf:Class	;
+	rdfs:label	"certain conditions on the interplay between the mappings alternative translations can be evaluated much more efficiently"	.
 
-local:novel_cardinality_estimation	rdfs:label	"novel cardinality estimation"	.
+local:efficiently_evaluated	a	rdf:Class	;
+	rdfs:label	"efficiently evaluated"	.
 
-local:novel	rdfs:label	"novel"	.
+local:evaluated	a	rdf:Class	;
+	rdfs:label	"evaluated"	.
 
-local:cardinality	rdfs:label	"cardinality"	.
+local:can_efficiently_evaluated	a	rdf:Class	;
+	rdfs:label	"can efficiently evaluated"	.
 
-local:such_sparql	rdfs:label	"such sparql"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:cost_model	rdfs:label	"cost model"	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations	a	rdf:Class	;
+	rdfs:label	"certain conditions on the interplay between the ontology alternative translations"	.
 
-local:model	rdfs:label	"model"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:cost	rdfs:label	"cost"	.
+local:ontology_alternative_translations	a	rdf:Class	;
+	rdfs:label	"ontology alternative translations"	.
 
-local:such_sparql_query	rdfs:label	"such sparql query"	.
+local:interplay_between_ontology_alternative_translations	a	rdf:Class	;
+	rdfs:label	"interplay between ontology alternative translations"	.
 
-local:data_access_components	rdfs:label	"data access components"	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations_can_be_evaluated_much_more_efficiently	a	rdf:Class	;
+	rdfs:label	"certain conditions on the interplay between the ontology alternative translations can be evaluated much more efficiently"	.
 
-local:components	rdfs:label	"components"	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	a	rdf:Class	;
+	rdfs:label	"certain conditions on the interplay between the statistics of the data alternative translations"	.
 
-local:ontologybased_data_access_components	rdfs:label	"ontology-based data access components"	.
+local:statistics	a	rdf:Class	;
+	rdfs:label	"statistics"	.
 
-local:estimation	rdfs:label	"estimation"	.
+local:data_alternative_translations	a	rdf:Class	;
+	rdfs:label	"data alternative translations"	.
 
-local:cardinality_estimation	rdfs:label	"cardinality estimation"	.
+local:interplay_between_statistics	a	rdf:Class	;
+	rdfs:label	"interplay between statistics"	.
 
-local:such	rdfs:label	"such"	.
+local:statistics_of_data_alternative_translations	a	rdf:Class	;
+	rdfs:label	"statistics of data alternative translations"	.
 
-local:access_components	rdfs:label	"access components"	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	a	rdf:Class	;
+	rdfs:label	"certain conditions on the interplay between the statistics of the data alternative translations can be evaluated much more efficiently"	.
 
-local:such_sparql_query_answering	rdfs:label	"such sparql query answering"	.
+local:translate	a	rdf:Class	;
+	rdfs:label	"translate"	.
 
-local:together_model	rdfs:label	"together model"	.
+local:ucqs	a	rdf:Class	;
+	rdfs:label	"ucqs"	.
 
-local:cost_together_model	rdfs:label	"cost together model"	.
+local:translating_to_ucqs_is_not_always_the_best_choice	a	rdf:Class	;
+	rdfs:label	"translating to ucqs is not always the best choice"	.
 
-local:cost_together_model_with_novel_cardinality_estimation	rdfs:label	"cost together model with novel cardinality estimation"	.
+local:best_choice	a	rdf:Class	;
+	rdfs:label	"best choice"	.
 
-local:takes_into_account	rdfs:label	"takes into account"	.
+local:choice	a	rdf:Class	;
+	rdfs:label	"choice"	.
 
-local:takes	rdfs:label	"takes"	.
+local:always_best_choice	a	rdf:Class	;
+	rdfs:label	"always best choice"	.
 
-local:account	rdfs:label	"account"	.
+local:not_always_best_choice	a	rdf:Class	;
+	rdfs:label	"not always best choice"	.
 
-local:such_sparql_query_answering_in_ontologybased_data_access_components	rdfs:label	"such sparql query answering in ontology-based data access components"	.
+local:translating	a	rdf:Class	;
+	rdfs:label	"translating"	.
 
-local:sparql_query_answering_in_ontologybased_data_access_components	rdfs:label	"sparql query answering in ontology-based data access components"	.
+local:modern_relational_database_engines	a	rdf:Class	;
+	rdfs:label	"modern relational database engines"	.
 
-local:confirm	rdfs:label	"confirm"	.
+local:modern_relational_database	a	rdf:Class	;
+	rdfs:label	"modern relational database"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:database	a	rdf:Class	;
+	rdfs:label	"database"	.
 
-local:actual_query_evaluation	rdfs:label	"actual query evaluation"	.
+local:relational_database_engines	a	rdf:Class	;
+	rdfs:label	"relational database engines"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:engines	a	rdf:Class	;
+	rdfs:label	"engines"	.
 
-local:query_evaluation	rdfs:label	"query evaluation"	.
+local:relational_database	a	rdf:Class	;
+	rdfs:label	"relational database"	.
 
-local:query_evaluation_cost	rdfs:label	"query evaluation cost"	.
+local:database_engines	a	rdf:Class	;
+	rdfs:label	"database engines"	.
 
-local:actual_query_evaluation_cost	rdfs:label	"actual query evaluation cost"	.
+local:modern_relational	a	rdf:Class	;
+	rdfs:label	"modern relational"	.
 
-local:actual_query	rdfs:label	"actual query"	.
+local:relational	a	rdf:Class	;
+	rdfs:label	"relational"	.
 
-local:actual	rdfs:label	"actual"	.
+local:modern	a	rdf:Class	;
+	rdfs:label	"modern"	.
 
-local:evaluation_cost	rdfs:label	"evaluation cost"	.
+local:heuristic_argument	a	rdf:Class	;
+	rdfs:label	"heuristic argument"	.
 
-local:well_suited	rdfs:label	"well suited"	.
+local:heuristic	a	rdf:Class	;
+	rdfs:label	"heuristic"	.
 
-local:suited	rdfs:label	"suited"	.
+local:argument	a	rdf:Class	;
+	rdfs:label	"argument"	.
 
-local:hence_well_suited	rdfs:label	"hence well suited"	.
+local:follow	a	rdf:Class	;
+	rdfs:label	"follow"	.
 
-local:efficient_orders	rdfs:label	"efficient orders"	.
+local:heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	a	rdf:Class	;
+	rdfs:label	"heuristic argument that ucqs can be efficiently evaluated by modern relational database engines"	.
 
-local:orders	rdfs:label	"orders"	.
+local:can_efficiently_evaluated_agent_modern_relational_database_engines	a	rdf:Class	;
+	rdfs:label	"can efficiently evaluated agent modern relational database engines"	.
 
-local:more_efficient	rdfs:label	"more efficient"	.
+local:standard_translation_techniques	a	rdf:Class	;
+	rdfs:label	"standard translation techniques"	.
 
-local:efficient	rdfs:label	"efficient"	.
+local:translation_techniques	a	rdf:Class	;
+	rdfs:label	"translation techniques"	.
 
-local:might_produce	rdfs:label	"might produce"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:produce	rdfs:label	"produce"	.
+local:standard_translation	a	rdf:Class	;
+	rdfs:label	"standard translation"	.
 
-local:alternatives_to_best_translation	rdfs:label	"alternatives to best translation"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:alternatives	rdfs:label	"alternatives"	.
+local:transform	a	rdf:Class	;
+	rdfs:label	"transform"	.
 
-local:efficient_orders_of_magnitude	rdfs:label	"efficient orders of magnitude"	.
+local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	a	rdf:Class	;
+	rdfs:label	"user query union of conjunctive queries following the heuristic argument that ucqs can be efficiently evaluated by modern relational database engines"	.
 
-local:magnitude	rdfs:label	"magnitude"	.
+local:union	a	rdf:Class	;
+	rdfs:label	"union"	.
 
-local:faithful_to_actual_query_evaluation_cost	rdfs:label	"faithful to actual query evaluation cost"	.
+local:conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"conjunctive queries"	.
 
-local:faithful	rdfs:label	"faithful"	.
+local:conjunctive	a	rdf:Class	;
+	rdfs:label	"conjunctive"	.
 
-local:might	rdfs:label	"might"	.
+local:query_union	a	rdf:Class	;
+	rdfs:label	"query union"	.
 
-local:propose	rdfs:label	"propose"	.
+local:user_query_union	a	rdf:Class	;
+	rdfs:label	"user query union"	.
 
-local:hence_cost	rdfs:label	"hence cost"	.
+local:user_query_union_of_conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"user query union of conjunctive queries"	.
 
-local:evaluation_hence_cost	rdfs:label	"evaluation hence cost"	.
+local:user_query_union_of_conjunctive_queries_following_heuristic_argument	a	rdf:Class	;
+	rdfs:label	"user query union of conjunctive queries following heuristic argument"	.
 
-local:query_evaluation_hence_cost	rdfs:label	"query evaluation hence cost"	.
+local:try	a	rdf:Class	;
+	rdfs:label	"try"	.
 
-local:actual_query_evaluation_hence_cost	rdfs:label	"actual query evaluation hence cost"	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	a	rdf:Class	;
+	rdfs:label	"transform the user query into a union of conjunctive queries following the heuristic argument that ucqs can be efficiently evaluated by modern relational database engines"	.
 
-local:well	rdfs:label	"well"	.
+local:user_query	a	rdf:Class	;
+	rdfs:label	"user query"	.
 
-local:select_best_translation	rdfs:label	"select best translation"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:select	rdfs:label	"select"	.
+local:transform_into_union	a	rdf:Class	;
+	rdfs:label	"transform into union"	.
 
-#### Properties ####
+local:union_of_conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"union of conjunctive queries"	.
+
+local:transform_into_union_following_heuristic_argument	a	rdf:Class	;
+	rdfs:label	"transform into union following heuristic argument"	.
+
+local:sparql_query_answering_in_ontologybased_data_access	a	rdf:Class	;
+	rdfs:label	"sparql query answering in ontologybased data access"	.
+
+local:sql_queries_over_the_data_source	a	rdf:Class	;
+	rdfs:label	"sql queries over the data source"	.
+
+local:data_source	a	rdf:Class	;
+	rdfs:label	"data source"	.
+
+local:sql_queries	a	rdf:Class	;
+	rdfs:label	"sql queries"	.
+
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
+
+local:sql	a	rdf:Class	;
+	rdfs:label	"sql"	.
+
+local:sql_queries_over_data_source	a	rdf:Class	;
+	rdfs:label	"sql queries over data source"	.
+
+local:translating_into_sql_queries_over_the_data_source	a	rdf:Class	;
+	rdfs:label	"translating into sql queries over the data source"	.
+
+local:translating_into_sql_queries	a	rdf:Class	;
+	rdfs:label	"translating into sql queries"	.
+
+local:translating_into_sql_queries_over_data_source	a	rdf:Class	;
+	rdfs:label	"translating into sql queries over data source"	.
+
+local:carry	a	rdf:Class	;
+	rdfs:label	"carry"	.
 
 #### Mapped Relations ####
 
-cso:sparql	rdfs:label	"sparql"	.
 cso:ontology	rdfs:label	"ontology"	.
-local:query_evaluation	owl:sameAs	cso:query_evaluation	.
-local:relational_database	owl:sameAs	cso:relational_database	.
 local:ontologybased_data_access	owl:sameAs	cso:ontology-based_data_access	.
-cso:user_query	rdfs:label	"user query"	.
-cso:ontology-based_data_access	rdfs:label	"ontology-based data access"	.
-cso:query_evaluation	rdfs:label	"query evaluation"	.
-local:statistics	owl:sameAs	cso:statistics	.
-cso:relational_database	rdfs:label	"relational database"	.
-cso:sql	rdfs:label	"sql"	.
-local:ontology	owl:sameAs	cso:ontology	.
-cso:query_answering	rdfs:label	"query answering"	.
-local:user_query	owl:sameAs	cso:user_query	.
-local:query_answering	owl:sameAs	cso:query_answering	.
+cso:sparql	rdfs:label	"sparql"	.
 local:sparql	owl:sameAs	cso:sparql	.
+cso:relational_database	rdfs:label	"relational database"	.
+cso:ontology-based_data_access	rdfs:label	"ontologybased data access"	.
+local:query_answering	owl:sameAs	cso:query_answering	.
 local:conjunctive_queries	owl:sameAs	cso:conjunctive_queries	.
+local:user_query	owl:sameAs	cso:user_query	.
 cso:statistics	rdfs:label	"statistics"	.
+local:ontology	owl:sameAs	cso:ontology	.
 local:sql	owl:sameAs	cso:sql	.
+local:relational_database	owl:sameAs	cso:relational_database	.
 cso:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+local:query_evaluation	owl:sameAs	cso:query_evaluation	.
+cso:query_answering	rdfs:label	"query answering"	.
+local:statistics	owl:sameAs	cso:statistics	.
+cso:query_evaluation	rdfs:label	"query evaluation"	.
+cso:sql	rdfs:label	"sql"	.
+cso:user_query	rdfs:label	"user query"	.
 
 #### Relations ####
 
-local:confirm	vn.role:Recipient	local:experiments	.
-local:interplay_between_statistics	local:between_statistics	local:interplay	.
-local:query_evaluation_cost	rdfs:subClassOf	local:cost	.
-local:access_components	rdfs:subClassOf	local:components	.
-local:data_source	rdfs:subClassOf	local:source	.
-local:ontologybased_data_access	rdfs:member	local:ontologybased_data_access_components	.
-local:best	rdfs:member	local:best_translation	.
-local:data_access	rdfs:member	local:data_access_components	.
-local:data_access_components	rdfs:subClassOf	local:components	.
-local:transform_into_union	local:into_union	local:transform	.
-local:sql_queries	rdfs:subClassOf	local:queries	.
-local:data_access_components	rdfs:subClassOf	local:access_components	.
-local:such_sparql_query_answering_in_ontologybased_data_access_components	local:in_ontology-baseddataaccesscomponents	local:such_sparql_query_answering	.
-local:always_best_choice	rdfs:subClassOf	local:best_choice	.
-local:sparql_query_answering_in_ontologybased_data_access	local:in_ontology-baseddataaccess	local:sparql_query_answering	.
-local:best	rdfs:member	local:best_choice	.
-local:suited	local:AM-MNR	local:well	.
-local:efficient_orders_of_magnitude	local:efficientorders_of	local:magnitude	.
-local:can_efficiently_evaluated_following_heuristic_argument_agent_modern_relational_database_engines	local:agent_modernrelationaldatabaseengines	local:can_efficiently_evaluated_following_heuristic_argument	.
-local:carried	vn.role:Theme	local:sparql_query_answering_in_ontologybased_data_access	.
-local:ontology_alternative_translations	local:_alternativetranslations	local:ontology	.
-local:ontologybased_data	rdfs:subClassOf	local:data	.
-local:translating	vn.role:Product	local:ucqs	.
-local:find	vn.role:Agent	local:we	.
-local:query_evaluation_hence_cost	rdfs:subClassOf	local:evaluation_hence_cost	.
-local:query	rdfs:member	local:query_evaluation	.
-local:relational_database_engines	rdfs:subClassOf	local:engines	.
-local:evaluation	rdfs:member	local:evaluation_cost	.
-local:data	rdfs:member	local:data_access	.
-local:transform_into_union_following_heuristic_argument	local:transformintounion_following	local:heuristic_argument	.
-local:suited	vn.role:indirect_object	local:select_best_translation	.
-local:sql_queries_over_data_source	local:over_datasource	local:sql_queries	.
-local:takes	vn.role:Agent	local:novel_cardinality_estimation	.
-local:sql_queries_over_data_source	local:sqlqueries_over	local:data_source	.
-local:produce	vn.role:Agent	local:alternatives_to_best_translation	.
-local:modern_relational	rdfs:member	local:modern_relational_database	.
-local:not_always_best_choice	rdfs:subClassOf	local:always_best_choice	.
-local:novel_cardinality_estimation	rdfs:subClassOf	local:estimation	.
-local:such_sparql	rdfs:subClassOf	local:sparql	.
-local:data	rdfs:member	local:data_source	.
-local:propose	vn.role:Agent	local:we	.
-local:produce	local:AM-MOD	local:might	.
-local:conjunctive_queries	rdfs:subClassOf	local:queries	.
-local:query_evaluation	rdfs:subClassOf	local:evaluation	.
-local:ontologybased_data_access	rdfs:subClassOf	local:data_access	.
-local:standard	rdfs:member	local:standard_translation	.
-local:more_efficiently	rdfs:subClassOf	local:efficiently	.
-local:transform_into_union_following_heuristic_argument	local:following_heuristicargument	local:transform_into_union	.
-local:can_efficiently_evaluated_agent_modern_relational_database_engines	local:agent_modernrelationaldatabaseengines	local:can_efficiently_evaluated	.
-local:alternatives_to_best_translation	local:to_besttranslation	local:alternatives	.
-local:union_of_conjunctive_queries	local:of_conjunctivequeries	local:union	.
-local:propose	vn.role:Topic	local:cost_model	.
-local:alternative_translations_under_certain_conditions	local:alternativetranslations_under	local:certain_conditions	.
-local:translating	vn.role:Agent	local:sparql_query_answering_in_ontologybased_data_access	.
-local:ontologybased_data	rdfs:member	local:ontologybased_data_access	.
-local:interplay_between_ontology	local:interplay_between	local:ontology	.
-local:efficient_orders	rdfs:subClassOf	local:orders	.
-local:try	vn.role:Experiencer	local:standard_translation_techniques	.
-local:takes_into_account	local:takes_into	local:account	.
-local:alternative_translations_under_certain_conditions	local:under_certainconditions	local:alternative_translations	.
-local:select	vn.role:Theme	local:best_translation	.
-local:relational_database	rdfs:member	local:relational_database_engines	.
-local:evaluation_hence_cost	rdfs:subClassOf	local:hence_cost	.
-local:evaluated	local:AM-MOD	local:can	.
-local:data_alternative_translations	local:_alternativetranslations	local:data	.
-local:novel_cardinality_estimation	rdfs:subClassOf	local:cardinality_estimation	.
-local:evaluated	vn.role:Theme	local:heuristic_argument	.
-local:sparql_query_answering	rdfs:subClassOf	local:query_answering	.
-local:such_sparql_query	rdfs:subClassOf	local:query	.
-local:together_model	rdfs:subClassOf	local:model	.
-local:ontology_alternative_translations	local:ontology_	local:alternative_translations	.
-local:query_evaluation_cost	rdfs:subClassOf	local:evaluation_cost	.
-local:actual_query_evaluation_cost	rdfs:subClassOf	local:query_evaluation_cost	.
-local:takes	vn.role:Source	local:account	.
-local:evaluated	vn.role:Theme	local:best_choice	.
-local:cardinality	rdfs:member	local:cardinality_estimation	.
-local:modern	rdfs:member	local:modern_relational	.
-local:standard_translation	rdfs:subClassOf	local:translation	.
-local:certain_conditions	rdfs:subClassOf	local:conditions	.
-local:sparql_query_answering_in_ontologybased_data_access	local:sparqlqueryanswering_in	local:ontologybased_data_access	.
-local:modern_relational_database	rdfs:subClassOf	local:database	.
-local:modern_relational	rdfs:subClassOf	local:relational	.
-local:can_efficiently_evaluated	rdfs:subClassOf	local:efficiently_evaluated	.
-local:certain	rdfs:member	local:certain_conditions	.
-local:translating_to_ucqs	local:to_ucqs	local:translating	.
-local:actual_query_evaluation_hence_cost	rdfs:subClassOf	local:query_evaluation_hence_cost	.
-local:produce	vn.role:Product	local:faithful_to_actual_query_evaluation_cost	.
-local:modern_relational_database_engines	rdfs:subClassOf	local:relational_database_engines	.
-local:faithful_to_actual_query_evaluation_cost	local:to_actualqueryevaluationcost	local:faithful	.
-local:transform	vn.role:Patient	local:user_query	.
-local:heuristic_argument	rdfs:subClassOf	local:argument	.
-local:standard_translation_techniques	rdfs:subClassOf	local:techniques	.
-local:sql	rdfs:member	local:sql_queries	.
-local:novel_cardinality	rdfs:subClassOf	local:cardinality	.
-local:cost	rdfs:member	local:cost_model	.
-local:find	vn.role:Theme	local:best_translation	.
-local:can_efficiently_evaluated_following_heuristic_argument	local:following_heuristicargument	local:can_efficiently_evaluated	.
-local:actual_query_evaluation	rdfs:member	local:actual_query_evaluation_cost	.
-local:translation_techniques	rdfs:subClassOf	local:techniques	.
-local:show	vn.role:Theme	local:not_always_best_choice	.
-local:standard_translation	rdfs:member	local:standard_translation_techniques	.
-local:database	rdfs:member	local:database_engines	.
-local:show	local:AM-LOC	local:work	.
-local:standard_translation_techniques	rdfs:subClassOf	local:translation_techniques	.
-local:such_sparql_query_answering_in_ontologybased_data_access_components	local:suchsparqlqueryanswering_in	local:ontologybased_data_access_components	.
-local:translating_into_sql_queries	local:into_sqlqueries	local:translating	.
-local:user_query	rdfs:subClassOf	local:query	.
-local:efficient_orders_of_magnitude	local:of_magnitude	local:efficient_orders	.
-local:sparql_query_answering_in_ontologybased_data_access_components	local:sparqlqueryanswering_in	local:ontologybased_data_access_components	.
-local:relational	rdfs:member	local:relational_database	.
-local:certain_conditions_on_interplay	local:on_interplay	local:certain_conditions	.
-local:transform_into_union	local:transform_into	local:union	.
-local:best_translation	rdfs:subClassOf	local:translation	.
-local:carried	vn.role:Agent	local:translating_into_sql_queries	.
-local:efficiently_evaluated	rdfs:subClassOf	local:evaluated	.
-local:data_access	rdfs:subClassOf	local:access	.
-local:can_efficiently_evaluated_following_heuristic_argument	local:canefficientlyevaluated_following	local:heuristic_argument	.
-local:evaluated	local:AM-MNR	local:efficiently	.
-local:actual_query_evaluation_cost	rdfs:subClassOf	local:cost	.
-local:query_answering	rdfs:subClassOf	local:answering	.
+local:s5.1	local:AM-MNR	local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations	.
+local:s10.2	rdf:subject	local:alternatives_to_the_best_translation_might_produce_hence	.
+local:s5	local:AM-LOC	local:work	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:data	.
 local:hence_well_suited	rdfs:subClassOf	local:well_suited	.
-local:conjunctive	rdfs:member	local:conjunctive_queries	.
-local:novel	rdfs:member	local:novel_cardinality	.
-local:can_efficiently_evaluated_under_certain_conditions	local:canefficientlyevaluated_under	local:certain_conditions	.
-local:modern_relational_database	rdfs:member	local:modern_relational_database_engines	.
-local:translation	rdfs:member	local:translation_techniques	.
-local:actual_query_evaluation	rdfs:subClassOf	local:evaluation	.
-local:show	vn.role:Agent	local:we	.
-local:heuristic	rdfs:member	local:heuristic_argument	.
-local:interplay_between_ontology	local:between_ontology	local:interplay	.
-local:data_alternative_translations	local:data_	local:alternative_translations	.
-local:evaluated	vn.role:Agent	local:ucqs	.
-local:interplay_between_statistics	local:interplay_between	local:statistics	.
-local:alternative	rdfs:member	local:alternative_translations	.
-local:evaluation_cost	rdfs:subClassOf	local:cost	.
-local:alternatives_to_best_translation	local:alternatives_to	local:best_translation	.
-local:try	vn.role:Cause	local:transform_into_union_following_heuristic_argument	.
-local:actual_query	rdfs:subClassOf	local:query	.
-local:ontologybased_data_access	rdfs:subClassOf	local:access	.
-local:sparql	rdfs:member	local:sparql_query	.
-local:ontologybased	rdfs:member	local:ontologybased_data	.
-local:statistics_of_data	local:of_data	local:statistics	.
-local:select_best_translation	rdfs:subClassOf	local:best_translation	.
-local:interplay_between_mappings	local:between_mappings	local:interplay	.
-local:sparql_query_answering_in_ontologybased_data_access_components	local:in_ontology-baseddataaccesscomponents	local:sparql_query_answering	.
-local:novel_cardinality	rdfs:member	local:novel_cardinality_estimation	.
-local:translating	vn.role:Product	local:sql_queries_over_data_source	.
-local:evaluated	vn.role:Theme	local:more_efficiently	.
-local:actual	rdfs:member	local:actual_query	.
-local:certain_conditions_on_interplay	local:certainconditions_on	local:interplay	.
-local:such_sparql	rdfs:member	local:such_sparql_query	.
-local:cost_model	rdfs:subClassOf	local:model	.
-local:can_efficiently_evaluated_agent_modern_relational_database_engines	local:canefficientlyevaluated_agent	local:modern_relational_database_engines	.
-local:takes	vn.role:Theme	local:sparql_query_answering_in_ontologybased_data_access_components	.
-local:modern_relational_database_engines	rdfs:subClassOf	local:engines	.
-local:database_engines	rdfs:subClassOf	local:engines	.
-local:such	rdfs:member	local:such_sparql	.
-local:best_choice	rdfs:subClassOf	local:choice	.
 local:alternative_translations	rdfs:subClassOf	local:translations	.
-local:suited	vn.role:Patient	local:actual_query_evaluation_hence_cost	.
-local:transform	vn.role:Product	local:can_efficiently_evaluated_following_heuristic_argument_agent_modern_relational_database_engines	.
-local:might_produce	rdfs:subClassOf	local:produce	.
-local:confirm	vn.role:Cause	local:might_produce	.
-local:takes_into_account	local:into_account	local:takes	.
-local:query_evaluation	rdfs:member	local:query_evaluation_cost	.
-local:faithful_to_actual_query_evaluation_cost	local:faithful_to	local:actual_query_evaluation_cost	.
-local:interplay_between_mappings	local:interplay_between	local:mappings	.
-local:translating_into_sql_queries	local:translating_into	local:sql_queries	.
-local:cost_together_model_with_novel_cardinality_estimation	local:costtogethermodel_with	local:novel_cardinality_estimation	.
-local:evaluated	vn.role:Agent	local:modern_relational_database_engines	.
-local:union_of_conjunctive_queries	local:union_of	local:conjunctive_queries	.
-local:can_efficiently_evaluated_under_certain_conditions	local:under_certainconditions	local:can_efficiently_evaluated	.
-local:user	rdfs:member	local:user_query	.
-local:cost_together_model_with_novel_cardinality_estimation	local:with_novelcardinalityestimation	local:cost_together_model	.
-local:actual_query	rdfs:member	local:actual_query_evaluation	.
+local:query_union	rdfs:subClassOf	local:union	.
+local:heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:ucqs	.
+local:alternatives_to_the_best_translation_might_produce_hence	rdfs:member	local:best_translation	.
+local:best_translation	rdfs:member	local:best	.
+local:s10.2	local:AM-MNR	local:well	.
+local:s10	rdf:object	local:s10.1	.
+local:novel_cardinality	rdfs:member	local:novel	.
+local:ontologybased_data	rdfs:member	local:ontologybased	.
+local:s1	rdf:object	local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	.
+local:standard_translation	rdfs:member	local:standard	.
+local:s10.3	rdf:object	local:best_translation	.
+local:s9	rdf:object	local:queries_that_are_orders_of_magnitude_the_cost_model	.
+local:s8	rdf:predicate	local:confirm	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:ontology	.
+local:hence_is_well_suited_to_select_the_best_translation	rdfs:member	local:hence	.
+local:s8	rdf:subject	local:experiments	.
+local:not_always_best_choice	rdfs:subClassOf	local:always_best_choice	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:modern_relational_database_engines	.
+local:translating_into_sql_queries_over_the_data_source	rdfs:member	local:sql_queries	.
+local:s10.3	rdf:predicate	local:select	.
+local:sparql_query_answering_in_ontologybased_data_access_components_account	rdfs:member	local:sparql_query	.
+local:s4	rdf:subject	local:we	.
+local:statistics_of_data_alternative_translations	rdfs:member	local:data_alternative_translations	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	rdfs:member	local:certain_conditions	.
+local:novel_cardinality_estimation	rdfs:member	local:novel_cardinality	.
+local:s2	rdf:predicate	local:show	.
+local:sparql_query_answering_in_ontologybased_data_access	rdfs:member	local:sparql_query_answering	.
+local:efficiently_evaluated	rdfs:subClassOf	local:evaluated	.
+local:s2	rdf:subject	local:we	.
+local:heuristic_argument	rdfs:member	local:heuristic	.
+local:s7	rdf:object	local:best_translation	.
+local:heuristic_argument	rdfs:subClassOf	local:argument	.
+local:sql_queries_over_data_source	rdfs:member	local:data_source	.
+local:s2	rdf:object	local:translating_to_ucqs_is_not_always_the_best_choice	.
+local:queries_that_are_orders_of_magnitude_the_cost_model	rdfs:member	local:queries	.
+local:interplay_between_mappings_alternative_translations	rdfs:member	local:mappings_alternative_translations	.
+local:s10.1	rdf:subject	local:alternatives_to_the_best_translation	.
+local:s0	rdf:subject	local:translating_into_sql_queries_over_the_data_source	.
 local:well_suited	rdfs:subClassOf	local:suited	.
-local:following	vn.role:Location	local:can_efficiently_evaluated_agent_modern_relational_database_engines	.
-local:devise	vn.role:Agent	local:we	.
-local:access	rdfs:member	local:access_components	.
-local:hence_cost	rdfs:subClassOf	local:cost	.
-local:devise	vn.role:Product	local:cost_together_model_with_novel_cardinality_estimation	.
+local:hence_produce	rdfs:subClassOf	local:produce	.
+local:orders_of_magnitude	rdfs:member	local:magnitude	.
+local:s1	rdf:predicate	local:try	.
+local:data_access_components	rdfs:subClassOf	local:components	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:interplay	.
 local:much_more	rdfs:subClassOf	local:more	.
-local:evaluated	local:AM-LOC	local:show	.
-local:statistics_of_data	local:statistics_of	local:data	.
-local:can_efficiently_evaluated_following_heuristic_argument_agent_modern_relational_database_engines	local:canefficientlyevaluatedfollowingheuristicargument_agent	local:modern_relational_database_engines	.
-local:relational_database_engines	rdfs:subClassOf	local:database_engines	.
+local:sql_queries_over_the_data_source	rdfs:member	local:data_source	.
+local:translating_into_sql_queries_over_the_data_source	rdfs:member	local:data_source	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations	rdfs:member	local:interplay	.
+local:cost_model_together_with_a_novel_cardinality_estimation	rdfs:member	local:novel_cardinality_estimation	.
+local:standard_translation_techniques	rdfs:member	local:standard_translation	.
+local:s5.1	local:AM-MOD	local:can	.
+local:standard_translation	rdfs:subClassOf	local:translation	.
+local:s2.1	rdfs:member	local:ucqs	.
+local:s5	rdf:subject	local:we	.
+local:s8.1	local:AM-MOD	local:might	.
+local:best_choice	rdfs:member	local:best	.
+local:s8	rdf:object	local:alternatives_to_the_best_translation_might_produce_queries_is_faithful_to_the_actual_query_evaluation_cost	.
+local:ontologybased_data	rdfs:subClassOf	local:data	.
+local:modern_relational_database_engines	rdfs:member	local:modern_relational_database	.
+local:s3.1	local:AM-MNR	local:much_more_efficiently	.
+local:s7.1	rdf:object	local:cost_model_together_with_a_novel_cardinality_estimation	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:alternative_translations	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:alternative_translations	.
+local:user_query_union	rdfs:subClassOf	local:query_union	.
+local:s9	rdf:subject	local:we	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:interplay	.
+local:s0	rdf:object	local:sparql_query_answering_in_ontologybased_data_access	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations	rdfs:member	local:certain_conditions	.
+local:cost_model_together_with_a_novel_cardinality_estimation	rdfs:member	local:cost_model	.
+local:s5	rdf:object	local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations_can_be_evaluated_much_more_efficiently	.
+local:always_best_choice	rdfs:subClassOf	local:best_choice	.
+local:s9	rdf:predicate	local:propose	.
+local:might_produce	rdfs:subClassOf	local:produce	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:heuristic_argument	.
+local:alternatives_to_best_translation	rdfs:member	local:alternatives	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations	rdfs:member	local:alternative_translations	.
+local:user_query_union_of_conjunctive_queries	rdfs:member	local:conjunctive_queries	.
+local:modern_relational	rdfs:subClassOf	local:relational	.
+local:cost_model	rdfs:subClassOf	local:model	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations	rdfs:member	local:interplay	.
+local:s8.1	rdf:subject	local:alternatives_to_the_best_translation	.
+local:access_components	rdfs:member	local:access	.
+local:user_query_union_of_conjunctive_queries_following_heuristic_argument	rdfs:member	local:user_query_union_of_conjunctive_queries	.
+local:translating_into_sql_queries	rdfs:member	local:translating	.
+local:s10.1	rdf:predicate	local:produce	.
+local:alternative_translations	rdfs:member	local:alternative	.
+local:s10.2	rdf:predicate	local:suit	.
+local:query_evaluation_cost	rdfs:member	local:query_evaluation	.
+local:modern_relational	rdfs:member	local:modern	.
 local:cardinality_estimation	rdfs:subClassOf	local:estimation	.
-local:relational_database	rdfs:subClassOf	local:database	.
-local:translating_to_ucqs	local:translating_to	local:ucqs	.
-local:ontologybased_data_access_components	rdfs:subClassOf	local:data_access_components	.
-local:such_sparql_query_answering	rdfs:subClassOf	local:sparql_query_answering	.
-local:more_efficient	rdfs:subClassOf	local:efficient	.
+local:access_components	rdfs:subClassOf	local:components	.
+local:s10.1	local:AM-PNC	local:hence_is_well_suited_to_select_the_best_translation	.
+local:s3.1	local:AM-LOC	local:work	.
+local:s1.2	rdf:predicate	local:follow	.
+local:alternatives_to_the_best_translation_might_produce_queries_is_faithful_to_the_actual_query_evaluation_cost	rdfs:member	local:best_translation	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	rdfs:member	local:alternative_translations	.
+local:modern_relational_database	rdfs:subClassOf	local:database	.
+local:user_query_union_of_conjunctive_queries	rdfs:member	local:user_query_union	.
 local:ontologybased_data_access_components	rdfs:subClassOf	local:components	.
-local:transform	vn.role:Agent	local:standard_translation_techniques	.
+local:data_source	rdfs:subClassOf	local:source	.
+local:sparql_query_answering_in_ontologybased_data_access_components_account	rdfs:member	local:ontologybased_data_access_components	.
+local:relational_database_engines	rdfs:subClassOf	local:database_engines	.
+local:alternatives_to_the_best_translation_might_produce_hence	rdfs:member	local:alternatives	.
+local:faithful_to_actual_query_evaluation_cost	rdfs:member	local:actual_query_evaluation_cost	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:mappings	.
+local:can_efficiently_evaluated_agent_modern_relational_database_engines	rdfs:member	local:modern_relational_database_engines	.
+local:evaluation_cost	rdfs:subClassOf	local:cost	.
+local:query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:data_alternative_translations	rdfs:subClassOf	local:alternative_translations	.
+local:cardinality_estimation	rdfs:member	local:cardinality	.
+local:database_engines	rdfs:member	local:database	.
+local:conjunctive_queries	rdfs:member	local:conjunctive	.
+local:ontologybased_data_access	rdfs:member	local:ontologybased_data	.
+local:s0.1	rdf:subject	local:sparql_query_answering_in_ontologybased_data_access	.
+local:s1.1	rdf:object	local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	.
+local:certain_conditions_on_interplay	rdfs:member	local:interplay	.
+local:s3	local:AM-LOC	local:work	.
+local:sparql_query_answering_in_ontologybased_data_access	rdfs:member	local:sparql_query	.
+local:evaluation_cost	rdfs:member	local:evaluation	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:ucqs	.
+local:sparql_query_answering_in_ontologybased_data_access	rdfs:member	local:ontologybased_data_access	.
+local:sql_queries	rdfs:subClassOf	local:queries	.
+local:novel_cardinality_estimation	rdfs:subClassOf	local:estimation	.
+local:data_access	rdfs:subClassOf	local:access	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:s4	rdf:predicate	local:show	.
+local:relational_database	rdfs:subClassOf	local:database	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:certain_conditions	.
+local:interplay_between_ontology_alternative_translations	rdfs:member	local:ontology_alternative_translations	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations	rdfs:member	local:alternative_translations	.
+local:standard_translation_techniques	rdfs:subClassOf	local:translation_techniques	.
+local:user_query	rdfs:member	local:user	.
+local:faithful_to_actual_query_evaluation_cost	rdfs:member	local:faithful	.
+local:s10	rdf:subject	local:experiments	.
+local:translating_to_ucqs_is_not_always_the_best_choice	rdfs:member	local:best_choice	.
+local:translating_into_sql_queries_over_data_source	rdfs:member	local:data_source	.
+local:s8.1	rdf:predicate	local:produce	.
+local:s6	rdf:subject	local:novel_cardinality_estimation	.
+local:s1.3	rdf:predicate	local:evaluate	.
+local:alternatives_to_the_best_translation	rdfs:member	local:alternatives	.
+local:mappings_alternative_translations	rdfs:subClassOf	local:alternative_translations	.
+local:ontology_alternative_translations	rdfs:subClassOf	local:alternative_translations	.
+local:relational_database_engines	rdfs:subClassOf	local:engines	.
+local:sparql_query_answering_in_ontologybased_data_access_components	rdfs:member	local:ontologybased_data_access_components	.
+local:s5.1	rdf:predicate	local:evaluate	.
+local:interplay_between_statistics	rdfs:member	local:interplay	.
+local:orders_of_magnitude	rdfs:member	local:orders	.
+local:actual_query	rdfs:subClassOf	local:query	.
+local:s4.1	local:AM-MNR	local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:user_query	.
+local:query_evaluation_cost	rdfs:subClassOf	local:evaluation_cost	.
+local:s4.1	local:AM-MOD	local:can	.
+local:s10.2	rdf:object	local:select_the_best_translation	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	rdfs:member	local:interplay	.
+local:s3.1	local:AM-MNR	local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	.
+local:interplay_between_statistics	rdfs:member	local:statistics	.
+local:queries_that_are_orders_of_magnitude_the_cost_model	rdfs:member	local:cost_model	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:certain_conditions	.
+local:s1.3	rdf:object	local:heuristic_argument	.
+local:s1.3	local:AM-MOD	local:can	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:conjunctive_queries	.
+local:s1.1	rdf:predicate	local:transform	.
+local:alternatives_to_the_best_translation	rdfs:member	local:best_translation	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations	rdfs:member	local:certain_conditions	.
+local:s4.1	rdf:predicate	local:evaluate	.
+local:s7	rdf:subject	local:we	.
+local:heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:heuristic_argument	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:ontologybased_data_access	rdfs:subClassOf	local:data_access	.
+local:data_access	rdfs:member	local:data	.
+local:actual_query_evaluation_cost	rdfs:subClassOf	local:cost	.
+local:actual_query_evaluation_cost	rdfs:subClassOf	local:query_evaluation_cost	.
+local:more_efficiently	rdfs:subClassOf	local:efficiently	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:certain_conditions	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations	rdfs:member	local:ontology	.
+local:novel_cardinality	rdfs:subClassOf	local:cardinality	.
+local:s4	rdf:object	local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations_can_be_evaluated_much_more_efficiently	.
+local:alternatives_to_the_best_translation_might_produce_hence	rdfs:member	local:hence	.
+local:interplay_between_mappings_alternative_translations	rdfs:member	local:interplay	.
+local:s3.1	local:AM-MOD	local:can	.
+local:s3	rdf:predicate	local:show	.
+local:translating_into_sql_queries_over_data_source	rdfs:member	local:translating_into_sql_queries	.
+local:data_access_components	rdfs:member	local:data_access	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations	rdfs:member	local:mappings	.
+local:cost_together_model_with_novel_cardinality_estimation	rdfs:member	local:novel_cardinality_estimation	.
+local:alternatives_to_the_best_translation_might_produce_queries_is_faithful_to_the_actual_query_evaluation_cost	rdfs:member	local:actual_query_evaluation_cost	.
+local:s7.1	rdf:predicate	local:devise	.
 local:cost_together_model	rdfs:subClassOf	local:together_model	.
+local:certain_conditions	rdfs:member	local:certain	.
+local:can_efficiently_evaluated	rdfs:subClassOf	local:efficiently_evaluated	.
+local:s2.1	rdfs:member	local:translating	.
+local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:conjunctive_queries	.
+local:translation_techniques	rdfs:subClassOf	local:techniques	.
+local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:modern_relational_database_engines	.
+local:cost_model	rdfs:member	local:cost	.
+local:database_engines	rdfs:subClassOf	local:engines	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	rdfs:member	local:statistics	.
+local:s3.1	rdf:predicate	local:evaluate	.
+local:s3	rdf:subject	local:we	.
+local:s1.3	local:AM-MNR	local:efficiently	.
+local:modern_relational_database_engines	rdfs:subClassOf	local:engines	.
+local:sql_queries_over_the_data_source	rdfs:member	local:sql_queries	.
+local:s7.1	rdf:subject	local:we	.
+local:s5	rdf:predicate	local:show	.
+local:alternatives_to_the_best_translation_might_produce_queries_is_faithful_to_the_actual_query_evaluation_cost	rdfs:member	local:queries	.
+local:s1.3	rdf:subject	local:modern_relational_database_engines	.
+local:data_source	rdfs:member	local:data	.
+local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:ucqs	.
+local:s4	local:AM-LOC	local:work	.
+local:cost_together_model_with_novel_cardinality_estimation	rdfs:member	local:cost_together_model	.
+local:actual_query_evaluation	rdfs:member	local:actual_query	.
+local:certain_conditions	rdfs:subClassOf	local:conditions	.
+local:actual_query	rdfs:member	local:actual	.
+local:sql_queries_over_data_source	rdfs:member	local:sql_queries	.
+local:sql_queries	rdfs:member	local:sql	.
+local:s0	rdf:predicate	local:carry	.
+local:standard_translation_techniques	rdfs:subClassOf	local:techniques	.
+local:modern_relational_database_engines	rdfs:subClassOf	local:relational_database_engines	.
+local:s6	rdf:predicate	local:take	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:statistics	.
+local:s2.1	rdf:predicate	local:translate	.
+local:ontologybased_data_access_components	rdfs:member	local:ontologybased_data_access	.
+local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:union	.
+local:s10.1	local:AM-MOD	local:might	.
+local:certain_conditions_on_the_interplay_between_the_mappings_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:interplay	.
+local:transform_into_union_following_heuristic_argument	rdfs:member	local:heuristic_argument	.
+local:queries_that_are_orders_of_magnitude_the_cost_model	rdfs:member	local:magnitude	.
+local:union_of_conjunctive_queries	rdfs:member	local:conjunctive_queries	.
+local:certain_conditions_on_the_interplay_between_the_ontology_alternative_translations_can_be_evaluated_much_more_efficiently	rdfs:member	local:alternative_translations	.
+local:data_access_components	rdfs:subClassOf	local:access_components	.
+local:s2.1	rdf:object	local:ucqs	.
+local:statistics_of_data_alternative_translations	rdfs:member	local:statistics	.
+local:s4.1	local:AM-MNR	local:much_more_efficiently	.
+local:s0.1	rdf:object	local:sql_queries_over_the_data_source	.
+local:s0.1	rdf:predicate	local:translate	.
+local:actual_query_evaluation_cost	rdfs:member	local:actual_query_evaluation	.
+local:translating_to_ucqs_is_not_always_the_best_choice	rdfs:member	local:ucqs	.
+local:sparql_query_answering_in_ontologybased_data_access_components	rdfs:member	local:sparql_query_answering	.
+local:ontologybased_data_access_components	rdfs:subClassOf	local:data_access_components	.
+local:relational_database	rdfs:member	local:relational	.
+local:translation_techniques	rdfs:member	local:translation	.
+local:s2	local:AM-LOC	local:work	.
+local:s1	rdf:subject	local:standard_translation_techniques	.
+local:modern_relational_database	rdfs:member	local:modern_relational	.
+local:s1.1	rdf:subject	local:standard_translation_techniques	.
+local:query_evaluation	rdfs:member	local:query	.
+local:s10.3	rdf:subject	local:alternatives_to_the_best_translation	.
+local:user_query_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:heuristic_argument	.
+local:might_hence_produce	rdfs:subClassOf	local:hence_produce	.
+local:s8.1	rdf:object	local:queries	.
+local:novel_cardinality_estimation	rdfs:subClassOf	local:cardinality_estimation	.
+local:alternatives_to_the_best_translation_might_produce_queries_is_faithful_to_the_actual_query_evaluation_cost	rdfs:member	local:alternatives	.
+local:s5.1	local:AM-MNR	local:much_more_efficiently	.
+local:s1.2	rdf:object	local:heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	.
+local:s6	rdf:object	local:sparql_query_answering_in_ontologybased_data_access_components_account	.
+local:transform_the_user_query_into_a_union_of_conjunctive_queries_following_the_heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:union	.
+local:transform_into_union	rdfs:member	local:union	.
+local:union_of_conjunctive_queries	rdfs:member	local:union	.
+local:user_query_union_of_conjunctive_queries_following_heuristic_argument	rdfs:member	local:heuristic_argument	.
+local:actual_query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:hence_is_well_suited_to_select_the_best_translation	rdfs:member	local:best_translation	.
+local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations	rdfs:member	local:data	.
+local:s7	rdf:predicate	local:find	.
+local:heuristic_argument_that_ucqs_can_be_efficiently_evaluated_by_modern_relational_database_engines	rdfs:member	local:modern_relational_database_engines	.
+local:conjunctive_queries	rdfs:subClassOf	local:queries	.
+local:s10	rdf:predicate	local:confirm	.
+local:certain_conditions_on_interplay	rdfs:member	local:certain_conditions	.
+local:query_evaluation_cost	rdfs:subClassOf	local:cost	.
+local:together_model	rdfs:subClassOf	local:model	.
+local:relational_database_engines	rdfs:member	local:relational_database	.
+local:queries_that_are_orders_of_magnitude_the_cost_model	rdfs:member	local:orders	.
+local:interplay_between_ontology_alternative_translations	rdfs:member	local:interplay	.
 local:sparql_query	rdfs:subClassOf	local:query	.
+local:transform_into_union_following_heuristic_argument	rdfs:member	local:transform_into_union	.
+local:user_query	rdfs:subClassOf	local:query	.
+local:transform_into_union	rdfs:member	local:transform	.
+local:ontologybased_data_access	rdfs:subClassOf	local:access	.
+local:alternatives_to_best_translation	rdfs:member	local:best_translation	.
+local:can_efficiently_evaluated_agent_modern_relational_database_engines	rdfs:member	local:can_efficiently_evaluated	.
+local:sparql_query_answering	rdfs:subClassOf	local:query_answering	.
+local:s3	rdf:object	local:certain_conditions_on_the_interplay_between_the_statistics_of_the_data_alternative_translations_can_be_evaluated_much_more_efficiently	.
+local:best_choice	rdfs:subClassOf	local:choice	.
+local:best_translation	rdfs:subClassOf	local:translation	.
+local:translating_into_sql_queries	rdfs:member	local:sql_queries	.

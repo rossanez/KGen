@@ -1,350 +1,658 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"this proposal avoids problems of previous proposals"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"this proposal eliminates the need for special semantics"	.
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"making certain concepts and roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we directly state that the extension of certain concepts and roles are complete by making certain concepts and roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we propose to instead directly state that the extension of certain concepts and roles are complete by making certain concepts and roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"providing a different meaning for constraints"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"adding in new constructs for constraints and providing a different meaning for constraints"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"syntactically specifying certain axioms as constraints"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"previous approaches to this issue relied on syntactically specifying certain axioms as constraints or adding in new constructs for constraints and providing a different meaning for constraints"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"constraints that reduces constraints"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"requiring the available data to be complete"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"infer new facts"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"constraints that reduces their ability to infer new facts without requiring the data to be complete ability to infer new facts without requiring the available data to be complete"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"requiring the available data to be complete"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"infer new facts"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"constraints that eliminates their ability to infer new facts without requiring the data to be complete ability to infer new facts without requiring the available data to be complete"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"constraints that eliminates constraints"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"providing a extended meaning for constraints"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"adding in new constructs for constraints and providing a extended meaning for constraints"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"syntactically specifying certain axioms as constraints"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"previous approaches to this issue relied on syntactically specifying certain axioms as constraints or adding in new constructs for constraints and providing a extended meaning for constraints"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the available data meant to be complete in certain ways"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"deducing new facts"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"axioms enable the inference of new facts about the available data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"other logical languages built around the idea that axioms enable the inference of new facts about the available data"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"axioms enable the inference of new facts about the available data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"ontology built around the idea that axioms enable the inference of new facts about the available data"	.
+
+
 #### Classes ####
 
-local:built	rdfs:label	"built"	.
+local:proposal	a	rdf:Class	;
+	rdfs:label	"proposal"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:avoid	a	rdf:Class	;
+	rdfs:label	"avoid"	.
 
-local:new_facts	rdfs:label	"new facts"	.
+local:problems_of_previous_proposals	a	rdf:Class	;
+	rdfs:label	"problems of previous proposals"	.
 
-local:facts	rdfs:label	"facts"	.
+local:previous_proposals	a	rdf:Class	;
+	rdfs:label	"previous proposals"	.
 
-local:available_data	rdfs:label	"available data"	.
+local:problems	a	rdf:Class	;
+	rdfs:label	"problems"	.
 
-local:data	rdfs:label	"data"	.
+local:proposals	a	rdf:Class	;
+	rdfs:label	"proposals"	.
 
-local:new	rdfs:label	"new"	.
+local:previous	a	rdf:Class	;
+	rdfs:label	"previous"	.
 
-local:available	rdfs:label	"available"	.
+local:eliminate	a	rdf:Class	;
+	rdfs:label	"eliminate"	.
 
-local:inference_of_new_facts	rdfs:label	"inference of new facts"	.
+local:need_for_special_semantics	a	rdf:Class	;
+	rdfs:label	"need for special semantics"	.
 
-local:inference	rdfs:label	"inference"	.
+local:special_semantics	a	rdf:Class	;
+	rdfs:label	"special semantics"	.
 
-local:new_facts_about_available_data	rdfs:label	"new facts about available data"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:idea	rdfs:label	"idea"	.
+local:special	a	rdf:Class	;
+	rdfs:label	"special"	.
 
-local:enable	rdfs:label	"enable"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:axioms	rdfs:label	"axioms"	.
+local:roles_dbox_predicates	a	rdf:Class	;
+	rdfs:label	"roles dbox predicates"	.
 
-local:logical_languages	rdfs:label	"logical languages"	.
+local:predicates	a	rdf:Class	;
+	rdfs:label	"predicates"	.
 
-local:languages	rdfs:label	"languages"	.
+local:roles_dbox	a	rdf:Class	;
+	rdfs:label	"roles dbox"	.
 
-local:logical	rdfs:label	"logical"	.
+local:roles	a	rdf:Class	;
+	rdfs:label	"roles"	.
 
-local:however_available_data	rdfs:label	"however available data"	.
+local:dbox	a	rdf:Class	;
+	rdfs:label	"dbox"	.
 
-local:meant	rdfs:label	"meant"	.
+local:dbox_predicates	a	rdf:Class	;
+	rdfs:label	"dbox predicates"	.
 
-local:deducing	rdfs:label	"deducing"	.
+local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	a	rdf:Class	;
+	rdfs:label	"distinction between regular axioms and constraints for these concepts and roles"	.
 
-local:eliminates	rdfs:label	"eliminates"	.
+local:distinction	a	rdf:Class	;
+	rdfs:label	"distinction"	.
 
-local:constraints	rdfs:label	"constraints"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:complete	rdfs:label	"complete"	.
+local:regular_axioms	a	rdf:Class	;
+	rdfs:label	"regular axioms"	.
 
-local:complete_ability	rdfs:label	"complete ability"	.
+local:constraints	a	rdf:Class	;
+	rdfs:label	"constraints"	.
 
-local:ability	rdfs:label	"ability"	.
+local:regular	a	rdf:Class	;
+	rdfs:label	"regular"	.
 
-local:infer	rdfs:label	"infer"	.
+local:axioms	a	rdf:Class	;
+	rdfs:label	"axioms"	.
 
-local:requiring	rdfs:label	"requiring"	.
+local:distinction_between_regular_axioms	a	rdf:Class	;
+	rdfs:label	"distinction between regular axioms"	.
 
-local:available_available	rdfs:label	"available available"	.
+local:distinction_between_regular_axioms_between_constraints	a	rdf:Class	;
+	rdfs:label	"distinction between regular axioms between constraints"	.
 
-local:available_available_data	rdfs:label	"available available data"	.
+local:distinction_between_regular_axioms_between_constraints_for_concepts	a	rdf:Class	;
+	rdfs:label	"distinction between regular axioms between constraints for concepts"	.
 
-local:data_data	rdfs:label	"data data"	.
+local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	a	rdf:Class	;
+	rdfs:label	"distinction between regular axioms between constraints for concepts for roles"	.
 
-local:available_available_data_data	rdfs:label	"available available data data"	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	a	rdf:Class	;
+	rdfs:label	"certain concepts and roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
 
-local:available_data_data	rdfs:label	"available data data"	.
+local:certain_concepts	a	rdf:Class	;
+	rdfs:label	"certain concepts"	.
 
-local:reduces	rdfs:label	"reduces"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:previous_approaches	rdfs:label	"previous approaches"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:previous	rdfs:label	"previous"	.
+local:state	a	rdf:Class	;
+	rdfs:label	"state"	.
 
-local:previous_approaches_to_issue	rdfs:label	"previous approaches to issue"	.
+local:extension_of_certain_concepts_and_roles_are_complete	a	rdf:Class	;
+	rdfs:label	"extension of certain concepts and roles are complete"	.
 
-local:issue	rdfs:label	"issue"	.
+local:extension	a	rdf:Class	;
+	rdfs:label	"extension"	.
 
-local:relied	rdfs:label	"relied"	.
+local:extension_of_certain_concepts	a	rdf:Class	;
+	rdfs:label	"extension of certain concepts"	.
 
-local:new_constructs	rdfs:label	"new constructs"	.
+local:extension_of_certain_concepts_of_roles	a	rdf:Class	;
+	rdfs:label	"extension of certain concepts of roles"	.
 
-local:constructs	rdfs:label	"constructs"	.
+local:directly	a	rdf:Class	;
+	rdfs:label	"directly"	.
 
-local:certain_axioms	rdfs:label	"certain axioms"	.
+local:making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	a	rdf:Class	;
+	rdfs:label	"making certain concepts and roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
 
-local:extended_meaning	rdfs:label	"extended meaning"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:meaning	rdfs:label	"meaning"	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	a	rdf:Class	;
+	rdfs:label	"instead directly state that the extension of certain concepts and roles are complete by making certain concepts and roles dbox predicates which eliminates the distinction between regular axioms and constraints for these concepts and roles"	.
 
-local:certain	rdfs:label	"certain"	.
+local:instead_directly_state	a	rdf:Class	;
+	rdfs:label	"instead directly state"	.
 
-local:extended	rdfs:label	"extended"	.
+local:directly_state	a	rdf:Class	;
+	rdfs:label	"directly state"	.
 
-local:syntactically_specifying	rdfs:label	"syntactically specifying"	.
+local:instead_directly	a	rdf:Class	;
+	rdfs:label	"instead directly"	.
 
-local:specifying	rdfs:label	"specifying"	.
+local:instead	a	rdf:Class	;
+	rdfs:label	"instead"	.
 
-local:syntactically_specifying_as_constraints	rdfs:label	"syntactically specifying as constraints"	.
+local:certain_certain_concepts	a	rdf:Class	;
+	rdfs:label	"certain certain concepts"	.
 
-local:adding_in_new_constructs	rdfs:label	"adding in new constructs"	.
+local:extension_of_certain_certain_concepts	a	rdf:Class	;
+	rdfs:label	"extension of certain certain concepts"	.
 
-local:adding	rdfs:label	"adding"	.
+local:extension_of_certain_certain_concepts_of_roles	a	rdf:Class	;
+	rdfs:label	"extension of certain certain concepts of roles"	.
 
-local:new_constructs_for_constraints	rdfs:label	"new constructs for constraints"	.
+local:different_meaning	a	rdf:Class	;
+	rdfs:label	"different meaning"	.
 
-local:extended_meaning_for_constraints	rdfs:label	"extended meaning for constraints"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:syntactically	rdfs:label	"syntactically"	.
+local:meaning	a	rdf:Class	;
+	rdfs:label	"meaning"	.
 
-local:constraints_in_new_constructs	rdfs:label	"constraints in new constructs"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:providing	rdfs:label	"providing"	.
+local:new_constructs	a	rdf:Class	;
+	rdfs:label	"new constructs"	.
 
-local:different_meaning	rdfs:label	"different meaning"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:different	rdfs:label	"different"	.
+local:constructs	a	rdf:Class	;
+	rdfs:label	"constructs"	.
 
-local:different_meaning_for_constraints	rdfs:label	"different meaning for constraints"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:propose	rdfs:label	"propose"	.
+local:constraints_and_providing_a_different_meaning_for_constraints	a	rdf:Class	;
+	rdfs:label	"constraints and providing a different meaning for constraints"	.
 
-local:we	rdfs:label	"we"	.
+local:different_meaning_for_constraints	a	rdf:Class	;
+	rdfs:label	"different meaning for constraints"	.
 
-local:regular	rdfs:label	"regular"	.
+local:certain_axioms	a	rdf:Class	;
+	rdfs:label	"certain axioms"	.
 
-local:regular_axioms	rdfs:label	"regular axioms"	.
+local:specify	a	rdf:Class	;
+	rdfs:label	"specify"	.
 
-local:instead_directly	rdfs:label	"instead directly"	.
+local:syntactically	a	rdf:Class	;
+	rdfs:label	"syntactically"	.
 
-local:instead_directly_state	rdfs:label	"instead directly state"	.
+local:previous_approaches_to_this_issue	a	rdf:Class	;
+	rdfs:label	"previous approaches to this issue"	.
 
-local:state	rdfs:label	"state"	.
+local:issue	a	rdf:Class	;
+	rdfs:label	"issue"	.
 
-local:certain_concepts	rdfs:label	"certain concepts"	.
+local:previous_approaches	a	rdf:Class	;
+	rdfs:label	"previous approaches"	.
 
-local:directly_state	rdfs:label	"directly state"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:directly	rdfs:label	"directly"	.
+local:previous_approaches_to_issue	a	rdf:Class	;
+	rdfs:label	"previous approaches to issue"	.
 
-local:instead	rdfs:label	"instead"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_different_meaning_for_constraints	a	rdf:Class	;
+	rdfs:label	"syntactically specifying certain axioms as constraints or adding in new constructs for constraints and providing a different meaning for constraints"	.
 
-local:roles_dbox	rdfs:label	"roles dbox"	.
+local:syntactically_specifying	a	rdf:Class	;
+	rdfs:label	"syntactically specifying"	.
 
-local:dbox	rdfs:label	"dbox"	.
+local:specifying	a	rdf:Class	;
+	rdfs:label	"specifying"	.
 
-local:certain_certain_concepts	rdfs:label	"certain certain concepts"	.
+local:syntactically_specifying_as_constraints	a	rdf:Class	;
+	rdfs:label	"syntactically specifying as constraints"	.
 
-local:extension_of_certain_certain_concepts	rdfs:label	"extension of certain certain concepts"	.
+local:adding_in_new_constructs	a	rdf:Class	;
+	rdfs:label	"adding in new constructs"	.
 
-local:extension	rdfs:label	"extension"	.
+local:adding	a	rdf:Class	;
+	rdfs:label	"adding"	.
 
-local:extension_of_certain_certain_concepts_of_roles	rdfs:label	"extension of certain certain concepts of roles"	.
+local:new_constructs_for_constraints	a	rdf:Class	;
+	rdfs:label	"new constructs for constraints"	.
 
-local:roles	rdfs:label	"roles"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:distinction_between_regular_axioms	rdfs:label	"distinction between regular axioms"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:distinction	rdfs:label	"distinction"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:distinction_between_regular_axioms_between_constraints	rdfs:label	"distinction between regular axioms between constraints"	.
+local:available_data_to_be_complete	a	rdf:Class	;
+	rdfs:label	"available data to be complete"	.
 
-local:distinction_between_regular_axioms_between_constraints_for_concepts	rdfs:label	"distinction between regular axioms between constraints for concepts"	.
+local:available_data	a	rdf:Class	;
+	rdfs:label	"available data"	.
 
-local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	rdfs:label	"distinction between regular axioms between constraints for concepts for roles"	.
+local:available	a	rdf:Class	;
+	rdfs:label	"available"	.
 
-local:extension_of_certain_concepts	rdfs:label	"extension of certain concepts"	.
+local:new_facts	a	rdf:Class	;
+	rdfs:label	"new facts"	.
 
-local:extension_of_certain_concepts_of_roles	rdfs:label	"extension of certain concepts of roles"	.
+local:facts	a	rdf:Class	;
+	rdfs:label	"facts"	.
 
-local:making	rdfs:label	"making"	.
+local:infer	a	rdf:Class	;
+	rdfs:label	"infer"	.
 
-local:predicates	rdfs:label	"predicates"	.
+local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	a	rdf:Class	;
+	rdfs:label	"ability infer new facts without requiring the data to be complete ability to infer new facts without requiring the available data to be complete"	.
 
-local:avoids	rdfs:label	"avoids"	.
+local:ability	a	rdf:Class	;
+	rdfs:label	"ability"	.
 
-local:proposal	rdfs:label	"proposal"	.
+local:complete_ability	a	rdf:Class	;
+	rdfs:label	"complete ability"	.
 
-local:previous_proposals	rdfs:label	"previous proposals"	.
+local:complete	a	rdf:Class	;
+	rdfs:label	"complete"	.
 
-local:proposals	rdfs:label	"proposals"	.
+local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	a	rdf:Class	;
+	rdfs:label	"ability to infer new facts without requiring the data to be complete ability to infer new facts without requiring the available data to be complete"	.
 
-local:problems_of_previous_proposals	rdfs:label	"problems of previous proposals"	.
+local:extended_meaning	a	rdf:Class	;
+	rdfs:label	"extended meaning"	.
 
-local:problems	rdfs:label	"problems"	.
+local:constraints_and_providing_a_extended_meaning_for_constraints	a	rdf:Class	;
+	rdfs:label	"constraints and providing a extended meaning for constraints"	.
 
-local:special_semantics	rdfs:label	"special semantics"	.
+local:extended	a	rdf:Class	;
+	rdfs:label	"extended"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:extended_meaning_for_constraints	a	rdf:Class	;
+	rdfs:label	"extended meaning for constraints"	.
 
-local:special	rdfs:label	"special"	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_extended_meaning_for_constraints	a	rdf:Class	;
+	rdfs:label	"syntactically specifying certain axioms as constraints or adding in new constructs for constraints and providing a extended meaning for constraints"	.
 
-local:need_for_special_semantics	rdfs:label	"need for special semantics"	.
+local:mean	a	rdf:Class	;
+	rdfs:label	"mean"	.
 
-local:need	rdfs:label	"need"	.
+local:deduce	a	rdf:Class	;
+	rdfs:label	"deduce"	.
 
-#### Properties ####
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
+
+local:inference_of_new_facts_about_the_available_data	a	rdf:Class	;
+	rdfs:label	"inference of new facts about the available data"	.
+
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
+
+local:inference_of_new_facts	a	rdf:Class	;
+	rdfs:label	"inference of new facts"	.
+
+local:new_facts_about_available_data	a	rdf:Class	;
+	rdfs:label	"new facts about available data"	.
+
+local:logical_languages	a	rdf:Class	;
+	rdfs:label	"logical languages"	.
+
+local:logical	a	rdf:Class	;
+	rdfs:label	"logical"	.
+
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
+
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
+
+local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	a	rdf:Class	;
+	rdfs:label	"around the idea that axioms enable the inference of new facts about the available data"	.
+
+local:idea	a	rdf:Class	;
+	rdfs:label	"idea"	.
+
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
 #### Mapped Relations ####
 
-cso:ontology	rdfs:label	"ontology"	.
-local:ontology	owl:sameAs	cso:ontology	.
-cso:semantics	rdfs:label	"semantics"	.
-local:semantics	owl:sameAs	cso:semantics	.
-local:inference	owl:sameAs	cso:inference	.
 cso:inference	rdfs:label	"inference"	.
+cso:semantics	rdfs:label	"semantics"	.
+local:inference	owl:sameAs	cso:inference	.
+local:semantics	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:directly	rdfs:member	local:directly_state	.
-local:distinction_between_regular_axioms_between_constraints_for_concepts	local:distinctionbetweenregularaxiomsbetweenconstraints_for	local:concepts	.
-local:propose	vn.role:Topic	local:instead_directly_state	.
-local:extension_of_certain_certain_concepts_of_roles	local:extensionofcertaincertainconcepts_of	local:roles	.
-local:different	rdfs:member	local:different_meaning	.
-local:available_data	rdfs:subClassOf	local:data	.
-local:extended_meaning	rdfs:subClassOf	local:meaning	.
-local:extended_meaning_for_constraints	local:for_constraints	local:extended_meaning	.
-local:enable	vn.role:Patient	local:inference_of_new_facts	.
-local:previous_approaches_to_issue	local:to_issue	local:previous_approaches	.
-local:extension_of_certain_certain_concepts	local:extension_of	local:certain_certain_concepts	.
-local:however_available_data	rdfs:subClassOf	local:available_data	.
-local:adding	vn.role:Patient	local:new_constructs_for_constraints	.
-local:constraints_in_new_constructs	local:constraints_in	local:new_constructs	.
-local:complete_ability	rdfs:subClassOf	local:ability	.
-local:available_data_data	rdfs:subClassOf	local:data	.
-local:eliminates	vn.role:Agent	local:proposal	.
-local:adding_in_new_constructs	local:in_newconstructs	local:adding	.
-local:different_meaning	rdfs:subClassOf	local:meaning	.
-local:eliminates	vn.role:Patient	local:ability	.
-local:certain_concepts	rdfs:subClassOf	local:concepts	.
-local:complete	rdfs:member	local:complete_ability	.
-local:infer	vn.role:Agent	local:constraints	.
-local:certain	rdfs:member	local:certain_concepts	.
-local:eliminates	vn.role:Agent	local:dbox	.
-local:instead_directly_state	rdfs:subClassOf	local:state	.
-local:eliminates	vn.role:Patient	local:constraints	.
-local:available_data_data	rdfs:subClassOf	local:data_data	.
-local:distinction_between_regular_axioms_between_constraints	local:distinctionbetweenregularaxioms_between	local:constraints	.
-local:extension_of_certain_concepts_of_roles	local:of_roles	local:extension_of_certain_concepts	.
-local:roles_dbox	rdfs:subClassOf	local:dbox	.
-local:state	vn.role:Topic	local:complete	.
-local:syntactically_specifying	rdfs:subClassOf	local:specifying	.
-local:distinction_between_regular_axioms	local:distinction_between	local:regular_axioms	.
-local:distinction_between_regular_axioms_between_constraints	local:between_constraints	local:distinction_between_regular_axioms	.
-local:relied	vn.role:indirect_object	local:syntactically_specifying_as_constraints	.
-local:extended	rdfs:member	local:extended_meaning	.
-local:specifying	local:AM-MNR	local:syntactically	.
-local:eliminates	vn.role:Patient	local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	.
-local:problems_of_previous_proposals	local:of_previousproposals	local:problems	.
-local:meant	vn.role:Theme	local:however_available_data	.
-local:different_meaning_for_constraints	local:for_constraints	local:different_meaning	.
-local:regular	rdfs:member	local:regular_axioms	.
-local:reduces	vn.role:Patient	local:constraints	.
-local:extended_meaning_for_constraints	local:extendedmeaning_for	local:constraints	.
-local:providing	vn.role:Agent	local:different_meaning	.
-local:previous_proposals	rdfs:subClassOf	local:proposals	.
-local:new_constructs_for_constraints	local:for_constraints	local:new_constructs	.
-local:enable	vn.role:Agent	local:axioms	.
-local:reduces	vn.role:other	local:infer	.
-local:available	rdfs:member	local:available_available	.
-local:previous_approaches_to_issue	local:previousapproaches_to	local:issue	.
-local:available_available_data_data	rdfs:subClassOf	local:available_data_data	.
-local:avoids	vn.role:Location	local:problems_of_previous_proposals	.
-local:extension_of_certain_concepts_of_roles	local:extensionofcertainconcepts_of	local:roles	.
-local:new	rdfs:member	local:new_constructs	.
-local:adding_in_new_constructs	local:adding_in	local:new_constructs	.
-local:certain_certain_concepts	rdfs:subClassOf	local:certain_concepts	.
-local:previous	rdfs:member	local:previous_approaches	.
-local:available_available_data_data	rdfs:subClassOf	local:data	.
-local:inference_of_new_facts	local:of_newfacts	local:inference	.
-local:new_facts_about_available_data	local:newfacts_about	local:available_data	.
-local:certain	rdfs:member	local:certain_axioms	.
-local:distinction_between_regular_axioms	local:between_regularaxioms	local:distinction	.
-local:data_data	rdfs:subClassOf	local:data	.
-local:extension_of_certain_concepts	local:of_certainconcepts	local:extension	.
-local:instead_directly	rdfs:member	local:instead_directly_state	.
-local:propose	vn.role:Agent	local:we	.
-local:adding	vn.role:Patient	local:new_constructs	.
-local:requiring	vn.role:Patient	local:available_available_data_data	.
-local:previous_approaches	rdfs:subClassOf	local:approaches	.
-local:eliminates	vn.role:Patient	local:need_for_special_semantics	.
-local:new	rdfs:member	local:new_facts	.
-local:special_semantics	rdfs:subClassOf	local:semantics	.
-local:extension_of_certain_certain_concepts	local:of_certaincertainconcepts	local:extension	.
-local:state	vn.role:Agent	local:we	.
-local:making	vn.role:Material	local:predicates	.
-local:adding	local:AM-PNC	local:constraints	.
-local:specifying	local:AM-TMP	local:constraints_in_new_constructs	.
-local:available_available	rdfs:subClassOf	local:available	.
-local:distinction_between_regular_axioms_between_constraints_for_concepts	local:for_concepts	local:distinction_between_regular_axioms_between_constraints	.
-local:built	local:AM-PNC	local:idea	.
-local:extension_of_certain_concepts	local:extension_of	local:certain_concepts	.
-local:regular_axioms	rdfs:subClassOf	local:axioms	.
-local:providing	vn.role:indirect_object	local:constraints	.
-local:need_for_special_semantics	local:for_specialsemantics	local:need	.
-local:requiring	vn.role:Patient	local:complete	.
-local:instead_directly_state	rdfs:subClassOf	local:directly_state	.
-local:new_facts_about_available_data	local:about_availabledata	local:new_facts	.
-local:built	vn.role:Material	local:logical_languages	.
-local:extension_of_certain_certain_concepts_of_roles	local:of_roles	local:extension_of_certain_certain_concepts	.
-local:reduces	vn.role:Cause	local:constraints	.
-local:specifying	vn.role:Theme	local:certain_axioms	.
-local:infer	vn.role:Theme	local:new_facts	.
-local:new_facts	rdfs:subClassOf	local:facts	.
-local:built	vn.role:Material	local:ontology	.
-local:available_data	rdfs:member	local:available_data_data	.
-local:instead	rdfs:member	local:instead_directly	.
-local:syntactically_specifying_as_constraints	local:syntacticallyspecifying_as	local:constraints	.
-local:problems_of_previous_proposals	local:problems_of	local:previous_proposals	.
-local:need_for_special_semantics	local:need_for	local:special_semantics	.
-local:avoids	vn.role:Agent	local:proposal	.
-local:syntactically_specifying_as_constraints	local:as_constraints	local:syntactically_specifying	.
-local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	local:for_roles	local:distinction_between_regular_axioms_between_constraints_for_concepts	.
-local:directly_state	rdfs:subClassOf	local:state	.
-local:instead_directly	rdfs:subClassOf	local:directly	.
-local:available_available	rdfs:member	local:available_available_data	.
-local:requiring	vn.role:Patient	local:data	.
-local:deducing	vn.role:Theme2	local:new_facts	.
-local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	local:distinctionbetweenregularaxiomsbetweenconstraintsforconcepts_for	local:roles	.
-local:constraints_in_new_constructs	local:in_newconstructs	local:constraints	.
-local:previous	rdfs:member	local:previous_proposals	.
-local:new_constructs_for_constraints	local:newconstructs_for	local:constraints	.
-local:data	rdfs:member	local:data_data	.
-local:providing	vn.role:Agent	local:extended_meaning	.
-local:different_meaning_for_constraints	local:differentmeaning_for	local:constraints	.
-local:relied	vn.role:Agent	local:previous_approaches_to_issue	.
-local:built	vn.role:Asset	local:idea	.
-local:inference_of_new_facts	local:inference_of	local:new_facts	.
-local:eliminates	vn.role:Agent	local:constraints	.
-local:available_available_data	rdfs:subClassOf	local:data	.
-local:state	local:AM-MNR	local:directly	.
-local:new_constructs	rdfs:subClassOf	local:constructs	.
-local:special	rdfs:member	local:special_semantics	.
-local:logical	rdfs:member	local:logical_languages	.
-local:requiring	vn.role:Patient	local:available_data	.
-local:available	rdfs:member	local:available_data	.
-local:reduces	vn.role:Patient	local:ability	.
 local:logical_languages	rdfs:subClassOf	local:languages	.
-local:available_available_data	rdfs:member	local:available_available_data_data	.
+local:extension_of_certain_certain_concepts	rdfs:member	local:extension	.
+local:s11.1	rdf:predicate	local:state	.
+local:new_facts	rdfs:member	local:new	.
+local:s13	rdf:object	local:problems_of_previous_proposals	.
+local:instead_directly_state	rdfs:subClassOf	local:state	.
+local:s10	rdf:object	local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_different_meaning_for_constraints	.
+local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:complete_ability	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_extended_meaning_for_constraints	rdfs:member	local:certain_axioms	.
+local:special_semantics	rdfs:subClassOf	local:semantics	.
+local:extension_of_certain_concepts_of_roles	rdfs:member	local:extension_of_certain_concepts	.
+local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:new_facts	.
+local:constraints_and_providing_a_extended_meaning_for_constraints	rdfs:member	local:extended_meaning	.
+local:s1.1	rdf:predicate	local:enable	.
+local:s4	rdf:predicate	local:mean	.
+local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:data	.
+local:adding_in_new_constructs	rdfs:member	local:adding	.
+local:s10.1	local:AM-MNR	local:syntactically	.
+local:s10.1	local:AM-MNR	local:constraints	.
+local:s1	local:AM-PNC	local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	.
+local:s0	rdf:predicate	local:build	.
+local:s5.2	rdf:subject	local:new_constructs	.
+local:previous_approaches_to_this_issue	rdfs:member	local:issue	.
+local:s8.2	rdf:object	local:available_data_to_be_complete	.
+local:new_constructs	rdfs:member	local:new	.
+local:s12	rdf:predicate	local:eliminate	.
+local:s11.2	rdfs:member	local:roles_dbox	.
+local:s11.3	rdf:subject	local:roles_dbox_predicates	.
+local:new_facts_about_available_data	rdfs:member	local:new_facts	.
+local:previous_approaches	rdfs:member	local:previous	.
+local:extension_of_certain_concepts	rdfs:member	local:extension	.
+local:s12	rdf:object	local:need_for_special_semantics	.
+local:s5.3	rdf:predicate	local:provide	.
+local:s5	rdf:subject	local:previous_approaches_to_this_issue	.
+local:s1.1	rdf:subject	local:axioms	.
+local:s7.1	rdf:object	local:new_facts	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_different_meaning_for_constraints	rdfs:member	local:different_meaning	.
+local:s5.1	rdf:predicate	local:specify	.
+local:extension_of_certain_concepts_and_roles_are_complete	rdfs:member	local:extension	.
+local:s11.2	rdfs:member	local:regular_axioms	.
+local:distinction_between_regular_axioms	rdfs:member	local:regular_axioms	.
+local:s11.2	rdfs:member	local:roles	.
+local:need_for_special_semantics	rdfs:member	local:need	.
+local:different_meaning	rdfs:member	local:different	.
+local:new_facts_about_available_data	rdfs:member	local:available_data	.
+local:inference_of_new_facts_about_the_available_data	rdfs:member	local:inference	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_different_meaning_for_constraints	rdfs:member	local:certain_axioms	.
+local:distinction_between_regular_axioms_between_constraints_for_concepts	rdfs:member	local:distinction_between_regular_axioms_between_constraints	.
+local:new_constructs	rdfs:subClassOf	local:constructs	.
+local:s3	rdf:subject	local:new_facts	.
+local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:constraints	.
+local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:roles	.
+local:s7.2	rdf:predicate	local:require	.
+local:regular_axioms	rdfs:subClassOf	local:axioms	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_extended_meaning_for_constraints	rdfs:member	local:new_constructs	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:certain_concepts	.
+local:s9	rdf:object	local:constraints	.
+local:s10.3	rdf:subject	local:different_meaning	.
+local:s10.1	rdf:predicate	local:specify	.
+local:s10	rdf:predicate	local:rely	.
+local:syntactically_specifying_as_constraints	rdfs:member	local:constraints	.
+local:s8	rdf:predicate	local:reduce	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:distinction	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:instead_directly_state	.
+local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:data	.
+local:s5.2	local:AM-PNC	local:constraints_and_providing_a_extended_meaning_for_constraints	.
+local:s0.1	rdf:predicate	local:enable	.
+local:roles_dbox	rdfs:member	local:roles	.
+local:s11.1	local:AM-MNR	local:directly	.
+local:s5	rdf:predicate	local:rely	.
+local:previous_approaches_to_issue	rdfs:member	local:issue	.
+local:s11.2	rdf:subject	local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	.
+local:s11.3	rdf:predicate	local:eliminate	.
+local:s11.1	rdf:object	local:extension_of_certain_concepts_and_roles_are_complete	.
+local:extension_of_certain_certain_concepts	rdfs:member	local:certain_certain_concepts	.
+local:s11.1	local:AM-MNR	local:making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	.
+local:certain_certain_concepts	rdfs:subClassOf	local:certain_concepts	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:extension	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:constraints	.
+local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:ability	.
+local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:concepts	.
+local:distinction_between_regular_axioms	rdfs:member	local:distinction	.
+local:constraints_and_providing_a_different_meaning_for_constraints	rdfs:member	local:different_meaning	.
+local:extension_of_certain_concepts_and_roles_are_complete	rdfs:member	local:certain_concepts	.
+local:different_meaning_for_constraints	rdfs:member	local:different_meaning	.
+local:special_semantics	rdfs:member	local:special	.
+local:distinction_between_regular_axioms_between_constraints	rdfs:member	local:constraints	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:concepts	.
+local:inference_of_new_facts_about_the_available_data	rdfs:member	local:available_data	.
+local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:available_data	.
+local:instead_directly	rdfs:member	local:instead	.
+local:s0.1	rdf:subject	local:axioms	.
+local:s10	rdf:subject	local:previous_approaches_to_this_issue	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:roles	.
+local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	rdfs:member	local:inference	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:constraints	.
+local:roles_dbox	rdfs:subClassOf	local:dbox	.
+local:new_constructs_for_constraints	rdfs:member	local:constraints	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:regular_axioms	.
+local:extension_of_certain_concepts	rdfs:member	local:certain_concepts	.
+local:previous_approaches	rdfs:subClassOf	local:approaches	.
+local:s10.2	rdf:subject	local:new_constructs	.
+local:instead_directly_state	rdfs:subClassOf	local:directly_state	.
+local:extended_meaning_for_constraints	rdfs:member	local:extended_meaning	.
+local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:complete_ability	.
+local:s5.1	local:AM-MNR	local:constraints	.
+local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	rdfs:member	local:roles	.
+local:s10.3	rdf:predicate	local:provide	.
+local:s8.2	rdf:subject	local:data	.
+local:extended_meaning	rdfs:subClassOf	local:meaning	.
+local:instead_directly_state	rdfs:member	local:instead_directly	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_different_meaning_for_constraints	rdfs:member	local:constraints	.
+local:constraints_and_providing_a_extended_meaning_for_constraints	rdfs:member	local:constraints	.
+local:s8	rdf:subject	local:constraints	.
+local:extension_of_certain_concepts_and_roles_are_complete	rdfs:member	local:roles	.
+local:s11.1	rdf:subject	local:we	.
+local:available_data	rdfs:member	local:available	.
+local:extension_of_certain_concepts_of_roles	rdfs:member	local:roles	.
+local:s10.2	rdf:predicate	local:add	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:roles_dbox	.
+local:s12	rdf:subject	local:proposal	.
+local:distinction_between_regular_axioms_between_constraints	rdfs:member	local:distinction_between_regular_axioms	.
+local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:new_facts	.
+local:s11.2	rdfs:member	local:distinction	.
+local:inference_of_new_facts	rdfs:member	local:inference	.
+local:s6	rdf:predicate	local:eliminate	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:roles	.
+local:s10.2	local:AM-PNC	local:constraints_and_providing_a_different_meaning_for_constraints	.
+local:problems_of_previous_proposals	rdfs:member	local:problems	.
+local:s11	rdf:subject	local:we	.
+local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:distinction	.
+local:complete_ability	rdfs:member	local:complete	.
+local:s8.2	rdf:predicate	local:require	.
+local:s8.1	rdf:subject	local:new_facts	.
+local:s8	rdf:object	local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	.
+local:inference_of_new_facts_about_the_available_data	rdfs:member	local:new_facts	.
+local:directly_state	rdfs:member	local:directly	.
+local:extended_meaning	rdfs:member	local:extended	.
+local:s11.2	rdfs:member	local:constraints	.
+local:s11.2	rdfs:member	local:concepts	.
+local:s0.1	rdf:object	local:inference_of_new_facts_about_the_available_data	.
+local:distinction_between_regular_axioms_between_constraints_for_concepts	rdfs:member	local:concepts	.
+local:s5	rdf:object	local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_extended_meaning_for_constraints	.
+local:s6	rdf:subject	local:constraints	.
+local:available_data	rdfs:subClassOf	local:data	.
+local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:certain_concepts	.
+local:certain_concepts	rdfs:member	local:certain	.
+local:s11.2	rdfs:member	local:certain_concepts	.
+local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	rdfs:member	local:idea	.
+local:dbox_predicates	rdfs:subClassOf	local:predicates	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_extended_meaning_for_constraints	rdfs:member	local:constraints	.
+local:s13	rdf:predicate	local:avoid	.
+local:s5.1	rdf:subject	local:certain_axioms	.
+local:s13	rdf:subject	local:proposal	.
+local:s7	rdf:subject	local:constraints	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_extended_meaning_for_constraints	rdfs:member	local:extended_meaning	.
+local:previous_approaches_to_this_issue	rdfs:member	local:previous_approaches	.
+local:syntactically_specifying_as_constraints	rdfs:member	local:syntactically_specifying	.
+local:directly_state	rdfs:subClassOf	local:state	.
+local:s9	rdf:predicate	local:reduce	.
+local:extended_meaning_for_constraints	rdfs:member	local:constraints	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:roles_dbox	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:distinction	.
+local:s5.1	local:AM-MNR	local:syntactically	.
+local:instead_directly	rdfs:subClassOf	local:directly	.
+local:certain_axioms	rdfs:member	local:certain	.
+local:complete_ability	rdfs:subClassOf	local:ability	.
+local:s7	rdf:predicate	local:eliminate	.
+local:s8.1	rdf:object	local:new_facts	.
+local:inference_of_new_facts	rdfs:member	local:new_facts	.
+local:regular_axioms	rdfs:member	local:regular	.
+local:s10.3	rdf:object	local:constraints	.
+local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:regular_axioms	.
+local:s4	rdf:subject	local:available_data	.
+local:need_for_special_semantics	rdfs:member	local:special_semantics	.
+local:s7.1	rdf:subject	local:new_facts	.
+local:s3	rdf:predicate	local:deduce	.
+local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	rdfs:member	local:new_facts	.
+local:s8.1	rdf:predicate	local:infer	.
+local:different_meaning_for_constraints	rdfs:member	local:constraints	.
+local:adding_in_new_constructs	rdfs:member	local:new_constructs	.
+local:s0	rdf:object	local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	.
+local:s5.2	rdf:predicate	local:add	.
+local:s1.1	rdf:object	local:inference_of_new_facts_about_the_available_data	.
+local:s9	rdf:subject	local:constraints	.
+local:extension_of_certain_certain_concepts_of_roles	rdfs:member	local:roles	.
+local:s6	rdf:object	local:constraints	.
+local:s10.1	rdf:subject	local:certain_axioms	.
+local:ability_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:available_data	.
+local:certain_concepts	rdfs:subClassOf	local:concepts	.
+local:s11	rdf:predicate	local:propose	.
+local:s11.2	rdf:predicate	local:make	.
+local:distinction_between_regular_axioms_between_constraints_for_concepts_for_roles	rdfs:member	local:distinction_between_regular_axioms_between_constraints_for_concepts	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:regular_axioms	.
+local:constraints_and_providing_a_different_meaning_for_constraints	rdfs:member	local:constraints	.
+local:previous_approaches_to_issue	rdfs:member	local:previous_approaches	.
 local:certain_axioms	rdfs:subClassOf	local:axioms	.
-local:state	local:AM-MNR	local:making	.
+local:s5.3	rdf:object	local:constraints	.
+local:logical_languages	rdfs:member	local:logical	.
+local:problems_of_previous_proposals	rdfs:member	local:previous_proposals	.
+local:previous_proposals	rdfs:member	local:previous	.
+local:s5.3	rdf:subject	local:extended_meaning	.
+local:s7.2	rdf:object	local:available_data_to_be_complete	.
+local:previous_proposals	rdfs:subClassOf	local:proposals	.
+local:syntactically_specifying	rdfs:subClassOf	local:specifying	.
+local:around_the_idea_that_axioms_enable_the_inference_of_new_facts_about_the_available_data	rdfs:member	local:available_data	.
+local:syntactically_specifying_certain_axioms_as_constraints_or_adding_in_new_constructs_for_constraints_and_providing_a_different_meaning_for_constraints	rdfs:member	local:new_constructs	.
+local:new_constructs_for_constraints	rdfs:member	local:new_constructs	.
+local:roles_dbox_predicates	rdfs:member	local:roles_dbox	.
+local:dbox_predicates	rdfs:member	local:dbox	.
+local:certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	rdfs:member	local:concepts	.
+local:s1	rdf:subject	local:logical_languages	.
+local:s11.3	rdf:object	local:distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	.
+local:s7.1	rdf:predicate	local:infer	.
+local:roles_dbox_predicates	rdfs:subClassOf	local:predicates	.
+local:s1	rdf:predicate	local:build	.
+local:s7	rdf:object	local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	.
+local:extension_of_certain_certain_concepts_of_roles	rdfs:member	local:extension_of_certain_certain_concepts	.
+local:s11	rdf:object	local:instead_directly_state_that_the_extension_of_certain_concepts_and_roles_are_complete_by_making_certain_concepts_and_roles_dbox_predicates_which_eliminates_the_distinction_between_regular_axioms_and_constraints_for_these_concepts_and_roles	.
+local:new_facts	rdfs:subClassOf	local:facts	.
+local:ability_to_infer_new_facts_without_requiring_the_data_to_be_complete_ability_to_infer_new_facts_without_requiring_the_available_data_to_be_complete	rdfs:member	local:ability	.
+local:s0	rdf:subject	local:ontology	.
+local:s7.2	rdf:subject	local:data	.
+local:different_meaning	rdfs:subClassOf	local:meaning	.

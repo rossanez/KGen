@@ -1,45 +1,73 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the damloil language which corresponds to a rich description logic"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the most advanced layer that reached maturity"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"most advanced layer"	.
+
+
 #### Classes ####
 
-local:advanced	rdfs:label	"advanced"	.
+local:damloil_language	a	rdf:Class	;
+	rdfs:label	"damloil language"	.
 
-local:most	rdfs:label	"most"	.
+local:damloil	a	rdf:Class	;
+	rdfs:label	"damloil"	.
 
-local:layer	rdfs:label	"layer"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:damloil	rdfs:label	"damloil"	.
+local:correspond	a	rdf:Class	;
+	rdfs:label	"correspond"	.
 
-local:damloil_language	rdfs:label	"damloil language"	.
+local:rich_description_logic	a	rdf:Class	;
+	rdfs:label	"rich description logic"	.
 
-local:language	rdfs:label	"language"	.
+local:rich_description	a	rdf:Class	;
+	rdfs:label	"rich description"	.
 
-local:corresponds	rdfs:label	"corresponds"	.
+local:rich	a	rdf:Class	;
+	rdfs:label	"rich"	.
 
-local:description	rdfs:label	"description"	.
+local:description_logic	a	rdf:Class	;
+	rdfs:label	"description logic"	.
 
-local:description_logic	rdfs:label	"description logic"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:rich_description_logic	rdfs:label	"rich description logic"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:logic	rdfs:label	"logic"	.
+local:advanced_layer	a	rdf:Class	;
+	rdfs:label	"advanced layer"	.
 
-local:rich	rdfs:label	"rich"	.
+local:advanced	a	rdf:Class	;
+	rdfs:label	"advanced"	.
 
-local:rich_description	rdfs:label	"rich description"	.
+local:layer	a	rdf:Class	;
+	rdfs:label	"layer"	.
 
-local:advanced_layer	rdfs:label	"advanced layer"	.
+local:reach	a	rdf:Class	;
+	rdfs:label	"reach"	.
 
-local:reached	rdfs:label	"reached"	.
+local:maturity	a	rdf:Class	;
+	rdfs:label	"maturity"	.
 
-local:maturity	rdfs:label	"maturity"	.
+local:advance	a	rdf:Class	;
+	rdfs:label	"advance"	.
 
-#### Properties ####
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
 #### Mapped Relations ####
 
@@ -48,20 +76,23 @@ local:description_logic	owl:sameAs	cso:description_logic	.
 
 #### Relations ####
 
-local:corresponds	vn.role:Actor1	local:damloil_language	.
-local:rich_description	rdfs:member	local:rich_description_logic	.
-local:advanced_layer	rdfs:subClassOf	local:layer	.
-local:rich_description	rdfs:subClassOf	local:description	.
-local:advanced	rdfs:member	local:advanced_layer	.
-local:description	rdfs:member	local:description_logic	.
+local:s1	rdf:subject	local:layer	.
+local:damloil_language	rdfs:member	local:damloil	.
+local:s1	rdf:predicate	local:advance	.
+local:advanced_layer	rdfs:member	local:advanced	.
+local:rich_description_logic	rdfs:member	local:rich_description	.
+local:s3	rdf:subject	local:damloil_language	.
 local:description_logic	rdfs:subClassOf	local:logic	.
-local:damloil_language	rdfs:subClassOf	local:language	.
-local:reached	vn.role:Agent	local:advanced_layer	.
-local:advanced	vn.role:object	local:layer	.
-local:rich	rdfs:member	local:rich_description	.
-local:rich_description_logic	rdfs:subClassOf	local:description_logic	.
-local:reached	vn.role:Theme	local:maturity	.
-local:advanced	local:AM-EXT	local:most	.
+local:s1	local:AM-EXT	local:most	.
+local:rich_description	rdfs:member	local:rich	.
+local:s2	rdf:object	local:maturity	.
 local:rich_description_logic	rdfs:subClassOf	local:logic	.
-local:corresponds	vn.role:Actor2	local:rich_description_logic	.
-local:damloil	rdfs:member	local:damloil_language	.
+local:advanced_layer	rdfs:subClassOf	local:layer	.
+local:s2	rdf:predicate	local:reach	.
+local:rich_description	rdfs:subClassOf	local:description	.
+local:s3	rdf:predicate	local:correspond	.
+local:s3	rdf:object	local:rich_description_logic	.
+local:rich_description_logic	rdfs:subClassOf	local:description_logic	.
+local:description_logic	rdfs:member	local:description	.
+local:s2	rdf:subject	local:advanced_layer	.
+local:damloil_language	rdfs:subClassOf	local:language	.

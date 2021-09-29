@@ -1,229 +1,348 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the algorithm admits easy extensions with ground conjunctive queries"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the algorithm admits easy extensions with dlsafe rules"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"this an turned into a disjunctive datalog program"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"ordered binary decision diagram"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a disjunctive datalog program that can used for abox reasoning"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"an ordered binary decision diagram which represents a canonical model for t"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"ordered binary decision"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"ordered binary decision diagram"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"a satisfiability converted into an ordered binary decision diagram"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"obtained alcib tbox t"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"preserving transformation"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we propose a novel method for reasoning in the description logic shiq"	.
+
+
 #### Classes ####
 
-local:propose	rdfs:label	"propose"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:we	rdfs:label	"we"	.
+local:admit	a	rdf:Class	;
+	rdfs:label	"admit"	.
 
-local:logic_shiq	rdfs:label	"logic shiq"	.
+local:easy_extensions_with_ground_conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"easy extensions with ground conjunctive queries"	.
 
-local:shiq	rdfs:label	"shiq"	.
+local:conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"conjunctive queries"	.
 
-local:description	rdfs:label	"description"	.
+local:ground	a	rdf:Class	;
+	rdfs:label	"ground"	.
 
-local:description_logic	rdfs:label	"description logic"	.
+local:easy_extensions	a	rdf:Class	;
+	rdfs:label	"easy extensions"	.
 
-local:novel_method	rdfs:label	"novel method"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:method	rdfs:label	"method"	.
+local:extensions	a	rdf:Class	;
+	rdfs:label	"extensions"	.
 
-local:logic	rdfs:label	"logic"	.
+local:easy	a	rdf:Class	;
+	rdfs:label	"easy"	.
 
-local:description_logic_shiq	rdfs:label	"description logic shiq"	.
+local:conjunctive	a	rdf:Class	;
+	rdfs:label	"conjunctive"	.
 
-local:novel	rdfs:label	"novel"	.
+local:ground_conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"ground conjunctive queries"	.
 
-local:novel_method_for_reasoning	rdfs:label	"novel method for reasoning"	.
+local:easy_extensions_with_dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"easy extensions with dlsafe rules"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:dlsafe_rules	a	rdf:Class	;
+	rdfs:label	"dlsafe rules"	.
 
-local:reasoning_in_description_logic_shiq	rdfs:label	"reasoning in description logic shiq"	.
+local:dlsafe	a	rdf:Class	;
+	rdfs:label	"dlsafe"	.
 
-local:binary	rdfs:label	"binary"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:binary_decision	rdfs:label	"binary decision"	.
+local:an	a	rdf:Class	;
+	rdfs:label	"an"	.
 
-local:decision	rdfs:label	"decision"	.
+local:turn	a	rdf:Class	;
+	rdfs:label	"turn"	.
 
-local:ordered	rdfs:label	"ordered"	.
+local:disjunctive_datalog_program	a	rdf:Class	;
+	rdfs:label	"disjunctive datalog program"	.
 
-local:binary_decision_diagram	rdfs:label	"binary decision diagram"	.
+local:disjunctive_datalog	a	rdf:Class	;
+	rdfs:label	"disjunctive datalog"	.
 
-local:decision_diagram	rdfs:label	"decision diagram"	.
+local:disjunctive	a	rdf:Class	;
+	rdfs:label	"disjunctive"	.
 
-local:diagram	rdfs:label	"diagram"	.
+local:datalog_program	a	rdf:Class	;
+	rdfs:label	"datalog program"	.
 
-local:represents	rdfs:label	"represents"	.
+local:datalog	a	rdf:Class	;
+	rdfs:label	"datalog"	.
 
-local:canonical_model	rdfs:label	"canonical model"	.
+local:program	a	rdf:Class	;
+	rdfs:label	"program"	.
 
-local:model	rdfs:label	"model"	.
+local:binary_decision_diagram	a	rdf:Class	;
+	rdfs:label	"binary decision diagram"	.
 
-local:canonical	rdfs:label	"canonical"	.
+local:decision_diagram	a	rdf:Class	;
+	rdfs:label	"decision diagram"	.
 
-local:canonical_model_for_t	rdfs:label	"canonical model for t."	.
+local:decision	a	rdf:Class	;
+	rdfs:label	"decision"	.
 
-local:t	rdfs:label	"t."	.
+local:diagram	a	rdf:Class	;
+	rdfs:label	"diagram"	.
 
-local:preserving	rdfs:label	"preserving"	.
+local:binary_decision	a	rdf:Class	;
+	rdfs:label	"binary decision"	.
 
-local:transformation	rdfs:label	"transformation"	.
+local:binary	a	rdf:Class	;
+	rdfs:label	"binary"	.
 
-local:alcib	rdfs:label	"alcib"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:alcib_tbox	rdfs:label	"alcib tbox"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:alcib_tbox_t	rdfs:label	"alcib tbox t."	.
+local:abox_reasoning	a	rdf:Class	;
+	rdfs:label	"abox reasoning"	.
 
-local:tbox	rdfs:label	"tbox"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:tbox_t	rdfs:label	"tbox t."	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:converted	rdfs:label	"converted"	.
+local:canonical_model_for_t	a	rdf:Class	;
+	rdfs:label	"canonical model for t"	.
 
-local:satisfiability	rdfs:label	"satisfiability"	.
+local:t	a	rdf:Class	;
+	rdfs:label	"t"	.
 
-local:disjunctive_datalog_program	rdfs:label	"disjunctive datalog program"	.
+local:canonical_model	a	rdf:Class	;
+	rdfs:label	"canonical model"	.
 
-local:program	rdfs:label	"program"	.
+local:canonical	a	rdf:Class	;
+	rdfs:label	"canonical"	.
 
-local:disjunctive_datalog	rdfs:label	"disjunctive datalog"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:datalog	rdfs:label	"datalog"	.
+local:satisfiability	a	rdf:Class	;
+	rdfs:label	"satisfiability"	.
 
-local:datalog_program	rdfs:label	"datalog program"	.
+local:convert	a	rdf:Class	;
+	rdfs:label	"convert"	.
 
-local:disjunctive	rdfs:label	"disjunctive"	.
+local:alcib_tbox_t	a	rdf:Class	;
+	rdfs:label	"alcib tbox t"	.
 
-local:used	rdfs:label	"used"	.
+local:alcib_tbox	a	rdf:Class	;
+	rdfs:label	"alcib tbox"	.
 
-local:can	rdfs:label	"can"	.
+local:tbox	a	rdf:Class	;
+	rdfs:label	"tbox"	.
 
-local:abox_reasoning	rdfs:label	"abox reasoning"	.
+local:tbox_t	a	rdf:Class	;
+	rdfs:label	"tbox t"	.
 
-local:abox	rdfs:label	"abox"	.
+local:alcib	a	rdf:Class	;
+	rdfs:label	"alcib"	.
 
-local:turned	rdfs:label	"turned"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:an	rdfs:label	"an"	.
+local:transformation	a	rdf:Class	;
+	rdfs:label	"transformation"	.
 
-local:admits	rdfs:label	"admits"	.
+local:preserve	a	rdf:Class	;
+	rdfs:label	"preserve"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:easy_extensions	rdfs:label	"easy extensions"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:extensions	rdfs:label	"extensions"	.
+local:novel_method_for_reasoning_in_the_description_logic_shiq	a	rdf:Class	;
+	rdfs:label	"novel method for reasoning in the description logic shiq"	.
 
-local:easy	rdfs:label	"easy"	.
+local:description_logic_shiq	a	rdf:Class	;
+	rdfs:label	"description logic shiq"	.
 
-local:dlsafe_rules	rdfs:label	"dl-safe rules"	.
+local:novel_method	a	rdf:Class	;
+	rdfs:label	"novel method"	.
 
-local:rules	rdfs:label	"rules"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:dlsafe	rdfs:label	"dl-safe"	.
+local:shiq	a	rdf:Class	;
+	rdfs:label	"shiq"	.
 
-local:easy_extensions_with_dlsafe_rules	rdfs:label	"easy extensions with dl-safe rules"	.
+local:description_logic	a	rdf:Class	;
+	rdfs:label	"description logic"	.
 
-local:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:queries	rdfs:label	"queries"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:conjunctive	rdfs:label	"conjunctive"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:ground_conjunctive_queries	rdfs:label	"ground conjunctive queries"	.
+local:logic_shiq	a	rdf:Class	;
+	rdfs:label	"logic shiq"	.
 
-local:easy_extensions_with_ground_conjunctive_queries	rdfs:label	"easy extensions with ground conjunctive queries"	.
+local:novel_method_for_reasoning	a	rdf:Class	;
+	rdfs:label	"novel method for reasoning"	.
 
-#### Properties ####
+local:reasoning_in_description_logic_shiq	a	rdf:Class	;
+	rdfs:label	"reasoning in description logic shiq"	.
 
 #### Mapped Relations ####
 
-local:reasoning	owl:sameAs	cso:reasoning	.
-cso:datalog	rdfs:label	"datalog"	.
 local:decision_diagram	owl:sameAs	cso:decision_diagram	.
-cso:conjunctive_queries	rdfs:label	"conjunctive queries"	.
-local:datalog_program	owl:sameAs	cso:datalog_programs	.
 cso:reasoning	rdfs:label	"reasoning"	.
-cso:binary_decision_diagram	rdfs:label	"binary decision diagram"	.
-cso:satisfiability	rdfs:label	"satisfiability"	.
-local:description_logic	owl:sameAs	cso:description_logic	.
-local:conjunctive_queries	owl:sameAs	cso:conjunctive_queries	.
-cso:binary_decision	rdfs:label	"binary decision"	.
+local:satisfiability	owl:sameAs	cso:satisfiability	.
 cso:decision_diagram	rdfs:label	"decision diagram"	.
+local:conjunctive_queries	owl:sameAs	cso:conjunctive_queries	.
+local:binary_decision_diagram	owl:sameAs	cso:binary_decision_diagram	.
+cso:binary_decision	rdfs:label	"binary decision"	.
+cso:datalog	rdfs:label	"datalog"	.
+cso:binary_decision_diagram	rdfs:label	"binary decision diagram"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
 cso:description_logic	rdfs:label	"description logic"	.
 local:datalog	owl:sameAs	cso:datalog	.
-cso:datalog_programs	rdfs:label	"datalog program"	.
-local:binary_decision_diagram	owl:sameAs	cso:binary_decision_diagram	.
-local:satisfiability	owl:sameAs	cso:satisfiability	.
+local:description_logic	owl:sameAs	cso:description_logic	.
+local:datalog_program	owl:sameAs	cso:datalog_programs	.
 local:binary_decision	owl:sameAs	cso:binary_decision	.
+cso:datalog_programs	rdfs:label	"datalog program"	.
+cso:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+cso:satisfiability	rdfs:label	"satisfiability"	.
 
 #### Relations ####
 
-local:ordered	vn.role:Theme	local:binary_decision	.
-local:disjunctive_datalog	rdfs:member	local:disjunctive_datalog_program	.
-local:binary	rdfs:member	local:binary_decision	.
-local:binary_decision_diagram	rdfs:subClassOf	local:diagram	.
-local:binary_decision_diagram	rdfs:subClassOf	local:decision_diagram	.
-local:disjunctive	rdfs:member	local:disjunctive_datalog	.
-local:canonical_model_for_t	local:canonicalmodel_for	local:t	.
-local:description	rdfs:member	local:description_logic	.
-local:abox_reasoning	rdfs:subClassOf	local:reasoning	.
-local:turned	vn.role:Source	local:disjunctive_datalog_program	.
-local:canonical_model_for_t	local:for_t.	local:canonical_model	.
-local:logic_shiq	rdfs:subClassOf	local:shiq	.
-local:alcib_tbox	rdfs:subClassOf	local:tbox	.
-local:alcib_tbox_t	rdfs:subClassOf	local:tbox_t	.
-local:propose	vn.role:Topic	local:novel_method_for_reasoning	.
-local:used	vn.role:Recipient	local:abox_reasoning	.
-local:reasoning_in_description_logic_shiq	local:reasoning_in	local:description_logic_shiq	.
-local:admits	vn.role:Theme	local:easy_extensions_with_dlsafe_rules	.
-local:binary_decision	rdfs:subClassOf	local:decision	.
-local:ordered	vn.role:Theme	local:binary_decision_diagram	.
-local:alcib_tbox_t	rdfs:subClassOf	local:t	.
 local:description_logic	rdfs:subClassOf	local:logic	.
-local:disjunctive_datalog_program	rdfs:subClassOf	local:datalog_program	.
-local:conjunctive_queries	rdfs:subClassOf	local:queries	.
-local:used	vn.role:Theme	local:disjunctive_datalog_program	.
-local:used	local:AM-MOD	local:can	.
-local:canonical	rdfs:member	local:canonical_model	.
-local:datalog_program	rdfs:subClassOf	local:program	.
-local:turned	vn.role:Patient	local:an	.
-local:easy_extensions	rdfs:subClassOf	local:extensions	.
-local:decision	rdfs:member	local:decision_diagram	.
-local:disjunctive_datalog_program	rdfs:subClassOf	local:program	.
-local:disjunctive_datalog	rdfs:subClassOf	local:datalog	.
-local:tbox_t	rdfs:subClassOf	local:t	.
-local:converted	vn.role:Patient	local:satisfiability	.
-local:datalog	rdfs:member	local:datalog_program	.
-local:reasoning_in_description_logic_shiq	local:in_descriptionlogicshiq	local:reasoning	.
-local:description_logic	rdfs:member	local:description_logic_shiq	.
-local:dlsafe_rules	rdfs:subClassOf	local:rules	.
-local:easy_extensions_with_dlsafe_rules	local:easyextensions_with	local:dlsafe_rules	.
-local:logic	rdfs:member	local:logic_shiq	.
-local:canonical_model	rdfs:subClassOf	local:model	.
-local:ground_conjunctive_queries	rdfs:subClassOf	local:conjunctive_queries	.
-local:easy_extensions_with_ground_conjunctive_queries	local:with_groundconjunctivequeries	local:easy_extensions	.
-local:easy_extensions_with_ground_conjunctive_queries	local:easyextensions_with	local:ground_conjunctive_queries	.
-local:tbox	rdfs:member	local:tbox_t	.
-local:novel_method_for_reasoning	local:novelmethod_for	local:reasoning	.
-local:description_logic_shiq	rdfs:subClassOf	local:logic_shiq	.
-local:easy	rdfs:member	local:easy_extensions	.
-local:admits	vn.role:Theme	local:easy_extensions_with_ground_conjunctive_queries	.
-local:binary_decision	rdfs:member	local:binary_decision_diagram	.
-local:represents	vn.role:Agent	local:ordered	.
-local:preserving	vn.role:Agent	local:transformation	.
-local:converted	vn.role:Source	local:ordered	.
-local:alcib	rdfs:member	local:alcib_tbox	.
-local:propose	vn.role:Agent	local:we	.
-local:decision_diagram	rdfs:subClassOf	local:diagram	.
-local:alcib_tbox	rdfs:member	local:alcib_tbox_t	.
-local:obtained	vn.role:object	local:alcib_tbox_t	.
-local:dlsafe	rdfs:member	local:dlsafe_rules	.
-local:represents	vn.role:Theme	local:canonical_model_for_t	.
-local:novel_method_for_reasoning	local:for_reasoning	local:novel_method	.
-local:novel_method	rdfs:subClassOf	local:method	.
-local:novel	rdfs:member	local:novel_method	.
-local:admits	vn.role:Agent	local:algorithm	.
-local:easy_extensions_with_dlsafe_rules	local:with_dl-saferules	local:easy_extensions	.
-local:conjunctive	rdfs:member	local:conjunctive_queries	.
 local:description_logic_shiq	rdfs:subClassOf	local:shiq	.
-local:abox	rdfs:member	local:abox_reasoning	.
+local:logic_shiq	rdfs:member	local:logic	.
+local:reasoning_in_description_logic_shiq	rdfs:member	local:description_logic_shiq	.
+local:description_logic_shiq	rdfs:member	local:description_logic	.
+local:s7	rdf:subject	local:algorithm	.
+local:novel_method	rdfs:subClassOf	local:method	.
+local:binary_decision_diagram	rdfs:member	local:binary_decision	.
+local:s8	rdf:object	local:easy_extensions_with_ground_conjunctive_queries	.
+local:alcib_tbox	rdfs:member	local:alcib	.
+local:s3.1	rdf:predicate	local:represent	.
+local:s4	rdf:object	local:abox_reasoning	.
+local:alcib_tbox_t	rdfs:member	local:alcib_tbox	.
+local:disjunctive_datalog_program	rdfs:member	local:disjunctive_datalog	.
+local:easy_extensions	rdfs:member	local:easy	.
+local:s0	rdf:subject	local:we	.
+local:novel_method_for_reasoning	rdfs:member	local:novel_method	.
+local:s3	rdf:predicate	local:order	.
+local:canonical_model	rdfs:member	local:canonical	.
+local:s1	rdf:predicate	local:preserve	.
+local:s4	rdf:subject	local:disjunctive_datalog_program	.
+local:easy_extensions_with_dlsafe_rules	rdfs:member	local:easy_extensions	.
+local:tbox_t	rdfs:member	local:tbox	.
+local:easy_extensions_with_ground_conjunctive_queries	rdfs:member	local:conjunctive_queries	.
+local:reasoning_in_description_logic_shiq	rdfs:member	local:reasoning	.
+local:easy_extensions	rdfs:subClassOf	local:extensions	.
+local:binary_decision_diagram	rdfs:subClassOf	local:diagram	.
+local:s1	rdf:subject	local:transformation	.
+local:easy_extensions_with_ground_conjunctive_queries	rdfs:member	local:ground_conjunctive_queries	.
+local:alcib_tbox	rdfs:subClassOf	local:tbox	.
+local:canonical_model	rdfs:subClassOf	local:model	.
+local:s6	rdf:subject	local:an	.
+local:dlsafe_rules	rdfs:member	local:dlsafe	.
+local:s3.1	rdf:object	local:canonical_model_for_t	.
+local:disjunctive_datalog_program	rdfs:subClassOf	local:program	.
+local:s2.1	rdf:subject	local:binary_decision_diagram	.
+local:s4	rdf:predicate	local:use	.
+local:binary_decision	rdfs:subClassOf	local:decision	.
+local:s2	rdf:object	local:s2.1	.
+local:novel_method_for_reasoning_in_the_description_logic_shiq	rdfs:member	local:novel_method	.
+local:s6	rdf:predicate	local:turn	.
+local:tbox_t	rdfs:subClassOf	local:t	.
+local:datalog_program	rdfs:member	local:datalog	.
+local:easy_extensions_with_dlsafe_rules	rdfs:member	local:dlsafe_rules	.
+local:alcib_tbox_t	rdfs:subClassOf	local:tbox_t	.
+local:s0	rdf:predicate	local:propose	.
+local:disjunctive_datalog	rdfs:subClassOf	local:datalog	.
+local:s2	rdf:predicate	local:convert	.
+local:easy_extensions_with_ground_conjunctive_queries	rdfs:member	local:ground	.
+local:decision_diagram	rdfs:member	local:decision	.
+local:description_logic	rdfs:member	local:description	.
+local:logic_shiq	rdfs:subClassOf	local:shiq	.
+local:binary_decision	rdfs:member	local:binary	.
+local:easy_extensions_with_ground_conjunctive_queries	rdfs:member	local:easy_extensions	.
+local:dlsafe_rules	rdfs:subClassOf	local:rules	.
+local:s5	rdf:subject	local:binary_decision_diagram	.
+local:disjunctive_datalog_program	rdfs:subClassOf	local:datalog_program	.
+local:s2	rdf:subject	local:satisfiability	.
+local:s1.1	rdf:predicate	local:obtain	.
+local:s0	rdf:object	local:novel_method_for_reasoning_in_the_description_logic_shiq	.
+local:s7	rdf:object	local:easy_extensions_with_dlsafe_rules	.
+local:canonical_model_for_t	rdfs:member	local:t	.
+local:s5	rdf:predicate	local:order	.
+local:conjunctive_queries	rdfs:member	local:conjunctive	.
+local:datalog_program	rdfs:subClassOf	local:program	.
+local:disjunctive_datalog	rdfs:member	local:disjunctive	.
+local:alcib_tbox_t	rdfs:subClassOf	local:t	.
+local:canonical_model_for_t	rdfs:member	local:canonical_model	.
+local:novel_method_for_reasoning	rdfs:member	local:reasoning	.
+local:s3.1	rdf:subject	local:s5	.
+local:s6	rdf:object	local:disjunctive_datalog_program	.
+local:s8	rdf:predicate	local:admit	.
+local:conjunctive_queries	rdfs:subClassOf	local:queries	.
+local:s2.1	rdf:predicate	local:order	.
+local:s3	rdf:subject	local:binary_decision	.
+local:decision_diagram	rdfs:subClassOf	local:diagram	.
+local:s4	local:AM-MOD	local:can	.
+local:binary_decision_diagram	rdfs:subClassOf	local:decision_diagram	.
+local:description_logic_shiq	rdfs:subClassOf	local:logic_shiq	.
+local:s7	rdf:predicate	local:admit	.
+local:novel_method	rdfs:member	local:novel	.
+local:abox_reasoning	rdfs:subClassOf	local:reasoning	.
+local:s8	rdf:subject	local:algorithm	.
+local:novel_method_for_reasoning_in_the_description_logic_shiq	rdfs:member	local:description_logic_shiq	.
+local:s1.1	rdf:subject	local:alcib_tbox_t	.
+local:ground_conjunctive_queries	rdfs:subClassOf	local:conjunctive_queries	.

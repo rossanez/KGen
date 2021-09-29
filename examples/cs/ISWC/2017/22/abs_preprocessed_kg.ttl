@@ -1,381 +1,672 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"information"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"furthermore we show an exemplary geographical breakdown of the information"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"we using a randomforest classifier"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"those we can extract 16 m new relations in dbpedia at a level of precision of 95percent using a randomforest classifier"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"a randomforest classifier trained only on languageindependent features"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the extraction of relations from wikipedia abstracts using the twelve largest language editions of wikipedia"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we demonstrate the extraction of relations from wikipedia abstracts"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"learning models"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a languageagnostic approach that builds machine learning models only from languageindependent features"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"while most existing approaches use languagespecific methods usually for english we present a languageagnostic approach"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"most existing approaches use languagespecific methods usually for english we present a languageagnostic approach"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"existing approaches"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a languageagnostic approach that exploits background knowledge from the graph instead of languagespecific techniques"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"using the data in the knowledge graph"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"largescale knowledge graphs such as wikidata can enhanced by relation extraction from text using the data in the knowledge graph as training data"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"using distant supervision"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"largescale knowledge graphs such as dbpedia can enhanced by relation extraction from text using distant supervision"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"using distant supervision"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"largescale knowledge graphs such as wikidata can enhanced by relation extraction from text using distant supervision"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"using distant supervision"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"largescale knowledge graphs such as yago can enhanced by relation extraction from text using distant supervision"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"using the data in the knowledge graph as training data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"largescale knowledge graphs such as yago can enhanced by relation extraction from text using the data in the knowledge graph as training data"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"using the data in the knowledge graph"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"largescale knowledge graphs such as dbpedia can enhanced by relation extraction from text using the data in the knowledge graph as training data"	.
+
+
 #### Classes ####
 
-local:largescale	rdfs:label	"large-scale"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:largescale_knowledge	rdfs:label	"large-scale knowledge"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:exemplary_geographical_breakdown_of_the_information	a	rdf:Class	;
+	rdfs:label	"exemplary geographical breakdown of the information"	.
 
-local:wikidata	rdfs:label	"wikidata"	.
+local:exemplary_geographical_breakdown	a	rdf:Class	;
+	rdfs:label	"exemplary geographical breakdown"	.
 
-local:training	rdfs:label	"training"	.
+local:geographical_breakdown	a	rdf:Class	;
+	rdfs:label	"geographical breakdown"	.
 
-local:training_data	rdfs:label	"training data"	.
+local:geographical	a	rdf:Class	;
+	rdfs:label	"geographical"	.
 
-local:data	rdfs:label	"data"	.
+local:exemplary_geographical	a	rdf:Class	;
+	rdfs:label	"exemplary geographical"	.
 
-local:distant	rdfs:label	"distant"	.
+local:breakdown	a	rdf:Class	;
+	rdfs:label	"breakdown"	.
 
-local:distant_supervision	rdfs:label	"distant supervision"	.
+local:exemplary	a	rdf:Class	;
+	rdfs:label	"exemplary"	.
 
-local:supervision	rdfs:label	"supervision"	.
+local:exemplary_geographical_breakdown_of_information	a	rdf:Class	;
+	rdfs:label	"exemplary geographical breakdown of information"	.
 
-local:ie_using	rdfs:label	"i.e. using"	.
+local:furthermore	a	rdf:Class	;
+	rdfs:label	"furthermore"	.
 
-local:using	rdfs:label	"using"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:training_data_ie_using	rdfs:label	"training data i.e. using"	.
+local:randomforest_classifier	a	rdf:Class	;
+	rdfs:label	"randomforest classifier"	.
 
-local:largescale_knowledge_graphs	rdfs:label	"large-scale knowledge graphs"	.
+local:randomforest	a	rdf:Class	;
+	rdfs:label	"randomforest"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:classifier	a	rdf:Class	;
+	rdfs:label	"classifier"	.
 
-local:largescale_knowledge_graphs_suchas_wikidata	rdfs:label	"large-scale knowledge graphs such_as wikidata"	.
+local:16_m_new_relations_in_dbpedia_level_of_precision_of_95percent	a	rdf:Class	;
+	rdfs:label	"16 m new relations in dbpedia level of precision of 95percent"	.
 
-local:enhanced	rdfs:label	"enhanced"	.
+local:new_relations	a	rdf:Class	;
+	rdfs:label	"new relations"	.
 
-local:can	rdfs:label	"can"	.
+local:dbpedia_level	a	rdf:Class	;
+	rdfs:label	"dbpedia level"	.
 
-local:relation	rdfs:label	"relation"	.
+local:m	a	rdf:Class	;
+	rdfs:label	"m"	.
 
-local:relation_extraction	rdfs:label	"relation extraction"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:level	a	rdf:Class	;
+	rdfs:label	"level"	.
 
-local:graph	rdfs:label	"graph"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:relation_extraction_from_text	rdfs:label	"relation extraction from text"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:text	rdfs:label	"text"	.
+local:16_m	a	rdf:Class	;
+	rdfs:label	"16 m"	.
 
-local:relation_extraction_from_text_using	rdfs:label	"relation extraction from text using"	.
+local:new_relations_in_dbpedia_level	a	rdf:Class	;
+	rdfs:label	"new relations in dbpedia level"	.
 
-local:data_in_knowledge_graph	rdfs:label	"data in knowledge graph"	.
+local:dbpedia_level_of_precision	a	rdf:Class	;
+	rdfs:label	"dbpedia level of precision"	.
 
-local:using_as_training_data	rdfs:label	"using as training data"	.
+local:precision_of_95percent	a	rdf:Class	;
+	rdfs:label	"precision of 95percent"	.
 
-local:training_data_ie	rdfs:label	"training data i.e."	.
+local:95percent	a	rdf:Class	;
+	rdfs:label	"95percent"	.
 
-local:ie	rdfs:label	"i.e."	.
+local:using_a_randomforest_classifier	a	rdf:Class	;
+	rdfs:label	"using a randomforest classifier"	.
 
-local:yago	rdfs:label	"yago"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:largescale_knowledge_graphs_suchas_yago	rdfs:label	"large-scale knowledge graphs such_as yago"	.
+local:train	a	rdf:Class	;
+	rdfs:label	"train"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:languageindependent_features	a	rdf:Class	;
+	rdfs:label	"languageindependent features"	.
 
-local:largescale_knowledge_graphs_suchas_dbpedia	rdfs:label	"large-scale knowledge graphs such_as dbpedia"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:existing	rdfs:label	"existing"	.
+local:languageindependent	a	rdf:Class	;
+	rdfs:label	"languageindependent"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:existing_approaches	rdfs:label	"existing approaches"	.
+local:extraction_of_relations_from_wikipedia_abstracts	a	rdf:Class	;
+	rdfs:label	"extraction of relations from wikipedia abstracts"	.
 
-local:use	rdfs:label	"use"	.
+local:wikipedia_abstracts	a	rdf:Class	;
+	rdfs:label	"wikipedia abstracts"	.
 
-local:background	rdfs:label	"background"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:background_knowledge	rdfs:label	"background knowledge"	.
+local:abstracts	a	rdf:Class	;
+	rdfs:label	"abstracts"	.
 
-local:languagespecific_methods	rdfs:label	"language-specific methods"	.
+local:wikipedia	a	rdf:Class	;
+	rdfs:label	"wikipedia"	.
 
-local:methods	rdfs:label	"methods"	.
+local:extraction_of_relations	a	rdf:Class	;
+	rdfs:label	"extraction of relations"	.
 
-local:languagespecific_techniques	rdfs:label	"language-specific techniques"	.
+local:relations_from_wikipedia_abstracts	a	rdf:Class	;
+	rdfs:label	"relations from wikipedia abstracts"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:twelve_largest_language_editions_of_wikipedia	a	rdf:Class	;
+	rdfs:label	"twelve largest language editions of wikipedia"	.
 
-local:languagespecific	rdfs:label	"language-specific"	.
+local:twelve_largest_language_editions	a	rdf:Class	;
+	rdfs:label	"twelve largest language editions"	.
 
-local:languageagnostic_approach	rdfs:label	"language-agnostic approach"	.
+local:largest_language_editions	a	rdf:Class	;
+	rdfs:label	"largest language editions"	.
 
-local:approach	rdfs:label	"approach"	.
+local:editions	a	rdf:Class	;
+	rdfs:label	"editions"	.
 
-local:languageagnostic	rdfs:label	"language-agnostic"	.
+local:twelve_largest_language	a	rdf:Class	;
+	rdfs:label	"twelve largest language"	.
 
-local:exploits_from_graph	rdfs:label	"exploits from graph"	.
+local:twelve_largest	a	rdf:Class	;
+	rdfs:label	"twelve largest"	.
 
-local:exploits	rdfs:label	"exploits"	.
+local:largest	a	rdf:Class	;
+	rdfs:label	"largest"	.
 
-local:exploits_from_graph_from_languagespecific_techniques	rdfs:label	"exploits from graph from language-specific techniques"	.
+local:largest_language	a	rdf:Class	;
+	rdfs:label	"largest language"	.
 
-local:present	rdfs:label	"present"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:we	rdfs:label	"we"	.
+local:language_editions	a	rdf:Class	;
+	rdfs:label	"language editions"	.
 
-local:builds	rdfs:label	"builds"	.
+local:twelve	a	rdf:Class	;
+	rdfs:label	"twelve"	.
 
-local:machine_learning	rdfs:label	"machine learning"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:machine_learning_models	rdfs:label	"machine learning models"	.
+local:models	a	rdf:Class	;
+	rdfs:label	"models"	.
 
-local:learning	rdfs:label	"learning"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:learning_models	rdfs:label	"learning models"	.
+local:languageagnostic_approach	a	rdf:Class	;
+	rdfs:label	"languageagnostic approach"	.
 
-local:models	rdfs:label	"models"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:machine	rdfs:label	"machine"	.
+local:languageagnostic	a	rdf:Class	;
+	rdfs:label	"languageagnostic"	.
 
-local:only	rdfs:label	"only"	.
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
 
-local:languageindependent_features	rdfs:label	"language-independent features"	.
+local:machine_learning_models_languageindependent_features	a	rdf:Class	;
+	rdfs:label	"machine learning models languageindependent features"	.
 
-local:features	rdfs:label	"features"	.
+local:models_languageindependent_features	a	rdf:Class	;
+	rdfs:label	"models languageindependent features"	.
 
-local:languageindependent	rdfs:label	"language-independent"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:models_languageindependent	a	rdf:Class	;
+	rdfs:label	"models languageindependent"	.
 
-local:language_editions	rdfs:label	"language editions"	.
+local:machine_learning_models	a	rdf:Class	;
+	rdfs:label	"machine learning models"	.
 
-local:editions	rdfs:label	"editions"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:language	rdfs:label	"language"	.
+local:existing_approaches_use_languagespecific_methods_usually_for_english	a	rdf:Class	;
+	rdfs:label	"existing approaches use languagespecific methods usually for english"	.
 
-local:largest_language	rdfs:label	"largest language"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:largest_language_editions	rdfs:label	"largest language editions"	.
+local:english	a	rdf:Class	;
+	rdfs:label	"english"	.
 
-local:largest	rdfs:label	"largest"	.
+local:languagespecific_methods	a	rdf:Class	;
+	rdfs:label	"languagespecific methods"	.
 
-local:twelve_largest_language_editions	rdfs:label	"twelve largest language editions"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:twelve_largest_language_editions_of_wikipedia	rdfs:label	"twelve largest language editions of wikipedia"	.
+local:languagespecific	a	rdf:Class	;
+	rdfs:label	"languagespecific"	.
 
-local:wikipedia	rdfs:label	"wikipedia"	.
+local:usually_use	a	rdf:Class	;
+	rdfs:label	"usually use"	.
 
-local:twelve_largest_language	rdfs:label	"twelve largest language"	.
+local:existing_approaches	a	rdf:Class	;
+	rdfs:label	"existing approaches"	.
 
-local:twelve_largest	rdfs:label	"twelve largest"	.
+local:usually_use_for_english	a	rdf:Class	;
+	rdfs:label	"usually use for english"	.
 
-local:twelve	rdfs:label	"twelve"	.
+local:languagespecific_methods_english_we_present_a_languageagnostic_approach	a	rdf:Class	;
+	rdfs:label	"languagespecific methods english we present a languageagnostic approach"	.
 
-local:extract	rdfs:label	"extract"	.
+local:english_methods	a	rdf:Class	;
+	rdfs:label	"english methods"	.
 
-local:those	rdfs:label	"those"	.
+local:languagespecific_english_methods	a	rdf:Class	;
+	rdfs:label	"languagespecific english methods"	.
 
-local:new_relations	rdfs:label	"new relations"	.
+local:usually	a	rdf:Class	;
+	rdfs:label	"usually"	.
 
-local:relations	rdfs:label	"relations"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:m_new_relations	rdfs:label	"m new relations"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:m_new	rdfs:label	"m new"	.
+local:background_knowledge_from_the_graph_instead_of_languagespecific_techniques	a	rdf:Class	;
+	rdfs:label	"background knowledge from the graph instead of languagespecific techniques"	.
 
-local:new	rdfs:label	"new"	.
+local:background_knowledge	a	rdf:Class	;
+	rdfs:label	"background knowledge"	.
 
-local:m	rdfs:label	"m"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:16_m_new_relations	rdfs:label	"1.6 m new relations"	.
+local:languagespecific_techniques	a	rdf:Class	;
+	rdfs:label	"languagespecific techniques"	.
 
-local:16_m_new_relations_in_dbpedia	rdfs:label	"1.6 m new relations in dbpedia"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:only_languageindependent_features	rdfs:label	"only language-independent features"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:level_of_precision	rdfs:label	"level of precision"	.
+local:background	a	rdf:Class	;
+	rdfs:label	"background"	.
 
-local:level	rdfs:label	"level"	.
+local:background_knowledge_from_graph	a	rdf:Class	;
+	rdfs:label	"background knowledge from graph"	.
 
-local:precision	rdfs:label	"precision"	.
+local:background_knowledge_from_graph_from_languagespecific_techniques	a	rdf:Class	;
+	rdfs:label	"background knowledge from graph from languagespecific techniques"	.
 
-local:precision_of_95percent	rdfs:label	"precision of 95percent"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:95percent	rdfs:label	"95percent"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:trained_on_only_languageindependent_features	rdfs:label	"trained on only language-independent features"	.
+local:largescale_knowledge_graphs_such_as_wikidata	a	rdf:Class	;
+	rdfs:label	"largescale knowledge graphs such_as wikidata"	.
 
-local:trained	rdfs:label	"trained"	.
+local:wikidata	a	rdf:Class	;
+	rdfs:label	"wikidata"	.
 
-local:show	rdfs:label	"show"	.
+local:largescale_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"largescale knowledge graphs"	.
 
-local:furthermore	rdfs:label	"furthermore"	.
+local:largescale_knowledge	a	rdf:Class	;
+	rdfs:label	"largescale knowledge"	.
 
-local:geographical	rdfs:label	"geographical"	.
+local:largescale	a	rdf:Class	;
+	rdfs:label	"largescale"	.
 
-local:geographical_breakdown	rdfs:label	"geographical breakdown"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:exemplary_geographical_breakdown	rdfs:label	"exemplary geographical breakdown"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:breakdown	rdfs:label	"breakdown"	.
+local:enhance	a	rdf:Class	;
+	rdfs:label	"enhance"	.
 
-local:exemplary	rdfs:label	"exemplary"	.
+local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	a	rdf:Class	;
+	rdfs:label	"relation extraction from text using the data in the knowledge graph as training data"	.
 
-local:exemplary_geographical	rdfs:label	"exemplary geographical"	.
+local:text	a	rdf:Class	;
+	rdfs:label	"text"	.
 
-local:exemplary_geographical_breakdown_of_extracted	rdfs:label	"exemplary geographical breakdown of extracted"	.
+local:training_data	a	rdf:Class	;
+	rdfs:label	"training data"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:relation_extraction	a	rdf:Class	;
+	rdfs:label	"relation extraction"	.
 
-#### Properties ####
+local:training	a	rdf:Class	;
+	rdfs:label	"training"	.
+
+local:relation	a	rdf:Class	;
+	rdfs:label	"relation"	.
+
+local:relation_extraction_from_text	a	rdf:Class	;
+	rdfs:label	"relation extraction from text"	.
+
+local:relation_extraction_from_text_using	a	rdf:Class	;
+	rdfs:label	"relation extraction from text using"	.
+
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
+
+local:data_in_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"data in knowledge graph"	.
+
+local:using_as_training_data	a	rdf:Class	;
+	rdfs:label	"using as training data"	.
+
+local:distant_supervision	a	rdf:Class	;
+	rdfs:label	"distant supervision"	.
+
+local:distant	a	rdf:Class	;
+	rdfs:label	"distant"	.
+
+local:supervision	a	rdf:Class	;
+	rdfs:label	"supervision"	.
+
+local:largescale_knowledge_graphs_such_as_dbpedia	a	rdf:Class	;
+	rdfs:label	"largescale knowledge graphs such_as dbpedia"	.
+
+local:relation_extraction_from_text_using_distant_supervision	a	rdf:Class	;
+	rdfs:label	"relation extraction from text using distant supervision"	.
+
+local:largescale_knowledge_graphs_such_as_yago	a	rdf:Class	;
+	rdfs:label	"largescale knowledge graphs such_as yago"	.
+
+local:yago	a	rdf:Class	;
+	rdfs:label	"yago"	.
 
 #### Mapped Relations ####
 
-cso:machine_learning	rdfs:label	"machine learning"	.
-cso:background_knowledge	rdfs:label	"background knowledge"	.
-local:machine_learning	owl:sameAs	cso:machine_learning	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
-local:background_knowledge	owl:sameAs	cso:background_knowledge	.
-cso:relation_extraction	rdfs:label	"relation extraction"	.
+local:randomforest	owl:sameAs	cso:random_forest	.
 local:relation_extraction	owl:sameAs	cso:relation_extraction	.
+cso:random_forest	rdfs:label	"randomforest"	.
+local:background_knowledge	owl:sameAs	cso:background_knowledge	.
+cso:background_knowledge	rdfs:label	"background knowledge"	.
+cso:classifier	rdfs:label	"classifier"	.
+local:randomforest_classifier	owl:sameAs	cso:random_forest_classifier	.
+cso:random_forest_classifier	rdfs:label	"randomforest classifier"	.
 cso:dbpedia	rdfs:label	"dbpedia"	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
+local:classifier	owl:sameAs	cso:classifier	.
+cso:relation_extraction	rdfs:label	"relation extraction"	.
 
 #### Relations ####
 
-local:level_of_precision	local:of_precision	local:level	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:geographical	rdfs:member	local:geographical_breakdown	.
-local:languagespecific	rdfs:member	local:languagespecific_techniques	.
-local:relation_extraction	rdfs:subClassOf	local:extraction	.
-local:precision_of_95percent	local:of_95percent	local:precision	.
-local:exploits	vn.role:indirect_object	local:graph	.
-local:trained_on_only_languageindependent_features	local:trained_on	local:only_languageindependent_features	.
-local:use	vn.role:Theme	local:present	.
-local:enhanced	vn.role:Patient	local:largescale_knowledge_graphs_suchas_yago	.
-local:largescale_knowledge_graphs_suchas_wikidata	local:such_as_wikidata	local:largescale_knowledge_graphs	.
-local:relation_extraction_from_text	local:from_text	local:relation_extraction	.
-local:using	local:AM-MNR	local:training_data_ie	.
-local:use	vn.role:Agent	local:existing_approaches	.
-local:existing	vn.role:Location	local:approaches	.
-local:using	vn.role:Recipient	local:knowledge_graph	.
-local:using_as_training_data	local:using_as	local:training_data	.
-local:languageindependent	rdfs:member	local:languageindependent_features	.
-local:distant	rdfs:member	local:distant_supervision	.
-local:exploits_from_graph_from_languagespecific_techniques	local:from_language-specifictechniques	local:exploits_from_graph	.
-local:machine_learning	rdfs:subClassOf	local:learning	.
-local:trained	vn.role:Predicate	local:languageindependent_features	.
-local:builds	vn.role:Material	local:machine_learning_models	.
-local:relation	rdfs:member	local:relation_extraction	.
-local:builds	vn.role:Agent	local:languageagnostic_approach	.
-local:learning	vn.role:Agent	local:models	.
-local:largescale_knowledge_graphs_suchas_yago	local:large-scaleknowledgegraphs_such_as	local:yago	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:data_in_knowledge_graph	local:data_in	local:knowledge_graph	.
-local:exploits	vn.role:Predicate	local:background_knowledge	.
-local:machine_learning_models	rdfs:subClassOf	local:models	.
-local:using_as_training_data	local:as_trainingdata	local:using	.
-local:training	rdfs:member	local:training_data	.
-local:existing_approaches	rdfs:subClassOf	local:approaches	.
-local:graphs	vn.role:object	local:wikidata	.
-local:largescale_knowledge_graphs_suchas_dbpedia	local:large-scaleknowledgegraphs_such_as	local:dbpedia	.
-local:largescale_knowledge_graphs_suchas_dbpedia	local:such_as_dbpedia	local:largescale_knowledge_graphs	.
-local:languageindependent_features	rdfs:subClassOf	local:features	.
-local:demonstrate	vn.role:Recipient	local:we	.
-local:using	vn.role:Theme	local:supervision	.
-local:twelve_largest_language_editions_of_wikipedia	local:of_wikipedia	local:twelve_largest_language_editions	.
-local:new_relations	rdfs:subClassOf	local:relations	.
-local:extract	local:AM-MNR	local:those	.
-local:exploits_from_graph	local:from_graph	local:exploits	.
-local:using	vn.role:Theme	local:trained_on_only_languageindependent_features	.
-local:graphs	vn.role:object	local:yago	.
-local:graphs	vn.role:object	local:dbpedia	.
-local:trained	local:AM-ADV	local:only	.
-local:largescale_knowledge	rdfs:subClassOf	local:knowledge	.
-local:ie_using	rdfs:subClassOf	local:using	.
-local:largest_language_editions	rdfs:subClassOf	local:editions	.
-local:twelve_largest_language_editions_of_wikipedia	local:twelvelargestlanguageeditions_of	local:wikipedia	.
-local:twelve_largest_language_editions	rdfs:subClassOf	local:editions	.
-local:using	vn.role:Agent	local:we	.
-local:level_of_precision	local:level_of	local:precision	.
-local:demonstrate	vn.role:Cause	local:using	.
+local:s9	rdf:object	local:extraction_of_relations_from_wikipedia_abstracts	.
+local:twelve_largest_language_editions_of_wikipedia	rdfs:member	local:twelve_largest_language_editions	.
 local:languageagnostic_approach	rdfs:subClassOf	local:approach	.
-local:geographical_breakdown	rdfs:subClassOf	local:breakdown	.
-local:largest_language	rdfs:subClassOf	local:language	.
-local:exploits_from_graph_from_languagespecific_techniques	local:exploitsfromgraph_from	local:languagespecific_techniques	.
-local:exemplary	rdfs:member	local:exemplary_geographical	.
-local:exemplary_geographical_breakdown	rdfs:subClassOf	local:breakdown	.
-local:only_languageindependent_features	rdfs:subClassOf	local:languageindependent_features	.
-local:twelve	rdfs:member	local:twelve_largest	.
-local:exemplary_geographical_breakdown_of_extracted	local:of_extracted	local:exemplary_geographical_breakdown	.
-local:builds	vn.role:Product	local:languageindependent_features	.
-local:enhanced	local:AM-MOD	local:can	.
-local:relation_extraction_from_text_using	local:relationextractionfromtext_	local:using	.
-local:languageagnostic	rdfs:member	local:languageagnostic_approach	.
-local:training_data_ie	local:trainingdata_	local:ie	.
-local:show	vn.role:Predicate	local:furthermore	.
-local:learning_models	rdfs:subClassOf	local:models	.
-local:twelve_largest	rdfs:member	local:twelve_largest_language	.
-local:exemplary_geographical_breakdown_of_extracted	local:exemplarygeographicalbreakdown_of	local:extracted	.
-local:languagespecific_methods	rdfs:subClassOf	local:methods	.
-local:largescale	rdfs:member	local:largescale_knowledge	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:m_new	rdfs:subClassOf	local:new	.
-local:largest_language_editions	rdfs:subClassOf	local:language_editions	.
-local:graphs	vn.role:subject	local:largescale_knowledge	.
-local:using	vn.role:Theme	local:distant_supervision	.
-local:show	vn.role:Agent	local:we	.
-local:exploits_from_graph	local:exploits_from	local:graph	.
-local:m_new	rdfs:member	local:m_new_relations	.
-local:relation_extraction_from_text_using	local:_using	local:relation_extraction_from_text	.
-local:using	vn.role:Theme	local:twelve_largest_language_editions_of_wikipedia	.
-local:extract	vn.role:Theme	local:16_m_new_relations_in_dbpedia	.
-local:twelve_largest	rdfs:subClassOf	local:largest	.
-local:new	rdfs:member	local:new_relations	.
-local:largescale_knowledge_graphs_suchas_wikidata	local:large-scaleknowledgegraphs_such_as	local:wikidata	.
-local:training_data_ie	local:_i.e.	local:training_data	.
-local:twelve_largest_language	rdfs:member	local:twelve_largest_language_editions	.
-local:background_knowledge	rdfs:subClassOf	local:knowledge	.
-local:exemplary_geographical	rdfs:member	local:exemplary_geographical_breakdown	.
-local:exploits	local:AM-MNR	local:languagespecific_techniques	.
-local:m_new_relations	rdfs:subClassOf	local:new_relations	.
-local:enhanced	vn.role:Patient	local:largescale_knowledge_graphs_suchas_dbpedia	.
-local:largest	rdfs:member	local:largest_language	.
-local:present	vn.role:Agent	local:we	.
-local:learning	rdfs:member	local:learning_models	.
-local:exemplary_geographical	rdfs:subClassOf	local:geographical	.
-local:extract	local:AM-MOD	local:can	.
-local:largescale_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
-local:machine_learning	rdfs:member	local:machine_learning_models	.
-local:machine	rdfs:member	local:machine_learning	.
-local:enhanced	vn.role:Instrument	local:relation_extraction_from_text_using	.
-local:training_data	rdfs:subClassOf	local:data	.
-local:extract	vn.role:Agent	local:we	.
-local:builds	local:AM-ADV	local:only	.
-local:16_m_new_relations_in_dbpedia	local:in_dbpedia	local:16_m_new_relations	.
-local:machine_learning_models	rdfs:subClassOf	local:learning_models	.
-local:precision_of_95percent	local:precision_of	local:95percent	.
-local:largescale_knowledge	rdfs:member	local:largescale_knowledge_graphs	.
-local:exemplary_geographical_breakdown	rdfs:subClassOf	local:geographical_breakdown	.
-local:present	local:AM-ADV	local:use	.
-local:extract	vn.role:Source	local:level_of_precision	.
-local:background	rdfs:member	local:background_knowledge	.
+local:s7.2	rdf:subject	local:we	.
+local:s14	rdf:predicate	local:extract	.
+local:16_m_new_relations_in_dbpedia_level_of_precision_of_95percent	rdfs:member	local:dbpedia_level	.
+local:background_knowledge_from_the_graph_instead_of_languagespecific_techniques	rdfs:member	local:background_knowledge	.
+local:s12	local:AM-MNR	local:using_a_randomforest_classifier	.
+local:exemplary_geographical	rdfs:member	local:exemplary	.
+local:s12	rdf:object	local:16_m_new_relations_in_dbpedia_level_of_precision_of_95percent	.
+local:existing_approaches_use_languagespecific_methods_usually_for_english	rdfs:member	local:approaches	.
+local:background_knowledge_from_graph	rdfs:member	local:graph	.
+local:s5	local:AM-MOD	local:can	.
+local:relation_extraction_from_text	rdfs:member	local:relation_extraction	.
+local:randomforest_classifier	rdfs:member	local:randomforest	.
+local:machine_learning_models	rdfs:subClassOf	local:s8.1	.
+local:wikipedia_abstracts	rdfs:subClassOf	local:abstracts	.
+local:training_data	rdfs:member	local:training	.
+local:s0.1	rdf:object	local:knowledge_graph	.
+local:twelve_largest_language	rdfs:member	local:twelve_largest	.
+local:s0.1	rdf:predicate	local:use	.
+local:s12	rdf:predicate	local:extract	.
+local:exemplary_geographical_breakdown_of_the_information	rdfs:member	local:s14	.
+local:existing_approaches_use_languagespecific_methods_usually_for_english	rdfs:member	local:english	.
+local:s7.1	rdf:object	local:languagespecific_methods_english_we_present_a_languageagnostic_approach	.
+local:background_knowledge_from_graph	rdfs:member	local:background_knowledge	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:s3	rdf:object	local:relation_extraction_from_text_using_distant_supervision	.
+local:s1.1	rdf:object	local:knowledge_graph	.
+local:s8	rdf:predicate	local:build	.
+local:relation_extraction_from_text_using_distant_supervision	rdfs:member	local:distant_supervision	.
+local:largest_language_editions	rdfs:subClassOf	local:editions	.
+local:s0	rdf:object	local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	.
+local:twelve_largest_language_editions_of_wikipedia	rdfs:member	local:wikipedia	.
 local:twelve_largest_language_editions	rdfs:subClassOf	local:largest_language_editions	.
-local:training_data_ie_using	local:_i.e.using	local:training_data	.
-local:languagespecific_techniques	rdfs:subClassOf	local:techniques	.
-local:twelve_largest_language	rdfs:subClassOf	local:language	.
-local:languagespecific	rdfs:member	local:languagespecific_methods	.
-local:m_new_relations	rdfs:subClassOf	local:relations	.
-local:16_m_new_relations_in_dbpedia	local:1.6mnewrelations_in	local:dbpedia	.
-local:enhanced	vn.role:Patient	local:largescale_knowledge_graphs_suchas_wikidata	.
-local:graphs	local:AM-ADV	local:training_data_ie_using	.
-local:show	vn.role:Theme	local:exemplary_geographical_breakdown_of_extracted	.
-local:m	rdfs:member	local:m_new	.
-local:trained	vn.role:Agent	local:we	.
-local:using	vn.role:Theme	local:data_in_knowledge_graph	.
-local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:trained_on_only_languageindependent_features	local:on_onlylanguage-independentfeatures	local:trained	.
-local:training_data_ie_using	local:trainingdata_	local:ie_using	.
-local:largescale_knowledge_graphs_suchas_yago	local:such_as_yago	local:largescale_knowledge_graphs	.
-local:language	rdfs:member	local:language_editions	.
-local:16_m_new_relations	rdfs:subClassOf	local:m_new_relations	.
-local:relation_extraction_from_text	local:relationextraction_from	local:text	.
-local:data_in_knowledge_graph	local:in_knowledgegraph	local:data	.
-local:largescale_knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:present	vn.role:Theme	local:languageagnostic_approach	.
+local:languagespecific_methods_english_we_present_a_languageagnostic_approach	rdfs:member	local:languageagnostic_approach	.
+local:s2	local:AM-MOD	local:can	.
+local:data_in_knowledge_graph	rdfs:member	local:knowledge_graph	.
+local:exemplary_geographical_breakdown_of_information	rdfs:member	local:exemplary_geographical_breakdown	.
+local:s5	rdf:predicate	local:enhance	.
+local:languagespecific_methods	rdfs:subClassOf	local:methods	.
+local:s6	rdf:subject	local:languageagnostic_approach	.
+local:language_editions	rdfs:member	local:language	.
+local:s14	rdf:subject	local:s14	.
+local:s9	rdf:subject	local:we	.
+local:s1	local:AM-MOD	local:can	.
+local:machine_learning_models_languageindependent_features	rdfs:member	local:models_languageindependent_features	.
+local:s0.1	rdf:subject	local:data	.
+local:extraction_of_relations_from_wikipedia_abstracts	rdfs:member	local:wikipedia_abstracts	.
+local:16_m_new_relations_in_dbpedia_level_of_precision_of_95percent	rdfs:member	local:precision	.
+local:s3.1	rdf:predicate	local:use	.
+local:dbpedia_level	rdfs:member	local:dbpedia	.
+local:models_languageindependent	rdfs:subClassOf	local:languageindependent	.
+local:s4.1	rdf:predicate	local:use	.
+local:largescale_knowledge_graphs_such_as_wikidata	rdfs:member	local:largescale_knowledge_graphs	.
+local:extraction_of_relations	rdfs:member	local:relations	.
+local:largescale_knowledge	rdfs:subClassOf	local:knowledge	.
+local:usually_use_for_english	rdfs:member	local:english	.
+local:s9	rdf:predicate	local:demonstrate	.
+local:background_knowledge_from_the_graph_instead_of_languagespecific_techniques	rdfs:member	local:graph	.
+local:largescale_knowledge_graphs	rdfs:subClassOf	local:knowledge_graphs	.
+local:s5.1	rdf:object	local:knowledge_graph	.
+local:new_relations_in_dbpedia_level	rdfs:member	local:new_relations	.
+local:using_as_training_data	rdfs:member	local:using	.
+local:precision_of_95percent	rdfs:member	local:95percent	.
+local:s7.1	rdf:predicate	local:use	.
+local:largescale_knowledge_graphs_such_as_yago	rdfs:member	local:yago	.
+local:new_relations	rdfs:subClassOf	local:relations	.
+local:s12	local:AM-MOD	local:can	.
+local:languageindependent_features	rdfs:member	local:languageindependent	.
+local:s11	rdf:predicate	local:train	.
+local:s11	rdf:object	local:languageindependent_features	.
+local:languageindependent_features	rdfs:subClassOf	local:features	.
 local:distant_supervision	rdfs:subClassOf	local:supervision	.
-local:exploits	vn.role:Agent	local:languageagnostic_approach	.
-local:largest_language	rdfs:member	local:largest_language_editions	.
+local:s4	local:AM-MOD	local:can	.
+local:s7.2	local:AM-ADV	local:existing_approaches_use_languagespecific_methods_usually_for_english	.
+local:precision_of_95percent	rdfs:member	local:precision	.
+local:largest_language	rdfs:member	local:largest	.
+local:s0	rdf:predicate	local:enhance	.
+local:twelve_largest	rdfs:member	local:twelve	.
+local:s5.1	rdf:predicate	local:use	.
+local:relations_from_wikipedia_abstracts	rdfs:member	local:relations	.
+local:s4	rdf:subject	local:largescale_knowledge_graphs_such_as_dbpedia	.
 local:language_editions	rdfs:subClassOf	local:editions	.
-local:using	vn.role:Theme	local:data	.
+local:s2	rdf:object	local:relation_extraction_from_text_using_distant_supervision	.
+local:relation_extraction	rdfs:subClassOf	local:extraction	.
+local:s1.1	local:AM-MNR	local:training_data	.
+local:exemplary_geographical	rdfs:subClassOf	local:geographical	.
+local:s12.1	rdf:predicate	local:use	.
+local:s8.1	rdf:subject	local:models	.
+local:background_knowledge_from_graph_from_languagespecific_techniques	rdfs:member	local:background_knowledge_from_graph	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:wikipedia_abstracts	rdfs:member	local:wikipedia	.
+local:s8	rdf:object	local:machine_learning_models_languageindependent_features	.
+local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	rdfs:member	local:knowledge_graph	.
+local:largescale_knowledge_graphs_such_as_dbpedia	rdfs:member	local:largescale_knowledge_graphs	.
+local:s4	rdf:object	local:relation_extraction_from_text_using_distant_supervision	.
+local:s10	rdf:predicate	local:use	.
+local:largescale_knowledge	rdfs:member	local:largescale	.
+local:usually_use	rdfs:subClassOf	local:use	.
+local:s7.2	rdf:predicate	local:present	.
+local:largescale_knowledge_graphs	rdfs:member	local:largescale_knowledge	.
+local:s3	rdf:subject	local:largescale_knowledge_graphs_such_as_wikidata	.
+local:s2.1	rdf:subject	local:distant_supervision	.
+local:s7	rdf:predicate	local:exist	.
+local:largescale_knowledge_graphs_such_as_dbpedia	rdfs:member	local:dbpedia	.
+local:relation_extraction_from_text_using_distant_supervision	rdfs:member	local:text	.
+local:languagespecific_methods	rdfs:member	local:languagespecific	.
+local:background_knowledge_from_the_graph_instead_of_languagespecific_techniques	rdfs:member	local:languagespecific_techniques	.
+local:s1	rdf:subject	local:largescale_knowledge_graphs_such_as_yago	.
+local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	rdfs:member	local:training_data	.
+local:languageagnostic_approach	rdfs:member	local:languageagnostic	.
+local:s5	rdf:object	local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	.
+local:largest_language	rdfs:subClassOf	local:language	.
+local:s1.1	rdf:predicate	local:use	.
+local:16_m_new_relations_in_dbpedia_level_of_precision_of_95percent	rdfs:member	local:m	.
+local:extraction_of_relations_from_wikipedia_abstracts	rdfs:member	local:extraction	.
+local:s6	rdf:predicate	local:exploit	.
+local:languagespecific_techniques	rdfs:member	local:languagespecific	.
+local:exemplary_geographical_breakdown	rdfs:subClassOf	local:breakdown	.
+local:using_as_training_data	rdfs:member	local:training_data	.
+local:s1	rdf:object	local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	.
+local:twelve_largest_language	rdfs:subClassOf	local:language	.
+local:relation_extraction_from_text_using	rdfs:member	local:using	.
+local:exemplary_geographical_breakdown_of_information	rdfs:member	local:s14	.
+local:s12.1	rdf:object	local:randomforest_classifier	.
+local:new_relations	rdfs:member	local:new	.
+local:s12	rdf:subject	local:we	.
+local:relation_extraction_from_text	rdfs:member	local:text	.
+local:relation_extraction	rdfs:member	local:relation	.
+local:languagespecific_techniques	rdfs:subClassOf	local:techniques	.
+local:extraction_of_relations	rdfs:member	local:extraction	.
+local:s4.1	rdf:subject	local:distant_supervision	.
+local:data_in_knowledge_graph	rdfs:member	local:data	.
+local:relation_extraction_from_text_using	rdfs:member	local:relation_extraction_from_text	.
+local:largest_language_editions	rdfs:member	local:largest_language	.
+local:s5.1	rdf:subject	local:data	.
+local:s2.1	rdf:predicate	local:use	.
+local:s0	local:AM-MOD	local:can	.
+local:s7.1	local:AM-TMP	local:usually	.
+local:s11	rdf:subject	local:randomforest_classifier	.
+local:twelve_largest	rdfs:subClassOf	local:largest	.
+local:english_methods	rdfs:subClassOf	local:methods	.
+local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	rdfs:member	local:relation_extraction	.
+local:existing_approaches	rdfs:subClassOf	local:approaches	.
+local:s7.1	rdf:subject	local:existing_approaches	.
+local:s5	rdf:subject	local:largescale_knowledge_graphs_such_as_wikidata	.
+local:exemplary_geographical_breakdown	rdfs:subClassOf	local:geographical_breakdown	.
+local:machine_learning_models_languageindependent_features	rdfs:member	local:machine	.
+local:geographical_breakdown	rdfs:member	local:geographical	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:s1.1	rdf:subject	local:data	.
+local:largest_language_editions	rdfs:subClassOf	local:language_editions	.
+local:s13	local:AM-DIS	local:furthermore	.
+local:s4	rdf:predicate	local:enhance	.
+local:exemplary_geographical_breakdown_of_the_information	rdfs:member	local:exemplary_geographical_breakdown	.
+local:s8.1	rdfs:subClassOf	local:models	.
+local:background_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s0	rdf:subject	local:largescale_knowledge_graphs_such_as_dbpedia	.
+local:largescale_knowledge_graphs_such_as_wikidata	rdfs:member	local:wikidata	.
+local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	rdfs:member	local:text	.
+local:s3	rdf:predicate	local:enhance	.
+local:s12.1	rdf:subject	local:we	.
+local:s8	local:AM-ADV	local:only	.
+local:twelve_largest_language_editions	rdfs:subClassOf	local:editions	.
+local:s13	rdf:predicate	local:show	.
+local:models_languageindependent	rdfs:member	local:models	.
+local:relation_extraction_from_text_using_the_data_in_the_knowledge_graph_as_training_data	rdfs:member	local:data	.
+local:relations_from_wikipedia_abstracts	rdfs:member	local:wikipedia_abstracts	.
+local:s13	rdf:subject	local:we	.
+local:s10	rdf:object	local:twelve_largest_language_editions_of_wikipedia	.
+local:models_languageindependent_features	rdfs:subClassOf	local:features	.
+local:largescale_knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:s7	rdf:subject	local:approaches	.
+local:s1	rdf:predicate	local:enhance	.
+local:background_knowledge_from_graph_from_languagespecific_techniques	rdfs:member	local:languagespecific_techniques	.
+local:languagespecific_english_methods	rdfs:subClassOf	local:english_methods	.
+local:s8	rdf:subject	local:languageagnostic_approach	.
+local:16_m	rdfs:subClassOf	local:m	.
+local:s8.1	rdf:predicate	local:learn	.
+local:training_data	rdfs:subClassOf	local:data	.
+local:s13	rdf:object	local:exemplary_geographical_breakdown_of_the_information	.
+local:randomforest_classifier	rdfs:subClassOf	local:classifier	.
+local:largescale_knowledge_graphs_such_as_yago	rdfs:member	local:largescale_knowledge_graphs	.
+local:s6	rdf:object	local:background_knowledge_from_the_graph_instead_of_languagespecific_techniques	.
+local:16_m_new_relations_in_dbpedia_level_of_precision_of_95percent	rdfs:member	local:new_relations	.
+local:dbpedia_level_of_precision	rdfs:member	local:precision	.
+local:s10	rdf:subject	local:extraction_of_relations_from_wikipedia_abstracts	.
+local:new_relations_in_dbpedia_level	rdfs:member	local:dbpedia_level	.
+local:distant_supervision	rdfs:member	local:distant	.
+local:languagespecific_methods_english_we_present_a_languageagnostic_approach	rdfs:member	local:languagespecific_methods	.
+local:s2	rdf:subject	local:largescale_knowledge_graphs_such_as_yago	.
+local:s11	local:AM-ADV	local:only	.
+local:extraction_of_relations_from_wikipedia_abstracts	rdfs:member	local:relations	.
+local:s7.2	rdf:object	local:languageagnostic_approach	.
+local:twelve_largest_language_editions	rdfs:member	local:twelve_largest_language	.
+local:dbpedia_level	rdfs:subClassOf	local:level	.
+local:dbpedia_level_of_precision	rdfs:member	local:dbpedia_level	.
+local:models_languageindependent_features	rdfs:member	local:models_languageindependent	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:geographical_breakdown	rdfs:subClassOf	local:breakdown	.
+local:relation_extraction_from_text_using_distant_supervision	rdfs:member	local:relation_extraction	.
+local:s3.1	rdf:subject	local:distant_supervision	.
+local:exemplary_geographical_breakdown	rdfs:member	local:exemplary_geographical	.
+local:s2	rdf:predicate	local:enhance	.
+local:s3	local:AM-MOD	local:can	.
+local:usually_use_for_english	rdfs:member	local:usually_use	.
+local:background_knowledge	rdfs:member	local:background	.
+local:existing_approaches_use_languagespecific_methods_usually_for_english	rdfs:member	local:languagespecific_methods	.

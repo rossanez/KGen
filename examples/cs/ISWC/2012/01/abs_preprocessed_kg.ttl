@@ -1,320 +1,632 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"properties that relate mapping entailment with description logic constructors"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"this paper also includes properties"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"weights measure how precise reclassifications"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"weights interpreted to measure how precise reclassifications"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"weights measure how complete reclassifications"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"weights interpreted to measure how complete reclassifications"	.
+
+local:s9.4	a	rdf:Statement	;
+	rdfs:label	"elements of x reclassified in the concepts of o 2"	.
+
+local:s9.3	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 1 encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 1 interpreted to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 1 to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"it based on a classificational interpretation of mappings"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"x classified in the concepts of o 1"	.
+
+local:s7.4	a	rdf:Statement	;
+	rdfs:label	"elements of x reclassified in the concepts of o 2"	.
+
+local:s7.3	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 1 encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 1 interpreted to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 1 to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"it based on a classificational interpretation of mappings"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"two ontologies used classify a common set x"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"used"	.
+
+local:s5.4	a	rdf:Statement	;
+	rdfs:label	"elements of x reclassified in the concepts of o 2"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 2 encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 2 interpreted to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 2 to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"it based on a classificational interpretation of mappings"	.
+
+local:s4.4	a	rdf:Statement	;
+	rdfs:label	"elements of x reclassified in the concepts of o 2"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 2 encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 2 interpreted to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"two ontologies then mappings between o 2 to encode how elements of x are reclassified in the concepts of o 2"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"it based on a classificational interpretation of mappings"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"this paper presents a formal semantics for weighted mappings between different ontologies"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"nonetheless few semantic accounts given so far for such weights"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"ontology mappings often assigned a confidence factor by matchers"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"ontology mappings often assigned a weight factor by matchers"	.
+
+
 #### Classes ####
 
-local:ontology	rdfs:label	"ontology"	.
+local:mapping_entailment	a	rdf:Class	;
+	rdfs:label	"mapping entailment"	.
 
-local:ontology_mappings	rdfs:label	"ontology mappings"	.
+local:mapping	a	rdf:Class	;
+	rdfs:label	"mapping"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:entailment	a	rdf:Class	;
+	rdfs:label	"entailment"	.
 
-local:assigned	rdfs:label	"assigned"	.
+local:relate	a	rdf:Class	;
+	rdfs:label	"relate"	.
 
-local:often	rdfs:label	"often"	.
+local:properties_description_logic_constructors	a	rdf:Class	;
+	rdfs:label	"properties description logic constructors"	.
 
-local:weight	rdfs:label	"weight"	.
+local:logic_constructors	a	rdf:Class	;
+	rdfs:label	"logic constructors"	.
 
-local:weight_factor	rdfs:label	"weight factor"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:factor	rdfs:label	"factor"	.
+local:constructors	a	rdf:Class	;
+	rdfs:label	"constructors"	.
 
-local:matchers	rdfs:label	"matchers"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:confidence	rdfs:label	"confidence"	.
+local:description_logic_constructors	a	rdf:Class	;
+	rdfs:label	"description logic constructors"	.
 
-local:confidence_factor	rdfs:label	"confidence factor"	.
+local:include	a	rdf:Class	;
+	rdfs:label	"include"	.
 
-local:few_semantic	rdfs:label	"few semantic"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:semantic_accounts	rdfs:label	"semantic accounts"	.
+local:precise_reclassifications	a	rdf:Class	;
+	rdfs:label	"precise reclassifications"	.
 
-local:few	rdfs:label	"few"	.
+local:reclassifications	a	rdf:Class	;
+	rdfs:label	"reclassifications"	.
 
-local:accounts	rdfs:label	"accounts"	.
+local:precise	a	rdf:Class	;
+	rdfs:label	"precise"	.
 
-local:few_semantic_accounts	rdfs:label	"few semantic accounts"	.
+local:measure	a	rdf:Class	;
+	rdfs:label	"measure"	.
 
-local:nonetheless_few_semantic_accounts	rdfs:label	"nonetheless few semantic accounts"	.
+local:weights	a	rdf:Class	;
+	rdfs:label	"weights"	.
 
-local:given	rdfs:label	"given"	.
+local:interpret	a	rdf:Class	;
+	rdfs:label	"interpret"	.
 
-local:such_weights	rdfs:label	"such weights"	.
+local:measure_how_precise_reclassifications	a	rdf:Class	;
+	rdfs:label	"measure how precise reclassifications"	.
 
-local:weights	rdfs:label	"weights"	.
+local:how_precise	a	rdf:Class	;
+	rdfs:label	"how precise"	.
 
-local:such	rdfs:label	"such"	.
+local:weights_complete_reclassifications	a	rdf:Class	;
+	rdfs:label	"weights complete reclassifications"	.
 
-local:far_such_weights	rdfs:label	"far such weights"	.
+local:complete_reclassifications	a	rdf:Class	;
+	rdfs:label	"complete reclassifications"	.
 
-local:presents	rdfs:label	"presents"	.
+local:complete	a	rdf:Class	;
+	rdfs:label	"complete"	.
 
-local:paper	rdfs:label	"paper"	.
+local:measure_how_complete_reclassifications	a	rdf:Class	;
+	rdfs:label	"measure how complete reclassifications"	.
 
-local:formal	rdfs:label	"formal"	.
+local:how_complete	a	rdf:Class	;
+	rdfs:label	"how complete"	.
 
-local:formal_semantics	rdfs:label	"formal semantics"	.
+local:elements_of_x	a	rdf:Class	;
+	rdfs:label	"elements of x"	.
 
-local:different_ontologies	rdfs:label	"different ontologies"	.
+local:elements	a	rdf:Class	;
+	rdfs:label	"elements"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:x	a	rdf:Class	;
+	rdfs:label	"x"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:reclassify	a	rdf:Class	;
+	rdfs:label	"reclassify"	.
 
-local:weighted_mappings	rdfs:label	"weighted mappings"	.
+local:concepts_of_o_2	a	rdf:Class	;
+	rdfs:label	"concepts of o 2"	.
 
-local:different	rdfs:label	"different"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:weighted	rdfs:label	"weighted"	.
+local:o	a	rdf:Class	;
+	rdfs:label	"o"	.
 
-local:formal_semantics_for_weighted_mappings	rdfs:label	"formal semantics for weighted mappings"	.
+local:2_o	a	rdf:Class	;
+	rdfs:label	"2 o"	.
 
-local:weighted_mappings_between_different_ontologies	rdfs:label	"weighted mappings between different ontologies"	.
+local:concepts_of_2_o	a	rdf:Class	;
+	rdfs:label	"concepts of 2 o"	.
 
-local:classified	rdfs:label	"classified"	.
+local:two_ontologies_then_mappings_between_o_1	a	rdf:Class	;
+	rdfs:label	"two ontologies then mappings between o 1"	.
 
-local:x	rdfs:label	"x."	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:1_o	rdfs:label	"1 o"	.
+local:then_mappings	a	rdf:Class	;
+	rdfs:label	"then mappings"	.
 
-local:o	rdfs:label	"o"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:concepts_of_1_o	rdfs:label	"concepts of 1 o"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:1_o	a	rdf:Class	;
+	rdfs:label	"1 o"	.
 
-local:based	rdfs:label	"based"	.
+local:two_ontologies	a	rdf:Class	;
+	rdfs:label	"two ontologies"	.
 
-local:it	rdfs:label	"it"	.
+local:then_mappings_between_1_o	a	rdf:Class	;
+	rdfs:label	"then mappings between 1 o"	.
 
-local:classificational	rdfs:label	"classificational"	.
+local:encode	a	rdf:Class	;
+	rdfs:label	"encode"	.
 
-local:classificational_interpretation	rdfs:label	"classificational interpretation"	.
+local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	a	rdf:Class	;
+	rdfs:label	"elements of x are reclassified in the concepts of o 2"	.
 
-local:interpretation	rdfs:label	"interpretation"	.
+local:reclassified_in_concepts	a	rdf:Class	;
+	rdfs:label	"reclassified in concepts"	.
 
-local:classificational_interpretation_of_mappings	rdfs:label	"classificational interpretation of mappings"	.
+local:reclassified	a	rdf:Class	;
+	rdfs:label	"reclassified"	.
 
-local:two_ontologies	rdfs:label	"two ontologies"	.
+local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	a	rdf:Class	;
+	rdfs:label	"encode how elements of x are reclassified in the concepts of o 2"	.
 
-local:then	rdfs:label	"then"	.
+local:how_reclassified	a	rdf:Class	;
+	rdfs:label	"how reclassified"	.
 
-local:1	rdfs:label	"1"	.
+local:how_reclassified_in_concepts	a	rdf:Class	;
+	rdfs:label	"how reclassified in concepts"	.
 
-local:then_mappings	rdfs:label	"then mappings"	.
+local:1	a	rdf:Class	;
+	rdfs:label	"1"	.
 
-local:between_mappings	rdfs:label	"between mappings"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:then_between_mappings	rdfs:label	"then between mappings"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:interpreted	rdfs:label	"interpreted"	.
+local:classificational_interpretation_of_mappings	a	rdf:Class	;
+	rdfs:label	"classificational interpretation of mappings"	.
 
-local:2_o	rdfs:label	"2 o"	.
+local:classificational_interpretation	a	rdf:Class	;
+	rdfs:label	"classificational interpretation"	.
 
-local:how_reclassified	rdfs:label	"how re-classified"	.
+local:interpretation	a	rdf:Class	;
+	rdfs:label	"interpretation"	.
 
-local:reclassified	rdfs:label	"re-classified"	.
+local:classificational	a	rdf:Class	;
+	rdfs:label	"classificational"	.
 
-local:elements_of_x	rdfs:label	"elements of x"	.
+local:classify	a	rdf:Class	;
+	rdfs:label	"classify"	.
 
-local:elements	rdfs:label	"elements"	.
+local:concepts_of_o_1	a	rdf:Class	;
+	rdfs:label	"concepts of o 1"	.
 
-local:how_reclassified_in_concepts	rdfs:label	"how re-classified in concepts"	.
+local:concepts_of_1_o	a	rdf:Class	;
+	rdfs:label	"concepts of 1 o"	.
 
-local:concepts_of_2_o	rdfs:label	"concepts of 2 o"	.
+local:common_set_x	a	rdf:Class	;
+	rdfs:label	"common set x"	.
 
-local:encode	rdfs:label	"encode"	.
+local:set_x	a	rdf:Class	;
+	rdfs:label	"set x"	.
 
-local:reclassified_in_concepts	rdfs:label	"re-classified in concepts"	.
+local:common_set	a	rdf:Class	;
+	rdfs:label	"common set"	.
 
-local:2	rdfs:label	"2"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:then_mappings_between_2_o	rdfs:label	"then mappings between 2 o"	.
+local:common	a	rdf:Class	;
+	rdfs:label	"common"	.
 
-local:complete_reclassifications	rdfs:label	"complete re-classifications"	.
+local:used	a	rdf:Class	;
+	rdfs:label	"used"	.
 
-local:reclassifications	rdfs:label	"re-classifications"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:complete	rdfs:label	"complete"	.
+local:two_ontologies_then_mappings_between_o_2	a	rdf:Class	;
+	rdfs:label	"two ontologies then mappings between o 2"	.
 
-local:how_complete	rdfs:label	"how complete"	.
+local:then_mappings_between_2_o	a	rdf:Class	;
+	rdfs:label	"then mappings between 2 o"	.
 
-local:measure	rdfs:label	"measure"	.
+local:2	a	rdf:Class	;
+	rdfs:label	"2"	.
 
-local:are	rdfs:label	"are"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:classify	rdfs:label	"classify"	.
+local:formal_semantics_for_weighted_mappings_between_different_ontologies	a	rdf:Class	;
+	rdfs:label	"formal semantics for weighted mappings between different ontologies"	.
 
-local:used	rdfs:label	"used"	.
+local:different_ontologies	a	rdf:Class	;
+	rdfs:label	"different ontologies"	.
 
-local:set	rdfs:label	"set"	.
+local:weighted_mappings	a	rdf:Class	;
+	rdfs:label	"weighted mappings"	.
 
-local:set_x	rdfs:label	"set x."	.
+local:formal_semantics	a	rdf:Class	;
+	rdfs:label	"formal semantics"	.
 
-local:common_set	rdfs:label	"common set"	.
+local:formal	a	rdf:Class	;
+	rdfs:label	"formal"	.
 
-local:common_set_x	rdfs:label	"common set x."	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:common	rdfs:label	"common"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:precise_reclassifications	rdfs:label	"precise re-classifications"	.
+local:weighted	a	rdf:Class	;
+	rdfs:label	"weighted"	.
 
-local:precise	rdfs:label	"precise"	.
+local:formal_semantics_for_weighted_mappings	a	rdf:Class	;
+	rdfs:label	"formal semantics for weighted mappings"	.
 
-local:how_precise	rdfs:label	"how precise"	.
+local:weighted_mappings_between_different_ontologies	a	rdf:Class	;
+	rdfs:label	"weighted mappings between different ontologies"	.
 
-local:relate	rdfs:label	"relate"	.
+local:semantic_accounts	a	rdf:Class	;
+	rdfs:label	"semantic accounts"	.
 
-local:properties	rdfs:label	"properties"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:mapping_entailment	rdfs:label	"mapping entailment"	.
+local:accounts	a	rdf:Class	;
+	rdfs:label	"accounts"	.
 
-local:entailment	rdfs:label	"entailment"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:mapping	rdfs:label	"mapping"	.
+local:far_for_such_weights	a	rdf:Class	;
+	rdfs:label	"far for such weights"	.
 
-local:logic_constructors	rdfs:label	"logic constructors"	.
+local:such_weights	a	rdf:Class	;
+	rdfs:label	"such weights"	.
 
-local:constructors	rdfs:label	"constructors"	.
+local:such	a	rdf:Class	;
+	rdfs:label	"such"	.
 
-local:logic	rdfs:label	"logic"	.
+local:far_such_weights	a	rdf:Class	;
+	rdfs:label	"far such weights"	.
 
-local:description_logic_constructors	rdfs:label	"description logic constructors"	.
+local:nonetheless	a	rdf:Class	;
+	rdfs:label	"nonetheless"	.
 
-local:includes	rdfs:label	"includes"	.
+local:ontology_mappings	a	rdf:Class	;
+	rdfs:label	"ontology mappings"	.
 
-local:also	rdfs:label	"also"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-#### Properties ####
+local:assign	a	rdf:Class	;
+	rdfs:label	"assign"	.
+
+local:confidence_factor	a	rdf:Class	;
+	rdfs:label	"confidence factor"	.
+
+local:factor	a	rdf:Class	;
+	rdfs:label	"factor"	.
+
+local:confidence	a	rdf:Class	;
+	rdfs:label	"confidence"	.
+
+local:matchers	a	rdf:Class	;
+	rdfs:label	"matchers"	.
+
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
+
+local:weight_factor	a	rdf:Class	;
+	rdfs:label	"weight factor"	.
+
+local:weight	a	rdf:Class	;
+	rdfs:label	"weight"	.
 
 #### Mapped Relations ####
 
-local:ontology_mappings	owl:sameAs	cso:ontology_mapping	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:ontology_mapping	rdfs:label	"ontology mappings"	.
 local:formal_semantics	owl:sameAs	cso:formal_semantics	.
 cso:ontology	rdfs:label	"ontology"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-cso:formal_semantics	rdfs:label	"formal semantics"	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:semantics	owl:sameAs	cso:semantics	.
-local:ontology	owl:sameAs	cso:ontology	.
-cso:semantics	rdfs:label	"semantics"	.
+local:ontology_mappings	owl:sameAs	cso:ontology_mapping	.
+cso:ontology_mapping	rdfs:label	"ontology mappings"	.
 cso:semantics	rdfs:label	"semantic"	.
+cso:semantics	rdfs:label	"semantics"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:formal_semantics	rdfs:label	"formal semantics"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:semantic	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:how_reclassified	rdfs:subClassOf	local:reclassified	.
-local:common_set_x	rdfs:subClassOf	local:set_x	.
-local:assigned	vn.role:Recipient	local:confidence_factor	.
-local:encode	vn.role:Agent	local:then_mappings_between_2_o	.
-local:classified	vn.role:Theme	local:x	.
-local:weight_factor	rdfs:subClassOf	local:factor	.
-local:classify	local:AM-MOD	local:used	.
-local:precise_reclassifications	rdfs:subClassOf	local:reclassifications	.
-local:mappings	vn.role:Agent	local:two_ontologies	.
-local:given	vn.role:object	local:nonetheless_few_semantic_accounts	.
-local:few	rdfs:member	local:few_semantic	.
-local:confidence	rdfs:member	local:confidence_factor	.
-local:set_x	rdfs:subClassOf	local:x	.
-local:few_semantic	rdfs:subClassOf	local:semantic	.
-local:classificational	rdfs:member	local:classificational_interpretation	.
-local:presents	vn.role:Theme	local:formal_semantics_for_weighted_mappings	.
-local:semantic_accounts	rdfs:subClassOf	local:accounts	.
-local:logic	rdfs:member	local:logic_constructors	.
-local:confidence_factor	rdfs:subClassOf	local:factor	.
-local:description_logic_constructors	rdfs:subClassOf	local:logic_constructors	.
-local:common_set_x	rdfs:subClassOf	local:x	.
-local:reclassified_in_concepts	local:re-classified_in	local:concepts	.
-local:presents	vn.role:Agent	local:paper	.
-local:weighted_mappings	rdfs:subClassOf	local:mappings	.
-local:different	rdfs:member	local:different_ontologies	.
-local:measure	vn.role:Value	local:are	.
-local:far_such_weights	rdfs:subClassOf	local:such_weights	.
-local:classified	local:AM-LOC	local:concepts_of_1_o	.
-local:mappings	vn.role:Predicate	local:2	.
-local:concepts_of_2_o	local:concepts_of	local:2_o	.
-local:concepts_of_1_o	local:concepts_of	local:1_o	.
-local:2_o	rdfs:subClassOf	local:o	.
-local:classificational_interpretation	rdfs:subClassOf	local:interpretation	.
-local:such	rdfs:member	local:such_weights	.
-local:assigned	local:AM-MNR	local:matchers	.
-local:precise	rdfs:member	local:precise_reclassifications	.
-local:elements_of_x	local:of_x	local:elements	.
-local:relate	vn.role:Recipient	local:properties	.
-local:concepts_of_2_o	local:of_2o	local:concepts	.
-local:then_mappings_between_2_o	local:between_2o	local:then_mappings	.
-local:given	vn.role:object	local:far_such_weights	.
-local:relate	vn.role:Topic	local:mapping	.
+local:how_reclassified_in_concepts	rdfs:member	local:how_reclassified	.
+local:s4.2	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:properties_description_logic_constructors	rdfs:member	local:properties	.
+local:s7	rdf:object	local:classificational_interpretation_of_mappings	.
+local:s11.1	rdf:subject	local:precise_reclassifications	.
+local:s5	rdf:predicate	local:base	.
+local:s7.1	local:AM-TMP	local:then	.
+local:measure_how_complete_reclassifications	rdfs:member	local:measure	.
+local:complete_reclassifications	rdfs:member	local:complete	.
+local:mapping_entailment	rdfs:member	local:mapping	.
 local:two_ontologies	rdfs:subClassOf	local:ontologies	.
-local:between_mappings	rdfs:subClassOf	local:mappings	.
-local:then_between_mappings	rdfs:subClassOf	local:between_mappings	.
-local:complete_reclassifications	rdfs:subClassOf	local:reclassifications	.
-local:includes	local:AM-DIS	local:also	.
-local:nonetheless_few_semantic_accounts	rdfs:subClassOf	local:few_semantic_accounts	.
-local:formal_semantics_for_weighted_mappings	local:formalsemantics_for	local:weighted_mappings	.
-local:reclassified_in_concepts	local:in_concepts	local:reclassified	.
-local:mappings	local:AM-TMP	local:then	.
-local:encode	vn.role:Agent	local:then_between_mappings	.
-local:interpreted	vn.role:Predicate	local:measure	.
-local:then_mappings_between_2_o	local:thenmappings_between	local:2_o	.
+local:then_mappings_between_1_o	rdfs:member	local:1_o	.
+local:s5	rdf:object	local:classificational_interpretation_of_mappings	.
+local:s5.4	rdf:predicate	local:reclassify	.
+local:s7.2	rdf:subject	local:two_ontologies_then_mappings_between_o_1	.
+local:precise_reclassifications	rdfs:subClassOf	local:reclassifications	.
+local:two_ontologies_then_mappings_between_o_2	rdfs:member	local:then_mappings	.
+local:reclassified_in_concepts	rdfs:member	local:concepts	.
+local:s5.3	rdf:object	local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s9.1	rdf:subject	local:two_ontologies	.
+local:s5.3	rdf:predicate	local:encode	.
+local:s4.2	rdf:predicate	local:interpret	.
+local:s2	rdf:subject	local:semantic_accounts	.
+local:formal_semantics_for_weighted_mappings_between_different_ontologies	rdfs:member	local:weighted_mappings	.
+local:s10.1	rdf:predicate	local:measure	.
+local:elements_of_x	rdfs:member	local:elements	.
+local:then_mappings_between_1_o	rdfs:member	local:then_mappings	.
+local:weight_factor	rdfs:member	local:weight	.
+local:s5.2	rdf:predicate	local:interpret	.
 local:ontology_mappings	rdfs:subClassOf	local:mappings	.
-local:semantic	rdfs:member	local:semantic_accounts	.
-local:classify	vn.role:Agent	local:two_ontologies	.
-local:set	rdfs:member	local:set_x	.
-local:weighted_mappings_between_different_ontologies	local:weightedmappings_between	local:different_ontologies	.
-local:assigned	local:AM-TMP	local:often	.
-local:then_mappings	rdfs:subClassOf	local:mappings	.
-local:interpreted	vn.role:Theme	local:weights	.
-local:mapping	rdfs:member	local:mapping_entailment	.
-local:how_reclassified_in_concepts	local:in_concepts	local:how_reclassified	.
-local:such_weights	rdfs:subClassOf	local:weights	.
-local:few_semantic_accounts	rdfs:subClassOf	local:semantic_accounts	.
-local:encode	vn.role:Patient	local:reclassified_in_concepts	.
-local:mappings	vn.role:Predicate	local:1	.
-local:relate	vn.role:Recipient	local:description_logic_constructors	.
-local:common_set	rdfs:subClassOf	local:set	.
-local:common	rdfs:member	local:common_set	.
-local:1_o	rdfs:subClassOf	local:o	.
-local:assigned	vn.role:Theme	local:ontology_mappings	.
-local:formal_semantics	rdfs:subClassOf	local:semantics	.
-local:based	vn.role:Cause	local:it	.
-local:interpreted	local:AM-PNC	local:measure	.
-local:assigned	vn.role:Recipient	local:weight_factor	.
-local:formal_semantics_for_weighted_mappings	local:for_weightedmappings	local:formal_semantics	.
-local:classificational_interpretation_of_mappings	local:classificationalinterpretation_of	local:mappings	.
-local:classificational_interpretation_of_mappings	local:of_mappings	local:classificational_interpretation	.
-local:based	vn.role:indirect_object	local:classificational_interpretation_of_mappings	.
-local:how_complete	rdfs:subClassOf	local:complete	.
-local:formal	rdfs:member	local:formal_semantics	.
-local:includes	vn.role:Theme	local:properties	.
-local:ontology	rdfs:member	local:ontology_mappings	.
-local:reclassified	vn.role:object	local:elements_of_x	.
-local:common_set	rdfs:member	local:common_set_x	.
-local:how_precise	rdfs:subClassOf	local:precise	.
-local:interpreted	vn.role:Theme	local:then_mappings_between_2_o	.
-local:weighted	rdfs:member	local:weighted_mappings	.
-local:classify	vn.role:Theme	local:common_set_x	.
-local:how_reclassified_in_concepts	local:howre-classified_in	local:concepts	.
-local:elements_of_x	local:elements_of	local:x	.
-local:different_ontologies	rdfs:subClassOf	local:ontologies	.
-local:includes	vn.role:Location	local:paper	.
-local:logic_constructors	rdfs:subClassOf	local:constructors	.
-local:reclassified	local:AM-LOC	local:concepts_of_2_o	.
-local:interpreted	vn.role:Predicate	local:encode	.
-local:measure	vn.role:Value	local:weights	.
-local:complete	rdfs:member	local:complete_reclassifications	.
-local:weighted_mappings_between_different_ontologies	local:between_differentontologies	local:weighted_mappings	.
-local:then	rdfs:member	local:then_mappings	.
-local:interpreted	vn.role:Theme	local:then_between_mappings	.
+local:s0	local:AM-TMP	local:often	.
+local:s0	rdf:predicate	local:assign	.
 local:mapping_entailment	rdfs:subClassOf	local:entailment	.
-local:few_semantic_accounts	rdfs:subClassOf	local:accounts	.
-local:few_semantic	rdfs:member	local:few_semantic_accounts	.
-local:weight	rdfs:member	local:weight_factor	.
-local:concepts_of_1_o	local:of_1o	local:concepts	.
+local:s4.4	rdf:object	local:concepts_of_o_2	.
+local:s11.1	rdf:object	local:weights	.
+local:s6.1	rdf:subject	local:two_ontologies	.
+local:two_ontologies_then_mappings_between_o_1	rdfs:member	local:ontologies	.
+local:formal_semantics_for_weighted_mappings	rdfs:member	local:formal_semantics	.
+local:s9.2	rdf:subject	local:two_ontologies_then_mappings_between_o_1	.
+local:precise_reclassifications	rdfs:member	local:precise	.
+local:semantic_accounts	rdfs:subClassOf	local:accounts	.
+local:s11	rdf:subject	local:weights	.
+local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:x	.
+local:how_reclassified	rdfs:subClassOf	local:reclassified	.
+local:s6	rdf:predicate	local:use	.
+local:s3	rdf:object	local:formal_semantics_for_weighted_mappings_between_different_ontologies	.
+local:concepts_of_1_o	rdfs:member	local:concepts	.
+local:s7.4	rdf:subject	local:elements_of_x	.
+local:concepts_of_o_1	rdfs:member	local:concepts	.
+local:how_complete	rdfs:subClassOf	local:complete	.
+local:set_x	rdfs:member	local:set	.
+local:s4.1	local:AM-TMP	local:then	.
+local:two_ontologies_then_mappings_between_o_1	rdfs:member	local:then_mappings	.
+local:weighted_mappings_between_different_ontologies	rdfs:member	local:different_ontologies	.
+local:s9	rdf:predicate	local:base	.
+local:s0	rdf:subject	local:ontology_mappings	.
+local:then_mappings_between_2_o	rdfs:member	local:2_o	.
+local:s9.1	rdf:predicate	local:mappings	.
+local:classificational_interpretation_of_mappings	rdfs:member	local:mappings	.
+local:s5.1	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s9.3	rdf:predicate	local:encode	.
+local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:elements	.
+local:s4.1	rdf:subject	local:two_ontologies	.
+local:two_ontologies_then_mappings_between_o_1	rdfs:member	local:o	.
+local:s11	rdf:predicate	local:interpret	.
+local:s9.2	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s7	rdf:predicate	local:base	.
+local:weight_factor	rdfs:subClassOf	local:factor	.
+local:s9.1	local:AM-TMP	local:then	.
+local:s14	rdf:predicate	local:include	.
+local:s3	rdf:subject	local:paper	.
+local:s14	local:AM-DIS	local:also	.
+local:set_x	rdfs:subClassOf	local:x	.
+local:s5.4	rdf:object	local:concepts_of_o_2	.
+local:properties_description_logic_constructors	rdfs:subClassOf	local:description_logic_constructors	.
+local:confidence_factor	rdfs:subClassOf	local:factor	.
+local:measure_how_precise_reclassifications	rdfs:member	local:measure	.
+local:common_set	rdfs:subClassOf	local:set	.
+local:how_reclassified_in_concepts	rdfs:member	local:concepts	.
+local:s1	rdf:predicate	local:assign	.
+local:s7.1	rdf:object	local:1	.
+local:s4.1	rdf:predicate	local:mappings	.
+local:classificational_interpretation	rdfs:subClassOf	local:interpretation	.
+local:s2	rdf:object	local:far_for_such_weights	.
+local:s4.1	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s9.1	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s7.1	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:common_set_x	rdfs:subClassOf	local:set_x	.
+local:1_o	rdfs:subClassOf	local:o	.
+local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:concepts	.
+local:s6.1	rdf:predicate	local:classify	.
+local:s4.1	rdf:object	local:2	.
+local:common_set	rdfs:member	local:common	.
+local:s5	rdf:subject	local:it	.
+local:s9.4	rdf:object	local:concepts_of_o_2	.
+local:s6.1	rdf:object	local:common_set_x	.
+local:common_set_x	rdfs:subClassOf	local:x	.
+local:s5.2	rdf:subject	local:two_ontologies_then_mappings_between_o_2	.
+local:s9.4	rdf:predicate	local:reclassify	.
+local:concepts_of_2_o	rdfs:member	local:concepts	.
+local:s15	rdf:subject	local:mapping_entailment	.
+local:formal_semantics_for_weighted_mappings_between_different_ontologies	rdfs:member	local:formal_semantics	.
+local:logic_constructors	rdfs:member	local:logic	.
+local:s9.3	rdf:subject	local:two_ontologies_then_mappings_between_o_1	.
+local:s4.3	rdf:subject	local:two_ontologies_then_mappings_between_o_2	.
+local:s5.1	rdf:object	local:2	.
+local:different_ontologies	rdfs:subClassOf	local:ontologies	.
+local:formal_semantics_for_weighted_mappings	rdfs:member	local:weighted_mappings	.
+local:s4.4	rdf:predicate	local:reclassify	.
+local:s8	rdf:subject	local:x	.
+local:s6.1	local:AM-MOD	local:used	.
+local:s7	rdf:subject	local:it	.
+local:s4.4	rdf:subject	local:elements_of_x	.
+local:two_ontologies_then_mappings_between_o_2	rdfs:member	local:ontologies	.
+local:s0	local:AM-MNR	local:matchers	.
+local:s14	rdf:subject	local:properties	.
+local:s8	rdf:predicate	local:classify	.
+local:concepts_of_o_1	rdfs:member	local:o	.
+local:s7.1	rdf:predicate	local:mappings	.
+local:weighted_mappings	rdfs:member	local:weighted	.
+local:s5.4	rdf:subject	local:elements_of_x	.
+local:s7.3	rdf:predicate	local:encode	.
+local:s7.2	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s15	rdf:predicate	local:relate	.
+local:s4	rdf:object	local:classificational_interpretation_of_mappings	.
+local:s2	local:AM-DIS	local:nonetheless	.
+local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:o	.
+local:s7.2	rdf:predicate	local:interpret	.
+local:formal_semantics	rdfs:subClassOf	local:semantics	.
+local:logic_constructors	rdfs:subClassOf	local:constructors	.
+local:s2	rdf:predicate	local:give	.
+local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:concepts	.
+local:then_mappings_between_2_o	rdfs:member	local:then_mappings	.
+local:s5.1	local:AM-TMP	local:then	.
+local:s1	rdf:object	local:confidence_factor	.
+local:two_ontologies_then_mappings_between_o_2	rdfs:member	local:o	.
+local:concepts_of_2_o	rdfs:member	local:2_o	.
+local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:x	.
+local:s11	rdf:object	local:measure_how_precise_reclassifications	.
+local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:elements	.
+local:s4.3	rdf:object	local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:confidence_factor	rdfs:member	local:confidence	.
+local:description_logic_constructors	rdfs:subClassOf	local:logic_constructors	.
+local:s9.4	rdf:subject	local:elements_of_x	.
+local:then_mappings	rdfs:member	local:then	.
+local:s7.3	rdf:object	local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:such_weights	rdfs:subClassOf	local:weights	.
+local:s9.2	rdf:predicate	local:interpret	.
+local:s4.2	rdf:subject	local:two_ontologies_then_mappings_between_o_2	.
+local:s3	rdf:predicate	local:present	.
+local:ontology_mappings	rdfs:member	local:ontology	.
+local:s4.3	rdf:predicate	local:encode	.
+local:s4	rdf:predicate	local:base	.
+local:s9	rdf:subject	local:it	.
+local:s7.3	rdf:subject	local:two_ontologies_then_mappings_between_o_1	.
+local:classificational_interpretation_of_mappings	rdfs:member	local:classificational_interpretation	.
+local:elements_of_x	rdfs:member	local:x	.
+local:s9.3	rdf:object	local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s15	rdf:object	local:properties_description_logic_constructors	.
+local:measure_how_precise_reclassifications	rdfs:member	local:precise_reclassifications	.
+local:s0	rdf:object	local:weight_factor	.
+local:s5.3	rdf:subject	local:two_ontologies_then_mappings_between_o_2	.
+local:s4	rdf:subject	local:it	.
+local:weighted_mappings_between_different_ontologies	rdfs:member	local:weighted_mappings	.
+local:formal_semantics	rdfs:member	local:formal	.
+local:elements_of_x_are_reclassified_in_the_concepts_of_o_2	rdfs:member	local:o	.
+local:s10.1	rdf:object	local:weights_complete_reclassifications	.
+local:s9	rdf:object	local:classificational_interpretation_of_mappings	.
+local:properties_description_logic_constructors	rdfs:member	local:logic_constructors	.
+local:weights_complete_reclassifications	rdfs:member	local:weights	.
+local:such_weights	rdfs:member	local:such	.
+local:s1	local:AM-TMP	local:often	.
+local:different_ontologies	rdfs:member	local:different	.
+local:weights_complete_reclassifications	rdfs:subClassOf	local:complete_reclassifications	.
+local:s7.1	rdf:subject	local:two_ontologies	.
+local:s5.1	rdf:predicate	local:mappings	.
+local:s14	rdf:object	local:paper	.
+local:concepts_of_o_2	rdfs:member	local:o	.
+local:s7.4	rdf:object	local:concepts_of_o_2	.
+local:far_such_weights	rdfs:subClassOf	local:such_weights	.
+local:common_set_x	rdfs:member	local:common_set	.
+local:s8	local:AM-LOC	local:concepts_of_o_1	.
+local:s10	rdf:object	local:measure_how_complete_reclassifications	.
+local:s5.1	rdf:subject	local:two_ontologies	.
+local:s10	rdf:subject	local:weights	.
+local:concepts_of_o_2	rdfs:member	local:concepts	.
+local:s5.2	local:AM-PNC	local:encode_how_elements_of_x_are_reclassified_in_the_concepts_of_o_2	.
+local:s9.1	rdf:object	local:1	.
+local:s10	rdf:predicate	local:interpret	.
+local:weights_complete_reclassifications	rdfs:member	local:complete_reclassifications	.
+local:how_precise	rdfs:subClassOf	local:precise	.
+local:then_mappings	rdfs:subClassOf	local:mappings	.
+local:2_o	rdfs:subClassOf	local:o	.
+local:measure_how_complete_reclassifications	rdfs:member	local:complete_reclassifications	.
+local:classificational_interpretation	rdfs:member	local:classificational	.
+local:semantic_accounts	rdfs:member	local:semantic	.
+local:reclassified_in_concepts	rdfs:member	local:reclassified	.
+local:s1	local:AM-MNR	local:matchers	.
+local:s1	rdf:subject	local:ontology_mappings	.
+local:s11.1	rdf:predicate	local:measure	.
+local:complete_reclassifications	rdfs:subClassOf	local:reclassifications	.
+local:concepts_of_1_o	rdfs:member	local:1_o	.
+local:weighted_mappings	rdfs:subClassOf	local:mappings	.
+local:formal_semantics_for_weighted_mappings_between_different_ontologies	rdfs:member	local:different_ontologies	.
+local:s7.4	rdf:predicate	local:reclassify	.

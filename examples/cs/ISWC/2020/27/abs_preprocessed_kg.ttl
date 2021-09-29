@@ -1,359 +1,730 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"the use cases"	.
+
+local:s17.4	a	rdf:Statement	;
+	rdfs:label	"desired results"	.
+
+local:s17.3	a	rdf:Statement	;
+	rdfs:label	"users achieve the desired results"	.
+
+local:s17.2	a	rdf:Statement	;
+	rdfs:label	"identifying the properties helps users achieve the desired results"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"identifying the properties"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"the use cases demonstrate that identifying the properties helps users achieve the desired results"	.
+
+local:s16.3	a	rdf:Statement	;
+	rdfs:label	"users querying a knowledge graph"	.
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"users needs when querying a knowledge graph"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"the desired results that meet users"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"desired results"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"the properties that can"	.
+
+local:s14.3	a	rdf:Statement	;
+	rdfs:label	"users querying more complete and accurate answers"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"users needs when querying more complete and accurate answers"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"the desired results that meet users needs when querying more complete and accurate answers"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"desired results"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"our approach achieved promising results"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"a given identity context that can propagated between contextually identical entities"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"given identity context"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"based on sentence embedding"	.
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"given identity context"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"find semiautomatically a set of properties for a given identity context"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"continuing this work on contextual identity we propose an approach to find semiautomatically a set of properties for a given identity context"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"continuing this work on contextual identity we propose an approach to find semiautomatically a set of properties for a given identity context"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"unlike classical identity with contextual identity only certain properties can propagated between contextually identical entities"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"using the owl"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"these facts lead to poor quality data"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"using sameas inference capabilities"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"indeed identity must seen as contextdependent"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"the identity as defined by the semantics of owl sameas property therefore often misused"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"the identity defined by the semantics of owl sameas property"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"several works indicate the identity as defined by the semantics of owl sameas property is therefore often misused"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the identity defined by the semantics of owl sameas"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"several works indicate the identity as defined by the semantics of owl sameas could be too rigid"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"using the owl"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the number of interconnections between these graphs sameas property"	.
+
+
 #### Classes ####
 
-local:rdfbased_knowledge	rdfs:label	"rdf-based knowledge"	.
+local:use_cases	a	rdf:Class	;
+	rdfs:label	"use cases"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:everincreasing	rdfs:label	"ever-increasing"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:everincreasing_number	rdfs:label	"ever-increasing number"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:number	rdfs:label	"number"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:rdfbased	rdfs:label	"rdf-based"	.
+local:desire	a	rdf:Class	;
+	rdfs:label	"desire"	.
 
-local:everincreasing_number_of_rdfbased_knowledge	rdfs:label	"ever-increasing number of rdf-based knowledge"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
 
-local:number_of_interconnections	rdfs:label	"number of interconnections"	.
+local:identifying_the_properties	a	rdf:Class	;
+	rdfs:label	"identifying the properties"	.
 
-local:interconnections	rdfs:label	"interconnections"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:interconnections_between_graphs	rdfs:label	"interconnections between graphs"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:sameas	rdfs:label	"sameas"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:has	rdfs:label	"has"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:exploded	rdfs:label	"exploded"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:using	rdfs:label	"using"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:owl	rdfs:label	"owl"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:several_works	rdfs:label	"several works"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:works	rdfs:label	"works"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:several	rdfs:label	"several"	.
+local:querying_a_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"querying a knowledge graph"	.
 
-local:indicate	rdfs:label	"indicate,"	.
+local:meet	a	rdf:Class	;
+	rdfs:label	"meet"	.
 
-local:identity	rdfs:label	"identity"	.
+local:propagate	a	rdf:Class	;
+	rdfs:label	"propagate"	.
 
-local:defined_by_semantics	rdfs:label	"defined by semantics"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:defined	rdfs:label	"defined"	.
+local:complete_and_accurate_answers	a	rdf:Class	;
+	rdfs:label	"complete and accurate answers"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:accurate_answers	a	rdf:Class	;
+	rdfs:label	"accurate answers"	.
 
-local:semantics_of_owl	rdfs:label	"semantics of owl"	.
+local:accurate	a	rdf:Class	;
+	rdfs:label	"accurate"	.
 
-local:sameas_property	rdfs:label	"sameas property"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:property	rdfs:label	"property"	.
+local:complete_accurate_answers	a	rdf:Class	;
+	rdfs:label	"complete accurate answers"	.
 
-local:indeed_identity	rdfs:label	"indeed identity"	.
+local:querying_more_complete_and_accurate_answers	a	rdf:Class	;
+	rdfs:label	"querying more complete and accurate answers"	.
 
-local:seen	rdfs:label	"seen"	.
+local:more_complete	a	rdf:Class	;
+	rdfs:label	"more complete"	.
 
-local:must	rdfs:label	"must"	.
+local:complete	a	rdf:Class	;
+	rdfs:label	"complete"	.
 
-local:lead	rdfs:label	"lead"	.
+local:users_needs	a	rdf:Class	;
+	rdfs:label	"users needs"	.
 
-local:facts	rdfs:label	"facts"	.
+local:needs	a	rdf:Class	;
+	rdfs:label	"needs"	.
 
-local:poor_quality	rdfs:label	"poor quality"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:quality	rdfs:label	"quality"	.
+local:promising_results	a	rdf:Class	;
+	rdfs:label	"promising results"	.
 
-local:quality_data	rdfs:label	"quality data"	.
+local:promising	a	rdf:Class	;
+	rdfs:label	"promising"	.
 
-local:poor_quality_data	rdfs:label	"poor quality data"	.
+local:given_identity_context_contextually_identical_entities	a	rdf:Class	;
+	rdfs:label	"given identity context contextually identical entities"	.
 
-local:data	rdfs:label	"data"	.
+local:contextually_identical_entities	a	rdf:Class	;
+	rdfs:label	"contextually identical entities"	.
 
-local:poor	rdfs:label	"poor"	.
+local:identity_context	a	rdf:Class	;
+	rdfs:label	"identity context"	.
 
-local:sameas_inference	rdfs:label	"sameas inference"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:inference	rdfs:label	"inference"	.
+local:identical_entities	a	rdf:Class	;
+	rdfs:label	"identical entities"	.
 
-local:capabilities	rdfs:label	"capabilities"	.
+local:identical	a	rdf:Class	;
+	rdfs:label	"identical"	.
 
-local:only	rdfs:label	"only"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:only_certain	rdfs:label	"only certain"	.
+local:contextually_identical	a	rdf:Class	;
+	rdfs:label	"contextually identical"	.
 
-local:certain	rdfs:label	"certain"	.
+local:identity	a	rdf:Class	;
+	rdfs:label	"identity"	.
 
-local:certain_properties	rdfs:label	"certain properties"	.
+local:contextually	a	rdf:Class	;
+	rdfs:label	"contextually"	.
 
-local:contextual_identity	rdfs:label	"contextual identity"	.
+local:given_identity_context	a	rdf:Class	;
+	rdfs:label	"given identity context"	.
 
-local:contextual	rdfs:label	"contextual"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:only_certain_properties	rdfs:label	"only certain properties"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:classical_identity	rdfs:label	"classical identity"	.
+local:sentence_embedding	a	rdf:Class	;
+	rdfs:label	"sentence embedding"	.
 
-local:classical	rdfs:label	"classical"	.
+local:embedding	a	rdf:Class	;
+	rdfs:label	"embedding"	.
 
-local:properties	rdfs:label	"properties"	.
+local:semiautomatically_a_set_of_properties	a	rdf:Class	;
+	rdfs:label	"semiautomatically a set of properties"	.
 
-local:classical_contextual_identity	rdfs:label	"classical contextual identity"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:only_certain_properties_unlike_classical_contextual_identity	rdfs:label	"only certain properties unlike classical contextual identity"	.
+local:semiautomatically_set	a	rdf:Class	;
+	rdfs:label	"semiautomatically set"	.
 
-local:only_certain_properties_unlike_classical_contextual_identity_with_contextual_identity	rdfs:label	"only certain properties unlike classical contextual identity with contextual identity"	.
+local:semiautomatically_set_of_properties	a	rdf:Class	;
+	rdfs:label	"semiautomatically set of properties"	.
 
-local:propagated	rdfs:label	"propagated"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:can	rdfs:label	"can"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:identical_entities	rdfs:label	"identical entities"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:entities	rdfs:label	"entities"	.
+local:approach_to_find_semiautomatically_a_set_of_properties	a	rdf:Class	;
+	rdfs:label	"approach to find semiautomatically a set of properties"	.
 
-local:identical	rdfs:label	"identical"	.
+local:continuing_this_work_on_contextual_identity	a	rdf:Class	;
+	rdfs:label	"continuing this work on contextual identity"	.
 
-local:contextually_identical	rdfs:label	"contextually identical"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:contextually_identical_entities	rdfs:label	"contextually identical entities"	.
+local:contextual_identity	a	rdf:Class	;
+	rdfs:label	"contextual identity"	.
 
-local:contextually	rdfs:label	"contextually"	.
+local:contextual	a	rdf:Class	;
+	rdfs:label	"contextual"	.
 
-local:given_identity	rdfs:label	"given identity"	.
+local:continuing_on_contextual_identity	a	rdf:Class	;
+	rdfs:label	"continuing on contextual identity"	.
 
-local:semiautomatically_set	rdfs:label	"semi-automatically set"	.
+local:continuing	a	rdf:Class	;
+	rdfs:label	"continuing"	.
 
-local:set	rdfs:label	"set"	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	a	rdf:Class	;
+	rdfs:label	"work on contextual identity we propose an approach to find semiautomatically a set of properties for a given identity context"	.
 
-local:work_on_contextual_identity	rdfs:label	"work on contextual identity"	.
+local:given_identity	a	rdf:Class	;
+	rdfs:label	"given identity"	.
 
-local:work	rdfs:label	"work"	.
+local:work_on_contextual_identity	a	rdf:Class	;
+	rdfs:label	"work on contextual identity"	.
 
-local:semiautomatically_set_of_properties	rdfs:label	"semi-automatically set of properties"	.
+local:semiautomatically_set_of_properties_for_given_identity	a	rdf:Class	;
+	rdfs:label	"semiautomatically set of properties for given identity"	.
 
-local:propose_for_given_identity	rdfs:label	"propose for given identity"	.
+local:unlike_classical_identity_with_contextual_identity_only_certain_properties	a	rdf:Class	;
+	rdfs:label	"unlike classical identity with contextual identity only certain properties"	.
 
-local:propose	rdfs:label	"propose"	.
+local:only_certain_properties	a	rdf:Class	;
+	rdfs:label	"only certain properties"	.
 
-local:continuing	rdfs:label	"continuing"	.
+local:classical_identity	a	rdf:Class	;
+	rdfs:label	"classical identity"	.
 
-local:we	rdfs:label	"we"	.
+local:certain_properties	a	rdf:Class	;
+	rdfs:label	"certain properties"	.
 
-local:approach	rdfs:label	"approach"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:identity_context	rdfs:label	"identity context"	.
+local:only_certain	a	rdf:Class	;
+	rdfs:label	"only certain"	.
 
-local:context	rdfs:label	"context"	.
+local:classical	a	rdf:Class	;
+	rdfs:label	"classical"	.
 
-local:find	rdfs:label	"find"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:given	rdfs:label	"given"	.
+local:classical_contextual_identity	a	rdf:Class	;
+	rdfs:label	"classical contextual identity"	.
 
-local:sentence	rdfs:label	"sentence"	.
+local:classical_contextual_identity_with_contextual_identity	a	rdf:Class	;
+	rdfs:label	"classical contextual identity with contextual identity"	.
 
-local:sentence_embedding	rdfs:label	"sentence embedding"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:embedding	rdfs:label	"embedding"	.
+local:facts	a	rdf:Class	;
+	rdfs:label	"facts"	.
 
-local:based	rdfs:label	"based"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:achieved	rdfs:label	"achieved"	.
+local:poor_quality_data	a	rdf:Class	;
+	rdfs:label	"poor quality data"	.
 
-local:promising_results	rdfs:label	"promising results"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:results	rdfs:label	"results"	.
+local:poor_quality	a	rdf:Class	;
+	rdfs:label	"poor quality"	.
 
-local:desired	rdfs:label	"desired"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:desired_results	rdfs:label	"desired results"	.
+local:quality_data	a	rdf:Class	;
+	rdfs:label	"quality data"	.
 
-local:meet	rdfs:label	"meet"	.
+local:poor	a	rdf:Class	;
+	rdfs:label	"poor"	.
 
-local:users	rdfs:label	"users"	.
+local:sameas_inference_capabilities	a	rdf:Class	;
+	rdfs:label	"sameas inference capabilities"	.
 
-local:needs	rdfs:label	"needs"	.
+local:sameas_inference	a	rdf:Class	;
+	rdfs:label	"sameas inference"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:graph	rdfs:label	"graph"	.
+local:inference_capabilities	a	rdf:Class	;
+	rdfs:label	"inference capabilities"	.
 
-local:querying	rdfs:label	"querying"	.
+local:capabilities	a	rdf:Class	;
+	rdfs:label	"capabilities"	.
 
-local:use	rdfs:label	"use"	.
+local:sameas	a	rdf:Class	;
+	rdfs:label	"sameas"	.
 
-local:use_cases	rdfs:label	"use cases"	.
+local:indeed_identity	a	rdf:Class	;
+	rdfs:label	"indeed identity"	.
 
-local:cases	rdfs:label	"cases"	.
+local:indeed	a	rdf:Class	;
+	rdfs:label	"indeed"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:see	a	rdf:Class	;
+	rdfs:label	"see"	.
 
-local:helps	rdfs:label	"helps"	.
+local:must	a	rdf:Class	;
+	rdfs:label	"must"	.
 
-local:identifying	rdfs:label	"identifying"	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property	a	rdf:Class	;
+	rdfs:label	"identity as defined by the semantics of owl sameas property"	.
 
-local:achieve	rdfs:label	"achieve"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:users_needs	rdfs:label	"users needs"	.
+local:owl_sameas_property	a	rdf:Class	;
+	rdfs:label	"owl sameas property"	.
 
-local:accurate	rdfs:label	"accurate"	.
+local:owl_sameas	a	rdf:Class	;
+	rdfs:label	"owl sameas"	.
 
-local:accurate_answers	rdfs:label	"accurate answers"	.
+local:sameas_property	a	rdf:Class	;
+	rdfs:label	"sameas property"	.
 
-local:answers	rdfs:label	"answers"	.
+local:property	a	rdf:Class	;
+	rdfs:label	"property"	.
 
-local:complete_accurate_answers	rdfs:label	"complete accurate answers"	.
+local:defined_by_semantics	a	rdf:Class	;
+	rdfs:label	"defined by semantics"	.
 
-local:more_complete	rdfs:label	"more complete"	.
+local:defined	a	rdf:Class	;
+	rdfs:label	"defined"	.
 
-local:complete	rdfs:label	"complete"	.
+local:semantics_of_owl_sameas_property	a	rdf:Class	;
+	rdfs:label	"semantics of owl sameas property"	.
 
-#### Properties ####
+local:misuse	a	rdf:Class	;
+	rdfs:label	"misuse"	.
+
+local:therefore	a	rdf:Class	;
+	rdfs:label	"therefore"	.
+
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
+
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
+
+local:several_works	a	rdf:Class	;
+	rdfs:label	"several works"	.
+
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
+
+local:works	a	rdf:Class	;
+	rdfs:label	"works"	.
+
+local:indicate	a	rdf:Class	;
+	rdfs:label	"indicate"	.
+
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property_is_therefore_often_misused	a	rdf:Class	;
+	rdfs:label	"identity as defined by the semantics of owl sameas property is therefore often misused"	.
+
+local:often_misused	a	rdf:Class	;
+	rdfs:label	"often misused"	.
+
+local:misused	a	rdf:Class	;
+	rdfs:label	"misused"	.
+
+local:therefore_often_misused	a	rdf:Class	;
+	rdfs:label	"therefore often misused"	.
+
+local:semantics_of_owl_sameas	a	rdf:Class	;
+	rdfs:label	"semantics of owl sameas"	.
+
+local:identity_as_defined_by_the_semantics_of_owl_sameas_could_be_too_rigid	a	rdf:Class	;
+	rdfs:label	"identity as defined by the semantics of owl sameas could be too rigid"	.
+
+local:too_rigid	a	rdf:Class	;
+	rdfs:label	"too rigid"	.
+
+local:rigid	a	rdf:Class	;
+	rdfs:label	"rigid"	.
+
+local:could_too_rigid	a	rdf:Class	;
+	rdfs:label	"could too rigid"	.
+
+local:number_of_interconnections_between_these_graphs_sameas_property	a	rdf:Class	;
+	rdfs:label	"number of interconnections between these graphs sameas property"	.
+
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
+
+local:interconnections	a	rdf:Class	;
+	rdfs:label	"interconnections"	.
+
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
+
+local:number_of_interconnections	a	rdf:Class	;
+	rdfs:label	"number of interconnections"	.
+
+local:interconnections_between_graphs	a	rdf:Class	;
+	rdfs:label	"interconnections between graphs"	.
+
+local:explode	a	rdf:Class	;
+	rdfs:label	"explode"	.
 
 #### Mapped Relations ####
 
-local:inference	owl:sameAs	cso:inference	.
 cso:semantics	rdfs:label	"semantics"	.
-cso:owl	rdfs:label	"owl"	.
+cso:inference	rdfs:label	"inference"	.
+local:inference	owl:sameAs	cso:inference	.
 local:owl	owl:sameAs	cso:owl	.
 local:semantics	owl:sameAs	cso:semantics	.
-cso:inference	rdfs:label	"inference"	.
+cso:owl	rdfs:label	"owl"	.
 
 #### Relations ####
 
-local:identifying	vn.role:Theme	local:properties	.
-local:quality	rdfs:member	local:quality_data	.
-local:number_of_interconnections	local:number_of	local:interconnections	.
-local:certain	rdfs:member	local:certain_properties	.
-local:propagated	local:AM-MOD	local:can	.
-local:defined	vn.role:Agent	local:semantics_of_owl	.
-local:contextual_identity	rdfs:subClassOf	local:identity	.
-local:identity_context	rdfs:subClassOf	local:context	.
-local:demonstrate	vn.role:Recipient	local:use_cases	.
-local:has	vn.role:Stimulus	local:sameas	.
-local:indicate	vn.role:object	local:identity	.
-local:graphs	vn.role:object	local:sameas	.
-local:only_certain	rdfs:subClassOf	local:certain	.
-local:propose_for_given_identity	local:for_givenidentity	local:propose	.
-local:desired_results	rdfs:subClassOf	local:results	.
-local:classical_identity	rdfs:subClassOf	local:identity	.
-local:users_needs	rdfs:subClassOf	local:needs	.
-local:accurate	rdfs:member	local:accurate_answers	.
-local:work_on_contextual_identity	local:work_on	local:contextual_identity	.
-local:accurate_answers	rdfs:subClassOf	local:answers	.
-local:demonstrate	vn.role:Cause	local:helps	.
-local:interconnections_between_graphs	local:interconnections_between	local:graphs	.
-local:has	vn.role:Stimulus	local:exploded	.
-local:only_certain_properties_unlike_classical_contextual_identity	local:unlike_classicalcontextualidentity	local:only_certain_properties	.
-local:only_certain	rdfs:member	local:only_certain_properties	.
-local:only_certain_properties_unlike_classical_contextual_identity	local:onlycertainproperties_unlike	local:classical_contextual_identity	.
-local:use_cases	rdfs:subClassOf	local:cases	.
-local:use	rdfs:member	local:use_cases	.
-local:everincreasing	rdfs:member	local:everincreasing_number	.
-local:querying	vn.role:Agent	local:users	.
-local:rdfbased	rdfs:member	local:rdfbased_knowledge	.
-local:using	vn.role:Recipient	local:capabilities	.
-local:helps	vn.role:Beneficiary	local:achieve	.
-local:sameas	rdfs:member	local:sameas_property	.
-local:rdfbased_knowledge	rdfs:subClassOf	local:knowledge	.
-local:semantics_of_owl	local:semantics_of	local:owl	.
-local:needs	vn.role:Agent	local:users	.
-local:quality_data	rdfs:subClassOf	local:data	.
-local:poor_quality	rdfs:subClassOf	local:quality	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:continuing	vn.role:Theme	local:propose_for_given_identity	.
-local:querying	vn.role:Theme	local:complete_accurate_answers	.
-local:achieve	vn.role:Theme	local:desired_results	.
-local:contextually_identical	rdfs:subClassOf	local:identical	.
-local:needs	local:AM-TMP	local:querying	.
-local:desired	rdfs:member	local:desired_results	.
-local:classical	rdfs:member	local:classical_identity	.
-local:defined_by_semantics	local:defined_by	local:semantics	.
-local:defined	vn.role:Theme	local:identity	.
-local:users	rdfs:member	local:users_needs	.
-local:contextually_identical	rdfs:member	local:contextually_identical_entities	.
-local:poor_quality_data	rdfs:subClassOf	local:quality_data	.
-local:more_complete	rdfs:subClassOf	local:complete	.
-local:seen	local:AM-MOD	local:must	.
-local:classical_contextual_identity	rdfs:subClassOf	local:contextual_identity	.
-local:lead	vn.role:Destination	local:poor_quality_data	.
-local:achieved	vn.role:Agent	local:approach	.
-local:propagated	local:AM-ADV	local:only_certain_properties_unlike_classical_contextual_identity_with_contextual_identity	.
-local:propose	vn.role:Agent	local:we	.
-local:propose	vn.role:Topic	local:approach	.
-local:poor_quality_data	rdfs:subClassOf	local:data	.
-local:defined_by_semantics	local:by_semantics	local:defined	.
-local:meet	vn.role:Theme2	local:users	.
-local:sameas_property	rdfs:subClassOf	local:property	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:poor_quality	rdfs:member	local:poor_quality_data	.
-local:graphs	vn.role:subject	local:everincreasing_number_of_rdfbased_knowledge	.
-local:propagated	vn.role:indirect_object	local:identical_entities	.
-local:contextually	rdfs:member	local:contextually_identical	.
-local:using	vn.role:Theme	local:owl	.
-local:indicate	vn.role:subject	local:several_works	.
-local:meet	vn.role:Theme1	local:desired_results	.
-local:contextual	rdfs:member	local:contextual_identity	.
-local:given	vn.role:object	local:identity_context	.
-local:complete_accurate_answers	rdfs:subClassOf	local:accurate_answers	.
-local:identity	rdfs:member	local:identity_context	.
-local:sameas	rdfs:member	local:sameas_inference	.
-local:propose	local:AM-PNC	local:identity_context	.
-local:several_works	rdfs:subClassOf	local:works	.
-local:identical_entities	rdfs:subClassOf	local:entities	.
-local:semiautomatically_set_of_properties	local:semi-automaticallyset_of	local:properties	.
-local:achieved	vn.role:Theme	local:promising_results	.
+local:s0	rdf:predicate	local:explode	.
 local:only_certain_properties	rdfs:subClassOf	local:properties	.
-local:indicate	local:AM-MNR	local:defined_by_semantics	.
-local:lead	vn.role:Agent	local:facts	.
-local:given	vn.role:object	local:identity	.
-local:sentence	rdfs:member	local:sentence_embedding	.
-local:achieve	vn.role:Agent	local:users	.
-local:sameas_inference	rdfs:subClassOf	local:inference	.
-local:everincreasing_number_of_rdfbased_knowledge	local:of_rdf-basedknowledge	local:everincreasing_number	.
-local:desired	vn.role:Theme	local:results	.
-local:sentence_embedding	rdfs:subClassOf	local:embedding	.
-local:work_on_contextual_identity	local:on_contextualidentity	local:work	.
-local:given_identity	rdfs:subClassOf	local:identity	.
-local:meet	local:AM-TMP	local:querying	.
-local:propose_for_given_identity	local:propose_for	local:given_identity	.
-local:helps	vn.role:Agent	local:identifying	.
-local:find	vn.role:Theme	local:semiautomatically_set_of_properties	.
-local:everincreasing_number	rdfs:subClassOf	local:number	.
-local:indicate	vn.role:indirect_object	local:defined_by_semantics	.
-local:everincreasing_number_of_rdfbased_knowledge	local:ever-increasingnumber_of	local:rdfbased_knowledge	.
-local:several	rdfs:member	local:several_works	.
-local:seen	vn.role:Theme	local:indeed_identity	.
-local:only_certain_properties_unlike_classical_contextual_identity_with_contextual_identity	local:onlycertainpropertiesunlikeclassicalcontextualidentity_with	local:contextual_identity	.
-local:propose	local:AM-ADV	local:continuing	.
-local:indeed_identity	rdfs:subClassOf	local:identity	.
-local:poor	rdfs:member	local:poor_quality	.
-local:interconnections_between_graphs	local:between_graphs	local:interconnections	.
-local:using	vn.role:Theme	local:sameas_inference	.
-local:only_certain_properties	rdfs:subClassOf	local:certain_properties	.
-local:identical	rdfs:member	local:identical_entities	.
-local:contextually_identical_entities	rdfs:subClassOf	local:entities	.
-local:propagated	vn.role:Location	local:identity_context	.
-local:querying	vn.role:Theme	local:knowledge_graph	.
-local:semiautomatically_set_of_properties	local:of_properties	local:semiautomatically_set	.
-local:based	vn.role:indirect_object	local:sentence_embedding	.
-local:semiautomatically_set	rdfs:subClassOf	local:set	.
-local:find	local:AM-PNC	local:identity_context	.
-local:only	rdfs:member	local:only_certain	.
+local:s16.2	rdf:subject	local:users	.
+local:only_certain	rdfs:subClassOf	local:certain	.
+local:contextually_identical	rdfs:subClassOf	local:identical	.
+local:s17	rdf:object	local:s17.2	.
+local:poor_quality_data	rdfs:subClassOf	local:data	.
+local:only_certain_properties	rdfs:member	local:only_certain	.
+local:s2.1	rdf:predicate	local:define	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_could_be_too_rigid	rdfs:member	local:semantics	.
+local:defined_by_semantics	rdfs:member	local:defined	.
+local:s15	rdf:subject	local:properties	.
+local:s3.2	local:AM-TMP	local:often	.
+local:s3	rdf:object	local:identity_as_defined_by_the_semantics_of_owl_sameas_property_is_therefore_often_misused	.
+local:s1	rdf:predicate	local:use	.
+local:unlike_classical_identity_with_contextual_identity_only_certain_properties	rdfs:member	local:classical_identity	.
+local:s16.2	rdf:predicate	local:need	.
+local:given_identity_context_contextually_identical_entities	rdfs:member	local:contextually_identical_entities	.
+local:classical_contextual_identity_with_contextual_identity	rdfs:member	local:contextual_identity	.
+local:semantics_of_owl_sameas_property	rdfs:member	local:semantics	.
+local:s17	rdf:subject	local:use_cases	.
+local:s17.3	rdf:subject	local:users	.
+local:s11	rdf:predicate	local:base	.
+local:s14	rdf:predicate	local:desire	.
+local:s16.1	rdf:predicate	local:meet	.
+local:s16	rdf:subject	local:results	.
+local:s1	rdf:subject	local:owl	.
+local:s17.4	rdf:predicate	local:desire	.
+local:unlike_classical_identity_with_contextual_identity_only_certain_properties	rdfs:member	local:contextual_identity	.
+local:s3.2	local:AM-DIS	local:therefore	.
+local:s17.2	rdf:predicate	local:help	.
+local:s4	local:AM-MOD	local:must	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property	rdfs:member	local:identity	.
+local:classical_contextual_identity_with_contextual_identity	rdfs:member	local:classical_contextual_identity	.
+local:s14.1	rdf:object	local:users_needs	.
+local:s12.1	rdf:predicate	local:propagate	.
+local:contextual_identity	rdfs:subClassOf	local:identity	.
+local:semiautomatically_set_of_properties	rdfs:member	local:properties	.
 local:promising_results	rdfs:subClassOf	local:results	.
+local:quality_data	rdfs:member	local:quality	.
+local:s13	rdf:predicate	local:achieve	.
+local:s2	rdf:predicate	local:indicate	.
+local:quality_data	rdfs:subClassOf	local:data	.
+local:inference_capabilities	rdfs:member	local:inference	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property	rdfs:member	local:owl_sameas_property	.
+local:s3.1	rdf:predicate	local:define	.
+local:s16.3	rdf:predicate	local:query	.
 local:certain_properties	rdfs:subClassOf	local:properties	.
-local:only_certain_properties_unlike_classical_contextual_identity_with_contextual_identity	local:with_contextualidentity	local:only_certain_properties_unlike_classical_contextual_identity	.
-local:meet	vn.role:Theme2	local:users_needs	.
-local:number_of_interconnections	local:of_interconnections	local:number	.
-local:semantics_of_owl	local:of_owl	local:semantics	.
+local:accurate_answers	rdfs:subClassOf	local:answers	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property_is_therefore_often_misused	rdfs:member	local:identity	.
+local:contextually_identical_entities	rdfs:member	local:contextually_identical	.
+local:number_of_interconnections	rdfs:member	local:number	.
+local:s14.2	rdf:subject	local:users	.
+local:s17.3	rdf:object	local:s17.4	.
+local:number_of_interconnections	rdfs:member	local:interconnections	.
+local:s10.2	local:AM-PNC	local:s10.3	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	rdfs:member	local:identity_context	.
+local:s18	rdf:predicate	local:provide	.
+local:semiautomatically_a_set_of_properties	rdfs:member	local:properties	.
+local:owl_sameas_property	rdfs:subClassOf	local:property	.
+local:s12.1	local:AM-MOD	local:can	.
+local:too_rigid	rdfs:subClassOf	local:rigid	.
+local:s16	rdf:predicate	local:desire	.
+local:complete_accurate_answers	rdfs:subClassOf	local:accurate_answers	.
+local:sameas_property	rdfs:member	local:sameas	.
+local:could_too_rigid	rdfs:subClassOf	local:too_rigid	.
+local:continuing_on_contextual_identity	rdfs:member	local:contextual_identity	.
+local:use_cases	rdfs:member	local:use	.
+local:certain_properties	rdfs:member	local:certain	.
+local:s6	rdf:subject	local:facts	.
+local:indeed_identity	rdfs:subClassOf	local:identity	.
+local:s3	rdf:predicate	local:indicate	.
+local:s10.1	local:AM-ADV	local:continuing_this_work_on_contextual_identity	.
+local:sameas_inference_capabilities	rdfs:member	local:sameas_inference	.
+local:s9	rdf:predicate	local:propagate	.
+local:s14.3	rdf:object	local:complete_and_accurate_answers	.
+local:sameas_property	rdfs:subClassOf	local:property	.
+local:identity_context	rdfs:subClassOf	local:context	.
+local:continuing_this_work_on_contextual_identity	rdfs:member	local:contextual_identity	.
+local:s17.4	rdf:subject	local:results	.
+local:poor_quality	rdfs:member	local:poor	.
+local:sameas_inference_capabilities	rdfs:subClassOf	local:capabilities	.
+local:given_identity	rdfs:subClassOf	local:identity	.
+local:s14.1	rdf:subject	local:s16	.
+local:s10	rdf:subject	local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	.
+local:s17.2	rdf:subject	local:identifying_the_properties	.
+local:therefore_often_misused	rdfs:subClassOf	local:often_misused	.
+local:identical_entities	rdfs:subClassOf	local:entities	.
+local:s16.1	rdf:subject	local:s17.4	.
+local:semiautomatically_a_set_of_properties	rdfs:member	local:set	.
+local:s10.1	rdf:subject	local:we	.
+local:accurate_answers	rdfs:member	local:accurate	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	rdfs:member	local:work	.
+local:more_complete	rdfs:subClassOf	local:complete	.
+local:only_certain	rdfs:member	local:only	.
+local:s6	rdf:object	local:poor_quality_data	.
+local:s18	rdf:subject	local:use_cases	.
+local:sameas_inference	rdfs:subClassOf	local:inference	.
+local:s3	rdf:subject	local:several_works	.
+local:semiautomatically_set_of_properties_for_given_identity	rdfs:member	local:given_identity	.
+local:s9	local:AM-MOD	local:can	.
+local:classical_identity	rdfs:member	local:classical	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_could_be_too_rigid	rdfs:member	local:owl_sameas	.
+local:s16.3	rdf:object	local:knowledge_graph	.
+local:contextually_identical	rdfs:member	local:contextually	.
+local:s6	rdf:predicate	local:lead	.
+local:s5	rdf:subject	local:sameas_inference_capabilities	.
+local:s7	rdf:predicate	local:use	.
+local:approach_to_find_semiautomatically_a_set_of_properties	rdfs:member	local:set	.
+local:continuing_this_work_on_contextual_identity	rdfs:member	local:work	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:given_identity_context	rdfs:subClassOf	local:identity_context	.
+local:work_on_contextual_identity	rdfs:member	local:contextual_identity	.
+local:s17.1	rdf:subject	local:properties	.
+local:s2.1	rdf:object	local:identity	.
+local:s14.3	rdf:predicate	local:query	.
+local:s16.2	local:AM-TMP	local:querying_a_knowledge_graph	.
+local:users_needs	rdfs:member	local:users	.
+local:often_misused	rdfs:subClassOf	local:misused	.
+local:s16.1	rdf:object	local:users	.
+local:work_on_contextual_identity	rdfs:member	local:work	.
+local:s14.1	local:AM-TMP	local:querying_more_complete_and_accurate_answers	.
+local:s9	local:AM-ADV	local:unlike_classical_identity_with_contextual_identity_only_certain_properties	.
+local:s17	rdf:predicate	local:demonstrate	.
+local:approach_to_find_semiautomatically_a_set_of_properties	rdfs:member	local:properties	.
+local:s13	rdf:subject	local:approach	.
+local:promising_results	rdfs:member	local:promising	.
+local:s10.3	rdf:predicate	local:give	.
+local:s14.1	rdf:predicate	local:meet	.
+local:s14.2	rdf:predicate	local:need	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	rdfs:member	local:approach	.
+local:several_works	rdfs:member	local:several	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:s2.1	rdf:subject	local:semantics_of_owl_sameas	.
+local:s10.1	rdf:object	local:approach_to_find_semiautomatically_a_set_of_properties	.
+local:several_works	rdfs:subClassOf	local:works	.
+local:owl_sameas	rdfs:subClassOf	local:sameas	.
+local:semiautomatically_set_of_properties	rdfs:member	local:semiautomatically_set	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	rdfs:member	local:contextual_identity	.
+local:s10.1	local:AM-PNC	local:s10.3	.
+local:poor_quality_data	rdfs:subClassOf	local:quality_data	.
+local:s12.1	rdf:object	local:given_identity_context_contextually_identical_entities	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_could_be_too_rigid	rdfs:member	local:identity	.
+local:number_of_interconnections_between_these_graphs_sameas_property	rdfs:member	local:property	.
+local:sameas_inference_capabilities	rdfs:subClassOf	local:inference_capabilities	.
+local:identity_context	rdfs:member	local:identity	.
+local:contextually_identical_entities	rdfs:subClassOf	local:entities	.
+local:semiautomatically_set_of_properties_for_given_identity	rdfs:member	local:semiautomatically_set_of_properties	.
+local:defined_by_semantics	rdfs:member	local:semantics	.
+local:poor_quality_data	rdfs:member	local:poor_quality	.
+local:semantics_of_owl_sameas	rdfs:member	local:owl_sameas	.
+local:number_of_interconnections_between_these_graphs_sameas_property	rdfs:member	local:interconnections	.
+local:use_cases	rdfs:subClassOf	local:cases	.
+local:inference_capabilities	rdfs:subClassOf	local:capabilities	.
+local:s10.1	rdf:predicate	local:propose	.
+local:s2	rdf:subject	local:several_works	.
+local:s10.3	rdf:subject	local:identity_context	.
+local:given_identity_context_contextually_identical_entities	rdfs:member	local:identity_context	.
+local:number_of_interconnections_between_these_graphs_sameas_property	rdfs:member	local:graphs	.
+local:semantics_of_owl_sameas	rdfs:member	local:semantics	.
+local:owl_sameas_property	rdfs:member	local:owl_sameas	.
+local:s17.1	rdf:predicate	local:identify	.
+local:s10.2	rdf:predicate	local:find	.
+local:s10	rdf:predicate	local:continuing	.
+local:s17.2	rdf:object	local:s17.3	.
+local:s13	rdf:object	local:promising_results	.
+local:s12	rdf:subject	local:identity_context	.
+local:s17.3	rdf:predicate	local:achieve	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property_is_therefore_often_misused	rdfs:member	local:semantics	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property_is_therefore_often_misused	rdfs:member	local:owl_sameas_property	.
+local:poor_quality	rdfs:subClassOf	local:quality	.
+local:s12	rdf:predicate	local:give	.
+local:s3.1	rdf:object	local:identity	.
+local:s7	rdf:subject	local:owl	.
+local:s3.2	rdf:subject	local:identity_as_defined_by_the_semantics_of_owl_sameas_property	.
+local:interconnections_between_graphs	rdfs:member	local:graphs	.
+local:s0	rdf:subject	local:number_of_interconnections_between_these_graphs_sameas_property	.
+local:sameas_inference	rdfs:member	local:sameas	.
+local:identical_entities	rdfs:member	local:identical	.
+local:identity_as_defined_by_the_semantics_of_owl_sameas_property	rdfs:member	local:semantics	.
+local:sentence_embedding	rdfs:subClassOf	local:embedding	.
+local:approach_to_find_semiautomatically_a_set_of_properties	rdfs:member	local:approach	.
+local:unlike_classical_identity_with_contextual_identity_only_certain_properties	rdfs:member	local:only_certain_properties	.
+local:indeed_identity	rdfs:member	local:indeed	.
+local:number_of_interconnections_between_these_graphs_sameas_property	rdfs:member	local:number	.
+local:s3.1	rdf:subject	local:semantics_of_owl_sameas_property	.
+local:s11	rdf:object	local:sentence_embedding	.
+local:owl_sameas_property	rdfs:subClassOf	local:sameas_property	.
+local:semantics_of_owl_sameas_property	rdfs:member	local:owl_sameas_property	.
+local:classical_identity	rdfs:subClassOf	local:identity	.
+local:s4	rdf:predicate	local:see	.
+local:classical_contextual_identity	rdfs:subClassOf	local:contextual_identity	.
+local:s15	local:AM-MOD	local:can	.
+local:s16.3	rdf:subject	local:users	.
+local:continuing_on_contextual_identity	rdfs:member	local:continuing	.
+local:semiautomatically_set	rdfs:subClassOf	local:set	.
+local:owl_sameas	rdfs:member	local:owl	.
+local:s2	rdf:object	local:identity_as_defined_by_the_semantics_of_owl_sameas_could_be_too_rigid	.
+local:s4	rdf:subject	local:indeed_identity	.
+local:s14	rdf:subject	local:results	.
+local:s14.3	rdf:subject	local:users	.
+local:s9	rdf:object	local:contextually_identical_entities	.
+local:contextual_identity	rdfs:member	local:contextual	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	rdfs:member	local:properties	.
+local:users_needs	rdfs:subClassOf	local:needs	.
+local:s10.2	rdf:subject	local:semiautomatically_a_set_of_properties	.
+local:s3.2	rdf:predicate	local:misuse	.
+local:s15	rdf:predicate	local:propagate	.
+local:interconnections_between_graphs	rdfs:member	local:interconnections	.
+local:work_on_contextual_identity_we_propose_an_approach_to_find_semiautomatically_a_set_of_properties_for_a_given_identity_context	rdfs:member	local:set	.
+local:s14.2	local:AM-TMP	local:querying_more_complete_and_accurate_answers	.
+local:s5	rdf:predicate	local:use	.
+local:only_certain_properties	rdfs:subClassOf	local:certain_properties	.

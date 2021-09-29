@@ -1,181 +1,372 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a method illustrated through conversions of two large thesauri wordnet"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"a method illustrated through conversions of two large thesauri mesh"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"each step supported through a number of guidelines"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"resulting representation"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"taken"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"have to be taken with respect to the syntax or semantics of the resulting representation"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a method identifies four steps in the conversion process"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"existing thesauri native format"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"converting related resources from existing thesauri native format to owl"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"this paper describes a method for converting related resources from existing thesauri native format to owl"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"existing thesauri native format"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"converting existing thesauri native format to owl"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"this paper describes a method for converting existing thesauri native format to owl"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"existing thesauri native format"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"converting existing thesauri native format to rdf"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"this paper describes a method for converting existing thesauri native format to rdf"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"existing thesauri native format"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"converting related resources from existing thesauri native format to rdf"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"this paper describes a method for converting related resources from existing thesauri native format to rdf"	.
+
+
 #### Classes ####
 
-local:describes	rdfs:label	"describes"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:paper	rdfs:label	"paper"	.
+local:illustrate	a	rdf:Class	;
+	rdfs:label	"illustrate"	.
 
-local:thesauri_native_format	rdfs:label	"thesauri native format"	.
+local:conversions_of_two_large_thesauri_wordnet	a	rdf:Class	;
+	rdfs:label	"conversions of two large thesauri wordnet"	.
 
-local:format	rdfs:label	"format"	.
+local:conversions	a	rdf:Class	;
+	rdfs:label	"conversions"	.
 
-local:related	rdfs:label	"related"	.
+local:large_thesauri	a	rdf:Class	;
+	rdfs:label	"large thesauri"	.
 
-local:related_resources	rdfs:label	"related resources"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:thesauri_native	rdfs:label	"thesauri native"	.
+local:thesauri	a	rdf:Class	;
+	rdfs:label	"thesauri"	.
 
-local:resources	rdfs:label	"resources"	.
+local:two_large_thesauri	a	rdf:Class	;
+	rdfs:label	"two large thesauri"	.
 
-local:native_format	rdfs:label	"native format"	.
+local:conversions_of_two_large_thesauri	a	rdf:Class	;
+	rdfs:label	"conversions of two large thesauri"	.
 
-local:thesauri	rdfs:label	"thesauri"	.
+local:conversions_of_two_large_thesauri_mesh	a	rdf:Class	;
+	rdfs:label	"conversions of two large thesauri mesh"	.
 
-local:native	rdfs:label	"native"	.
+local:large_thesauri_mesh	a	rdf:Class	;
+	rdfs:label	"large thesauri mesh"	.
 
-local:existing_native_format	rdfs:label	"existing native format"	.
+local:thesauri_mesh	a	rdf:Class	;
+	rdfs:label	"thesauri mesh"	.
 
-local:converting_from_existing_native_format	rdfs:label	"converting from existing native format"	.
+local:mesh	a	rdf:Class	;
+	rdfs:label	"mesh"	.
 
-local:converting	rdfs:label	"converting"	.
+local:two_large_thesauri_mesh	a	rdf:Class	;
+	rdfs:label	"two large thesauri mesh"	.
 
-local:existing_native_format_to_owl	rdfs:label	"existing native format to owl"	.
+local:step	a	rdf:Class	;
+	rdfs:label	"step"	.
 
-local:owl	rdfs:label	"owl"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:method	rdfs:label	"method"	.
+local:number_of_guidelines	a	rdf:Class	;
+	rdfs:label	"number of guidelines"	.
 
-local:existing	rdfs:label	"existing"	.
+local:guidelines	a	rdf:Class	;
+	rdfs:label	"guidelines"	.
 
-local:converting_from_existing_native_format_to_rdf	rdfs:label	"converting from existing native format to rdf"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:existing_native_format_to_rdf	rdfs:label	"existing native format to rdf"	.
+local:representation	a	rdf:Class	;
+	rdfs:label	"representation"	.
 
-local:converting_to_owl	rdfs:label	"converting to owl"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:converting_to_rdf	rdfs:label	"converting to rdf"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:identifies	rdfs:label	"identifies"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:conversion_process	rdfs:label	"conversion process"	.
+local:four_steps_in_the_conversion_process	a	rdf:Class	;
+	rdfs:label	"four steps in the conversion process"	.
 
-local:process	rdfs:label	"process"	.
+local:conversion_process	a	rdf:Class	;
+	rdfs:label	"conversion process"	.
 
-local:conversion	rdfs:label	"conversion"	.
+local:steps	a	rdf:Class	;
+	rdfs:label	"steps"	.
 
-local:four_steps	rdfs:label	"four steps"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:steps	rdfs:label	"steps"	.
+local:conversion	a	rdf:Class	;
+	rdfs:label	"conversion"	.
 
-local:four_steps_in_conversion_process	rdfs:label	"four steps in conversion process"	.
+local:four_steps	a	rdf:Class	;
+	rdfs:label	"four steps"	.
 
-local:resulting_representation	rdfs:label	"resulting representation"	.
+local:four_steps_in_conversion_process	a	rdf:Class	;
+	rdfs:label	"four steps in conversion process"	.
 
-local:representation	rdfs:label	"representation"	.
+local:thesauri_native_format	a	rdf:Class	;
+	rdfs:label	"thesauri native format"	.
 
-local:respect_to_syntax	rdfs:label	"respect to syntax"	.
+local:format	a	rdf:Class	;
+	rdfs:label	"format"	.
 
-local:respect	rdfs:label	"respect"	.
+local:thesauri_native	a	rdf:Class	;
+	rdfs:label	"thesauri native"	.
 
-local:syntax	rdfs:label	"syntax"	.
+local:native	a	rdf:Class	;
+	rdfs:label	"native"	.
 
-local:respect_to_syntax_to_semantics	rdfs:label	"respect to syntax to semantics"	.
+local:native_format	a	rdf:Class	;
+	rdfs:label	"native format"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:syntax_of_resulting_representation	rdfs:label	"syntax of resulting representation"	.
+local:related_resources	a	rdf:Class	;
+	rdfs:label	"related resources"	.
 
-local:taken	rdfs:label	"taken"	.
+local:related	a	rdf:Class	;
+	rdfs:label	"related"	.
 
-local:resulting	rdfs:label	"resulting"	.
+local:resources	a	rdf:Class	;
+	rdfs:label	"resources"	.
 
-local:supported	rdfs:label	"supported"	.
+local:convert	a	rdf:Class	;
+	rdfs:label	"convert"	.
 
-local:step	rdfs:label	"step"	.
+local:existing_thesauri_native_format_to_owl	a	rdf:Class	;
+	rdfs:label	"existing thesauri native format to owl"	.
 
-local:number_of_guidelines	rdfs:label	"number of guidelines"	.
+local:existing_native_format	a	rdf:Class	;
+	rdfs:label	"existing native format"	.
 
-local:number	rdfs:label	"number"	.
+local:existing_native_format_to_owl	a	rdf:Class	;
+	rdfs:label	"existing native format to owl"	.
 
-local:guidelines	rdfs:label	"guidelines"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:illustrated	rdfs:label	"illustrated"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:large	rdfs:label	"large"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:large_thesauri	rdfs:label	"large thesauri"	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_owl	a	rdf:Class	;
+	rdfs:label	"method for converting related resources from existing thesauri native format to owl"	.
 
-local:two_large_thesauri	rdfs:label	"two large thesauri"	.
+local:converting_from_existing_native_format	a	rdf:Class	;
+	rdfs:label	"converting from existing native format"	.
 
-local:conversions_of_two_large_thesauri	rdfs:label	"conversions of two large thesauri"	.
+local:converting	a	rdf:Class	;
+	rdfs:label	"converting"	.
 
-local:conversions	rdfs:label	"conversions"	.
+local:converting_from_existing_native_format_to_owl	a	rdf:Class	;
+	rdfs:label	"converting from existing native format to owl"	.
 
-#### Properties ####
+local:method_converting_existing_thesauri_native_format_to_owl	a	rdf:Class	;
+	rdfs:label	"method converting existing thesauri native format to owl"	.
+
+local:method_converting	a	rdf:Class	;
+	rdfs:label	"method converting"	.
+
+local:converting_to_owl	a	rdf:Class	;
+	rdfs:label	"converting to owl"	.
+
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
+
+local:method_for_converting_existing_thesauri_native_format_to_rdf	a	rdf:Class	;
+	rdfs:label	"method for converting existing thesauri native format to rdf"	.
+
+local:converting_to_rdf	a	rdf:Class	;
+	rdfs:label	"converting to rdf"	.
+
+local:related_resources_from_existing_thesauri_native_format	a	rdf:Class	;
+	rdfs:label	"related resources from existing thesauri native format"	.
+
+local:related_resources_from_existing_native_format	a	rdf:Class	;
+	rdfs:label	"related resources from existing native format"	.
+
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_rdf	a	rdf:Class	;
+	rdfs:label	"method for converting related resources from existing thesauri native format to rdf"	.
+
+local:converting_from_existing_native_format_to_rdf	a	rdf:Class	;
+	rdfs:label	"converting from existing native format to rdf"	.
 
 #### Mapped Relations ####
 
-local:owl	owl:sameAs	cso:owl	.
-cso:owl	rdfs:label	"owl"	.
-cso:rdf	rdfs:label	"rdf"	.
 local:rdf	owl:sameAs	cso:rdf	.
-local:semantics	owl:sameAs	cso:semantics	.
-cso:semantics	rdfs:label	"semantics"	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:owl	rdfs:label	"owl"	.
+local:owl	owl:sameAs	cso:owl	.
 
 #### Relations ####
 
-local:conversion	rdfs:member	local:conversion_process	.
-local:describes	vn.role:Theme	local:method	.
-local:respect_to_syntax	local:respect_to	local:syntax	.
-local:converting_from_existing_native_format_to_rdf	local:convertingfromexistingnativeformat_to	local:rdf	.
-local:respect_to_syntax_to_semantics	local:to_semantics	local:respect_to_syntax	.
-local:converting_from_existing_native_format	local:converting_from	local:existing_native_format	.
-local:taken	local:AM-MNR	local:respect_to_syntax_to_semantics	.
-local:illustrated	local:AM-MNR	local:conversions_of_two_large_thesauri	.
-local:converting_to_owl	local:converting_to	local:owl	.
-local:thesauri_native	rdfs:member	local:thesauri_native_format	.
-local:converting	vn.role:Source	local:owl	.
-local:four_steps	rdfs:subClassOf	local:steps	.
-local:thesauri_native	rdfs:subClassOf	local:native	.
-local:resulting_representation	rdfs:subClassOf	local:representation	.
-local:large_thesauri	rdfs:subClassOf	local:thesauri	.
-local:respect_to_syntax	local:to_syntax	local:respect	.
-local:thesauri	rdfs:member	local:thesauri_native	.
-local:thesauri_native_format	rdfs:subClassOf	local:format	.
-local:existing_native_format_to_rdf	local:to_rdf	local:existing_native_format	.
-local:number_of_guidelines	local:of_guidelines	local:number	.
-local:four_steps_in_conversion_process	local:foursteps_in	local:conversion_process	.
+local:s1.1	rdf:predicate	local:convert	.
+local:method_for_converting_existing_thesauri_native_format_to_rdf	rdfs:member	local:method	.
+local:converting_from_existing_native_format_to_rdf	rdfs:member	local:rdf	.
+local:thesauri_native_format	rdfs:member	local:thesauri_native	.
 local:related_resources	rdfs:subClassOf	local:resources	.
-local:converting	vn.role:Patient	local:related_resources	.
-local:converting	vn.role:Source	local:existing_native_format_to_rdf	.
-local:identifies	vn.role:Theme	local:four_steps_in_conversion_process	.
-local:converting	vn.role:Source	local:rdf	.
-local:resulting	vn.role:indirect_object	local:representation	.
-local:describes	vn.role:Agent	local:paper	.
-local:four_steps_in_conversion_process	local:in_conversionprocess	local:four_steps	.
-local:converting_from_existing_native_format	local:from_existingnativeformat	local:converting	.
-local:supported	local:AM-MNR	local:number_of_guidelines	.
-local:converting_to_owl	local:to_owl	local:converting	.
-local:two_large_thesauri	rdfs:subClassOf	local:large_thesauri	.
-local:conversions_of_two_large_thesauri	local:conversions_of	local:two_large_thesauri	.
-local:related	rdfs:member	local:related_resources	.
-local:converting	vn.role:Source	local:existing_native_format_to_owl	.
-local:syntax_of_resulting_representation	local:of_resultingrepresentation	local:syntax	.
-local:number_of_guidelines	local:number_of	local:guidelines	.
-local:existing_native_format_to_owl	local:to_owl	local:existing_native_format	.
-local:converting	vn.role:Patient	local:existing_native_format	.
-local:respect_to_syntax_to_semantics	local:respecttosyntax_to	local:semantics	.
-local:native_format	rdfs:subClassOf	local:format	.
-local:illustrated	vn.role:Theme	local:method	.
-local:existing_native_format_to_rdf	local:existingnativeformat_to	local:rdf	.
-local:existing_native_format_to_owl	local:existingnativeformat_to	local:owl	.
-local:conversions_of_two_large_thesauri	local:of_twolargethesauri	local:conversions	.
-local:converting_to_rdf	local:converting_to	local:rdf	.
-local:identifies	vn.role:Agent	local:method	.
+local:s2	rdf:object	local:method_converting_existing_thesauri_native_format_to_owl	.
+local:s1.2	rdf:predicate	local:exist	.
+local:existing_thesauri_native_format_to_owl	rdfs:member	local:thesauri	.
+local:s2.1	rdf:object	local:owl	.
+local:s1	rdf:predicate	local:describe	.
+local:converting_from_existing_native_format_to_owl	rdfs:member	local:converting_from_existing_native_format	.
+local:conversions_of_two_large_thesauri	rdfs:member	local:two_large_thesauri	.
+local:s8	rdf:predicate	local:illustrate	.
+local:s6	rdf:subject	local:step	.
+local:s5.2	rdf:predicate	local:result	.
+local:large_thesauri_mesh	rdfs:subClassOf	local:thesauri_mesh	.
+local:thesauri_native	rdfs:member	local:thesauri	.
+local:conversions_of_two_large_thesauri_mesh	rdfs:member	local:conversions	.
+local:s1.1	rdf:subject	local:s1.2	.
+local:converting_to_owl	rdfs:member	local:converting	.
+local:number_of_guidelines	rdfs:member	local:guidelines	.
+local:s1.2	rdf:subject	local:thesauri_native_format	.
+local:s0.1	rdf:predicate	local:convert	.
+local:s0.2	rdf:predicate	local:exist	.
+local:conversions_of_two_large_thesauri	rdfs:member	local:conversions	.
+local:thesauri_mesh	rdfs:member	local:thesauri	.
+local:s6	rdf:predicate	local:support	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_rdf	rdfs:member	local:related_resources	.
+local:s5.1	rdf:predicate	local:take	.
+local:s0.1	rdf:subject	local:related_resources_from_existing_thesauri_native_format	.
+local:converting_from_existing_native_format	rdfs:member	local:converting	.
+local:s3.1	rdf:subject	local:related_resources	.
+local:s2	rdf:predicate	local:describe	.
+local:method_for_converting_existing_thesauri_native_format_to_rdf	rdfs:member	local:thesauri_native_format	.
 local:conversion_process	rdfs:subClassOf	local:process	.
-local:converting_to_rdf	local:to_rdf	local:converting	.
-local:converting_from_existing_native_format_to_rdf	local:to_rdf	local:converting_from_existing_native_format	.
-local:supported	vn.role:Experiencer	local:step	.
-local:large	rdfs:member	local:large_thesauri	.
-local:syntax_of_resulting_representation	local:syntax_of	local:resulting_representation	.
-local:existing	vn.role:Location	local:native_format	.
-local:native	rdfs:member	local:native_format	.
+local:s6	local:AM-MNR	local:number_of_guidelines	.
+local:four_steps_in_the_conversion_process	rdfs:member	local:steps	.
+local:thesauri_native	rdfs:subClassOf	local:native	.
+local:s3.1	rdf:predicate	local:convert	.
+local:large_thesauri_mesh	rdfs:subClassOf	local:mesh	.
+local:s0	rdf:object	local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_rdf	.
+local:s5.2	rdf:object	local:representation	.
+local:s2	rdf:subject	local:paper	.
+local:conversions_of_two_large_thesauri_mesh	rdfs:member	local:large_thesauri_mesh	.
+local:thesauri_mesh	rdfs:subClassOf	local:mesh	.
+local:conversions_of_two_large_thesauri_wordnet	rdfs:member	local:large_thesauri	.
+local:s4	rdf:subject	local:method	.
+local:method_converting	rdfs:member	local:converting	.
+local:native_format	rdfs:subClassOf	local:format	.
+local:related_resources_from_existing_native_format	rdfs:member	local:existing_native_format	.
+local:s2.2	rdf:subject	local:thesauri_native_format	.
+local:s5	rdf:predicate	local:have	.
+local:conversions_of_two_large_thesauri_wordnet	rdfs:member	local:conversions	.
+local:s2.1	rdf:predicate	local:convert	.
+local:s1	rdf:object	local:method_for_converting_existing_thesauri_native_format_to_rdf	.
+local:s2.2	rdf:predicate	local:exist	.
+local:s3	rdf:subject	local:paper	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_owl	rdfs:member	local:method	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_rdf	rdfs:member	local:thesauri_native_format	.
+local:large_thesauri_mesh	rdfs:member	local:large_thesauri	.
+local:large_thesauri	rdfs:member	local:large	.
+local:number_of_guidelines	rdfs:member	local:number	.
+local:four_steps_in_conversion_process	rdfs:member	local:four_steps	.
+local:existing_native_format_to_owl	rdfs:member	local:owl	.
+local:thesauri_native_format	rdfs:subClassOf	local:format	.
+local:four_steps_in_conversion_process	rdfs:member	local:conversion_process	.
+local:converting_to_owl	rdfs:member	local:owl	.
+local:two_large_thesauri_mesh	rdfs:subClassOf	local:large_thesauri_mesh	.
+local:conversion_process	rdfs:member	local:conversion	.
+local:converting_to_rdf	rdfs:member	local:rdf	.
+local:s4	rdf:object	local:four_steps_in_the_conversion_process	.
+local:s1.1	rdf:object	local:rdf	.
+local:converting_from_existing_native_format	rdfs:member	local:existing_native_format	.
+local:s2.1	rdf:subject	local:s2.2	.
+local:s7	local:AM-MNR	local:conversions_of_two_large_thesauri_mesh	.
+local:four_steps	rdfs:subClassOf	local:steps	.
+local:two_large_thesauri	rdfs:subClassOf	local:large_thesauri	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_rdf	rdfs:member	local:method	.
+local:conversions_of_two_large_thesauri_mesh	rdfs:member	local:two_large_thesauri_mesh	.
 local:existing_native_format	rdfs:subClassOf	local:native_format	.
+local:method_converting_existing_thesauri_native_format_to_owl	rdfs:member	local:thesauri_native_format	.
+local:s0	rdf:subject	local:paper	.
+local:s3.2	rdf:subject	local:thesauri_native_format	.
+local:related_resources	rdfs:member	local:related	.
+local:related_resources_from_existing_thesauri_native_format	rdfs:member	local:related_resources	.
+local:existing_thesauri_native_format_to_owl	rdfs:member	local:native_format	.
+local:four_steps_in_the_conversion_process	rdfs:member	local:conversion_process	.
+local:method_converting_existing_thesauri_native_format_to_owl	rdfs:member	local:method	.
+local:native_format	rdfs:member	local:native	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_owl	rdfs:member	local:thesauri_native_format	.
+local:s8	rdf:subject	local:method	.
+local:s0	rdf:predicate	local:describe	.
+local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_owl	rdfs:member	local:related_resources	.
+local:converting_to_rdf	rdfs:member	local:converting	.
+local:related_resources_from_existing_thesauri_native_format	rdfs:member	local:thesauri_native_format	.
+local:s4	rdf:predicate	local:identify	.
+local:method_converting	rdfs:member	local:method	.
+local:existing_native_format_to_owl	rdfs:member	local:existing_native_format	.
+local:s3	rdf:object	local:method_for_converting_related_resources_from_existing_thesauri_native_format_to_owl	.
+local:related_resources_from_existing_native_format	rdfs:member	local:related_resources	.
+local:s7	rdf:subject	local:method	.
+local:s7	rdf:predicate	local:illustrate	.
+local:s3.2	rdf:predicate	local:exist	.
+local:s1	rdf:subject	local:paper	.
+local:s8	local:AM-MNR	local:conversions_of_two_large_thesauri_wordnet	.
+local:s3.1	rdf:object	local:existing_thesauri_native_format_to_owl	.
+local:large_thesauri	rdfs:subClassOf	local:thesauri	.
+local:s3	rdf:predicate	local:describe	.
+local:converting_from_existing_native_format_to_rdf	rdfs:member	local:converting_from_existing_native_format	.
+local:converting_from_existing_native_format_to_owl	rdfs:member	local:owl	.
+local:s0.2	rdf:subject	local:thesauri_native_format	.
+local:s0.1	rdf:object	local:rdf	.

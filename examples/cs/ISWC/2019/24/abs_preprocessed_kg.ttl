@@ -1,533 +1,791 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s22	a	rdf:Statement	;
+	rdfs:label	"experimental results that demonstrate the strong performance of this method"	.
+
+local:s21	a	rdf:Statement	;
+	rdfs:label	"we present experimental results"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"we then use a neural network model"	.
+
+local:s18.2	a	rdf:Statement	;
+	rdfs:label	"obtain a representation"	.
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"a neural network model based on graph convolutional networks refine the initial vector representation of the predicates to obtain a representation"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"based on graph convolutional networks to refine the initial vector representation of the predicates to obtain a representation"	.
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"predicates that cooccur in the same rule reflect the types of rules in which the predicates cooccur"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"predicates that cooccur in the same rule"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"edges connect predicates that cooccur in the same rule reflect the types of rules in which the predicates cooccur"	.
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"predicates that cooccur in the vectors annotations reflect the types of rules in which the predicates cooccur"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"predicates that cooccur in the vectors annotations"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"edges connect predicates that cooccur in the vectors annotations reflect the types of rules in which the predicates cooccur"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"external resources such as the vectors could estimated from the rule base the rule base itself"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the vectors may obtained from external resources such as the vectors could be estimated from the rule base the rule base itself"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"external resources such as word embeddings could estimated from the rule base the rule base itself"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the vectors may obtained from external resources such as word embeddings could be estimated from the rule base the rule base itself"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"nodes of the annotated with the vectors"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"to this end we propose a graphbased representation of rule bases"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"given ontology"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"which can not deduced from the given ontology"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in particular we aim which can not be deduced from the given ontology"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we find rules"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we aim"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"ontologies that encoded as a set of existential rules"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"in this paper we automatically extending ontologies"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"in this paper we instead focus on automatically"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"finding plausible knowledge graph triples in particular"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the vast majority of many methods focus on finding plausible knowledge graph triples in particular"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"automatically extend knowledge bases"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"many methods proposed to automatically extend knowledge bases"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"missing facts"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"finding plausible missing facts graph triples in particular"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the vast majority of many methods focus on finding plausible missing facts graph triples in particular"	.
+
+
 #### Classes ####
 
-local:many	rdfs:label	"many"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:many_methods	rdfs:label	"many methods"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:methods	rdfs:label	"methods"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:extend	rdfs:label	"extend"	.
+local:strong_performance_of_this_method	a	rdf:Class	;
+	rdfs:label	"strong performance of this method"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:strong_performance	a	rdf:Class	;
+	rdfs:label	"strong performance"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:knowledge_graph_triples	rdfs:label	"knowledge graph triples"	.
+local:strong	a	rdf:Class	;
+	rdfs:label	"strong"	.
 
-local:plausible_knowledge_graph	rdfs:label	"plausible knowledge graph"	.
+local:strong_performance_of_method	a	rdf:Class	;
+	rdfs:label	"strong performance of method"	.
 
-local:graph	rdfs:label	"graph"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:plausible	rdfs:label	"plausible"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:plausible_knowledge	rdfs:label	"plausible knowledge"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:vast_majority	rdfs:label	"vast majority"	.
+local:neural_network_model	a	rdf:Class	;
+	rdfs:label	"neural network model"	.
 
-local:majority	rdfs:label	"majority"	.
+local:network_model	a	rdf:Class	;
+	rdfs:label	"network model"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:bases	rdfs:label	"bases"	.
+local:neural_network	a	rdf:Class	;
+	rdfs:label	"neural network"	.
 
-local:graph_triples	rdfs:label	"graph triples"	.
+local:neural	a	rdf:Class	;
+	rdfs:label	"neural"	.
 
-local:vast	rdfs:label	"vast"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:triples	rdfs:label	"triples"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:plausible_knowledge_graph_triples	rdfs:label	"plausible knowledge graph triples"	.
+local:representation	a	rdf:Class	;
+	rdfs:label	"representation"	.
 
-local:vast_majority_of_many_methods	rdfs:label	"vast majority of many methods"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:finding_in_particular	rdfs:label	"finding in particular"	.
+local:neural_network_model_based_on_graph_convolutional_networks	a	rdf:Class	;
+	rdfs:label	"neural network model based on graph convolutional networks"	.
 
-local:finding	rdfs:label	"finding"	.
+local:graph_convolutional_networks	a	rdf:Class	;
+	rdfs:label	"graph convolutional networks"	.
 
-local:particular	rdfs:label	"particular"	.
+local:graph_convolutional	a	rdf:Class	;
+	rdfs:label	"graph convolutional"	.
 
-local:focus	rdfs:label	"focus"	.
+local:convolutional	a	rdf:Class	;
+	rdfs:label	"convolutional"	.
 
-local:missing_facts	rdfs:label	"missing facts"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:facts	rdfs:label	"facts"	.
+local:convolutional_networks	a	rdf:Class	;
+	rdfs:label	"convolutional networks"	.
 
-local:plausible_missing_facts	rdfs:label	"plausible missing facts"	.
+local:networks	a	rdf:Class	;
+	rdfs:label	"networks"	.
 
-local:plausible_missing_facts_in_particular	rdfs:label	"plausible missing facts in particular"	.
+local:neural_network_model_based	a	rdf:Class	;
+	rdfs:label	"neural network model based"	.
 
-local:facts_graph	rdfs:label	"facts graph"	.
+local:based	a	rdf:Class	;
+	rdfs:label	"based"	.
 
-local:facts_graph_triples	rdfs:label	"facts graph triples"	.
+local:based_on_graph_convolutional_networks	a	rdf:Class	;
+	rdfs:label	"based on graph convolutional networks"	.
 
-local:missing	rdfs:label	"missing"	.
+local:refine	a	rdf:Class	;
+	rdfs:label	"refine"	.
 
-local:paper	rdfs:label	"paper"	.
+local:initial_vector_representation_of_the_predicates	a	rdf:Class	;
+	rdfs:label	"initial vector representation of the predicates"	.
 
-local:we	rdfs:label	"we"	.
+local:initial_vector_representation	a	rdf:Class	;
+	rdfs:label	"initial vector representation"	.
 
-local:instead	rdfs:label	"instead"	.
+local:predicates	a	rdf:Class	;
+	rdfs:label	"predicates"	.
 
-local:existential_rules	rdfs:label	"existential rules"	.
+local:initial_vector	a	rdf:Class	;
+	rdfs:label	"initial vector"	.
 
-local:rules	rdfs:label	"rules"	.
+local:vector_representation	a	rdf:Class	;
+	rdfs:label	"vector representation"	.
 
-local:existential	rdfs:label	"existential"	.
+local:initial	a	rdf:Class	;
+	rdfs:label	"initial"	.
 
-local:automatically_extending	rdfs:label	"automatically extending"	.
+local:vector	a	rdf:Class	;
+	rdfs:label	"vector"	.
 
-local:extending	rdfs:label	"extending"	.
+local:initial_vector_representation_of_predicates	a	rdf:Class	;
+	rdfs:label	"initial vector representation of predicates"	.
 
-local:encoded_as_set	rdfs:label	"encoded as set"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:encoded	rdfs:label	"encoded"	.
+local:graph_convolutional_networks_to_refine_the_initial_vector_representation_of_the_predicates_to_obtain_a_representation	a	rdf:Class	;
+	rdfs:label	"graph convolutional networks to refine the initial vector representation of the predicates to obtain a representation"	.
 
-local:set	rdfs:label	"set"	.
+local:types_of_rules_in_which_the_predicates_cooccur	a	rdf:Class	;
+	rdfs:label	"types of rules in which the predicates cooccur"	.
 
-local:set_of_existential_rules	rdfs:label	"set of existential rules"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:find	rdfs:label	"find"	.
+local:types_of_rules	a	rdf:Class	;
+	rdfs:label	"types of rules"	.
 
-local:deduced	rdfs:label	"deduced"	.
+local:cooccur_in_rules	a	rdf:Class	;
+	rdfs:label	"cooccur in rules"	.
 
-local:can	rdfs:label	"can"	.
+local:cooccur	a	rdf:Class	;
+	rdfs:label	"cooccur"	.
 
-local:not	rdfs:label	"not"	.
+local:reflect	a	rdf:Class	;
+	rdfs:label	"reflect"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:predicates_that_cooccur_in_the_same_rule	a	rdf:Class	;
+	rdfs:label	"predicates that cooccur in the same rule"	.
 
-local:given	rdfs:label	"given"	.
+local:same_rule	a	rdf:Class	;
+	rdfs:label	"same rule"	.
 
-local:propose	rdfs:label	"propose"	.
+local:rule	a	rdf:Class	;
+	rdfs:label	"rule"	.
 
-local:end	rdfs:label	"end"	.
+local:same	a	rdf:Class	;
+	rdfs:label	"same"	.
 
-local:rule	rdfs:label	"rule"	.
+local:cooccur_in_same_rule	a	rdf:Class	;
+	rdfs:label	"cooccur in same rule"	.
 
-local:rule_bases	rdfs:label	"rule bases"	.
+local:edges	a	rdf:Class	;
+	rdfs:label	"edges"	.
 
-local:graphbased	rdfs:label	"graph-based"	.
+local:connect	a	rdf:Class	;
+	rdfs:label	"connect"	.
 
-local:graphbased_representation	rdfs:label	"graph-based representation"	.
+local:predicates_that_cooccur_in_the_vectors_annotations	a	rdf:Class	;
+	rdfs:label	"predicates that cooccur in the vectors annotations"	.
 
-local:representation	rdfs:label	"representation"	.
+local:vectors_annotations	a	rdf:Class	;
+	rdfs:label	"vectors annotations"	.
 
-local:graphbased_representation_of_rule_bases	rdfs:label	"graph-based representation of rule bases"	.
+local:vectors	a	rdf:Class	;
+	rdfs:label	"vectors"	.
 
-local:considered	rdfs:label	"considered"	.
+local:annotations	a	rdf:Class	;
+	rdfs:label	"annotations"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:cooccur_in_vectors	a	rdf:Class	;
+	rdfs:label	"cooccur in vectors"	.
 
-local:nodes_nodes	rdfs:label	"nodes nodes"	.
+local:predicates_that_cooccur_in_the_vectors_annotations_reflect_the_types_of_rules_in_which_the_predicates_cooccur	a	rdf:Class	;
+	rdfs:label	"predicates that cooccur in the vectors annotations reflect the types of rules in which the predicates cooccur"	.
 
-local:graphs_correspond	rdfs:label	"graphs correspond"	.
+local:reflect_in_vectors	a	rdf:Class	;
+	rdfs:label	"reflect in vectors"	.
 
-local:graphs_correspond_correspond	rdfs:label	"graphs correspond correspond"	.
+local:external_resources_such_as_the_vectors	a	rdf:Class	;
+	rdfs:label	"external resources such as the vectors"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:external_resources	a	rdf:Class	;
+	rdfs:label	"external resources"	.
 
-local:graphs_graphs	rdfs:label	"graphs graphs"	.
+local:resources	a	rdf:Class	;
+	rdfs:label	"resources"	.
 
-local:correspond	rdfs:label	"correspond"	.
+local:external	a	rdf:Class	;
+	rdfs:label	"external"	.
 
-local:graphs_graphs_correspond_correspond	rdfs:label	"graphs graphs correspond correspond"	.
+local:external_resources_such_as_vectors	a	rdf:Class	;
+	rdfs:label	"external resources such_as vectors"	.
 
-local:correspond_correspond	rdfs:label	"correspond correspond"	.
+local:estimate	a	rdf:Class	;
+	rdfs:label	"estimate"	.
 
-local:graphs_graphs_correspond	rdfs:label	"graphs graphs correspond"	.
+local:rule_base_itself_rule_base	a	rdf:Class	;
+	rdfs:label	"rule base itself rule base"	.
 
-local:considered_graphs	rdfs:label	"considered graphs"	.
+local:rule_base	a	rdf:Class	;
+	rdfs:label	"rule base"	.
 
-local:to_correspond	rdfs:label	"to correspond"	.
+local:itself_base	a	rdf:Class	;
+	rdfs:label	"itself base"	.
 
-local:to_correspond_to_predicates	rdfs:label	"to correspond to predicates"	.
+local:rule_itself_base	a	rdf:Class	;
+	rdfs:label	"rule itself base"	.
 
-local:predicates	rdfs:label	"predicates"	.
+local:could	a	rdf:Class	;
+	rdfs:label	"could"	.
 
-local:nodes_of_considered_graphs	rdfs:label	"nodes of considered graphs"	.
+local:external_resources_such_as_the_vectors_could_be_estimated_from_the_rule_base_the_rule_base_itself	a	rdf:Class	;
+	rdfs:label	"external resources such as the vectors could be estimated from the rule base the rule base itself"	.
 
-local:annotated_with_vectors	rdfs:label	"annotated with vectors"	.
+local:could_estimated	a	rdf:Class	;
+	rdfs:label	"could estimated"	.
 
-local:annotated	rdfs:label	"annotated"	.
+local:estimated	a	rdf:Class	;
+	rdfs:label	"estimated"	.
 
-local:vectors	rdfs:label	"vectors"	.
+local:could_estimated_from_rule_base	a	rdf:Class	;
+	rdfs:label	"could estimated from rule base"	.
 
-local:considered_considered_graphs	rdfs:label	"considered considered graphs"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:nodes_of_considered_considered_graphs	rdfs:label	"nodes of considered considered graphs"	.
+local:external_resources_such_as_word_embeddings	a	rdf:Class	;
+	rdfs:label	"external resources such_as word embeddings"	.
 
-local:correspond_to_predicates	rdfs:label	"correspond to predicates"	.
+local:word_embeddings	a	rdf:Class	;
+	rdfs:label	"word embeddings"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:word	a	rdf:Class	;
+	rdfs:label	"word"	.
 
-local:may	rdfs:label	"may"	.
+local:embeddings	a	rdf:Class	;
+	rdfs:label	"embeddings"	.
 
-local:word_embeddings	rdfs:label	"word embeddings"	.
+local:external_resources_such_as_word_embeddings_could_be_estimated_from_the_rule_base_the_rule_base_itself	a	rdf:Class	;
+	rdfs:label	"external resources such as word embeddings could be estimated from the rule base the rule base itself"	.
 
-local:embeddings	rdfs:label	"embeddings"	.
+local:nodes_of_the	a	rdf:Class	;
+	rdfs:label	"nodes of the"	.
 
-local:rule_base	rdfs:label	"rule base"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:word	rdfs:label	"word"	.
+local:the	a	rdf:Class	;
+	rdfs:label	"the"	.
 
-local:base	rdfs:label	"base"	.
+local:annotate	a	rdf:Class	;
+	rdfs:label	"annotate"	.
 
-local:external_resources	rdfs:label	"external resources"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:resources	rdfs:label	"resources"	.
+local:graphbased_representation_of_rule_bases	a	rdf:Class	;
+	rdfs:label	"graphbased representation of rule bases"	.
 
-local:external	rdfs:label	"external"	.
+local:rule_bases	a	rdf:Class	;
+	rdfs:label	"rule bases"	.
 
-local:itself_base	rdfs:label	"itself base"	.
+local:graphbased_representation	a	rdf:Class	;
+	rdfs:label	"graphbased representation"	.
 
-local:rule_itself_base	rdfs:label	"rule itself base"	.
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
 
-local:could_estimated	rdfs:label	"could estimated"	.
+local:graphbased	a	rdf:Class	;
+	rdfs:label	"graphbased"	.
 
-local:estimated	rdfs:label	"estimated"	.
+local:end	a	rdf:Class	;
+	rdfs:label	"end"	.
 
-local:external_resources_suchas_word_embeddings	rdfs:label	"external resources such_as word embeddings"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:could_estimated_from_rule_base	rdfs:label	"could estimated from rule base"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:could	rdfs:label	"could"	.
+local:not_deduce	a	rdf:Class	;
+	rdfs:label	"not deduce"	.
 
-local:external_resources_suchas_vectors	rdfs:label	"external resources such_as vectors"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:connect	rdfs:label	"connect"	.
+local:aim	a	rdf:Class	;
+	rdfs:label	"aim"	.
 
-local:edges	rdfs:label	"edges"	.
+local:deduced_from_the_given_ontology	a	rdf:Class	;
+	rdfs:label	"deduced from the given ontology"	.
 
-local:vectors_annotations	rdfs:label	"vectors annotations"	.
+local:deduced_from_given_ontology	a	rdf:Class	;
+	rdfs:label	"deduced from given ontology"	.
 
-local:annotations	rdfs:label	"annotations"	.
+local:deduced	a	rdf:Class	;
+	rdfs:label	"deduced"	.
 
-local:predicates_cooccur	rdfs:label	"predicates co-occur"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:cooccur	rdfs:label	"co-occur"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:reflect_in_vectors	rdfs:label	"reflect in vectors"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:reflect	rdfs:label	"reflect"	.
+local:encode	a	rdf:Class	;
+	rdfs:label	"encode"	.
 
-local:types_of_rules	rdfs:label	"types of rules"	.
+local:set_of_existential_rules	a	rdf:Class	;
+	rdfs:label	"set of existential rules"	.
 
-local:types	rdfs:label	"types"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:rules_in_which	rdfs:label	"rules in which"	.
+local:existential_rules	a	rdf:Class	;
+	rdfs:label	"existential rules"	.
 
-local:which	rdfs:label	"which"	.
+local:existential	a	rdf:Class	;
+	rdfs:label	"existential"	.
 
-local:cooccur_in_vectors	rdfs:label	"co-occur in vectors"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:same	rdfs:label	"same"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:same_rule	rdfs:label	"same rule"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:cooccur_in_same_rule	rdfs:label	"co-occur in same rule"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:use	rdfs:label	"use"	.
+local:instead	a	rdf:Class	;
+	rdfs:label	"instead"	.
 
-local:then	rdfs:label	"then"	.
+local:plausible_knowledge_graph_triples	a	rdf:Class	;
+	rdfs:label	"plausible knowledge graph triples"	.
 
-local:network	rdfs:label	"network"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:network_model	rdfs:label	"network model"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:graph_convolutional	rdfs:label	"graph convolutional"	.
+local:graph_triples	a	rdf:Class	;
+	rdfs:label	"graph triples"	.
 
-local:neural_network_model	rdfs:label	"neural network model"	.
+local:plausible_knowledge	a	rdf:Class	;
+	rdfs:label	"plausible knowledge"	.
 
-local:model	rdfs:label	"model"	.
+local:plausible_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"plausible knowledge graph"	.
 
-local:neural_network	rdfs:label	"neural network"	.
+local:plausible	a	rdf:Class	;
+	rdfs:label	"plausible"	.
 
-local:convolutional	rdfs:label	"convolutional"	.
+local:triples	a	rdf:Class	;
+	rdfs:label	"triples"	.
 
-local:convolutional_networks	rdfs:label	"convolutional networks"	.
+local:knowledge_graph_triples	a	rdf:Class	;
+	rdfs:label	"knowledge graph triples"	.
 
-local:graph_convolutional_networks	rdfs:label	"graph convolutional networks"	.
+local:vast_majority_of_many_methods	a	rdf:Class	;
+	rdfs:label	"vast majority of many methods"	.
 
-local:networks	rdfs:label	"networks"	.
+local:vast_majority	a	rdf:Class	;
+	rdfs:label	"vast majority"	.
 
-local:neural	rdfs:label	"neural"	.
+local:many_methods	a	rdf:Class	;
+	rdfs:label	"many methods"	.
 
-local:neural_network_model_basedon_graph_convolutional_networks	rdfs:label	"neural network model based_on graph convolutional networks"	.
+local:majority	a	rdf:Class	;
+	rdfs:label	"majority"	.
 
-local:initial_vector	rdfs:label	"initial vector"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:initial_vector_representation	rdfs:label	"initial vector representation"	.
+local:vast	a	rdf:Class	;
+	rdfs:label	"vast"	.
 
-local:vector_representation	rdfs:label	"vector representation"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:vector	rdfs:label	"vector"	.
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
 
-local:initial	rdfs:label	"initial"	.
+local:facts	a	rdf:Class	;
+	rdfs:label	"facts"	.
 
-local:initial_vector_representation_of_predicates	rdfs:label	"initial vector representation of predicates"	.
+local:miss	a	rdf:Class	;
+	rdfs:label	"miss"	.
 
-local:plausible_of_predictive	rdfs:label	"plausible of predictive"	.
+local:plausible_missing_facts_graph_triples_in_particular	a	rdf:Class	;
+	rdfs:label	"plausible missing facts graph triples in particular"	.
 
-local:predictive	rdfs:label	"predictive"	.
+local:plausible_missing_facts	a	rdf:Class	;
+	rdfs:label	"plausible missing facts"	.
 
-local:refine	rdfs:label	"refine"	.
-
-local:based	rdfs:label	"based"	.
-
-local:obtain	rdfs:label	"obtain"	.
-
-local:present	rdfs:label	"present"	.
-
-local:strong	rdfs:label	"strong"	.
-
-local:strong_performance	rdfs:label	"strong performance"	.
-
-local:performance	rdfs:label	"performance"	.
-
-local:experimental_results	rdfs:label	"experimental results"	.
-
-local:results	rdfs:label	"results"	.
-
-local:experimental	rdfs:label	"experimental"	.
-
-local:strong_performance_of_method	rdfs:label	"strong performance of method"	.
-
-local:method	rdfs:label	"method"	.
-
-local:demonstrate	rdfs:label	"demonstrate"	.
-
-#### Properties ####
+local:graph_triples_in_particular	a	rdf:Class	;
+	rdfs:label	"graph triples in particular"	.
 
 #### Mapped Relations ####
 
-cso:rule_base	rdfs:member	local:rule_bases	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
+cso:rule_base	rdfs:label	"rule base"	.
+cso:rule_base	rdfs:label	"rule bases"	.
+local:neural_network	owl:sameAs	cso:neural_network	.
 local:word_embeddings	owl:sameAs	cso:word_embeddings	.
-cso:neural_network_model	rdfs:label	"neural network model"	.
-cso:knowledge_bases	rdfs:label	"knowledge bases"	.
-cso:rule_base	rdfs:member	local:rule_base	.
-local:neural_network_model	owl:sameAs	cso:neural_network_model	.
-cso:graph-based_representations	rdfs:label	"graph-based representation"	.
 local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
 cso:ontology	rdfs:label	"ontology"	.
-local:graphbased_representation	owl:sameAs	cso:graph-based_representations	.
 local:ontology	owl:sameAs	cso:ontology	.
-cso:rule_base	rdfs:label	"rule bases"	.
+cso:neural_network_model	rdfs:label	"neural network model"	.
+cso:graph-based_representations	rdfs:label	"graphbased representation"	.
+local:graphbased_representation	owl:sameAs	cso:graph-based_representations	.
+cso:neural_network	rdfs:label	"neural network"	.
+local:rule_bases	owl:sameAs	cso:rule_base	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:rule_base	owl:sameAs	cso:rule_base	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:neural_network_model	owl:sameAs	cso:neural_network_model	.
 cso:word_embeddings	rdfs:label	"word embeddings"	.
-cso:rule_base	rdfs:label	"rule base"	.
 
 #### Relations ####
 
-local:graphs_graphs_correspond_correspond	rdfs:subClassOf	local:correspond	.
-local:finding_in_particular	local:in_particular	local:finding	.
-local:focus	local:AM-LOC	local:paper	.
-local:graphs	rdfs:member	local:graphs_correspond	.
-local:correspond	rdfs:member	local:correspond_correspond	.
-local:obtained	local:AM-MOD	local:may	.
-local:use	vn.role:Recipient	local:refine	.
-local:finding_in_particular	local:finding_in	local:particular	.
-local:missing_facts	rdfs:subClassOf	local:facts	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:find	vn.role:Agent	local:we	.
-local:obtained	vn.role:indirect_object	local:could_estimated_from_rule_base	.
-local:estimated	vn.role:Value	local:rule_base	.
-local:nodes_of_considered_considered_graphs	local:of_consideredconsideredgraphs	local:nodes	.
-local:graph	rdfs:member	local:graph_convolutional	.
-local:plausible_missing_facts_in_particular	local:plausiblemissingfacts_in	local:particular	.
-local:could_estimated_from_rule_base	local:couldestimated_from	local:rule_base	.
-local:cooccur	vn.role:Patient2	local:predicates	.
-local:rule_bases	rdfs:subClassOf	local:bases	.
-local:finding	vn.role:Theme	local:plausible_knowledge_graph_triples	.
-local:neural_network_model	rdfs:subClassOf	local:network_model	.
-local:could_estimated_from_rule_base	local:from_rulebase	local:could_estimated	.
-local:plausible_knowledge_graph	rdfs:member	local:plausible_knowledge_graph_triples	.
-local:propose	vn.role:Topic	local:graphbased_representation_of_rule_bases	.
-local:strong_performance_of_method	local:strongperformance_of	local:method	.
-local:external	rdfs:member	local:external_resources	.
-local:many_methods	rdfs:subClassOf	local:methods	.
-local:annotated	vn.role:Destination	local:vectors	.
-local:facts_graph	rdfs:member	local:facts_graph_triples	.
-local:predicates_cooccur	rdfs:subClassOf	local:cooccur	.
-local:strong	rdfs:member	local:strong_performance	.
-local:graph	rdfs:member	local:graph_triples	.
-local:existential_rules	rdfs:subClassOf	local:rules	.
-local:same	rdfs:member	local:same_rule	.
-local:finding	local:AM-LOC	local:particular	.
-local:rule	rdfs:member	local:rule_bases	.
-local:facts_graph	rdfs:subClassOf	local:graph	.
-local:missing	vn.role:Theme	local:facts	.
-local:graph_convolutional_networks	rdfs:subClassOf	local:networks	.
-local:propose	local:AM-TMP	local:end	.
-local:based	vn.role:indirect_object	local:graph_convolutional_networks	.
-local:reflect	vn.role:Cause	local:types_of_rules	.
-local:vast_majority_of_many_methods	local:of_manymethods	local:vast_majority	.
-local:rules_in_which	local:in_which	local:rules	.
-local:cooccur_in_vectors	local:in_vectors	local:cooccur	.
-local:external_resources_suchas_vectors	local:externalresources_such_as	local:vectors	.
-local:plausible	rdfs:member	local:plausible_knowledge	.
-local:plausible_knowledge_graph_triples	rdfs:subClassOf	local:triples	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:finding	vn.role:Theme	local:plausible_missing_facts	.
-local:external_resources	rdfs:subClassOf	local:resources	.
-local:cooccur	vn.role:Agent	local:rule	.
-local:vectors_annotations	rdfs:subClassOf	local:annotations	.
-local:nodes_of_considered_considered_graphs	local:nodes_of	local:considered_considered_graphs	.
-local:neural_network	rdfs:subClassOf	local:network	.
-local:vector_representation	rdfs:subClassOf	local:representation	.
-local:reflect_in_vectors	local:reflect_in	local:vectors	.
-local:connect	vn.role:Patient	local:reflect	.
-local:neural_network	rdfs:member	local:neural_network_model	.
-local:initial_vector_representation	rdfs:subClassOf	local:vector_representation	.
-local:graphbased_representation	rdfs:subClassOf	local:representation	.
-local:external_resources_suchas_vectors	local:such_as_vectors	local:external_resources	.
-local:correspond_to_predicates	local:correspond_to	local:predicates	.
-local:demonstrate	vn.role:Cause	local:strong_performance_of_method	.
-local:graphs_graphs_correspond	rdfs:member	local:graphs_graphs_correspond_correspond	.
-local:considered_considered_graphs	rdfs:subClassOf	local:considered_graphs	.
-local:graph_convolutional_networks	rdfs:subClassOf	local:convolutional_networks	.
-local:initial_vector_representation_of_predicates	local:initialvectorrepresentation_of	local:predicates	.
-local:demonstrate	vn.role:Recipient	local:experimental_results	.
-local:focus	vn.role:indirect_object	local:finding	.
-local:convolutional_networks	rdfs:subClassOf	local:networks	.
-local:focus	vn.role:indirect_object	local:finding_in_particular	.
-local:nodes	rdfs:member	local:nodes_nodes	.
-local:set_of_existential_rules	local:set_of	local:existential_rules	.
-local:graphbased_representation_of_rule_bases	local:graph-basedrepresentation_of	local:rule_bases	.
-local:annotated	vn.role:Theme	local:correspond_to_predicates	.
-local:focus	vn.role:Experiencer	local:we	.
-local:external_resources_suchas_word_embeddings	local:such_as_wordembeddings	local:external_resources	.
-local:types_of_rules	local:types_of	local:rules	.
-local:many	rdfs:member	local:many_methods	.
-local:plausible_of_predictive	local:of_predictive	local:plausible	.
-local:considered	vn.role:Predicate	local:correspond	.
-local:initial_vector_representation	rdfs:subClassOf	local:representation	.
-local:estimated	local:AM-MOD	local:could	.
-local:initial_vector	rdfs:subClassOf	local:vector	.
-local:deduced	local:AM-MOD	local:can	.
-local:graphs_correspond_correspond	rdfs:subClassOf	local:correspond	.
-local:initial_vector	rdfs:member	local:initial_vector_representation	.
-local:focus	local:AM-DIS	local:instead	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:use	vn.role:Theme	local:neural_network_model_basedon_graph_convolutional_networks	.
-local:encoded_as_set	local:encoded_as	local:set	.
-local:reflect	vn.role:indirect_object	local:predicates	.
-local:vectors	rdfs:member	local:vectors_annotations	.
-local:cooccur_in_same_rule	local:co-occur_in	local:same_rule	.
-local:graph_convolutional	rdfs:member	local:graph_convolutional_networks	.
-local:considered_graphs	rdfs:subClassOf	local:graphs	.
-local:set_of_existential_rules	local:of_existentialrules	local:set	.
-local:initial	rdfs:member	local:initial_vector	.
-local:graphs_graphs_correspond	rdfs:subClassOf	local:correspond	.
-local:nodes_nodes	rdfs:subClassOf	local:nodes	.
-local:extending	vn.role:Theme	local:ontologies	.
-local:deduced	vn.role:Predicate	local:ontology	.
-local:word_embeddings	rdfs:subClassOf	local:embeddings	.
+local:s18	rdf:object	local:graph_convolutional_networks_to_refine_the_initial_vector_representation_of_the_predicates_to_obtain_a_representation	.
+local:network_model	rdfs:member	local:network	.
+local:s4	rdf:subject	local:ontologies	.
 local:itself_base	rdfs:subClassOf	local:base	.
-local:vast_majority	rdfs:subClassOf	local:majority	.
-local:use	vn.role:Agent	local:we	.
-local:present	vn.role:Agent	local:we	.
-local:annotated_with_vectors	local:with_vectors	local:annotated	.
-local:refine	vn.role:Theme	local:initial_vector_representation_of_predicates	.
-local:correspond	vn.role:Actor2	local:annotated_with_vectors	.
-local:graphbased	rdfs:member	local:graphbased_representation	.
-local:neural	rdfs:member	local:neural_network	.
-local:estimated	vn.role:Theme	local:external_resources_suchas_word_embeddings	.
-local:graphs_graphs	rdfs:member	local:graphs_graphs_correspond	.
-local:strong_performance_of_method	local:of_method	local:strong_performance	.
-local:word	rdfs:member	local:word_embeddings	.
-local:rule	rdfs:member	local:rule_base	.
-local:cooccur	local:AM-LOC	local:vectors_annotations	.
-local:initial_vector_representation_of_predicates	local:of_predicates	local:initial_vector_representation	.
-local:strong_performance	rdfs:subClassOf	local:performance	.
-local:correspond_correspond	rdfs:subClassOf	local:correspond	.
-local:cooccur_in_vectors	local:co-occur_in	local:vectors	.
-local:graphs_graphs	rdfs:subClassOf	local:graphs	.
-local:plausible_knowledge_graph	rdfs:subClassOf	local:graph	.
-local:vast	rdfs:member	local:vast_majority	.
-local:proposed	vn.role:Topic	local:many_methods	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:focus	vn.role:Experiencer	local:many_methods	.
-local:considered	vn.role:Agent	local:nodes	.
-local:encoded	vn.role:Patient	local:ontologies	.
-local:graphbased_representation_of_rule_bases	local:of_rulebases	local:graphbased_representation	.
-local:types_of_rules	local:of_rules	local:types	.
+local:set_of_existential_rules	rdfs:member	local:existential_rules	.
+local:deduced_from_given_ontology	rdfs:member	local:deduced	.
+local:plausible_knowledge_graph_triples	rdfs:member	local:plausible_knowledge_graph	.
 local:network_model	rdfs:subClassOf	local:model	.
-local:extend	vn.role:Agent	local:many_methods	.
-local:cooccur_in_same_rule	local:in_samerule	local:cooccur	.
-local:propose	vn.role:Agent	local:we	.
-local:extend	vn.role:Theme	local:focus	.
-local:present	vn.role:Theme	local:experimental_results	.
-local:facts_graph_triples	rdfs:subClassOf	local:triples	.
-local:annotated_with_vectors	local:annotated_with	local:vectors	.
-local:use	local:AM-TMP	local:then	.
-local:knowledge_graph_triples	rdfs:subClassOf	local:graph_triples	.
-local:external_resources_suchas_word_embeddings	local:externalresources_such_as	local:word_embeddings	.
-local:deduced	local:AM-NEG	local:not	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:graph_convolutional_networks_to_refine_the_initial_vector_representation_of_the_predicates_to_obtain_a_representation	rdfs:member	local:initial_vector_representation	.
+local:s21	rdf:predicate	local:present	.
+local:s18.1	rdf:subject	local:neural_network_model_based_on_graph_convolutional_networks	.
+local:s14	rdf:subject	local:vectors	.
+local:s22	rdf:object	local:strong_performance_of_this_method	.
+local:external_resources_such_as_the_vectors_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:vectors	.
+local:s7.1	rdf:predicate	local:not_deduce	.
+local:s7	local:AM-ADV	local:particular	.
+local:s3.1	local:AM-MNR	local:automatically	.
+local:graph_convolutional_networks_to_refine_the_initial_vector_representation_of_the_predicates_to_obtain_a_representation	rdfs:member	local:predicates	.
+local:knowledge_bases	rdfs:member	local:knowledge	.
+local:neural_network_model_based_on_graph_convolutional_networks	rdfs:member	local:graph_convolutional_networks	.
+local:s14.1	local:AM-MOD	local:could	.
+local:s3	rdf:subject	local:we	.
+local:s2.1	rdf:predicate	local:find	.
+local:many_methods	rdfs:subClassOf	local:methods	.
+local:s15.2	rdfs:member	local:vectors_annotations	.
+local:external_resources_such_as_the_vectors	rdfs:member	local:vectors	.
+local:could_estimated_from_rule_base	rdfs:member	local:could_estimated	.
+local:strong_performance_of_this_method	rdfs:member	local:strong_performance	.
+local:s7.2	rdf:predicate	local:give	.
+local:graph_convolutional_networks	rdfs:subClassOf	local:convolutional_networks	.
 local:rule_base	rdfs:subClassOf	local:base	.
-local:neural_network_model_basedon_graph_convolutional_networks	local:neuralnetworkmodel_based_on	local:graph_convolutional_networks	.
-local:plausible_missing_facts_in_particular	local:in_particular	local:plausible_missing_facts	.
-local:given	vn.role:object	local:ontology	.
-local:graphs_correspond	rdfs:subClassOf	local:correspond	.
-local:knowledge_graph_triples	rdfs:subClassOf	local:triples	.
-local:knowledge_graph	rdfs:member	local:knowledge_graph_triples	.
-local:estimated	vn.role:Theme	local:external_resources_suchas_vectors	.
-local:connect	vn.role:Patient	local:predicates	.
-local:graph_convolutional	rdfs:subClassOf	local:convolutional	.
-local:obtain	vn.role:object	local:representation	.
-local:nodes_of_considered_graphs	local:of_consideredgraphs	local:nodes	.
-local:refine	vn.role:Agent	local:we	.
-local:estimated	vn.role:Theme	local:rule_itself_base	.
-local:find	vn.role:Theme	local:rules	.
-local:connect	vn.role:Agent	local:edges	.
-local:vector	rdfs:member	local:vector_representation	.
-local:convolutional	rdfs:member	local:convolutional_networks	.
-local:plausible_knowledge_graph_triples	rdfs:subClassOf	local:knowledge_graph_triples	.
+local:s16.1	rdf:predicate	local:cooccur	.
+local:graph_triples_in_particular	rdfs:member	local:particular	.
+local:strong_performance_of_method	rdfs:member	local:strong_performance	.
+local:s13	rdf:subject	local:vectors	.
+local:external_resources	rdfs:member	local:external	.
+local:graph_convolutional_networks_to_refine_the_initial_vector_representation_of_the_predicates_to_obtain_a_representation	rdfs:member	local:graph_convolutional_networks	.
+local:s3.1	local:AM-LOC	local:paper	.
+local:s0	rdf:predicate	local:focus	.
 local:could_estimated	rdfs:subClassOf	local:estimated	.
-local:facts	rdfs:member	local:facts_graph	.
-local:network	rdfs:member	local:network_model	.
-local:graph_triples	rdfs:subClassOf	local:triples	.
-local:rules_in_which	local:rules_in	local:which	.
-local:reflect	vn.role:indirect_object	local:annotations	.
-local:automatically_extending	rdfs:subClassOf	local:extending	.
-local:reflect_in_vectors	local:in_vectors	local:reflect	.
-local:encoded	vn.role:Patient	local:set_of_existential_rules	.
-local:considered	vn.role:Predicate	local:graphs	.
-local:plausible_knowledge	rdfs:member	local:plausible_knowledge_graph	.
-local:plausible_knowledge	rdfs:subClassOf	local:knowledge	.
-local:existential	rdfs:member	local:existential_rules	.
-local:plausible_missing_facts	rdfs:subClassOf	local:missing_facts	.
-local:focus	vn.role:indirect_object	local:automatically_extending	.
-local:graphs_correspond	rdfs:member	local:graphs_correspond_correspond	.
-local:obtained	vn.role:object	local:vectors	.
-local:neural_network_model_basedon_graph_convolutional_networks	local:based_on_graphconvolutionalnetworks	local:neural_network_model	.
-local:rule_itself_base	rdfs:subClassOf	local:itself_base	.
-local:graphs	rdfs:member	local:graphs_graphs	.
-local:to_correspond	rdfs:subClassOf	local:correspond	.
-local:extend	local:AM-MNR	local:automatically	.
-local:correspond	vn.role:Actor1	local:nodes_of_considered_graphs	.
-local:extending	local:AM-MNR	local:automatically	.
-local:correspond_to_predicates	local:to_predicates	local:correspond	.
-local:vast_majority_of_many_methods	local:vastmajority_of	local:many_methods	.
-local:encoded_as_set	local:as_set	local:encoded	.
-local:nodes_of_considered_graphs	local:nodes_of	local:considered_graphs	.
-local:neural_network_model	rdfs:subClassOf	local:model	.
+local:s16	rdf:subject	local:edges	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:s7	rdf:predicate	local:aim	.
+local:initial_vector_representation_of_predicates	rdfs:member	local:initial_vector_representation	.
+local:s0	rdf:object	local:s0.1	.
+local:plausible_missing_facts_graph_triples_in_particular	rdfs:member	local:facts	.
+local:s1	local:AM-PNC	local:s1.1	.
+local:s16.2	rdf:subject	local:types_of_rules_in_which_the_predicates_cooccur	.
+local:predicates_that_cooccur_in_the_same_rule	rdfs:member	local:same_rule	.
+local:s14.1	rdf:subject	local:external_resources_such_as_the_vectors	.
+local:cooccur_in_rules	rdfs:member	local:rules	.
+local:s7	rdf:object	local:deduced_from_the_given_ontology	.
+local:s6.1	rdf:predicate	local:find	.
+local:reflect_in_vectors	rdfs:member	local:reflect	.
+local:s0.1	rdf:predicate	local:find	.
+local:strong_performance_of_method	rdfs:member	local:method	.
+local:s0.1	rdf:subject	local:plausible_missing_facts_graph_triples_in_particular	.
+local:s13	rdf:object	local:external_resources_such_as_word_embeddings_could_be_estimated_from_the_rule_base_the_rule_base_itself	.
+local:s14	rdf:object	local:external_resources_such_as_the_vectors_could_be_estimated_from_the_rule_base_the_rule_base_itself	.
+local:based_on_graph_convolutional_networks	rdfs:member	local:graph_convolutional_networks	.
+local:s7.2	rdfs:subClassOf	local:ontology	.
+local:many_methods	rdfs:member	local:many	.
+local:cooccur_in_vectors	rdfs:member	local:cooccur	.
+local:vector_representation	rdfs:member	local:vector	.
+local:external_resources_such_as_vectors	rdfs:member	local:external_resources	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:rule_bases	rdfs:member	local:rule	.
+local:s2.1	rdf:subject	local:plausible_knowledge_graph_triples	.
+local:s14.1	rdf:predicate	local:estimate	.
+local:s22	rdf:subject	local:experimental_results	.
+local:graphbased_representation	rdfs:subClassOf	local:representation	.
+local:s3.1	rdf:object	local:ontologies	.
+local:s21	rdf:subject	local:we	.
+local:initial_vector_representation_of_predicates	rdfs:member	local:predicates	.
+local:strong_performance	rdfs:subClassOf	local:performance	.
+local:cooccur_in_same_rule	rdfs:member	local:cooccur	.
+local:initial_vector_representation	rdfs:subClassOf	local:vector_representation	.
+local:external_resources_such_as_word_embeddings	rdfs:member	local:word_embeddings	.
+local:s16	rdf:predicate	local:connect	.
+local:s2	rdf:predicate	local:focus	.
+local:plausible_missing_facts	rdfs:subClassOf	local:s0.2	.
+local:graphbased_representation	rdfs:member	local:graphbased	.
+local:graph_convolutional_networks	rdfs:subClassOf	local:networks	.
+local:graph_convolutional_networks	rdfs:member	local:graph_convolutional	.
+local:s8	rdf:predicate	local:propose	.
+local:deduced_from_given_ontology	rdfs:member	local:s7.2	.
+local:vast_majority_of_many_methods	rdfs:member	local:vast_majority	.
+local:s2	rdf:object	local:s2.1	.
+local:s7.1	local:AM-MOD	local:can	.
 local:same_rule	rdfs:subClassOf	local:rule	.
-local:to_correspond_to_predicates	local:tocorrespond_to	local:predicates	.
-local:to_correspond_to_predicates	local:to_predicates	local:to_correspond	.
-local:plausible_of_predictive	local:plausible_of	local:predictive	.
+local:external_resources_such_as_word_embeddings_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:rule_base	.
+local:existential_rules	rdfs:subClassOf	local:rules	.
+local:s3	rdf:predicate	local:focus	.
+local:s2.1	local:AM-LOC	local:particular	.
+local:s18.1	rdf:predicate	local:refine	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:convolutional_networks	rdfs:member	local:convolutional	.
+local:s16.2	rdf:object	local:predicates_that_cooccur_in_the_same_rule	.
+local:predicates_that_cooccur_in_the_vectors_annotations	rdfs:member	local:vectors_annotations	.
+local:word_embeddings	rdfs:member	local:word	.
+local:s13	local:AM-MOD	local:may	.
+local:vast_majority	rdfs:subClassOf	local:majority	.
+local:types_of_rules_in_which_the_predicates_cooccur	rdfs:member	local:types	.
+local:s7	rdf:subject	local:we	.
 local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:existential_rules	rdfs:member	local:existential	.
+local:types_of_rules_in_which_the_predicates_cooccur	rdfs:member	local:rules	.
+local:s13.1	local:AM-MOD	local:could	.
+local:s3	local:AM-MNR	local:automatically	.
+local:s19	rdf:predicate	local:use	.
+local:s19	rdf:object	local:neural_network_model	.
+local:convolutional_networks	rdfs:subClassOf	local:networks	.
+local:s13.1	rdf:predicate	local:estimate	.
+local:s11	rdf:predicate	local:annotate	.
+local:knowledge_graph_triples	rdfs:member	local:knowledge_graph	.
+local:vast_majority	rdfs:member	local:vast	.
+local:neural_network_model_based_on_graph_convolutional_networks	rdfs:member	local:neural_network_model	.
+local:s15.1	rdf:predicate	local:cooccur	.
+local:external_resources_such_as_word_embeddings_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:word_embeddings	.
+local:strong_performance	rdfs:member	local:strong	.
+local:same_rule	rdfs:member	local:same	.
+local:vector_representation	rdfs:subClassOf	local:representation	.
+local:types_of_rules_in_which_the_predicates_cooccur	rdfs:member	local:predicates	.
+local:s15.1	local:AM-LOC	local:vectors_annotations	.
+local:external_resources_such_as_word_embeddings_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:rule	.
+local:predicates_that_cooccur_in_the_vectors_annotations	rdfs:member	local:predicates	.
+local:graphbased_representation_of_rule_bases	rdfs:member	local:rule_bases	.
+local:s13	rdf:predicate	local:obtain	.
+local:set_of_existential_rules	rdfs:member	local:set	.
+local:could_estimated_from_rule_base	rdfs:member	local:rule_base	.
+local:s3.1	rdf:subject	local:we	.
+local:external_resources_such_as_the_vectors_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:rule	.
+local:s3	local:AM-LOC	local:paper	.
+local:s15.2	rdfs:member	local:rules	.
+local:s16.1	rdf:subject	local:predicates	.
+local:neural_network_model	rdfs:subClassOf	local:network_model	.
+local:rule_itself_base	rdfs:subClassOf	local:itself_base	.
+local:s19	local:AM-TMP	local:then	.
+local:initial_vector	rdfs:subClassOf	local:vector	.
+local:s15.2	rdf:predicate	local:reflect	.
+local:s11	rdf:object	local:vectors	.
+local:s1.1	local:AM-MNR	local:automatically	.
+local:s2	rdf:subject	local:vast_majority_of_many_methods	.
+local:graph_triples	rdfs:subClassOf	local:triples	.
+local:s8	local:AM-TMP	local:end	.
+local:s1.1	rdf:predicate	local:extend	.
+local:neural_network_model	rdfs:member	local:neural_network	.
+local:neural_network	rdfs:subClassOf	local:network	.
+local:s13.1	rdf:subject	local:external_resources_such_as_word_embeddings	.
+local:s16.2	rdf:predicate	local:reflect	.
+local:external_resources_such_as_word_embeddings	rdfs:member	local:external_resources	.
+local:cooccur_in_same_rule	rdfs:member	local:same_rule	.
+local:plausible_knowledge_graph	rdfs:member	local:plausible_knowledge	.
+local:s8	rdf:object	local:graphbased_representation_of_rule_bases	.
+local:rule_bases	rdfs:subClassOf	local:bases	.
+local:s1.1	rdf:subject	local:knowledge_bases	.
+local:plausible_knowledge	rdfs:subClassOf	local:knowledge	.
+local:nodes_of_the	rdfs:member	local:nodes	.
+local:vast_majority_of_many_methods	rdfs:member	local:many_methods	.
+local:graph_convolutional	rdfs:subClassOf	local:convolutional	.
+local:s15.1	rdf:subject	local:predicates	.
+local:external_resources_such_as_the_vectors_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:external_resources	.
+local:plausible_knowledge_graph	rdfs:subClassOf	local:graph	.
+local:reflect_in_vectors	rdfs:member	local:vectors	.
+local:s13.1	rdf:object	local:rule_base_itself_rule_base	.
+local:external_resources_such_as_vectors	rdfs:member	local:vectors	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:s18	rdf:predicate	local:base	.
+local:s6.1	rdf:subject	local:we	.
+local:graph_convolutional_networks_to_refine_the_initial_vector_representation_of_the_predicates_to_obtain_a_representation	rdfs:member	local:representation	.
+local:s21	rdf:object	local:experimental_results	.
+local:s15	rdf:object	local:predicates_that_cooccur_in_the_vectors_annotations_reflect_the_types_of_rules_in_which_the_predicates_cooccur	.
+local:s0	rdf:subject	local:vast_majority_of_many_methods	.
+local:vectors_annotations	rdfs:member	local:vectors	.
+local:s8	rdf:subject	local:we	.
+local:s15.2	rdf:object	local:predicates_that_cooccur_in_the_vectors_annotations	.
+local:s16	rdf:object	local:s16.2	.
+local:s18.2	rdf:predicate	local:obtain	.
+local:s6.1	rdf:object	local:rules	.
+local:s22	rdf:predicate	local:demonstrate	.
+local:neural_network	rdfs:member	local:neural	.
+local:s4	rdf:predicate	local:encode	.
+local:s1	rdf:subject	local:many_methods	.
+local:external_resources	rdfs:subClassOf	local:resources	.
+local:initial_vector_representation	rdfs:subClassOf	local:representation	.
+local:graph_triples_in_particular	rdfs:member	local:graph_triples	.
+local:external_resources_such_as_word_embeddings_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:external_resources	.
+local:s6	rdf:predicate	local:aim	.
+local:neural_network_model_based	rdfs:member	local:based	.
+local:s14	local:AM-MOD	local:may	.
+local:s14	rdf:predicate	local:obtain	.
+local:s0.2	rdf:subject	local:facts	.
+local:s0.2	rdfs:subClassOf	local:facts	.
+local:s19	rdf:subject	local:we	.
+local:types_of_rules	rdfs:member	local:types	.
+local:neural_network_model_based	rdfs:member	local:neural_network_model	.
+local:cooccur_in_rules	rdfs:member	local:cooccur	.
+local:plausible_knowledge	rdfs:member	local:plausible	.
+local:s7.1	rdf:object	local:s7.2	.
+local:s15	rdf:predicate	local:connect	.
+local:graph_triples	rdfs:member	local:graph	.
+local:s7.2	rdf:subject	local:ontology	.
+local:s15.2	rdfs:member	local:types	.
+local:plausible_knowledge_graph_triples	rdfs:subClassOf	local:triples	.
+local:s15.2	rdfs:member	local:predicates	.
+local:external_resources_such_as_the_vectors_could_be_estimated_from_the_rule_base_the_rule_base_itself	rdfs:member	local:rule_base	.
+local:initial_vector_representation_of_the_predicates	rdfs:member	local:predicates	.
+local:s15	rdf:subject	local:edges	.
+local:s3	local:AM-DIS	local:instead	.
+local:initial_vector_representation	rdfs:member	local:initial_vector	.
+local:external_resources_such_as_the_vectors	rdfs:member	local:external_resources	.
+local:cooccur_in_vectors	rdfs:member	local:vectors	.
+local:rule_base	rdfs:member	local:rule	.
+local:strong_performance_of_this_method	rdfs:member	local:method	.
+local:s16.1	rdf:object	local:rule	.
+local:s15.2	rdf:subject	local:types_of_rules_in_which_the_predicates_cooccur	.
+local:s18.1	local:AM-PNC	local:s18.2	.
+local:s3.1	rdf:predicate	local:extend	.
+local:word_embeddings	rdfs:subClassOf	local:embeddings	.
+local:s14.1	rdf:object	local:rule_base_itself_rule_base	.
+local:s18.1	rdf:object	local:initial_vector_representation_of_the_predicates	.
+local:initial_vector	rdfs:member	local:initial	.
+local:graph_convolutional	rdfs:member	local:graph	.
+local:nodes_of_the	rdfs:member	local:the	.
+local:knowledge_graph_triples	rdfs:subClassOf	local:graph_triples	.
+local:plausible_missing_facts_graph_triples_in_particular	rdfs:member	local:graph_triples	.
+local:knowledge_graph_triples	rdfs:subClassOf	local:triples	.
+local:based_on_graph_convolutional_networks	rdfs:member	local:based	.
+local:types_of_rules	rdfs:member	local:rules	.
+local:graphbased_representation_of_rule_bases	rdfs:member	local:graphbased_representation	.
+local:s6	rdf:subject	local:we	.
+local:s1	rdf:predicate	local:propose	.
+local:s0.2	rdf:predicate	local:miss	.
+local:plausible_knowledge_graph_triples	rdfs:subClassOf	local:knowledge_graph_triples	.
+local:vectors_annotations	rdfs:subClassOf	local:annotations	.
+local:neural_network_model	rdfs:subClassOf	local:model	.
+local:s18.2	rdf:subject	local:representation	.
+local:s4	rdf:object	local:set_of_existential_rules	.
+local:initial_vector_representation_of_the_predicates	rdfs:member	local:initial_vector_representation	.
+local:s11	rdf:subject	local:nodes_of_the	.
+local:predicates_that_cooccur_in_the_same_rule	rdfs:member	local:predicates	.

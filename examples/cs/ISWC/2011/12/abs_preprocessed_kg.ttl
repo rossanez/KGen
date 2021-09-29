@@ -1,488 +1,744 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"our approach outperforms the stateoftheart technique on both efficiency and effectiveness particularly for ambiguous queries"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"experimental results show that our approach outperforms the stateoftheart technique on both efficiency and effectiveness particularly for ambiguous queries"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"experimental results presented over dbpedia dataset"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"corresponding to interpretations of keyword queries"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"using a sequence of structured queries"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"our approach addresses the novel problem of using a sequence of structured queries in the query history as contextual information for biasing the interpretation of a new query"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the interpretation process based on a users"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"keyword query interpretation that personalizes the interpretation process"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose a contextaware approach for keyword query interpretation"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"generating topk interpretations"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"this leads to the problem of generating topk interpretations"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"topk interpretations that not aligned with user intentions"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"databasedependent properties such as occurrence frequency of subgraph pattern connecting keywords"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"heuristics capture any userdependent characteristics"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"however heuristics currently fail to capture any userdependent characteristics"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"however heuristics currently proposed to capture any userdependent characteristics"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"heuristics depend on databasedependent properties such as occurrence frequency of subgraph pattern"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"however heuristics currently fail to depend on databasedependent properties such as occurrence frequency of subgraph pattern"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"however heuristics currently proposed to depend on databasedependent properties such as occurrence frequency of subgraph pattern"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"consequently heuristics geared toward generating the topk likeliest userintended interpretations"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"heuristics generating the topk likeliest userintended interpretations"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"consequently heuristics geared toward generating the topk likeliest userintended interpretations"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"it generate a unique interpretation for a keyword query"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"effective techniques for keyword search over rdf databases incorporate an explicit interpretation phase"	.
+
+
 #### Classes ####
 
-local:rdf_databases	rdfs:label	"rdf databases"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:databases	rdfs:label	"databases"	.
+local:outperform	a	rdf:Class	;
+	rdfs:label	"outperform"	.
 
-local:effective_techniques	rdfs:label	"effective techniques"	.
+local:stateoftheart_technique_on_both_efficiency_and_effectiveness	a	rdf:Class	;
+	rdfs:label	"stateoftheart technique on both efficiency and effectiveness"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:efficiency	a	rdf:Class	;
+	rdfs:label	"efficiency"	.
 
-local:effective	rdfs:label	"effective"	.
+local:stateoftheart_technique	a	rdf:Class	;
+	rdfs:label	"stateoftheart technique"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:effectiveness	a	rdf:Class	;
+	rdfs:label	"effectiveness"	.
 
-local:keyword	rdfs:label	"keyword"	.
+local:technique	a	rdf:Class	;
+	rdfs:label	"technique"	.
 
-local:keyword_search	rdfs:label	"keyword search"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:search	rdfs:label	"search"	.
+local:stateoftheart_technique_on_efficiency	a	rdf:Class	;
+	rdfs:label	"stateoftheart technique on efficiency"	.
 
-local:effective_techniques_for_keyword_search	rdfs:label	"effective techniques for keyword search"	.
+local:stateoftheart_technique_on_efficiency_on_effectiveness	a	rdf:Class	;
+	rdfs:label	"stateoftheart technique on efficiency on effectiveness"	.
 
-local:keyword_search_over_rdf_databases	rdfs:label	"keyword search over rdf databases"	.
+local:particularly_for_ambiguous_queries	a	rdf:Class	;
+	rdfs:label	"particularly for ambiguous queries"	.
 
-local:incorporate	rdfs:label	"incorporate"	.
+local:ambiguous_queries	a	rdf:Class	;
+	rdfs:label	"ambiguous queries"	.
 
-local:explicit	rdfs:label	"explicit"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:explicit_interpretation	rdfs:label	"explicit interpretation"	.
+local:ambiguous	a	rdf:Class	;
+	rdfs:label	"ambiguous"	.
 
-local:interpretation	rdfs:label	"interpretation"	.
+local:particularly_ambiguous_queries	a	rdf:Class	;
+	rdfs:label	"particularly ambiguous queries"	.
 
-local:interpretation_phase	rdfs:label	"interpretation phase"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:explicit_interpretation_phase	rdfs:label	"explicit interpretation phase"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:phase	rdfs:label	"phase"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:unique_interpretation	rdfs:label	"unique interpretation"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:keyword_query	rdfs:label	"keyword query"	.
+local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	a	rdf:Class	;
+	rdfs:label	"approach outperforms the stateoftheart technique on both efficiency and effectiveness particularly for ambiguous queries"	.
 
-local:query	rdfs:label	"query"	.
+local:outperforms_on_efficiency	a	rdf:Class	;
+	rdfs:label	"outperforms on efficiency"	.
 
-local:unique	rdfs:label	"unique"	.
+local:outperforms	a	rdf:Class	;
+	rdfs:label	"outperforms"	.
 
-local:unique_interpretation_for_keyword_query	rdfs:label	"unique interpretation for keyword query"	.
+local:outperforms_on_efficiency_on_effectiveness	a	rdf:Class	;
+	rdfs:label	"outperforms on efficiency on effectiveness"	.
 
-local:generate	rdfs:label	"generate"	.
+local:outperforms_on_efficiency_on_effectiveness_for_particularly_ambiguous_queries	a	rdf:Class	;
+	rdfs:label	"outperforms on efficiency on effectiveness for particularly ambiguous queries"	.
 
-local:consequently_heuristics	rdfs:label	"consequently heuristics"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:heuristics	rdfs:label	"heuristics"	.
+local:dbpedia_dataset	a	rdf:Class	;
+	rdfs:label	"dbpedia dataset"	.
 
-local:geared	rdfs:label	"geared"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:likeliest	rdfs:label	"likeliest"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:likeliest_userintended	rdfs:label	"likeliest user-intended"	.
+local:correspond	a	rdf:Class	;
+	rdfs:label	"correspond"	.
 
-local:userintended	rdfs:label	"user-intended"	.
+local:interpretations_of_keyword_queries	a	rdf:Class	;
+	rdfs:label	"interpretations of keyword queries"	.
 
-local:userintended_interpretations	rdfs:label	"user-intended interpretations"	.
+local:keyword_queries	a	rdf:Class	;
+	rdfs:label	"keyword queries"	.
 
-local:likeliest_userintended_interpretations	rdfs:label	"likeliest user-intended interpretations"	.
+local:interpretations	a	rdf:Class	;
+	rdfs:label	"interpretations"	.
 
-local:interpretations	rdfs:label	"interpretations"	.
+local:keyword	a	rdf:Class	;
+	rdfs:label	"keyword"	.
 
-local:topk	rdfs:label	"top-k"	.
+local:sequence_of_structured_queries	a	rdf:Class	;
+	rdfs:label	"sequence of structured queries"	.
 
-local:topk_likeliest	rdfs:label	"top-k likeliest"	.
+local:structured_queries	a	rdf:Class	;
+	rdfs:label	"structured queries"	.
 
-local:topk_likeliest_userintended	rdfs:label	"top-k likeliest user-intended"	.
+local:sequence	a	rdf:Class	;
+	rdfs:label	"sequence"	.
 
-local:topk_likeliest_userintended_interpretations	rdfs:label	"top-k likeliest user-intended interpretations"	.
+local:structured	a	rdf:Class	;
+	rdfs:label	"structured"	.
 
-local:generating	rdfs:label	"generating"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:however_heuristics	rdfs:label	"however heuristics"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	a	rdf:Class	;
+	rdfs:label	"novel problem of using a sequence of structured queries in the query history as contextual information for biasing the interpretation of a new query"	.
 
-local:currently	rdfs:label	"currently"	.
+local:new_query	a	rdf:Class	;
+	rdfs:label	"new query"	.
 
-local:userdependent_characteristics	rdfs:label	"user-dependent characteristics"	.
+local:query_history	a	rdf:Class	;
+	rdfs:label	"query history"	.
 
-local:characteristics	rdfs:label	"characteristics"	.
+local:novel_problem	a	rdf:Class	;
+	rdfs:label	"novel problem"	.
 
-local:userdependent	rdfs:label	"user-dependent"	.
+local:interpretation	a	rdf:Class	;
+	rdfs:label	"interpretation"	.
 
-local:capture	rdfs:label	"capture"	.
+local:contextual_information	a	rdf:Class	;
+	rdfs:label	"contextual information"	.
 
-local:fail	rdfs:label	"fail"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:occurrence_frequency	rdfs:label	"occurrence frequency"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:frequency	rdfs:label	"frequency"	.
+local:contextual	a	rdf:Class	;
+	rdfs:label	"contextual"	.
 
-local:subgraph	rdfs:label	"subgraph"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:subgraph_pattern	rdfs:label	"subgraph pattern"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:pattern	rdfs:label	"pattern"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:occurrence	rdfs:label	"occurrence"	.
+local:history	a	rdf:Class	;
+	rdfs:label	"history"	.
 
-local:databasedependent	rdfs:label	"database-dependent"	.
+local:structured_queries_in_query_history	a	rdf:Class	;
+	rdfs:label	"structured queries in query history"	.
 
-local:databasedependent_properties	rdfs:label	"database-dependent properties"	.
+local:using_as_contextual_information	a	rdf:Class	;
+	rdfs:label	"using as contextual information"	.
 
-local:properties	rdfs:label	"properties"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:databasedependent_properties_suchas_occurrence_frequency	rdfs:label	"database-dependent properties such_as occurrence frequency"	.
+local:interpretation_of_new_query	a	rdf:Class	;
+	rdfs:label	"interpretation of new query"	.
 
-local:occurrence_frequency_of_subgraph_pattern	rdfs:label	"occurrence frequency of subgraph pattern"	.
+local:interpretation_process	a	rdf:Class	;
+	rdfs:label	"interpretation process"	.
 
-local:connecting	rdfs:label	"connecting"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:keywords	rdfs:label	"keywords"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:depend_on_databasedependent_properties	rdfs:label	"depend on database-dependent properties"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:depend	rdfs:label	"depend"	.
+local:keyword_query_interpretation	a	rdf:Class	;
+	rdfs:label	"keyword query interpretation"	.
 
-local:leads	rdfs:label	"leads"	.
+local:keyword_query	a	rdf:Class	;
+	rdfs:label	"keyword query"	.
 
-local:this	rdfs:label	"this"	.
+local:query_interpretation	a	rdf:Class	;
+	rdfs:label	"query interpretation"	.
 
-local:topk_interpretations	rdfs:label	"top-k interpretations"	.
+local:personalize	a	rdf:Class	;
+	rdfs:label	"personalize"	.
 
-local:problem	rdfs:label	"problem"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:aligned	rdfs:label	"aligned"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:not	rdfs:label	"not"	.
+local:contextaware_approach_for_keyword_query_interpretation	a	rdf:Class	;
+	rdfs:label	"contextaware approach for keyword query interpretation"	.
 
-local:user	rdfs:label	"user"	.
+local:contextaware_approach	a	rdf:Class	;
+	rdfs:label	"contextaware approach"	.
 
-local:user_intentions	rdfs:label	"user intentions"	.
+local:contextaware	a	rdf:Class	;
+	rdfs:label	"contextaware"	.
 
-local:intentions	rdfs:label	"intentions"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:query_interpretation	rdfs:label	"query interpretation"	.
+local:topk_interpretations	a	rdf:Class	;
+	rdfs:label	"topk interpretations"	.
 
-local:keyword_query_interpretation	rdfs:label	"keyword query interpretation"	.
+local:topk	a	rdf:Class	;
+	rdfs:label	"topk"	.
 
-local:personalizes	rdfs:label	"personalizes"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:user_’	rdfs:label	"user ’"	.
+local:this	a	rdf:Class	;
+	rdfs:label	"this"	.
 
-local:’	rdfs:label	"’"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:’_s_query	rdfs:label	"’ s query"	.
+local:problem_of_generating_topk_interpretations	a	rdf:Class	;
+	rdfs:label	"problem of generating topk interpretations"	.
 
-local:query_context	rdfs:label	"query context"	.
+local:not_align	a	rdf:Class	;
+	rdfs:label	"not align"	.
 
-local:interpretation_process	rdfs:label	"interpretation process"	.
+local:user_intentions	a	rdf:Class	;
+	rdfs:label	"user intentions"	.
 
-local:process	rdfs:label	"process"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:’_s	rdfs:label	"’ s"	.
+local:intentions	a	rdf:Class	;
+	rdfs:label	"intentions"	.
 
-local:s_query	rdfs:label	"s query"	.
+local:databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	a	rdf:Class	;
+	rdfs:label	"databasedependent properties such as occurrence frequency of subgraph pattern"	.
 
-local:’_s_query_context	rdfs:label	"’ s query context"	.
+local:occurrence_frequency	a	rdf:Class	;
+	rdfs:label	"occurrence frequency"	.
 
-local:user_’_s_query	rdfs:label	"user ’ s query"	.
+local:subgraph_pattern	a	rdf:Class	;
+	rdfs:label	"subgraph pattern"	.
 
-local:s	rdfs:label	"s"	.
+local:databasedependent_properties	a	rdf:Class	;
+	rdfs:label	"databasedependent properties"	.
 
-local:user_’_s	rdfs:label	"user ’ s"	.
+local:frequency	a	rdf:Class	;
+	rdfs:label	"frequency"	.
 
-local:context	rdfs:label	"context"	.
+local:subgraph	a	rdf:Class	;
+	rdfs:label	"subgraph"	.
 
-local:s_query_context	rdfs:label	"s query context"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:user_’_s_query_context	rdfs:label	"user ’ s query context"	.
+local:databasedependent	a	rdf:Class	;
+	rdfs:label	"databasedependent"	.
 
-local:user_query_context	rdfs:label	"user query context"	.
+local:occurrence	a	rdf:Class	;
+	rdfs:label	"occurrence"	.
 
-local:interpretation_process_based	rdfs:label	"interpretation process based"	.
+local:pattern	a	rdf:Class	;
+	rdfs:label	"pattern"	.
 
-local:based	rdfs:label	"based"	.
+local:databasedependent_properties_such_as_occurrence_frequency	a	rdf:Class	;
+	rdfs:label	"databasedependent properties such_as occurrence frequency"	.
 
-local:based_on_user_query_context	rdfs:label	"based on user query context"	.
+local:occurrence_frequency_of_subgraph_pattern	a	rdf:Class	;
+	rdfs:label	"occurrence frequency of subgraph pattern"	.
 
-local:propose	rdfs:label	"propose"	.
+local:connect	a	rdf:Class	;
+	rdfs:label	"connect"	.
 
-local:paper	rdfs:label	"paper"	.
+local:keywords	a	rdf:Class	;
+	rdfs:label	"keywords"	.
 
-local:we	rdfs:label	"we"	.
+local:heuristics	a	rdf:Class	;
+	rdfs:label	"heuristics"	.
 
-local:contextaware	rdfs:label	"context-aware"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-local:contextaware_approach	rdfs:label	"context-aware approach"	.
+local:userdependent_characteristics	a	rdf:Class	;
+	rdfs:label	"userdependent characteristics"	.
 
-local:approach	rdfs:label	"approach"	.
+local:userdependent	a	rdf:Class	;
+	rdfs:label	"userdependent"	.
 
-local:contextaware_approach_for_keyword_query_interpretation	rdfs:label	"context-aware approach for keyword query interpretation"	.
+local:characteristics	a	rdf:Class	;
+	rdfs:label	"characteristics"	.
 
-local:corresponding	rdfs:label	"corresponding"	.
+local:fail	a	rdf:Class	;
+	rdfs:label	"fail"	.
 
-local:queries	rdfs:label	"queries"	.
+local:capture_any_userdependent_characteristics	a	rdf:Class	;
+	rdfs:label	"capture any userdependent characteristics"	.
 
-local:keyword_queries	rdfs:label	"keyword queries"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:interpretations_of_keyword_queries	rdfs:label	"interpretations of keyword queries"	.
+local:currently	a	rdf:Class	;
+	rdfs:label	"currently"	.
 
-local:addresses	rdfs:label	"addresses"	.
+local:depend	a	rdf:Class	;
+	rdfs:label	"depend"	.
 
-local:query_history	rdfs:label	"query history"	.
+local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	a	rdf:Class	;
+	rdfs:label	"depend on databasedependent properties such as occurrence frequency of subgraph pattern"	.
 
-local:history	rdfs:label	"history"	.
+local:depend_on_databasedependent_properties	a	rdf:Class	;
+	rdfs:label	"depend on databasedependent properties"	.
 
-local:new	rdfs:label	"new"	.
+local:topk_likeliest_userintended_interpretations	a	rdf:Class	;
+	rdfs:label	"topk likeliest userintended interpretations"	.
 
-local:new_query	rdfs:label	"new query"	.
+local:likeliest_userintended_interpretations	a	rdf:Class	;
+	rdfs:label	"likeliest userintended interpretations"	.
 
-local:novel_problem	rdfs:label	"novel problem"	.
+local:likeliest_userintended	a	rdf:Class	;
+	rdfs:label	"likeliest userintended"	.
 
-local:contextual_information	rdfs:label	"contextual information"	.
+local:likeliest	a	rdf:Class	;
+	rdfs:label	"likeliest"	.
 
-local:information	rdfs:label	"information"	.
+local:userintended	a	rdf:Class	;
+	rdfs:label	"userintended"	.
 
-local:structured_queries	rdfs:label	"structured queries"	.
+local:userintended_interpretations	a	rdf:Class	;
+	rdfs:label	"userintended interpretations"	.
 
-local:contextual	rdfs:label	"contextual"	.
+local:consequently_heuristics_geared_toward_generating	a	rdf:Class	;
+	rdfs:label	"consequently heuristics geared toward generating"	.
 
-local:structured	rdfs:label	"structured"	.
+local:consequently_heuristics	a	rdf:Class	;
+	rdfs:label	"consequently heuristics"	.
 
-local:novel	rdfs:label	"novel"	.
+local:consequently	a	rdf:Class	;
+	rdfs:label	"consequently"	.
 
-local:sequence_of_structured_queries	rdfs:label	"sequence of structured queries"	.
+local:consequently_geared	a	rdf:Class	;
+	rdfs:label	"consequently geared"	.
 
-local:sequence	rdfs:label	"sequence"	.
+local:geared	a	rdf:Class	;
+	rdfs:label	"geared"	.
 
-local:structured_queries_in_query_history	rdfs:label	"structured queries in query history"	.
+local:gear	a	rdf:Class	;
+	rdfs:label	"gear"	.
 
-local:using_as_contextual_information	rdfs:label	"using as contextual information"	.
+local:toward_generating_the_topk_likeliest_userintended_interpretations	a	rdf:Class	;
+	rdfs:label	"toward generating the topk likeliest userintended interpretations"	.
 
-local:using	rdfs:label	"using"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:interpretation_of_new_query	rdfs:label	"interpretation of new query"	.
+local:unique_interpretation_for_a_keyword_query	a	rdf:Class	;
+	rdfs:label	"unique interpretation for a keyword query"	.
 
-local:experimental_results	rdfs:label	"experimental results"	.
+local:unique_interpretation	a	rdf:Class	;
+	rdfs:label	"unique interpretation"	.
 
-local:results	rdfs:label	"results"	.
+local:unique	a	rdf:Class	;
+	rdfs:label	"unique"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:unique_interpretation_for_keyword_query	a	rdf:Class	;
+	rdfs:label	"unique interpretation for keyword query"	.
 
-local:show	rdfs:label	"show"	.
+local:effective_techniques_for_keyword_search_over_rdf_databases	a	rdf:Class	;
+	rdfs:label	"effective techniques for keyword search over rdf databases"	.
 
-local:stateoftheart_technique	rdfs:label	"state-of-the-art technique"	.
+local:effective_techniques	a	rdf:Class	;
+	rdfs:label	"effective techniques"	.
 
-local:technique	rdfs:label	"technique"	.
+local:rdf_databases	a	rdf:Class	;
+	rdfs:label	"rdf databases"	.
 
-local:ambiguous_queries	rdfs:label	"ambiguous queries"	.
+local:keyword_search	a	rdf:Class	;
+	rdfs:label	"keyword search"	.
 
-local:ambiguous	rdfs:label	"ambiguous"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:particularly_ambiguous_queries	rdfs:label	"particularly ambiguous queries"	.
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
 
-local:stateoftheart_technique_on_efficiency	rdfs:label	"state-of-the-art technique on efficiency"	.
+local:databases	a	rdf:Class	;
+	rdfs:label	"databases"	.
 
-local:efficiency	rdfs:label	"efficiency"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:stateoftheart_technique_on_efficiency_on_effectiveness	rdfs:label	"state-of-the-art technique on efficiency on effectiveness"	.
+local:effective_techniques_for_keyword_search	a	rdf:Class	;
+	rdfs:label	"effective techniques for keyword search"	.
 
-local:effectiveness	rdfs:label	"effectiveness"	.
+local:keyword_search_over_rdf_databases	a	rdf:Class	;
+	rdfs:label	"keyword search over rdf databases"	.
 
-local:stateoftheart_technique_on_efficiency_on_effectiveness_for_particularly_ambiguous_queries	rdfs:label	"state-of-the-art technique on efficiency on effectiveness for particularly ambiguous queries"	.
+local:incorporate	a	rdf:Class	;
+	rdfs:label	"incorporate"	.
 
-local:outperforms	rdfs:label	"outperforms"	.
+local:explicit_interpretation_phase	a	rdf:Class	;
+	rdfs:label	"explicit interpretation phase"	.
 
-local:presented	rdfs:label	"presented"	.
+local:interpretation_phase	a	rdf:Class	;
+	rdfs:label	"interpretation phase"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:phase	a	rdf:Class	;
+	rdfs:label	"phase"	.
 
-local:dbpedia_dataset	rdfs:label	"dbpedia dataset"	.
+local:explicit_interpretation	a	rdf:Class	;
+	rdfs:label	"explicit interpretation"	.
 
-local:dataset	rdfs:label	"dataset"	.
-
-#### Properties ####
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
 
 #### Mapped Relations ####
 
-local:databases	owl:sameAs	cso:database	.
-cso:context-aware	rdfs:label	"context-aware"	.
-cso:database	rdfs:label	"databases"	.
-cso:keyword_queries	rdfs:label	"keyword queries"	.
-cso:keyword_search	rdfs:label	"keyword search"	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
-local:structured_queries	owl:sameAs	cso:structured_queries	.
-cso:rdf	rdfs:label	"rdf"	.
 cso:dbpedia	rdfs:label	"dbpedia"	.
-local:rdf	owl:sameAs	cso:rdf	.
 local:keyword_queries	owl:sameAs	cso:keyword_queries	.
+cso:keyword_queries	rdfs:label	"keyword queries"	.
+cso:context-aware	rdfs:label	"contextaware"	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
 cso:structured_queries	rdfs:label	"structured queries"	.
+cso:rdf	rdfs:label	"rdf"	.
 local:contextaware	owl:sameAs	cso:context-aware	.
 local:keyword_search	owl:sameAs	cso:keyword_search	.
+local:databases	owl:sameAs	cso:database	.
+local:structured_queries	owl:sameAs	cso:structured_queries	.
+cso:keyword_search	rdfs:label	"keyword search"	.
+cso:database	rdfs:label	"databases"	.
 
 #### Relations ####
 
-local:personalizes	vn.role:Agent	local:keyword_query_interpretation	.
-local:proposed	local:AM-TMP	local:currently	.
-local:keyword_search_over_rdf_databases	local:keywordsearch_over	local:rdf_databases	.
+local:databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:occurrence_frequency	.
 local:new_query	rdfs:subClassOf	local:query	.
-local:user_’_s_query	rdfs:member	local:user_’_s_query_context	.
-local:stateoftheart_technique	rdfs:subClassOf	local:technique	.
-local:structured_queries	rdfs:subClassOf	local:queries	.
-local:outperforms	vn.role:Theme2	local:stateoftheart_technique_on_efficiency_on_effectiveness	.
-local:sequence_of_structured_queries	local:of_structuredqueries	local:sequence	.
-local:contextaware_approach_for_keyword_query_interpretation	local:for_keywordqueryinterpretation	local:contextaware_approach	.
-local:s_query_context	rdfs:subClassOf	local:context	.
-local:effective	rdfs:member	local:effective_techniques	.
-local:databasedependent_properties	rdfs:subClassOf	local:properties	.
-local:addresses	vn.role:Agent	local:approach	.
-local:generating	vn.role:Theme1	local:consequently_heuristics	.
-local:corresponding	vn.role:Actor2	local:interpretations_of_keyword_queries	.
-local:outperforms	vn.role:Theme1	local:approach	.
-local:effective_techniques_for_keyword_search	local:effectivetechniques_for	local:keyword_search	.
-local:topk_likeliest_userintended	rdfs:subClassOf	local:userintended	.
-local:fail	vn.role:indirect_object	local:depend_on_databasedependent_properties	.
-local:occurrence	rdfs:member	local:occurrence_frequency	.
-local:depend	vn.role:Theme	local:however_heuristics	.
-local:s_query	rdfs:subClassOf	local:query	.
-local:outperforms	vn.role:Attribute	local:particularly_ambiguous_queries	.
-local:user_’_s_query	rdfs:subClassOf	local:query	.
-local:query_context	rdfs:subClassOf	local:context	.
-local:contextual	rdfs:member	local:contextual_information	.
-local:connecting	vn.role:Agent	local:databasedependent_properties_suchas_occurrence_frequency	.
-local:fail	local:AM-TMP	local:currently	.
-local:interpretations_of_keyword_queries	local:of_keywordqueries	local:interpretations	.
-local:presented	local:AM-LOC	local:dbpedia_dataset	.
-local:userintended_interpretations	rdfs:subClassOf	local:interpretations	.
-local:’_s_query	rdfs:member	local:’_s_query_context	.
-local:aligned	local:AM-NEG	local:not	.
-local:user	rdfs:member	local:user_’	.
-local:occurrence_frequency	rdfs:subClassOf	local:frequency	.
-local:based	vn.role:indirect_object	local:user_query_context	.
-local:’_s	rdfs:member	local:’_s_query	.
-local:novel	rdfs:member	local:novel_problem	.
-local:based	vn.role:Cause	local:interpretation_process	.
-local:proposed	local:AM-PNC	local:capture	.
-local:occurrence_frequency_of_subgraph_pattern	local:of_subgraphpattern	local:occurrence_frequency	.
-local:presented	vn.role:Theme	local:experimental_results	.
-local:’_s_query_context	rdfs:subClassOf	local:context	.
-local:fail	vn.role:indirect_object	local:capture	.
-local:subgraph	rdfs:member	local:subgraph_pattern	.
-local:rdf_databases	rdfs:subClassOf	local:databases	.
-local:ambiguous_queries	rdfs:subClassOf	local:queries	.
-local:query_history	rdfs:subClassOf	local:history	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:particularly_ambiguous_queries	rdfs:subClassOf	local:ambiguous_queries	.
-local:show	vn.role:Agent	local:experimental_results	.
-local:structured_queries_in_query_history	local:in_queryhistory	local:structured_queries	.
-local:likeliest_userintended	rdfs:subClassOf	local:userintended	.
-local:explicit	rdfs:member	local:explicit_interpretation	.
-local:contextaware_approach_for_keyword_query_interpretation	local:context-awareapproach_for	local:keyword_query_interpretation	.
-local:dbpedia_dataset	rdfs:subClassOf	local:dataset	.
-local:interpretation_process	rdfs:subClassOf	local:process	.
-local:connecting	vn.role:Patient	local:keywords	.
-local:unique_interpretation_for_keyword_query	local:uniqueinterpretation_for	local:keyword_query	.
-local:interpretation_of_new_query	local:of_newquery	local:interpretation	.
-local:topk	rdfs:member	local:topk_interpretations	.
-local:keyword_query	rdfs:member	local:keyword_query_interpretation	.
-local:contextaware	rdfs:member	local:contextaware_approach	.
-local:likeliest_userintended_interpretations	rdfs:subClassOf	local:userintended_interpretations	.
-local:likeliest_userintended	rdfs:member	local:likeliest_userintended_interpretations	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:user_’_s_query_context	rdfs:subClassOf	local:context	.
-local:explicit_interpretation	rdfs:member	local:explicit_interpretation_phase	.
-local:query_interpretation	rdfs:subClassOf	local:interpretation	.
-local:structured_queries_in_query_history	local:structuredqueries_in	local:query_history	.
-local:leads	vn.role:Agent	local:this	.
-local:user_query_context	rdfs:subClassOf	local:query_context	.
-local:topk_likeliest	rdfs:member	local:topk_likeliest_userintended	.
-local:based_on_user_query_context	local:based_on	local:user_query_context	.
-local:proposed	vn.role:Topic	local:depend_on_databasedependent_properties	.
-local:subgraph_pattern	rdfs:subClassOf	local:pattern	.
-local:generating	vn.role:Theme2	local:topk_interpretations	.
-local:using_as_contextual_information	local:using_as	local:contextual_information	.
-local:effective_techniques_for_keyword_search	local:for_keywordsearch	local:effective_techniques	.
-local:occurrence_frequency_of_subgraph_pattern	local:occurrencefrequency_of	local:subgraph_pattern	.
-local:topk_interpretations	rdfs:subClassOf	local:interpretations	.
-local:user_’	rdfs:member	local:user_’_s	.
-local:interpretation	rdfs:member	local:interpretation_phase	.
-local:user_’_s	rdfs:subClassOf	local:s	.
-local:s	rdfs:member	local:s_query	.
-local:interpretation_process_based	local:interpretationprocess_	local:based	.
-local:databasedependent_properties_suchas_occurrence_frequency	local:such_as_occurrencefrequency	local:databasedependent_properties	.
-local:userdependent_characteristics	rdfs:subClassOf	local:characteristics	.
-local:topk	rdfs:member	local:topk_likeliest	.
-local:however_heuristics	rdfs:subClassOf	local:heuristics	.
+local:s13	rdf:predicate	local:present	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:query_history	.
+local:databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:subgraph_pattern	.
+local:stateoftheart_technique_on_both_efficiency_and_effectiveness	rdfs:member	local:efficiency	.
 local:keyword_search	rdfs:subClassOf	local:search	.
-local:personalizes	vn.role:Patient	local:interpretation_process_based	.
-local:propose	vn.role:Agent	local:we	.
-local:depend_on_databasedependent_properties	local:on_database-dependentproperties	local:depend	.
-local:aligned	local:AM-MNR	local:user_intentions	.
-local:keyword_queries	rdfs:subClassOf	local:queries	.
-local:user	rdfs:member	local:user_intentions	.
-local:explicit_interpretation_phase	rdfs:subClassOf	local:interpretation_phase	.
-local:novel_problem	rdfs:subClassOf	local:problem	.
-local:geared	vn.role:Theme	local:consequently_heuristics	.
-local:interpretation	rdfs:member	local:interpretation_process	.
-local:structured	rdfs:member	local:structured_queries	.
-local:ambiguous	rdfs:member	local:ambiguous_queries	.
-local:stateoftheart_technique_on_efficiency	local:on_efficiency	local:stateoftheart_technique	.
-local:likeliest_userintended_interpretations	rdfs:subClassOf	local:interpretations	.
-local:’	rdfs:member	local:’_s	.
-local:incorporate	vn.role:Patient1	local:effective_techniques_for_keyword_search	.
-local:propose	vn.role:Topic	local:contextaware_approach_for_keyword_query_interpretation	.
-local:effective_techniques	rdfs:subClassOf	local:techniques	.
-local:stateoftheart	rdfs:member	local:stateoftheart_technique	.
-local:fail	vn.role:Theme	local:however_heuristics	.
-local:new	rdfs:member	local:new_query	.
-local:explicit_interpretation	rdfs:subClassOf	local:interpretation	.
-local:depend_on_databasedependent_properties	local:depend_on	local:databasedependent_properties	.
-local:unique_interpretation_for_keyword_query	local:for_keywordquery	local:unique_interpretation	.
-local:explicit_interpretation_phase	rdfs:subClassOf	local:phase	.
-local:incorporate	vn.role:Patient2	local:explicit_interpretation_phase	.
-local:using_as_contextual_information	local:as_contextualinformation	local:using	.
-local:stateoftheart_technique_on_efficiency	local:state-of-the-arttechnique_on	local:efficiency	.
-local:keyword_query_interpretation	rdfs:subClassOf	local:query_interpretation	.
-local:stateoftheart_technique_on_efficiency_on_effectiveness	local:on_effectiveness	local:stateoftheart_technique_on_efficiency	.
-local:aligned	vn.role:Theme	local:topk_interpretations	.
-local:stateoftheart_technique_on_efficiency_on_effectiveness	local:state-of-the-arttechniqueonefficiency_on	local:effectiveness	.
-local:unique	rdfs:member	local:unique_interpretation	.
-local:query	rdfs:member	local:query_context	.
-local:using	vn.role:Theme	local:sequence_of_structured_queries	.
-local:generating	vn.role:Theme2	local:topk_likeliest_userintended_interpretations	.
-local:keyword	rdfs:member	local:keyword_query	.
-local:stateoftheart_technique_on_efficiency_on_effectiveness_for_particularly_ambiguous_queries	local:state-of-the-arttechniqueonefficiencyoneffectiveness_for	local:particularly_ambiguous_queries	.
-local:user_intentions	rdfs:subClassOf	local:intentions	.
-local:user_’	rdfs:subClassOf	local:’	.
-local:based_on_user_query_context	local:on_userquerycontext	local:based	.
-local:interpretation_of_new_query	local:interpretation_of	local:new_query	.
-local:dbpedia	rdfs:member	local:dbpedia_dataset	.
-local:keyword	rdfs:member	local:keyword_queries	.
-local:user_’_s	rdfs:member	local:user_’_s_query	.
-local:databasedependent_properties_suchas_occurrence_frequency	local:database-dependentproperties_such_as	local:occurrence_frequency	.
-local:interpretation_phase	rdfs:subClassOf	local:phase	.
-local:leads	local:AM-DIR	local:problem	.
-local:contextual_information	rdfs:subClassOf	local:information	.
-local:interpretations_of_keyword_queries	local:interpretations_of	local:keyword_queries	.
-local:keyword_query	rdfs:subClassOf	local:query	.
-local:userintended	rdfs:member	local:userintended_interpretations	.
-local:unique_interpretation	rdfs:subClassOf	local:interpretation	.
-local:show	vn.role:Theme	local:outperforms	.
-local:topk_likeliest	rdfs:subClassOf	local:likeliest	.
-local:query	rdfs:member	local:query_interpretation	.
-local:’_s_query	rdfs:subClassOf	local:query	.
-local:addresses	vn.role:Theme	local:novel_problem	.
-local:keyword_query_interpretation	rdfs:subClassOf	local:interpretation	.
-local:capture	vn.role:Agent	local:however_heuristics	.
+local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:occurrence_frequency	.
+local:dbpedia_dataset	rdfs:subClassOf	local:dataset	.
+local:capture_any_userdependent_characteristics	rdfs:member	local:capture	.
+local:outperforms_on_efficiency_on_effectiveness	rdfs:member	local:outperforms_on_efficiency	.
+local:s3	local:AM-DIS	local:consequently	.
+local:keyword_query_interpretation	rdfs:member	local:keyword_query	.
+local:query_history	rdfs:subClassOf	local:history	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:contextual_information	.
+local:likeliest_userintended_interpretations	rdfs:subClassOf	local:userintended_interpretations	.
+local:s4	rdf:subject	local:heuristics	.
+local:structured_queries_in_query_history	rdfs:member	local:query_history	.
+local:toward_generating_the_topk_likeliest_userintended_interpretations	rdfs:member	local:likeliest_userintended_interpretations	.
+local:s5.1	local:AM-TMP	local:currently	.
+local:contextaware_approach_for_keyword_query_interpretation	rdfs:member	local:contextaware_approach	.
+local:s11	rdf:object	local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	.
+local:likeliest_userintended_interpretations	rdfs:member	local:likeliest_userintended	.
+local:keyword_search_over_rdf_databases	rdfs:member	local:keyword_search	.
+local:s1	rdf:predicate	local:incorporate	.
+local:interpretation_phase	rdfs:member	local:interpretation	.
+local:s5	local:AM-TMP	local:currently	.
+local:s5.2	rdf:subject	local:heuristics	.
 local:consequently_heuristics	rdfs:subClassOf	local:heuristics	.
-local:likeliest	rdfs:member	local:likeliest_userintended	.
-local:interpretation_process_based	local:_based	local:interpretation_process	.
-local:sequence_of_structured_queries	local:sequence_of	local:structured_queries	.
-local:capture	vn.role:Theme	local:userdependent_characteristics	.
-local:’_s	rdfs:subClassOf	local:s	.
-local:query	rdfs:member	local:query_history	.
-local:geared	vn.role:Source	local:generating	.
-local:s_query	rdfs:member	local:s_query_context	.
+local:s3.1	rdf:object	local:topk_likeliest_userintended_interpretations	.
+local:s9	local:AM-LOC	local:paper	.
+local:likeliest_userintended_interpretations	rdfs:subClassOf	local:interpretations	.
+local:outperforms_on_efficiency_on_effectiveness_for_particularly_ambiguous_queries	rdfs:member	local:outperforms_on_efficiency_on_effectiveness	.
+local:outperforms_on_efficiency	rdfs:member	local:outperforms	.
+local:s4.1	local:AM-TMP	local:currently	.
+local:interpretation_process	rdfs:subClassOf	local:process	.
+local:s9	rdf:subject	local:we	.
+local:s3	rdf:subject	local:heuristics	.
+local:stateoftheart_technique_on_efficiency	rdfs:member	local:stateoftheart_technique	.
+local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	rdfs:member	local:effectiveness	.
+local:keyword_queries	rdfs:member	local:keyword	.
+local:using_as_contextual_information	rdfs:member	local:using	.
 local:contextaware_approach	rdfs:subClassOf	local:approach	.
-local:corresponding	vn.role:Actor1	local:queries	.
+local:effective_techniques_for_keyword_search_over_rdf_databases	rdfs:member	local:rdf_databases	.
+local:keyword_search_over_rdf_databases	rdfs:member	local:rdf_databases	.
+local:s5.2	rdf:predicate	local:capture	.
+local:query_history	rdfs:member	local:query	.
 local:topk_likeliest_userintended_interpretations	rdfs:subClassOf	local:likeliest_userintended_interpretations	.
-local:propose	local:AM-LOC	local:paper	.
-local:topk_likeliest_userintended	rdfs:member	local:topk_likeliest_userintended_interpretations	.
-local:userdependent	rdfs:member	local:userdependent_characteristics	.
-local:keyword_search_over_rdf_databases	local:over_rdfdatabases	local:keyword_search	.
-local:stateoftheart_technique_on_efficiency_on_effectiveness_for_particularly_ambiguous_queries	local:for_particularlyambiguousqueries	local:stateoftheart_technique_on_efficiency_on_effectiveness	.
-local:proposed	vn.role:Topic	local:however_heuristics	.
-local:keyword	rdfs:member	local:keyword_search	.
-local:rdf	rdfs:member	local:rdf_databases	.
-local:generate	vn.role:Theme2	local:unique_interpretation_for_keyword_query	.
-local:databasedependent	rdfs:member	local:databasedependent_properties	.
-local:depend	vn.role:Location	local:databasedependent_properties_suchas_occurrence_frequency	.
-local:topk_likeliest_userintended_interpretations	rdfs:subClassOf	local:interpretations	.
+local:s5.1	local:AM-DIS	local:however	.
+local:dbpedia_dataset	rdfs:member	local:dbpedia	.
+local:rdf_databases	rdfs:subClassOf	local:databases	.
+local:s14	rdf:predicate	local:show	.
+local:s9	rdf:object	local:contextaware_approach_for_keyword_query_interpretation	.
+local:keyword_query	rdfs:member	local:keyword	.
+local:s13	rdf:subject	local:experimental_results	.
+local:s1	rdf:subject	local:effective_techniques_for_keyword_search_over_rdf_databases	.
+local:keyword_query_interpretation	rdfs:subClassOf	local:interpretation	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:structured_queries	.
+local:s5.2	rdf:object	local:userdependent_characteristics	.
+local:effective_techniques_for_keyword_search_over_rdf_databases	rdfs:member	local:effective_techniques	.
+local:s14	rdf:subject	local:experimental_results	.
+local:userintended_interpretations	rdfs:member	local:userintended	.
+local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:depend	.
+local:s10.1	rdf:object	local:users	.
+local:unique_interpretation	rdfs:member	local:unique	.
+local:particularly_ambiguous_queries	rdfs:subClassOf	local:ambiguous_queries	.
+local:query_interpretation	rdfs:subClassOf	local:interpretation	.
+local:s3	rdf:predicate	local:gear	.
+local:s4.2	rdf:object	local:databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	.
+local:s7	rdf:subject	local:topk_interpretations	.
+local:explicit_interpretation	rdfs:member	local:explicit	.
+local:explicit_interpretation_phase	rdfs:member	local:explicit_interpretation	.
+local:unique_interpretation_for_a_keyword_query	rdfs:member	local:keyword_query	.
+local:s4.1	rdf:predicate	local:fail	.
+local:novel_problem	rdfs:member	local:novel	.
+local:consequently_geared	rdfs:subClassOf	local:geared	.
+local:explicit_interpretation_phase	rdfs:subClassOf	local:interpretation_phase	.
+local:contextaware_approach_for_keyword_query_interpretation	rdfs:member	local:keyword_query_interpretation	.
+local:structured_queries	rdfs:subClassOf	local:queries	.
+local:databasedependent_properties_such_as_occurrence_frequency	rdfs:member	local:occurrence_frequency	.
+local:s6	rdf:predicate	local:connect	.
+local:s6	rdf:object	local:keywords	.
+local:depend_on_databasedependent_properties	rdfs:member	local:depend	.
+local:user_intentions	rdfs:subClassOf	local:intentions	.
+local:keyword_queries	rdfs:subClassOf	local:queries	.
+local:interpretation_of_new_query	rdfs:member	local:new_query	.
+local:s5	local:AM-DIS	local:however	.
+local:s5.1	rdf:predicate	local:fail	.
+local:s4	rdf:object	local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:new_query	.
+local:stateoftheart_technique_on_both_efficiency_and_effectiveness	rdfs:member	local:effectiveness	.
+local:interpretation_process	rdfs:member	local:interpretation	.
+local:unique_interpretation_for_keyword_query	rdfs:member	local:unique_interpretation	.
+local:interpretation_of_new_query	rdfs:member	local:interpretation	.
+local:stateoftheart_technique_on_efficiency_on_effectiveness	rdfs:member	local:effectiveness	.
+local:s8	local:AM-DIR	local:problem_of_generating_topk_interpretations	.
+local:problem_of_generating_topk_interpretations	rdfs:member	local:topk_interpretations	.
+local:stateoftheart_technique	rdfs:member	local:stateoftheart	.
+local:keyword_query_interpretation	rdfs:subClassOf	local:query_interpretation	.
+local:s3.2	local:AM-ADV	local:consequently_heuristics_geared_toward_generating	.
+local:s3.1	rdf:predicate	local:generate	.
+local:s2	rdf:subject	local:it	.
+local:stateoftheart_technique	rdfs:subClassOf	local:technique	.
+local:s10.1	rdf:subject	local:interpretation_process	.
+local:userdependent_characteristics	rdfs:subClassOf	local:characteristics	.
+local:s4.1	rdf:subject	local:heuristics	.
+local:effective_techniques_for_keyword_search_over_rdf_databases	rdfs:member	local:keyword_search	.
+local:s1	rdf:object	local:explicit_interpretation_phase	.
+local:s13	local:AM-LOC	local:dbpedia_dataset	.
+local:s11.1	rdf:subject	local:sequence_of_structured_queries	.
+local:sequence_of_structured_queries	rdfs:member	local:sequence	.
+local:depend_on_databasedependent_properties	rdfs:member	local:databasedependent_properties	.
+local:databasedependent_properties_such_as_occurrence_frequency	rdfs:member	local:databasedependent_properties	.
+local:s8	rdf:predicate	local:lead	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:stateoftheart_technique_on_efficiency_on_effectiveness	rdfs:member	local:stateoftheart_technique_on_efficiency	.
+local:s4.1	local:AM-DIS	local:however	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:sequence	.
+local:s4	local:AM-TMP	local:currently	.
+local:stateoftheart_technique_on_efficiency	rdfs:member	local:efficiency	.
+local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	rdfs:member	local:approach	.
+local:explicit_interpretation_phase	rdfs:subClassOf	local:phase	.
+local:s4.1	rdf:object	local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	.
+local:s14.1	local:AM-CAU	local:particularly_for_ambiguous_queries	.
+local:outperforms_on_efficiency	rdfs:member	local:efficiency	.
+local:structured_queries	rdfs:member	local:structured	.
+local:databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:databasedependent_properties	.
+local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:subgraph_pattern	.
+local:s4	rdf:predicate	local:propose	.
+local:sequence_of_structured_queries	rdfs:member	local:structured_queries	.
+local:contextual_information	rdfs:subClassOf	local:information	.
+local:contextual_information	rdfs:member	local:contextual	.
+local:occurrence_frequency_of_subgraph_pattern	rdfs:member	local:occurrence_frequency	.
+local:s2	rdf:predicate	local:generate	.
+local:ambiguous_queries	rdfs:subClassOf	local:queries	.
+local:problem_of_generating_topk_interpretations	rdfs:member	local:problem	.
+local:s10	rdf:predicate	local:personalize	.
+local:databasedependent_properties	rdfs:member	local:databasedependent	.
+local:s5.1	rdf:object	local:capture_any_userdependent_characteristics	.
+local:userintended_interpretations	rdfs:subClassOf	local:interpretations	.
+local:consequently_heuristics	rdfs:member	local:consequently	.
+local:s10	rdf:subject	local:keyword_query_interpretation	.
+local:s5	local:AM-PNC	local:capture_any_userdependent_characteristics	.
+local:s3.2	rdf:subject	local:topk_likeliest_userintended_interpretations	.
+local:user_intentions	rdfs:member	local:user	.
+local:databasedependent_properties	rdfs:subClassOf	local:properties	.
+local:effective_techniques	rdfs:subClassOf	local:techniques	.
+local:s3.2	rdf:predicate	local:propose	.
+local:s14.1	rdf:predicate	local:outperform	.
+local:s10	rdf:object	local:interpretation_process	.
+local:s5	rdf:subject	local:heuristics	.
+local:s6	rdf:subject	local:databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	.
+local:interpretations_of_keyword_queries	rdfs:member	local:interpretations	.
+local:s5	rdf:predicate	local:propose	.
+local:ambiguous_queries	rdfs:member	local:ambiguous	.
+local:s8.1	rdf:predicate	local:generate	.
+local:subgraph_pattern	rdfs:subClassOf	local:pattern	.
+local:s4	local:AM-DIS	local:however	.
+local:unique_interpretation	rdfs:subClassOf	local:interpretation	.
+local:s7	rdf:predicate	local:not_align	.
+local:s14.1	rdf:subject	local:approach	.
+local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	rdfs:member	local:ambiguous_queries	.
+local:structured_queries_in_query_history	rdfs:member	local:structured_queries	.
+local:likeliest_userintended	rdfs:member	local:likeliest	.
+local:s4.2	rdf:subject	local:heuristics	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:novel_problem	.
+local:interpretations_of_keyword_queries	rdfs:member	local:keyword_queries	.
+local:s14.1	rdf:object	local:stateoftheart_technique_on_both_efficiency_and_effectiveness	.
+local:s9	rdf:predicate	local:propose	.
+local:effective_techniques	rdfs:member	local:effective	.
+local:s8.1	rdf:subject	local:topk_interpretations	.
+local:s12	rdf:object	local:interpretations_of_keyword_queries	.
+local:explicit_interpretation	rdfs:subClassOf	local:interpretation	.
+local:effective_techniques_for_keyword_search	rdfs:member	local:keyword_search	.
+local:s14	rdf:object	local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	.
+local:keyword_query	rdfs:subClassOf	local:query	.
+local:novel_problem_of_using_a_sequence_of_structured_queries_in_the_query_history_as_contextual_information_for_biasing_the_interpretation_of_a_new_query	rdfs:member	local:interpretation	.
+local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	rdfs:member	local:efficiency	.
+local:s7	local:AM-MNR	local:user_intentions	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:s8	rdf:subject	local:this	.
+local:interpretation_phase	rdfs:subClassOf	local:phase	.
+local:s3	rdf:object	local:toward_generating_the_topk_likeliest_userintended_interpretations	.
+local:s5.1	rdf:subject	local:heuristics	.
+local:topk_likeliest_userintended_interpretations	rdfs:member	local:likeliest_userintended_interpretations	.
+local:topk_likeliest_userintended_interpretations	rdfs:member	local:topk	.
+local:likeliest_userintended	rdfs:subClassOf	local:userintended	.
+local:unique_interpretation_for_keyword_query	rdfs:member	local:keyword_query	.
+local:rdf_databases	rdfs:member	local:rdf	.
+local:s12	rdf:predicate	local:correspond	.
+local:new_query	rdfs:member	local:new	.
+local:novel_problem	rdfs:subClassOf	local:problem	.
+local:s10.1	rdf:predicate	local:base	.
+local:using_as_contextual_information	rdfs:member	local:contextual_information	.
+local:userdependent_characteristics	rdfs:member	local:userdependent	.
+local:query_interpretation	rdfs:member	local:query	.
+local:s11	rdf:subject	local:approach	.
+local:s3.1	rdf:subject	local:heuristics	.
+local:keyword_search	rdfs:member	local:keyword	.
+local:topk_interpretations	rdfs:subClassOf	local:interpretations	.
+local:s11.1	rdf:predicate	local:use	.
+local:contextaware_approach	rdfs:member	local:contextaware	.
+local:outperforms_on_efficiency_on_effectiveness	rdfs:member	local:effectiveness	.
+local:effective_techniques_for_keyword_search	rdfs:member	local:effective_techniques	.
+local:outperforms_on_efficiency_on_effectiveness_for_particularly_ambiguous_queries	rdfs:member	local:particularly_ambiguous_queries	.
+local:s2	rdf:object	local:unique_interpretation_for_a_keyword_query	.
+local:s11	rdf:predicate	local:address	.
+local:topk_interpretations	rdfs:member	local:topk	.
+local:subgraph_pattern	rdfs:member	local:subgraph	.
+local:toward_generating_the_topk_likeliest_userintended_interpretations	rdfs:member	local:topk	.
+local:occurrence_frequency	rdfs:subClassOf	local:frequency	.
+local:stateoftheart_technique_on_both_efficiency_and_effectiveness	rdfs:member	local:stateoftheart_technique	.
+local:depend_on_databasedependent_properties_such_as_occurrence_frequency_of_subgraph_pattern	rdfs:member	local:databasedependent_properties	.
+local:s4.2	rdf:predicate	local:depend	.
+local:capture_any_userdependent_characteristics	rdfs:member	local:userdependent_characteristics	.
+local:approach_outperforms_the_stateoftheart_technique_on_both_efficiency_and_effectiveness_particularly_for_ambiguous_queries	rdfs:member	local:stateoftheart_technique	.
+local:occurrence_frequency_of_subgraph_pattern	rdfs:member	local:subgraph_pattern	.
+local:occurrence_frequency	rdfs:member	local:occurrence	.
+local:unique_interpretation_for_a_keyword_query	rdfs:member	local:unique_interpretation	.

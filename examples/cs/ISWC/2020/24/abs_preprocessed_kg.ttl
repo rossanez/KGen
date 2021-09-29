@@ -1,383 +1,670 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"we model against stateoftheart models on a set of standard benchmarks namely freebase"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we evaluate we model against stateoftheart models on a set of standard benchmarks namely freebase"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we model against stateoftheart models on a set of standard benchmarks namely wordnet"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we evaluate we model against stateoftheart models on a set of standard benchmarks namely wordnet"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we describe the theoretical considerations behind the solution space"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"newly proposed model"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we showcase the effect of solution space on a newly proposed model"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"a newly proposed model dubbed spacess"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"newly proposed model"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"a factor infer relational patterns"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we develop the concept of a solution space as a factor to infer relational patterns"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a factor that has a direct influence on the practical performance of knowledge graph embedding models"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a factor that has knowledge graph embedding models capability"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"factors contribute to such performance differences among kge models in the inference of particular patterns"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"those infer those patterns"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"those not allowing to infer those patterns"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"some of the models such as symmetry show lower performance in practice than those not allowing to infer those patterns"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"those infer those patterns"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"those not allowing to infer those patterns"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"some of the models such as transitivity show lower performance in practice than those not allowing to infer those patterns"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the models which inferring relational patterns"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"the models which proven"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"machine learning problems"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"several knowledge graph embedding models handle machine learning problems for knowledge graphs"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"during the last few years several knowledge graph embedding models devised in order to handle machine learning problems for knowledge graphs"	.
+
+
 #### Classes ####
 
-local:last_few_years	rdfs:label	"last few years"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:years	rdfs:label	"years"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:last_few	rdfs:label	"last few"	.
+local:stateoftheart_models	a	rdf:Class	;
+	rdfs:label	"stateoftheart models"	.
 
-local:few	rdfs:label	"few"	.
+local:models	a	rdf:Class	;
+	rdfs:label	"models"	.
 
-local:few_years	rdfs:label	"few years"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:last	rdfs:label	"last"	.
+local:set_of_standard_benchmarks_namely_freebase	a	rdf:Class	;
+	rdfs:label	"set of standard benchmarks namely freebase"	.
 
-local:devised	rdfs:label	"devised"	.
+local:standard_benchmarks	a	rdf:Class	;
+	rdfs:label	"standard benchmarks"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:namely_freebase	a	rdf:Class	;
+	rdfs:label	"namely freebase"	.
 
-local:graph	rdfs:label	"graph"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:several_knowledge	rdfs:label	"several knowledge"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:namely	a	rdf:Class	;
+	rdfs:label	"namely"	.
 
-local:several_knowledge_graph	rdfs:label	"several knowledge graph"	.
+local:freebase	a	rdf:Class	;
+	rdfs:label	"freebase"	.
 
-local:several	rdfs:label	"several"	.
+local:benchmarks	a	rdf:Class	;
+	rdfs:label	"benchmarks"	.
 
-local:embedding_models	rdfs:label	"embedding models"	.
+local:set_of_standard_benchmarks	a	rdf:Class	;
+	rdfs:label	"set of standard benchmarks"	.
 
-local:models	rdfs:label	"models"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:graph_embedding_models	rdfs:label	"graph embedding models"	.
+local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	a	rdf:Class	;
+	rdfs:label	"model against stateoftheart models on a set of standard benchmarks namely freebase"	.
 
-local:knowledge_graph_embedding_models	rdfs:label	"knowledge graph embedding models"	.
+local:model_against_stateoftheart_models	a	rdf:Class	;
+	rdfs:label	"model against stateoftheart models"	.
 
-local:several_knowledge_graph_embedding_models	rdfs:label	"several knowledge graph embedding models"	.
+local:model_against_stateoftheart_models_on_set	a	rdf:Class	;
+	rdfs:label	"model against stateoftheart models on set"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:set_of_standard_benchmarks_namely_wordnet	a	rdf:Class	;
+	rdfs:label	"set of standard benchmarks namely wordnet"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:namely_wordnet	a	rdf:Class	;
+	rdfs:label	"namely wordnet"	.
 
-local:learning_problems	rdfs:label	"learning problems"	.
+local:wordnet	a	rdf:Class	;
+	rdfs:label	"wordnet"	.
 
-local:problems	rdfs:label	"problems"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:machine_learning_problems	rdfs:label	"machine learning problems"	.
+local:theoretical_considerations_behind_the_solution_space	a	rdf:Class	;
+	rdfs:label	"theoretical considerations behind the solution space"	.
 
-local:machine_learning_problems_for_knowledge_graphs	rdfs:label	"machine learning problems for knowledge graphs"	.
+local:theoretical_considerations	a	rdf:Class	;
+	rdfs:label	"theoretical considerations"	.
 
-local:order	rdfs:label	"order"	.
+local:solution_space	a	rdf:Class	;
+	rdfs:label	"solution space"	.
 
-local:handle	rdfs:label	"handle"	.
+local:solution	a	rdf:Class	;
+	rdfs:label	"solution"	.
 
-local:learning	rdfs:label	"learning"	.
+local:considerations	a	rdf:Class	;
+	rdfs:label	"considerations"	.
 
-local:machine	rdfs:label	"machine"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:machine_learning	rdfs:label	"machine learning"	.
+local:theoretical	a	rdf:Class	;
+	rdfs:label	"theoretical"	.
 
-local:models_suchas_transitivity	rdfs:label	"models such_as transitivity"	.
+local:theoretical_considerations_behind_solution_space	a	rdf:Class	;
+	rdfs:label	"theoretical considerations behind solution space"	.
 
-local:transitivity	rdfs:label	"transitivity"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:show	rdfs:label	"show"	.
+local:newly	a	rdf:Class	;
+	rdfs:label	"newly"	.
 
-local:lower_performance	rdfs:label	"lower performance"	.
+local:showcase	a	rdf:Class	;
+	rdfs:label	"showcase"	.
 
-local:performance	rdfs:label	"performance"	.
+local:effect_of_solution_space_on_a_newly_proposed_model	a	rdf:Class	;
+	rdfs:label	"effect of solution space on a newly proposed model"	.
 
-local:lower	rdfs:label	"lower"	.
+local:effect	a	rdf:Class	;
+	rdfs:label	"effect"	.
 
-local:not_allowing	rdfs:label	"not allowing"	.
+local:proposed_model	a	rdf:Class	;
+	rdfs:label	"proposed model"	.
 
-local:allowing	rdfs:label	"allowing"	.
+local:newly_proposed	a	rdf:Class	;
+	rdfs:label	"newly proposed"	.
 
-local:lower_performance_in_practice	rdfs:label	"lower performance in practice"	.
+local:proposed	a	rdf:Class	;
+	rdfs:label	"proposed"	.
 
-local:practice	rdfs:label	"practice"	.
+local:effect_of_solution_space	a	rdf:Class	;
+	rdfs:label	"effect of solution space"	.
 
-local:lower_performance_in_practice_than_those	rdfs:label	"lower performance in practice than those"	.
+local:effect_of_solution_space_on_proposed_model	a	rdf:Class	;
+	rdfs:label	"effect of solution space on proposed model"	.
 
-local:those	rdfs:label	"those"	.
+local:dub	a	rdf:Class	;
+	rdfs:label	"dub"	.
 
-local:those_not_allowing	rdfs:label	"those not allowing"	.
+local:spacess	a	rdf:Class	;
+	rdfs:label	"spacess"	.
 
-local:not	rdfs:label	"not"	.
+local:factor	a	rdf:Class	;
+	rdfs:label	"factor"	.
 
-local:infer	rdfs:label	"infer"	.
+local:infer	a	rdf:Class	;
+	rdfs:label	"infer"	.
 
-local:patterns	rdfs:label	"patterns"	.
+local:relational_patterns	a	rdf:Class	;
+	rdfs:label	"relational patterns"	.
 
-local:models_suchas_symmetry	rdfs:label	"models such_as symmetry"	.
+local:relational	a	rdf:Class	;
+	rdfs:label	"relational"	.
 
-local:symmetry	rdfs:label	"symmetry"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:proven	rdfs:label	"proven"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:inferring	rdfs:label	"inferring"	.
+local:concept_of_a_solution_space	a	rdf:Class	;
+	rdfs:label	"concept of a solution space"	.
 
-local:relational_patterns	rdfs:label	"relational patterns"	.
+local:concept	a	rdf:Class	;
+	rdfs:label	"concept"	.
 
-local:relational	rdfs:label	"relational"	.
+local:concept_of_solution_space	a	rdf:Class	;
+	rdfs:label	"concept of solution space"	.
 
-local:contribute	rdfs:label	"contribute"	.
+local:factor_to_infer_relational_patterns	a	rdf:Class	;
+	rdfs:label	"factor to infer relational patterns"	.
 
-local:factors	rdfs:label	"factors"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:particular_patterns	rdfs:label	"particular patterns"	.
+local:direct_influence_on_the_practical_performance_of_knowledge_graph_embedding_models	a	rdf:Class	;
+	rdfs:label	"direct influence on the practical performance of knowledge graph embedding models"	.
 
-local:performance_differences	rdfs:label	"performance differences"	.
+local:direct_influence	a	rdf:Class	;
+	rdfs:label	"direct influence"	.
 
-local:differences	rdfs:label	"differences"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:particular	rdfs:label	"particular"	.
+local:practical_performance	a	rdf:Class	;
+	rdfs:label	"practical performance"	.
 
-local:kge_models	rdfs:label	"kge models"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:kge	rdfs:label	"kge"	.
+local:influence	a	rdf:Class	;
+	rdfs:label	"influence"	.
 
-local:performance_differences_among_kge_models	rdfs:label	"performance differences among kge models"	.
+local:direct	a	rdf:Class	;
+	rdfs:label	"direct"	.
 
-local:performance_differences_among_kge_models_in_inference	rdfs:label	"performance differences among kge models in inference"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:inference	rdfs:label	"inference"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:inference_of_particular_patterns	rdfs:label	"inference of particular patterns"	.
+local:practical	a	rdf:Class	;
+	rdfs:label	"practical"	.
 
-local:has	rdfs:label	"has"	.
+local:embedding_models	a	rdf:Class	;
+	rdfs:label	"embedding models"	.
 
-local:factor	rdfs:label	"factor"	.
+local:graph_embedding_models	a	rdf:Class	;
+	rdfs:label	"graph embedding models"	.
 
-local:direct	rdfs:label	"direct"	.
+local:knowledge_graph_embedding_models	a	rdf:Class	;
+	rdfs:label	"knowledge graph embedding models"	.
 
-local:direct_influence	rdfs:label	"direct influence"	.
+local:direct_influence_on_practical_performance	a	rdf:Class	;
+	rdfs:label	"direct influence on practical performance"	.
 
-local:influence	rdfs:label	"influence"	.
+local:practical_performance_of_knowledge_graph_embedding_models	a	rdf:Class	;
+	rdfs:label	"practical performance of knowledge graph embedding models"	.
 
-local:practical	rdfs:label	"practical"	.
+local:knowledge_graph_embedding_models_capability	a	rdf:Class	;
+	rdfs:label	"knowledge graph embedding models capability"	.
 
-local:practical_performance	rdfs:label	"practical performance"	.
+local:models_capability	a	rdf:Class	;
+	rdfs:label	"models capability"	.
 
-local:direct_influence_on_practical_performance	rdfs:label	"direct influence on practical performance"	.
+local:capability	a	rdf:Class	;
+	rdfs:label	"capability"	.
 
-local:practical_performance_of_knowledge_graph_embedding_models	rdfs:label	"practical performance of knowledge graph embedding models"	.
+local:factors	a	rdf:Class	;
+	rdfs:label	"factors"	.
 
-local:models_capability	rdfs:label	"models capability"	.
+local:contribute	a	rdf:Class	;
+	rdfs:label	"contribute"	.
 
-local:capability	rdfs:label	"capability"	.
+local:performance_differences_among_kge_models_in_the_inference_of_particular_patterns	a	rdf:Class	;
+	rdfs:label	"performance differences among kge models in the inference of particular patterns"	.
 
-local:embedding_models_capability	rdfs:label	"embedding models capability"	.
+local:particular_patterns	a	rdf:Class	;
+	rdfs:label	"particular patterns"	.
 
-local:graph_embedding_models_capability	rdfs:label	"graph embedding models capability"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:knowledge_graph_embedding_models_capability	rdfs:label	"knowledge graph embedding models capability"	.
+local:kge_models	a	rdf:Class	;
+	rdfs:label	"kge models"	.
 
-local:develop	rdfs:label	"develop"	.
+local:performance_differences	a	rdf:Class	;
+	rdfs:label	"performance differences"	.
 
-local:we	rdfs:label	"we"	.
+local:kge	a	rdf:Class	;
+	rdfs:label	"kge"	.
 
-local:solution	rdfs:label	"solution"	.
+local:differences	a	rdf:Class	;
+	rdfs:label	"differences"	.
 
-local:solution_space	rdfs:label	"solution space"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:space	rdfs:label	"space"	.
+local:performance_differences_among_kge_models	a	rdf:Class	;
+	rdfs:label	"performance differences among kge models"	.
 
-local:concept_of_solution_space	rdfs:label	"concept of solution space"	.
+local:performance_differences_among_kge_models_in_inference	a	rdf:Class	;
+	rdfs:label	"performance differences among kge models in inference"	.
 
-local:concept	rdfs:label	"concept"	.
+local:inference_of_particular_patterns	a	rdf:Class	;
+	rdfs:label	"inference of particular patterns"	.
 
-local:showcase	rdfs:label	"showcase"	.
+local:those	a	rdf:Class	;
+	rdfs:label	"those"	.
 
-local:proposed_model	rdfs:label	"proposed model"	.
+local:not_allow	a	rdf:Class	;
+	rdfs:label	"not allow"	.
 
-local:model	rdfs:label	"model"	.
+local:infer_those_patterns	a	rdf:Class	;
+	rdfs:label	"infer those patterns"	.
 
-local:newly_proposed	rdfs:label	"newly proposed"	.
+local:models_such_as_symmetry	a	rdf:Class	;
+	rdfs:label	"models such_as symmetry"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:symmetry	a	rdf:Class	;
+	rdfs:label	"symmetry"	.
 
-local:effect_of_solution_space	rdfs:label	"effect of solution space"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:effect	rdfs:label	"effect"	.
+local:lower_performance_in_practice_than_those_not_allowing_to_infer_those_patterns	a	rdf:Class	;
+	rdfs:label	"lower performance in practice than those not allowing to infer those patterns"	.
 
-local:effect_of_solution_space_on_proposed_model	rdfs:label	"effect of solution space on proposed model"	.
+local:lower_performance	a	rdf:Class	;
+	rdfs:label	"lower performance"	.
 
-local:newly	rdfs:label	"newly"	.
+local:practice	a	rdf:Class	;
+	rdfs:label	"practice"	.
 
-local:dubbed	rdfs:label	"dubbed"	.
+local:lower	a	rdf:Class	;
+	rdfs:label	"lower"	.
 
-local:spacess	rdfs:label	"spacess"	.
+local:not_allowing	a	rdf:Class	;
+	rdfs:label	"not allowing"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:allowing	a	rdf:Class	;
+	rdfs:label	"allowing"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:lower_performance_in_practice	a	rdf:Class	;
+	rdfs:label	"lower performance in practice"	.
 
-local:stateoftheart_models	rdfs:label	"state-of-the-art models"	.
+local:lower_performance_in_practice_than_those	a	rdf:Class	;
+	rdfs:label	"lower performance in practice than those"	.
 
-local:model_against_stateoftheart_models	rdfs:label	"model against state-of-the-art models"	.
+local:those_not_allowing	a	rdf:Class	;
+	rdfs:label	"those not allowing"	.
 
-local:standard	rdfs:label	"standard"	.
+local:models_such_as_transitivity	a	rdf:Class	;
+	rdfs:label	"models such_as transitivity"	.
 
-local:standard_benchmarks	rdfs:label	"standard benchmarks"	.
+local:transitivity	a	rdf:Class	;
+	rdfs:label	"transitivity"	.
 
-local:benchmarks	rdfs:label	"benchmarks"	.
+local:prove	a	rdf:Class	;
+	rdfs:label	"prove"	.
 
-local:namely_freebase	rdfs:label	"namely freebase"	.
+local:problems	a	rdf:Class	;
+	rdfs:label	"problems"	.
 
-local:freebase	rdfs:label	"freebase"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:set_of_standard_benchmarks	rdfs:label	"set of standard benchmarks"	.
+local:several_knowledge_graph_embedding_models	a	rdf:Class	;
+	rdfs:label	"several knowledge graph embedding models"	.
 
-local:set	rdfs:label	"set"	.
+local:several_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"several knowledge graph"	.
 
-local:describe	rdfs:label	"describe"	.
+local:several_knowledge	a	rdf:Class	;
+	rdfs:label	"several knowledge"	.
 
-local:theoretical	rdfs:label	"theoretical"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:theoretical_considerations	rdfs:label	"theoretical considerations"	.
+local:handle	a	rdf:Class	;
+	rdfs:label	"handle"	.
 
-local:considerations	rdfs:label	"considerations"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:theoretical_considerations_behind_solution_space	rdfs:label	"theoretical considerations behind solution space"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:namely_wordnet	rdfs:label	"namely wordnet"	.
+local:devise	a	rdf:Class	;
+	rdfs:label	"devise"	.
 
-local:wordnet	rdfs:label	"wordnet"	.
+local:order_to_handle_machine_learning_problems_for_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"order to handle machine learning problems for knowledge graphs"	.
 
-#### Properties ####
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
+
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
+
+local:learning_problems	a	rdf:Class	;
+	rdfs:label	"learning problems"	.
+
+local:machine_learning_problems_for_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"machine learning problems for knowledge graphs"	.
+
+local:last_few_years	a	rdf:Class	;
+	rdfs:label	"last few years"	.
+
+local:few_years	a	rdf:Class	;
+	rdfs:label	"few years"	.
+
+local:years	a	rdf:Class	;
+	rdfs:label	"years"	.
+
+local:last_few	a	rdf:Class	;
+	rdfs:label	"last few"	.
+
+local:few	a	rdf:Class	;
+	rdfs:label	"few"	.
+
+local:last	a	rdf:Class	;
+	rdfs:label	"last"	.
 
 #### Mapped Relations ####
 
-local:inference	owl:sameAs	cso:inference	.
-cso:inference	rdfs:label	"inference"	.
 cso:wordnet	rdfs:label	"wordnet"	.
 local:wordnet	owl:sameAs	cso:wordnet	.
-cso:machine_learning	rdfs:label	"machine learning"	.
-local:machine_learning	owl:sameAs	cso:machine_learning	.
+cso:inference	rdfs:label	"inference"	.
+local:inference	owl:sameAs	cso:inference	.
 
 #### Relations ####
 
-local:lower_performance_in_practice_than_those	local:than_those	local:lower_performance_in_practice	.
-local:lower_performance_in_practice	local:lowerperformance_in	local:practice	.
-local:performance_differences_among_kge_models	local:among_kgemodels	local:performance_differences	.
-local:models_capability	rdfs:subClassOf	local:capability	.
-local:direct_influence_on_practical_performance	local:directinfluence_on	local:practical_performance	.
-local:several	rdfs:member	local:several_knowledge	.
-local:namely_freebase	rdfs:subClassOf	local:freebase	.
-local:practical	rdfs:member	local:practical_performance	.
-local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:machine_learning	rdfs:subClassOf	local:learning	.
-local:those_not_allowing	local:those_	local:not_allowing	.
-local:direct	rdfs:member	local:direct_influence	.
-local:devised	local:AM-PNC	local:order	.
-local:inference_of_particular_patterns	local:inference_of	local:particular_patterns	.
-local:contribute	vn.role:Theme1	local:factors	.
-local:practical_performance	rdfs:subClassOf	local:performance	.
-local:model_against_stateoftheart_models	local:model_against	local:stateoftheart_models	.
-local:inference_of_particular_patterns	local:of_particularpatterns	local:inference	.
-local:handle	vn.role:object	local:machine_learning_problems	.
-local:models_suchas_symmetry	local:models_such_as	local:symmetry	.
-local:knowledge_graph_embedding_models_capability	rdfs:subClassOf	local:graph_embedding_models_capability	.
-local:solution	rdfs:member	local:solution_space	.
-local:inferring	vn.role:Agent	local:models	.
-local:machine_learning_problems_for_knowledge_graphs	local:machinelearningproblems_for	local:knowledge_graphs	.
-local:inferring	vn.role:Theme	local:relational_patterns	.
-local:last_few_years	rdfs:subClassOf	local:few_years	.
-local:lower_performance	rdfs:subClassOf	local:performance	.
-local:few_years	rdfs:subClassOf	local:years	.
-local:dubbed	vn.role:Theme	local:proposed_model	.
-local:effect_of_solution_space_on_proposed_model	local:effectofsolutionspace_on	local:proposed_model	.
-local:standard_benchmarks	rdfs:subClassOf	local:benchmarks	.
-local:machine_learning_problems	rdfs:subClassOf	local:learning_problems	.
-local:infer	vn.role:Agent	local:those	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:direct_influence	rdfs:subClassOf	local:influence	.
-local:infer	vn.role:Agent	local:factor	.
-local:dubbed	vn.role:Predicate	local:spacess	.
-local:stateoftheart	rdfs:member	local:stateoftheart_models	.
-local:set_of_standard_benchmarks	local:set_of	local:standard_benchmarks	.
-local:learning	vn.role:Agent	local:problems	.
-local:learning_problems	rdfs:subClassOf	local:problems	.
-local:allowing	vn.role:Theme	local:infer	.
-local:concept_of_solution_space	local:of_solutionspace	local:concept	.
-local:effect_of_solution_space_on_proposed_model	local:on_proposedmodel	local:effect_of_solution_space	.
-local:model	local:AM-MNR	local:set_of_standard_benchmarks	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:has	vn.role:Experiencer	local:factor	.
-local:last	rdfs:member	local:last_few	.
-local:practical_performance_of_knowledge_graph_embedding_models	local:of_knowledgegraphembeddingmodels	local:practical_performance	.
-local:has	vn.role:Stimulus	local:direct_influence_on_practical_performance	.
-local:learning	vn.role:Agent	local:machine	.
-local:few	rdfs:member	local:few_years	.
-local:models_suchas_transitivity	local:models_such_as	local:transitivity	.
-local:showcase	vn.role:Agent	local:we	.
-local:theoretical	rdfs:member	local:theoretical_considerations	.
-local:set_of_standard_benchmarks	local:of_standardbenchmarks	local:set	.
-local:namely_wordnet	rdfs:subClassOf	local:wordnet	.
-local:models	rdfs:member	local:models_capability	.
-local:relational_patterns	rdfs:subClassOf	local:patterns	.
-local:performance_differences_among_kge_models_in_inference	local:in_inference	local:performance_differences_among_kge_models	.
-local:knowledge_graph_embedding_models	rdfs:subClassOf	local:graph_embedding_models	.
-local:infer	vn.role:Theme	local:patterns	.
-local:show	vn.role:Agent	local:models_suchas_transitivity	.
-local:graph_embedding_models	rdfs:subClassOf	local:embedding_models	.
-local:allowing	local:AM-NEG	local:not	.
-local:standard	rdfs:member	local:standard_benchmarks	.
-local:machine_learning_problems	rdfs:subClassOf	local:problems	.
-local:evaluate	vn.role:Agent	local:we	.
-local:show	vn.role:Agent	local:models_suchas_symmetry	.
-local:direct_influence_on_practical_performance	local:on_practicalperformance	local:direct_influence	.
+local:s2.1	rdf:object	local:infer_those_patterns	.
+local:s7.1	rdf:subject	local:factor	.
 local:embedding_models	rdfs:subClassOf	local:models	.
-local:contribute	vn.role:indirect_object	local:performance_differences_among_kge_models_in_inference	.
-local:describe	vn.role:Agent	local:we	.
-local:describe	vn.role:Theme	local:theoretical_considerations_behind_solution_space	.
-local:theoretical_considerations_behind_solution_space	local:theoreticalconsiderations_behind	local:solution_space	.
-local:models_suchas_transitivity	local:such_as_transitivity	local:models	.
-local:develop	local:AM-MNR	local:factor	.
-local:several_knowledge_graph_embedding_models	rdfs:subClassOf	local:knowledge_graph_embedding_models	.
-local:newly_proposed	rdfs:subClassOf	local:proposed	.
-local:several_knowledge_graph	rdfs:subClassOf	local:graph	.
-local:performance_differences	rdfs:subClassOf	local:differences	.
-local:infer	vn.role:Theme	local:relational_patterns	.
-local:machine_learning	rdfs:member	local:machine_learning_problems	.
-local:performance	rdfs:member	local:performance_differences	.
-local:model	local:AM-MNR	local:stateoftheart_models	.
-local:several_knowledge	rdfs:subClassOf	local:knowledge	.
-local:particular	rdfs:member	local:particular_patterns	.
-local:those_not_allowing	local:_notallowing	local:those	.
-local:effect_of_solution_space	local:of_solutionspace	local:effect	.
-local:handle	local:AM-PNC	local:knowledge_graphs	.
-local:model	vn.role:Agent	local:we	.
-local:several_knowledge	rdfs:member	local:several_knowledge_graph	.
-local:stateoftheart_models	rdfs:subClassOf	local:models	.
-local:model_against_stateoftheart_models	local:against_state-of-the-artmodels	local:model	.
-local:solution_space	rdfs:subClassOf	local:space	.
-local:particular_patterns	rdfs:subClassOf	local:patterns	.
-local:proposed_model	rdfs:subClassOf	local:model	.
-local:machine_learning_problems_for_knowledge_graphs	local:for_knowledgegraphs	local:machine_learning_problems	.
-local:relational	rdfs:member	local:relational_patterns	.
-local:evaluate	vn.role:Theme	local:model_against_stateoftheart_models	.
-local:lower_performance_in_practice_than_those	local:lowerperformanceinpractice_than	local:those	.
-local:lower_performance_in_practice	local:in_practice	local:lower_performance	.
-local:lower	rdfs:member	local:lower_performance	.
-local:models_suchas_symmetry	local:such_as_symmetry	local:models	.
-local:graph_embedding_models_capability	rdfs:subClassOf	local:embedding_models_capability	.
-local:last_few	rdfs:subClassOf	local:few	.
-local:concept_of_solution_space	local:concept_of	local:solution_space	.
-local:practical_performance_of_knowledge_graph_embedding_models	local:practicalperformance_of	local:knowledge_graph_embedding_models	.
+local:s2.2	rdf:object	local:patterns	.
+local:s0.2	rdf:predicate	local:learn	.
+local:s9.1	local:AM-TMP	local:newly	.
+local:direct_influence	rdfs:member	local:direct	.
+local:theoretical_considerations_behind_solution_space	rdfs:member	local:solution_space	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:graph_embedding_models	rdfs:subClassOf	local:embedding_models	.
+local:stateoftheart_models	rdfs:member	local:stateoftheart	.
+local:order_to_handle_machine_learning_problems_for_knowledge_graphs	rdfs:member	local:order	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
 local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:proposed	vn.role:Topic	local:model	.
-local:proposed	local:AM-TMP	local:newly	.
-local:performance_differences_among_kge_models_in_inference	local:performancedifferencesamongkgemodels_in	local:inference	.
-local:showcase	vn.role:Theme	local:effect_of_solution_space_on_proposed_model	.
-local:evaluate	local:AM-MNR	local:set_of_standard_benchmarks	.
-local:last_few_years	rdfs:subClassOf	local:years	.
-local:proven	vn.role:Theme	local:models	.
-local:show	vn.role:Theme	local:lower_performance_in_practice_than_those	.
-local:theoretical_considerations_behind_solution_space	local:behind_solutionspace	local:theoretical_considerations	.
-local:develop	vn.role:Theme	local:we	.
-local:effect_of_solution_space	local:effect_of	local:solution_space	.
-local:not_allowing	rdfs:subClassOf	local:allowing	.
-local:performance_differences_among_kge_models	local:performancedifferences_among	local:kge_models	.
-local:embedding_models_capability	rdfs:subClassOf	local:models_capability	.
-local:devised	local:AM-TMP	local:last_few_years	.
-local:handle	vn.role:Theme	local:several_knowledge_graph_embedding_models	.
+local:concept_of_a_solution_space	rdfs:member	local:concept	.
+local:practical_performance_of_knowledge_graph_embedding_models	rdfs:member	local:knowledge_graph_embedding_models	.
+local:s7	local:AM-MNR	local:factor_to_infer_relational_patterns	.
+local:models_capability	rdfs:subClassOf	local:capability	.
+local:s1.1	rdf:object	local:relational_patterns	.
+local:s12.1	local:AM-MNR	local:stateoftheart_models	.
+local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	rdfs:member	local:set	.
+local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	rdfs:member	local:stateoftheart_models	.
+local:s10	rdf:object	local:theoretical_considerations_behind_the_solution_space	.
+local:s3.1	rdf:predicate	local:not_allow	.
+local:set_of_standard_benchmarks_namely_wordnet	rdfs:member	local:set	.
+local:those_not_allowing	rdfs:member	local:those	.
+local:s5	rdf:object	local:knowledge_graph_embedding_models_capability	.
+local:order_to_handle_machine_learning_problems_for_knowledge_graphs	rdfs:member	local:problems	.
+local:stateoftheart_models	rdfs:subClassOf	local:models	.
+local:lower_performance_in_practice_than_those_not_allowing_to_infer_those_patterns	rdfs:member	local:patterns	.
+local:s4	rdf:subject	local:factors	.
+local:s1.1	rdf:predicate	local:infer	.
+local:s11.1	rdf:subject	local:we	.
+local:lower_performance_in_practice_than_those_not_allowing_to_infer_those_patterns	rdfs:member	local:lower_performance	.
+local:s9.1	rdf:subject	local:model	.
+local:performance_differences_among_kge_models_in_the_inference_of_particular_patterns	rdfs:member	local:kge_models	.
+local:concept_of_solution_space	rdfs:member	local:concept	.
+local:several_knowledge_graph_embedding_models	rdfs:member	local:models	.
+local:model_against_stateoftheart_models	rdfs:member	local:stateoftheart_models	.
+local:learning_problems	rdfs:subClassOf	local:problems	.
+local:performance_differences_among_kge_models_in_the_inference_of_particular_patterns	rdfs:member	local:particular_patterns	.
+local:s3	rdf:object	local:lower_performance_in_practice_than_those_not_allowing_to_infer_those_patterns	.
+local:factor_to_infer_relational_patterns	rdfs:member	local:factor	.
+local:model_against_stateoftheart_models_on_set	rdfs:member	local:model_against_stateoftheart_models	.
+local:practical_performance	rdfs:subClassOf	local:performance	.
+local:direct_influence_on_practical_performance	rdfs:member	local:practical_performance	.
+local:theoretical_considerations_behind_solution_space	rdfs:member	local:theoretical_considerations	.
+local:practical_performance_of_knowledge_graph_embedding_models	rdfs:member	local:practical_performance	.
+local:s0.1	local:AM-PNC	local:knowledge_graphs	.
+local:inference_of_particular_patterns	rdfs:member	local:inference	.
+local:s3.2	rdf:object	local:patterns	.
+local:effect_of_solution_space_on_a_newly_proposed_model	rdfs:member	local:solution_space	.
+local:set_of_standard_benchmarks	rdfs:member	local:standard_benchmarks	.
+local:performance_differences	rdfs:member	local:performance	.
+local:s8	rdf:subject	local:model	.
+local:s0.1	rdf:predicate	local:handle	.
+local:effect_of_solution_space	rdfs:member	local:solution_space	.
+local:s4	rdf:predicate	local:contribute	.
+local:standard_benchmarks	rdfs:member	local:standard	.
+local:s3.1	rdf:object	local:infer_those_patterns	.
+local:s1	rdf:predicate	local:prove	.
+local:s9	rdf:predicate	local:showcase	.
+local:theoretical_considerations	rdfs:member	local:theoretical	.
+local:performance_differences_among_kge_models_in_the_inference_of_particular_patterns	rdfs:member	local:inference	.
+local:set_of_standard_benchmarks	rdfs:member	local:set	.
+local:performance_differences_among_kge_models_in_the_inference_of_particular_patterns	rdfs:member	local:performance_differences	.
+local:s8	rdf:predicate	local:propose	.
+local:s0.2	rdfs:subClassOf	local:learning_problems	.
+local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	rdfs:member	local:standard_benchmarks	.
+local:particular_patterns	rdfs:subClassOf	local:patterns	.
+local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	rdfs:member	local:model	.
+local:models_such_as_transitivity	rdfs:member	local:models	.
+local:s12	rdf:predicate	local:evaluate	.
+local:s7	rdf:predicate	local:develop	.
+local:kge_models	rdfs:member	local:kge	.
+local:s6	rdf:predicate	local:have	.
+local:lower_performance_in_practice_than_those_not_allowing_to_infer_those_patterns	rdfs:member	local:practice	.
+local:s0	rdf:subject	local:several_knowledge_graph_embedding_models	.
+local:s11	rdf:predicate	local:evaluate	.
+local:effect_of_solution_space_on_proposed_model	rdfs:member	local:proposed_model	.
+local:lower_performance_in_practice_than_those	rdfs:member	local:those	.
+local:s9	rdf:subject	local:we	.
+local:s2	rdf:subject	local:models_such_as_transitivity	.
+local:s11.1	local:AM-MNR	local:set_of_standard_benchmarks_namely_wordnet	.
+local:s0.1	rdf:subject	local:several_knowledge_graph_embedding_models	.
 local:kge_models	rdfs:subClassOf	local:models	.
-local:last_few	rdfs:member	local:last_few_years	.
-local:develop	vn.role:Location	local:concept_of_solution_space	.
-local:devised	vn.role:Product	local:several_knowledge_graph_embedding_models	.
+local:performance_differences_among_kge_models	rdfs:member	local:kge_models	.
+local:s11	rdf:subject	local:we	.
+local:s11.1	rdf:predicate	local:model	.
+local:s2	rdf:predicate	local:show	.
+local:direct_influence_on_the_practical_performance_of_knowledge_graph_embedding_models	rdfs:member	local:practical_performance	.
+local:s0.2	rdf:subject	local:problems	.
+local:models_such_as_symmetry	rdfs:member	local:models	.
+local:s2.2	rdf:subject	local:those	.
+local:s9	rdf:object	local:effect_of_solution_space_on_a_newly_proposed_model	.
+local:direct_influence_on_the_practical_performance_of_knowledge_graph_embedding_models	rdfs:member	local:direct_influence	.
+local:few_years	rdfs:subClassOf	local:years	.
+local:performance_differences_among_kge_models	rdfs:member	local:performance_differences	.
+local:solution_space	rdfs:subClassOf	local:space	.
+local:models_such_as_symmetry	rdfs:member	local:symmetry	.
+local:inference_of_particular_patterns	rdfs:member	local:particular_patterns	.
+local:particular_patterns	rdfs:member	local:particular	.
+local:s2.1	rdf:predicate	local:not_allow	.
+local:s5	rdf:predicate	local:have	.
+local:not_allowing	rdfs:subClassOf	local:allowing	.
+local:performance_differences	rdfs:subClassOf	local:differences	.
+local:s1	rdf:subject	local:models	.
+local:s0	local:AM-TMP	local:last_few_years	.
+local:last_few_years	rdfs:subClassOf	local:few_years	.
+local:effect_of_solution_space_on_a_newly_proposed_model	rdfs:member	local:model	.
+local:s6	rdf:subject	local:factor	.
+local:s3.2	rdf:predicate	local:infer	.
+local:s8.1	rdf:subject	local:s9.1	.
+local:s7.1	rdf:predicate	local:infer	.
+local:s4	rdf:object	local:performance_differences_among_kge_models_in_the_inference_of_particular_patterns	.
+local:several_knowledge_graph_embedding_models	rdfs:member	local:several_knowledge_graph	.
+local:performance_differences_among_kge_models_in_inference	rdfs:member	local:inference	.
+local:effect_of_solution_space_on_a_newly_proposed_model	rdfs:member	local:effect	.
+local:relational_patterns	rdfs:subClassOf	local:patterns	.
+local:newly_proposed	rdfs:subClassOf	local:proposed	.
+local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	rdfs:member	local:namely_freebase	.
+local:proposed_model	rdfs:subClassOf	local:model	.
+local:concept_of_a_solution_space	rdfs:member	local:solution_space	.
+local:knowledge_graph_embedding_models_capability	rdfs:member	local:knowledge_graph	.
+local:s0.1	rdf:object	local:s0.2	.
+local:relational_patterns	rdfs:member	local:relational	.
+local:several_knowledge	rdfs:member	local:several	.
+local:s10	rdf:predicate	local:describe	.
+local:practical_performance	rdfs:member	local:practical	.
+local:last_few	rdfs:subClassOf	local:few	.
+local:concept_of_solution_space	rdfs:member	local:solution_space	.
+local:several_knowledge_graph	rdfs:subClassOf	local:graph	.
+local:knowledge_graph_embedding_models	rdfs:subClassOf	local:graph_embedding_models	.
+local:few_years	rdfs:member	local:few	.
 local:theoretical_considerations	rdfs:subClassOf	local:considerations	.
-local:has	vn.role:Stimulus	local:knowledge_graph_embedding_models_capability	.
-local:machine	rdfs:member	local:machine_learning	.
-local:allowing	vn.role:Agent	local:those	.
-local:learning	rdfs:member	local:learning_problems	.
-local:kge	rdfs:member	local:kge_models	.
+local:solution_space	rdfs:member	local:solution	.
+local:s1.1	rdf:subject	local:models	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:s12.1	local:AM-MNR	local:set_of_standard_benchmarks_namely_freebase	.
+local:namely_freebase	rdfs:subClassOf	local:freebase	.
+local:s5	rdf:subject	local:factor	.
+local:namely_freebase	rdfs:member	local:namely	.
+local:lower_performance	rdfs:subClassOf	local:performance	.
+local:model_against_stateoftheart_models	rdfs:member	local:model	.
+local:direct_influence_on_the_practical_performance_of_knowledge_graph_embedding_models	rdfs:member	local:knowledge_graph	.
+local:infer_those_patterns	rdfs:member	local:infer	.
+local:last_few_years	rdfs:member	local:last_few	.
+local:s10	rdf:subject	local:we	.
+local:those_not_allowing	rdfs:member	local:not_allowing	.
+local:effect_of_solution_space_on_proposed_model	rdfs:member	local:effect_of_solution_space	.
+local:s7	rdf:object	local:concept_of_a_solution_space	.
+local:effect_of_solution_space	rdfs:member	local:effect	.
+local:set_of_standard_benchmarks_namely_wordnet	rdfs:member	local:standard_benchmarks	.
+local:several_knowledge_graph_embedding_models	rdfs:subClassOf	local:knowledge_graph_embedding_models	.
+local:several_knowledge_graph	rdfs:member	local:several_knowledge	.
+local:set_of_standard_benchmarks_namely_freebase	rdfs:member	local:namely_freebase	.
+local:s3.2	rdf:subject	local:those	.
+local:s8.1	rdf:object	local:spacess	.
+local:factor_to_infer_relational_patterns	rdfs:member	local:relational_patterns	.
+local:direct_influence_on_practical_performance	rdfs:member	local:direct_influence	.
+local:s6	rdf:object	local:direct_influence_on_the_practical_performance_of_knowledge_graph_embedding_models	.
+local:s3.1	rdf:subject	local:those	.
+local:s0	local:AM-PNC	local:order_to_handle_machine_learning_problems_for_knowledge_graphs	.
+local:s2.2	rdf:predicate	local:infer	.
+local:s12.1	rdf:predicate	local:model	.
+local:theoretical_considerations_behind_the_solution_space	rdfs:member	local:solution_space	.
+local:s2.1	rdf:subject	local:those	.
+local:models_such_as_transitivity	rdfs:member	local:transitivity	.
+local:order_to_handle_machine_learning_problems_for_knowledge_graphs	rdfs:member	local:knowledge_graphs	.
+local:infer_those_patterns	rdfs:member	local:patterns	.
+local:machine_learning_problems_for_knowledge_graphs	rdfs:member	local:knowledge_graphs	.
+local:set_of_standard_benchmarks_namely_freebase	rdfs:member	local:standard_benchmarks	.
+local:lower_performance_in_practice	rdfs:member	local:practice	.
+local:s8.1	rdf:predicate	local:dub	.
+local:s3	rdf:predicate	local:show	.
+local:lower_performance	rdfs:member	local:lower	.
+local:theoretical_considerations_behind_the_solution_space	rdfs:member	local:theoretical_considerations	.
+local:direct_influence_on_the_practical_performance_of_knowledge_graph_embedding_models	rdfs:member	local:models	.
+local:direct_influence	rdfs:subClassOf	local:influence	.
+local:model_against_stateoftheart_models_on_set	rdfs:member	local:set	.
+local:last_few_years	rdfs:subClassOf	local:years	.
+local:s9.1	rdf:predicate	local:propose	.
+local:lower_performance_in_practice	rdfs:member	local:lower_performance	.
+local:s8	local:AM-TMP	local:newly	.
+local:order_to_handle_machine_learning_problems_for_knowledge_graphs	rdfs:member	local:machine	.
+local:s2	rdf:object	local:lower_performance_in_practice_than_those_not_allowing_to_infer_those_patterns	.
+local:models_capability	rdfs:member	local:models	.
+local:s12	rdf:subject	local:we	.
+local:set_of_standard_benchmarks_namely_freebase	rdfs:member	local:set	.
+local:s0	rdf:predicate	local:devise	.
+local:performance_differences_among_kge_models_in_inference	rdfs:member	local:performance_differences_among_kge_models	.
+local:namely_wordnet	rdfs:subClassOf	local:wordnet	.
+local:s3	rdf:subject	local:models_such_as_symmetry	.
+local:lower_performance_in_practice_than_those	rdfs:member	local:lower_performance_in_practice	.
+local:standard_benchmarks	rdfs:subClassOf	local:benchmarks	.
+local:s11	local:AM-MNR	local:set_of_standard_benchmarks_namely_wordnet	.
+local:s12	rdf:object	local:model_against_stateoftheart_models_on_a_set_of_standard_benchmarks_namely_freebase	.
+local:s7.1	rdf:object	local:relational_patterns	.
+local:knowledge_graph_embedding_models_capability	rdfs:member	local:models_capability	.
+local:s12.1	rdf:subject	local:we	.
+local:machine_learning_problems_for_knowledge_graphs	rdfs:member	local:s0.2	.
+local:last_few	rdfs:member	local:last	.
+local:s7	rdf:subject	local:we	.
+local:s11.1	local:AM-MNR	local:stateoftheart_models	.
+local:several_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s11	rdf:object	local:model_against_stateoftheart_models	.

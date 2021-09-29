@@ -1,225 +1,419 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"our algorithm produces significantly smaller rewritings in most cases"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the results indicate that our algorithm produces significantly smaller rewritings in most cases"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"the standard algorithm using queries"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the standard algorithm conducting an empirical evaluation using queries"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we resolution based rewriting algorithm with the standard algorithm conducting an empirical evaluation using queries"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"ontologies derived from realistic applications"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"queries derived from realistic applications"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we present a comparison of we resolution"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the standard algorithm proposed by calvanese et al"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"the standard algorithm conducting an empirical evaluation using ontologies"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the standard algorithm conducting an empirical evaluation using ontologies"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we resolution based rewriting algorithm with the standard algorithm conducting an empirical evaluation using ontologies"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the standard algorithm implementing both"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we resolution based rewriting algorithm with the standard algorithm implementing both"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"query rewriting"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"use database technology for query answering via query rewriting"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the ql profile of owl 2 designed so that it is possible to use database technology for query answering via query rewriting"	.
+
+
 #### Classes ####
 
-local:ql	rdfs:label	"ql"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:ql_profile	rdfs:label	"ql profile"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:profile	rdfs:label	"profile"	.
+local:significantly_smaller_rewritings	a	rdf:Class	;
+	rdfs:label	"significantly smaller rewritings"	.
 
-local:2_owl	rdfs:label	"2 owl"	.
+local:significantly_smaller	a	rdf:Class	;
+	rdfs:label	"significantly smaller"	.
 
-local:owl	rdfs:label	"owl"	.
+local:significantly	a	rdf:Class	;
+	rdfs:label	"significantly"	.
 
-local:ql_profile_of_2_owl	rdfs:label	"ql profile of 2 owl"	.
+local:smaller_rewritings	a	rdf:Class	;
+	rdfs:label	"smaller rewritings"	.
 
-local:designed	rdfs:label	"designed"	.
+local:rewritings	a	rdf:Class	;
+	rdfs:label	"rewritings"	.
 
-local:query	rdfs:label	"query"	.
+local:smaller	a	rdf:Class	;
+	rdfs:label	"smaller"	.
 
-local:query_rewriting	rdfs:label	"query rewriting"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:rewriting	rdfs:label	"rewriting"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:database	rdfs:label	"database"	.
+local:indicate	a	rdf:Class	;
+	rdfs:label	"indicate"	.
 
-local:database_technology	rdfs:label	"database technology"	.
+local:algorithm_produces_significantly_smaller_rewritings_in_most_cases	a	rdf:Class	;
+	rdfs:label	"algorithm produces significantly smaller rewritings in most cases"	.
 
-local:technology	rdfs:label	"technology"	.
+local:most_cases	a	rdf:Class	;
+	rdfs:label	"most cases"	.
 
-local:query_answering	rdfs:label	"query answering"	.
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
-local:answering	rdfs:label	"answering"	.
+local:produces_in_most_cases	a	rdf:Class	;
+	rdfs:label	"produces in most cases"	.
 
-local:use_for_query_answering	rdfs:label	"use for query answering"	.
+local:produces	a	rdf:Class	;
+	rdfs:label	"produces"	.
 
-local:use	rdfs:label	"use"	.
+local:standard_algorithm	a	rdf:Class	;
+	rdfs:label	"standard algorithm"	.
 
-local:use_for_query_answering_via_query	rdfs:label	"use for query answering via query"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:possible	rdfs:label	"possible"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:query_answering_via_query	rdfs:label	"query answering via query"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:standard	rdfs:label	"standard"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:standard_algorithm	rdfs:label	"standard algorithm"	.
+local:empirical_evaluation	a	rdf:Class	;
+	rdfs:label	"empirical evaluation"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:empirical	a	rdf:Class	;
+	rdfs:label	"empirical"	.
 
-local:et_al	rdfs:label	"et al."	.
+local:using_queries	a	rdf:Class	;
+	rdfs:label	"using queries"	.
 
-local:al	rdfs:label	"al."	.
+local:resolution	a	rdf:Class	;
+	rdfs:label	"resolution"	.
 
-local:calvanese_et_al	rdfs:label	"calvanese et al."	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:based	rdfs:label	"based"	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_queries	a	rdf:Class	;
+	rdfs:label	"rewriting algorithm with the standard algorithm conducting an empirical evaluation using queries"	.
 
-local:resolution	rdfs:label	"resolution"	.
+local:rewriting_with_standard_algorithm	a	rdf:Class	;
+	rdfs:label	"rewriting with standard algorithm"	.
 
-local:rewriting_with_standard_algorithm	rdfs:label	"rewriting with standard algorithm"	.
+local:rewriting	a	rdf:Class	;
+	rdfs:label	"rewriting"	.
 
-local:standard_algorithm_implementing	rdfs:label	"standard algorithm implementing"	.
+local:standard_algorithm_conducting	a	rdf:Class	;
+	rdfs:label	"standard algorithm conducting"	.
 
-local:implementing	rdfs:label	"implementing"	.
+local:conducting	a	rdf:Class	;
+	rdfs:label	"conducting"	.
 
-local:both	rdfs:label	"both"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:present	rdfs:label	"present"	.
+local:derive	a	rdf:Class	;
+	rdfs:label	"derive"	.
 
-local:we	rdfs:label	"we"	.
+local:realistic_applications	a	rdf:Class	;
+	rdfs:label	"realistic applications"	.
 
-local:comparison_of_resolution	rdfs:label	"comparison of resolution"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:comparison	rdfs:label	"comparison"	.
+local:realistic	a	rdf:Class	;
+	rdfs:label	"realistic"	.
 
-local:empirical	rdfs:label	"empirical"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:empirical_evaluation	rdfs:label	"empirical evaluation"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:comparison_of_we_resolution	a	rdf:Class	;
+	rdfs:label	"comparison of we resolution"	.
 
-local:standard_algorithm_conducting	rdfs:label	"standard algorithm conducting"	.
+local:calvanese_et_al	a	rdf:Class	;
+	rdfs:label	"calvanese et al"	.
 
-local:conducting	rdfs:label	"conducting"	.
+local:calvanese_et	a	rdf:Class	;
+	rdfs:label	"calvanese et"	.
 
-local:empirical_evaluation_using	rdfs:label	"empirical evaluation using"	.
+local:et	a	rdf:Class	;
+	rdfs:label	"et"	.
 
-local:using	rdfs:label	"using"	.
+local:calvanese	a	rdf:Class	;
+	rdfs:label	"calvanese"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:et_al	a	rdf:Class	;
+	rdfs:label	"et al"	.
 
-local:derived	rdfs:label	"derived"	.
+local:al	a	rdf:Class	;
+	rdfs:label	"al"	.
 
-local:realistic_applications	rdfs:label	"realistic applications"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:applications	rdfs:label	"applications"	.
+local:standard_algorithm_conducting_an_empirical_evaluation	a	rdf:Class	;
+	rdfs:label	"standard algorithm conducting an empirical evaluation"	.
 
-local:realistic	rdfs:label	"realistic"	.
+local:empirical_evaluation_using_ontologies	a	rdf:Class	;
+	rdfs:label	"empirical evaluation using ontologies"	.
 
-local:queries	rdfs:label	"queries"	.
+local:empirical_evaluation_using	a	rdf:Class	;
+	rdfs:label	"empirical evaluation using"	.
 
-local:indicate	rdfs:label	"indicate"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:results	rdfs:label	"results"	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_ontologies	a	rdf:Class	;
+	rdfs:label	"rewriting algorithm with the standard algorithm conducting an empirical evaluation using ontologies"	.
 
-local:significantly_smaller_rewritings	rdfs:label	"significantly smaller rewritings"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:rewritings	rdfs:label	"rewritings"	.
+local:both	a	rdf:Class	;
+	rdfs:label	"both"	.
 
-local:significantly_smaller	rdfs:label	"significantly smaller"	.
+local:rewriting_algorithm_with_the_standard_algorithm_implementing_both	a	rdf:Class	;
+	rdfs:label	"rewriting algorithm with the standard algorithm implementing both"	.
 
-local:smaller	rdfs:label	"smaller"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:smaller_rewritings	rdfs:label	"smaller rewritings"	.
+local:rewrite	a	rdf:Class	;
+	rdfs:label	"rewrite"	.
 
-local:significantly	rdfs:label	"significantly"	.
+local:database_technology	a	rdf:Class	;
+	rdfs:label	"database technology"	.
 
-local:most	rdfs:label	"most"	.
+local:database	a	rdf:Class	;
+	rdfs:label	"database"	.
 
-local:most_cases	rdfs:label	"most cases"	.
+local:technology	a	rdf:Class	;
+	rdfs:label	"technology"	.
 
-local:cases	rdfs:label	"cases"	.
+local:query_answering_via_query_rewriting	a	rdf:Class	;
+	rdfs:label	"query answering via query rewriting"	.
 
-local:produces_in_most_cases	rdfs:label	"produces in most cases"	.
+local:query_answering	a	rdf:Class	;
+	rdfs:label	"query answering"	.
 
-local:produces	rdfs:label	"produces"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-#### Properties ####
+local:query_answering_via_query	a	rdf:Class	;
+	rdfs:label	"query answering via query"	.
+
+local:ql_profile_of_owl_2	a	rdf:Class	;
+	rdfs:label	"ql profile of owl 2"	.
+
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
+
+local:ql_profile	a	rdf:Class	;
+	rdfs:label	"ql profile"	.
+
+local:profile	a	rdf:Class	;
+	rdfs:label	"profile"	.
+
+local:ql	a	rdf:Class	;
+	rdfs:label	"ql"	.
+
+local:2_owl	a	rdf:Class	;
+	rdfs:label	"2 owl"	.
+
+local:ql_profile_of_2_owl	a	rdf:Class	;
+	rdfs:label	"ql profile of 2 owl"	.
+
+local:design	a	rdf:Class	;
+	rdfs:label	"design"	.
+
+local:possible_to_use_database_technology_for_query_answering_via_query_rewriting	a	rdf:Class	;
+	rdfs:label	"possible to use database technology for query answering via query rewriting"	.
+
+local:use_for_query_answering	a	rdf:Class	;
+	rdfs:label	"use for query answering"	.
+
+local:use_for_query_answering_via_query	a	rdf:Class	;
+	rdfs:label	"use for query answering via query"	.
 
 #### Mapped Relations ####
 
-cso:owl	rdfs:label	"owl"	.
-local:query_answering	owl:sameAs	cso:query_answering	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:query_rewriting	rdfs:label	"query rewriting"	.
-local:owl	owl:sameAs	cso:owl	.
 cso:query_answering	rdfs:label	"query answering"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 cso:database	rdfs:label	"database"	.
-local:query_rewriting	owl:sameAs	cso:query_rewriting	.
 local:database	owl:sameAs	cso:database	.
+local:owl	owl:sameAs	cso:owl	.
+cso:owl	rdfs:label	"owl"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:query_answering	owl:sameAs	cso:query_answering	.
 
 #### Relations ####
 
-local:based	vn.role:Experiencer	local:resolution	.
-local:use_for_query_answering	local:use_for	local:query_answering	.
-local:use_for_query_answering_via_query	local:useforqueryanswering_via	local:query	.
-local:implementing	vn.role:Theme	local:both	.
-local:significantly_smaller	rdfs:member	local:significantly_smaller_rewritings	.
-local:query_rewriting	rdfs:subClassOf	local:rewriting	.
-local:significantly_smaller_rewritings	rdfs:subClassOf	local:rewritings	.
-local:query_answering_via_query	local:queryanswering_via	local:query	.
-local:standard_algorithm_conducting	local:_conducting	local:standard_algorithm	.
-local:produces	local:AM-MNR	local:cases	.
-local:proposed	vn.role:Agent	local:calvanese_et_al	.
-local:empirical_evaluation_using	local:_using	local:empirical_evaluation	.
-local:produces	vn.role:Agent	local:algorithm	.
-local:use_for_query_answering	local:for_queryanswering	local:use	.
-local:query_answering_via_query	local:via_query	local:query_answering	.
-local:empirical_evaluation	rdfs:subClassOf	local:evaluation	.
-local:ql_profile_of_2_owl	local:of_2owl	local:ql_profile	.
-local:rewriting_with_standard_algorithm	local:with_standardalgorithm	local:rewriting	.
-local:use	vn.role:Recipient	local:query_answering_via_query	.
-local:derived	vn.role:Location	local:queries	.
-local:use_for_query_answering_via_query	local:via_query	local:use_for_query_answering	.
-local:rewriting_with_standard_algorithm	local:rewriting_with	local:standard_algorithm	.
-local:query_answering	rdfs:subClassOf	local:answering	.
-local:standard	rdfs:member	local:standard_algorithm	.
-local:standard_algorithm_implementing	local:_implementing	local:standard_algorithm	.
-local:standard_algorithm	rdfs:subClassOf	local:algorithm	.
-local:designed	vn.role:Product	local:ql_profile_of_2_owl	.
-local:standard_algorithm_implementing	local:standardalgorithm_	local:implementing	.
-local:present	vn.role:Theme	local:comparison_of_resolution	.
-local:standard_algorithm_conducting	local:standardalgorithm_	local:conducting	.
-local:et_al	rdfs:subClassOf	local:al	.
-local:using	vn.role:Agent	local:standard_algorithm_conducting	.
-local:produces_in_most_cases	local:in_mostcases	local:produces	.
-local:use	vn.role:Theme	local:database_technology	.
-local:ql_profile	rdfs:subClassOf	local:profile	.
-local:query_rewriting	local:_rewriting	local:query	.
-local:significantly_smaller	rdfs:subClassOf	local:smaller	.
-local:derived	vn.role:indirect_object	local:realistic_applications	.
-local:conducting	vn.role:Agent	local:standard_algorithm	.
-local:produces_in_most_cases	local:produces_in	local:most_cases	.
-local:significantly	rdfs:member	local:significantly_smaller	.
-local:empirical	rdfs:member	local:empirical_evaluation	.
-local:empirical_evaluation_using	local:empiricalevaluation_	local:using	.
-local:comparison_of_resolution	local:comparison_of	local:resolution	.
-local:smaller_rewritings	rdfs:subClassOf	local:rewritings	.
-local:comparison_of_resolution	local:of_resolution	local:comparison	.
-local:derived	vn.role:Location	local:ontologies	.
-local:using	vn.role:Theme	local:queries	.
-local:proposed	vn.role:Topic	local:standard_algorithm	.
-local:query_rewriting	local:query_	local:rewriting	.
-local:present	vn.role:Agent	local:we	.
-local:2_owl	rdfs:subClassOf	local:owl	.
-local:most_cases	rdfs:subClassOf	local:cases	.
-local:implementing	vn.role:Agent	local:rewriting	.
-local:most	rdfs:member	local:most_cases	.
-local:designed	local:AM-PNC	local:possible	.
-local:ql	rdfs:member	local:ql_profile	.
+local:ql_profile_of_owl_2	rdfs:member	local:ql_profile	.
 local:calvanese_et_al	rdfs:subClassOf	local:et_al	.
-local:indicate	vn.role:Cause	local:produces_in_most_cases	.
-local:implementing	vn.role:Agent	local:standard_algorithm	.
-local:realistic	rdfs:member	local:realistic_applications	.
-local:database_technology	rdfs:subClassOf	local:technology	.
-local:conducting	local:AM-MNR	local:using	.
+local:empirical_evaluation	rdfs:subClassOf	local:evaluation	.
+local:standard_algorithm	rdfs:subClassOf	local:algorithm	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_ontologies	rdfs:member	local:algorithm	.
+local:s7	rdf:object	local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_queries	.
+local:s0	rdf:predicate	local:design	.
+local:rewriting_algorithm_with_the_standard_algorithm_implementing_both	rdfs:member	local:standard_algorithm	.
+local:possible_to_use_database_technology_for_query_answering_via_query_rewriting	rdfs:member	local:s0.2	.
+local:possible_to_use_database_technology_for_query_answering_via_query_rewriting	rdfs:member	local:query	.
+local:s7.1	local:AM-MNR	local:using_queries	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_queries	rdfs:member	local:algorithm	.
+local:s8.1	rdf:object	local:significantly_smaller_rewritings	.
+local:s8.1	rdf:predicate	local:produce	.
+local:database_technology	rdfs:member	local:database	.
+local:query_answering_via_query	rdfs:member	local:query_answering	.
+local:s7.2	rdf:subject	local:standard_algorithm	.
+local:use_for_query_answering	rdfs:member	local:use	.
+local:standard_algorithm_conducting_an_empirical_evaluation	rdfs:member	local:empirical_evaluation	.
+local:algorithm_produces_significantly_smaller_rewritings_in_most_cases	rdfs:member	local:most_cases	.
+local:s8	rdf:predicate	local:indicate	.
+local:most_cases	rdfs:member	local:most	.
+local:s0.1	rdf:subject	local:database_technology	.
+local:s6	rdf:subject	local:ontologies	.
+local:s8	rdf:subject	local:results	.
+local:s3	rdf:object	local:standard_algorithm	.
+local:s1	rdf:predicate	local:base	.
+local:significantly_smaller	rdfs:subClassOf	local:smaller	.
+local:query_answering_via_query	rdfs:member	local:query	.
+local:standard_algorithm_conducting_an_empirical_evaluation	rdfs:member	local:standard_algorithm	.
+local:produces_in_most_cases	rdfs:member	local:most_cases	.
+local:realistic_applications	rdfs:member	local:realistic	.
+local:s2.2	rdf:object	local:ontologies	.
+local:s6	rdf:object	local:realistic_applications	.
+local:empirical_evaluation_using	rdfs:member	local:using	.
+local:produces_in_most_cases	rdfs:member	local:produces	.
+local:s8.1	rdf:subject	local:algorithm	.
+local:et_al	rdfs:subClassOf	local:al	.
+local:use_for_query_answering	rdfs:member	local:query_answering	.
+local:smaller_rewritings	rdfs:subClassOf	local:rewritings	.
+local:s6	rdf:predicate	local:derive	.
+local:ql_profile_of_2_owl	rdfs:member	local:2_owl	.
+local:s2	rdf:object	local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_ontologies	.
+local:empirical_evaluation_using_ontologies	rdfs:member	local:empirical_evaluation	.
+local:s4	rdf:predicate	local:present	.
+local:use_for_query_answering_via_query	rdfs:member	local:use_for_query_answering	.
+local:s5	rdf:object	local:realistic_applications	.
+local:ql_profile_of_2_owl	rdfs:member	local:ql_profile	.
+local:s7	rdf:predicate	local:base	.
+local:s1	rdf:object	local:rewriting_algorithm_with_the_standard_algorithm_implementing_both	.
+local:s5	rdf:predicate	local:derive	.
+local:s2.2	rdf:subject	local:standard_algorithm_conducting_an_empirical_evaluation	.
+local:ql_profile	rdfs:subClassOf	local:profile	.
+local:s7.1	rdf:predicate	local:conduct	.
+local:2_owl	rdfs:subClassOf	local:owl	.
+local:possible_to_use_database_technology_for_query_answering_via_query_rewriting	rdfs:member	local:database_technology	.
+local:rewriting_with_standard_algorithm	rdfs:member	local:rewriting	.
+local:s3	rdf:subject	local:calvanese_et_al	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_queries	rdfs:member	local:empirical_evaluation	.
+local:s4	rdf:subject	local:we	.
+local:rewriting_algorithm_with_the_standard_algorithm_implementing_both	rdfs:member	local:algorithm	.
+local:s7.2	rdf:object	local:queries	.
+local:s2	rdf:subject	local:resolution	.
+local:s8	rdf:object	local:algorithm_produces_significantly_smaller_rewritings_in_most_cases	.
+local:s3	rdf:predicate	local:propose	.
+local:s1.1	rdf:predicate	local:implement	.
+local:s0.2	rdfs:member	local:rewriting	.
+local:s0.1	rdf:object	local:query_answering_via_query_rewriting	.
+local:s0	rdf:subject	local:ql_profile_of_owl_2	.
+local:standard_algorithm	rdfs:member	local:standard	.
+local:s7.1	rdf:subject	local:standard_algorithm	.
+local:s0.1	rdf:predicate	local:use	.
+local:s7.2	rdf:predicate	local:use	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_ontologies	rdfs:member	local:standard_algorithm	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_ontologies	rdfs:member	local:ontologies	.
+local:s1.1	rdf:subject	local:standard_algorithm	.
+local:s2.1	rdf:object	local:empirical_evaluation_using_ontologies	.
+local:calvanese_et	rdfs:member	local:calvanese	.
+local:empirical_evaluation	rdfs:member	local:empirical	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_queries	rdfs:member	local:queries	.
+local:query_answering_via_query_rewriting	rdfs:member	local:s0.2	.
+local:s7	rdf:subject	local:resolution	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_ontologies	rdfs:member	local:empirical_evaluation	.
+local:s0.2	rdf:predicate	local:rewrite	.
+local:smaller_rewritings	rdfs:member	local:smaller	.
+local:s0.2	rdfs:subClassOf	local:rewriting	.
+local:s8.1	local:AM-TMP	local:cases	.
+local:significantly_smaller	rdfs:member	local:significantly	.
+local:significantly_smaller_rewritings	rdfs:member	local:significantly_smaller	.
+local:s7.1	rdf:object	local:empirical_evaluation	.
+local:rewriting_with_standard_algorithm	rdfs:member	local:standard_algorithm	.
+local:s4	rdf:object	local:comparison_of_we_resolution	.
+local:s5	rdf:subject	local:queries	.
+local:s2.1	rdf:predicate	local:conduct	.
+local:ql_profile	rdfs:member	local:ql	.
+local:use_for_query_answering_via_query	rdfs:member	local:query	.
+local:rewriting_algorithm_with_the_standard_algorithm_conducting_an_empirical_evaluation_using_queries	rdfs:member	local:standard_algorithm	.
+local:most_cases	rdfs:subClassOf	local:cases	.
+local:algorithm_produces_significantly_smaller_rewritings_in_most_cases	rdfs:member	local:significantly_smaller_rewritings	.
+local:s1	rdf:subject	local:resolution	.
+local:s1.1	rdf:object	local:both	.
+local:empirical_evaluation_using	rdfs:member	local:empirical_evaluation	.
+local:ql_profile_of_owl_2	rdfs:member	local:owl	.
 local:realistic_applications	rdfs:subClassOf	local:applications	.
-local:produces	vn.role:Product	local:smaller_rewritings	.
-local:indicate	vn.role:Recipient	local:results	.
-local:conducting	vn.role:Theme	local:empirical_evaluation	.
-local:ql_profile_of_2_owl	local:qlprofile_of	local:2_owl	.
-local:database	rdfs:member	local:database_technology	.
-local:smaller	rdfs:member	local:smaller_rewritings	.
-local:query	rdfs:member	local:query_rewriting	.
-local:based	vn.role:Cause	local:rewriting_with_standard_algorithm	.
-local:using	vn.role:Theme	local:ontologies	.
+local:standard_algorithm_conducting	rdfs:member	local:standard_algorithm	.
+local:s0.2	rdfs:member	local:query	.
+local:s0.2	rdf:subject	local:query	.
+local:calvanese_et	rdfs:subClassOf	local:et	.
+local:s2.2	rdf:predicate	local:use	.
+local:query_answering	rdfs:subClassOf	local:answering	.
+local:empirical_evaluation_using_ontologies	rdfs:member	local:ontologies	.
+local:database_technology	rdfs:subClassOf	local:technology	.
+local:s0	local:AM-PNC	local:possible_to_use_database_technology_for_query_answering_via_query_rewriting	.
+local:s2.1	rdf:subject	local:standard_algorithm	.
+local:s2	rdf:predicate	local:base	.
+local:significantly_smaller_rewritings	rdfs:subClassOf	local:rewritings	.
+local:algorithm_produces_significantly_smaller_rewritings_in_most_cases	rdfs:member	local:algorithm	.
+local:query_answering_via_query_rewriting	rdfs:member	local:query	.
+local:standard_algorithm_conducting	rdfs:member	local:conducting	.

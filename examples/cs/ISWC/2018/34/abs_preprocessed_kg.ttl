@@ -1,604 +1,777 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"the canonicalisation method highlighting difficult cases"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"synthetic queries stresstest the canonicalisation method highlighting difficult cases"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"synthetic queries designed to stresstest the canonicalisation method highlighting difficult cases"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we also present the results of experiments over synthetic queries designed to stresstest the canonicalisation method highlighting difficult cases"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation of sparql queries"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"an algorithm detects more equivalent queries than when compared with purely syntactic methods"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"despite the fact that canonicalisation must be harder than the equivalence problem we show that an algorithm detects more equivalent queries than when compared with purely syntactic methods"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the answers for the canonicalised query will not change"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"despite the fact that canonicalisation must be harder than the equivalence problem we show an algorithm such that the answers for the canonicalised query will not change versus the original to be practical for realworld queries"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"realworld queries taken from sparql endpoint logs"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation of sparql queries such that the answers for the canonicalised query will not change"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation sparql queries such that the answers for the canonicalised query will not change versus the original"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation of sparql queries such that the answers for the canonicalised query will not change versus the original"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we can guarantee that the canonicalisation of two queries within a core fragment of sparql is equal if"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"we also support other sparql features"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we can guarantee that the canonicalisation of two queries within a core fragment of sparql is equal if the two queries are equivalent we also support other sparql features but with a weaker soundness guarantee that the is equivalent to the input query"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"despite this complexity in this paper we propose an algorithm"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation of sparql queries such that the answers for the canonicalised query will not change"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation sparql queries such that the answers for the canonicalised query will not change versus the original"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"an algorithm that performs syntactic canonicalisation of sparql queries such that the answers for the canonicalised query will not change versus the original"	.
+
+local:s0.4	a	rdf:Statement	;
+	rdfs:label	"further query features makes the problem"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"npcomplete where adding further query features"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"deciding"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"sparql detecting equivalent queries deciding if two conjunctive queries are equivalent is npcomplete where adding further query features makes the problem undecidable"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"expressive query languages such as sparql complicated by the difficulty of detecting equivalent queries deciding if two conjunctive queries are equivalent is npcomplete where adding further query features makes the problem undecidable"	.
+
+
 #### Classes ####
 
-local:paper_despite_complexity	rdfs:label	"paper despite complexity"	.
+local:canonicalisation_method	a	rdf:Class	;
+	rdfs:label	"canonicalisation method"	.
 
-local:paper	rdfs:label	"paper"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:complexity	rdfs:label	"complexity"	.
+local:canonicalisation	a	rdf:Class	;
+	rdfs:label	"canonicalisation"	.
 
-local:propose	rdfs:label	"propose"	.
+local:highlight	a	rdf:Class	;
+	rdfs:label	"highlight"	.
 
-local:we	rdfs:label	"we"	.
+local:difficult_cases	a	rdf:Class	;
+	rdfs:label	"difficult cases"	.
 
-local:canonicalised_query	rdfs:label	"canonicalised query"	.
+local:difficult	a	rdf:Class	;
+	rdfs:label	"difficult"	.
 
-local:query	rdfs:label	"query"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:synthetic_queries	a	rdf:Class	;
+	rdfs:label	"synthetic queries"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:synthetic	a	rdf:Class	;
+	rdfs:label	"synthetic"	.
 
-local:canonicalised	rdfs:label	"canonicalised"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:syntactic	rdfs:label	"syntactic"	.
+local:stresstest	a	rdf:Class	;
+	rdfs:label	"stresstest"	.
 
-local:syntactic_canonicalisation	rdfs:label	"syntactic canonicalisation"	.
+local:canonicalisation_method_highlighting_difficult_cases	a	rdf:Class	;
+	rdfs:label	"canonicalisation method highlighting difficult cases"	.
 
-local:queries	rdfs:label	"queries"	.
+local:canonicalisation_method_highlighting	a	rdf:Class	;
+	rdfs:label	"canonicalisation method highlighting"	.
 
-local:canonicalisation	rdfs:label	"canonicalisation"	.
+local:highlighting	a	rdf:Class	;
+	rdfs:label	"highlighting"	.
 
-local:not_change	rdfs:label	"not change"	.
+local:design	a	rdf:Class	;
+	rdfs:label	"design"	.
 
-local:change	rdfs:label	"change"	.
+local:stresstest_the_canonicalisation_method_highlighting_difficult_cases	a	rdf:Class	;
+	rdfs:label	"stresstest the canonicalisation method highlighting difficult cases"	.
 
-local:will_not_change	rdfs:label	"will not change"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:syntactic_canonicalisation_of_sparql_queries	rdfs:label	"syntactic canonicalisation of sparql queries"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:answers_for_canonicalised_query	rdfs:label	"answers for canonicalised query"	.
+local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	a	rdf:Class	;
+	rdfs:label	"results of experiments over synthetic queries designed to stresstest the canonicalisation method highlighting difficult cases"	.
 
-local:answers	rdfs:label	"answers"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:will_not_change_versus_original	rdfs:label	"will not change versus original"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:original	rdfs:label	"original"	.
+local:results_of_experiments	a	rdf:Class	;
+	rdfs:label	"results of experiments"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:experiments_over_synthetic_queries	a	rdf:Class	;
+	rdfs:label	"experiments over synthetic queries"	.
 
-local:performs	rdfs:label	"performs"	.
+local:synthetic_queries_designed	a	rdf:Class	;
+	rdfs:label	"synthetic queries designed"	.
 
-local:such	rdfs:label	"such"	.
+local:designed	a	rdf:Class	;
+	rdfs:label	"designed"	.
 
-local:propose_despite_complexity	rdfs:label	"propose despite complexity"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:propose_despite_complexity_in_paper	rdfs:label	"propose despite complexity in paper"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:will	rdfs:label	"will"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:not	rdfs:label	"not"	.
+local:syntactic_canonicalisation_of_sparql_queries	a	rdf:Class	;
+	rdfs:label	"syntactic canonicalisation of sparql queries"	.
 
-local:guarantee	rdfs:label	"guarantee"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:can	rdfs:label	"can"	.
+local:syntactic_canonicalisation	a	rdf:Class	;
+	rdfs:label	"syntactic canonicalisation"	.
 
-local:monotone_queries	rdfs:label	"monotone queries"	.
+local:syntactic	a	rdf:Class	;
+	rdfs:label	"syntactic"	.
 
-local:sparql_monotone	rdfs:label	"sparql monotone"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:sparql_monotone_queries	rdfs:label	"sparql monotone queries"	.
+local:detect	a	rdf:Class	;
+	rdfs:label	"detect"	.
 
-local:monotone	rdfs:label	"monotone"	.
+local:equivalent_queries_than_when_compared_with_purely_syntactic_methods	a	rdf:Class	;
+	rdfs:label	"equivalent queries than when compared with purely syntactic methods"	.
 
-local:core_fragment	rdfs:label	"core fragment"	.
+local:equivalent_queries	a	rdf:Class	;
+	rdfs:label	"equivalent queries"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:purely_syntactic_methods	a	rdf:Class	;
+	rdfs:label	"purely syntactic methods"	.
 
-local:core	rdfs:label	"core"	.
+local:syntactic_methods	a	rdf:Class	;
+	rdfs:label	"syntactic methods"	.
 
-local:two_queries	rdfs:label	"two queries"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:only_equivalent	rdfs:label	"only equivalent"	.
+local:purely_syntactic	a	rdf:Class	;
+	rdfs:label	"purely syntactic"	.
 
-local:equivalent	rdfs:label	"equivalent"	.
+local:purely	a	rdf:Class	;
+	rdfs:label	"purely"	.
 
-local:canonicalisation_of_two_queries	rdfs:label	"canonicalisation of two queries"	.
+local:equivalent	a	rdf:Class	;
+	rdfs:label	"equivalent"	.
 
-local:two_queries_within_core_fragment	rdfs:label	"two queries within core fragment"	.
+local:when_compared	a	rdf:Class	;
+	rdfs:label	"when compared"	.
 
-local:core_fragment_of_sparql_monotone_queries	rdfs:label	"core fragment of sparql monotone queries"	.
+local:compared	a	rdf:Class	;
+	rdfs:label	"compared"	.
 
-local:sparql_monotone_queries_with_select	rdfs:label	"sparql monotone queries with select"	.
+local:when_compared_with_syntactic_methods	a	rdf:Class	;
+	rdfs:label	"when compared with syntactic methods"	.
 
-local:select	rdfs:label	"select"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:equal	rdfs:label	"equal"	.
+local:algorithm_detects_more_equivalent_queries_than_when_compared_with_purely_syntactic_methods	a	rdf:Class	;
+	rdfs:label	"algorithm detects more equivalent queries than when compared with purely syntactic methods"	.
 
-local:support	rdfs:label	"support"	.
+local:algorithm_detects	a	rdf:Class	;
+	rdfs:label	"algorithm detects"	.
 
-local:also	rdfs:label	"also"	.
+local:more_equivalent_queries	a	rdf:Class	;
+	rdfs:label	"more equivalent queries"	.
 
-local:sparql_features	rdfs:label	"sparql features"	.
+local:more_equivalent	a	rdf:Class	;
+	rdfs:label	"more equivalent"	.
 
-local:features	rdfs:label	"features"	.
+local:detects	a	rdf:Class	;
+	rdfs:label	"detects"	.
 
-local:weaker_soundness	rdfs:label	"weaker soundness"	.
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
 
-local:weaker_soundness_guarantee	rdfs:label	"weaker soundness guarantee"	.
+local:despite_the_fact_that_canonicalisation_must_be_harder_than_the_equivalence_problem	a	rdf:Class	;
+	rdfs:label	"despite the fact that canonicalisation must be harder than the equivalence problem"	.
 
-local:soundness	rdfs:label	"soundness"	.
+local:fact	a	rdf:Class	;
+	rdfs:label	"fact"	.
 
-local:soundness_guarantee	rdfs:label	"soundness guarantee"	.
+local:equivalence_problem	a	rdf:Class	;
+	rdfs:label	"equivalence problem"	.
 
-local:input_query	rdfs:label	"input query"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:input	rdfs:label	"input"	.
+local:equivalence	a	rdf:Class	;
+	rdfs:label	"equivalence"	.
 
-local:weaker	rdfs:label	"weaker"	.
+local:must_harder	a	rdf:Class	;
+	rdfs:label	"must harder"	.
 
-local:equivalent_to_input_query	rdfs:label	"equivalent to input query"	.
+local:harder	a	rdf:Class	;
+	rdfs:label	"harder"	.
 
-local:sparql_monotone_queries_with_project	rdfs:label	"sparql monotone queries with project"	.
+local:must_harder_than_equivalence_problem	a	rdf:Class	;
+	rdfs:label	"must harder than equivalence problem"	.
 
-local:project	rdfs:label	"project"	.
+local:answers_for_the_canonicalised_query	a	rdf:Class	;
+	rdfs:label	"answers for the canonicalised query"	.
 
-local:canonicalisation_of_two_queries_with_join	rdfs:label	"canonicalisation of two queries with join"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:join	rdfs:label	"join"	.
+local:canonicalised_query	a	rdf:Class	;
+	rdfs:label	"canonicalised query"	.
 
-local:sparql_monotone_queries_with_union	rdfs:label	"sparql monotone queries with union"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:union	rdfs:label	"union"	.
+local:canonicalised	a	rdf:Class	;
+	rdfs:label	"canonicalised"	.
 
-local:equivalence	rdfs:label	"equivalence"	.
+local:answers_for_canonicalised_query	a	rdf:Class	;
+	rdfs:label	"answers for canonicalised query"	.
 
-local:equivalence_problem	rdfs:label	"equivalence problem"	.
+local:not_change	a	rdf:Class	;
+	rdfs:label	"not change"	.
 
-local:problem	rdfs:label	"problem"	.
+local:will	a	rdf:Class	;
+	rdfs:label	"will"	.
 
-local:must_harder	rdfs:label	"must harder"	.
+local:algorithm_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original_to_be_practical_for_realworld_queries	a	rdf:Class	;
+	rdfs:label	"algorithm such that the answers for the canonicalised query will not change versus the original to be practical for realworld queries"	.
 
-local:harder	rdfs:label	"harder"	.
+local:realworld_queries	a	rdf:Class	;
+	rdfs:label	"realworld queries"	.
 
-local:must_harder_than_equivalence_problem	rdfs:label	"must harder than equivalence problem"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:show	rdfs:label	"show"	.
+local:change	a	rdf:Class	;
+	rdfs:label	"change"	.
 
-local:fact	rdfs:label	"fact"	.
+local:will_not_change	a	rdf:Class	;
+	rdfs:label	"will not change"	.
 
-local:sparql_endpoint_logs	rdfs:label	"sparql endpoint logs"	.
+local:will_not_change_versus_original	a	rdf:Class	;
+	rdfs:label	"will not change versus original"	.
 
-local:logs	rdfs:label	"logs"	.
+local:original	a	rdf:Class	;
+	rdfs:label	"original"	.
 
-local:sparql_endpoint	rdfs:label	"sparql endpoint"	.
+local:practical_for_realworld_queries	a	rdf:Class	;
+	rdfs:label	"practical for realworld queries"	.
 
-local:endpoint_logs	rdfs:label	"endpoint logs"	.
+local:practical	a	rdf:Class	;
+	rdfs:label	"practical"	.
 
-local:endpoint	rdfs:label	"endpoint"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:realworld_queries	rdfs:label	"real-world queries"	.
+local:sparql_endpoint_logs	a	rdf:Class	;
+	rdfs:label	"sparql endpoint logs"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:sparql_endpoint	a	rdf:Class	;
+	rdfs:label	"sparql endpoint"	.
 
-local:further_change	rdfs:label	"further change"	.
+local:endpoint	a	rdf:Class	;
+	rdfs:label	"endpoint"	.
 
-local:not_further_change	rdfs:label	"not further change"	.
+local:endpoint_logs	a	rdf:Class	;
+	rdfs:label	"endpoint logs"	.
 
-local:will_not_further_change	rdfs:label	"will not further change"	.
+local:logs	a	rdf:Class	;
+	rdfs:label	"logs"	.
 
-local:will_not_further_change_versus_original	rdfs:label	"will not further change versus original"	.
+local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	a	rdf:Class	;
+	rdfs:label	"algorithm that performs syntactic canonicalisation of sparql queries such that the answers for the canonicalised query"	.
 
-local:practical_for_realworld_queries	rdfs:label	"practical for real-world queries"	.
+local:answers_for_the_canonicalised_query_will_not_change_versus_the_original	a	rdf:Class	;
+	rdfs:label	"answers for the canonicalised query will not change versus the original"	.
 
-local:practical	rdfs:label	"practical"	.
+local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	a	rdf:Class	;
+	rdfs:label	"syntactic canonicalisation of sparql queries such that the answers for the canonicalised query will not change versus the original"	.
 
-local:realworld_queries_taken	rdfs:label	"real-world queries taken"	.
+local:guarantee	a	rdf:Class	;
+	rdfs:label	"guarantee"	.
 
-local:taken	rdfs:label	"taken"	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if	a	rdf:Class	;
+	rdfs:label	"canonicalisation of two queries within a core fragment of sparql is equal if"	.
 
-local:taken_from_sparql_endpoint_logs	rdfs:label	"taken from sparql endpoint logs"	.
+local:core_fragment	a	rdf:Class	;
+	rdfs:label	"core fragment"	.
 
-local:algorithm_algorithm	rdfs:label	"algorithm algorithm"	.
+local:core	a	rdf:Class	;
+	rdfs:label	"core"	.
 
-local:equivalent_queries	rdfs:label	"equivalent queries"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-local:purely_purely_syntactic_syntactic	rdfs:label	"purely purely syntactic syntactic"	.
+local:two_queries	a	rdf:Class	;
+	rdfs:label	"two queries"	.
 
-local:purely_purely_syntactic_syntactic_methods	rdfs:label	"purely purely syntactic syntactic methods"	.
+local:canonicalisation_of_two_queries	a	rdf:Class	;
+	rdfs:label	"canonicalisation of two queries"	.
 
-local:methods	rdfs:label	"methods"	.
+local:two_queries_within_core_fragment	a	rdf:Class	;
+	rdfs:label	"two queries within core fragment"	.
 
-local:query_query	rdfs:label	"query query"	.
+local:core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"core fragment of sparql"	.
 
-local:sparql_queries_queries	rdfs:label	"sparql queries queries"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:syntactic_syntactic	rdfs:label	"syntactic syntactic"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:sparql_sparql_queries	rdfs:label	"sparql sparql queries"	.
+local:sparql_features	a	rdf:Class	;
+	rdfs:label	"sparql features"	.
 
-local:sparql_sparql_queries_queries	rdfs:label	"sparql sparql queries queries"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:original_original	rdfs:label	"original original"	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	a	rdf:Class	;
+	rdfs:label	"canonicalisation of two queries within a core fragment of sparql is equal if the two queries are equivalent we also support other sparql features but with a weaker soundness guarantee that the is equivalent to the input query"	.
 
-local:canonicalised_canonicalised_query	rdfs:label	"canonicalised canonicalised query"	.
+local:other_sparql_features	a	rdf:Class	;
+	rdfs:label	"other sparql features"	.
 
-local:canonicalised_canonicalised_query_query	rdfs:label	"canonicalised canonicalised query query"	.
+local:input_query	a	rdf:Class	;
+	rdfs:label	"input query"	.
 
-local:canonicalised_canonicalised	rdfs:label	"canonicalised canonicalised"	.
+local:weaker_soundness_guarantee	a	rdf:Class	;
+	rdfs:label	"weaker soundness guarantee"	.
 
-local:answers_answers	rdfs:label	"answers answers"	.
+local:weaker_soundness	a	rdf:Class	;
+	rdfs:label	"weaker soundness"	.
 
-local:more_equivalent_equivalent_queries_queries	rdfs:label	"more equivalent equivalent queries queries"	.
+local:soundness	a	rdf:Class	;
+	rdfs:label	"soundness"	.
 
-local:canonicalisation_canonicalisation	rdfs:label	"canonicalisation canonicalisation"	.
+local:other_sparql	a	rdf:Class	;
+	rdfs:label	"other sparql"	.
 
-local:sparql_sparql	rdfs:label	"sparql sparql"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:equivalent_equivalent	rdfs:label	"equivalent equivalent"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:equivalent_equivalent_queries	rdfs:label	"equivalent equivalent queries"	.
+local:soundness_guarantee	a	rdf:Class	;
+	rdfs:label	"soundness guarantee"	.
 
-local:purely	rdfs:label	"purely"	.
+local:weaker	a	rdf:Class	;
+	rdfs:label	"weaker"	.
 
-local:purely_purely	rdfs:label	"purely purely"	.
+local:also_support	a	rdf:Class	;
+	rdfs:label	"also support"	.
 
-local:syntactic_methods	rdfs:label	"syntactic methods"	.
+local:equivalent_to_input_query	a	rdf:Class	;
+	rdfs:label	"equivalent to input query"	.
 
-local:equivalent_equivalent_queries_queries	rdfs:label	"equivalent equivalent queries queries"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:syntactic_syntactic_canonicalisation_canonicalisation	rdfs:label	"syntactic syntactic canonicalisation canonicalisation"	.
+local:despite_this_complexity_in_this_paper	a	rdf:Class	;
+	rdfs:label	"despite this complexity in this paper"	.
 
-local:queries_queries	rdfs:label	"queries queries"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:more_equivalent_equivalent_queries	rdfs:label	"more equivalent equivalent queries"	.
+local:complexity	a	rdf:Class	;
+	rdfs:label	"complexity"	.
 
-local:syntactic_canonicalisation_canonicalisation	rdfs:label	"syntactic canonicalisation canonicalisation"	.
+local:complexity_in_paper	a	rdf:Class	;
+	rdfs:label	"complexity in paper"	.
 
-local:syntactic_syntactic_canonicalisation	rdfs:label	"syntactic syntactic canonicalisation"	.
+local:query_features	a	rdf:Class	;
+	rdfs:label	"query features"	.
 
-local:syntactic_syntactic_methods	rdfs:label	"syntactic syntactic methods"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:purely_purely_syntactic	rdfs:label	"purely purely syntactic"	.
+local:npcomplete	a	rdf:Class	;
+	rdfs:label	"npcomplete"	.
 
-local:purely_syntactic	rdfs:label	"purely syntactic"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:purely_syntactic_syntactic	rdfs:label	"purely syntactic syntactic"	.
+local:decide	a	rdf:Class	;
+	rdfs:label	"decide"	.
 
-local:purely_syntactic_syntactic_methods	rdfs:label	"purely syntactic syntactic methods"	.
+local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	a	rdf:Class	;
+	rdfs:label	"equivalent queries deciding if two conjunctive queries are equivalent is npcomplete where adding further query features makes the problem undecidable"	.
 
-local:more_equivalent	rdfs:label	"more equivalent"	.
+local:further_query_features	a	rdf:Class	;
+	rdfs:label	"further query features"	.
 
-local:more_equivalent_equivalent	rdfs:label	"more equivalent equivalent"	.
+local:conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"conjunctive queries"	.
 
-local:original_original_detects	rdfs:label	"original original detects"	.
+local:further_query	a	rdf:Class	;
+	rdfs:label	"further query"	.
 
-local:canonicalised_query_query	rdfs:label	"canonicalised query query"	.
+local:further	a	rdf:Class	;
+	rdfs:label	"further"	.
 
-local:original_detects	rdfs:label	"original detects"	.
+local:conjunctive	a	rdf:Class	;
+	rdfs:label	"conjunctive"	.
 
-local:equivalent_queries_queries	rdfs:label	"equivalent queries queries"	.
+local:where_adding	a	rdf:Class	;
+	rdfs:label	"where adding"	.
 
-local:detects	rdfs:label	"detects"	.
+local:adding	a	rdf:Class	;
+	rdfs:label	"adding"	.
 
-local:more	rdfs:label	"more"	.
+local:two_conjunctive_queries	a	rdf:Class	;
+	rdfs:label	"two conjunctive queries"	.
 
-local:when_compared	rdfs:label	"when compared"	.
+local:equivalent_queries_deciding	a	rdf:Class	;
+	rdfs:label	"equivalent queries deciding"	.
 
-local:compared	rdfs:label	"compared"	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	a	rdf:Class	;
+	rdfs:label	"difficulty of detecting equivalent queries deciding if two conjunctive queries are equivalent is npcomplete where adding further query features makes the problem undecidable"	.
 
-local:when_when_compared	rdfs:label	"when when compared"	.
+local:difficulty	a	rdf:Class	;
+	rdfs:label	"difficulty"	.
 
-local:more_more	rdfs:label	"more more"	.
+local:complicate	a	rdf:Class	;
+	rdfs:label	"complicate"	.
 
-local:not_not_change	rdfs:label	"not not change"	.
+local:expressive_query_languages_such_as_sparql	a	rdf:Class	;
+	rdfs:label	"expressive query languages such_as sparql"	.
 
-local:will_not_not_change	rdfs:label	"will not not change"	.
+local:expressive_query_languages	a	rdf:Class	;
+	rdfs:label	"expressive query languages"	.
 
-local:will_will_not_not_change	rdfs:label	"will will not not change"	.
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
 
-local:such_such	rdfs:label	"such such"	.
+local:query_languages	a	rdf:Class	;
+	rdfs:label	"query languages"	.
 
-local:such_such_queries	rdfs:label	"such such queries"	.
+local:expressive_query	a	rdf:Class	;
+	rdfs:label	"expressive query"	.
 
-local:queries_such_such_queries	rdfs:label	"queries such such queries"	.
-
-local:sparql_queries_such_such_queries	rdfs:label	"sparql queries such such queries"	.
-
-local:sparql_sparql_queries_such_such_queries	rdfs:label	"sparql sparql queries such such queries"	.
-
-local:syntactic_syntactic_canonicalisation_canonicalisation_of_sparql_sparql_queries_such_such_queries	rdfs:label	"syntactic syntactic canonicalisation canonicalisation of sparql sparql queries such such queries"	.
-
-local:answers_for_canonicalised_canonicalised_query_query	rdfs:label	"answers for canonicalised canonicalised query query"	.
-
-local:such_queries	rdfs:label	"such queries"	.
-
-local:sparql_such_queries	rdfs:label	"sparql such queries"	.
-
-local:syntactic_canonicalisation_of_sparql_such_queries	rdfs:label	"syntactic canonicalisation of sparql such queries"	.
-
-local:purely_syntactic_methods	rdfs:label	"purely syntactic methods"	.
-
-local:when_compared_with_syntactic_methods	rdfs:label	"when compared with syntactic methods"	.
-
-local:present	rdfs:label	"present"	.
-
-local:difficult	rdfs:label	"difficult"	.
-
-local:difficult_cases	rdfs:label	"difficult cases"	.
-
-local:canonicalisation_method	rdfs:label	"canonicalisation method"	.
-
-local:method	rdfs:label	"method"	.
-
-local:synthetic	rdfs:label	"synthetic"	.
-
-local:synthetic_queries	rdfs:label	"synthetic queries"	.
-
-local:cases	rdfs:label	"cases"	.
-
-local:results_of_experiments	rdfs:label	"results of experiments"	.
-
-local:results	rdfs:label	"results"	.
-
-local:experiments	rdfs:label	"experiments"	.
-
-local:experiments_over_synthetic_queries	rdfs:label	"experiments over synthetic queries"	.
-
-local:synthetic_queries_designed	rdfs:label	"synthetic queries designed"	.
-
-local:designed	rdfs:label	"designed"	.
-
-local:results_of_experiments_highlighting	rdfs:label	"results of experiments highlighting"	.
-
-local:highlighting	rdfs:label	"highlighting"	.
-
-local:stresstest	rdfs:label	"stress-test"	.
-
-#### Properties ####
+local:expressive	a	rdf:Class	;
+	rdfs:label	"expressive"	.
 
 #### Mapped Relations ####
 
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:syntactic	owl:sameAs	cso:syntactics	.
-cso:sparql_queries	rdfs:label	"sparql queries"	.
-cso:equivalence_problem	rdfs:label	"equivalence problem"	.
+local:query_languages	owl:sameAs	cso:query_languages	.
 local:equivalence_problem	owl:sameAs	cso:equivalence_problem	.
+local:sparql	owl:sameAs	cso:sparql	.
 cso:sparql	rdfs:label	"sparql"	.
 cso:syntactics	rdfs:label	"syntactic"	.
+local:syntactic	owl:sameAs	cso:syntactics	.
+cso:sparql_queries	rdfs:label	"sparql queries"	.
+local:conjunctive_queries	owl:sameAs	cso:conjunctive_queries	.
+cso:query_languages	rdfs:label	"query languages"	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+cso:conjunctive_queries	rdfs:label	"conjunctive queries"	.
+cso:equivalence_problem	rdfs:label	"equivalence problem"	.
 
 #### Relations ####
 
-local:queries	vn.role:Agent	local:sparql	.
-local:designed	vn.role:Beneficiary	local:stresstest	.
-local:purely_syntactic_syntactic_methods	rdfs:subClassOf	local:methods	.
-local:canonicalised_canonicalised	rdfs:member	local:canonicalised_canonicalised_query	.
-local:equivalent_to_input_query	local:to_inputquery	local:equivalent	.
-local:sparql_sparql_queries_queries	rdfs:subClassOf	local:queries	.
-local:input_query	rdfs:subClassOf	local:query	.
-local:support	local:AM-ADV	local:equivalent_to_input_query	.
-local:query	rdfs:member	local:query_query	.
-local:two_queries_within_core_fragment	local:within_corefragment	local:two_queries	.
-local:input	rdfs:member	local:input_query	.
-local:syntactic_syntactic_methods	rdfs:subClassOf	local:syntactic_methods	.
-local:performs	vn.role:Theme	local:syntactic_canonicalisation_of_sparql_queries	.
 local:difficult_cases	rdfs:subClassOf	local:cases	.
-local:syntactic_syntactic_canonicalisation	rdfs:member	local:syntactic_syntactic_canonicalisation_canonicalisation	.
-local:more_equivalent_equivalent_queries	rdfs:member	local:more_equivalent_equivalent_queries_queries	.
-local:purely_purely_syntactic	rdfs:subClassOf	local:purely_syntactic	.
-local:purely_purely_syntactic	rdfs:member	local:purely_purely_syntactic_syntactic	.
-local:purely_syntactic	rdfs:member	local:purely_syntactic_syntactic	.
-local:canonicalised_canonicalised_query_query	rdfs:subClassOf	local:canonicalised_query_query	.
-local:syntactic_canonicalisation_of_sparql_such_queries	local:syntacticcanonicalisation_of	local:sparql_such_queries	.
-local:purely_syntactic_syntactic	rdfs:subClassOf	local:syntactic	.
-local:will_not_change_versus_original	local:willnotchange_versus	local:original	.
-local:detects	vn.role:Stimulus	local:equivalent_queries	.
-local:synthetic_queries	rdfs:subClassOf	local:queries	.
-local:equivalent_equivalent_queries_queries	rdfs:subClassOf	local:queries	.
-local:sparql_queries	rdfs:member	local:sparql_queries_queries	.
-local:sparql_sparql	rdfs:member	local:sparql_sparql_queries	.
-local:synthetic_queries_designed	local:syntheticqueries_	local:designed	.
-local:guarantee	vn.role:Theme	local:equal	.
-local:support	vn.role:Theme	local:we	.
-local:more_equivalent	rdfs:subClassOf	local:equivalent	.
-local:when_compared	rdfs:subClassOf	local:compared	.
-local:must_harder_than_equivalence_problem	local:mustharder_than	local:equivalence_problem	.
-local:more_more	rdfs:subClassOf	local:more	.
-local:syntactic	rdfs:member	local:syntactic_methods	.
-local:weaker_soundness_guarantee	rdfs:subClassOf	local:soundness_guarantee	.
-local:purely_purely	rdfs:subClassOf	local:purely	.
-local:answers_answers	rdfs:subClassOf	local:answers	.
-local:sparql_sparql_queries_such_such_queries	rdfs:subClassOf	local:sparql_queries_such_such_queries	.
-local:endpoint	rdfs:member	local:endpoint_logs	.
-local:when_compared_with_syntactic_methods	local:with_syntacticmethods	local:when_compared	.
-local:answers_for_canonicalised_query	local:answers_for	local:canonicalised_query	.
-local:sparql_monotone_queries	rdfs:subClassOf	local:queries	.
-local:canonicalised_canonicalised_query	rdfs:member	local:canonicalised_canonicalised_query_query	.
-local:propose	vn.role:Topic	local:algorithm	.
-local:core_fragment_of_sparql_monotone_queries	local:corefragment_of	local:sparql_monotone_queries	.
-local:sparql	rdfs:member	local:sparql_sparql	.
-local:syntactic_canonicalisation_of_sparql_such_queries	local:of_sparqlsuchqueries	local:syntactic_canonicalisation	.
-local:equivalent_queries_queries	rdfs:subClassOf	local:queries_queries	.
-local:results_of_experiments	local:of_experiments	local:results	.
-local:sparql_monotone_queries_with_select	local:sparqlmonotonequeries_with	local:select	.
-local:propose	local:AM-ADV	local:paper_despite_complexity	.
-local:must_harder	rdfs:subClassOf	local:harder	.
-local:canonicalisation_of_two_queries	local:canonicalisation_of	local:two_queries	.
-local:show	vn.role:Theme	local:algorithm_algorithm	.
-local:sparql_endpoint_logs	rdfs:subClassOf	local:logs	.
-local:syntactic_syntactic_canonicalisation	rdfs:subClassOf	local:canonicalisation	.
-local:queries	vn.role:Theme	local:such	.
-local:support	local:AM-DIS	local:also	.
-local:not_not_change	rdfs:subClassOf	local:not_change	.
-local:present	vn.role:Agent	local:we	.
-local:results_of_experiments_highlighting	local:_highlighting	local:results_of_experiments	.
-local:more	rdfs:member	local:more_equivalent	.
-local:taken_from_sparql_endpoint_logs	local:from_sparqlendpointlogs	local:taken	.
-local:equivalent	rdfs:member	local:equivalent_equivalent	.
-local:realworld_queries_taken	local:real-worldqueries_	local:taken	.
-local:sparql	rdfs:member	local:sparql_endpoint	.
-local:original_original	rdfs:subClassOf	local:original	.
-local:such_such	rdfs:subClassOf	local:such	.
-local:will_not_change_versus_original	local:versus_original	local:will_not_change	.
-local:highlighting	vn.role:Agent	local:canonicalisation_method	.
+local:experiments_over_synthetic_queries	rdfs:member	local:experiments	.
+local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	rdfs:member	local:algorithm	.
+local:s6.1	rdf:predicate	local:query	.
+local:algorithm_detects_more_equivalent_queries_than_when_compared_with_purely_syntactic_methods	rdfs:member	local:more_equivalent_queries	.
+local:query_languages	rdfs:subClassOf	local:languages	.
+local:s11	rdf:subject	local:we	.
+local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:results	.
 local:endpoint_logs	rdfs:subClassOf	local:logs	.
-local:sparql_endpoint	rdfs:member	local:sparql_endpoint_logs	.
-local:sparql_monotone_queries_with_select	local:with_select	local:sparql_monotone_queries	.
-local:purely_purely_syntactic_syntactic	rdfs:subClassOf	local:syntactic	.
-local:queries	rdfs:member	local:queries_queries	.
-local:equivalent_equivalent_queries_queries	rdfs:subClassOf	local:equivalent_queries_queries	.
-local:synthetic	rdfs:member	local:synthetic_queries	.
-local:more_equivalent	rdfs:member	local:more_equivalent_equivalent	.
-local:two_queries	rdfs:subClassOf	local:queries	.
-local:purely_purely_syntactic_syntactic	rdfs:member	local:purely_purely_syntactic_syntactic_methods	.
-local:answers_for_canonicalised_canonicalised_query_query	local:for_canonicalisedcanonicalisedqueryquery	local:answers	.
-local:queries	vn.role:Agent	local:algorithm	.
-local:canonicalisation_method	rdfs:subClassOf	local:method	.
-local:show	vn.role:Agent	local:we	.
-local:syntactic_syntactic_methods	rdfs:subClassOf	local:methods	.
-local:sparql_monotone_queries_with_project	local:sparqlmonotonequeries_with	local:project	.
-local:canonicalised_query_query	rdfs:subClassOf	local:query	.
-local:weaker	rdfs:member	local:weaker_soundness	.
-local:sparql_endpoint_logs	rdfs:subClassOf	local:endpoint_logs	.
-local:such_queries	rdfs:subClassOf	local:queries	.
-local:soundness	rdfs:member	local:soundness_guarantee	.
-local:such_such_queries	rdfs:subClassOf	local:queries	.
-local:will_will_not_not_change	rdfs:subClassOf	local:will_not_not_change	.
-local:support	vn.role:Experiencer	local:sparql_features	.
-local:realworld_queries_taken	local:_taken	local:realworld_queries	.
-local:syntactic_syntactic_canonicalisation_canonicalisation	rdfs:subClassOf	local:syntactic_canonicalisation_canonicalisation	.
-local:equivalent_equivalent_queries	rdfs:subClassOf	local:queries	.
-local:taken	vn.role:Source	local:sparql_endpoint_logs	.
-local:highlighting	vn.role:Theme	local:difficult_cases	.
-local:realworld	rdfs:member	local:realworld_queries	.
-local:performs	vn.role:Theme	local:syntactic_canonicalisation_of_sparql_such_queries	.
-local:will_not_further_change_versus_original	local:versus_original	local:will_not_further_change	.
-local:canonicalisation_of_two_queries	local:of_twoqueries	local:canonicalisation	.
-local:purely	rdfs:member	local:purely_purely	.
-local:will_not_further_change	rdfs:subClassOf	local:not_further_change	.
-local:sparql_monotone_queries_with_union	local:with_union	local:sparql_monotone_queries	.
-local:sparql_monotone_queries	rdfs:subClassOf	local:monotone_queries	.
-local:syntactic_canonicalisation	rdfs:member	local:syntactic_canonicalisation_canonicalisation	.
-local:equivalent_to_input_query	local:equivalent_to	local:input_query	.
-local:purely_purely_syntactic_syntactic_methods	rdfs:subClassOf	local:methods	.
-local:purely_syntactic_syntactic	rdfs:member	local:purely_syntactic_syntactic_methods	.
-local:paper_despite_complexity	local:paper_despite	local:complexity	.
-local:syntactic_syntactic	rdfs:subClassOf	local:syntactic	.
-local:monotone_queries	rdfs:subClassOf	local:queries	.
-local:canonicalised_canonicalised	rdfs:subClassOf	local:canonicalised	.
-local:syntactic_syntactic	rdfs:member	local:syntactic_syntactic_canonicalisation	.
-local:will_not_not_change	rdfs:subClassOf	local:not_not_change	.
-local:further_change	rdfs:subClassOf	local:change	.
-local:syntactic_syntactic_canonicalisation_canonicalisation_of_sparql_sparql_queries_such_such_queries	local:syntacticsyntacticcanonicalisationcanonicalisation_of	local:sparql_sparql_queries_such_such_queries	.
-local:change	local:AM-NEG	local:not	.
-local:guarantee	vn.role:Agent	local:we	.
-local:canonicalised_query	rdfs:member	local:canonicalised_query_query	.
-local:syntactic_syntactic_canonicalisation_canonicalisation_of_sparql_sparql_queries_such_such_queries	local:of_sparqlsparqlqueriessuchsuchqueries	local:syntactic_syntactic_canonicalisation_canonicalisation	.
+local:equivalence_problem	rdfs:member	local:equivalence	.
+local:endpoint_logs	rdfs:member	local:endpoint	.
+local:despite_the_fact_that_canonicalisation_must_be_harder_than_the_equivalence_problem	rdfs:member	local:fact	.
+local:other_sparql	rdfs:member	local:other	.
+local:s0.1	rdf:object	local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	.
+local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:equivalent_queries	.
 local:sparql_features	rdfs:subClassOf	local:features	.
-local:queries	vn.role:Theme	local:will_not_change_versus_original	.
-local:change	local:AM-ADV	local:original	.
-local:syntactic_canonicalisation_canonicalisation	rdfs:subClassOf	local:canonicalisation_canonicalisation	.
-local:sparql_endpoint	rdfs:subClassOf	local:endpoint	.
-local:equivalent_queries	rdfs:member	local:equivalent_queries_queries	.
-local:core	rdfs:member	local:core_fragment	.
-local:sparql_monotone	rdfs:subClassOf	local:monotone	.
-local:canonicalised	rdfs:member	local:canonicalised_query	.
-local:will_not_further_change_versus_original	local:willnotfurtherchange_versus	local:original	.
-local:difficult	rdfs:member	local:difficult_cases	.
-local:propose_despite_complexity	local:propose_despite	local:complexity	.
-local:sparql_monotone	rdfs:member	local:sparql_monotone_queries	.
-local:sparql_queries_queries	rdfs:subClassOf	local:queries	.
-local:original_original	rdfs:member	local:original_original_detects	.
-local:results_of_experiments_highlighting	local:resultsofexperiments_	local:highlighting	.
-local:queries_queries	rdfs:subClassOf	local:queries	.
-local:algorithm	rdfs:member	local:algorithm_algorithm	.
-local:answers	rdfs:member	local:answers_answers	.
-local:canonicalised_query	rdfs:subClassOf	local:query	.
-local:syntactic_canonicalisation_of_sparql_queries	local:syntacticcanonicalisation_of	local:sparql_queries	.
-local:sparql_monotone_queries_with_project	local:with_project	local:sparql_monotone_queries	.
-local:equivalent	rdfs:member	local:equivalent_queries	.
-local:equivalent_equivalent	rdfs:subClassOf	local:equivalent	.
-local:only_equivalent	rdfs:subClassOf	local:equivalent	.
-local:algorithm_algorithm	rdfs:subClassOf	local:algorithm	.
-local:syntactic_syntactic	rdfs:member	local:syntactic_syntactic_methods	.
-local:purely_purely_syntactic	rdfs:subClassOf	local:syntactic	.
-local:sparql_monotone_queries_with_union	local:sparqlmonotonequeries_with	local:union	.
-local:original_original_detects	rdfs:subClassOf	local:detects	.
-local:core_fragment_of_sparql_monotone_queries	local:of_sparqlmonotonequeries	local:core_fragment	.
-local:paper_despite_complexity	local:despite_complexity	local:paper	.
-local:purely_purely	rdfs:member	local:purely_purely_syntactic	.
-local:purely_syntactic	rdfs:subClassOf	local:syntactic	.
-local:equivalent_equivalent_queries	rdfs:member	local:equivalent_equivalent_queries_queries	.
-local:purely_syntactic	rdfs:member	local:purely_syntactic_methods	.
-local:will_not_change	rdfs:subClassOf	local:not_change	.
-local:canonicalisation_of_two_queries_with_join	local:canonicalisationoftwoqueries_with	local:join	.
-local:canonicalisation_canonicalisation	rdfs:subClassOf	local:canonicalisation	.
-local:purely_syntactic_methods	rdfs:subClassOf	local:methods	.
-local:guarantee	local:AM-MOD	local:can	.
-local:performs	vn.role:Agent	local:algorithm	.
-local:must_harder_than_equivalence_problem	local:than_equivalenceproblem	local:must_harder	.
-local:syntactic	rdfs:member	local:syntactic_syntactic	.
-local:canonicalised_canonicalised_query	rdfs:subClassOf	local:query	.
-local:experiments_over_synthetic_queries	local:over_syntheticqueries	local:experiments	.
-local:equivalent_equivalent	rdfs:member	local:equivalent_equivalent_queries	.
-local:syntactic_canonicalisation_canonicalisation	rdfs:subClassOf	local:canonicalisation	.
-local:propose	vn.role:Agent	local:we	.
-local:equivalence_problem	rdfs:subClassOf	local:problem	.
-local:realworld_queries	rdfs:subClassOf	local:queries	.
-local:more_equivalent_equivalent_queries_queries	rdfs:subClassOf	local:queries	.
-local:weaker_soundness	rdfs:member	local:weaker_soundness_guarantee	.
-local:show	vn.role:Theme	local:methods	.
-local:propose_despite_complexity_in_paper	local:proposedespitecomplexity_in	local:paper	.
-local:sparql_sparql_queries	rdfs:member	local:sparql_sparql_queries_queries	.
-local:show	vn.role:Theme	local:show	.
-local:synthetic_queries_designed	local:_designed	local:synthetic_queries	.
-local:change	local:AM-ADV	local:propose_despite_complexity_in_paper	.
-local:syntactic_canonicalisation_of_sparql_queries	local:of_sparqlqueries	local:syntactic_canonicalisation	.
-local:syntactic_syntactic_canonicalisation_canonicalisation	rdfs:subClassOf	local:canonicalisation	.
-local:show	local:AM-ADV	local:fact	.
-local:canonicalised_canonicalised_query_query	rdfs:subClassOf	local:query	.
-local:taken	vn.role:Theme	local:realworld_queries	.
-local:more_equivalent_equivalent_queries	rdfs:subClassOf	local:queries	.
-local:sparql_such_queries	rdfs:subClassOf	local:such_queries	.
-local:sparql	rdfs:member	local:sparql_features	.
-local:detects	vn.role:Experiencer	local:original	.
-local:taken_from_sparql_endpoint_logs	local:taken_from	local:sparql_endpoint_logs	.
-local:practical_for_realworld_queries	local:for_real-worldqueries	local:practical	.
-local:sparql_queries_such_such_queries	rdfs:subClassOf	local:queries_such_such_queries	.
+local:equivalent_queries_deciding	rdfs:member	local:s0.2	.
+local:s4	rdf:subject	local:we	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:core_fragment	.
 local:not_change	rdfs:subClassOf	local:change	.
-local:canonicalised_query_query	rdfs:subClassOf	local:query_query	.
-local:queries_such_such_queries	rdfs:subClassOf	local:such_such_queries	.
-local:canonicalisation	rdfs:member	local:canonicalisation_method	.
-local:sparql	rdfs:member	local:sparql_monotone	.
-local:change	local:AM-MOD	local:will	.
+local:s1.2	local:AM-MOD	local:will	.
+local:two_conjunctive_queries	rdfs:subClassOf	local:conjunctive_queries	.
+local:s0.3	rdf:subject	local:npcomplete	.
+local:expressive_query	rdfs:member	local:expressive	.
+local:s11	local:AM-DIS	local:also	.
+local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	rdfs:member	local:answers	.
+local:s3.1	local:AM-DIS	local:also	.
+local:s0	rdf:object	local:expressive_query_languages_such_as_sparql	.
+local:s9	rdf:object	local:algorithm_detects_more_equivalent_queries_than_when_compared_with_purely_syntactic_methods	.
+local:s6.2	local:AM-MOD	local:will	.
+local:s3	rdf:subject	local:we	.
+local:complexity_in_paper	rdfs:member	local:complexity	.
+local:s3.1	rdf:object	local:sparql_features	.
+local:equivalent_queries_deciding	rdfs:member	local:equivalent_queries	.
+local:s11.1	rdf:subject	local:synthetic_queries	.
+local:algorithm_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original_to_be_practical_for_realworld_queries	rdfs:member	local:canonicalised_query	.
+local:results_of_experiments	rdfs:member	local:experiments	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:other_sparql	rdfs:subClassOf	local:sparql	.
+local:answers_for_the_canonicalised_query	rdfs:member	local:canonicalised_query	.
+local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	rdfs:member	local:sparql_queries	.
+local:more_equivalent_queries	rdfs:subClassOf	local:queries	.
+local:s2	rdf:subject	local:we	.
+local:s8.1	local:AM-MOD	local:will	.
+local:canonicalisation_of_two_queries	rdfs:member	local:two_queries	.
+local:syntactic_canonicalisation_of_sparql_queries	rdfs:member	local:syntactic_canonicalisation	.
+local:s7	rdf:subject	local:realworld_queries	.
+local:s9	local:AM-ADV	local:despite_the_fact_that_canonicalisation_must_be_harder_than_the_equivalence_problem	.
+local:canonicalisation_method	rdfs:member	local:canonicalisation	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:equivalent_queries	.
+local:answers_for_canonicalised_query	rdfs:member	local:answers	.
+local:s8	rdf:subject	local:we	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:canonicalisation	.
+local:synthetic_queries	rdfs:subClassOf	local:queries	.
+local:more_equivalent	rdfs:member	local:more	.
+local:complexity_in_paper	rdfs:member	local:paper	.
+local:further_query_features	rdfs:subClassOf	local:features	.
+local:s9.1	rdf:subject	local:algorithm	.
 local:soundness_guarantee	rdfs:subClassOf	local:guarantee	.
-local:sparql_sparql	rdfs:subClassOf	local:sparql	.
-local:purely	rdfs:member	local:purely_syntactic	.
-local:two_queries_within_core_fragment	local:twoqueries_within	local:core_fragment	.
-local:not_further_change	rdfs:subClassOf	local:further_change	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:answers_for_canonicalised_query	local:for_canonicalisedquery	local:answers	.
-local:canonicalised	rdfs:member	local:canonicalised_canonicalised	.
-local:when_compared_with_syntactic_methods	local:whencompared_with	local:syntactic_methods	.
-local:when_when_compared	rdfs:subClassOf	local:when_compared	.
-local:queries	vn.role:Agent	local:syntactic_canonicalisation	.
-local:monotone	rdfs:member	local:monotone_queries	.
-local:original	rdfs:member	local:original_original	.
-local:experiments_over_synthetic_queries	local:experiments_over	local:synthetic_queries	.
-local:show	vn.role:Theme	local:algorithm	.
-local:canonicalisation_of_two_queries_with_join	local:with_join	local:canonicalisation_of_two_queries	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:syntactic_canonicalisation	rdfs:subClassOf	local:canonicalisation	.
-local:equivalent_queries	rdfs:subClassOf	local:queries	.
-local:designed	vn.role:Product	local:synthetic_queries	.
-local:original	rdfs:member	local:original_detects	.
-local:original_detects	rdfs:subClassOf	local:detects	.
-local:answers_for_canonicalised_canonicalised_query_query	local:answers_for	local:canonicalised_canonicalised_query_query	.
-local:core_fragment	rdfs:subClassOf	local:fragment	.
-local:change	vn.role:Patient	local:answers_for_canonicalised_query	.
-local:stresstest	vn.role:object	local:canonicalisation_method	.
-local:syntactic_methods	rdfs:subClassOf	local:methods	.
-local:present	vn.role:Theme	local:results_of_experiments_highlighting	.
-local:canonicalisation	rdfs:member	local:canonicalisation_canonicalisation	.
-local:query_query	rdfs:subClassOf	local:query	.
-local:more_equivalent_equivalent	rdfs:subClassOf	local:equivalent	.
-local:sparql_sparql_queries	rdfs:subClassOf	local:queries	.
-local:results_of_experiments	local:results_of	local:experiments	.
-local:stresstest	vn.role:subject	local:synthetic_queries	.
-local:equivalent_queries_queries	rdfs:subClassOf	local:queries	.
-local:syntactic	rdfs:member	local:syntactic_canonicalisation	.
+local:s0.4	rdf:predicate	local:make	.
+local:purely_syntactic	rdfs:member	local:purely	.
+local:will_not_change_versus_original	rdfs:member	local:original	.
+local:further_query	rdfs:subClassOf	local:query	.
+local:realworld_queries	rdfs:subClassOf	local:queries	.
+local:s6.2	rdf:predicate	local:not_change	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:sparql	.
+local:s8	local:AM-ADV	local:despite_the_fact_that_canonicalisation_must_be_harder_than_the_equivalence_problem	.
+local:s0.1	rdf:predicate	local:detect	.
+local:s0	rdf:predicate	local:complicate	.
+local:more_equivalent	rdfs:subClassOf	local:equivalent	.
+local:s8	rdf:object	local:algorithm_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original_to_be_practical_for_realworld_queries	.
+local:s3	local:AM-MOD	local:can	.
+local:expressive_query_languages	rdfs:member	local:expressive_query	.
+local:s4	rdf:predicate	local:guarantee	.
+local:s11	rdf:predicate	local:present	.
+local:s11.1	rdf:predicate	local:design	.
+local:s6.2	rdf:subject	local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	.
+local:two_queries_within_core_fragment	rdfs:member	local:core_fragment	.
+local:s3	rdf:object	local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	.
+local:s11.3	rdf:predicate	local:highlight	.
+local:must_harder_than_equivalence_problem	rdfs:member	local:must_harder	.
 local:weaker_soundness_guarantee	rdfs:subClassOf	local:guarantee	.
-local:equivalence	rdfs:member	local:equivalence_problem	.
-local:propose_despite_complexity_in_paper	local:in_paper	local:propose_despite_complexity	.
-local:practical_for_realworld_queries	local:practical_for	local:realworld_queries	.
-local:present	local:AM-DIS	local:also	.
-local:more_equivalent_equivalent	rdfs:member	local:more_equivalent_equivalent_queries	.
+local:s8.1	rdf:subject	local:answers_for_the_canonicalised_query	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if	rdfs:member	local:canonicalisation	.
+local:equivalence_problem	rdfs:subClassOf	local:problem	.
+local:s10	rdf:predicate	local:perform	.
+local:algorithm_detects	rdfs:member	local:algorithm	.
+local:syntactic_canonicalisation_of_sparql_queries	rdfs:member	local:sparql_queries	.
+local:answers_for_the_canonicalised_query	rdfs:member	local:answers	.
+local:sparql_endpoint_logs	rdfs:member	local:sparql_endpoint	.
+local:input_query	rdfs:member	local:input	.
+local:s11	rdf:object	local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	.
+local:s8.1	rdf:predicate	local:not_change	.
+local:canonicalisation_method_highlighting	rdfs:member	local:highlighting	.
+local:realworld_queries	rdfs:member	local:realworld	.
+local:s10	rdf:subject	local:algorithm	.
+local:s1.2	rdf:subject	local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	.
+local:soundness_guarantee	rdfs:member	local:soundness	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:equivalent_to_input_query	rdfs:member	local:input_query	.
+local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:npcomplete	.
+local:s9	rdf:predicate	local:show	.
+local:more_equivalent_queries	rdfs:member	local:more_equivalent	.
+local:input_query	rdfs:subClassOf	local:query	.
+local:s3	rdf:predicate	local:guarantee	.
+local:s9	rdf:subject	local:we	.
+local:algorithm_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original_to_be_practical_for_realworld_queries	rdfs:member	local:algorithm	.
+local:canonicalisation_method_highlighting	rdfs:member	local:canonicalisation_method	.
+local:weaker_soundness_guarantee	rdfs:member	local:weaker_soundness	.
+local:s1.2	rdf:predicate	local:not_change	.
+local:s6	rdf:subject	local:algorithm	.
+local:purely_syntactic_methods	rdfs:subClassOf	local:methods	.
+local:query_languages	rdfs:member	local:query	.
+local:sparql_endpoint	rdfs:subClassOf	local:endpoint	.
+local:canonicalised_query	rdfs:subClassOf	local:query	.
+local:s6	rdf:object	local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	.
+local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	rdfs:member	local:answers	.
+local:s7	rdf:predicate	local:take	.
+local:core_fragment_of_sparql	rdfs:member	local:sparql	.
+local:must_harder_than_equivalence_problem	rdfs:member	local:equivalence_problem	.
+local:s1.1	rdf:predicate	local:query	.
+local:practical_for_realworld_queries	rdfs:member	local:realworld_queries	.
+local:s0.1	rdf:subject	local:sparql	.
+local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:difficult_cases	.
+local:stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:difficult_cases	.
+local:synthetic_queries_designed	rdfs:member	local:synthetic_queries	.
+local:syntactic_canonicalisation	rdfs:member	local:syntactic	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if	rdfs:member	local:sparql	.
+local:s1	rdf:predicate	local:perform	.
+local:s0.4	rdf:object	local:problem	.
+local:s11.2	rdf:object	local:canonicalisation_method_highlighting_difficult_cases	.
+local:s6	rdf:predicate	local:perform	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:npcomplete	.
+local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	rdfs:member	local:canonicalised_query	.
+local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:synthetic_queries	.
+local:synthetic_queries	rdfs:member	local:synthetic	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if	rdfs:member	local:core_fragment	.
+local:s8	rdf:predicate	local:show	.
+local:s2	rdf:object	local:algorithm	.
+local:despite_this_complexity_in_this_paper	rdfs:member	local:paper	.
+local:despite_the_fact_that_canonicalisation_must_be_harder_than_the_equivalence_problem	rdfs:member	local:canonicalisation	.
+local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	rdfs:member	local:syntactic_canonicalisation	.
+local:despite_this_complexity_in_this_paper	rdfs:member	local:complexity	.
+local:s0.3	rdf:predicate	local:add	.
+local:conjunctive_queries	rdfs:member	local:conjunctive	.
+local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	rdfs:member	local:sparql_queries	.
+local:s9.1	rdf:object	local:equivalent_queries_than_when_compared_with_purely_syntactic_methods	.
+local:s2	rdf:predicate	local:propose	.
+local:algorithm_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original_to_be_practical_for_realworld_queries	rdfs:member	local:realworld_queries	.
+local:sparql_endpoint	rdfs:member	local:sparql	.
+local:answers_for_the_canonicalised_query_will_not_change_versus_the_original	rdfs:member	local:answers	.
+local:will_not_change	rdfs:subClassOf	local:not_change	.
+local:s11.3	rdf:object	local:difficult_cases	.
+local:expressive_query_languages_such_as_sparql	rdfs:member	local:expressive_query_languages	.
+local:s11.1	rdf:object	local:stresstest_the_canonicalisation_method_highlighting_difficult_cases	.
+local:syntactic_methods	rdfs:subClassOf	local:methods	.
+local:equivalent_to_input_query	rdfs:member	local:equivalent	.
+local:results_of_experiments	rdfs:member	local:results	.
+local:answers_for_canonicalised_query	rdfs:member	local:canonicalised_query	.
+local:query_features	rdfs:subClassOf	local:features	.
+local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:problem	.
+local:s7	rdf:object	local:sparql_endpoint_logs	.
+local:canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:canonicalisation_method	.
+local:expressive_query_languages_such_as_sparql	rdfs:member	local:sparql	.
+local:s3.1	rdf:predicate	local:support	.
+local:equivalent_queries	rdfs:member	local:equivalent	.
+local:when_compared_with_syntactic_methods	rdfs:member	local:when_compared	.
+local:s4	local:AM-MOD	local:can	.
 local:weaker_soundness	rdfs:subClassOf	local:soundness	.
-local:propose_despite_complexity	local:despite_complexity	local:propose	.
+local:other_sparql_features	rdfs:subClassOf	local:sparql_features	.
+local:sparql_endpoint_logs	rdfs:subClassOf	local:endpoint_logs	.
+local:canonicalisation_of_two_queries	rdfs:member	local:canonicalisation	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:further_query_features	.
+local:must_harder	rdfs:subClassOf	local:harder	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:weaker_soundness_guarantee	.
+local:further_query_features	rdfs:member	local:further_query	.
+local:difficult_cases	rdfs:member	local:difficult	.
+local:s11.3	rdf:subject	local:canonicalisation_method	.
+local:synthetic_queries_designed	rdfs:member	local:designed	.
+local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	rdfs:member	local:canonicalised_query	.
+local:canonicalisation_method	rdfs:subClassOf	local:method	.
+local:answers_for_the_canonicalised_query_will_not_change_versus_the_original	rdfs:member	local:canonicalised_query	.
+local:expressive_query_languages	rdfs:subClassOf	local:query_languages	.
+local:s11.2	rdf:subject	local:synthetic_queries	.
+local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:further_query_features	.
+local:algorithm_detects	rdfs:subClassOf	local:detects	.
+local:algorithm_detects_more_equivalent_queries_than_when_compared_with_purely_syntactic_methods	rdfs:member	local:purely_syntactic_methods	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if	rdfs:member	local:queries	.
+local:s2	local:AM-ADV	local:despite_this_complexity_in_this_paper	.
+local:conjunctive_queries	rdfs:subClassOf	local:queries	.
+local:core_fragment	rdfs:member	local:core	.
+local:two_queries_within_core_fragment	rdfs:member	local:two_queries	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:problem	.
+local:s1	rdf:subject	local:algorithm	.
+local:s6.1	rdf:object	local:answers_for_the_canonicalised_query_will_not_change_versus_the_original	.
+local:experiments_over_synthetic_queries	rdfs:member	local:synthetic_queries	.
+local:practical_for_realworld_queries	rdfs:member	local:practical	.
+local:other_sparql_features	rdfs:member	local:other_sparql	.
+local:s11.2	rdf:predicate	local:stresstest	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:difficulty	.
+local:when_compared	rdfs:subClassOf	local:compared	.
+local:where_adding	rdfs:subClassOf	local:adding	.
+local:canonicalised_query	rdfs:member	local:canonicalised	.
+local:expressive_query_languages	rdfs:subClassOf	local:languages	.
+local:equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:conjunctive_queries	.
+local:despite_the_fact_that_canonicalisation_must_be_harder_than_the_equivalence_problem	rdfs:member	local:equivalence_problem	.
+local:core_fragment	rdfs:subClassOf	local:fragment	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:other_sparql_features	.
+local:syntactic_canonicalisation	rdfs:subClassOf	local:canonicalisation	.
+local:expressive_query	rdfs:subClassOf	local:query	.
+local:purely_syntactic	rdfs:subClassOf	local:syntactic	.
+local:s0.3	rdf:object	local:query_features	.
+local:when_compared_with_syntactic_methods	rdfs:member	local:syntactic_methods	.
+local:equivalent_queries	rdfs:subClassOf	local:queries	.
+local:weaker_soundness_guarantee	rdfs:subClassOf	local:soundness_guarantee	.
+local:s10	rdf:object	local:syntactic_canonicalisation_of_sparql_queries	.
+local:two_queries	rdfs:subClassOf	local:queries	.
+local:syntactic_methods	rdfs:member	local:syntactic	.
+local:s4	rdf:object	local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if	.
+local:algorithm_that_performs_syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query	rdfs:member	local:syntactic_canonicalisation	.
+local:stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:canonicalisation_method	.
+local:algorithm_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original_to_be_practical_for_realworld_queries	rdfs:member	local:answers	.
+local:s1.1	rdf:subject	local:sparql	.
+local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:experiments	.
+local:will_not_change_versus_original	rdfs:member	local:will_not_change	.
+local:s0	rdf:subject	local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	.
+local:s3.1	rdf:subject	local:we	.
+local:results_of_experiments_over_synthetic_queries_designed_to_stresstest_the_canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:canonicalisation_method	.
+local:sparql_endpoint_logs	rdfs:subClassOf	local:logs	.
+local:further_query	rdfs:member	local:further	.
+local:equivalent_queries_than_when_compared_with_purely_syntactic_methods	rdfs:member	local:purely_syntactic_methods	.
+local:sparql_features	rdfs:member	local:sparql	.
+local:s9.1	rdf:predicate	local:detect	.
+local:s0.2	rdf:predicate	local:decide	.
+local:equivalent_queries_than_when_compared_with_purely_syntactic_methods	rdfs:member	local:equivalent_queries	.
+local:also_support	rdfs:subClassOf	local:support	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:input_query	.
+local:weaker_soundness	rdfs:member	local:weaker	.
+local:difficulty_of_detecting_equivalent_queries_deciding_if_two_conjunctive_queries_are_equivalent_is_npcomplete_where_adding_further_query_features_makes_the_problem_undecidable	rdfs:member	local:conjunctive_queries	.
+local:query_features	rdfs:member	local:query	.
+local:canonicalisation_method_highlighting_difficult_cases	rdfs:member	local:difficult_cases	.
+local:canonicalisation_of_two_queries_within_a_core_fragment_of_sparql_is_equal_if_the_two_queries_are_equivalent_we_also_support_other_sparql_features_but_with_a_weaker_soundness_guarantee_that_the_is_equivalent_to_the_input_query	rdfs:member	local:queries	.
+local:core_fragment_of_sparql	rdfs:member	local:core_fragment	.
+local:s1	rdf:object	local:syntactic_canonicalisation_of_sparql_queries_such_that_the_answers_for_the_canonicalised_query_will_not_change_versus_the_original	.
+local:s1.1	rdf:object	local:answers_for_the_canonicalised_query_will_not_change_versus_the_original	.
+local:algorithm_detects_more_equivalent_queries_than_when_compared_with_purely_syntactic_methods	rdfs:member	local:algorithm_detects	.
+local:s0.4	rdf:subject	local:query_features	.
+local:s6.1	rdf:subject	local:sparql	.
+local:other_sparql_features	rdfs:subClassOf	local:features	.
+local:further_query_features	rdfs:subClassOf	local:query_features	.
+local:purely_syntactic_methods	rdfs:member	local:purely_syntactic	.

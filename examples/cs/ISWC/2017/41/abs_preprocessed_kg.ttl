@@ -1,379 +1,784 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"usually applied optimizations"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"optimizations specific to sprefql improve runtime efficiency by comparison to the usually applied optimizations on the equivalent standard sparql query"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we also provide empirical evidence that optimizations specific to sprefql improve runtime efficiency by comparison to the usually applied optimizations on the equivalent standard sparql query"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"a prefer clause that expresses soft preferences over the query"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"in this paper we present sprefql we formally define the semantics of an extension of the sparql language"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"in this paper we present sprefql"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"in this paper we present sprefql we formally define the syntax"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"in this paper we present sprefql"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"appending a prefer clause"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the sparql language that allows appending a prefer clause"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"preferences from the hard patterns where clause gives queries where the intention of the client more cleanly expressed an advantage for both human readability"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the hard patterns where clause gives queries where the intention of the client is more cleanly expressed an advantage for both human readability"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"however clearly separating preferences from the hard patterns where clause gives queries where the intention of the client"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"clause gives queries where the intention of the client more cleanly expressed an advantage for both machine optimization"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"clause gives queries where the intention of the client is more cleanly expressed an advantage for both machine optimization"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"clearly separating preferences from the filters in the where clause gives queries where the intention of the client"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"clause gives queries where the intention of the client more cleanly expressed an advantage for both human readability"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"clause gives queries where the intention of the client is more cleanly expressed an advantage for both human readability"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"clearly separating preferences from the filters in the where clause gives queries where the intention of the client"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"preferences from the hard patterns where clause gives queries where the intention of the client more cleanly expressed an advantage for both machine optimization"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the hard patterns where clause gives queries where the intention of the client is more cleanly expressed an advantage for both machine optimization"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"however clearly separating preferences from the hard patterns where clause gives queries where the intention of the client"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a prefer clause that expresses soft preferences over the query"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"appending a prefer clause"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the sparql language that allows appending a prefer clause"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"any sprefql query can transformed to an equivalent standard sparql query"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"an extension of the sparql language not add expressivity"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"prefer clause that expresses"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"prefer clause that expresses"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the query results obtained by the main body of the query"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"in this paper we present sprefql an extension of the sparql language soft preferences over the query results obtained by the main body of the query"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"appending a prefer clause"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the sparql language that allows appending a prefer clause"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:optimizations	a	rdf:Class	;
+	rdfs:label	"optimizations"	.
 
-local:paper	rdfs:label	"paper"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:we	rdfs:label	"we"	.
+local:usually	a	rdf:Class	;
+	rdfs:label	"usually"	.
 
-local:main_body	rdfs:label	"main body"	.
+local:optimizations_specific_to_sprefql	a	rdf:Class	;
+	rdfs:label	"optimizations specific to sprefql"	.
 
-local:body	rdfs:label	"body"	.
+local:specific_optimizations	a	rdf:Class	;
+	rdfs:label	"specific optimizations"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:specific_to_sprefql	a	rdf:Class	;
+	rdfs:label	"specific to sprefql"	.
 
-local:sparql_language	rdfs:label	"sparql language"	.
+local:specific	a	rdf:Class	;
+	rdfs:label	"specific"	.
 
-local:query_results	rdfs:label	"query results"	.
+local:sprefql	a	rdf:Class	;
+	rdfs:label	"sprefql"	.
 
-local:results	rdfs:label	"results"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:language	rdfs:label	"language"	.
+local:runtime_efficiency	a	rdf:Class	;
+	rdfs:label	"runtime efficiency"	.
 
-local:main	rdfs:label	"main"	.
+local:runtime	a	rdf:Class	;
+	rdfs:label	"runtime"	.
 
-local:query	rdfs:label	"query"	.
+local:efficiency	a	rdf:Class	;
+	rdfs:label	"efficiency"	.
 
-local:soft_preferences	rdfs:label	"soft preferences"	.
+local:comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	a	rdf:Class	;
+	rdfs:label	"comparison to the usually applied optimizations on the equivalent standard sparql query"	.
 
-local:preferences	rdfs:label	"preferences"	.
+local:comparison	a	rdf:Class	;
+	rdfs:label	"comparison"	.
 
-local:sprefql_extension	rdfs:label	"sprefql extension"	.
+local:equivalent_standard_sparql_query	a	rdf:Class	;
+	rdfs:label	"equivalent standard sparql query"	.
 
-local:sprefql	rdfs:label	"sprefql"	.
+local:equivalent_standard_sparql	a	rdf:Class	;
+	rdfs:label	"equivalent standard sparql"	.
 
-local:extension	rdfs:label	"extension"	.
+local:equivalent_standard	a	rdf:Class	;
+	rdfs:label	"equivalent standard"	.
 
-local:extension_of_sparql_language	rdfs:label	"extension of sparql language"	.
+local:standard_sparql	a	rdf:Class	;
+	rdfs:label	"standard sparql"	.
 
-local:soft_preferences_over_query	rdfs:label	"soft preferences over query"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:results_obtained	rdfs:label	"results obtained"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:obtained_by_main_body	rdfs:label	"obtained by main body"	.
+local:standard_sparql_query	a	rdf:Class	;
+	rdfs:label	"standard sparql query"	.
 
-local:main_body_of_query	rdfs:label	"main body of query"	.
+local:equivalent	a	rdf:Class	;
+	rdfs:label	"equivalent"	.
 
-local:allows	rdfs:label	"allows"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:appending	rdfs:label	"appending"	.
+local:applied_optimizations	a	rdf:Class	;
+	rdfs:label	"applied optimizations"	.
 
-local:clause	rdfs:label	"clause"	.
+local:usually_applied	a	rdf:Class	;
+	rdfs:label	"usually applied"	.
 
-local:expresses	rdfs:label	"expresses"	.
+local:applied	a	rdf:Class	;
+	rdfs:label	"applied"	.
 
-local:standard	rdfs:label	"standard"	.
+local:comparison_to_applied_optimizations	a	rdf:Class	;
+	rdfs:label	"comparison to applied optimizations"	.
 
-local:standard_sparql	rdfs:label	"standard sparql"	.
+local:applied_optimizations_on_equivalent_standard_sparql_query	a	rdf:Class	;
+	rdfs:label	"applied optimizations on equivalent standard sparql query"	.
 
-local:equivalent_standard	rdfs:label	"equivalent standard"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:equivalent_standard_sparql	rdfs:label	"equivalent standard sparql"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:standard_sparql_query	rdfs:label	"standard sparql query"	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	a	rdf:Class	;
+	rdfs:label	"empirical evidence that optimizations specific to sprefql improve runtime efficiency by comparison to the usually applied optimizations on the equivalent standard sparql query"	.
 
-local:sprefql_query	rdfs:label	"sprefql query"	.
+local:empirical_evidence	a	rdf:Class	;
+	rdfs:label	"empirical evidence"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:empirical	a	rdf:Class	;
+	rdfs:label	"empirical"	.
 
-local:equivalent_standard_sparql_query	rdfs:label	"equivalent standard sparql query"	.
+local:evidence	a	rdf:Class	;
+	rdfs:label	"evidence"	.
 
-local:equivalent	rdfs:label	"equivalent"	.
+local:improve_by_comparison	a	rdf:Class	;
+	rdfs:label	"improve by comparison"	.
 
-local:can_transformed	rdfs:label	"can transformed"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:transformed	rdfs:label	"transformed"	.
+local:prefer_clause	a	rdf:Class	;
+	rdfs:label	"prefer clause"	.
 
-local:not_add	rdfs:label	"not add"	.
+local:clause	a	rdf:Class	;
+	rdfs:label	"clause"	.
 
-local:add	rdfs:label	"add"	.
+local:prefer	a	rdf:Class	;
+	rdfs:label	"prefer"	.
 
-local:does_not_add	rdfs:label	"does not add"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:can_transformed_to_equivalent_standard_sparql_query	rdfs:label	"can transformed to equivalent standard sparql query"	.
+local:soft_preferences_over_the_query	a	rdf:Class	;
+	rdfs:label	"soft preferences over the query"	.
 
-local:not	rdfs:label	"not"	.
+local:soft_preferences	a	rdf:Class	;
+	rdfs:label	"soft preferences"	.
 
-local:can	rdfs:label	"can"	.
+local:soft	a	rdf:Class	;
+	rdfs:label	"soft"	.
 
-local:separating	rdfs:label	"separating"	.
+local:preferences	a	rdf:Class	;
+	rdfs:label	"preferences"	.
 
-local:however	rdfs:label	"however"	.
+local:soft_preferences_over_query	a	rdf:Class	;
+	rdfs:label	"soft preferences over query"	.
 
-local:clearly	rdfs:label	"clearly"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-local:where_gives	rdfs:label	"where gives"	.
+local:semantics_of_an_extension_of_the_sparql_language	a	rdf:Class	;
+	rdfs:label	"semantics of an extension of the sparql language"	.
 
-local:gives	rdfs:label	"gives"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:hard_patterns	rdfs:label	"hard patterns"	.
+local:sparql_language	a	rdf:Class	;
+	rdfs:label	"sparql language"	.
 
-local:patterns	rdfs:label	"patterns"	.
+local:extension	a	rdf:Class	;
+	rdfs:label	"extension"	.
 
-local:preferences_from_hard_patterns	rdfs:label	"preferences from hard patterns"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:preferences_from_hard_patterns_from_filters	rdfs:label	"preferences from hard patterns from filters"	.
+local:semantics_of_extension	a	rdf:Class	;
+	rdfs:label	"semantics of extension"	.
 
-local:filters	rdfs:label	"filters"	.
+local:extension_of_sparql_language	a	rdf:Class	;
+	rdfs:label	"extension of sparql language"	.
 
-local:hard_patterns_in_	rdfs:label	"hard patterns in ``"	.
+local:paper_we_present_sprefql	a	rdf:Class	;
+	rdfs:label	"paper we present sprefql"	.
 
-local:	rdfs:label	"``"	.
+local:present_sprefql	a	rdf:Class	;
+	rdfs:label	"present sprefql"	.
 
-local:intention_of_client	rdfs:label	"intention of client"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:intention	rdfs:label	"intention"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:client	rdfs:label	"client"	.
+local:formally	a	rdf:Class	;
+	rdfs:label	"formally"	.
 
-local:where_clause	rdfs:label	"where clause"	.
+local:syntax	a	rdf:Class	;
+	rdfs:label	"syntax"	.
 
-local:separating_preferences	rdfs:label	"separating preferences"	.
+local:append	a	rdf:Class	;
+	rdfs:label	"append"	.
 
-local:clearly_separating	rdfs:label	"clearly separating"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:separating_preferences_from_hard_patterns	rdfs:label	"separating preferences from hard patterns"	.
+local:appending_a_prefer_clause	a	rdf:Class	;
+	rdfs:label	"appending a prefer clause"	.
 
-local:separating_preferences_from_hard_patterns_from_filters	rdfs:label	"separating preferences from hard patterns from filters"	.
+local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	a	rdf:Class	;
+	rdfs:label	"preferences from the hard patterns where clause gives queries where the intention of the client"	.
 
-local:hard_patterns_in_where_clause	rdfs:label	"hard patterns in where clause"	.
+local:client	a	rdf:Class	;
+	rdfs:label	"client"	.
 
-local:machine_optimization	rdfs:label	"machine optimization"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:optimization	rdfs:label	"optimization"	.
+local:intention	a	rdf:Class	;
+	rdfs:label	"intention"	.
 
-local:machine	rdfs:label	"machine"	.
+local:hard_patterns_where_clause	a	rdf:Class	;
+	rdfs:label	"hard patterns where clause"	.
 
-local:cleanly_expressed	rdfs:label	"cleanly expressed"	.
+local:where_clause	a	rdf:Class	;
+	rdfs:label	"where clause"	.
 
-local:expressed	rdfs:label	"expressed,"	.
+local:hard_patterns_where	a	rdf:Class	;
+	rdfs:label	"hard patterns where"	.
 
-local:more_cleanly	rdfs:label	"more cleanly"	.
+local:where	a	rdf:Class	;
+	rdfs:label	"where"	.
 
-local:cleanly	rdfs:label	"cleanly"	.
+local:patterns_where_clause	a	rdf:Class	;
+	rdfs:label	"patterns where clause"	.
 
-local:where_cleanly_expressed	rdfs:label	"where cleanly expressed"	.
+local:hard_patterns	a	rdf:Class	;
+	rdfs:label	"hard patterns"	.
 
-local:advantage_for_machine_optimization	rdfs:label	"advantage for machine optimization"	.
+local:hard	a	rdf:Class	;
+	rdfs:label	"hard"	.
 
-local:advantage	rdfs:label	"advantage"	.
+local:patterns	a	rdf:Class	;
+	rdfs:label	"patterns"	.
 
-local:queries	rdfs:label	"queries"	.
+local:patterns_where	a	rdf:Class	;
+	rdfs:label	"patterns where"	.
 
-local:human	rdfs:label	"human"	.
+local:preferences_from_hard_patterns	a	rdf:Class	;
+	rdfs:label	"preferences from hard patterns"	.
 
-local:human_readability	rdfs:label	"human readability"	.
+local:intention_of_client	a	rdf:Class	;
+	rdfs:label	"intention of client"	.
 
-local:readability	rdfs:label	"readability"	.
+local:advantage_human_readability	a	rdf:Class	;
+	rdfs:label	"advantage human readability"	.
 
-local:advantage_for_human_readability	rdfs:label	"advantage for human readability"	.
+local:human_readability	a	rdf:Class	;
+	rdfs:label	"human readability"	.
 
-local:present_sprefql	rdfs:label	"present sprefql"	.
+local:advantage	a	rdf:Class	;
+	rdfs:label	"advantage"	.
 
-local:define	rdfs:label	"define"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:formally	rdfs:label	"formally"	.
+local:readability	a	rdf:Class	;
+	rdfs:label	"readability"	.
 
-local:empirical_evidence	rdfs:label	"empirical evidence"	.
+local:cleanly	a	rdf:Class	;
+	rdfs:label	"cleanly"	.
 
-local:evidence	rdfs:label	"evidence"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:runtime	rdfs:label	"run-time"	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	a	rdf:Class	;
+	rdfs:label	"queries where the intention of the client is more cleanly expressed an advantage for both human readability"	.
 
-local:runtime_efficiency	rdfs:label	"run-time efficiency"	.
+local:cleanly_expressed	a	rdf:Class	;
+	rdfs:label	"cleanly expressed"	.
 
-local:efficiency	rdfs:label	"efficiency"	.
+local:expressed	a	rdf:Class	;
+	rdfs:label	"expressed"	.
 
-local:empirical	rdfs:label	"empirical"	.
+local:more_cleanly	a	rdf:Class	;
+	rdfs:label	"more cleanly"	.
 
-local:applied_optimizations	rdfs:label	"applied optimizations"	.
+local:where_cleanly_expressed	a	rdf:Class	;
+	rdfs:label	"where cleanly expressed"	.
 
-local:optimizations	rdfs:label	"optimizations"	.
+local:advantage_for_human_readability	a	rdf:Class	;
+	rdfs:label	"advantage for human readability"	.
 
-local:usually_applied	rdfs:label	"usually applied"	.
+local:separate	a	rdf:Class	;
+	rdfs:label	"separate"	.
 
-local:applied	rdfs:label	"applied"	.
+local:clearly	a	rdf:Class	;
+	rdfs:label	"clearly"	.
 
-local:specific_optimizations	rdfs:label	"specific optimizations"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:also_provide	rdfs:label	"also provide"	.
+local:clause_gives_queries_where_the_intention_of_the_client	a	rdf:Class	;
+	rdfs:label	"clause gives queries where the intention of the client"	.
 
-local:provide	rdfs:label	"provide"	.
+local:advantage_machine_optimization	a	rdf:Class	;
+	rdfs:label	"advantage machine optimization"	.
 
-local:semantics_of_extension	rdfs:label	"semantics of extension"	.
+local:machine_optimization	a	rdf:Class	;
+	rdfs:label	"machine optimization"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:specific_to_sprefql	rdfs:label	"specific to sprefql"	.
+local:optimization	a	rdf:Class	;
+	rdfs:label	"optimization"	.
 
-local:specific	rdfs:label	"specific"	.
+local:advantage_machine	a	rdf:Class	;
+	rdfs:label	"advantage machine"	.
 
-local:improve_by_comparison	rdfs:label	"improve by comparison"	.
+local:intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	a	rdf:Class	;
+	rdfs:label	"intention of the client is more cleanly expressed an advantage for both machine optimization"	.
 
-local:improve	rdfs:label	"improve"	.
+local:advantage_for_machine_optimization	a	rdf:Class	;
+	rdfs:label	"advantage for machine optimization"	.
 
-local:comparison	rdfs:label	"comparison"	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	a	rdf:Class	;
+	rdfs:label	"preferences from the filters in the where clause gives queries where the intention of the client"	.
 
-local:comparison_to_applied_optimizations	rdfs:label	"comparison to applied optimizations"	.
+local:filters	a	rdf:Class	;
+	rdfs:label	"filters"	.
 
-local:applied_optimizations_on_equivalent_standard_sparql_query	rdfs:label	"applied optimizations on equivalent standard sparql query"	.
+local:preferences_from_filters	a	rdf:Class	;
+	rdfs:label	"preferences from filters"	.
 
-local:syntax	rdfs:label	"syntax"	.
+local:filters_in_where_clause	a	rdf:Class	;
+	rdfs:label	"filters in where clause"	.
 
-local:also	rdfs:label	"also"	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	a	rdf:Class	;
+	rdfs:label	"queries where the intention of the client is more cleanly expressed an advantage for both machine optimization"	.
 
-local:runtime_efficiency_by_comparison	rdfs:label	"run-time efficiency by comparison"	.
+local:sprefql_query	a	rdf:Class	;
+	rdfs:label	"sprefql query"	.
 
-local:usually	rdfs:label	"usually"	.
+local:transform	a	rdf:Class	;
+	rdfs:label	"transform"	.
 
-#### Properties ####
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
+
+local:extension_of_the_sparql_language	a	rdf:Class	;
+	rdfs:label	"extension of the sparql language"	.
+
+local:not_add	a	rdf:Class	;
+	rdfs:label	"not add"	.
+
+local:expressivity	a	rdf:Class	;
+	rdfs:label	"expressivity"	.
+
+local:clause_that_expresses	a	rdf:Class	;
+	rdfs:label	"clause that expresses"	.
+
+local:main_body_of_the_query	a	rdf:Class	;
+	rdfs:label	"main body of the query"	.
+
+local:main_body	a	rdf:Class	;
+	rdfs:label	"main body"	.
+
+local:body	a	rdf:Class	;
+	rdfs:label	"body"	.
+
+local:main	a	rdf:Class	;
+	rdfs:label	"main"	.
+
+local:main_body_of_query	a	rdf:Class	;
+	rdfs:label	"main body of query"	.
+
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
+
+local:query_results	a	rdf:Class	;
+	rdfs:label	"query results"	.
+
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
+
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	a	rdf:Class	;
+	rdfs:label	"sprefql an extension of the sparql language soft preferences over the query results obtained by the main body of the query"	.
+
+local:language_soft_preferences	a	rdf:Class	;
+	rdfs:label	"language soft preferences"	.
+
+local:sparql_language_soft_preferences	a	rdf:Class	;
+	rdfs:label	"sparql language soft preferences"	.
+
+local:extension_of_sparql_language_soft_preferences	a	rdf:Class	;
+	rdfs:label	"extension of sparql language soft preferences"	.
+
+local:sparql_language_soft_preferences_over_query	a	rdf:Class	;
+	rdfs:label	"sparql language soft preferences over query"	.
+
+local:results_obtained	a	rdf:Class	;
+	rdfs:label	"results obtained"	.
+
+local:obtained	a	rdf:Class	;
+	rdfs:label	"obtained"	.
+
+local:obtained_by_main_body	a	rdf:Class	;
+	rdfs:label	"obtained by main body"	.
 
 #### Mapped Relations ####
 
-cso:query_results	rdfs:label	"query results"	.
-cso:optimization	rdfs:member	local:optimization	.
-cso:optimization	rdfs:label	"optimization"	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:semantics	owl:sameAs	cso:semantics	.
-cso:semantics	rdfs:label	"semantics"	.
-cso:optimization	rdfs:label	"optimizations"	.
+local:optimizations	owl:sameAs	cso:optimization	.
 local:query_results	owl:sameAs	cso:query_results	.
-cso:optimization	rdfs:member	local:optimizations	.
+cso:query_results	rdfs:label	"query results"	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:optimization	rdfs:label	"optimizations"	.
 cso:sparql	rdfs:label	"sparql"	.
+local:sparql	owl:sameAs	cso:sparql	.
+cso:semantics	rdfs:label	"semantics"	.
+cso:optimization	rdfs:label	"optimization"	.
+local:optimization	owl:sameAs	cso:optimization	.
 
 #### Relations ####
 
-local:runtime_efficiency_by_comparison	local:run-timeefficiency_by	local:comparison	.
-local:cleanly_expressed	rdfs:subClassOf	local:expressed	.
-local:semantics_of_extension	local:semantics_of	local:extension	.
-local:provide	vn.role:Recipient	local:we	.
-local:equivalent_standard_sparql_query	rdfs:subClassOf	local:standard_sparql_query	.
-local:improve	vn.role:Agent	local:specific_optimizations	.
-local:does_not_add	rdfs:subClassOf	local:not_add	.
-local:preferences_from_hard_patterns_from_filters	local:preferencesfromhardpatterns_from	local:filters	.
-local:obtained_by_main_body	local:by_mainbody	local:obtained	.
-local:expresses	vn.role:Theme	local:clause	.
-local:clearly_separating	rdfs:subClassOf	local:separating	.
-local:provide	local:AM-DIS	local:also	.
-local:can_transformed	rdfs:subClassOf	local:transformed	.
-local:separating_preferences_from_hard_patterns_from_filters	local:separatingpreferencesfromhardpatterns_from	local:filters	.
-local:present	vn.role:Theme	local:sprefql_extension	.
-local:separating_preferences_from_hard_patterns	local:separatingpreferences_from	local:hard_patterns	.
-local:human_readability	rdfs:subClassOf	local:readability	.
-local:equivalent_standard_sparql_query	rdfs:subClassOf	local:query	.
-local:improve	vn.role:Patient	local:runtime_efficiency_by_comparison	.
-local:add	local:AM-NEG	local:not	.
-local:separating	vn.role:Theme	local:preferences_from_hard_patterns_from_filters	.
-local:allows	vn.role:Agent	local:extension_of_sparql_language	.
-local:expressed	vn.role:indirect_object	local:machine_optimization	.
-local:specific_to_sprefql	local:to_sprefql	local:specific	.
-local:sprefql_extension	local:_extension	local:sprefql	.
-local:sprefql_query	rdfs:subClassOf	local:query	.
-local:appending	vn.role:Patient	local:clause	.
-local:standard_sparql	rdfs:subClassOf	local:sparql	.
-local:query	rdfs:member	local:query_results	.
-local:runtime_efficiency	rdfs:subClassOf	local:efficiency	.
-local:comparison_to_applied_optimizations	local:comparison_to	local:applied_optimizations	.
-local:transformed	vn.role:Product	local:equivalent_standard_sparql_query	.
-local:advantage_for_machine_optimization	local:advantage_for	local:machine_optimization	.
-local:main	rdfs:member	local:main_body	.
-local:where_gives	rdfs:subClassOf	local:gives	.
-local:specific_optimizations	rdfs:subClassOf	local:optimizations	.
-local:obtained_by_main_body	local:obtained_by	local:main_body	.
-local:results_obtained	local:results_	local:obtained	.
-local:also_provide	rdfs:subClassOf	local:provide	.
-local:advantage_for_machine_optimization	local:for_machineoptimization	local:advantage	.
-local:where_cleanly_expressed	rdfs:subClassOf	local:cleanly_expressed	.
-local:expressed	vn.role:subject	local:intention_of_client	.
-local:intention_of_client	local:of_client	local:intention	.
-local:gives	vn.role:Asset	local:however	.
-local:improve_by_comparison	local:improve_by	local:comparison	.
-local:comparison_to_applied_optimizations	local:to_appliedoptimizations	local:comparison	.
-local:define	local:AM-LOC	local:paper	.
-local:main_body	rdfs:subClassOf	local:body	.
-local:provide	vn.role:Agent	local:empirical_evidence	.
-local:machine	rdfs:member	local:machine_optimization	.
-local:main_body_of_query	local:mainbody_of	local:query	.
-local:obtained	vn.role:object	local:query_results	.
-local:runtime_efficiency_by_comparison	local:by_comparison	local:runtime_efficiency	.
-local:equivalent_standard	rdfs:member	local:equivalent_standard_sparql	.
-local:present	rdfs:member	local:present_sprefql	.
-local:soft_preferences_over_query	local:softpreferences_over	local:query	.
-local:hard_patterns_in_	local:in_``	local:hard_patterns	.
-local:allows	vn.role:Theme	local:appending	.
-local:empirical_evidence	rdfs:subClassOf	local:evidence	.
-local:define	vn.role:Theme	local:syntax	.
-local:hard_patterns_in_where_clause	local:hardpatterns_in	local:where_clause	.
-local:expressed	vn.role:subject	local:queries	.
-local:present	local:AM-LOC	local:paper	.
-local:sparql	rdfs:member	local:sparql_language	.
-local:expresses	vn.role:Agent	local:does_not_add	.
-local:can_transformed_to_equivalent_standard_sparql_query	local:to_equivalentstandardsparqlquery	local:can_transformed	.
-local:define	vn.role:Agent	local:we	.
-local:preferences_from_hard_patterns	local:preferences_from	local:hard_patterns	.
-local:applied_optimizations_on_equivalent_standard_sparql_query	local:on_equivalentstandardsparqlquery	local:applied_optimizations	.
-local:equivalent_standard_sparql	rdfs:member	local:equivalent_standard_sparql_query	.
-local:soft_preferences	rdfs:subClassOf	local:preferences	.
-local:hard_patterns_in_	local:hardpatterns_in	local:	.
-local:separating_preferences_from_hard_patterns	local:from_hardpatterns	local:separating_preferences	.
-local:applied_optimizations_on_equivalent_standard_sparql_query	local:appliedoptimizations_on	local:equivalent_standard_sparql_query	.
-local:equivalent_standard	rdfs:subClassOf	local:standard	.
-local:main_body_of_query	local:of_query	local:main_body	.
-local:sparql_language	rdfs:subClassOf	local:language	.
-local:hard_patterns_in_where_clause	local:in_whereclause	local:hard_patterns	.
-local:add	vn.role:Patient	local:can_transformed_to_equivalent_standard_sparql_query	.
-local:improve_by_comparison	local:by_comparison	local:improve	.
-local:standard_sparql_query	rdfs:subClassOf	local:query	.
-local:transformed	vn.role:Patient	local:extension_of_sparql_language	.
-local:extension_of_sparql_language	local:of_sparqllanguage	local:extension	.
-local:advantage_for_human_readability	local:for_humanreadability	local:advantage	.
-local:standard	rdfs:member	local:standard_sparql	.
-local:preferences_from_hard_patterns	local:from_hardpatterns	local:preferences	.
-local:query_results	rdfs:subClassOf	local:results	.
-local:allows	vn.role:Agent	local:sparql_language	.
-local:human	rdfs:member	local:human_readability	.
-local:present	vn.role:Theme	local:sprefql	.
-local:standard_sparql_query	rdfs:subClassOf	local:sparql_query	.
-local:define	local:AM-MNR	local:formally	.
-local:expressed	local:AM-MNR	local:cleanly	.
-local:extension_of_sparql_language	local:extension_of	local:sparql_language	.
-local:separating	vn.role:Agent	local:however	.
-local:advantage_for_human_readability	local:advantage_for	local:human_readability	.
-local:expresses	vn.role:Agent	local:soft_preferences_over_query	.
-local:separating_preferences	rdfs:subClassOf	local:preferences	.
-local:not_add	rdfs:subClassOf	local:add	.
-local:gives	vn.role:object	local:queries	.
-local:results_obtained	local:_obtained	local:results	.
-local:standard_sparql	rdfs:member	local:standard_sparql_query	.
-local:applied	vn.role:Recipient	local:equivalent_standard_sparql_query	.
-local:semantics_of_extension	local:of_extension	local:semantics	.
-local:expressed	vn.role:object	local:advantage_for_human_readability	.
-local:empirical	rdfs:member	local:empirical_evidence	.
-local:machine_optimization	rdfs:subClassOf	local:optimization	.
-local:where_clause	rdfs:subClassOf	local:clause	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:sprefql	rdfs:member	local:sprefql_query	.
-local:preferences_from_hard_patterns_from_filters	local:from_filters	local:preferences_from_hard_patterns	.
-local:separating	local:AM-ADV	local:clearly	.
-local:expressed	vn.role:object	local:advantage	.
-local:equivalent_standard_sparql	rdfs:subClassOf	local:sparql	.
+local:s7.1	local:AM-LOC	local:hard_patterns	.
 local:usually_applied	rdfs:subClassOf	local:applied	.
-local:sprefql_extension	local:sprefql_	local:extension	.
-local:soft_preferences_over_query	local:over_query	local:soft_preferences	.
-local:hard_patterns	rdfs:subClassOf	local:patterns	.
-local:applied	vn.role:Theme	local:optimizations	.
+local:semantics_of_an_extension_of_the_sparql_language	rdfs:member	local:sparql_language	.
+local:advantage_human_readability	rdfs:member	local:human_readability	.
+local:s12	local:AM-LOC	local:paper	.
 local:more_cleanly	rdfs:subClassOf	local:cleanly	.
-local:sparql	rdfs:member	local:sparql_query	.
-local:applied	local:AM-TMP	local:usually	.
-local:can_transformed_to_equivalent_standard_sparql_query	local:cantransformed_to	local:equivalent_standard_sparql_query	.
-local:intention_of_client	local:intention_of	local:client	.
-local:obtained	vn.role:Asset	local:main_body_of_query	.
-local:equivalent	rdfs:member	local:equivalent_standard	.
-local:transformed	local:AM-MOD	local:can	.
-local:runtime	rdfs:member	local:runtime_efficiency	.
-local:present	vn.role:Agent	local:we	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:preferences	.
+local:s1	rdf:subject	local:we	.
+local:s11	rdf:subject	local:sparql_language	.
+local:s13.1	local:AM-LOC	local:paper_we_present_sprefql	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:comparison	.
+local:s1.1	rdf:object	local:query_results	.
+local:s8.2	local:AM-MNR	local:cleanly	.
+local:s12.1	rdf:object	local:syntax	.
+local:s11	rdf:object	local:appending_a_prefer_clause	.
+local:main_body	rdfs:member	local:main	.
+local:applied_optimizations_on_equivalent_standard_sparql_query	rdfs:member	local:applied_optimizations	.
+local:s5.1	rdf:subject	local:prefer_clause	.
+local:sprefql_query	rdfs:member	local:sprefql	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:s0	rdf:predicate	local:allow	.
+local:s10.1	local:AM-LOC	local:hard_patterns	.
+local:standard_sparql_query	rdfs:subClassOf	local:query	.
+local:s9.1	rdf:object	local:queries	.
+local:specific_to_sprefql	rdfs:member	local:specific	.
+local:s13	local:AM-LOC	local:paper	.
+local:advantage_machine	rdfs:subClassOf	local:machine	.
+local:s12	rdf:subject	local:we	.
+local:s15.2	local:AM-TMP	local:usually	.
+local:advantage_for_machine_optimization	rdfs:member	local:advantage	.
+local:s4	local:AM-MOD	local:can	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:query	.
+local:s15.2	rdf:subject	local:optimizations	.
+local:soft_preferences	rdfs:subClassOf	local:preferences	.
+local:improve_by_comparison	rdfs:member	local:comparison	.
+local:hard_patterns_where_clause	rdfs:subClassOf	local:clause	.
+local:s13	rdf:object	local:sprefql	.
+local:clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:intention	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:intention	.
+local:preferences_from_filters	rdfs:member	local:preferences	.
+local:extension_of_sparql_language	rdfs:member	local:sparql_language	.
+local:s8.1	rdf:subject	local:clause	.
+local:s11.1	rdf:subject	local:prefer_clause	.
+local:clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:client	.
+local:applied_optimizations_on_equivalent_standard_sparql_query	rdfs:member	local:equivalent_standard_sparql_query	.
+local:s10	local:AM-DIS	local:however	.
+local:s7.1	rdf:object	local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	.
+local:s7.1	rdf:predicate	local:give	.
+local:advantage_machine	rdfs:member	local:advantage	.
+local:s15.1	rdf:object	local:runtime_efficiency	.
+local:hard_patterns_where_clause	rdfs:member	local:hard_patterns_where	.
+local:s10	rdf:subject	local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	.
+local:soft_preferences_over_query	rdfs:member	local:soft_preferences	.
+local:s12.1	local:AM-MNR	local:formally	.
+local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:intention	.
+local:s9.2	local:AM-MNR	local:cleanly	.
+local:language_soft_preferences	rdfs:subClassOf	local:soft_preferences	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:machine_optimization	.
+local:standard_sparql_query	rdfs:subClassOf	local:sparql_query	.
+local:preferences_from_hard_patterns	rdfs:member	local:preferences	.
+local:query_results	rdfs:member	local:query	.
+local:s8.2	rdf:predicate	local:express	.
+local:results_obtained	rdfs:member	local:obtained	.
+local:s0.1	rdf:subject	local:prefer_clause	.
+local:runtime_efficiency	rdfs:subClassOf	local:efficiency	.
+local:equivalent_standard_sparql	rdfs:member	local:equivalent_standard	.
+local:s15	rdf:predicate	local:provide	.
+local:equivalent_standard_sparql	rdfs:subClassOf	local:sparql	.
+local:s4	rdf:predicate	local:transform	.
+local:obtained_by_main_body	rdfs:member	local:main_body	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:intention	.
+local:s9.2	rdf:subject	local:clause_gives_queries_where_the_intention_of_the_client	.
+local:s8.2	rdf:object	local:advantage_human_readability	.
+local:extension_of_sparql_language	rdfs:member	local:extension	.
+local:extension_of_the_sparql_language	rdfs:member	local:extension	.
+local:s13.1	local:AM-MNR	local:formally	.
+local:s7.1	rdf:subject	local:clause	.
+local:s9	local:AM-ADV	local:clearly	.
+local:soft_preferences_over_the_query	rdfs:member	local:query	.
+local:s9.2	rdf:object	local:advantage_machine_optimization	.
+local:s0.1	rdf:predicate	local:append	.
+local:s3	rdf:subject	local:extension_of_the_sparql_language	.
+local:s13	rdf:predicate	local:present	.
+local:s5	rdf:predicate	local:allow	.
+local:where_clause	rdfs:member	local:where	.
+local:s1.1	rdf:predicate	local:obtain	.
+local:advantage_human_readability	rdfs:member	local:advantage	.
+local:s11.1	rdf:predicate	local:append	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:queries	.
+local:s13.1	rdf:subject	local:we	.
+local:s1	rdf:object	local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	.
+local:soft_preferences_over_query	rdfs:member	local:query	.
+local:s6	rdf:predicate	local:express	.
+local:advantage_for_human_readability	rdfs:member	local:human_readability	.
+local:s2	rdf:subject	local:clause_that_expresses	.
+local:where_clause	rdfs:subClassOf	local:clause	.
 local:applied_optimizations	rdfs:subClassOf	local:optimizations	.
-local:appending	vn.role:Patient	local:does_not_add	.
-local:specific_to_sprefql	local:specific_to	local:sprefql	.
-local:separating_preferences_from_hard_patterns_from_filters	local:from_filters	local:separating_preferences_from_hard_patterns	.
+local:preferences_from_hard_patterns	rdfs:member	local:hard_patterns	.
+local:s10.1	rdf:object	local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	.
+local:s1.1	rdf:subject	local:main_body_of_the_query	.
+local:main_body_of_the_query	rdfs:member	local:main_body	.
+local:sparql_language_soft_preferences_over_query	rdfs:member	local:sparql_language_soft_preferences	.
+local:specific_to_sprefql	rdfs:member	local:sprefql	.
+local:sprefql_query	rdfs:subClassOf	local:query	.
+local:equivalent_standard	rdfs:member	local:equivalent	.
 local:present_sprefql	rdfs:subClassOf	local:sprefql	.
-local:add	vn.role:Agent	local:extension_of_sparql_language	.
+local:patterns_where	rdfs:member	local:patterns	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:where_clause	.
+local:s7	local:AM-ADV	local:clearly	.
+local:comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:equivalent_standard_sparql_query	.
+local:s10.2	rdf:object	local:advantage_human_readability	.
+local:improve_by_comparison	rdfs:member	local:improve	.
+local:s15.1	local:AM-MNR	local:comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	.
+local:paper_we_present_sprefql	rdfs:member	local:present_sprefql	.
+local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:preferences	.
+local:semantics_of_an_extension_of_the_sparql_language	rdfs:member	local:extension	.
+local:advantage_for_machine_optimization	rdfs:member	local:machine_optimization	.
+local:s6	rdf:object	local:soft_preferences_over_the_query	.
+local:s2	rdf:predicate	local:prefer	.
+local:s0	rdf:object	local:appending_a_prefer_clause	.
+local:s8.1	rdf:object	local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	.
+local:soft_preferences	rdfs:member	local:soft	.
+local:runtime_efficiency	rdfs:member	local:runtime	.
+local:patterns_where	rdfs:subClassOf	local:where	.
+local:s8	rdf:predicate	local:separate	.
+local:human_readability	rdfs:member	local:human	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:query_results	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	rdfs:member	local:intention	.
+local:advantage_machine_optimization	rdfs:subClassOf	local:machine_optimization	.
+local:obtained_by_main_body	rdfs:member	local:obtained	.
+local:s4	rdf:object	local:equivalent_standard_sparql_query	.
+local:hard_patterns_where	rdfs:member	local:hard_patterns	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:soft_preferences	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:sprefql	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:main_body	.
+local:s10.1	rdf:predicate	local:give	.
+local:machine_optimization	rdfs:subClassOf	local:optimization	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:client	.
+local:comparison_to_applied_optimizations	rdfs:member	local:applied_optimizations	.
+local:paper_we_present_sprefql	rdfs:member	local:paper	.
+local:s7.2	rdf:object	local:advantage_machine_optimization	.
+local:s12	rdf:predicate	local:present	.
+local:s15	local:AM-DIS	local:also	.
+local:s12.1	local:AM-LOC	local:paper_we_present_sprefql	.
+local:s9.2	rdf:predicate	local:express	.
+local:intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:machine_optimization	.
+local:preferences_from_filters	rdfs:member	local:filters	.
+local:s15.1	rdf:subject	local:optimizations_specific_to_sprefql	.
+local:s7.2	local:AM-MNR	local:cleanly	.
+local:s5	rdf:object	local:appending_a_prefer_clause	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:runtime_efficiency	.
+local:clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:clause	.
+local:semantics_of_an_extension_of_the_sparql_language	rdfs:member	local:semantics	.
+local:s15	rdf:subject	local:we	.
+local:main_body_of_the_query	rdfs:member	local:query	.
+local:specific_optimizations	rdfs:subClassOf	local:optimizations	.
+local:intention_of_client	rdfs:member	local:client	.
+local:main_body	rdfs:subClassOf	local:body	.
+local:comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:optimizations	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	rdfs:member	local:human_readability	.
+local:s10	local:AM-ADV	local:clearly	.
+local:sparql_language_soft_preferences	rdfs:subClassOf	local:language_soft_preferences	.
+local:s14	rdf:predicate	local:express	.
+local:comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:comparison	.
+local:empirical_evidence	rdfs:member	local:empirical	.
+local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:client	.
+local:s6	rdf:subject	local:prefer_clause	.
+local:cleanly_expressed	rdfs:subClassOf	local:expressed	.
+local:s7	local:AM-DIS	local:however	.
+local:s3	rdf:object	local:expressivity	.
+local:s2.1	rdf:predicate	local:express	.
+local:equivalent_standard	rdfs:subClassOf	local:standard	.
+local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:queries	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	rdfs:member	local:advantage	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:sprefql	.
+local:equivalent_standard_sparql_query	rdfs:subClassOf	local:query	.
+local:s8.2	rdf:subject	local:clause_gives_queries_where_the_intention_of_the_client	.
+local:s7.2	rdf:subject	local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	.
+local:s5.1	rdf:predicate	local:append	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:extension	.
+local:s8	rdf:subject	local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	.
+local:empirical_evidence	rdfs:subClassOf	local:evidence	.
+local:s10.1	rdf:subject	local:clause	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	rdfs:member	local:queries	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:empirical_evidence	.
+local:present_sprefql	rdfs:member	local:present	.
+local:s9.1	rdf:subject	local:clause	.
+local:s2.1	rdf:subject	local:prefer_clause	.
+local:human_readability	rdfs:subClassOf	local:readability	.
+local:hard_patterns	rdfs:member	local:hard	.
+local:s7.2	rdf:predicate	local:express	.
+local:intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:intention	.
+local:sprefql_an_extension_of_the_sparql_language_soft_preferences_over_the_query_results_obtained_by_the_main_body_of_the_query	rdfs:member	local:sparql_language	.
+local:standard_sparql	rdfs:subClassOf	local:sparql	.
+local:prefer_clause	rdfs:subClassOf	local:clause	.
+local:s9.1	local:AM-ADV	local:intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	.
+local:extension_of_the_sparql_language	rdfs:member	local:sparql_language	.
+local:intention_of_client	rdfs:member	local:intention	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_human_readability	rdfs:member	local:client	.
+local:advantage_machine_optimization	rdfs:subClassOf	local:optimization	.
+local:s3	rdf:predicate	local:not_add	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:client	.
+local:query_results	rdfs:subClassOf	local:results	.
+local:patterns_where_clause	rdfs:subClassOf	local:clause	.
+local:prefer_clause	rdfs:member	local:prefer	.
+local:filters_in_where_clause	rdfs:member	local:filters	.
+local:semantics_of_extension	rdfs:member	local:extension	.
+local:equivalent_standard_sparql_query	rdfs:member	local:equivalent_standard_sparql	.
+local:s11	rdf:predicate	local:allow	.
+local:intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:client	.
+local:s9	rdf:predicate	local:separate	.
+local:hard_patterns	rdfs:subClassOf	local:patterns	.
+local:s15.1	rdf:predicate	local:improve	.
+local:s12.1	rdf:predicate	local:define	.
+local:soft_preferences_over_the_query	rdfs:member	local:soft_preferences	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:equivalent_standard_sparql_query	.
+local:s8	local:AM-ADV	local:clearly	.
+local:standard_sparql_query	rdfs:member	local:standard_sparql	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:extension_of_sparql_language_soft_preferences	rdfs:member	local:extension	.
+local:where_cleanly_expressed	rdfs:subClassOf	local:cleanly_expressed	.
+local:extension_of_sparql_language_soft_preferences	rdfs:member	local:sparql_language_soft_preferences	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:filters	.
+local:s15.2	rdf:predicate	local:apply	.
+local:patterns_where_clause	rdfs:member	local:patterns_where	.
+local:sparql_language	rdfs:subClassOf	local:language	.
+local:s5	rdf:subject	local:sparql_language	.
+local:s10.2	local:AM-MNR	local:cleanly	.
+local:advantage_machine_optimization	rdfs:member	local:advantage_machine	.
+local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:hard_patterns_where_clause	.
+local:comparison_to_applied_optimizations	rdfs:member	local:comparison	.
+local:clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:queries	.
+local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	rdfs:member	local:queries	.
+local:s0	rdf:subject	local:sparql_language	.
+local:s10.2	rdf:subject	local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	.
+local:s9	rdf:subject	local:preferences_from_the_filters_in_the_where_clause_gives_queries_where_the_intention_of_the_client	.
+local:queries_where_the_intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:advantage	.
+local:s7	rdf:subject	local:preferences_from_the_hard_patterns_where_clause_gives_queries_where_the_intention_of_the_client	.
+local:s12.1	rdf:subject	local:we	.
+local:s15	rdf:object	local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	.
+local:main_body_of_query	rdfs:member	local:main_body	.
+local:equivalent_standard_sparql_query	rdfs:subClassOf	local:standard_sparql_query	.
+local:machine_optimization	rdfs:member	local:machine	.
+local:s13.1	rdf:object	local:semantics_of_an_extension_of_the_sparql_language	.
+local:s13.1	rdf:predicate	local:define	.
+local:empirical_evidence_that_optimizations_specific_to_sprefql_improve_runtime_efficiency_by_comparison_to_the_usually_applied_optimizations_on_the_equivalent_standard_sparql_query	rdfs:member	local:optimizations	.
+local:hard_patterns_where	rdfs:subClassOf	local:where	.
+local:s9.1	rdf:predicate	local:give	.
+local:s14	rdf:subject	local:prefer_clause	.
+local:s14	rdf:object	local:soft_preferences_over_the_query	.
+local:sparql_language	rdfs:member	local:sparql	.
+local:s7	rdf:predicate	local:separate	.
+local:s12	rdf:object	local:sprefql	.
+local:semantics_of_extension	rdfs:member	local:semantics	.
+local:s8.1	rdf:predicate	local:give	.
+local:s10.2	rdf:predicate	local:express	.
+local:intention_of_the_client_is_more_cleanly_expressed_an_advantage_for_both_machine_optimization	rdfs:member	local:advantage	.
+local:filters_in_where_clause	rdfs:member	local:where_clause	.
+local:s4	rdf:subject	local:sprefql_query	.
+local:results_obtained	rdfs:member	local:results	.
+local:advantage_human_readability	rdfs:subClassOf	local:human_readability	.
+local:s10	rdf:predicate	local:separate	.
+local:s1	rdf:predicate	local:present	.
+local:advantage_for_human_readability	rdfs:member	local:advantage	.
+local:main_body_of_query	rdfs:member	local:query	.
+local:s1	local:AM-LOC	local:paper	.
+local:s13	rdf:subject	local:we	.
+local:standard_sparql	rdfs:member	local:standard	.
+local:sparql_language_soft_preferences_over_query	rdfs:member	local:query	.

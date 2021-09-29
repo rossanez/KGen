@@ -1,459 +1,873 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"for the seven semantic relations the semantic filter consistently yields a higher precision at any relative recall value in the highrecall range"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the seven semantic relations tested here"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"extracted rules"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"estimating the adequacy of the extracted rules"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"the resulting relationspecific subgraphs of babelnet used as semantic filters for estimating the adequacy of the extracted rules"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"resulting relationspecific subgraphs"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"as a result a set of relationspecific relevant concepts"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"each of relationspecific relevant concepts represent the structured semantics of the corresponding relation"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"each of relationspecific relevant concepts then used to represent the structured semantics of the corresponding relation"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"automatically extracted rules"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we apply word sense disambiguation to the content words of the automatically extracted rules"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"effective semantic rule filtering"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"employing a widecoverage for effective semantic rule"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"how precision of relation extraction can considerably improved by employing a widecoverage for effective semantic rule"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"this paper shows how precision of relation extraction can be considerably improved by employing a widecoverage for effective semantic rule"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"employing generalpurpose lexical semantic network for effective semantic rule"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"how precision of relation extraction can considerably improved by employing generalpurpose lexical semantic network for effective semantic rule"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"this paper shows how precision of relation extraction can be considerably improved by employing generalpurpose lexical semantic network for effective semantic rule"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"employing babelnet for effective semantic rule"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"how precision of relation extraction can considerably improved by employing babelnet for effective semantic rule"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"this paper shows how precision of relation extraction can be considerably improved by employing babelnet for effective semantic rule"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a decent level of precision learned from unlabeled data by means of distant supervision"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"this type of automated knowledge building requires a decent level of precision learned from unlabeled data by means of distant supervision"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a decent level of precision learned from unlabeled data by means of minimal supervision"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"this type of automated knowledge building requires a decent level of precision learned from unlabeled data by means of minimal supervision"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"automatically acquired rule"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"precision which achieve with automatically acquired rule sets"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"extending large repositories of formalized knowledge"	.
+
+
 #### Classes ####
 
-local:large_repositories	rdfs:label	"large repositories"	.
+local:semantic_filter	a	rdf:Class	;
+	rdfs:label	"semantic filter"	.
 
-local:repositories	rdfs:label	"repositories"	.
+local:filter	a	rdf:Class	;
+	rdfs:label	"filter"	.
 
-local:formalized_knowledge	rdfs:label	"formalized knowledge"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:yield	a	rdf:Class	;
+	rdfs:label	"yield"	.
 
-local:large	rdfs:label	"large"	.
+local:higher_precision_at_any_relative_recall_value_in_the_highrecall_range	a	rdf:Class	;
+	rdfs:label	"higher precision at any relative recall value in the highrecall range"	.
 
-local:formalized	rdfs:label	"formalized"	.
+local:highrecall_range	a	rdf:Class	;
+	rdfs:label	"highrecall range"	.
 
-local:large_repositories_of_formalized_knowledge	rdfs:label	"large repositories of formalized knowledge"	.
+local:relative_recall_value	a	rdf:Class	;
+	rdfs:label	"relative recall value"	.
 
-local:extending	rdfs:label	"extending"	.
+local:higher_precision	a	rdf:Class	;
+	rdfs:label	"higher precision"	.
 
-local:achieve	rdfs:label	"achieve"	.
+local:recall_value	a	rdf:Class	;
+	rdfs:label	"recall value"	.
 
-local:precision	rdfs:label	"precision"	.
+local:value	a	rdf:Class	;
+	rdfs:label	"value"	.
 
-local:automatically_acquired	rdfs:label	"automatically acquired"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:acquired	rdfs:label	"acquired"	.
+local:range	a	rdf:Class	;
+	rdfs:label	"range"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:relative_recall	a	rdf:Class	;
+	rdfs:label	"relative recall"	.
 
-local:rule	rdfs:label	"rule"	.
+local:recall	a	rdf:Class	;
+	rdfs:label	"recall"	.
 
-local:knowledge_building	rdfs:label	"knowledge building"	.
+local:relative	a	rdf:Class	;
+	rdfs:label	"relative"	.
 
-local:building	rdfs:label	"building"	.
+local:higher	a	rdf:Class	;
+	rdfs:label	"higher"	.
 
-local:automated_knowledge_building	rdfs:label	"automated knowledge building"	.
+local:highrecall	a	rdf:Class	;
+	rdfs:label	"highrecall"	.
 
-local:type_of_automated_knowledge_building	rdfs:label	"type of automated knowledge building"	.
+local:higher_precision_at_relative_recall_value	a	rdf:Class	;
+	rdfs:label	"higher precision at relative recall value"	.
 
-local:type	rdfs:label	"type"	.
+local:relative_recall_value_in_highrecall_range	a	rdf:Class	;
+	rdfs:label	"relative recall value in highrecall range"	.
 
-local:requires	rdfs:label	"requires"	.
+local:consistently	a	rdf:Class	;
+	rdfs:label	"consistently"	.
 
-local:decent	rdfs:label	"decent"	.
+local:seven_semantic_relations	a	rdf:Class	;
+	rdfs:label	"seven semantic relations"	.
 
-local:decent_level	rdfs:label	"decent level"	.
+local:semantic_relations	a	rdf:Class	;
+	rdfs:label	"semantic relations"	.
 
-local:minimal	rdfs:label	"minimal"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:minimal_supervision	rdfs:label	"minimal supervision"	.
+local:test	a	rdf:Class	;
+	rdfs:label	"test"	.
 
-local:supervision	rdfs:label	"supervision"	.
+local:here	a	rdf:Class	;
+	rdfs:label	"here"	.
 
-local:unlabeled_data	rdfs:label	"unlabeled data"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:data	rdfs:label	"data"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:level	rdfs:label	"level"	.
+local:adequacy_of_the_extracted_rules	a	rdf:Class	;
+	rdfs:label	"adequacy of the extracted rules"	.
 
-local:unlabeled	rdfs:label	"unlabeled"	.
+local:adequacy	a	rdf:Class	;
+	rdfs:label	"adequacy"	.
 
-local:decent_level_of_precision	rdfs:label	"decent level of precision"	.
+local:extracted	a	rdf:Class	;
+	rdfs:label	"extracted"	.
 
-local:learned_from_unlabeled_data	rdfs:label	"learned from unlabeled data"	.
+local:adequacy_of_extracted_rules	a	rdf:Class	;
+	rdfs:label	"adequacy of extracted rules"	.
 
-local:learned	rdfs:label	"learned"	.
+local:estimate	a	rdf:Class	;
+	rdfs:label	"estimate"	.
 
-local:learned_from_unlabeled_data_bymeansof_minimal_supervision	rdfs:label	"learned from unlabeled data by_means_of minimal supervision"	.
+local:resulting_relationspecific_subgraphs_of_babelnet	a	rdf:Class	;
+	rdfs:label	"resulting relationspecific subgraphs of babelnet"	.
 
-local:means_of_minimal_supervision	rdfs:label	"means of minimal supervision"	.
+local:relationspecific_subgraphs	a	rdf:Class	;
+	rdfs:label	"relationspecific subgraphs"	.
 
-local:means	rdfs:label	"means"	.
+local:babelnet	a	rdf:Class	;
+	rdfs:label	"babelnet"	.
 
-local:distant_supervision	rdfs:label	"distant supervision"	.
+local:relationspecific	a	rdf:Class	;
+	rdfs:label	"relationspecific"	.
 
-local:distant	rdfs:label	"distant"	.
+local:subgraphs	a	rdf:Class	;
+	rdfs:label	"subgraphs"	.
 
-local:learned_from_unlabeled_data_bymeansof_distant_supervision	rdfs:label	"learned from unlabeled data by_means_of distant supervision"	.
+local:relationspecific_subgraphs_of_babelnet	a	rdf:Class	;
+	rdfs:label	"relationspecific subgraphs of babelnet"	.
 
-local:means_of_distant_supervision	rdfs:label	"means of distant supervision"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:shows	rdfs:label	"shows"	.
+local:semantic_filters_for_estimating_the_adequacy_of_the_extracted_rules	a	rdf:Class	;
+	rdfs:label	"semantic filters for estimating the adequacy of the extracted rules"	.
 
-local:paper	rdfs:label	"paper"	.
+local:semantic_filters	a	rdf:Class	;
+	rdfs:label	"semantic filters"	.
 
-local:relation_extraction	rdfs:label	"relation extraction"	.
+local:filters	a	rdf:Class	;
+	rdfs:label	"filters"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:set_of_relationspecific_relevant_concepts	a	rdf:Class	;
+	rdfs:label	"set of relationspecific relevant concepts"	.
 
-local:semantic_rule	rdfs:label	"semantic rule"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:relation	rdfs:label	"relation"	.
+local:relationspecific_relevant_concepts	a	rdf:Class	;
+	rdfs:label	"relationspecific relevant concepts"	.
 
-local:effective	rdfs:label	"effective"	.
+local:relationspecific_relevant	a	rdf:Class	;
+	rdfs:label	"relationspecific relevant"	.
 
-local:effective_semantic	rdfs:label	"effective semantic"	.
+local:relevant_concepts	a	rdf:Class	;
+	rdfs:label	"relevant concepts"	.
 
-local:effective_semantic_rule	rdfs:label	"effective semantic rule"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:considerably_improved	rdfs:label	"considerably improved"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:improved	rdfs:label	"improved"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:can_considerably_improved	rdfs:label	"can considerably improved"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:precision_of_relation_extraction	rdfs:label	"precision of relation extraction"	.
+local:structured_semantics_of_the_corresponding_relation	a	rdf:Class	;
+	rdfs:label	"structured semantics of the corresponding relation"	.
 
-local:widecoverage_for_effective_semantic_rule	rdfs:label	"wide-coverage for effective semantic rule"	.
+local:corresponding_relation	a	rdf:Class	;
+	rdfs:label	"corresponding relation"	.
 
-local:widecoverage	rdfs:label	"wide-coverage"	.
+local:structured_semantics	a	rdf:Class	;
+	rdfs:label	"structured semantics"	.
 
-local:can	rdfs:label	"can"	.
+local:corresponding	a	rdf:Class	;
+	rdfs:label	"corresponding"	.
 
-local:considerably	rdfs:label	"considerably"	.
+local:relation	a	rdf:Class	;
+	rdfs:label	"relation"	.
 
-local:employing	rdfs:label	"employing"	.
+local:structured	a	rdf:Class	;
+	rdfs:label	"structured"	.
 
-local:employing_for_effective_semantic_rule	rdfs:label	"employing for effective semantic rule"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:babelnet	rdfs:label	"babelnet"	.
+local:structured_semantics_of_corresponding_relation	a	rdf:Class	;
+	rdfs:label	"structured semantics of corresponding relation"	.
 
-local:generalpurpose	rdfs:label	"general-purpose"	.
+local:represent_the_structured_semantics_of_the_corresponding_relation	a	rdf:Class	;
+	rdfs:label	"represent the structured semantics of the corresponding relation"	.
 
-local:generalpurpose_lexical	rdfs:label	"general-purpose lexical"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:generalpurpose_lexical_semantic_network	rdfs:label	"general-purpose lexical semantic network"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:network	rdfs:label	"network"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:semantic_network	rdfs:label	"semantic network"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:lexical_semantic	rdfs:label	"lexical semantic"	.
+local:word_sense_disambiguation_content_words_of_the_automatically_extracted_rules	a	rdf:Class	;
+	rdfs:label	"word sense disambiguation content words of the automatically extracted rules"	.
 
-local:lexical_semantic_network	rdfs:label	"lexical semantic network"	.
+local:word_sense_disambiguation_content_words	a	rdf:Class	;
+	rdfs:label	"word sense disambiguation content words"	.
 
-local:generalpurpose_lexical_semantic	rdfs:label	"general-purpose lexical semantic"	.
+local:disambiguation_content	a	rdf:Class	;
+	rdfs:label	"disambiguation content"	.
 
-local:lexical	rdfs:label	"lexical"	.
+local:disambiguation	a	rdf:Class	;
+	rdfs:label	"disambiguation"	.
 
-local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:label	"general-purpose lexical semantic network for effective semantic rule"	.
+local:word_sense	a	rdf:Class	;
+	rdfs:label	"word sense"	.
 
-local:apply	rdfs:label	"apply"	.
+local:word	a	rdf:Class	;
+	rdfs:label	"word"	.
 
-local:we	rdfs:label	"we"	.
+local:word_sense_disambiguation_content	a	rdf:Class	;
+	rdfs:label	"word sense disambiguation content"	.
 
-local:word_sense	rdfs:label	"word sense"	.
+local:word_sense_disambiguation	a	rdf:Class	;
+	rdfs:label	"word sense disambiguation"	.
 
-local:word_sense_disambiguation	rdfs:label	"word sense disambiguation"	.
+local:sense_disambiguation_content	a	rdf:Class	;
+	rdfs:label	"sense disambiguation content"	.
 
-local:sense_disambiguation	rdfs:label	"sense disambiguation"	.
+local:content	a	rdf:Class	;
+	rdfs:label	"content"	.
 
-local:disambiguation	rdfs:label	"disambiguation"	.
+local:disambiguation_content_words	a	rdf:Class	;
+	rdfs:label	"disambiguation content words"	.
 
-local:word	rdfs:label	"word"	.
+local:sense_disambiguation	a	rdf:Class	;
+	rdfs:label	"sense disambiguation"	.
 
-local:sense	rdfs:label	"sense"	.
+local:sense_disambiguation_content_words	a	rdf:Class	;
+	rdfs:label	"sense disambiguation content words"	.
 
-local:automatically_extracted	rdfs:label	"automatically extracted"	.
+local:words	a	rdf:Class	;
+	rdfs:label	"words"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:content_words	a	rdf:Class	;
+	rdfs:label	"content words"	.
 
-local:automatically_extracted_rules	rdfs:label	"automatically extracted rules"	.
+local:sense	a	rdf:Class	;
+	rdfs:label	"sense"	.
 
-local:rules	rdfs:label	"rules"	.
+local:automatically_extracted	a	rdf:Class	;
+	rdfs:label	"automatically extracted"	.
 
-local:extracted_rules	rdfs:label	"extracted rules"	.
+local:word_sense_disambiguation_content_words_of_extracted_rules	a	rdf:Class	;
+	rdfs:label	"word sense disambiguation content words of extracted rules"	.
 
-local:content_words	rdfs:label	"content words"	.
+local:effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"effective semantic rule"	.
 
-local:words	rdfs:label	"words"	.
+local:semantic_rule	a	rdf:Class	;
+	rdfs:label	"semantic rule"	.
 
-local:content	rdfs:label	"content"	.
+local:rule	a	rdf:Class	;
+	rdfs:label	"rule"	.
 
-local:content_words_of_extracted_rules	rdfs:label	"content words of extracted rules"	.
+local:effective_semantic	a	rdf:Class	;
+	rdfs:label	"effective semantic"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
 
-local:relevant_concepts	rdfs:label	"relevant concepts"	.
+local:widecoverage_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"widecoverage for effective semantic rule"	.
 
-local:relationspecific_relevant	rdfs:label	"relation-specific relevant"	.
+local:widecoverage	a	rdf:Class	;
+	rdfs:label	"widecoverage"	.
 
-local:relationspecific_relevant_concepts	rdfs:label	"relation-specific relevant concepts"	.
+local:employ	a	rdf:Class	;
+	rdfs:label	"employ"	.
 
-local:relationspecific	rdfs:label	"relation-specific"	.
+local:precision_of_relation_extraction	a	rdf:Class	;
+	rdfs:label	"precision of relation extraction"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:relation_extraction	a	rdf:Class	;
+	rdfs:label	"relation extraction"	.
 
-local:used	rdfs:label	"used"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:then	rdfs:label	"then"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:structured_semantics	rdfs:label	"structured semantics"	.
+local:considerably	a	rdf:Class	;
+	rdfs:label	"considerably"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:corresponding	rdfs:label	"corresponding"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:corresponding_relation	rdfs:label	"corresponding relation"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:structured	rdfs:label	"structured"	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_a_widecoverage_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"precision of relation extraction can be considerably improved by employing a widecoverage for effective semantic rule"	.
 
-local:structured_semantics_of_corresponding_relation	rdfs:label	"structured semantics of corresponding relation"	.
+local:considerably_improved	a	rdf:Class	;
+	rdfs:label	"considerably improved"	.
 
-local:represent	rdfs:label	"represent"	.
+local:improved	a	rdf:Class	;
+	rdfs:label	"improved"	.
 
-local:relationspecific_subgraphs	rdfs:label	"relation-specific subgraphs"	.
+local:can_considerably_improved	a	rdf:Class	;
+	rdfs:label	"can considerably improved"	.
 
-local:subgraphs	rdfs:label	"subgraphs"	.
+local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"generalpurpose lexical semantic network for effective semantic rule"	.
 
-local:resulting	rdfs:label	"resulting"	.
+local:generalpurpose_lexical_semantic_network	a	rdf:Class	;
+	rdfs:label	"generalpurpose lexical semantic network"	.
 
-local:relationspecific_subgraphs_of_babelnet	rdfs:label	"relation-specific subgraphs of babelnet"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:semantic_filters	rdfs:label	"semantic filters"	.
+local:semantic_network	a	rdf:Class	;
+	rdfs:label	"semantic network"	.
 
-local:filters	rdfs:label	"filters"	.
+local:lexical_semantic	a	rdf:Class	;
+	rdfs:label	"lexical semantic"	.
 
-local:adequacy_of_extracted_rules	rdfs:label	"adequacy of extracted rules"	.
+local:lexical	a	rdf:Class	;
+	rdfs:label	"lexical"	.
 
-local:adequacy	rdfs:label	"adequacy"	.
+local:generalpurpose_lexical_semantic	a	rdf:Class	;
+	rdfs:label	"generalpurpose lexical semantic"	.
 
-local:estimating	rdfs:label	"estimating"	.
+local:generalpurpose_lexical	a	rdf:Class	;
+	rdfs:label	"generalpurpose lexical"	.
 
-local:semantic_relations	rdfs:label	"semantic relations"	.
+local:generalpurpose	a	rdf:Class	;
+	rdfs:label	"generalpurpose"	.
 
-local:relations	rdfs:label	"relations"	.
+local:lexical_semantic_network	a	rdf:Class	;
+	rdfs:label	"lexical semantic network"	.
 
-local:seven_semantic_relations	rdfs:label	"seven semantic relations"	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_generalpurpose_lexical_semantic_network_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"precision of relation extraction can be considerably improved by employing generalpurpose lexical semantic network for effective semantic rule"	.
 
-local:tested	rdfs:label	"tested"	.
+local:employing_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"employing for effective semantic rule"	.
 
-local:yields	rdfs:label	"yields"	.
+local:employing	a	rdf:Class	;
+	rdfs:label	"employing"	.
 
-local:semantic_filter	rdfs:label	"semantic filter"	.
+local:employing_babelnet_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"employing babelnet for effective semantic rule"	.
 
-local:filter	rdfs:label	"filter"	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_babelnet_for_effective_semantic_rule	a	rdf:Class	;
+	rdfs:label	"precision of relation extraction can be considerably improved by employing babelnet for effective semantic rule"	.
 
-local:consistently	rdfs:label	"consistently"	.
+local:means_of_distant_supervision	a	rdf:Class	;
+	rdfs:label	"means of distant supervision"	.
 
-local:highrecall	rdfs:label	"high-recall"	.
+local:means	a	rdf:Class	;
+	rdfs:label	"means"	.
 
-local:highrecall_range	rdfs:label	"high-recall range"	.
+local:distant_supervision	a	rdf:Class	;
+	rdfs:label	"distant supervision"	.
 
-local:relative_recall	rdfs:label	"relative recall"	.
+local:supervision	a	rdf:Class	;
+	rdfs:label	"supervision"	.
 
-local:relative_recall_value	rdfs:label	"relative recall value"	.
+local:distant	a	rdf:Class	;
+	rdfs:label	"distant"	.
 
-local:range	rdfs:label	"range"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:relative	rdfs:label	"relative"	.
+local:decent_level_of_precision_unlabeled_data	a	rdf:Class	;
+	rdfs:label	"decent level of precision unlabeled data"	.
 
-local:value	rdfs:label	"value"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:recall_value	rdfs:label	"recall value"	.
+local:decent_level	a	rdf:Class	;
+	rdfs:label	"decent level"	.
 
-local:recall	rdfs:label	"recall"	.
+local:level	a	rdf:Class	;
+	rdfs:label	"level"	.
 
-local:higher_precision	rdfs:label	"higher precision"	.
+local:decent	a	rdf:Class	;
+	rdfs:label	"decent"	.
 
-local:higher	rdfs:label	"higher"	.
+local:unlabeled_data	a	rdf:Class	;
+	rdfs:label	"unlabeled data"	.
 
-local:higher_precision_at_relative_recall_value	rdfs:label	"higher precision at relative recall value"	.
+local:precision_unlabeled_data	a	rdf:Class	;
+	rdfs:label	"precision unlabeled data"	.
 
-local:relative_recall_value_in_highrecall_range	rdfs:label	"relative recall value in high-recall range"	.
+local:type_of_automated_knowledge_building	a	rdf:Class	;
+	rdfs:label	"type of automated knowledge building"	.
 
-#### Properties ####
+local:knowledge_building	a	rdf:Class	;
+	rdfs:label	"knowledge building"	.
+
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
+
+local:building	a	rdf:Class	;
+	rdfs:label	"building"	.
+
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
+
+local:automated_knowledge_building	a	rdf:Class	;
+	rdfs:label	"automated knowledge building"	.
+
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
+
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	a	rdf:Class	;
+	rdfs:label	"decent level of precision learned from unlabeled data by means of distant supervision"	.
+
+local:unlabeled	a	rdf:Class	;
+	rdfs:label	"unlabeled"	.
+
+local:decent_level_of_precision	a	rdf:Class	;
+	rdfs:label	"decent level of precision"	.
+
+local:learned_from_unlabeled_data	a	rdf:Class	;
+	rdfs:label	"learned from unlabeled data"	.
+
+local:learned	a	rdf:Class	;
+	rdfs:label	"learned"	.
+
+local:learned_from_unlabeled_data_by_means_of_distant_supervision	a	rdf:Class	;
+	rdfs:label	"learned from unlabeled data by_means_of distant supervision"	.
+
+local:means_of_minimal_supervision	a	rdf:Class	;
+	rdfs:label	"means of minimal supervision"	.
+
+local:minimal_supervision	a	rdf:Class	;
+	rdfs:label	"minimal supervision"	.
+
+local:minimal	a	rdf:Class	;
+	rdfs:label	"minimal"	.
+
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	a	rdf:Class	;
+	rdfs:label	"decent level of precision learned from unlabeled data by means of minimal supervision"	.
+
+local:learned_from_unlabeled_data_by_means_of_minimal_supervision	a	rdf:Class	;
+	rdfs:label	"learned from unlabeled data by_means_of minimal supervision"	.
+
+local:acquire	a	rdf:Class	;
+	rdfs:label	"acquire"	.
+
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
+
+local:rule_sets	a	rdf:Class	;
+	rdfs:label	"rule sets"	.
+
+local:sets	a	rdf:Class	;
+	rdfs:label	"sets"	.
+
+local:automatically_acquired	a	rdf:Class	;
+	rdfs:label	"automatically acquired"	.
+
+local:acquired	a	rdf:Class	;
+	rdfs:label	"acquired"	.
+
+local:large_repositories_of_formalized_knowledge	a	rdf:Class	;
+	rdfs:label	"large repositories of formalized knowledge"	.
+
+local:large_repositories	a	rdf:Class	;
+	rdfs:label	"large repositories"	.
+
+local:formalized_knowledge	a	rdf:Class	;
+	rdfs:label	"formalized knowledge"	.
+
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
+
+local:repositories	a	rdf:Class	;
+	rdfs:label	"repositories"	.
+
+local:formalized	a	rdf:Class	;
+	rdfs:label	"formalized"	.
+
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
 #### Mapped Relations ####
 
-cso:semantics	rdfs:label	"semantics"	.
-cso:word_sense_disambiguation	rdfs:label	"word sense disambiguation"	.
-cso:lexical_semantics	rdfs:label	"lexical semantic"	.
-local:semantic_relations	owl:sameAs	cso:semantic_relations	.
-cso:knowledge_building	rdfs:label	"knowledge building"	.
-local:knowledge_building	owl:sameAs	cso:knowledge_building	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:relation_extraction	owl:sameAs	cso:relation_extraction	.
-cso:semantic_relations	rdfs:label	"semantic relations"	.
-local:semantics	owl:sameAs	cso:semantics	.
-cso:semantics	rdfs:label	"semantic"	.
 local:word_sense_disambiguation	owl:sameAs	cso:word_sense_disambiguation	.
+local:knowledge_building	owl:sameAs	cso:knowledge_building	.
+cso:lexical_semantics	rdfs:label	"lexical semantic"	.
+cso:semantics	rdfs:label	"semantic"	.
+cso:general_purpose	rdfs:label	"generalpurpose"	.
+cso:knowledge_building	rdfs:label	"knowledge building"	.
+local:semantic_relations	owl:sameAs	cso:semantic_relations	.
+local:generalpurpose	owl:sameAs	cso:general_purpose	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantics"	.
+local:relation_extraction	owl:sameAs	cso:relation_extraction	.
+cso:word_sense_disambiguation	rdfs:label	"word sense disambiguation"	.
 local:lexical_semantic	owl:sameAs	cso:lexical_semantics	.
+cso:semantic_relations	rdfs:label	"semantic relations"	.
 cso:relation_extraction	rdfs:label	"relation extraction"	.
+local:semantic	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:employing	vn.role:Theme	local:widecoverage_for_effective_semantic_rule	.
-local:yields	local:AM-PNC	local:seven_semantic_relations	.
-local:relationspecific	rdfs:member	local:relationspecific_subgraphs	.
-local:learned_from_unlabeled_data_bymeansof_distant_supervision	local:learnedfromunlabeleddata_by_means_of	local:distant_supervision	.
-local:semantic	rdfs:member	local:semantic_rule	.
-local:generalpurpose_lexical_semantic_network	rdfs:subClassOf	local:lexical_semantic_network	.
-local:lexical_semantic	rdfs:subClassOf	local:semantic	.
-local:semantic_filter	rdfs:subClassOf	local:filter	.
-local:word	rdfs:member	local:word_sense	.
-local:apply	vn.role:Agent	local:we	.
-local:generalpurpose_lexical_semantic_network	rdfs:subClassOf	local:network	.
-local:automatically_extracted_rules	rdfs:subClassOf	local:rules	.
-local:means_of_minimal_supervision	local:of_minimalsupervision	local:means	.
-local:widecoverage_for_effective_semantic_rule	local:for_effectivesemanticrule	local:widecoverage	.
-local:employing_for_effective_semantic_rule	local:employing_for	local:effective_semantic_rule	.
-local:used	vn.role:Theme	local:resulting	.
-local:generalpurpose_lexical_semantic	rdfs:member	local:generalpurpose_lexical_semantic_network	.
-local:word_sense	rdfs:subClassOf	local:sense	.
-local:learned_from_unlabeled_data	local:learned_from	local:unlabeled_data	.
-local:decent	rdfs:member	local:decent_level	.
-local:distant	rdfs:member	local:distant_supervision	.
-local:relative_recall_value	rdfs:subClassOf	local:recall_value	.
-local:relationspecific_subgraphs_of_babelnet	local:relation-specificsubgraphs_of	local:babelnet	.
-local:means_of_minimal_supervision	local:means_of	local:minimal_supervision	.
-local:semantic	rdfs:member	local:semantic_filter	.
-local:semantic_relations	rdfs:subClassOf	local:relations	.
-local:relation_extraction	rdfs:subClassOf	local:extraction	.
-local:word_sense_disambiguation	rdfs:subClassOf	local:sense_disambiguation	.
-local:large_repositories	rdfs:subClassOf	local:repositories	.
-local:relative_recall_value	rdfs:subClassOf	local:value	.
-local:effective_semantic_rule	rdfs:subClassOf	local:rule	.
-local:knowledge_building	rdfs:subClassOf	local:building	.
-local:lexical_semantic_network	rdfs:subClassOf	local:semantic_network	.
-local:semantic	rdfs:member	local:semantic_relations	.
-local:relationspecific_relevant	rdfs:subClassOf	local:relevant	.
-local:means_of_distant_supervision	local:of_distantsupervision	local:means	.
-local:relationspecific_relevant	rdfs:member	local:relationspecific_relevant_concepts	.
-local:relationspecific_relevant_concepts	rdfs:subClassOf	local:concepts	.
-local:shows	vn.role:Theme	local:can_considerably_improved	.
-local:automatically_extracted	rdfs:subClassOf	local:extracted	.
-local:higher	rdfs:member	local:higher_precision	.
-local:effective_semantic_rule	rdfs:subClassOf	local:semantic_rule	.
-local:lexical_semantic_network	rdfs:subClassOf	local:network	.
-local:type_of_automated_knowledge_building	local:of_automatedknowledgebuilding	local:type	.
-local:employing	vn.role:Theme	local:babelnet	.
-local:shows	vn.role:Agent	local:paper	.
-local:widecoverage_for_effective_semantic_rule	local:wide-coverage_for	local:effective_semantic_rule	.
-local:represent	vn.role:Agent	local:relationspecific_relevant_concepts	.
-local:automatically_acquired	rdfs:subClassOf	local:acquired	.
-local:achieve	vn.role:Agent	local:precision	.
-local:large	rdfs:member	local:large_repositories	.
-local:requires	vn.role:Agent	local:type_of_automated_knowledge_building	.
-local:generalpurpose_lexical	rdfs:member	local:generalpurpose_lexical_semantic	.
-local:large_repositories_of_formalized_knowledge	local:of_formalizedknowledge	local:large_repositories	.
-local:precision_of_relation_extraction	local:of_relationextraction	local:precision	.
-local:formalized	rdfs:member	local:formalized_knowledge	.
-local:seven_semantic_relations	rdfs:subClassOf	local:semantic_relations	.
-local:used	vn.role:Recipient	local:represent	.
-local:generalpurpose	rdfs:member	local:generalpurpose_lexical	.
-local:structured_semantics_of_corresponding_relation	local:of_correspondingrelation	local:structured_semantics	.
-local:minimal	rdfs:member	local:minimal_supervision	.
-local:recall	rdfs:member	local:recall_value	.
-local:semantic	rdfs:member	local:semantic_network	.
-local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	local:general-purposelexicalsemanticnetwork_for	local:effective_semantic_rule	.
-local:apply	vn.role:Recipient	local:content_words_of_extracted_rules	.
-local:acquired	local:AM-MNR	local:automatically	.
 local:generalpurpose_lexical	rdfs:subClassOf	local:lexical	.
-local:content_words_of_extracted_rules	local:of_extractedrules	local:content_words	.
-local:learned	vn.role:Theme	local:decent_level_of_precision	.
-local:resulting	vn.role:Theme	local:relationspecific_subgraphs	.
-local:considerably_improved	rdfs:subClassOf	local:improved	.
-local:means_of_distant_supervision	local:means_of	local:distant_supervision	.
-local:learned_from_unlabeled_data	local:from_unlabeleddata	local:learned	.
-local:tested	vn.role:Location	local:seven_semantic_relations	.
-local:extending	vn.role:Theme	local:large_repositories_of_formalized_knowledge	.
-local:structured_semantics_of_corresponding_relation	local:structuredsemantics_of	local:corresponding_relation	.
-local:learned	vn.role:Source	local:unlabeled_data	.
-local:higher_precision_at_relative_recall_value	local:at_relativerecallvalue	local:higher_precision	.
-local:structured_semantics	rdfs:subClassOf	local:semantics	.
-local:used	local:AM-TMP	local:then	.
-local:highrecall	rdfs:member	local:highrecall_range	.
-local:learned	vn.role:Agent	local:means_of_distant_supervision	.
-local:effective	rdfs:member	local:effective_semantic	.
-local:estimating	vn.role:Theme	local:adequacy_of_extracted_rules	.
-local:decent_level_of_precision	local:decentlevel_of	local:precision	.
-local:type_of_automated_knowledge_building	local:type_of	local:automated_knowledge_building	.
-local:lexical	rdfs:member	local:lexical_semantic	.
-local:generalpurpose_lexical_semantic	rdfs:subClassOf	local:semantic	.
-local:large_repositories_of_formalized_knowledge	local:largerepositories_of	local:formalized_knowledge	.
-local:recall_value	rdfs:subClassOf	local:value	.
-local:effective_semantic	rdfs:subClassOf	local:semantic	.
-local:relative_recall	rdfs:member	local:relative_recall_value	.
-local:learned_from_unlabeled_data_bymeansof_minimal_supervision	local:learnedfromunlabeleddata_by_means_of	local:minimal_supervision	.
-local:decent_level	rdfs:subClassOf	local:level	.
-local:employing_for_effective_semantic_rule	local:for_effectivesemanticrule	local:employing	.
-local:apply	vn.role:Theme	local:word_sense_disambiguation	.
-local:adequacy_of_extracted_rules	local:adequacy_of	local:extracted_rules	.
-local:relative	rdfs:member	local:relative_recall	.
-local:unlabeled_data	rdfs:subClassOf	local:data	.
-local:employing	vn.role:Recipient	local:effective_semantic_rule	.
-local:improved	local:AM-MNR	local:employing_for_effective_semantic_rule	.
-local:relationspecific_relevant_concepts	rdfs:subClassOf	local:relevant_concepts	.
-local:improved	local:AM-MNR	local:considerably	.
-local:relationspecific_subgraphs_of_babelnet	local:of_babelnet	local:relationspecific_subgraphs	.
-local:content	rdfs:member	local:content_words	.
-local:extracted_rules	rdfs:subClassOf	local:rules	.
-local:lexical_semantic	rdfs:member	local:lexical_semantic_network	.
-local:extracted	rdfs:member	local:extracted_rules	.
-local:relevant	rdfs:member	local:relevant_concepts	.
-local:improved	local:AM-MOD	local:can	.
-local:relative_recall_value_in_highrecall_range	local:relativerecallvalue_in	local:highrecall_range	.
-local:word_sense_disambiguation	rdfs:subClassOf	local:disambiguation	.
-local:structured	rdfs:member	local:structured_semantics	.
-local:semantic	rdfs:member	local:semantic_filters	.
-local:semantic_network	rdfs:subClassOf	local:network	.
-local:yields	vn.role:Theme	local:higher_precision_at_relative_recall_value	.
-local:acquired	vn.role:Topic	local:rule	.
-local:used	vn.role:Recipient	local:semantic_filters	.
-local:relation	rdfs:member	local:relation_extraction	.
-local:can_considerably_improved	rdfs:subClassOf	local:considerably_improved	.
-local:extracted	local:AM-MNR	local:automatically	.
-local:yields	local:AM-MNR	local:consistently	.
-local:requires	vn.role:Patient	local:learned_from_unlabeled_data_bymeansof_minimal_supervision	.
-local:sense	rdfs:member	local:sense_disambiguation	.
-local:content_words_of_extracted_rules	local:contentwords_of	local:extracted_rules	.
-local:precision_of_relation_extraction	local:precision_of	local:relation_extraction	.
-local:yields	vn.role:Agent	local:semantic_filter	.
-local:improved	vn.role:Patient	local:precision_of_relation_extraction	.
-local:employing	vn.role:Theme	local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	.
-local:higher_precision_at_relative_recall_value	local:higherprecision_at	local:relative_recall_value	.
 local:automated_knowledge_building	rdfs:subClassOf	local:knowledge_building	.
-local:relationspecific_subgraphs	rdfs:subClassOf	local:subgraphs	.
-local:formalized_knowledge	rdfs:subClassOf	local:knowledge	.
-local:knowledge	rdfs:member	local:knowledge_building	.
-local:used	vn.role:Theme	local:relationspecific_relevant_concepts	.
-local:content_words	rdfs:subClassOf	local:words	.
-local:sense_disambiguation	rdfs:subClassOf	local:disambiguation	.
-local:unlabeled	rdfs:member	local:unlabeled_data	.
-local:requires	vn.role:Patient	local:learned_from_unlabeled_data_bymeansof_distant_supervision	.
-local:extracted	vn.role:Theme	local:rules	.
-local:relative_recall	rdfs:subClassOf	local:recall	.
-local:minimal_supervision	rdfs:subClassOf	local:supervision	.
-local:automatically_extracted	rdfs:member	local:automatically_extracted_rules	.
-local:relative_recall_value_in_highrecall_range	local:in_high-recallrange	local:relative_recall_value	.
-local:learned_from_unlabeled_data_bymeansof_minimal_supervision	local:by_means_of_minimalsupervision	local:learned_from_unlabeled_data	.
-local:improved	local:AM-MNR	local:employing	.
-local:effective_semantic	rdfs:member	local:effective_semantic_rule	.
-local:corresponding	rdfs:member	local:corresponding_relation	.
-local:relevant_concepts	rdfs:subClassOf	local:concepts	.
-local:achieve	vn.role:Theme	local:automatically_acquired	.
-local:highrecall_range	rdfs:subClassOf	local:range	.
-local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	local:for_effectivesemanticrule	local:generalpurpose_lexical_semantic_network	.
-local:adequacy_of_extracted_rules	local:of_extractedrules	local:adequacy	.
-local:word_sense	rdfs:member	local:word_sense_disambiguation	.
+local:relative_recall_value	rdfs:subClassOf	local:recall_value	.
+local:s10.1	rdf:predicate	local:represent	.
+local:s11	rdf:predicate	local:obtain	.
+local:precision_of_relation_extraction	rdfs:member	local:precision	.
+local:employing_for_effective_semantic_rule	rdfs:member	local:effective_semantic_rule	.
+local:s10	rdf:subject	local:relationspecific_relevant_concepts	.
+local:type_of_automated_knowledge_building	rdfs:member	local:knowledge_building	.
+local:generalpurpose_lexical_semantic_network	rdfs:subClassOf	local:lexical_semantic_network	.
+local:s7.1	local:AM-MNR	local:s7.2	.
+local:s5.1	rdf:predicate	local:improve	.
+local:effective_semantic_rule	rdfs:member	local:effective_semantic	.
+local:effective_semantic_rule	rdfs:subClassOf	local:rule	.
+local:semantic_network	rdfs:subClassOf	local:network	.
 local:distant_supervision	rdfs:subClassOf	local:supervision	.
-local:higher_precision	rdfs:subClassOf	local:precision	.
-local:corresponding_relation	rdfs:subClassOf	local:relation	.
-local:relationspecific	rdfs:member	local:relationspecific_relevant	.
-local:automatically	rdfs:member	local:automatically_extracted	.
-local:represent	vn.role:Theme	local:structured_semantics_of_corresponding_relation	.
+local:s1	rdf:subject	local:large_repositories_of_formalized_knowledge	.
+local:word_sense_disambiguation_content	rdfs:member	local:word_sense_disambiguation	.
+local:relative_recall_value	rdfs:subClassOf	local:value	.
+local:large_repositories_of_formalized_knowledge	rdfs:member	local:formalized_knowledge	.
+local:sense_disambiguation	rdfs:subClassOf	local:disambiguation	.
+local:s13	local:AM-LOC	local:here	.
+local:formalized_knowledge	rdfs:subClassOf	local:knowledge	.
+local:semantic_filters_for_estimating_the_adequacy_of_the_extracted_rules	rdfs:member	local:s12.3	.
+local:s4	rdf:object	local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	.
+local:disambiguation_content	rdfs:member	local:disambiguation	.
+local:generalpurpose_lexical_semantic	rdfs:subClassOf	local:semantic	.
+local:knowledge_building	rdfs:subClassOf	local:building	.
+local:s6	rdf:predicate	local:show	.
+local:s12.1	rdf:object	local:semantic_filters_for_estimating_the_adequacy_of_the_extracted_rules	.
+local:s5.2	rdfs:member	local:effective_semantic_rule	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_a_widecoverage_for_effective_semantic_rule	rdfs:member	local:effective_semantic_rule	.
+local:relation_extraction	rdfs:member	local:relation	.
+local:unlabeled_data	rdfs:member	local:unlabeled	.
+local:lexical_semantic	rdfs:member	local:lexical	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:precision	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:means	.
+local:employing_for_effective_semantic_rule	rdfs:member	local:employing	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:decent_level	.
+local:s5.2	rdf:predicate	local:employ	.
+local:s14	rdf:predicate	local:yield	.
 local:semantic_filters	rdfs:subClassOf	local:filters	.
-local:learned	local:AM-MNR	local:means_of_minimal_supervision	.
-local:learned_from_unlabeled_data_bymeansof_distant_supervision	local:by_means_of_distantsupervision	local:learned_from_unlabeled_data	.
+local:s11	local:AM-DIS	local:result	.
+local:s12.3	rdfs:subClassOf	local:rules	.
+local:semantic_filters_for_estimating_the_adequacy_of_the_extracted_rules	rdfs:member	local:semantic_filters	.
+local:s8	rdf:predicate	local:filter	.
+local:learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:minimal_supervision	.
+local:s9	rdf:predicate	local:apply	.
+local:higher_precision_at_relative_recall_value	rdfs:member	local:relative_recall_value	.
+local:s2.1	rdf:predicate	local:acquire	.
+local:rule_sets	rdfs:subClassOf	local:sets	.
+local:relative_recall	rdfs:member	local:relative	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:minimal_supervision	.
+local:s10	rdf:predicate	local:use	.
+local:s4.1	rdf:object	local:decent_level_of_precision_unlabeled_data	.
+local:s9.1	local:AM-MNR	local:automatically	.
+local:disambiguation_content_words	rdfs:member	local:disambiguation_content	.
+local:precision_of_relation_extraction	rdfs:member	local:relation_extraction	.
+local:generalpurpose_lexical_semantic	rdfs:member	local:generalpurpose_lexical	.
+local:word_sense_disambiguation_content_words_of_extracted_rules	rdfs:member	local:word_sense_disambiguation_content_words	.
+local:large_repositories	rdfs:member	local:large	.
+local:adequacy_of_the_extracted_rules	rdfs:member	local:adequacy	.
+local:higher_precision_at_any_relative_recall_value_in_the_highrecall_range	rdfs:member	local:relative_recall_value	.
+local:corresponding_relation	rdfs:subClassOf	local:relation	.
+local:s7.1	local:AM-MNR	local:considerably	.
+local:s13	rdf:subject	local:seven_semantic_relations	.
+local:lexical_semantic_network	rdfs:subClassOf	local:network	.
+local:s7.1	local:AM-MOD	local:can	.
+local:lexical_semantic_network	rdfs:member	local:lexical_semantic	.
+local:s5.2	rdf:subject	local:babelnet	.
+local:s7.2	rdf:subject	local:widecoverage_for_effective_semantic_rule	.
+local:generalpurpose_lexical_semantic_network	rdfs:subClassOf	local:network	.
+local:s2	rdf:predicate	local:achieve	.
+local:s5.1	local:AM-MOD	local:can	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_babelnet_for_effective_semantic_rule	rdfs:member	local:precision	.
+local:s9	rdf:subject	local:we	.
+local:s7	rdf:subject	local:paper	.
+local:s9	rdf:object	local:word_sense_disambiguation_content_words_of_the_automatically_extracted_rules	.
+local:word_sense_disambiguation_content_words	rdfs:subClassOf	local:words	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_a_widecoverage_for_effective_semantic_rule	rdfs:member	local:precision	.
+local:structured_semantics_of_the_corresponding_relation	rdfs:member	local:structured_semantics	.
+local:means_of_distant_supervision	rdfs:member	local:distant_supervision	.
+local:decent_level_of_precision	rdfs:member	local:decent_level	.
+local:s3	rdf:object	local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	.
+local:lexical_semantic	rdfs:subClassOf	local:semantic	.
+local:word_sense_disambiguation	rdfs:subClassOf	local:disambiguation	.
+local:sense_disambiguation_content_words	rdfs:subClassOf	local:disambiguation_content_words	.
+local:s3.1	rdf:predicate	local:learn	.
+local:s12.2	rdf:predicate	local:estimate	.
+local:structured_semantics_of_corresponding_relation	rdfs:member	local:structured_semantics	.
+local:semantic_filters_for_estimating_the_adequacy_of_the_extracted_rules	rdfs:member	local:adequacy	.
+local:sense_disambiguation_content_words	rdfs:subClassOf	local:words	.
+local:s14	local:AM-MNR	local:consistently	.
+local:set_of_relationspecific_relevant_concepts	rdfs:member	local:relationspecific_relevant_concepts	.
+local:effective_semantic	rdfs:subClassOf	local:semantic	.
+local:s10.1	rdf:subject	local:relationspecific_relevant_concepts	.
+local:widecoverage_for_effective_semantic_rule	rdfs:member	local:effective_semantic_rule	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_a_widecoverage_for_effective_semantic_rule	rdfs:member	local:widecoverage	.
+local:s6.1	local:AM-MOD	local:can	.
+local:s6	rdf:object	local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_generalpurpose_lexical_semantic_network_for_effective_semantic_rule	.
+local:s5.2	local:AM-PNC	local:effective_semantic_rule	.
+local:semantic_relations	rdfs:member	local:semantic	.
+local:relationspecific_relevant	rdfs:member	local:relationspecific	.
+local:sense_disambiguation_content_words	rdfs:member	local:sense_disambiguation_content	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_babelnet_for_effective_semantic_rule	rdfs:member	local:babelnet	.
+local:s9.1	rdf:subject	local:rules	.
+local:s13	rdf:predicate	local:test	.
+local:s6.1	rdf:predicate	local:improve	.
+local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:member	local:effective_semantic_rule	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:member	local:effective_semantic_rule	.
+local:decent_level_of_precision_unlabeled_data	rdfs:member	local:precision_unlabeled_data	.
+local:s12.1	rdf:subject	local:resulting_relationspecific_subgraphs_of_babelnet	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:unlabeled_data	.
+local:s12.2	rdf:subject	local:adequacy_of_the_extracted_rules	.
+local:resulting_relationspecific_subgraphs_of_babelnet	rdfs:member	local:babelnet	.
+local:s14	local:AM-PNC	local:seven_semantic_relations	.
+local:represent_the_structured_semantics_of_the_corresponding_relation	rdfs:member	local:structured_semantics	.
+local:relationspecific_subgraphs_of_babelnet	rdfs:member	local:relationspecific_subgraphs	.
+local:relative_recall_value	rdfs:member	local:relative_recall	.
+local:content_words	rdfs:member	local:content	.
+local:decent_level	rdfs:member	local:decent	.
+local:relation_extraction	rdfs:subClassOf	local:extraction	.
+local:highrecall_range	rdfs:subClassOf	local:range	.
+local:s5.2	rdfs:member	local:babelnet	.
+local:represent_the_structured_semantics_of_the_corresponding_relation	rdfs:member	local:corresponding_relation	.
+local:decent_level	rdfs:subClassOf	local:level	.
+local:semantic_filter	rdfs:subClassOf	local:filter	.
+local:s5.1	rdf:subject	local:precision_of_relation_extraction	.
+local:learned_from_unlabeled_data	rdfs:member	local:unlabeled_data	.
+local:word_sense_disambiguation_content_words_of_the_automatically_extracted_rules	rdfs:member	local:rules	.
+local:means_of_minimal_supervision	rdfs:member	local:minimal_supervision	.
+local:s10	local:AM-TMP	local:then	.
+local:structured_semantics	rdfs:member	local:structured	.
+local:s5.1	local:AM-MNR	local:considerably	.
+local:s9.1	rdf:predicate	local:extract	.
+local:distant_supervision	rdfs:member	local:distant	.
+local:relative_recall	rdfs:subClassOf	local:recall	.
+local:s2	rdf:object	local:rule_sets	.
+local:word_sense_disambiguation_content_words_of_the_automatically_extracted_rules	rdfs:member	local:word_sense_disambiguation_content_words	.
+local:word_sense_disambiguation	rdfs:member	local:word_sense	.
+local:sense_disambiguation_content	rdfs:member	local:sense_disambiguation	.
+local:seven_semantic_relations	rdfs:subClassOf	local:semantic_relations	.
+local:higher_precision	rdfs:member	local:higher	.
+local:higher_precision_at_any_relative_recall_value_in_the_highrecall_range	rdfs:member	local:highrecall_range	.
+local:s11	rdf:subject	local:set_of_relationspecific_relevant_concepts	.
+local:minimal_supervision	rdfs:subClassOf	local:supervision	.
+local:s4	rdf:subject	local:type_of_automated_knowledge_building	.
+local:s7	rdf:object	local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_a_widecoverage_for_effective_semantic_rule	.
+local:word_sense_disambiguation_content	rdfs:subClassOf	local:content	.
+local:s6.2	rdf:subject	local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	.
+local:s7.1	rdf:predicate	local:improve	.
+local:s4.1	rdf:subject	local:means_of_distant_supervision	.
+local:highrecall_range	rdfs:member	local:highrecall	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_babelnet_for_effective_semantic_rule	rdfs:member	local:effective_semantic_rule	.
+local:decent_level_of_precision_unlabeled_data	rdfs:member	local:data	.
+local:s14	rdf:subject	local:semantic_filter	.
+local:semantic_network	rdfs:member	local:semantic	.
+local:precision_unlabeled_data	rdfs:subClassOf	local:unlabeled_data	.
+local:relative_recall_value_in_highrecall_range	rdfs:member	local:highrecall_range	.
+local:set_of_relationspecific_relevant_concepts	rdfs:member	local:set	.
 local:semantic_rule	rdfs:subClassOf	local:rule	.
-local:decent_level_of_precision	local:of_precision	local:decent_level	.
+local:relationspecific_relevant_concepts	rdfs:subClassOf	local:relevant_concepts	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:decent_level	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:means	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:unlabeled_data	.
+local:type_of_automated_knowledge_building	rdfs:member	local:automated_knowledge_building	.
+local:s5	rdf:subject	local:paper	.
+local:s1	rdf:predicate	local:extend	.
+local:considerably_improved	rdfs:subClassOf	local:improved	.
+local:s4	rdf:predicate	local:require	.
+local:s3.1	rdf:subject	local:means_of_minimal_supervision	.
+local:s3	rdf:predicate	local:require	.
+local:adequacy_of_the_extracted_rules	rdfs:member	local:s12.3	.
+local:automatically_extracted	rdfs:subClassOf	local:extracted	.
+local:learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:distant_supervision	.
+local:higher_precision	rdfs:subClassOf	local:precision	.
+local:generalpurpose_lexical	rdfs:member	local:generalpurpose	.
+local:disambiguation_content	rdfs:subClassOf	local:content	.
+local:large_repositories_of_formalized_knowledge	rdfs:member	local:large_repositories	.
+local:word_sense_disambiguation_content_words_of_extracted_rules	rdfs:member	local:s12.3	.
+local:relationspecific_relevant	rdfs:subClassOf	local:relevant	.
+local:s8	rdf:subject	local:effective_semantic_rule	.
+local:structured_semantics_of_the_corresponding_relation	rdfs:member	local:corresponding_relation	.
+local:resulting_relationspecific_subgraphs_of_babelnet	rdfs:member	local:relationspecific_subgraphs	.
+local:disambiguation_content_words	rdfs:subClassOf	local:content_words	.
+local:large_repositories	rdfs:subClassOf	local:repositories	.
+local:s14	rdf:object	local:higher_precision_at_any_relative_recall_value_in_the_highrecall_range	.
+local:relationspecific_subgraphs	rdfs:subClassOf	local:subgraphs	.
+local:relationspecific_subgraphs_of_babelnet	rdfs:member	local:babelnet	.
+local:relative_recall_value_in_highrecall_range	rdfs:member	local:relative_recall_value	.
+local:relationspecific_relevant_concepts	rdfs:subClassOf	local:concepts	.
+local:semantic_relations	rdfs:subClassOf	local:relations	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_a_widecoverage_for_effective_semantic_rule	rdfs:member	local:relation_extraction	.
+local:decent_level_of_precision_unlabeled_data	rdfs:member	local:precision	.
+local:unlabeled_data	rdfs:subClassOf	local:data	.
+local:learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:learned_from_unlabeled_data	.
+local:s6	rdf:subject	local:paper	.
+local:s7.1	rdf:subject	local:precision_of_relation_extraction	.
+local:s12.3	rdf:subject	local:rules	.
+local:learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:learned_from_unlabeled_data	.
+local:corresponding_relation	rdfs:member	local:corresponding	.
+local:recall_value	rdfs:subClassOf	local:value	.
+local:s12.1	rdf:predicate	local:use	.
+local:word_sense	rdfs:subClassOf	local:sense	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:member	local:relation_extraction	.
+local:s5	rdf:predicate	local:show	.
+local:decent_level_of_precision_unlabeled_data	rdfs:member	local:decent_level	.
+local:s5	rdf:object	local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_babelnet_for_effective_semantic_rule	.
+local:structured_semantics_of_corresponding_relation	rdfs:member	local:corresponding_relation	.
+local:s6.1	rdf:subject	local:precision_of_relation_extraction	.
+local:adequacy_of_extracted_rules	rdfs:member	local:adequacy	.
+local:recall_value	rdfs:member	local:recall	.
+local:disambiguation_content_words	rdfs:subClassOf	local:words	.
+local:knowledge_building	rdfs:member	local:knowledge	.
+local:automatically_acquired	rdfs:subClassOf	local:acquired	.
+local:s12.3	rdfs:member	local:extracted	.
+local:sense_disambiguation_content	rdfs:subClassOf	local:content	.
+local:type_of_automated_knowledge_building	rdfs:member	local:type	.
+local:rule_sets	rdfs:member	local:rule	.
+local:generalpurpose_lexical_semantic_network	rdfs:member	local:generalpurpose_lexical_semantic	.
+local:s6.1	local:AM-MNR	local:s6.2	.
+local:higher_precision_at_any_relative_recall_value_in_the_highrecall_range	rdfs:member	local:higher_precision	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_babelnet_for_effective_semantic_rule	rdfs:member	local:relation_extraction	.
+local:s2.1	local:AM-MNR	local:automatically	.
+local:formalized_knowledge	rdfs:member	local:formalized	.
+local:effective_semantic_rule	rdfs:subClassOf	local:semantic_rule	.
+local:s7	rdf:predicate	local:show	.
+local:s12	rdf:predicate	local:result	.
+local:relationspecific_subgraphs	rdfs:member	local:relationspecific	.
+local:s12.3	rdf:predicate	local:extract	.
+local:s12	rdf:subject	local:relationspecific_subgraphs	.
+local:relationspecific_relevant_concepts	rdfs:member	local:relationspecific_relevant	.
+local:relevant_concepts	rdfs:subClassOf	local:concepts	.
+local:s10.1	rdf:object	local:structured_semantics_of_the_corresponding_relation	.
+local:content_words	rdfs:subClassOf	local:words	.
+local:s7.2	rdf:predicate	local:employ	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_minimal_supervision	rdfs:member	local:precision	.
+local:semantic_rule	rdfs:member	local:semantic	.
+local:semantic_filter	rdfs:member	local:semantic	.
+local:word_sense_disambiguation_content_words	rdfs:subClassOf	local:sense_disambiguation_content_words	.
+local:relevant_concepts	rdfs:member	local:relevant	.
+local:can_considerably_improved	rdfs:subClassOf	local:considerably_improved	.
+local:lexical_semantic_network	rdfs:subClassOf	local:semantic_network	.
+local:means_of_distant_supervision	rdfs:member	local:means	.
+local:minimal_supervision	rdfs:member	local:minimal	.
+local:s3	rdf:subject	local:type_of_automated_knowledge_building	.
+local:structured_semantics	rdfs:subClassOf	local:semantics	.
+local:learned_from_unlabeled_data	rdfs:member	local:learned	.
+local:semantic_filters	rdfs:member	local:semantic	.
+local:widecoverage_for_effective_semantic_rule	rdfs:member	local:widecoverage	.
+local:decent_level_of_precision	rdfs:member	local:precision	.
+local:s6.2	rdf:predicate	local:employ	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:member	local:precision	.
+local:generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:member	local:generalpurpose_lexical_semantic_network	.
+local:s10	rdf:object	local:represent_the_structured_semantics_of_the_corresponding_relation	.
+local:s5.1	local:AM-MNR	local:employing_babelnet_for_effective_semantic_rule	.
+local:s4.1	rdf:predicate	local:learn	.
+local:means_of_minimal_supervision	rdfs:member	local:means	.
+local:s6.1	local:AM-MNR	local:considerably	.
+local:sense_disambiguation	rdfs:member	local:sense	.
+local:s2	local:AM-MNR	local:automatically_acquired	.
+local:s2	rdf:subject	local:precision	.
+local:word_sense_disambiguation_content_words	rdfs:member	local:word_sense_disambiguation_content	.
+local:word_sense	rdfs:member	local:word	.
+local:decent_level_of_precision_learned_from_unlabeled_data_by_means_of_distant_supervision	rdfs:member	local:distant_supervision	.
+local:adequacy_of_extracted_rules	rdfs:member	local:s12.3	.
+local:higher_precision_at_relative_recall_value	rdfs:member	local:higher_precision	.
+local:precision_of_relation_extraction_can_be_considerably_improved_by_employing_generalpurpose_lexical_semantic_network_for_effective_semantic_rule	rdfs:member	local:generalpurpose_lexical_semantic_network	.
+local:s3.1	rdf:object	local:decent_level_of_precision_unlabeled_data	.
+local:effective_semantic	rdfs:member	local:effective	.
+local:s2.1	rdf:subject	local:rule	.

@@ -1,362 +1,675 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we compare the fitness for purpose of the generated alignments"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we evaluate the fitness for purpose of the generated alignments"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"the proposed approach has comparable performance to the mba approach"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we empirically demonstrate that the proposed approach has comparable performance to the mba approach"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we empirically compare this approach with the meaningbased argumentation"	.
+
+local:s5.4	a	rdf:Statement	;
+	rdfs:label	"enabling agent communication"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"agreed alignments"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"the proposed approach produces larger agreed alignments thus better enabling agent communication"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we empirically demonstrate that the proposed approach produces larger agreed alignments thus better enabling agent communication"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"agents express a private acceptability threshold over the types of mappings agents"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"mutually acceptable mappings that allows agents to express a private acceptability threshold over the types of mappings agents"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"in this paper the dynamic determination of mutually acceptable mappings"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a novel approach to the dynamic determination of mutually acceptable mappings prefer"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"how mutually acceptable mappings between corresponding concepts in the agents own ontologies may determined dynamically through argumentationbased negotiation such as meaningbased argumentation mba"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"various approaches considered how mutually acceptable mappings between corresponding concepts in the agents own ontologies may be determined dynamically through argumentationbased negotiation such as meaningbased argumentation mba"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"agents reconciling the vocabulary"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"exchanged message"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"agents reach a mutual understanding of the exchanged message by reconciling the vocabulary"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"effective communication in open environments relies on the ability of agents to reach a mutual understanding of the exchanged message by reconciling the vocabulary"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the vocabulary used"	.
+
+
 #### Classes ####
 
-local:open	rdfs:label	"open"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:open_environments	rdfs:label	"open environments"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:environments	rdfs:label	"environments"	.
+local:fitness_purpose_of_the_generated_alignments	a	rdf:Class	;
+	rdfs:label	"fitness purpose of the generated alignments"	.
 
-local:effective_communication	rdfs:label	"effective communication"	.
+local:fitness_purpose	a	rdf:Class	;
+	rdfs:label	"fitness purpose"	.
 
-local:communication	rdfs:label	"communication"	.
+local:generated_alignments	a	rdf:Class	;
+	rdfs:label	"generated alignments"	.
 
-local:effective	rdfs:label	"effective"	.
+local:purpose	a	rdf:Class	;
+	rdfs:label	"purpose"	.
 
-local:effective_communication_in_open_environments	rdfs:label	"effective communication in open environments"	.
+local:alignments	a	rdf:Class	;
+	rdfs:label	"alignments"	.
 
-local:relies	rdfs:label	"relies"	.
+local:fitness	a	rdf:Class	;
+	rdfs:label	"fitness"	.
 
-local:ability_of_agents	rdfs:label	"ability of agents"	.
+local:generated	a	rdf:Class	;
+	rdfs:label	"generated"	.
 
-local:ability	rdfs:label	"ability"	.
+local:fitness_purpose_of_generated_alignments	a	rdf:Class	;
+	rdfs:label	"fitness purpose of generated alignments"	.
 
-local:agents	rdfs:label	"agents"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:mutual_understanding	rdfs:label	"mutual understanding"	.
+local:fitness_for_purpose_of_the_generated_alignments	a	rdf:Class	;
+	rdfs:label	"fitness for purpose of the generated alignments"	.
 
-local:understanding	rdfs:label	"understanding"	.
+local:fitness_for_purpose	a	rdf:Class	;
+	rdfs:label	"fitness for purpose"	.
 
-local:mutual	rdfs:label	"mutual"	.
+local:purpose_of_generated_alignments	a	rdf:Class	;
+	rdfs:label	"purpose of generated alignments"	.
 
-local:exchanged_message	rdfs:label	"exchanged message"	.
+local:proposed_approach	a	rdf:Class	;
+	rdfs:label	"proposed approach"	.
 
-local:message	rdfs:label	"message"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:mutual_understanding_of_exchanged_message	rdfs:label	"mutual understanding of exchanged message"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:reach	rdfs:label	"reach"	.
+local:comparable_performance_to_the_mba_approach	a	rdf:Class	;
+	rdfs:label	"comparable performance to the mba approach"	.
 
-local:exchanged	rdfs:label	"exchanged"	.
+local:mba_approach	a	rdf:Class	;
+	rdfs:label	"mba approach"	.
 
-local:reconciling	rdfs:label	"reconciling"	.
+local:comparable_performance	a	rdf:Class	;
+	rdfs:label	"comparable performance"	.
 
-local:vocabulary	rdfs:label	"vocabulary"	.
+local:comparable	a	rdf:Class	;
+	rdfs:label	"comparable"	.
 
-local:various_approaches	rdfs:label	"various approaches"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:mba	a	rdf:Class	;
+	rdfs:label	"mba"	.
 
-local:various	rdfs:label	"various"	.
+local:comparable_performance_to_mba_approach	a	rdf:Class	;
+	rdfs:label	"comparable performance to mba approach"	.
 
-local:considered	rdfs:label	"considered"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:mutually_acceptable	rdfs:label	"mutually acceptable"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:acceptable	rdfs:label	"acceptable"	.
+local:proposed_approach_has_comparable_performance_to_the_mba_approach	a	rdf:Class	;
+	rdfs:label	"proposed approach has comparable performance to the mba approach"	.
 
-local:argumentationbased	rdfs:label	"argumentation-based"	.
+local:empirically	a	rdf:Class	;
+	rdfs:label	"empirically"	.
 
-local:argumentationbased_negotiation	rdfs:label	"argumentation-based negotiation"	.
+local:approach_meaningbased_argumentation	a	rdf:Class	;
+	rdfs:label	"approach meaningbased argumentation"	.
 
-local:mutually	rdfs:label	"mutually"	.
+local:argumentation	a	rdf:Class	;
+	rdfs:label	"argumentation"	.
 
-local:acceptable_mappings	rdfs:label	"acceptable mappings"	.
+local:meaningbased_argumentation	a	rdf:Class	;
+	rdfs:label	"meaningbased argumentation"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:agent_communication	a	rdf:Class	;
+	rdfs:label	"agent communication"	.
 
-local:mutually_acceptable_mappings	rdfs:label	"mutually acceptable mappings"	.
+local:communication	a	rdf:Class	;
+	rdfs:label	"communication"	.
 
-local:meaningbased	rdfs:label	"meaning-based"	.
+local:agent	a	rdf:Class	;
+	rdfs:label	"agent"	.
 
-local:meaningbased_argumentation	rdfs:label	"meaning-based argumentation"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:argumentation	rdfs:label	"argumentation"	.
+local:agree	a	rdf:Class	;
+	rdfs:label	"agree"	.
 
-local:negotiation	rdfs:label	"negotiation"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:own_ontologies	rdfs:label	"own ontologies"	.
+local:larger_agreed_alignments_thus_better_enabling_agent_communication	a	rdf:Class	;
+	rdfs:label	"larger agreed alignments thus better enabling agent communication"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:better_agreed	a	rdf:Class	;
+	rdfs:label	"better agreed"	.
 
-local:own	rdfs:label	"own"	.
+local:agreed	a	rdf:Class	;
+	rdfs:label	"agreed"	.
 
-local:dynamically_determined	rdfs:label	"dynamically determined"	.
+local:thus_better	a	rdf:Class	;
+	rdfs:label	"thus better"	.
 
-local:determined	rdfs:label	"determined"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:may_dynamically_determined	rdfs:label	"may dynamically determined"	.
+local:proposed_approach_produces_larger_agreed_alignments_thus_better_enabling_agent_communication	a	rdf:Class	;
+	rdfs:label	"proposed approach produces larger agreed alignments thus better enabling agent communication"	.
 
-local:agents_own_ontologies	rdfs:label	"agents own ontologies"	.
+local:larger_better_agreed	a	rdf:Class	;
+	rdfs:label	"larger better agreed"	.
 
-local:corresponding_concepts	rdfs:label	"corresponding concepts"	.
+local:agents	a	rdf:Class	;
+	rdfs:label	"agents"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:acceptable_mappings_between_corresponding_concepts	rdfs:label	"acceptable mappings between corresponding concepts"	.
+local:private_acceptability_threshold_over_the_types_of_mappings_agents	a	rdf:Class	;
+	rdfs:label	"private acceptability threshold over the types of mappings agents"	.
 
-local:corresponding_concepts_in_agents_own_ontologies	rdfs:label	"corresponding concepts in agents own ontologies"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:may_dynamically_determined_through_argumentationbased_negotiation	rdfs:label	"may dynamically determined through argumentation-based negotiation"	.
+local:mappings_agents	a	rdf:Class	;
+	rdfs:label	"mappings agents"	.
 
-local:meaningbased_argumentation_mba	rdfs:label	"meaning-based argumentation mba"	.
+local:private_acceptability_threshold	a	rdf:Class	;
+	rdfs:label	"private acceptability threshold"	.
 
-local:mba	rdfs:label	"mba"	.
+local:private_acceptability	a	rdf:Class	;
+	rdfs:label	"private acceptability"	.
 
-local:may	rdfs:label	"may"	.
+local:acceptability	a	rdf:Class	;
+	rdfs:label	"acceptability"	.
 
-local:dynamically	rdfs:label	"dynamically"	.
+local:acceptability_threshold	a	rdf:Class	;
+	rdfs:label	"acceptability threshold"	.
 
-local:argumentationbased_negotiation_suchas_meaningbased_argumentation	rdfs:label	"argumentation-based negotiation such_as meaning-based argumentation"	.
+local:threshold	a	rdf:Class	;
+	rdfs:label	"threshold"	.
 
-local:present	rdfs:label	"present"	.
+local:private	a	rdf:Class	;
+	rdfs:label	"private"	.
 
-local:paper	rdfs:label	"paper"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:we	rdfs:label	"we"	.
+local:private_acceptability_threshold_over_types	a	rdf:Class	;
+	rdfs:label	"private acceptability threshold over types"	.
 
-local:dynamic_determination	rdfs:label	"dynamic determination"	.
+local:types_of_mappings_agents	a	rdf:Class	;
+	rdfs:label	"types of mappings agents"	.
 
-local:determination	rdfs:label	"determination"	.
+local:mutually_acceptable_mappings	a	rdf:Class	;
+	rdfs:label	"mutually acceptable mappings"	.
 
-local:dynamic	rdfs:label	"dynamic"	.
+local:acceptable_mappings	a	rdf:Class	;
+	rdfs:label	"acceptable mappings"	.
 
-local:novel	rdfs:label	"novel"	.
+local:acceptable	a	rdf:Class	;
+	rdfs:label	"acceptable"	.
 
-local:novel_approach	rdfs:label	"novel approach"	.
+local:mutually_acceptable	a	rdf:Class	;
+	rdfs:label	"mutually acceptable"	.
 
-local:approach	rdfs:label	"approach"	.
+local:mutually	a	rdf:Class	;
+	rdfs:label	"mutually"	.
 
-local:novel_approach_to_dynamic_determination	rdfs:label	"novel approach to dynamic determination"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:dynamic_determination_of_acceptable_mappings	rdfs:label	"dynamic determination of acceptable mappings"	.
+local:agents_to_express_a_private_acceptability_threshold_over_the_types_of_mappings_agents	a	rdf:Class	;
+	rdfs:label	"agents to express a private acceptability threshold over the types of mappings agents"	.
 
-local:prefer	rdfs:label	"prefer"	.
+local:express_over_types	a	rdf:Class	;
+	rdfs:label	"express over types"	.
 
-local:allows	rdfs:label	"allows"	.
+local:dynamic_determination_of_mutually_acceptable_mappings	a	rdf:Class	;
+	rdfs:label	"dynamic determination of mutually acceptable mappings"	.
 
-local:mappings_agents	rdfs:label	"mappings agents"	.
+local:dynamic_determination	a	rdf:Class	;
+	rdfs:label	"dynamic determination"	.
 
-local:private_acceptability_threshold	rdfs:label	"private acceptability threshold"	.
+local:determination	a	rdf:Class	;
+	rdfs:label	"determination"	.
 
-local:threshold	rdfs:label	"threshold"	.
+local:dynamic	a	rdf:Class	;
+	rdfs:label	"dynamic"	.
 
-local:private	rdfs:label	"private"	.
+local:dynamic_determination_of_acceptable_mappings	a	rdf:Class	;
+	rdfs:label	"dynamic determination of acceptable mappings"	.
 
-local:private_acceptability	rdfs:label	"private acceptability"	.
+local:prefer	a	rdf:Class	;
+	rdfs:label	"prefer"	.
 
-local:acceptability_threshold	rdfs:label	"acceptability threshold"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:acceptability	rdfs:label	"acceptability"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:express_over_types	rdfs:label	"express over types"	.
+local:novel_approach_to_the_dynamic_determination_of_mutually_acceptable_mappings_prefer	a	rdf:Class	;
+	rdfs:label	"novel approach to the dynamic determination of mutually acceptable mappings prefer"	.
 
-local:express	rdfs:label	"express"	.
+local:novel_approach	a	rdf:Class	;
+	rdfs:label	"novel approach"	.
 
-local:types	rdfs:label	"types"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:types_of_mappings_agents	rdfs:label	"types of mappings agents"	.
+local:novel_approach_to_dynamic_determination	a	rdf:Class	;
+	rdfs:label	"novel approach to dynamic determination"	.
 
-local:private_acceptability_threshold_over_types	rdfs:label	"private acceptability threshold over types"	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies	a	rdf:Class	;
+	rdfs:label	"mutually acceptable mappings between corresponding concepts in the agents own ontologies"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:empirically	rdfs:label	"empirically"	.
+local:own_ontologies	a	rdf:Class	;
+	rdfs:label	"own ontologies"	.
 
-local:agent_communication	rdfs:label	"agent communication"	.
+local:own	a	rdf:Class	;
+	rdfs:label	"own"	.
 
-local:agent	rdfs:label	"agent"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:better_agreed	rdfs:label	"better agreed"	.
+local:corresponding_concepts	a	rdf:Class	;
+	rdfs:label	"corresponding concepts"	.
 
-local:agreed	rdfs:label	"agreed"	.
+local:acceptable_mappings_between_corresponding_concepts	a	rdf:Class	;
+	rdfs:label	"acceptable mappings between corresponding concepts"	.
 
-local:thus_better	rdfs:label	"thus better"	.
+local:corresponding_concepts_in_agents	a	rdf:Class	;
+	rdfs:label	"corresponding concepts in agents"	.
 
-local:better	rdfs:label	"better"	.
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
 
-local:larger_better_agreed	rdfs:label	"larger better agreed"	.
+local:dynamically	a	rdf:Class	;
+	rdfs:label	"dynamically"	.
 
-local:proposed_approach	rdfs:label	"proposed approach"	.
+local:argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	a	rdf:Class	;
+	rdfs:label	"argumentationbased negotiation such_as meaningbased argumentation mba"	.
 
-local:produces	rdfs:label	"produces"	.
+local:meaningbased_argumentation_mba	a	rdf:Class	;
+	rdfs:label	"meaningbased argumentation mba"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:negotiation	a	rdf:Class	;
+	rdfs:label	"negotiation"	.
 
-local:alignments	rdfs:label	"alignments"	.
+local:argumentation_mba	a	rdf:Class	;
+	rdfs:label	"argumentation mba"	.
 
-local:enabling	rdfs:label	"enabling"	.
+local:meaningbased	a	rdf:Class	;
+	rdfs:label	"meaningbased"	.
 
-local:compare	rdfs:label	"compare"	.
+local:argumentationbased_negotiation	a	rdf:Class	;
+	rdfs:label	"argumentationbased negotiation"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:generated	rdfs:label	"generated"	.
+local:various_approaches	a	rdf:Class	;
+	rdfs:label	"various approaches"	.
 
-local:generated_alignments	rdfs:label	"generated alignments"	.
+local:various	a	rdf:Class	;
+	rdfs:label	"various"	.
 
-local:fitness_for_purpose	rdfs:label	"fitness for purpose"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:fitness	rdfs:label	"fitness"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:purpose	rdfs:label	"purpose"	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	a	rdf:Class	;
+	rdfs:label	"mutually acceptable mappings between corresponding concepts in the agents own ontologies may be determined dynamically through argumentationbased negotiation such as meaningbased argumentation mba"	.
 
-local:purpose_of_generated_alignments	rdfs:label	"purpose of generated alignments"	.
+local:dynamically_determined	a	rdf:Class	;
+	rdfs:label	"dynamically determined"	.
 
-local:mba_approach	rdfs:label	"mba approach"	.
+local:determined	a	rdf:Class	;
+	rdfs:label	"determined"	.
 
-local:comparable_performance	rdfs:label	"comparable performance"	.
+local:may_dynamically_determined	a	rdf:Class	;
+	rdfs:label	"may dynamically determined"	.
 
-local:performance	rdfs:label	"performance"	.
+local:may_dynamically_determined_through_argumentationbased_negotiation	a	rdf:Class	;
+	rdfs:label	"may dynamically determined through argumentationbased negotiation"	.
 
-local:comparable	rdfs:label	"comparable"	.
+local:reconcile	a	rdf:Class	;
+	rdfs:label	"reconcile"	.
 
-local:comparable_performance_to_mba_approach	rdfs:label	"comparable performance to mba approach"	.
+local:vocabulary	a	rdf:Class	;
+	rdfs:label	"vocabulary"	.
 
-local:has	rdfs:label	"has"	.
+local:message	a	rdf:Class	;
+	rdfs:label	"message"	.
 
-#### Properties ####
+local:exchange	a	rdf:Class	;
+	rdfs:label	"exchange"	.
+
+local:reach	a	rdf:Class	;
+	rdfs:label	"reach"	.
+
+local:mutual_understanding_of_the_exchanged_message	a	rdf:Class	;
+	rdfs:label	"mutual understanding of the exchanged message"	.
+
+local:mutual_understanding	a	rdf:Class	;
+	rdfs:label	"mutual understanding"	.
+
+local:mutual	a	rdf:Class	;
+	rdfs:label	"mutual"	.
+
+local:exchanged	a	rdf:Class	;
+	rdfs:label	"exchanged"	.
+
+local:understanding	a	rdf:Class	;
+	rdfs:label	"understanding"	.
+
+local:mutual_understanding_of_exchanged_message	a	rdf:Class	;
+	rdfs:label	"mutual understanding of exchanged message"	.
+
+local:reconciling_the_vocabulary	a	rdf:Class	;
+	rdfs:label	"reconciling the vocabulary"	.
+
+local:effective_communication_in_open_environments	a	rdf:Class	;
+	rdfs:label	"effective communication in open environments"	.
+
+local:open_environments	a	rdf:Class	;
+	rdfs:label	"open environments"	.
+
+local:effective_communication	a	rdf:Class	;
+	rdfs:label	"effective communication"	.
+
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
+
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
+
+local:environments	a	rdf:Class	;
+	rdfs:label	"environments"	.
+
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
+
+local:ability_of_agents	a	rdf:Class	;
+	rdfs:label	"ability of agents"	.
+
+local:ability	a	rdf:Class	;
+	rdfs:label	"ability"	.
+
+local:reach_a_mutual_understanding_of_the_exchanged_message_by_reconciling_the_vocabulary	a	rdf:Class	;
+	rdfs:label	"reach a mutual understanding of the exchanged message by reconciling the vocabulary"	.
+
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
 #### Mapped Relations ####
 
-cso:vocabulary	rdfs:label	"vocabulary"	.
 local:ontologies	owl:sameAs	cso:ontologies	.
+cso:argumentation	rdfs:label	"argumentation"	.
 local:vocabulary	owl:sameAs	cso:vocabulary	.
 cso:communication	rdfs:label	"communication"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:communication	owl:sameAs	cso:communication	.
-cso:argumentation	rdfs:label	"argumentation"	.
 local:argumentation	owl:sameAs	cso:argumentation	.
+cso:vocabulary	rdfs:label	"vocabulary"	.
+local:communication	owl:sameAs	cso:communication	.
+cso:ontologies	rdfs:label	"ontologies"	.
 
 #### Relations ####
 
-local:open	rdfs:member	local:open_environments	.
-local:relies	vn.role:Theme	local:ability_of_agents	.
-local:meaningbased_argumentation_mba	local:_mba	local:meaningbased_argumentation	.
-local:comparable	rdfs:member	local:comparable_performance	.
-local:ability_of_agents	local:of_agents	local:ability	.
-local:corresponding_concepts_in_agents_own_ontologies	local:correspondingconcepts_in	local:agents_own_ontologies	.
-local:compare	vn.role:Agent	local:purpose_of_generated_alignments	.
-local:purpose_of_generated_alignments	local:of_generatedalignments	local:purpose	.
-local:generated	vn.role:Theme2	local:alignments	.
-local:private_acceptability_threshold	rdfs:subClassOf	local:threshold	.
+local:s6	local:AM-MNR	local:empirically	.
+local:reach_a_mutual_understanding_of_the_exchanged_message_by_reconciling_the_vocabulary	rdfs:member	local:mutual_understanding	.
+local:agent_communication	rdfs:member	local:agent	.
+local:s6	rdf:object	local:approach_meaningbased_argumentation	.
+local:s2.1	rdf:subject	local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:meaningbased_argumentation_mba	.
+local:effective_communication_in_open_environments	rdfs:member	local:open_environments	.
+local:s10	rdf:object	local:fitness_purpose_of_the_generated_alignments	.
+local:s5.1	rdf:subject	local:approach	.
+local:mutual_understanding	rdfs:member	local:mutual	.
+local:mutually_acceptable_mappings	rdfs:member	local:mutually_acceptable	.
+local:comparable_performance_to_the_mba_approach	rdfs:member	local:comparable_performance	.
+local:s5.4	rdf:predicate	local:enable	.
 local:larger_better_agreed	rdfs:subClassOf	local:better_agreed	.
-local:exchanged	rdfs:member	local:exchanged_message	.
-local:compare	vn.role:Agent	local:meaningbased_argumentation	.
-local:exchanged	vn.role:object	local:message	.
-local:private_acceptability	rdfs:member	local:private_acceptability_threshold	.
-local:reconciling	vn.role:Patient1	local:agents	.
-local:compare	local:AM-MNR	local:empirically	.
-local:argumentationbased_negotiation_suchas_meaningbased_argumentation	local:argumentation-basednegotiation_such_as	local:meaningbased_argumentation	.
-local:private_acceptability	rdfs:subClassOf	local:acceptability	.
-local:open_environments	rdfs:subClassOf	local:environments	.
-local:meaningbased	rdfs:member	local:meaningbased_argumentation	.
-local:effective_communication	rdfs:subClassOf	local:communication	.
-local:allows	vn.role:Theme	local:agents	.
-local:considered	vn.role:Theme	local:may_dynamically_determined_through_argumentationbased_negotiation	.
-local:purpose_of_generated_alignments	local:purpose_of	local:generated_alignments	.
-local:may_dynamically_determined_through_argumentationbased_negotiation	local:maydynamicallydetermined_through	local:argumentationbased_negotiation	.
-local:private	rdfs:member	local:private_acceptability	.
-local:may_dynamically_determined_through_argumentationbased_negotiation	local:through_argumentation-basednegotiation	local:may_dynamically_determined	.
-local:generated_alignments	rdfs:subClassOf	local:alignments	.
-local:agreed	vn.role:Actor1	local:alignments	.
-local:evaluate	vn.role:Agent	local:we	.
-local:determined	local:AM-MNR	local:dynamically	.
-local:relies	vn.role:Agent	local:effective_communication_in_open_environments	.
-local:mutually_acceptable	rdfs:member	local:mutually_acceptable_mappings	.
-local:mappings	rdfs:member	local:mappings_agents	.
-local:meaningbased_argumentation	rdfs:subClassOf	local:argumentation	.
-local:mutual_understanding_of_exchanged_message	local:mutualunderstanding_of	local:exchanged_message	.
-local:express	vn.role:Theme	local:agents	.
-local:various	rdfs:member	local:various_approaches	.
-local:corresponding_concepts_in_agents_own_ontologies	local:in_agentsownontologies	local:corresponding_concepts	.
-local:determined	local:AM-MNR	local:argumentationbased_negotiation_suchas_meaningbased_argumentation	.
-local:has	vn.role:Experiencer	local:proposed_approach	.
-local:argumentationbased	rdfs:member	local:argumentationbased_negotiation	.
-local:effective	rdfs:member	local:effective_communication	.
-local:mutual_understanding	rdfs:subClassOf	local:understanding	.
-local:thus_better	rdfs:subClassOf	local:better	.
-local:produces	vn.role:Product	local:better_agreed	.
-local:dynamic	rdfs:member	local:dynamic_determination	.
-local:reach	vn.role:Theme	local:mutual_understanding_of_exchanged_message	.
-local:mba	rdfs:member	local:mba_approach	.
-local:demonstrate	vn.role:Recipient	local:we	.
-local:meaningbased_argumentation_mba	local:meaning-basedargumentation_	local:mba	.
-local:may_dynamically_determined	rdfs:subClassOf	local:dynamically_determined	.
-local:agent_communication	rdfs:subClassOf	local:communication	.
-local:dynamic_determination_of_acceptable_mappings	local:of_acceptablemappings	local:dynamic_determination	.
-local:novel_approach	rdfs:subClassOf	local:approach	.
-local:acceptable_mappings_between_corresponding_concepts	local:acceptablemappings_between	local:corresponding_concepts	.
-local:mutually_acceptable	rdfs:subClassOf	local:acceptable	.
-local:own	rdfs:member	local:own_ontologies	.
-local:reconciling	vn.role:Patient2	local:vocabulary	.
-local:mutual_understanding_of_exchanged_message	local:of_exchangedmessage	local:mutual_understanding	.
-local:reach	vn.role:Agent	local:agents	.
-local:novel_approach_to_dynamic_determination	local:to_dynamicdetermination	local:novel_approach	.
-local:private_acceptability_threshold_over_types	local:over_types	local:private_acceptability_threshold	.
-local:mba_approach	rdfs:subClassOf	local:approach	.
-local:exchanged_message	rdfs:subClassOf	local:message	.
-local:generated	rdfs:member	local:generated_alignments	.
-local:acceptability_threshold	rdfs:subClassOf	local:threshold	.
-local:allows	vn.role:Agent	local:acceptable_mappings	.
-local:express	vn.role:Agent	local:private_acceptability_threshold_over_types	.
-local:agents_own_ontologies	rdfs:subClassOf	local:own_ontologies	.
-local:acceptable_mappings	rdfs:subClassOf	local:mappings	.
-local:better_agreed	rdfs:subClassOf	local:agreed	.
-local:determined	local:AM-MOD	local:may	.
-local:present	local:AM-LOC	local:paper	.
-local:evaluate	vn.role:Theme	local:fitness_for_purpose	.
-local:present	vn.role:Agent	local:we	.
-local:demonstrate	local:AM-MNR	local:empirically	.
-local:proposed	vn.role:Topic	local:approach	.
-local:acceptability	rdfs:member	local:acceptability_threshold	.
-local:ability_of_agents	local:ability_of	local:agents	.
-local:argumentationbased_negotiation_suchas_meaningbased_argumentation	local:such_as_meaning-basedargumentation	local:argumentationbased_negotiation	.
-local:determined	vn.role:Theme	local:acceptable_mappings_between_corresponding_concepts	.
-local:demonstrate	vn.role:Cause	local:produces	.
-local:novel	rdfs:member	local:novel_approach	.
-local:express_over_types	local:over_types	local:express	.
-local:produces	vn.role:Agent	local:proposed_approach	.
-local:acceptable	rdfs:member	local:acceptable_mappings	.
-local:private_acceptability_threshold	rdfs:subClassOf	local:acceptability_threshold	.
-local:mutually_acceptable_mappings	rdfs:subClassOf	local:mappings	.
-local:fitness_for_purpose	local:for_purpose	local:fitness	.
-local:comparable_performance_to_mba_approach	local:to_mbaapproach	local:comparable_performance	.
-local:relies	local:AM-PNC	local:reach	.
-local:compare	vn.role:Patient2	local:approach	.
-local:fitness_for_purpose	local:fitness_for	local:purpose	.
-local:considered	vn.role:Agent	local:various_approaches	.
-local:mutually	rdfs:member	local:mutually_acceptable	.
-local:private_acceptability_threshold_over_types	local:privateacceptabilitythreshold_over	local:types	.
-local:corresponding_concepts	rdfs:subClassOf	local:concepts	.
-local:compare	vn.role:Patient2	local:fitness	.
-local:proposed_approach	rdfs:subClassOf	local:approach	.
-local:enabling	vn.role:Patient	local:agent_communication	.
-local:novel_approach_to_dynamic_determination	local:novelapproach_to	local:dynamic_determination	.
-local:express_over_types	local:express_over	local:types	.
-local:effective_communication_in_open_environments	local:in_openenvironments	local:effective_communication	.
-local:acceptable_mappings_between_corresponding_concepts	local:between_correspondingconcepts	local:acceptable_mappings	.
-local:dynamic_determination	rdfs:subClassOf	local:determination	.
-local:types_of_mappings_agents	local:of_mappingsagents	local:types	.
-local:effective_communication_in_open_environments	local:effectivecommunication_in	local:open_environments	.
-local:own_ontologies	rdfs:subClassOf	local:ontologies	.
-local:dynamic_determination_of_acceptable_mappings	local:dynamicdetermination_of	local:acceptable_mappings	.
-local:mappings_agents	rdfs:subClassOf	local:agents	.
-local:various_approaches	rdfs:subClassOf	local:approaches	.
-local:argumentationbased_negotiation	rdfs:subClassOf	local:negotiation	.
-local:types_of_mappings_agents	local:types_of	local:mappings_agents	.
-local:present	vn.role:Theme	local:prefer	.
-local:mutual	rdfs:member	local:mutual_understanding	.
-local:agent	rdfs:member	local:agent_communication	.
-local:demonstrate	vn.role:Cause	local:has	.
-local:comparable_performance_to_mba_approach	local:comparableperformance_to	local:mba_approach	.
-local:compare	vn.role:Patient1	local:we	.
-local:has	vn.role:Stimulus	local:comparable_performance_to_mba_approach	.
+local:s10	rdf:predicate	local:compare	.
+local:s2.1	local:AM-MOD	local:may	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:mutually_acceptable_mappings	.
+local:agents_to_express_a_private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:agents	.
+local:s9	rdf:subject	local:we	.
+local:s6	rdf:subject	local:we	.
+local:acceptable_mappings_between_corresponding_concepts	rdfs:member	local:acceptable_mappings	.
+local:fitness_purpose_of_generated_alignments	rdfs:member	local:generated_alignments	.
+local:agents_to_express_a_private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:types	.
 local:comparable_performance	rdfs:subClassOf	local:performance	.
+local:s9	rdf:predicate	local:evaluate	.
+local:reach_a_mutual_understanding_of_the_exchanged_message_by_reconciling_the_vocabulary	rdfs:member	local:vocabulary	.
+local:private_acceptability	rdfs:subClassOf	local:acceptability	.
+local:dynamic_determination_of_mutually_acceptable_mappings	rdfs:member	local:dynamic_determination	.
+local:argumentationbased_negotiation	rdfs:subClassOf	local:negotiation	.
+local:comparable_performance_to_mba_approach	rdfs:member	local:mba_approach	.
+local:dynamic_determination_of_acceptable_mappings	rdfs:member	local:acceptable_mappings	.
 local:dynamically_determined	rdfs:subClassOf	local:determined	.
+local:mba_approach	rdfs:subClassOf	local:approach	.
+local:effective_communication_in_open_environments	rdfs:member	local:effective_communication	.
+local:acceptability_threshold	rdfs:member	local:acceptability	.
+local:meaningbased_argumentation	rdfs:member	local:meaningbased	.
+local:generated_alignments	rdfs:subClassOf	local:alignments	.
+local:argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:meaningbased_argumentation_mba	.
+local:comparable_performance	rdfs:member	local:comparable	.
+local:types_of_mappings_agents	rdfs:member	local:mappings_agents	.
+local:s1.2	rdf:subject	local:message	.
+local:mutual_understanding_of_exchanged_message	rdfs:member	local:mutual_understanding	.
+local:s1.2	rdfs:member	local:exchanged	.
+local:various_approaches	rdfs:member	local:various	.
+local:s8	rdf:object	local:proposed_approach_has_comparable_performance_to_the_mba_approach	.
+local:corresponding_concepts_in_agents	rdfs:member	local:corresponding_concepts	.
+local:s8	rdf:subject	local:we	.
+local:s5.4	rdf:subject	local:agent_communication	.
+local:novel_approach_to_the_dynamic_determination_of_mutually_acceptable_mappings_prefer	rdfs:member	local:dynamic_determination	.
+local:s8.2	rdf:subject	local:proposed_approach	.
+local:types_of_mappings_agents	rdfs:member	local:types	.
+local:s8.1	rdfs:subClassOf	local:approach	.
+local:fitness_for_purpose	rdfs:member	local:purpose	.
+local:fitness_purpose	rdfs:member	local:fitness	.
+local:larger_agreed_alignments_thus_better_enabling_agent_communication	rdfs:member	local:agent_communication	.
+local:novel_approach_to_dynamic_determination	rdfs:member	local:dynamic_determination	.
+local:express_over_types	rdfs:member	local:express	.
+local:s8	local:AM-MNR	local:empirically	.
+local:s1.3	rdf:predicate	local:reconcile	.
+local:private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:private_acceptability_threshold	.
+local:effective_communication	rdfs:member	local:effective	.
+local:larger_agreed_alignments_thus_better_enabling_agent_communication	rdfs:member	local:alignments	.
+local:s1.1	rdf:predicate	local:reach	.
+local:novel_approach_to_dynamic_determination	rdfs:member	local:novel_approach	.
+local:argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:negotiation	.
+local:s8.1	rdf:predicate	local:propose	.
+local:s4	rdf:subject	local:mutually_acceptable_mappings	.
+local:s8.1	rdf:subject	local:approach	.
+local:fitness_for_purpose_of_the_generated_alignments	rdfs:member	local:purpose	.
+local:private_acceptability_threshold_over_types	rdfs:member	local:private_acceptability_threshold	.
+local:agents_to_express_a_private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:mappings_agents	.
+local:s9	rdf:object	local:fitness_for_purpose_of_the_generated_alignments	.
+local:s0	rdf:predicate	local:use	.
+local:s3	rdf:object	local:novel_approach_to_the_dynamic_determination_of_mutually_acceptable_mappings_prefer	.
+local:may_dynamically_determined_through_argumentationbased_negotiation	rdfs:member	local:argumentationbased_negotiation	.
+local:private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:mappings_agents	.
+local:s2.1	local:AM-MNR	local:argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	.
+local:s5.1	rdf:predicate	local:propose	.
+local:argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:argumentationbased_negotiation	.
+local:may_dynamically_determined_through_argumentationbased_negotiation	rdfs:member	local:may_dynamically_determined	.
+local:s5.3	rdf:subject	local:alignments	.
+local:meaningbased_argumentation_mba	rdfs:subClassOf	local:argumentation_mba	.
+local:s4	rdf:object	local:agents_to_express_a_private_acceptability_threshold_over_the_types_of_mappings_agents	.
+local:private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:types	.
+local:effective_communication	rdfs:subClassOf	local:communication	.
+local:s0	rdf:subject	local:vocabulary	.
+local:proposed_approach_produces_larger_agreed_alignments_thus_better_enabling_agent_communication	rdfs:member	local:agent_communication	.
+local:s3.1	local:AM-LOC	local:paper	.
+local:s1.1	rdf:object	local:mutual_understanding_of_the_exchanged_message	.
+local:private_acceptability_threshold	rdfs:subClassOf	local:acceptability_threshold	.
+local:purpose_of_generated_alignments	rdfs:member	local:generated_alignments	.
+local:approach_meaningbased_argumentation	rdfs:member	local:approach	.
+local:acceptability_threshold	rdfs:subClassOf	local:threshold	.
+local:s5	rdf:object	local:proposed_approach_produces_larger_agreed_alignments_thus_better_enabling_agent_communication	.
+local:mappings_agents	rdfs:member	local:mappings	.
+local:s1	rdf:object	local:ability_of_agents	.
+local:s8.2	rdf:predicate	local:have	.
+local:s5.3	rdf:predicate	local:agree	.
+local:comparable_performance_to_the_mba_approach	rdfs:member	local:mba_approach	.
+local:s1	rdf:subject	local:effective_communication_in_open_environments	.
+local:s8.2	rdf:object	local:comparable_performance_to_the_mba_approach	.
+local:ability_of_agents	rdfs:member	local:ability	.
+local:private_acceptability_threshold	rdfs:subClassOf	local:threshold	.
+local:comparable_performance_to_mba_approach	rdfs:member	local:comparable_performance	.
+local:s1.1	rdf:subject	local:agents	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies	rdfs:member	local:agents	.
+local:private_acceptability_threshold	rdfs:member	local:private_acceptability	.
+local:mutual_understanding	rdfs:subClassOf	local:understanding	.
+local:private_acceptability_threshold_over_types	rdfs:member	local:types	.
+local:s5.2	rdf:object	local:larger_agreed_alignments_thus_better_enabling_agent_communication	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies	rdfs:member	local:own_ontologies	.
+local:thus_better	rdfs:subClassOf	local:better	.
+local:s2	rdf:predicate	local:consider	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:agents	.
+local:s2	rdf:subject	local:various_approaches	.
+local:s3.1	rdf:subject	local:dynamic_determination_of_mutually_acceptable_mappings	.
+local:s1.3	rdf:object	local:vocabulary	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies	rdfs:member	local:concepts	.
+local:fitness_for_purpose	rdfs:member	local:fitness	.
+local:mutually_acceptable_mappings	rdfs:subClassOf	local:mappings	.
+local:s2.1	local:AM-MNR	local:dynamically	.
+local:approach_meaningbased_argumentation	rdfs:subClassOf	local:meaningbased_argumentation	.
+local:argumentation_mba	rdfs:member	local:argumentation	.
+local:proposed_approach_has_comparable_performance_to_the_mba_approach	rdfs:member	local:comparable_performance	.
+local:proposed_approach_produces_larger_agreed_alignments_thus_better_enabling_agent_communication	rdfs:member	local:approach	.
+local:corresponding_concepts	rdfs:subClassOf	local:concepts	.
+local:s2.1	rdf:predicate	local:determine	.
+local:meaningbased_argumentation_mba	rdfs:subClassOf	local:mba	.
+local:mutual_understanding_of_exchanged_message	rdfs:member	local:s1.2	.
+local:s10	rdf:subject	local:we	.
+local:s3.1	rdf:predicate	local:prefer	.
+local:fitness_for_purpose_of_the_generated_alignments	rdfs:member	local:fitness	.
+local:novel_approach	rdfs:member	local:novel	.
+local:s5.2	rdf:subject	local:s8.1	.
+local:mutually_acceptable	rdfs:subClassOf	local:acceptable	.
+local:mappings_agents	rdfs:subClassOf	local:agents	.
+local:agent_communication	rdfs:subClassOf	local:communication	.
+local:meaningbased_argumentation_mba	rdfs:member	local:meaningbased_argumentation	.
+local:fitness_purpose_of_the_generated_alignments	rdfs:member	local:generated_alignments	.
+local:s5	rdf:subject	local:we	.
+local:reach_a_mutual_understanding_of_the_exchanged_message_by_reconciling_the_vocabulary	rdfs:member	local:message	.
+local:corresponding_concepts_in_agents	rdfs:member	local:agents	.
+local:fitness_purpose_of_generated_alignments	rdfs:member	local:fitness_purpose	.
+local:novel_approach_to_the_dynamic_determination_of_mutually_acceptable_mappings_prefer	rdfs:member	local:mutually_acceptable_mappings	.
+local:dynamic_determination	rdfs:member	local:dynamic	.
+local:s2	rdf:object	local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	.
+local:s1.3	rdf:subject	local:agents	.
+local:novel_approach	rdfs:subClassOf	local:approach	.
+local:s5.1	rdfs:subClassOf	local:approach	.
+local:acceptable_mappings_between_corresponding_concepts	rdfs:member	local:corresponding_concepts	.
+local:own_ontologies	rdfs:subClassOf	local:ontologies	.
+local:mutually_acceptable	rdfs:member	local:mutually	.
+local:s5.2	rdf:predicate	local:produce	.
+local:s4.1	rdf:object	local:private_acceptability_threshold_over_the_types_of_mappings_agents	.
+local:fitness_for_purpose_of_the_generated_alignments	rdfs:member	local:generated_alignments	.
+local:approach_meaningbased_argumentation	rdfs:member	local:argumentation	.
+local:meaningbased_argumentation	rdfs:subClassOf	local:argumentation	.
+local:open_environments	rdfs:member	local:open	.
+local:dynamic_determination	rdfs:subClassOf	local:determination	.
+local:s8	rdf:predicate	local:demonstrate	.
+local:dynamic_determination_of_mutually_acceptable_mappings	rdfs:member	local:mutually_acceptable_mappings	.
+local:mutual_understanding_of_the_exchanged_message	rdfs:member	local:mutual_understanding	.
+local:private_acceptability	rdfs:member	local:private	.
+local:s4.1	rdf:subject	local:agents	.
+local:s1	local:AM-PNC	local:reach_a_mutual_understanding_of_the_exchanged_message_by_reconciling_the_vocabulary	.
+local:proposed_approach_has_comparable_performance_to_the_mba_approach	rdfs:member	local:approach	.
+local:fitness_purpose	rdfs:subClassOf	local:purpose	.
+local:mba_approach	rdfs:member	local:mba	.
+local:own_ontologies	rdfs:member	local:own	.
+local:better_agreed	rdfs:subClassOf	local:agreed	.
+local:open_environments	rdfs:subClassOf	local:environments	.
+local:fitness_purpose_of_the_generated_alignments	rdfs:member	local:fitness_purpose	.
+local:s3	rdf:subject	local:we	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:concepts	.
+local:mutual_understanding_of_the_exchanged_message	rdfs:member	local:s1.2	.
+local:purpose_of_generated_alignments	rdfs:member	local:purpose	.
+local:s6	rdf:predicate	local:compare	.
+local:agents_to_express_a_private_acceptability_threshold_over_the_types_of_mappings_agents	rdfs:member	local:private_acceptability_threshold	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:negotiation	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies_may_be_determined_dynamically_through_argumentationbased_negotiation_such_as_meaningbased_argumentation_mba	rdfs:member	local:own_ontologies	.
+local:argumentation_mba	rdfs:subClassOf	local:mba	.
+local:mutually_acceptable_mappings_between_corresponding_concepts_in_the_agents_own_ontologies	rdfs:member	local:mutually_acceptable_mappings	.
+local:novel_approach_to_the_dynamic_determination_of_mutually_acceptable_mappings_prefer	rdfs:member	local:novel_approach	.
+local:s1.2	rdf:predicate	local:exchange	.
+local:proposed_approach_produces_larger_agreed_alignments_thus_better_enabling_agent_communication	rdfs:member	local:alignments	.
+local:ability_of_agents	rdfs:member	local:agents	.
+local:s5	rdf:predicate	local:demonstrate	.
+local:s4.1	rdf:predicate	local:express	.
+local:may_dynamically_determined	rdfs:subClassOf	local:dynamically_determined	.
+local:s3	rdf:predicate	local:present	.
+local:proposed_approach	rdfs:subClassOf	local:approach	.
+local:acceptable_mappings	rdfs:member	local:acceptable	.
+local:s3	local:AM-LOC	local:paper	.
+local:various_approaches	rdfs:subClassOf	local:approaches	.
+local:s1.1	local:AM-MNR	local:reconciling_the_vocabulary	.
+local:acceptable_mappings	rdfs:subClassOf	local:mappings	.
+local:dynamic_determination_of_acceptable_mappings	rdfs:member	local:dynamic_determination	.
+local:proposed_approach_has_comparable_performance_to_the_mba_approach	rdfs:member	local:mba_approach	.
+local:generated_alignments	rdfs:member	local:generated	.
+local:express_over_types	rdfs:member	local:types	.
+local:s4	rdf:predicate	local:allow	.
+local:s1.2	rdfs:subClassOf	local:message	.
+local:s5	local:AM-MNR	local:empirically	.
+local:s1	rdf:predicate	local:rely	.

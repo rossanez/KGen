@@ -1,517 +1,814 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s26	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s25	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s24	a	rdf:Statement	;
+	rdfs:label	"we compare the strategies"	.
+
+local:s23	a	rdf:Statement	;
+	rdfs:label	"we evaluate the strategies on a dataset with 5000 questions"	.
+
+local:s22.1	a	rdf:Statement	;
+	rdfs:label	"predict relations"	.
+
+local:s22	a	rdf:Statement	;
+	rdfs:label	"the first strategy relies on reranking steps in order to predict relations"	.
+
+local:s21.1	a	rdf:Statement	;
+	rdfs:label	"the first strategy predict relations"	.
+
+local:s21	a	rdf:Statement	;
+	rdfs:label	"the first strategy relies on three base features in order to predict relations"	.
+
+local:s20.1	a	rdf:Statement	;
+	rdfs:label	"predict entities"	.
+
+local:s20	a	rdf:Statement	;
+	rdfs:label	"the first strategy relies on reranking steps in order to predict entities"	.
+
+local:s19.1	a	rdf:Statement	;
+	rdfs:label	"the first strategy predict entities"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"the first strategy relies on three base features in order to predict entities"	.
+
+local:s18.2	a	rdf:Statement	;
+	rdfs:label	"the first strategy exploit the connection density between nodes in the knowledge graph"	.
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"the first strategy machine learning"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"the first strategy uses machine learning in order to exploit the connection density between nodes in the knowledge graph"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"in order to be computationally feasible we employ approximate gtsp solvers"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"two different solution strategies for which we provide a comparative analysis in this paper"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"the joint entity and relation linking tasks as an instance of the generalised travelling salesman problem"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"earl implements two different solution strategies the first strategy is a formalisation of the joint entity and relation gtsp"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose relation"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a framework called earl"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"earl which performs entity"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"entity"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"linking as a joint task"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose a framework"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"entity"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"traditionally relation performed either as dependent sequential tasks"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"traditionally relation performed either as independent parallel tasks"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"traditionally entity performed either as independent parallel tasks"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"traditionally entity performed either as dependent sequential tasks"	.
+
+local:s1.3	a	rdf:Statement	;
+	rdfs:label	"many question answering systems over knowledge graphs connect the natural language input to the underlying knowledge graph"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"linking components"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"many question answering systems over knowledge graphs rely on relation linking components in order to connect the natural language input to the underlying knowledge graph"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"answering systems"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"connect the natural language input to the underlying knowledge graph"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"linking components in order to connect the natural language input to the underlying knowledge graph"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"many question answering systems over knowledge graphs rely on entity linking components in order to connect the natural language input to the underlying knowledge graph"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"answering systems"	.
+
+
 #### Classes ####
 
-local:answering	rdfs:label	"answering"	.
+local:link	a	rdf:Class	;
+	rdfs:label	"link"	.
 
-local:systems	rdfs:label	"systems"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:many	rdfs:label	"many"	.
+local:strategies_on_a_dataset	a	rdf:Class	;
+	rdfs:label	"strategies on a dataset"	.
 
-local:many_question	rdfs:label	"many question"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:question	rdfs:label	"question"	.
+local:strategies_on_dataset	a	rdf:Class	;
+	rdfs:label	"strategies on dataset"	.
 
-local:answering_systems	rdfs:label	"answering systems"	.
+local:5000_questions	a	rdf:Class	;
+	rdfs:label	"5000 questions"	.
 
-local:answering_systems_over_knowledge_graphs	rdfs:label	"answering systems over knowledge graphs"	.
+local:questions	a	rdf:Class	;
+	rdfs:label	"questions"	.
 
-local:rely	rdfs:label	"rely"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:linking	rdfs:label	"linking"	.
+local:predict	a	rdf:Class	;
+	rdfs:label	"predict"	.
 
-local:natural_language	rdfs:label	"natural language"	.
+local:first_strategy	a	rdf:Class	;
+	rdfs:label	"first strategy"	.
 
-local:natural_language_input	rdfs:label	"natural language input"	.
+local:strategy	a	rdf:Class	;
+	rdfs:label	"strategy"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:natural	rdfs:label	"natural"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:language	rdfs:label	"language"	.
+local:reranking_steps	a	rdf:Class	;
+	rdfs:label	"reranking steps"	.
 
-local:language_input	rdfs:label	"language input"	.
+local:order_to_predict_relations	a	rdf:Class	;
+	rdfs:label	"order to predict relations"	.
 
-local:input	rdfs:label	"input"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:graph	rdfs:label	"graph"	.
+local:three_base_features	a	rdf:Class	;
+	rdfs:label	"three base features"	.
 
-local:underlying_knowledge_graph	rdfs:label	"underlying knowledge graph"	.
+local:base_features	a	rdf:Class	;
+	rdfs:label	"base features"	.
 
-local:connect_to_underlying_knowledge_graph	rdfs:label	"connect to underlying knowledge graph"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:connect	rdfs:label	"connect"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:order	rdfs:label	"order"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:components	rdfs:label	"components"	.
+local:order_to_predict_entities	a	rdf:Class	;
+	rdfs:label	"order to predict entities"	.
 
-local:underlying	rdfs:label	"underlying"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:traditionally	rdfs:label	"traditionally"	.
+local:connection_density_between_nodes_in_the_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"connection density between nodes in the knowledge graph"	.
 
-local:traditionally_linking	rdfs:label	"traditionally linking"	.
+local:connection_density	a	rdf:Class	;
+	rdfs:label	"connection density"	.
 
-local:performed	rdfs:label	"performed"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:independent_parallel_tasks	rdfs:label	"independent parallel tasks"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:tasks	rdfs:label	"tasks"	.
+local:connection	a	rdf:Class	;
+	rdfs:label	"connection"	.
 
-local:dependent_sequential	rdfs:label	"dependent sequential"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:dependent_sequential_tasks	rdfs:label	"dependent sequential tasks"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:sequential	rdfs:label	"sequential"	.
+local:density	a	rdf:Class	;
+	rdfs:label	"density"	.
 
-local:sequential_tasks	rdfs:label	"sequential tasks"	.
+local:connection_density_between_nodes	a	rdf:Class	;
+	rdfs:label	"connection density between nodes"	.
 
-local:independent_parallel	rdfs:label	"independent parallel"	.
+local:nodes_in_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"nodes in knowledge graph"	.
 
-local:dependent	rdfs:label	"dependent"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:independent	rdfs:label	"independent"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:parallel	rdfs:label	"parallel"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:parallel_tasks	rdfs:label	"parallel tasks"	.
+local:machine_learning	a	rdf:Class	;
+	rdfs:label	"machine learning"	.
 
-local:propose	rdfs:label	"propose"	.
+local:learning	a	rdf:Class	;
+	rdfs:label	"learning"	.
 
-local:paper	rdfs:label	"paper"	.
+local:order_to_exploit_the_connection_density_between_nodes_in_the_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"order to exploit the connection density between nodes in the knowledge graph"	.
 
-local:we	rdfs:label	"we"	.
+local:employ	a	rdf:Class	;
+	rdfs:label	"employ"	.
 
-local:joint	rdfs:label	"joint"	.
+local:approximate_gtsp_solvers	a	rdf:Class	;
+	rdfs:label	"approximate gtsp solvers"	.
 
-local:joint_task	rdfs:label	"joint task"	.
+local:gtsp_solvers	a	rdf:Class	;
+	rdfs:label	"gtsp solvers"	.
 
-local:task	rdfs:label	"task"	.
+local:solvers	a	rdf:Class	;
+	rdfs:label	"solvers"	.
 
-local:entity_linking	rdfs:label	"entity linking"	.
+local:approximate_gtsp	a	rdf:Class	;
+	rdfs:label	"approximate gtsp"	.
 
-local:entity	rdfs:label	"entity"	.
+local:approximate	a	rdf:Class	;
+	rdfs:label	"approximate"	.
 
-local:entity_linking_relation	rdfs:label	"entity linking relation"	.
+local:gtsp	a	rdf:Class	;
+	rdfs:label	"gtsp"	.
 
-local:relation	rdfs:label	"relation"	.
+local:order_to_be_computationally_feasible	a	rdf:Class	;
+	rdfs:label	"order to be computationally feasible"	.
 
-local:linking_as_joint_task	rdfs:label	"linking as joint task"	.
+local:computationally_feasible	a	rdf:Class	;
+	rdfs:label	"computationally feasible"	.
 
-local:called	rdfs:label	"called"	.
+local:feasible	a	rdf:Class	;
+	rdfs:label	"feasible"	.
 
-local:framework	rdfs:label	"framework"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:earl	rdfs:label	"earl"	.
+local:comparative_analysis_two_different_solution_strategies	a	rdf:Class	;
+	rdfs:label	"comparative analysis two different solution strategies"	.
 
-local:performs	rdfs:label	"performs"	.
+local:comparative_analysis	a	rdf:Class	;
+	rdfs:label	"comparative analysis"	.
 
-local:as	rdfs:label	"as"	.
+local:different_solution_strategies	a	rdf:Class	;
+	rdfs:label	"different solution strategies"	.
 
-local:joint_joint	rdfs:label	"joint joint"	.
+local:different_solution	a	rdf:Class	;
+	rdfs:label	"different solution"	.
 
-local:joint_joint_task	rdfs:label	"joint joint task"	.
+local:analysis	a	rdf:Class	;
+	rdfs:label	"analysis"	.
 
-local:implements	rdfs:label	"implements"	.
+local:comparative	a	rdf:Class	;
+	rdfs:label	"comparative"	.
 
-local:different_solution_strategies	rdfs:label	"different solution strategies"	.
+local:solution	a	rdf:Class	;
+	rdfs:label	"solution"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:solution_strategies	a	rdf:Class	;
+	rdfs:label	"solution strategies"	.
 
-local:solution	rdfs:label	"solution"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:solution_strategies	rdfs:label	"solution strategies"	.
+local:two_different_solution_strategies	a	rdf:Class	;
+	rdfs:label	"two different solution strategies"	.
 
-local:travelling	rdfs:label	"travelling"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:travelling_salesman	rdfs:label	"travelling salesman"	.
+local:joint_entity_and_relation	a	rdf:Class	;
+	rdfs:label	"joint entity and relation"	.
 
-local:travelling_salesman_problem_lrb_gtsp_rrb	rdfs:label	"travelling salesman problem -lrb- gtsp -rrb-"	.
+local:joint_entity	a	rdf:Class	;
+	rdfs:label	"joint entity"	.
 
-local:rrb	rdfs:label	"-rrb-"	.
+local:relation	a	rdf:Class	;
+	rdfs:label	"relation"	.
 
-local:generalised	rdfs:label	"generalised"	.
+local:joint	a	rdf:Class	;
+	rdfs:label	"joint"	.
 
-local:generalised_travelling	rdfs:label	"generalised travelling"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:problem_lrb_gtsp	rdfs:label	"problem -lrb- gtsp"	.
+local:tasks_as_an_instance_of_the_generalised_travelling_salesman_problem	a	rdf:Class	;
+	rdfs:label	"tasks as an instance of the generalised travelling salesman problem"	.
 
-local:gtsp	rdfs:label	"gtsp"	.
+local:instance	a	rdf:Class	;
+	rdfs:label	"instance"	.
 
-local:salesman	rdfs:label	"salesman"	.
+local:generalised_travelling_salesman_problem	a	rdf:Class	;
+	rdfs:label	"generalised travelling salesman problem"	.
 
-local:salesman_problem	rdfs:label	"salesman problem"	.
+local:tasks	a	rdf:Class	;
+	rdfs:label	"tasks"	.
 
-local:different	rdfs:label	"different"	.
+local:travelling_salesman	a	rdf:Class	;
+	rdfs:label	"travelling salesman"	.
 
-local:different_solution	rdfs:label	"different solution"	.
+local:travelling	a	rdf:Class	;
+	rdfs:label	"travelling"	.
 
-local:travelling_salesman_problem_lrb_gtsp	rdfs:label	"travelling salesman problem -lrb- gtsp"	.
+local:generalised_travelling_salesman	a	rdf:Class	;
+	rdfs:label	"generalised travelling salesman"	.
 
-local:joint_entity	rdfs:label	"joint entity"	.
+local:generalised_travelling	a	rdf:Class	;
+	rdfs:label	"generalised travelling"	.
 
-local:salesman_problem_lrb	rdfs:label	"salesman problem -lrb-"	.
+local:travelling_salesman_problem	a	rdf:Class	;
+	rdfs:label	"travelling salesman problem"	.
 
-local:lrb	rdfs:label	"-lrb-"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:lrb_gtsp	rdfs:label	"-lrb- gtsp"	.
+local:salesman	a	rdf:Class	;
+	rdfs:label	"salesman"	.
 
-local:salesman_problem_lrb_gtsp	rdfs:label	"salesman problem -lrb- gtsp"	.
+local:generalised	a	rdf:Class	;
+	rdfs:label	"generalised"	.
 
-local:generalised_travelling_salesman_problem_lrb_gtsp_rrb	rdfs:label	"generalised travelling salesman problem -lrb- gtsp -rrb-"	.
+local:salesman_problem	a	rdf:Class	;
+	rdfs:label	"salesman problem"	.
 
-local:problem	rdfs:label	"problem"	.
+local:tasks_as_instance	a	rdf:Class	;
+	rdfs:label	"tasks as instance"	.
 
-local:gtsp_rrb	rdfs:label	"gtsp -rrb-"	.
+local:instance_of_generalised_travelling_salesman_problem	a	rdf:Class	;
+	rdfs:label	"instance of generalised travelling salesman problem"	.
 
-local:problem_lrb_gtsp_rrb	rdfs:label	"problem -lrb- gtsp -rrb-"	.
+local:earl	a	rdf:Class	;
+	rdfs:label	"earl"	.
 
-local:generalised_travelling_salesman_problem_lrb	rdfs:label	"generalised travelling salesman problem -lrb-"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:salesman_problem_lrb_gtsp_rrb	rdfs:label	"salesman problem -lrb- gtsp -rrb-"	.
+local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	a	rdf:Class	;
+	rdfs:label	"two different solution strategies the first strategy is a formalisation of the joint entity and relation gtsp"	.
 
-local:generalised_travelling_salesman_problem_lrb_gtsp	rdfs:label	"generalised travelling salesman problem -lrb- gtsp"	.
+local:formalisation	a	rdf:Class	;
+	rdfs:label	"formalisation"	.
 
-local:generalised_travelling_salesman	rdfs:label	"generalised travelling salesman"	.
+local:relation_gtsp	a	rdf:Class	;
+	rdfs:label	"relation gtsp"	.
 
-local:travelling_salesman_problem_lrb	rdfs:label	"travelling salesman problem -lrb-"	.
+local:formalisation_of_joint_entity	a	rdf:Class	;
+	rdfs:label	"formalisation of joint entity"	.
 
-local:lrb_gtsp_rrb	rdfs:label	"-lrb- gtsp -rrb-"	.
+local:formalisation_of_joint_entity_of_relation_gtsp	a	rdf:Class	;
+	rdfs:label	"formalisation of joint entity of relation gtsp"	.
 
-local:problem_lrb	rdfs:label	"problem -lrb-"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:first	rdfs:label	"first"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:first_strategy	rdfs:label	"first strategy"	.
+local:call	a	rdf:Class	;
+	rdfs:label	"call"	.
 
-local:generalised_travelling_salesman_problem	rdfs:label	"generalised travelling salesman problem"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:comparative	rdfs:label	"comparative"	.
+local:joint_task	a	rdf:Class	;
+	rdfs:label	"joint task"	.
 
-local:comparative_analysis	rdfs:label	"comparative analysis"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:strategy	rdfs:label	"strategy"	.
+local:traditionally_relation	a	rdf:Class	;
+	rdfs:label	"traditionally relation"	.
 
-local:travelling_salesman_problem	rdfs:label	"travelling salesman problem"	.
+local:traditionally	a	rdf:Class	;
+	rdfs:label	"traditionally"	.
 
-local:analysis	rdfs:label	"analysis"	.
+local:either_as_dependent_sequential_tasks	a	rdf:Class	;
+	rdfs:label	"either as dependent sequential tasks"	.
 
-local:two_different_solution_strategies	rdfs:label	"two different solution strategies"	.
+local:dependent_sequential_tasks	a	rdf:Class	;
+	rdfs:label	"dependent sequential tasks"	.
 
-local:provide_for_two_different_solution_strategies	rdfs:label	"provide for two different solution strategies"	.
+local:dependent_sequential	a	rdf:Class	;
+	rdfs:label	"dependent sequential"	.
 
-local:provide	rdfs:label	"provide"	.
+local:sequential	a	rdf:Class	;
+	rdfs:label	"sequential"	.
 
-local:provide_for_two_different_solution_strategies_in_paper	rdfs:label	"provide for two different solution strategies in paper"	.
+local:sequential_tasks	a	rdf:Class	;
+	rdfs:label	"sequential tasks"	.
 
-local:formalisation_of_joint_entity	rdfs:label	"formalisation of joint entity"	.
+local:dependent	a	rdf:Class	;
+	rdfs:label	"dependent"	.
 
-local:formalisation	rdfs:label	"formalisation"	.
+local:either_as_independent_parallel_tasks	a	rdf:Class	;
+	rdfs:label	"either as independent parallel tasks"	.
 
-local:relation_linking	rdfs:label	"relation linking"	.
+local:parallel_tasks	a	rdf:Class	;
+	rdfs:label	"parallel tasks"	.
 
-local:linking_as_instance	rdfs:label	"linking as instance"	.
+local:independent_parallel	a	rdf:Class	;
+	rdfs:label	"independent parallel"	.
 
-local:instance	rdfs:label	"instance"	.
+local:parallel	a	rdf:Class	;
+	rdfs:label	"parallel"	.
 
-local:instance_of_generalised_travelling_salesman_problem	rdfs:label	"instance of generalised travelling salesman problem"	.
+local:independent	a	rdf:Class	;
+	rdfs:label	"independent"	.
 
-local:computationally_feasible	rdfs:label	"computationally feasible"	.
+local:independent_parallel_tasks	a	rdf:Class	;
+	rdfs:label	"independent parallel tasks"	.
 
-local:feasible	rdfs:label	"feasible"	.
+local:many_question_answering_systems_over_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"many question answering systems over knowledge graphs"	.
 
-local:employ	rdfs:label	"employ"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:gtsp_solvers	rdfs:label	"gtsp solvers"	.
+local:many_question	a	rdf:Class	;
+	rdfs:label	"many question"	.
 
-local:approximate_gtsp	rdfs:label	"approximate gtsp"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:approximate	rdfs:label	"approximate"	.
+local:question	a	rdf:Class	;
+	rdfs:label	"question"	.
 
-local:solvers	rdfs:label	"solvers"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:approximate_gtsp_solvers	rdfs:label	"approximate gtsp solvers"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:uses	rdfs:label	"uses"	.
+local:answering_systems	a	rdf:Class	;
+	rdfs:label	"answering systems"	.
 
-local:machine_learning	rdfs:label	"machine learning"	.
+local:answering_systems_over_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"answering systems over knowledge graphs"	.
 
-local:learning	rdfs:label	"learning"	.
+local:connect	a	rdf:Class	;
+	rdfs:label	"connect"	.
 
-local:machine	rdfs:label	"machine"	.
+local:natural_language_input_underlying_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"natural language input underlying knowledge graph"	.
 
-local:connection	rdfs:label	"connection"	.
+local:natural_language_input	a	rdf:Class	;
+	rdfs:label	"natural language input"	.
 
-local:connection_density	rdfs:label	"connection density"	.
+local:language_input	a	rdf:Class	;
+	rdfs:label	"language input"	.
 
-local:density	rdfs:label	"density"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:connection_density_between_nodes	rdfs:label	"connection density between nodes"	.
+local:natural_language	a	rdf:Class	;
+	rdfs:label	"natural language"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:natural	a	rdf:Class	;
+	rdfs:label	"natural"	.
 
-local:nodes_in_knowledge_graph	rdfs:label	"nodes in knowledge graph"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:exploit	rdfs:label	"exploit"	.
+local:natural_language_input_underlying	a	rdf:Class	;
+	rdfs:label	"natural language input underlying"	.
 
-local:relies	rdfs:label	"relies"	.
+local:underlying	a	rdf:Class	;
+	rdfs:label	"underlying"	.
 
-local:base	rdfs:label	"base"	.
+local:components	a	rdf:Class	;
+	rdfs:label	"components"	.
 
-local:base_features	rdfs:label	"base features"	.
+local:relation_linking_components	a	rdf:Class	;
+	rdfs:label	"relation linking components"	.
 
-local:features	rdfs:label	"features"	.
+local:relation_linking	a	rdf:Class	;
+	rdfs:label	"relation linking"	.
 
-local:three_base_features	rdfs:label	"three base features"	.
+local:linking	a	rdf:Class	;
+	rdfs:label	"linking"	.
 
-local:predict	rdfs:label	"predict"	.
+local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"order to connect the natural language input to the underlying knowledge graph"	.
 
-local:entities	rdfs:label	"entities"	.
+local:underlying_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"underlying knowledge graph"	.
 
-local:relations	rdfs:label	"relations"	.
+local:connect_to_underlying_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"connect to underlying knowledge graph"	.
 
-local:reranking	rdfs:label	"re-ranking"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:reranking_steps	rdfs:label	"re-ranking steps"	.
+local:entity_linking_components	a	rdf:Class	;
+	rdfs:label	"entity linking components"	.
 
-local:steps	rdfs:label	"steps"	.
-
-local:evaluate	rdfs:label	"evaluate"	.
-
-local:strategies_on_dataset	rdfs:label	"strategies on dataset"	.
-
-local:dataset	rdfs:label	"dataset"	.
-
-local:5000_questions	rdfs:label	"5000 questions"	.
-
-local:questions	rdfs:label	"questions"	.
-
-local:compare	rdfs:label	"compare"	.
-
-#### Properties ####
+local:entity_linking	a	rdf:Class	;
+	rdfs:label	"entity linking"	.
 
 #### Mapped Relations ####
 
-local:knowledge_graphs	rdfs:member	local:knowledge_graph	.
-local:relation	rdfs:member	local:relations	.
-local:knowledge_graph	rdfs:member	local:knowledge_graph	.
-local:machine_learning	owl:sameAs	cso:machine_learning	.
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
-local:natural_language	owl:sameAs	cso:natural_language	.
-local:relations	rdfs:member	local:relation	.
-local:knowledge_graph	rdfs:member	local:knowledge_graphs	.
-local:relation	rdfs:member	local:relation	.
-local:knowledge_graphs	rdfs:member	local:knowledge_graphs	.
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
-local:relations	rdfs:member	local:relations	.
 cso:machine_learning	rdfs:label	"machine learning"	.
-local:relations	rdfs:label	"relations"	.
-local:relation	rdfs:label	"relation"	.
+local:natural_language	owl:sameAs	cso:natural_language	.
+local:machine_learning	owl:sameAs	cso:machine_learning	.
 cso:natural_language	rdfs:label	"natural language"	.
 
 #### Relations ####
 
-local:salesman_problem_lrb_gtsp	rdfs:subClassOf	local:gtsp	.
-local:answering	vn.role:Agent	local:systems	.
-local:relation_linking	local:_linking	local:relation	.
-local:travelling_salesman	rdfs:subClassOf	local:salesman	.
-local:propose	vn.role:Agent	local:we	.
-local:connection	rdfs:member	local:connection_density	.
-local:strategies_on_dataset	local:strategies_on	local:dataset	.
-local:entity_linking_relation	local:entitylinking_	local:relation	.
-local:independent_parallel	rdfs:subClassOf	local:parallel	.
-local:predict	vn.role:Recipient	local:first_strategy	.
-local:dependent_sequential	rdfs:member	local:dependent_sequential_tasks	.
-local:provide	local:AM-LOC	local:paper	.
-local:salesman_problem_lrb	rdfs:member	local:salesman_problem_lrb_gtsp	.
-local:linking	vn.role:Patient	local:as	.
-local:gtsp	rdfs:member	local:gtsp_solvers	.
-local:relies	vn.role:Agent	local:first_strategy	.
-local:base	rdfs:member	local:base_features	.
-local:travelling_salesman_problem_lrb	rdfs:subClassOf	local:lrb	.
-local:travelling	rdfs:member	local:travelling_salesman	.
-local:generalised_travelling_salesman	rdfs:subClassOf	local:salesman	.
-local:different_solution	rdfs:member	local:different_solution_strategies	.
-local:independent_parallel_tasks	rdfs:subClassOf	local:tasks	.
-local:dependent_sequential	rdfs:subClassOf	local:sequential	.
-local:approximate	rdfs:member	local:approximate_gtsp	.
-local:provide_for_two_different_solution_strategies	local:for_twodifferentsolutionstrategies	local:provide	.
-local:salesman_problem	rdfs:subClassOf	local:problem	.
-local:travelling_salesman_problem	rdfs:member	local:travelling_salesman_problem_lrb	.
-local:travelling_salesman_problem_lrb	rdfs:member	local:travelling_salesman_problem_lrb_gtsp	.
-local:uses	vn.role:Theme	local:machine_learning	.
-local:solution_strategies	rdfs:subClassOf	local:strategies	.
-local:linking_as_instance	local:linking_as	local:instance	.
-local:compare	vn.role:Patient1	local:we	.
-local:joint_joint_task	rdfs:subClassOf	local:task	.
-local:many	rdfs:member	local:many_question	.
-local:travelling_salesman	rdfs:member	local:travelling_salesman_problem	.
-local:underlying_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
-local:relies	vn.role:Theme	local:reranking_steps	.
-local:salesman	rdfs:member	local:salesman_problem	.
-local:gtsp_rrb	rdfs:subClassOf	local:rrb	.
-local:propose	vn.role:Topic	local:called	.
-local:employ	vn.role:Theme	local:approximate_gtsp_solvers	.
-local:different	rdfs:member	local:different_solution	.
-local:propose	local:AM-LOC	local:paper	.
-local:joint	rdfs:member	local:joint_entity	.
-local:linking_as_instance	local:as_instance	local:linking	.
-local:travelling_salesman_problem_lrb_gtsp	rdfs:member	local:travelling_salesman_problem_lrb_gtsp_rrb	.
-local:linking_as_joint_task	local:linking_as	local:joint_task	.
-local:evaluate	vn.role:Theme	local:strategies_on_dataset	.
-local:entity_linking	local:_linking	local:entity	.
-local:generalised_travelling_salesman	rdfs:member	local:generalised_travelling_salesman_problem	.
-local:joint_entity	rdfs:subClassOf	local:entity	.
-local:provide_for_two_different_solution_strategies_in_paper	local:providefortwodifferentsolutionstrategies_in	local:paper	.
-local:employ	vn.role:Agent	local:we	.
-local:connection_density_between_nodes	local:between_nodes	local:connection_density	.
-local:lrb_gtsp_rrb	rdfs:subClassOf	local:rrb	.
+local:s19.1	rdf:object	local:entities	.
+local:answering_systems_over_knowledge_graphs	rdfs:member	local:s1	.
+local:s20	local:AM-PNC	local:order_to_predict_entities	.
+local:s3	rdf:predicate	local:perform	.
+local:s0.1	local:AM-PNC	local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	.
+local:s18	rdf:subject	local:first_strategy	.
+local:s2	rdf:predicate	local:perform	.
+local:s24	rdf:predicate	local:compare	.
 local:computationally_feasible	rdfs:subClassOf	local:feasible	.
-local:generalised	rdfs:member	local:generalised_travelling	.
-local:linking	vn.role:Patient	local:task	.
-local:relies	vn.role:Theme	local:three_base_features	.
-local:problem_lrb	rdfs:subClassOf	local:lrb	.
-local:linking	vn.role:Patient	local:joint_joint_task	.
-local:generalised_travelling_salesman_problem_lrb_gtsp	rdfs:member	local:generalised_travelling_salesman_problem_lrb_gtsp_rrb	.
-local:approximate_gtsp	rdfs:member	local:approximate_gtsp_solvers	.
-local:relation_linking	local:relation_	local:linking	.
-local:linking_as_joint_task	local:as_jointtask	local:linking	.
-local:connection_density_between_nodes	local:connectiondensity_between	local:nodes	.
-local:joint_joint	rdfs:subClassOf	local:joint	.
-local:linking	local:AM-PNC	local:order	.
-local:generalised_travelling_salesman_problem	rdfs:member	local:generalised_travelling_salesman_problem_lrb	.
-local:joint	rdfs:member	local:joint_task	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:relies	local:AM-PNC	local:order	.
-local:different_solution_strategies	rdfs:subClassOf	local:solution_strategies	.
-local:generalised_travelling_salesman_problem_lrb_gtsp_rrb	rdfs:subClassOf	local:rrb	.
-local:provide_for_two_different_solution_strategies_in_paper	local:in_paper	local:provide_for_two_different_solution_strategies	.
-local:provide_for_two_different_solution_strategies	local:provide_for	local:two_different_solution_strategies	.
-local:implements	vn.role:Theme	local:two_different_solution_strategies	.
-local:dependent_sequential_tasks	rdfs:subClassOf	local:sequential_tasks	.
-local:rely	vn.role:Theme	local:linking	.
-local:comparative	rdfs:member	local:comparative_analysis	.
-local:lrb_gtsp_rrb	rdfs:subClassOf	local:gtsp_rrb	.
-local:connect	vn.role:Patient	local:natural_language_input	.
-local:evaluate	local:AM-MNR	local:5000_questions	.
-local:compare	vn.role:Patient2	local:strategies	.
-local:approximate_gtsp_solvers	rdfs:subClassOf	local:gtsp_solvers	.
-local:connect	vn.role:Patient1	local:underlying	.
-local:travelling_salesman_problem_lrb_gtsp	rdfs:subClassOf	local:gtsp	.
-local:lrb_gtsp	rdfs:subClassOf	local:gtsp	.
-local:natural_language	rdfs:member	local:natural_language_input	.
-local:three_base_features	rdfs:subClassOf	local:base_features	.
-local:sequential	rdfs:member	local:sequential_tasks	.
-local:generalised_travelling	rdfs:member	local:generalised_travelling_salesman	.
-local:linking	vn.role:Patient	local:components	.
-local:connect	vn.role:Agent	local:many_question	.
-local:parallel_tasks	rdfs:subClassOf	local:tasks	.
-local:independent_parallel	rdfs:member	local:independent_parallel_tasks	.
-local:provide	vn.role:Agent	local:comparative_analysis	.
-local:machine	rdfs:member	local:machine_learning	.
-local:evaluate	vn.role:Agent	local:we	.
-local:5000_questions	rdfs:subClassOf	local:questions	.
-local:learning	vn.role:Agent	local:first_strategy	.
-local:exploit	vn.role:Agent	local:first_strategy	.
-local:generalised_travelling	rdfs:subClassOf	local:travelling	.
-local:problem_lrb_gtsp_rrb	rdfs:subClassOf	local:rrb	.
-local:many_question	rdfs:subClassOf	local:question	.
-local:nodes_in_knowledge_graph	local:in_knowledgegraph	local:nodes	.
-local:nodes_in_knowledge_graph	local:nodes_in	local:knowledge_graph	.
-local:generalised_travelling_salesman_problem	rdfs:subClassOf	local:problem	.
-local:independent_parallel_tasks	rdfs:subClassOf	local:parallel_tasks	.
-local:natural_language_input	rdfs:subClassOf	local:input	.
-local:generalised_travelling_salesman_problem	rdfs:subClassOf	local:travelling_salesman_problem	.
-local:connect	vn.role:Agent	local:components	.
-local:dependent_sequential_tasks	rdfs:subClassOf	local:tasks	.
-local:connect_to_underlying_knowledge_graph	local:to_underlyingknowledgegraph	local:connect	.
-local:approximate_gtsp_solvers	rdfs:subClassOf	local:solvers	.
-local:called	vn.role:Theme	local:earl	.
-local:answering_systems	rdfs:subClassOf	local:systems	.
-local:machine_learning	rdfs:subClassOf	local:learning	.
-local:predict	vn.role:Cause	local:entities	.
-local:employ	local:AM-ADV	local:order	.
-local:different_solution_strategies	rdfs:subClassOf	local:strategies	.
-local:learning	vn.role:Agent	local:machine	.
-local:sequential_tasks	rdfs:subClassOf	local:tasks	.
-local:problem_lrb	rdfs:member	local:problem_lrb_gtsp	.
-local:problem_lrb_gtsp	rdfs:subClassOf	local:gtsp	.
-local:performs	vn.role:Theme	local:entity_linking_relation	.
-local:solution	rdfs:member	local:solution_strategies	.
-local:salesman_problem_lrb	rdfs:subClassOf	local:lrb	.
-local:uses	local:AM-PNC	local:order	.
-local:lrb	rdfs:member	local:lrb_gtsp	.
-local:salesman_problem	rdfs:member	local:salesman_problem_lrb	.
-local:reranking_steps	rdfs:subClassOf	local:steps	.
-local:language_input	rdfs:subClassOf	local:input	.
-local:natural_language	rdfs:subClassOf	local:language	.
-local:salesman_problem_lrb_gtsp	rdfs:member	local:salesman_problem_lrb_gtsp_rrb	.
-local:natural_language_input	rdfs:subClassOf	local:language_input	.
-local:problem	rdfs:member	local:problem_lrb	.
-local:independent	rdfs:member	local:independent_parallel	.
-local:rely	local:AM-PNC	local:order	.
-local:joint_joint	rdfs:member	local:joint_joint_task	.
-local:comparative_analysis	rdfs:subClassOf	local:analysis	.
-local:uses	vn.role:Agent	local:first_strategy	.
-local:predict	vn.role:Cause	local:relations	.
-local:called	vn.role:Cause	local:framework	.
-local:connection_density	rdfs:subClassOf	local:density	.
-local:connect_to_underlying_knowledge_graph	local:connect_to	local:underlying_knowledge_graph	.
-local:implements	vn.role:Agent	local:earl	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:strategies_on_dataset	local:on_dataset	local:strategies	.
-local:two_different_solution_strategies	rdfs:subClassOf	local:different_solution_strategies	.
-local:different_solution	rdfs:subClassOf	local:solution	.
-local:problem_lrb_gtsp	rdfs:member	local:problem_lrb_gtsp_rrb	.
-local:linking	vn.role:Patient	local:traditionally	.
-local:answering_systems_over_knowledge_graphs	local:answeringsystems_over	local:knowledge_graphs	.
-local:parallel	rdfs:member	local:parallel_tasks	.
-local:traditionally_linking	rdfs:subClassOf	local:linking	.
-local:salesman_problem_lrb_gtsp_rrb	rdfs:subClassOf	local:rrb	.
-local:lrb_gtsp	rdfs:member	local:lrb_gtsp_rrb	.
-local:formalisation_of_joint_entity	local:formalisation_of	local:joint_entity	.
-local:approximate_gtsp	rdfs:subClassOf	local:gtsp	.
-local:joint	rdfs:member	local:joint_joint	.
-local:travelling_salesman_problem	rdfs:subClassOf	local:salesman_problem	.
-local:instance_of_generalised_travelling_salesman_problem	local:instance_of	local:generalised_travelling_salesman_problem	.
-local:performed	vn.role:Theme	local:traditionally_linking	.
-local:formalisation_of_joint_entity	local:of_jointentity	local:formalisation	.
-local:gtsp	rdfs:member	local:gtsp_rrb	.
-local:provide	vn.role:Recipient	local:we	.
-local:travelling_salesman_problem_lrb_gtsp_rrb	rdfs:subClassOf	local:rrb	.
-local:gtsp_solvers	rdfs:subClassOf	local:solvers	.
-local:natural	rdfs:member	local:natural_language	.
-local:answering_systems_over_knowledge_graphs	local:over_knowledgegraphs	local:answering_systems	.
-local:instance_of_generalised_travelling_salesman_problem	local:of_generalisedtravellingsalesmanproblem	local:instance	.
-local:linking	vn.role:Patient	local:tasks	.
-local:generalised_travelling_salesman_problem_lrb_gtsp	rdfs:subClassOf	local:gtsp	.
+local:s1.1	rdf:subject	local:many_question_answering_systems_over_knowledge_graphs	.
+local:s19.1	rdf:subject	local:first_strategy	.
 local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:performs	vn.role:Agent	local:framework	.
-local:base_features	rdfs:subClassOf	local:features	.
-local:generalised_travelling_salesman_problem_lrb	rdfs:subClassOf	local:lrb	.
-local:first	rdfs:member	local:first_strategy	.
-local:joint_task	rdfs:subClassOf	local:task	.
-local:joint_joint_task	rdfs:subClassOf	local:joint_task	.
-local:generalised_travelling_salesman_problem_lrb	rdfs:member	local:generalised_travelling_salesman_problem_lrb_gtsp	.
-local:entity_linking_relation	local:_relation	local:entity_linking	.
-local:first_strategy	rdfs:subClassOf	local:strategy	.
+local:s16	local:AM-LOC	local:paper	.
+local:dependent_sequential_tasks	rdfs:member	local:dependent_sequential	.
+local:s10	rdf:subject	local:s10	.
+local:connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:connection_density	.
+local:s16	rdf:predicate	local:provide	.
+local:traditionally_relation	rdfs:subClassOf	local:relation	.
+local:s0.1	rdf:subject	local:many_question_answering_systems_over_knowledge_graphs	.
+local:underlying_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
+local:different_solution	rdfs:subClassOf	local:solution	.
+local:s15	rdf:subject	local:joint_entity_and_relation	.
+local:s4	rdf:predicate	local:perform	.
+local:strategies_on_a_dataset	rdfs:member	local:strategies	.
+local:order_to_exploit_the_connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:nodes	.
+local:instance_of_generalised_travelling_salesman_problem	rdfs:member	local:generalised_travelling_salesman_problem	.
+local:s20	rdf:object	local:reranking_steps	.
+local:s15	rdf:object	local:tasks_as_an_instance_of_the_generalised_travelling_salesman_problem	.
+local:s19	rdf:object	local:three_base_features	.
+local:order_to_exploit_the_connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:order	.
+local:s2	local:AM-MNR	local:either_as_dependent_sequential_tasks	.
+local:joint_entity_and_relation	rdfs:member	local:joint_entity	.
+local:s1	rdf:predicate	local:answer	.
+local:tasks_as_an_instance_of_the_generalised_travelling_salesman_problem	rdfs:member	local:generalised_travelling_salesman_problem	.
+local:s1.3	rdf:subject	local:many_question_answering_systems_over_knowledge_graphs	.
+local:gtsp_solvers	rdfs:member	local:gtsp	.
+local:s23	local:AM-MNR	local:5000_questions	.
+local:nodes_in_knowledge_graph	rdfs:member	local:nodes	.
+local:s13	rdf:subject	local:we	.
+local:order_to_predict_entities	rdfs:member	local:entities	.
+local:generalised_travelling	rdfs:member	local:generalised	.
+local:generalised_travelling_salesman_problem	rdfs:member	local:generalised_travelling_salesman	.
+local:s1.3	rdf:predicate	local:connect	.
+local:approximate_gtsp_solvers	rdfs:member	local:approximate_gtsp	.
+local:relation_linking	rdfs:member	local:linking	.
+local:many_question_answering_systems_over_knowledge_graphs	rdfs:member	local:knowledge_graphs	.
+local:strategies_on_dataset	rdfs:member	local:strategies	.
+local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	rdfs:member	local:order	.
+local:approximate_gtsp	rdfs:subClassOf	local:gtsp	.
+local:connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:nodes	.
+local:natural_language_input_underlying_knowledge_graph	rdfs:member	local:natural_language_input	.
+local:formalisation_of_joint_entity_of_relation_gtsp	rdfs:member	local:relation_gtsp	.
+local:travelling_salesman_problem	rdfs:member	local:travelling_salesman	.
+local:relation_linking_components	rdfs:member	local:relation	.
+local:joint_entity	rdfs:member	local:joint	.
+local:salesman_problem	rdfs:member	local:salesman	.
+local:salesman_problem	rdfs:subClassOf	local:problem	.
+local:5000_questions	rdfs:subClassOf	local:questions	.
+local:s20.1	rdf:predicate	local:predict	.
+local:s10	rdf:predicate	local:link	.
+local:s0.1	rdf:object	local:entity_linking_components	.
+local:s22	rdf:predicate	local:rely	.
+local:s21	local:AM-PNC	local:order_to_predict_relations	.
+local:s19	local:AM-PNC	local:order_to_predict_entities	.
+local:s3	local:AM-MNR	local:either_as_independent_parallel_tasks	.
+local:s16	rdf:subject	local:we	.
+local:order_to_exploit_the_connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:knowledge_graph	.
+local:first_strategy	rdfs:member	local:first	.
+local:natural_language_input	rdfs:subClassOf	local:language_input	.
+local:s0.2	rdf:predicate	local:link	.
+local:answering_systems	rdfs:subClassOf	local:systems	.
+local:s18.1	rdf:subject	local:machine	.
+local:s0.2	rdf:subject	local:components	.
+local:s14	rdf:predicate	local:implement	.
+local:s9	rdf:predicate	local:link	.
+local:s19.1	rdf:predicate	local:predict	.
+local:travelling_salesman_problem	rdfs:subClassOf	local:salesman_problem	.
+local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	rdfs:member	local:relation_gtsp	.
+local:dependent_sequential_tasks	rdfs:subClassOf	local:sequential_tasks	.
+local:order_to_predict_relations	rdfs:member	local:relations	.
+local:connection_density	rdfs:member	local:connection	.
+local:independent_parallel_tasks	rdfs:subClassOf	local:parallel_tasks	.
+local:s1	rdf:subject	local:systems	.
+local:s23	rdf:object	local:strategies_on_a_dataset	.
+local:tasks_as_instance	rdfs:member	local:instance	.
+local:s20	rdf:subject	local:first_strategy	.
+local:s1.2	rdf:subject	local:components	.
+local:s22	rdf:subject	local:first_strategy	.
+local:independent_parallel_tasks	rdfs:member	local:independent_parallel	.
+local:relation_linking	rdfs:member	local:relation	.
+local:s18.2	rdf:subject	local:first_strategy	.
+local:comparative_analysis_two_different_solution_strategies	rdfs:member	local:different_solution_strategies	.
+local:s12	rdf:object	local:earl	.
+local:s23	rdf:predicate	local:evaluate	.
+local:s0.3	rdf:object	local:underlying_knowledge_graph	.
+local:s18	rdf:predicate	local:use	.
+local:different_solution_strategies	rdfs:subClassOf	local:strategies	.
+local:order_to_predict_relations	rdfs:member	local:order	.
+local:natural_language_input_underlying_knowledge_graph	rdfs:member	local:knowledge_graph	.
+local:language_input	rdfs:subClassOf	local:input	.
+local:s21	rdf:predicate	local:rely	.
+local:answering_systems_over_knowledge_graphs	rdfs:member	local:knowledge_graphs	.
+local:natural_language	rdfs:member	local:natural	.
+local:s4	local:AM-ADV	local:traditionally_relation	.
+local:many_question_answering_systems_over_knowledge_graphs	rdfs:member	local:many_question	.
+local:connection_density_between_nodes	rdfs:member	local:nodes	.
+local:s18.2	rdf:object	local:connection_density_between_nodes_in_the_knowledge_graph	.
+local:tasks_as_an_instance_of_the_generalised_travelling_salesman_problem	rdfs:member	local:instance	.
+local:traditionally_relation	rdfs:member	local:traditionally	.
+local:s8	rdf:object	local:framework	.
+local:s5	rdf:predicate	local:perform	.
+local:s0.3	rdf:subject	local:natural_language_input	.
+local:s18.2	rdf:predicate	local:exploit	.
+local:independent_parallel_tasks	rdfs:subClassOf	local:tasks	.
+local:natural_language	rdfs:subClassOf	local:language	.
+local:sequential_tasks	rdfs:subClassOf	local:tasks	.
+local:comparative_analysis	rdfs:subClassOf	local:analysis	.
+local:s1.1	rdf:predicate	local:rely	.
+local:s9	rdf:subject	local:joint_task	.
+local:comparative_analysis	rdfs:member	local:comparative	.
+local:connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:knowledge_graph	.
+local:s12	rdf:subject	local:framework	.
+local:gtsp_solvers	rdfs:subClassOf	local:solvers	.
+local:s15	rdf:predicate	local:link	.
+local:s22.1	rdf:predicate	local:predict	.
+local:dependent_sequential	rdfs:subClassOf	local:sequential	.
+local:many_question	rdfs:member	local:many	.
+local:s12	rdf:predicate	local:call	.
+local:s11	rdf:predicate	local:perform	.
+local:s11	rdf:object	local:entity	.
+local:relation_linking_components	rdfs:member	local:components	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	rdfs:member	local:natural_language_input	.
+local:joint_entity	rdfs:subClassOf	local:entity	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:machine_learning	rdfs:member	local:machine	.
+local:s24	rdf:object	local:strategies	.
+local:s1.1	rdf:object	local:relation_linking_components	.
+local:s7	rdf:predicate	local:link	.
+local:independent_parallel	rdfs:subClassOf	local:parallel	.
+local:s22	local:AM-PNC	local:order_to_predict_relations	.
+local:travelling_salesman	rdfs:subClassOf	local:salesman	.
+local:s0	rdf:subject	local:systems	.
+local:s23	rdf:subject	local:we	.
+local:s6	rdf:predicate	local:link	.
+local:s26	rdf:predicate	local:link	.
+local:s8	rdf:predicate	local:propose	.
+local:s19	rdf:predicate	local:rely	.
+local:three_base_features	rdfs:subClassOf	local:base_features	.
+local:s21	rdf:subject	local:first_strategy	.
+local:instance_of_generalised_travelling_salesman_problem	rdfs:member	local:instance	.
+local:s8	local:AM-LOC	local:paper	.
+local:s19	rdf:subject	local:first_strategy	.
+local:s21.1	rdf:subject	local:first_strategy	.
+local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	rdfs:member	local:joint_entity	.
+local:s3	rdf:subject	local:s6	.
+local:natural_language_input_underlying	rdfs:member	local:underlying	.
+local:s22	rdf:object	local:reranking_steps	.
+local:s1.3	rdf:object	local:natural_language_input_underlying_knowledge_graph	.
+local:nodes_in_knowledge_graph	rdfs:member	local:knowledge_graph	.
+local:travelling_salesman	rdfs:member	local:travelling	.
+local:entity_linking	rdfs:member	local:linking	.
+local:connect_to_underlying_knowledge_graph	rdfs:member	local:connect	.
+local:tasks_as_an_instance_of_the_generalised_travelling_salesman_problem	rdfs:member	local:tasks	.
+local:relation_gtsp	rdfs:member	local:relation	.
+local:connection_density_between_nodes	rdfs:member	local:connection_density	.
+local:s14	rdf:subject	local:earl	.
+local:s2	rdf:subject	local:s6	.
+local:s21	rdf:object	local:three_base_features	.
+local:entity_linking_components	rdfs:member	local:components	.
+local:s16	rdf:object	local:comparative_analysis_two_different_solution_strategies	.
+local:different_solution	rdfs:member	local:different	.
+local:strategies_on_a_dataset	rdfs:member	local:dataset	.
+local:comparative_analysis_two_different_solution_strategies	rdfs:member	local:comparative_analysis	.
+local:formalisation_of_joint_entity_of_relation_gtsp	rdfs:member	local:formalisation_of_joint_entity	.
+local:s5	local:AM-ADV	local:traditionally_relation	.
+local:generalised_travelling	rdfs:subClassOf	local:travelling	.
+local:s17	rdf:subject	local:we	.
+local:s5	local:AM-MNR	local:either_as_dependent_sequential_tasks	.
+local:tasks_as_instance	rdfs:member	local:tasks	.
+local:s3	local:AM-ADV	local:traditionally	.
+local:s18.1	rdf:predicate	local:learn	.
+local:strategies_on_dataset	rdfs:member	local:dataset	.
+local:connection_density	rdfs:subClassOf	local:density	.
+local:formalisation_of_joint_entity	rdfs:member	local:joint_entity	.
+local:natural_language_input	rdfs:subClassOf	local:input	.
+local:connect_to_underlying_knowledge_graph	rdfs:member	local:underlying_knowledge_graph	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
 local:travelling_salesman_problem	rdfs:subClassOf	local:problem	.
-local:dependent	rdfs:member	local:dependent_sequential	.
-local:performed	local:AM-MNR	local:dependent_sequential_tasks	.
-local:language	rdfs:member	local:language_input	.
-local:exploit	vn.role:Predicate	local:connection_density_between_nodes	.
-local:entity_linking	local:entity_	local:linking	.
-local:reranking	rdfs:member	local:reranking_steps	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:rely	vn.role:Agent	local:many_question	.
+local:parallel_tasks	rdfs:member	local:parallel	.
+local:s0	rdf:predicate	local:answer	.
+local:parallel_tasks	rdfs:subClassOf	local:tasks	.
+local:s21.1	rdf:object	local:relations	.
+local:solution_strategies	rdfs:subClassOf	local:strategies	.
+local:entity_linking_components	rdfs:member	local:s6	.
+local:s20.1	rdf:subject	local:entities	.
+local:joint_task	rdfs:member	local:joint	.
+local:dependent_sequential	rdfs:member	local:dependent	.
+local:s18	local:AM-PNC	local:order_to_exploit_the_connection_density_between_nodes_in_the_knowledge_graph	.
+local:sequential_tasks	rdfs:member	local:sequential	.
+local:language_input	rdfs:member	local:language	.
+local:generalised_travelling_salesman	rdfs:subClassOf	local:salesman	.
+local:first_strategy	rdfs:subClassOf	local:strategy	.
+local:s6	rdf:subject	local:s6	.
+local:different_solution_strategies	rdfs:member	local:different_solution	.
+local:order_to_exploit_the_connection_density_between_nodes_in_the_knowledge_graph	rdfs:member	local:connection_density	.
+local:s0.1	rdf:predicate	local:rely	.
+local:s8	rdf:subject	local:we	.
+local:s22.1	rdf:subject	local:relations	.
+local:generalised_travelling_salesman_problem	rdfs:subClassOf	local:travelling_salesman_problem	.
+local:s20	rdf:predicate	local:rely	.
+local:s14	rdf:object	local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	.
+local:s11	rdf:subject	local:earl	.
+local:entity_linking	rdfs:member	local:s6	.
+local:s13	local:AM-LOC	local:paper	.
+local:s13	rdf:predicate	local:propose	.
+local:s1	rdfs:subClassOf	local:systems	.
+local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	rdfs:member	local:formalisation	.
+local:formalisation_of_joint_entity	rdfs:member	local:formalisation	.
+local:answering_systems_over_knowledge_graphs	rdfs:member	local:answering_systems	.
+local:independent_parallel	rdfs:member	local:independent	.
+local:s25	rdf:predicate	local:link	.
+local:s24	rdf:subject	local:we	.
+local:machine_learning	rdfs:subClassOf	local:learning	.
+local:joint_task	rdfs:subClassOf	local:task	.
+local:many_question	rdfs:subClassOf	local:question	.
+local:approximate_gtsp_solvers	rdfs:subClassOf	local:solvers	.
+local:s21.1	rdf:predicate	local:predict	.
+local:s17	rdf:predicate	local:employ	.
+local:base_features	rdfs:subClassOf	local:features	.
+local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	rdfs:member	local:first_strategy	.
+local:s4	local:AM-MNR	local:either_as_independent_parallel_tasks	.
+local:natural_language_input	rdfs:member	local:natural_language	.
+local:s1.2	rdf:predicate	local:link	.
+local:s2	local:AM-ADV	local:traditionally	.
+local:generalised_travelling_salesman_problem	rdfs:subClassOf	local:problem	.
+local:two_different_solution_strategies_the_first_strategy_is_a_formalisation_of_the_joint_entity_and_relation_gtsp	rdfs:member	local:different_solution	.
+local:dependent_sequential_tasks	rdfs:subClassOf	local:tasks	.
+local:base_features	rdfs:member	local:base	.
+local:s0.2	local:AM-PNC	local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	.
+local:s18	rdf:object	local:machine_learning	.
+local:natural_language_input_underlying	rdfs:member	local:natural_language_input	.
+local:s0.3	rdf:predicate	local:connect	.
+local:many_question_answering_systems_over_knowledge_graphs	rdfs:member	local:systems	.
+local:s17	rdf:object	local:approximate_gtsp_solvers	.
+local:s13	rdf:object	local:relation	.
+local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	rdfs:member	local:knowledge_graph	.
+local:solution_strategies	rdfs:member	local:solution	.
+local:relation_gtsp	rdfs:subClassOf	local:gtsp	.
+local:two_different_solution_strategies	rdfs:subClassOf	local:different_solution_strategies	.
+local:s1.1	local:AM-PNC	local:order_to_connect_the_natural_language_input_to_the_underlying_knowledge_graph	.
+local:generalised_travelling_salesman	rdfs:member	local:generalised_travelling	.
+local:approximate_gtsp	rdfs:member	local:approximate	.
+local:different_solution_strategies	rdfs:subClassOf	local:solution_strategies	.
+local:order_to_predict_entities	rdfs:member	local:order	.
+local:s17	local:AM-ADV	local:order_to_be_computationally_feasible	.
+local:joint_entity_and_relation	rdfs:member	local:relation	.

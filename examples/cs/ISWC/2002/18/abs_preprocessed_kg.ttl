@@ -1,281 +1,474 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"distributed rdf repositories"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"we approach towards a modification exchange language for distributed rdf repositories"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we use annotation services as guideline for we approach towards a modification exchange language for distributed rdf repositories"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we describe use case scenarios for replication services"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"distributed rdf repositories"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we approach towards a modification exchange language for distributed rdf repositories"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we use replication services as guideline for we approach towards a modification exchange language for distributed rdf repositories"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we describe use case scenarios for annotation services"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"distributed modification capabilities"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"we also need standardization of distributed modification capabilities"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"this work shows why we also need standardization of distributed modification capabilities"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"retrieve information from rdf repositories"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"a query exchange language which can used as lingua franca to retrieve information from rdf repositories"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"allow communication between different rdf repository implementations"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"many rdf repositories already implemented with various access languages and mechanisms"	.
+
+
 #### Classes ####
 
-local:many_rdf	rdfs:label	"many rdf"	.
+local:rdf_repositories	a	rdf:Class	;
+	rdfs:label	"rdf repositories"	.
 
-local:many_rdf_repositories	rdfs:label	"many rdf repositories"	.
+local:repositories	a	rdf:Class	;
+	rdfs:label	"repositories"	.
 
-local:many	rdfs:label	"many"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:distribute	a	rdf:Class	;
+	rdfs:label	"distribute"	.
 
-local:rdf_repositories	rdfs:label	"rdf repositories"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:repositories	rdfs:label	"repositories"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:towards_a_modification_exchange_language_for_distributed_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"towards a modification exchange language for distributed rdf repositories"	.
 
-local:already	rdfs:label	"already"	.
+local:towards	a	rdf:Class	;
+	rdfs:label	"towards"	.
 
-local:access	rdfs:label	"access"	.
+local:modification_exchange_language	a	rdf:Class	;
+	rdfs:label	"modification exchange language"	.
 
-local:access_languages	rdfs:label	"access languages"	.
+local:exchange_language	a	rdf:Class	;
+	rdfs:label	"exchange language"	.
 
-local:languages	rdfs:label	"languages"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:various	rdfs:label	"various"	.
+local:exchange	a	rdf:Class	;
+	rdfs:label	"exchange"	.
 
-local:various_access	rdfs:label	"various access"	.
+local:modification_exchange	a	rdf:Class	;
+	rdfs:label	"modification exchange"	.
 
-local:various_access_languages	rdfs:label	"various access languages"	.
+local:modification	a	rdf:Class	;
+	rdfs:label	"modification"	.
 
-local:rdf_repository_implementations	rdfs:label	"rdf repository implementations"	.
+local:modification_exchange_language_for_distributed_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"modification exchange language for distributed rdf repositories"	.
 
-local:implementations	rdfs:label	"implementations"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:different_rdf_repository_implementations	rdfs:label	"different rdf repository implementations"	.
+local:annotation_services_as_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"annotation services as guideline for we approach towards a modification exchange language for distributed rdf repositories"	.
 
-local:rdf_repository	rdfs:label	"rdf repository"	.
+local:annotation_services	a	rdf:Class	;
+	rdfs:label	"annotation services"	.
 
-local:repository	rdfs:label	"repository"	.
+local:guideline	a	rdf:Class	;
+	rdfs:label	"guideline"	.
 
-local:different_rdf	rdfs:label	"different rdf"	.
+local:services	a	rdf:Class	;
+	rdfs:label	"services"	.
 
-local:different_rdf_repository	rdfs:label	"different rdf repository"	.
+local:annotation	a	rdf:Class	;
+	rdfs:label	"annotation"	.
 
-local:repository_implementations	rdfs:label	"repository implementations"	.
+local:annotation_services_as_guideline	a	rdf:Class	;
+	rdfs:label	"annotation services as guideline"	.
 
-local:different	rdfs:label	"different"	.
+local:approach_towards_modification_exchange_language	a	rdf:Class	;
+	rdfs:label	"approach towards modification exchange language"	.
 
-local:communication_between_different_rdf_repository_implementations	rdfs:label	"communication between different rdf repository implementations"	.
+local:approach_towards_modification_exchange_language_for_distributed_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"approach towards modification exchange language for distributed rdf repositories"	.
 
-local:communication	rdfs:label	"communication"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:allow	rdfs:label	"allow"	.
+local:use_case_scenarios_for_replication_services	a	rdf:Class	;
+	rdfs:label	"use case scenarios for replication services"	.
 
-local:exchange_language	rdfs:label	"exchange language"	.
+local:use_case_scenarios	a	rdf:Class	;
+	rdfs:label	"use case scenarios"	.
 
-local:language	rdfs:label	"language"	.
+local:replication_services	a	rdf:Class	;
+	rdfs:label	"replication services"	.
 
-local:query_exchange_language	rdfs:label	"query exchange language"	.
+local:use_case	a	rdf:Class	;
+	rdfs:label	"use case"	.
 
-local:query_exchange	rdfs:label	"query exchange"	.
+local:replication	a	rdf:Class	;
+	rdfs:label	"replication"	.
 
-local:query	rdfs:label	"query"	.
+local:case_scenarios	a	rdf:Class	;
+	rdfs:label	"case scenarios"	.
 
-local:exchange	rdfs:label	"exchange"	.
+local:case	a	rdf:Class	;
+	rdfs:label	"case"	.
 
-local:used	rdfs:label	"used"	.
+local:scenarios	a	rdf:Class	;
+	rdfs:label	"scenarios"	.
 
-local:can	rdfs:label	"can"	.
+local:replication_services_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"replication services guideline for we approach towards a modification exchange language for distributed rdf repositories"	.
 
-local:lingua	rdfs:label	"lingua"	.
+local:replication_services_guideline	a	rdf:Class	;
+	rdfs:label	"replication services guideline"	.
 
-local:lingua_franca	rdfs:label	"lingua franca"	.
+local:services_guideline	a	rdf:Class	;
+	rdfs:label	"services guideline"	.
 
-local:franca	rdfs:label	"franca"	.
+local:use_case_scenarios_for_annotation_services	a	rdf:Class	;
+	rdfs:label	"use case scenarios for annotation services"	.
 
-local:retrieve	rdfs:label	"retrieve"	.
+local:modification_capabilities	a	rdf:Class	;
+	rdfs:label	"modification capabilities"	.
 
-local:retrieve_information	rdfs:label	"retrieve information"	.
+local:capabilities	a	rdf:Class	;
+	rdfs:label	"capabilities"	.
 
-local:information	rdfs:label	"information"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:information_from_rdf_repositories	rdfs:label	"information from rdf repositories"	.
+local:standardization_of_distributed_modification_capabilities	a	rdf:Class	;
+	rdfs:label	"standardization of distributed modification capabilities"	.
 
-local:shows	rdfs:label	"shows"	.
+local:standardization	a	rdf:Class	;
+	rdfs:label	"standardization"	.
 
-local:work	rdfs:label	"work"	.
+local:distributed_modification	a	rdf:Class	;
+	rdfs:label	"distributed modification"	.
 
-local:distributed_modification	rdfs:label	"distributed modification"	.
+local:distributed	a	rdf:Class	;
+	rdfs:label	"distributed"	.
 
-local:modification	rdfs:label	"modification"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:modification_capabilities	rdfs:label	"modification capabilities"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:capabilities	rdfs:label	"capabilities"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:distributed	rdfs:label	"distributed"	.
+local:also_need_standardization_of_distributed_modification_capabilities	a	rdf:Class	;
+	rdfs:label	"also need standardization of distributed modification capabilities"	.
 
-local:distributed_modification_capabilities	rdfs:label	"distributed modification capabilities"	.
+local:also_need	a	rdf:Class	;
+	rdfs:label	"also need"	.
 
-local:also_need	rdfs:label	"also need"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:need	rdfs:label	"need"	.
+local:retrieve	a	rdf:Class	;
+	rdfs:label	"retrieve"	.
 
-local:standardization_of_distributed_modification_capabilities	rdfs:label	"standardization of distributed modification capabilities"	.
+local:query_exchange_language	a	rdf:Class	;
+	rdfs:label	"query exchange language"	.
 
-local:standardization	rdfs:label	"standardization"	.
+local:query_exchange	a	rdf:Class	;
+	rdfs:label	"query exchange"	.
 
-local:we	rdfs:label	"we"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:also	rdfs:label	"also"	.
+local:lingua_franca	a	rdf:Class	;
+	rdfs:label	"lingua franca"	.
 
-local:use	rdfs:label	"use"	.
+local:franca	a	rdf:Class	;
+	rdfs:label	"franca"	.
 
-local:replication	rdfs:label	"replication"	.
+local:lingua	a	rdf:Class	;
+	rdfs:label	"lingua"	.
 
-local:replication_services	rdfs:label	"replication services"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:services	rdfs:label	"services"	.
+local:retrieve_information_from_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"retrieve information from rdf repositories"	.
 
-local:modification_exchange_language	rdfs:label	"modification exchange language"	.
+local:retrieve_information	a	rdf:Class	;
+	rdfs:label	"retrieve information"	.
 
-local:modification_exchange	rdfs:label	"modification exchange"	.
+local:information_from_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"information from rdf repositories"	.
 
-local:distributed_rdf_repositories	rdfs:label	"distributed rdf repositories"	.
+local:communication_between_different_rdf_repository_implementations	a	rdf:Class	;
+	rdfs:label	"communication between different rdf repository implementations"	.
 
-local:approach_towards_modification_exchange_language	rdfs:label	"approach towards modification exchange language"	.
+local:communication	a	rdf:Class	;
+	rdfs:label	"communication"	.
 
-local:approach	rdfs:label	"approach"	.
+local:different_rdf_repository_implementations	a	rdf:Class	;
+	rdfs:label	"different rdf repository implementations"	.
 
-local:modification_exchange_language_for_distributed_rdf_repositories	rdfs:label	"modification exchange language for distributed rdf repositories"	.
+local:rdf_repository_implementations	a	rdf:Class	;
+	rdfs:label	"rdf repository implementations"	.
 
-local:guideline	rdfs:label	"guideline"	.
+local:implementations	a	rdf:Class	;
+	rdfs:label	"implementations"	.
 
-local:annotation_services	rdfs:label	"annotation services"	.
+local:different_rdf_repository	a	rdf:Class	;
+	rdfs:label	"different rdf repository"	.
 
-local:annotation	rdfs:label	"annotation"	.
+local:repository	a	rdf:Class	;
+	rdfs:label	"repository"	.
 
-local:annotation_services_as_guideline	rdfs:label	"annotation services as guideline"	.
+local:different_rdf	a	rdf:Class	;
+	rdfs:label	"different rdf"	.
 
-local:describe	rdfs:label	"describe"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:case_scenarios	rdfs:label	"case scenarios"	.
+local:rdf_repository	a	rdf:Class	;
+	rdfs:label	"rdf repository"	.
 
-local:scenarios	rdfs:label	"scenarios"	.
+local:repository_implementations	a	rdf:Class	;
+	rdfs:label	"repository implementations"	.
 
-local:use_case_scenarios	rdfs:label	"use case scenarios"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:use_case	rdfs:label	"use case"	.
+local:many_rdf_repositories	a	rdf:Class	;
+	rdfs:label	"many rdf repositories"	.
 
-local:case	rdfs:label	"case"	.
+local:many_rdf	a	rdf:Class	;
+	rdfs:label	"many rdf"	.
 
-local:use_case_scenarios_for_annotation_services	rdfs:label	"use case scenarios for annotation services"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:use_case_scenarios_for_replication_services	rdfs:label	"use case scenarios for replication services"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-#### Properties ####
+local:various_access_languages_and_mechanisms	a	rdf:Class	;
+	rdfs:label	"various access languages and mechanisms"	.
+
+local:mechanisms	a	rdf:Class	;
+	rdfs:label	"mechanisms"	.
+
+local:various_access_languages	a	rdf:Class	;
+	rdfs:label	"various access languages"	.
+
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
+
+local:access_languages	a	rdf:Class	;
+	rdfs:label	"access languages"	.
+
+local:various_access	a	rdf:Class	;
+	rdfs:label	"various access"	.
+
+local:various	a	rdf:Class	;
+	rdfs:label	"various"	.
+
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
+
+local:already	a	rdf:Class	;
+	rdfs:label	"already"	.
 
 #### Mapped Relations ####
 
+local:communication	owl:sameAs	cso:communication	.
+cso:rdf	rdfs:label	"rdf"	.
 local:rdf	owl:sameAs	cso:rdf	.
 cso:communication	rdfs:label	"communication"	.
-cso:rdf	rdfs:label	"rdf"	.
-local:communication	owl:sameAs	cso:communication	.
 
 #### Relations ####
 
-local:modification	rdfs:member	local:modification_capabilities	.
-local:describe	vn.role:Theme	local:use_case_scenarios_for_annotation_services	.
-local:use_case	rdfs:subClassOf	local:case	.
-local:case	rdfs:member	local:case_scenarios	.
-local:also_need	rdfs:subClassOf	local:need	.
-local:distributed_modification_capabilities	rdfs:subClassOf	local:capabilities	.
-local:use_case_scenarios_for_annotation_services	local:usecasescenarios_for	local:annotation_services	.
-local:different	rdfs:member	local:different_rdf	.
-local:use_case_scenarios_for_replication_services	local:usecasescenarios_for	local:replication_services	.
-local:use_case_scenarios_for_annotation_services	local:for_annotationservices	local:use_case_scenarios	.
-local:describe	vn.role:Theme	local:use_case_scenarios_for_replication_services	.
-local:shows	vn.role:Agent	local:work	.
-local:different_rdf_repository	rdfs:subClassOf	local:repository	.
-local:different_rdf	rdfs:member	local:different_rdf_repository	.
-local:implemented	vn.role:Theme	local:many_rdf_repositories	.
-local:access	rdfs:member	local:access_languages	.
-local:rdf	rdfs:member	local:rdf_repository	.
-local:need	local:AM-DIS	local:also	.
-local:distributed_modification_capabilities	rdfs:subClassOf	local:modification_capabilities	.
-local:modification_exchange_language	rdfs:subClassOf	local:exchange_language	.
-local:approach_towards_modification_exchange_language	local:approach_towards	local:modification_exchange_language	.
-local:replication_services	rdfs:subClassOf	local:services	.
-local:lingua_franca	rdfs:subClassOf	local:franca	.
-local:used	vn.role:Theme	local:query_exchange_language	.
-local:need	vn.role:Agent	local:we	.
-local:describe	vn.role:Agent	local:we	.
-local:use_case	rdfs:member	local:use_case_scenarios	.
-local:distributed_modification	rdfs:subClassOf	local:modification	.
-local:modification_exchange	rdfs:member	local:modification_exchange_language	.
-local:annotation_services_as_guideline	local:as_guideline	local:annotation_services	.
-local:replication	rdfs:member	local:replication_services	.
-local:various	rdfs:member	local:various_access	.
-local:different_rdf_repository_implementations	rdfs:subClassOf	local:implementations	.
-local:need	vn.role:Patient	local:standardization_of_distributed_modification_capabilities	.
-local:used	local:AM-PNC	local:retrieve	.
-local:repository	rdfs:member	local:repository_implementations	.
-local:modification_exchange_language_for_distributed_rdf_repositories	local:for_distributedrdfrepositories	local:modification_exchange_language	.
-local:exchange	rdfs:member	local:exchange_language	.
-local:standardization_of_distributed_modification_capabilities	local:standardization_of	local:distributed_modification_capabilities	.
-local:information_from_rdf_repositories	local:from_rdfrepositories	local:information	.
-local:use_case_scenarios_for_replication_services	local:for_replicationservices	local:use_case_scenarios	.
-local:modification_exchange_language	rdfs:subClassOf	local:language	.
+local:s4.2	rdf:predicate	local:distribute	.
 local:use_case_scenarios	rdfs:subClassOf	local:scenarios	.
-local:used	local:AM-MOD	local:can	.
-local:modification_exchange_language_for_distributed_rdf_repositories	local:modificationexchangelanguage_for	local:distributed_rdf_repositories	.
-local:case_scenarios	rdfs:subClassOf	local:scenarios	.
-local:distributed	rdfs:member	local:distributed_modification	.
-local:rdf_repository_implementations	rdfs:subClassOf	local:repository_implementations	.
-local:implemented	local:AM-TMP	local:already	.
-local:access_languages	rdfs:subClassOf	local:languages	.
-local:exchange_language	rdfs:subClassOf	local:language	.
-local:various_access_languages	rdfs:subClassOf	local:languages	.
-local:rdf_repository	rdfs:subClassOf	local:repository	.
-local:approach	vn.role:indirect_object	local:modification_exchange_language_for_distributed_rdf_repositories	.
-local:annotation_services_as_guideline	local:annotationservices_as	local:guideline	.
-local:used	vn.role:Recipient	local:lingua_franca	.
-local:retrieve_information	rdfs:subClassOf	local:information	.
-local:shows	vn.role:Theme	local:also_need	.
-local:use	vn.role:Theme	local:annotation_services_as_guideline	.
-local:many_rdf	rdfs:member	local:many_rdf_repositories	.
-local:different_rdf_repository	rdfs:member	local:different_rdf_repository_implementations	.
-local:annotation	rdfs:member	local:annotation_services	.
-local:annotation_services	rdfs:subClassOf	local:services	.
-local:distributed_modification	rdfs:member	local:distributed_modification_capabilities	.
-local:distributed	vn.role:Theme	local:rdf_repositories	.
-local:many	rdfs:member	local:many_rdf	.
-local:rdf_repository	rdfs:member	local:rdf_repository_implementations	.
-local:repository_implementations	rdfs:subClassOf	local:implementations	.
-local:query_exchange_language	rdfs:subClassOf	local:language	.
-local:allow	vn.role:Theme	local:communication_between_different_rdf_repository_implementations	.
-local:different_rdf	rdfs:subClassOf	local:rdf	.
-local:implemented	local:AM-MNR	local:various_access_languages	.
-local:query	rdfs:member	local:query_exchange	.
-local:rdf_repository_implementations	rdfs:subClassOf	local:implementations	.
-local:approach	vn.role:object	local:we	.
-local:retrieve	rdfs:member	local:retrieve_information	.
-local:lingua	rdfs:member	local:lingua_franca	.
-local:retrieve	vn.role:Theme	local:information	.
-local:various_access_languages	rdfs:subClassOf	local:access_languages	.
-local:use	rdfs:member	local:use_case	.
-local:distributed	vn.role:Theme	local:modification_capabilities	.
-local:rdf_repositories	rdfs:subClassOf	local:repositories	.
-local:many_rdf_repositories	rdfs:subClassOf	local:rdf_repositories	.
-local:modification_exchange	rdfs:subClassOf	local:exchange	.
-local:communication_between_different_rdf_repository_implementations	local:communication_between	local:different_rdf_repository_implementations	.
-local:modification	rdfs:member	local:modification_exchange	.
-local:communication_between_different_rdf_repository_implementations	local:between_differentrdfrepositoryimplementations	local:communication	.
-local:query_exchange_language	rdfs:subClassOf	local:exchange_language	.
-local:many_rdf	rdfs:subClassOf	local:rdf	.
-local:various_access	rdfs:member	local:various_access_languages	.
-local:information_from_rdf_repositories	local:information_from	local:rdf_repositories	.
-local:many_rdf_repositories	rdfs:subClassOf	local:repositories	.
-local:use	vn.role:Recipient	local:guideline	.
-local:query_exchange	rdfs:subClassOf	local:exchange	.
-local:distributed	vn.role:Agent	local:we	.
-local:approach_towards_modification_exchange_language	local:towards_modificationexchangelanguage	local:approach	.
+local:annotation_services_as_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:guideline	.
+local:services_guideline	rdfs:subClassOf	local:guideline	.
+local:s4	rdf:object	local:also_need_standardization_of_distributed_modification_capabilities	.
+local:s5	rdf:predicate	local:describe	.
 local:use_case_scenarios	rdfs:subClassOf	local:case_scenarios	.
-local:use	vn.role:Agent	local:we	.
-local:use	vn.role:Theme	local:replication_services	.
-local:retrieve	vn.role:Source	local:rdf_repositories	.
-local:different_rdf_repository_implementations	rdfs:subClassOf	local:rdf_repository_implementations	.
-local:rdf	rdfs:member	local:rdf_repositories	.
-local:standardization_of_distributed_modification_capabilities	local:of_distributedmodificationcapabilities	local:standardization	.
-local:distributed_rdf_repositories	rdfs:subClassOf	local:rdf_repositories	.
-local:query_exchange	rdfs:member	local:query_exchange_language	.
+local:s3.1	rdfs:member	local:rdf_repositories	.
+local:modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:s6.2	.
+local:communication_between_different_rdf_repository_implementations	rdfs:member	local:communication	.
+local:different_rdf_repository	rdfs:member	local:different_rdf	.
+local:rdf_repository_implementations	rdfs:member	local:rdf_repository	.
+local:s8	rdf:object	local:annotation_services_as_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	.
+local:s3	rdf:predicate	local:use	.
+local:modification_capabilities	rdfs:member	local:modification	.
+local:s6.2	rdfs:subClassOf	local:rdf_repositories	.
+local:different_rdf_repository	rdfs:subClassOf	local:repository	.
+local:s8.2	rdf:predicate	local:distribute	.
+local:also_need	rdfs:subClassOf	local:need	.
+local:query_exchange_language	rdfs:subClassOf	local:language	.
+local:rdf_repository	rdfs:subClassOf	local:repository	.
+local:annotation_services_as_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:annotation_services	.
+local:standardization_of_distributed_modification_capabilities	rdfs:member	local:s4.2	.
+local:s0	rdf:subject	local:many_rdf_repositories	.
+local:repository_implementations	rdfs:member	local:repository	.
+local:s1	rdf:predicate	local:allow	.
+local:s0	local:AM-MNR	local:various_access_languages_and_mechanisms	.
+local:approach_towards_modification_exchange_language	rdfs:member	local:modification_exchange_language	.
+local:annotation_services_as_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:modification_exchange_language	.
+local:s7	rdf:predicate	local:describe	.
+local:various_access_languages_and_mechanisms	rdfs:member	local:various_access_languages	.
+local:s5	rdf:object	local:use_case_scenarios_for_annotation_services	.
+local:distributed_modification	rdfs:member	local:distributed	.
+local:modification_exchange_language	rdfs:subClassOf	local:language	.
+local:s3.1	rdf:subject	local:information	.
+local:s3	rdf:object	local:lingua_franca	.
+local:many_rdf	rdfs:subClassOf	local:rdf	.
+local:s0	local:AM-TMP	local:already	.
+local:modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:modification_exchange_language	.
+local:s7	rdf:object	local:use_case_scenarios_for_replication_services	.
+local:annotation_services_as_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:rdf_repositories	.
+local:standardization_of_distributed_modification_capabilities	rdfs:member	local:standardization	.
+local:s3	local:AM-PNC	local:retrieve_information_from_rdf_repositories	.
+local:also_need_standardization_of_distributed_modification_capabilities	rdfs:member	local:standardization	.
+local:query_exchange	rdfs:member	local:query	.
+local:different_rdf_repository_implementations	rdfs:member	local:different_rdf_repository	.
+local:use_case	rdfs:subClassOf	local:case	.
+local:rdf_repository_implementations	rdfs:subClassOf	local:implementations	.
+local:replication_services	rdfs:subClassOf	local:services	.
+local:various_access	rdfs:member	local:various	.
+local:many_rdf_repositories	rdfs:subClassOf	local:rdf_repositories	.
+local:s1	rdf:subject	local:communication_between_different_rdf_repository_implementations	.
+local:use_case_scenarios_for_replication_services	rdfs:member	local:replication_services	.
+local:modification_exchange_language	rdfs:member	local:modification_exchange	.
+local:modification_exchange_language	rdfs:subClassOf	local:exchange_language	.
+local:s3	rdf:subject	local:query_exchange_language	.
+local:distributed_modification	rdfs:subClassOf	local:modification	.
+local:replication_services_guideline	rdfs:member	local:replication_services	.
+local:use_case_scenarios_for_annotation_services	rdfs:member	local:use_case_scenarios	.
+local:modification_exchange	rdfs:subClassOf	local:exchange	.
+local:s6	rdf:subject	local:we	.
+local:access_languages	rdfs:member	local:access	.
+local:lingua_franca	rdfs:member	local:lingua	.
+local:retrieve_information	rdfs:member	local:retrieve	.
+local:modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:s8.2	.
+local:s0	rdf:predicate	local:implement	.
+local:s8	rdf:predicate	local:use	.
+local:s6.2	rdf:predicate	local:distribute	.
+local:access_languages	rdfs:subClassOf	local:languages	.
+local:s4.1	rdf:subject	local:we	.
+local:towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:modification_exchange_language	.
 local:modification_capabilities	rdfs:subClassOf	local:capabilities	.
+local:repository_implementations	rdfs:subClassOf	local:implementations	.
+local:communication_between_different_rdf_repository_implementations	rdfs:member	local:different_rdf_repository_implementations	.
+local:towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:rdf_repositories	.
+local:annotation_services_as_guideline	rdfs:member	local:annotation_services	.
+local:case_scenarios	rdfs:subClassOf	local:scenarios	.
+local:s3.1	rdfs:member	local:retrieve_information	.
+local:s6.1	rdf:object	local:towards_a_modification_exchange_language_for_distributed_rdf_repositories	.
+local:information_from_rdf_repositories	rdfs:member	local:rdf_repositories	.
+local:s4	rdf:subject	local:work	.
+local:many_rdf	rdfs:member	local:many	.
+local:retrieve_information	rdfs:subClassOf	local:information	.
+local:also_need_standardization_of_distributed_modification_capabilities	rdfs:member	local:s4.2	.
+local:s8.1	rdf:predicate	local:approach	.
+local:use_case_scenarios_for_replication_services	rdfs:member	local:use_case_scenarios	.
+local:s3.1	rdf:object	local:rdf_repositories	.
+local:various_access_languages	rdfs:member	local:various_access	.
+local:s6.1	rdf:predicate	local:approach	.
+local:s4.1	local:AM-DIS	local:also	.
+local:s6.1	rdf:subject	local:we	.
+local:s3.1	rdf:predicate	local:retrieve	.
+local:query_exchange	rdfs:subClassOf	local:exchange	.
+local:use_case	rdfs:member	local:use	.
+local:s6	rdf:object	local:replication_services_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	.
+local:s4	rdf:predicate	local:show	.
+local:modification_exchange	rdfs:member	local:modification	.
+local:approach_towards_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:s6.2	.
+local:case_scenarios	rdfs:member	local:case	.
+local:s4.2	rdfs:subClassOf	local:modification_capabilities	.
+local:s4.2	rdfs:member	local:distributed_modification	.
+local:s8.1	rdf:subject	local:we	.
+local:replication_services_guideline	rdfs:subClassOf	local:services_guideline	.
+local:use_case_scenarios_for_annotation_services	rdfs:member	local:annotation_services	.
+local:approach_towards_modification_exchange_language	rdfs:member	local:approach	.
+local:exchange_language	rdfs:member	local:exchange	.
+local:s4.2	rdf:subject	local:modification_capabilities	.
 local:various_access	rdfs:subClassOf	local:access	.
+local:replication_services_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:modification_exchange_language	.
+local:different_rdf	rdfs:member	local:different	.
+local:s8.2	rdfs:subClassOf	local:rdf_repositories	.
+local:s6.2	rdf:subject	local:rdf_repositories	.
+local:different_rdf_repository_implementations	rdfs:subClassOf	local:implementations	.
+local:towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:towards	.
+local:services_guideline	rdfs:member	local:services	.
+local:s4.2	rdfs:subClassOf	local:capabilities	.
+local:various_access_languages	rdfs:subClassOf	local:access_languages	.
+local:many_rdf_repositories	rdfs:member	local:many_rdf	.
+local:annotation_services	rdfs:member	local:annotation	.
+local:query_exchange_language	rdfs:subClassOf	local:exchange_language	.
+local:s6	rdf:predicate	local:use	.
+local:s4.1	rdf:predicate	local:need	.
+local:approach_towards_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:s8.2	.
+local:s8	rdf:subject	local:we	.
+local:approach_towards_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:approach_towards_modification_exchange_language	.
+local:different_rdf_repository_implementations	rdfs:subClassOf	local:rdf_repository_implementations	.
+local:replication_services	rdfs:member	local:replication	.
+local:many_rdf_repositories	rdfs:subClassOf	local:repositories	.
+local:rdf_repository	rdfs:member	local:rdf	.
+local:s8.2	rdf:subject	local:rdf_repositories	.
+local:rdf_repositories	rdfs:subClassOf	local:repositories	.
+local:s7	rdf:subject	local:we	.
+local:use_case_scenarios	rdfs:member	local:use_case	.
+local:different_rdf	rdfs:subClassOf	local:rdf	.
+local:s4.1	rdf:object	local:standardization_of_distributed_modification_capabilities	.
+local:annotation_services	rdfs:subClassOf	local:services	.
+local:annotation_services_as_guideline	rdfs:member	local:guideline	.
+local:s3	local:AM-MOD	local:can	.
+local:rdf_repositories	rdfs:member	local:rdf	.
+local:exchange_language	rdfs:subClassOf	local:language	.
+local:s5	rdf:subject	local:we	.
+local:query_exchange_language	rdfs:member	local:query_exchange	.
+local:various_access_languages	rdfs:subClassOf	local:languages	.
+local:replication_services_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:replication_services_guideline	.
+local:information_from_rdf_repositories	rdfs:member	local:information	.
+local:s8.1	rdf:object	local:towards_a_modification_exchange_language_for_distributed_rdf_repositories	.
+local:lingua_franca	rdfs:subClassOf	local:franca	.
+local:rdf_repository_implementations	rdfs:subClassOf	local:repository_implementations	.
+local:replication_services_guideline	rdfs:subClassOf	local:guideline	.
+local:replication_services_guideline_for_we_approach_towards_a_modification_exchange_language_for_distributed_rdf_repositories	rdfs:member	local:rdf_repositories	.
+local:various_access_languages_and_mechanisms	rdfs:member	local:mechanisms	.

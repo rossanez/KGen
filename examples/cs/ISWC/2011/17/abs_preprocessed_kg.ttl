@@ -1,383 +1,624 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"the ontology not contain unsatisfiable classes"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"logmaps produce a clean set of output mappings in many cases in the sense that the ontology does not contain unsatisfiable classes"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"logmaps produce a clean set of output mappings in many cases in the sense that the ontology is consistent"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"integrating logmaps output mappings with the input ontologies"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the ontology obtained by integrating logmaps output mappings with the input ontologies"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"existing biomedical ontologies"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"our system can efficiently match even the largest existing biomedical ontologies"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"our experiments with the ontologies snomed ct confirm that our system can efficiently match even the largest existing biomedical ontologies"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"existing biomedical ontologies"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"our system can efficiently match even the largest existing biomedical ontologies"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"our experiments with the ontologies fma ct confirm that our system can efficiently match even the largest existing biomedical ontologies"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"existing biomedical ontologies"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"our system can efficiently match even the largest existing biomedical ontologies"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"our experiments with the ontologies nci ct confirm that our system can efficiently match even the largest existing biomedical ontologies"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in contrast to most existing tools logmaps also implements algorithms for repair"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in contrast to most existing tools logmaps also implements algorithms for on the fly unsatisfiability detection"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"the only matching system that can deal with semantically rich ontologies"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"semantically rich ontologies containing hundreds of thousands of classes"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"semantically rich ontologies containing tens of thousands of classes"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"matching system with diagnosis capabilities"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"matching system"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in this paper we present logmap a highly scalable ontology"	.
+
+
 #### Classes ####
 
-local:highly_scalable	rdfs:label	"highly scalable"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:scalable	rdfs:label	"scalable"	.
+local:not_contain	a	rdf:Class	;
+	rdfs:label	"not contain"	.
 
-local:scalable_ontology	rdfs:label	"scalable ontology"	.
+local:unsatisfiable_classes	a	rdf:Class	;
+	rdfs:label	"unsatisfiable classes"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:classes	a	rdf:Class	;
+	rdfs:label	"classes"	.
 
-local:highly	rdfs:label	"highly"	.
+local:unsatisfiable	a	rdf:Class	;
+	rdfs:label	"unsatisfiable"	.
 
-local:highly_scalable_ontology	rdfs:label	"highly scalable ontology"	.
+local:logmaps	a	rdf:Class	;
+	rdfs:label	"logmaps"	.
 
-local:matching	rdfs:label	"matching"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:logmap	rdfs:label	"logmap"	.
+local:clean_set_of_output_mappings	a	rdf:Class	;
+	rdfs:label	"clean set of output mappings"	.
 
-local:system	rdfs:label	"system"	.
+local:clean_set	a	rdf:Class	;
+	rdfs:label	"clean set"	.
 
-local:diagnosis	rdfs:label	"diagnosis"	.
+local:output_mappings	a	rdf:Class	;
+	rdfs:label	"output mappings"	.
 
-local:diagnosis_capabilities	rdfs:label	"diagnosis capabilities"	.
+local:output	a	rdf:Class	;
+	rdfs:label	"output"	.
 
-local:capabilities	rdfs:label	"capabilities"	.
+local:clean	a	rdf:Class	;
+	rdfs:label	"clean"	.
 
-local:present	rdfs:label	"present"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:paper	rdfs:label	"paper"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:we	rdfs:label	"we"	.
+local:many_cases_in_the_sense_that_the_ontology_does_not_contain_unsatisfiable_classes	a	rdf:Class	;
+	rdfs:label	"many cases in the sense that the ontology does not contain unsatisfiable classes"	.
 
-local:semantically_rich_ontologies	rdfs:label	"semantically rich ontologies"	.
+local:many_cases	a	rdf:Class	;
+	rdfs:label	"many cases"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:sense	a	rdf:Class	;
+	rdfs:label	"sense"	.
 
-local:rich	rdfs:label	"rich"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:rich_ontologies	rdfs:label	"rich ontologies"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:semantically_rich	rdfs:label	"semantically rich"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:semantically	rdfs:label	"semantically"	.
+local:does_not_contain	a	rdf:Class	;
+	rdfs:label	"does not contain"	.
 
-local:containing	rdfs:label	"containing"	.
+local:many_cases_in_sense	a	rdf:Class	;
+	rdfs:label	"many cases in sense"	.
 
-local:tens	rdfs:label	"tens"	.
+local:many_cases_in_the_sense_that_the_ontology_is_consistent	a	rdf:Class	;
+	rdfs:label	"many cases in the sense that the ontology is consistent"	.
 
-local:thousands_classes	rdfs:label	"thousands classes"	.
+local:logmaps_output_mappings_with_the_input_ontologies	a	rdf:Class	;
+	rdfs:label	"logmaps output mappings with the input ontologies"	.
 
-local:classes	rdfs:label	"classes"	.
+local:input_ontologies	a	rdf:Class	;
+	rdfs:label	"input ontologies"	.
 
-local:matching_system	rdfs:label	"matching system"	.
+local:logmaps_output_mappings	a	rdf:Class	;
+	rdfs:label	"logmaps output mappings"	.
 
-local:deal	rdfs:label	"deal"	.
+local:logmaps_output	a	rdf:Class	;
+	rdfs:label	"logmaps output"	.
 
-local:can	rdfs:label	"can"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:classes_hundreds	rdfs:label	"classes hundreds"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:hundreds	rdfs:label	"hundreds"	.
+local:logmaps_output_mappings_with_input_ontologies	a	rdf:Class	;
+	rdfs:label	"logmaps output mappings with input ontologies"	.
 
-local:most_existing	rdfs:label	"most existing"	.
+local:integrate	a	rdf:Class	;
+	rdfs:label	"integrate"	.
 
-local:most_existing_tools	rdfs:label	"most existing tools"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:tools	rdfs:label	"tools"	.
+local:integrating_logmaps_output_mappings_with_the_input_ontologies	a	rdf:Class	;
+	rdfs:label	"integrating logmaps output mappings with the input ontologies"	.
 
-local:existing	rdfs:label	"existing"	.
+local:integrating_with_input_ontologies	a	rdf:Class	;
+	rdfs:label	"integrating with input ontologies"	.
 
-local:existing_tools	rdfs:label	"existing tools"	.
+local:integrating	a	rdf:Class	;
+	rdfs:label	"integrating"	.
 
-local:most	rdfs:label	"most"	.
+local:biomedical_ontologies	a	rdf:Class	;
+	rdfs:label	"biomedical ontologies"	.
 
-local:contrast_to_most_existing_tools	rdfs:label	"contrast to most existing tools"	.
+local:biomedical	a	rdf:Class	;
+	rdfs:label	"biomedical"	.
 
-local:contrast	rdfs:label	"contrast"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:implements	rdfs:label	"implements"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:also	rdfs:label	"also"	.
+local:match	a	rdf:Class	;
+	rdfs:label	"match"	.
 
-local:fly_’_unsatisfiability	rdfs:label	"fly ’ unsatisfiability"	.
+local:even_the_largest_existing_biomedical_ontologies	a	rdf:Class	;
+	rdfs:label	"even the largest existing biomedical ontologies"	.
 
-local:fly_’_unsatisfiability_detection	rdfs:label	"fly ’ unsatisfiability detection"	.
+local:largest_existing_biomedical_ontologies	a	rdf:Class	;
+	rdfs:label	"largest existing biomedical ontologies"	.
 
-local:unsatisfiability	rdfs:label	"unsatisfiability"	.
+local:even_largest_existing_biomedical_ontologies	a	rdf:Class	;
+	rdfs:label	"even largest existing biomedical ontologies"	.
 
-local:fly_’	rdfs:label	"fly ’"	.
+local:efficiently	a	rdf:Class	;
+	rdfs:label	"efficiently"	.
 
-local:unsatisfiability_detection	rdfs:label	"unsatisfiability detection"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:’	rdfs:label	"’"	.
+local:experiments_with_the_ontologies_snomed_ct	a	rdf:Class	;
+	rdfs:label	"experiments with the ontologies snomed ct"	.
 
-local:’_unsatisfiability	rdfs:label	"’ unsatisfiability"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:detection	rdfs:label	"detection"	.
+local:ontologies_snomed_ct	a	rdf:Class	;
+	rdfs:label	"ontologies snomed ct"	.
 
-local:fly	rdfs:label	"fly"	.
+local:ct	a	rdf:Class	;
+	rdfs:label	"ct"	.
 
-local:’_unsatisfiability_detection	rdfs:label	"’ unsatisfiability detection"	.
+local:snomed_ct	a	rdf:Class	;
+	rdfs:label	"snomed ct"	.
 
-local:algorithms	rdfs:label	"algorithms"	.
+local:snomed	a	rdf:Class	;
+	rdfs:label	"snomed"	.
 
-local:experiments_with_ontologies	rdfs:label	"experiments with ontologies"	.
+local:ontologies_snomed	a	rdf:Class	;
+	rdfs:label	"ontologies snomed"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:experiments_with_ontologies	a	rdf:Class	;
+	rdfs:label	"experiments with ontologies"	.
 
-local:confirm	rdfs:label	"confirm"	.
+local:confirm	a	rdf:Class	;
+	rdfs:label	"confirm"	.
 
-local:snomed	rdfs:label	"snomed"	.
+local:system_can_efficiently_match_even_the_largest_existing_biomedical_ontologies	a	rdf:Class	;
+	rdfs:label	"system can efficiently match even the largest existing biomedical ontologies"	.
 
-local:biomedical_ontologies	rdfs:label	"bio-medical ontologies"	.
+local:efficiently_match	a	rdf:Class	;
+	rdfs:label	"efficiently match"	.
 
-local:biomedical	rdfs:label	"bio-medical"	.
+local:can_efficiently_match	a	rdf:Class	;
+	rdfs:label	"can efficiently match"	.
 
-local:existing_biomedical_ontologies	rdfs:label	"existing bio-medical ontologies"	.
+local:experiments_with_the_ontologies_fma_ct	a	rdf:Class	;
+	rdfs:label	"experiments with the ontologies fma ct"	.
 
-local:largest_existing_biomedical_ontologies	rdfs:label	"largest existing bio-medical ontologies"	.
+local:ontologies_fma_ct	a	rdf:Class	;
+	rdfs:label	"ontologies fma ct"	.
 
-local:even_largest_existing_biomedical_ontologies	rdfs:label	"even largest existing bio-medical ontologies"	.
+local:ontologies_fma	a	rdf:Class	;
+	rdfs:label	"ontologies fma"	.
 
-local:efficiently_match	rdfs:label	"efficiently match"	.
+local:fma	a	rdf:Class	;
+	rdfs:label	"fma"	.
 
-local:match	rdfs:label	"match"	.
+local:fma_ct	a	rdf:Class	;
+	rdfs:label	"fma ct"	.
 
-local:can_efficiently_match	rdfs:label	"can efficiently match"	.
+local:experiments_with_ontologies_fma_ct	a	rdf:Class	;
+	rdfs:label	"experiments with ontologies fma ct"	.
 
-local:efficiently	rdfs:label	"efficiently"	.
+local:experiments_with_the_ontologies_nci_ct	a	rdf:Class	;
+	rdfs:label	"experiments with the ontologies nci ct"	.
 
-local:nci	rdfs:label	"nci"	.
+local:ontologies_nci_ct	a	rdf:Class	;
+	rdfs:label	"ontologies nci ct"	.
 
-local:fma_ct	rdfs:label	"fma ct"	.
+local:ontologies_nci	a	rdf:Class	;
+	rdfs:label	"ontologies nci"	.
 
-local:ct	rdfs:label	"ct"	.
+local:nci	a	rdf:Class	;
+	rdfs:label	"nci"	.
 
-local:ontologies_fma_ct	rdfs:label	"ontologies fma ct"	.
+local:nci_ct	a	rdf:Class	;
+	rdfs:label	"nci ct"	.
 
-local:experiments_with_ontologies_fma_ct	rdfs:label	"experiments with ontologies fma ct"	.
+local:experiments_with_ontologies_nci_ct	a	rdf:Class	;
+	rdfs:label	"experiments with ontologies nci ct"	.
 
-local:produce	rdfs:label	"produce"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:furthermore	rdfs:label	"furthermore"	.
+local:algorithms_repair	a	rdf:Class	;
+	rdfs:label	"algorithms repair"	.
 
-local:‘	rdfs:label	"‘"	.
+local:repair	a	rdf:Class	;
+	rdfs:label	"repair"	.
 
-local:‘_clean	rdfs:label	"‘ clean"	.
+local:algorithms	a	rdf:Class	;
+	rdfs:label	"algorithms"	.
 
-local:clean	rdfs:label	"clean"	.
+local:contrast_to_most_existing_tools	a	rdf:Class	;
+	rdfs:label	"contrast to most existing tools"	.
 
-local:clean_’	rdfs:label	"clean ’"	.
+local:contrast	a	rdf:Class	;
+	rdfs:label	"contrast"	.
 
-local:clean_’_set	rdfs:label	"clean ’ set"	.
+local:most_existing_tools	a	rdf:Class	;
+	rdfs:label	"most existing tools"	.
 
-local:set	rdfs:label	"set"	.
+local:existing_tools	a	rdf:Class	;
+	rdfs:label	"existing tools"	.
 
-local:‘_clean_’_set	rdfs:label	"‘ clean ’ set"	.
+local:existing	a	rdf:Class	;
+	rdfs:label	"existing"	.
 
-local:‘_clean_’	rdfs:label	"‘ clean ’"	.
+local:tools	a	rdf:Class	;
+	rdfs:label	"tools"	.
 
-local:output_mappings	rdfs:label	"output mappings"	.
+local:most_existing	a	rdf:Class	;
+	rdfs:label	"most existing"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
-local:’_set	rdfs:label	"’ set"	.
+local:contrast_to_existing_tools	a	rdf:Class	;
+	rdfs:label	"contrast to existing tools"	.
 
-local:output	rdfs:label	"output"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:clean_set	rdfs:label	"clean set"	.
+local:algorithms_fly_unsatisfiability_detection	a	rdf:Class	;
+	rdfs:label	"algorithms fly unsatisfiability detection"	.
 
-local:clean_set_of_output_mappings	rdfs:label	"clean set of output mappings"	.
+local:unsatisfiability_detection	a	rdf:Class	;
+	rdfs:label	"unsatisfiability detection"	.
 
-local:many	rdfs:label	"many"	.
+local:detection	a	rdf:Class	;
+	rdfs:label	"detection"	.
 
-local:many_cases	rdfs:label	"many cases"	.
+local:unsatisfiability	a	rdf:Class	;
+	rdfs:label	"unsatisfiability"	.
 
-local:cases	rdfs:label	"cases"	.
+local:matching_system	a	rdf:Class	;
+	rdfs:label	"matching system"	.
 
-local:clean_set_of_output_mappings_in_many_cases	rdfs:label	"clean set of output mappings in many cases"	.
+local:deal	a	rdf:Class	;
+	rdfs:label	"deal"	.
 
-local:unsatisfiable	rdfs:label	"unsatisfiable"	.
+local:semantically_rich_ontologies	a	rdf:Class	;
+	rdfs:label	"semantically rich ontologies"	.
 
-local:unsatisfiable_classes	rdfs:label	"unsatisfiable classes"	.
+local:rich_ontologies	a	rdf:Class	;
+	rdfs:label	"rich ontologies"	.
 
-local:not_contain	rdfs:label	"not contain"	.
+local:rich	a	rdf:Class	;
+	rdfs:label	"rich"	.
 
-local:contain	rdfs:label	"contain"	.
+local:semantically_rich	a	rdf:Class	;
+	rdfs:label	"semantically rich"	.
 
-local:does_not_contain	rdfs:label	"does not contain"	.
+local:semantically	a	rdf:Class	;
+	rdfs:label	"semantically"	.
 
-local:sense	rdfs:label	"sense"	.
+local:hundreds_of_thousands_of_classes	a	rdf:Class	;
+	rdfs:label	"hundreds of thousands of classes"	.
 
-local:not	rdfs:label	"not"	.
+local:thousands	a	rdf:Class	;
+	rdfs:label	"thousands"	.
 
-local:obtained	rdfs:label	"obtained"	.
+local:hundreds	a	rdf:Class	;
+	rdfs:label	"hundreds"	.
 
-local:logmap_’_s_output	rdfs:label	"logmap ’ s output"	.
+local:thousands_classes	a	rdf:Class	;
+	rdfs:label	"thousands classes"	.
 
-local:logmap_’_s_output_mappings	rdfs:label	"logmap ’ s output mappings"	.
+local:hundreds_thousands	a	rdf:Class	;
+	rdfs:label	"hundreds thousands"	.
 
-local:logmap_’_s	rdfs:label	"logmap ’ s"	.
+local:tens_of_thousands_of_classes	a	rdf:Class	;
+	rdfs:label	"tens of thousands of classes"	.
 
-local:s	rdfs:label	"s"	.
+local:tens	a	rdf:Class	;
+	rdfs:label	"tens"	.
 
-local:logmap_’	rdfs:label	"logmap ’"	.
+local:tens_thousands	a	rdf:Class	;
+	rdfs:label	"tens thousands"	.
 
-local:s_output	rdfs:label	"s output"	.
+local:diagnosis_capabilities	a	rdf:Class	;
+	rdfs:label	"diagnosis capabilities"	.
 
-local:s_output_mappings	rdfs:label	"s output mappings"	.
+local:diagnosis	a	rdf:Class	;
+	rdfs:label	"diagnosis"	.
 
-local:input_ontologies	rdfs:label	"input ontologies"	.
+local:capabilities	a	rdf:Class	;
+	rdfs:label	"capabilities"	.
 
-local:’_s_output	rdfs:label	"’ s output"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:’_s_output_mappings	rdfs:label	"’ s output mappings"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:’_s	rdfs:label	"’ s"	.
+local:logmap_a_highly_scalable_ontology	a	rdf:Class	;
+	rdfs:label	"logmap a highly scalable ontology"	.
 
-local:input	rdfs:label	"input"	.
+local:highly_scalable	a	rdf:Class	;
+	rdfs:label	"highly scalable"	.
 
-local:logmap_output_mappings	rdfs:label	"logmap output mappings"	.
+local:highly	a	rdf:Class	;
+	rdfs:label	"highly"	.
 
-local:integrating_with_input_ontologies	rdfs:label	"integrating with input ontologies"	.
+local:scalable_ontology	a	rdf:Class	;
+	rdfs:label	"scalable ontology"	.
 
-local:integrating	rdfs:label	"integrating"	.
+local:scalable	a	rdf:Class	;
+	rdfs:label	"scalable"	.
 
-local:logmap_output_mappings_with_input_ontologies	rdfs:label	"logmap output mappings with input ontologies"	.
+local:highly_scalable_ontology	a	rdf:Class	;
+	rdfs:label	"highly scalable ontology"	.
 
-#### Properties ####
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
 #### Mapped Relations ####
 
-local:ontologies	owl:sameAs	cso:ontologies	.
 cso:ontologies	rdfs:label	"ontologies"	.
 local:ontology	owl:sameAs	cso:ontology	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 cso:ontology	rdfs:label	"ontology"	.
 
 #### Relations ####
 
-local:confirm	vn.role:Cause	local:can_efficiently_match	.
-local:produce	local:AM-LOC	local:many_cases	.
-local:output_mappings	rdfs:subClassOf	local:mappings	.
-local:unsatisfiable_classes	rdfs:subClassOf	local:classes	.
-local:many_cases	rdfs:subClassOf	local:cases	.
-local:’_s_output	rdfs:subClassOf	local:output	.
-local:scalable	rdfs:member	local:scalable_ontology	.
-local:fly_’_unsatisfiability	rdfs:subClassOf	local:unsatisfiability	.
-local:biomedical_ontologies	rdfs:subClassOf	local:ontologies	.
-local:’_unsatisfiability	rdfs:member	local:’_unsatisfiability_detection	.
-local:contain	vn.role:Theme1	local:ontology	.
-local:logmap_’_s_output_mappings	rdfs:subClassOf	local:mappings	.
-local:present	local:AM-LOC	local:paper	.
-local:present	vn.role:Agent	local:we	.
-local:fly	rdfs:member	local:fly_’	.
-local:classes_hundreds	rdfs:subClassOf	local:hundreds	.
-local:most_existing_tools	rdfs:subClassOf	local:tools	.
-local:implements	local:AM-DIS	local:also	.
-local:experiments_with_ontologies_fma_ct	local:experiments_with	local:ontologies_fma_ct	.
-local:‘_clean_’	rdfs:subClassOf	local:’	.
-local:diagnosis	rdfs:member	local:diagnosis_capabilities	.
-local:’	rdfs:member	local:’_set	.
-local:fly_’_unsatisfiability_detection	rdfs:subClassOf	local:detection	.
-local:match	vn.role:Patient2	local:even_largest_existing_biomedical_ontologies	.
-local:semantically_rich_ontologies	rdfs:subClassOf	local:ontologies	.
-local:logmap_output_mappings	rdfs:subClassOf	local:output_mappings	.
-local:integrating	vn.role:Patient2	local:logmap_output_mappings_with_input_ontologies	.
-local:matching	vn.role:Patient2	local:logmap	.
-local:not_contain	rdfs:subClassOf	local:contain	.
-local:thousands_classes	rdfs:subClassOf	local:classes	.
-local:logmap_’_s	rdfs:subClassOf	local:s	.
-local:confirm	vn.role:Recipient	local:snomed	.
-local:’	rdfs:member	local:’_s	.
-local:deal	vn.role:Theme	local:rich_ontologies	.
-local:even_largest_existing_biomedical_ontologies	rdfs:subClassOf	local:largest_existing_biomedical_ontologies	.
-local:’	rdfs:member	local:’_unsatisfiability	.
-local:’_s_output_mappings	rdfs:subClassOf	local:mappings	.
-local:clean_set	rdfs:subClassOf	local:set	.
-local:matching_system	rdfs:subClassOf	local:system	.
-local:experiments_with_ontologies_fma_ct	local:with_ontologiesfmact	local:experiments	.
-local:fma_ct	rdfs:subClassOf	local:ct	.
-local:logmap_output_mappings_with_input_ontologies	local:with_inputontologies	local:logmap_output_mappings	.
-local:clean_set_of_output_mappings	local:cleanset_of	local:output_mappings	.
-local:’_set	rdfs:subClassOf	local:set	.
-local:’_unsatisfiability	rdfs:subClassOf	local:unsatisfiability	.
-local:efficiently_match	rdfs:subClassOf	local:match	.
-local:diagnosis_capabilities	rdfs:subClassOf	local:capabilities	.
-local:deal	vn.role:Agent	local:matching_system	.
-local:most_existing	rdfs:subClassOf	local:existing	.
-local:deal	local:AM-MOD	local:can	.
-local:produce	vn.role:Product	local:clean_set_of_output_mappings	.
-local:confirm	vn.role:Recipient	local:nci	.
-local:confirm	vn.role:Recipient	local:experiments_with_ontologies_fma_ct	.
-local:containing	vn.role:Theme1	local:rich_ontologies	.
-local:contrast_to_most_existing_tools	local:to_mostexistingtools	local:contrast	.
-local:obtained	vn.role:object	local:ontology	.
-local:match	vn.role:Patient2	local:system	.
-local:’_unsatisfiability_detection	rdfs:subClassOf	local:detection	.
-local:‘	rdfs:member	local:‘_clean	.
-local:semantically	rdfs:member	local:semantically_rich	.
-local:logmap_’_s_output	rdfs:member	local:logmap_’_s_output_mappings	.
-local:clean_set_of_output_mappings_in_many_cases	local:in_manycases	local:clean_set_of_output_mappings	.
-local:matching	local:AM-MNR	local:diagnosis_capabilities	.
-local:‘_clean	rdfs:member	local:‘_clean_’	.
-local:logmap_output_mappings_with_input_ontologies	local:logmapoutputmappings_with	local:input_ontologies	.
-local:clean_set_of_output_mappings	local:of_outputmappings	local:clean_set	.
-local:many	rdfs:member	local:many_cases	.
-local:semantically_rich	rdfs:member	local:semantically_rich_ontologies	.
-local:produce	local:AM-PNC	local:sense	.
-local:fly_’_unsatisfiability	rdfs:member	local:fly_’_unsatisfiability_detection	.
-local:clean_’	rdfs:subClassOf	local:’	.
-local:logmap_’_s_output	rdfs:subClassOf	local:output	.
-local:unsatisfiable	rdfs:member	local:unsatisfiable_classes	.
-local:containing	vn.role:Theme2	local:classes_hundreds	.
-local:highly	rdfs:member	local:highly_scalable	.
-local:s	rdfs:member	local:s_output	.
-local:can_efficiently_match	rdfs:subClassOf	local:efficiently_match	.
-local:obtained	local:AM-MNR	local:integrating_with_input_ontologies	.
-local:contain	vn.role:Theme2	local:unsatisfiable_classes	.
-local:semantically_rich	rdfs:subClassOf	local:rich	.
-local:contain	local:AM-NEG	local:not	.
-local:contrast_to_most_existing_tools	local:contrast_to	local:most_existing_tools	.
-local:highly_scalable	rdfs:member	local:highly_scalable_ontology	.
-local:existing	vn.role:Location	local:biomedical_ontologies	.
-local:clean_set_of_output_mappings_in_many_cases	local:cleansetofoutputmappings_in	local:many_cases	.
-local:logmap_’_s	rdfs:member	local:logmap_’_s_output	.
-local:clean_’_set	rdfs:subClassOf	local:set	.
-local:unsatisfiability	rdfs:member	local:unsatisfiability_detection	.
-local:scalable_ontology	rdfs:subClassOf	local:ontology	.
-local:experiments_with_ontologies	local:experiments_with	local:ontologies	.
-local:experiments_with_ontologies	local:with_ontologies	local:experiments	.
-local:existing_tools	rdfs:subClassOf	local:tools	.
-local:logmap_’	rdfs:subClassOf	local:’	.
-local:input_ontologies	rdfs:subClassOf	local:ontologies	.
-local:rich_ontologies	rdfs:subClassOf	local:ontologies	.
-local:largest_existing_biomedical_ontologies	rdfs:subClassOf	local:existing_biomedical_ontologies	.
-local:most	rdfs:member	local:most_existing	.
-local:logmap	rdfs:member	local:logmap_’	.
-local:produce	vn.role:Product	local:clean_set_of_output_mappings_in_many_cases	.
-local:s_output_mappings	rdfs:subClassOf	local:mappings	.
-local:existing	rdfs:member	local:existing_tools	.
-local:highly_scalable_ontology	rdfs:subClassOf	local:ontology	.
-local:unsatisfiability_detection	rdfs:subClassOf	local:detection	.
-local:most_existing_tools	rdfs:subClassOf	local:existing_tools	.
-local:present	vn.role:Theme	local:logmap	.
-local:most_existing	rdfs:member	local:most_existing_tools	.
-local:’_s_output	rdfs:member	local:’_s_output_mappings	.
-local:match	local:AM-MNR	local:efficiently	.
-local:s_output	rdfs:subClassOf	local:output	.
-local:logmap_’	rdfs:member	local:logmap_’_s	.
-local:’_s	rdfs:subClassOf	local:s	.
-local:match	local:AM-MOD	local:can	.
-local:containing	vn.role:Theme2	local:tens	.
-local:input	rdfs:member	local:input_ontologies	.
-local:‘_clean_’	rdfs:member	local:‘_clean_’_set	.
-local:biomedical	rdfs:member	local:biomedical_ontologies	.
-local:existing_biomedical_ontologies	rdfs:subClassOf	local:biomedical_ontologies	.
-local:produce	vn.role:Agent	local:furthermore	.
-local:rich	rdfs:member	local:rich_ontologies	.
-local:clean_’	rdfs:member	local:clean_’_set	.
-local:‘_clean_’_set	rdfs:subClassOf	local:set	.
-local:highly_scalable	rdfs:subClassOf	local:scalable	.
-local:containing	vn.role:Theme2	local:thousands_classes	.
-local:implements	vn.role:Theme	local:algorithms	.
-local:fly_’	rdfs:subClassOf	local:’	.
-local:clean	rdfs:member	local:clean_’	.
-local:output	rdfs:member	local:output_mappings	.
-local:’_s	rdfs:member	local:’_s_output	.
-local:integrating_with_input_ontologies	local:with_inputontologies	local:integrating	.
-local:‘_clean	rdfs:subClassOf	local:clean	.
-local:ontologies_fma_ct	rdfs:subClassOf	local:fma_ct	.
-local:matching	vn.role:Patient2	local:system	.
-local:fly_’	rdfs:member	local:fly_’_unsatisfiability	.
-local:s_output	rdfs:member	local:s_output_mappings	.
-local:integrating_with_input_ontologies	local:integrating_with	local:input_ontologies	.
+local:ontologies_nci_ct	rdfs:subClassOf	local:nci_ct	.
+local:s11.1	rdf:predicate	local:match	.
+local:s11.2	rdf:predicate	local:exist	.
+local:many_cases	rdfs:member	local:many	.
+local:contrast_to_existing_tools	rdfs:member	local:contrast	.
+local:s12.1	rdf:subject	local:logmaps_output_mappings_with_the_input_ontologies	.
+local:ontologies_fma	rdfs:subClassOf	local:fma	.
+local:nci_ct	rdfs:subClassOf	local:ct	.
+local:s13	local:AM-LOC	local:many_cases_in_the_sense_that_the_ontology_is_consistent	.
+local:ontologies_nci	rdfs:member	local:ontologies	.
 local:does_not_contain	rdfs:subClassOf	local:not_contain	.
-local:implements	local:AM-ADV	local:contrast_to_most_existing_tools	.
+local:highly_scalable	rdfs:subClassOf	local:scalable	.
+local:s12	rdf:subject	local:ontology	.
+local:snomed_ct	rdfs:subClassOf	local:ct	.
+local:s10.2	rdf:predicate	local:exist	.
+local:s14.1	rdf:object	local:unsatisfiable_classes	.
+local:experiments_with_the_ontologies_snomed_ct	rdfs:member	local:experiments	.
+local:s9.2	rdf:subject	local:biomedical_ontologies	.
+local:experiments_with_the_ontologies_nci_ct	rdfs:member	local:ontologies_nci_ct	.
+local:s14	rdf:predicate	local:produce	.
+local:clean_set	rdfs:member	local:clean	.
+local:s8	rdf:subject	local:logmaps	.
+local:s8	rdf:predicate	local:implement	.
+local:hundreds_of_thousands_of_classes	rdfs:member	local:thousands	.
+local:ontologies_nci	rdfs:subClassOf	local:nci	.
+local:most_existing_tools	rdfs:subClassOf	local:tools	.
+local:s5	rdf:predicate	local:contain	.
+local:fma_ct	rdfs:subClassOf	local:ct	.
+local:rich_ontologies	rdfs:subClassOf	local:ontologies	.
+local:scalable_ontology	rdfs:member	local:scalable	.
+local:clean_set_of_output_mappings	rdfs:member	local:output_mappings	.
+local:integrating_with_input_ontologies	rdfs:member	local:integrating	.
+local:ontologies_fma_ct	rdfs:member	local:ontologies_fma	.
+local:s10	rdf:object	local:system_can_efficiently_match_even_the_largest_existing_biomedical_ontologies	.
+local:s1	rdf:predicate	local:match	.
+local:existing_tools	rdfs:subClassOf	local:tools	.
+local:many_cases_in_the_sense_that_the_ontology_is_consistent	rdfs:member	local:sense	.
+local:biomedical_ontologies	rdfs:member	local:biomedical	.
+local:experiments_with_ontologies	rdfs:member	local:experiments	.
+local:s0	rdf:predicate	local:present	.
+local:s7	rdf:subject	local:logmaps	.
+local:s10.1	local:AM-MOD	local:can	.
+local:experiments_with_ontologies_nci_ct	rdfs:member	local:experiments	.
+local:s4	rdf:subject	local:semantically_rich_ontologies	.
+local:algorithms_fly_unsatisfiability_detection	rdfs:member	local:algorithms	.
+local:existing_tools	rdfs:member	local:existing	.
+local:algorithms_repair	rdfs:member	local:algorithms	.
+local:logmaps_output_mappings_with_input_ontologies	rdfs:member	local:logmaps_output_mappings	.
+local:s2	rdf:predicate	local:match	.
+local:semantically_rich_ontologies	rdfs:member	local:semantically_rich	.
+local:s6	local:AM-MOD	local:can	.
+local:s11.1	rdf:subject	local:system	.
+local:s11	rdf:predicate	local:confirm	.
+local:ontologies_fma_ct	rdfs:subClassOf	local:ct	.
+local:largest_existing_biomedical_ontologies	rdfs:subClassOf	local:s9.2	.
+local:s10.1	local:AM-MNR	local:efficiently	.
+local:experiments_with_ontologies_fma_ct	rdfs:member	local:experiments	.
+local:s9.2	rdfs:subClassOf	local:biomedical_ontologies	.
+local:s7	rdf:object	local:algorithms_fly_unsatisfiability_detection	.
+local:s2	rdf:subject	local:diagnosis_capabilities	.
+local:diagnosis_capabilities	rdfs:subClassOf	local:capabilities	.
+local:s9.1	local:AM-MNR	local:efficiently	.
+local:s13	rdf:subject	local:logmaps	.
+local:snomed_ct	rdfs:member	local:snomed	.
+local:many_cases_in_the_sense_that_the_ontology_is_consistent	rdfs:member	local:ontology	.
+local:many_cases_in_the_sense_that_the_ontology_is_consistent	rdfs:member	local:many_cases	.
+local:tens_thousands	rdfs:subClassOf	local:thousands	.
+local:s0	rdf:subject	local:we	.
+local:ontologies_snomed	rdfs:subClassOf	local:snomed	.
+local:semantically_rich_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s9	rdf:subject	local:experiments_with_the_ontologies_nci_ct	.
+local:many_cases_in_the_sense_that_the_ontology_does_not_contain_unsatisfiable_classes	rdfs:member	local:sense	.
+local:unsatisfiability_detection	rdfs:subClassOf	local:detection	.
+local:s8	local:AM-DIS	local:also	.
+local:hundreds_of_thousands_of_classes	rdfs:member	local:classes	.
+local:s14.1	rdf:predicate	local:not_contain	.
+local:experiments_with_ontologies	rdfs:member	local:ontologies	.
+local:highly_scalable	rdfs:member	local:highly	.
+local:s9	rdf:object	local:system_can_efficiently_match_even_the_largest_existing_biomedical_ontologies	.
+local:contrast_to_most_existing_tools	rdfs:member	local:most_existing_tools	.
+local:hundreds_of_thousands_of_classes	rdfs:member	local:hundreds	.
+local:s0	local:AM-LOC	local:paper	.
+local:s10.1	rdf:predicate	local:match	.
+local:logmaps_output_mappings_with_the_input_ontologies	rdfs:member	local:input_ontologies	.
+local:s14.1	rdf:subject	local:ontology	.
+local:s13	rdf:predicate	local:produce	.
+local:even_largest_existing_biomedical_ontologies	rdfs:subClassOf	local:largest_existing_biomedical_ontologies	.
+local:many_cases_in_the_sense_that_the_ontology_does_not_contain_unsatisfiable_classes	rdfs:member	local:ontology	.
+local:ontologies_nci_ct	rdfs:subClassOf	local:ct	.
+local:diagnosis_capabilities	rdfs:member	local:diagnosis	.
+local:tens_of_thousands_of_classes	rdfs:member	local:classes	.
+local:unsatisfiability_detection	rdfs:member	local:unsatisfiability	.
+local:rich_ontologies	rdfs:member	local:rich	.
+local:s4	rdf:object	local:tens_of_thousands_of_classes	.
+local:s10.1	rdf:object	local:even_the_largest_existing_biomedical_ontologies	.
+local:output_mappings	rdfs:subClassOf	local:mappings	.
+local:input_ontologies	rdfs:member	local:input	.
+local:s7	local:AM-DIS	local:also	.
+local:most_existing_tools	rdfs:member	local:most_existing	.
+local:s7	rdf:predicate	local:implement	.
+local:s0	rdf:object	local:logmap_a_highly_scalable_ontology	.
+local:s11	rdf:object	local:system_can_efficiently_match_even_the_largest_existing_biomedical_ontologies	.
+local:s14	local:AM-LOC	local:many_cases_in_the_sense_that_the_ontology_does_not_contain_unsatisfiable_classes	.
+local:s12	local:AM-MNR	local:integrating_logmaps_output_mappings_with_the_input_ontologies	.
+local:many_cases_in_the_sense_that_the_ontology_does_not_contain_unsatisfiable_classes	rdfs:member	local:many_cases	.
+local:ontologies_nci_ct	rdfs:member	local:ontologies_nci	.
+local:highly_scalable_ontology	rdfs:member	local:highly_scalable	.
+local:not_contain	rdfs:subClassOf	local:contain	.
+local:fma_ct	rdfs:member	local:fma	.
+local:s14	rdf:object	local:clean_set_of_output_mappings	.
+local:logmaps_output_mappings	rdfs:subClassOf	local:output_mappings	.
+local:logmaps_output_mappings_with_the_input_ontologies	rdfs:member	local:logmaps_output_mappings	.
+local:ontologies_snomed_ct	rdfs:member	local:ontologies_snomed	.
+local:s10.2	rdf:subject	local:biomedical_ontologies	.
+local:ontologies_fma_ct	rdfs:subClassOf	local:fma_ct	.
+local:s7	local:AM-ADV	local:contrast_to_most_existing_tools	.
+local:s4	rdf:predicate	local:contain	.
+local:thousands_classes	rdfs:subClassOf	local:classes	.
+local:integrating_with_input_ontologies	rdfs:member	local:input_ontologies	.
+local:s14	rdf:subject	local:logmaps	.
+local:algorithms_repair	rdfs:subClassOf	local:repair	.
+local:ontologies_snomed	rdfs:member	local:ontologies	.
+local:output_mappings	rdfs:member	local:output	.
+local:s10.2	rdfs:subClassOf	local:biomedical_ontologies	.
+local:s11.1	local:AM-MOD	local:can	.
+local:scalable_ontology	rdfs:subClassOf	local:ontology	.
+local:logmaps_output_mappings	rdfs:subClassOf	local:mappings	.
+local:s9	rdf:predicate	local:confirm	.
+local:many_cases	rdfs:subClassOf	local:cases	.
+local:logmaps_output_mappings	rdfs:member	local:logmaps_output	.
+local:contrast_to_most_existing_tools	rdfs:member	local:contrast	.
+local:s1	rdf:subject	local:system	.
+local:biomedical_ontologies	rdfs:subClassOf	local:ontologies	.
+local:logmaps_output	rdfs:subClassOf	local:output	.
+local:efficiently_match	rdfs:subClassOf	local:match	.
+local:s5	rdf:object	local:hundreds_of_thousands_of_classes	.
+local:most_existing	rdfs:member	local:most	.
+local:many_cases_in_sense	rdfs:member	local:sense	.
+local:s9.2	rdf:predicate	local:exist	.
+local:hundreds_thousands	rdfs:subClassOf	local:thousands	.
+local:s12	rdf:predicate	local:obtain	.
+local:unsatisfiable_classes	rdfs:subClassOf	local:classes	.
+local:clean_set_of_output_mappings	rdfs:member	local:clean_set	.
+local:can_efficiently_match	rdfs:subClassOf	local:efficiently_match	.
+local:s8	local:AM-ADV	local:contrast_to_most_existing_tools	.
+local:input_ontologies	rdfs:subClassOf	local:ontologies	.
+local:system_can_efficiently_match_even_the_largest_existing_biomedical_ontologies	rdfs:member	local:biomedical_ontologies	.
+local:s2	rdf:object	local:system	.
+local:experiments_with_ontologies_fma_ct	rdfs:member	local:ontologies_fma_ct	.
+local:algorithms_fly_unsatisfiability_detection	rdfs:member	local:unsatisfiability_detection	.
+local:s6	rdf:subject	local:matching_system	.
+local:clean_set	rdfs:subClassOf	local:set	.
+local:s9.1	rdf:object	local:even_the_largest_existing_biomedical_ontologies	.
+local:tens_of_thousands_of_classes	rdfs:member	local:thousands	.
+local:s12.1	rdfs:member	local:input_ontologies	.
+local:ontologies_snomed_ct	rdfs:subClassOf	local:ct	.
+local:s9.1	rdf:subject	local:system	.
+local:s12.1	rdf:predicate	local:integrate	.
+local:s11.1	local:AM-MNR	local:efficiently	.
+local:matching_system	rdfs:subClassOf	local:system	.
+local:largest_existing_biomedical_ontologies	rdfs:subClassOf	local:s11.2	.
+local:experiments_with_the_ontologies_nci_ct	rdfs:member	local:experiments	.
+local:semantically_rich	rdfs:member	local:semantically	.
+local:s10.1	rdf:subject	local:system	.
+local:experiments_with_ontologies_nci_ct	rdfs:member	local:ontologies_nci_ct	.
+local:s6	rdf:object	local:semantically_rich_ontologies	.
+local:s10	rdf:subject	local:experiments_with_the_ontologies_fma_ct	.
+local:experiments_with_the_ontologies_snomed_ct	rdfs:member	local:ontologies_snomed_ct	.
+local:s8	rdf:object	local:algorithms_repair	.
+local:nci_ct	rdfs:member	local:nci	.
+local:s12.1	rdfs:member	local:logmaps_output_mappings	.
+local:s11	rdf:subject	local:experiments_with_the_ontologies_snomed_ct	.
+local:s13	rdf:object	local:clean_set_of_output_mappings	.
+local:s11.2	rdfs:subClassOf	local:biomedical_ontologies	.
+local:largest_existing_biomedical_ontologies	rdfs:subClassOf	local:s10.2	.
+local:highly_scalable_ontology	rdfs:subClassOf	local:ontology	.
+local:s9.1	rdf:predicate	local:match	.
+local:s6	rdf:predicate	local:deal	.
+local:most_existing	rdfs:subClassOf	local:existing	.
+local:experiments_with_the_ontologies_fma_ct	rdfs:member	local:ontologies_fma_ct	.
+local:s9.1	local:AM-MOD	local:can	.
+local:ontologies_fma	rdfs:member	local:ontologies	.
+local:many_cases_in_sense	rdfs:member	local:many_cases	.
+local:s5	rdf:subject	local:semantically_rich_ontologies	.
+local:s10	rdf:predicate	local:confirm	.
+local:tens_of_thousands_of_classes	rdfs:member	local:tens	.
+local:experiments_with_the_ontologies_fma_ct	rdfs:member	local:experiments	.
+local:logmaps_output	rdfs:member	local:logmaps	.
+local:contrast_to_existing_tools	rdfs:member	local:existing_tools	.
+local:many_cases_in_the_sense_that_the_ontology_does_not_contain_unsatisfiable_classes	rdfs:member	local:unsatisfiable_classes	.
+local:semantically_rich	rdfs:subClassOf	local:rich	.
+local:s11.1	rdf:object	local:even_the_largest_existing_biomedical_ontologies	.
+local:logmaps_output_mappings_with_input_ontologies	rdfs:member	local:input_ontologies	.
+local:unsatisfiable_classes	rdfs:member	local:unsatisfiable	.
+local:system_can_efficiently_match_even_the_largest_existing_biomedical_ontologies	rdfs:member	local:system	.
+local:s11.2	rdf:subject	local:biomedical_ontologies	.

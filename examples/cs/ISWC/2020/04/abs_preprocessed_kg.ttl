@@ -1,404 +1,779 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"we discuss an extensive experimental evaluation and comparison with related work"	.
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"fixed radius"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"the embeddings of semantic neighboring nodes of a node lie within a sphere of fixed radius"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"node embeddings imposing the embeddings of semantic neighboring nodes of a node to lie within a sphere of fixed radius"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"the second component iteratively refines an initial set of node embeddings"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"the second component leveraging the notion of semantic proximity"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the second component focuses on refining embeddings by leveraging the notion of semantic proximity"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"leveraging the notion of semantic proximity"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"existing embeddings"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the second component focuses on existing embeddings by leveraging the notion of semantic proximity"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"leveraging semantic relatedness between predicates"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"random walks by leveraging semantic relatedness between predicates"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"biasing random walks by leveraging semantic relatedness between predicates"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the first provides four different ways of biasing random walks by leveraging semantic relatedness between predicates"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"introducing node embeddings via semantic proximity"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"overcome these limitations by introducing node embeddings via semantic proximity"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"nesp which features two main components"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"semantic proximity which features two main components"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"introducing nesp"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"overcome these limitations by introducing nesp"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"while the former are purely structural thus not fully considering knowledge available in semantically rich networks the latter require eg metapaths"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the former purely structural thus not fully considering knowledge available in semantically rich networks"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"while the former are purely structural thus not fully considering knowledge available in semantically rich networks the latter require leverage node types"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the former purely structural thus not fully considering knowledge available in semantically rich networks"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"while the former are purely structural thus not fully considering knowledge available in semantically rich networks the latter require complex inputs"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the former purely structural thus not fully considering knowledge available in semantically rich networks"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"other approaches also rely on some form of semantic information"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"some techniques using structural information"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"some techniques generate biased random walks by using structural information"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"representation learning techniques"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"biased random walks that then fed into representation learning techniques"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"a variety of available approaches learn graph node embeddings"	.
+
+
 #### Classes ####
 
-local:available	rdfs:label	"available"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:available_approaches	rdfs:label	"available approaches"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:extensive_experimental_evaluation_and_comparison_with_related_work	a	rdf:Class	;
+	rdfs:label	"extensive experimental evaluation and comparison with related work"	.
 
-local:variety_of_available_approaches	rdfs:label	"variety of available approaches"	.
+local:extensive_experimental_evaluation	a	rdf:Class	;
+	rdfs:label	"extensive experimental evaluation"	.
 
-local:variety	rdfs:label	"variety"	.
+local:comparison	a	rdf:Class	;
+	rdfs:label	"comparison"	.
 
-local:learn	rdfs:label	"learn"	.
+local:related_work	a	rdf:Class	;
+	rdfs:label	"related work"	.
 
-local:node_embeddings	rdfs:label	"node embeddings"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:embeddings	rdfs:label	"embeddings"	.
+local:extensive_experimental	a	rdf:Class	;
+	rdfs:label	"extensive experimental"	.
 
-local:node	rdfs:label	"node"	.
+local:experimental_evaluation	a	rdf:Class	;
+	rdfs:label	"experimental evaluation"	.
 
-local:graph_node_embeddings	rdfs:label	"graph node embeddings"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:random	rdfs:label	"random"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:random_walks	rdfs:label	"random walks"	.
+local:related	a	rdf:Class	;
+	rdfs:label	"related"	.
 
-local:walks	rdfs:label	"walks"	.
+local:extensive	a	rdf:Class	;
+	rdfs:label	"extensive"	.
 
-local:fed	rdfs:label	"fed"	.
+local:comparison_with_related_work	a	rdf:Class	;
+	rdfs:label	"comparison with related work"	.
 
-local:then	rdfs:label	"then"	.
+local:radius	a	rdf:Class	;
+	rdfs:label	"radius"	.
 
-local:learning_techniques	rdfs:label	"learning techniques"	.
+local:fix	a	rdf:Class	;
+	rdfs:label	"fix"	.
 
-local:techniques	rdfs:label	"techniques"	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node	a	rdf:Class	;
+	rdfs:label	"embeddings of semantic neighboring nodes of a node"	.
 
-local:representation_learning_techniques	rdfs:label	"representation learning techniques"	.
+local:node	a	rdf:Class	;
+	rdfs:label	"node"	.
 
-local:then_fed	rdfs:label	"then fed"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:then_fed_into_representation	rdfs:label	"then fed into representation"	.
+local:embeddings	a	rdf:Class	;
+	rdfs:label	"embeddings"	.
 
-local:representation	rdfs:label	"representation"	.
+local:neighboring_nodes	a	rdf:Class	;
+	rdfs:label	"neighboring nodes"	.
 
-local:learning	rdfs:label	"learning"	.
+local:semantic_neighboring_nodes	a	rdf:Class	;
+	rdfs:label	"semantic neighboring nodes"	.
 
-local:generate	rdfs:label	"generate"	.
+local:embeddings_of_semantic_neighboring_nodes	a	rdf:Class	;
+	rdfs:label	"embeddings of semantic neighboring nodes"	.
 
-local:biased_random	rdfs:label	"biased random"	.
+local:semantic_neighboring_nodes_of_node	a	rdf:Class	;
+	rdfs:label	"semantic neighboring nodes of node"	.
 
-local:structural	rdfs:label	"structural"	.
+local:lie	a	rdf:Class	;
+	rdfs:label	"lie"	.
 
-local:structural_information	rdfs:label	"structural information"	.
+local:within_a_sphere_of_fixed_radius	a	rdf:Class	;
+	rdfs:label	"within a sphere of fixed radius"	.
 
-local:information	rdfs:label	"information"	.
+local:sphere	a	rdf:Class	;
+	rdfs:label	"sphere"	.
 
-local:using	rdfs:label	"using"	.
+local:fixed	a	rdf:Class	;
+	rdfs:label	"fixed"	.
 
-local:rely	rdfs:label	"rely"	.
+local:sphere_of_fixed_radius	a	rdf:Class	;
+	rdfs:label	"sphere of fixed radius"	.
 
-local:also	rdfs:label	"also"	.
+local:node_embeddings	a	rdf:Class	;
+	rdfs:label	"node embeddings"	.
 
-local:semantic_information	rdfs:label	"semantic information"	.
+local:impose	a	rdf:Class	;
+	rdfs:label	"impose"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	a	rdf:Class	;
+	rdfs:label	"embeddings of semantic neighboring nodes of a node to lie within a sphere of fixed radius"	.
 
-local:form_of_semantic_information	rdfs:label	"form of semantic information"	.
+local:lie_within_sphere	a	rdf:Class	;
+	rdfs:label	"lie within sphere"	.
 
-local:form	rdfs:label	"form"	.
+local:second_component	a	rdf:Class	;
+	rdfs:label	"second component"	.
 
-local:considering	rdfs:label	"considering"	.
+local:second	a	rdf:Class	;
+	rdfs:label	"second"	.
 
-local:former	rdfs:label	"former"	.
+local:component	a	rdf:Class	;
+	rdfs:label	"component"	.
 
-local:fully	rdfs:label	"fully"	.
+local:refine	a	rdf:Class	;
+	rdfs:label	"refine"	.
 
-local:rich	rdfs:label	"rich"	.
+local:initial_set_of_node_embeddings	a	rdf:Class	;
+	rdfs:label	"initial set of node embeddings"	.
 
-local:rich_networks	rdfs:label	"rich networks"	.
+local:initial_set	a	rdf:Class	;
+	rdfs:label	"initial set"	.
 
-local:semantically_rich	rdfs:label	"semantically rich"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:semantically_rich_networks	rdfs:label	"semantically rich networks"	.
+local:initial	a	rdf:Class	;
+	rdfs:label	"initial"	.
 
-local:networks	rdfs:label	"networks"	.
+local:iteratively	a	rdf:Class	;
+	rdfs:label	"iteratively"	.
 
-local:semantically	rdfs:label	"semantically"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:available_knowledge	rdfs:label	"available knowledge"	.
+local:notion_of_semantic_proximity	a	rdf:Class	;
+	rdfs:label	"notion of semantic proximity"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:notion	a	rdf:Class	;
+	rdfs:label	"notion"	.
 
-local:available_in_rich_networks	rdfs:label	"available in rich networks"	.
+local:semantic_proximity	a	rdf:Class	;
+	rdfs:label	"semantic proximity"	.
 
-local:fully_considering	rdfs:label	"fully considering"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:not_fully_considering	rdfs:label	"not fully considering"	.
+local:proximity	a	rdf:Class	;
+	rdfs:label	"proximity"	.
 
-local:thus_not_fully_considering	rdfs:label	"thus not fully considering"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:purely_structural	rdfs:label	"purely structural"	.
+local:refining_embeddings	a	rdf:Class	;
+	rdfs:label	"refining embeddings"	.
 
-local:require	rdfs:label	"require"	.
+local:refining	a	rdf:Class	;
+	rdfs:label	"refining"	.
 
-local:latter	rdfs:label	"latter"	.
+local:leveraging_the_notion_of_semantic_proximity	a	rdf:Class	;
+	rdfs:label	"leveraging the notion of semantic proximity"	.
 
-local:metapaths	rdfs:label	"metapaths"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:node_types	rdfs:label	"node types"	.
+local:semantic_relatedness_between_predicates	a	rdf:Class	;
+	rdfs:label	"semantic relatedness between predicates"	.
 
-local:types	rdfs:label	"types"	.
+local:predicates	a	rdf:Class	;
+	rdfs:label	"predicates"	.
 
-local:leverage_node_types	rdfs:label	"leverage node types"	.
+local:semantic_relatedness	a	rdf:Class	;
+	rdfs:label	"semantic relatedness"	.
 
-local:complex_inputs	rdfs:label	"complex inputs"	.
+local:relatedness	a	rdf:Class	;
+	rdfs:label	"relatedness"	.
 
-local:inputs	rdfs:label	"inputs"	.
+local:random	a	rdf:Class	;
+	rdfs:label	"random"	.
 
-local:complex	rdfs:label	"complex"	.
+local:walk	a	rdf:Class	;
+	rdfs:label	"walk"	.
 
-local:features	rdfs:label	"features"	.
+local:random_walks	a	rdf:Class	;
+	rdfs:label	"random walks"	.
 
-local:nesp	rdfs:label	"nesp"	.
+local:walks	a	rdf:Class	;
+	rdfs:label	"walks"	.
 
-local:main_components	rdfs:label	"main components"	.
+local:bias	a	rdf:Class	;
+	rdfs:label	"bias"	.
 
-local:components	rdfs:label	"components"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:main	rdfs:label	"main"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:two_main_components	rdfs:label	"two main components"	.
+local:four_different_ways_of_biasing_random_walks	a	rdf:Class	;
+	rdfs:label	"four different ways of biasing random walks"	.
 
-local:overcome	rdfs:label	"overcome"	.
+local:different_ways	a	rdf:Class	;
+	rdfs:label	"different ways"	.
 
-local:limitations	rdfs:label	"limitations"	.
+local:ways	a	rdf:Class	;
+	rdfs:label	"ways"	.
 
-local:introducing	rdfs:label	"introducing"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:semantic_proximity	rdfs:label	"semantic proximity"	.
+local:four_different_ways	a	rdf:Class	;
+	rdfs:label	"four different ways"	.
 
-local:proximity	rdfs:label	"proximity"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:provides	rdfs:label	"provides"	.
+local:via_semantic_proximity	a	rdf:Class	;
+	rdfs:label	"via semantic proximity"	.
 
-local:first	rdfs:label	"first"	.
+local:limitations	a	rdf:Class	;
+	rdfs:label	"limitations"	.
 
-local:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+local:overcome	a	rdf:Class	;
+	rdfs:label	"overcome"	.
 
-local:different	rdfs:label	"different"	.
+local:introducing_node_embeddings_via_semantic_proximity	a	rdf:Class	;
+	rdfs:label	"introducing node embeddings via semantic proximity"	.
 
-local:different_ways	rdfs:label	"different ways"	.
+local:introducing_via_semantic_proximity	a	rdf:Class	;
+	rdfs:label	"introducing via semantic proximity"	.
 
-local:relatedness	rdfs:label	"relatedness"	.
+local:introducing	a	rdf:Class	;
+	rdfs:label	"introducing"	.
 
-local:ways	rdfs:label	"ways"	.
+local:nesp	a	rdf:Class	;
+	rdfs:label	"nesp"	.
 
-local:four_different_ways	rdfs:label	"four different ways"	.
+local:feature	a	rdf:Class	;
+	rdfs:label	"feature"	.
 
-local:semantic_relatedness_between_predicates	rdfs:label	"semantic relatedness between predicates"	.
+local:two_main_components	a	rdf:Class	;
+	rdfs:label	"two main components"	.
 
-local:predicates	rdfs:label	"predicates"	.
+local:main_components	a	rdf:Class	;
+	rdfs:label	"main components"	.
 
-local:biasing	rdfs:label	"biasing"	.
+local:main	a	rdf:Class	;
+	rdfs:label	"main"	.
 
-local:leveraging	rdfs:label	"leveraging"	.
+local:components	a	rdf:Class	;
+	rdfs:label	"components"	.
 
-local:second_component	rdfs:label	"second component"	.
+local:introducing_nesp	a	rdf:Class	;
+	rdfs:label	"introducing nesp"	.
 
-local:component	rdfs:label	"component"	.
+local:latter	a	rdf:Class	;
+	rdfs:label	"latter"	.
 
-local:second	rdfs:label	"second"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:focuses	rdfs:label	"focuses"	.
+local:eg_metapaths	a	rdf:Class	;
+	rdfs:label	"eg metapaths"	.
 
-local:notion_of_semantic_proximity	rdfs:label	"notion of semantic proximity"	.
+local:eg	a	rdf:Class	;
+	rdfs:label	"eg"	.
 
-local:notion	rdfs:label	"notion"	.
+local:metapaths	a	rdf:Class	;
+	rdfs:label	"metapaths"	.
 
-local:embeddings_refining	rdfs:label	"embeddings refining"	.
+local:former_are_purely_structural_thus_not_fully_considering_knowledge_available_in_semantically_rich_networks	a	rdf:Class	;
+	rdfs:label	"former are purely structural thus not fully considering knowledge available in semantically rich networks"	.
 
-local:refining	rdfs:label	"refining"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:refines	rdfs:label	"refines"	.
+local:semantically_rich_networks	a	rdf:Class	;
+	rdfs:label	"semantically rich networks"	.
 
-local:iteratively	rdfs:label	"iteratively"	.
+local:rich_networks	a	rdf:Class	;
+	rdfs:label	"rich networks"	.
 
-local:initial	rdfs:label	"initial"	.
+local:networks	a	rdf:Class	;
+	rdfs:label	"networks"	.
 
-local:initial_set	rdfs:label	"initial set"	.
+local:semantically_rich	a	rdf:Class	;
+	rdfs:label	"semantically rich"	.
 
-local:set	rdfs:label	"set"	.
+local:semantically	a	rdf:Class	;
+	rdfs:label	"semantically"	.
 
-local:initial_set_of_node_embeddings	rdfs:label	"initial set of node embeddings"	.
+local:rich	a	rdf:Class	;
+	rdfs:label	"rich"	.
 
-local:imposing	rdfs:label	"imposing"	.
+local:available_knowledge	a	rdf:Class	;
+	rdfs:label	"available knowledge"	.
 
-local:fixed	rdfs:label	"fixed"	.
+local:fully_considering	a	rdf:Class	;
+	rdfs:label	"fully considering"	.
 
-local:fixed_radius	rdfs:label	"fixed radius"	.
+local:considering	a	rdf:Class	;
+	rdfs:label	"considering"	.
 
-local:radius	rdfs:label	"radius"	.
+local:not_fully_considering	a	rdf:Class	;
+	rdfs:label	"not fully considering"	.
 
-local:neighboring_nodes	rdfs:label	"neighboring nodes"	.
+local:thus_not_fully_considering	a	rdf:Class	;
+	rdfs:label	"thus not fully considering"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:purely_structural	a	rdf:Class	;
+	rdfs:label	"purely structural"	.
 
-local:semantic_neighboring_nodes	rdfs:label	"semantic neighboring nodes"	.
+local:structural	a	rdf:Class	;
+	rdfs:label	"structural"	.
 
-local:embeddings_of_semantic_neighboring_nodes	rdfs:label	"embeddings of semantic neighboring nodes"	.
+local:available_in_rich_networks	a	rdf:Class	;
+	rdfs:label	"available in rich networks"	.
 
-local:semantic_neighboring_nodes_of_node	rdfs:label	"semantic neighboring nodes of node"	.
+local:available	a	rdf:Class	;
+	rdfs:label	"available"	.
 
-local:lie_within_sphere	rdfs:label	"lie within sphere"	.
+local:purely_structural_thus_not_fully	a	rdf:Class	;
+	rdfs:label	"purely structural thus not fully"	.
 
-local:lie	rdfs:label	"lie"	.
+local:fully_structural	a	rdf:Class	;
+	rdfs:label	"fully structural"	.
 
-local:sphere	rdfs:label	"sphere"	.
+local:thus_fully	a	rdf:Class	;
+	rdfs:label	"thus fully"	.
 
-local:sphere_of_fixed_radius	rdfs:label	"sphere of fixed radius"	.
+local:fully	a	rdf:Class	;
+	rdfs:label	"fully"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:purely_fully_structural	a	rdf:Class	;
+	rdfs:label	"purely fully structural"	.
 
-local:we	rdfs:label	"we"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:extensive_experimental_evaluation	rdfs:label	"extensive experimental evaluation"	.
+local:knowledge_available_in_semantically_rich_networks	a	rdf:Class	;
+	rdfs:label	"knowledge available in semantically rich networks"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:leverage_node_types	a	rdf:Class	;
+	rdfs:label	"leverage node types"	.
 
-local:extensive_experimental	rdfs:label	"extensive experimental"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:related_work	rdfs:label	"related work"	.
+local:node_types	a	rdf:Class	;
+	rdfs:label	"node types"	.
 
-local:work	rdfs:label	"work"	.
+local:complex_inputs	a	rdf:Class	;
+	rdfs:label	"complex inputs"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:complex	a	rdf:Class	;
+	rdfs:label	"complex"	.
 
-local:experimental_evaluation	rdfs:label	"experimental evaluation"	.
+local:inputs	a	rdf:Class	;
+	rdfs:label	"inputs"	.
 
-local:extensive	rdfs:label	"extensive"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:related	rdfs:label	"related"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:comparison_with_related_work	rdfs:label	"comparison with related work"	.
+local:form_of_semantic_information	a	rdf:Class	;
+	rdfs:label	"form of semantic information"	.
 
-local:comparison	rdfs:label	"comparison"	.
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
 
-#### Properties ####
+local:semantic_information	a	rdf:Class	;
+	rdfs:label	"semantic information"	.
+
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
+
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
+
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
+
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
+
+local:structural_information	a	rdf:Class	;
+	rdfs:label	"structural information"	.
+
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
+
+local:biased_random_walks	a	rdf:Class	;
+	rdfs:label	"biased random walks"	.
+
+local:biased_random	a	rdf:Class	;
+	rdfs:label	"biased random"	.
+
+local:using_structural_information	a	rdf:Class	;
+	rdfs:label	"using structural information"	.
+
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
+
+local:feed	a	rdf:Class	;
+	rdfs:label	"feed"	.
+
+local:biased_random_walks_representation_learning_techniques	a	rdf:Class	;
+	rdfs:label	"biased random walks representation learning techniques"	.
+
+local:random_walks_representation	a	rdf:Class	;
+	rdfs:label	"random walks representation"	.
+
+local:walks_representation	a	rdf:Class	;
+	rdfs:label	"walks representation"	.
+
+local:representation	a	rdf:Class	;
+	rdfs:label	"representation"	.
+
+local:learning_techniques	a	rdf:Class	;
+	rdfs:label	"learning techniques"	.
+
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
+
+local:variety_of_available_approaches	a	rdf:Class	;
+	rdfs:label	"variety of available approaches"	.
+
+local:available_approaches	a	rdf:Class	;
+	rdfs:label	"available approaches"	.
+
+local:variety	a	rdf:Class	;
+	rdfs:label	"variety"	.
+
+local:graph_node_embeddings	a	rdf:Class	;
+	rdfs:label	"graph node embeddings"	.
+
+local:graph_node	a	rdf:Class	;
+	rdfs:label	"graph node"	.
+
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
 #### Mapped Relations ####
 
-local:semantic_information	owl:sameAs	cso:semantic_information	.
-cso:semantics	rdfs:label	"semantic"	.
-local:random_walks	owl:sameAs	cso:random_walks	.
-local:semantic	owl:sameAs	cso:semantics	.
-cso:random_walks	rdfs:label	"random walks"	.
-cso:semantic_information	rdfs:label	"semantic information"	.
 local:semantic_relatedness	owl:sameAs	cso:semantic_relatedness	.
 cso:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+cso:semantic_information	rdfs:label	"semantic information"	.
+cso:semantics	rdfs:label	"semantic"	.
+local:random_walks	owl:sameAs	cso:random_walks	.
+cso:random_walks	rdfs:label	"random walks"	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:semantic_information	owl:sameAs	cso:semantic_information	.
 
 #### Relations ####
 
-local:leveraging	vn.role:Theme	local:semantic_relatedness_between_predicates	.
-local:second	rdfs:member	local:second_component	.
-local:fed	vn.role:Patient	local:walks	.
-local:rely	vn.role:Theme	local:form_of_semantic_information	.
-local:semantic	rdfs:member	local:semantic_proximity	.
-local:semantic_proximity	rdfs:subClassOf	local:proximity	.
-local:form_of_semantic_information	local:form_of	local:semantic_information	.
-local:related	rdfs:member	local:related_work	.
-local:graph_node_embeddings	rdfs:subClassOf	local:node_embeddings	.
-local:fixed	rdfs:member	local:fixed_radius	.
-local:complex_inputs	rdfs:subClassOf	local:inputs	.
-local:introducing	local:AM-MNR	local:semantic_proximity	.
-local:introducing	vn.role:Patient	local:node_embeddings	.
-local:semantic	rdfs:member	local:semantic_information	.
-local:rely	vn.role:Agent	local:approaches	.
-local:extensive_experimental_evaluation	rdfs:subClassOf	local:evaluation	.
-local:different_ways	rdfs:subClassOf	local:ways	.
-local:fed	local:AM-TMP	local:then	.
-local:focuses	vn.role:indirect_object	local:embeddings_refining	.
-local:learning	vn.role:Agent	local:random_walks	.
-local:discuss	vn.role:Patient2	local:extensive_experimental_evaluation	.
-local:require	local:AM-ADV	local:purely_structural	.
-local:generate	vn.role:Theme2	local:walks	.
-local:focuses	local:AM-MNR	local:leveraging	.
-local:form_of_semantic_information	local:of_semanticinformation	local:form	.
-local:lie_within_sphere	local:within_sphere	local:lie	.
-local:experimental	rdfs:member	local:experimental_evaluation	.
-local:node_types	rdfs:subClassOf	local:types	.
-local:provides	vn.role:Recipient	local:first	.
-local:leverage_node_types	rdfs:subClassOf	local:node_types	.
-local:extensive_experimental	rdfs:subClassOf	local:experimental	.
-local:representation_learning_techniques	rdfs:subClassOf	local:learning_techniques	.
-local:lie	vn.role:Location	local:embeddings_of_semantic_neighboring_nodes	.
-local:available	rdfs:member	local:available_approaches	.
-local:semantically	rdfs:member	local:semantically_rich	.
-local:random_walks	rdfs:subClassOf	local:walks	.
-local:lie_within_sphere	local:lie_within	local:sphere	.
-local:walks	vn.role:Theme	local:random	.
-local:initial_set_of_node_embeddings	local:of_nodeembeddings	local:initial_set	.
-local:random	rdfs:member	local:random_walks	.
-local:complex	rdfs:member	local:complex_inputs	.
-local:fixed_radius	rdfs:subClassOf	local:radius	.
-local:embeddings_of_semantic_neighboring_nodes	local:embeddings_of	local:semantic_neighboring_nodes	.
-local:semantic_neighboring_nodes	rdfs:subClassOf	local:neighboring_nodes	.
-local:extensive_experimental_evaluation	rdfs:subClassOf	local:experimental_evaluation	.
-local:biased_random	rdfs:subClassOf	local:random	.
-local:node	rdfs:member	local:node_embeddings	.
-local:require	vn.role:Proposition	local:leverage_node_types	.
-local:focuses	vn.role:indirect_object	local:embeddings	.
-local:fixed	vn.role:Product	local:radius	.
-local:extensive_experimental	rdfs:member	local:extensive_experimental_evaluation	.
-local:semantic_information	rdfs:subClassOf	local:information	.
-local:initial_set	rdfs:subClassOf	local:set	.
-local:semantic_relatedness_between_predicates	local:semanticrelatedness_between	local:predicates	.
-local:considering	vn.role:Theme	local:available_knowledge	.
-local:biasing	local:AM-MNR	local:leveraging	.
-local:then_fed	rdfs:subClassOf	local:fed	.
+local:within_a_sphere_of_fixed_radius	rdfs:member	local:sphere	.
+local:semantic_relatedness_between_predicates	rdfs:member	local:semantic_relatedness	.
+local:semantically_rich	rdfs:member	local:semantically	.
+local:random_walks_representation	rdfs:subClassOf	local:representation	.
+local:variety_of_available_approaches	rdfs:member	local:variety	.
+local:within_a_sphere_of_fixed_radius	rdfs:member	local:s16.2	.
+local:s7	rdf:object	local:knowledge_available_in_semantically_rich_networks	.
+local:walks_representation	rdfs:subClassOf	local:representation	.
+local:semantic_proximity	rdfs:member	local:semantic	.
+local:structural_information	rdfs:member	local:structural	.
+local:s0	rdf:subject	local:variety_of_available_approaches	.
+local:initial_set_of_node_embeddings	rdfs:member	local:initial_set	.
 local:semantically_rich_networks	rdfs:subClassOf	local:networks	.
-local:not_fully_considering	rdfs:subClassOf	local:fully_considering	.
-local:semantic	rdfs:member	local:semantic_relatedness	.
-local:generate	local:AM-MNR	local:using	.
-local:main	rdfs:member	local:main_components	.
-local:introducing	vn.role:Patient	local:nesp	.
-local:biasing	vn.role:Experiencer	local:walks	.
-local:refines	local:AM-MNR	local:iteratively	.
-local:four_different_ways	rdfs:subClassOf	local:different_ways	.
-local:learning	vn.role:Agent	local:techniques	.
-local:then_fed_into_representation	local:thenfed_into	local:representation	.
-local:sphere_of_fixed_radius	local:sphere_of	local:fixed_radius	.
-local:require	vn.role:Patient	local:complex_inputs	.
-local:comparison_with_related_work	local:with_relatedwork	local:comparison	.
-local:available_approaches	rdfs:subClassOf	local:approaches	.
-local:embeddings_of_semantic_neighboring_nodes	local:of_semanticneighboringnodes	local:embeddings	.
-local:embeddings_refining	local:embeddings_	local:refining	.
-local:fed	vn.role:Recipient	local:representation_learning_techniques	.
-local:considering	local:AM-MNR	local:fully	.
-local:variety_of_available_approaches	local:variety_of	local:available_approaches	.
-local:require	vn.role:Agent	local:latter	.
-local:imposing	vn.role:Theme	local:embeddings_of_semantic_neighboring_nodes	.
-local:walks	vn.role:Agent	local:leveraging	.
-local:available_in_rich_networks	local:available_in	local:rich_networks	.
-local:semantic_neighboring_nodes_of_node	local:semanticneighboringnodes_of	local:node	.
-local:overcome	local:AM-MNR	local:introducing	.
-local:available_knowledge	rdfs:subClassOf	local:knowledge	.
-local:learning_techniques	rdfs:subClassOf	local:techniques	.
-local:fully_considering	rdfs:subClassOf	local:considering	.
-local:provides	vn.role:Agent	local:four_different_ways	.
-local:second_component	rdfs:subClassOf	local:component	.
-local:purely_structural	rdfs:subClassOf	local:structural	.
-local:notion_of_semantic_proximity	local:notion_of	local:semantic_proximity	.
-local:node_embeddings	rdfs:subClassOf	local:embeddings	.
-local:main_components	rdfs:subClassOf	local:components	.
-local:then_fed_into_representation	local:into_representation	local:then_fed	.
-local:features	vn.role:Theme	local:nesp	.
-local:using	vn.role:Theme	local:structural_information	.
-local:initial_set_of_node_embeddings	local:initialset_of	local:node_embeddings	.
-local:learn	vn.role:Theme	local:graph_node_embeddings	.
-local:discuss	vn.role:Patient1	local:we	.
-local:considering	vn.role:Agent	local:former	.
-local:structural_information	rdfs:subClassOf	local:information	.
-local:comparison_with_related_work	local:comparison_with	local:related_work	.
-local:two_main_components	rdfs:subClassOf	local:main_components	.
-local:features	vn.role:object	local:two_main_components	.
-local:semantic_relatedness_between_predicates	local:between_predicates	local:semantic_relatedness	.
-local:leveraging	vn.role:Theme	local:notion_of_semantic_proximity	.
-local:neighboring_nodes	rdfs:subClassOf	local:nodes	.
-local:overcome	local:AM-MNR	local:semantic_proximity	.
-local:learn	vn.role:Agent	local:variety_of_available_approaches	.
-local:generate	vn.role:Theme1	local:techniques	.
-local:structural	rdfs:member	local:structural_information	.
-local:different	rdfs:member	local:different_ways	.
-local:imposing	vn.role:Agent	local:node_embeddings	.
-local:related_work	rdfs:subClassOf	local:work	.
-local:focuses	vn.role:Experiencer	local:second_component	.
-local:notion_of_semantic_proximity	local:of_semanticproximity	local:notion	.
-local:refines	vn.role:Theme	local:initial_set_of_node_embeddings	.
+local:s12	rdf:predicate	local:provide	.
+local:s2.1	rdf:object	local:structural_information	.
+local:random_walks	rdfs:member	local:random	.
+local:s10	rdf:predicate	local:feature	.
+local:s4	rdf:predicate	local:consider	.
+local:semantic_neighboring_nodes	rdfs:subClassOf	local:neighboring_nodes	.
+local:s7.1	local:AM-ADV	local:former_are_purely_structural_thus_not_fully_considering_knowledge_available_in_semantically_rich_networks	.
 local:semantically_rich	rdfs:subClassOf	local:rich	.
-local:overcome	vn.role:Theme2	local:limitations	.
-local:available_in_rich_networks	local:in_richnetworks	local:available	.
-local:lie	vn.role:indirect_object	local:sphere_of_fixed_radius	.
-local:refines	vn.role:Agent	local:second_component	.
-local:initial	rdfs:member	local:initial_set	.
+local:s4.1	rdf:object	local:complex_inputs	.
+local:s1.1	rdf:predicate	local:learn	.
+local:available_in_rich_networks	rdfs:member	local:available	.
+local:semantic_neighboring_nodes_of_node	rdfs:member	local:semantic_neighboring_nodes	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	rdfs:member	local:embeddings	.
+local:knowledge_available_in_semantically_rich_networks	rdfs:member	local:knowledge	.
+local:available_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s11	rdf:subject	local:limitations	.
+local:s13	local:AM-MNR	local:s13.2	.
+local:extensive_experimental_evaluation	rdfs:member	local:extensive_experimental	.
+local:extensive_experimental_evaluation_and_comparison_with_related_work	rdfs:member	local:extensive_experimental_evaluation	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node	rdfs:member	local:node	.
+local:s12	local:AM-MNR	local:s12.3	.
+local:s10	rdf:subject	local:nesp	.
+local:available_in_rich_networks	rdfs:member	local:rich_networks	.
+local:s2	rdf:predicate	local:generate	.
+local:notion_of_semantic_proximity	rdfs:member	local:semantic_proximity	.
+local:walks_representation	rdfs:member	local:walks	.
+local:graph_node_embeddings	rdfs:subClassOf	local:node_embeddings	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	rdfs:member	local:nodes	.
+local:s12.1	rdf:subject	local:random_walks	.
+local:complex_inputs	rdfs:member	local:complex	.
+local:initial_set	rdfs:subClassOf	local:set	.
+local:s2.1	rdf:predicate	local:use	.
+local:s16.1	rdf:predicate	local:lie	.
+local:s16.1	rdf:subject	local:embeddings_of_semantic_neighboring_nodes_of_a_node	.
+local:s9	rdf:subject	local:semantic_proximity	.
+local:s8	rdf:predicate	local:overcome	.
+local:s1	rdf:predicate	local:feed	.
+local:biased_random_walks_representation_learning_techniques	rdfs:member	local:random_walks_representation	.
+local:biased_random_walks_representation_learning_techniques	rdfs:member	local:techniques	.
+local:extensive_experimental	rdfs:member	local:extensive	.
+local:s7.1	rdf:object	local:eg_metapaths	.
+local:eg_metapaths	rdfs:member	local:eg	.
+local:s13.2	rdf:predicate	local:leverage	.
+local:s5	rdf:subject	local:purely_structural_thus_not_fully	.
+local:s16.2	rdf:predicate	local:fix	.
+local:s12.3	rdf:subject	local:semantic_relatedness_between_predicates	.
+local:s13	rdf:subject	local:second_component	.
+local:node_embeddings	rdfs:subClassOf	local:embeddings	.
+local:lie_within_sphere	rdfs:member	local:sphere	.
+local:different_ways	rdfs:subClassOf	local:ways	.
+local:structural_information	rdfs:subClassOf	local:information	.
+local:second_component	rdfs:subClassOf	local:component	.
+local:s9	rdf:predicate	local:feature	.
+local:s14	rdf:subject	local:second_component	.
+local:s3	rdf:object	local:form_of_semantic_information	.
+local:initial_set_of_node_embeddings	rdfs:member	local:node_embeddings	.
+local:s16.1	rdf:object	local:within_a_sphere_of_fixed_radius	.
+local:s8	rdf:subject	local:limitations	.
+local:s7	rdf:subject	local:purely_structural_thus_not_fully	.
+local:sphere_of_fixed_radius	rdfs:member	local:sphere	.
+local:s4.1	local:AM-ADV	local:former_are_purely_structural_thus_not_fully_considering_knowledge_available_in_semantically_rich_networks	.
+local:s5.1	rdf:predicate	local:require	.
+local:four_different_ways_of_biasing_random_walks	rdfs:member	local:random_walks	.
+local:s11.1	local:AM-MNR	local:via_semantic_proximity	.
+local:main_components	rdfs:subClassOf	local:components	.
+local:s8	local:AM-MNR	local:introducing_nesp	.
+local:s1	local:AM-TMP	local:then	.
+local:graph_node_embeddings	rdfs:member	local:graph_node	.
+local:s14	rdf:object	local:refining_embeddings	.
+local:variety_of_available_approaches	rdfs:member	local:available_approaches	.
+local:biased_random	rdfs:subClassOf	local:random	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	rdfs:member	local:sphere	.
+local:s12.3	rdf:predicate	local:leverage	.
+local:node_types	rdfs:subClassOf	local:types	.
+local:former_are_purely_structural_thus_not_fully_considering_knowledge_available_in_semantically_rich_networks	rdfs:member	local:knowledge	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	rdfs:member	local:node	.
+local:s3	rdf:predicate	local:rely	.
+local:s16	rdf:predicate	local:impose	.
+local:fully_considering	rdfs:subClassOf	local:considering	.
+local:extensive_experimental	rdfs:subClassOf	local:experimental	.
+local:embeddings_of_semantic_neighboring_nodes	rdfs:member	local:semantic_neighboring_nodes	.
+local:s14	rdf:predicate	local:focus	.
+local:graph_node	rdfs:subClassOf	local:node	.
+local:graph_node_embeddings	rdfs:subClassOf	local:embeddings	.
+local:s10	rdf:object	local:two_main_components	.
+local:experimental_evaluation	rdfs:member	local:experimental	.
+local:embeddings_of_semantic_neighboring_nodes	rdfs:member	local:embeddings	.
+local:s11	rdf:predicate	local:overcome	.
 local:rich_networks	rdfs:subClassOf	local:networks	.
-local:variety_of_available_approaches	local:of_availableapproaches	local:variety	.
-local:semantically_rich	rdfs:member	local:semantically_rich_networks	.
-local:semantic_relatedness	rdfs:subClassOf	local:relatedness	.
-local:rely	local:AM-DIS	local:also	.
-local:semantic_neighboring_nodes_of_node	local:of_node	local:semantic_neighboring_nodes	.
+local:s15	rdf:predicate	local:refine	.
+local:s9	rdf:object	local:two_main_components	.
+local:s12.2	rdf:subject	local:random	.
+local:semantic_neighboring_nodes_of_node	rdfs:member	local:node	.
+local:refining_embeddings	rdfs:member	local:refining	.
+local:s16.2	rdf:subject	local:radius	.
+local:four_different_ways	rdfs:subClassOf	local:different_ways	.
+local:s7	rdf:predicate	local:consider	.
+local:s17	rdf:subject	local:we	.
+local:s5.1	rdf:object	local:leverage_node_types	.
+local:purely_fully_structural	rdfs:subClassOf	local:fully_structural	.
+local:graph_node	rdfs:member	local:graph	.
+local:s17	rdf:object	local:extensive_experimental_evaluation_and_comparison_with_related_work	.
+local:s12	rdf:object	local:four_different_ways_of_biasing_random_walks	.
+local:different_ways	rdfs:member	local:different	.
 local:thus_not_fully_considering	rdfs:subClassOf	local:not_fully_considering	.
-local:sphere_of_fixed_radius	local:of_fixedradius	local:sphere	.
-local:embeddings_refining	local:_refining	local:embeddings	.
-local:using	vn.role:Agent	local:techniques	.
-local:extensive	rdfs:member	local:extensive_experimental	.
-local:rich	rdfs:member	local:rich_networks	.
+local:comparison_with_related_work	rdfs:member	local:comparison	.
+local:s13	rdf:object	local:s13.1	.
+local:introducing_via_semantic_proximity	rdfs:member	local:introducing	.
+local:s13.1	rdf:predicate	local:exist	.
+local:s5.1	rdf:subject	local:latter	.
+local:leverage_node_types	rdfs:subClassOf	local:node_types	.
+local:semantic_information	rdfs:subClassOf	local:information	.
+local:form_of_semantic_information	rdfs:member	local:semantic_information	.
+local:s8.1	rdf:subject	local:nesp	.
+local:s4.1	rdf:subject	local:latter	.
+local:s14.1	rdf:object	local:notion_of_semantic_proximity	.
+local:former_are_purely_structural_thus_not_fully_considering_knowledge_available_in_semantically_rich_networks	rdfs:member	local:semantically_rich_networks	.
+local:s5	rdf:predicate	local:consider	.
+local:s14.1	rdf:subject	local:second_component	.
+local:s5	rdf:object	local:knowledge_available_in_semantically_rich_networks	.
+local:s11.1	rdf:predicate	local:introduce	.
+local:s12.2	local:AM-MNR	local:s12.3	.
+local:neighboring_nodes	rdfs:subClassOf	local:nodes	.
+local:s16	rdf:subject	local:node_embeddings	.
+local:s1.1	rdfs:subClassOf	local:learning_techniques	.
+local:s16	rdf:object	local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	.
+local:random_walks	rdfs:subClassOf	local:walks	.
+local:not_fully_considering	rdfs:subClassOf	local:fully_considering	.
+local:s2	local:AM-MNR	local:using_structural_information	.
+local:complex_inputs	rdfs:subClassOf	local:inputs	.
+local:s16.2	rdfs:subClassOf	local:radius	.
+local:s16.2	rdfs:member	local:fixed	.
+local:s15	rdf:subject	local:second_component	.
+local:s4	rdf:subject	local:purely_structural_thus_not_fully	.
+local:s7.1	rdf:predicate	local:require	.
+local:leveraging_the_notion_of_semantic_proximity	rdfs:member	local:semantic_proximity	.
+local:s1.1	rdf:subject	local:techniques	.
+local:s5.1	local:AM-ADV	local:former_are_purely_structural_thus_not_fully_considering_knowledge_available_in_semantically_rich_networks	.
+local:s15	local:AM-MNR	local:iteratively	.
+local:semantic_relatedness	rdfs:subClassOf	local:relatedness	.
+local:extensive_experimental_evaluation	rdfs:subClassOf	local:experimental_evaluation	.
+local:s2	rdf:object	local:biased_random_walks	.
+local:s0	rdf:object	local:graph_node_embeddings	.
+local:purely_structural	rdfs:subClassOf	local:structural	.
+local:semantic_relatedness_between_predicates	rdfs:member	local:predicates	.
+local:second_component	rdfs:member	local:second	.
+local:initial_set	rdfs:member	local:initial	.
+local:s11	local:AM-MNR	local:introducing_node_embeddings_via_semantic_proximity	.
+local:learning_techniques	rdfs:subClassOf	local:techniques	.
+local:s13.2	rdf:subject	local:notion_of_semantic_proximity	.
+local:s13.1	rdf:subject	local:embeddings	.
+local:s12.1	local:AM-MNR	local:s12.3	.
+local:related_work	rdfs:subClassOf	local:work	.
+local:s12.2	rdf:predicate	local:walk	.
+local:s15	rdf:object	local:initial_set_of_node_embeddings	.
+local:leverage_node_types	rdfs:member	local:leverage	.
+local:lie_within_sphere	rdfs:member	local:lie	.
+local:knowledge_available_in_semantically_rich_networks	rdfs:member	local:semantically_rich_networks	.
+local:s11.1	rdfs:member	local:semantic_proximity	.
+local:semantically_rich_networks	rdfs:member	local:semantically_rich	.
+local:notion_of_semantic_proximity	rdfs:member	local:notion	.
+local:random_walks_representation	rdfs:member	local:random_walks	.
+local:related_work	rdfs:member	local:related	.
+local:s4.1	rdf:predicate	local:require	.
+local:extensive_experimental_evaluation	rdfs:subClassOf	local:evaluation	.
+local:two_main_components	rdfs:subClassOf	local:main_components	.
+local:s17	rdf:predicate	local:discuss	.
+local:sphere_of_fixed_radius	rdfs:member	local:s16.2	.
+local:s2	rdf:subject	local:techniques	.
+local:s11.1	rdf:subject	local:node_embeddings	.
+local:eg_metapaths	rdfs:subClassOf	local:metapaths	.
+local:semantic_relatedness	rdfs:member	local:semantic	.
+local:form_of_semantic_information	rdfs:member	local:form	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node_to_lie_within_a_sphere_of_fixed_radius	rdfs:member	local:s16.2	.
+local:extensive_experimental_evaluation_and_comparison_with_related_work	rdfs:member	local:related_work	.
+local:s14.1	rdf:predicate	local:leverage	.
+local:available_approaches	rdfs:subClassOf	local:approaches	.
+local:refining_embeddings	rdfs:subClassOf	local:embeddings	.
+local:s12	rdf:subject	local:first	.
+local:s8.1	rdf:predicate	local:introduce	.
+local:main_components	rdfs:member	local:main	.
+local:fully_structural	rdfs:subClassOf	local:structural	.
+local:introducing_via_semantic_proximity	rdfs:member	local:semantic_proximity	.
+local:available_approaches	rdfs:member	local:available	.
+local:s11.1	rdfs:member	local:node_embeddings	.
+local:leverage_node_types	rdfs:member	local:types	.
+local:comparison_with_related_work	rdfs:member	local:related_work	.
+local:node_embeddings	rdfs:member	local:node	.
+local:s4	rdf:object	local:knowledge_available_in_semantically_rich_networks	.
+local:s12.1	rdf:predicate	local:bias	.
+local:four_different_ways_of_biasing_random_walks	rdfs:member	local:different_ways	.
 local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
-local:require	vn.role:Patient	local:metapaths	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node	rdfs:member	local:nodes	.
+local:thus_fully	rdfs:subClassOf	local:fully	.
+local:rich_networks	rdfs:member	local:rich	.
+local:s3	local:AM-DIS	local:also	.
+local:s1	rdf:object	local:biased_random_walks_representation_learning_techniques	.
+local:s7.1	rdf:subject	local:latter	.
+local:leveraging_the_notion_of_semantic_proximity	rdfs:member	local:notion	.
+local:s0	rdf:predicate	local:learn	.
+local:embeddings_of_semantic_neighboring_nodes_of_a_node	rdfs:member	local:embeddings	.
+local:s13	rdf:predicate	local:focus	.
+local:semantic_information	rdfs:member	local:semantic	.
+local:s2.1	rdf:subject	local:techniques	.
+local:extensive_experimental_evaluation_and_comparison_with_related_work	rdfs:member	local:comparison	.
+local:s14	local:AM-MNR	local:leveraging_the_notion_of_semantic_proximity	.
+local:semantic_proximity	rdfs:subClassOf	local:proximity	.
+local:s3	rdf:subject	local:approaches	.

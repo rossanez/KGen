@@ -1,351 +1,573 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s7.3	a	rdf:Statement	;
+	rdfs:label	"the number of required observations compared to myopic strategies"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"the suggested method reduces the number of required observations compared to myopic strategies"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"suggested method"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we evaluation showed that the suggested method reduces the number of required observations compared to myopic strategies"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"we formulate information theoretic concepts for query selection"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we exploit probabilities of typical user errors to formulate information theoretic concepts for query selection"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"that querying an oracle about entailments of the target ontology"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"performing a sequence of observations that is by querying an oracle about entailments of the target ontology"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"the target diagnosis can identified by performing a sequence of observations that is by querying an oracle about entailments of the target ontology"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the user demonstrates how the target diagnosis can be identified by performing a sequence of observations that is by querying an oracle about entailments of the target ontology"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"many alternative diagnoses thus placing the burden of fault localization on the user"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"however in most debugging cases these methods return many alternative diagnoses thus placing the burden of fault localization on the user"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"identify sources of inconsistency"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"most recent approaches use diagnosis methods to identify sources of inconsistency"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"areas that rely upon everyday users create knowledge bases"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"areas that rely upon everyday users to create knowledge bases"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"areas that rely upon everyday users maintain knowledge bases"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"areas that rely upon everyday users to maintain knowledge bases"	.
+
+
 #### Classes ####
 
-local:rely	rdfs:label	"rely"	.
+local:number_of_required_observations	a	rdf:Class	;
+	rdfs:label	"number of required observations"	.
 
-local:areas	rdfs:label	"areas"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:everyday_users	rdfs:label	"everyday users"	.
+local:required_observations	a	rdf:Class	;
+	rdfs:label	"required observations"	.
 
-local:users	rdfs:label	"users"	.
+local:required	a	rdf:Class	;
+	rdfs:label	"required"	.
 
-local:everyday	rdfs:label	"everyday"	.
+local:observations	a	rdf:Class	;
+	rdfs:label	"observations"	.
 
-local:create_knowledge_bases	rdfs:label	"create knowledge bases"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:bases	rdfs:label	"bases"	.
+local:myopic_strategies	a	rdf:Class	;
+	rdfs:label	"myopic strategies"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:myopic	a	rdf:Class	;
+	rdfs:label	"myopic"	.
 
-local:create	rdfs:label	"create"	.
+local:suggested_method	a	rdf:Class	;
+	rdfs:label	"suggested method"	.
 
-local:create_knowledge	rdfs:label	"create knowledge"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:rely_upon_everyday_users	rdfs:label	"rely upon everyday users"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:maintain_knowledge	rdfs:label	"maintain knowledge"	.
+local:number_of_required_observations_compared_to_myopic_strategies	a	rdf:Class	;
+	rdfs:label	"number of required observations compared to myopic strategies"	.
 
-local:maintain_knowledge_bases	rdfs:label	"maintain knowledge bases"	.
+local:suggest	a	rdf:Class	;
+	rdfs:label	"suggest"	.
 
-local:maintain	rdfs:label	"maintain"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:recent	rdfs:label	"recent"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:recent_approaches	rdfs:label	"recent approaches"	.
+local:suggested_method_reduces_the_number_of_required_observations_compared_to_myopic_strategies	a	rdf:Class	;
+	rdfs:label	"suggested method reduces the number of required observations compared to myopic strategies"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:use	rdfs:label	"use"	.
+local:formulate	a	rdf:Class	;
+	rdfs:label	"formulate"	.
 
-local:diagnosis	rdfs:label	"diagnosis"	.
+local:information_theoretic_concepts_for_query_selection	a	rdf:Class	;
+	rdfs:label	"information theoretic concepts for query selection"	.
 
-local:diagnosis_methods	rdfs:label	"diagnosis methods"	.
+local:query_selection	a	rdf:Class	;
+	rdfs:label	"query selection"	.
 
-local:methods	rdfs:label	"methods"	.
+local:theoretic_concepts	a	rdf:Class	;
+	rdfs:label	"theoretic concepts"	.
 
-local:identify	rdfs:label	"identify"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:identify_sources	rdfs:label	"identify sources"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:sources	rdfs:label	"sources"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:sources_of_inconsistency	rdfs:label	"sources of inconsistency"	.
+local:selection	a	rdf:Class	;
+	rdfs:label	"selection"	.
 
-local:inconsistency	rdfs:label	"inconsistency"	.
+local:theoretic	a	rdf:Class	;
+	rdfs:label	"theoretic"	.
 
-local:return	rdfs:label	"return"	.
+local:information_theoretic_concepts	a	rdf:Class	;
+	rdfs:label	"information theoretic concepts"	.
 
-local:however	rdfs:label	"however"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:debugging	rdfs:label	"debugging"	.
+local:probabilities_of_typical_user_errors	a	rdf:Class	;
+	rdfs:label	"probabilities of typical user errors"	.
 
-local:many_alternative	rdfs:label	"many alternative"	.
+local:probabilities	a	rdf:Class	;
+	rdfs:label	"probabilities"	.
 
-local:many_alternative_diagnoses	rdfs:label	"many alternative diagnoses"	.
+local:typical_user_errors	a	rdf:Class	;
+	rdfs:label	"typical user errors"	.
 
-local:alternative_diagnoses	rdfs:label	"alternative diagnoses"	.
+local:typical_user	a	rdf:Class	;
+	rdfs:label	"typical user"	.
 
-local:diagnoses	rdfs:label	"diagnoses"	.
+local:typical	a	rdf:Class	;
+	rdfs:label	"typical"	.
 
-local:alternative	rdfs:label	"alternative"	.
+local:user_errors	a	rdf:Class	;
+	rdfs:label	"user errors"	.
 
-local:many	rdfs:label	"many"	.
+local:errors	a	rdf:Class	;
+	rdfs:label	"errors"	.
 
-local:thus	rdfs:label	"thus"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:fault	rdfs:label	"fault"	.
+local:formulate_information_theoretic_concepts_for_query_selection	a	rdf:Class	;
+	rdfs:label	"formulate information theoretic concepts for query selection"	.
 
-local:fault_localization	rdfs:label	"fault localization"	.
+local:formulate_information	a	rdf:Class	;
+	rdfs:label	"formulate information"	.
 
-local:localization	rdfs:label	"localization"	.
+local:oracle_about_entailments_of_the_target_ontology	a	rdf:Class	;
+	rdfs:label	"oracle about entailments of the target ontology"	.
 
-local:burden_of_fault_localization	rdfs:label	"burden of fault localization"	.
+local:target_ontology	a	rdf:Class	;
+	rdfs:label	"target ontology"	.
 
-local:burden	rdfs:label	"burden"	.
+local:oracle	a	rdf:Class	;
+	rdfs:label	"oracle"	.
 
-local:burden_of_fault_localization_on_user	rdfs:label	"burden of fault localization on user"	.
+local:entailments	a	rdf:Class	;
+	rdfs:label	"entailments"	.
 
-local:user	rdfs:label	"user"	.
+local:target	a	rdf:Class	;
+	rdfs:label	"target"	.
 
-local:placing	rdfs:label	"placing"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:debugging_cases	rdfs:label	"debugging cases"	.
+local:oracle_about_entailments	a	rdf:Class	;
+	rdfs:label	"oracle about entailments"	.
 
-local:cases	rdfs:label	"cases"	.
+local:entailments_of_target_ontology	a	rdf:Class	;
+	rdfs:label	"entailments of target ontology"	.
 
-local:most_debugging	rdfs:label	"most debugging"	.
+local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	a	rdf:Class	;
+	rdfs:label	"sequence of observations that is by querying an oracle about entailments of the target ontology"	.
 
-local:most_debugging_cases	rdfs:label	"most debugging cases"	.
+local:sequence	a	rdf:Class	;
+	rdfs:label	"sequence"	.
 
-local:most	rdfs:label	"most"	.
+local:sequence_of_observations	a	rdf:Class	;
+	rdfs:label	"sequence of observations"	.
 
-local:however_methods	rdfs:label	"however methods"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:however_methods_in_most_debugging_cases	rdfs:label	"however methods in most debugging cases"	.
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
 
-local:demonstrates	rdfs:label	"demonstrates"	.
+local:target_diagnosis	a	rdf:Class	;
+	rdfs:label	"target diagnosis"	.
 
-local:target	rdfs:label	"target"	.
+local:diagnosis	a	rdf:Class	;
+	rdfs:label	"diagnosis"	.
 
-local:target_diagnosis	rdfs:label	"target diagnosis"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:target_ontology	rdfs:label	"target ontology"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	a	rdf:Class	;
+	rdfs:label	"target diagnosis can be identified by performing a sequence of observations that is by querying an oracle about entailments of the target ontology"	.
 
-local:can_identified	rdfs:label	"can identified"	.
+local:can_identified	a	rdf:Class	;
+	rdfs:label	"can identified"	.
 
-local:identified	rdfs:label	"identified"	.
+local:identified	a	rdf:Class	;
+	rdfs:label	"identified"	.
 
-local:sequence_of_observations	rdfs:label	"sequence of observations"	.
+local:many_alternative_diagnoses	a	rdf:Class	;
+	rdfs:label	"many alternative diagnoses"	.
 
-local:sequence	rdfs:label	"sequence"	.
+local:many_alternative	a	rdf:Class	;
+	rdfs:label	"many alternative"	.
 
-local:observations	rdfs:label	"observations"	.
+local:diagnoses	a	rdf:Class	;
+	rdfs:label	"diagnoses"	.
 
-local:oracle_about_entailments	rdfs:label	"oracle about entailments"	.
+local:alternative_diagnoses	a	rdf:Class	;
+	rdfs:label	"alternative diagnoses"	.
 
-local:oracle	rdfs:label	"oracle"	.
+local:alternative	a	rdf:Class	;
+	rdfs:label	"alternative"	.
 
-local:entailments	rdfs:label	"entailments"	.
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
 
-local:entailments_of_target_ontology	rdfs:label	"entailments of target ontology"	.
+local:place	a	rdf:Class	;
+	rdfs:label	"place"	.
 
-local:can	rdfs:label	"can"	.
+local:burden_of_fault_localization_user	a	rdf:Class	;
+	rdfs:label	"burden of fault localization user"	.
 
-local:is	rdfs:label	"is"	.
+local:burden	a	rdf:Class	;
+	rdfs:label	"burden"	.
 
-local:performing	rdfs:label	"performing"	.
+local:fault_localization_user	a	rdf:Class	;
+	rdfs:label	"fault localization user"	.
 
-local:querying	rdfs:label	"querying"	.
+local:localization_user	a	rdf:Class	;
+	rdfs:label	"localization user"	.
 
-local:exploit	rdfs:label	"exploit"	.
+local:localization	a	rdf:Class	;
+	rdfs:label	"localization"	.
 
-local:we	rdfs:label	"we"	.
+local:fault_localization	a	rdf:Class	;
+	rdfs:label	"fault localization"	.
 
-local:typical_user_errors	rdfs:label	"typical user errors"	.
+local:fault	a	rdf:Class	;
+	rdfs:label	"fault"	.
 
-local:errors	rdfs:label	"errors"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:typical_user	rdfs:label	"typical user"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:user_errors	rdfs:label	"user errors"	.
+local:return	a	rdf:Class	;
+	rdfs:label	"return"	.
 
-local:typical	rdfs:label	"typical"	.
+local:thus_placing_the_burden_of_fault_localization_on_the_user	a	rdf:Class	;
+	rdfs:label	"thus placing the burden of fault localization on the user"	.
 
-local:probabilities_of_typical_user_errors	rdfs:label	"probabilities of typical user errors"	.
+local:thus_placing	a	rdf:Class	;
+	rdfs:label	"thus placing"	.
 
-local:probabilities	rdfs:label	"probabilities"	.
+local:placing	a	rdf:Class	;
+	rdfs:label	"placing"	.
 
-local:theoretic	rdfs:label	"theoretic"	.
+local:burden_of_fault_localization	a	rdf:Class	;
+	rdfs:label	"burden of fault localization"	.
 
-local:theoretic_concepts	rdfs:label	"theoretic concepts"	.
+local:burden_of_fault_localization_on_user	a	rdf:Class	;
+	rdfs:label	"burden of fault localization on user"	.
 
-local:formulate	rdfs:label	"formulate"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:formulate_information	rdfs:label	"formulate information"	.
+local:debugging_cases	a	rdf:Class	;
+	rdfs:label	"debugging cases"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:sources_of_inconsistency	a	rdf:Class	;
+	rdfs:label	"sources of inconsistency"	.
 
-local:information	rdfs:label	"information"	.
+local:inconsistency	a	rdf:Class	;
+	rdfs:label	"inconsistency"	.
 
-local:query_selection	rdfs:label	"query selection"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:selection	rdfs:label	"selection"	.
+local:recent_approaches	a	rdf:Class	;
+	rdfs:label	"recent approaches"	.
 
-local:information_theoretic_concepts	rdfs:label	"information theoretic concepts"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:information_theoretic_concepts_for_query_selection	rdfs:label	"information theoretic concepts for query selection"	.
+local:recent	a	rdf:Class	;
+	rdfs:label	"recent"	.
 
-local:showed	rdfs:label	"showed"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:diagnosis_methods_identify_sources_of_inconsistency	a	rdf:Class	;
+	rdfs:label	"diagnosis methods identify sources of inconsistency"	.
 
-local:required	rdfs:label	"required"	.
+local:diagnosis_methods	a	rdf:Class	;
+	rdfs:label	"diagnosis methods"	.
 
-local:required_observations	rdfs:label	"required observations"	.
+local:areas_that_rely_upon_everyday_users	a	rdf:Class	;
+	rdfs:label	"areas that rely upon everyday users"	.
 
-local:myopic_strategies	rdfs:label	"myopic strategies"	.
+local:everyday_users	a	rdf:Class	;
+	rdfs:label	"everyday users"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:areas	a	rdf:Class	;
+	rdfs:label	"areas"	.
 
-local:suggested_method	rdfs:label	"suggested method"	.
+local:everyday	a	rdf:Class	;
+	rdfs:label	"everyday"	.
 
-local:method	rdfs:label	"method"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:number_of_required_observations	rdfs:label	"number of required observations"	.
+local:rely_upon_everyday_users	a	rdf:Class	;
+	rdfs:label	"rely upon everyday users"	.
 
-local:number	rdfs:label	"number"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:reduces	rdfs:label	"reduces"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:suggested	rdfs:label	"suggested"	.
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
 
-local:compared	rdfs:label	"compared"	.
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
 
-local:myopic	rdfs:label	"myopic"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-#### Properties ####
+local:upon_everyday_users	a	rdf:Class	;
+	rdfs:label	"upon everyday users"	.
+
+local:create_knowledge_bases	a	rdf:Class	;
+	rdfs:label	"create knowledge bases"	.
+
+local:create_knowledge	a	rdf:Class	;
+	rdfs:label	"create knowledge"	.
+
+local:maintain	a	rdf:Class	;
+	rdfs:label	"maintain"	.
+
+local:maintain_knowledge_bases	a	rdf:Class	;
+	rdfs:label	"maintain knowledge bases"	.
+
+local:maintain_knowledge	a	rdf:Class	;
+	rdfs:label	"maintain knowledge"	.
 
 #### Mapped Relations ####
 
+cso:ontology	rdfs:label	"ontology"	.
 local:ontology	owl:sameAs	cso:ontology	.
 local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
-cso:debugging	rdfs:label	"debugging"	.
-cso:ontology	rdfs:label	"ontology"	.
-cso:knowledge_bases	rdfs:label	"knowledge bases"	.
-cso:fault_localization	rdfs:label	"fault localization"	.
 local:fault_localization	owl:sameAs	cso:fault_localization	.
-local:debugging	owl:sameAs	cso:debugging	.
+cso:fault_localization	rdfs:label	"fault localization"	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
 
 #### Relations ####
 
-local:most_debugging	rdfs:subClassOf	local:debugging	.
-local:placing	vn.role:Theme	local:many_alternative_diagnoses	.
-local:create_knowledge	rdfs:member	local:create_knowledge_bases	.
-local:maintain_knowledge	rdfs:subClassOf	local:knowledge	.
-local:burden_of_fault_localization_on_user	local:burdenoffaultlocalization_on	local:user	.
-local:rely	local:AM-PNC	local:maintain	.
-local:maintain	vn.role:Agent	local:areas	.
-local:most_debugging_cases	rdfs:subClassOf	local:debugging_cases	.
-local:rely	vn.role:Agent	local:areas	.
-local:everyday	rdfs:member	local:everyday_users	.
-local:rely_upon_everyday_users	local:upon_everydayusers	local:rely	.
-local:required_observations	rdfs:subClassOf	local:observations	.
-local:alternative_diagnoses	rdfs:subClassOf	local:diagnoses	.
-local:burden_of_fault_localization_on_user	local:on_user	local:burden_of_fault_localization	.
-local:target_diagnosis	rdfs:subClassOf	local:diagnosis	.
-local:however_methods_in_most_debugging_cases	local:howevermethods_in	local:most_debugging_cases	.
-local:rely_upon_everyday_users	local:rely_upon	local:everyday_users	.
-local:performing	vn.role:Theme	local:sequence_of_observations	.
-local:query_selection	rdfs:subClassOf	local:selection	.
-local:myopic	rdfs:member	local:myopic_strategies	.
-local:demonstrates	vn.role:Cause	local:can_identified	.
-local:target	rdfs:member	local:target_diagnosis	.
-local:theoretic	rdfs:member	local:theoretic_concepts	.
-local:querying	vn.role:Theme	local:oracle_about_entailments	.
-local:return	local:AM-LOC	local:debugging	.
-local:suggested	vn.role:Agent	local:method	.
-local:alternative	rdfs:member	local:alternative_diagnoses	.
-local:many	rdfs:member	local:many_alternative	.
-local:fault	rdfs:member	local:fault_localization	.
-local:number_of_required_observations	local:of_requiredobservations	local:number	.
-local:identify	vn.role:Theme	local:sources_of_inconsistency	.
-local:use	vn.role:Recipient	local:identify	.
-local:typical_user	rdfs:member	local:typical_user_errors	.
-local:reduces	vn.role:Patient	local:number_of_required_observations	.
-local:everyday_users	rdfs:subClassOf	local:users	.
-local:most_debugging	rdfs:member	local:most_debugging_cases	.
-local:compared	vn.role:Patient2	local:number_of_required_observations	.
-local:identified	vn.role:Agent	local:is	.
-local:formulate	rdfs:member	local:formulate_information	.
-local:burden_of_fault_localization	local:of_faultlocalization	local:burden	.
-local:maintain	vn.role:Theme	local:knowledge_bases	.
-local:oracle_about_entailments	local:oracle_about	local:entailments	.
-local:entailments_of_target_ontology	local:entailments_of	local:target_ontology	.
-local:most	rdfs:member	local:most_debugging	.
-local:create	vn.role:Agent	local:areas	.
-local:rely	local:AM-PNC	local:create	.
-local:diagnosis	rdfs:member	local:diagnosis_methods	.
-local:information_theoretic_concepts_for_query_selection	local:for_queryselection	local:information_theoretic_concepts	.
-local:maintain_knowledge	rdfs:member	local:maintain_knowledge_bases	.
-local:many_alternative	rdfs:member	local:many_alternative_diagnoses	.
-local:many_alternative_diagnoses	rdfs:subClassOf	local:alternative_diagnoses	.
-local:identified	vn.role:Theme	local:target_diagnosis	.
-local:exploit	vn.role:Predicate	local:probabilities_of_typical_user_errors	.
-local:placing	vn.role:object	local:burden_of_fault_localization_on_user	.
-local:compared	vn.role:Agent	local:myopic_strategies	.
-local:can_identified	rdfs:subClassOf	local:identified	.
-local:showed	vn.role:Theme	local:reduces	.
-local:sources_of_inconsistency	local:of_inconsistency	local:sources	.
-local:sources_of_inconsistency	local:sources_of	local:inconsistency	.
-local:user_errors	rdfs:subClassOf	local:errors	.
-local:information_theoretic_concepts_for_query_selection	local:informationtheoreticconcepts_for	local:query_selection	.
-local:number_of_required_observations	local:number_of	local:required_observations	.
-local:required	rdfs:member	local:required_observations	.
-local:target_ontology	rdfs:subClassOf	local:ontology	.
-local:debugging	rdfs:member	local:debugging_cases	.
-local:formulate	vn.role:Agent	local:we	.
-local:return	vn.role:Theme	local:many_alternative_diagnoses	.
-local:use	vn.role:Agent	local:recent_approaches	.
-local:however_methods_in_most_debugging_cases	local:in_mostdebuggingcases	local:however_methods	.
+local:burden_of_fault_localization_on_user	rdfs:member	local:user	.
 local:fault_localization	rdfs:subClassOf	local:localization	.
-local:identified	local:AM-MOD	local:can	.
-local:recent_approaches	rdfs:subClassOf	local:approaches	.
-local:rely	vn.role:Theme	local:everyday_users	.
-local:diagnosis_methods	rdfs:subClassOf	local:methods	.
-local:debugging_cases	rdfs:subClassOf	local:cases	.
-local:probabilities_of_typical_user_errors	local:of_typicalusererrors	local:probabilities	.
-local:create_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:many_alternative_diagnoses	rdfs:subClassOf	local:diagnoses	.
-local:recent	rdfs:member	local:recent_approaches	.
-local:identify_sources	rdfs:subClassOf	local:sources	.
-local:probabilities_of_typical_user_errors	local:probabilities_of	local:typical_user_errors	.
-local:suggested_method	rdfs:subClassOf	local:method	.
-local:exploit	vn.role:Agent	local:we	.
-local:user	rdfs:member	local:user_errors	.
-local:create	vn.role:Product	local:knowledge_bases	.
-local:return	vn.role:Agent	local:methods	.
-local:formulate_information	rdfs:subClassOf	local:information	.
-local:placing	vn.role:Theme	local:however_methods_in_most_debugging_cases	.
-local:typical_user	rdfs:subClassOf	local:user	.
-local:burden_of_fault_localization	local:burden_of	local:fault_localization	.
-local:return	local:AM-ADV	local:placing	.
-local:information_theoretic_concepts	rdfs:subClassOf	local:theoretic_concepts	.
-local:use	vn.role:Theme	local:diagnosis_methods	.
-local:maintain_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:maintain	rdfs:member	local:maintain_knowledge	.
-local:create	rdfs:member	local:create_knowledge	.
-local:sequence_of_observations	local:of_observations	local:sequence	.
-local:myopic_strategies	rdfs:subClassOf	local:strategies	.
-local:exploit	local:AM-PNC	local:formulate	.
-local:return	vn.role:Agent	local:however	.
-local:placing	local:AM-DIS	local:thus	.
+local:s4	rdf:object	local:many_alternative_diagnoses	.
+local:s7.2	rdf:predicate	local:reduce	.
+local:s1	rdf:object	local:upon_everyday_users	.
 local:theoretic_concepts	rdfs:subClassOf	local:concepts	.
-local:many_alternative	rdfs:subClassOf	local:alternative	.
-local:showed	vn.role:Agent	local:evaluation	.
-local:oracle_about_entailments	local:about_entailments	local:oracle	.
-local:most_debugging_cases	rdfs:subClassOf	local:cases	.
+local:sequence_of_observations	rdfs:member	local:observations	.
+local:s5.1	rdf:object	local:target_diagnosis	.
+local:s4	local:AM-DIS	local:however	.
+local:s4	local:AM-LOC	local:debugging_cases	.
+local:s0.1	rdf:predicate	local:maintain	.
+local:s3	rdf:subject	local:recent_approaches	.
+local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:observations	.
+local:suggested_method	rdfs:subClassOf	local:method	.
+local:s7.1	rdf:subject	local:method	.
+local:s3.1	rdf:predicate	local:identify	.
+local:s5.3	rdf:subject	local:oracle_about_entailments_of_the_target_ontology	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:target_diagnosis	.
+local:s4.1	rdf:subject	local:many_alternative_diagnoses	.
+local:formulate_information	rdfs:member	local:formulate	.
+local:diagnosis_methods_identify_sources_of_inconsistency	rdfs:member	local:sources	.
+local:maintain_knowledge_bases	rdfs:member	local:maintain_knowledge	.
 local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:formulate	vn.role:Material	local:information_theoretic_concepts_for_query_selection	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:sequence_of_observations	local:sequence_of	local:observations	.
-local:entailments_of_target_ontology	local:of_targetontology	local:entailments	.
-local:typical	rdfs:member	local:typical_user	.
-local:identify	rdfs:member	local:identify_sources	.
-local:however_methods	rdfs:subClassOf	local:methods	.
-local:create_knowledge	rdfs:subClassOf	local:knowledge	.
-local:demonstrates	vn.role:Recipient	local:user	.
-local:typical_user_errors	rdfs:subClassOf	local:user_errors	.
-local:target	rdfs:member	local:target_ontology	.
+local:maintain_knowledge	rdfs:member	local:maintain	.
+local:s5.1	local:AM-MOD	local:can	.
+local:oracle_about_entailments_of_the_target_ontology	rdfs:member	local:target_ontology	.
+local:s4	rdf:predicate	local:return	.
+local:areas_that_rely_upon_everyday_users	rdfs:member	local:areas	.
+local:s0	rdf:subject	local:areas	.
+local:required_observations	rdfs:member	local:required	.
+local:fault_localization_user	rdfs:subClassOf	local:user	.
+local:s6.1	rdf:subject	local:we	.
+local:sequence_of_observations	rdfs:member	local:sequence	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:oracle	.
+local:s1.1	rdf:predicate	local:create	.
+local:formulate_information_theoretic_concepts_for_query_selection	rdfs:member	local:theoretic_concepts	.
+local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:target_ontology	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:sequence	.
+local:maintain_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:s6.1	rdf:predicate	local:formulate	.
+local:many_alternative_diagnoses	rdfs:subClassOf	local:alternative_diagnoses	.
+local:fault_localization_user	rdfs:subClassOf	local:localization_user	.
+local:target_diagnosis	rdfs:member	local:target	.
+local:maintain_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s7	rdf:subject	local:evaluation	.
+local:user_errors	rdfs:subClassOf	local:errors	.
 local:typical_user_errors	rdfs:subClassOf	local:errors	.
-local:reduces	vn.role:Cause	local:suggested_method	.
-local:return	local:AM-DIS	local:thus	.
+local:s1	rdf:subject	local:areas	.
+local:s3.1	rdf:subject	local:sources_of_inconsistency	.
+local:information_theoretic_concepts	rdfs:subClassOf	local:theoretic_concepts	.
+local:burden_of_fault_localization_user	rdfs:member	local:burden	.
+local:formulate_information_theoretic_concepts_for_query_selection	rdfs:member	local:query_selection	.
+local:thus_placing_the_burden_of_fault_localization_on_the_user	rdfs:member	local:burden	.
+local:s5	rdf:predicate	local:demonstrate	.
+local:localization_user	rdfs:subClassOf	local:user	.
+local:s1.1	rdf:object	local:knowledge_bases	.
+local:fault_localization	rdfs:member	local:fault	.
+local:create_knowledge_bases	rdfs:member	local:create_knowledge	.
+local:s5	rdf:subject	local:user	.
+local:number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:required_observations	.
+local:thus_placing_the_burden_of_fault_localization_on_the_user	rdfs:member	local:fault_localization	.
+local:information_theoretic_concepts_for_query_selection	rdfs:member	local:information	.
+local:s6	rdf:predicate	local:exploit	.
+local:entailments_of_target_ontology	rdfs:member	local:target_ontology	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:entailments	.
+local:s4.1	rdf:predicate	local:place	.
+local:s3	rdf:object	local:diagnosis_methods_identify_sources_of_inconsistency	.
+local:number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:number	.
+local:s5.1	rdf:subject	local:s5.2	.
+local:can_identified	rdfs:subClassOf	local:identified	.
+local:alternative_diagnoses	rdfs:subClassOf	local:diagnoses	.
+local:probabilities_of_typical_user_errors	rdfs:member	local:probabilities	.
+local:s7.3	rdf:object	local:myopic_strategies	.
+local:s7.3	rdf:predicate	local:compare	.
+local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:sequence	.
+local:information_theoretic_concepts_for_query_selection	rdfs:member	local:query_selection	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:target_ontology	.
+local:oracle_about_entailments	rdfs:member	local:entailments	.
+local:s1.1	rdf:subject	local:areas_that_rely_upon_everyday_users	.
+local:s7.2	rdf:object	local:number_of_required_observations_compared_to_myopic_strategies	.
+local:knowledge_bases	rdfs:member	local:knowledge	.
+local:s0.1	rdf:object	local:knowledge_bases	.
+local:burden_of_fault_localization_user	rdfs:member	local:fault_localization_user	.
+local:everyday_users	rdfs:subClassOf	local:users	.
+local:query_selection	rdfs:subClassOf	local:selection	.
+local:typical_user	rdfs:subClassOf	local:user	.
+local:s6	rdf:subject	local:we	.
+local:s5.2	rdf:predicate	local:perform	.
+local:s7	rdf:predicate	local:show	.
+local:fault_localization_user	rdfs:member	local:fault_localization	.
+local:typical_user	rdfs:member	local:typical	.
+local:diagnosis_methods	rdfs:subClassOf	local:methods	.
+local:oracle_about_entailments_of_the_target_ontology	rdfs:member	local:entailments	.
+local:number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:strategies	.
+local:target_diagnosis	rdfs:subClassOf	local:diagnosis	.
+local:recent_approaches	rdfs:member	local:recent	.
+local:s4	rdf:subject	local:methods	.
+local:suggested_method_reduces_the_number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:required_observations	.
+local:localization_user	rdfs:member	local:localization	.
+local:s5.1	rdf:predicate	local:identify	.
+local:suggested_method_reduces_the_number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:strategies	.
+local:s1	rdf:predicate	local:rely	.
+local:create_knowledge	rdfs:member	local:create	.
+local:diagnosis_methods_identify_sources_of_inconsistency	rdfs:member	local:inconsistency	.
+local:myopic_strategies	rdfs:subClassOf	local:strategies	.
+local:alternative_diagnoses	rdfs:member	local:alternative	.
+local:s4	local:AM-ADV	local:thus_placing_the_burden_of_fault_localization_on_the_user	.
+local:required_observations	rdfs:subClassOf	local:observations	.
+local:myopic_strategies	rdfs:member	local:myopic	.
+local:number_of_required_observations	rdfs:member	local:required_observations	.
+local:s6	local:AM-PNC	local:formulate_information_theoretic_concepts_for_query_selection	.
+local:formulate_information	rdfs:subClassOf	local:information	.
+local:thus_placing	rdfs:subClassOf	local:placing	.
+local:information_theoretic_concepts_for_query_selection	rdfs:member	local:theoretic_concepts	.
+local:rely_upon_everyday_users	rdfs:member	local:everyday_users	.
+local:oracle_about_entailments	rdfs:member	local:oracle	.
+local:target_ontology	rdfs:subClassOf	local:ontology	.
+local:many_alternative_diagnoses	rdfs:member	local:many_alternative	.
+local:s0	rdf:object	local:upon_everyday_users	.
+local:query_selection	rdfs:member	local:query	.
+local:everyday_users	rdfs:member	local:everyday	.
+local:s6	rdf:object	local:probabilities_of_typical_user_errors	.
+local:probabilities_of_typical_user_errors	rdfs:member	local:typical_user_errors	.
+local:s0	rdf:predicate	local:rely	.
+local:typical_user_errors	rdfs:member	local:typical_user	.
+local:burden_of_fault_localization	rdfs:member	local:fault_localization	.
+local:s1	local:AM-PNC	local:create_knowledge_bases	.
+local:oracle_about_entailments_of_the_target_ontology	rdfs:member	local:oracle	.
+local:diagnosis_methods	rdfs:member	local:diagnosis	.
+local:rely_upon_everyday_users	rdfs:member	local:rely	.
+local:s7.3	rdf:subject	local:number_of_required_observations	.
+local:theoretic_concepts	rdfs:member	local:theoretic	.
+local:s4.1	local:AM-DIS	local:thus	.
+local:burden_of_fault_localization_on_user	rdfs:member	local:burden_of_fault_localization	.
+local:burden_of_fault_localization	rdfs:member	local:burden	.
+local:create_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:suggested_method_reduces_the_number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:method	.
+local:s0.1	rdf:subject	local:areas_that_rely_upon_everyday_users	.
+local:s7.1	rdf:predicate	local:suggest	.
+local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:oracle	.
+local:s3	rdf:predicate	local:use	.
+local:s5.3	rdf:predicate	local:query	.
+local:s4.1	rdf:object	local:burden_of_fault_localization_user	.
+local:sources_of_inconsistency	rdfs:member	local:sources	.
+local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:entailments	.
+local:information_theoretic_concepts_for_query_selection	rdfs:member	local:information_theoretic_concepts	.
+local:s0	local:AM-PNC	local:maintain_knowledge_bases	.
+local:s5.2	rdf:subject	local:sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	.
+local:thus_placing_the_burden_of_fault_localization_on_the_user	rdfs:member	local:user	.
+local:many_alternative	rdfs:member	local:many	.
+local:s7.2	rdf:subject	local:suggested_method	.
+local:s7.1	rdfs:subClassOf	local:method	.
+local:suggested_method_reduces_the_number_of_required_observations_compared_to_myopic_strategies	rdfs:member	local:number	.
+local:number_of_required_observations	rdfs:member	local:number	.
+local:typical_user_errors	rdfs:subClassOf	local:user_errors	.
+local:many_alternative_diagnoses	rdfs:subClassOf	local:diagnoses	.
+local:recent_approaches	rdfs:subClassOf	local:approaches	.
+local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	rdfs:member	local:observations	.
+local:s7	rdf:object	local:suggested_method_reduces_the_number_of_required_observations_compared_to_myopic_strategies	.
+local:areas_that_rely_upon_everyday_users	rdfs:member	local:everyday_users	.
+local:target_ontology	rdfs:member	local:target	.
+local:many_alternative	rdfs:subClassOf	local:alternative	.
+local:diagnosis_methods_identify_sources_of_inconsistency	rdfs:member	local:diagnosis_methods	.
+local:create_knowledge	rdfs:subClassOf	local:knowledge	.
+local:sources_of_inconsistency	rdfs:member	local:inconsistency	.
+local:user_errors	rdfs:member	local:user	.
+local:entailments_of_target_ontology	rdfs:member	local:entailments	.
+local:formulate_information_theoretic_concepts_for_query_selection	rdfs:member	local:formulate_information	.
+local:s5	rdf:object	local:target_diagnosis_can_be_identified_by_performing_a_sequence_of_observations_that_is_by_querying_an_oracle_about_entailments_of_the_target_ontology	.
+local:s6.1	rdf:object	local:information_theoretic_concepts_for_query_selection	.

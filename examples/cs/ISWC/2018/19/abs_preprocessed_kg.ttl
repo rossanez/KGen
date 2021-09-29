@@ -1,463 +1,912 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s10.3	a	rdf:Statement	;
+	rdfs:label	"how this new semantics would affect the results of user queries over wikidata"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"on query solutions we analyse how this new semantics would affect the results of user queries over wikidata"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"such a change in semantics may have on query solutions"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"further understand the impact that such a change in semantics may have on query solutions"	.
+
+local:s9.3	a	rdf:Statement	;
+	rdfs:label	"approximation techniques setting for a core fragment of sparql"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"we evaluate approximation techniques setting for a core fragment of sparql"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the performance costs that would associated with such a change in semantics for current implementations we evaluate approximation techniques setting for a core fragment of sparql"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"estimate the performance costs that would be associated with such a change in semantics for current implementations we evaluate approximation techniques setting for a core fragment of sparql"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"approximation techniques proposed in a relational database"	.
+
+local:s7.3	a	rdf:Statement	;
+	rdfs:label	"setting for a core fragment of sparql"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"we adapt approximation techniques setting for a core fragment of sparql"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the performance costs that would associated with such a change in semantics for current implementations we adapt approximation techniques setting for a core fragment of sparql"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"estimate the performance costs that would be associated with such a change in semantics for current implementations we adapt approximation techniques setting for a core fragment of sparql"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"an alternative sparql semantics based on certain answers"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we thus explore the feasibility of an alternative sparql semantics based on certain answers"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"running sparql queries over datasets with unknown values may thus lead to counterintuitive results"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"running sparql queries over datasets with unknown values"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"counterintuitive results which may make the standard sparql semantics unsuitable for datasets with existential blank nodes"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"while sparql considers blank nodes in a query as existentials the author of beowulf treats blank nodes in rdf data more like constants"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"sparql considers blank nodes in a query as existentials the author of beowulf treats blank nodes in rdf data more like constants"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the wikidata dataset where the author of beowulf given as a blank node"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"a prominent example of such usage can found in the wikidata dataset where the author of beowulf is given as a blank node"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"whose identity remains unknown"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"blank nodes in rdf graphs represent values whose identity remains unknown"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"blank nodes in rdf graphs can used to represent values whose identity remains unknown"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"values exist"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"values known to exist"	.
+
+
 #### Classes ####
 
-local:rdf	rdfs:label	"rdf"	.
+local:new_semantics	a	rdf:Class	;
+	rdfs:label	"new semantics"	.
 
-local:rdf_graphs	rdfs:label	"rdf graphs"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:blank	rdfs:label	"blank"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:blank_nodes	rdfs:label	"blank nodes"	.
+local:affect	a	rdf:Class	;
+	rdfs:label	"affect"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:results_of_user_queries_over_wikidata	a	rdf:Class	;
+	rdfs:label	"results of user queries over wikidata"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:user_queries	a	rdf:Class	;
+	rdfs:label	"user queries"	.
 
-local:blank_nodes_in_rdf_graphs	rdfs:label	"blank nodes in rdf graphs"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:used	rdfs:label	"used"	.
+local:wikidata	a	rdf:Class	;
+	rdfs:label	"wikidata"	.
 
-local:can	rdfs:label	"can"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:represent	rdfs:label	"represent"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:remains	rdfs:label	"remains"	.
+local:results_of_user_queries	a	rdf:Class	;
+	rdfs:label	"results of user queries"	.
 
-local:unknown	rdfs:label	"unknown"	.
+local:user_queries_over_wikidata	a	rdf:Class	;
+	rdfs:label	"user queries over wikidata"	.
 
-local:such	rdfs:label	"such"	.
+local:would	a	rdf:Class	;
+	rdfs:label	"would"	.
 
-local:such_usage	rdfs:label	"such usage"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:prominent_example	rdfs:label	"prominent example"	.
+local:analyse	a	rdf:Class	;
+	rdfs:label	"analyse"	.
 
-local:example	rdfs:label	"example"	.
+local:new_semantics_would_affect_the_results_of_user_queries_over_wikidata	a	rdf:Class	;
+	rdfs:label	"new semantics would affect the results of user queries over wikidata"	.
 
-local:prominent	rdfs:label	"prominent"	.
+local:would_affect	a	rdf:Class	;
+	rdfs:label	"would affect"	.
 
-local:usage	rdfs:label	"usage"	.
+local:query_solutions	a	rdf:Class	;
+	rdfs:label	"query solutions"	.
 
-local:prominent_example_of_such_usage	rdfs:label	"prominent example of such usage"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:found	rdfs:label	"found"	.
+local:solutions	a	rdf:Class	;
+	rdfs:label	"solutions"	.
 
-local:wikidata_dataset	rdfs:label	"wikidata dataset"	.
+local:change_in_semantics	a	rdf:Class	;
+	rdfs:label	"change in semantics"	.
 
-local:dataset	rdfs:label	"dataset"	.
+local:change	a	rdf:Class	;
+	rdfs:label	"change"	.
 
-local:wikidata	rdfs:label	"wikidata"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:blank_node	rdfs:label	"blank node"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:node	rdfs:label	"node"	.
+local:impact_that_such_a_change_in_semantics_may_have_on_query_solutions	a	rdf:Class	;
+	rdfs:label	"impact that such a change in semantics may have on query solutions"	.
 
-local:author_of_beowulf	rdfs:label	"author of beowulf"	.
+local:impact	a	rdf:Class	;
+	rdfs:label	"impact"	.
 
-local:author	rdfs:label	"author"	.
+local:may_have	a	rdf:Class	;
+	rdfs:label	"may have"	.
 
-local:beowulf	rdfs:label	"beowulf"	.
+local:may_have_on_query_solutions	a	rdf:Class	;
+	rdfs:label	"may have on query solutions"	.
 
-local:given_as_blank_node	rdfs:label	"given as blank node"	.
+local:understand	a	rdf:Class	;
+	rdfs:label	"understand"	.
 
-local:given	rdfs:label	"given"	.
+local:further	a	rdf:Class	;
+	rdfs:label	"further"	.
 
-local:can_found	rdfs:label	"can found"	.
+local:approximation_techniques	a	rdf:Class	;
+	rdfs:label	"approximation techniques"	.
 
-local:can_found_in_wikidata_dataset	rdfs:label	"can found in wikidata dataset"	.
+local:techniques	a	rdf:Class	;
+	rdfs:label	"techniques"	.
 
-local:considers	rdfs:label	"considers"	.
+local:approximation	a	rdf:Class	;
+	rdfs:label	"approximation"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:beowulf_treats	rdfs:label	"beowulf treats"	.
+local:core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"core fragment of sparql"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:core_fragment	a	rdf:Class	;
+	rdfs:label	"core fragment"	.
 
-local:data	rdfs:label	"data"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:treats	rdfs:label	"treats"	.
+local:core	a	rdf:Class	;
+	rdfs:label	"core"	.
 
-local:more_constants	rdfs:label	"more constants"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-local:constants	rdfs:label	"constants"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:query_as_existentials	rdfs:label	"query as existentials"	.
+local:approximation_techniques_setting_for_a_core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"approximation techniques setting for a core fragment of sparql"	.
 
-local:query	rdfs:label	"query"	.
+local:approximation_techniques_setting	a	rdf:Class	;
+	rdfs:label	"approximation techniques setting"	.
 
-local:existentials	rdfs:label	"existentials"	.
+local:setting	a	rdf:Class	;
+	rdfs:label	"setting"	.
 
-local:query_as_existentials_author	rdfs:label	"query as existentials author"	.
+local:setting_for_core_fragment	a	rdf:Class	;
+	rdfs:label	"setting for core fragment"	.
 
-local:treats_in_rdf_data	rdfs:label	"treats in rdf data"	.
+local:performance_costs	a	rdf:Class	;
+	rdfs:label	"performance costs"	.
 
-local:rdf_data_like_more_constants	rdfs:label	"rdf data like more constants"	.
+local:costs	a	rdf:Class	;
+	rdfs:label	"costs"	.
 
-local:sparql_considers	rdfs:label	"sparql considers"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:blank_nodes_in_query	rdfs:label	"blank nodes in query"	.
+local:associate	a	rdf:Class	;
+	rdfs:label	"associate"	.
 
-local:considers_as_existentials	rdfs:label	"considers as existentials"	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"change in semantics for current implementations we evaluate approximation techniques setting for a core fragment of sparql"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:current_implementations	a	rdf:Class	;
+	rdfs:label	"current implementations"	.
 
-local:queries	rdfs:label	"queries"	.
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
 
-local:running	rdfs:label	"running"	.
+local:implementations	a	rdf:Class	;
+	rdfs:label	"implementations"	.
 
-local:unknown_values	rdfs:label	"unknown values"	.
+local:semantics_for_current_implementations	a	rdf:Class	;
+	rdfs:label	"semantics for current implementations"	.
 
-local:values	rdfs:label	"values"	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"performance costs that would be associated with such a change in semantics for current implementations we evaluate approximation techniques setting for a core fragment of sparql"	.
 
-local:datasets_with_unknown_values	rdfs:label	"datasets with unknown values"	.
+local:such_change	a	rdf:Class	;
+	rdfs:label	"such change"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:would_associated	a	rdf:Class	;
+	rdfs:label	"would associated"	.
 
-local:running_over_datasets	rdfs:label	"running over datasets"	.
+local:associated	a	rdf:Class	;
+	rdfs:label	"associated"	.
 
-local:lead	rdfs:label	"lead"	.
+local:would_associated_with_such_change	a	rdf:Class	;
+	rdfs:label	"would associated with such change"	.
 
-local:may	rdfs:label	"may"	.
+local:such_change_in_semantics	a	rdf:Class	;
+	rdfs:label	"such change in semantics"	.
 
-local:thus	rdfs:label	"thus"	.
+local:estimate	a	rdf:Class	;
+	rdfs:label	"estimate"	.
 
-local:standard	rdfs:label	"standard"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:standard_sparql	rdfs:label	"standard sparql"	.
+local:relational_database	a	rdf:Class	;
+	rdfs:label	"relational database"	.
 
-local:existential_blank	rdfs:label	"existential blank"	.
+local:database	a	rdf:Class	;
+	rdfs:label	"database"	.
 
-local:existential_blank_nodes	rdfs:label	"existential blank nodes"	.
+local:relational	a	rdf:Class	;
+	rdfs:label	"relational"	.
 
-local:sparql_semantics	rdfs:label	"sparql semantics"	.
+local:adapt	a	rdf:Class	;
+	rdfs:label	"adapt"	.
 
-local:standard_sparql_semantics	rdfs:label	"standard sparql semantics"	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"change in semantics for current implementations we adapt approximation techniques setting for a core fragment of sparql"	.
 
-local:counterintuitive	rdfs:label	"counter-intuitive"	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	a	rdf:Class	;
+	rdfs:label	"performance costs that would be associated with such a change in semantics for current implementations we adapt approximation techniques setting for a core fragment of sparql"	.
 
-local:counterintuitive_results	rdfs:label	"counter-intuitive results"	.
+local:alternative_sparql_semantics	a	rdf:Class	;
+	rdfs:label	"alternative sparql semantics"	.
 
-local:results	rdfs:label	"results"	.
+local:alternative_sparql	a	rdf:Class	;
+	rdfs:label	"alternative sparql"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:alternative	a	rdf:Class	;
+	rdfs:label	"alternative"	.
 
-local:existential	rdfs:label	"existential"	.
+local:sparql_semantics	a	rdf:Class	;
+	rdfs:label	"sparql semantics"	.
 
-local:may_make	rdfs:label	"may make"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:make	rdfs:label	"make"	.
+local:certain_answers	a	rdf:Class	;
+	rdfs:label	"certain answers"	.
 
-local:unsuitable_for_datasets	rdfs:label	"unsuitable for datasets"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:unsuitable	rdfs:label	"unsuitable"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:datasets_with_existential_blank_nodes	rdfs:label	"datasets with existential blank nodes"	.
+local:explore	a	rdf:Class	;
+	rdfs:label	"explore"	.
 
-local:explore	rdfs:label	"explore"	.
+local:feasibility_of_an_alternative_sparql_semantics_based_on_certain_answers	a	rdf:Class	;
+	rdfs:label	"feasibility of an alternative sparql semantics based on certain answers"	.
 
-local:we	rdfs:label	"we"	.
+local:feasibility	a	rdf:Class	;
+	rdfs:label	"feasibility"	.
 
-local:certain_answers	rdfs:label	"certain answers"	.
+local:feasibility_of_alternative_sparql_semantics	a	rdf:Class	;
+	rdfs:label	"feasibility of alternative sparql semantics"	.
 
-local:answers	rdfs:label	"answers"	.
+local:alternative_sparql_semantics_based_on_certain_answers	a	rdf:Class	;
+	rdfs:label	"alternative sparql semantics based_on certain answers"	.
 
-local:certain	rdfs:label	"certain"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:alternative_sparql_semantics	rdfs:label	"alternative sparql semantics"	.
+local:running_sparql_queries_over_datasets_with_unknown_values	a	rdf:Class	;
+	rdfs:label	"running sparql queries over datasets with unknown values"	.
 
-local:alternative_sparql	rdfs:label	"alternative sparql"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:alternative	rdfs:label	"alternative"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:feasibility_of_alternative_sparql_semantics	rdfs:label	"feasibility of alternative sparql semantics"	.
+local:unknown_values	a	rdf:Class	;
+	rdfs:label	"unknown values"	.
 
-local:feasibility	rdfs:label	"feasibility"	.
+local:unknown	a	rdf:Class	;
+	rdfs:label	"unknown"	.
 
-local:alternative_sparql_semantics_basedon_certain_answers	rdfs:label	"alternative sparql semantics based_on certain answers"	.
+local:values	a	rdf:Class	;
+	rdfs:label	"values"	.
 
-local:based	rdfs:label	"based"	.
+local:running_over_datasets	a	rdf:Class	;
+	rdfs:label	"running over datasets"	.
 
-local:core	rdfs:label	"core"	.
+local:running	a	rdf:Class	;
+	rdfs:label	"running"	.
 
-local:core_fragment	rdfs:label	"core fragment"	.
+local:datasets_with_unknown_values	a	rdf:Class	;
+	rdfs:label	"datasets with unknown values"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:current_implementations	rdfs:label	"current implementations"	.
+local:counterintuitive_results	a	rdf:Class	;
+	rdfs:label	"counterintuitive results"	.
 
-local:implementations	rdfs:label	"implementations"	.
+local:counterintuitive	a	rdf:Class	;
+	rdfs:label	"counterintuitive"	.
 
-local:performance_costs	rdfs:label	"performance costs"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:costs	rdfs:label	"costs"	.
+local:standard_sparql_semantics_unsuitable_for_datasets_with_existential_blank_nodes	a	rdf:Class	;
+	rdfs:label	"standard sparql semantics unsuitable for datasets with existential blank nodes"	.
 
-local:current	rdfs:label	"current"	.
+local:standard_sparql_semantics	a	rdf:Class	;
+	rdfs:label	"standard sparql semantics"	.
 
-local:performance	rdfs:label	"performance"	.
+local:existential_blank_nodes	a	rdf:Class	;
+	rdfs:label	"existential blank nodes"	.
 
-local:such_change	rdfs:label	"such change"	.
+local:standard_sparql	a	rdf:Class	;
+	rdfs:label	"standard sparql"	.
 
-local:change	rdfs:label	"change"	.
+local:blank_nodes	a	rdf:Class	;
+	rdfs:label	"blank nodes"	.
 
-local:would_associated	rdfs:label	"would associated"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:associated	rdfs:label	"associated"	.
+local:existential_blank	a	rdf:Class	;
+	rdfs:label	"existential blank"	.
 
-local:would_associated_with_such_change	rdfs:label	"would associated with such change"	.
+local:existential	a	rdf:Class	;
+	rdfs:label	"existential"	.
 
-local:such_change_in_semantics	rdfs:label	"such change in semantics"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:semantics_for_current_implementations	rdfs:label	"semantics for current implementations"	.
+local:blank	a	rdf:Class	;
+	rdfs:label	"blank"	.
 
-local:setting_for_core_fragment	rdfs:label	"setting for core fragment"	.
+local:unsuitable_semantics	a	rdf:Class	;
+	rdfs:label	"unsuitable semantics"	.
 
-local:setting	rdfs:label	"setting"	.
+local:sparql_unsuitable_semantics	a	rdf:Class	;
+	rdfs:label	"sparql unsuitable semantics"	.
 
-local:core_fragment_of_sparql	rdfs:label	"core fragment of sparql"	.
+local:standard_sparql_unsuitable_semantics	a	rdf:Class	;
+	rdfs:label	"standard sparql unsuitable semantics"	.
 
-local:estimate	rdfs:label	"estimate"	.
+local:unsuitable_for_datasets	a	rdf:Class	;
+	rdfs:label	"unsuitable for datasets"	.
 
-local:would	rdfs:label	"would"	.
+local:unsuitable	a	rdf:Class	;
+	rdfs:label	"unsuitable"	.
 
-local:change_in_semantics	rdfs:label	"change in semantics"	.
+local:datasets_with_existential_blank_nodes	a	rdf:Class	;
+	rdfs:label	"datasets with existential blank nodes"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:author_of_beowulf	a	rdf:Class	;
+	rdfs:label	"author of beowulf"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:beowulf	a	rdf:Class	;
+	rdfs:label	"beowulf"	.
 
-local:adapt	rdfs:label	"adapt"	.
+local:author	a	rdf:Class	;
+	rdfs:label	"author"	.
 
-local:understand	rdfs:label	"understand"	.
+local:treat	a	rdf:Class	;
+	rdfs:label	"treat"	.
 
-local:further	rdfs:label	"further"	.
+local:blank_nodes_rdf_data_more_like_constants	a	rdf:Class	;
+	rdfs:label	"blank nodes rdf data more like constants"	.
 
-local:query_solutions	rdfs:label	"query solutions"	.
+local:blank_nodes_rdf	a	rdf:Class	;
+	rdfs:label	"blank nodes rdf"	.
 
-local:solutions	rdfs:label	"solutions"	.
+local:constants	a	rdf:Class	;
+	rdfs:label	"constants"	.
 
-local:may_have	rdfs:label	"may have"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:have	rdfs:label	"have"	.
+local:nodes_rdf	a	rdf:Class	;
+	rdfs:label	"nodes rdf"	.
 
-local:may_have_on_query_solutions	rdfs:label	"may have on query solutions"	.
+local:more_constants	a	rdf:Class	;
+	rdfs:label	"more constants"	.
 
-local:impact	rdfs:label	"impact"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:analyse	rdfs:label	"analyse"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:user	rdfs:label	"user"	.
+local:nodes_rdf_data	a	rdf:Class	;
+	rdfs:label	"nodes rdf data"	.
 
-local:user_queries	rdfs:label	"user queries"	.
+local:blank_nodes_rdf_data	a	rdf:Class	;
+	rdfs:label	"blank nodes rdf data"	.
 
-local:new	rdfs:label	"new"	.
+local:blank_nodes_rdf_data_like_more_constants	a	rdf:Class	;
+	rdfs:label	"blank nodes rdf data like more constants"	.
 
-local:new_semantics	rdfs:label	"new semantics"	.
+local:sparql_considers_blank_nodes_in_a_query_as_existentials	a	rdf:Class	;
+	rdfs:label	"sparql considers blank nodes in a query as existentials"	.
 
-local:would_affect	rdfs:label	"would affect"	.
+local:existentials	a	rdf:Class	;
+	rdfs:label	"existentials"	.
 
-local:affect	rdfs:label	"affect"	.
+local:sparql_considers	a	rdf:Class	;
+	rdfs:label	"sparql considers"	.
 
-local:results_of_user_queries	rdfs:label	"results of user queries"	.
+local:considers	a	rdf:Class	;
+	rdfs:label	"considers"	.
 
-local:user_queries_over_wikidata	rdfs:label	"user queries over wikidata"	.
+local:blank_nodes_in_query	a	rdf:Class	;
+	rdfs:label	"blank nodes in query"	.
 
-#### Properties ####
+local:considers_as_existentials	a	rdf:Class	;
+	rdfs:label	"considers as existentials"	.
+
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
+
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	a	rdf:Class	;
+	rdfs:label	"blank nodes query as existentials the author of beowulf treats blank nodes in rdf data more like constants"	.
+
+local:beowulf_treats	a	rdf:Class	;
+	rdfs:label	"beowulf treats"	.
+
+local:treats	a	rdf:Class	;
+	rdfs:label	"treats"	.
+
+local:blank_blank_nodes	a	rdf:Class	;
+	rdfs:label	"blank blank nodes"	.
+
+local:query_as_existentials	a	rdf:Class	;
+	rdfs:label	"query as existentials"	.
+
+local:blank_nodes_in_rdf_data	a	rdf:Class	;
+	rdfs:label	"blank nodes in rdf data"	.
+
+local:treats_like_more_constants	a	rdf:Class	;
+	rdfs:label	"treats like more constants"	.
+
+local:wikidata_dataset_where_the_author_of_beowulf	a	rdf:Class	;
+	rdfs:label	"wikidata dataset where the author of beowulf"	.
+
+local:wikidata_dataset	a	rdf:Class	;
+	rdfs:label	"wikidata dataset"	.
+
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
+
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
+
+local:blank_node	a	rdf:Class	;
+	rdfs:label	"blank node"	.
+
+local:node	a	rdf:Class	;
+	rdfs:label	"node"	.
+
+local:prominent_example_of_such_usage	a	rdf:Class	;
+	rdfs:label	"prominent example of such usage"	.
+
+local:prominent_example	a	rdf:Class	;
+	rdfs:label	"prominent example"	.
+
+local:such_usage	a	rdf:Class	;
+	rdfs:label	"such usage"	.
+
+local:usage	a	rdf:Class	;
+	rdfs:label	"usage"	.
+
+local:prominent	a	rdf:Class	;
+	rdfs:label	"prominent"	.
+
+local:example	a	rdf:Class	;
+	rdfs:label	"example"	.
+
+local:such	a	rdf:Class	;
+	rdfs:label	"such"	.
+
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
+
+local:wikidata_dataset_where_the_author_of_beowulf_is_given_as_a_blank_node	a	rdf:Class	;
+	rdfs:label	"wikidata dataset where the author of beowulf is given as a blank node"	.
+
+local:where_given	a	rdf:Class	;
+	rdfs:label	"where given"	.
+
+local:given	a	rdf:Class	;
+	rdfs:label	"given"	.
+
+local:where_given_as_blank_node	a	rdf:Class	;
+	rdfs:label	"where given as blank node"	.
+
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
+
+local:remain	a	rdf:Class	;
+	rdfs:label	"remain"	.
+
+local:blank_nodes_in_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"blank nodes in rdf graphs"	.
+
+local:rdf_graphs	a	rdf:Class	;
+	rdfs:label	"rdf graphs"	.
+
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
+
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
+
+local:values_whose_identity_remains_unknown	a	rdf:Class	;
+	rdfs:label	"values whose identity remains unknown"	.
+
+local:identity	a	rdf:Class	;
+	rdfs:label	"identity"	.
+
+local:values_identity	a	rdf:Class	;
+	rdfs:label	"values identity"	.
+
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
+
+local:represent_values_whose_identity_remains_unknown	a	rdf:Class	;
+	rdfs:label	"represent values whose identity remains unknown"	.
+
+local:represent_values	a	rdf:Class	;
+	rdfs:label	"represent values"	.
+
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
+
+local:know	a	rdf:Class	;
+	rdfs:label	"know"	.
 
 #### Mapped Relations ####
 
-local:blank_nodes	rdfs:label	"blank nodes"	.
-local:blank_nodes	rdfs:member	local:blank_nodes	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:blank_node	rdfs:member	local:blank_node	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:sparql_queries	rdfs:label	"sparql queries"	.
-cso:semantics	rdfs:label	"semantics"	.
-local:semantics	owl:sameAs	cso:semantics	.
-local:blank_nodes	rdfs:member	local:blank_node	.
-local:blank_node	rdfs:member	local:blank_nodes	.
-local:blank_node	rdfs:label	"blank node"	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
 local:rdf_data	owl:sameAs	cso:rdf_data	.
+cso:sparql_queries	rdfs:label	"sparql queries"	.
+local:sparql	owl:sameAs	cso:sparql	.
+cso:semantics	rdfs:label	"semantics"	.
 cso:rdf_data	rdfs:label	"rdf data"	.
 cso:rdf_graph	rdfs:label	"rdf graphs"	.
+cso:relational_database	rdfs:label	"relational database"	.
 local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:sparql	rdfs:label	"sparql"	.
+local:relational_database	owl:sameAs	cso:relational_database	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
 
 #### Relations ####
 
-local:treats_in_rdf_data	local:treats_in	local:rdf_data	.
-local:user	rdfs:member	local:user_queries	.
-local:treats	local:AM-ADV	local:considers_as_existentials	.
-local:performance	rdfs:member	local:performance_costs	.
-local:found	local:AM-MOD	local:can	.
-local:user_queries	rdfs:subClassOf	local:queries	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:treats	local:AM-LOC	local:rdf_data_like_more_constants	.
-local:found	vn.role:Theme	local:given_as_blank_node	.
-local:considers	vn.role:Predicate	local:treats_in_rdf_data	.
-local:setting_for_core_fragment	local:for_corefragment	local:setting	.
-local:query_solutions	rdfs:subClassOf	local:solutions	.
-local:used	local:AM-MOD	local:can	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:have	vn.role:Experiencer	local:change_in_semantics	.
-local:alternative_sparql_semantics_basedon_certain_answers	local:alternativesparqlsemantics_based_on	local:certain_answers	.
-local:new_semantics	rdfs:subClassOf	local:semantics	.
-local:proposed	local:AM-PNC	local:setting_for_core_fragment	.
-local:would_associated	rdfs:subClassOf	local:associated	.
-local:more_constants	rdfs:subClassOf	local:constants	.
-local:prominent_example	rdfs:subClassOf	local:example	.
-local:proposed	local:AM-ADV	local:setting	.
-local:considers_as_existentials	local:considers_as	local:existentials	.
-local:prominent_example_of_such_usage	local:of_suchusage	local:prominent_example	.
-local:standard_sparql	rdfs:member	local:standard_sparql_semantics	.
-local:used	vn.role:Theme	local:blank_nodes_in_rdf_graphs	.
-local:blank_node	rdfs:subClassOf	local:node	.
-local:treats	vn.role:Agent	local:author_of_beowulf	.
-local:unsuitable_for_datasets	local:unsuitable_for	local:datasets	.
-local:have	local:AM-MOD	local:may	.
-local:alternative_sparql_semantics_basedon_certain_answers	local:based_on_certainanswers	local:alternative_sparql_semantics	.
-local:blank_nodes_in_query	local:blanknodes_in	local:query	.
-local:datasets_with_unknown_values	local:datasets_with	local:unknown_values	.
-local:found	vn.role:Theme	local:prominent_example_of_such_usage	.
-local:would_associated_with_such_change	local:with_suchchange	local:would_associated	.
-local:user_queries_over_wikidata	local:over_wikidata	local:user_queries	.
-local:new	rdfs:member	local:new_semantics	.
-local:understand	local:AM-MNR	local:further	.
-local:considers	vn.role:Agent	local:sparql	.
-local:change_in_semantics	local:change_in	local:semantics	.
-local:running	vn.role:Theme	local:sparql_queries	.
-local:lead	local:AM-DIS	local:thus	.
-local:blank	rdfs:member	local:blank_node	.
-local:alternative_sparql_semantics	rdfs:subClassOf	local:sparql_semantics	.
-local:analyse	vn.role:Theme	local:would_affect	.
-local:standard_sparql_semantics	rdfs:subClassOf	local:sparql_semantics	.
-local:such_change_in_semantics	local:suchchange_in	local:semantics	.
-local:given	vn.role:indirect_object	local:blank_node	.
-local:beowulf_treats	rdfs:subClassOf	local:treats	.
-local:may_have_on_query_solutions	local:on_querysolutions	local:may_have	.
-local:author_of_beowulf	local:of_beowulf	local:author	.
-local:change_in_semantics	local:in_semantics	local:change	.
-local:lead	vn.role:Agent	local:running_over_datasets	.
-local:explore	vn.role:Location	local:feasibility_of_alternative_sparql_semantics	.
-local:unknown	rdfs:member	local:unknown_values	.
-local:wikidata_dataset	rdfs:subClassOf	local:dataset	.
-local:blank_nodes	rdfs:subClassOf	local:nodes	.
-local:core_fragment_of_sparql	local:corefragment_of	local:sparql	.
-local:author_of_beowulf	local:author_of	local:beowulf	.
-local:semantics_for_current_implementations	local:for_currentimplementations	local:semantics	.
-local:sparql	rdfs:member	local:sparql_semantics	.
-local:core_fragment	rdfs:subClassOf	local:fragment	.
-local:prominent_example_of_such_usage	local:prominentexample_of	local:such_usage	.
-local:can_found_in_wikidata_dataset	local:in_wikidatadataset	local:can_found	.
-local:alternative_sparql	rdfs:member	local:alternative_sparql_semantics	.
-local:unknown_values	rdfs:subClassOf	local:values	.
-local:can_found_in_wikidata_dataset	local:canfound_in	local:wikidata_dataset	.
-local:certain	rdfs:member	local:certain_answers	.
+local:running_sparql_queries_over_datasets_with_unknown_values	rdfs:member	local:sparql_queries	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:semantics	.
 local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:make	vn.role:Product	local:unsuitable_for_datasets	.
-local:results_of_user_queries	local:of_userqueries	local:results	.
-local:setting_for_core_fragment	local:setting_for	local:core_fragment	.
-local:counterintuitive_results	rdfs:subClassOf	local:results	.
-local:current_implementations	rdfs:subClassOf	local:implementations	.
-local:results_of_user_queries	local:results_of	local:user_queries	.
-local:given	vn.role:object	local:can_found_in_wikidata_dataset	.
-local:make	local:AM-MOD	local:may	.
-local:may_make	rdfs:subClassOf	local:make	.
-local:sparql	rdfs:member	local:sparql_considers	.
-local:existential_blank	rdfs:subClassOf	local:blank	.
-local:datasets_with_existential_blank_nodes	local:datasets_with	local:existential_blank_nodes	.
-local:datasets_with_unknown_values	local:with_unknownvalues	local:datasets	.
-local:given_as_blank_node	local:as_blanknode	local:given	.
-local:sparql_considers	rdfs:subClassOf	local:considers	.
-local:blank_nodes_in_query	local:in_query	local:blank_nodes	.
-local:existential_blank_nodes	rdfs:subClassOf	local:blank_nodes	.
-local:lead	vn.role:Destination	local:counterintuitive_results	.
-local:may_have_on_query_solutions	local:mayhave_on	local:query_solutions	.
-local:standard	rdfs:member	local:standard_sparql	.
-local:prominent	rdfs:member	local:prominent_example	.
-local:such_change	rdfs:subClassOf	local:change	.
-local:existential_blank	rdfs:member	local:existential_blank_nodes	.
-local:adapt	local:AM-PNC	local:proposed	.
-local:standard_sparql	rdfs:subClassOf	local:sparql	.
-local:query_as_existentials_author	local:queryasexistentials_	local:author	.
-local:based	vn.role:Cause	local:alternative_sparql_semantics	.
-local:running_over_datasets	local:running_over	local:datasets	.
-local:feasibility_of_alternative_sparql_semantics	local:feasibility_of	local:alternative_sparql_semantics	.
-local:affect	local:AM-MOD	local:would	.
-local:make	vn.role:Material	local:standard_sparql_semantics	.
-local:blank	rdfs:member	local:blank_nodes	.
-local:feasibility_of_alternative_sparql_semantics	local:of_alternativesparqlsemantics	local:feasibility	.
-local:performance_costs	rdfs:subClassOf	local:costs	.
-local:sparql_semantics	rdfs:subClassOf	local:semantics	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:such_change_in_semantics	local:in_semantics	local:such_change	.
-local:found	local:AM-LOC	local:wikidata_dataset	.
-local:affect	vn.role:Experiencer	local:new_semantics	.
-local:associated	vn.role:Patient2	local:performance_costs	.
-local:evaluate	vn.role:Agent	local:we	.
-local:would_affect	rdfs:subClassOf	local:affect	.
-local:unsuitable_for_datasets	local:for_datasets	local:unsuitable	.
-local:rdf_data_like_more_constants	local:rdfdata_like	local:more_constants	.
-local:user_queries_over_wikidata	local:userqueries_over	local:wikidata	.
-local:proposed	local:AM-PNC	local:core_fragment_of_sparql	.
-local:beowulf	rdfs:member	local:beowulf_treats	.
-local:remains	vn.role:other	local:unknown	.
-local:query	rdfs:member	local:query_solutions	.
-local:understand	vn.role:Proposition	local:impact	.
-local:query_as_existentials	local:as_existentials	local:query	.
-local:may_have	rdfs:subClassOf	local:have	.
-local:alternative_sparql_semantics	rdfs:subClassOf	local:semantics	.
-local:such_usage	rdfs:subClassOf	local:usage	.
-local:make	vn.role:Agent	local:counterintuitive_results	.
-local:semantics_for_current_implementations	local:semantics_for	local:current_implementations	.
-local:counterintuitive	rdfs:member	local:counterintuitive_results	.
+local:sparql_semantics	rdfs:member	local:sparql	.
+local:represent_values_whose_identity_remains_unknown	rdfs:member	local:identity	.
+local:s1	rdf:object	local:represent_values_whose_identity_remains_unknown	.
+local:more_constants	rdfs:subClassOf	local:constants	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:nodes	.
+local:blank_nodes_rdf	rdfs:member	local:blank_nodes	.
+local:sparql_considers_blank_nodes_in_a_query_as_existentials	rdfs:member	local:sparql_considers	.
+local:s10.1	rdf:object	local:query_solutions	.
+local:query_as_existentials	rdfs:member	local:query	.
+local:change_in_semantics	rdfs:member	local:semantics	.
+local:nodes_rdf_data	rdfs:subClassOf	local:rdf_data	.
 local:alternative_sparql	rdfs:subClassOf	local:sparql	.
-local:explore	vn.role:Agent	local:we	.
-local:blank_nodes_in_rdf_graphs	local:blanknodes_in	local:rdf_graphs	.
-local:associated	vn.role:Agent	local:adapt	.
-local:would_associated_with_such_change	local:wouldassociated_with	local:such_change	.
-local:analyse	vn.role:Agent	local:we	.
-local:proposed	vn.role:Agent	local:we	.
-local:based	vn.role:indirect_object	local:certain_answers	.
-local:associated	vn.role:Agent	local:evaluate	.
-local:existential	rdfs:member	local:existential_blank	.
-local:explore	local:AM-DIS	local:thus	.
-local:query_as_existentials	local:query_as	local:existentials	.
-local:such	rdfs:member	local:such_usage	.
-local:associated	local:AM-MOD	local:would	.
-local:core	rdfs:member	local:core_fragment	.
-local:wikidata	rdfs:member	local:wikidata_dataset	.
-local:datasets_with_existential_blank_nodes	local:with_existentialblanknodes	local:datasets	.
-local:estimate	vn.role:Theme	local:performance_costs	.
-local:affect	vn.role:Cause	local:results_of_user_queries	.
-local:used	vn.role:Recipient	local:represent	.
-local:considers	vn.role:Theme	local:blank_nodes	.
-local:evaluate	vn.role:Theme	local:proposed	.
-local:can_found	rdfs:subClassOf	local:found	.
-local:rdf_data_like_more_constants	local:like_moreconstants	local:rdf_data	.
-local:lead	local:AM-MOD	local:may	.
-local:alternative	rdfs:member	local:alternative_sparql	.
-local:treats	vn.role:Theme	local:blank_nodes	.
-local:rdf_graphs	rdfs:subClassOf	local:graphs	.
-local:standard_sparql_semantics	rdfs:subClassOf	local:semantics	.
-local:analyse	local:AM-MNR	local:query_solutions	.
-local:treats_in_rdf_data	local:in_rdfdata	local:treats	.
-local:represent	vn.role:Theme	local:blank_nodes_in_rdf_graphs	.
-local:core_fragment_of_sparql	local:of_sparql	local:core_fragment	.
-local:current	rdfs:member	local:current_implementations	.
-local:adapt	vn.role:Agent	local:we	.
-local:certain_answers	rdfs:subClassOf	local:answers	.
-local:running	local:AM-MNR	local:datasets_with_unknown_values	.
-local:running_over_datasets	local:over_datasets	local:running	.
-local:given_as_blank_node	local:given_as	local:blank_node	.
-local:have	vn.role:Stimulus	local:query_solutions	.
-local:rdf	rdfs:member	local:rdf_graphs	.
+local:impact_that_such_a_change_in_semantics_may_have_on_query_solutions	rdfs:member	local:change	.
+local:datasets_with_unknown_values	rdfs:member	local:unknown_values	.
+local:standard_sparql_semantics_unsuitable_for_datasets_with_existential_blank_nodes	rdfs:member	local:standard_sparql_semantics	.
+local:unsuitable_for_datasets	rdfs:member	local:unsuitable	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:current_implementations	.
+local:s5	rdf:predicate	local:running	.
+local:s6.1	rdf:predicate	local:base	.
 local:existential_blank_nodes	rdfs:subClassOf	local:nodes	.
-local:query_as_existentials_author	local:_author	local:query_as_existentials	.
-local:considers_as_existentials	local:as_existentials	local:considers	.
-local:blank_nodes_in_rdf_graphs	local:in_rdfgraphs	local:blank_nodes	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:approximation_techniques	.
+local:such_usage	rdfs:subClassOf	local:usage	.
+local:counterintuitive_results	rdfs:subClassOf	local:results	.
+local:setting_for_core_fragment	rdfs:member	local:core_fragment	.
+local:blank_nodes_in_query	rdfs:member	local:blank_nodes	.
+local:s7.1	rdf:subject	local:performance_costs	.
+local:s10.1	rdf:predicate	local:have	.
+local:blank_nodes_rdf_data_more_like_constants	rdfs:member	local:constants	.
+local:s10.2	rdf:predicate	local:analyse	.
+local:s9.2	rdf:subject	local:we	.
+local:user_queries_over_wikidata	rdfs:member	local:wikidata	.
+local:s5.1	local:AM-MOD	local:may	.
+local:existential_blank	rdfs:subClassOf	local:blank	.
+local:new_semantics_would_affect_the_results_of_user_queries_over_wikidata	rdfs:member	local:wikidata	.
+local:s5	local:AM-MNR	local:datasets_with_unknown_values	.
+local:may_have	rdfs:subClassOf	local:have	.
+local:would_associated	rdfs:subClassOf	local:associated	.
+local:s6	local:AM-DIS	local:thus	.
+local:s4	local:AM-MOD	local:may	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:approximation_techniques	.
+local:s1	local:AM-MOD	local:can	.
+local:setting_for_core_fragment	rdfs:member	local:setting	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:current_implementations	.
+local:s7.2	rdf:subject	local:we	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:change	.
+local:where_given	rdfs:subClassOf	local:given	.
+local:performance_costs	rdfs:member	local:performance	.
+local:approximation_techniques_setting	rdfs:member	local:approximation_techniques	.
+local:standard_sparql	rdfs:member	local:standard	.
+local:s9.3	local:AM-PNC	local:core_fragment_of_sparql	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:constants	.
+local:wikidata_dataset_where_the_author_of_beowulf_is_given_as_a_blank_node	rdfs:member	local:beowulf	.
+local:prominent_example_of_such_usage	rdfs:member	local:prominent_example	.
+local:counterintuitive_results	rdfs:member	local:counterintuitive	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:semantics	.
+local:s3.1	rdf:object	local:blank_nodes_rdf_data_more_like_constants	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:sparql	.
+local:current_implementations	rdfs:subClassOf	local:implementations	.
+local:prominent_example_of_such_usage	rdfs:member	local:such_usage	.
+local:s2	local:AM-MOD	local:can	.
+local:standard_sparql_semantics_unsuitable_for_datasets_with_existential_blank_nodes	rdfs:member	local:datasets	.
+local:blank_nodes_rdf_data_like_more_constants	rdfs:member	local:blank_nodes_rdf_data	.
+local:impact_that_such_a_change_in_semantics_may_have_on_query_solutions	rdfs:member	local:semantics	.
+local:nodes_rdf	rdfs:subClassOf	local:rdf	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:author	.
+local:sparql_semantics	rdfs:subClassOf	local:semantics	.
+local:query_solutions	rdfs:member	local:query	.
+local:s9	rdf:subject	local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	.
+local:s6.1	rdf:object	local:certain_answers	.
+local:existential_blank_nodes	rdfs:member	local:existential_blank	.
+local:s4	rdf:predicate	local:make	.
+local:existential_blank	rdfs:member	local:existential	.
+local:values_whose_identity_remains_unknown	rdfs:member	local:identity	.
+local:s0.1	rdf:predicate	local:exist	.
+local:alternative_sparql_semantics	rdfs:subClassOf	local:semantics	.
+local:feasibility_of_alternative_sparql_semantics	rdfs:member	local:alternative_sparql_semantics	.
+local:approximation_techniques	rdfs:subClassOf	local:techniques	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:sparql	.
+local:s9.1	local:AM-MOD	local:would	.
+local:s9	rdf:predicate	local:estimate	.
+local:may_have_on_query_solutions	rdfs:member	local:may_have	.
+local:wikidata_dataset_where_the_author_of_beowulf_is_given_as_a_blank_node	rdfs:member	local:author	.
+local:semantics_for_current_implementations	rdfs:member	local:semantics	.
+local:alternative_sparql_semantics_based_on_certain_answers	rdfs:member	local:alternative_sparql_semantics	.
+local:new_semantics	rdfs:member	local:new	.
+local:s7.2	rdf:object	local:approximation_techniques_setting_for_a_core_fragment_of_sparql	.
+local:s1.1	rdf:subject	local:blank_nodes_in_rdf_graphs	.
+local:s9.1	rdf:object	local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:approximation_techniques	.
+local:semantics_for_current_implementations	rdfs:member	local:current_implementations	.
+local:s6	rdf:object	local:feasibility_of_an_alternative_sparql_semantics_based_on_certain_answers	.
+local:s3.1	rdf:predicate	local:treat	.
+local:blank_nodes_in_query	rdfs:member	local:query	.
+local:represent_values_whose_identity_remains_unknown	rdfs:member	local:represent_values	.
+local:s10.2	local:AM-MNR	local:query_solutions	.
+local:s10.2	rdf:object	local:new_semantics_would_affect_the_results_of_user_queries_over_wikidata	.
+local:unsuitable_semantics	rdfs:subClassOf	local:semantics	.
+local:standard_sparql_semantics	rdfs:subClassOf	local:semantics	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:wikidata_dataset_where_the_author_of_beowulf	rdfs:member	local:wikidata_dataset	.
+local:query_solutions	rdfs:subClassOf	local:solutions	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:core_fragment	.
+local:blank_nodes_rdf	rdfs:subClassOf	local:rdf	.
+local:s10	rdf:predicate	local:understand	.
+local:results_of_user_queries_over_wikidata	rdfs:member	local:wikidata	.
+local:s10.1	rdf:subject	local:change_in_semantics	.
+local:beowulf_treats	rdfs:member	local:beowulf	.
+local:results_of_user_queries	rdfs:member	local:results	.
+local:wikidata_dataset_where_the_author_of_beowulf	rdfs:member	local:beowulf	.
+local:blank_nodes_in_rdf_data	rdfs:member	local:rdf_data	.
+local:user_queries	rdfs:member	local:user	.
+local:s6	rdf:subject	local:we	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:treats_like_more_constants	rdfs:member	local:treats	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:change	.
+local:s7	rdf:predicate	local:estimate	.
+local:results_of_user_queries_over_wikidata	rdfs:member	local:results	.
+local:core_fragment	rdfs:member	local:core	.
+local:s5.1	rdf:predicate	local:lead	.
+local:approximation_techniques	rdfs:member	local:approximation	.
+local:s4	rdf:subject	local:counterintuitive_results	.
+local:values_identity	rdfs:subClassOf	local:identity	.
+local:s1	rdf:subject	local:blank_nodes_in_rdf_graphs	.
+local:s10.3	rdf:object	local:results_of_user_queries_over_wikidata	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:sparql	.
+local:blank_nodes_rdf_data_like_more_constants	rdfs:member	local:more_constants	.
+local:beowulf_treats	rdfs:subClassOf	local:treats	.
+local:sparql_considers_blank_nodes_in_a_query_as_existentials	rdfs:member	local:existentials	.
+local:s10.3	rdf:subject	local:new_semantics	.
+local:wikidata_dataset_where_the_author_of_beowulf_is_given_as_a_blank_node	rdfs:member	local:blank_node	.
+local:s0.1	rdf:subject	local:values	.
+local:may_have_on_query_solutions	rdfs:member	local:query_solutions	.
+local:s5	rdf:subject	local:sparql_queries	.
+local:blank_nodes	rdfs:subClassOf	local:nodes	.
+local:user_queries	rdfs:subClassOf	local:queries	.
+local:user_queries_over_wikidata	rdfs:member	local:user_queries	.
+local:rdf_graphs	rdfs:member	local:rdf	.
+local:represent_values	rdfs:subClassOf	local:values	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:semantics	.
+local:s8	rdf:predicate	local:propose	.
+local:results_of_user_queries	rdfs:member	local:user_queries	.
+local:relational_database	rdfs:subClassOf	local:database	.
+local:s7.3	rdf:predicate	local:set	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:semantics	.
+local:author_of_beowulf	rdfs:member	local:author	.
+local:s2	rdf:subject	local:prominent_example_of_such_usage	.
+local:rdf_graphs	rdfs:subClassOf	local:graphs	.
+local:impact_that_such_a_change_in_semantics_may_have_on_query_solutions	rdfs:member	local:query_solutions	.
+local:s9.3	rdfs:member	local:approximation_techniques	.
+local:such_change_in_semantics	rdfs:member	local:such_change	.
+local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:change	.
+local:current_implementations	rdfs:member	local:current	.
+local:s7.1	local:AM-MOD	local:would	.
+local:alternative_sparql_semantics	rdfs:subClassOf	local:sparql_semantics	.
+local:feasibility_of_an_alternative_sparql_semantics_based_on_certain_answers	rdfs:member	local:certain_answers	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:wikidata_dataset_where_the_author_of_beowulf	rdfs:member	local:author	.
+local:core_fragment_of_sparql	rdfs:member	local:core_fragment	.
+local:wikidata_dataset	rdfs:member	local:wikidata	.
+local:sparql_considers	rdfs:subClassOf	local:considers	.
+local:s8	rdf:subject	local:approximation_techniques	.
+local:s1.2	rdf:predicate	local:remain	.
+local:blank_nodes_rdf_data_more_like_constants	rdfs:member	local:blank_nodes_rdf	.
+local:s2	rdf:predicate	local:find	.
+local:running_over_datasets	rdfs:member	local:datasets	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:approximation_techniques	.
+local:treats_like_more_constants	rdfs:member	local:more_constants	.
+local:sparql_unsuitable_semantics	rdfs:subClassOf	local:unsuitable_semantics	.
+local:blank_node	rdfs:subClassOf	local:node	.
+local:where_given_as_blank_node	rdfs:member	local:blank_node	.
+local:change_in_semantics	rdfs:member	local:change	.
+local:s7.2	rdf:predicate	local:adapt	.
+local:standard_sparql_unsuitable_semantics	rdfs:subClassOf	local:sparql_unsuitable_semantics	.
+local:s5.1	rdf:object	local:counterintuitive_results	.
+local:prominent_example	rdfs:subClassOf	local:example	.
+local:s9.2	rdf:predicate	local:evaluate	.
+local:s10	rdf:subject	local:impact_that_such_a_change_in_semantics_may_have_on_query_solutions	.
+local:datasets_with_existential_blank_nodes	rdfs:member	local:datasets	.
+local:s4	rdf:object	local:standard_sparql_semantics_unsuitable_for_datasets_with_existential_blank_nodes	.
+local:core_fragment	rdfs:subClassOf	local:fragment	.
+local:s5.1	local:AM-DIS	local:thus	.
+local:unknown_values	rdfs:subClassOf	local:values	.
+local:existential_blank_nodes	rdfs:subClassOf	local:blank_nodes	.
+local:s2.1	rdf:predicate	local:give	.
+local:new_semantics_would_affect_the_results_of_user_queries_over_wikidata	rdfs:member	local:user_queries	.
+local:s10.3	rdf:predicate	local:affect	.
+local:standard_sparql_semantics_unsuitable_for_datasets_with_existential_blank_nodes	rdfs:member	local:existential_blank_nodes	.
+local:new_semantics	rdfs:subClassOf	local:semantics	.
+local:blank_nodes	rdfs:member	local:blank	.
+local:s5.1	rdf:subject	local:running_sparql_queries_over_datasets_with_unknown_values	.
+local:s3	rdf:object	local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	.
+local:would_associated_with_such_change	rdfs:member	local:such_change	.
+local:s7.1	rdf:object	local:change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:core_fragment	.
+local:standard_sparql_semantics	rdfs:member	local:standard_sparql	.
+local:s2.1	rdf:object	local:blank_node	.
+local:results_of_user_queries_over_wikidata	rdfs:member	local:user_queries	.
+local:blank_nodes_in_rdf_graphs	rdfs:member	local:blank_nodes	.
+local:s9.2	rdf:object	local:approximation_techniques_setting_for_a_core_fragment_of_sparql	.
+local:s3.1	rdf:subject	local:author_of_beowulf	.
+local:feasibility_of_an_alternative_sparql_semantics_based_on_certain_answers	rdfs:member	local:feasibility	.
+local:s1.1	rdf:predicate	local:represent	.
+local:s3	rdf:subject	local:sparql	.
+local:where_given_as_blank_node	rdfs:member	local:where_given	.
+local:prominent_example	rdfs:member	local:prominent	.
+local:would_affect	rdfs:subClassOf	local:affect	.
+local:standard_sparql	rdfs:subClassOf	local:sparql	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:performance_costs	.
+local:s9.3	rdf:subject	local:approximation_techniques	.
+local:s6	rdf:predicate	local:explore	.
+local:approximation_techniques_setting	rdfs:member	local:setting	.
+local:datasets_with_existential_blank_nodes	rdfs:member	local:existential_blank_nodes	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:performance_costs	.
+local:s0	rdf:subject	local:values	.
+local:wikidata_dataset	rdfs:subClassOf	local:dataset	.
+local:s2	local:AM-LOC	local:wikidata_dataset_where_the_author_of_beowulf_is_given_as_a_blank_node	.
+local:s8	local:AM-LOC	local:relational_database	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:core_fragment	.
+local:wikidata_dataset_where_the_author_of_beowulf_is_given_as_a_blank_node	rdfs:member	local:wikidata_dataset	.
+local:s9.3	rdfs:member	local:core_fragment	.
+local:s7.1	rdf:predicate	local:associate	.
+local:new_semantics_would_affect_the_results_of_user_queries_over_wikidata	rdfs:member	local:results	.
+local:s10.1	local:AM-MOD	local:may	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:existentials	.
+local:new_semantics_would_affect_the_results_of_user_queries_over_wikidata	rdfs:member	local:new_semantics	.
+local:s7.3	local:AM-PNC	local:core_fragment_of_sparql	.
+local:considers_as_existentials	rdfs:member	local:considers	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:current_implementations	.
+local:would_associated_with_such_change	rdfs:member	local:would_associated	.
+local:performance_costs	rdfs:subClassOf	local:costs	.
+local:blank_blank_nodes	rdfs:subClassOf	local:blank_nodes	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:beowulf_treats	.
+local:relational_database	rdfs:member	local:relational	.
+local:such_change	rdfs:subClassOf	local:change	.
+local:alternative_sparql_semantics	rdfs:member	local:alternative_sparql	.
+local:running_sparql_queries_over_datasets_with_unknown_values	rdfs:member	local:datasets	.
+local:unsuitable_for_datasets	rdfs:member	local:datasets	.
+local:certain_answers	rdfs:member	local:certain	.
+local:s3.1	local:AM-TMP	local:sparql_considers_blank_nodes_in_a_query_as_existentials	.
+local:s9.1	rdf:subject	local:performance_costs	.
+local:s1.2	rdf:object	local:unknown	.
+local:s9.1	rdf:predicate	local:associate	.
+local:s1	rdf:predicate	local:use	.
+local:author_of_beowulf	rdfs:member	local:beowulf	.
+local:blank_nodes_in_rdf_graphs	rdfs:member	local:rdf_graphs	.
+local:running_sparql_queries_over_datasets_with_unknown_values	rdfs:member	local:unknown_values	.
+local:s9.3	rdf:predicate	local:set	.
+local:core_fragment_of_sparql	rdfs:member	local:sparql	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:change	.
+local:unknown_values	rdfs:member	local:unknown	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:core_fragment	.
+local:nodes_rdf	rdfs:member	local:nodes	.
+local:s2.1	rdf:subject	local:wikidata_dataset_where_the_author_of_beowulf	.
+local:such_usage	rdfs:member	local:such	.
+local:s0	rdf:predicate	local:know	.
+local:feasibility_of_alternative_sparql_semantics	rdfs:member	local:feasibility	.
+local:query_as_existentials	rdfs:member	local:existentials	.
+local:represent_values	rdfs:member	local:represent	.
+local:alternative_sparql_semantics_based_on_certain_answers	rdfs:member	local:certain_answers	.
+local:datasets_with_unknown_values	rdfs:member	local:datasets	.
+local:feasibility_of_an_alternative_sparql_semantics_based_on_certain_answers	rdfs:member	local:alternative_sparql_semantics	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:blank_nodes	.
+local:s6.1	rdf:subject	local:alternative_sparql_semantics	.
+local:s3	rdf:predicate	local:consider	.
+local:s7	rdf:subject	local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	.
+local:s10.2	rdf:subject	local:we	.
+local:blank_nodes_rdf_data	rdfs:subClassOf	local:nodes_rdf_data	.
+local:certain_answers	rdfs:subClassOf	local:answers	.
+local:sparql_considers_blank_nodes_in_a_query_as_existentials	rdfs:member	local:nodes	.
+local:s0	rdf:object	local:exist	.
+local:such_change_in_semantics	rdfs:member	local:semantics	.
+local:values_whose_identity_remains_unknown	rdfs:member	local:values	.
+local:change_in_semantics_for_current_implementations_we_evaluate_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:current_implementations	.
+local:blank_nodes_in_rdf_data	rdfs:member	local:blank_nodes	.
+local:blank_nodes_query_as_existentials_the_author_of_beowulf_treats_blank_nodes_in_rdf_data_more_like_constants	rdfs:member	local:rdf_data	.
+local:sparql_considers	rdfs:member	local:sparql	.
+local:running_over_datasets	rdfs:member	local:running	.
+local:s10.3	local:AM-MOD	local:would	.
+local:s9.3	rdfs:member	local:sparql	.
+local:s10	local:AM-MNR	local:further	.
+local:blank_node	rdfs:member	local:blank	.
+local:s1.1	rdf:object	local:values_whose_identity_remains_unknown	.
+local:impact_that_such_a_change_in_semantics_may_have_on_query_solutions	rdfs:member	local:impact	.
+local:considers_as_existentials	rdfs:member	local:existentials	.
+local:sparql_considers_blank_nodes_in_a_query_as_existentials	rdfs:member	local:query	.
+local:performance_costs_that_would_be_associated_with_such_a_change_in_semantics_for_current_implementations_we_adapt_approximation_techniques_setting_for_a_core_fragment_of_sparql	rdfs:member	local:sparql	.
+local:alternative_sparql	rdfs:member	local:alternative	.

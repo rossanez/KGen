@@ -1,409 +1,778 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"provide defacto has in the correctness of the input fact"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"provide useful additional information defacto has in the correctness of the input fact"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"supplying the user with relevant excerpts of webpages defacto"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"validating facts by supplying the user with relevant excerpts of webpages defacto has in the correctness of the input fact"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"provide an effective way of validating facts by supplying the user with relevant excerpts of webpages defacto has in the correctness of the input fact"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"in this article we present defacto"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"we finding trustworthy sources for this article on the web"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"we validating facts"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"in this article we present an algorithm for validating facts by finding trustworthy sources for this article on the web"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"in this article we present deep fact validation"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the experts must often read several documents"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the experts have carry out several search processes"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"have"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"a threestep process retrieving potentially relevant documents"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"so far this task often addressed by human curators in a threestep process retrieving potentially relevant documents"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"a threestep process screening those documents for relevant content"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"so far this task often addressed by human curators in a threestep process screening those documents for relevant content"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"the statement using standard search engines"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"the statement check using standard search engines"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"a threestep process issuing appropriate keyword queries for the statement to check using standard search engines"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"so far this task often addressed by human curators in a threestep process issuing appropriate keyword queries for the statement to check using standard search engines"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"maintaining knowledge bases"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"provided knowledge"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"ensure traceability of the provided knowledge"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"provide sources for facts in order to ensure traceability of the provided knowledge"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"provided knowledge"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"ensure correctness of the provided knowledge"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"provide sources for facts in order to ensure correctness of the provided knowledge"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"one of the main tasks validate facts"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"creating knowledge bases"	.
+
+
 #### Classes ####
 
-local:provide	rdfs:label	"provide"	.
+local:defacto_has_in_the_correctness_of_the_input_fact	a	rdf:Class	;
+	rdfs:label	"defacto has in the correctness of the input fact"	.
 
-local:sources	rdfs:label	"sources"	.
+local:defacto	a	rdf:Class	;
+	rdfs:label	"defacto"	.
 
-local:facts	rdfs:label	"facts"	.
+local:input_fact	a	rdf:Class	;
+	rdfs:label	"input fact"	.
 
-local:provided_knowledge	rdfs:label	"provided knowledge"	.
+local:correctness	a	rdf:Class	;
+	rdfs:label	"correctness"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:fact	a	rdf:Class	;
+	rdfs:label	"fact"	.
 
-local:traceability_of_provided_knowledge	rdfs:label	"traceability of provided knowledge"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:traceability	rdfs:label	"traceability"	.
+local:has_in_correctness	a	rdf:Class	;
+	rdfs:label	"has in correctness"	.
 
-local:order	rdfs:label	"order"	.
+local:has	a	rdf:Class	;
+	rdfs:label	"has"	.
 
-local:ensure	rdfs:label	"ensure"	.
+local:correctness_of_input_fact	a	rdf:Class	;
+	rdfs:label	"correctness of input fact"	.
 
-local:provided	rdfs:label	"provided"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:useful_additional_information_defacto_has_in_the_correctness_of_the_input_fact	a	rdf:Class	;
+	rdfs:label	"useful additional information defacto has in the correctness of the input fact"	.
 
-local:bases	rdfs:label	"bases"	.
+local:useful_additional_information_defacto	a	rdf:Class	;
+	rdfs:label	"useful additional information defacto"	.
 
-local:maintaining	rdfs:label	"maintaining"	.
+local:additional_information_defacto	a	rdf:Class	;
+	rdfs:label	"additional information defacto"	.
 
-local:creating	rdfs:label	"creating"	.
+local:information_defacto	a	rdf:Class	;
+	rdfs:label	"information defacto"	.
 
-local:correctness_of_provided_knowledge	rdfs:label	"correctness of provided knowledge"	.
+local:additional_information	a	rdf:Class	;
+	rdfs:label	"additional information"	.
 
-local:correctness	rdfs:label	"correctness"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:main_tasks	rdfs:label	"main tasks"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:tasks	rdfs:label	"tasks"	.
+local:useful_additional	a	rdf:Class	;
+	rdfs:label	"useful additional"	.
 
-local:main	rdfs:label	"main"	.
+local:useful_additional_information	a	rdf:Class	;
+	rdfs:label	"useful additional information"	.
 
-local:one_main_tasks	rdfs:label	"one main tasks"	.
+local:useful	a	rdf:Class	;
+	rdfs:label	"useful"	.
 
-local:validate	rdfs:label	"validate"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:addressed	rdfs:label	"addressed"	.
+local:supply	a	rdf:Class	;
+	rdfs:label	"supply"	.
 
-local:far	rdfs:label	"far"	.
+local:relevant_excerpts_of_webpages_defacto	a	rdf:Class	;
+	rdfs:label	"relevant excerpts of webpages defacto"	.
 
-local:task	rdfs:label	"task"	.
+local:webpages_defacto	a	rdf:Class	;
+	rdfs:label	"webpages defacto"	.
 
-local:often	rdfs:label	"often"	.
+local:relevant_excerpts	a	rdf:Class	;
+	rdfs:label	"relevant excerpts"	.
 
-local:relevant_documents	rdfs:label	"relevant documents"	.
+local:excerpts	a	rdf:Class	;
+	rdfs:label	"excerpts"	.
 
-local:documents	rdfs:label	"documents"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:potentially_relevant_documents	rdfs:label	"potentially relevant documents"	.
+local:webpages	a	rdf:Class	;
+	rdfs:label	"webpages"	.
 
-local:threestep_process	rdfs:label	"three-step process"	.
+local:facts	a	rdf:Class	;
+	rdfs:label	"facts"	.
 
-local:process	rdfs:label	"process"	.
+local:validate	a	rdf:Class	;
+	rdfs:label	"validate"	.
 
-local:potentially	rdfs:label	"potentially"	.
+local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	a	rdf:Class	;
+	rdfs:label	"supplying the user with relevant excerpts of webpages defacto has in the correctness of the input fact"	.
 
-local:potentially_relevant	rdfs:label	"potentially relevant"	.
+local:supplying_with_relevant_excerpts	a	rdf:Class	;
+	rdfs:label	"supplying with relevant excerpts"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:supplying	a	rdf:Class	;
+	rdfs:label	"supplying"	.
 
-local:threestep	rdfs:label	"three-step"	.
+local:relevant_excerpts_of_webpages	a	rdf:Class	;
+	rdfs:label	"relevant excerpts of webpages"	.
 
-local:human	rdfs:label	"human"	.
+local:effective_way_of_validating_facts	a	rdf:Class	;
+	rdfs:label	"effective way of validating facts"	.
 
-local:human_curators	rdfs:label	"human curators"	.
+local:effective_way	a	rdf:Class	;
+	rdfs:label	"effective way"	.
 
-local:curators	rdfs:label	"curators"	.
+local:way	a	rdf:Class	;
+	rdfs:label	"way"	.
 
-local:human_curators_in_threestep_process	rdfs:label	"human curators in three-step process"	.
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
 
-local:retrieving	rdfs:label	"retrieving"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:keyword_queries	rdfs:label	"keyword queries"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:queries	rdfs:label	"queries"	.
+local:article	a	rdf:Class	;
+	rdfs:label	"article"	.
 
-local:search	rdfs:label	"search"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:search_engines	rdfs:label	"search engines"	.
+local:trustworthy_sources_for_this_article_on_the_web	a	rdf:Class	;
+	rdfs:label	"trustworthy sources for this article on the web"	.
 
-local:standard	rdfs:label	"standard"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:standard_search	rdfs:label	"standard search"	.
+local:trustworthy_sources	a	rdf:Class	;
+	rdfs:label	"trustworthy sources"	.
 
-local:appropriate_keyword	rdfs:label	"appropriate keyword"	.
+local:trustworthy	a	rdf:Class	;
+	rdfs:label	"trustworthy"	.
 
-local:keyword	rdfs:label	"keyword"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:engines	rdfs:label	"engines"	.
+local:trustworthy_sources_for_article	a	rdf:Class	;
+	rdfs:label	"trustworthy sources for article"	.
 
-local:appropriate_keyword_queries	rdfs:label	"appropriate keyword queries"	.
+local:article_on_web	a	rdf:Class	;
+	rdfs:label	"article on web"	.
 
-local:standard_search_engines	rdfs:label	"standard search engines"	.
+local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	a	rdf:Class	;
+	rdfs:label	"algorithm for validating facts by finding trustworthy sources for this article on the web"	.
 
-local:appropriate	rdfs:label	"appropriate"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:appropriate_keyword_queries_for_statement	rdfs:label	"appropriate keyword queries for statement"	.
+local:deep_fact_validation	a	rdf:Class	;
+	rdfs:label	"deep fact validation"	.
 
-local:statement	rdfs:label	"statement"	.
+local:deep_fact	a	rdf:Class	;
+	rdfs:label	"deep fact"	.
 
-local:issuing	rdfs:label	"issuing"	.
+local:deep	a	rdf:Class	;
+	rdfs:label	"deep"	.
 
-local:check_using	rdfs:label	"check using"	.
+local:fact_validation	a	rdf:Class	;
+	rdfs:label	"fact validation"	.
 
-local:check	rdfs:label	"check"	.
+local:validation	a	rdf:Class	;
+	rdfs:label	"validation"	.
 
-local:using	rdfs:label	"using"	.
+local:experts	a	rdf:Class	;
+	rdfs:label	"experts"	.
 
-local:relevant_content	rdfs:label	"relevant content"	.
+local:read	a	rdf:Class	;
+	rdfs:label	"read"	.
 
-local:content	rdfs:label	"content"	.
+local:several_documents	a	rdf:Class	;
+	rdfs:label	"several documents"	.
 
-local:screening_for_relevant_content	rdfs:label	"screening for relevant content"	.
+local:documents	a	rdf:Class	;
+	rdfs:label	"documents"	.
 
-local:screening	rdfs:label	"screening"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:documents_for_relevant_content	rdfs:label	"documents for relevant content"	.
+local:must	a	rdf:Class	;
+	rdfs:label	"must"	.
 
-local:read	rdfs:label	"read"	.
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
 
-local:experts	rdfs:label	"experts"	.
+local:carry	a	rdf:Class	;
+	rdfs:label	"carry"	.
 
-local:must	rdfs:label	"must"	.
+local:several_search_processes	a	rdf:Class	;
+	rdfs:label	"several search processes"	.
 
-local:several	rdfs:label	"several"	.
+local:search_processes	a	rdf:Class	;
+	rdfs:label	"search processes"	.
 
-local:several_documents	rdfs:label	"several documents"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:carry	rdfs:label	"carry"	.
+local:processes	a	rdf:Class	;
+	rdfs:label	"processes"	.
 
-local:have	rdfs:label	"have"	.
+local:several_search	a	rdf:Class	;
+	rdfs:label	"several search"	.
 
-local:search_processes	rdfs:label	"search processes"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:several_search	rdfs:label	"several search"	.
+local:threestep_process	a	rdf:Class	;
+	rdfs:label	"threestep process"	.
 
-local:processes	rdfs:label	"processes"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:several_search_processes	rdfs:label	"several search processes"	.
+local:threestep	a	rdf:Class	;
+	rdfs:label	"threestep"	.
 
-local:present	rdfs:label	"present"	.
+local:retrieve	a	rdf:Class	;
+	rdfs:label	"retrieve"	.
 
-local:article	rdfs:label	"article"	.
+local:potentially_relevant_documents	a	rdf:Class	;
+	rdfs:label	"potentially relevant documents"	.
 
-local:we	rdfs:label	"we"	.
+local:relevant_documents	a	rdf:Class	;
+	rdfs:label	"relevant documents"	.
 
-local:trustworthy_sources	rdfs:label	"trustworthy sources"	.
+local:potentially_relevant	a	rdf:Class	;
+	rdfs:label	"potentially relevant"	.
 
-local:trustworthy	rdfs:label	"trustworthy"	.
+local:potentially	a	rdf:Class	;
+	rdfs:label	"potentially"	.
 
-local:trustworthy_sources_for_article	rdfs:label	"trustworthy sources for article"	.
+local:human_curators_in_a_threestep_process_retrieving_potentially_relevant_documents	a	rdf:Class	;
+	rdfs:label	"human curators in a threestep process retrieving potentially relevant documents"	.
 
-local:article_on_web	rdfs:label	"article on web"	.
+local:human_curators	a	rdf:Class	;
+	rdfs:label	"human curators"	.
 
-local:web	rdfs:label	"web"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:defacto	rdfs:label	"defacto"	.
+local:curators	a	rdf:Class	;
+	rdfs:label	"curators"	.
 
-local:validating	rdfs:label	"validating"	.
+local:human_curators_in_threestep_process	a	rdf:Class	;
+	rdfs:label	"human curators in threestep process"	.
 
-local:finding	rdfs:label	"finding"	.
+local:threestep_process_retrieving	a	rdf:Class	;
+	rdfs:label	"threestep process retrieving"	.
 
-local:deep	rdfs:label	"deep"	.
+local:retrieving	a	rdf:Class	;
+	rdfs:label	"retrieving"	.
 
-local:deep_fact	rdfs:label	"deep fact"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:deep_fact_validation	rdfs:label	"deep fact validation"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:validation	rdfs:label	"validation"	.
+local:far	a	rdf:Class	;
+	rdfs:label	"far"	.
 
-local:fact_validation	rdfs:label	"fact validation"	.
+local:screen	a	rdf:Class	;
+	rdfs:label	"screen"	.
 
-local:fact	rdfs:label	"fact"	.
+local:documents_for_relevant_content	a	rdf:Class	;
+	rdfs:label	"documents for relevant content"	.
 
-local:input	rdfs:label	"input"	.
+local:relevant_content	a	rdf:Class	;
+	rdfs:label	"relevant content"	.
 
-local:input_fact	rdfs:label	"input fact"	.
+local:content	a	rdf:Class	;
+	rdfs:label	"content"	.
 
-local:defacto_has	rdfs:label	"defacto has"	.
+local:human_curators_in_a_threestep_process_screening_those_documents_for_relevant_content	a	rdf:Class	;
+	rdfs:label	"human curators in a threestep process screening those documents for relevant content"	.
 
-local:has	rdfs:label	"has"	.
+local:threestep_process_screening	a	rdf:Class	;
+	rdfs:label	"threestep process screening"	.
 
-local:has_in_correctness	rdfs:label	"has in correctness"	.
+local:screening	a	rdf:Class	;
+	rdfs:label	"screening"	.
 
-local:correctness_of_input_fact	rdfs:label	"correctness of input fact"	.
+local:screening_for_relevant_content	a	rdf:Class	;
+	rdfs:label	"screening for relevant content"	.
 
-local:information_defacto	rdfs:label	"information defacto"	.
+local:statement	a	rdf:Class	;
+	rdfs:label	"statement"	.
 
-local:additional_information	rdfs:label	"additional information"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:additional_information_defacto	rdfs:label	"additional information defacto"	.
+local:standard_search_engines	a	rdf:Class	;
+	rdfs:label	"standard search engines"	.
 
-local:useful	rdfs:label	"useful"	.
+local:standard_search	a	rdf:Class	;
+	rdfs:label	"standard search"	.
 
-local:useful_additional	rdfs:label	"useful additional"	.
+local:standard	a	rdf:Class	;
+	rdfs:label	"standard"	.
 
-local:information	rdfs:label	"information"	.
+local:search_engines	a	rdf:Class	;
+	rdfs:label	"search engines"	.
 
-local:useful_additional_information	rdfs:label	"useful additional information"	.
+local:engines	a	rdf:Class	;
+	rdfs:label	"engines"	.
 
-local:useful_additional_information_defacto	rdfs:label	"useful additional information defacto"	.
+local:check	a	rdf:Class	;
+	rdfs:label	"check"	.
 
-local:additional	rdfs:label	"additional"	.
+local:using_standard_search_engines	a	rdf:Class	;
+	rdfs:label	"using standard search engines"	.
 
-local:useful_additional_information_defacto_has	rdfs:label	"useful additional information defacto has"	.
+local:check_using_standard_search_engines	a	rdf:Class	;
+	rdfs:label	"check using standard search engines"	.
 
-local:effective_way	rdfs:label	"effective way"	.
+local:check_using	a	rdf:Class	;
+	rdfs:label	"check using"	.
 
-local:way	rdfs:label	"way"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:effective	rdfs:label	"effective"	.
+local:issue	a	rdf:Class	;
+	rdfs:label	"issue"	.
 
-local:webpages	rdfs:label	"webpages"	.
+local:appropriate_keyword_queries_for_the_statement	a	rdf:Class	;
+	rdfs:label	"appropriate keyword queries for the statement"	.
 
-local:webpages_defacto	rdfs:label	"webpages defacto"	.
+local:appropriate_keyword_queries	a	rdf:Class	;
+	rdfs:label	"appropriate keyword queries"	.
 
-local:relevant_excerpts	rdfs:label	"relevant excerpts"	.
+local:appropriate_keyword	a	rdf:Class	;
+	rdfs:label	"appropriate keyword"	.
 
-local:excerpts	rdfs:label	"excerpts"	.
+local:appropriate	a	rdf:Class	;
+	rdfs:label	"appropriate"	.
 
-local:supplying_with_relevant_excerpts	rdfs:label	"supplying with relevant excerpts"	.
+local:keyword	a	rdf:Class	;
+	rdfs:label	"keyword"	.
 
-local:supplying	rdfs:label	"supplying"	.
+local:keyword_queries	a	rdf:Class	;
+	rdfs:label	"keyword queries"	.
 
-local:relevant_excerpts_of_webpages	rdfs:label	"relevant excerpts of webpages"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:user	rdfs:label	"user"	.
+local:appropriate_keyword_queries_for_statement	a	rdf:Class	;
+	rdfs:label	"appropriate keyword queries for statement"	.
 
-#### Properties ####
+local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	a	rdf:Class	;
+	rdfs:label	"human curators in a threestep process issuing appropriate keyword queries for the statement to check using standard search engines"	.
+
+local:threestep_process_issuing	a	rdf:Class	;
+	rdfs:label	"threestep process issuing"	.
+
+local:issuing	a	rdf:Class	;
+	rdfs:label	"issuing"	.
+
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
+
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
+
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
+
+local:maintain	a	rdf:Class	;
+	rdfs:label	"maintain"	.
+
+local:traceability_of_the_provided_knowledge	a	rdf:Class	;
+	rdfs:label	"traceability of the provided knowledge"	.
+
+local:traceability	a	rdf:Class	;
+	rdfs:label	"traceability"	.
+
+local:traceability_of_provided_knowledge	a	rdf:Class	;
+	rdfs:label	"traceability of provided knowledge"	.
+
+local:ensure	a	rdf:Class	;
+	rdfs:label	"ensure"	.
+
+local:order_to_ensure_traceability_of_the_provided_knowledge	a	rdf:Class	;
+	rdfs:label	"order to ensure traceability of the provided knowledge"	.
+
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
+
+local:correctness_of_the_provided_knowledge	a	rdf:Class	;
+	rdfs:label	"correctness of the provided knowledge"	.
+
+local:correctness_of_provided_knowledge	a	rdf:Class	;
+	rdfs:label	"correctness of provided knowledge"	.
+
+local:order_to_ensure_correctness_of_the_provided_knowledge	a	rdf:Class	;
+	rdfs:label	"order to ensure correctness of the provided knowledge"	.
+
+local:one_of_the_main_tasks	a	rdf:Class	;
+	rdfs:label	"one of the main tasks"	.
+
+local:main_tasks	a	rdf:Class	;
+	rdfs:label	"main tasks"	.
+
+local:main	a	rdf:Class	;
+	rdfs:label	"main"	.
+
+local:tasks	a	rdf:Class	;
+	rdfs:label	"tasks"	.
+
+local:one_main_tasks	a	rdf:Class	;
+	rdfs:label	"one main tasks"	.
+
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
 #### Mapped Relations ####
 
-local:search_engines	owl:sameAs	cso:search_engines	.
-cso:keyword_queries	rdfs:label	"keyword queries"	.
-local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
-cso:search_engines	rdfs:label	"search engines"	.
-local:validation	owl:sameAs	cso:validation	.
 cso:validation	rdfs:label	"validation"	.
 local:keyword_queries	owl:sameAs	cso:keyword_queries	.
+cso:search_engines	rdfs:label	"search engines"	.
+local:search_engines	owl:sameAs	cso:search_engines	.
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+local:validation	owl:sameAs	cso:validation	.
+cso:keyword_queries	rdfs:label	"keyword queries"	.
 cso:knowledge_bases	rdfs:label	"knowledge bases"	.
 
 #### Relations ####
 
-local:search	rdfs:member	local:search_processes	.
-local:potentially_relevant	rdfs:member	local:potentially_relevant_documents	.
-local:provided_knowledge	rdfs:subClassOf	local:knowledge	.
-local:several_search	rdfs:member	local:several_search_processes	.
-local:correctness_of_provided_knowledge	local:of_providedknowledge	local:correctness	.
-local:check_using	local:check_	local:using	.
-local:creating	vn.role:Product	local:knowledge_bases	.
-local:maintaining	vn.role:Theme	local:knowledge_bases	.
-local:has_in_correctness	local:has_in	local:correctness	.
-local:validating	local:AM-MNR	local:defacto	.
-local:potentially	rdfs:member	local:potentially_relevant	.
-local:provide	vn.role:indirect_object	local:facts	.
-local:useful_additional_information_defacto_has	local:_has	local:useful_additional_information_defacto	.
-local:additional	rdfs:member	local:additional_information	.
-local:deep_fact	rdfs:subClassOf	local:fact	.
-local:relevant	rdfs:member	local:relevant_documents	.
-local:validate	vn.role:Agent	local:one_main_tasks	.
-local:addressed	vn.role:Agent	local:human_curators_in_threestep_process	.
-local:using	vn.role:Agent	local:statement	.
-local:additional_information_defacto	rdfs:subClassOf	local:defacto	.
-local:validating	vn.role:Location	local:finding	.
-local:additional_information_defacto	rdfs:subClassOf	local:information_defacto	.
-local:standard_search_engines	rdfs:subClassOf	local:search_engines	.
-local:validating	vn.role:Agent	local:we	.
-local:standard_search	rdfs:subClassOf	local:search	.
-local:provide	local:AM-PNC	local:order	.
-local:standard_search_engines	rdfs:subClassOf	local:engines	.
-local:appropriate_keyword	rdfs:subClassOf	local:keyword	.
-local:one_main_tasks	rdfs:subClassOf	local:main_tasks	.
-local:supplying_with_relevant_excerpts	local:with_relevantexcerpts	local:supplying	.
-local:appropriate	rdfs:member	local:appropriate_keyword	.
-local:using	vn.role:Theme	local:standard_search_engines	.
-local:defacto_has	local:_has	local:defacto	.
-local:human_curators_in_threestep_process	local:in_three-stepprocess	local:human_curators	.
 local:search_processes	rdfs:subClassOf	local:processes	.
-local:article_on_web	local:article_on	local:web	.
-local:provide	vn.role:Agent	local:useful_additional_information_defacto_has	.
-local:present	local:AM-PNC	local:validating	.
-local:provide	vn.role:Agent	local:effective_way	.
-local:human_curators	rdfs:subClassOf	local:curators	.
-local:keyword	rdfs:member	local:keyword_queries	.
-local:read	local:AM-TMP	local:often	.
-local:trustworthy	rdfs:member	local:trustworthy_sources	.
-local:main	rdfs:member	local:main_tasks	.
-local:read	vn.role:Agent	local:experts	.
-local:article_on_web	local:on_web	local:article	.
-local:issuing	vn.role:Theme	local:threestep_process	.
-local:present	local:AM-LOC	local:article	.
-local:check	vn.role:Experiencer	local:statement	.
-local:useful_additional_information	rdfs:member	local:useful_additional_information_defacto	.
-local:addressed	vn.role:Theme	local:task	.
-local:check	vn.role:Stimulus	local:using	.
-local:carry	local:AM-MOD	local:have	.
-local:additional_information	rdfs:subClassOf	local:information	.
-local:deep_fact	rdfs:member	local:deep_fact_validation	.
-local:several_search	rdfs:subClassOf	local:search	.
-local:threestep_process	rdfs:subClassOf	local:process	.
-local:relevant	rdfs:member	local:relevant_excerpts	.
-local:several_search_processes	rdfs:subClassOf	local:search_processes	.
-local:fact	rdfs:member	local:fact_validation	.
-local:has_in_correctness	local:in_correctness	local:has	.
-local:documents_for_relevant_content	local:for_relevantcontent	local:documents	.
-local:threestep	rdfs:member	local:threestep_process	.
-local:several	rdfs:member	local:several_search	.
-local:useful_additional_information_defacto	rdfs:subClassOf	local:additional_information_defacto	.
-local:search_engines	rdfs:subClassOf	local:engines	.
-local:relevant	rdfs:member	local:relevant_content	.
-local:information_defacto	rdfs:subClassOf	local:defacto	.
-local:standard_search	rdfs:member	local:standard_search_engines	.
-local:present	vn.role:Theme	local:deep_fact	.
-local:supplying	vn.role:Recipient	local:defacto	.
-local:provide	vn.role:Agent	local:sources	.
-local:additional_information	rdfs:member	local:additional_information_defacto	.
-local:issuing	vn.role:Location	local:appropriate_keyword_queries_for_statement	.
-local:trustworthy_sources_for_article	local:trustworthysources_for	local:article	.
-local:several_documents	rdfs:subClassOf	local:documents	.
-local:appropriate_keyword_queries_for_statement	local:appropriatekeywordqueries_for	local:statement	.
-local:supplying	vn.role:Theme	local:user	.
-local:appropriate_keyword_queries	rdfs:subClassOf	local:queries	.
-local:defacto_has	local:defacto_	local:has	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:appropriate_keyword	rdfs:member	local:appropriate_keyword_queries	.
-local:main_tasks	rdfs:subClassOf	local:tasks	.
-local:validate	vn.role:Theme	local:facts	.
-local:standard	rdfs:member	local:standard_search	.
-local:potentially_relevant_documents	rdfs:subClassOf	local:documents	.
-local:webpages_defacto	rdfs:subClassOf	local:defacto	.
-local:carry	vn.role:Agent	local:experts	.
-local:finding	vn.role:Agent	local:we	.
-local:useful_additional_information_defacto	rdfs:subClassOf	local:defacto	.
-local:potentially_relevant	rdfs:subClassOf	local:relevant	.
-local:documents_for_relevant_content	local:documents_for	local:relevant_content	.
-local:validating	vn.role:Theme	local:facts	.
-local:provide	local:AM-MNR	local:defacto	.
-local:screening_for_relevant_content	local:screening_for	local:relevant_content	.
-local:finding	vn.role:Theme	local:trustworthy_sources_for_article	.
-local:relevant_excerpts_of_webpages	local:of_webpages	local:relevant_excerpts	.
-local:provide	vn.role:Agent	local:defacto_has	.
-local:check_using	local:_using	local:check	.
-local:supplying_with_relevant_excerpts	local:supplying_with	local:relevant_excerpts	.
-local:effective	rdfs:member	local:effective_way	.
-local:keyword_queries	rdfs:subClassOf	local:queries	.
-local:issuing	vn.role:Theme	local:check_using	.
-local:traceability_of_provided_knowledge	local:of_providedknowledge	local:traceability	.
-local:useful_additional_information_defacto_has	local:usefuladditionalinformationdefacto_	local:has	.
-local:retrieving	vn.role:Theme	local:relevant_documents	.
-local:relevant_documents	rdfs:subClassOf	local:documents	.
-local:relevant_excerpts_of_webpages	local:relevantexcerpts_of	local:webpages	.
-local:addressed	local:AM-MNR	local:far	.
-local:ensure	vn.role:Theme	local:traceability_of_provided_knowledge	.
-local:relevant_excerpts	rdfs:subClassOf	local:excerpts	.
-local:correctness_of_provided_knowledge	local:correctness_of	local:provided_knowledge	.
-local:human_curators_in_threestep_process	local:humancurators_in	local:threestep_process	.
-local:search	rdfs:member	local:search_engines	.
+local:standard_search	rdfs:subClassOf	local:search	.
+local:correctness_of_the_provided_knowledge	rdfs:member	local:correctness	.
+local:correctness_of_the_provided_knowledge	rdfs:member	local:knowledge	.
+local:deep_fact	rdfs:subClassOf	local:fact	.
+local:s2.2	rdf:predicate	local:provide	.
+local:additional_information_defacto	rdfs:subClassOf	local:defacto	.
+local:s13	rdf:predicate	local:present	.
 local:fact_validation	rdfs:subClassOf	local:validation	.
-local:information	rdfs:member	local:information_defacto	.
-local:deep_fact_validation	rdfs:subClassOf	local:validation	.
-local:useful_additional	rdfs:subClassOf	local:additional	.
+local:standard_search_engines	rdfs:subClassOf	local:engines	.
+local:s3	rdf:subject	local:sources	.
+local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	rdfs:member	local:appropriate_keyword_queries	.
+local:has_in_correctness	rdfs:member	local:correctness	.
+local:knowledge_bases	rdfs:member	local:knowledge	.
+local:s13	rdf:object	local:defacto	.
+local:defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:input_fact	.
 local:appropriate_keyword_queries	rdfs:subClassOf	local:keyword_queries	.
-local:ensure	vn.role:Theme	local:correctness_of_provided_knowledge	.
-local:useful_additional	rdfs:member	local:useful_additional_information	.
-local:validating	local:AM-MNR	local:finding	.
-local:correctness_of_input_fact	local:correctness_of	local:input_fact	.
-local:human	rdfs:member	local:human_curators	.
-local:correctness_of_input_fact	local:of_inputfact	local:correctness	.
-local:deep	rdfs:member	local:deep_fact	.
-local:input_fact	rdfs:subClassOf	local:fact	.
-local:retrieving	vn.role:Agent	local:threestep_process	.
-local:traceability_of_provided_knowledge	local:traceability_of	local:provided_knowledge	.
-local:present	vn.role:Agent	local:we	.
+local:effective_way	rdfs:member	local:effective	.
+local:s3	rdf:predicate	local:provide	.
+local:s3.1	rdf:subject	local:traceability_of_the_provided_knowledge	.
+local:trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:web	.
+local:s9.1	rdf:predicate	local:carry	.
+local:relevant_content	rdfs:member	local:relevant	.
+local:appropriate_keyword_queries_for_the_statement	rdfs:member	local:appropriate_keyword_queries	.
+local:relevant_excerpts_of_webpages	rdfs:member	local:relevant_excerpts	.
+local:s7.1	rdf:predicate	local:retrieve	.
+local:s7	rdf:subject	local:human_curators_in_a_threestep_process_retrieving_potentially_relevant_documents	.
+local:appropriate_keyword_queries	rdfs:member	local:appropriate_keyword	.
 local:relevant_content	rdfs:subClassOf	local:content	.
-local:useful_additional_information	rdfs:subClassOf	local:information	.
-local:several_search_processes	rdfs:subClassOf	local:processes	.
-local:trustworthy_sources_for_article	local:for_article	local:trustworthy_sources	.
-local:addressed	local:AM-TMP	local:often	.
-local:several	rdfs:member	local:several_documents	.
-local:appropriate_keyword_queries_for_statement	local:for_statement	local:appropriate_keyword_queries	.
-local:input	rdfs:member	local:input_fact	.
-local:trustworthy_sources	rdfs:subClassOf	local:sources	.
-local:read	local:AM-MOD	local:must	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:screening	vn.role:Agent	local:threestep_process	.
-local:useful	rdfs:member	local:useful_additional	.
-local:provided	vn.role:Agent	local:knowledge	.
-local:webpages	rdfs:member	local:webpages_defacto	.
+local:s12.2	rdf:object	local:trustworthy_sources_for_this_article_on_the_web	.
+local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:relevant_excerpts	.
+local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:algorithm	.
+local:s14.2	rdf:subject	local:user	.
+local:s14.1	rdf:predicate	local:validate	.
+local:s6	rdf:predicate	local:address	.
+local:screening_for_relevant_content	rdfs:member	local:relevant_content	.
+local:s2	rdf:subject	local:sources	.
+local:relevant_documents	rdfs:member	local:relevant	.
+local:human_curators	rdfs:subClassOf	local:curators	.
+local:s5	rdf:object	local:task	.
+local:order_to_ensure_traceability_of_the_provided_knowledge	rdfs:member	local:order	.
+local:human_curators_in_a_threestep_process_screening_those_documents_for_relevant_content	rdfs:member	local:threestep_process	.
+local:s6.1	rdf:object	local:documents_for_relevant_content	.
+local:s5.1	rdf:object	local:appropriate_keyword_queries_for_the_statement	.
+local:input_fact	rdfs:member	local:input	.
+local:deep_fact_validation	rdfs:member	local:deep_fact	.
+local:s3.2	rdf:subject	local:knowledge	.
+local:s14.1	local:AM-MNR	local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	.
+local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:input_fact	.
+local:trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:trustworthy_sources	.
+local:check_using	rdfs:member	local:check	.
+local:s12.1	rdf:object	local:facts	.
+local:s11	rdf:object	local:deep_fact_validation	.
+local:s3.1	rdf:predicate	local:ensure	.
+local:s4	rdf:subject	local:knowledge_bases	.
+local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:webpages_defacto	.
+local:effective_way_of_validating_facts	rdfs:member	local:facts	.
+local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:trustworthy_sources	.
+local:s9.1	rdf:subject	local:experts	.
+local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	rdfs:member	local:standard_search_engines	.
+local:s4	rdf:predicate	local:maintain	.
+local:s3.2	rdfs:subClassOf	local:knowledge	.
+local:information_defacto	rdfs:subClassOf	local:defacto	.
+local:s14.1	rdf:subject	local:facts	.
+local:human_curators_in_a_threestep_process_retrieving_potentially_relevant_documents	rdfs:member	local:human_curators	.
+local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	rdfs:member	local:statement	.
+local:s14	rdf:predicate	local:provide	.
+local:s18	rdf:predicate	local:provide	.
+local:order_to_ensure_traceability_of_the_provided_knowledge	rdfs:member	local:traceability	.
+local:s2.2	rdfs:subClassOf	local:knowledge	.
+local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	rdfs:member	local:threestep_process	.
+local:relevant_excerpts	rdfs:member	local:relevant	.
+local:s14.2	rdf:predicate	local:supply	.
+local:human_curators_in_a_threestep_process_screening_those_documents_for_relevant_content	rdfs:member	local:human_curators	.
+local:relevant_excerpts_of_webpages	rdfs:member	local:webpages	.
+local:deep_fact_validation	rdfs:subClassOf	local:validation	.
+local:standard_search_engines	rdfs:subClassOf	local:search_engines	.
+local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:facts	.
+local:s15	rdf:subject	local:useful_additional_information_defacto_has_in_the_correctness_of_the_input_fact	.
+local:s7.1	rdf:subject	local:threestep_process	.
+local:threestep_process_issuing	rdfs:member	local:threestep_process	.
+local:threestep_process	rdfs:member	local:threestep	.
+local:deep_fact	rdfs:member	local:deep	.
+local:defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:correctness	.
+local:human_curators_in_threestep_process	rdfs:member	local:threestep_process	.
+local:s14	local:AM-MNR	local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	.
+local:s10	local:AM-MOD	local:must	.
+local:additional_information	rdfs:subClassOf	local:information	.
+local:documents_for_relevant_content	rdfs:member	local:documents	.
+local:s1	rdf:object	local:facts	.
+local:threestep_process_retrieving	rdfs:member	local:threestep_process	.
+local:s3	local:AM-PNC	local:order_to_ensure_traceability_of_the_provided_knowledge	.
+local:appropriate_keyword_queries	rdfs:subClassOf	local:queries	.
+local:s10	local:AM-TMP	local:often	.
+local:s5	local:AM-TMP	local:often	.
+local:human_curators_in_a_threestep_process_screening_those_documents_for_relevant_content	rdfs:member	local:documents	.
+local:s9	rdf:predicate	local:s9	.
+local:s7	rdf:object	local:task	.
+local:human_curators_in_a_threestep_process_retrieving_potentially_relevant_documents	rdfs:member	local:threestep_process	.
+local:s5.3	rdf:object	local:standard_search_engines	.
+local:order_to_ensure_correctness_of_the_provided_knowledge	rdfs:member	local:order	.
+local:search_processes	rdfs:member	local:search	.
+local:s5	rdf:subject	local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	.
+local:check_using	rdfs:member	local:using	.
+local:webpages_defacto	rdfs:subClassOf	local:defacto	.
+local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:article	.
+local:s12	rdf:object	local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	.
+local:traceability_of_provided_knowledge	rdfs:member	local:s3.2	.
+local:s2	local:AM-PNC	local:order_to_ensure_correctness_of_the_provided_knowledge	.
+local:s11	rdf:predicate	local:present	.
+local:potentially_relevant_documents	rdfs:member	local:potentially_relevant	.
+local:documents_for_relevant_content	rdfs:member	local:relevant_content	.
+local:s2.2	rdf:subject	local:knowledge	.
+local:s5.2	rdf:predicate	local:check	.
+local:s2	rdf:object	local:facts	.
+local:relevant_documents	rdfs:subClassOf	local:documents	.
+local:s12	local:AM-LOC	local:article	.
+local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:user	.
+local:useful_additional_information	rdfs:member	local:useful_additional	.
+local:s5.1	rdf:predicate	local:issue	.
+local:s2.1	rdf:subject	local:correctness_of_the_provided_knowledge	.
+local:s3.2	rdf:predicate	local:provide	.
+local:one_main_tasks	rdfs:subClassOf	local:main_tasks	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:supplying_with_relevant_excerpts	rdfs:member	local:supplying	.
+local:s18	rdf:subject	local:defacto_has_in_the_correctness_of_the_input_fact	.
+local:input_fact	rdfs:subClassOf	local:fact	.
+local:trustworthy_sources_for_article	rdfs:member	local:article	.
+local:s6	local:AM-TMP	local:often	.
+local:s5.2	rdf:object	local:using_standard_search_engines	.
+local:useful_additional_information_defacto	rdfs:subClassOf	local:defacto	.
+local:threestep_process_screening	rdfs:member	local:threestep_process	.
+local:supplying_with_relevant_excerpts	rdfs:member	local:relevant_excerpts	.
+local:s7	local:AM-TMP	local:far	.
+local:supplying_the_user_with_relevant_excerpts_of_webpages_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:correctness	.
+local:s5.3	rdf:subject	local:statement	.
+local:appropriate_keyword	rdfs:member	local:appropriate	.
+local:trustworthy_sources	rdfs:member	local:trustworthy	.
+local:keyword_queries	rdfs:member	local:keyword	.
+local:s6	rdf:subject	local:human_curators_in_a_threestep_process_screening_those_documents_for_relevant_content	.
+local:effective_way_of_validating_facts	rdfs:member	local:effective_way	.
+local:fact_validation	rdfs:member	local:fact	.
+local:search_engines	rdfs:subClassOf	local:engines	.
+local:s12	rdf:subject	local:we	.
+local:several_search	rdfs:subClassOf	local:search	.
+local:correctness_of_input_fact	rdfs:member	local:input_fact	.
+local:s15	rdf:predicate	local:provide	.
+local:s10	rdf:predicate	local:read	.
+local:check_using_standard_search_engines	rdfs:member	local:standard_search_engines	.
+local:s2.1	rdf:predicate	local:ensure	.
+local:human_curators_in_a_threestep_process_screening_those_documents_for_relevant_content	rdfs:member	local:relevant_content	.
+local:main_tasks	rdfs:member	local:main	.
+local:main_tasks	rdfs:subClassOf	local:tasks	.
+local:several_documents	rdfs:member	local:several	.
+local:several_search_processes	rdfs:subClassOf	local:search_processes	.
+local:s13	local:AM-LOC	local:article	.
+local:s6	rdf:object	local:task	.
+local:relevant_excerpts_of_webpages_defacto	rdfs:member	local:webpages_defacto	.
+local:threestep_process_issuing	rdfs:member	local:issuing	.
+local:standard_search_engines	rdfs:member	local:standard_search	.
+local:s6	local:AM-TMP	local:far	.
+local:threestep_process_screening	rdfs:member	local:screening	.
+local:appropriate_keyword_queries_for_statement	rdfs:member	local:appropriate_keyword_queries	.
+local:human_curators_in_a_threestep_process_retrieving_potentially_relevant_documents	rdfs:member	local:potentially_relevant_documents	.
+local:s13	rdf:subject	local:we	.
+local:traceability_of_provided_knowledge	rdfs:member	local:traceability	.
+local:s0	rdf:predicate	local:create	.
+local:s7.1	rdf:object	local:potentially_relevant_documents	.
+local:webpages_defacto	rdfs:member	local:webpages	.
+local:s5.2	rdf:subject	local:statement	.
+local:s5	local:AM-TMP	local:far	.
+local:potentially_relevant_documents	rdfs:subClassOf	local:documents	.
+local:s1	rdf:predicate	local:validate	.
+local:appropriate_keyword	rdfs:subClassOf	local:keyword	.
+local:useful_additional	rdfs:member	local:useful	.
+local:search_engines	rdfs:member	local:search	.
+local:threestep_process_retrieving	rdfs:member	local:retrieving	.
+local:s12.2	rdf:subject	local:we	.
+local:potentially_relevant	rdfs:member	local:potentially	.
+local:appropriate_keyword_queries_for_statement	rdfs:member	local:statement	.
+local:s11	rdf:subject	local:we	.
+local:s3	rdf:object	local:facts	.
+local:useful_additional_information_defacto	rdfs:member	local:useful_additional_information	.
+local:s6.1	rdf:predicate	local:screen	.
+local:s9.1	rdf:object	local:several_search_processes	.
+local:human_curators	rdfs:member	local:human	.
+local:correctness_of_provided_knowledge	rdfs:member	local:correctness	.
+local:order_to_ensure_correctness_of_the_provided_knowledge	rdfs:member	local:knowledge	.
+local:s0	rdf:subject	local:knowledge_bases	.
+local:s7	rdf:predicate	local:address	.
+local:s9.1	local:AM-MOD	local:have	.
+local:human_curators_in_threestep_process	rdfs:member	local:human_curators	.
+local:s6.1	rdf:subject	local:threestep_process	.
+local:s2	rdf:predicate	local:provide	.
+local:s12	rdf:predicate	local:present	.
+local:s5.3	rdf:predicate	local:use	.
+local:s12.1	rdf:predicate	local:validate	.
+local:traceability_of_the_provided_knowledge	rdfs:member	local:knowledge	.
+local:screening_for_relevant_content	rdfs:member	local:screening	.
+local:s5.1	rdf:subject	local:check_using_standard_search_engines	.
+local:useful_additional	rdfs:subClassOf	local:additional	.
+local:several_documents	rdfs:subClassOf	local:documents	.
+local:order_to_ensure_correctness_of_the_provided_knowledge	rdfs:member	local:correctness	.
+local:additional_information	rdfs:member	local:additional	.
+local:useful_additional_information_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:useful_additional_information_defacto	.
+local:s14	rdf:subject	local:effective_way_of_validating_facts	.
 local:effective_way	rdfs:subClassOf	local:way	.
-local:read	vn.role:Theme	local:several_documents	.
-local:present	vn.role:Theme	local:defacto	.
-local:carry	vn.role:Theme	local:several_search_processes	.
-local:screening_for_relevant_content	local:for_relevantcontent	local:screening	.
-local:screening	vn.role:Recipient	local:documents_for_relevant_content	.
+local:algorithm_for_validating_facts_by_finding_trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:web	.
+local:useful_additional_information_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:correctness	.
+local:trustworthy_sources	rdfs:subClassOf	local:sources	.
+local:s10	rdf:subject	local:experts	.
+local:s12.1	rdf:subject	local:we	.
+local:s7	local:AM-TMP	local:often	.
+local:potentially_relevant	rdfs:subClassOf	local:relevant	.
+local:s11	local:AM-LOC	local:article	.
+local:human_curators_in_a_threestep_process_issuing_appropriate_keyword_queries_for_the_statement_to_check_using_standard_search_engines	rdfs:member	local:human_curators	.
+local:correctness_of_input_fact	rdfs:member	local:correctness	.
+local:additional_information_defacto	rdfs:member	local:additional_information	.
+local:s10	rdf:object	local:several_documents	.
+local:several_search	rdfs:member	local:several	.
+local:several_search_processes	rdfs:member	local:several_search	.
+local:traceability_of_the_provided_knowledge	rdfs:member	local:traceability	.
+local:relevant_excerpts	rdfs:subClassOf	local:excerpts	.
+local:correctness_of_provided_knowledge	rdfs:member	local:s2.2	.
+local:article_on_web	rdfs:member	local:article	.
+local:trustworthy_sources_for_this_article_on_the_web	rdfs:member	local:article	.
+local:useful_additional_information	rdfs:subClassOf	local:information	.
+local:check_using_standard_search_engines	rdfs:member	local:check	.
+local:trustworthy_sources_for_article	rdfs:member	local:trustworthy_sources	.
+local:relevant_excerpts_of_webpages_defacto	rdfs:member	local:relevant_excerpts	.
+local:deep_fact_validation	rdfs:subClassOf	local:fact_validation	.
+local:s12.2	rdf:predicate	local:find	.
+local:standard_search	rdfs:member	local:standard	.
+local:useful_additional_information	rdfs:subClassOf	local:additional_information	.
+local:defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:defacto	.
+local:appropriate_keyword_queries_for_the_statement	rdfs:member	local:statement	.
+local:keyword_queries	rdfs:subClassOf	local:queries	.
+local:order_to_ensure_traceability_of_the_provided_knowledge	rdfs:member	local:knowledge	.
+local:s1	rdf:subject	local:one_of_the_main_tasks	.
+local:useful_additional_information_defacto_has_in_the_correctness_of_the_input_fact	rdfs:member	local:input_fact	.
+local:information_defacto	rdfs:member	local:information	.
+local:threestep_process	rdfs:subClassOf	local:process	.
+local:s14.2	rdf:object	local:relevant_excerpts_of_webpages_defacto	.
+local:article_on_web	rdfs:member	local:web	.
+local:has_in_correctness	rdfs:member	local:has	.
+local:s5	rdf:predicate	local:address	.
+local:several_search_processes	rdfs:subClassOf	local:processes	.

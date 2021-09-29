@@ -1,440 +1,734 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"the evaluation of a nested regular expression e over an rdf graph g can computed in time o"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"regarding complexity of evaluation we prove that the evaluation of a nested regular expression e over an rdf graph g can be computed in time o"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"we obtain this last result"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"nesting"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we also show that nesting is necessary to obtain this last result"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we study the expressiveness of the combination of nested regular expressions"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we study the expressiveness of the combination of sparql operators"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"nsparql answer queries"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we show"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the semantics of the rdfs vocabulary directly traversing the input graph"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"queries considering the semantics of the rdfs vocabulary by directly traversing the input graph"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"nsparql concerning complexity of evaluation"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"rdf data we study some of the fundamental properties of nsparql concerning complexity of evaluation"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"navigate rdf data"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"nsparql concerning expressiveness of evaluation"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"rdf data we study some of the fundamental properties of nsparql concerning expressiveness of evaluation"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"navigate rdf data"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we proposed the nsparql query language for rdf"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"navigate rdf data"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we argued in a previous paper that nested regular expressions are appropriate to navigate rdf data"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"rdf that uses nested regular expressions as building blocks"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"several authors propose rdf query languages with navigational capabilities"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"this fact motivated several authors to propose rdf query languages with navigational capabilities"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"navigational features largely recognized as fundamental for graph database query languages"	.
+
+
 #### Classes ####
 
-local:navigational_features	rdfs:label	"navigational features"	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g	a	rdf:Class	;
+	rdfs:label	"evaluation of a nested regular expression e over an rdf graph g"	.
 
-local:features	rdfs:label	"features"	.
+local:rdf_graph_g	a	rdf:Class	;
+	rdfs:label	"rdf graph g"	.
 
-local:navigational	rdfs:label	"navigational"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:recognized	rdfs:label	"recognized"	.
+local:nested_regular_expression_e	a	rdf:Class	;
+	rdfs:label	"nested regular expression e"	.
 
-local:largely	rdfs:label	"largely"	.
+local:nested_regular	a	rdf:Class	;
+	rdfs:label	"nested regular"	.
 
-local:graph_database_query_languages	rdfs:label	"graph database query languages"	.
+local:regular	a	rdf:Class	;
+	rdfs:label	"regular"	.
 
-local:languages	rdfs:label	"languages"	.
+local:rdf_graph	a	rdf:Class	;
+	rdfs:label	"rdf graph"	.
 
-local:query	rdfs:label	"query"	.
+local:regular_expression_e	a	rdf:Class	;
+	rdfs:label	"regular expression e"	.
 
-local:query_languages	rdfs:label	"query languages"	.
+local:e	a	rdf:Class	;
+	rdfs:label	"e"	.
 
-local:graph_database_query	rdfs:label	"graph database query"	.
+local:regular_expression	a	rdf:Class	;
+	rdfs:label	"regular expression"	.
 
-local:database_query	rdfs:label	"database query"	.
+local:expression	a	rdf:Class	;
+	rdfs:label	"expression"	.
 
-local:database_query_languages	rdfs:label	"database query languages"	.
+local:g	a	rdf:Class	;
+	rdfs:label	"g"	.
 
-local:database	rdfs:label	"database"	.
+local:graph_g	a	rdf:Class	;
+	rdfs:label	"graph g"	.
 
-local:graph	rdfs:label	"graph"	.
+local:expression_e	a	rdf:Class	;
+	rdfs:label	"expression e"	.
 
-local:graph_database	rdfs:label	"graph database"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:fundamental_for_graph_database_query_languages	rdfs:label	"fundamental for graph database query languages"	.
+local:nested	a	rdf:Class	;
+	rdfs:label	"nested"	.
 
-local:fundamental	rdfs:label	"fundamental"	.
+local:nested_regular_expression	a	rdf:Class	;
+	rdfs:label	"nested regular expression"	.
 
-local:motivated	rdfs:label	"motivated"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:fact	rdfs:label	"fact"	.
+local:evaluation_of_nested_regular_expression_e	a	rdf:Class	;
+	rdfs:label	"evaluation of nested regular expression e"	.
 
-local:several_authors	rdfs:label	"several authors"	.
+local:evaluation_of_nested_regular_expression_e_over_rdf_graph_g	a	rdf:Class	;
+	rdfs:label	"evaluation of nested regular expression e over rdf graph g"	.
 
-local:authors	rdfs:label	"authors"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:several	rdfs:label	"several"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:propose_rdf_query	rdfs:label	"propose rdf query"	.
+local:time_o	a	rdf:Class	;
+	rdfs:label	"time o"	.
 
-local:propose	rdfs:label	"propose"	.
+local:o	a	rdf:Class	;
+	rdfs:label	"o"	.
 
-local:propose_rdf	rdfs:label	"propose rdf"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:navigational_capabilities	rdfs:label	"navigational capabilities"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:capabilities	rdfs:label	"capabilities"	.
+local:prove	a	rdf:Class	;
+	rdfs:label	"prove"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g_can_be_computed_in_time_o	a	rdf:Class	;
+	rdfs:label	"evaluation of a nested regular expression e over an rdf graph g can be computed in time o"	.
 
-local:rdf_query	rdfs:label	"rdf query"	.
+local:can_computed	a	rdf:Class	;
+	rdfs:label	"can computed"	.
 
-local:rdf_query_languages	rdfs:label	"rdf query languages"	.
+local:computed	a	rdf:Class	;
+	rdfs:label	"computed"	.
 
-local:rdf_query_languages_with_navigational_capabilities	rdfs:label	"rdf query languages with navigational capabilities"	.
+local:can_computed_in_time	a	rdf:Class	;
+	rdfs:label	"can computed in time"	.
 
-local:uses	rdfs:label	"uses"	.
+local:regarding_complexity_of_evaluation	a	rdf:Class	;
+	rdfs:label	"regarding complexity of evaluation"	.
 
-local:regular	rdfs:label	"regular"	.
+local:complexity	a	rdf:Class	;
+	rdfs:label	"complexity"	.
 
-local:regular_expressions	rdfs:label	"regular expressions"	.
+local:complexity_of_evaluation	a	rdf:Class	;
+	rdfs:label	"complexity of evaluation"	.
 
-local:expressions	rdfs:label	"expressions"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:nested_regular_expressions	rdfs:label	"nested regular expressions"	.
+local:last_result	a	rdf:Class	;
+	rdfs:label	"last result"	.
 
-local:building	rdfs:label	"building"	.
+local:last	a	rdf:Class	;
+	rdfs:label	"last"	.
 
-local:building_blocks	rdfs:label	"building blocks"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:blocks	rdfs:label	"blocks"	.
+local:nest	a	rdf:Class	;
+	rdfs:label	"nest"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:we	rdfs:label	"we"	.
+local:nesting_is_necessary_to_obtain_this_last_result	a	rdf:Class	;
+	rdfs:label	"nesting is necessary to obtain this last result"	.
 
-local:query_language	rdfs:label	"query language"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:language	rdfs:label	"language"	.
+local:study	a	rdf:Class	;
+	rdfs:label	"study"	.
 
-local:nsparql	rdfs:label	"nsparql"	.
+local:expressiveness_of_the_combination_of_nested_regular_expressions	a	rdf:Class	;
+	rdfs:label	"expressiveness of the combination of nested regular expressions"	.
 
-local:nsparql_query	rdfs:label	"nsparql query"	.
+local:nested_regular_expressions	a	rdf:Class	;
+	rdfs:label	"nested regular expressions"	.
 
-local:nsparql_query_language	rdfs:label	"nsparql query language"	.
+local:expressiveness	a	rdf:Class	;
+	rdfs:label	"expressiveness"	.
 
-local:argued	rdfs:label	"argued"	.
+local:combination	a	rdf:Class	;
+	rdfs:label	"combination"	.
 
-local:previous	rdfs:label	"previous"	.
+local:expressions	a	rdf:Class	;
+	rdfs:label	"expressions"	.
 
-local:previous_paper	rdfs:label	"previous paper"	.
+local:regular_expressions	a	rdf:Class	;
+	rdfs:label	"regular expressions"	.
 
-local:paper	rdfs:label	"paper"	.
+local:expressiveness_of_combination	a	rdf:Class	;
+	rdfs:label	"expressiveness of combination"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:combination_of_nested_regular_expressions	a	rdf:Class	;
+	rdfs:label	"combination of nested regular expressions"	.
 
-local:data	rdfs:label	"data"	.
+local:expressiveness_of_the_combination_of_sparql_operators	a	rdf:Class	;
+	rdfs:label	"expressiveness of the combination of sparql operators"	.
 
-local:appropriate	rdfs:label	"appropriate"	.
+local:sparql_operators	a	rdf:Class	;
+	rdfs:label	"sparql operators"	.
 
-local:navigate	rdfs:label	"navigate"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:study	rdfs:label	"study"	.
+local:operators	a	rdf:Class	;
+	rdfs:label	"operators"	.
 
-local:fundamental_properties	rdfs:label	"fundamental properties"	.
+local:combination_of_sparql_operators	a	rdf:Class	;
+	rdfs:label	"combination of sparql operators"	.
 
-local:properties	rdfs:label	"properties"	.
+local:nsparql	a	rdf:Class	;
+	rdfs:label	"nsparql"	.
 
-local:fundamental_properties_of_nsparql	rdfs:label	"fundamental properties of nsparql"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:fundamental_properties_of_nsparql_concerning_complexity	rdfs:label	"fundamental properties of nsparql concerning complexity"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:complexity	rdfs:label	"complexity"	.
+local:semantics_of_the_rdfs_vocabulary	a	rdf:Class	;
+	rdfs:label	"semantics of the rdfs vocabulary"	.
 
-local:complexity_of_evaluation	rdfs:label	"complexity of evaluation"	.
+local:rdfs_vocabulary	a	rdf:Class	;
+	rdfs:label	"rdfs vocabulary"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:concerning	rdfs:label	"concerning"	.
+local:rdfs	a	rdf:Class	;
+	rdfs:label	"rdfs"	.
 
-local:fundamental_properties_of_nsparql_concerning_expressiveness	rdfs:label	"fundamental properties of nsparql concerning expressiveness"	.
+local:vocabulary	a	rdf:Class	;
+	rdfs:label	"vocabulary"	.
 
-local:expressiveness	rdfs:label	"expressiveness"	.
+local:semantics_of_rdfs_vocabulary	a	rdf:Class	;
+	rdfs:label	"semantics of rdfs vocabulary"	.
 
-local:expressiveness_of_evaluation	rdfs:label	"expressiveness of evaluation"	.
+local:traverse	a	rdf:Class	;
+	rdfs:label	"traverse"	.
 
-local:considering	rdfs:label	"considering"	.
+local:input_graph	a	rdf:Class	;
+	rdfs:label	"input graph"	.
 
-local:queries	rdfs:label	"queries"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:input	rdfs:label	"input"	.
+local:directly	a	rdf:Class	;
+	rdfs:label	"directly"	.
 
-local:input_graph	rdfs:label	"input graph"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:rdfs_vocabulary	rdfs:label	"rdfs vocabulary"	.
+local:semantics_of_the_rdfs_vocabulary_by_directly_traversing_the_input_graph	a	rdf:Class	;
+	rdfs:label	"semantics of the rdfs vocabulary by directly traversing the input graph"	.
 
-local:vocabulary	rdfs:label	"vocabulary"	.
+local:directly_traversing	a	rdf:Class	;
+	rdfs:label	"directly traversing"	.
 
-local:rdfs	rdfs:label	"rdfs"	.
+local:traversing	a	rdf:Class	;
+	rdfs:label	"traversing"	.
 
-local:directly_traversing	rdfs:label	"directly traversing"	.
+local:concern	a	rdf:Class	;
+	rdfs:label	"concern"	.
 
-local:traversing	rdfs:label	"traversing"	.
+local:fundamental_properties_of_nsparql_concerning_complexity_of_evaluation	a	rdf:Class	;
+	rdfs:label	"fundamental properties of nsparql concerning complexity of evaluation"	.
 
-local:semantics_of_rdfs_vocabulary	rdfs:label	"semantics of rdfs vocabulary"	.
+local:fundamental_properties	a	rdf:Class	;
+	rdfs:label	"fundamental properties"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:directly	rdfs:label	"directly"	.
+local:fundamental	a	rdf:Class	;
+	rdfs:label	"fundamental"	.
 
-local:show	rdfs:label	"show"	.
+local:fundamental_properties_of_nsparql	a	rdf:Class	;
+	rdfs:label	"fundamental properties of nsparql"	.
 
-local:answer	rdfs:label	"answer"	.
+local:fundamental_properties_of_nsparql_concerning_complexity	a	rdf:Class	;
+	rdfs:label	"fundamental properties of nsparql concerning complexity"	.
 
-local:also	rdfs:label	"also"	.
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
 
-local:last	rdfs:label	"last"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:last_result	rdfs:label	"last result"	.
+local:navigate	a	rdf:Class	;
+	rdfs:label	"navigate"	.
 
-local:result	rdfs:label	"result"	.
+local:expressiveness_of_evaluation	a	rdf:Class	;
+	rdfs:label	"expressiveness of evaluation"	.
 
-local:necessary	rdfs:label	"necessary"	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness_of_evaluation	a	rdf:Class	;
+	rdfs:label	"fundamental properties of nsparql concerning expressiveness of evaluation"	.
 
-local:obtain	rdfs:label	"obtain"	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness	a	rdf:Class	;
+	rdfs:label	"fundamental properties of nsparql concerning expressiveness"	.
 
-local:nested_regular	rdfs:label	"nested regular"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:nested	rdfs:label	"nested"	.
+local:nsparql_query_language_for_rdf	a	rdf:Class	;
+	rdfs:label	"nsparql query language for rdf"	.
 
-local:expressiveness_of_combination	rdfs:label	"expressiveness of combination"	.
+local:nsparql_query_language	a	rdf:Class	;
+	rdfs:label	"nsparql query language"	.
 
-local:combination	rdfs:label	"combination"	.
+local:query_language	a	rdf:Class	;
+	rdfs:label	"query language"	.
 
-local:combination_of_nested_regular_expressions	rdfs:label	"combination of nested regular expressions"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:nsparql_query	a	rdf:Class	;
+	rdfs:label	"nsparql query"	.
 
-local:sparql_operators	rdfs:label	"sparql operators"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:operators	rdfs:label	"operators"	.
+local:argue	a	rdf:Class	;
+	rdfs:label	"argue"	.
 
-local:combination_of_sparql_operators	rdfs:label	"combination of sparql operators"	.
+local:nested_regular_expressions_are_appropriate_to_navigate_rdf_data	a	rdf:Class	;
+	rdfs:label	"nested regular expressions are appropriate to navigate rdf data"	.
 
-local:prove	rdfs:label	"prove"	.
+local:previous_paper	a	rdf:Class	;
+	rdfs:label	"previous paper"	.
 
-local:regular_expression_e	rdfs:label	"regular expression e"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:e	rdfs:label	"e"	.
+local:previous	a	rdf:Class	;
+	rdfs:label	"previous"	.
 
-local:rdf_graph	rdfs:label	"rdf graph"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:rdf_graph_g	rdfs:label	"rdf graph g"	.
+local:nested_regular_expressions_building_blocks	a	rdf:Class	;
+	rdfs:label	"nested regular expressions building blocks"	.
 
-local:regular_expression	rdfs:label	"regular expression"	.
+local:regular_expressions_building	a	rdf:Class	;
+	rdfs:label	"regular expressions building"	.
 
-local:expression	rdfs:label	"expression"	.
+local:expressions_building_blocks	a	rdf:Class	;
+	rdfs:label	"expressions building blocks"	.
 
-local:g	rdfs:label	"g"	.
+local:expressions_building	a	rdf:Class	;
+	rdfs:label	"expressions building"	.
 
-local:time_o	rdfs:label	"time o"	.
+local:regular_expressions_building_blocks	a	rdf:Class	;
+	rdfs:label	"regular expressions building blocks"	.
 
-local:o	rdfs:label	"o"	.
+local:building_blocks	a	rdf:Class	;
+	rdfs:label	"building blocks"	.
 
-local:graph_g	rdfs:label	"graph g"	.
+local:building	a	rdf:Class	;
+	rdfs:label	"building"	.
 
-local:time	rdfs:label	"time"	.
+local:blocks	a	rdf:Class	;
+	rdfs:label	"blocks"	.
 
-local:nested_regular_expression	rdfs:label	"nested regular expression"	.
+local:nested_regular_expressions_building	a	rdf:Class	;
+	rdfs:label	"nested regular expressions building"	.
 
-local:expression_e	rdfs:label	"expression e"	.
+local:several_authors	a	rdf:Class	;
+	rdfs:label	"several authors"	.
 
-local:nested_regular_expression_e	rdfs:label	"nested regular expression e"	.
+local:authors	a	rdf:Class	;
+	rdfs:label	"authors"	.
 
-local:can_computed	rdfs:label	"can computed"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:computed	rdfs:label	"computed"	.
+local:rdf_query_languages_with_navigational_capabilities	a	rdf:Class	;
+	rdfs:label	"rdf query languages with navigational capabilities"	.
 
-local:evaluation_of_nested_regular_expression	rdfs:label	"evaluation of nested regular expression"	.
+local:rdf_query	a	rdf:Class	;
+	rdfs:label	"rdf query"	.
 
-local:e_over_rdf_graph_g	rdfs:label	"e over rdf graph g"	.
+local:navigational_capabilities	a	rdf:Class	;
+	rdfs:label	"navigational capabilities"	.
 
-local:can_computed_in_time_o	rdfs:label	"can computed in time o"	.
+local:navigational	a	rdf:Class	;
+	rdfs:label	"navigational"	.
 
-local:can	rdfs:label	"can"	.
+local:capabilities	a	rdf:Class	;
+	rdfs:label	"capabilities"	.
 
-local:g_·_e	rdfs:label	"g · e"	.
+local:query_languages	a	rdf:Class	;
+	rdfs:label	"query languages"	.
 
-local:g_·	rdfs:label	"g ·"	.
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
 
-local:·	rdfs:label	"·"	.
+local:rdf_query_languages	a	rdf:Class	;
+	rdfs:label	"rdf query languages"	.
 
-local:·_e	rdfs:label	"· e"	.
+local:fact	a	rdf:Class	;
+	rdfs:label	"fact"	.
 
-local:can_computed_in_g_·	rdfs:label	"can computed in g ·"	.
+local:motivate	a	rdf:Class	;
+	rdfs:label	"motivate"	.
 
-local:g_e	rdfs:label	"g e"	.
+local:several_authors_propose_rdf_query_languages_with_navigational_capabilities	a	rdf:Class	;
+	rdfs:label	"several authors propose rdf query languages with navigational capabilities"	.
 
-#### Properties ####
+local:propose_with_navigational_capabilities	a	rdf:Class	;
+	rdfs:label	"propose with navigational capabilities"	.
+
+local:navigational_features	a	rdf:Class	;
+	rdfs:label	"navigational features"	.
+
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
+
+local:recognize	a	rdf:Class	;
+	rdfs:label	"recognize"	.
+
+local:fundamental_for_graph_database_query_languages	a	rdf:Class	;
+	rdfs:label	"fundamental for graph database query languages"	.
+
+local:database_query_languages	a	rdf:Class	;
+	rdfs:label	"database query languages"	.
+
+local:graph_database_query	a	rdf:Class	;
+	rdfs:label	"graph database query"	.
+
+local:graph_database	a	rdf:Class	;
+	rdfs:label	"graph database"	.
+
+local:graph_database_query_languages	a	rdf:Class	;
+	rdfs:label	"graph database query languages"	.
+
+local:database_query	a	rdf:Class	;
+	rdfs:label	"database query"	.
+
+local:database	a	rdf:Class	;
+	rdfs:label	"database"	.
+
+local:largely	a	rdf:Class	;
+	rdfs:label	"largely"	.
 
 #### Mapped Relations ####
 
-local:query_language	owl:sameAs	cso:query_languages	.
-local:database	owl:sameAs	cso:database	.
-cso:database	rdfs:label	"database"	.
-local:semantics	owl:sameAs	cso:semantics	.
-cso:query_languages	rdfs:label	"query languages"	.
-cso:graph_g	rdfs:label	"graph g"	.
 local:rdf_graph	owl:sameAs	cso:rdf_graph	.
-cso:vocabulary	rdfs:label	"vocabulary"	.
-cso:semantics	rdfs:label	"semantics"	.
-local:query_languages	owl:sameAs	cso:query_languages	.
-cso:rdf_graph	rdfs:label	"rdf graph"	.
-local:rdf_data	owl:sameAs	cso:rdf_data	.
-cso:query_languages	rdfs:label	"query language"	.
-local:vocabulary	owl:sameAs	cso:vocabulary	.
-cso:sparql	rdfs:label	"sparql"	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:graph_g	owl:sameAs	cso:graph_g	.
 cso:rdf_data	rdfs:label	"rdf data"	.
+local:sparql	owl:sameAs	cso:sparql	.
+local:semantics	owl:sameAs	cso:semantics	.
+cso:query_languages	rdfs:label	"query language"	.
+cso:vocabulary	rdfs:label	"vocabulary"	.
+cso:query_languages	rdfs:label	"query languages"	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
+cso:database	rdfs:label	"database"	.
+cso:graph_g	rdfs:label	"graph g"	.
+local:query_languages	owl:sameAs	cso:query_languages	.
+cso:semantics	rdfs:label	"semantics"	.
+local:graph_g	owl:sameAs	cso:graph_g	.
+cso:sparql	rdfs:label	"sparql"	.
+local:vocabulary	owl:sameAs	cso:vocabulary	.
+local:database	owl:sameAs	cso:database	.
+cso:rdf_graph	rdfs:label	"rdf graph"	.
+local:query_language	owl:sameAs	cso:query_languages	.
 
 #### Relations ####
 
-local:concerning	vn.role:Cause	local:complexity_of_evaluation	.
-local:graph_database	rdfs:member	local:graph_database_query	.
-local:graph	rdfs:member	local:graph_g	.
-local:combination_of_sparql_operators	local:of_sparqloperators	local:combination	.
-local:navigational_capabilities	rdfs:subClassOf	local:capabilities	.
-local:previous_paper	rdfs:subClassOf	local:paper	.
-local:show	vn.role:Agent	local:we	.
-local:combination_of_nested_regular_expressions	local:combination_of	local:nested_regular_expressions	.
-local:query	rdfs:member	local:query_languages	.
-local:rdf_graph_g	rdfs:subClassOf	local:g	.
-local:propose	rdfs:member	local:propose_rdf	.
-local:can_computed_in_time_o	local:in_timeo	local:can_computed	.
-local:fundamental_properties_of_nsparql	local:of_nsparql	local:fundamental_properties	.
-local:propose_rdf	rdfs:subClassOf	local:rdf	.
-local:argued	vn.role:Actor	local:we	.
-local:argued	vn.role:Actor1	local:appropriate	.
-local:motivated	vn.role:Proposition	local:propose	.
-local:prove	vn.role:Agent	local:we	.
-local:rdf_query_languages	rdfs:subClassOf	local:query_languages	.
-local:nested_regular_expression	rdfs:subClassOf	local:regular_expression	.
-local:prove	vn.role:Theme	local:evaluation_of_nested_regular_expression	.
-local:nested_regular_expressions	rdfs:subClassOf	local:regular_expressions	.
-local:rdf	rdfs:member	local:rdf_query	.
-local:nsparql	rdfs:member	local:nsparql_query	.
-local:traversing	local:AM-MNR	local:directly	.
-local:concerning	vn.role:Experiencer	local:nsparql	.
-local:semantics_of_rdfs_vocabulary	local:of_rdfsvocabulary	local:semantics	.
-local:database_query	rdfs:member	local:database_query_languages	.
-local:graph_database_query_languages	rdfs:subClassOf	local:database_query_languages	.
-local:database	rdfs:member	local:database_query	.
-local:show	local:AM-DIS	local:also	.
-local:several	rdfs:member	local:several_authors	.
-local:computed	local:AM-LOC	local:g_e	.
-local:combination_of_nested_regular_expressions	local:of_nestedregularexpressions	local:combination	.
-local:semantics_of_rdfs_vocabulary	local:semantics_of	local:rdfs_vocabulary	.
-local:study	vn.role:Theme	local:fundamental_properties_of_nsparql_concerning_expressiveness	.
-local:fundamental_properties_of_nsparql_concerning_complexity	local:concerning_complexity	local:fundamental_properties_of_nsparql	.
-local:computed	vn.role:Product	local:evaluation_of_nested_regular_expression	.
-local:fundamental_properties_of_nsparql_concerning_expressiveness	local:concerning_expressiveness	local:fundamental_properties_of_nsparql	.
-local:regular	rdfs:member	local:regular_expression	.
-local:rdf_query_languages_with_navigational_capabilities	local:with_navigationalcapabilities	local:rdf_query_languages	.
-local:previous	rdfs:member	local:previous_paper	.
-local:database_query_languages	rdfs:subClassOf	local:languages	.
-local:regular_expression_e	rdfs:subClassOf	local:e	.
-local:graph_database_query	rdfs:member	local:graph_database_query_languages	.
-local:building	rdfs:member	local:building_blocks	.
-local:expression	rdfs:member	local:expression_e	.
-local:rdf_query_languages_with_navigational_capabilities	local:rdfquerylanguages_with	local:navigational_capabilities	.
-local:traversing	vn.role:Theme2	local:input_graph	.
-local:time_o	rdfs:subClassOf	local:o	.
-local:recognized	vn.role:Predicate	local:fundamental_for_graph_database_query_languages	.
-local:last_result	rdfs:subClassOf	local:result	.
-local:propose_rdf	rdfs:member	local:propose_rdf_query	.
-local:nested_regular_expression	rdfs:subClassOf	local:expression	.
-local:regular_expression	rdfs:member	local:regular_expression_e	.
-local:can_computed_in_g_·	local:in_g·	local:can_computed	.
-local:g_·	rdfs:member	local:g_·_e	.
-local:combination_of_sparql_operators	local:combination_of	local:sparql_operators	.
-local:evaluation_of_nested_regular_expression	local:evaluation_of	local:nested_regular_expression	.
-local:show	vn.role:Theme	local:necessary	.
-local:fundamental_properties_of_nsparql_concerning_complexity	local:fundamentalpropertiesofnsparql_concerning	local:complexity	.
-local:graph_database_query	rdfs:subClassOf	local:query	.
-local:prove	local:AM-ADV	local:complexity_of_evaluation	.
-local:propose_rdf_query	rdfs:subClassOf	local:query	.
-local:nsparql_query	rdfs:subClassOf	local:query	.
-local:show	local:AM-ADV	local:expressiveness	.
-local:recognized	vn.role:Theme	local:navigational_features	.
-local:fundamental_for_graph_database_query_languages	local:for_graphdatabasequerylanguages	local:fundamental	.
-local:fundamental_for_graph_database_query_languages	local:fundamental_for	local:graph_database_query_languages	.
-local:argued	local:AM-LOC	local:previous_paper	.
-local:nested_regular_expression	rdfs:member	local:nested_regular_expression_e	.
-local:graph	rdfs:member	local:graph_database	.
-local:study	vn.role:Theme	local:expressiveness_of_combination	.
-local:proposed	local:AM-PNC	local:rdf	.
-local:rdf	rdfs:member	local:rdf_graph	.
-local:study	vn.role:Agent	local:we	.
-local:navigational	rdfs:member	local:navigational_capabilities	.
-local:complexity_of_evaluation	local:complexity_of	local:evaluation	.
+local:fundamental_properties_of_nsparql_concerning_complexity_of_evaluation	rdfs:member	local:evaluation	.
+local:s1.1	rdfs:member	local:rdf_query	.
+local:s2	rdf:subject	local:rdf	.
+local:s13	local:AM-ADV	local:regarding_complexity_of_evaluation	.
 local:graph_database_query_languages	rdfs:subClassOf	local:languages	.
-local:regular_expressions	rdfs:subClassOf	local:expressions	.
-local:nsparql_query	rdfs:member	local:nsparql_query_language	.
-local:query	rdfs:member	local:query_language	.
-local:query_language	rdfs:subClassOf	local:language	.
-local:query_languages	rdfs:subClassOf	local:languages	.
-local:e_over_rdf_graph_g	local:e_over	local:rdf_graph_g	.
-local:input	rdfs:member	local:input_graph	.
-local:directly_traversing	rdfs:subClassOf	local:traversing	.
-local:recognized	local:AM-ADV	local:largely	.
-local:e_over_rdf_graph_g	local:over_rdfgraphg	local:e	.
-local:proposed	vn.role:Topic	local:nsparql_query_language	.
-local:uses	vn.role:Agent	local:rdf	.
+local:database_query_languages	rdfs:member	local:database_query	.
+local:building_blocks	rdfs:member	local:building	.
+local:s6.1	rdf:object	local:fundamental_properties_of_nsparql_concerning_expressiveness_of_evaluation	.
+local:fundamental_properties_of_nsparql	rdfs:member	local:nsparql	.
+local:rdf_query_languages_with_navigational_capabilities	rdfs:member	local:navigational_capabilities	.
 local:graph_database	rdfs:subClassOf	local:database	.
-local:nsparql_query_language	rdfs:subClassOf	local:query_language	.
-local:motivated	vn.role:Patient	local:several_authors	.
-local:fundamental_properties	rdfs:subClassOf	local:properties	.
-local:input_graph	rdfs:subClassOf	local:graph	.
-local:graph_g	rdfs:subClassOf	local:g	.
-local:rdf_query	rdfs:subClassOf	local:query	.
-local:time	rdfs:member	local:time_o	.
-local:can_computed	rdfs:subClassOf	local:computed	.
-local:rdf_graph	rdfs:subClassOf	local:graph	.
-local:building_blocks	rdfs:subClassOf	local:blocks	.
-local:·	rdfs:member	local:·_e	.
-local:complexity_of_evaluation	local:of_evaluation	local:complexity	.
-local:navigational	rdfs:member	local:navigational_features	.
-local:g_·	rdfs:subClassOf	local:·	.
-local:fundamental_properties_of_nsparql_concerning_expressiveness	local:fundamentalpropertiesofnsparql_concerning	local:expressiveness	.
-local:regular	rdfs:member	local:regular_expressions	.
-local:considering	vn.role:Agent	local:queries	.
-local:answer	vn.role:Predicate	local:queries	.
-local:obtain	vn.role:object	local:last_result	.
-local:database_query	rdfs:subClassOf	local:query	.
-local:uses	vn.role:Theme	local:nested_regular_expressions	.
-local:propose	vn.role:Topic	local:rdf_query_languages_with_navigational_capabilities	.
-local:expressiveness_of_evaluation	local:of_evaluation	local:expressiveness	.
-local:nested_regular	rdfs:member	local:nested_regular_expression	.
-local:sparql	rdfs:member	local:sparql_operators	.
-local:propose	vn.role:Agent	local:several_authors	.
-local:expression_e	rdfs:subClassOf	local:e	.
-local:g_·_e	rdfs:subClassOf	local:e	.
-local:several_authors	rdfs:subClassOf	local:authors	.
-local:expressiveness_of_combination	local:expressiveness_of	local:combination	.
-local:obtain	vn.role:Asset	local:we	.
-local:rdf_graph_g	rdfs:subClassOf	local:graph_g	.
-local:traversing	vn.role:Theme1	local:semantics_of_rdfs_vocabulary	.
-local:g_e	local:_e	local:g	.
-local:fundamental	rdfs:member	local:fundamental_properties	.
-local:can_computed_in_time_o	local:cancomputed_in	local:time_o	.
-local:considering	vn.role:Theme	local:semantics_of_rdfs_vocabulary	.
-local:navigate	vn.role:Theme	local:rdf_data	.
-local:study	vn.role:Theme	local:fundamental_properties_of_nsparql_concerning_complexity	.
-local:rdfs	rdfs:member	local:rdfs_vocabulary	.
-local:nested_regular_expressions	rdfs:subClassOf	local:expressions	.
-local:sparql_operators	rdfs:subClassOf	local:operators	.
-local:expressiveness_of_evaluation	local:expressiveness_of	local:evaluation	.
-local:computed	local:AM-MOD	local:can	.
-local:expressiveness_of_combination	local:of_combination	local:expressiveness	.
-local:nested_regular	rdfs:subClassOf	local:regular	.
+local:rdf_graph_g	rdfs:member	local:rdf_graph	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness	rdfs:member	local:fundamental_properties_of_nsparql	.
+local:navigational_features	rdfs:member	local:navigational	.
 local:navigational_features	rdfs:subClassOf	local:features	.
-local:rdf_graph	rdfs:member	local:rdf_graph_g	.
-local:database_query_languages	rdfs:subClassOf	local:query_languages	.
-local:uses	vn.role:Recipient	local:building_blocks	.
-local:rdfs_vocabulary	rdfs:subClassOf	local:vocabulary	.
-local:nested_regular_expression_e	rdfs:subClassOf	local:e	.
-local:fundamental_properties_of_nsparql	local:fundamentalproperties_of	local:nsparql	.
-local:answer	vn.role:Agent	local:nsparql	.
-local:regular_expression	rdfs:subClassOf	local:expression	.
+local:s12.2	rdf:predicate	local:obtain	.
+local:fundamental_properties_of_nsparql	rdfs:member	local:fundamental_properties	.
+local:s8.1	local:AM-MNR	local:directly	.
+local:building_blocks	rdfs:subClassOf	local:blocks	.
+local:rdf_query	rdfs:member	local:rdf	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g	rdfs:member	local:rdf_graph_g	.
+local:nested_regular_expression	rdfs:subClassOf	local:expression	.
+local:expressiveness_of_combination	rdfs:member	local:combination	.
+local:rdf_query_languages	rdfs:subClassOf	local:query_languages	.
+local:nested_regular_expression	rdfs:member	local:nested_regular	.
+local:evaluation_of_nested_regular_expression_e_over_rdf_graph_g	rdfs:member	local:rdf_graph_g	.
+local:nesting_is_necessary_to_obtain_this_last_result	rdfs:member	local:last_result	.
+local:expressiveness_of_evaluation	rdfs:member	local:evaluation	.
+local:s11	rdf:subject	local:we	.
+local:nesting_is_necessary_to_obtain_this_last_result	rdfs:member	local:s12.1	.
+local:nsparql_query	rdfs:subClassOf	local:query	.
+local:s12.1	rdf:predicate	local:nest	.
+local:rdf_graph	rdfs:member	local:rdf	.
+local:semantics_of_the_rdfs_vocabulary	rdfs:member	local:rdfs_vocabulary	.
+local:nested_regular	rdfs:subClassOf	local:regular	.
+local:rdf_graph_g	rdfs:subClassOf	local:g	.
+local:graph_database	rdfs:member	local:graph	.
+local:s7.1	rdf:object	local:fundamental_properties_of_nsparql_concerning_complexity_of_evaluation	.
+local:s3.1	rdf:predicate	local:navigate	.
+local:s11	rdf:predicate	local:study	.
+local:previous_paper	rdfs:member	local:previous	.
+local:semantics_of_rdfs_vocabulary	rdfs:member	local:rdfs_vocabulary	.
+local:s6.1	rdf:predicate	local:study	.
+local:input_graph	rdfs:member	local:input	.
+local:s1	rdf:object	local:several_authors_propose_rdf_query_languages_with_navigational_capabilities	.
+local:graph_database_query	rdfs:subClassOf	local:query	.
+local:expressiveness_of_the_combination_of_nested_regular_expressions	rdfs:member	local:nested_regular_expressions	.
+local:nsparql_query_language_for_rdf	rdfs:member	local:rdf	.
+local:previous_paper	rdfs:subClassOf	local:paper	.
+local:s12	rdf:predicate	local:show	.
+local:nested_regular_expression_e	rdfs:member	local:nested_regular_expression	.
 local:nsparql_query_language	rdfs:subClassOf	local:language	.
-local:last	rdfs:member	local:last_result	.
-local:nested_regular	rdfs:member	local:nested_regular_expressions	.
-local:can_computed_in_g_·	local:cancomputed_in	local:g_·	.
-local:g	rdfs:member	local:g_·	.
-local:evaluation_of_nested_regular_expression	local:of_nestedregularexpression	local:evaluation	.
-local:proposed	vn.role:Agent	local:we	.
-local:rdf	rdfs:member	local:rdf_data	.
+local:regular_expressions_building_blocks	rdfs:member	local:regular_expressions_building	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness_of_evaluation	rdfs:member	local:fundamental_properties	.
+local:nested_regular_expression_e	rdfs:subClassOf	local:regular_expression_e	.
+local:regarding_complexity_of_evaluation	rdfs:member	local:complexity	.
+local:combination_of_sparql_operators	rdfs:member	local:combination	.
+local:s8.1	rdf:subject	local:semantics_of_the_rdfs_vocabulary	.
+local:regular_expressions_building	rdfs:subClassOf	local:building	.
+local:s1.1	rdf:object	local:rdf_query_languages_with_navigational_capabilities	.
+local:graph_g	rdfs:subClassOf	local:g	.
+local:s12.2	rdf:subject	local:we	.
+local:fundamental_properties_of_nsparql_concerning_complexity_of_evaluation	rdfs:member	local:fundamental_properties	.
+local:fundamental_properties_of_nsparql_concerning_complexity	rdfs:member	local:fundamental_properties_of_nsparql	.
+local:s12.2	rdf:object	local:last_result	.
+local:expressiveness_of_the_combination_of_nested_regular_expressions	rdfs:member	local:expressiveness	.
+local:regarding_complexity_of_evaluation	rdfs:member	local:evaluation	.
+local:last_result	rdfs:subClassOf	local:result	.
+local:nested_regular_expressions	rdfs:subClassOf	local:regular_expressions	.
+local:regular_expression_e	rdfs:subClassOf	local:e	.
+local:s9	rdf:subject	local:we	.
+local:semantics_of_the_rdfs_vocabulary_by_directly_traversing_the_input_graph	rdfs:member	local:semantics	.
+local:nsparql_query_language_for_rdf	rdfs:member	local:nsparql_query_language	.
+local:query_language	rdfs:subClassOf	local:language	.
+local:propose_with_navigational_capabilities	rdfs:member	local:propose	.
+local:database_query	rdfs:member	local:database	.
+local:s13	rdf:predicate	local:prove	.
+local:expressiveness_of_the_combination_of_sparql_operators	rdfs:member	local:combination	.
+local:regular_expressions_building	rdfs:member	local:regular_expressions	.
+local:expression_e	rdfs:member	local:expression	.
+local:fundamental_properties	rdfs:member	local:fundamental	.
+local:combination_of_nested_regular_expressions	rdfs:member	local:combination	.
+local:s0	local:AM-ADV	local:largely	.
+local:nested_regular_expressions_are_appropriate_to_navigate_rdf_data	rdfs:member	local:regular_expressions	.
+local:regular_expression_e	rdfs:member	local:regular_expression	.
+local:nested_regular_expressions_building	rdfs:member	local:building	.
+local:s0	rdf:predicate	local:recognize	.
+local:nested_regular_expressions	rdfs:member	local:nested_regular	.
+local:expressions_building	rdfs:subClassOf	local:building	.
+local:s13.1	rdf:predicate	local:compute	.
+local:rdf_graph_g	rdfs:subClassOf	local:graph_g	.
+local:time_o	rdfs:member	local:time	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness	rdfs:member	local:expressiveness	.
+local:fundamental_for_graph_database_query_languages	rdfs:member	local:fundamental	.
+local:s7.2	rdf:object	local:complexity_of_evaluation	.
+local:s10	rdf:predicate	local:study	.
+local:s9.1	rdf:object	local:queries	.
+local:navigational_capabilities	rdfs:subClassOf	local:capabilities	.
+local:regular_expression	rdfs:subClassOf	local:expression	.
+local:input_graph	rdfs:subClassOf	local:graph	.
+local:semantics_of_the_rdfs_vocabulary_by_directly_traversing_the_input_graph	rdfs:member	local:input_graph	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness_of_evaluation	rdfs:member	local:evaluation	.
+local:s4	rdf:subject	local:we	.
+local:s2	rdf:object	local:nested_regular_expressions_building_blocks	.
+local:s6.1	local:AM-ADV	local:rdf_data	.
+local:s6	rdf:subject	local:rdf_data	.
+local:expressions_building_blocks	rdfs:member	local:expressions_building	.
+local:last_result	rdfs:member	local:last	.
+local:can_computed_in_time	rdfs:member	local:can_computed	.
+local:several_authors	rdfs:member	local:several	.
+local:rdf_query_languages_with_navigational_capabilities	rdfs:member	local:rdf_query_languages	.
+local:several_authors	rdfs:subClassOf	local:authors	.
+local:s8.1	rdf:predicate	local:traverse	.
+local:fundamental_properties_of_nsparql_concerning_complexity	rdfs:member	local:complexity	.
+local:s13.1	local:AM-MOD	local:can	.
+local:expressiveness_of_the_combination_of_sparql_operators	rdfs:member	local:sparql_operators	.
+local:expressiveness_of_evaluation	rdfs:member	local:expressiveness	.
+local:s1.1	rdf:subject	local:several_authors	.
+local:s11	rdf:object	local:expressiveness_of_the_combination_of_nested_regular_expressions	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g_can_be_computed_in_time_o	rdfs:member	local:nested_regular_expression_e	.
+local:sparql_operators	rdfs:subClassOf	local:operators	.
+local:s0	rdf:subject	local:navigational_features	.
+local:regular_expressions	rdfs:subClassOf	local:expressions	.
+local:expressions_building_blocks	rdfs:subClassOf	local:blocks	.
+local:s1.1	rdf:predicate	local:propose	.
+local:s7.2	rdf:subject	local:nsparql	.
+local:graph_database_query_languages	rdfs:subClassOf	local:database_query_languages	.
+local:s8	rdf:predicate	local:consider	.
+local:s2	rdf:predicate	local:use	.
+local:fundamental_for_graph_database_query_languages	rdfs:member	local:graph_database_query_languages	.
+local:s3	rdf:predicate	local:argue	.
+local:graph_g	rdfs:member	local:graph	.
+local:s0	rdf:object	local:fundamental_for_graph_database_query_languages	.
+local:graph_database_query	rdfs:member	local:graph_database	.
+local:s13.1	rdf:subject	local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g	.
+local:s1	rdf:predicate	local:motivate	.
+local:rdfs_vocabulary	rdfs:subClassOf	local:vocabulary	.
+local:s1.1	rdfs:member	local:several_authors	.
+local:database_query	rdfs:subClassOf	local:query	.
+local:nested_regular_expressions	rdfs:subClassOf	local:expressions	.
+local:s6	rdf:predicate	local:navigate	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g	rdfs:member	local:evaluation	.
+local:expressions_building	rdfs:member	local:expressions	.
+local:regular_expression	rdfs:member	local:regular	.
+local:directly_traversing	rdfs:subClassOf	local:traversing	.
+local:nested_regular_expression_e	rdfs:subClassOf	local:e	.
+local:s12	rdf:subject	local:we	.
+local:evaluation_of_nested_regular_expression_e	rdfs:member	local:evaluation	.
+local:fundamental_properties	rdfs:subClassOf	local:properties	.
+local:s7	rdf:predicate	local:navigate	.
+local:query_language	rdfs:member	local:query	.
+local:nsparql_query_language	rdfs:member	local:nsparql_query	.
+local:s3.1	rdf:subject	local:rdf_data	.
+local:sparql_operators	rdfs:member	local:sparql	.
+local:fundamental_properties_of_nsparql_concerning_complexity_of_evaluation	rdfs:member	local:complexity	.
+local:s1	rdf:subject	local:fact	.
+local:s6.2	rdf:subject	local:nsparql	.
+local:s7.1	rdf:subject	local:we	.
+local:rdf_query_languages_with_navigational_capabilities	rdfs:member	local:rdf_query	.
+local:s7.2	rdf:predicate	local:concern	.
+local:rdfs_vocabulary	rdfs:member	local:rdfs	.
+local:complexity_of_evaluation	rdfs:member	local:evaluation	.
+local:regular_expressions_building_blocks	rdfs:subClassOf	local:blocks	.
+local:expressiveness_of_combination	rdfs:member	local:expressiveness	.
+local:s7.1	local:AM-ADV	local:rdf_data	.
+local:expression_e	rdfs:subClassOf	local:e	.
+local:expressiveness_of_the_combination_of_nested_regular_expressions	rdfs:member	local:combination	.
+local:nested_regular_expressions_are_appropriate_to_navigate_rdf_data	rdfs:member	local:rdf_data	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g_can_be_computed_in_time_o	rdfs:member	local:evaluation	.
+local:s6.2	rdf:predicate	local:concern	.
+local:semantics_of_the_rdfs_vocabulary	rdfs:member	local:semantics	.
+local:can_computed_in_time	rdfs:member	local:time	.
+local:fundamental_properties_of_nsparql_concerning_expressiveness_of_evaluation	rdfs:member	local:expressiveness	.
+local:nsparql_query	rdfs:member	local:nsparql	.
+local:s8.1	rdf:object	local:input_graph	.
+local:combination_of_nested_regular_expressions	rdfs:member	local:nested_regular_expressions	.
+local:s1.1	rdfs:member	local:navigational_capabilities	.
+local:propose_with_navigational_capabilities	rdfs:member	local:navigational_capabilities	.
+local:database_query_languages	rdfs:subClassOf	local:languages	.
 local:rdf_data	rdfs:subClassOf	local:data	.
-local:nested	rdfs:member	local:nested_regular	.
-local:computed	local:AM-TMP	local:time_o	.
-local:·_e	rdfs:subClassOf	local:e	.
-local:g_e	local:g_	local:e	.
-local:motivated	vn.role:Agent	local:fact	.
-local:concerning	vn.role:Cause	local:expressiveness_of_evaluation	.
+local:semantics_of_rdfs_vocabulary	rdfs:member	local:semantics	.
+local:time_o	rdfs:subClassOf	local:o	.
+local:regular_expressions	rdfs:member	local:regular	.
+local:s9	rdf:predicate	local:show	.
+local:s3	rdf:object	local:nested_regular_expressions_are_appropriate_to_navigate_rdf_data	.
+local:query_languages	rdfs:member	local:query	.
+local:s7.1	rdf:predicate	local:study	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g	rdfs:member	local:nested_regular_expression_e	.
+local:s7	rdf:subject	local:rdf_data	.
+local:evaluation_of_nested_regular_expression_e	rdfs:member	local:nested_regular_expression_e	.
+local:query_languages	rdfs:subClassOf	local:languages	.
+local:complexity_of_evaluation	rdfs:member	local:complexity	.
+local:s4	rdf:object	local:nsparql_query_language_for_rdf	.
+local:nsparql_query_language	rdfs:subClassOf	local:query_language	.
+local:database_query_languages	rdfs:subClassOf	local:query_languages	.
+local:expressiveness_of_the_combination_of_sparql_operators	rdfs:member	local:expressiveness	.
+local:s9.1	rdf:subject	local:nsparql	.
+local:graph_database_query_languages	rdfs:member	local:graph_database_query	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:nested_regular_expressions_building	rdfs:member	local:nested_regular_expressions	.
+local:regular_expression_e	rdfs:subClassOf	local:expression_e	.
+local:s12	rdf:object	local:nesting_is_necessary_to_obtain_this_last_result	.
+local:s12	local:AM-DIS	local:also	.
+local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:s6.1	rdf:subject	local:we	.
+local:nested_regular	rdfs:member	local:nested	.
+local:semantics_of_the_rdfs_vocabulary_by_directly_traversing_the_input_graph	rdfs:member	local:rdfs_vocabulary	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g_can_be_computed_in_time_o	rdfs:member	local:time_o	.
+local:evaluation_of_nested_regular_expression_e_over_rdf_graph_g	rdfs:member	local:evaluation_of_nested_regular_expression_e	.
+local:s8	rdf:subject	local:queries	.
+local:s13	rdf:object	local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g_can_be_computed_in_time_o	.
+local:s8	rdf:object	local:semantics_of_the_rdfs_vocabulary_by_directly_traversing_the_input_graph	.
+local:s3	local:AM-LOC	local:previous_paper	.
+local:s9.1	rdf:predicate	local:answer	.
+local:s6.2	rdf:object	local:expressiveness_of_evaluation	.
+local:evaluation_of_a_nested_regular_expression_e_over_an_rdf_graph_g_can_be_computed_in_time_o	rdfs:member	local:rdf_graph_g	.
+local:s3	rdf:subject	local:we	.
+local:rdf_query	rdfs:subClassOf	local:query	.
+local:s4	rdf:predicate	local:propose	.
+local:s13.1	local:AM-TMP	local:time_o	.
+local:s13	rdf:subject	local:we	.
+local:can_computed	rdfs:subClassOf	local:computed	.
+local:s10	rdf:object	local:expressiveness_of_the_combination_of_sparql_operators	.
+local:combination_of_sparql_operators	rdfs:member	local:sparql_operators	.
+local:navigational_capabilities	rdfs:member	local:navigational	.
+local:s10	rdf:subject	local:we	.

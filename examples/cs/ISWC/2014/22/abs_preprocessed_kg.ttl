@@ -1,481 +1,887 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"experiments on the nell datasets demonstrate the feasibility of our approach"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"experiments on the dbpedia datasets demonstrate the feasibility of our approach"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"us reject the assessment of a wrong value"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"doing so allows us to reject the assessment of a wrong value"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"us confirm the assessment of a wrong value"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"doing so allows us to confirm the assessment of a wrong value"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"perform a second outlier detection on additional property values"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"for the second step we exploit owl sameas links for the instances to perform a second outlier detection on additional property values"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"get additional property values"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"for the second step we exploit owl sameas links for the instances to get additional property values"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the property values extracted from a single repository"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"splitting the data into relevant subsets"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"the property values using a novel approach for splitting the data into relevant subsets"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"in a first step we apply outlier detection methods to the property values using a novel approach for splitting the data into relevant subsets"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"the application of such an idea since linked data also contains explicit links between instances"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"linked data especially suited for the application of such an idea since linked data also contains explicit links between instances"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"data enriched with hierarchical information"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"the application of such an idea since linked data provides large amounts of data"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"linked data especially suited for the application of such an idea since linked data provides large amounts of data"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in this work we instead propose an approach"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"problems arising from natural outliers"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"an approach which combines the outcomes of two independent outlier detection runs also prevent problems"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"an approach which combines the outcomes of two independent outlier detection runs to also prevent problems"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"an approach which combines the outcomes of two independent outlier detection runs"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"two independent outlier detection runs get a more reliable result"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"an approach which combines the outcomes of two independent outlier detection runs to get a more reliable result"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"search data for values of unexpected behavior"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"outlier detection typically applied to single datasets to search data for values of unexpected behavior"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"outlier detection identifying wrong values in data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"outlier detection used for identifying wrong values in data"	.
+
+
 #### Classes ####
 
-local:outlier_detection	rdfs:label	"outlier detection"	.
+local:experiments_on_the_nell_datasets	a	rdf:Class	;
+	rdfs:label	"experiments on the nell datasets"	.
 
-local:detection	rdfs:label	"detection"	.
+local:nell_datasets	a	rdf:Class	;
+	rdfs:label	"nell datasets"	.
 
-local:outlier	rdfs:label	"outlier"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:applied	rdfs:label	"applied"	.
+local:nell	a	rdf:Class	;
+	rdfs:label	"nell"	.
 
-local:typically	rdfs:label	"typically"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:single_datasets	rdfs:label	"single datasets"	.
+local:experiments_on_nell	a	rdf:Class	;
+	rdfs:label	"experiments on nell"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:single	rdfs:label	"single"	.
+local:feasibility_of_our_approach	a	rdf:Class	;
+	rdfs:label	"feasibility of our approach"	.
 
-local:search_data	rdfs:label	"search data"	.
+local:feasibility	a	rdf:Class	;
+	rdfs:label	"feasibility"	.
 
-local:data	rdfs:label	"data"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:unexpected	rdfs:label	"unexpected"	.
+local:our_approach	a	rdf:Class	;
+	rdfs:label	"our approach"	.
 
-local:unexpected_behavior	rdfs:label	"unexpected behavior"	.
+local:experiments_on_the_dbpedia_datasets	a	rdf:Class	;
+	rdfs:label	"experiments on the dbpedia datasets"	.
 
-local:behavior	rdfs:label	"behavior"	.
+local:dbpedia_datasets	a	rdf:Class	;
+	rdfs:label	"dbpedia datasets"	.
 
-local:search	rdfs:label	"search"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:search_data_for_values	rdfs:label	"search data for values"	.
+local:experiments_on_dbpedia_datasets	a	rdf:Class	;
+	rdfs:label	"experiments on dbpedia datasets"	.
 
-local:values	rdfs:label	"values"	.
+local:us	a	rdf:Class	;
+	rdfs:label	"us"	.
 
-local:values_of_unexpected_behavior	rdfs:label	"values of unexpected behavior"	.
+local:reject	a	rdf:Class	;
+	rdfs:label	"reject"	.
 
-local:used	rdfs:label	"used"	.
+local:assessment_of_a_wrong_value	a	rdf:Class	;
+	rdfs:label	"assessment of a wrong value"	.
 
-local:wrong_values	rdfs:label	"wrong values"	.
+local:wrong_value	a	rdf:Class	;
+	rdfs:label	"wrong value"	.
 
-local:wrong	rdfs:label	"wrong"	.
+local:assessment	a	rdf:Class	;
+	rdfs:label	"assessment"	.
 
-local:identifying_in_data	rdfs:label	"identifying in data"	.
+local:value	a	rdf:Class	;
+	rdfs:label	"value"	.
 
-local:identifying	rdfs:label	"identifying"	.
+local:wrong	a	rdf:Class	;
+	rdfs:label	"wrong"	.
 
-local:propose	rdfs:label	"propose"	.
+local:assessment_of_wrong_value	a	rdf:Class	;
+	rdfs:label	"assessment of wrong value"	.
 
-local:work	rdfs:label	"work"	.
+local:so	a	rdf:Class	;
+	rdfs:label	"so"	.
 
-local:we	rdfs:label	"we"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:instead	rdfs:label	"instead"	.
+local:us_to_reject_the_assessment_of_a_wrong_value	a	rdf:Class	;
+	rdfs:label	"us to reject the assessment of a wrong value"	.
 
-local:approach	rdfs:label	"approach"	.
+local:confirm	a	rdf:Class	;
+	rdfs:label	"confirm"	.
 
-local:arising	rdfs:label	"arising"	.
+local:us_to_confirm_the_assessment_of_a_wrong_value	a	rdf:Class	;
+	rdfs:label	"us to confirm the assessment of a wrong value"	.
 
-local:problems	rdfs:label	"problems"	.
+local:second_outlier_detection	a	rdf:Class	;
+	rdfs:label	"second outlier detection"	.
 
-local:natural_outliers	rdfs:label	"natural outliers"	.
+local:outlier_detection	a	rdf:Class	;
+	rdfs:label	"outlier detection"	.
 
-local:outliers	rdfs:label	"outliers"	.
+local:outlier	a	rdf:Class	;
+	rdfs:label	"outlier"	.
 
-local:natural	rdfs:label	"natural"	.
+local:detection	a	rdf:Class	;
+	rdfs:label	"detection"	.
 
-local:combines	rdfs:label	"combines"	.
+local:second_outlier	a	rdf:Class	;
+	rdfs:label	"second outlier"	.
 
-local:independent_outlier	rdfs:label	"independent outlier"	.
+local:second	a	rdf:Class	;
+	rdfs:label	"second"	.
 
-local:outlier_detection_runs	rdfs:label	"outlier detection runs"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:detection_runs	rdfs:label	"detection runs"	.
+local:additional_property_values	a	rdf:Class	;
+	rdfs:label	"additional property values"	.
 
-local:runs	rdfs:label	"runs"	.
+local:additional_property	a	rdf:Class	;
+	rdfs:label	"additional property"	.
 
-local:independent	rdfs:label	"independent"	.
+local:property	a	rdf:Class	;
+	rdfs:label	"property"	.
 
-local:independent_outlier_detection	rdfs:label	"independent outlier detection"	.
+local:property_values	a	rdf:Class	;
+	rdfs:label	"property values"	.
 
-local:independent_outlier_detection_runs	rdfs:label	"independent outlier detection runs"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:two_independent_outlier_detection_runs	rdfs:label	"two independent outlier detection runs"	.
+local:values	a	rdf:Class	;
+	rdfs:label	"values"	.
 
-local:outcomes_of_two_independent_outlier_detection_runs	rdfs:label	"outcomes of two independent outlier detection runs"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:outcomes	rdfs:label	"outcomes"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:two_independent_outlier_detection	rdfs:label	"two independent outlier detection"	.
+local:owl_sameas_links_for_the_instances	a	rdf:Class	;
+	rdfs:label	"owl sameas links for the instances"	.
 
-local:outcomes_of_two_independent_outlier_detection	rdfs:label	"outcomes of two independent outlier detection"	.
+local:sameas_links	a	rdf:Class	;
+	rdfs:label	"sameas links"	.
 
-local:prevent_problems	rdfs:label	"prevent problems"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:also_prevent	rdfs:label	"also prevent"	.
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
 
-local:prevent	rdfs:label	"prevent"	.
+local:sameas	a	rdf:Class	;
+	rdfs:label	"sameas"	.
 
-local:also_prevent_problems	rdfs:label	"also prevent problems"	.
+local:links	a	rdf:Class	;
+	rdfs:label	"links"	.
 
-local:also	rdfs:label	"also"	.
+local:owl_sameas_links	a	rdf:Class	;
+	rdfs:label	"owl sameas links"	.
 
-local:more_reliable	rdfs:label	"more reliable"	.
+local:owl_sameas_links_for_instances	a	rdf:Class	;
+	rdfs:label	"owl sameas links for instances"	.
 
-local:more_reliable_result	rdfs:label	"more reliable result"	.
+local:second_step	a	rdf:Class	;
+	rdfs:label	"second step"	.
 
-local:more	rdfs:label	"more"	.
+local:step	a	rdf:Class	;
+	rdfs:label	"step"	.
 
-local:result	rdfs:label	"result"	.
+local:get	a	rdf:Class	;
+	rdfs:label	"get"	.
 
-local:reliable_result	rdfs:label	"reliable result"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:reliable	rdfs:label	"reliable"	.
+local:single_repository	a	rdf:Class	;
+	rdfs:label	"single repository"	.
 
-local:get	rdfs:label	"get"	.
+local:single	a	rdf:Class	;
+	rdfs:label	"single"	.
 
-local:linked	rdfs:label	"linked"	.
+local:repository	a	rdf:Class	;
+	rdfs:label	"repository"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:suited	rdfs:label	"suited"	.
+local:split	a	rdf:Class	;
+	rdfs:label	"split"	.
 
-local:especially	rdfs:label	"especially"	.
+local:relevant_subsets	a	rdf:Class	;
+	rdfs:label	"relevant subsets"	.
 
-local:explicit	rdfs:label	"explicit"	.
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
 
-local:explicit_links	rdfs:label	"explicit links"	.
+local:subsets	a	rdf:Class	;
+	rdfs:label	"subsets"	.
 
-local:links	rdfs:label	"links"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:also_contains	rdfs:label	"also contains"	.
+local:novel_approach_splitting_the_data_into_relevant_subsets	a	rdf:Class	;
+	rdfs:label	"novel approach splitting the data into relevant subsets"	.
 
-local:contains	rdfs:label	"contains"	.
+local:novel_approach	a	rdf:Class	;
+	rdfs:label	"novel approach"	.
 
-local:application_of_idea	rdfs:label	"application of idea"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:application	rdfs:label	"application"	.
+local:approach_splitting	a	rdf:Class	;
+	rdfs:label	"approach splitting"	.
 
-local:idea	rdfs:label	"idea"	.
+local:splitting	a	rdf:Class	;
+	rdfs:label	"splitting"	.
 
-local:explicit_links_between_instances	rdfs:label	"explicit links between instances"	.
+local:novel_approach_splitting	a	rdf:Class	;
+	rdfs:label	"novel approach splitting"	.
 
-local:instances	rdfs:label	"instances"	.
+local:data_into_relevant_subsets	a	rdf:Class	;
+	rdfs:label	"data into relevant subsets"	.
 
-local:application_of_idea_since_linked_data	rdfs:label	"application of idea since linked data"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:enriched	rdfs:label	"enriched"	.
+local:outlier_detection_methods_property_values_using_a_novel_approach_for_splitting_the_data_into_relevant_subsets	a	rdf:Class	;
+	rdfs:label	"outlier detection methods property values using a novel approach for splitting the data into relevant subsets"	.
 
-local:hierarchical	rdfs:label	"hierarchical"	.
+local:outlier_detection_methods_property_values	a	rdf:Class	;
+	rdfs:label	"outlier detection methods property values"	.
 
-local:hierarchical_information	rdfs:label	"hierarchical information"	.
+local:outlier_detection_methods	a	rdf:Class	;
+	rdfs:label	"outlier detection methods"	.
 
-local:information	rdfs:label	"information"	.
+local:outlier_detection_methods_property	a	rdf:Class	;
+	rdfs:label	"outlier detection methods property"	.
 
-local:large_amounts	rdfs:label	"large amounts"	.
+local:detection_methods_property	a	rdf:Class	;
+	rdfs:label	"detection methods property"	.
 
-local:amounts	rdfs:label	"amounts"	.
+local:detection_methods	a	rdf:Class	;
+	rdfs:label	"detection methods"	.
 
-local:large	rdfs:label	"large"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:large_amounts_of_data	rdfs:label	"large amounts of data"	.
+local:detection_methods_property_values	a	rdf:Class	;
+	rdfs:label	"detection methods property values"	.
 
-local:provides	rdfs:label	"provides"	.
+local:methods_property_values	a	rdf:Class	;
+	rdfs:label	"methods property values"	.
 
-local:first	rdfs:label	"first"	.
+local:methods_property	a	rdf:Class	;
+	rdfs:label	"methods property"	.
 
-local:first_step	rdfs:label	"first step"	.
+local:outlier_detection_methods_property_values_using	a	rdf:Class	;
+	rdfs:label	"outlier detection methods property values using"	.
 
-local:step	rdfs:label	"step"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:apply	rdfs:label	"apply"	.
+local:novel_approach_for_splitting	a	rdf:Class	;
+	rdfs:label	"novel approach for splitting"	.
 
-local:detection_methods	rdfs:label	"detection methods"	.
+local:splitting_into_relevant_subsets	a	rdf:Class	;
+	rdfs:label	"splitting into relevant subsets"	.
 
-local:methods	rdfs:label	"methods"	.
+local:first_step	a	rdf:Class	;
+	rdfs:label	"first step"	.
 
-local:outlier_detection_methods	rdfs:label	"outlier detection methods"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:relevant_subsets	rdfs:label	"relevant subsets"	.
+local:application_of_such_an_idea_since_linked_data	a	rdf:Class	;
+	rdfs:label	"application of such an idea since linked data"	.
 
-local:subsets	rdfs:label	"subsets"	.
+local:idea	a	rdf:Class	;
+	rdfs:label	"idea"	.
 
-local:novel	rdfs:label	"novel"	.
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
 
-local:novel_approach	rdfs:label	"novel approach"	.
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
 
-local:property	rdfs:label	"property"	.
+local:application_of_idea	a	rdf:Class	;
+	rdfs:label	"application of idea"	.
 
-local:property_values	rdfs:label	"property values"	.
+local:application_of_idea_since_linked_data	a	rdf:Class	;
+	rdfs:label	"application of idea since linked data"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:property_values_using	rdfs:label	"property values using"	.
+local:explicit_links_between_instances	a	rdf:Class	;
+	rdfs:label	"explicit links between instances"	.
 
-local:using	rdfs:label	"using"	.
+local:explicit_links	a	rdf:Class	;
+	rdfs:label	"explicit links"	.
 
-local:novel_approach_for_splitting	rdfs:label	"novel approach for splitting"	.
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
 
-local:splitting	rdfs:label	"splitting"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:splitting_into_relevant_subsets	rdfs:label	"splitting into relevant subsets"	.
+local:suit	a	rdf:Class	;
+	rdfs:label	"suit"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	a	rdf:Class	;
+	rdfs:label	"application of such an idea since linked data also contains explicit links between instances"	.
 
-local:single_repository	rdfs:label	"single repository"	.
+local:also_contains	a	rdf:Class	;
+	rdfs:label	"also contains"	.
 
-local:repository	rdfs:label	"repository"	.
+local:contains	a	rdf:Class	;
+	rdfs:label	"contains"	.
 
-local:second	rdfs:label	"second"	.
+local:especially	a	rdf:Class	;
+	rdfs:label	"especially"	.
 
-local:second_step	rdfs:label	"second step"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:exploit	rdfs:label	"exploit"	.
+local:enrich	a	rdf:Class	;
+	rdfs:label	"enrich"	.
 
-local:sameas_links	rdfs:label	"sameas links"	.
+local:hierarchical_information	a	rdf:Class	;
+	rdfs:label	"hierarchical information"	.
 
-local:sameas	rdfs:label	"sameas"	.
+local:hierarchical	a	rdf:Class	;
+	rdfs:label	"hierarchical"	.
 
-local:sameas_links_for_instances	rdfs:label	"sameas links for instances"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:owl	rdfs:label	"owl"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:additional	rdfs:label	"additional"	.
+local:large_amounts_of_data	a	rdf:Class	;
+	rdfs:label	"large amounts of data"	.
 
-local:additional_property	rdfs:label	"additional property"	.
+local:large_amounts	a	rdf:Class	;
+	rdfs:label	"large amounts"	.
 
-local:additional_property_values	rdfs:label	"additional property values"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:second_outlier	rdfs:label	"second outlier"	.
+local:amounts	a	rdf:Class	;
+	rdfs:label	"amounts"	.
 
-local:second_outlier_detection	rdfs:label	"second outlier detection"	.
+local:application_of_such_an_idea_since_linked_data_provides_large_amounts_of_data	a	rdf:Class	;
+	rdfs:label	"application of such an idea since linked data provides large amounts of data"	.
 
-local:perform_on_additional_property_values	rdfs:label	"perform on additional property values"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:perform	rdfs:label	"perform"	.
+local:instead	a	rdf:Class	;
+	rdfs:label	"instead"	.
 
-local:allows	rdfs:label	"allows"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:so	rdfs:label	"so"	.
+local:problems	a	rdf:Class	;
+	rdfs:label	"problems"	.
 
-local:wrong_value	rdfs:label	"wrong value"	.
+local:arise	a	rdf:Class	;
+	rdfs:label	"arise"	.
 
-local:value	rdfs:label	"value"	.
+local:natural_outliers	a	rdf:Class	;
+	rdfs:label	"natural outliers"	.
 
-local:assessment_of_wrong_value	rdfs:label	"assessment of wrong value"	.
+local:natural	a	rdf:Class	;
+	rdfs:label	"natural"	.
 
-local:assessment	rdfs:label	"assessment"	.
+local:outliers	a	rdf:Class	;
+	rdfs:label	"outliers"	.
 
-local:us	rdfs:label	"us"	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection_runs	a	rdf:Class	;
+	rdfs:label	"approach which combines the outcomes of two independent outlier detection runs"	.
 
-local:reject	rdfs:label	"reject"	.
+local:independent_outlier_detection_runs	a	rdf:Class	;
+	rdfs:label	"independent outlier detection runs"	.
 
-local:confirm	rdfs:label	"confirm"	.
+local:outcomes	a	rdf:Class	;
+	rdfs:label	"outcomes"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:independent_outlier	a	rdf:Class	;
+	rdfs:label	"independent outlier"	.
 
-local:dbpedia_datasets	rdfs:label	"dbpedia datasets"	.
+local:independent	a	rdf:Class	;
+	rdfs:label	"independent"	.
 
-local:experiments_on_dbpedia_datasets	rdfs:label	"experiments on dbpedia datasets"	.
+local:independent_outlier_detection	a	rdf:Class	;
+	rdfs:label	"independent outlier detection"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:outlier_detection_runs	a	rdf:Class	;
+	rdfs:label	"outlier detection runs"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:detection_runs	a	rdf:Class	;
+	rdfs:label	"detection runs"	.
 
-local:our_approach	rdfs:label	"our approach"	.
+local:runs	a	rdf:Class	;
+	rdfs:label	"runs"	.
 
-local:feasibility_of_our_approach	rdfs:label	"feasibility of our approach"	.
+local:two_independent_outlier_detection_runs	a	rdf:Class	;
+	rdfs:label	"two independent outlier detection runs"	.
 
-local:feasibility	rdfs:label	"feasibility"	.
+local:outcomes_of_two_independent_outlier_detection_runs	a	rdf:Class	;
+	rdfs:label	"outcomes of two independent outlier detection runs"	.
 
-local:nell	rdfs:label	"nell"	.
+local:prevent	a	rdf:Class	;
+	rdfs:label	"prevent"	.
 
-local:nell_datasets	rdfs:label	"nell datasets"	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection	a	rdf:Class	;
+	rdfs:label	"approach which combines the outcomes of two independent outlier detection"	.
 
-local:experiments_on_nell	rdfs:label	"experiments on nell"	.
+local:two_independent_outlier_detection	a	rdf:Class	;
+	rdfs:label	"two independent outlier detection"	.
 
-#### Properties ####
+local:outcomes_of_two_independent_outlier_detection	a	rdf:Class	;
+	rdfs:label	"outcomes of two independent outlier detection"	.
+
+local:run	a	rdf:Class	;
+	rdfs:label	"run"	.
+
+local:also_prevent_problems	a	rdf:Class	;
+	rdfs:label	"also prevent problems"	.
+
+local:also_prevent	a	rdf:Class	;
+	rdfs:label	"also prevent"	.
+
+local:prevent_problems	a	rdf:Class	;
+	rdfs:label	"prevent problems"	.
+
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
+
+local:reliable_result	a	rdf:Class	;
+	rdfs:label	"reliable result"	.
+
+local:reliable	a	rdf:Class	;
+	rdfs:label	"reliable"	.
+
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
+
+local:get_a_more_reliable_result	a	rdf:Class	;
+	rdfs:label	"get a more reliable result"	.
+
+local:more_reliable_result	a	rdf:Class	;
+	rdfs:label	"more reliable result"	.
+
+local:more_reliable	a	rdf:Class	;
+	rdfs:label	"more reliable"	.
+
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
+
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
+
+local:values_of_unexpected_behavior	a	rdf:Class	;
+	rdfs:label	"values of unexpected behavior"	.
+
+local:unexpected_behavior	a	rdf:Class	;
+	rdfs:label	"unexpected behavior"	.
+
+local:unexpected	a	rdf:Class	;
+	rdfs:label	"unexpected"	.
+
+local:behavior	a	rdf:Class	;
+	rdfs:label	"behavior"	.
+
+local:single_datasets	a	rdf:Class	;
+	rdfs:label	"single datasets"	.
+
+local:typically	a	rdf:Class	;
+	rdfs:label	"typically"	.
+
+local:identify	a	rdf:Class	;
+	rdfs:label	"identify"	.
+
+local:wrong_values	a	rdf:Class	;
+	rdfs:label	"wrong values"	.
+
+local:identifying_wrong_values_in_data	a	rdf:Class	;
+	rdfs:label	"identifying wrong values in data"	.
+
+local:wrong_values_in_data	a	rdf:Class	;
+	rdfs:label	"wrong values in data"	.
 
 #### Mapped Relations ####
 
-cso:linked_data	rdfs:label	"linked data"	.
-cso:owl	rdfs:label	"owl"	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-local:owl	owl:sameAs	cso:owl	.
 local:dbpedia	owl:sameAs	cso:dbpedia	.
+cso:linked_data	rdfs:label	"linked data"	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
 local:linked_data	owl:sameAs	cso:linked_data	.
+cso:owl	rdfs:label	"owl"	.
+local:owl	owl:sameAs	cso:owl	.
 
 #### Relations ####
 
-local:outlier_detection	rdfs:member	local:outlier_detection_runs	.
-local:propose	local:AM-LOC	local:work	.
-local:prevent	rdfs:member	local:prevent_problems	.
-local:outcomes_of_two_independent_outlier_detection_runs	local:outcomes_of	local:two_independent_outlier_detection_runs	.
-local:outlier_detection	rdfs:member	local:outlier_detection_methods	.
+local:additional_property	rdfs:member	local:additional	.
+local:experiments_on_the_dbpedia_datasets	rdfs:member	local:dbpedia_datasets	.
+local:us_to_confirm_the_assessment_of_a_wrong_value	rdfs:member	local:wrong_value	.
+local:s7	local:AM-LOC	local:work	.
 local:independent_outlier_detection	rdfs:subClassOf	local:outlier_detection	.
-local:property_values_using	local:_using	local:property_values	.
-local:novel_approach	rdfs:subClassOf	local:approach	.
-local:outcomes_of_two_independent_outlier_detection_runs	local:of_twoindependentoutlierdetectionruns	local:outcomes	.
-local:single	rdfs:member	local:single_datasets	.
-local:provides	vn.role:Agent	local:large_amounts_of_data	.
-local:outlier_detection	rdfs:subClassOf	local:detection	.
-local:identifying	vn.role:Theme	local:wrong_values	.
-local:get	vn.role:Patient	local:reliable_result	.
-local:sameas_links_for_instances	local:for_instances	local:sameas_links	.
-local:experiments_on_dbpedia_datasets	local:experiments_on	local:dbpedia_datasets	.
-local:hierarchical_information	rdfs:subClassOf	local:information	.
-local:single_datasets	rdfs:subClassOf	local:datasets	.
-local:combines	local:AM-PNC	local:get	.
-local:contains	vn.role:Theme1	local:application_of_idea_since_linked_data	.
-local:property_values_using	local:propertyvalues_	local:using	.
-local:explicit_links_between_instances	local:explicitlinks_between	local:instances	.
-local:assessment_of_wrong_value	local:assessment_of	local:wrong_value	.
-local:prevent	local:AM-DIS	local:also	.
-local:large	rdfs:member	local:large_amounts	.
-local:detection_runs	rdfs:subClassOf	local:runs	.
-local:novel	rdfs:member	local:novel_approach	.
-local:wrong	rdfs:member	local:wrong_value	.
-local:apply	vn.role:Recipient	local:property_values_using	.
-local:sameas_links	rdfs:subClassOf	local:links	.
-local:independent_outlier_detection_runs	rdfs:subClassOf	local:runs	.
-local:outcomes_of_two_independent_outlier_detection	local:outcomes_of	local:two_independent_outlier_detection	.
-local:sameas	rdfs:member	local:sameas_links	.
-local:perform	vn.role:Theme	local:second_outlier_detection	.
-local:outlier	rdfs:member	local:outlier_detection	.
-local:outlier_detection_methods	rdfs:subClassOf	local:methods	.
-local:suited	vn.role:indirect_object	local:application_of_idea	.
-local:large_amounts	rdfs:subClassOf	local:amounts	.
-local:exploit	vn.role:Predicate	local:owl	.
-local:reliable_result	rdfs:subClassOf	local:result	.
-local:outcomes_of_two_independent_outlier_detection	local:of_twoindependentoutlierdetection	local:outcomes	.
-local:more	rdfs:member	local:more_reliable	.
-local:second_outlier_detection	rdfs:subClassOf	local:outlier_detection	.
-local:get	vn.role:Agent	local:approach	.
-local:natural_outliers	rdfs:subClassOf	local:outliers	.
-local:search_data	rdfs:subClassOf	local:data	.
-local:using	vn.role:Agent	local:property_values	.
-local:independent	rdfs:member	local:independent_outlier	.
-local:outlier_detection_runs	rdfs:subClassOf	local:detection_runs	.
-local:also_prevent	rdfs:member	local:also_prevent_problems	.
-local:nell	rdfs:member	local:nell_datasets	.
-local:additional_property	rdfs:subClassOf	local:property	.
-local:runs	local:AM-PNC	local:also_prevent	.
-local:more_reliable	rdfs:member	local:more_reliable_result	.
-local:reject	vn.role:Theme	local:assessment_of_wrong_value	.
-local:perform	local:AM-LOC	local:additional_property_values	.
-local:nell_datasets	rdfs:subClassOf	local:datasets	.
-local:sameas_links_for_instances	local:sameaslinks_for	local:instances	.
-local:additional	rdfs:member	local:additional_property	.
-local:values_of_unexpected_behavior	local:of_unexpectedbehavior	local:values	.
-local:experiments_on_nell	local:on_nell	local:experiments	.
-local:dbpedia	rdfs:member	local:dbpedia_datasets	.
-local:feasibility_of_our_approach	local:feasibility_of	local:our_approach	.
-local:used	vn.role:Theme	local:identifying_in_data	.
-local:detection_methods	rdfs:subClassOf	local:methods	.
-local:our_approach	rdfs:subClassOf	local:approach	.
-local:second_step	rdfs:subClassOf	local:step	.
-local:used	vn.role:Agent	local:outlier_detection	.
-local:search	vn.role:Location	local:data	.
-local:identifying_in_data	local:in_data	local:identifying	.
-local:identifying_in_data	local:identifying_in	local:data	.
-local:independent_outlier	rdfs:subClassOf	local:outlier	.
-local:get	vn.role:Patient	local:additional_property_values	.
-local:perform_on_additional_property_values	local:on_additionalpropertyvalues	local:perform	.
-local:property_values	rdfs:subClassOf	local:values	.
-local:contains	local:AM-DIS	local:also	.
-local:reject	vn.role:Agent	local:us	.
-local:allows	vn.role:Theme	local:us	.
-local:demonstrate	vn.role:Recipient	local:experiments_on_dbpedia_datasets	.
-local:applied	vn.role:Recipient	local:single_datasets	.
-local:suited	local:AM-MNR	local:especially	.
-local:search	rdfs:member	local:search_data	.
-local:arising	vn.role:indirect_object	local:natural_outliers	.
-local:outlier_detection_runs	rdfs:subClassOf	local:runs	.
-local:allows	vn.role:Agent	local:so	.
-local:suited	local:AM-ADV	local:especially	.
-local:application_of_idea	local:application_of	local:idea	.
-local:prevent	vn.role:Agent	local:approach	.
-local:also	rdfs:member	local:also_prevent	.
-local:arising	vn.role:Location	local:problems	.
-local:using	vn.role:Recipient	local:splitting_into_relevant_subsets	.
-local:propose	local:AM-DIS	local:instead	.
-local:two_independent_outlier_detection_runs	rdfs:subClassOf	local:independent_outlier_detection_runs	.
-local:large_amounts_of_data	local:largeamounts_of	local:data	.
-local:extracted	vn.role:Theme	local:property_values	.
-local:relevant	rdfs:member	local:relevant_subsets	.
-local:application_of_idea	local:of_idea	local:application	.
-local:identifying	local:AM-LOC	local:data	.
-local:suited	vn.role:Patient	local:linked_data	.
-local:contains	vn.role:Theme2	local:explicit_links_between_instances	.
-local:combines	vn.role:Agent	local:approach	.
-local:second_outlier	rdfs:subClassOf	local:outlier	.
-local:dbpedia_datasets	rdfs:subClassOf	local:datasets	.
-local:novel_approach_for_splitting	local:for_splitting	local:novel_approach	.
-local:enriched	vn.role:Theme	local:data	.
-local:also_contains	rdfs:subClassOf	local:contains	.
-local:apply	vn.role:Agent	local:we	.
-local:second	rdfs:member	local:second_step	.
-local:natural	rdfs:member	local:natural_outliers	.
-local:explicit_links	rdfs:subClassOf	local:links	.
-local:apply	vn.role:Theme	local:outlier_detection_methods	.
-local:runs	vn.role:Location	local:approach	.
-local:provides	vn.role:Recipient	local:application_of_idea_since_linked_data	.
-local:second	rdfs:member	local:second_outlier	.
-local:outlier_detection_methods	rdfs:subClassOf	local:detection_methods	.
-local:perform_on_additional_property_values	local:perform_on	local:additional_property_values	.
-local:demonstrate	vn.role:Cause	local:feasibility_of_our_approach	.
-local:two_independent_outlier_detection	rdfs:subClassOf	local:independent_outlier_detection	.
-local:values_of_unexpected_behavior	local:values_of	local:unexpected_behavior	.
-local:applied	local:AM-TMP	local:typically	.
-local:prevent	vn.role:Theme	local:problems	.
-local:reliable	rdfs:member	local:reliable_result	.
-local:applied	local:AM-PNC	local:search_data_for_values	.
-local:application_of_idea_since_linked_data	local:applicationofidea_since	local:linked_data	.
-local:search_data_for_values	local:searchdata_for	local:values	.
-local:large_amounts_of_data	local:of_data	local:large_amounts	.
-local:confirm	vn.role:Cause	local:assessment_of_wrong_value	.
-local:single	rdfs:member	local:single_repository	.
-local:wrong_values	rdfs:subClassOf	local:values	.
-local:splitting	vn.role:Instrument	local:relevant_subsets	.
+local:s14	rdf:subject	local:we	.
+local:s8	rdf:subject	local:data	.
+local:dbpedia_datasets	rdfs:member	local:dbpedia	.
+local:assessment_of_wrong_value	rdfs:member	local:wrong_value	.
+local:application_of_such_an_idea_since_linked_data	rdfs:member	local:data	.
+local:detection_methods_property_values	rdfs:member	local:detection_methods_property	.
+local:s0.1	rdf:object	local:wrong_values	.
+local:outlier_detection_methods_property	rdfs:member	local:outlier_detection_methods	.
+local:application_of_idea	rdfs:member	local:idea	.
 local:additional_property_values	rdfs:subClassOf	local:property_values	.
-local:unexpected_behavior	rdfs:subClassOf	local:behavior	.
-local:single_repository	rdfs:subClassOf	local:repository	.
-local:relevant_subsets	rdfs:subClassOf	local:subsets	.
-local:independent_outlier_detection	rdfs:member	local:independent_outlier_detection_runs	.
-local:novel_approach_for_splitting	local:novelapproach_for	local:splitting	.
-local:exploit	local:AM-TMP	local:second_step	.
-local:application_of_idea_since_linked_data	local:since_linkeddata	local:application_of_idea	.
-local:unexpected	rdfs:member	local:unexpected_behavior	.
-local:splitting_into_relevant_subsets	local:into_relevantsubsets	local:splitting	.
-local:identifying	vn.role:Agent	local:outlier_detection	.
-local:wrong_value	rdfs:subClassOf	local:value	.
-local:independent_outlier_detection	rdfs:subClassOf	local:detection	.
-local:combines	vn.role:Patient	local:outcomes_of_two_independent_outlier_detection_runs	.
-local:explicit	rdfs:member	local:explicit_links	.
-local:using	vn.role:Theme	local:novel_approach	.
-local:splitting_into_relevant_subsets	local:splitting_into	local:relevant_subsets	.
-local:feasibility_of_our_approach	local:of_ourapproach	local:feasibility	.
-local:more_reliable	rdfs:subClassOf	local:reliable	.
-local:wrong	rdfs:member	local:wrong_values	.
-local:explicit_links_between_instances	local:between_instances	local:explicit_links	.
-local:experiments_on_dbpedia_datasets	local:on_dbpediadatasets	local:experiments	.
-local:exploit	local:AM-PNC	local:get	.
-local:also_prevent_problems	rdfs:subClassOf	local:problems	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:first	rdfs:member	local:first_step	.
-local:independent_outlier_detection_runs	rdfs:subClassOf	local:outlier_detection_runs	.
-local:independent_outlier	rdfs:member	local:independent_outlier_detection	.
-local:experiments_on_nell	local:experiments_on	local:nell	.
-local:linked	vn.role:Patient	local:data	.
-local:exploit	vn.role:Agent	local:we	.
-local:detection	rdfs:member	local:detection_methods	.
-local:property	rdfs:member	local:property_values	.
-local:more_reliable_result	rdfs:subClassOf	local:result	.
-local:second_outlier	rdfs:member	local:second_outlier_detection	.
-local:demonstrate	vn.role:Recipient	local:datasets	.
-local:additional_property_values	rdfs:subClassOf	local:values	.
-local:search	vn.role:Theme	local:values_of_unexpected_behavior	.
-local:propose	vn.role:Topic	local:approach	.
-local:apply	local:AM-LOC	local:first_step	.
-local:propose	vn.role:Agent	local:we	.
-local:also_prevent	rdfs:subClassOf	local:prevent	.
-local:additional_property	rdfs:member	local:additional_property_values	.
-local:enriched	vn.role:Destination	local:hierarchical_information	.
-local:search_data_for_values	local:for_values	local:search_data	.
-local:confirm	vn.role:Recipient	local:us	.
-local:hierarchical	rdfs:member	local:hierarchical_information	.
+local:s11	rdf:predicate	local:apply	.
+local:outlier_detection_methods	rdfs:subClassOf	local:methods	.
+local:outcomes_of_two_independent_outlier_detection	rdfs:member	local:outcomes	.
+local:s1	rdf:object	local:single_datasets	.
+local:s15.1	rdf:object	local:assessment_of_a_wrong_value	.
+local:experiments_on_dbpedia_datasets	rdfs:member	local:experiments	.
+local:s13	rdf:predicate	local:exploit	.
+local:detection_methods_property	rdfs:member	local:detection_methods	.
+local:first_step	rdfs:member	local:first	.
+local:s8.1	rdf:subject	local:linked_data	.
+local:s11.1	rdf:subject	local:property_values	.
+local:novel_approach	rdfs:subClassOf	local:approach	.
+local:detection_methods_property_values	rdfs:subClassOf	local:values	.
+local:methods_property_values	rdfs:member	local:methods_property	.
+local:novel_approach_for_splitting	rdfs:member	local:splitting	.
+local:explicit_links	rdfs:subClassOf	local:links	.
+local:independent_outlier_detection_runs	rdfs:member	local:independent_outlier_detection	.
+local:outcomes_of_two_independent_outlier_detection	rdfs:member	local:two_independent_outlier_detection	.
+local:s10.2	rdf:object	local:explicit_links_between_instances	.
+local:nell_datasets	rdfs:subClassOf	local:datasets	.
+local:s14.1	rdf:predicate	local:perform	.
+local:also_contains	rdfs:subClassOf	local:contains	.
+local:s17	rdf:object	local:feasibility_of_our_approach	.
+local:s0.1	local:AM-LOC	local:data	.
+local:application_of_idea_since_linked_data	rdfs:member	local:application_of_idea	.
+local:natural_outliers	rdfs:member	local:natural	.
 local:second_outlier_detection	rdfs:subClassOf	local:detection	.
-local:detection	rdfs:member	local:detection_runs	.
-local:extracted	vn.role:other	local:single_repository	.
-local:splitting	vn.role:Patient	local:data	.
-local:applied	vn.role:Theme	local:outlier_detection	.
-local:first_step	rdfs:subClassOf	local:step	.
+local:s16.1	rdf:predicate	local:reject	.
+local:outlier_detection_methods_property	rdfs:subClassOf	local:property	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection_runs	rdfs:member	local:approach	.
+local:s11	local:AM-TMP	local:first_step	.
+local:independent_outlier_detection_runs	rdfs:subClassOf	local:runs	.
+local:single_datasets	rdfs:member	local:single	.
+local:application_of_such_an_idea_since_linked_data_provides_large_amounts_of_data	rdfs:member	local:application	.
+local:us_to_confirm_the_assessment_of_a_wrong_value	rdfs:member	local:assessment	.
+local:linked_data	rdfs:subClassOf	local:data	.
 local:prevent_problems	rdfs:subClassOf	local:problems	.
-local:assessment_of_wrong_value	local:of_wrongvalue	local:assessment	.
+local:splitting_into_relevant_subsets	rdfs:member	local:splitting	.
+local:outlier_detection_runs	rdfs:subClassOf	local:runs	.
+local:s10.1	rdf:subject	local:linked_data	.
+local:second_outlier_detection	rdfs:member	local:second_outlier	.
+local:s11.1	rdf:object	local:novel_approach_splitting_the_data_into_relevant_subsets	.
+local:s16.1	rdf:subject	local:us	.
+local:detection_methods	rdfs:subClassOf	local:methods	.
+local:detection_runs	rdfs:subClassOf	local:runs	.
+local:second_outlier	rdfs:subClassOf	local:outlier	.
+local:s11.2	rdf:subject	local:data	.
+local:s13.1	rdf:predicate	local:get	.
+local:s13	rdf:object	local:owl_sameas_links_for_the_instances	.
+local:outlier_detection_runs	rdfs:member	local:outlier_detection	.
+local:two_independent_outlier_detection_runs	rdfs:subClassOf	local:independent_outlier_detection_runs	.
+local:wrong_values	rdfs:member	local:wrong	.
+local:s18	rdf:object	local:feasibility_of_our_approach	.
+local:s18	rdf:subject	local:experiments_on_the_nell_datasets	.
+local:s10	rdfs:subClassOf	local:data	.
+local:s1.1	rdf:predicate	local:search	.
+local:relevant_subsets	rdfs:member	local:relevant	.
+local:methods_property	rdfs:member	local:methods	.
+local:s16	rdf:subject	local:so	.
+local:additional_property_values	rdfs:subClassOf	local:values	.
+local:explicit_links	rdfs:member	local:explicit	.
+local:s15.1	rdf:predicate	local:confirm	.
+local:outcomes_of_two_independent_outlier_detection_runs	rdfs:member	local:independent_outlier_detection_runs	.
+local:us_to_reject_the_assessment_of_a_wrong_value	rdfs:member	local:assessment	.
+local:s14	rdf:object	local:owl_sameas_links_for_the_instances	.
+local:s4	rdf:object	local:outcomes_of_two_independent_outlier_detection_runs	.
+local:application_of_such_an_idea_since_linked_data	rdfs:member	local:application	.
+local:s10.2	rdf:predicate	local:contain	.
+local:s0.1	rdf:predicate	local:identify	.
+local:s18	rdf:predicate	local:demonstrate	.
+local:s1	rdf:subject	local:outlier_detection	.
+local:application_of_idea_since_linked_data	rdfs:member	local:s10	.
+local:prevent_problems	rdfs:member	local:prevent	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection_runs	rdfs:member	local:outcomes	.
+local:nell_datasets	rdfs:member	local:nell	.
+local:second_outlier	rdfs:member	local:second	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection	rdfs:member	local:independent_outlier_detection	.
+local:splitting_into_relevant_subsets	rdfs:member	local:relevant_subsets	.
+local:s7	rdf:object	local:approach	.
+local:more_reliable_result	rdfs:member	local:more_reliable	.
+local:more_reliable_result	rdfs:subClassOf	local:result	.
+local:s17	rdf:subject	local:experiments_on_the_dbpedia_datasets	.
+local:s0	rdf:subject	local:outlier_detection	.
+local:s8	rdf:predicate	local:linked	.
+local:s13	local:AM-PNC	local:s13.1	.
+local:also_prevent_problems	rdfs:member	local:also_prevent	.
+local:second_step	rdfs:subClassOf	local:step	.
+local:s10.2	rdf:subject	local:application_of_such_an_idea_since_linked_data	.
+local:application_of_such_an_idea_since_linked_data_provides_large_amounts_of_data	rdfs:member	local:large_amounts	.
+local:s10.1	local:AM-MNR	local:especially	.
+local:s13	rdf:subject	local:we	.
+local:s8.2	rdf:object	local:large_amounts_of_data	.
+local:identifying_wrong_values_in_data	rdfs:member	local:wrong_values	.
+local:s9	rdf:subject	local:data	.
+local:outlier_detection_methods_property_values_using_a_novel_approach_for_splitting_the_data_into_relevant_subsets	rdfs:member	local:novel_approach	.
+local:identifying_wrong_values_in_data	rdfs:member	local:data	.
+local:s8	rdf:object	local:data	.
+local:feasibility_of_our_approach	rdfs:member	local:approach	.
+local:hierarchical_information	rdfs:subClassOf	local:information	.
+local:s4.1	rdf:subject	local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection	.
+local:single_repository	rdfs:member	local:single	.
+local:additional_property	rdfs:subClassOf	local:property	.
+local:natural_outliers	rdfs:subClassOf	local:outliers	.
+local:owl_sameas_links_for_the_instances	rdfs:member	local:sameas_links	.
+local:s12	rdf:object	local:single_repository	.
+local:reliable_result	rdfs:member	local:reliable	.
+local:novel_approach_splitting	rdfs:subClassOf	local:approach_splitting	.
+local:s4.1	rdf:predicate	local:run	.
+local:explicit_links_between_instances	rdfs:member	local:explicit_links	.
+local:second_outlier_detection	rdfs:subClassOf	local:outlier_detection	.
+local:us_to_reject_the_assessment_of_a_wrong_value	rdfs:member	local:wrong_value	.
+local:detection_methods_property	rdfs:subClassOf	local:property	.
+local:s10.1	rdf:object	local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	.
+local:s8.2	rdf:predicate	local:provide	.
+local:s8.1	local:AM-ADV	local:especially	.
+local:s15	rdf:predicate	local:allow	.
+local:also_prevent	rdfs:subClassOf	local:prevent	.
+local:values_of_unexpected_behavior	rdfs:member	local:values	.
+local:experiments_on_the_dbpedia_datasets	rdfs:member	local:experiments	.
+local:wrong_value	rdfs:member	local:wrong	.
+local:also_prevent	rdfs:member	local:also	.
+local:unexpected_behavior	rdfs:member	local:unexpected	.
+local:s1	rdf:predicate	local:apply	.
+local:wrong_value	rdfs:subClassOf	local:value	.
+local:property_values	rdfs:member	local:property	.
+local:s13.1	rdf:subject	local:additional_property_values	.
+local:s1	local:AM-PNC	local:s1.1	.
+local:s13	local:AM-TMP	local:second_step	.
+local:s14	rdf:predicate	local:exploit	.
+local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	rdfs:member	local:explicit_links	.
+local:s3.1	rdf:predicate	local:get	.
+local:methods_property_values	rdfs:subClassOf	local:property_values	.
+local:application_of_such_an_idea_since_linked_data	rdfs:member	local:idea	.
+local:large_amounts_of_data	rdfs:member	local:data	.
+local:large_amounts	rdfs:subClassOf	local:amounts	.
+local:s14.1	local:AM-LOC	local:additional_property_values	.
+local:s11.1	rdf:predicate	local:use	.
+local:owl_sameas_links	rdfs:subClassOf	local:sameas_links	.
+local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	rdfs:member	local:instances	.
+local:s9	rdf:predicate	local:enrich	.
+local:application_of_such_an_idea_since_linked_data_provides_large_amounts_of_data	rdfs:member	local:idea	.
+local:s8.2	rdf:subject	local:application_of_such_an_idea_since_linked_data	.
+local:s11	rdf:object	local:outlier_detection_methods_property_values_using_a_novel_approach_for_splitting_the_data_into_relevant_subsets	.
+local:wrong_values	rdfs:subClassOf	local:values	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection	rdfs:member	local:approach	.
+local:large_amounts	rdfs:member	local:large	.
+local:s10	rdf:subject	local:data	.
+local:two_independent_outlier_detection	rdfs:subClassOf	local:independent_outlier_detection	.
+local:experiments_on_the_nell_datasets	rdfs:member	local:nell_datasets	.
+local:reliable_result	rdfs:subClassOf	local:result	.
+local:additional_property_values	rdfs:member	local:additional_property	.
+local:outcomes_of_two_independent_outlier_detection_runs	rdfs:member	local:outcomes	.
+local:novel_approach	rdfs:member	local:novel	.
+local:s3.1	rdf:subject	local:two_independent_outlier_detection_runs	.
+local:application_of_idea	rdfs:member	local:application	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection	rdfs:member	local:outcomes	.
+local:wrong_values_in_data	rdfs:member	local:data	.
+local:outlier_detection_methods_property_values	rdfs:subClassOf	local:detection_methods_property_values	.
+local:s11	rdf:subject	local:we	.
+local:experiments_on_nell	rdfs:member	local:experiments	.
+local:s10.1	rdf:predicate	local:suit	.
+local:s0	rdf:object	local:identifying_wrong_values_in_data	.
+local:data_into_relevant_subsets	rdfs:member	local:data	.
+local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	rdfs:member	local:idea	.
+local:s14	local:AM-TMP	local:second_step	.
+local:our_approach	rdfs:subClassOf	local:approach	.
+local:dbpedia_datasets	rdfs:subClassOf	local:datasets	.
+local:s1	local:AM-TMP	local:typically	.
+local:novel_approach_splitting_the_data_into_relevant_subsets	rdfs:member	local:data	.
+local:feasibility_of_our_approach	rdfs:member	local:our_approach	.
+local:owl_sameas_links_for_instances	rdfs:member	local:owl_sameas_links	.
+local:novel_approach_splitting_the_data_into_relevant_subsets	rdfs:member	local:relevant_subsets	.
+local:s4.2	rdf:subject	local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection_runs	.
+local:s3	rdf:predicate	local:combine	.
+local:application_of_such_an_idea_since_linked_data_provides_large_amounts_of_data	rdfs:member	local:data	.
+local:s16	rdf:predicate	local:allow	.
+local:s17	rdf:predicate	local:demonstrate	.
+local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	rdfs:member	local:application	.
+local:s10	rdf:predicate	local:linked	.
+local:outlier_detection	rdfs:subClassOf	local:detection	.
+local:s5	rdf:predicate	local:arise	.
+local:owl_sameas_links_for_the_instances	rdfs:member	local:owl	.
+local:outlier_detection_methods_property_values_using_a_novel_approach_for_splitting_the_data_into_relevant_subsets	rdfs:member	local:outlier_detection_methods_property_values	.
+local:independent_outlier_detection	rdfs:member	local:independent_outlier	.
+local:outlier_detection_methods_property_values_using_a_novel_approach_for_splitting_the_data_into_relevant_subsets	rdfs:member	local:relevant_subsets	.
+local:experiments_on_the_nell_datasets	rdfs:member	local:experiments	.
+local:s3	rdf:subject	local:approach	.
+local:s8.1	rdf:object	local:application_of_such_an_idea_since_linked_data_provides_large_amounts_of_data	.
+local:outlier_detection_methods_property_values_using_a_novel_approach_for_splitting_the_data_into_relevant_subsets	rdfs:member	local:data	.
+local:s15	rdf:subject	local:so	.
+local:more_reliable	rdfs:subClassOf	local:reliable	.
+local:outlier_detection	rdfs:member	local:outlier	.
+local:assessment_of_wrong_value	rdfs:member	local:assessment	.
+local:s11.2	rdf:predicate	local:split	.
+local:outlier_detection_methods	rdfs:member	local:outlier_detection	.
+local:s5	rdf:subject	local:problems	.
+local:more_reliable	rdfs:member	local:more	.
+local:outcomes_of_two_independent_outlier_detection_runs	rdfs:member	local:two_independent_outlier_detection_runs	.
+local:methods_property	rdfs:subClassOf	local:property	.
+local:relevant_subsets	rdfs:subClassOf	local:subsets	.
+local:sameas_links	rdfs:subClassOf	local:links	.
+local:single_datasets	rdfs:subClassOf	local:datasets	.
+local:s4.1	local:AM-PNC	local:also_prevent_problems	.
+local:outlier_detection_runs	rdfs:subClassOf	local:detection_runs	.
+local:methods_property_values	rdfs:subClassOf	local:values	.
+local:wrong_values_in_data	rdfs:member	local:wrong_values	.
+local:s7	local:AM-DIS	local:instead	.
+local:unexpected_behavior	rdfs:subClassOf	local:behavior	.
+local:s14.1	rdf:subject	local:second_outlier_detection	.
+local:detection_runs	rdfs:member	local:detection	.
+local:explicit_links_between_instances	rdfs:member	local:instances	.
+local:s14	local:AM-PNC	local:s14.1	.
+local:experiments_on_nell	rdfs:member	local:nell	.
+local:novel_approach_splitting_the_data_into_relevant_subsets	rdfs:member	local:novel_approach	.
+local:s3	rdf:object	local:outcomes_of_two_independent_outlier_detection_runs	.
+local:s7	rdf:predicate	local:propose	.
+local:outlier_detection_methods_property_values	rdfs:member	local:outlier_detection_methods_property	.
+local:data_into_relevant_subsets	rdfs:member	local:relevant_subsets	.
+local:s12	rdf:predicate	local:extract	.
+local:application_of_idea_since_linked_data	rdfs:member	local:linked_data	.
+local:values_of_unexpected_behavior	rdfs:member	local:unexpected_behavior	.
+local:s4	rdf:predicate	local:combine	.
+local:s1.1	rdf:subject	local:data	.
+local:assessment_of_a_wrong_value	rdfs:member	local:wrong_value	.
+local:single_repository	rdfs:subClassOf	local:repository	.
+local:s8.1	rdf:predicate	local:suit	.
+local:s1.1	rdf:object	local:values_of_unexpected_behavior	.
+local:feasibility_of_our_approach	rdfs:member	local:feasibility	.
+local:approach_splitting	rdfs:subClassOf	local:splitting	.
+local:independent_outlier	rdfs:subClassOf	local:outlier	.
+local:property_values	rdfs:subClassOf	local:values	.
+local:owl_sameas_links_for_the_instances	rdfs:member	local:instances	.
+local:s15.1	rdf:subject	local:us	.
+local:s11.2	rdf:object	local:relevant_subsets	.
+local:s5	rdf:object	local:natural_outliers	.
+local:outlier_detection_methods_property_values	rdfs:subClassOf	local:values	.
+local:first_step	rdfs:subClassOf	local:step	.
+local:independent_outlier_detection	rdfs:subClassOf	local:detection	.
+local:s4	rdf:subject	local:approach	.
+local:assessment_of_a_wrong_value	rdfs:member	local:assessment	.
+local:detection_methods	rdfs:member	local:detection	.
+local:s12	rdf:subject	local:property_values	.
+local:also_prevent_problems	rdfs:subClassOf	local:problems	.
+local:experiments_on_dbpedia_datasets	rdfs:member	local:dbpedia_datasets	.
+local:s16	rdf:object	local:us_to_reject_the_assessment_of_a_wrong_value	.
+local:s0	rdf:predicate	local:use	.
+local:novel_approach_for_splitting	rdfs:member	local:novel_approach	.
+local:independent_outlier	rdfs:member	local:independent	.
+local:independent_outlier_detection_runs	rdfs:subClassOf	local:outlier_detection_runs	.
+local:s4.2	rdf:object	local:problems	.
+local:outlier_detection_methods_property_values_using	rdfs:member	local:using	.
+local:hierarchical_information	rdfs:member	local:hierarchical	.
+local:s0.1	rdf:subject	local:outlier_detection	.
+local:owl_sameas_links_for_instances	rdfs:member	local:instances	.
+local:s3.1	rdf:object	local:reliable_result	.
+local:s4.2	rdf:predicate	local:prevent	.
+local:detection_methods_property_values	rdfs:subClassOf	local:methods_property_values	.
+local:large_amounts_of_data	rdfs:member	local:large_amounts	.
+local:s4.2	local:AM-DIS	local:also	.
+local:application_of_such_an_idea_since_linked_data_also_contains_explicit_links_between_instances	rdfs:member	local:data	.
+local:second_step	rdfs:member	local:second	.
+local:s10	rdf:object	local:data	.
+local:s3	local:AM-PNC	local:get_a_more_reliable_result	.
+local:s10.2	local:AM-DIS	local:also	.
+local:s7	rdf:subject	local:we	.
+local:approach_which_combines_the_outcomes_of_two_independent_outlier_detection_runs	rdfs:member	local:independent_outlier_detection_runs	.
+local:s9	rdf:object	local:hierarchical_information	.
+local:s16.1	rdf:object	local:assessment_of_a_wrong_value	.
+local:outlier_detection_methods_property_values_using	rdfs:member	local:outlier_detection_methods_property_values	.
+local:s15	rdf:object	local:us_to_confirm_the_assessment_of_a_wrong_value	.
+local:sameas_links	rdfs:member	local:sameas	.

@@ -1,294 +1,521 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s9.3	a	rdf:Statement	;
+	rdfs:label	"locating paths"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"discovering knowledge from text corpora"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"generated rdf"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"results that clearly demonstrate the utility of the generated rdf in discovering knowledge from text corpora by means of locating paths"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"extracted relationships"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"paths composed of the extracted relationships"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we present a rulebased method for extraction of such complex entities and relationships between a rulebased method for extraction of the conversion of such relationships into rdf"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we present a rulebased method for extraction of such complex entities and relationships between a rulebased method for the conversion of such relationships into rdf"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we present a rulebased method for extraction of such complex entities and relationships between a rulebased method for extraction of such complex entities and relationships between them into rdf"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"entities seldom occur in text in entities simple form complex forms of entities with each other"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we argue that entities seldom occur in text in entities simple form complex forms of entities with each other"	.
+
+local:s2.3	a	rdf:Statement	;
+	rdfs:label	"modified complex forms"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"relationships in text relate the modified complex forms of entities with each other"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"entities seldom occur in text in entities that relationships in text relate the modified complex forms of entities with each other"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we argue that entities seldom occur in text in entities that relationships in text relate the modified complex forms of entities with each other"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"we extracting explicit relationships between entities in biomedical text"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we address the issue of extracting explicit relationships between entities in biomedical text"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"we extracting implicit relationships between entities in biomedical text"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we address the issue of extracting implicit relationships between entities in biomedical text"	.
+
+
 #### Classes ####
 
-local:address	rdfs:label	"address"	.
+local:paths	a	rdf:Class	;
+	rdfs:label	"paths"	.
 
-local:we	rdfs:label	"we"	.
+local:locate	a	rdf:Class	;
+	rdfs:label	"locate"	.
 
-local:biomedical	rdfs:label	"biomedical"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:biomedical_text	rdfs:label	"biomedical text"	.
+local:discover	a	rdf:Class	;
+	rdfs:label	"discover"	.
 
-local:implicit	rdfs:label	"implicit"	.
+local:text_corpora	a	rdf:Class	;
+	rdfs:label	"text corpora"	.
 
-local:implicit_relationships	rdfs:label	"implicit relationships"	.
+local:text	a	rdf:Class	;
+	rdfs:label	"text"	.
 
-local:text	rdfs:label	"text"	.
+local:corpora	a	rdf:Class	;
+	rdfs:label	"corpora"	.
 
-local:relationships	rdfs:label	"relationships"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:implicit_relationships_between_entities	rdfs:label	"implicit relationships between entities"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:entities	rdfs:label	"entities"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:entities_in_biomedical_text	rdfs:label	"entities in biomedical text"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:issue	rdfs:label	"issue"	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	a	rdf:Class	;
+	rdfs:label	"utility of the generated rdf in discovering knowledge from text corpora by means of locating paths"	.
 
-local:extracting	rdfs:label	"extracting"	.
+local:utility	a	rdf:Class	;
+	rdfs:label	"utility"	.
 
-local:explicit_relationships	rdfs:label	"explicit relationships"	.
+local:means	a	rdf:Class	;
+	rdfs:label	"means"	.
 
-local:explicit	rdfs:label	"explicit"	.
+local:generated	a	rdf:Class	;
+	rdfs:label	"generated"	.
 
-local:explicit_relationships_between_entities	rdfs:label	"explicit relationships between entities"	.
+local:utility_of_generated_rdf	a	rdf:Class	;
+	rdfs:label	"utility of generated rdf"	.
 
-local:argue	rdfs:label	"argue"	.
+local:knowledge_from_text_corpora	a	rdf:Class	;
+	rdfs:label	"knowledge from text corpora"	.
 
-local:complex_forms	rdfs:label	"complex forms"	.
+local:clearly	a	rdf:Class	;
+	rdfs:label	"clearly"	.
 
-local:forms	rdfs:label	"forms"	.
+local:relationships	a	rdf:Class	;
+	rdfs:label	"relationships"	.
 
-local:complex	rdfs:label	"complex"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:modified_complex_forms	rdfs:label	"modified complex forms"	.
+local:compose	a	rdf:Class	;
+	rdfs:label	"compose"	.
 
-local:seldom_occur	rdfs:label	"seldom occur"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:occur	rdfs:label	"occur"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:seldom_occur_in_text	rdfs:label	"seldom occur in text"	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	a	rdf:Class	;
+	rdfs:label	"rulebased method for extraction of such complex entities and relationships between a rulebased method for extraction of the conversion of such relationships into rdf"	.
 
-local:seldom_occur_in_text_in_entities	rdfs:label	"seldom occur in text in entities"	.
+local:rulebased_method	a	rdf:Class	;
+	rdfs:label	"rulebased method"	.
 
-local:relationships_in_text	rdfs:label	"relationships in text"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:modified_complex_forms_of_entities	rdfs:label	"modified complex forms of entities"	.
+local:such_complex_entities	a	rdf:Class	;
+	rdfs:label	"such complex entities"	.
 
-local:entities_with_other	rdfs:label	"entities with other"	.
+local:conversion	a	rdf:Class	;
+	rdfs:label	"conversion"	.
 
-local:other	rdfs:label	"other"	.
+local:such_relationships	a	rdf:Class	;
+	rdfs:label	"such relationships"	.
 
-local:seldom	rdfs:label	"seldom"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:text_in_entities	rdfs:label	"text in entities"	.
+local:complex_entities	a	rdf:Class	;
+	rdfs:label	"complex entities"	.
 
-local:relate	rdfs:label	"relate"	.
+local:complex	a	rdf:Class	;
+	rdfs:label	"complex"	.
 
-local:modified	rdfs:label	"modified"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:simple_form	rdfs:label	"simple form"	.
+local:such_complex	a	rdf:Class	;
+	rdfs:label	"such complex"	.
 
-local:form	rdfs:label	"form"	.
+local:such	a	rdf:Class	;
+	rdfs:label	"such"	.
 
-local:simple	rdfs:label	"simple"	.
+local:rulebased	a	rdf:Class	;
+	rdfs:label	"rulebased"	.
 
-local:form_complex_forms	rdfs:label	"form complex forms"	.
+local:rulebased_method_for_extraction	a	rdf:Class	;
+	rdfs:label	"rulebased method for extraction"	.
 
-local:simple_form_complex_forms	rdfs:label	"simple form complex forms"	.
+local:extraction_of_such_complex_entities	a	rdf:Class	;
+	rdfs:label	"extraction of such complex entities"	.
 
-local:entities_simple_form_complex_forms	rdfs:label	"entities simple form complex forms"	.
+local:extraction_of_such_complex_entities_of_relationships	a	rdf:Class	;
+	rdfs:label	"extraction of such complex entities of relationships"	.
 
-local:seldom_occur_in_text_in_entities_simple_form_complex_forms	rdfs:label	"seldom occur in text in entities simple form complex forms"	.
+local:extraction_of_such_complex_entities_of_relationships_between_rulebased_method	a	rdf:Class	;
+	rdfs:label	"extraction of such complex entities of relationships between rulebased method"	.
 
-local:entities_simple_form_complex_forms_of_entities	rdfs:label	"entities simple form complex forms of entities"	.
+local:extraction_of_conversion	a	rdf:Class	;
+	rdfs:label	"extraction of conversion"	.
 
-local:text_in_entities_simple_form_complex_forms	rdfs:label	"text in entities simple form complex forms"	.
+local:conversion_of_such_relationships	a	rdf:Class	;
+	rdfs:label	"conversion of such relationships"	.
 
-local:present	rdfs:label	"present"	.
+local:conversion_of_such_relationships_into_rdf	a	rdf:Class	;
+	rdfs:label	"conversion of such relationships into rdf"	.
 
-local:complex_entities	rdfs:label	"complex entities"	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	a	rdf:Class	;
+	rdfs:label	"rulebased method for extraction of such complex entities and relationships between a rulebased method for the conversion of such relationships into rdf"	.
 
-local:such_complex_entities	rdfs:label	"such complex entities"	.
+local:rulebased_method_for_conversion	a	rdf:Class	;
+	rdfs:label	"rulebased method for conversion"	.
 
-local:rulebased	rdfs:label	"rule-based"	.
+local:such_relationships_into_rdf	a	rdf:Class	;
+	rdfs:label	"such relationships into rdf"	.
 
-local:rulebased_method	rdfs:label	"rule-based method"	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	a	rdf:Class	;
+	rdfs:label	"rulebased method for extraction of such complex entities and relationships between a rulebased method for extraction of such complex entities and relationships between them into rdf"	.
 
-local:such_relationships	rdfs:label	"such relationships"	.
+local:such_complex_entities_between_them	a	rdf:Class	;
+	rdfs:label	"such complex entities between them"	.
 
-local:such	rdfs:label	"such"	.
+local:them	a	rdf:Class	;
+	rdfs:label	"them"	.
 
-local:such_complex	rdfs:label	"such complex"	.
+local:rulebased_method_for_extraction_into_rdf	a	rdf:Class	;
+	rdfs:label	"rulebased method for extraction into rdf"	.
 
-local:method	rdfs:label	"method"	.
+local:occur	a	rdf:Class	;
+	rdfs:label	"occur"	.
 
-local:rulebased_method_for_extraction	rdfs:label	"rule-based method for extraction"	.
+local:text_in_entities_simple_form_complex_forms_of_entities_with_each_other	a	rdf:Class	;
+	rdfs:label	"text in entities simple form complex forms of entities with each other"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:complex_forms	a	rdf:Class	;
+	rdfs:label	"complex forms"	.
 
-local:extraction_of_such_complex_entities	rdfs:label	"extraction of such complex entities"	.
+local:simple_form	a	rdf:Class	;
+	rdfs:label	"simple form"	.
 
-local:extraction_of_such_complex_entities_of_relationships	rdfs:label	"extraction of such complex entities of relationships"	.
+local:simple	a	rdf:Class	;
+	rdfs:label	"simple"	.
 
-local:extraction_of_such_complex_entities_of_relationships_between_rulebased_method	rdfs:label	"extraction of such complex entities of relationships between rule-based method"	.
+local:forms	a	rdf:Class	;
+	rdfs:label	"forms"	.
 
-local:rulebased_method_for_conversion	rdfs:label	"rule-based method for conversion"	.
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
 
-local:conversion	rdfs:label	"conversion"	.
+local:form_complex_forms	a	rdf:Class	;
+	rdfs:label	"form complex forms"	.
 
-local:conversion_of_such_relationships	rdfs:label	"conversion of such relationships"	.
+local:simple_form_complex_forms	a	rdf:Class	;
+	rdfs:label	"simple form complex forms"	.
 
-local:such_relationships_into_rdf	rdfs:label	"such relationships into rdf"	.
+local:entities_simple_form_complex_forms	a	rdf:Class	;
+	rdfs:label	"entities simple form complex forms"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:text_in_entities_simple_form_complex_forms	a	rdf:Class	;
+	rdfs:label	"text in entities simple form complex forms"	.
 
-local:extraction_of_conversion	rdfs:label	"extraction of conversion"	.
+local:entities_simple_form_complex_forms_of_entities	a	rdf:Class	;
+	rdfs:label	"entities simple form complex forms of entities"	.
 
-local:conversion_of_such_relationships_into_rdf	rdfs:label	"conversion of such relationships into rdf"	.
+local:entities_with_other	a	rdf:Class	;
+	rdfs:label	"entities with other"	.
 
-local:such_complex_entities_between_them	rdfs:label	"such complex entities between them"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:them	rdfs:label	"them"	.
+local:seldom	a	rdf:Class	;
+	rdfs:label	"seldom"	.
 
-local:them_into_rdf	rdfs:label	"them into rdf"	.
+local:argue	a	rdf:Class	;
+	rdfs:label	"argue"	.
 
-local:composed	rdfs:label	"composed"	.
+local:modify	a	rdf:Class	;
+	rdfs:label	"modify"	.
 
-local:paths	rdfs:label	"paths"	.
+local:relationships_in_text	a	rdf:Class	;
+	rdfs:label	"relationships in text"	.
 
-local:extracted_relationships	rdfs:label	"extracted relationships"	.
+local:relate	a	rdf:Class	;
+	rdfs:label	"relate"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:modified_complex_forms_of_entities_with_each_other	a	rdf:Class	;
+	rdfs:label	"modified complex forms of entities with each other"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:modified_complex_forms_of_entities	a	rdf:Class	;
+	rdfs:label	"modified complex forms of entities"	.
 
-local:results	rdfs:label	"results"	.
+local:text_in_entities_that_relationships_in_text_relate_the_modified_complex_forms_of_entities_with_each_other	a	rdf:Class	;
+	rdfs:label	"text in entities that relationships in text relate the modified complex forms of entities with each other"	.
 
-local:clearly	rdfs:label	"clearly"	.
+local:text_in_entities	a	rdf:Class	;
+	rdfs:label	"text in entities"	.
 
-local:generated_rdf	rdfs:label	"generated rdf"	.
+local:explicit_relationships_between_entities_in_biomedical_text	a	rdf:Class	;
+	rdfs:label	"explicit relationships between entities in biomedical text"	.
 
-local:text_corpora	rdfs:label	"text corpora"	.
+local:biomedical_text	a	rdf:Class	;
+	rdfs:label	"biomedical text"	.
 
-local:corpora	rdfs:label	"corpora"	.
+local:explicit_relationships	a	rdf:Class	;
+	rdfs:label	"explicit relationships"	.
 
-local:generated	rdfs:label	"generated"	.
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
 
-local:utility_of_generated_rdf	rdfs:label	"utility of generated rdf"	.
+local:biomedical	a	rdf:Class	;
+	rdfs:label	"biomedical"	.
 
-local:utility	rdfs:label	"utility"	.
+local:explicit_relationships_between_entities	a	rdf:Class	;
+	rdfs:label	"explicit relationships between entities"	.
 
-local:knowledge_from_text_corpora	rdfs:label	"knowledge from text corpora"	.
+local:entities_in_biomedical_text	a	rdf:Class	;
+	rdfs:label	"entities in biomedical text"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:discovering	rdfs:label	"discovering"	.
+local:issue_of_extracting_explicit_relationships_between_entities_in_biomedical_text	a	rdf:Class	;
+	rdfs:label	"issue of extracting explicit relationships between entities in biomedical text"	.
 
-local:locating	rdfs:label	"locating"	.
+local:issue	a	rdf:Class	;
+	rdfs:label	"issue"	.
 
-#### Properties ####
+local:implicit_relationships_between_entities_in_biomedical_text	a	rdf:Class	;
+	rdfs:label	"implicit relationships between entities in biomedical text"	.
+
+local:implicit_relationships	a	rdf:Class	;
+	rdfs:label	"implicit relationships"	.
+
+local:implicit	a	rdf:Class	;
+	rdfs:label	"implicit"	.
+
+local:implicit_relationships_between_entities	a	rdf:Class	;
+	rdfs:label	"implicit relationships between entities"	.
+
+local:issue_of_extracting_implicit_relationships_between_entities_in_biomedical_text	a	rdf:Class	;
+	rdfs:label	"issue of extracting implicit relationships between entities in biomedical text"	.
 
 #### Mapped Relations ####
 
-cso:biomedical_text	rdfs:label	"biomedical text"	.
-local:biomedical_text	owl:sameAs	cso:biomedical_text	.
 cso:rdf	rdfs:label	"rdf"	.
+cso:biomedical_text	rdfs:label	"biomedical text"	.
 local:rdf	owl:sameAs	cso:rdf	.
+local:biomedical_text	owl:sameAs	cso:biomedical_text	.
 
 #### Relations ####
 
-local:seldom_occur_in_text_in_entities_simple_form_complex_forms	local:seldomoccurintext_in	local:entities_simple_form_complex_forms	.
-local:seldom_occur_in_text_in_entities	local:seldomoccurintext_in	local:entities	.
-local:modified_complex_forms_of_entities	local:of_entities	local:modified_complex_forms	.
-local:simple	rdfs:member	local:simple_form	.
-local:utility_of_generated_rdf	local:of_generatedrdf	local:utility	.
-local:extraction_of_conversion	local:extraction_of	local:conversion	.
-local:such	rdfs:member	local:such_relationships	.
-local:locating	vn.role:Theme	local:paths	.
-local:relationships_in_text	local:in_text	local:relationships	.
-local:knowledge_from_text_corpora	local:knowledge_from	local:text_corpora	.
-local:explicit_relationships	rdfs:subClassOf	local:relationships	.
-local:occur	vn.role:Location	local:entities	.
-local:argue	vn.role:Actor1	local:seldom_occur_in_text_in_entities_simple_form_complex_forms	.
-local:such_complex	rdfs:member	local:such_complex_entities	.
-local:text_corpora	rdfs:subClassOf	local:corpora	.
-local:entities_in_biomedical_text	local:in_biomedicaltext	local:entities	.
-local:address	vn.role:Agent	local:we	.
-local:implicit	rdfs:member	local:implicit_relationships	.
-local:entities_simple_form_complex_forms_of_entities	local:entitiessimpleformcomplexforms_of	local:entities	.
-local:implicit_relationships_between_entities	local:between_entities	local:implicit_relationships	.
-local:knowledge_from_text_corpora	local:from_textcorpora	local:knowledge	.
-local:rulebased_method_for_conversion	local:rule-basedmethod_for	local:conversion	.
-local:complex	rdfs:member	local:complex_forms	.
-local:them_into_rdf	local:them_into	local:rdf	.
-local:text_in_entities_simple_form_complex_forms	local:in_entitiessimpleformcomplexforms	local:text	.
-local:complex_forms	rdfs:subClassOf	local:forms	.
-local:conversion_of_such_relationships_into_rdf	local:into_rdf	local:conversion_of_such_relationships	.
-local:seldom_occur	rdfs:subClassOf	local:occur	.
-local:implicit_relationships_between_entities	local:implicitrelationships_between	local:entities	.
-local:such_relationships	rdfs:subClassOf	local:relationships	.
-local:utility_of_generated_rdf	local:utility_of	local:generated_rdf	.
-local:conversion_of_such_relationships	local:of_suchrelationships	local:conversion	.
-local:seldom_occur_in_text	local:seldomoccur_in	local:text	.
-local:extraction_of_such_complex_entities	local:of_suchcomplexentities	local:extraction	.
-local:generated	rdfs:member	local:generated_rdf	.
-local:text_in_entities	local:in_entities	local:text	.
-local:seldom_occur_in_text_in_entities_simple_form_complex_forms	local:in_entitiessimpleformcomplexforms	local:seldom_occur_in_text	.
-local:extracting	vn.role:Agent	local:we	.
-local:text	rdfs:member	local:text_corpora	.
-local:argue	vn.role:Actor	local:we	.
-local:rulebased_method_for_extraction	local:rule-basedmethod_for	local:extraction	.
-local:such	rdfs:member	local:such_complex	.
-local:rulebased_method	rdfs:subClassOf	local:method	.
-local:discovering	vn.role:Predicate	local:text_corpora	.
-local:address	vn.role:Theme	local:issue	.
-local:modified_complex_forms_of_entities	local:modifiedcomplexforms_of	local:entities	.
-local:entities_simple_form_complex_forms_of_entities	local:of_entities	local:entities_simple_form_complex_forms	.
-local:explicit_relationships_between_entities	local:between_entities	local:explicit_relationships	.
-local:composed	vn.role:Product	local:paths	.
-local:extraction_of_conversion	local:of_conversion	local:extraction	.
-local:entities_simple_form_complex_forms	rdfs:subClassOf	local:simple_form_complex_forms	.
-local:present	vn.role:Theme	local:rulebased_method_for_extraction	.
-local:complex	rdfs:member	local:complex_entities	.
-local:relationships_in_text	local:relationships_in	local:text	.
-local:rulebased	rdfs:member	local:rulebased_method	.
-local:demonstrate	vn.role:Cause	local:utility_of_generated_rdf	.
-local:occur	local:AM-LOC	local:text_in_entities	.
-local:entities_with_other	local:with_other	local:entities	.
-local:form_complex_forms	rdfs:subClassOf	local:complex_forms	.
-local:present	vn.role:Agent	local:we	.
-local:biomedical_text	rdfs:subClassOf	local:text	.
-local:explicit_relationships_between_entities	local:explicitrelationships_between	local:entities	.
-local:extracting	vn.role:Theme	local:implicit_relationships_between_entities	.
-local:rulebased_method_for_extraction	local:for_extraction	local:rulebased_method	.
-local:simple_form	rdfs:subClassOf	local:form	.
-local:such_complex_entities	rdfs:subClassOf	local:entities	.
-local:modified	vn.role:Patient	local:complex_forms	.
-local:occur	local:AM-LOC	local:text_in_entities_simple_form_complex_forms	.
-local:such_complex	rdfs:subClassOf	local:complex	.
-local:occur	local:AM-TMP	local:seldom	.
-local:such_relationships_into_rdf	local:suchrelationships_into	local:rdf	.
-local:extraction_of_such_complex_entities_of_relationships	local:of_relationships	local:extraction_of_such_complex_entities	.
-local:biomedical	rdfs:member	local:biomedical_text	.
-local:explicit	rdfs:member	local:explicit_relationships	.
-local:complex_entities	rdfs:subClassOf	local:entities	.
-local:argue	vn.role:Actor1	local:seldom_occur_in_text_in_entities	.
-local:modified_complex_forms	rdfs:subClassOf	local:complex_forms	.
-local:seldom_occur_in_text	local:in_text	local:seldom_occur	.
-local:extracted	vn.role:Theme	local:relationships	.
-local:such_complex_entities_between_them	local:suchcomplexentities_between	local:them	.
-local:extraction_of_such_complex_entities_of_relationships_between_rulebased_method	local:between_rule-basedmethod	local:extraction_of_such_complex_entities_of_relationships	.
-local:relate	vn.role:Topic	local:relationships_in_text	.
-local:extraction_of_such_complex_entities_of_relationships_between_rulebased_method	local:extractionofsuchcomplexentitiesofrelationships_between	local:rulebased_method	.
-local:such_complex_entities	rdfs:subClassOf	local:complex_entities	.
-local:generated	vn.role:Theme2	local:rdf	.
-local:entities_with_other	local:entities_with	local:other	.
-local:such_relationships_into_rdf	local:into_rdf	local:such_relationships	.
+local:entities_simple_form_complex_forms_of_entities	rdfs:member	local:entities_simple_form_complex_forms	.
+local:rulebased_method	rdfs:member	local:rulebased	.
+local:s3	rdf:object	local:s3.1	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:such_complex_entities	.
+local:s9.3	rdf:subject	local:paths	.
+local:s0	rdf:subject	local:we	.
+local:s0.1	rdf:predicate	local:extract	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:extraction	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:such_complex_entities	.
+local:modified_complex_forms_of_entities_with_each_other	rdfs:member	local:complex_forms	.
+local:s2	rdf:object	local:s2.1	.
+local:s1.1	rdf:subject	local:we	.
+local:extraction_of_such_complex_entities_of_relationships_between_rulebased_method	rdfs:member	local:extraction_of_such_complex_entities_of_relationships	.
+local:text_in_entities_simple_form_complex_forms	rdfs:member	local:entities_simple_form_complex_forms	.
+local:explicit_relationships	rdfs:member	local:explicit	.
+local:s1	rdf:object	local:issue_of_extracting_explicit_relationships_between_entities_in_biomedical_text	.
 local:implicit_relationships	rdfs:subClassOf	local:relationships	.
-local:generated_rdf	rdfs:subClassOf	local:rdf	.
-local:relate	vn.role:Recipient	local:modified_complex_forms_of_entities	.
-local:extracted_relationships	rdfs:subClassOf	local:relationships	.
-local:extracting	vn.role:Theme	local:explicit_relationships_between_entities	.
-local:conversion_of_such_relationships	local:conversion_of	local:such_relationships	.
-local:demonstrate	vn.role:Recipient	local:results	.
-local:extraction_of_such_complex_entities	local:extraction_of	local:such_complex_entities	.
-local:entities_in_biomedical_text	local:entities_in	local:biomedical_text	.
-local:them_into_rdf	local:into_rdf	local:them	.
-local:text_in_entities_simple_form_complex_forms	local:text_in	local:entities_simple_form_complex_forms	.
-local:text_in_entities	local:text_in	local:entities	.
-local:seldom_occur_in_text_in_entities	local:in_entities	local:seldom_occur_in_text	.
-local:conversion_of_such_relationships_into_rdf	local:conversionofsuchrelationships_into	local:rdf	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:rdf	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:conversion	.
+local:s9.1	rdf:subject	local:rdf	.
+local:s7	rdf:subject	local:paths	.
+local:utility_of_generated_rdf	rdfs:member	local:utility	.
+local:relationships_in_text	rdfs:member	local:relationships	.
+local:s3.1	rdf:subject	local:entities	.
+local:rulebased_method_for_extraction	rdfs:member	local:extraction	.
+local:such_complex	rdfs:member	local:such	.
+local:explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:entities	.
+local:entities_in_biomedical_text	rdfs:member	local:biomedical_text	.
+local:text_corpora	rdfs:member	local:text	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:rulebased_method	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:conversion	.
+local:issue_of_extracting_explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:issue	.
+local:complex_entities	rdfs:member	local:complex	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:relationships	.
+local:s3.1	local:AM-TMP	local:seldom	.
+local:implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:implicit_relationships	.
+local:s5	rdf:object	local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	.
+local:such_complex_entities	rdfs:subClassOf	local:complex_entities	.
+local:such_relationships_into_rdf	rdfs:member	local:rdf	.
+local:s9	rdf:predicate	local:demonstrate	.
+local:text_in_entities_that_relationships_in_text_relate_the_modified_complex_forms_of_entities_with_each_other	rdfs:member	local:entities	.
+local:rulebased_method	rdfs:subClassOf	local:method	.
+local:text_in_entities_simple_form_complex_forms	rdfs:member	local:text	.
+local:text_in_entities_that_relationships_in_text_relate_the_modified_complex_forms_of_entities_with_each_other	rdfs:member	local:complex_forms	.
+local:implicit_relationships	rdfs:member	local:implicit	.
+local:s9.1	rdfs:member	local:generated	.
+local:s2.2	rdf:object	local:modified_complex_forms_of_entities_with_each_other	.
+local:text_in_entities_simple_form_complex_forms_of_entities_with_each_other	rdfs:member	local:text	.
+local:s0.1	rdf:subject	local:we	.
+local:s2.3	rdf:subject	local:complex_forms	.
+local:s9.1	rdfs:subClassOf	local:rdf	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	rdfs:member	local:method	.
+local:entities_with_other	rdfs:member	local:other	.
+local:text_in_entities	rdfs:member	local:text	.
+local:s2.3	rdfs:subClassOf	local:complex_forms	.
+local:s4	rdf:subject	local:we	.
+local:such_complex_entities_between_them	rdfs:member	local:them	.
+local:s2.2	rdf:subject	local:relationships_in_text	.
+local:text_in_entities_that_relationships_in_text_relate_the_modified_complex_forms_of_entities_with_each_other	rdfs:member	local:text	.
+local:s3	rdf:subject	local:we	.
+local:extraction_of_such_complex_entities	rdfs:member	local:such_complex_entities	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	rdfs:member	local:extraction	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	rdfs:member	local:text_corpora	.
+local:issue_of_extracting_implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:issue	.
+local:s1.1	rdf:predicate	local:extract	.
+local:implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:biomedical_text	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:such_relationships	.
+local:explicit_relationships_between_entities	rdfs:member	local:explicit_relationships	.
+local:s5	rdf:subject	local:we	.
+local:explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:biomedical_text	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	rdfs:member	local:means	.
+local:relationships_in_text	rdfs:member	local:text	.
+local:text_in_entities_simple_form_complex_forms_of_entities_with_each_other	rdfs:member	local:entities	.
+local:such_relationships	rdfs:subClassOf	local:relationships	.
+local:s2	rdf:subject	local:we	.
+local:such_complex	rdfs:subClassOf	local:complex	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:extraction	.
+local:s9.2	rdf:predicate	local:discover	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	rdfs:member	local:knowledge	.
+local:s9	rdf:object	local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	.
+local:conversion_of_such_relationships_into_rdf	rdfs:member	local:conversion_of_such_relationships	.
+local:s4	rdf:predicate	local:present	.
+local:issue_of_extracting_explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:entities	.
+local:s3	rdf:predicate	local:argue	.
+local:simple_form	rdfs:subClassOf	local:form	.
+local:entities_with_other	rdfs:member	local:entities	.
+local:implicit_relationships_between_entities	rdfs:member	local:entities	.
+local:s0	rdf:object	local:issue_of_extracting_implicit_relationships_between_entities_in_biomedical_text	.
+local:s2.2	rdf:predicate	local:relate	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:relationships	.
+local:s7.1	rdf:subject	local:relationships	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:rdf	.
+local:utility_of_generated_rdf	rdfs:member	local:s9.1	.
+local:conversion_of_such_relationships	rdfs:member	local:such_relationships	.
+local:complex_forms	rdfs:member	local:complex	.
+local:such_complex_entities_between_them	rdfs:member	local:such_complex_entities	.
+local:issue_of_extracting_explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:biomedical_text	.
 local:simple_form_complex_forms	rdfs:subClassOf	local:form_complex_forms	.
-local:composed	vn.role:Material	local:extracted_relationships	.
-local:discovering	vn.role:Theme	local:knowledge	.
-local:such_complex_entities_between_them	local:between_them	local:such_complex_entities	.
-local:demonstrate	local:AM-ADV	local:clearly	.
-local:extraction_of_such_complex_entities_of_relationships	local:extractionofsuchcomplexentities_of	local:relationships	.
-local:rulebased_method_for_conversion	local:for_conversion	local:rulebased_method	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:rulebased_method	.
+local:extraction_of_conversion	rdfs:member	local:extraction	.
+local:rulebased_method_for_extraction_into_rdf	rdfs:member	local:rdf	.
+local:knowledge_from_text_corpora	rdfs:member	local:text_corpora	.
+local:explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:explicit_relationships	.
+local:rulebased_method_for_conversion	rdfs:member	local:rulebased_method	.
+local:s9.2	rdf:object	local:text_corpora	.
+local:knowledge_from_text_corpora	rdfs:member	local:knowledge	.
+local:text_corpora	rdfs:subClassOf	local:corpora	.
+local:s6	rdf:subject	local:we	.
+local:s3.1	local:AM-LOC	local:text_in_entities_simple_form_complex_forms_of_entities_with_each_other	.
+local:text_in_entities_simple_form_complex_forms_of_entities_with_each_other	rdfs:member	local:complex_forms	.
+local:such_complex_entities	rdfs:member	local:such_complex	.
+local:biomedical_text	rdfs:subClassOf	local:text	.
+local:implicit_relationships_between_entities	rdfs:member	local:implicit_relationships	.
+local:conversion_of_such_relationships_into_rdf	rdfs:member	local:rdf	.
+local:extraction_of_such_complex_entities_of_relationships	rdfs:member	local:relationships	.
+local:s9.1	rdf:predicate	local:generate	.
+local:conversion_of_such_relationships	rdfs:member	local:conversion	.
+local:rulebased_method_for_extraction	rdfs:member	local:rulebased_method	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	rdfs:member	local:relationships	.
+local:extraction_of_such_complex_entities_of_relationships	rdfs:member	local:extraction_of_such_complex_entities	.
+local:s1	rdf:predicate	local:address	.
+local:such_complex_entities	rdfs:subClassOf	local:entities	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	rdfs:member	local:rulebased_method	.
+local:s7.1	rdf:predicate	local:extract	.
+local:s9	local:AM-ADV	local:clearly	.
+local:s6	rdf:predicate	local:present	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:such_relationships	.
+local:complex_forms	rdfs:subClassOf	local:forms	.
+local:s7	rdf:object	local:s7.1	.
+local:entities_in_biomedical_text	rdfs:member	local:entities	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	rdfs:member	local:paths	.
+local:explicit_relationships	rdfs:subClassOf	local:relationships	.
+local:entities_simple_form_complex_forms	rdfs:subClassOf	local:simple_form_complex_forms	.
+local:complex_entities	rdfs:subClassOf	local:entities	.
+local:modified_complex_forms_of_entities	rdfs:member	local:s2.3	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:method	.
+local:s1.1	rdf:object	local:explicit_relationships_between_entities_in_biomedical_text	.
+local:modified_complex_forms_of_entities_with_each_other	rdfs:member	local:entities	.
+local:rulebased_method_for_extraction_into_rdf	rdfs:member	local:rulebased_method_for_extraction	.
+local:issue_of_extracting_explicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:explicit_relationships	.
+local:s9.3	rdf:predicate	local:locate	.
+local:s3.1	rdf:predicate	local:occur	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	rdfs:member	local:utility	.
+local:s2.1	rdf:predicate	local:occur	.
+local:s2.3	rdf:predicate	local:modify	.
+local:s9	rdf:subject	local:results	.
+local:form_complex_forms	rdfs:subClassOf	local:complex_forms	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	rdfs:member	local:rdf	.
+local:such_relationships	rdfs:member	local:such	.
+local:s7	rdf:predicate	local:compose	.
+local:extraction_of_conversion	rdfs:member	local:conversion	.
+local:s5	rdf:predicate	local:present	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	rdfs:member	local:such_complex_entities	.
+local:s0	rdf:predicate	local:address	.
+local:explicit_relationships_between_entities	rdfs:member	local:entities	.
+local:modified_complex_forms_of_entities	rdfs:member	local:entities	.
+local:s9.2	rdf:subject	local:knowledge	.
+local:s2	rdf:predicate	local:argue	.
+local:biomedical_text	rdfs:member	local:biomedical	.
+local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	rdfs:member	local:method	.
+local:extraction_of_such_complex_entities_of_relationships_between_rulebased_method	rdfs:member	local:rulebased_method	.
+local:s2.1	rdf:subject	local:entities	.
+local:s6	rdf:object	local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_the_conversion_of_such_relationships_into_rdf	.
+local:issue_of_extracting_implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:entities	.
+local:rulebased_method_for_conversion	rdfs:member	local:conversion	.
+local:issue_of_extracting_implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:biomedical_text	.
+local:such_relationships_into_rdf	rdfs:member	local:such_relationships	.
+local:entities_simple_form_complex_forms_of_entities	rdfs:member	local:entities	.
+local:issue_of_extracting_implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:implicit_relationships	.
+local:extraction_of_such_complex_entities	rdfs:member	local:extraction	.
+local:s1	rdf:subject	local:we	.
+local:implicit_relationships_between_entities_in_biomedical_text	rdfs:member	local:entities	.
+local:s2.1	local:AM-TMP	local:seldom	.
+local:simple_form	rdfs:member	local:simple	.
+local:s2.1	local:AM-LOC	local:text_in_entities_that_relationships_in_text_relate_the_modified_complex_forms_of_entities_with_each_other	.
+local:text_in_entities	rdfs:member	local:entities	.
+local:text_in_entities_simple_form_complex_forms_of_entities_with_each_other	rdfs:member	local:simple_form	.
+local:s0.1	rdf:object	local:implicit_relationships_between_entities_in_biomedical_text	.
+local:s4	rdf:object	local:rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_a_rulebased_method_for_extraction_of_such_complex_entities_and_relationships_between_them_into_rdf	.
+local:utility_of_the_generated_rdf_in_discovering_knowledge_from_text_corpora_by_means_of_locating_paths	rdfs:member	local:s9.1	.

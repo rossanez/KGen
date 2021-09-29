@@ -1,330 +1,586 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"a web service that takes as input a url to csv file map"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"a web service that provides rdf as output"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"a web service that takes as input a url to an rdf123 map"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a web service that takes as input a url to a google spreadsheet map"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"users create users"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"a graphical application that allows users to create users"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"further each row in the spreadsheet can mapped with a fairly different rdf scheme"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"much richer spreadsheet semantics"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"users arbitrary graphs thus allowing much richer spreadsheet semantics to be expressed"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"users define mappings to arbitrary graphs thus allowing much richer spreadsheet semantics to be expressed"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"rdf123 on the other hand allows users to define mappings to arbitrary graphs thus allowing much richer spreadsheet semantics to be expressed"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"each column representing a property"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"existing spreadsheettordf tools typically map only to starshaped rdf graphs ie each spreadsheet row"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"existing spreadsheettordf tools"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"translating spreadsheet data to rdf"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we describe a highly flexible opensource tool for translating spreadsheet data to rdf"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"translating spreadsheet data to rdf"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we describe rdf123 for translating spreadsheet data to rdf"	.
+
+
 #### Classes ####
 
-local:describe	rdfs:label	"describe"	.
+local:web_service	a	rdf:Class	;
+	rdfs:label	"web service"	.
 
-local:we	rdfs:label	"we"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:spreadsheet_data	rdfs:label	"spreadsheet data"	.
+local:service	a	rdf:Class	;
+	rdfs:label	"service"	.
 
-local:data	rdfs:label	"data"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:spreadsheet	rdfs:label	"spreadsheet"	.
+local:input_a_url_csv_file_map	a	rdf:Class	;
+	rdfs:label	"input a url csv file map"	.
 
-local:translating_to_rdf	rdfs:label	"translating to rdf"	.
+local:file_map	a	rdf:Class	;
+	rdfs:label	"file map"	.
 
-local:translating	rdfs:label	"translating"	.
+local:file	a	rdf:Class	;
+	rdfs:label	"file"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:url_csv	a	rdf:Class	;
+	rdfs:label	"url csv"	.
 
-local:rdf123	rdfs:label	"rdf123"	.
+local:csv	a	rdf:Class	;
+	rdfs:label	"csv"	.
 
-local:opensource_tool	rdfs:label	"open-source tool"	.
+local:url_csv_file_map	a	rdf:Class	;
+	rdfs:label	"url csv file map"	.
 
-local:tool	rdfs:label	"tool"	.
+local:map	a	rdf:Class	;
+	rdfs:label	"map"	.
 
-local:opensource	rdfs:label	"open-source"	.
+local:url_csv_file	a	rdf:Class	;
+	rdfs:label	"url csv file"	.
 
-local:highly_flexible_opensource	rdfs:label	"highly flexible open-source"	.
+local:csv_file	a	rdf:Class	;
+	rdfs:label	"csv file"	.
 
-local:flexible_opensource	rdfs:label	"flexible open-source"	.
+local:csv_file_map	a	rdf:Class	;
+	rdfs:label	"csv file map"	.
 
-local:flexible_opensource_tool	rdfs:label	"flexible open-source tool"	.
+local:url	a	rdf:Class	;
+	rdfs:label	"url"	.
 
-local:highly_flexible_opensource_tool	rdfs:label	"highly flexible open-source tool"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:flexible	rdfs:label	"flexible"	.
+local:rdf_output	a	rdf:Class	;
+	rdfs:label	"rdf output"	.
 
-local:highly_flexible	rdfs:label	"highly flexible"	.
+local:output	a	rdf:Class	;
+	rdfs:label	"output"	.
 
-local:highly	rdfs:label	"highly"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:representing	rdfs:label	"representing"	.
+local:input_a_url_rdf123_map	a	rdf:Class	;
+	rdfs:label	"input a url rdf123 map"	.
 
-local:column	rdfs:label	"column"	.
+local:rdf123_map	a	rdf:Class	;
+	rdfs:label	"rdf123 map"	.
 
-local:property	rdfs:label	"property"	.
+local:rdf123	a	rdf:Class	;
+	rdfs:label	"rdf123"	.
 
-local:spreadsheettordf	rdfs:label	"spreadsheet-to-rdf"	.
+local:url_rdf123_map	a	rdf:Class	;
+	rdfs:label	"url rdf123 map"	.
 
-local:spreadsheettordf_tools	rdfs:label	"spreadsheet-to-rdf tools"	.
+local:url_rdf123	a	rdf:Class	;
+	rdfs:label	"url rdf123"	.
 
-local:tools	rdfs:label	"tools"	.
+local:input_a_url_to_a_google_spreadsheet_map	a	rdf:Class	;
+	rdfs:label	"input a url to a google spreadsheet map"	.
 
-local:existing	rdfs:label	"existing"	.
+local:google_spreadsheet_map	a	rdf:Class	;
+	rdfs:label	"google spreadsheet map"	.
 
-local:existing_spreadsheettordf_tools	rdfs:label	"existing spreadsheet-to-rdf tools"	.
+local:google_spreadsheet	a	rdf:Class	;
+	rdfs:label	"google spreadsheet"	.
 
-local:map	rdfs:label	"map"	.
+local:google	a	rdf:Class	;
+	rdfs:label	"google"	.
 
-local:typically	rdfs:label	"typically"	.
+local:spreadsheet_map	a	rdf:Class	;
+	rdfs:label	"spreadsheet map"	.
 
-local:starshaped_rdf	rdfs:label	"star-shaped rdf"	.
+local:spreadsheet	a	rdf:Class	;
+	rdfs:label	"spreadsheet"	.
 
-local:spreadsheet_row	rdfs:label	"spreadsheet row"	.
+local:url_to_google_spreadsheet_map	a	rdf:Class	;
+	rdfs:label	"url to google spreadsheet map"	.
 
-local:starshaped_rdf_graphs	rdfs:label	"star-shaped rdf graphs"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:starshaped	rdfs:label	"star-shaped"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:row	rdfs:label	"row"	.
+local:graphical_application	a	rdf:Class	;
+	rdfs:label	"graphical application"	.
 
-local:rdf_graphs	rdfs:label	"rdf graphs"	.
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:graphical	a	rdf:Class	;
+	rdfs:label	"graphical"	.
 
-local:other	rdfs:label	"other"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:other_hand	rdfs:label	"other hand"	.
+local:users_to_create_users	a	rdf:Class	;
+	rdfs:label	"users to create users"	.
 
-local:hand	rdfs:label	"hand"	.
+local:row_in_the_spreadsheet	a	rdf:Class	;
+	rdfs:label	"row in the spreadsheet"	.
 
-local:allows	rdfs:label	"allows"	.
+local:row	a	rdf:Class	;
+	rdfs:label	"row"	.
 
-local:spreadsheet_semantics	rdfs:label	"spreadsheet semantics"	.
+local:row_in_spreadsheet	a	rdf:Class	;
+	rdfs:label	"row in spreadsheet"	.
 
-local:richer_spreadsheet_semantics	rdfs:label	"richer spreadsheet semantics"	.
+local:fairly_different_rdf_scheme	a	rdf:Class	;
+	rdfs:label	"fairly different rdf scheme"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:scheme	a	rdf:Class	;
+	rdfs:label	"scheme"	.
 
-local:much_richer_spreadsheet	rdfs:label	"much richer spreadsheet"	.
+local:fairly_different	a	rdf:Class	;
+	rdfs:label	"fairly different"	.
 
-local:much_richer	rdfs:label	"much richer"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:much_richer_spreadsheet_semantics	rdfs:label	"much richer spreadsheet semantics"	.
+local:fairly	a	rdf:Class	;
+	rdfs:label	"fairly"	.
 
-local:much	rdfs:label	"much"	.
+local:fairly_different_rdf	a	rdf:Class	;
+	rdfs:label	"fairly different rdf"	.
 
-local:richer_spreadsheet	rdfs:label	"richer spreadsheet"	.
+local:different_rdf	a	rdf:Class	;
+	rdfs:label	"different rdf"	.
 
-local:arbitrary_graphs	rdfs:label	"arbitrary graphs"	.
+local:rdf_scheme	a	rdf:Class	;
+	rdfs:label	"rdf scheme"	.
 
-local:richer	rdfs:label	"richer"	.
+local:different_rdf_scheme	a	rdf:Class	;
+	rdfs:label	"different rdf scheme"	.
 
-local:arbitrary	rdfs:label	"arbitrary"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:thus_allowing	rdfs:label	"thus allowing"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:allowing	rdfs:label	"allowing"	.
+local:arbitrary_graphs	a	rdf:Class	;
+	rdfs:label	"arbitrary graphs"	.
 
-local:mappings_to_arbitrary_graphs	rdfs:label	"mappings to arbitrary graphs"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:arbitrary	a	rdf:Class	;
+	rdfs:label	"arbitrary"	.
 
-local:define	rdfs:label	"define"	.
+local:much_richer_spreadsheet_semantics_to_be_expressed	a	rdf:Class	;
+	rdfs:label	"much richer spreadsheet semantics to be expressed"	.
 
-local:users	rdfs:label	"users"	.
+local:richer_spreadsheet_semantics	a	rdf:Class	;
+	rdfs:label	"richer spreadsheet semantics"	.
 
-local:thus	rdfs:label	"thus"	.
+local:richer_spreadsheet	a	rdf:Class	;
+	rdfs:label	"richer spreadsheet"	.
 
-local:row_in_spreadsheet	rdfs:label	"row in spreadsheet"	.
+local:much_richer_spreadsheet	a	rdf:Class	;
+	rdfs:label	"much richer spreadsheet"	.
 
-local:mapped	rdfs:label	"mapped"	.
+local:richer	a	rdf:Class	;
+	rdfs:label	"richer"	.
 
-local:further	rdfs:label	"further"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:can	rdfs:label	"can"	.
+local:spreadsheet_semantics	a	rdf:Class	;
+	rdfs:label	"spreadsheet semantics"	.
 
-local:fairly_different_rdf	rdfs:label	"fairly different rdf"	.
+local:much_richer	a	rdf:Class	;
+	rdfs:label	"much richer"	.
 
-local:fairly_different_rdf_scheme	rdfs:label	"fairly different rdf scheme"	.
+local:much	a	rdf:Class	;
+	rdfs:label	"much"	.
 
-local:different_rdf	rdfs:label	"different rdf"	.
+local:thus	a	rdf:Class	;
+	rdfs:label	"thus"	.
 
-local:different_rdf_scheme	rdfs:label	"different rdf scheme"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-local:fairly_different	rdfs:label	"fairly different"	.
+local:mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	a	rdf:Class	;
+	rdfs:label	"mappings to arbitrary graphs thus allowing much richer spreadsheet semantics to be expressed"	.
 
-local:different	rdfs:label	"different"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:scheme	rdfs:label	"scheme"	.
+local:thus_allowing	a	rdf:Class	;
+	rdfs:label	"thus allowing"	.
 
-local:rdf_scheme	rdfs:label	"rdf scheme"	.
+local:allowing	a	rdf:Class	;
+	rdfs:label	"allowing"	.
 
-local:fairly	rdfs:label	"fairly"	.
+local:mappings_to_arbitrary_graphs	a	rdf:Class	;
+	rdfs:label	"mappings to arbitrary graphs"	.
 
-local:graphical_application	rdfs:label	"graphical application"	.
+local:rdf123_on_the_other_hand	a	rdf:Class	;
+	rdfs:label	"rdf123 on the other hand"	.
 
-local:application	rdfs:label	"application"	.
+local:other_hand	a	rdf:Class	;
+	rdfs:label	"other hand"	.
 
-local:graphical	rdfs:label	"graphical"	.
+local:hand	a	rdf:Class	;
+	rdfs:label	"hand"	.
 
-local:create	rdfs:label	"create"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:web	rdfs:label	"web"	.
+local:rdf123_on_other_hand	a	rdf:Class	;
+	rdfs:label	"rdf123 on other hand"	.
 
-local:web_service	rdfs:label	"web service"	.
+local:users_to_define_mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	a	rdf:Class	;
+	rdfs:label	"users to define mappings to arbitrary graphs thus allowing much richer spreadsheet semantics to be expressed"	.
 
-local:service	rdfs:label	"service"	.
+local:column	a	rdf:Class	;
+	rdfs:label	"column"	.
 
-local:takes	rdfs:label	"takes"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:input	rdfs:label	"input"	.
+local:property	a	rdf:Class	;
+	rdfs:label	"property"	.
 
-local:csv	rdfs:label	"csv"	.
+local:existing_spreadsheettordf_tools	a	rdf:Class	;
+	rdfs:label	"existing spreadsheettordf tools"	.
 
-local:csv_file	rdfs:label	"csv file"	.
+local:spreadsheettordf_tools	a	rdf:Class	;
+	rdfs:label	"spreadsheettordf tools"	.
 
-local:file	rdfs:label	"file"	.
+local:spreadsheettordf	a	rdf:Class	;
+	rdfs:label	"spreadsheettordf"	.
 
-local:file_map	rdfs:label	"file map"	.
+local:tools	a	rdf:Class	;
+	rdfs:label	"tools"	.
 
-local:csv_file_map	rdfs:label	"csv file map"	.
+local:starshaped_rdf_graphs_ie_each_spreadsheet_row	a	rdf:Class	;
+	rdfs:label	"starshaped rdf graphs ie each spreadsheet row"	.
 
-local:provides	rdfs:label	"provides"	.
+local:spreadsheet_row	a	rdf:Class	;
+	rdfs:label	"spreadsheet row"	.
 
-local:output	rdfs:label	"output"	.
+local:graphs_ie	a	rdf:Class	;
+	rdfs:label	"graphs ie"	.
 
-local:spreadsheet_map	rdfs:label	"spreadsheet map"	.
+local:ie	a	rdf:Class	;
+	rdfs:label	"ie"	.
 
-local:google_spreadsheet_map	rdfs:label	"google spreadsheet map"	.
+local:ie_spreadsheet_row	a	rdf:Class	;
+	rdfs:label	"ie spreadsheet row"	.
 
-local:google	rdfs:label	"google"	.
+local:rdf_graphs	a	rdf:Class	;
+	rdfs:label	"rdf graphs"	.
 
-local:google_spreadsheet	rdfs:label	"google spreadsheet"	.
+local:starshaped_rdf_graphs	a	rdf:Class	;
+	rdfs:label	"starshaped rdf graphs"	.
 
-local:url_to_google_spreadsheet_map	rdfs:label	"url to google spreadsheet map"	.
+local:typically	a	rdf:Class	;
+	rdfs:label	"typically"	.
 
-local:url	rdfs:label	"url"	.
+local:existing	a	rdf:Class	;
+	rdfs:label	"existing"	.
 
-local:rdf123_map	rdfs:label	"rdf123 map"	.
+local:spreadsheet_data	a	rdf:Class	;
+	rdfs:label	"spreadsheet data"	.
 
-#### Properties ####
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
+
+local:translate	a	rdf:Class	;
+	rdfs:label	"translate"	.
+
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
+
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
+
+local:highly_flexible_opensource_tool_for_translating_spreadsheet_data_to_rdf	a	rdf:Class	;
+	rdfs:label	"highly flexible opensource tool for translating spreadsheet data to rdf"	.
+
+local:highly_flexible_opensource_tool	a	rdf:Class	;
+	rdfs:label	"highly flexible opensource tool"	.
+
+local:highly_flexible_opensource	a	rdf:Class	;
+	rdfs:label	"highly flexible opensource"	.
+
+local:highly_flexible	a	rdf:Class	;
+	rdfs:label	"highly flexible"	.
+
+local:highly	a	rdf:Class	;
+	rdfs:label	"highly"	.
+
+local:tool	a	rdf:Class	;
+	rdfs:label	"tool"	.
+
+local:flexible_opensource_tool	a	rdf:Class	;
+	rdfs:label	"flexible opensource tool"	.
+
+local:flexible_opensource	a	rdf:Class	;
+	rdfs:label	"flexible opensource"	.
+
+local:opensource_tool	a	rdf:Class	;
+	rdfs:label	"opensource tool"	.
+
+local:opensource	a	rdf:Class	;
+	rdfs:label	"opensource"	.
+
+local:flexible	a	rdf:Class	;
+	rdfs:label	"flexible"	.
+
+local:translating_to_rdf	a	rdf:Class	;
+	rdfs:label	"translating to rdf"	.
+
+local:translating	a	rdf:Class	;
+	rdfs:label	"translating"	.
+
+local:rdf123_for_translating_spreadsheet_data_to_rdf	a	rdf:Class	;
+	rdfs:label	"rdf123 for translating spreadsheet data to rdf"	.
 
 #### Mapped Relations ####
 
-cso:semantics	rdfs:label	"semantics"	.
-local:semantics	owl:sameAs	cso:semantics	.
 local:rdf	owl:sameAs	cso:rdf	.
 local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
 cso:rdf_graph	rdfs:label	"rdf graphs"	.
+local:semantics	owl:sameAs	cso:semantics	.
 cso:rdf	rdfs:label	"rdf"	.
+cso:semantics	rdfs:label	"semantics"	.
 
 #### Relations ####
 
-local:file	rdfs:member	local:file_map	.
-local:much_richer_spreadsheet	rdfs:member	local:much_richer_spreadsheet_semantics	.
-local:csv_file_map	rdfs:subClassOf	local:file_map	.
-local:describe	vn.role:Theme	local:rdf123	.
-local:mappings_to_arbitrary_graphs	local:to_arbitrarygraphs	local:mappings	.
-local:takes	vn.role:Source	local:csv_file_map	.
-local:arbitrary	rdfs:member	local:arbitrary_graphs	.
-local:mapped	local:AM-MNR	local:different_rdf_scheme	.
-local:takes	vn.role:Source	local:rdf123_map	.
-local:graphical_application	rdfs:subClassOf	local:application	.
-local:google_spreadsheet_map	rdfs:subClassOf	local:map	.
-local:create	vn.role:Agent	local:users	.
-local:starshaped_rdf	rdfs:subClassOf	local:rdf	.
-local:map	local:AM-TMP	local:typically	.
+local:url_csv_file	rdfs:member	local:url_csv	.
+local:s1.1	rdf:predicate	local:translate	.
+local:translating_to_rdf	rdfs:member	local:rdf	.
+local:arbitrary_graphs	rdfs:member	local:arbitrary	.
+local:starshaped_rdf_graphs_ie_each_spreadsheet_row	rdfs:member	local:spreadsheet_row	.
+local:s0.1	rdf:predicate	local:translate	.
 local:flexible_opensource_tool	rdfs:subClassOf	local:tool	.
-local:describe	vn.role:Theme	local:flexible_opensource_tool	.
-local:csv_file_map	rdfs:subClassOf	local:map	.
-local:fairly_different	rdfs:member	local:fairly_different_rdf	.
-local:translating	vn.role:Product	local:rdf	.
-local:provides	vn.role:indirect_object	local:output	.
-local:spreadsheettordf_tools	rdfs:subClassOf	local:tools	.
-local:web	rdfs:member	local:web_service	.
-local:different	rdfs:member	local:different_rdf	.
-local:allowing	local:AM-DIS	local:thus	.
-local:allows	vn.role:Agent	local:graphical_application	.
-local:rdf	rdfs:member	local:rdf_scheme	.
-local:existing	vn.role:Location	local:spreadsheettordf_tools	.
-local:richer_spreadsheet	rdfs:member	local:richer_spreadsheet_semantics	.
-local:allowing	vn.role:Theme	local:richer_spreadsheet_semantics	.
-local:starshaped_rdf_graphs	rdfs:subClassOf	local:rdf_graphs	.
-local:much_richer	rdfs:member	local:much_richer_spreadsheet	.
-local:takes	vn.role:Agent	local:web_service	.
-local:much_richer_spreadsheet	rdfs:subClassOf	local:spreadsheet	.
-local:other	rdfs:member	local:other_hand	.
-local:representing	vn.role:Theme	local:property	.
-local:other_hand	rdfs:subClassOf	local:hand	.
-local:highly_flexible_opensource	rdfs:member	local:highly_flexible_opensource_tool	.
-local:translating_to_rdf	local:to_rdf	local:translating	.
+local:s2.1	rdf:predicate	local:map	.
 local:richer_spreadsheet_semantics	rdfs:subClassOf	local:spreadsheet_semantics	.
-local:spreadsheet_row	rdfs:subClassOf	local:row	.
-local:fairly_different_rdf_scheme	rdfs:subClassOf	local:scheme	.
-local:highly_flexible_opensource	rdfs:subClassOf	local:opensource	.
-local:different_rdf_scheme	rdfs:subClassOf	local:scheme	.
-local:google_spreadsheet	rdfs:member	local:google_spreadsheet_map	.
-local:flexible	rdfs:member	local:flexible_opensource	.
-local:row_in_spreadsheet	local:row_in	local:spreadsheet	.
-local:flexible_opensource	rdfs:subClassOf	local:opensource	.
-local:allowing	vn.role:Agent	local:rdf123	.
-local:define	vn.role:Theme	local:thus_allowing	.
-local:csv_file	rdfs:subClassOf	local:file	.
-local:google_spreadsheet_map	rdfs:subClassOf	local:spreadsheet_map	.
-local:allows	vn.role:Agent	local:rdf123	.
-local:allowing	vn.role:Agent	local:users	.
+local:s5	local:AM-MNR	local:fairly_different_rdf_scheme	.
+local:input_a_url_to_a_google_spreadsheet_map	rdfs:member	local:google_spreadsheet_map	.
+local:other_hand	rdfs:subClassOf	local:hand	.
+local:url_rdf123_map	rdfs:subClassOf	local:rdf123_map	.
+local:highly_flexible_opensource_tool_for_translating_spreadsheet_data_to_rdf	rdfs:member	local:highly_flexible_opensource_tool	.
 local:highly_flexible_opensource_tool	rdfs:subClassOf	local:tool	.
-local:much	rdfs:member	local:much_richer	.
-local:starshaped_rdf	rdfs:member	local:starshaped_rdf_graphs	.
-local:provides	vn.role:Recipient	local:web_service	.
-local:rdf_graphs	rdfs:subClassOf	local:graphs	.
-local:translating	vn.role:Patient	local:spreadsheet_data	.
-local:flexible_opensource	rdfs:member	local:flexible_opensource_tool	.
-local:mapped	local:AM-MOD	local:can	.
-local:create	vn.role:Product	local:users	.
-local:opensource	rdfs:member	local:opensource_tool	.
-local:row_in_spreadsheet	local:in_spreadsheet	local:row	.
-local:spreadsheet	rdfs:member	local:spreadsheet_data	.
-local:takes	vn.role:Theme	local:input	.
-local:arbitrary_graphs	rdfs:subClassOf	local:graphs	.
-local:flexible_opensource_tool	rdfs:subClassOf	local:opensource_tool	.
-local:google_spreadsheet	rdfs:subClassOf	local:spreadsheet	.
-local:different_rdf_scheme	rdfs:subClassOf	local:rdf_scheme	.
-local:mapped	vn.role:Predicate	local:further	.
-local:representing	vn.role:Agent	local:column	.
-local:spreadsheettordf	rdfs:member	local:spreadsheettordf_tools	.
-local:spreadsheet_semantics	rdfs:subClassOf	local:semantics	.
-local:allows	vn.role:Theme	local:users	.
-local:url_to_google_spreadsheet_map	local:url_to	local:google_spreadsheet_map	.
-local:fairly_different_rdf	rdfs:member	local:fairly_different_rdf_scheme	.
-local:spreadsheet	rdfs:member	local:spreadsheet_row	.
-local:richer	rdfs:member	local:richer_spreadsheet	.
-local:web_service	rdfs:subClassOf	local:service	.
-local:allowing	vn.role:Agent	local:arbitrary_graphs	.
-local:provides	vn.role:Agent	local:rdf	.
-local:highly_flexible	rdfs:member	local:highly_flexible_opensource	.
-local:different_rdf	rdfs:subClassOf	local:rdf	.
-local:different_rdf	rdfs:member	local:different_rdf_scheme	.
-local:rdf	rdfs:member	local:rdf_graphs	.
-local:allows	vn.role:Theme	local:thus_allowing	.
+local:different_rdf_scheme	rdfs:subClassOf	local:scheme	.
+local:s13	rdf:subject	local:web_service	.
 local:spreadsheet_map	rdfs:subClassOf	local:map	.
-local:fairly_different	rdfs:subClassOf	local:different	.
-local:url_to_google_spreadsheet_map	local:to_googlespreadsheetmap	local:url	.
+local:rdf_scheme	rdfs:member	local:rdf	.
+local:spreadsheet_semantics	rdfs:member	local:spreadsheet	.
+local:s10	rdf:object	local:input_a_url_to_a_google_spreadsheet_map	.
+local:mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:s4.3	.
+local:s9.1	rdf:subject	local:users	.
+local:s0.1	rdf:subject	local:spreadsheet_data	.
+local:s14	rdf:object	local:input_a_url_csv_file_map	.
+local:s10	rdf:predicate	local:take	.
+local:s2	rdf:predicate	local:existing	.
+local:s4.2	rdf:object	local:much_richer_spreadsheet_semantics_to_be_expressed	.
+local:csv_file_map	rdfs:subClassOf	local:file_map	.
+local:rdf_output	rdfs:subClassOf	local:output	.
+local:google_spreadsheet	rdfs:subClassOf	local:spreadsheet	.
+local:richer_spreadsheet	rdfs:member	local:richer	.
+local:s0.1	rdf:object	local:rdf	.
+local:spreadsheet_data	rdfs:member	local:spreadsheet	.
+local:much_richer_spreadsheet	rdfs:member	local:much_richer	.
+local:url_csv_file	rdfs:subClassOf	local:file	.
+local:s13	rdf:object	local:rdf_output	.
+local:s0	rdf:object	local:rdf123_for_translating_spreadsheet_data_to_rdf	.
+local:url_csv_file_map	rdfs:subClassOf	local:map	.
+local:url_rdf123	rdfs:subClassOf	local:rdf123	.
+local:s4.2	local:AM-DIS	local:thus	.
+local:mappings_to_arbitrary_graphs	rdfs:member	local:arbitrary_graphs	.
+local:s1	rdf:object	local:highly_flexible_opensource_tool_for_translating_spreadsheet_data_to_rdf	.
+local:highly_flexible_opensource_tool_for_translating_spreadsheet_data_to_rdf	rdfs:member	local:spreadsheet_data	.
+local:highly_flexible	rdfs:member	local:highly	.
+local:rdf123_for_translating_spreadsheet_data_to_rdf	rdfs:member	local:spreadsheet_data	.
+local:row_in_spreadsheet	rdfs:member	local:spreadsheet	.
+local:csv_file	rdfs:member	local:csv	.
+local:google_spreadsheet_map	rdfs:subClassOf	local:map	.
 local:richer_spreadsheet	rdfs:subClassOf	local:spreadsheet	.
-local:existing_spreadsheettordf_tools	rdfs:subClassOf	local:spreadsheettordf_tools	.
-local:google	rdfs:member	local:google_spreadsheet	.
-local:csv	rdfs:member	local:csv_file	.
-local:thus_allowing	rdfs:subClassOf	local:allowing	.
-local:mappings_to_arbitrary_graphs	local:mappings_to	local:arbitrary_graphs	.
-local:translating_to_rdf	local:translating_to	local:rdf	.
-local:spreadsheet	rdfs:member	local:spreadsheet_semantics	.
-local:define	vn.role:Agent	local:users	.
-local:graphical	rdfs:member	local:graphical_application	.
 local:rdf123_map	rdfs:subClassOf	local:map	.
-local:opensource_tool	rdfs:subClassOf	local:tool	.
-local:richer_spreadsheet_semantics	rdfs:subClassOf	local:semantics	.
-local:starshaped_rdf_graphs	rdfs:subClassOf	local:graphs	.
-local:rdf123	rdfs:member	local:rdf123_map	.
-local:spreadsheet_data	rdfs:subClassOf	local:data	.
-local:describe	vn.role:Agent	local:we	.
-local:highly_flexible	rdfs:subClassOf	local:flexible	.
-local:map	local:AM-MNR	local:starshaped_rdf_graphs	.
-local:spreadsheet	rdfs:member	local:spreadsheet_map	.
-local:much_richer_spreadsheet_semantics	rdfs:subClassOf	local:semantics	.
-local:much_richer	rdfs:subClassOf	local:richer	.
+local:url_to_google_spreadsheet_map	rdfs:member	local:google_spreadsheet_map	.
+local:s1	rdf:predicate	local:describe	.
+local:graphs_ie	rdfs:member	local:graphs	.
+local:graphical_application	rdfs:member	local:graphical	.
+local:s13	rdf:predicate	local:provide	.
+local:starshaped_rdf_graphs	rdfs:subClassOf	local:rdf_graphs	.
+local:different_rdf_scheme	rdfs:member	local:different_rdf	.
+local:s5	local:AM-MOD	local:can	.
+local:s1	rdf:subject	local:we	.
+local:users_to_define_mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:arbitrary_graphs	.
+local:ie_spreadsheet_row	rdfs:subClassOf	local:spreadsheet_row	.
+local:rdf123_on_other_hand	rdfs:member	local:rdf123	.
+local:users_to_define_mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:s4.3	.
+local:spreadsheet_row	rdfs:member	local:spreadsheet	.
+local:other_hand	rdfs:member	local:other	.
+local:fairly_different	rdfs:member	local:fairly	.
+local:different_rdf_scheme	rdfs:subClassOf	local:rdf_scheme	.
+local:s4.3	rdfs:subClassOf	local:semantics	.
+local:rdf123_for_translating_spreadsheet_data_to_rdf	rdfs:member	local:rdf123	.
+local:s9	rdf:subject	local:graphical_application	.
+local:file_map	rdfs:member	local:file	.
+local:mappings_to_arbitrary_graphs	rdfs:member	local:mappings	.
+local:flexible_opensource_tool	rdfs:subClassOf	local:opensource_tool	.
+local:google_spreadsheet_map	rdfs:subClassOf	local:spreadsheet_map	.
+local:fairly_different_rdf_scheme	rdfs:subClassOf	local:scheme	.
+local:much_richer	rdfs:member	local:much	.
+local:rdf123_on_other_hand	rdfs:member	local:other_hand	.
+local:s3	rdf:object	local:property	.
+local:s2.1	rdf:subject	local:existing_spreadsheettordf_tools	.
+local:much_richer_spreadsheet	rdfs:subClassOf	local:spreadsheet	.
+local:row_in_the_spreadsheet	rdfs:member	local:row	.
+local:input_a_url_to_a_google_spreadsheet_map	rdfs:member	local:url	.
+local:s4.1	rdf:predicate	local:define	.
 local:rdf_scheme	rdfs:subClassOf	local:scheme	.
-local:csv_file	rdfs:member	local:csv_file_map	.
+local:url_rdf123_map	rdfs:subClassOf	local:map	.
+local:mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:mappings	.
+local:url_csv_file_map	rdfs:member	local:url_csv_file	.
+local:mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:arbitrary_graphs	.
+local:s3	rdf:subject	local:column	.
+local:flexible_opensource	rdfs:member	local:flexible	.
+local:s14	rdf:predicate	local:take	.
+local:s2	rdf:subject	local:spreadsheettordf_tools	.
+local:s9	rdf:predicate	local:allow	.
+local:s4.2	rdf:predicate	local:allow	.
+local:fairly_different	rdfs:subClassOf	local:different	.
+local:s14	rdf:subject	local:web_service	.
 local:file_map	rdfs:subClassOf	local:map	.
-local:fairly	rdfs:member	local:fairly_different	.
+local:spreadsheet_data	rdfs:subClassOf	local:data	.
+local:url_rdf123_map	rdfs:member	local:url_rdf123	.
+local:s10	rdf:subject	local:web_service	.
+local:translating_to_rdf	rdfs:member	local:translating	.
+local:flexible_opensource_tool	rdfs:member	local:flexible_opensource	.
+local:s4.1	rdf:object	local:mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	.
+local:s4.3	rdfs:member	local:much_richer_spreadsheet	.
+local:google_spreadsheet_map	rdfs:member	local:google_spreadsheet	.
+local:s11	rdf:subject	local:web_service	.
+local:s0	rdf:subject	local:we	.
+local:opensource_tool	rdfs:subClassOf	local:tool	.
+local:s4.2	rdf:subject	local:arbitrary_graphs	.
+local:s4.3	rdf:subject	local:s4.3	.
+local:spreadsheet_semantics	rdfs:subClassOf	local:semantics	.
+local:highly_flexible_opensource_tool	rdfs:member	local:highly_flexible_opensource	.
+local:csv_file_map	rdfs:member	local:csv_file	.
+local:spreadsheet_row	rdfs:subClassOf	local:row	.
+local:s2.1	local:AM-MNR	local:starshaped_rdf_graphs_ie_each_spreadsheet_row	.
+local:different_rdf	rdfs:subClassOf	local:rdf	.
+local:much_richer	rdfs:subClassOf	local:richer	.
+local:s11	rdf:object	local:input_a_url_rdf123_map	.
+local:url_csv	rdfs:subClassOf	local:csv	.
+local:highly_flexible_opensource	rdfs:subClassOf	local:opensource	.
+local:s4	rdf:predicate	local:allow	.
+local:url_to_google_spreadsheet_map	rdfs:member	local:url	.
+local:s3	rdf:predicate	local:represent	.
+local:rdf123_on_the_other_hand	rdfs:member	local:rdf123	.
+local:arbitrary_graphs	rdfs:subClassOf	local:graphs	.
+local:url_rdf123	rdfs:member	local:url	.
+local:s5	rdf:predicate	local:map	.
+local:spreadsheettordf_tools	rdfs:member	local:spreadsheettordf	.
+local:s9.1	rdf:object	local:users	.
+local:s4.1	rdf:subject	local:users	.
 local:fairly_different_rdf	rdfs:subClassOf	local:rdf	.
-local:starshaped	rdfs:member	local:starshaped_rdf	.
-local:highly	rdfs:member	local:highly_flexible	.
-local:map	vn.role:Agent	local:existing_spreadsheettordf_tools	.
+local:s1.1	rdf:subject	local:spreadsheet_data	.
+local:highly_flexible_opensource	rdfs:member	local:highly_flexible	.
+local:starshaped_rdf_graphs_ie_each_spreadsheet_row	rdfs:member	local:rdf	.
+local:richer_spreadsheet_semantics	rdfs:member	local:richer_spreadsheet	.
+local:highly_flexible	rdfs:subClassOf	local:flexible	.
+local:url_csv_file_map	rdfs:subClassOf	local:csv_file_map	.
+local:fairly_different_rdf	rdfs:member	local:fairly_different	.
+local:spreadsheettordf_tools	rdfs:subClassOf	local:tools	.
+local:graphs_ie	rdfs:subClassOf	local:ie	.
+local:url_csv	rdfs:member	local:url	.
+local:opensource_tool	rdfs:member	local:opensource	.
+local:richer_spreadsheet_semantics	rdfs:subClassOf	local:semantics	.
+local:s1.1	rdf:object	local:rdf	.
+local:s2.1	local:AM-TMP	local:typically	.
+local:web_service	rdfs:subClassOf	local:service	.
+local:s11	rdf:predicate	local:take	.
+local:users_to_define_mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:users	.
+local:s4.3	rdf:predicate	local:express	.
+local:s9.1	rdf:predicate	local:create	.
+local:different_rdf	rdfs:member	local:different	.
+local:row_in_spreadsheet	rdfs:member	local:row	.
+local:thus_allowing	rdfs:subClassOf	local:allowing	.
+local:spreadsheet_map	rdfs:member	local:spreadsheet	.
+local:row_in_the_spreadsheet	rdfs:member	local:spreadsheet	.
+local:csv_file	rdfs:subClassOf	local:file	.
+local:fairly_different_rdf_scheme	rdfs:member	local:fairly_different_rdf	.
+local:flexible_opensource	rdfs:subClassOf	local:opensource	.
+local:web_service	rdfs:member	local:web	.
+local:users_to_define_mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	rdfs:member	local:mappings	.
+local:csv_file_map	rdfs:subClassOf	local:map	.
+local:rdf123_on_the_other_hand	rdfs:member	local:other_hand	.
+local:rdf123_map	rdfs:member	local:rdf123	.
+local:s4	rdf:object	local:users_to_define_mappings_to_arbitrary_graphs_thus_allowing_much_richer_spreadsheet_semantics_to_be_expressed	.
+local:google_spreadsheet	rdfs:member	local:google	.
+local:s5	rdf:subject	local:row_in_the_spreadsheet	.
+local:starshaped_rdf_graphs_ie_each_spreadsheet_row	rdfs:member	local:graphs_ie	.
+local:rdf_output	rdfs:member	local:rdf	.
+local:graphical_application	rdfs:subClassOf	local:application	.
+local:s0	rdf:predicate	local:describe	.
+local:s9	rdf:object	local:users_to_create_users	.
+local:rdf_graphs	rdfs:subClassOf	local:graphs	.
+local:s4	rdf:subject	local:rdf123_on_the_other_hand	.

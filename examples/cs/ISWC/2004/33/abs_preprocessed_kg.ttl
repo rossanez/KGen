@@ -1,519 +1,839 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"a unique rql query which captures the cumulative effect of an entire user navigation session"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"the first applicationindependent gui generate a unique rql query"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"the resources class appearing in the query result"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"users can easily specify the resources class"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"currently visited class"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"additionally users can enrich the generated queries with filtering conditions on the attributes of the currently visited class while users can easily specify the resources class"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"path expressions access the resources of interest capture accurately the meaning of its navigation steps through the class or property subsumption andor associations"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"path expressions required to access the resources of interest capture accurately the meaning of its navigation steps through the class or property subsumption andor associations"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"path expressions access the resources of interest"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"path expressions required to access the resources of interest"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"more precisely a user can navigate graphically through property definitions"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"more precisely a user can generate transparently the rql path expressions"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"more precisely a user can navigate graphically through the individual rdfs class"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a novel interface"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a novel interface called grql"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the fly queries expressed in rql"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"which relies on the full power of the rdfs data model for constructing on the fly queries"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"constructing"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"which relies on the full power of the rdfs data model for constructing on the fly queries"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"browsing rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"building userfriendly guis for browsing rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"building userfriendly guis for filtering rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"building userfriendly guis for filtering rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"userfriendly guis browsing rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"building userfriendly guis for browsing rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
+
+
 #### Classes ####
 
-local:declarative_queryview_languages	rdfs:label	"declarative queryview languages"	.
+local:unique_rql_query	a	rdf:Class	;
+	rdfs:label	"unique rql query"	.
 
-local:languages	rdfs:label	"languages"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:declarative_queryview	rdfs:label	"declarative queryview"	.
+local:rql_query	a	rdf:Class	;
+	rdfs:label	"rql query"	.
 
-local:rdfs_description	rdfs:label	"rdfs description"	.
+local:unique_rql	a	rdf:Class	;
+	rdfs:label	"unique rql"	.
 
-local:rdfs_description_bases	rdfs:label	"rdfs description bases"	.
+local:unique	a	rdf:Class	;
+	rdfs:label	"unique"	.
 
-local:description_bases	rdfs:label	"description bases"	.
+local:rql	a	rdf:Class	;
+	rdfs:label	"rql"	.
 
-local:bases	rdfs:label	"bases"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-local:transparent	rdfs:label	"transparent"	.
+local:cumulative_effect_of_an_entire_user_navigation_session	a	rdf:Class	;
+	rdfs:label	"cumulative effect of an entire user navigation session"	.
 
-local:transparent_way	rdfs:label	"transparent way"	.
+local:cumulative_effect	a	rdf:Class	;
+	rdfs:label	"cumulative effect"	.
 
-local:queryview	rdfs:label	"queryview"	.
+local:entire_user_navigation_session	a	rdf:Class	;
+	rdfs:label	"entire user navigation session"	.
 
-local:description	rdfs:label	"description"	.
+local:navigation_session	a	rdf:Class	;
+	rdfs:label	"navigation session"	.
 
-local:way	rdfs:label	"way"	.
+local:navigation	a	rdf:Class	;
+	rdfs:label	"navigation"	.
 
-local:rdfs	rdfs:label	"rdfs"	.
+local:cumulative	a	rdf:Class	;
+	rdfs:label	"cumulative"	.
 
-local:declarative	rdfs:label	"declarative"	.
+local:entire_user_navigation	a	rdf:Class	;
+	rdfs:label	"entire user navigation"	.
 
-local:userfriendly_guis	rdfs:label	"user-friendly guis"	.
+local:user_navigation	a	rdf:Class	;
+	rdfs:label	"user navigation"	.
 
-local:guis	rdfs:label	"guis"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:queryview_languages	rdfs:label	"queryview languages"	.
+local:session	a	rdf:Class	;
+	rdfs:label	"session"	.
 
-local:userfriendly	rdfs:label	"user-friendly"	.
+local:user_navigation_session	a	rdf:Class	;
+	rdfs:label	"user navigation session"	.
 
-local:filtering_rdfs_description_bases	rdfs:label	"filtering rdfs description bases"	.
+local:effect	a	rdf:Class	;
+	rdfs:label	"effect"	.
 
-local:userfriendly_guis_for_filtering_rdfs_description_bases	rdfs:label	"user-friendly guis for filtering rdfs description bases"	.
+local:entire_user	a	rdf:Class	;
+	rdfs:label	"entire user"	.
 
-local:exploiting_in_transparent_way	rdfs:label	"exploiting in transparent way"	.
+local:entire	a	rdf:Class	;
+	rdfs:label	"entire"	.
 
-local:exploiting	rdfs:label	"exploiting"	.
+local:cumulative_effect_of_entire_user_navigation_session	a	rdf:Class	;
+	rdfs:label	"cumulative effect of entire user navigation session"	.
 
-local:expressiveness_of_declarative_queryview_languages	rdfs:label	"expressiveness of declarative queryview languages"	.
+local:first_applicationindependent_gui	a	rdf:Class	;
+	rdfs:label	"first applicationindependent gui"	.
 
-local:expressiveness	rdfs:label	"expressiveness"	.
+local:first_applicationindependent	a	rdf:Class	;
+	rdfs:label	"first applicationindependent"	.
 
-local:building	rdfs:label	"building"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:browsing	rdfs:label	"browsing"	.
+local:applicationindependent_gui	a	rdf:Class	;
+	rdfs:label	"applicationindependent gui"	.
 
-local:novel	rdfs:label	"novel"	.
+local:applicationindependent	a	rdf:Class	;
+	rdfs:label	"applicationindependent"	.
 
-local:novel_interface	rdfs:label	"novel interface"	.
+local:gui	a	rdf:Class	;
+	rdfs:label	"gui"	.
 
-local:interface	rdfs:label	"interface"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:called	rdfs:label	"called"	.
+local:resources_class	a	rdf:Class	;
+	rdfs:label	"resources class"	.
 
-local:grql	rdfs:label	"grql"	.
+local:resources	a	rdf:Class	;
+	rdfs:label	"resources"	.
 
-local:present	rdfs:label	"present"	.
+local:class	a	rdf:Class	;
+	rdfs:label	"class"	.
 
-local:paper	rdfs:label	"paper"	.
+local:appear	a	rdf:Class	;
+	rdfs:label	"appear"	.
 
-local:we	rdfs:label	"we"	.
+local:query_result	a	rdf:Class	;
+	rdfs:label	"query result"	.
 
-local:data	rdfs:label	"data"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:data_model	rdfs:label	"data model"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:rdfs_data	rdfs:label	"rdfs data"	.
+local:specify	a	rdf:Class	;
+	rdfs:label	"specify"	.
 
-local:rdfs_data_model	rdfs:label	"rdfs data model"	.
+local:easily	a	rdf:Class	;
+	rdfs:label	"easily"	.
 
-local:full_power	rdfs:label	"full power"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:power	rdfs:label	"power"	.
+local:visit	a	rdf:Class	;
+	rdfs:label	"visit"	.
 
-local:full	rdfs:label	"full"	.
+local:currently	a	rdf:Class	;
+	rdfs:label	"currently"	.
 
-local:model	rdfs:label	"model"	.
+local:enrich	a	rdf:Class	;
+	rdfs:label	"enrich"	.
 
-local:full_power_of_rdfs_data_model	rdfs:label	"full power of rdfs data model"	.
+local:generated_queries_with_filtering_conditions_on_the_attributes_of_the_currently_visited_class	a	rdf:Class	;
+	rdfs:label	"generated queries with filtering conditions on the attributes of the currently visited class"	.
 
-local:relies	rdfs:label	"relies"	.
+local:attributes	a	rdf:Class	;
+	rdfs:label	"attributes"	.
 
-local:fly	rdfs:label	"fly"	.
+local:filtering_conditions	a	rdf:Class	;
+	rdfs:label	"filtering conditions"	.
 
-local:fly_queries	rdfs:label	"fly queries"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:queries	rdfs:label	"queries"	.
+local:conditions	a	rdf:Class	;
+	rdfs:label	"conditions"	.
 
-local:constructing_on_fly_queries	rdfs:label	"constructing on fly queries"	.
+local:filtering	a	rdf:Class	;
+	rdfs:label	"filtering"	.
 
-local:constructing	rdfs:label	"constructing"	.
+local:visited_class	a	rdf:Class	;
+	rdfs:label	"visited class"	.
 
-local:expressed	rdfs:label	"expressed"	.
+local:currently_visited	a	rdf:Class	;
+	rdfs:label	"currently visited"	.
 
-local:rql	rdfs:label	"rql"	.
+local:visited	a	rdf:Class	;
+	rdfs:label	"visited"	.
 
-local:path_expressions	rdfs:label	"path expressions"	.
+local:generated_queries	a	rdf:Class	;
+	rdfs:label	"generated queries"	.
 
-local:expressions	rdfs:label	"expressions"	.
+local:generated_queries_with_filtering_conditions	a	rdf:Class	;
+	rdfs:label	"generated queries with filtering conditions"	.
 
-local:path	rdfs:label	"path"	.
+local:filtering_conditions_on_attributes	a	rdf:Class	;
+	rdfs:label	"filtering conditions on attributes"	.
 
-local:required	rdfs:label	"required"	.
+local:attributes_of_visited_class	a	rdf:Class	;
+	rdfs:label	"attributes of visited class"	.
 
-local:resources_of_interest	rdfs:label	"resources of interest"	.
+local:additionally	a	rdf:Class	;
+	rdfs:label	"additionally"	.
 
-local:resources	rdfs:label	"resources"	.
+local:path_expressions	a	rdf:Class	;
+	rdfs:label	"path expressions"	.
 
-local:interest	rdfs:label	"interest"	.
+local:expressions	a	rdf:Class	;
+	rdfs:label	"expressions"	.
 
-local:access	rdfs:label	"access"	.
+local:path	a	rdf:Class	;
+	rdfs:label	"path"	.
 
-local:precisely_user	rdfs:label	"precisely user"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:user	rdfs:label	"user"	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	a	rdf:Class	;
+	rdfs:label	"resources of interest capture accurately the meaning of its navigation steps through the class or property subsumption andor associations"	.
 
-local:navigate	rdfs:label	"navigate"	.
+local:property_subsumption_andor_associations	a	rdf:Class	;
+	rdfs:label	"property subsumption andor associations"	.
 
-local:can	rdfs:label	"can"	.
+local:navigation_steps	a	rdf:Class	;
+	rdfs:label	"navigation steps"	.
 
-local:graphically	rdfs:label	"graphically"	.
+local:meaning	a	rdf:Class	;
+	rdfs:label	"meaning"	.
 
-local:rdfs_class	rdfs:label	"rdfs class"	.
+local:interest_capture	a	rdf:Class	;
+	rdfs:label	"interest capture"	.
 
-local:class	rdfs:label	"class"	.
+local:property_subsumption_andor	a	rdf:Class	;
+	rdfs:label	"property subsumption andor"	.
 
-local:individual_rdfs	rdfs:label	"individual rdfs"	.
+local:property_subsumption	a	rdf:Class	;
+	rdfs:label	"property subsumption"	.
 
-local:individual_rdfs_class	rdfs:label	"individual rdfs class"	.
+local:subsumption_andor	a	rdf:Class	;
+	rdfs:label	"subsumption andor"	.
 
-local:individual	rdfs:label	"individual"	.
+local:andor	a	rdf:Class	;
+	rdfs:label	"andor"	.
 
-local:generate	rdfs:label	"generate"	.
+local:subsumption_andor_associations	a	rdf:Class	;
+	rdfs:label	"subsumption andor associations"	.
 
-local:transparently	rdfs:label	"transparently"	.
+local:andor_associations	a	rdf:Class	;
+	rdfs:label	"andor associations"	.
 
-local:rql_path	rdfs:label	"rql path"	.
+local:associations	a	rdf:Class	;
+	rdfs:label	"associations"	.
 
-local:rql_path_expressions	rdfs:label	"rql path expressions"	.
+local:property	a	rdf:Class	;
+	rdfs:label	"property"	.
 
-local:property_definitions	rdfs:label	"property definitions"	.
+local:interest	a	rdf:Class	;
+	rdfs:label	"interest"	.
 
-local:definitions	rdfs:label	"definitions"	.
+local:subsumption	a	rdf:Class	;
+	rdfs:label	"subsumption"	.
 
-local:property	rdfs:label	"property"	.
+local:steps	a	rdf:Class	;
+	rdfs:label	"steps"	.
 
-local:subsumption_andor	rdfs:label	"subsumption andor"	.
+local:class_property_subsumption_andor_associations	a	rdf:Class	;
+	rdfs:label	"class property subsumption andor associations"	.
 
-local:subsumption_andor_associations	rdfs:label	"subsumption andor associations"	.
+local:its_navigation_steps	a	rdf:Class	;
+	rdfs:label	"its navigation steps"	.
 
-local:andor	rdfs:label	"andor"	.
+local:accurately_meaning	a	rdf:Class	;
+	rdfs:label	"accurately meaning"	.
 
-local:andor_associations	rdfs:label	"andor associations"	.
+local:resources_of_interest_capture	a	rdf:Class	;
+	rdfs:label	"resources of interest capture"	.
 
-local:navigation	rdfs:label	"navigation"	.
+local:accurately_meaning_of_its_navigation_steps	a	rdf:Class	;
+	rdfs:label	"accurately meaning of its navigation steps"	.
 
-local:navigation_steps	rdfs:label	"navigation steps"	.
+local:its_navigation_steps_through_class_property_subsumption_andor_associations	a	rdf:Class	;
+	rdfs:label	"its navigation steps through class property subsumption andor associations"	.
 
-local:associations	rdfs:label	"associations"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:interest_capture	rdfs:label	"interest capture"	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	a	rdf:Class	;
+	rdfs:label	"access the resources of interest capture accurately the meaning of its navigation steps through the class or property subsumption andor associations"	.
 
-local:subsumption	rdfs:label	"subsumption"	.
+local:resources_of_interest	a	rdf:Class	;
+	rdfs:label	"resources of interest"	.
 
-local:capture	rdfs:label	"capture"	.
+local:access_the_resources_of_interest	a	rdf:Class	;
+	rdfs:label	"access the resources of interest"	.
 
-local:steps	rdfs:label	"steps"	.
+local:navigate	a	rdf:Class	;
+	rdfs:label	"navigate"	.
 
-local:its_navigation_steps	rdfs:label	"its navigation steps"	.
+local:precisely	a	rdf:Class	;
+	rdfs:label	"precisely"	.
 
-local:accurately_meaning	rdfs:label	"accurately meaning"	.
+local:graphically	a	rdf:Class	;
+	rdfs:label	"graphically"	.
 
-local:meaning	rdfs:label	"meaning"	.
+local:property_definitions	a	rdf:Class	;
+	rdfs:label	"property definitions"	.
 
-local:resources_of_interest_capture	rdfs:label	"resources of interest capture"	.
+local:definitions	a	rdf:Class	;
+	rdfs:label	"definitions"	.
 
-local:accurately_meaning_of_its_navigation_steps	rdfs:label	"accurately meaning of its navigation steps"	.
+local:rql_path_expressions	a	rdf:Class	;
+	rdfs:label	"rql path expressions"	.
 
-local:its_navigation_steps_through_class	rdfs:label	"its navigation steps through class"	.
+local:rql_path	a	rdf:Class	;
+	rdfs:label	"rql path"	.
 
-local:class_property	rdfs:label	"class property"	.
+local:transparently	a	rdf:Class	;
+	rdfs:label	"transparently"	.
 
-local:additionally_users	rdfs:label	"additionally users"	.
+local:individual_rdfs_class	a	rdf:Class	;
+	rdfs:label	"individual rdfs class"	.
 
-local:users	rdfs:label	"users"	.
+local:individual_rdfs	a	rdf:Class	;
+	rdfs:label	"individual rdfs"	.
 
-local:enrich	rdfs:label	"enrich"	.
+local:rdfs	a	rdf:Class	;
+	rdfs:label	"rdfs"	.
 
-local:filtering_conditions	rdfs:label	"filtering conditions"	.
+local:rdfs_class	a	rdf:Class	;
+	rdfs:label	"rdfs class"	.
 
-local:conditions	rdfs:label	"conditions"	.
+local:individual	a	rdf:Class	;
+	rdfs:label	"individual"	.
 
-local:filtering	rdfs:label	"filtering"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:visited_class	rdfs:label	"visited class"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:currently_visited	rdfs:label	"currently visited"	.
+local:novel_interface	a	rdf:Class	;
+	rdfs:label	"novel interface"	.
 
-local:visited	rdfs:label	"visited"	.
+local:interface	a	rdf:Class	;
+	rdfs:label	"interface"	.
 
-local:generated_queries	rdfs:label	"generated queries"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:generated_queries_with_filtering_conditions	rdfs:label	"generated queries with filtering conditions"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:filtering_conditions_on_attributes	rdfs:label	"filtering conditions on attributes"	.
+local:call	a	rdf:Class	;
+	rdfs:label	"call"	.
 
-local:attributes	rdfs:label	"attributes"	.
+local:grql	a	rdf:Class	;
+	rdfs:label	"grql"	.
 
-local:attributes_of_visited_class	rdfs:label	"attributes of visited class"	.
+local:fly_queries	a	rdf:Class	;
+	rdfs:label	"fly queries"	.
 
-local:query_result	rdfs:label	"query result"	.
+local:fly	a	rdf:Class	;
+	rdfs:label	"fly"	.
 
-local:result	rdfs:label	"result"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:query	rdfs:label	"query"	.
+local:relies_on_the_full_power_of_the_rdfs_data_model_for_constructing_on_the_fly	a	rdf:Class	;
+	rdfs:label	"relies on the full power of the rdfs data model for constructing on the fly"	.
 
-local:resource_class	rdfs:label	"resource class"	.
+local:relies	a	rdf:Class	;
+	rdfs:label	"relies"	.
 
-local:easily_specify	rdfs:label	"easily specify"	.
+local:rdfs_data_model	a	rdf:Class	;
+	rdfs:label	"rdfs data model"	.
 
-local:specify	rdfs:label	"specify"	.
+local:full_power	a	rdf:Class	;
+	rdfs:label	"full power"	.
 
-local:can_easily_specify	rdfs:label	"can easily specify"	.
+local:full	a	rdf:Class	;
+	rdfs:label	"full"	.
 
-local:resource_class_appearing	rdfs:label	"resource class appearing"	.
+local:data_model	a	rdf:Class	;
+	rdfs:label	"data model"	.
 
-local:appearing	rdfs:label	"appearing"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:appearing_in_query_result	rdfs:label	"appearing in query result"	.
+local:rdfs_data	a	rdf:Class	;
+	rdfs:label	"rdfs data"	.
 
-local:currently	rdfs:label	"currently"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:easily	rdfs:label	"easily"	.
+local:power	a	rdf:Class	;
+	rdfs:label	"power"	.
 
-local:resource	rdfs:label	"resource"	.
+local:relies_on_full_power	a	rdf:Class	;
+	rdfs:label	"relies on full power"	.
 
-local:resource_’	rdfs:label	"resource ’"	.
+local:full_power_of_rdfs_data_model	a	rdf:Class	;
+	rdfs:label	"full power of rdfs data model"	.
 
-local:s	rdfs:label	"s"	.
+local:constructing_on_fly	a	rdf:Class	;
+	rdfs:label	"constructing on fly"	.
 
-local:s_class	rdfs:label	"s class"	.
+local:constructing	a	rdf:Class	;
+	rdfs:label	"constructing"	.
 
-local:resource_’_s	rdfs:label	"resource ’ s"	.
+local:construct	a	rdf:Class	;
+	rdfs:label	"construct"	.
 
-local:’_s_class	rdfs:label	"’ s class"	.
+local:full_power_of_the_rdfs_data_model_for_constructing_on_the_fly_queries	a	rdf:Class	;
+	rdfs:label	"full power of the rdfs data model for constructing on the fly queries"	.
 
-local:’_s	rdfs:label	"’ s"	.
+local:constructing_on_fly_queries	a	rdf:Class	;
+	rdfs:label	"constructing on fly queries"	.
 
-local:’	rdfs:label	"’"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:resource_’_s_class	rdfs:label	"resource ’ s class"	.
+local:expressiveness_of_declarative_queryview_languages	a	rdf:Class	;
+	rdfs:label	"expressiveness of declarative queryview languages"	.
 
-local:first	rdfs:label	"first"	.
+local:expressiveness	a	rdf:Class	;
+	rdfs:label	"expressiveness"	.
 
-local:first_applicationindependent	rdfs:label	"first application-independent"	.
+local:declarative_queryview_languages	a	rdf:Class	;
+	rdfs:label	"declarative queryview languages"	.
 
-local:first_applicationindependent_gui	rdfs:label	"first application-independent gui"	.
+local:declarative_queryview	a	rdf:Class	;
+	rdfs:label	"declarative queryview"	.
 
-local:gui	rdfs:label	"gui"	.
+local:declarative	a	rdf:Class	;
+	rdfs:label	"declarative"	.
 
-local:applicationindependent	rdfs:label	"application-independent"	.
+local:queryview_languages	a	rdf:Class	;
+	rdfs:label	"queryview languages"	.
 
-local:applicationindependent_gui	rdfs:label	"application-independent gui"	.
+local:languages	a	rdf:Class	;
+	rdfs:label	"languages"	.
 
-local:rql_query	rdfs:label	"rql query"	.
+local:queryview	a	rdf:Class	;
+	rdfs:label	"queryview"	.
 
-local:unique	rdfs:label	"unique"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:unique_rql	rdfs:label	"unique rql"	.
+local:transparent_way	a	rdf:Class	;
+	rdfs:label	"transparent way"	.
 
-local:unique_rql_query	rdfs:label	"unique rql query"	.
+local:transparent	a	rdf:Class	;
+	rdfs:label	"transparent"	.
 
-local:captures	rdfs:label	"captures"	.
+local:way	a	rdf:Class	;
+	rdfs:label	"way"	.
 
-local:entire_user	rdfs:label	"entire user"	.
+local:rdfs_description_bases	a	rdf:Class	;
+	rdfs:label	"rdfs description bases"	.
 
-local:entire_user_navigation	rdfs:label	"entire user navigation"	.
+local:rdfs_description	a	rdf:Class	;
+	rdfs:label	"rdfs description"	.
 
-local:user_navigation	rdfs:label	"user navigation"	.
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
 
-local:user_navigation_session	rdfs:label	"user navigation session"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
-local:entire_user_navigation_session	rdfs:label	"entire user navigation session"	.
+local:description_bases	a	rdf:Class	;
+	rdfs:label	"description bases"	.
 
-local:session	rdfs:label	"session"	.
+local:browse	a	rdf:Class	;
+	rdfs:label	"browse"	.
 
-local:navigation_session	rdfs:label	"navigation session"	.
+local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	a	rdf:Class	;
+	rdfs:label	"userfriendly guis for browsing rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
 
-local:cumulative_effect	rdfs:label	"cumulative effect"	.
+local:userfriendly_guis	a	rdf:Class	;
+	rdfs:label	"userfriendly guis"	.
 
-local:effect	rdfs:label	"effect"	.
+local:guis	a	rdf:Class	;
+	rdfs:label	"guis"	.
 
-local:cumulative	rdfs:label	"cumulative"	.
+local:userfriendly	a	rdf:Class	;
+	rdfs:label	"userfriendly"	.
 
-local:entire	rdfs:label	"entire"	.
+local:exploiting_in_transparent_way	a	rdf:Class	;
+	rdfs:label	"exploiting in transparent way"	.
 
-local:cumulative_effect_of_entire_user_navigation_session	rdfs:label	"cumulative effect of entire user navigation session"	.
+local:exploiting	a	rdf:Class	;
+	rdfs:label	"exploiting"	.
 
-#### Properties ####
+local:building	a	rdf:Class	;
+	rdfs:label	"building"	.
+
+local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	a	rdf:Class	;
+	rdfs:label	"userfriendly guis for filtering rdfs description bases while exploiting in a transparent way the expressiveness of declarative queryview languages"	.
 
 #### Mapped Relations ####
 
-local:user_navigation	owl:sameAs	cso:user_navigation	.
 cso:query_results	rdfs:label	"query result"	.
-cso:user_navigation	rdfs:label	"user navigation"	.
 cso:gui	rdfs:label	"gui"	.
-local:query_result	owl:sameAs	cso:query_results	.
+cso:user_navigation	rdfs:label	"user navigation"	.
+local:user_navigation	owl:sameAs	cso:user_navigation	.
 local:gui	owl:sameAs	cso:gui	.
+local:query_result	owl:sameAs	cso:query_results	.
 
 #### Relations ####
 
-local:declarative_queryview_languages	rdfs:subClassOf	local:queryview_languages	.
-local:relies	vn.role:Theme	local:full_power_of_rdfs_data_model	.
-local:unique_rql	rdfs:member	local:unique_rql_query	.
 local:rdfs_description_bases	rdfs:subClassOf	local:bases	.
-local:class_property	local:class_	local:property	.
-local:’	rdfs:member	local:’_s	.
-local:rdfs	rdfs:member	local:rdfs_class	.
-local:captures	vn.role:Agent	local:unique_rql_query	.
-local:resource_’_s_class	rdfs:subClassOf	local:class	.
-local:’_s	rdfs:subClassOf	local:s	.
-local:unique_rql_query	rdfs:subClassOf	local:rql_query	.
-local:called	vn.role:Theme	local:grql	.
-local:appearing	local:AM-LOC	local:query	.
-local:subsumption_andor	rdfs:member	local:subsumption_andor_associations	.
-local:rdfs_data	rdfs:subClassOf	local:data	.
-local:its_navigation_steps_through_class	local:through_class	local:its_navigation_steps	.
-local:resource_class_appearing	local:_appearing	local:resource_class	.
-local:enrich	local:AM-TMP	local:can_easily_specify	.
-local:filtering_conditions_on_attributes	local:filteringconditions_on	local:attributes	.
-local:exploiting_in_transparent_way	local:in_transparentway	local:exploiting	.
-local:full_power_of_rdfs_data_model	local:of_rdfsdatamodel	local:full_power	.
-local:navigate	local:AM-MOD	local:can	.
-local:path	rdfs:member	local:path_expressions	.
-local:transparent_way	rdfs:subClassOf	local:way	.
-local:entire_user	rdfs:member	local:entire_user_navigation	.
-local:individual_rdfs_class	rdfs:subClassOf	local:rdfs_class	.
-local:rql_path	rdfs:member	local:rql_path_expressions	.
-local:appearing_in_query_result	local:appearing_in	local:query_result	.
-local:exploiting_in_transparent_way	local:exploiting_in	local:transparent_way	.
-local:entire_user	rdfs:subClassOf	local:user	.
-local:navigate	local:AM-MNR	local:graphically	.
-local:resource_’	rdfs:member	local:resource_’_s	.
-local:required	vn.role:Agent	local:path_expressions	.
-local:full_power	rdfs:subClassOf	local:power	.
-local:userfriendly	rdfs:member	local:userfriendly_guis	.
-local:path_expressions	rdfs:subClassOf	local:expressions	.
-local:full_power_of_rdfs_data_model	local:fullpower_of	local:rdfs_data_model	.
-local:property	rdfs:member	local:property_definitions	.
-local:rdfs	rdfs:member	local:rdfs_description	.
-local:rdfs_data_model	rdfs:subClassOf	local:model	.
-local:novel	rdfs:member	local:novel_interface	.
-local:specify	vn.role:Agent	local:users	.
-local:appearing_in_query_result	local:in_queryresult	local:appearing	.
-local:entire_user_navigation	rdfs:subClassOf	local:navigation	.
-local:cumulative_effect_of_entire_user_navigation_session	local:of_entireusernavigationsession	local:cumulative_effect	.
-local:resource	rdfs:member	local:resource_’	.
-local:first_applicationindependent_gui	rdfs:subClassOf	local:applicationindependent_gui	.
-local:entire	rdfs:member	local:entire_user	.
-local:rql	rdfs:member	local:rql_path	.
-local:declarative_queryview	rdfs:subClassOf	local:queryview	.
-local:declarative_queryview_languages	rdfs:subClassOf	local:languages	.
-local:unique	rdfs:member	local:unique_rql	.
-local:userfriendly_guis_for_filtering_rdfs_description_bases	local:user-friendlyguis_for	local:filtering_rdfs_description_bases	.
-local:first_applicationindependent	rdfs:member	local:first_applicationindependent_gui	.
-local:constructing_on_fly_queries	local:constructing_on	local:fly_queries	.
-local:filtering	rdfs:member	local:filtering_conditions	.
-local:generate	local:AM-MOD	local:can	.
-local:resource_class	rdfs:subClassOf	local:class	.
-local:its_navigation_steps_through_class	local:itsnavigationsteps_through	local:class	.
-local:resources_of_interest	local:of_interest	local:resources	.
-local:enrich	vn.role:Agent	local:additionally_users	.
-local:userfriendly_guis_for_filtering_rdfs_description_bases	local:for_filteringrdfsdescriptionbases	local:userfriendly_guis	.
-local:building	vn.role:Material	local:userfriendly_guis	.
-local:cumulative_effect_of_entire_user_navigation_session	local:cumulativeeffect_of	local:entire_user_navigation_session	.
-local:resource_’_s	rdfs:member	local:resource_’_s_class	.
-local:rdfs_data_model	rdfs:subClassOf	local:data_model	.
-local:s_class	rdfs:subClassOf	local:class	.
-local:navigate	local:AM-MNR	local:property_definitions	.
-local:user_navigation_session	rdfs:subClassOf	local:session	.
-local:rql_query	rdfs:subClassOf	local:query	.
-local:applicationindependent	rdfs:member	local:applicationindependent_gui	.
-local:resources_of_interest	local:resources_of	local:interest	.
-local:resources_of_interest_capture	local:of_interestcapture	local:resources	.
-local:building	vn.role:Material	local:userfriendly_guis_for_filtering_rdfs_description_bases	.
-local:generated_queries_with_filtering_conditions	local:with_filteringconditions	local:generated_queries	.
-local:declarative_queryview	rdfs:member	local:declarative_queryview_languages	.
-local:relies	vn.role:indirect_object	local:constructing_on_fly_queries	.
-local:resource_class_appearing	local:resourceclass_	local:appearing	.
-local:user	rdfs:member	local:user_navigation	.
-local:full	rdfs:member	local:full_power	.
-local:interest_capture	rdfs:subClassOf	local:capture	.
-local:applicationindependent_gui	rdfs:subClassOf	local:gui	.
-local:visited	local:AM-TMP	local:currently	.
-local:user_navigation_session	rdfs:subClassOf	local:navigation_session	.
-local:specify	vn.role:Theme	local:resource_class	.
-local:currently_visited	rdfs:subClassOf	local:visited	.
-local:description_bases	rdfs:subClassOf	local:bases	.
-local:unique_rql	rdfs:subClassOf	local:rql	.
-local:navigation	rdfs:member	local:navigation_steps	.
-local:captures	vn.role:Theme	local:cumulative_effect_of_entire_user_navigation_session	.
-local:queryview_languages	rdfs:subClassOf	local:languages	.
-local:precisely_user	rdfs:subClassOf	local:user	.
-local:rql_path	rdfs:subClassOf	local:path	.
-local:browsing	vn.role:Location	local:rdfs_description_bases	.
-local:generate	vn.role:Theme1	local:first_applicationindependent_gui	.
-local:first_applicationindependent	rdfs:subClassOf	local:applicationindependent	.
-local:expressed	vn.role:Agent	local:fly	.
-local:rql	rdfs:member	local:rql_query	.
-local:user_navigation	rdfs:subClassOf	local:navigation	.
-local:additionally_users	rdfs:subClassOf	local:users	.
-local:expressed	local:AM-LOC	local:rql	.
-local:constructing_on_fly_queries	local:on_flyqueries	local:constructing	.
-local:andor_associations	rdfs:subClassOf	local:associations	.
-local:cumulative_effect	rdfs:subClassOf	local:effect	.
-local:rdfs_description	rdfs:member	local:rdfs_description_bases	.
-local:rdfs_description	rdfs:subClassOf	local:description	.
-local:easily_specify	rdfs:subClassOf	local:specify	.
-local:user_navigation	rdfs:member	local:user_navigation_session	.
-local:rdfs_description_bases	rdfs:subClassOf	local:description_bases	.
-local:browsing	vn.role:Agent	local:userfriendly_guis	.
-local:navigation_session	rdfs:subClassOf	local:session	.
-local:required	vn.role:Patient	local:access	.
-local:called	vn.role:Agent	local:novel_interface	.
-local:data_model	rdfs:subClassOf	local:model	.
-local:property_definitions	rdfs:subClassOf	local:definitions	.
-local:subsumption_andor_associations	rdfs:subClassOf	local:associations	.
-local:navigation_steps	rdfs:subClassOf	local:steps	.
-local:first	rdfs:member	local:first_applicationindependent	.
-local:fly	rdfs:member	local:fly_queries	.
-local:visited_class	rdfs:subClassOf	local:class	.
-local:present	local:AM-LOC	local:paper	.
-local:resource_’	rdfs:subClassOf	local:’	.
-local:present	vn.role:Theme	local:novel_interface	.
-local:cumulative	rdfs:member	local:cumulative_effect	.
-local:attributes_of_visited_class	local:attributes_of	local:visited_class	.
-local:query	rdfs:member	local:query_result	.
-local:attributes_of_visited_class	local:of_visitedclass	local:attributes	.
-local:entire_user_navigation_session	rdfs:subClassOf	local:user_navigation_session	.
-local:andor	rdfs:member	local:andor_associations	.
-local:subsumption_andor	rdfs:subClassOf	local:andor	.
-local:expressiveness_of_declarative_queryview_languages	local:expressiveness_of	local:declarative_queryview_languages	.
-local:generate	vn.role:Theme1	local:precisely_user	.
+local:unique_rql_query	rdfs:member	local:unique_rql	.
+local:entire_user	rdfs:member	local:entire	.
+local:first_applicationindependent_gui	rdfs:member	local:first_applicationindependent	.
+local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:expressiveness	.
+local:full_power	rdfs:member	local:full	.
+local:s0.1	rdf:object	local:rdfs_description_bases	.
+local:generated_queries_with_filtering_conditions	rdfs:member	local:generated_queries	.
+local:property_subsumption	rdfs:member	local:property	.
+local:s14	rdf:object	local:generated_queries_with_filtering_conditions_on_the_attributes_of_the_currently_visited_class	.
+local:s13	rdf:object	local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	.
 local:query_result	rdfs:subClassOf	local:result	.
-local:appearing	vn.role:Location	local:resource_class	.
-local:s	rdfs:member	local:s_class	.
-local:declarative	rdfs:member	local:declarative_queryview	.
-local:browsing	local:AM-PNC	local:exploiting_in_transparent_way	.
-local:’_s_class	rdfs:subClassOf	local:class	.
-local:accurately_meaning_of_its_navigation_steps	local:accuratelymeaning_of	local:its_navigation_steps	.
-local:’_s	rdfs:member	local:’_s_class	.
-local:expressiveness_of_declarative_queryview_languages	local:of_declarativequeryviewlanguages	local:expressiveness	.
-local:resources_of_interest_capture	local:resources_of	local:interest_capture	.
-local:entire_user_navigation_session	rdfs:subClassOf	local:session	.
-local:userfriendly_guis	rdfs:subClassOf	local:guis	.
-local:generate	local:AM-MNR	local:transparently	.
-local:entire_user_navigation	rdfs:member	local:entire_user_navigation_session	.
-local:navigation	rdfs:member	local:navigation_session	.
+local:s3.1	local:AM-PNC	local:s3.2	.
 local:rql_path_expressions	rdfs:subClassOf	local:path_expressions	.
-local:specify	local:AM-MNR	local:easily	.
-local:accurately_meaning	rdfs:subClassOf	local:meaning	.
-local:exploiting	local:AM-MNR	local:transparent_way	.
-local:rdfs	rdfs:member	local:rdfs_data	.
-local:access	vn.role:Patient	local:resources_of_interest_capture	.
-local:generate	vn.role:Theme2	local:unique_rql_query	.
-local:access	vn.role:Agent	local:path_expressions	.
-local:individual_rdfs_class	rdfs:subClassOf	local:class	.
-local:generated_queries	rdfs:subClassOf	local:queries	.
-local:access	vn.role:Patient	local:resources_of_interest	.
-local:first_applicationindependent_gui	rdfs:subClassOf	local:gui	.
-local:subsumption_andor_associations	rdfs:subClassOf	local:andor_associations	.
-local:queryview	rdfs:member	local:queryview_languages	.
-local:navigate	local:AM-MNR	local:individual_rdfs_class	.
-local:subsumption	rdfs:member	local:subsumption_andor	.
-local:filtering_conditions_on_attributes	local:on_attributes	local:filtering_conditions	.
-local:specify	local:AM-MOD	local:can	.
-local:unique_rql_query	rdfs:subClassOf	local:query	.
-local:rdfs_data	rdfs:member	local:rdfs_data_model	.
-local:generated_queries_with_filtering_conditions	local:generatedqueries_with	local:filtering_conditions	.
-local:data	rdfs:member	local:data_model	.
-local:visited	vn.role:Actor1	local:class	.
-local:resource_’_s	rdfs:subClassOf	local:s	.
-local:fly_queries	rdfs:subClassOf	local:queries	.
-local:rdfs_class	rdfs:subClassOf	local:class	.
-local:individual_rdfs	rdfs:member	local:individual_rdfs_class	.
-local:generate	vn.role:Theme2	local:rql_path_expressions	.
-local:navigate	vn.role:Agent	local:precisely_user	.
-local:individual_rdfs	rdfs:subClassOf	local:rdfs	.
-local:individual	rdfs:member	local:individual_rdfs	.
-local:enrich	local:AM-MOD	local:can	.
-local:filtering_conditions	rdfs:subClassOf	local:conditions	.
-local:description	rdfs:member	local:description_bases	.
-local:exploiting	vn.role:Predicate	local:expressiveness_of_declarative_queryview_languages	.
+local:rdfs_data	rdfs:member	local:rdfs	.
+local:applicationindependent_gui	rdfs:subClassOf	local:gui	.
+local:accurately_meaning_of_its_navigation_steps	rdfs:member	local:its_navigation_steps	.
+local:s17	rdf:predicate	local:capture	.
+local:description_bases	rdfs:subClassOf	local:bases	.
+local:constructing_on_fly	rdfs:member	local:fly	.
+local:user_navigation	rdfs:subClassOf	local:navigation	.
+local:s3.2	local:AM-MNR	local:transparent_way	.
+local:s2.1	rdf:subject	local:expressiveness_of_declarative_queryview_languages	.
+local:cumulative_effect	rdfs:member	local:cumulative	.
+local:property_definitions	rdfs:member	local:property	.
+local:unique_rql_query	rdfs:subClassOf	local:rql_query	.
+local:s3	rdf:subject	local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	.
+local:declarative_queryview_languages	rdfs:subClassOf	local:queryview_languages	.
+local:s14.2	rdf:subject	local:users	.
+local:cumulative_effect_of_an_entire_user_navigation_session	rdfs:member	local:cumulative_effect	.
+local:s17	rdf:object	local:cumulative_effect_of_an_entire_user_navigation_session	.
+local:cumulative_effect_of_entire_user_navigation_session	rdfs:member	local:entire_user_navigation_session	.
+local:filtering_conditions_on_attributes	rdfs:member	local:attributes	.
+local:relies_on_the_full_power_of_the_rdfs_data_model_for_constructing_on_the_fly	rdfs:member	local:rdfs_data_model	.
+local:relies_on_full_power	rdfs:member	local:relies	.
+local:s11	local:AM-MNR	local:precisely	.
+local:resources_of_interest	rdfs:member	local:interest	.
+local:entire_user_navigation_session	rdfs:member	local:entire_user_navigation	.
+local:declarative_queryview	rdfs:subClassOf	local:queryview	.
+local:s13	rdf:predicate	local:require	.
 local:novel_interface	rdfs:subClassOf	local:interface	.
-local:accurately_meaning_of_its_navigation_steps	local:of_itsnavigationsteps	local:accurately_meaning	.
-local:transparent	rdfs:member	local:transparent_way	.
+local:entire_user_navigation	rdfs:member	local:entire_user	.
+local:rdfs_class	rdfs:subClassOf	local:class	.
+local:s3.2	rdf:subject	local:expressiveness_of_declarative_queryview_languages	.
+local:declarative_queryview	rdfs:member	local:declarative	.
+local:rdfs_data_model	rdfs:subClassOf	local:data_model	.
+local:s14	local:AM-MOD	local:can	.
+local:s2.1	local:AM-MNR	local:transparent_way	.
+local:s0.1	rdf:subject	local:userfriendly_guis	.
+local:fly_queries	rdfs:member	local:fly	.
+local:constructing_on_fly_queries	rdfs:member	local:s4.1	.
+local:s12	rdf:predicate	local:require	.
+local:subsumption_andor	rdfs:member	local:subsumption	.
+local:generated_queries_with_filtering_conditions_on_the_attributes_of_the_currently_visited_class	rdfs:member	local:queries	.
+local:s17	rdf:subject	local:unique_rql_query	.
+local:s8	local:AM-LOC	local:paper	.
+local:accurately_meaning_of_its_navigation_steps	rdfs:member	local:accurately_meaning	.
+local:user_navigation_session	rdfs:member	local:user_navigation	.
+local:s1.1	local:AM-MNR	local:transparent_way	.
+local:s3	rdf:predicate	local:building	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:class	.
+local:s14	local:AM-DIS	local:additionally	.
+local:andor_associations	rdfs:subClassOf	local:associations	.
+local:individual_rdfs_class	rdfs:subClassOf	local:rdfs_class	.
+local:property_definitions	rdfs:subClassOf	local:definitions	.
+local:data_model	rdfs:subClassOf	local:model	.
+local:cumulative_effect_of_an_entire_user_navigation_session	rdfs:member	local:entire_user_navigation_session	.
+local:path_expressions	rdfs:subClassOf	local:expressions	.
+local:relies_on_full_power	rdfs:member	local:full_power	.
+local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:rdfs_description_bases	.
+local:s1.1	rdf:predicate	local:exploit	.
+local:s4.1	rdf:predicate	local:construct	.
+local:s10	rdf:predicate	local:generate	.
+local:s1	rdf:subject	local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	.
+local:attributes_of_visited_class	rdfs:member	local:attributes	.
+local:property_subsumption_andor_associations	rdfs:subClassOf	local:associations	.
+local:s8	rdf:subject	local:we	.
+local:rdfs_data_model	rdfs:subClassOf	local:model	.
+local:s13	rdf:subject	local:path_expressions	.
+local:s2	rdf:subject	local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	.
+local:s9	rdf:subject	local:user	.
+local:s14	rdf:subject	local:users	.
+local:s13.1	rdf:object	local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	.
+local:s12.1	rdf:subject	local:path_expressions	.
+local:filtering_conditions	rdfs:member	local:filtering	.
+local:class_property_subsumption_andor_associations	rdfs:subClassOf	local:property_subsumption_andor_associations	.
+local:accurately_meaning	rdfs:subClassOf	local:meaning	.
+local:its_navigation_steps_through_class_property_subsumption_andor_associations	rdfs:member	local:class_property_subsumption_andor_associations	.
+local:s8	rdf:predicate	local:present	.
+local:s0	rdf:subject	local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	.
+local:subsumption_andor	rdfs:subClassOf	local:andor	.
+local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:userfriendly_guis	.
+local:s10	rdf:object	local:rql_path_expressions	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:resources	.
+local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:expressiveness	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:navigation_steps	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:class	.
+local:its_navigation_steps_through_class_property_subsumption_andor_associations	rdfs:member	local:its_navigation_steps	.
+local:data_model	rdfs:member	local:data	.
+local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:rdfs_description_bases	.
+local:s11	rdf:predicate	local:navigate	.
+local:s0.1	rdf:predicate	local:browse	.
+local:entire_user_navigation_session	rdfs:subClassOf	local:user_navigation_session	.
+local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:declarative_queryview_languages	.
+local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:transparent_way	.
+local:entire_user_navigation	rdfs:subClassOf	local:navigation	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:meaning	.
+local:query_result	rdfs:member	local:query	.
+local:fly_queries	rdfs:subClassOf	local:queries	.
+local:expressiveness_of_declarative_queryview_languages	rdfs:member	local:expressiveness	.
+local:rdfs_data_model	rdfs:member	local:rdfs_data	.
+local:s14.1	local:AM-TMP	local:currently	.
+local:s10	local:AM-MNR	local:transparently	.
+local:rql_path	rdfs:subClassOf	local:path	.
+local:full_power_of_the_rdfs_data_model_for_constructing_on_the_fly_queries	rdfs:member	local:full_power	.
+local:visited_class	rdfs:subClassOf	local:class	.
+local:s15	local:AM-LOC	local:query_result	.
+local:s15	rdf:predicate	local:appear	.
+local:s15	rdf:subject	local:resources_class	.
+local:rdfs_description_bases	rdfs:subClassOf	local:description_bases	.
+local:currently_visited	rdfs:subClassOf	local:visited	.
+local:subsumption_andor_associations	rdfs:member	local:subsumption_andor	.
+local:generated_queries_with_filtering_conditions_on_the_attributes_of_the_currently_visited_class	rdfs:member	local:class	.
+local:s4	rdf:predicate	local:rely	.
+local:s14.1	rdf:subject	local:class	.
+local:unique_rql	rdfs:member	local:unique	.
+local:rdfs_description_bases	rdfs:member	local:rdfs_description	.
+local:description_bases	rdfs:member	local:description	.
+local:property_subsumption	rdfs:subClassOf	local:subsumption	.
+local:userfriendly_guis_for_browsing_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:transparent_way	.
+local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:declarative_queryview_languages	.
+local:property_subsumption_andor	rdfs:subClassOf	local:andor	.
+local:s6	rdf:subject	local:novel_interface	.
+local:s4.2	rdf:predicate	local:query	.
+local:s16	rdf:predicate	local:generate	.
+local:resources_class	rdfs:subClassOf	local:class	.
+local:generated_queries_with_filtering_conditions_on_the_attributes_of_the_currently_visited_class	rdfs:member	local:filtering_conditions	.
+local:filtering_conditions	rdfs:subClassOf	local:conditions	.
+local:s14.2	rdf:predicate	local:specify	.
+local:s13.1	rdf:subject	local:path_expressions	.
+local:access_the_resources_of_interest	rdfs:member	local:access	.
+local:s11	local:AM-MOD	local:can	.
+local:transparent_way	rdfs:subClassOf	local:way	.
+local:s0.2	rdf:predicate	local:exploit	.
 local:rql_path_expressions	rdfs:subClassOf	local:expressions	.
-local:enrich	vn.role:Theme	local:generated_queries_with_filtering_conditions	.
-local:filtering_rdfs_description_bases	rdfs:subClassOf	local:rdfs_description_bases	.
-local:present	vn.role:Agent	local:we	.
+local:full_power_of_the_rdfs_data_model_for_constructing_on_the_fly_queries	rdfs:member	local:rdfs_data_model	.
+local:novel_interface	rdfs:member	local:novel	.
+local:rdfs_class	rdfs:member	local:rdfs	.
+local:s5	rdf:subject	local:fly_queries	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:property_subsumption_andor_associations	.
+local:s9	local:AM-MOD	local:can	.
+local:userfriendly_guis	rdfs:member	local:userfriendly	.
+local:s0.2	rdf:subject	local:expressiveness_of_declarative_queryview_languages	.
+local:s6	rdf:object	local:grql	.
+local:generated_queries_with_filtering_conditions	rdfs:member	local:filtering_conditions	.
+local:first_applicationindependent	rdfs:subClassOf	local:applicationindependent	.
+local:s14.2	local:AM-MNR	local:easily	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:interest_capture	.
+local:cumulative_effect	rdfs:subClassOf	local:effect	.
+local:first_applicationindependent	rdfs:member	local:first	.
+local:rql_path_expressions	rdfs:member	local:rql_path	.
+local:s12.1	rdf:object	local:resources_of_interest	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:meaning	.
+local:s4	rdf:subject	local:full_power_of_the_rdfs_data_model_for_constructing_on_the_fly_queries	.
+local:resources_class	rdfs:member	local:resources	.
+local:path_expressions	rdfs:member	local:path	.
+local:individual_rdfs_class	rdfs:member	local:individual_rdfs	.
+local:rdfs_description	rdfs:subClassOf	local:description	.
+local:s5	local:AM-LOC	local:rql	.
+local:resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:interest_capture	.
+local:navigation_session	rdfs:subClassOf	local:session	.
+local:full_power_of_rdfs_data_model	rdfs:member	local:rdfs_data_model	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:resources	.
+local:generated_queries_with_filtering_conditions_on_the_attributes_of_the_currently_visited_class	rdfs:member	local:attributes	.
+local:rql_path	rdfs:member	local:rql	.
+local:relies_on_the_full_power_of_the_rdfs_data_model_for_constructing_on_the_fly	rdfs:member	local:relies	.
+local:relies_on_the_full_power_of_the_rdfs_data_model_for_constructing_on_the_fly	rdfs:member	local:fly	.
+local:s1.1	rdf:subject	local:expressiveness_of_declarative_queryview_languages	.
+local:resources_of_interest_capture	rdfs:member	local:interest_capture	.
+local:rdfs_description	rdfs:member	local:rdfs	.
+local:userfriendly_guis	rdfs:subClassOf	local:guis	.
+local:s9	local:AM-MNR	local:graphically	.
+local:property_subsumption_andor_associations	rdfs:subClassOf	local:subsumption_andor_associations	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:navigation_steps	.
+local:individual_rdfs	rdfs:member	local:individual	.
+local:s11	local:AM-MNR	local:graphically	.
+local:s14	local:AM-TMP	local:s14.2	.
+local:s1	rdf:predicate	local:building	.
+local:applicationindependent_gui	rdfs:member	local:applicationindependent	.
+local:s8	rdf:object	local:novel_interface	.
+local:queryview_languages	rdfs:member	local:queryview	.
+local:full_power	rdfs:subClassOf	local:power	.
+local:s10	local:AM-MOD	local:can	.
+local:generated_queries	rdfs:subClassOf	local:queries	.
+local:s14.2	rdf:object	local:resources_class	.
+local:unique_rql	rdfs:subClassOf	local:rql	.
+local:rdfs_data	rdfs:subClassOf	local:data	.
+local:s16	rdf:object	local:unique_rql_query	.
+local:rql_query	rdfs:member	local:rql	.
+local:s10	rdf:subject	local:user	.
+local:individual_rdfs_class	rdfs:subClassOf	local:class	.
+local:s16	rdf:subject	local:first_applicationindependent_gui	.
+local:full_power_of_rdfs_data_model	rdfs:member	local:full_power	.
+local:s12	rdf:object	local:access_the_resources_of_interest	.
+local:cumulative_effect_of_entire_user_navigation_session	rdfs:member	local:cumulative_effect	.
+local:resources_of_interest_capture	rdfs:member	local:resources	.
+local:subsumption_andor_associations	rdfs:subClassOf	local:andor_associations	.
+local:s12.1	rdf:predicate	local:access	.
+local:s9	rdf:predicate	local:navigate	.
+local:s2.1	rdf:predicate	local:exploit	.
+local:s3.1	rdf:subject	local:rdfs_description_bases	.
+local:interest_capture	rdfs:subClassOf	local:capture	.
+local:userfriendly_guis_for_filtering_rdfs_description_bases_while_exploiting_in_a_transparent_way_the_expressiveness_of_declarative_queryview_languages	rdfs:member	local:userfriendly_guis	.
+local:s11	rdf:subject	local:user	.
+local:exploiting_in_transparent_way	rdfs:member	local:transparent_way	.
+local:s0.2	local:AM-MNR	local:transparent_way	.
+local:andor_associations	rdfs:member	local:andor	.
+local:property_subsumption_andor_associations	rdfs:member	local:property_subsumption_andor	.
+local:s12	rdf:subject	local:path_expressions	.
+local:individual_rdfs	rdfs:subClassOf	local:rdfs	.
+local:entire_user	rdfs:subClassOf	local:user	.
+local:declarative_queryview_languages	rdfs:member	local:declarative_queryview	.
 local:its_navigation_steps	rdfs:subClassOf	local:navigation_steps	.
-local:class_property	local:_property	local:class	.
-local:interest	rdfs:member	local:interest_capture	.
-local:can_easily_specify	rdfs:subClassOf	local:easily_specify	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:access	.
+local:s14.1	rdf:predicate	local:visit	.
+local:filtering_conditions_on_attributes	rdfs:member	local:filtering_conditions	.
+local:subsumption_andor_associations	rdfs:subClassOf	local:associations	.
+local:s9	local:AM-MNR	local:individual_rdfs_class	.
+local:s13.1	rdf:predicate	local:access	.
+local:rql_query	rdfs:subClassOf	local:query	.
+local:entire_user_navigation_session	rdfs:subClassOf	local:session	.
+local:access_the_resources_of_interest_capture_accurately_the_meaning_of_its_navigation_steps_through_the_class_or_property_subsumption_andor_associations	rdfs:member	local:property_subsumption_andor_associations	.
+local:full_power_of_the_rdfs_data_model_for_constructing_on_the_fly_queries	rdfs:member	local:fly_queries	.
+local:declarative_queryview_languages	rdfs:subClassOf	local:languages	.
+local:s3.2	rdf:predicate	local:exploit	.
+local:exploiting_in_transparent_way	rdfs:member	local:exploiting	.
+local:attributes_of_visited_class	rdfs:member	local:visited_class	.
+local:navigation_session	rdfs:member	local:navigation	.
+local:s9	local:AM-MNR	local:precisely	.
+local:resources_of_interest	rdfs:member	local:resources	.
+local:access_the_resources_of_interest	rdfs:member	local:interest	.
+local:constructing_on_fly_queries	rdfs:member	local:fly_queries	.
+local:s2	rdf:predicate	local:building	.
+local:navigation_steps	rdfs:member	local:navigation	.
+local:unique_rql_query	rdfs:subClassOf	local:query	.
+local:s14.2	local:AM-MOD	local:can	.
+local:s11	local:AM-MNR	local:property_definitions	.
+local:s10	local:AM-MNR	local:precisely	.
+local:transparent_way	rdfs:member	local:transparent	.
+local:s0	rdf:predicate	local:building	.
+local:navigation_steps	rdfs:subClassOf	local:steps	.
+local:s0.1	local:AM-PNC	local:s0.2	.
+local:user_navigation_session	rdfs:subClassOf	local:session	.
+local:access_the_resources_of_interest	rdfs:member	local:resources	.
+local:relies_on_the_full_power_of_the_rdfs_data_model_for_constructing_on_the_fly	rdfs:member	local:full_power	.
+local:expressiveness_of_declarative_queryview_languages	rdfs:member	local:declarative_queryview_languages	.
+local:user_navigation	rdfs:member	local:user	.
+local:queryview_languages	rdfs:subClassOf	local:languages	.
+local:s3.1	rdf:predicate	local:browse	.
+local:interest_capture	rdfs:member	local:interest	.
+local:s4.2	rdf:subject	local:relies_on_the_full_power_of_the_rdfs_data_model_for_constructing_on_the_fly	.
+local:constructing_on_fly	rdfs:member	local:constructing	.
+local:user_navigation_session	rdfs:subClassOf	local:navigation_session	.
+local:s14	rdf:predicate	local:enrich	.
+local:s5	rdf:predicate	local:express	.
+local:s6	rdf:predicate	local:call	.
+local:property_subsumption_andor	rdfs:member	local:property_subsumption	.
+local:first_applicationindependent_gui	rdfs:subClassOf	local:gui	.

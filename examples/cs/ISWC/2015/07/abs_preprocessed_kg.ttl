@@ -1,582 +1,1050 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"support other filters such as complete regular expressions"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"matching can used to support other filters such as complete regular expressions"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"furthermore substring matching can be used to support other filters such as complete regular expressions"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"support other filters such as range queries"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"matching can used to support other filters such as range queries"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"furthermore substring matching can be used to support other filters such as range queries"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"users obtain faster responses for filterbased sparql queries"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"triple pattern fragment servers allows users to obtain faster responses for filterbased sparql queries"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"offering the substring feature on triple pattern fragment servers"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"significantly increasing the load on the server"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"these improvements allow for faster query execution without significantly increasing the load on the server"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we evaluations indicate that these improvements allow for faster query execution without significantly increasing the load on the server"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"multiple implementations including caseinsensitive fmindex"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in this paper we compare the performance of sparql queries on multiple implementations including caseinsensitive fmindex"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in this paper we discuss the clientserver setup"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"multiple implementations including elastic search"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"in this paper we compare the performance of sparql queries on multiple implementations including elastic search"	.
+
+local:s5.3	a	rdf:Statement	;
+	rdfs:label	"we maintaining low server cost"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"improving query performance"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"we adding a literal substring matching feature to the triple pattern fragments interface with the goal of improving query performance while maintaining low server cost"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we therefore investigated the impact of adding a literal substring matching feature to the triple pattern fragments interface with the goal of improving query performance while maintaining low server cost"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"resulting in long execution times"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"complex constructs such as sparql filters queries executed mostly on the client"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"complex constructs such as sparql filters queries need to be executed mostly on the client resulting in long execution times"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the triple pattern fragments interface purposely not support complex constructs such as sparql filters queries need to be executed mostly on the client resulting in long execution times"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"queries that use sparql filters"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"scalability moving part of the query execution to the client at the cost of elevated query times"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"scalability achieved by moving part of the query execution to the client at the cost of elevated query times"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"high numbers of clients evaluate sparql queries"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"high numbers of clients need to evaluate sparql queries"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"recently triple pattern fragments introduced as a lowcost serverside interface"	.
+
+
 #### Classes ####
 
-local:pattern	rdfs:label	"pattern"	.
+local:filters_such_as_complete_regular_expressions	a	rdf:Class	;
+	rdfs:label	"filters such_as complete regular expressions"	.
 
-local:pattern_fragments	rdfs:label	"pattern fragments"	.
+local:complete_regular_expressions	a	rdf:Class	;
+	rdfs:label	"complete regular expressions"	.
 
-local:triple_pattern	rdfs:label	"triple pattern"	.
+local:filters	a	rdf:Class	;
+	rdfs:label	"filters"	.
 
-local:triple_pattern_fragments	rdfs:label	"triple pattern fragments"	.
+local:complete_regular	a	rdf:Class	;
+	rdfs:label	"complete regular"	.
 
-local:triple	rdfs:label	"triple"	.
+local:complete	a	rdf:Class	;
+	rdfs:label	"complete"	.
 
-local:fragments	rdfs:label	"fragments"	.
+local:regular_expressions	a	rdf:Class	;
+	rdfs:label	"regular expressions"	.
 
-local:recently_triple_pattern_fragments	rdfs:label	"recently triple pattern fragments"	.
+local:regular	a	rdf:Class	;
+	rdfs:label	"regular"	.
 
-local:introduced	rdfs:label	"introduced"	.
+local:expressions	a	rdf:Class	;
+	rdfs:label	"expressions"	.
 
-local:serverside_interface	rdfs:label	"server-side interface"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:interface	rdfs:label	"interface"	.
+local:matching	a	rdf:Class	;
+	rdfs:label	"matching"	.
 
-local:lowcost_serverside	rdfs:label	"low-cost server-side"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:lowcost_serverside_interface	rdfs:label	"low-cost server-side interface"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:serverside	rdfs:label	"server-side"	.
+local:matching_can_be_used_to_support_other_filters_such_as_complete_regular_expressions	a	rdf:Class	;
+	rdfs:label	"matching can be used to support other filters such as complete regular expressions"	.
 
-local:lowcost	rdfs:label	"low-cost"	.
+local:other_filters	a	rdf:Class	;
+	rdfs:label	"other filters"	.
 
-local:high	rdfs:label	"high"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:high_numbers	rdfs:label	"high numbers"	.
+local:can_used	a	rdf:Class	;
+	rdfs:label	"can used"	.
 
-local:numbers	rdfs:label	"numbers"	.
+local:used	a	rdf:Class	;
+	rdfs:label	"used"	.
 
-local:high_numbers_of_clients	rdfs:label	"high numbers of clients"	.
+local:other_filters_such_as_complete_regular_expressions	a	rdf:Class	;
+	rdfs:label	"other filters such_as complete regular expressions"	.
 
-local:clients	rdfs:label	"clients"	.
+local:substring	a	rdf:Class	;
+	rdfs:label	"substring"	.
 
-local:need	rdfs:label	"need"	.
+local:furthermore	a	rdf:Class	;
+	rdfs:label	"furthermore"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:filters_such_as_range_queries	a	rdf:Class	;
+	rdfs:label	"filters such_as range queries"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:range_queries	a	rdf:Class	;
+	rdfs:label	"range queries"	.
 
-local:queries	rdfs:label	"queries"	.
+local:range	a	rdf:Class	;
+	rdfs:label	"range"	.
 
-local:evaluate_sparql_queries	rdfs:label	"evaluate sparql queries"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:evaluate_sparql	rdfs:label	"evaluate sparql"	.
+local:matching_can_be_used_to_support_other_filters_such_as_range_queries	a	rdf:Class	;
+	rdfs:label	"matching can be used to support other filters such as range queries"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:other_filters_such_as_range_queries	a	rdf:Class	;
+	rdfs:label	"other filters such_as range queries"	.
 
-local:achieved	rdfs:label	"achieved"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:scalability	rdfs:label	"scalability"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:query_times	rdfs:label	"query times"	.
+local:faster_responses_for_filterbased_sparql_queries	a	rdf:Class	;
+	rdfs:label	"faster responses for filterbased sparql queries"	.
 
-local:times	rdfs:label	"times"	.
+local:faster_responses	a	rdf:Class	;
+	rdfs:label	"faster responses"	.
 
-local:elevated_query	rdfs:label	"elevated query"	.
+local:filterbased_sparql_queries	a	rdf:Class	;
+	rdfs:label	"filterbased sparql queries"	.
 
-local:query	rdfs:label	"query"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:elevated_query_times	rdfs:label	"elevated query times"	.
+local:responses	a	rdf:Class	;
+	rdfs:label	"responses"	.
 
-local:query_execution	rdfs:label	"query execution"	.
+local:filterbased_sparql	a	rdf:Class	;
+	rdfs:label	"filterbased sparql"	.
 
-local:execution	rdfs:label	"execution"	.
+local:filterbased	a	rdf:Class	;
+	rdfs:label	"filterbased"	.
 
-local:elevated	rdfs:label	"elevated"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:part_of_query_execution	rdfs:label	"part of query execution"	.
+local:faster	a	rdf:Class	;
+	rdfs:label	"faster"	.
 
-local:part	rdfs:label	"part"	.
+local:triple_pattern_fragment_servers	a	rdf:Class	;
+	rdfs:label	"triple pattern fragment servers"	.
 
-local:query_execution_to_client	rdfs:label	"query execution to client"	.
+local:servers	a	rdf:Class	;
+	rdfs:label	"servers"	.
 
-local:client	rdfs:label	"client"	.
+local:triple_pattern_fragment	a	rdf:Class	;
+	rdfs:label	"triple pattern fragment"	.
 
-local:moving_at_cost	rdfs:label	"moving at cost"	.
+local:triple_pattern	a	rdf:Class	;
+	rdfs:label	"triple pattern"	.
 
-local:moving	rdfs:label	"moving"	.
+local:pattern	a	rdf:Class	;
+	rdfs:label	"pattern"	.
 
-local:cost	rdfs:label	"cost"	.
+local:fragment_servers	a	rdf:Class	;
+	rdfs:label	"fragment servers"	.
 
-local:cost_of_elevated_query_times	rdfs:label	"cost of elevated query times"	.
+local:triple	a	rdf:Class	;
+	rdfs:label	"triple"	.
 
-local:part_of_query_execution_at_cost	rdfs:label	"part of query execution at cost"	.
+local:pattern_fragment_servers	a	rdf:Class	;
+	rdfs:label	"pattern fragment servers"	.
 
-local:triple_pattern_fragments_interface	rdfs:label	"triple pattern fragments interface"	.
+local:pattern_fragment	a	rdf:Class	;
+	rdfs:label	"pattern fragment"	.
 
-local:pattern_fragments_interface	rdfs:label	"pattern fragments interface"	.
+local:fragment	a	rdf:Class	;
+	rdfs:label	"fragment"	.
 
-local:fragments_interface	rdfs:label	"fragments interface"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:support	rdfs:label	"support"	.
+local:users_to_obtain_faster_responses_for_filterbased_sparql_queries	a	rdf:Class	;
+	rdfs:label	"users to obtain faster responses for filterbased sparql queries"	.
 
-local:purposely	rdfs:label	"purposely"	.
+local:substring_feature_on_triple_pattern_fragment_servers	a	rdf:Class	;
+	rdfs:label	"substring feature on triple pattern fragment servers"	.
 
-local:not	rdfs:label	"not"	.
+local:feature	a	rdf:Class	;
+	rdfs:label	"feature"	.
 
-local:execution_times	rdfs:label	"execution times"	.
+local:substring_feature	a	rdf:Class	;
+	rdfs:label	"substring feature"	.
 
-local:sparql_filters	rdfs:label	"sparql filters"	.
+local:offering	a	rdf:Class	;
+	rdfs:label	"offering"	.
 
-local:long_execution_times	rdfs:label	"long execution times"	.
+local:load_on_the_server	a	rdf:Class	;
+	rdfs:label	"load on the server"	.
 
-local:long_execution	rdfs:label	"long execution"	.
+local:server	a	rdf:Class	;
+	rdfs:label	"server"	.
 
-local:complex	rdfs:label	"complex"	.
+local:load	a	rdf:Class	;
+	rdfs:label	"load"	.
 
-local:complex_constructs	rdfs:label	"complex constructs"	.
+local:load_on_server	a	rdf:Class	;
+	rdfs:label	"load on server"	.
 
-local:filters	rdfs:label	"filters"	.
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
 
-local:long	rdfs:label	"long"	.
+local:significantly	a	rdf:Class	;
+	rdfs:label	"significantly"	.
 
-local:constructs	rdfs:label	"constructs"	.
+local:improvements	a	rdf:Class	;
+	rdfs:label	"improvements"	.
 
-local:mostly_executed	rdfs:label	"mostly executed"	.
+local:faster_query_execution_without_significantly_increasing_the_load_on_the_server	a	rdf:Class	;
+	rdfs:label	"faster query execution without significantly increasing the load on the server"	.
 
-local:executed	rdfs:label	"executed"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:complex_constructs_suchas_sparql_filters	rdfs:label	"complex constructs such_as sparql filters"	.
+local:significantly_increasing	a	rdf:Class	;
+	rdfs:label	"significantly increasing"	.
 
-local:mostly_executed_on_client	rdfs:label	"mostly executed on client"	.
+local:increasing	a	rdf:Class	;
+	rdfs:label	"increasing"	.
 
-local:resulting_in_long_execution_times	rdfs:label	"resulting in long execution times"	.
+local:query_execution	a	rdf:Class	;
+	rdfs:label	"query execution"	.
 
-local:resulting	rdfs:label	"resulting"	.
+local:faster_query_execution	a	rdf:Class	;
+	rdfs:label	"faster query execution"	.
 
-local:not_support	rdfs:label	"not support"	.
+local:evaluations	a	rdf:Class	;
+	rdfs:label	"evaluations"	.
 
-local:does_not_support	rdfs:label	"does not support"	.
+local:indicate	a	rdf:Class	;
+	rdfs:label	"indicate"	.
 
-local:purposely_does_not_support	rdfs:label	"purposely does not support"	.
+local:improvements_allow_for_faster_query_execution_without_significantly_increasing_the_load_on_the_server	a	rdf:Class	;
+	rdfs:label	"improvements allow for faster query execution without significantly increasing the load on the server"	.
 
-local:sparql_filters_queries	rdfs:label	"sparql filters queries"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:mostly	rdfs:label	"mostly"	.
+local:faster_query	a	rdf:Class	;
+	rdfs:label	"faster query"	.
 
-local:use	rdfs:label	"use"	.
+local:allow_for_faster_query_execution	a	rdf:Class	;
+	rdfs:label	"allow for faster query execution"	.
 
-local:investigated	rdfs:label	"investigated"	.
+local:caseinsensitive_fmindex	a	rdf:Class	;
+	rdfs:label	"caseinsensitive fmindex"	.
 
-local:we	rdfs:label	"we"	.
+local:fmindex	a	rdf:Class	;
+	rdfs:label	"fmindex"	.
 
-local:therefore	rdfs:label	"therefore"	.
+local:caseinsensitive	a	rdf:Class	;
+	rdfs:label	"caseinsensitive"	.
 
-local:query_performance	rdfs:label	"query performance"	.
+local:include	a	rdf:Class	;
+	rdfs:label	"include"	.
 
-local:literal_substring	rdfs:label	"literal substring"	.
+local:multiple_implementations	a	rdf:Class	;
+	rdfs:label	"multiple implementations"	.
 
-local:substring	rdfs:label	"substring"	.
+local:implementations	a	rdf:Class	;
+	rdfs:label	"implementations"	.
 
-local:matching_feature	rdfs:label	"matching feature"	.
+local:multiple	a	rdf:Class	;
+	rdfs:label	"multiple"	.
 
-local:feature	rdfs:label	"feature"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:performance	rdfs:label	"performance"	.
+local:compare	a	rdf:Class	;
+	rdfs:label	"compare"	.
 
-local:literal	rdfs:label	"literal"	.
+local:performance_of_sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	a	rdf:Class	;
+	rdfs:label	"performance of sparql queries multiple implementations including caseinsensitive fmindex"	.
 
-local:matching	rdfs:label	"matching"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:matching_feature_to_triple_pattern_fragments_interface	rdfs:label	"matching feature to triple pattern fragments interface"	.
+local:queries_multiple_implementations	a	rdf:Class	;
+	rdfs:label	"queries multiple implementations"	.
 
-local:matching_feature_to_triple_pattern_fragments_interface_with_goal	rdfs:label	"matching feature to triple pattern fragments interface with goal"	.
+local:sparql_queries_multiple_implementations	a	rdf:Class	;
+	rdfs:label	"sparql queries multiple implementations"	.
 
-local:goal	rdfs:label	"goal"	.
+local:performance_of_sparql_queries_multiple_implementations	a	rdf:Class	;
+	rdfs:label	"performance of sparql queries multiple implementations"	.
 
-local:impact	rdfs:label	"impact"	.
+local:sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	a	rdf:Class	;
+	rdfs:label	"sparql queries multiple implementations including caseinsensitive fmindex"	.
 
-local:low_server_cost	rdfs:label	"low server cost"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:low_server	rdfs:label	"low server"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:server	rdfs:label	"server"	.
+local:clientserver_setup	a	rdf:Class	;
+	rdfs:label	"clientserver setup"	.
 
-local:low	rdfs:label	"low"	.
+local:clientserver	a	rdf:Class	;
+	rdfs:label	"clientserver"	.
 
-local:server_cost	rdfs:label	"server cost"	.
+local:setup	a	rdf:Class	;
+	rdfs:label	"setup"	.
 
-local:maintaining	rdfs:label	"maintaining"	.
+local:elastic_search	a	rdf:Class	;
+	rdfs:label	"elastic search"	.
 
-local:adding	rdfs:label	"adding"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:literal_substring_with_goal	rdfs:label	"literal substring with goal"	.
+local:elastic	a	rdf:Class	;
+	rdfs:label	"elastic"	.
 
-local:improving	rdfs:label	"improving"	.
+local:performance_of_sparql_queries_multiple_implementations_including_elastic_search	a	rdf:Class	;
+	rdfs:label	"performance of sparql queries multiple implementations including elastic search"	.
 
-local:compare	rdfs:label	"compare"	.
+local:sparql_queries_multiple_implementations_including_elastic	a	rdf:Class	;
+	rdfs:label	"sparql queries multiple implementations including elastic"	.
 
-local:paper	rdfs:label	"paper"	.
+local:maintain	a	rdf:Class	;
+	rdfs:label	"maintain"	.
 
-local:performance_of_sparql_queries	rdfs:label	"performance of sparql queries"	.
+local:low_server_cost	a	rdf:Class	;
+	rdfs:label	"low server cost"	.
 
-local:caseinsensitive_fmindex	rdfs:label	"case-insensitive fm-index"	.
+local:low_server	a	rdf:Class	;
+	rdfs:label	"low server"	.
 
-local:fmindex	rdfs:label	"fm-index"	.
+local:low	a	rdf:Class	;
+	rdfs:label	"low"	.
 
-local:caseinsensitive	rdfs:label	"case-insensitive"	.
+local:server_cost	a	rdf:Class	;
+	rdfs:label	"server cost"	.
 
-local:multiple	rdfs:label	"multiple"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:multiple_implementations	rdfs:label	"multiple implementations"	.
+local:query_performance	a	rdf:Class	;
+	rdfs:label	"query performance"	.
 
-local:implementations	rdfs:label	"implementations"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:multiple_implementations_including_caseinsensitive_fmindex	rdfs:label	"multiple implementations including case-insensitive fm-index"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:including	rdfs:label	"including"	.
+local:goal_of_improving_query_performance_triple_pattern_fragments_interface	a	rdf:Class	;
+	rdfs:label	"goal of improving query performance triple pattern fragments interface"	.
 
-local:elastic	rdfs:label	"elastic"	.
+local:query_performance_triple_pattern_fragments_interface	a	rdf:Class	;
+	rdfs:label	"query performance triple pattern fragments interface"	.
 
-local:elastic_search	rdfs:label	"elastic search"	.
+local:goal	a	rdf:Class	;
+	rdfs:label	"goal"	.
 
-local:search	rdfs:label	"search"	.
+local:performance_triple_pattern_fragments_interface	a	rdf:Class	;
+	rdfs:label	"performance triple pattern fragments interface"	.
 
-local:multiple_implementations_including_elastic_search	rdfs:label	"multiple implementations including elastic search"	.
+local:performance_triple_pattern_fragments	a	rdf:Class	;
+	rdfs:label	"performance triple pattern fragments"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:query_performance_triple_pattern	a	rdf:Class	;
+	rdfs:label	"query performance triple pattern"	.
 
-local:clientserver_setup	rdfs:label	"clientserver setup"	.
+local:query_performance_triple	a	rdf:Class	;
+	rdfs:label	"query performance triple"	.
 
-local:setup	rdfs:label	"setup"	.
+local:triple_pattern_fragments_interface	a	rdf:Class	;
+	rdfs:label	"triple pattern fragments interface"	.
 
-local:clientserver	rdfs:label	"clientserver"	.
+local:triple_pattern_fragments	a	rdf:Class	;
+	rdfs:label	"triple pattern fragments"	.
 
-local:indicate	rdfs:label	"indicate"	.
+local:fragments_interface	a	rdf:Class	;
+	rdfs:label	"fragments interface"	.
 
-local:evaluations	rdfs:label	"evaluations"	.
+local:fragments	a	rdf:Class	;
+	rdfs:label	"fragments"	.
 
-local:faster	rdfs:label	"faster"	.
+local:interface	a	rdf:Class	;
+	rdfs:label	"interface"	.
 
-local:faster_query	rdfs:label	"faster query"	.
+local:query_performance_triple_pattern_fragments	a	rdf:Class	;
+	rdfs:label	"query performance triple pattern fragments"	.
 
-local:faster_query_execution	rdfs:label	"faster query execution"	.
+local:pattern_fragments_interface	a	rdf:Class	;
+	rdfs:label	"pattern fragments interface"	.
 
-local:significantly_increasing	rdfs:label	"significantly increasing"	.
+local:pattern_fragments	a	rdf:Class	;
+	rdfs:label	"pattern fragments"	.
 
-local:increasing	rdfs:label	"increasing"	.
+local:performance_triple	a	rdf:Class	;
+	rdfs:label	"performance triple"	.
 
-local:allow_for_faster_query_execution	rdfs:label	"allow for faster query execution"	.
+local:performance_triple_pattern	a	rdf:Class	;
+	rdfs:label	"performance triple pattern"	.
 
-local:allow	rdfs:label	"allow"	.
+local:maintaining_low_server_cost	a	rdf:Class	;
+	rdfs:label	"maintaining low server cost"	.
 
-local:load_on_server	rdfs:label	"load on server"	.
+local:investigate	a	rdf:Class	;
+	rdfs:label	"investigate"	.
 
-local:load	rdfs:label	"load"	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	a	rdf:Class	;
+	rdfs:label	"impact of adding a literal substring matching feature to the triple pattern fragments interface with the goal of improving query performance"	.
 
-local:improvements	rdfs:label	"improvements"	.
+local:impact	a	rdf:Class	;
+	rdfs:label	"impact"	.
 
-local:significantly	rdfs:label	"significantly"	.
+local:literal_substring	a	rdf:Class	;
+	rdfs:label	"literal substring"	.
 
-local:fragment_servers	rdfs:label	"fragment servers"	.
+local:matching_feature	a	rdf:Class	;
+	rdfs:label	"matching feature"	.
 
-local:servers	rdfs:label	"servers"	.
+local:literal	a	rdf:Class	;
+	rdfs:label	"literal"	.
 
-local:pattern_fragment	rdfs:label	"pattern fragment"	.
+local:literal_substring_matching_feature	a	rdf:Class	;
+	rdfs:label	"literal substring matching feature"	.
 
-local:fragment	rdfs:label	"fragment"	.
+local:matching_feature_to_triple_pattern_fragments_interface	a	rdf:Class	;
+	rdfs:label	"matching feature to triple pattern fragments interface"	.
 
-local:pattern_fragment_servers	rdfs:label	"pattern fragment servers"	.
+local:triple_pattern_fragments_interface_with_goal	a	rdf:Class	;
+	rdfs:label	"triple pattern fragments interface with goal"	.
 
-local:triple_pattern_fragment	rdfs:label	"triple pattern fragment"	.
+local:therefore	a	rdf:Class	;
+	rdfs:label	"therefore"	.
 
-local:triple_pattern_fragment_servers	rdfs:label	"triple pattern fragment servers"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:substring_feature	rdfs:label	"substring feature"	.
+local:long_execution_times	a	rdf:Class	;
+	rdfs:label	"long execution times"	.
 
-local:substring_feature_on_triple_pattern_fragment_servers	rdfs:label	"substring feature on triple pattern fragment servers"	.
+local:times	a	rdf:Class	;
+	rdfs:label	"times"	.
 
-local:offering	rdfs:label	"offering"	.
+local:long_execution	a	rdf:Class	;
+	rdfs:label	"long execution"	.
 
-local:users	rdfs:label	"users"	.
+local:long	a	rdf:Class	;
+	rdfs:label	"long"	.
 
-local:filterbased_sparql	rdfs:label	"filter-based sparql"	.
+local:execution_times	a	rdf:Class	;
+	rdfs:label	"execution times"	.
 
-local:filterbased	rdfs:label	"filter-based"	.
+local:complex_constructs_such_as_sparql_filters_queries	a	rdf:Class	;
+	rdfs:label	"complex constructs such as sparql filters queries"	.
 
-local:faster_responses	rdfs:label	"faster responses"	.
+local:sparql_filters_queries	a	rdf:Class	;
+	rdfs:label	"sparql filters queries"	.
 
-local:responses	rdfs:label	"responses"	.
+local:complex_constructs	a	rdf:Class	;
+	rdfs:label	"complex constructs"	.
 
-local:filterbased_sparql_queries	rdfs:label	"filter-based sparql queries"	.
+local:sparql_filters	a	rdf:Class	;
+	rdfs:label	"sparql filters"	.
 
-local:faster_responses_for_filterbased_sparql_queries	rdfs:label	"faster responses for filter-based sparql queries"	.
+local:complex	a	rdf:Class	;
+	rdfs:label	"complex"	.
 
-local:obtain	rdfs:label	"obtain"	.
+local:constructs	a	rdf:Class	;
+	rdfs:label	"constructs"	.
 
-local:allows	rdfs:label	"allows"	.
+local:filters_queries	a	rdf:Class	;
+	rdfs:label	"filters queries"	.
 
-local:used	rdfs:label	"used"	.
+local:complex_constructs_such_as_sparql_filters	a	rdf:Class	;
+	rdfs:label	"complex constructs such_as sparql filters"	.
 
-local:furthermore	rdfs:label	"furthermore"	.
+local:execute	a	rdf:Class	;
+	rdfs:label	"execute"	.
 
-local:can	rdfs:label	"can"	.
+local:client	a	rdf:Class	;
+	rdfs:label	"client"	.
 
-local:complete	rdfs:label	"complete"	.
+local:mostly	a	rdf:Class	;
+	rdfs:label	"mostly"	.
 
-local:complete_regular	rdfs:label	"complete regular"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:complete_regular_expressions	rdfs:label	"complete regular expressions"	.
+local:executed_mostly_on_the_client_resulting_in_long_execution_times	a	rdf:Class	;
+	rdfs:label	"executed mostly on the client resulting in long execution times"	.
 
-local:regular	rdfs:label	"regular"	.
+local:mostly_executed	a	rdf:Class	;
+	rdfs:label	"mostly executed"	.
 
-local:regular_expressions	rdfs:label	"regular expressions"	.
+local:executed	a	rdf:Class	;
+	rdfs:label	"executed"	.
 
-local:other_filters	rdfs:label	"other filters"	.
+local:mostly_executed_on_client	a	rdf:Class	;
+	rdfs:label	"mostly executed on client"	.
 
-local:expressions	rdfs:label	"expressions"	.
+local:client_resulting	a	rdf:Class	;
+	rdfs:label	"client resulting"	.
 
-local:other	rdfs:label	"other"	.
+local:resulting	a	rdf:Class	;
+	rdfs:label	"resulting"	.
 
-local:other_filters_suchas_complete_regular_expressions	rdfs:label	"other filters such_as complete regular expressions"	.
+local:not_support	a	rdf:Class	;
+	rdfs:label	"not support"	.
 
-local:filters_suchas_complete_regular_expressions	rdfs:label	"filters such_as complete regular expressions"	.
+local:purposely	a	rdf:Class	;
+	rdfs:label	"purposely"	.
 
-local:range	rdfs:label	"range"	.
+local:scalability	a	rdf:Class	;
+	rdfs:label	"scalability"	.
 
-local:range_queries	rdfs:label	"range queries"	.
+local:move	a	rdf:Class	;
+	rdfs:label	"move"	.
 
-local:other_filters_suchas_range_queries	rdfs:label	"other filters such_as range queries"	.
+local:part_of_the_query_execution_client	a	rdf:Class	;
+	rdfs:label	"part of the query execution client"	.
 
-local:filters_suchas_range_queries	rdfs:label	"filters such_as range queries"	.
+local:part	a	rdf:Class	;
+	rdfs:label	"part"	.
 
-#### Properties ####
+local:query_execution_client	a	rdf:Class	;
+	rdfs:label	"query execution client"	.
+
+local:execution_client	a	rdf:Class	;
+	rdfs:label	"execution client"	.
+
+local:part_of_query_execution_client	a	rdf:Class	;
+	rdfs:label	"part of query execution client"	.
+
+local:cost_of_elevated_query_times	a	rdf:Class	;
+	rdfs:label	"cost of elevated query times"	.
+
+local:elevated_query_times	a	rdf:Class	;
+	rdfs:label	"elevated query times"	.
+
+local:elevated_query	a	rdf:Class	;
+	rdfs:label	"elevated query"	.
+
+local:query_times	a	rdf:Class	;
+	rdfs:label	"query times"	.
+
+local:elevated	a	rdf:Class	;
+	rdfs:label	"elevated"	.
+
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
+
+local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	a	rdf:Class	;
+	rdfs:label	"moving part of the query execution to the client at the cost of elevated query times"	.
+
+local:part_of_query_execution	a	rdf:Class	;
+	rdfs:label	"part of query execution"	.
+
+local:query_execution_to_client	a	rdf:Class	;
+	rdfs:label	"query execution to client"	.
+
+local:moving_at_cost	a	rdf:Class	;
+	rdfs:label	"moving at cost"	.
+
+local:moving	a	rdf:Class	;
+	rdfs:label	"moving"	.
+
+local:high_numbers_of_clients	a	rdf:Class	;
+	rdfs:label	"high numbers of clients"	.
+
+local:clients	a	rdf:Class	;
+	rdfs:label	"clients"	.
+
+local:high_numbers	a	rdf:Class	;
+	rdfs:label	"high numbers"	.
+
+local:high	a	rdf:Class	;
+	rdfs:label	"high"	.
+
+local:numbers	a	rdf:Class	;
+	rdfs:label	"numbers"	.
+
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
+
+local:evaluate_sparql_queries	a	rdf:Class	;
+	rdfs:label	"evaluate sparql queries"	.
+
+local:evaluate_sparql	a	rdf:Class	;
+	rdfs:label	"evaluate sparql"	.
+
+local:recently_triple_pattern_fragments	a	rdf:Class	;
+	rdfs:label	"recently triple pattern fragments"	.
+
+local:recently_triple_pattern	a	rdf:Class	;
+	rdfs:label	"recently triple pattern"	.
+
+local:recently_triple	a	rdf:Class	;
+	rdfs:label	"recently triple"	.
+
+local:recently	a	rdf:Class	;
+	rdfs:label	"recently"	.
+
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
+
+local:lowcost_serverside_interface	a	rdf:Class	;
+	rdfs:label	"lowcost serverside interface"	.
+
+local:serverside_interface	a	rdf:Class	;
+	rdfs:label	"serverside interface"	.
+
+local:lowcost_serverside	a	rdf:Class	;
+	rdfs:label	"lowcost serverside"	.
+
+local:serverside	a	rdf:Class	;
+	rdfs:label	"serverside"	.
+
+local:lowcost	a	rdf:Class	;
+	rdfs:label	"lowcost"	.
 
 #### Mapped Relations ####
 
-local:servers	owl:sameAs	cso:servers	.
-cso:sparql	rdfs:label	"sparql"	.
-local:clientserver	owl:sameAs	cso:client-server	.
-cso:range_queries	rdfs:label	"range queries"	.
-cso:sparql_queries	rdfs:label	"sparql queries"	.
-local:query_performance	owl:sameAs	cso:query_performance	.
-cso:client-server	rdfs:label	"clientserver"	.
-cso:query_execution	rdfs:label	"query execution"	.
-cso:query_performance	rdfs:label	"query performance"	.
+local:range_queries	owl:sameAs	cso:range_queries	.
 local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+cso:query_execution	rdfs:label	"query execution"	.
+cso:client-server	rdfs:label	"clientserver"	.
+cso:range_queries	rdfs:label	"range queries"	.
 cso:servers	rdfs:label	"servers"	.
 local:query_execution	owl:sameAs	cso:query_execution	.
-local:range_queries	owl:sameAs	cso:range_queries	.
+cso:sparql_queries	rdfs:label	"sparql queries"	.
+local:clientserver	owl:sameAs	cso:client-server	.
 local:sparql	owl:sameAs	cso:sparql	.
+cso:sparql	rdfs:label	"sparql"	.
+local:servers	owl:sameAs	cso:servers	.
+local:query_performance	owl:sameAs	cso:query_performance	.
+cso:query_performance	rdfs:label	"query performance"	.
 
 #### Relations ####
 
-local:caseinsensitive_fmindex	rdfs:subClassOf	local:fmindex	.
-local:resulting_in_long_execution_times	local:in_longexecutiontimes	local:resulting	.
-local:filters_suchas_complete_regular_expressions	local:such_as_completeregularexpressions	local:filters	.
-local:range	rdfs:member	local:range_queries	.
-local:need	vn.role:Patient	local:mostly_executed_on_client	.
-local:evaluate_sparql	rdfs:member	local:evaluate_sparql_queries	.
-local:other_filters	rdfs:subClassOf	local:filters	.
-local:low_server	rdfs:member	local:low_server_cost	.
-local:part_of_query_execution	local:of_queryexecution	local:part	.
-local:evaluate	vn.role:Theme	local:sparql_queries	.
-local:obtain	vn.role:object	local:faster_responses_for_filterbased_sparql_queries	.
-local:triple_pattern_fragment	rdfs:subClassOf	local:fragment	.
-local:query_performance	rdfs:subClassOf	local:performance	.
-local:literal_substring_with_goal	local:literalsubstring_with	local:goal	.
-local:triple_pattern	rdfs:member	local:triple_pattern_fragments	.
-local:serverside	rdfs:member	local:serverside_interface	.
-local:substring	rdfs:member	local:substring_feature	.
-local:load_on_server	local:load_on	local:server	.
-local:complete_regular_expressions	rdfs:subClassOf	local:expressions	.
-local:discuss	local:AM-LOC	local:paper	.
-local:faster	rdfs:member	local:faster_query	.
-local:performance_of_sparql_queries	local:performance_of	local:sparql_queries	.
-local:significantly_increasing	rdfs:subClassOf	local:increasing	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:support	local:AM-NEG	local:not	.
-local:discuss	vn.role:Patient2	local:clientserver_setup	.
-local:evaluate_sparql_queries	rdfs:subClassOf	local:queries	.
-local:multiple_implementations	rdfs:subClassOf	local:implementations	.
-local:elevated_query_times	rdfs:subClassOf	local:times	.
-local:part_of_query_execution	local:part_of	local:query_execution	.
-local:executed	vn.role:Patient	local:complex_constructs_suchas_sparql_filters	.
-local:triple_pattern	rdfs:member	local:triple_pattern_fragment	.
-local:multiple	rdfs:member	local:multiple_implementations	.
+local:long_execution_times	rdfs:member	local:long_execution	.
+local:filters_such_as_range_queries	rdfs:member	local:filters	.
+local:other_filters	rdfs:member	local:other	.
+local:execution_times	rdfs:member	local:execution	.
+local:s5	rdf:object	local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	.
+local:lowcost_serverside	rdfs:member	local:lowcost	.
+local:query_performance_triple_pattern_fragments_interface	rdfs:subClassOf	local:performance_triple_pattern_fragments_interface	.
+local:performance_of_sparql_queries_multiple_implementations_including_elastic_search	rdfs:member	local:multiple_implementations	.
+local:s6.1	rdf:subject	local:elastic_search	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	rdfs:member	local:literal_substring	.
+local:performance_of_sparql_queries_multiple_implementations	rdfs:member	local:sparql_queries_multiple_implementations	.
+local:performance_of_sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	rdfs:member	local:caseinsensitive_fmindex	.
 local:substring_feature	rdfs:subClassOf	local:feature	.
+local:s0	rdf:subject	local:recently_triple_pattern_fragments	.
+local:s11.2	rdf:subject	local:filters_such_as_range_queries	.
+local:significantly_increasing	rdfs:subClassOf	local:increasing	.
+local:s11.1	rdf:predicate	local:use	.
+local:s11	rdf:predicate	local:substring	.
+local:query_execution_to_client	rdfs:member	local:client	.
+local:s5	local:AM-TMP	local:maintaining_low_server_cost	.
+local:sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	rdfs:member	local:caseinsensitive_fmindex	.
+local:faster_responses_for_filterbased_sparql_queries	rdfs:member	local:filterbased_sparql_queries	.
 local:elevated_query_times	rdfs:subClassOf	local:query_times	.
-local:matching	rdfs:member	local:matching_feature	.
-local:allows	vn.role:Agent	local:offering	.
-local:query_execution_to_client	local:to_client	local:query_execution	.
-local:literal	rdfs:member	local:literal_substring	.
-local:adding	vn.role:Patient	local:literal_substring_with_goal	.
-local:elastic_search	rdfs:subClassOf	local:search	.
-local:investigated	vn.role:Location	local:impact	.
-local:indicate	vn.role:Recipient	local:evaluations	.
-local:compare	vn.role:Patient1	local:we	.
-local:substring_feature_on_triple_pattern_fragment_servers	local:on_triplepatternfragmentservers	local:substring_feature	.
-local:faster_query	rdfs:subClassOf	local:query	.
-local:complete_regular_expressions	rdfs:subClassOf	local:regular_expressions	.
-local:support	local:AM-MNR	local:purposely	.
-local:support	vn.role:Theme	local:interface	.
-local:pattern_fragment_servers	rdfs:subClassOf	local:servers	.
-local:multiple_implementations_including_caseinsensitive_fmindex	local:including_case-insensitivefm-index	local:multiple_implementations	.
-local:compare	local:AM-LOC	local:paper	.
-local:complete_regular	rdfs:member	local:complete_regular_expressions	.
-local:high_numbers_of_clients	local:highnumbers_of	local:clients	.
-local:resulting	vn.role:indirect_object	local:long_execution_times	.
-local:allow_for_faster_query_execution	local:allow_for	local:faster_query_execution	.
-local:increasing	vn.role:Attribute	local:load_on_server	.
-local:query	rdfs:member	local:query_execution	.
-local:evaluate	vn.role:Agent	local:high_numbers_of_clients	.
-local:moving_at_cost	local:at_cost	local:moving	.
-local:elastic	rdfs:member	local:elastic_search	.
-local:fragments_interface	rdfs:subClassOf	local:interface	.
-local:low	rdfs:member	local:low_server	.
-local:complete_regular	rdfs:subClassOf	local:regular	.
-local:used	vn.role:Recipient	local:support	.
-local:other_filters_suchas_range_queries	local:such_as_rangequeries	local:other_filters	.
-local:triple_pattern_fragments	rdfs:subClassOf	local:pattern_fragments	.
-local:query	rdfs:member	local:query_performance	.
-local:long_execution	rdfs:subClassOf	local:execution	.
-local:offering	local:AM-PNC	local:obtain	.
-local:filters_suchas_range_queries	local:such_as_rangequeries	local:filters	.
-local:use	vn.role:Theme	local:sparql_filters	.
-local:fragment	rdfs:member	local:fragment_servers	.
-local:matching_feature_to_triple_pattern_fragments_interface	local:to_triplepatternfragmentsinterface	local:matching_feature	.
-local:compare	vn.role:Patient2	local:performance_of_sparql_queries	.
-local:query_execution	rdfs:subClassOf	local:execution	.
-local:purposely_does_not_support	rdfs:subClassOf	local:does_not_support	.
-local:recently_triple_pattern_fragments	rdfs:subClassOf	local:triple_pattern_fragments	.
-local:increasing	local:AM-MNR	local:significantly	.
-local:triple_pattern_fragments_interface	rdfs:subClassOf	local:interface	.
-local:investigated	local:AM-DIS	local:therefore	.
-local:complex_constructs_suchas_sparql_filters	local:such_as_sparqlfilters	local:complex_constructs	.
-local:achieved	local:AM-MNR	local:moving_at_cost	.
-local:faster_responses	rdfs:subClassOf	local:responses	.
-local:lowcost_serverside	rdfs:member	local:lowcost_serverside_interface	.
-local:including	vn.role:Location	local:multiple_implementations	.
-local:elevated_query	rdfs:member	local:elevated_query_times	.
-local:evaluate_sparql	rdfs:subClassOf	local:sparql	.
-local:support	vn.role:Experiencer	local:complex_constructs_suchas_sparql_filters	.
-local:literal_substring_with_goal	local:with_goal	local:literal_substring	.
-local:need	vn.role:Agent	local:high_numbers_of_clients	.
-local:substring_feature_on_triple_pattern_fragment_servers	local:substringfeature_on	local:triple_pattern_fragment_servers	.
-local:introduced	vn.role:Patient1	local:lowcost_serverside_interface	.
-local:use	vn.role:Agent	local:queries	.
-local:investigated	local:AM-TMP	local:maintaining	.
-local:part_of_query_execution_at_cost	local:partofqueryexecution_at	local:cost	.
-local:long	rdfs:member	local:long_execution	.
-local:matching_feature_to_triple_pattern_fragments_interface	local:matchingfeature_to	local:triple_pattern_fragments_interface	.
-local:allow	vn.role:Theme	local:faster_query_execution	.
-local:elevated	rdfs:member	local:elevated_query	.
-local:allows	vn.role:Theme	local:users	.
-local:need	vn.role:Patient	local:evaluate	.
-local:filterbased_sparql_queries	rdfs:subClassOf	local:sparql_queries	.
-local:elevated_query	rdfs:subClassOf	local:query	.
-local:filters_suchas_complete_regular_expressions	local:filters_such_as	local:complete_regular_expressions	.
-local:mostly_executed_on_client	local:on_client	local:mostly_executed	.
-local:query	rdfs:member	local:query_times	.
+local:s12.1	local:AM-MOD	local:can	.
+local:performance_of_sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	rdfs:member	local:multiple_implementations	.
+local:s8	rdf:subject	local:we	.
+local:s6	rdf:predicate	local:compare	.
+local:s6	rdf:subject	local:we	.
+local:allow_for_faster_query_execution	rdfs:member	local:allow	.
+local:sparql_filters_queries	rdfs:member	local:sparql_filters	.
+local:fragments_interface	rdfs:member	local:fragments	.
+local:query_performance_triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:s4.2	rdf:predicate	local:execute	.
+local:s10.1	rdf:subject	local:triple_pattern_fragment_servers	.
+local:lowcost_serverside_interface	rdfs:member	local:lowcost_serverside	.
 local:pattern_fragment	rdfs:subClassOf	local:fragment	.
-local:faster_responses_for_filterbased_sparql_queries	local:fasterresponses_for	local:filterbased_sparql_queries	.
-local:filters_suchas_range_queries	local:filters_such_as	local:range_queries	.
-local:sparql	rdfs:member	local:sparql_filters	.
-local:indicate	vn.role:Cause	local:allow_for_faster_query_execution	.
-local:high_numbers_of_clients	local:of_clients	local:high_numbers	.
-local:cost_of_elevated_query_times	local:of_elevatedquerytimes	local:cost	.
-local:faster_query_execution	rdfs:subClassOf	local:query_execution	.
-local:server_cost	rdfs:subClassOf	local:cost	.
-local:triple_pattern_fragment	rdfs:member	local:triple_pattern_fragment_servers	.
-local:sparql_filters_queries	local:sparqlfilters_	local:queries	.
-local:serverside_interface	rdfs:subClassOf	local:interface	.
-local:resulting_in_long_execution_times	local:resulting_in	local:long_execution_times	.
-local:lowcost_serverside_interface	rdfs:subClassOf	local:serverside_interface	.
-local:lowcost_serverside_interface	rdfs:subClassOf	local:interface	.
-local:moving	vn.role:Experiencer	local:scalability	.
-local:regular_expressions	rdfs:subClassOf	local:expressions	.
-local:caseinsensitive	rdfs:member	local:caseinsensitive_fmindex	.
-local:compare	vn.role:Agent	local:multiple_implementations_including_elastic_search	.
-local:moving_at_cost	local:moving_at	local:cost	.
-local:maintaining	vn.role:Theme	local:low_server_cost	.
-local:complex	rdfs:member	local:complex_constructs	.
-local:sparql_filters_queries	local:_queries	local:sparql_filters	.
-local:discuss	vn.role:Patient1	local:we	.
-local:achieved	vn.role:Theme	local:scalability	.
-local:complete	rdfs:member	local:complete_regular	.
-local:used	local:AM-MOD	local:can	.
-local:clientserver	rdfs:member	local:clientserver_setup	.
-local:complex_constructs_suchas_sparql_filters	local:complexconstructs_such_as	local:sparql_filters	.
-local:triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
-local:long_execution_times	rdfs:subClassOf	local:times	.
-local:moving	vn.role:Cause	local:part_of_query_execution_at_cost	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:need	local:AM-CAU	local:purposely_does_not_support	.
-local:long_execution_times	rdfs:subClassOf	local:execution_times	.
-local:matching_feature	rdfs:subClassOf	local:feature	.
-local:pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:fragments_interface	rdfs:subClassOf	local:interface	.
+local:complete_regular_expressions	rdfs:subClassOf	local:regular_expressions	.
+local:caseinsensitive_fmindex	rdfs:member	local:caseinsensitive	.
+local:filters_such_as_complete_regular_expressions	rdfs:member	local:complete_regular_expressions	.
+local:clientserver_setup	rdfs:member	local:clientserver	.
+local:s4	rdf:predicate	local:not_support	.
+local:sparql_filters	rdfs:member	local:sparql	.
+local:s1	rdf:object	local:evaluate_sparql_queries	.
+local:executed_mostly_on_the_client_resulting_in_long_execution_times	rdfs:member	local:long_execution_times	.
+local:s10.2	rdf:subject	local:users	.
+local:load_on_the_server	rdfs:member	local:server	.
+local:recently_triple_pattern_fragments	rdfs:subClassOf	local:triple_pattern_fragments	.
+local:s5.1	rdf:object	local:goal_of_improving_query_performance_triple_pattern_fragments_interface	.
+local:other_filters_such_as_complete_regular_expressions	rdfs:member	local:complete_regular_expressions	.
 local:high_numbers	rdfs:subClassOf	local:numbers	.
-local:investigated	vn.role:Agent	local:we	.
-local:compare	vn.role:Agent	local:multiple_implementations_including_caseinsensitive_fmindex	.
-local:other	rdfs:member	local:other_filters	.
-local:triple_pattern_fragments_interface	rdfs:subClassOf	local:pattern_fragments_interface	.
-local:obtain	vn.role:Asset	local:users	.
-local:query_execution_to_client	local:queryexecution_to	local:client	.
-local:pattern	rdfs:member	local:pattern_fragment	.
-local:not_support	rdfs:subClassOf	local:support	.
-local:multiple_implementations_including_elastic_search	local:multipleimplementations_including	local:elastic_search	.
-local:faster	rdfs:member	local:faster_responses	.
-local:range_queries	rdfs:subClassOf	local:queries	.
-local:pattern_fragment	rdfs:member	local:pattern_fragment_servers	.
-local:pattern_fragment_servers	rdfs:subClassOf	local:fragment_servers	.
-local:allow	vn.role:Agent	local:improvements	.
-local:filterbased_sparql	rdfs:subClassOf	local:sparql	.
-local:executed	local:AM-ADV	local:mostly	.
-local:other_filters_suchas_complete_regular_expressions	local:such_as_completeregularexpressions	local:other_filters	.
-local:other_filters_suchas_range_queries	local:otherfilters_such_as	local:range_queries	.
-local:pattern_fragments_interface	rdfs:subClassOf	local:fragments_interface	.
-local:other_filters_suchas_complete_regular_expressions	local:otherfilters_such_as	local:complete_regular_expressions	.
-local:low_server_cost	rdfs:subClassOf	local:server_cost	.
-local:pattern_fragments_interface	rdfs:subClassOf	local:interface	.
-local:pattern_fragments	rdfs:member	local:pattern_fragments_interface	.
-local:matching_feature_to_triple_pattern_fragments_interface_with_goal	local:with_goal	local:matching_feature_to_triple_pattern_fragments_interface	.
-local:part_of_query_execution_at_cost	local:at_cost	local:part_of_query_execution	.
-local:performance_of_sparql_queries	local:of_sparqlqueries	local:performance	.
-local:triple	rdfs:member	local:triple_pattern	.
-local:long_execution	rdfs:member	local:long_execution_times	.
+local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	rdfs:member	local:query_execution	.
 local:literal_substring	rdfs:subClassOf	local:substring	.
-local:lowcost_serverside	rdfs:subClassOf	local:serverside	.
-local:fragments	rdfs:member	local:fragments_interface	.
-local:multiple_implementations_including_caseinsensitive_fmindex	local:multipleimplementations_including	local:caseinsensitive_fmindex	.
-local:load_on_server	local:on_server	local:load	.
-local:cost_of_elevated_query_times	local:cost_of	local:elevated_query_times	.
-local:offering	vn.role:Theme	local:substring_feature_on_triple_pattern_fragment_servers	.
-local:adding	vn.role:Agent	local:we	.
-local:improving	vn.role:Patient	local:query_performance	.
-local:triple_pattern_fragment_servers	rdfs:subClassOf	local:pattern_fragment_servers	.
-local:including	vn.role:Theme	local:elastic_search	.
-local:regular	rdfs:member	local:regular_expressions	.
-local:server	rdfs:member	local:server_cost	.
-local:triple_pattern_fragments	rdfs:member	local:triple_pattern_fragments_interface	.
-local:filterbased_sparql	rdfs:member	local:filterbased_sparql_queries	.
-local:query_times	rdfs:subClassOf	local:times	.
-local:faster_query_execution	rdfs:subClassOf	local:execution	.
-local:filterbased	rdfs:member	local:filterbased_sparql	.
-local:high	rdfs:member	local:high_numbers	.
-local:mostly_executed	rdfs:subClassOf	local:executed	.
-local:evaluate	rdfs:member	local:evaluate_sparql	.
-local:support	vn.role:Experiencer	local:filters_suchas_complete_regular_expressions	.
-local:does_not_support	rdfs:subClassOf	local:not_support	.
-local:sparql_filters	rdfs:subClassOf	local:filters	.
-local:introduced	vn.role:Patient	local:recently_triple_pattern_fragments	.
-local:execution	rdfs:member	local:execution_times	.
-local:multiple_implementations_including_elastic_search	local:including_elasticsearch	local:multiple_implementations	.
-local:execution_times	rdfs:subClassOf	local:times	.
-local:pattern	rdfs:member	local:pattern_fragments	.
-local:fragment_servers	rdfs:subClassOf	local:servers	.
-local:used	vn.role:Theme	local:furthermore	.
-local:matching_feature_to_triple_pattern_fragments_interface_with_goal	local:matchingfeaturetotriplepatternfragmentsinterface_with	local:goal	.
-local:including	vn.role:Theme	local:caseinsensitive_fmindex	.
-local:triple_pattern	rdfs:subClassOf	local:pattern	.
-local:mostly_executed_on_client	local:mostlyexecuted_on	local:client	.
-local:allow_for_faster_query_execution	local:for_fasterqueryexecution	local:allow	.
-local:executed	vn.role:Instrument	local:client	.
+local:moving_at_cost	rdfs:member	local:moving	.
+local:client_resulting	rdfs:member	local:resulting	.
+local:long_execution	rdfs:member	local:long	.
+local:evaluate_sparql_queries	rdfs:subClassOf	local:queries	.
+local:s9	rdf:subject	local:evaluations	.
+local:performance_triple	rdfs:subClassOf	local:triple	.
+local:s9.1	rdf:predicate	local:allow	.
+local:triple_pattern_fragments	rdfs:subClassOf	local:pattern_fragments	.
+local:high_numbers	rdfs:member	local:high	.
+local:recently_triple_pattern_fragments	rdfs:member	local:recently_triple_pattern	.
 local:clientserver_setup	rdfs:subClassOf	local:setup	.
-local:need	vn.role:Agent	local:sparql_filters_queries	.
-local:maintaining	vn.role:Agent	local:we	.
-local:offering	vn.role:Agent	local:users	.
-local:support	vn.role:Theme	local:furthermore	.
-local:faster_query	rdfs:member	local:faster_query_execution	.
-local:complex_constructs	rdfs:subClassOf	local:constructs	.
-local:triple_pattern_fragment_servers	rdfs:subClassOf	local:servers	.
-local:faster_responses_for_filterbased_sparql_queries	local:for_filter-basedsparqlqueries	local:faster_responses	.
+local:faster_query	rdfs:subClassOf	local:query	.
+local:s2	local:AM-MNR	local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	.
+local:query_execution_to_client	rdfs:member	local:query_execution	.
+local:users_to_obtain_faster_responses_for_filterbased_sparql_queries	rdfs:member	local:users	.
+local:triple_pattern_fragments_interface	rdfs:subClassOf	local:pattern_fragments_interface	.
+local:substring_feature_on_triple_pattern_fragment_servers	rdfs:member	local:substring_feature	.
+local:s6	rdf:object	local:performance_of_sparql_queries_multiple_implementations_including_elastic_search	.
 local:low_server_cost	rdfs:subClassOf	local:cost	.
-local:lowcost	rdfs:member	local:lowcost_serverside	.
-local:filterbased_sparql_queries	rdfs:subClassOf	local:queries	.
+local:queries_multiple_implementations	rdfs:subClassOf	local:multiple_implementations	.
+local:faster_responses_for_filterbased_sparql_queries	rdfs:member	local:faster_responses	.
+local:load_on_server	rdfs:member	local:load	.
+local:faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:server	.
+local:triple_pattern	rdfs:member	local:triple	.
+local:other_filters_such_as_complete_regular_expressions	rdfs:member	local:other_filters	.
+local:other_filters	rdfs:subClassOf	local:filters	.
+local:recently_triple	rdfs:subClassOf	local:triple	.
+local:s11.1	local:AM-MOD	local:can	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	rdfs:member	local:query_performance	.
+local:s2	rdf:subject	local:scalability	.
+local:elevated_query	rdfs:member	local:elevated	.
+local:range_queries	rdfs:subClassOf	local:queries	.
+local:s10.2	rdf:predicate	local:obtain	.
+local:filters_such_as_range_queries	rdfs:member	local:range_queries	.
+local:matching_can_be_used_to_support_other_filters_such_as_range_queries	rdfs:member	local:other_filters	.
+local:regular_expressions	rdfs:subClassOf	local:expressions	.
+local:s9.2	local:AM-MNR	local:significantly	.
+local:goal_of_improving_query_performance_triple_pattern_fragments_interface	rdfs:member	local:query_performance_triple_pattern_fragments_interface	.
+local:regular_expressions	rdfs:member	local:regular	.
+local:allow_for_faster_query_execution	rdfs:member	local:faster_query_execution	.
+local:s2	rdf:predicate	local:achieve	.
+local:range_queries	rdfs:member	local:range	.
+local:server_cost	rdfs:subClassOf	local:cost	.
+local:s2.1	rdf:predicate	local:move	.
+local:triple_pattern_fragments	rdfs:member	local:triple_pattern	.
+local:performance_of_sparql_queries_multiple_implementations_including_elastic_search	rdfs:member	local:elastic_search	.
+local:elevated_query	rdfs:subClassOf	local:query	.
+local:s8	rdf:predicate	local:compare	.
+local:s4.3	rdfs:member	local:long_execution_times	.
+local:performance_triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:elastic_search	rdfs:member	local:elastic	.
+local:lowcost_serverside_interface	rdfs:subClassOf	local:interface	.
+local:complex_constructs_such_as_sparql_filters_queries	rdfs:member	local:sparql_filters_queries	.
+local:pattern_fragments_interface	rdfs:member	local:pattern_fragments	.
+local:fragment_servers	rdfs:subClassOf	local:servers	.
+local:s7	rdf:object	local:clientserver_setup	.
+local:client_resulting	rdfs:member	local:client	.
+local:lowcost_serverside_interface	rdfs:subClassOf	local:serverside_interface	.
+local:s11.2	rdf:predicate	local:support	.
+local:query_execution_client	rdfs:subClassOf	local:client	.
+local:high_numbers_of_clients	rdfs:member	local:clients	.
+local:s1	rdf:subject	local:high_numbers_of_clients	.
+local:s8.1	rdf:subject	local:caseinsensitive_fmindex	.
+local:serverside_interface	rdfs:subClassOf	local:interface	.
+local:pattern_fragment_servers	rdfs:subClassOf	local:fragment_servers	.
+local:pattern_fragments_interface	rdfs:subClassOf	local:interface	.
+local:pattern_fragment_servers	rdfs:member	local:pattern_fragment	.
+local:query_performance_triple_pattern_fragments	rdfs:member	local:query_performance_triple_pattern	.
+local:s10	rdf:subject	local:substring_feature_on_triple_pattern_fragment_servers	.
+local:part_of_query_execution_client	rdfs:member	local:part	.
+local:matching_can_be_used_to_support_other_filters_such_as_complete_regular_expressions	rdfs:member	local:other_filters	.
+local:query_execution	rdfs:member	local:query	.
+local:s6.1	rdf:object	local:multiple_implementations	.
+local:performance_of_sparql_queries_multiple_implementations_including_elastic_search	rdfs:member	local:performance	.
+local:other_filters_such_as_range_queries	rdfs:member	local:other_filters	.
+local:s5	rdf:predicate	local:investigate	.
+local:query_performance	rdfs:member	local:query	.
+local:part_of_the_query_execution_client	rdfs:member	local:query_execution_client	.
+local:s1.1	rdf:subject	local:high_numbers_of_clients	.
+local:triple_pattern_fragments_interface	rdfs:subClassOf	local:interface	.
+local:filterbased_sparql_queries	rdfs:member	local:filterbased_sparql	.
+local:executed_mostly_on_the_client_resulting_in_long_execution_times	rdfs:member	local:client	.
+local:s12.1	rdf:subject	local:matching	.
+local:s5.2	rdf:predicate	local:improve	.
+local:query_performance_triple_pattern	rdfs:member	local:query_performance_triple	.
+local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	rdfs:member	local:part	.
+local:evaluate_sparql	rdfs:subClassOf	local:sparql	.
+local:complex_constructs_such_as_sparql_filters_queries	rdfs:member	local:complex_constructs	.
+local:query_performance_triple	rdfs:subClassOf	local:triple	.
+local:mostly_executed	rdfs:subClassOf	local:executed	.
+local:s8	local:AM-LOC	local:paper	.
+local:sparql_queries_multiple_implementations_including_elastic	rdfs:member	local:elastic	.
+local:faster_query_execution	rdfs:subClassOf	local:query_execution	.
+local:s6	local:AM-LOC	local:paper	.
+local:pattern_fragments	rdfs:member	local:pattern	.
+local:server_cost	rdfs:member	local:server	.
+local:s9.1	rdf:object	local:faster_query_execution_without_significantly_increasing_the_load_on_the_server	.
+local:substring_feature_on_triple_pattern_fragment_servers	rdfs:member	local:feature	.
+local:s4.3	rdfs:member	local:resulting	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:query_times	rdfs:member	local:query	.
+local:pattern_fragment	rdfs:member	local:pattern	.
+local:s3	rdf:object	local:sparql_filters	.
+local:multiple_implementations	rdfs:member	local:multiple	.
+local:part_of_the_query_execution_client	rdfs:member	local:part	.
+local:s12.2	rdf:predicate	local:support	.
+local:faster_query	rdfs:member	local:faster	.
+local:s1.1	rdf:predicate	local:evaluate	.
+local:triple_pattern_fragment_servers	rdfs:member	local:triple_pattern_fragment	.
+local:literal_substring_matching_feature	rdfs:member	local:matching_feature	.
+local:s4.2	rdf:subject	local:complex_constructs_such_as_sparql_filters_queries	.
+local:pattern_fragment_servers	rdfs:subClassOf	local:servers	.
+local:s1	rdf:predicate	local:need	.
+local:filters_such_as_complete_regular_expressions	rdfs:member	local:filters	.
+local:users_to_obtain_faster_responses_for_filterbased_sparql_queries	rdfs:member	local:faster_responses	.
+local:performance_triple_pattern	rdfs:subClassOf	local:pattern	.
+local:part_of_query_execution	rdfs:member	local:query_execution	.
+local:matching_feature	rdfs:member	local:matching	.
+local:s9	rdf:predicate	local:indicate	.
+local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	rdfs:member	local:cost	.
+local:recently_triple_pattern	rdfs:member	local:recently_triple	.
+local:moving_at_cost	rdfs:member	local:cost	.
+local:literal_substring	rdfs:member	local:literal	.
+local:recently_triple_pattern	rdfs:subClassOf	local:pattern	.
+local:low_server_cost	rdfs:subClassOf	local:server_cost	.
+local:part_of_query_execution	rdfs:member	local:part	.
+local:lowcost_serverside	rdfs:subClassOf	local:serverside	.
+local:cost_of_elevated_query_times	rdfs:member	local:elevated_query_times	.
+local:triple_pattern_fragment_servers	rdfs:subClassOf	local:servers	.
 local:low_server	rdfs:subClassOf	local:server	.
-local:support	vn.role:Experiencer	local:filters_suchas_range_queries	.
+local:performance_of_sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	rdfs:member	local:sparql_queries	.
+local:matching_can_be_used_to_support_other_filters_such_as_range_queries	rdfs:member	local:matching	.
+local:sparql_filters	rdfs:subClassOf	local:filters	.
+local:long_execution_times	rdfs:subClassOf	local:execution_times	.
+local:s6.1	rdf:predicate	local:include	.
+local:serverside_interface	rdfs:member	local:serverside	.
+local:pattern_fragments_interface	rdfs:subClassOf	local:fragments_interface	.
+local:filterbased_sparql_queries	rdfs:subClassOf	local:sparql_queries	.
+local:faster_query_execution	rdfs:member	local:faster_query	.
+local:complete_regular	rdfs:subClassOf	local:regular	.
+local:part_of_query_execution_client	rdfs:member	local:query_execution_client	.
+local:improvements_allow_for_faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:server	.
+local:query_performance	rdfs:subClassOf	local:performance	.
+local:s5.1	rdf:subject	local:we	.
+local:query_performance_triple_pattern_fragments_interface	rdfs:subClassOf	local:interface	.
+local:s3	rdf:predicate	local:use	.
+local:improvements_allow_for_faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:faster_query_execution	.
+local:s4	local:AM-MNR	local:purposely	.
+local:faster_responses	rdfs:member	local:faster	.
+local:matching_feature	rdfs:subClassOf	local:feature	.
+local:evaluate_sparql_queries	rdfs:member	local:evaluate_sparql	.
+local:s2.1	rdf:object	local:part_of_the_query_execution_client	.
+local:s4.3	rdf:predicate	local:result	.
+local:users_to_obtain_faster_responses_for_filterbased_sparql_queries	rdfs:member	local:filterbased_sparql_queries	.
+local:complex_constructs	rdfs:member	local:complex	.
+local:s1.1	rdf:object	local:sparql_queries	.
+local:triple_pattern_fragments_interface_with_goal	rdfs:member	local:goal	.
+local:s9	rdf:object	local:improvements_allow_for_faster_query_execution_without_significantly_increasing_the_load_on_the_server	.
+local:s4	rdf:object	local:s4.1	.
+local:goal_of_improving_query_performance_triple_pattern_fragments_interface	rdfs:member	local:goal	.
+local:complete_regular_expressions	rdfs:subClassOf	local:expressions	.
+local:s4	rdf:subject	local:triple_pattern_fragments_interface	.
+local:filterbased_sparql_queries	rdfs:subClassOf	local:queries	.
+local:matching_can_be_used_to_support_other_filters_such_as_range_queries	rdfs:member	local:range_queries	.
+local:filterbased_sparql	rdfs:member	local:filterbased	.
+local:other_filters_such_as_range_queries	rdfs:member	local:range_queries	.
+local:filters_queries	rdfs:subClassOf	local:queries	.
+local:s4.1	rdf:object	local:executed_mostly_on_the_client_resulting_in_long_execution_times	.
+local:fragment_servers	rdfs:member	local:fragment	.
+local:s10	rdf:predicate	local:offering	.
+local:complete_regular_expressions	rdfs:member	local:complete_regular	.
+local:matching_can_be_used_to_support_other_filters_such_as_complete_regular_expressions	rdfs:member	local:matching	.
+local:s11	rdf:object	local:matching_can_be_used_to_support_other_filters_such_as_range_queries	.
+local:s9.2	rdf:subject	local:load_on_the_server	.
+local:execution_client	rdfs:subClassOf	local:client	.
+local:s5.3	rdf:subject	local:we	.
+local:execution_times	rdfs:subClassOf	local:times	.
+local:load_on_the_server	rdfs:member	local:load	.
+local:sparql_filters_queries	rdfs:subClassOf	local:queries	.
+local:s10.1	rdf:object	local:users_to_obtain_faster_responses_for_filterbased_sparql_queries	.
+local:mostly_executed_on_client	rdfs:member	local:client	.
+local:performance_triple_pattern_fragments	rdfs:member	local:performance_triple_pattern	.
+local:query_execution_client	rdfs:member	local:query_execution	.
+local:performance_of_sparql_queries_multiple_implementations_including_elastic_search	rdfs:member	local:sparql_queries	.
+local:s5.1	rdf:predicate	local:add	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	rdfs:member	local:triple_pattern_fragments_interface	.
+local:query_execution_client	rdfs:subClassOf	local:execution_client	.
+local:performance_triple_pattern_fragments_interface	rdfs:member	local:performance_triple_pattern_fragments	.
+local:s5.1	local:AM-TMP	local:maintaining_low_server_cost	.
+local:low_server_cost	rdfs:member	local:low_server	.
+local:triple_pattern_fragments_interface	rdfs:member	local:triple_pattern_fragments	.
+local:triple_pattern_fragment	rdfs:member	local:triple_pattern	.
+local:faster_responses	rdfs:subClassOf	local:responses	.
+local:s0	rdf:predicate	local:introduce	.
+local:performance_of_sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	rdfs:member	local:performance	.
+local:multiple_implementations	rdfs:subClassOf	local:implementations	.
+local:s7	rdf:subject	local:we	.
+local:s5	rdf:subject	local:we	.
+local:performance_triple_pattern_fragments_interface	rdfs:subClassOf	local:triple_pattern_fragments_interface	.
+local:query_performance_triple	rdfs:member	local:query_performance	.
+local:substring_feature_on_triple_pattern_fragment_servers	rdfs:member	local:triple_pattern_fragment_servers	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	rdfs:member	local:goal	.
+local:s12	local:AM-DIS	local:furthermore	.
+local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	rdfs:member	local:client	.
+local:can_used	rdfs:subClassOf	local:used	.
+local:moving_part_of_the_query_execution_to_the_client_at_the_cost_of_elevated_query_times	rdfs:member	local:elevated_query_times	.
+local:s2.1	rdf:subject	local:scalability	.
+local:load_on_server	rdfs:member	local:server	.
+local:triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:improvements_allow_for_faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:improvements	.
+local:performance_triple_pattern_fragments_interface	rdfs:subClassOf	local:interface	.
+local:filterbased_sparql	rdfs:subClassOf	local:sparql	.
+local:sparql_queries_multiple_implementations_including_elastic	rdfs:member	local:sparql_queries_multiple_implementations	.
+local:performance_triple_pattern	rdfs:member	local:performance_triple	.
+local:performance_of_sparql_queries_multiple_implementations	rdfs:member	local:performance	.
+local:s11	local:AM-DIS	local:furthermore	.
+local:complex_constructs_such_as_sparql_filters	rdfs:member	local:sparql_filters	.
+local:s4.1	rdf:subject	local:complex_constructs_such_as_sparql_filters_queries	.
+local:s11.1	rdf:object	local:s11.2	.
+local:s9.1	rdf:subject	local:improvements	.
+local:mostly_executed_on_client	rdfs:member	local:mostly_executed	.
+local:s12.1	rdf:object	local:s12.2	.
+local:query_performance_triple_pattern_fragments_interface	rdfs:member	local:query_performance_triple_pattern_fragments	.
+local:high_numbers_of_clients	rdfs:member	local:high_numbers	.
+local:recently_triple_pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:s12	rdf:predicate	local:substring	.
+local:complete_regular	rdfs:member	local:complete	.
+local:faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:execution	.
+local:matching_can_be_used_to_support_other_filters_such_as_complete_regular_expressions	rdfs:member	local:complete_regular_expressions	.
+local:s0	rdf:object	local:lowcost_serverside_interface	.
+local:s11.1	rdf:subject	local:matching	.
+local:s5.2	rdf:subject	local:query_performance	.
+local:pattern_fragments	rdfs:subClassOf	local:fragments	.
+local:literal_substring_matching_feature	rdfs:member	local:literal_substring	.
+local:filters_queries	rdfs:member	local:filters	.
+local:s12	rdf:subject	local:matching_can_be_used_to_support_other_filters_such_as_complete_regular_expressions	.
+local:query_times	rdfs:subClassOf	local:times	.
+local:elevated_query_times	rdfs:subClassOf	local:times	.
+local:recently_triple	rdfs:member	local:recently	.
+local:faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:load	.
+local:caseinsensitive_fmindex	rdfs:subClassOf	local:fmindex	.
+local:cost_of_elevated_query_times	rdfs:member	local:cost	.
+local:s12.1	rdf:predicate	local:use	.
+local:s7	local:AM-LOC	local:paper	.
+local:s10.1	rdf:predicate	local:allow	.
+local:triple_pattern_fragments_interface_with_goal	rdfs:member	local:triple_pattern_fragments_interface	.
+local:s4.2	rdf:object	local:client	.
+local:complex_constructs_such_as_sparql_filters	rdfs:member	local:complex_constructs	.
+local:s5.3	rdf:object	local:low_server_cost	.
+local:evaluate_sparql	rdfs:member	local:evaluate	.
+local:triple_pattern_fragment	rdfs:subClassOf	local:fragment	.
+local:query_execution	rdfs:subClassOf	local:execution	.
+local:sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	rdfs:member	local:sparql_queries_multiple_implementations	.
+local:elastic_search	rdfs:subClassOf	local:search	.
+local:s8	rdf:object	local:performance_of_sparql_queries_multiple_implementations_including_caseinsensitive_fmindex	.
+local:s12.2	rdf:subject	local:filters_such_as_complete_regular_expressions	.
+local:s4.1	rdf:predicate	local:need	.
+local:s8.1	rdf:predicate	local:include	.
+local:faster_query_execution	rdfs:subClassOf	local:execution	.
+local:long_execution	rdfs:subClassOf	local:execution	.
+local:execution_client	rdfs:member	local:execution	.
+local:elevated_query_times	rdfs:member	local:elevated_query	.
+local:sparql_queries_multiple_implementations	rdfs:subClassOf	local:queries_multiple_implementations	.
+local:triple_pattern_fragment_servers	rdfs:subClassOf	local:pattern_fragment_servers	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	rdfs:member	local:impact	.
+local:performance_triple	rdfs:member	local:performance	.
+local:s4.3	rdf:object	local:long_execution_times	.
+local:s4.2	local:AM-ADV	local:mostly	.
+local:s10.2	rdf:object	local:faster_responses_for_filterbased_sparql_queries	.
+local:s8.1	rdf:object	local:multiple_implementations	.
+local:query_performance_triple_pattern	rdfs:subClassOf	local:pattern	.
+local:matching_feature_to_triple_pattern_fragments_interface	rdfs:member	local:matching_feature	.
+local:s2.1	local:AM-MNR	local:cost_of_elevated_query_times	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:s7	rdf:predicate	local:discuss	.
+local:complex_constructs	rdfs:subClassOf	local:constructs	.
+local:s5	local:AM-DIS	local:therefore	.
+local:improvements_allow_for_faster_query_execution_without_significantly_increasing_the_load_on_the_server	rdfs:member	local:load	.
+local:s5.3	rdf:predicate	local:maintain	.
+local:s9.2	rdf:predicate	local:increase	.
+local:matching_feature_to_triple_pattern_fragments_interface	rdfs:member	local:triple_pattern_fragments_interface	.
+local:low_server	rdfs:member	local:low	.
+local:long_execution_times	rdfs:subClassOf	local:times	.
+local:s3	rdf:subject	local:queries	.
+local:impact_of_adding_a_literal_substring_matching_feature_to_the_triple_pattern_fragments_interface_with_the_goal_of_improving_query_performance	rdfs:member	local:matching_feature	.
+local:triple_pattern	rdfs:subClassOf	local:pattern	.

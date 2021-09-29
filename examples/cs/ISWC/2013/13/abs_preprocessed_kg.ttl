@@ -1,500 +1,958 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"we system deal with possible inconsistencies between the nonmonotonic rules"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we system deal with an ontology"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"very large ontologies such as snomed ct augmented with a large number of rules can processed at an interactive response time after one initial brief preprocessing period"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"very large ontologies such as snomed ct augmented with a large number of rules"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"the resulting plugin even queries to very large ontologies such as snomed ct augmented with a large number of rules can be processed at an interactive response time after one initial brief preprocessing period"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"resulting plugin"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the tool with the help of owl 2 el reasoner elk preprocesses the ontology into rules"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the topdown querying engine xsb prolog"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"rules whose result together with the nonmonotonic rules serve as input for the topdown querying engine xsb prolog"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"the tool the tool builds on the procedure slg"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"no restriction other than dlsafety imposed on the rules"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"we uses the wellfounded semantics for mknf knowledge bases as underlying formalism so no restriction other than dlsafety is imposed on the rules"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we approach uses the wellfounded semantics for mknf knowledge bases as underlying formalism so no restriction other than dlsafety is imposed on the rules"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the rules that can"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"the user logic programming rules suitable eg express defaults"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"the user add a set of logic programming rules suitable eg to express defaults"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"the protege plugin nohr that allows the user to add a set of logic programming rules suitable eg to express defaults"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"the user logic programming rules suitable eg express exceptions"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"the user add a set of logic programming rules suitable eg to express exceptions"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the protege plugin nohr that allows the user to add a set of logic programming rules suitable eg to express exceptions"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"the user a set of nonmonotonic rules suitable eg express exceptions"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"the user add a set of nonmonotonic rules suitable eg"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the protege plugin nohr that allows the user to add a set of nonmonotonic rules suitable eg to express exceptions"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we present the protege plugin nohr"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"the user nonmonotonic rules suitable eg express defaults"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the user add a set of nonmonotonic rules suitable eg to express defaults"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the protege plugin nohr that allows the user to add a set of nonmonotonic rules suitable eg to express defaults"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the user take an el op ontology"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"the protege plugin nohr that allows the user to take an el op ontology"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"combined knowledge base"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"the user query the combined knowledge base"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the protege plugin nohr that allows the user to query the combined knowledge base"	.
+
+
 #### Classes ####
 
-local:plugin	rdfs:label	"plug-in"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:plugin_nohr	rdfs:label	"plug-in nohr"	.
+local:deal	a	rdf:Class	;
+	rdfs:label	"deal"	.
 
-local:protégé	rdfs:label	"protégé"	.
+local:possible_inconsistencies_between_the_nonmonotonic_rules	a	rdf:Class	;
+	rdfs:label	"possible inconsistencies between the nonmonotonic rules"	.
 
-local:protégé_plugin	rdfs:label	"protégé plug-in"	.
+local:possible_inconsistencies	a	rdf:Class	;
+	rdfs:label	"possible inconsistencies"	.
 
-local:nohr	rdfs:label	"nohr"	.
+local:nonmonotonic_rules	a	rdf:Class	;
+	rdfs:label	"nonmonotonic rules"	.
 
-local:protégé_plugin_nohr	rdfs:label	"protégé plug-in nohr"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:allows	rdfs:label	"allows"	.
+local:nonmonotonic	a	rdf:Class	;
+	rdfs:label	"nonmonotonic"	.
 
-local:logic_programming	rdfs:label	"logic programming"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:programming	rdfs:label	"programming"	.
+local:inconsistencies	a	rdf:Class	;
+	rdfs:label	"inconsistencies"	.
 
-local:logic	rdfs:label	"logic"	.
+local:possible_inconsistencies_between_nonmonotonic_rules	a	rdf:Class	;
+	rdfs:label	"possible inconsistencies between nonmonotonic rules"	.
 
-local:set_of_logic_programming	rdfs:label	"set of logic programming"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:set	rdfs:label	"set"	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules	a	rdf:Class	;
+	rdfs:label	"large ontologies such as snomed ct augmented with a large number of rules"	.
 
-local:user	rdfs:label	"user"	.
+local:snomed_ct	a	rdf:Class	;
+	rdfs:label	"snomed ct"	.
 
-local:add	rdfs:label	"add"	.
+local:large_number	a	rdf:Class	;
+	rdfs:label	"large number"	.
 
-local:express	rdfs:label	"express"	.
+local:large_ontologies	a	rdf:Class	;
+	rdfs:label	"large ontologies"	.
 
-local:exceptions	rdfs:label	"exceptions"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:knowledge_base	rdfs:label	"knowledge base"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:base	rdfs:label	"base"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:snomed	a	rdf:Class	;
+	rdfs:label	"snomed"	.
 
-local:combined_knowledge_base	rdfs:label	"combined knowledge base"	.
+local:ct	a	rdf:Class	;
+	rdfs:label	"ct"	.
 
-local:query	rdfs:label	"query"	.
+local:large_ontologies_such_as_snomed_ct	a	rdf:Class	;
+	rdfs:label	"large ontologies such_as snomed ct"	.
 
-local:combined	rdfs:label	"combined"	.
+local:augmented_with_large_number	a	rdf:Class	;
+	rdfs:label	"augmented with large number"	.
 
-local:op	rdfs:label	"op"	.
+local:augmented	a	rdf:Class	;
+	rdfs:label	"augmented"	.
 
-local:op_ontology	rdfs:label	"op ontology"	.
+local:large_number_of_rules	a	rdf:Class	;
+	rdfs:label	"large number of rules"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:el	rdfs:label	"el"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:el_	rdfs:label	"el _"	.
+local:interactive_response_time_after_one_initial_brief_preprocessing_period	a	rdf:Class	;
+	rdfs:label	"interactive response time after one initial brief preprocessing period"	.
 
-local:	rdfs:label	"_"	.
+local:interactive_response_time	a	rdf:Class	;
+	rdfs:label	"interactive response time"	.
 
-local:_op_ontology	rdfs:label	"_ op ontology"	.
+local:initial_brief	a	rdf:Class	;
+	rdfs:label	"initial brief"	.
 
-local:el__op_ontology	rdfs:label	"el _ op ontology"	.
+local:preprocessing_period	a	rdf:Class	;
+	rdfs:label	"preprocessing period"	.
 
-local:take	rdfs:label	"take"	.
+local:interactive_response	a	rdf:Class	;
+	rdfs:label	"interactive response"	.
 
-local:el__op	rdfs:label	"el _ op"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:_op	rdfs:label	"_ op"	.
+local:response_time	a	rdf:Class	;
+	rdfs:label	"response time"	.
 
-local:defaults	rdfs:label	"defaults"	.
+local:response	a	rdf:Class	;
+	rdfs:label	"response"	.
 
-local:set_of_nonmonotonic	rdfs:label	"set of non-monotonic"	.
+local:brief	a	rdf:Class	;
+	rdfs:label	"brief"	.
 
-local:nonmonotonic	rdfs:label	"non-monotonic"	.
+local:period	a	rdf:Class	;
+	rdfs:label	"period"	.
 
-local:present	rdfs:label	"present"	.
+local:preprocessing	a	rdf:Class	;
+	rdfs:label	"preprocessing"	.
 
-local:we	rdfs:label	"we"	.
+local:initial	a	rdf:Class	;
+	rdfs:label	"initial"	.
 
-local:approach	rdfs:label	"approach"	.
+local:interactive	a	rdf:Class	;
+	rdfs:label	"interactive"	.
 
-local:wellfounded_semantics	rdfs:label	"well-founded semantics"	.
+local:brief_preprocessing_period	a	rdf:Class	;
+	rdfs:label	"brief preprocessing period"	.
 
-local:semantics	rdfs:label	"semantics"	.
+local:initial_brief_preprocessing_period	a	rdf:Class	;
+	rdfs:label	"initial brief preprocessing period"	.
 
-local:wellfounded	rdfs:label	"well-founded"	.
+local:one_initial_brief_preprocessing_period	a	rdf:Class	;
+	rdfs:label	"one initial brief preprocessing period"	.
 
-local:uses	rdfs:label	"uses"	.
+local:augment	a	rdf:Class	;
+	rdfs:label	"augment"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:resulting_plugin	a	rdf:Class	;
+	rdfs:label	"resulting plugin"	.
 
-local:bases	rdfs:label	"bases"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:mknf_knowledge	rdfs:label	"mknf knowledge"	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	a	rdf:Class	;
+	rdfs:label	"large ontologies such as snomed ct augmented with a large number of rules can be processed at an interactive response time after one initial brief preprocessing period"	.
 
-local:mknf_knowledge_bases	rdfs:label	"mknf knowledge bases"	.
+local:can_processed	a	rdf:Class	;
+	rdfs:label	"can processed"	.
 
-local:underlying_formalism	rdfs:label	"underlying formalism"	.
+local:processed	a	rdf:Class	;
+	rdfs:label	"processed"	.
 
-local:formalism	rdfs:label	"formalism"	.
+local:can_processed_at_interactive_response_time	a	rdf:Class	;
+	rdfs:label	"can processed at interactive response time"	.
 
-local:underlying	rdfs:label	"underlying"	.
+local:can_processed_at_interactive_response_time_after_one_initial_brief_preprocessing_period	a	rdf:Class	;
+	rdfs:label	"can processed at interactive response time after one initial brief preprocessing period"	.
 
-local:mknf	rdfs:label	"mknf"	.
+local:even	a	rdf:Class	;
+	rdfs:label	"even"	.
 
-local:other_restriction	rdfs:label	"other restriction"	.
+local:plugin	a	rdf:Class	;
+	rdfs:label	"plugin"	.
 
-local:restriction	rdfs:label	"restriction"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:no_other_restriction	rdfs:label	"no other restriction"	.
+local:tool_with_the_help_of_owl_2_el_reasoner_elk	a	rdf:Class	;
+	rdfs:label	"tool with the help of owl 2 el reasoner elk"	.
 
-local:mknf_knowledge_bases_as_underlying_formalism	rdfs:label	"mknf knowledge bases as underlying formalism"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:other_than_dlsafety	rdfs:label	"other than dl-safety"	.
+local:el_reasoner_elk	a	rdf:Class	;
+	rdfs:label	"el reasoner elk"	.
 
-local:other	rdfs:label	"other"	.
+local:tool	a	rdf:Class	;
+	rdfs:label	"tool"	.
 
-local:dlsafety	rdfs:label	"dl-safety"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:imposed_on_rules	rdfs:label	"imposed on rules"	.
+local:el_reasoner	a	rdf:Class	;
+	rdfs:label	"el reasoner"	.
 
-local:imposed	rdfs:label	"imposed"	.
+local:el	a	rdf:Class	;
+	rdfs:label	"el"	.
 
-local:rules	rdfs:label	"rules"	.
+local:reasoner_elk	a	rdf:Class	;
+	rdfs:label	"reasoner elk"	.
 
-local:reasoner	rdfs:label	"reasoner"	.
+local:elk	a	rdf:Class	;
+	rdfs:label	"elk"	.
 
-local:reasoner_elk	rdfs:label	"reasoner elk"	.
+local:reasoner	a	rdf:Class	;
+	rdfs:label	"reasoner"	.
 
-local:elk	rdfs:label	"elk"	.
+local:2_el_reasoner_elk	a	rdf:Class	;
+	rdfs:label	"2 el reasoner elk"	.
 
-local:el_reasoner_elk	rdfs:label	"el reasoner elk"	.
+local:owl_2_el_reasoner_elk	a	rdf:Class	;
+	rdfs:label	"owl 2 el reasoner elk"	.
 
-local:el_reasoner	rdfs:label	"el reasoner"	.
+local:tool_with_help	a	rdf:Class	;
+	rdfs:label	"tool with help"	.
 
-local:2_el_reasoner_elk	rdfs:label	"2 el reasoner elk"	.
+local:help_of_owl_2_el_reasoner_elk	a	rdf:Class	;
+	rdfs:label	"help of owl 2 el reasoner elk"	.
 
-local:owl_2_el_reasoner_elk	rdfs:label	"owl 2 el reasoner elk"	.
+local:preprocesses	a	rdf:Class	;
+	rdfs:label	"preprocesses"	.
 
-local:tool_tool	rdfs:label	"tool tool"	.
+local:ontology_rules	a	rdf:Class	;
+	rdfs:label	"ontology rules"	.
 
-local:tool	rdfs:label	"tool"	.
+local:topdown	a	rdf:Class	;
+	rdfs:label	"topdown"	.
 
-local:help_of_owl_2_el_reasoner_elk	rdfs:label	"help of owl 2 el reasoner elk"	.
+local:engine_xsb_prolog	a	rdf:Class	;
+	rdfs:label	"engine xsb prolog"	.
 
-local:help	rdfs:label	"help"	.
+local:engine_xsb	a	rdf:Class	;
+	rdfs:label	"engine xsb"	.
 
-local:preprocesses	rdfs:label	"pre-processes"	.
+local:engine	a	rdf:Class	;
+	rdfs:label	"engine"	.
 
-local:builds	rdfs:label	"builds"	.
+local:xsb	a	rdf:Class	;
+	rdfs:label	"xsb"	.
 
-local:procedure	rdfs:label	"procedure"	.
+local:xsb_prolog	a	rdf:Class	;
+	rdfs:label	"xsb prolog"	.
 
-local:procedure_slg	rdfs:label	"procedure slg"	.
+local:prolog	a	rdf:Class	;
+	rdfs:label	"prolog"	.
 
-local:slg	rdfs:label	"slg"	.
+local:rules_whose_result_together_with_the_nonmonotonic_rules	a	rdf:Class	;
+	rdfs:label	"rules whose result together with the nonmonotonic rules"	.
 
-local:nonmonotonic_rules	rdfs:label	"non-monotonic rules"	.
+local:together_result	a	rdf:Class	;
+	rdfs:label	"together result"	.
 
-local:together_result	rdfs:label	"together result"	.
+local:together_result_with_nonmonotonic_rules	a	rdf:Class	;
+	rdfs:label	"together result with nonmonotonic rules"	.
 
-local:result	rdfs:label	"result"	.
+local:serve	a	rdf:Class	;
+	rdfs:label	"serve"	.
 
-local:together_result_with_nonmonotonic_rules	rdfs:label	"together result with non-monotonic rules"	.
+local:input_for_the_topdown_querying_engine_xsb_prolog	a	rdf:Class	;
+	rdfs:label	"input for the topdown querying engine xsb prolog"	.
 
-local:serve	rdfs:label	"serve"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:querying_engine_xsb	rdfs:label	"querying engine xsb"	.
+local:topdown_querying_engine_xsb_prolog	a	rdf:Class	;
+	rdfs:label	"topdown querying engine xsb prolog"	.
 
-local:querying_engine_xsb_prolog	rdfs:label	"querying engine xsb prolog"	.
+local:topdown_querying_engine	a	rdf:Class	;
+	rdfs:label	"topdown querying engine"	.
 
-local:topdown_querying_engine_xsb	rdfs:label	"top-down querying engine xsb"	.
+local:querying_engine_xsb	a	rdf:Class	;
+	rdfs:label	"querying engine xsb"	.
 
-local:xsb	rdfs:label	"xsb"	.
+local:querying_engine	a	rdf:Class	;
+	rdfs:label	"querying engine"	.
 
-local:querying	rdfs:label	"querying"	.
+local:querying_engine_xsb_prolog	a	rdf:Class	;
+	rdfs:label	"querying engine xsb prolog"	.
 
-local:querying_engine	rdfs:label	"querying engine"	.
+local:topdown_querying_engine_xsb	a	rdf:Class	;
+	rdfs:label	"topdown querying engine xsb"	.
 
-local:topdown_querying_engine	rdfs:label	"top-down querying engine"	.
+local:querying	a	rdf:Class	;
+	rdfs:label	"querying"	.
 
-local:engine	rdfs:label	"engine"	.
+local:topdown_querying	a	rdf:Class	;
+	rdfs:label	"topdown querying"	.
 
-local:prolog	rdfs:label	"prolog"	.
+local:tool_the_tool	a	rdf:Class	;
+	rdfs:label	"tool the tool"	.
 
-local:engine_xsb	rdfs:label	"engine xsb"	.
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
 
-local:xsb_prolog	rdfs:label	"xsb prolog"	.
+local:procedure_slg	a	rdf:Class	;
+	rdfs:label	"procedure slg"	.
 
-local:engine_xsb_prolog	rdfs:label	"engine xsb prolog"	.
+local:procedure	a	rdf:Class	;
+	rdfs:label	"procedure"	.
 
-local:topdown	rdfs:label	"top-down"	.
+local:slg	a	rdf:Class	;
+	rdfs:label	"slg"	.
 
-local:topdown_querying	rdfs:label	"top-down querying"	.
+local:restriction_other_than_dlsafety	a	rdf:Class	;
+	rdfs:label	"restriction other than dlsafety"	.
 
-local:topdown_querying_engine_xsb_prolog	rdfs:label	"top-down querying engine xsb prolog"	.
+local:dlsafety	a	rdf:Class	;
+	rdfs:label	"dlsafety"	.
 
-local:input_for_topdown_querying_engine_xsb_prolog	rdfs:label	"input for top-down querying engine xsb prolog"	.
+local:restriction	a	rdf:Class	;
+	rdfs:label	"restriction"	.
 
-local:input	rdfs:label	"input"	.
+local:other_restriction	a	rdf:Class	;
+	rdfs:label	"other restriction"	.
 
-local:resulting	rdfs:label	"resulting"	.
+local:other_than_dlsafety	a	rdf:Class	;
+	rdfs:label	"other than dlsafety"	.
 
-local:large	rdfs:label	"large"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:large_ontologies	rdfs:label	"large ontologies"	.
+local:impose	a	rdf:Class	;
+	rdfs:label	"impose"	.
 
-local:snomed	rdfs:label	"snomed"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:snomed_ct	rdfs:label	"snomed ct"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:very	rdfs:label	"very"	.
+local:wellfounded_semantics	a	rdf:Class	;
+	rdfs:label	"wellfounded semantics"	.
 
-local:very_large	rdfs:label	"very large"	.
+local:semantics	a	rdf:Class	;
+	rdfs:label	"semantics"	.
 
-local:very_large_ontologies	rdfs:label	"very large ontologies"	.
+local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	a	rdf:Class	;
+	rdfs:label	"mknf knowledge bases as underlying formalism so no restriction other than dlsafety is imposed on the rules"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:underlying_formalism	a	rdf:Class	;
+	rdfs:label	"underlying formalism"	.
 
-local:even	rdfs:label	"even"	.
+local:mknf_knowledge_bases	a	rdf:Class	;
+	rdfs:label	"mknf knowledge bases"	.
 
-local:even_queries	rdfs:label	"even queries"	.
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
 
-local:ct	rdfs:label	"ct"	.
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
 
-local:queries	rdfs:label	"queries"	.
+local:mknf_knowledge	a	rdf:Class	;
+	rdfs:label	"mknf knowledge"	.
 
-local:plugin_even_queries	rdfs:label	"plug-in even queries"	.
+local:mknf	a	rdf:Class	;
+	rdfs:label	"mknf"	.
 
-local:even_queries_to_large_ontologies	rdfs:label	"even queries to large ontologies"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:large_ontologies_suchas_snomed_ct	rdfs:label	"large ontologies such_as snomed ct"	.
+local:formalism	a	rdf:Class	;
+	rdfs:label	"formalism"	.
 
-local:augmented	rdfs:label	"augmented"	.
+local:underlying	a	rdf:Class	;
+	rdfs:label	"underlying"	.
 
-local:large_number	rdfs:label	"large number"	.
+local:no_other_restriction	a	rdf:Class	;
+	rdfs:label	"no other restriction"	.
 
-local:number	rdfs:label	"number"	.
+local:mknf_knowledge_bases_as_underlying_formalism	a	rdf:Class	;
+	rdfs:label	"mknf knowledge bases as underlying formalism"	.
 
-local:large_number_of_rules	rdfs:label	"large number of rules"	.
+local:imposed_on_rules	a	rdf:Class	;
+	rdfs:label	"imposed on rules"	.
 
-local:processed	rdfs:label	"processed"	.
+local:imposed	a	rdf:Class	;
+	rdfs:label	"imposed"	.
 
-local:can	rdfs:label	"can"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:interactive_response_time	rdfs:label	"interactive response time"	.
+local:uses_the_wellfounded_semantics	a	rdf:Class	;
+	rdfs:label	"uses the wellfounded semantics"	.
 
-local:time	rdfs:label	"time"	.
+local:wellfounded	a	rdf:Class	;
+	rdfs:label	"wellfounded"	.
 
-local:response	rdfs:label	"response"	.
+local:write	a	rdf:Class	;
+	rdfs:label	"write"	.
 
-local:response_time	rdfs:label	"response time"	.
+local:logic_programming_rules_suitable_eg	a	rdf:Class	;
+	rdfs:label	"logic programming rules suitable eg"	.
 
-local:interactive	rdfs:label	"interactive"	.
+local:logic_programming_rules	a	rdf:Class	;
+	rdfs:label	"logic programming rules"	.
 
-local:interactive_response	rdfs:label	"interactive response"	.
+local:suitable_eg	a	rdf:Class	;
+	rdfs:label	"suitable eg"	.
 
-local:brief_preprocessing	rdfs:label	"brief pre-processing"	.
+local:eg	a	rdf:Class	;
+	rdfs:label	"eg"	.
 
-local:brief_preprocessing_period	rdfs:label	"brief pre-processing period"	.
+local:programming_rules	a	rdf:Class	;
+	rdfs:label	"programming rules"	.
 
-local:period	rdfs:label	"period"	.
+local:programming	a	rdf:Class	;
+	rdfs:label	"programming"	.
 
-local:brief	rdfs:label	"brief"	.
+local:logic_programming	a	rdf:Class	;
+	rdfs:label	"logic programming"	.
 
-local:initial_brief_preprocessing	rdfs:label	"initial brief pre-processing"	.
+local:suitable	a	rdf:Class	;
+	rdfs:label	"suitable"	.
 
-local:preprocessing	rdfs:label	"pre-processing"	.
+local:logic	a	rdf:Class	;
+	rdfs:label	"logic"	.
 
-local:preprocessing_period	rdfs:label	"pre-processing period"	.
+local:suitable_rules	a	rdf:Class	;
+	rdfs:label	"suitable rules"	.
 
-local:initial	rdfs:label	"initial"	.
+local:programming_suitable_rules	a	rdf:Class	;
+	rdfs:label	"programming suitable rules"	.
 
-local:initial_brief	rdfs:label	"initial brief"	.
+local:logic_programming_suitable_rules	a	rdf:Class	;
+	rdfs:label	"logic programming suitable rules"	.
 
-local:initial_brief_preprocessing_period	rdfs:label	"initial brief pre-processing period"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:one_initial_brief_preprocessing_period	rdfs:label	"one initial brief pre-processing period"	.
+local:defaults	a	rdf:Class	;
+	rdfs:label	"defaults"	.
 
-local:deal	rdfs:label	"deal"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:system	rdfs:label	"system"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:possible_inconsistencies	rdfs:label	"possible inconsistencies"	.
+local:set_of_logic_programming_rules_suitable_eg	a	rdf:Class	;
+	rdfs:label	"set of logic programming rules suitable eg"	.
 
-local:inconsistencies	rdfs:label	"inconsistencies"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:possible	rdfs:label	"possible"	.
+local:set_of_logic_programming_suitable_rules	a	rdf:Class	;
+	rdfs:label	"set of logic programming suitable rules"	.
 
-local:possible_inconsistencies_between_nonmonotonic_rules	rdfs:label	"possible inconsistencies between non-monotonic rules"	.
+local:express_defaults	a	rdf:Class	;
+	rdfs:label	"express defaults"	.
 
-#### Properties ####
+local:protege_plugin_nohr	a	rdf:Class	;
+	rdfs:label	"protege plugin nohr"	.
+
+local:protege_plugin	a	rdf:Class	;
+	rdfs:label	"protege plugin"	.
+
+local:plugin_nohr	a	rdf:Class	;
+	rdfs:label	"plugin nohr"	.
+
+local:nohr	a	rdf:Class	;
+	rdfs:label	"nohr"	.
+
+local:protege	a	rdf:Class	;
+	rdfs:label	"protege"	.
+
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
+
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	a	rdf:Class	;
+	rdfs:label	"user to add a set of logic programming rules suitable eg to express defaults"	.
+
+local:set_of_logic_programming_rules	a	rdf:Class	;
+	rdfs:label	"set of logic programming rules"	.
+
+local:exceptions	a	rdf:Class	;
+	rdfs:label	"exceptions"	.
+
+local:express_exceptions	a	rdf:Class	;
+	rdfs:label	"express exceptions"	.
+
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	a	rdf:Class	;
+	rdfs:label	"user to add a set of logic programming rules suitable eg to express exceptions"	.
+
+local:set_of_nonmonotonic_rules_suitable_eg	a	rdf:Class	;
+	rdfs:label	"set of nonmonotonic rules suitable eg"	.
+
+local:nonmonotonic_suitable_rules	a	rdf:Class	;
+	rdfs:label	"nonmonotonic suitable rules"	.
+
+local:set_of_nonmonotonic_suitable_rules	a	rdf:Class	;
+	rdfs:label	"set of nonmonotonic suitable rules"	.
+
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	a	rdf:Class	;
+	rdfs:label	"user to add a set of nonmonotonic rules suitable eg to express exceptions"	.
+
+local:set_of_nonmonotonic_rules	a	rdf:Class	;
+	rdfs:label	"set of nonmonotonic rules"	.
+
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
+
+local:nonmonotonic_rules_suitable_eg	a	rdf:Class	;
+	rdfs:label	"nonmonotonic rules suitable eg"	.
+
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	a	rdf:Class	;
+	rdfs:label	"user to add a set of nonmonotonic rules suitable eg to express defaults"	.
+
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
+
+local:el_op_ontology	a	rdf:Class	;
+	rdfs:label	"el op ontology"	.
+
+local:op_ontology	a	rdf:Class	;
+	rdfs:label	"op ontology"	.
+
+local:user_to_take_an_el_op_ontology	a	rdf:Class	;
+	rdfs:label	"user to take an el op ontology"	.
+
+local:op	a	rdf:Class	;
+	rdfs:label	"op"	.
+
+local:el_op	a	rdf:Class	;
+	rdfs:label	"el op"	.
+
+local:knowledge_base	a	rdf:Class	;
+	rdfs:label	"knowledge base"	.
+
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
+
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
+
+local:user_to_query_the_combined_knowledge_base	a	rdf:Class	;
+	rdfs:label	"user to query the combined knowledge base"	.
 
 #### Mapped Relations ####
 
-local:reasoner	owl:sameAs	cso:reasoner	.
+cso:owl	rdfs:label	"owl"	.
 cso:engine	rdfs:label	"engine"	.
-cso:knowledge_base	rdfs:label	"knowledge base"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
+local:owl	owl:sameAs	cso:owl	.
+local:wellfounded_semantics	owl:sameAs	cso:well_founded_semantics	.
+local:logic_programming	owl:sameAs	cso:logic_programming	.
 local:engine	owl:sameAs	cso:engine	.
+cso:ontology	rdfs:label	"ontology"	.
 cso:reasoner	rdfs:label	"reasoner"	.
+cso:logic_programming	rdfs:label	"logic programming"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:well_founded_semantics	rdfs:label	"wellfounded semantics"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:reasoner	owl:sameAs	cso:reasoner	.
+cso:knowledge_base	rdfs:label	"knowledge base"	.
 cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
 cso:ontologies	rdfs:label	"ontologies"	.
 local:knowledge_base	owl:sameAs	cso:knowledge_base	.
-local:wellfounded_semantics	owl:sameAs	cso:well_founded_semantics	.
-local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
-cso:well_founded_semantics	rdfs:label	"well-founded semantics"	.
 
 #### Relations ####
 
-local:op_ontology	rdfs:subClassOf	local:ontology	.
-local:approach	vn.role:object	local:we	.
-local:reasoner_elk	rdfs:subClassOf	local:elk	.
-local:together_result_with_nonmonotonic_rules	local:with_non-monotonicrules	local:together_result	.
-local:querying	vn.role:Agent	local:topdown	.
-local:querying_engine_xsb_prolog	rdfs:subClassOf	local:prolog	.
-local:large_ontologies	rdfs:subClassOf	local:ontologies	.
-local:querying_engine_xsb_prolog	rdfs:subClassOf	local:engine_xsb_prolog	.
-local:_op	rdfs:subClassOf	local:op	.
-local:other_restriction	rdfs:subClassOf	local:restriction	.
-local:el__op	rdfs:member	local:el__op_ontology	.
-local:topdown	rdfs:member	local:topdown_querying	.
-local:set_of_logic_programming	local:of_logicprogramming	local:set	.
-local:deal	vn.role:Agent	local:system	.
-local:augmented	vn.role:Instrument	local:large_number_of_rules	.
-local:interactive	rdfs:member	local:interactive_response	.
-local:topdown_querying	rdfs:subClassOf	local:querying	.
-local:serve	vn.role:Value	local:input_for_topdown_querying_engine_xsb_prolog	.
-local:possible	rdfs:member	local:possible_inconsistencies	.
-local:approach	vn.role:indirect_object	local:uses	.
-local:interactive_response	rdfs:subClassOf	local:response	.
-local:initial_brief_preprocessing	rdfs:subClassOf	local:preprocessing	.
-local:mknf_knowledge	rdfs:member	local:mknf_knowledge_bases	.
-local:querying_engine	rdfs:member	local:querying_engine_xsb	.
-local:querying_engine_xsb	rdfs:member	local:querying_engine_xsb_prolog	.
-local:snomed_ct	rdfs:subClassOf	local:ct	.
-local:resulting	vn.role:Theme	local:plugin	.
-local:other_than_dlsafety	local:than_dl-safety	local:other	.
-local:approach	local:AM-PNC	local:mknf_knowledge_bases_as_underlying_formalism	.
-local:set_of_logic_programming	local:set_of	local:logic_programming	.
-local:initial_brief_preprocessing	rdfs:member	local:initial_brief_preprocessing_period	.
-local:very	rdfs:member	local:very_large	.
-local:imposed	vn.role:Theme	local:other_restriction	.
-local:interactive_response	rdfs:member	local:interactive_response_time	.
-local:el_reasoner	rdfs:subClassOf	local:reasoner	.
-local:_op	rdfs:member	local:_op_ontology	.
-local:large_ontologies_suchas_snomed_ct	local:such_as_snomedct	local:large_ontologies	.
-local:topdown_querying_engine_xsb	rdfs:member	local:topdown_querying_engine_xsb_prolog	.
-local:topdown_querying	rdfs:member	local:topdown_querying_engine	.
-local:response	rdfs:member	local:response_time	.
-local:imposed_on_rules	local:on_rules	local:imposed	.
-local:help_of_owl_2_el_reasoner_elk	local:of_owl2elreasonerelk	local:help	.
-local:mknf_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
-local:el	rdfs:member	local:el_	.
-local:querying_engine	rdfs:subClassOf	local:engine	.
-local:	rdfs:member	local:_op	.
-local:express	vn.role:Agent	local:exceptions	.
-local:engine_xsb	rdfs:member	local:engine_xsb_prolog	.
-local:deal	vn.role:Theme	local:ontology	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:take	vn.role:Agent	local:user	.
-local:large	rdfs:member	local:large_ontologies	.
-local:initial_brief_preprocessing_period	rdfs:subClassOf	local:period	.
-local:_op_ontology	rdfs:subClassOf	local:op_ontology	.
-local:topdown_querying_engine_xsb_prolog	rdfs:subClassOf	local:prolog	.
-local:plugin_even_queries	local:_evenqueries	local:plugin	.
-local:large_number_of_rules	local:of_rules	local:large_number	.
-local:initial_brief_preprocessing_period	rdfs:subClassOf	local:brief_preprocessing_period	.
-local:preprocessing	rdfs:member	local:preprocessing_period	.
-local:initial_brief	rdfs:subClassOf	local:brief	.
-local:together_result_with_nonmonotonic_rules	local:togetherresult_with	local:nonmonotonic_rules	.
-local:serve	vn.role:Agent	local:rules	.
-local:topdown_querying_engine_xsb_prolog	rdfs:subClassOf	local:querying_engine_xsb_prolog	.
-local:very_large	rdfs:member	local:very_large_ontologies	.
-local:procedure	rdfs:member	local:procedure_slg	.
-local:el_	rdfs:subClassOf	local:	.
-local:imposed	vn.role:indirect_object	local:rules	.
-local:el__op	rdfs:subClassOf	local:op	.
-local:set_of_nonmonotonic	local:set_of	local:nonmonotonic	.
-local:response_time	rdfs:subClassOf	local:time	.
-local:el__op_ontology	rdfs:subClassOf	local:_op_ontology	.
-local:large_ontologies_suchas_snomed_ct	local:largeontologies_such_as	local:snomed_ct	.
-local:help_of_owl_2_el_reasoner_elk	local:help_of	local:owl_2_el_reasoner_elk	.
-local:querying_engine_xsb	rdfs:subClassOf	local:xsb	.
-local:processed	local:AM-TMP	local:one_initial_brief_preprocessing_period	.
-local:present	vn.role:Theme	local:protégé_plugin_nohr	.
-local:querying	vn.role:Agent	local:rules	.
-local:underlying	vn.role:Theme1	local:formalism	.
-local:uses	vn.role:Agent	local:we	.
-local:protégé_plugin_nohr	rdfs:subClassOf	local:plugin_nohr	.
-local:mknf_knowledge_bases_as_underlying_formalism	local:as_underlyingformalism	local:mknf_knowledge_bases	.
-local:engine_xsb_prolog	rdfs:subClassOf	local:prolog	.
-local:plugin	rdfs:member	local:plugin_nohr	.
-local:protégé_plugin	rdfs:subClassOf	local:plugin	.
-local:querying	vn.role:Theme	local:engine_xsb_prolog	.
-local:allows	vn.role:Agent	local:protégé_plugin_nohr	.
-local:brief_preprocessing	rdfs:subClassOf	local:preprocessing	.
-local:possible_inconsistencies_between_nonmonotonic_rules	local:possibleinconsistencies_between	local:nonmonotonic_rules	.
-local:query	vn.role:Agent	local:user	.
-local:possible_inconsistencies_between_nonmonotonic_rules	local:between_non-monotonicrules	local:possible_inconsistencies	.
-local:nonmonotonic	rdfs:member	local:nonmonotonic_rules	.
-local:initial_brief	rdfs:member	local:initial_brief_preprocessing	.
-local:other_than_dlsafety	local:other_than	local:dlsafety	.
-local:el__op_ontology	rdfs:subClassOf	local:ontology	.
-local:brief	rdfs:member	local:brief_preprocessing	.
-local:combined_knowledge_base	rdfs:subClassOf	local:knowledge_base	.
-local:input_for_topdown_querying_engine_xsb_prolog	local:for_top-downqueryingenginexsbprolog	local:input	.
-local:protégé	rdfs:member	local:protégé_plugin	.
-local:tool_tool	rdfs:subClassOf	local:tool	.
-local:very_large	rdfs:subClassOf	local:large	.
-local:even_queries_to_large_ontologies	local:to_largeontologies	local:even_queries	.
-local:combined	vn.role:Patient2	local:knowledge	.
-local:plugin_nohr	rdfs:subClassOf	local:nohr	.
-local:_op_ontology	rdfs:subClassOf	local:ontology	.
-local:interactive_response_time	rdfs:subClassOf	local:time	.
-local:add	vn.role:Patient	local:set_of_logic_programming	.
-local:imposed_on_rules	local:imposed_on	local:rules	.
-local:el_reasoner	rdfs:member	local:el_reasoner_elk	.
-local:procedure_slg	rdfs:subClassOf	local:slg	.
-local:underlying_formalism	rdfs:subClassOf	local:formalism	.
-local:xsb_prolog	rdfs:subClassOf	local:prolog	.
-local:protégé_plugin	rdfs:member	local:protégé_plugin_nohr	.
-local:querying	rdfs:member	local:querying_engine	.
-local:possible_inconsistencies	rdfs:subClassOf	local:inconsistencies	.
-local:topdown_querying_engine	rdfs:member	local:topdown_querying_engine_xsb	.
-local:el_reasoner_elk	rdfs:subClassOf	local:reasoner_elk	.
-local:wellfounded	rdfs:member	local:wellfounded_semantics	.
-local:processed	vn.role:Theme	local:large_number_of_rules	.
-local:present	vn.role:Agent	local:we	.
-local:underlying	rdfs:member	local:underlying_formalism	.
-local:protégé_plugin_nohr	rdfs:subClassOf	local:nohr	.
-local:very_large_ontologies	rdfs:subClassOf	local:ontologies	.
-local:even_queries	rdfs:subClassOf	local:queries	.
-local:el_reasoner_elk	rdfs:subClassOf	local:elk	.
-local:preprocessing_period	rdfs:subClassOf	local:period	.
-local:knowledge	rdfs:member	local:knowledge_base	.
-local:set_of_nonmonotonic	local:of_non-monotonic	local:set	.
-local:mknf_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:query	vn.role:Theme	local:combined_knowledge_base	.
-local:plugin_even_queries	local:plug-in_	local:even_queries	.
-local:builds	local:AM-LOC	local:procedure_slg	.
-local:logic	rdfs:member	local:logic_programming	.
-local:engine	rdfs:member	local:engine_xsb	.
-local:mknf_knowledge_bases_as_underlying_formalism	local:mknfknowledgebases_as	local:underlying_formalism	.
-local:no_other_restriction	rdfs:subClassOf	local:other_restriction	.
-local:engine_xsb_prolog	rdfs:subClassOf	local:xsb_prolog	.
-local:el	rdfs:member	local:el_reasoner	.
-local:initial	rdfs:member	local:initial_brief	.
-local:express	vn.role:Theme	local:protégé_plugin_nohr	.
-local:builds	vn.role:Agent	local:tool	.
-local:xsb	rdfs:member	local:xsb_prolog	.
-local:large_number	rdfs:subClassOf	local:number	.
-local:even_queries_to_large_ontologies	local:evenqueries_to	local:large_ontologies	.
-local:processed	local:AM-MOD	local:can	.
-local:mknf_knowledge	rdfs:subClassOf	local:knowledge	.
-local:one_initial_brief_preprocessing_period	rdfs:subClassOf	local:initial_brief_preprocessing_period	.
-local:interactive_response_time	rdfs:subClassOf	local:response_time	.
-local:topdown_querying_engine	rdfs:subClassOf	local:engine	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:take	vn.role:Theme	local:el__op_ontology	.
-local:even	rdfs:member	local:even_queries	.
-local:knowledge_base	rdfs:subClassOf	local:base	.
-local:op	rdfs:member	local:op_ontology	.
-local:brief_preprocessing_period	rdfs:subClassOf	local:period	.
-local:engine_xsb	rdfs:subClassOf	local:xsb	.
-local:preprocesses	vn.role:object	local:ontology	.
-local:brief_preprocessing	rdfs:member	local:brief_preprocessing_period	.
-local:uses	vn.role:Theme	local:wellfounded_semantics	.
-local:owl_2_el_reasoner_elk	rdfs:subClassOf	local:2_el_reasoner_elk	.
-local:processed	local:AM-ADV	local:resulting	.
-local:preprocesses	vn.role:indirect_object	local:rules	.
-local:2_el_reasoner_elk	rdfs:subClassOf	local:el_reasoner_elk	.
-local:input_for_topdown_querying_engine_xsb_prolog	local:input_for	local:topdown_querying_engine_xsb_prolog	.
-local:add	vn.role:Agent	local:user	.
-local:snomed	rdfs:member	local:snomed_ct	.
-local:nonmonotonic_rules	rdfs:subClassOf	local:rules	.
-local:augmented	vn.role:Patient	local:resulting	.
-local:large	rdfs:member	local:large_number	.
-local:processed	vn.role:other	local:interactive_response_time	.
-local:el_	rdfs:member	local:el__op	.
-local:allows	vn.role:Theme	local:user	.
-local:uses	local:AM-PNC	local:mknf_knowledge_bases_as_underlying_formalism	.
-local:add	vn.role:Patient	local:set_of_nonmonotonic	.
-local:together_result	rdfs:subClassOf	local:result	.
-local:large_number_of_rules	local:largenumber_of	local:rules	.
-local:deal	vn.role:Theme	local:possible_inconsistencies_between_nonmonotonic_rules	.
-local:reasoner	rdfs:member	local:reasoner_elk	.
-local:logic_programming	rdfs:subClassOf	local:programming	.
-local:mknf	rdfs:member	local:mknf_knowledge	.
-local:preprocesses	vn.role:subject	local:tool_tool	.
-local:topdown_querying_engine_xsb	rdfs:subClassOf	local:xsb	.
+local:s8	rdf:object	local:uses_the_wellfounded_semantics	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:rules	.
+local:el_op_ontology	rdfs:member	local:el_op	.
+local:s5	rdf:object	local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	rdfs:member	local:user	.
 local:wellfounded_semantics	rdfs:subClassOf	local:semantics	.
-local:express	vn.role:Agent	local:defaults	.
+local:s2.1	local:AM-PNC	local:express_defaults	.
+local:s5	rdf:subject	local:protege_plugin_nohr	.
+local:tool_with_the_help_of_owl_2_el_reasoner_elk	rdfs:member	local:el_reasoner_elk	.
+local:el_reasoner	rdfs:member	local:el	.
+local:s3	rdf:subject	local:we	.
 local:brief_preprocessing_period	rdfs:subClassOf	local:preprocessing_period	.
+local:mknf_knowledge	rdfs:subClassOf	local:knowledge	.
+local:augmented_with_large_number	rdfs:member	local:large_number	.
+local:snomed_ct	rdfs:member	local:snomed	.
+local:s1.1	rdf:predicate	local:take	.
+local:nonmonotonic_rules	rdfs:subClassOf	local:rules	.
+local:s12.2	rdf:predicate	local:augment	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules	rdfs:member	local:snomed_ct	.
+local:large_number	rdfs:subClassOf	local:number	.
+local:can_processed	rdfs:subClassOf	local:processed	.
+local:s14	rdf:object	local:possible_inconsistencies_between_the_nonmonotonic_rules	.
+local:op_ontology	rdfs:member	local:op	.
+local:imposed_on_rules	rdfs:member	local:imposed	.
+local:interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:initial_brief	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	rdfs:member	local:defaults	.
+local:set_of_nonmonotonic_rules	rdfs:member	local:set	.
+local:s4.2	rdf:subject	local:set_of_nonmonotonic_rules_suitable_eg	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:interactive_response_time	.
+local:s12.3	rdf:predicate	local:process	.
+local:op_ontology	rdfs:subClassOf	local:ontology	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	rdfs:member	local:nonmonotonic_rules	.
+local:s9	rdf:subject	local:tool_the_tool	.
+local:el_op	rdfs:subClassOf	local:op	.
+local:interactive_response_time	rdfs:member	local:interactive_response	.
+local:s7	rdf:predicate	local:write	.
+local:s4.2	rdf:object	local:exceptions	.
+local:el_op_ontology	rdfs:subClassOf	local:op_ontology	.
+local:topdown_querying_engine	rdfs:member	local:topdown_querying	.
+local:protege_plugin	rdfs:subClassOf	local:plugin	.
+local:interactive_response_time	rdfs:subClassOf	local:response_time	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	rdfs:member	local:set	.
+local:s12.1	rdf:subject	local:resulting_plugin	.
+local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	rdfs:member	local:dlsafety	.
+local:s12.2	rdf:subject	local:large_ontologies_such_as_snomed_ct	.
+local:knowledge_bases	rdfs:member	local:knowledge	.
+local:s8.1	rdf:object	local:wellfounded_semantics	.
+local:programming_rules	rdfs:subClassOf	local:rules	.
+local:s8.1	local:AM-PNC	local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	.
+local:possible_inconsistencies_between_nonmonotonic_rules	rdfs:member	local:possible_inconsistencies	.
+local:querying_engine_xsb_prolog	rdfs:member	local:querying_engine_xsb	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules	rdfs:member	local:rules	.
+local:mknf_knowledge	rdfs:member	local:mknf	.
+local:mknf_knowledge_bases_as_underlying_formalism	rdfs:member	local:mknf_knowledge_bases	.
+local:interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:preprocessing_period	.
+local:large_number_of_rules	rdfs:member	local:rules	.
+local:s5.2	rdf:predicate	local:express	.
+local:logic_programming_suitable_rules	rdfs:subClassOf	local:programming_suitable_rules	.
+local:s8.2	rdf:predicate	local:impose	.
+local:s12	rdf:subject	local:plugin	.
+local:initial_brief_preprocessing_period	rdfs:subClassOf	local:brief_preprocessing_period	.
+local:s4	rdf:predicate	local:allow	.
+local:xsb_prolog	rdfs:member	local:xsb	.
+local:s3	rdf:object	local:protege_plugin_nohr	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	rdfs:member	local:set	.
+local:suitable_eg	rdfs:subClassOf	local:eg	.
+local:s10	rdf:predicate	local:serve	.
+local:s4.1	rdf:predicate	local:add	.
+local:can_processed_at_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:one_initial_brief_preprocessing_period	.
+local:s8	rdf:subject	local:we	.
+local:interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:interactive_response_time	.
+local:logic_programming	rdfs:member	local:logic	.
+local:topdown_querying_engine_xsb_prolog	rdfs:subClassOf	local:prolog	.
+local:ontology_rules	rdfs:subClassOf	local:rules	.
+local:suitable_rules	rdfs:subClassOf	local:rules	.
+local:large_ontologies	rdfs:member	local:large	.
+local:protege_plugin_nohr	rdfs:subClassOf	local:plugin_nohr	.
+local:s0.2	rdf:subject	local:knowledge_base	.
+local:possible_inconsistencies_between_the_nonmonotonic_rules	rdfs:member	local:possible_inconsistencies	.
+local:set_of_nonmonotonic_rules	rdfs:member	local:nonmonotonic_rules	.
+local:s7	local:AM-MOD	local:can	.
+local:s5.1	rdf:object	local:set_of_logic_programming_rules_suitable_eg	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:el_reasoner	rdfs:subClassOf	local:reasoner	.
+local:possible_inconsistencies	rdfs:member	local:possible	.
+local:s6	rdf:object	local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	.
+local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	rdfs:member	local:rules	.
+local:large_number_of_rules	rdfs:member	local:large_number	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	rdfs:member	local:suitable_eg	.
+local:knowledge_base	rdfs:member	local:knowledge	.
+local:set_of_logic_programming_suitable_rules	rdfs:member	local:logic_programming_suitable_rules	.
+local:s6.2	rdf:predicate	local:express	.
+local:logic_programming_rules_suitable_eg	rdfs:member	local:suitable_eg	.
+local:programming_rules	rdfs:member	local:programming	.
+local:interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:one_initial_brief_preprocessing_period	.
+local:large_number	rdfs:member	local:large	.
+local:input_for_the_topdown_querying_engine_xsb_prolog	rdfs:member	local:input	.
+local:s5.1	local:AM-PNC	local:express_exceptions	.
+local:possible_inconsistencies_between_nonmonotonic_rules	rdfs:member	local:nonmonotonic_rules	.
+local:other_than_dlsafety	rdfs:member	local:dlsafety	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:preprocessing_period	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:initial_brief	.
+local:s0	rdf:subject	local:protege_plugin_nohr	.
+local:snomed_ct	rdfs:subClassOf	local:ct	.
+local:set_of_nonmonotonic_rules_suitable_eg	rdfs:member	local:nonmonotonic_rules	.
+local:can_processed_at_interactive_response_time	rdfs:member	local:can_processed	.
+local:imposed_on_rules	rdfs:member	local:rules	.
+local:set_of_logic_programming_rules	rdfs:member	local:logic_programming_rules	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	rdfs:member	local:nonmonotonic_rules	.
+local:engine_xsb_prolog	rdfs:subClassOf	local:xsb_prolog	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	rdfs:member	local:set	.
+local:set_of_nonmonotonic_suitable_rules	rdfs:member	local:nonmonotonic_suitable_rules	.
+local:logic_programming_rules_suitable_eg	rdfs:member	local:logic_programming_rules	.
+local:plugin_nohr	rdfs:subClassOf	local:nohr	.
+local:s12.1	local:AM-ADV	local:even	.
+local:nonmonotonic_rules_suitable_eg	rdfs:member	local:suitable_eg	.
+local:express_exceptions	rdfs:subClassOf	local:exceptions	.
+local:s12.3	local:AM-TMP	local:interactive_response_time_after_one_initial_brief_preprocessing_period	.
+local:set_of_nonmonotonic_rules_suitable_eg	rdfs:member	local:set	.
+local:s12.2	rdf:object	local:large_number_of_rules	.
+local:nonmonotonic_suitable_rules	rdfs:subClassOf	local:suitable_rules	.
+local:preprocessing_period	rdfs:subClassOf	local:period	.
+local:querying_engine_xsb	rdfs:subClassOf	local:xsb	.
+local:s2.2	rdf:predicate	local:express	.
+local:nonmonotonic_rules	rdfs:member	local:nonmonotonic	.
+local:together_result	rdfs:subClassOf	local:result	.
+local:s0.1	rdf:object	local:s0.2	.
+local:s7	rdf:subject	local:rules	.
+local:engine_xsb	rdfs:subClassOf	local:xsb	.
+local:s8	local:AM-PNC	local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	.
+local:possible_inconsistencies	rdfs:subClassOf	local:inconsistencies	.
+local:protege_plugin	rdfs:member	local:protege	.
+local:s2.1	rdf:predicate	local:add	.
+local:initial_brief	rdfs:member	local:initial	.
+local:preprocessing_period	rdfs:member	local:preprocessing	.
+local:s8.1	rdf:predicate	local:use	.
+local:user_to_query_the_combined_knowledge_base	rdfs:member	local:knowledge_base	.
+local:nonmonotonic_rules_suitable_eg	rdfs:member	local:nonmonotonic_rules	.
+local:s2	rdf:predicate	local:allow	.
+local:s6.2	rdf:subject	local:logic_programming_rules_suitable_eg	.
+local:s12.3	rdf:subject	local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules	.
+local:mknf_knowledge_bases	rdfs:member	local:mknf_knowledge	.
+local:el_op_ontology	rdfs:member	local:ontology	.
+local:s12.1	rdf:object	local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	.
+local:s2	rdf:subject	local:protege_plugin_nohr	.
+local:procedure_slg	rdfs:member	local:procedure	.
+local:s6	rdf:subject	local:protege_plugin_nohr	.
+local:suitable_eg	rdfs:member	local:suitable	.
+local:s0	rdf:object	local:user_to_query_the_combined_knowledge_base	.
+local:tool_with_help	rdfs:member	local:tool	.
+local:el_reasoner_elk	rdfs:subClassOf	local:elk	.
+local:large_ontologies_such_as_snomed_ct	rdfs:member	local:large_ontologies	.
+local:reasoner_elk	rdfs:member	local:reasoner	.
+local:2_el_reasoner_elk	rdfs:subClassOf	local:el_reasoner_elk	.
+local:s1	rdf:subject	local:protege_plugin_nohr	.
+local:programming_suitable_rules	rdfs:subClassOf	local:suitable_rules	.
+local:underlying_formalism	rdfs:member	local:underlying	.
+local:s2.2	rdf:subject	local:nonmonotonic_rules_suitable_eg	.
+local:tool_with_the_help_of_owl_2_el_reasoner_elk	rdfs:member	local:help	.
+local:s3	rdf:predicate	local:present	.
+local:user_to_take_an_el_op_ontology	rdfs:member	local:user	.
+local:s12	rdf:predicate	local:result	.
+local:s14	rdf:predicate	local:deal	.
+local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	rdfs:member	local:restriction	.
+local:s8.2	rdf:object	local:rules	.
+local:xsb_prolog	rdfs:subClassOf	local:prolog	.
+local:s12.3	local:AM-MOD	local:can	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	rdfs:member	local:suitable_eg	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	rdfs:member	local:exceptions	.
+local:s8.2	rdf:subject	local:restriction_other_than_dlsafety	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	rdfs:member	local:suitable_eg	.
+local:s8.1	rdf:subject	local:we	.
+local:el_op_ontology	rdfs:member	local:el	.
+local:engine_xsb	rdfs:member	local:engine	.
+local:s1.1	rdf:object	local:el_op_ontology	.
+local:engine_xsb_prolog	rdfs:member	local:engine_xsb	.
+local:response_time	rdfs:subClassOf	local:time	.
+local:logic_programming_rules	rdfs:subClassOf	local:rules	.
+local:topdown_querying	rdfs:member	local:topdown	.
+local:s6	rdf:predicate	local:allow	.
+local:tool_with_the_help_of_owl_2_el_reasoner_elk	rdfs:member	local:tool	.
+local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	rdfs:member	local:underlying_formalism	.
+local:s13	rdf:predicate	local:deal	.
+local:topdown_querying_engine_xsb	rdfs:subClassOf	local:xsb	.
+local:help_of_owl_2_el_reasoner_elk	rdfs:member	local:owl_2_el_reasoner_elk	.
+local:el_reasoner_elk	rdfs:subClassOf	local:reasoner_elk	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:el_op_ontology	rdfs:subClassOf	local:ontology	.
+local:s0.2	rdf:predicate	local:combine	.
+local:rules_whose_result_together_with_the_nonmonotonic_rules	rdfs:member	local:nonmonotonic_rules	.
+local:mknf_knowledge_bases_as_underlying_formalism	rdfs:member	local:underlying_formalism	.
+local:s6.1	rdf:object	local:set_of_logic_programming_rules_suitable_eg	.
+local:interactive_response	rdfs:subClassOf	local:response	.
+local:querying_engine_xsb	rdfs:member	local:querying_engine	.
+local:no_other_restriction	rdfs:subClassOf	local:other_restriction	.
+local:set_of_logic_programming_rules_suitable_eg	rdfs:member	local:set	.
+local:rules_whose_result_together_with_the_nonmonotonic_rules	rdfs:member	local:rules	.
+local:topdown_querying_engine_xsb	rdfs:member	local:topdown_querying_engine	.
+local:help_of_owl_2_el_reasoner_elk	rdfs:member	local:help	.
+local:s0.2	rdfs:subClassOf	local:knowledge_base	.
+local:response_time	rdfs:member	local:response	.
+local:querying_engine_xsb_prolog	rdfs:subClassOf	local:prolog	.
+local:querying_engine	rdfs:subClassOf	local:engine	.
+local:topdown_querying	rdfs:subClassOf	local:querying	.
+local:s0	rdf:predicate	local:allow	.
+local:s5.1	rdf:subject	local:user	.
+local:s10	rdf:object	local:input_for_the_topdown_querying_engine_xsb_prolog	.
+local:mknf_knowledge_bases_as_underlying_formalism_so_no_restriction_other_than_dlsafety_is_imposed_on_the_rules	rdfs:member	local:mknf_knowledge_bases	.
+local:s5	rdf:predicate	local:allow	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	rdfs:member	local:suitable_eg	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	rdfs:member	local:defaults	.
+local:s4	rdf:subject	local:protege_plugin_nohr	.
+local:s4	rdf:object	local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	.
+local:interactive_response	rdfs:member	local:interactive	.
+local:express_defaults	rdfs:member	local:express	.
+local:owl_2_el_reasoner_elk	rdfs:subClassOf	local:2_el_reasoner_elk	.
+local:set_of_nonmonotonic_suitable_rules	rdfs:member	local:set	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:snomed_ct	.
+local:s5.2	rdf:object	local:exceptions	.
+local:s13	rdf:object	local:ontology	.
+local:tool_with_help	rdfs:member	local:help	.
+local:s11	rdf:subject	local:tool_with_the_help_of_owl_2_el_reasoner_elk	.
+local:user_to_take_an_el_op_ontology	rdfs:member	local:el_op_ontology	.
+local:set_of_logic_programming_rules_suitable_eg	rdfs:member	local:logic_programming_rules	.
+local:mknf_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
+local:s10.1	rdf:object	local:engine_xsb_prolog	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	rdfs:member	local:user	.
+local:large_ontologies_such_as_snomed_ct	rdfs:member	local:snomed_ct	.
+local:s9	rdf:predicate	local:build	.
+local:augmented_with_large_number	rdfs:member	local:augmented	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules	rdfs:member	local:large_number	.
+local:s6.1	local:AM-PNC	local:express_defaults	.
+local:logic_programming_rules	rdfs:subClassOf	local:programming_rules	.
+local:protege_plugin_nohr	rdfs:subClassOf	local:nohr	.
+local:s4.2	rdf:predicate	local:express	.
+local:initial_brief	rdfs:subClassOf	local:brief	.
+local:querying_engine	rdfs:member	local:querying	.
+local:topdown_querying_engine_xsb_prolog	rdfs:member	local:topdown_querying_engine_xsb	.
+local:s5.2	rdf:subject	local:logic_programming_rules_suitable_eg	.
+local:s11	rdf:object	local:ontology_rules	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules	rdfs:member	local:large_ontologies	.
+local:together_result_with_nonmonotonic_rules	rdfs:member	local:together_result	.
+local:s6.2	rdf:object	local:defaults	.
+local:can_processed_at_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:can_processed_at_interactive_response_time	.
+local:s0.1	rdf:subject	local:user	.
+local:s9	local:AM-LOC	local:procedure_slg	.
+local:s10.1	rdf:predicate	local:query	.
+local:input_for_the_topdown_querying_engine_xsb_prolog	rdfs:member	local:topdown_querying_engine_xsb_prolog	.
+local:s14	rdf:subject	local:system	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_exceptions	rdfs:member	local:user	.
+local:set_of_nonmonotonic_rules_suitable_eg	rdfs:member	local:suitable_eg	.
+local:s0.1	rdf:predicate	local:query	.
+local:other_restriction	rdfs:subClassOf	local:restriction	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	rdfs:member	local:exceptions	.
+local:s10	rdf:subject	local:rules_whose_result_together_with_the_nonmonotonic_rules	.
+local:el_reasoner_elk	rdfs:member	local:el_reasoner	.
+local:set_of_logic_programming_rules	rdfs:member	local:set	.
+local:reasoner_elk	rdfs:subClassOf	local:elk	.
+local:set_of_logic_programming_suitable_rules	rdfs:member	local:set	.
+local:s1	rdf:predicate	local:allow	.
+local:one_initial_brief_preprocessing_period	rdfs:subClassOf	local:initial_brief_preprocessing_period	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:large_ontologies	.
+local:s4.1	rdf:object	local:set_of_nonmonotonic_rules_suitable_eg	.
+local:large_ontologies_such_as_snomed_ct_augmented_with_a_large_number_of_rules_can_be_processed_at_an_interactive_response_time_after_one_initial_brief_preprocessing_period	rdfs:member	local:large_number	.
+local:restriction_other_than_dlsafety	rdfs:member	local:restriction	.
+local:rules_whose_result_together_with_the_nonmonotonic_rules	rdfs:member	local:result	.
+local:s2.1	rdf:object	local:set_of_nonmonotonic_rules_suitable_eg	.
+local:engine_xsb_prolog	rdfs:subClassOf	local:prolog	.
+local:s8	rdf:predicate	local:approach	.
+local:s12.1	rdf:predicate	local:query	.
+local:s4.1	rdf:subject	local:user	.
+local:plugin_nohr	rdfs:member	local:plugin	.
+local:s6.1	rdf:predicate	local:add	.
+local:s5.1	rdf:predicate	local:add	.
+local:restriction_other_than_dlsafety	rdfs:member	local:dlsafety	.
+local:s13	rdf:subject	local:system	.
+local:mknf_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:s6.1	rdf:subject	local:user	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_exceptions	rdfs:member	local:logic_programming_rules	.
+local:s2.2	rdf:object	local:defaults	.
+local:tool_with_the_help_of_owl_2_el_reasoner_elk	rdfs:member	local:owl	.
+local:can_processed_at_interactive_response_time	rdfs:member	local:interactive_response_time	.
+local:possible_inconsistencies_between_the_nonmonotonic_rules	rdfs:member	local:nonmonotonic_rules	.
+local:protege_plugin_nohr	rdfs:member	local:protege_plugin	.
+local:user_to_query_the_combined_knowledge_base	rdfs:member	local:user	.
+local:set_of_logic_programming_rules_suitable_eg	rdfs:member	local:suitable_eg	.
+local:s2.1	rdf:subject	local:user	.
+local:s2	rdf:object	local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	.
+local:logic_programming_rules	rdfs:member	local:logic_programming	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	rdfs:member	local:logic_programming_rules	.
+local:together_result_with_nonmonotonic_rules	rdfs:member	local:nonmonotonic_rules	.
+local:interactive_response_time	rdfs:subClassOf	local:time	.
+local:s1	rdf:object	local:user_to_take_an_el_op_ontology	.
+local:wellfounded_semantics	rdfs:member	local:wellfounded	.
+local:s1.1	rdf:subject	local:user	.
+local:user_to_add_a_set_of_nonmonotonic_rules_suitable_eg_to_express_defaults	rdfs:member	local:user	.
+local:s11	rdf:predicate	local:preprocesses	.
+local:topdown_querying_engine	rdfs:subClassOf	local:engine	.
+local:large_ontologies	rdfs:subClassOf	local:ontologies	.
+local:user_to_add_a_set_of_logic_programming_rules_suitable_eg_to_express_defaults	rdfs:member	local:set	.
+local:procedure_slg	rdfs:subClassOf	local:slg	.
+local:ontology_rules	rdfs:member	local:ontology	.
+local:express_defaults	rdfs:subClassOf	local:defaults	.
+local:logic_programming	rdfs:subClassOf	local:programming	.
+local:s10.1	rdf:subject	local:topdown	.
+local:underlying_formalism	rdfs:subClassOf	local:formalism	.
+local:el_op	rdfs:member	local:el	.
+local:other_than_dlsafety	rdfs:member	local:other	.
+local:express_exceptions	rdfs:member	local:express	.

@@ -1,358 +1,660 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the information mined from the web"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"highly ambiguous cases which lowered the performance of previous methods"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"the information contributes substantially towards the successful handling of highly ambiguous cases"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the results show that the information contributes substantially towards the successful handling of highly ambiguous cases"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the method evaluated on two datasets one"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"the method evaluated on two datasets one from the bt digital library"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"one used in previous work on name disambiguation"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"gather additional evidence for the instance unification algorithm"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the approach combines the use of titles with web mining in order to gather additional evidence for the instance unification algorithm"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"gather additional evidence for the instance unification algorithm"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"the approach combines the use of initials with web mining in order to gather additional evidence for the instance unification algorithm"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"gather additional evidence for the instance unification algorithm"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the approach combines the use of coauthorship information with web mining in order to gather additional evidence for the instance unification algorithm"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"gather additional evidence for the instance unification algorithm"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the approach combines the use of abstract with web mining in order to gather additional evidence for the instance unification algorithm"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"gather additional evidence for the instance unification algorithm"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the approach combines the use of citation information with web mining in order to gather additional evidence for the instance unification algorithm"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"gather additional evidence for the instance unification algorithm"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the approach combines the use of ie with web mining in order to gather additional evidence for the instance unification algorithm"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"more specifically this paper addresses the instance unification problem for person names"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"two instances in an ontology refer to the same object in the real world"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"instance unification determines whether two instances in an ontology refer to the same object in the real world"	.
+
+
 #### Classes ####
 
-local:instance	rdfs:label	"instance"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:instance_unification	rdfs:label	"instance unification"	.
+local:mine	a	rdf:Class	;
+	rdfs:label	"mine"	.
 
-local:unification	rdfs:label	"unification"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:determines	rdfs:label	"determines"	.
+local:highly_ambiguous_cases	a	rdf:Class	;
+	rdfs:label	"highly ambiguous cases"	.
 
-local:real_world	rdfs:label	"real world"	.
+local:highly_ambiguous	a	rdf:Class	;
+	rdfs:label	"highly ambiguous"	.
 
-local:world	rdfs:label	"world"	.
+local:ambiguous	a	rdf:Class	;
+	rdfs:label	"ambiguous"	.
 
-local:same	rdfs:label	"same"	.
+local:highly	a	rdf:Class	;
+	rdfs:label	"highly"	.
 
-local:same_object	rdfs:label	"same object"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:real	rdfs:label	"real"	.
+local:ambiguous_cases	a	rdf:Class	;
+	rdfs:label	"ambiguous cases"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:lower	a	rdf:Class	;
+	rdfs:label	"lower"	.
 
-local:ontology_refer	rdfs:label	"ontology refer"	.
+local:performance_of_previous_methods	a	rdf:Class	;
+	rdfs:label	"performance of previous methods"	.
 
-local:refer	rdfs:label	"refer"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:object	rdfs:label	"object"	.
+local:previous_methods	a	rdf:Class	;
+	rdfs:label	"previous methods"	.
 
-local:two_instances	rdfs:label	"two instances"	.
+local:previous	a	rdf:Class	;
+	rdfs:label	"previous"	.
 
-local:instances	rdfs:label	"instances"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:two_instances_in_ontology	rdfs:label	"two instances in ontology"	.
+local:contribute	a	rdf:Class	;
+	rdfs:label	"contribute"	.
 
-local:refer_to_same_object	rdfs:label	"refer to same object"	.
+local:towards_the_successful_handling_of_highly_ambiguous_cases	a	rdf:Class	;
+	rdfs:label	"towards the successful handling of highly ambiguous cases"	.
 
-local:same_object_in_real_world	rdfs:label	"same object in real world"	.
+local:successful_handling	a	rdf:Class	;
+	rdfs:label	"successful handling"	.
 
-local:whether	rdfs:label	"whether"	.
+local:handling	a	rdf:Class	;
+	rdfs:label	"handling"	.
 
-local:object_in_real_world	rdfs:label	"object in real world"	.
+local:successful	a	rdf:Class	;
+	rdfs:label	"successful"	.
 
-local:specifically_paper	rdfs:label	"specifically paper"	.
+local:successful_handling_of_ambiguous_cases	a	rdf:Class	;
+	rdfs:label	"successful handling of ambiguous cases"	.
 
-local:paper	rdfs:label	"paper"	.
+local:substantially	a	rdf:Class	;
+	rdfs:label	"substantially"	.
 
-local:addresses	rdfs:label	"addresses"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:unification_problem	rdfs:label	"unification problem"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:problem	rdfs:label	"problem"	.
+local:information_contributes_substantially_towards_the_successful_handling_of_highly_ambiguous_cases	a	rdf:Class	;
+	rdfs:label	"information contributes substantially towards the successful handling of highly ambiguous cases"	.
 
-local:instance_unification_problem	rdfs:label	"instance unification problem"	.
+local:substantially_contributes	a	rdf:Class	;
+	rdfs:label	"substantially contributes"	.
 
-local:person	rdfs:label	"person"	.
+local:contributes	a	rdf:Class	;
+	rdfs:label	"contributes"	.
 
-local:person_names	rdfs:label	"person names"	.
+local:substantially_contributes_towards_successful_handling	a	rdf:Class	;
+	rdfs:label	"substantially contributes towards successful handling"	.
 
-local:names	rdfs:label	"names"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:combines	rdfs:label	"combines"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:approach	rdfs:label	"approach"	.
+local:two_datasets_one	a	rdf:Class	;
+	rdfs:label	"two datasets one"	.
 
-local:citation_information	rdfs:label	"citation information"	.
+local:two_datasets	a	rdf:Class	;
+	rdfs:label	"two datasets"	.
 
-local:information	rdfs:label	"information"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:web_mining	rdfs:label	"web mining"	.
+local:two_datasets_one_from_the_bt_digital_library	a	rdf:Class	;
+	rdfs:label	"two datasets one from the bt digital library"	.
 
-local:mining	rdfs:label	"mining"	.
+local:digital_library	a	rdf:Class	;
+	rdfs:label	"digital library"	.
 
-local:web	rdfs:label	"web"	.
+local:bt	a	rdf:Class	;
+	rdfs:label	"bt"	.
 
-local:citation	rdfs:label	"citation"	.
+local:library	a	rdf:Class	;
+	rdfs:label	"library"	.
 
-local:use_of_citation_information	rdfs:label	"use of citation information"	.
+local:digital	a	rdf:Class	;
+	rdfs:label	"digital"	.
 
-local:use	rdfs:label	"use"	.
+local:bt_digital_library	a	rdf:Class	;
+	rdfs:label	"bt digital library"	.
 
-local:use_of_citation_information_with_web_mining	rdfs:label	"use of citation information with web mining"	.
+local:one_from_bt_digital_library	a	rdf:Class	;
+	rdfs:label	"one from bt digital library"	.
 
-local:instance_unification_algorithm	rdfs:label	"instance unification algorithm"	.
+local:one	a	rdf:Class	;
+	rdfs:label	"one"	.
 
-local:unification_algorithm	rdfs:label	"unification algorithm"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:additional	rdfs:label	"additional"	.
+local:previous_work_on_name_disambiguation	a	rdf:Class	;
+	rdfs:label	"previous work on name disambiguation"	.
 
-local:additional_evidence	rdfs:label	"additional evidence"	.
+local:name_disambiguation	a	rdf:Class	;
+	rdfs:label	"name disambiguation"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:previous_work	a	rdf:Class	;
+	rdfs:label	"previous work"	.
 
-local:evidence	rdfs:label	"evidence"	.
+local:disambiguation	a	rdf:Class	;
+	rdfs:label	"disambiguation"	.
 
-local:additional_evidence_for_instance_unification_algorithm	rdfs:label	"additional evidence for instance unification algorithm"	.
+local:name	a	rdf:Class	;
+	rdfs:label	"name"	.
 
-local:order	rdfs:label	"order"	.
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
 
-local:gather	rdfs:label	"gather"	.
+local:additional_evidence_for_the_instance_unification_algorithm	a	rdf:Class	;
+	rdfs:label	"additional evidence for the instance unification algorithm"	.
 
-local:use_of_abstract	rdfs:label	"use of abstract"	.
+local:instance_unification_algorithm	a	rdf:Class	;
+	rdfs:label	"instance unification algorithm"	.
 
-local:abstract	rdfs:label	"abstract"	.
+local:additional_evidence	a	rdf:Class	;
+	rdfs:label	"additional evidence"	.
 
-local:use_of_abstract_with_web_mining	rdfs:label	"use of abstract with web mining"	.
+local:instance_unification	a	rdf:Class	;
+	rdfs:label	"instance unification"	.
 
-local:use_of_titles	rdfs:label	"use of titles"	.
+local:evidence	a	rdf:Class	;
+	rdfs:label	"evidence"	.
 
-local:titles	rdfs:label	"titles"	.
+local:unification_algorithm	a	rdf:Class	;
+	rdfs:label	"unification algorithm"	.
 
-local:use_of_titles_with_web_mining	rdfs:label	"use of titles with web mining"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:use_of_initials	rdfs:label	"use of initials"	.
+local:unification	a	rdf:Class	;
+	rdfs:label	"unification"	.
 
-local:initials	rdfs:label	"initials"	.
+local:instance	a	rdf:Class	;
+	rdfs:label	"instance"	.
 
-local:use_of_initials_with_web_mining	rdfs:label	"use of initials with web mining"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:use_of_ie	rdfs:label	"use of i.e."	.
+local:additional_evidence_for_instance_unification_algorithm	a	rdf:Class	;
+	rdfs:label	"additional evidence for instance unification algorithm"	.
 
-local:ie	rdfs:label	"i.e."	.
+local:gather	a	rdf:Class	;
+	rdfs:label	"gather"	.
 
-local:use_of_ie_with_web_mining	rdfs:label	"use of i.e. with web mining"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:coauthorship_information	rdfs:label	"co-authorship information"	.
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
 
-local:coauthorship	rdfs:label	"co-authorship"	.
+local:use_of_titles_with_web_mining	a	rdf:Class	;
+	rdfs:label	"use of titles with web mining"	.
 
-local:use_of_coauthorship_information	rdfs:label	"use of co-authorship information"	.
+local:web_mining	a	rdf:Class	;
+	rdfs:label	"web mining"	.
 
-local:use_of_coauthorship_information_with_web_mining	rdfs:label	"use of co-authorship information with web mining"	.
+local:titles	a	rdf:Class	;
+	rdfs:label	"titles"	.
 
-local:used	rdfs:label	"used"	.
+local:mining	a	rdf:Class	;
+	rdfs:label	"mining"	.
 
-local:one	rdfs:label	"one"	.
+local:use_of_titles	a	rdf:Class	;
+	rdfs:label	"use of titles"	.
 
-local:name_disambiguation	rdfs:label	"name disambiguation"	.
+local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	a	rdf:Class	;
+	rdfs:label	"order to gather additional evidence for the instance unification algorithm"	.
 
-local:disambiguation	rdfs:label	"disambiguation"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:name	rdfs:label	"name"	.
+local:use_of_initials_with_web_mining	a	rdf:Class	;
+	rdfs:label	"use of initials with web mining"	.
 
-local:previous_work	rdfs:label	"previous work"	.
+local:initials	a	rdf:Class	;
+	rdfs:label	"initials"	.
 
-local:work	rdfs:label	"work"	.
+local:use_of_initials	a	rdf:Class	;
+	rdfs:label	"use of initials"	.
 
-local:previous	rdfs:label	"previous"	.
+local:use_of_coauthorship_information_with_web_mining	a	rdf:Class	;
+	rdfs:label	"use of coauthorship information with web mining"	.
 
-local:previous_work_on_name_disambiguation	rdfs:label	"previous work on name disambiguation"	.
+local:coauthorship_information	a	rdf:Class	;
+	rdfs:label	"coauthorship information"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:coauthorship	a	rdf:Class	;
+	rdfs:label	"coauthorship"	.
 
-local:two_datasets	rdfs:label	"two datasets"	.
+local:use_of_coauthorship_information	a	rdf:Class	;
+	rdfs:label	"use of coauthorship information"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:use_of_abstract_with_web_mining	a	rdf:Class	;
+	rdfs:label	"use of abstract with web mining"	.
 
-local:digital	rdfs:label	"digital"	.
+local:abstract	a	rdf:Class	;
+	rdfs:label	"abstract"	.
 
-local:digital_library	rdfs:label	"digital library"	.
+local:use_of_abstract	a	rdf:Class	;
+	rdfs:label	"use of abstract"	.
 
-local:library	rdfs:label	"library"	.
+local:use_of_citation_information_with_web_mining	a	rdf:Class	;
+	rdfs:label	"use of citation information with web mining"	.
 
-local:bt_digital_library	rdfs:label	"bt digital library"	.
+local:citation_information	a	rdf:Class	;
+	rdfs:label	"citation information"	.
 
-local:one_from_bt_digital_library	rdfs:label	"one from bt digital library"	.
+local:citation	a	rdf:Class	;
+	rdfs:label	"citation"	.
 
-local:mined	rdfs:label	"mined"	.
+local:use_of_citation_information	a	rdf:Class	;
+	rdfs:label	"use of citation information"	.
 
-local:show	rdfs:label	"show"	.
+local:use_of_ie_with_web_mining	a	rdf:Class	;
+	rdfs:label	"use of ie with web mining"	.
 
-local:results	rdfs:label	"results"	.
+local:ie	a	rdf:Class	;
+	rdfs:label	"ie"	.
 
-local:highly_ambiguous	rdfs:label	"highly ambiguous"	.
+local:use_of_ie	a	rdf:Class	;
+	rdfs:label	"use of ie"	.
 
-local:ambiguous	rdfs:label	"ambiguous"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:highly_ambiguous_cases	rdfs:label	"highly ambiguous cases"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:cases	rdfs:label	"cases"	.
+local:instance_unification_problem_person_names	a	rdf:Class	;
+	rdfs:label	"instance unification problem person names"	.
 
-local:ambiguous_cases	rdfs:label	"ambiguous cases"	.
+local:instance_unification_problem_person	a	rdf:Class	;
+	rdfs:label	"instance unification problem person"	.
 
-local:highly	rdfs:label	"highly"	.
+local:unification_problem_person_names	a	rdf:Class	;
+	rdfs:label	"unification problem person names"	.
 
-local:successful_handling	rdfs:label	"successful handling"	.
+local:unification_problem_person	a	rdf:Class	;
+	rdfs:label	"unification problem person"	.
 
-local:handling	rdfs:label	"handling"	.
+local:unification_problem	a	rdf:Class	;
+	rdfs:label	"unification problem"	.
 
-local:successful	rdfs:label	"successful"	.
+local:instance_unification_problem	a	rdf:Class	;
+	rdfs:label	"instance unification problem"	.
 
-local:substantially_contributes	rdfs:label	"substantially contributes"	.
+local:person	a	rdf:Class	;
+	rdfs:label	"person"	.
 
-local:contributes	rdfs:label	"contributes"	.
+local:problem_person_names	a	rdf:Class	;
+	rdfs:label	"problem person names"	.
 
-local:substantially_contributes_towards_successful_handling	rdfs:label	"substantially contributes towards successful handling"	.
+local:problem_person	a	rdf:Class	;
+	rdfs:label	"problem person"	.
 
-local:successful_handling_of_ambiguous_cases	rdfs:label	"successful handling of ambiguous cases"	.
+local:names	a	rdf:Class	;
+	rdfs:label	"names"	.
 
-local:substantially	rdfs:label	"substantially"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:lowered	rdfs:label	"lowered"	.
+local:person_names	a	rdf:Class	;
+	rdfs:label	"person names"	.
 
-local:previous_methods	rdfs:label	"previous methods"	.
+local:specifically	a	rdf:Class	;
+	rdfs:label	"specifically"	.
 
-local:methods	rdfs:label	"methods"	.
+local:two_instances_in_an_ontology	a	rdf:Class	;
+	rdfs:label	"two instances in an ontology"	.
 
-local:performance_of_previous_methods	rdfs:label	"performance of previous methods"	.
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
 
-local:performance	rdfs:label	"performance"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-#### Properties ####
+local:two_instances	a	rdf:Class	;
+	rdfs:label	"two instances"	.
+
+local:two_instances_in_ontology	a	rdf:Class	;
+	rdfs:label	"two instances in ontology"	.
+
+local:refer	a	rdf:Class	;
+	rdfs:label	"refer"	.
+
+local:object_in_the_real_world	a	rdf:Class	;
+	rdfs:label	"object in the real world"	.
+
+local:object	a	rdf:Class	;
+	rdfs:label	"object"	.
+
+local:real_world	a	rdf:Class	;
+	rdfs:label	"real world"	.
+
+local:real	a	rdf:Class	;
+	rdfs:label	"real"	.
+
+local:world	a	rdf:Class	;
+	rdfs:label	"world"	.
+
+local:object_in_real_world	a	rdf:Class	;
+	rdfs:label	"object in real world"	.
+
+local:determine	a	rdf:Class	;
+	rdfs:label	"determine"	.
+
+local:whether_two_instances_in_an_ontology_refer_to_the_same_object_in_the_real_world	a	rdf:Class	;
+	rdfs:label	"whether two instances in an ontology refer to the same object in the real world"	.
+
+local:ontology_refer	a	rdf:Class	;
+	rdfs:label	"ontology refer"	.
+
+local:same_object	a	rdf:Class	;
+	rdfs:label	"same object"	.
+
+local:same	a	rdf:Class	;
+	rdfs:label	"same"	.
+
+local:refer_to_same_object	a	rdf:Class	;
+	rdfs:label	"refer to same object"	.
+
+local:same_object_in_real_world	a	rdf:Class	;
+	rdfs:label	"same object in real world"	.
 
 #### Mapped Relations ####
 
-cso:co-authorship	rdfs:label	"co-authorship"	.
 local:ontology	owl:sameAs	cso:ontology	.
+local:coauthorship	owl:sameAs	cso:coauthorship	.
 cso:ontology	rdfs:label	"ontology"	.
-local:web_mining	owl:sameAs	cso:web_mining	.
-local:coauthorship	owl:sameAs	cso:co-authorship	.
+cso:library	rdfs:label	"library"	.
 local:digital_library	owl:sameAs	cso:digital_library	.
 cso:web_mining	rdfs:label	"web mining"	.
+cso:coauthorship	rdfs:label	"coauthorship"	.
 cso:digital_library	rdfs:label	"digital library"	.
+local:library	owl:sameAs	cso:library	.
+local:web_mining	owl:sameAs	cso:web_mining	.
 
 #### Relations ####
 
-local:instance_unification	rdfs:subClassOf	local:unification	.
-local:successful_handling	rdfs:subClassOf	local:handling	.
-local:instance_unification_algorithm	rdfs:subClassOf	local:unification_algorithm	.
-local:name_disambiguation	rdfs:subClassOf	local:disambiguation	.
-local:combines	vn.role:Patient	local:use_of_ie_with_web_mining	.
-local:use_of_initials	local:of_initials	local:use	.
-local:one_from_bt_digital_library	local:one_from	local:bt_digital_library	.
-local:use_of_coauthorship_information_with_web_mining	local:with_webmining	local:use_of_coauthorship_information	.
-local:substantially_contributes	rdfs:subClassOf	local:contributes	.
-local:instance_unification	rdfs:member	local:instance_unification_problem	.
-local:addresses	vn.role:Agent	local:specifically_paper	.
-local:unification_problem	rdfs:subClassOf	local:problem	.
-local:use_of_titles_with_web_mining	local:with_webmining	local:use_of_titles	.
-local:use_of_coauthorship_information_with_web_mining	local:useofco-authorshipinformation_with	local:web_mining	.
-local:use_of_ie	local:of_i.e.	local:use	.
-local:used	local:AM-LOC	local:previous_work_on_name_disambiguation	.
-local:two_datasets	rdfs:subClassOf	local:datasets	.
-local:two_instances_in_ontology	local:in_ontology	local:two_instances	.
-local:refer_to_same_object	local:refer_to	local:same_object	.
-local:refer_to_same_object	local:to_sameobject	local:refer	.
-local:combines	vn.role:Patient	local:use_of_abstract_with_web_mining	.
-local:combines	vn.role:Patient	local:use_of_initials_with_web_mining	.
-local:use_of_citation_information	local:of_citationinformation	local:use	.
-local:use_of_initials	local:use_of	local:initials	.
-local:two_instances_in_ontology	local:twoinstances_in	local:ontology	.
-local:performance_of_previous_methods	local:of_previousmethods	local:performance	.
-local:use_of_abstract_with_web_mining	local:useofabstract_with	local:web_mining	.
-local:instance_unification_algorithm	rdfs:subClassOf	local:algorithm	.
-local:highly	rdfs:member	local:highly_ambiguous	.
-local:highly_ambiguous	rdfs:member	local:highly_ambiguous_cases	.
-local:person_names	rdfs:subClassOf	local:names	.
-local:use_of_initials_with_web_mining	local:with_webmining	local:use_of_initials	.
-local:same	rdfs:member	local:same_object	.
-local:unification_algorithm	rdfs:subClassOf	local:algorithm	.
-local:use_of_titles	local:use_of	local:titles	.
-local:previous	rdfs:member	local:previous_methods	.
-local:instance_unification_problem	rdfs:subClassOf	local:unification_problem	.
-local:use_of_abstract_with_web_mining	local:with_webmining	local:use_of_abstract	.
-local:performance_of_previous_methods	local:performance_of	local:previous_methods	.
-local:gather	vn.role:Theme	local:additional_evidence_for_instance_unification_algorithm	.
-local:additional_evidence_for_instance_unification_algorithm	local:additionalevidence_for	local:instance_unification_algorithm	.
-local:use_of_initials_with_web_mining	local:useofinitials_with	local:web_mining	.
-local:use_of_coauthorship_information	local:use_of	local:coauthorship_information	.
-local:coauthorship	rdfs:member	local:coauthorship_information	.
+local:s12	rdf:object	local:performance_of_previous_methods	.
+local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	rdfs:member	local:instance_unification_algorithm	.
+local:use_of_citation_information_with_web_mining	rdfs:member	local:use_of_citation_information	.
+local:use_of_titles	rdfs:member	local:use	.
+local:problem_person_names	rdfs:subClassOf	local:person_names	.
+local:two_datasets_one_from_the_bt_digital_library	rdfs:member	local:bt	.
+local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	rdfs:member	local:additional_evidence	.
 local:two_instances	rdfs:subClassOf	local:instances	.
-local:previous	rdfs:member	local:previous_work	.
-local:contributes	local:AM-MNR	local:substantially	.
-local:lowered	vn.role:Patient	local:ambiguous_cases	.
-local:evaluated	local:AM-MNR	local:two_datasets	.
-local:unification	rdfs:member	local:unification_problem	.
-local:name	rdfs:member	local:name_disambiguation	.
-local:citation_information	rdfs:subClassOf	local:information	.
-local:additional	rdfs:member	local:additional_evidence	.
-local:highly_ambiguous_cases	rdfs:subClassOf	local:cases	.
-local:specifically_paper	rdfs:subClassOf	local:paper	.
-local:addresses	vn.role:Destination	local:person_names	.
-local:ambiguous_cases	rdfs:subClassOf	local:cases	.
-local:use_of_coauthorship_information	local:of_co-authorshipinformation	local:use	.
-local:ontology	rdfs:member	local:ontology_refer	.
-local:instance	rdfs:member	local:instance_unification	.
-local:object_in_real_world	local:object_in	local:real_world	.
-local:real_world	rdfs:subClassOf	local:world	.
-local:use_of_abstract	local:use_of	local:abstract	.
-local:citation	rdfs:member	local:citation_information	.
-local:additional_evidence	rdfs:subClassOf	local:evidence	.
-local:determines	vn.role:Theme	local:whether	.
-local:determines	vn.role:Agent	local:instance_unification	.
-local:instance_unification	rdfs:member	local:instance_unification_algorithm	.
-local:used	vn.role:Theme	local:one	.
-local:one_from_bt_digital_library	local:from_btdigitallibrary	local:one	.
-local:previous_work	rdfs:subClassOf	local:work	.
-local:ontology_refer	local:ontology_	local:refer	.
-local:show	vn.role:Agent	local:results	.
-local:instance_unification_problem	rdfs:subClassOf	local:problem	.
-local:use_of_abstract	local:of_abstract	local:use	.
-local:evaluated	vn.role:Theme	local:instance_unification_algorithm	.
-local:use_of_titles	local:of_titles	local:use	.
-local:same_object_in_real_world	local:in_realworld	local:same_object	.
-local:combines	local:AM-PNC	local:order	.
-local:evaluated	vn.role:Attribute	local:two_datasets	.
-local:ontology_refer	local:_refer	local:ontology	.
-local:same_object_in_real_world	local:sameobject_in	local:real_world	.
-local:addresses	vn.role:Theme	local:instance_unification_problem	.
-local:successful_handling_of_ambiguous_cases	local:of_ambiguouscases	local:successful_handling	.
-local:contributes	vn.role:indirect_object	local:successful_handling_of_ambiguous_cases	.
-local:previous_work_on_name_disambiguation	local:on_namedisambiguation	local:previous_work	.
-local:contributes	vn.role:Theme2	local:information	.
-local:use_of_titles_with_web_mining	local:useoftitles_with	local:web_mining	.
-local:digital	rdfs:member	local:digital_library	.
-local:ontology_refer	rdfs:subClassOf	local:refer	.
-local:web_mining	rdfs:subClassOf	local:mining	.
-local:refer	vn.role:Theme	local:object_in_real_world	.
-local:use_of_citation_information_with_web_mining	local:with_webmining	local:use_of_citation_information	.
-local:previous_work_on_name_disambiguation	local:previouswork_on	local:name_disambiguation	.
-local:additional_evidence_for_instance_unification_algorithm	local:for_instanceunificationalgorithm	local:additional_evidence	.
-local:substantially_contributes_towards_successful_handling	local:towards_successfulhandling	local:substantially_contributes	.
-local:use_of_citation_information	local:use_of	local:citation_information	.
-local:person	rdfs:member	local:person_names	.
-local:coauthorship_information	rdfs:subClassOf	local:information	.
-local:lowered	vn.role:Attribute	local:performance_of_previous_methods	.
-local:ambiguous	rdfs:member	local:ambiguous_cases	.
-local:successful_handling_of_ambiguous_cases	local:successfulhandling_of	local:ambiguous_cases	.
-local:real	rdfs:member	local:real_world	.
-local:use_of_ie_with_web_mining	local:useofi.e._with	local:web_mining	.
-local:evaluated	vn.role:Attribute	local:one	.
-local:mined	vn.role:Location	local:information	.
-local:show	vn.role:Theme	local:substantially_contributes_towards_successful_handling	.
-local:combines	vn.role:Patient	local:use_of_citation_information_with_web_mining	.
-local:combines	vn.role:Patient	local:use_of_coauthorship_information_with_web_mining	.
-local:successful	rdfs:member	local:successful_handling	.
-local:previous_methods	rdfs:subClassOf	local:methods	.
-local:web	rdfs:member	local:web_mining	.
-local:use_of_ie	local:use_of	local:ie	.
-local:use_of_ie_with_web_mining	local:with_webmining	local:use_of_ie	.
-local:combines	vn.role:Patient	local:use_of_titles_with_web_mining	.
-local:highly_ambiguous	rdfs:subClassOf	local:ambiguous	.
-local:mined	vn.role:other	local:web	.
-local:object_in_real_world	local:in_realworld	local:object	.
-local:refer	vn.role:Agent	local:two_instances_in_ontology	.
-local:unification	rdfs:member	local:unification_algorithm	.
-local:bt_digital_library	rdfs:subClassOf	local:digital_library	.
-local:same_object	rdfs:subClassOf	local:object	.
-local:substantially_contributes_towards_successful_handling	local:substantiallycontributes_towards	local:successful_handling	.
+local:s7	rdf:subject	local:approach	.
+local:use_of_coauthorship_information_with_web_mining	rdfs:member	local:web_mining	.
+local:use_of_citation_information	rdfs:member	local:use	.
+local:use_of_coauthorship_information_with_web_mining	rdfs:member	local:coauthorship_information	.
+local:use_of_coauthorship_information	rdfs:member	local:coauthorship_information	.
+local:ontology_refer	rdfs:member	local:ontology	.
+local:use_of_ie_with_web_mining	rdfs:member	local:ie	.
+local:performance_of_previous_methods	rdfs:member	local:previous_methods	.
+local:coauthorship_information	rdfs:member	local:coauthorship	.
+local:use_of_abstract_with_web_mining	rdfs:member	local:use_of_abstract	.
+local:instance_unification_problem_person	rdfs:subClassOf	local:person	.
+local:s1	rdf:object	local:instance_unification_problem_person_names	.
+local:s0.1	rdf:predicate	local:refer	.
+local:successful_handling	rdfs:member	local:successful	.
+local:s0.1	rdf:object	local:object_in_the_real_world	.
+local:s8	local:AM-LOC	local:previous_work_on_name_disambiguation	.
+local:use_of_initials_with_web_mining	rdfs:member	local:web_mining	.
+local:object_in_real_world	rdfs:member	local:real_world	.
+local:s13	rdf:subject	local:information	.
+local:s1	local:AM-ADV	local:specifically	.
+local:s4	rdf:subject	local:approach	.
+local:use_of_titles_with_web_mining	rdfs:member	local:titles	.
+local:instance_unification_problem_person_names	rdfs:member	local:instance_unification_problem_person	.
+local:use_of_abstract	rdfs:member	local:use	.
+local:s2.1	rdf:subject	local:additional_evidence_for_the_instance_unification_algorithm	.
+local:s12	rdf:predicate	local:lower	.
+local:digital_library	rdfs:member	local:digital	.
+local:additional_evidence_for_instance_unification_algorithm	rdfs:member	local:instance_unification_algorithm	.
+local:information_contributes_substantially_towards_the_successful_handling_of_highly_ambiguous_cases	rdfs:member	local:successful_handling	.
+local:use_of_abstract_with_web_mining	rdfs:member	local:abstract	.
+local:s11	rdf:subject	local:results	.
+local:object_in_the_real_world	rdfs:member	local:real_world	.
+local:s11.1	rdf:object	local:towards_the_successful_handling_of_highly_ambiguous_cases	.
+local:use_of_coauthorship_information	rdfs:member	local:use	.
+local:two_datasets_one_from_the_bt_digital_library	rdfs:member	local:digital_library	.
+local:unification_problem_person_names	rdfs:subClassOf	local:names	.
+local:instance_unification	rdfs:member	local:instance	.
+local:s5	rdf:object	local:use_of_coauthorship_information_with_web_mining	.
+local:s2	rdf:object	local:use_of_ie_with_web_mining	.
 local:digital_library	rdfs:subClassOf	local:library	.
-local:combines	vn.role:Agent	local:approach	.
-local:use_of_citation_information_with_web_mining	local:useofcitationinformation_with	local:web_mining	.
+local:s0	rdf:predicate	local:determine	.
+local:successful_handling_of_ambiguous_cases	rdfs:member	local:successful_handling	.
+local:s1	rdf:predicate	local:address	.
+local:unification_problem_person	rdfs:member	local:unification_problem	.
+local:s7.1	rdf:subject	local:additional_evidence_for_the_instance_unification_algorithm	.
+local:two_instances_in_ontology	rdfs:member	local:two_instances	.
+local:real_world	rdfs:member	local:real	.
+local:s3.1	rdf:predicate	local:gather	.
+local:successful_handling	rdfs:subClassOf	local:handling	.
+local:name_disambiguation	rdfs:member	local:name	.
+local:highly_ambiguous	rdfs:member	local:highly	.
+local:s11.1	rdf:predicate	local:contribute	.
+local:instance_unification_problem_person	rdfs:member	local:instance_unification_problem	.
+local:use_of_initials	rdfs:member	local:initials	.
+local:s3.1	rdf:subject	local:additional_evidence_for_the_instance_unification_algorithm	.
+local:s3	rdf:subject	local:approach	.
+local:two_instances_in_an_ontology	rdfs:member	local:instances	.
+local:unification_problem_person_names	rdfs:member	local:unification_problem_person	.
+local:s9	rdf:predicate	local:evaluate	.
+local:instance_unification_problem_person_names	rdfs:subClassOf	local:unification_problem_person_names	.
+local:use_of_titles_with_web_mining	rdfs:member	local:web_mining	.
+local:use_of_ie_with_web_mining	rdfs:member	local:use_of_ie	.
+local:bt_digital_library	rdfs:subClassOf	local:digital_library	.
+local:substantially_contributes_towards_successful_handling	rdfs:member	local:substantially_contributes	.
+local:use_of_ie	rdfs:member	local:ie	.
+local:web_mining	rdfs:member	local:web	.
+local:s8	rdf:predicate	local:use	.
+local:additional_evidence	rdfs:member	local:additional	.
+local:s3	local:AM-PNC	local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	.
+local:two_instances_in_an_ontology	rdfs:member	local:ontology	.
+local:object_in_the_real_world	rdfs:member	local:object	.
+local:unification_problem	rdfs:member	local:unification	.
+local:s4	rdf:object	local:use_of_abstract_with_web_mining	.
+local:citation_information	rdfs:subClassOf	local:information	.
+local:previous_work_on_name_disambiguation	rdfs:member	local:previous_work	.
+local:use_of_initials_with_web_mining	rdfs:member	local:use	.
+local:s0	rdf:subject	local:instance_unification	.
+local:highly_ambiguous	rdfs:subClassOf	local:ambiguous	.
+local:s6	local:AM-PNC	local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	.
+local:use_of_coauthorship_information_with_web_mining	rdfs:member	local:use	.
+local:instance_unification_problem_person_names	rdfs:subClassOf	local:names	.
+local:s1	rdf:subject	local:paper	.
+local:whether_two_instances_in_an_ontology_refer_to_the_same_object_in_the_real_world	rdfs:member	local:instances	.
+local:person_names	rdfs:subClassOf	local:names	.
+local:refer_to_same_object	rdfs:member	local:same_object	.
+local:instance_unification_algorithm	rdfs:member	local:instance_unification	.
+local:citation_information	rdfs:member	local:citation	.
+local:ambiguous_cases	rdfs:member	local:ambiguous	.
+local:s11.1	local:AM-MNR	local:substantially	.
+local:two_instances_in_ontology	rdfs:member	local:ontology	.
+local:two_datasets_one_from_the_bt_digital_library	rdfs:member	local:datasets	.
+local:performance_of_previous_methods	rdfs:member	local:performance	.
+local:unification_algorithm	rdfs:member	local:unification	.
+local:s3	rdf:predicate	local:combine	.
+local:s13	rdf:predicate	local:mine	.
+local:instance_unification_problem	rdfs:subClassOf	local:problem	.
+local:two_datasets	rdfs:subClassOf	local:datasets	.
+local:instance_unification_algorithm	rdfs:subClassOf	local:unification_algorithm	.
+local:use_of_ie_with_web_mining	rdfs:member	local:use	.
+local:name_disambiguation	rdfs:subClassOf	local:disambiguation	.
+local:ontology_refer	rdfs:member	local:refer	.
+local:successful_handling_of_ambiguous_cases	rdfs:member	local:ambiguous_cases	.
+local:instance_unification_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s5	rdf:subject	local:approach	.
+local:use_of_ie_with_web_mining	rdfs:member	local:web_mining	.
+local:s6	rdf:predicate	local:combine	.
+local:s11.1	rdf:subject	local:information	.
+local:s5.1	rdf:predicate	local:gather	.
+local:highly_ambiguous_cases	rdfs:subClassOf	local:cases	.
+local:s7	local:AM-PNC	local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	.
+local:coauthorship_information	rdfs:subClassOf	local:information	.
+local:whether_two_instances_in_an_ontology_refer_to_the_same_object_in_the_real_world	rdfs:member	local:ontology_refer	.
+local:substantially_contributes	rdfs:subClassOf	local:contributes	.
+local:ontology_refer	rdfs:subClassOf	local:refer	.
+local:previous_work	rdfs:member	local:previous	.
+local:s5	rdf:predicate	local:combine	.
+local:s4.1	rdf:predicate	local:gather	.
+local:s11	rdf:object	local:information_contributes_substantially_towards_the_successful_handling_of_highly_ambiguous_cases	.
+local:s2	rdf:subject	local:approach	.
+local:unification_problem_person	rdfs:subClassOf	local:person	.
+local:problem_person	rdfs:subClassOf	local:person	.
+local:s2	local:AM-PNC	local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	.
+local:refer_to_same_object	rdfs:member	local:refer	.
+local:s6	rdf:object	local:use_of_initials_with_web_mining	.
+local:s5.1	rdf:subject	local:additional_evidence_for_the_instance_unification_algorithm	.
+local:s10	local:AM-MNR	local:two_datasets_one	.
+local:use_of_abstract	rdfs:member	local:abstract	.
+local:s0	rdf:object	local:whether_two_instances_in_an_ontology_refer_to_the_same_object_in_the_real_world	.
+local:s10	rdf:subject	local:method	.
+local:information_contributes_substantially_towards_the_successful_handling_of_highly_ambiguous_cases	rdfs:member	local:information	.
+local:s7.1	rdf:predicate	local:gather	.
+local:s2.1	rdf:predicate	local:gather	.
+local:same_object	rdfs:member	local:same	.
+local:previous_work_on_name_disambiguation	rdfs:member	local:name_disambiguation	.
+local:problem_person	rdfs:member	local:problem	.
+local:same_object_in_real_world	rdfs:member	local:same_object	.
+local:unification_algorithm	rdfs:subClassOf	local:algorithm	.
+local:ambiguous_cases	rdfs:subClassOf	local:cases	.
+local:additional_evidence_for_the_instance_unification_algorithm	rdfs:member	local:instance_unification_algorithm	.
+local:s5	local:AM-PNC	local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	.
+local:substantially_contributes_towards_successful_handling	rdfs:member	local:successful_handling	.
+local:s6.1	rdf:subject	local:additional_evidence_for_the_instance_unification_algorithm	.
+local:s10	rdf:predicate	local:evaluate	.
+local:use_of_citation_information_with_web_mining	rdfs:member	local:use	.
+local:s9	rdf:object	local:two_datasets_one_from_the_bt_digital_library	.
+local:use_of_titles_with_web_mining	rdfs:member	local:use_of_titles	.
+local:use_of_citation_information	rdfs:member	local:citation_information	.
+local:s8	rdf:subject	local:one	.
+local:s11	rdf:predicate	local:show	.
+local:one_from_bt_digital_library	rdfs:member	local:one	.
+local:use_of_titles_with_web_mining	rdfs:member	local:use	.
+local:previous_methods	rdfs:subClassOf	local:methods	.
+local:s7	rdf:object	local:use_of_titles_with_web_mining	.
+local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	rdfs:member	local:order	.
+local:s0.1	rdf:subject	local:two_instances_in_an_ontology	.
+local:s9	rdf:subject	local:method	.
+local:instance_unification_problem	rdfs:member	local:instance_unification	.
+local:real_world	rdfs:subClassOf	local:world	.
+local:s7	rdf:predicate	local:combine	.
+local:previous_methods	rdfs:member	local:previous	.
+local:s13	rdf:object	local:web	.
+local:s4	local:AM-PNC	local:order_to_gather_additional_evidence_for_the_instance_unification_algorithm	.
+local:use_of_coauthorship_information_with_web_mining	rdfs:member	local:use_of_coauthorship_information	.
+local:same_object	rdfs:subClassOf	local:object	.
+local:person_names	rdfs:member	local:person	.
+local:same_object_in_real_world	rdfs:member	local:real_world	.
+local:use_of_ie	rdfs:member	local:use	.
+local:use_of_citation_information_with_web_mining	rdfs:member	local:citation_information	.
+local:whether_two_instances_in_an_ontology_refer_to_the_same_object_in_the_real_world	rdfs:member	local:real_world	.
+local:use_of_titles	rdfs:member	local:titles	.
+local:previous_work	rdfs:subClassOf	local:work	.
+local:use_of_abstract_with_web_mining	rdfs:member	local:web_mining	.
+local:use_of_citation_information_with_web_mining	rdfs:member	local:web_mining	.
+local:one_from_bt_digital_library	rdfs:member	local:bt_digital_library	.
+local:unification_problem_person_names	rdfs:subClassOf	local:problem_person_names	.
+local:web_mining	rdfs:subClassOf	local:mining	.
+local:use_of_initials	rdfs:member	local:use	.
+local:towards_the_successful_handling_of_highly_ambiguous_cases	rdfs:member	local:highly_ambiguous_cases	.
+local:s6.1	rdf:predicate	local:gather	.
+local:problem_person_names	rdfs:member	local:problem_person	.
+local:use_of_initials_with_web_mining	rdfs:member	local:use_of_initials	.
+local:highly_ambiguous_cases	rdfs:member	local:highly_ambiguous	.
+local:object_in_real_world	rdfs:member	local:object	.
+local:problem_person_names	rdfs:subClassOf	local:names	.
+local:s12	rdf:subject	local:highly_ambiguous_cases	.
+local:use_of_initials_with_web_mining	rdfs:member	local:initials	.
+local:whether_two_instances_in_an_ontology_refer_to_the_same_object_in_the_real_world	rdfs:member	local:same_object	.
+local:additional_evidence_for_instance_unification_algorithm	rdfs:member	local:additional_evidence	.
+local:s4	rdf:predicate	local:combine	.
+local:towards_the_successful_handling_of_highly_ambiguous_cases	rdfs:member	local:successful_handling	.
+local:information_contributes_substantially_towards_the_successful_handling_of_highly_ambiguous_cases	rdfs:member	local:highly_ambiguous_cases	.
+local:s2	rdf:predicate	local:combine	.
+local:additional_evidence	rdfs:subClassOf	local:evidence	.
+local:s3	rdf:object	local:use_of_citation_information_with_web_mining	.
+local:instance_unification	rdfs:subClassOf	local:unification	.
+local:s6	rdf:subject	local:approach	.
+local:s4.1	rdf:subject	local:additional_evidence_for_the_instance_unification_algorithm	.
+local:use_of_abstract_with_web_mining	rdfs:member	local:use	.
+local:unification_problem	rdfs:subClassOf	local:problem	.
+local:additional_evidence_for_the_instance_unification_algorithm	rdfs:member	local:additional_evidence	.

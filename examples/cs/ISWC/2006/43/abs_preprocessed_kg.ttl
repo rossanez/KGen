@@ -1,155 +1,180 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"they"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"adding soft constraints to they"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"answers they prefer"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"express relevance"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"such scoring can only express total orders"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"when several factors influence result relevance"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"total orders which restricts its usefulness when several factors influence result relevance"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"avoid empty or overfull and unordered result sets"	.
+
+
 #### Classes ####
 
-local:unordered_result	rdfs:label	"unordered result"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:unordered_result_sets	rdfs:label	"unordered result sets"	.
+local:soft_constraints	a	rdf:Class	;
+	rdfs:label	"soft constraints"	.
 
-local:result	rdfs:label	"result"	.
+local:constraints	a	rdf:Class	;
+	rdfs:label	"constraints"	.
 
-local:sets	rdfs:label	"sets"	.
+local:soft	a	rdf:Class	;
+	rdfs:label	"soft"	.
 
-local:unordered	rdfs:label	"unordered"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:result_sets	rdfs:label	"result sets"	.
+local:prefer	a	rdf:Class	;
+	rdfs:label	"prefer"	.
 
-local:overfull_unordered_result_sets	rdfs:label	"overfull unordered result sets"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:empty_overfull_unordered_result_sets	rdfs:label	"empty overfull unordered result sets"	.
+local:relevance	a	rdf:Class	;
+	rdfs:label	"relevance"	.
 
-local:avoid	rdfs:label	"avoid"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:such_scoring	rdfs:label	"such scoring"	.
+local:scoring	a	rdf:Class	;
+	rdfs:label	"scoring"	.
 
-local:scoring	rdfs:label	"scoring"	.
+local:total_orders	a	rdf:Class	;
+	rdfs:label	"total orders"	.
 
-local:such	rdfs:label	"such"	.
+local:total	a	rdf:Class	;
+	rdfs:label	"total"	.
 
-local:however_such_scoring	rdfs:label	"however such scoring"	.
+local:orders	a	rdf:Class	;
+	rdfs:label	"orders"	.
 
-local:express	rdfs:label	"express"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:can	rdfs:label	"can"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:only	rdfs:label	"only"	.
+local:several_factors	a	rdf:Class	;
+	rdfs:label	"several factors"	.
 
-local:total	rdfs:label	"total"	.
+local:factors	a	rdf:Class	;
+	rdfs:label	"factors"	.
 
-local:total_orders	rdfs:label	"total orders"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:orders	rdfs:label	"orders"	.
+local:influence	a	rdf:Class	;
+	rdfs:label	"influence"	.
 
-local:restricts	rdfs:label	"restricts"	.
+local:result_relevance	a	rdf:Class	;
+	rdfs:label	"result relevance"	.
 
-local:usefulness	rdfs:label	"usefulness"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:several	rdfs:label	"several"	.
+local:restrict	a	rdf:Class	;
+	rdfs:label	"restrict"	.
 
-local:several_factors	rdfs:label	"several factors"	.
+local:usefulness	a	rdf:Class	;
+	rdfs:label	"usefulness"	.
 
-local:result_relevance	rdfs:label	"result relevance"	.
+local:several_factors_influence_result_relevance	a	rdf:Class	;
+	rdfs:label	"several factors influence result relevance"	.
 
-local:relevance	rdfs:label	"relevance"	.
+local:empty_or_overfull_and_unordered_result_sets	a	rdf:Class	;
+	rdfs:label	"empty or overfull and unordered result sets"	.
 
-local:factors	rdfs:label	"factors"	.
+local:unordered_result_sets	a	rdf:Class	;
+	rdfs:label	"unordered result sets"	.
 
-local:influence	rdfs:label	"influence"	.
+local:sets	a	rdf:Class	;
+	rdfs:label	"sets"	.
 
-local:‘	rdfs:label	"‘"	.
+local:result_sets	a	rdf:Class	;
+	rdfs:label	"result sets"	.
 
-local:they	rdfs:label	"they"	.
+local:unordered_result	a	rdf:Class	;
+	rdfs:label	"unordered result"	.
 
-local:prefer_’	rdfs:label	"prefer ’"	.
+local:unordered	a	rdf:Class	;
+	rdfs:label	"unordered"	.
 
-local:’	rdfs:label	"’"	.
+local:overfull_unordered_result_sets	a	rdf:Class	;
+	rdfs:label	"overfull unordered result sets"	.
 
-local:prefer	rdfs:label	"prefer"	.
+local:empty_overfull_unordered_result_sets	a	rdf:Class	;
+	rdfs:label	"empty overfull unordered result sets"	.
 
-local:users_state	rdfs:label	"users state"	.
-
-local:state	rdfs:label	"state"	.
-
-local:users	rdfs:label	"users"	.
-
-local:state_kind	rdfs:label	"state kind"	.
-
-local:kind	rdfs:label	"kind"	.
-
-local:users_state_kind	rdfs:label	"users state kind"	.
-
-local:users_state_kind_of_answers	rdfs:label	"users state kind of answers"	.
-
-local:answers	rdfs:label	"answers"	.
-
-local:	rdfs:label	"'"	.
-
-local:soft	rdfs:label	"soft"	.
-
-local:soft_constraints	rdfs:label	"soft constraints"	.
-
-local:constraints	rdfs:label	"constraints"	.
-
-local:adding	rdfs:label	"adding"	.
-
-local:queries	rdfs:label	"queries"	.
-
-#### Properties ####
-
-#### Mapped Relations ####
+local:avoid	a	rdf:Class	;
+	rdfs:label	"avoid"	.
 
 
 #### Relations ####
 
-local:such_scoring	rdfs:subClassOf	local:scoring	.
-local:prefer	local:AM-MNR	local:adding	.
-local:users_state_kind_of_answers	local:of_answers	local:users_state_kind	.
-local:result	rdfs:member	local:result_sets	.
-local:empty_overfull_unordered_result_sets	rdfs:subClassOf	local:overfull_unordered_result_sets	.
-local:avoid	vn.role:Location	local:empty_overfull_unordered_result_sets	.
-local:such	rdfs:member	local:such_scoring	.
-local:adding	vn.role:Patient	local:soft_constraints	.
-local:result	rdfs:member	local:result_relevance	.
-local:express	vn.role:Agent	local:total_orders	.
-local:express	local:AM-MOD	local:can	.
-local:result_relevance	rdfs:subClassOf	local:relevance	.
-local:however_such_scoring	rdfs:subClassOf	local:such_scoring	.
-local:total	rdfs:member	local:total_orders	.
-local:several_factors	rdfs:subClassOf	local:factors	.
-local:unordered_result	rdfs:member	local:unordered_result_sets	.
-local:influence	vn.role:Experiencer	local:several_factors	.
-local:users_state_kind_of_answers	local:usersstatekind_of	local:answers	.
+local:s4.1	rdf:object	local:s4.2	.
+local:several_factors	rdfs:member	local:several	.
 local:soft_constraints	rdfs:subClassOf	local:constraints	.
-local:soft	rdfs:member	local:soft_constraints	.
-local:restricts	vn.role:Cause	local:total_orders	.
-local:users	rdfs:member	local:users_state	.
-local:restricts	local:AM-TMP	local:influence	.
-local:unordered_result_sets	rdfs:subClassOf	local:result_sets	.
-local:users_state	rdfs:subClassOf	local:state	.
-local:prefer_’	rdfs:subClassOf	local:’	.
-local:express	local:AM-ADV	local:only	.
-local:users_state_kind	rdfs:subClassOf	local:state_kind	.
-local:express	vn.role:Theme	local:however_such_scoring	.
-local:restricts	vn.role:Patient	local:usefulness	.
-local:influence	vn.role:Cause	local:result_relevance	.
-local:total_orders	rdfs:subClassOf	local:orders	.
-local:unordered_result	rdfs:subClassOf	local:result	.
-local:result_sets	rdfs:subClassOf	local:sets	.
-local:adding	vn.role:Agent	local:users_state_kind_of_answers	.
-local:overfull_unordered_result_sets	rdfs:subClassOf	local:unordered_result_sets	.
-local:adding	vn.role:Patient1	local:queries	.
-local:‘	vn.role:object	local:prefer	.
-local:unordered	rdfs:member	local:unordered_result	.
-local:express	vn.role:Agent	local:relevance	.
-local:‘	vn.role:subject	local:they	.
-local:state_kind	rdfs:subClassOf	local:kind	.
-local:prefer	vn.role:Theme	local:users_state_kind_of_answers	.
-local:prefer	rdfs:member	local:prefer_’	.
+local:s2	local:AM-ADV	local:only	.
+local:s1.1	rdf:object	local:result_relevance	.
 local:unordered_result_sets	rdfs:subClassOf	local:sets	.
-local:prefer	vn.role:Experiencer	local:	.
-local:several	rdfs:member	local:several_factors	.
+local:s4	rdf:object	local:answers	.
+local:unordered_result	rdfs:member	local:unordered	.
+local:soft_constraints	rdfs:member	local:soft	.
+local:s0	rdf:subject	local:empty_or_overfull_and_unordered_result_sets	.
+local:s1	local:AM-TMP	local:several_factors_influence_result_relevance	.
+local:several_factors_influence_result_relevance	rdfs:member	local:several_factors	.
+local:s1	rdf:object	local:usefulness	.
+local:result_sets	rdfs:subClassOf	local:sets	.
+local:several_factors_influence_result_relevance	rdfs:member	local:result_relevance	.
+local:s2	local:AM-MOD	local:can	.
+local:total_orders	rdfs:subClassOf	local:orders	.
+local:unordered_result_sets	rdfs:member	local:unordered_result	.
+local:result_relevance	rdfs:member	local:result	.
+local:s0	rdf:predicate	local:avoid	.
+local:total_orders	rdfs:member	local:total	.
+local:s2	rdf:predicate	local:express	.
+local:s2	rdf:object	local:total_orders	.
+local:s4.1	rdf:predicate	local:add	.
+local:s2	rdf:subject	local:scoring	.
+local:empty_overfull_unordered_result_sets	rdfs:subClassOf	local:overfull_unordered_result_sets	.
+local:s1.1	rdf:subject	local:several_factors	.
+local:s4.1	rdf:subject	local:soft_constraints	.
+local:s4	rdf:predicate	local:prefer	.
+local:unordered_result	rdfs:subClassOf	local:result	.
+local:s4.2	rdf:subject	local:s4.2	.
+local:overfull_unordered_result_sets	rdfs:subClassOf	local:unordered_result_sets	.
+local:s1.1	rdf:predicate	local:influence	.
+local:s1	rdf:subject	local:total_orders	.
+local:result_sets	rdfs:member	local:result	.
+local:s4.2	rdf:predicate	local:query	.
+local:s1	rdf:predicate	local:restrict	.
+local:s3	rdf:predicate	local:express	.
+local:several_factors	rdfs:subClassOf	local:factors	.
+local:unordered_result_sets	rdfs:subClassOf	local:result_sets	.
+local:s3	rdf:subject	local:relevance	.
+local:result_relevance	rdfs:subClassOf	local:relevance	.
+local:s4	rdf:subject	local:s4.2	.

@@ -1,423 +1,754 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"exploiting both freebase in the music domain"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"four different recommendation approaches exploiting both freebase in the music domain"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"exploiting both dbpedia in the music domain"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"four different recommendation approaches exploiting both dbpedia in the music domain"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we tested four different recommendation approaches"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"in this paper the choice of one of the two datasets may influence the performance of a recommendation engine not only also in terms of these latter diversity and novelty"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in this paper we investigate how the choice of one of the two datasets may influence the performance of a recommendation engine not only also in terms of these latter diversity and novelty"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"in this paper the choice of one of the two datasets may influence the performance of a recommendation engine not only in terms of precision of the results"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in this paper we investigate how the choice of one of the two datasets may influence the performance of a recommendation engine not only in terms of precision of the results"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"data that feed a contentbased recommender system"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"data that can used to feed a contentbased recommender system"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"well known encyclopedic collections of data"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"a new stream dataintensive applications that leverage the knowledge available in semantic datasets such as freebase"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the recent boom in linked data facilitates a new stream of dataintensive applications that leverage the knowledge available in semantic datasets such as freebase"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"a new stream dataintensive applications that leverage the knowledge available in semantic datasets such as dbpedia"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the recent boom in linked data facilitates a new stream of dataintensive applications that leverage the knowledge available in semantic datasets such as dbpedia"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"this renders data easily understandable by human beings by machines at the same time"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"this renders data seamlessly processable by machines at the same time"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"imposing structured data on the web of data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the web of data introduced as a novel scheme for imposing structured data on the web of data"	.
+
+
 #### Classes ####
 
-local:web_of_data	rdfs:label	"web of data"	.
+local:freebase_in_the_music_domain	a	rdf:Class	;
+	rdfs:label	"freebase in the music domain"	.
 
-local:web	rdfs:label	"web"	.
+local:music_domain	a	rdf:Class	;
+	rdfs:label	"music domain"	.
 
-local:data	rdfs:label	"data"	.
+local:freebase	a	rdf:Class	;
+	rdfs:label	"freebase"	.
 
-local:introduced	rdfs:label	"introduced"	.
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
 
-local:novel_scheme	rdfs:label	"novel scheme"	.
+local:music	a	rdf:Class	;
+	rdfs:label	"music"	.
 
-local:scheme	rdfs:label	"scheme"	.
+local:freebase_in_music_domain	a	rdf:Class	;
+	rdfs:label	"freebase in music domain"	.
 
-local:novel	rdfs:label	"novel"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:structured_data	rdfs:label	"structured data"	.
+local:four_different_recommendation	a	rdf:Class	;
+	rdfs:label	"four different recommendation"	.
 
-local:imposing_on_web	rdfs:label	"imposing on web"	.
+local:different_recommendation	a	rdf:Class	;
+	rdfs:label	"different recommendation"	.
 
-local:imposing	rdfs:label	"imposing"	.
+local:recommendation	a	rdf:Class	;
+	rdfs:label	"recommendation"	.
 
-local:structured_data_on_web	rdfs:label	"structured data on web"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:renders	rdfs:label	"renders"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:this	rdfs:label	"this"	.
+local:exploiting_both_freebase_in_the_music_domain	a	rdf:Class	;
+	rdfs:label	"exploiting both freebase in the music domain"	.
 
-local:same	rdfs:label	"same"	.
+local:exploiting_in_music_domain	a	rdf:Class	;
+	rdfs:label	"exploiting in music domain"	.
 
-local:same_time	rdfs:label	"same time"	.
+local:exploiting	a	rdf:Class	;
+	rdfs:label	"exploiting"	.
 
-local:time	rdfs:label	"time"	.
+local:dbpedia_in_the_music_domain	a	rdf:Class	;
+	rdfs:label	"dbpedia in the music domain"	.
 
-local:seamlessly_processable	rdfs:label	"seamlessly processable"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:processable	rdfs:label	"processable"	.
+local:dbpedia_in_music_domain	a	rdf:Class	;
+	rdfs:label	"dbpedia in music domain"	.
 
-local:seamlessly_processable_by_machines	rdfs:label	"seamlessly processable by machines"	.
+local:exploiting_both_dbpedia_in_the_music_domain	a	rdf:Class	;
+	rdfs:label	"exploiting both dbpedia in the music domain"	.
 
-local:machines	rdfs:label	"machines"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:seamlessly_processable_by_machines_at_same_time	rdfs:label	"seamlessly processable by machines at same time"	.
+local:test	a	rdf:Class	;
+	rdfs:label	"test"	.
 
-local:easily_understandable	rdfs:label	"easily understandable"	.
+local:four_different_recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"four different recommendation approaches"	.
 
-local:understandable	rdfs:label	"understandable"	.
+local:different_recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"different recommendation approaches"	.
 
-local:human_beings	rdfs:label	"human beings"	.
+local:recommendation_approaches	a	rdf:Class	;
+	rdfs:label	"recommendation approaches"	.
 
-local:beings	rdfs:label	"beings"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:human	rdfs:label	"human"	.
+local:choice_of_one_of_the_two_datasets	a	rdf:Class	;
+	rdfs:label	"choice of one of the two datasets"	.
 
-local:human_beings_by_machines	rdfs:label	"human beings by machines"	.
+local:choice	a	rdf:Class	;
+	rdfs:label	"choice"	.
 
-local:human_beings_by_machines_at_same_time	rdfs:label	"human beings by machines at same time"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:recent	rdfs:label	"recent"	.
+local:datasets_choice	a	rdf:Class	;
+	rdfs:label	"datasets choice"	.
 
-local:recent_boom	rdfs:label	"recent boom"	.
+local:two_datasets	a	rdf:Class	;
+	rdfs:label	"two datasets"	.
 
-local:boom	rdfs:label	"boom"	.
+local:one_two_datasets	a	rdf:Class	;
+	rdfs:label	"one two datasets"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:influence	a	rdf:Class	;
+	rdfs:label	"influence"	.
 
-local:recent_boom_in_linked_data	rdfs:label	"recent boom in linked data"	.
+local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	a	rdf:Class	;
+	rdfs:label	"performance of a recommendation engine not only also in terms of these latter diversity and novelty"	.
 
-local:facilitates	rdfs:label	"facilitates"	.
+local:recommendation_engine	a	rdf:Class	;
+	rdfs:label	"recommendation engine"	.
 
-local:new	rdfs:label	"new"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:new_stream	rdfs:label	"new stream"	.
+local:novelty	a	rdf:Class	;
+	rdfs:label	"novelty"	.
 
-local:semantic_datasets	rdfs:label	"semantic datasets"	.
+local:latter_diversity	a	rdf:Class	;
+	rdfs:label	"latter diversity"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:stream	rdfs:label	"stream"	.
+local:engine	a	rdf:Class	;
+	rdfs:label	"engine"	.
 
-local:dataintensive_applications	rdfs:label	"data-intensive applications"	.
+local:latter	a	rdf:Class	;
+	rdfs:label	"latter"	.
 
-local:applications	rdfs:label	"applications"	.
+local:diversity	a	rdf:Class	;
+	rdfs:label	"diversity"	.
 
-local:dataintensive	rdfs:label	"data-intensive"	.
+local:only_also	a	rdf:Class	;
+	rdfs:label	"only also"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:available_knowledge	rdfs:label	"available knowledge"	.
+local:not_only	a	rdf:Class	;
+	rdfs:label	"not only"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:new_stream_of_dataintensive_applications	rdfs:label	"new stream of data-intensive applications"	.
+local:performance_of_recommendation_engine	a	rdf:Class	;
+	rdfs:label	"performance of recommendation engine"	.
 
-local:available_in_semantic_datasets	rdfs:label	"available in semantic datasets"	.
+local:only_also_in_terms	a	rdf:Class	;
+	rdfs:label	"only also in terms"	.
 
-local:available	rdfs:label	"available"	.
+local:terms_of_latter_diversity	a	rdf:Class	;
+	rdfs:label	"terms of latter diversity"	.
 
-local:semantic_datasets_suchas_dbpedia	rdfs:label	"semantic datasets such_as dbpedia"	.
+local:terms_of_latter_diversity_of_novelty	a	rdf:Class	;
+	rdfs:label	"terms of latter diversity of novelty"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:leverage	rdfs:label	"leverage"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:semantic_datasets_suchas_freebase	rdfs:label	"semantic datasets such_as freebase"	.
+local:investigate	a	rdf:Class	;
+	rdfs:label	"investigate"	.
 
-local:freebase	rdfs:label	"freebase"	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	a	rdf:Class	;
+	rdfs:label	"choice of one of the two datasets may influence the performance of a recommendation engine not only also in terms of these latter diversity and novelty"	.
 
-local:known	rdfs:label	"known"	.
+local:also_terms	a	rdf:Class	;
+	rdfs:label	"also terms"	.
 
-local:well	rdfs:label	"well"	.
+local:may_influence	a	rdf:Class	;
+	rdfs:label	"may influence"	.
 
-local:encyclopedic	rdfs:label	"encyclopedic"	.
+local:may_influence_in_also_terms	a	rdf:Class	;
+	rdfs:label	"may influence in also terms"	.
 
-local:encyclopedic_collections	rdfs:label	"encyclopedic collections"	.
+local:also_terms_of_latter_diversity	a	rdf:Class	;
+	rdfs:label	"also terms of latter diversity"	.
 
-local:collections	rdfs:label	"collections"	.
+local:also_terms_of_latter_diversity_of_novelty	a	rdf:Class	;
+	rdfs:label	"also terms of latter diversity of novelty"	.
 
-local:encyclopedic_collections_of_data	rdfs:label	"encyclopedic collections of data"	.
+local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	a	rdf:Class	;
+	rdfs:label	"performance of a recommendation engine not only in terms of precision of the results"	.
 
-local:used	rdfs:label	"used"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:can	rdfs:label	"can"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:contentbased	rdfs:label	"content-based"	.
+local:performance_of_recommendation_engine_in_terms	a	rdf:Class	;
+	rdfs:label	"performance of recommendation engine in terms"	.
 
-local:contentbased_recommender	rdfs:label	"content-based recommender"	.
+local:terms_of_precision	a	rdf:Class	;
+	rdfs:label	"terms of precision"	.
 
-local:recommender	rdfs:label	"recommender"	.
+local:precision_of_results	a	rdf:Class	;
+	rdfs:label	"precision of results"	.
 
-local:contentbased_recommender_system	rdfs:label	"content-based recommender system"	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	a	rdf:Class	;
+	rdfs:label	"choice of one of the two datasets may influence the performance of a recommendation engine not only in terms of precision of the results"	.
 
-local:recommender_system	rdfs:label	"recommender system"	.
+local:only_influence	a	rdf:Class	;
+	rdfs:label	"only influence"	.
 
-local:system	rdfs:label	"system"	.
+local:may_only_influence	a	rdf:Class	;
+	rdfs:label	"may only influence"	.
 
-local:feed	rdfs:label	"feed"	.
+local:not_only_in_terms	a	rdf:Class	;
+	rdfs:label	"not only in terms"	.
 
-local:investigate	rdfs:label	"investigate"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:paper	rdfs:label	"paper"	.
+local:fee	a	rdf:Class	;
+	rdfs:label	"fee"	.
 
-local:we	rdfs:label	"we"	.
+local:contentbased_recommender_system	a	rdf:Class	;
+	rdfs:label	"contentbased recommender system"	.
 
-local:recommendation	rdfs:label	"recommendation"	.
+local:recommender_system	a	rdf:Class	;
+	rdfs:label	"recommender system"	.
 
-local:recommendation_engine	rdfs:label	"recommendation engine"	.
+local:recommender	a	rdf:Class	;
+	rdfs:label	"recommender"	.
 
-local:engine	rdfs:label	"engine"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:only_influence	rdfs:label	"only influence"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:influence	rdfs:label	"influence"	.
+local:feed_a_contentbased_recommender_system	a	rdf:Class	;
+	rdfs:label	"feed a contentbased recommender system"	.
 
-local:not_only	rdfs:label	"not only"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:only	rdfs:label	"only"	.
+local:encyclopedic_collections_of_data	a	rdf:Class	;
+	rdfs:label	"encyclopedic collections of data"	.
 
-local:may_only_influence	rdfs:label	"may only influence"	.
+local:encyclopedic_collections	a	rdf:Class	;
+	rdfs:label	"encyclopedic collections"	.
 
-local:datasets_choice	rdfs:label	"datasets choice"	.
+local:collections	a	rdf:Class	;
+	rdfs:label	"collections"	.
 
-local:choice	rdfs:label	"choice"	.
+local:encyclopedic	a	rdf:Class	;
+	rdfs:label	"encyclopedic"	.
 
-local:two_datasets	rdfs:label	"two datasets"	.
+local:know	a	rdf:Class	;
+	rdfs:label	"know"	.
 
-local:one_two_datasets	rdfs:label	"one two datasets"	.
+local:well	a	rdf:Class	;
+	rdfs:label	"well"	.
 
-local:performance_of_recommendation_engine	rdfs:label	"performance of recommendation engine"	.
+local:dataintensive_applications	a	rdf:Class	;
+	rdfs:label	"dataintensive applications"	.
 
-local:performance	rdfs:label	"performance"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:not_only_in_terms	rdfs:label	"not only in terms"	.
+local:dataintensive	a	rdf:Class	;
+	rdfs:label	"dataintensive"	.
 
-local:terms	rdfs:label	"terms"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:terms_of_precision	rdfs:label	"terms of precision"	.
+local:knowledge_available_in_semantic_datasets_such_as_freebase	a	rdf:Class	;
+	rdfs:label	"knowledge available in semantic datasets such as freebase"	.
 
-local:precision	rdfs:label	"precision"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:precision_of_results	rdfs:label	"precision of results"	.
+local:semantic_datasets	a	rdf:Class	;
+	rdfs:label	"semantic datasets"	.
 
-local:results	rdfs:label	"results"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:may	rdfs:label	"may"	.
+local:available_knowledge	a	rdf:Class	;
+	rdfs:label	"available knowledge"	.
 
-local:performance_of_recommendation_engine_in_terms	rdfs:label	"performance of recommendation engine in terms"	.
+local:available_in_semantic_datasets	a	rdf:Class	;
+	rdfs:label	"available in semantic datasets"	.
 
-local:latter	rdfs:label	"latter"	.
+local:available	a	rdf:Class	;
+	rdfs:label	"available"	.
 
-local:latter_diversity	rdfs:label	"latter diversity"	.
+local:semantic_datasets_such_as_freebase	a	rdf:Class	;
+	rdfs:label	"semantic datasets such_as freebase"	.
 
-local:diversity	rdfs:label	"diversity"	.
+local:recent_boom_in_linked_data	a	rdf:Class	;
+	rdfs:label	"recent boom in linked data"	.
 
-local:also_terms	rdfs:label	"also terms"	.
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
 
-local:may_influence	rdfs:label	"may influence"	.
+local:recent_boom	a	rdf:Class	;
+	rdfs:label	"recent boom"	.
 
-local:may_influence_in_also_terms	rdfs:label	"may influence in also terms"	.
+local:recent	a	rdf:Class	;
+	rdfs:label	"recent"	.
 
-local:also_terms_of_latter_diversity	rdfs:label	"also terms of latter diversity"	.
+local:boom	a	rdf:Class	;
+	rdfs:label	"boom"	.
 
-local:also_terms_of_latter_diversity_of_novelty	rdfs:label	"also terms of latter diversity of novelty"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:novelty	rdfs:label	"novelty"	.
+local:facilitate	a	rdf:Class	;
+	rdfs:label	"facilitate"	.
 
-local:also_performance	rdfs:label	"also performance"	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	a	rdf:Class	;
+	rdfs:label	"new stream of dataintensive applications that leverage the knowledge available in semantic datasets such as freebase"	.
 
-local:only_also	rdfs:label	"only also"	.
+local:new_stream	a	rdf:Class	;
+	rdfs:label	"new stream"	.
 
-local:also	rdfs:label	"also"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:also_performance_of_recommendation_engine	rdfs:label	"also performance of recommendation engine"	.
+local:stream	a	rdf:Class	;
+	rdfs:label	"stream"	.
 
-local:only_also_in_terms	rdfs:label	"only also in terms"	.
+local:new_stream_of_dataintensive_applications	a	rdf:Class	;
+	rdfs:label	"new stream of dataintensive applications"	.
 
-local:terms_of_latter_diversity	rdfs:label	"terms of latter diversity"	.
+local:knowledge_available_in_semantic_datasets_such_as_dbpedia	a	rdf:Class	;
+	rdfs:label	"knowledge available in semantic datasets such as dbpedia"	.
 
-local:terms_of_latter_diversity_of_novelty	rdfs:label	"terms of latter diversity of novelty"	.
+local:semantic_datasets_such_as_dbpedia	a	rdf:Class	;
+	rdfs:label	"semantic datasets such_as dbpedia"	.
 
-local:different_recommendation	rdfs:label	"different recommendation"	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	a	rdf:Class	;
+	rdfs:label	"new stream of dataintensive applications that leverage the knowledge available in semantic datasets such as dbpedia"	.
 
-local:different	rdfs:label	"different"	.
+local:this	a	rdf:Class	;
+	rdfs:label	"this"	.
 
-local:four_different_recommendation	rdfs:label	"four different recommendation"	.
+local:render	a	rdf:Class	;
+	rdfs:label	"render"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:data_human_beings_by_machines_at_the_same_time	a	rdf:Class	;
+	rdfs:label	"data human beings by machines at the same time"	.
 
-local:music	rdfs:label	"music"	.
+local:same_time	a	rdf:Class	;
+	rdfs:label	"same time"	.
 
-local:music_domain	rdfs:label	"music domain"	.
+local:machines	a	rdf:Class	;
+	rdfs:label	"machines"	.
 
-local:domain	rdfs:label	"domain"	.
+local:human_beings	a	rdf:Class	;
+	rdfs:label	"human beings"	.
 
-local:exploiting_in_music_domain	rdfs:label	"exploiting in music domain"	.
+local:same	a	rdf:Class	;
+	rdfs:label	"same"	.
 
-local:exploiting	rdfs:label	"exploiting"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:dbpedia_in_music_domain	rdfs:label	"dbpedia in music domain"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:freebase_in_music_domain	rdfs:label	"freebase in music domain"	.
+local:beings	a	rdf:Class	;
+	rdfs:label	"beings"	.
 
-local:tested	rdfs:label	"tested"	.
+local:data_human_beings	a	rdf:Class	;
+	rdfs:label	"data human beings"	.
 
-local:recommendation_approaches	rdfs:label	"recommendation approaches"	.
+local:data_human_beings_by_machines	a	rdf:Class	;
+	rdfs:label	"data human beings by machines"	.
 
-local:different_recommendation_approaches	rdfs:label	"different recommendation approaches"	.
+local:data_human_beings_by_machines_at_same_time	a	rdf:Class	;
+	rdfs:label	"data human beings by machines at same time"	.
 
-local:four_different_recommendation_approaches	rdfs:label	"four different recommendation approaches"	.
+local:easily_understandable	a	rdf:Class	;
+	rdfs:label	"easily understandable"	.
 
-#### Properties ####
+local:understandable	a	rdf:Class	;
+	rdfs:label	"understandable"	.
+
+local:data_seamlessly_processable_by_machines_at_the_same_time	a	rdf:Class	;
+	rdfs:label	"data seamlessly processable by machines at the same time"	.
+
+local:processable_data	a	rdf:Class	;
+	rdfs:label	"processable data"	.
+
+local:seamlessly_processable	a	rdf:Class	;
+	rdfs:label	"seamlessly processable"	.
+
+local:processable	a	rdf:Class	;
+	rdfs:label	"processable"	.
+
+local:seamlessly_processable_by_machines	a	rdf:Class	;
+	rdfs:label	"seamlessly processable by machines"	.
+
+local:seamlessly_processable_by_machines_at_same_time	a	rdf:Class	;
+	rdfs:label	"seamlessly processable by machines at same time"	.
+
+local:structured_data_on_the_web_of_data	a	rdf:Class	;
+	rdfs:label	"structured data on the web of data"	.
+
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
+
+local:structured_data	a	rdf:Class	;
+	rdfs:label	"structured data"	.
+
+local:structured_data_on_web	a	rdf:Class	;
+	rdfs:label	"structured data on web"	.
+
+local:web_of_data	a	rdf:Class	;
+	rdfs:label	"web of data"	.
+
+local:impose	a	rdf:Class	;
+	rdfs:label	"impose"	.
+
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
+
+local:novel_scheme	a	rdf:Class	;
+	rdfs:label	"novel scheme"	.
+
+local:scheme	a	rdf:Class	;
+	rdfs:label	"scheme"	.
+
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
+
+local:imposing_structured_data_on_the_web_of_data	a	rdf:Class	;
+	rdfs:label	"imposing structured data on the web of data"	.
+
+local:imposing_on_web	a	rdf:Class	;
+	rdfs:label	"imposing on web"	.
+
+local:imposing	a	rdf:Class	;
+	rdfs:label	"imposing"	.
 
 #### Mapped Relations ####
 
-cso:semantics	rdfs:label	"semantic"	.
-local:dataintensive_applications	owl:sameAs	cso:data-intensive_applications	.
-local:recommendation	owl:sameAs	cso:recommendation	.
-cso:recommendation	rdfs:label	"recommendation"	.
-local:recommender_system	owl:sameAs	cso:recommender_system	.
-cso:linked_data	rdfs:label	"linked data"	.
-local:engine	owl:sameAs	cso:engine	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
-cso:recommender_system	rdfs:label	"recommender system"	.
-cso:data-intensive_applications	rdfs:label	"data-intensive applications"	.
-local:semantic	owl:sameAs	cso:semantics	.
 cso:engine	rdfs:label	"engine"	.
+cso:recommender_system	rdfs:label	"recommender system"	.
 local:linked_data	owl:sameAs	cso:linked_data	.
+cso:data-intensive_applications	rdfs:label	"dataintensive applications"	.
+local:engine	owl:sameAs	cso:engine	.
+cso:semantics	rdfs:label	"semantic"	.
+local:recommendation	owl:sameAs	cso:recommendation	.
+local:recommender_system	owl:sameAs	cso:recommender_system	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
+local:dataintensive_applications	owl:sameAs	cso:data-intensive_applications	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
+cso:recommendation	rdfs:label	"recommendation"	.
+cso:linked_data	rdfs:label	"linked data"	.
 
 #### Relations ####
 
-local:structured_data_on_web	local:on_web	local:structured_data	.
-local:only_also	rdfs:subClassOf	local:also	.
-local:freebase_in_music_domain	local:in_musicdomain	local:freebase	.
-local:terms_of_latter_diversity	local:of_latterdiversity	local:terms	.
-local:tested	vn.role:Location	local:four_different_recommendation_approaches	.
-local:freebase_in_music_domain	local:freebase_in	local:music_domain	.
-local:renders	vn.role:Source	local:seamlessly_processable_by_machines_at_same_time	.
-local:different_recommendation	rdfs:member	local:different_recommendation_approaches	.
-local:human	rdfs:member	local:human_beings	.
-local:terms_of_precision	local:of_precision	local:terms	.
-local:leverage	vn.role:Agent	local:dataintensive_applications	.
-local:only_influence	rdfs:subClassOf	local:influence	.
-local:new_stream_of_dataintensive_applications	local:newstream_of	local:dataintensive_applications	.
-local:performance_of_recommendation_engine_in_terms	local:in_terms	local:performance_of_recommendation_engine	.
-local:seamlessly_processable_by_machines	local:by_machines	local:seamlessly_processable	.
-local:seamlessly_processable_by_machines_at_same_time	local:at_sametime	local:seamlessly_processable_by_machines	.
-local:recommendation	rdfs:member	local:recommendation_engine	.
-local:performance_of_recommendation_engine_in_terms	local:performanceofrecommendationengine_in	local:terms	.
-local:recommendation	rdfs:member	local:recommendation_approaches	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:dataintensive_applications	rdfs:subClassOf	local:applications	.
-local:exploiting_in_music_domain	local:exploiting_in	local:music_domain	.
-local:may_influence	rdfs:subClassOf	local:influence	.
-local:investigate	local:AM-LOC	local:paper	.
-local:also_performance	rdfs:subClassOf	local:performance	.
-local:recommendation_engine	rdfs:subClassOf	local:engine	.
-local:recommender	rdfs:member	local:recommender_system	.
-local:structured_data_on_web	local:structureddata_on	local:web	.
-local:facilitates	vn.role:Agent	local:recent_boom_in_linked_data	.
-local:precision_of_results	local:precision_of	local:results	.
-local:also_terms_of_latter_diversity_of_novelty	local:of_novelty	local:also_terms_of_latter_diversity	.
-local:known	local:AM-ADV	local:well	.
-local:new_stream	rdfs:subClassOf	local:stream	.
-local:performance_of_recommendation_engine	local:of_recommendationengine	local:performance	.
-local:terms_of_precision	local:terms_of	local:precision	.
-local:introduced	vn.role:Patient	local:web_of_data	.
-local:leverage	vn.role:Theme	local:available_knowledge	.
-local:two_datasets	rdfs:subClassOf	local:datasets	.
-local:new	rdfs:member	local:new_stream	.
-local:semantic_datasets_suchas_dbpedia	local:semanticdatasets_such_as	local:dbpedia	.
-local:different	rdfs:member	local:different_recommendation	.
-local:renders	vn.role:Theme	local:data	.
-local:web_of_data	local:web_of	local:data	.
-local:precision_of_results	local:of_results	local:precision	.
-local:recommender_system	rdfs:subClassOf	local:system	.
-local:terms_of_latter_diversity_of_novelty	local:termsoflatterdiversity_of	local:novelty	.
-local:same_time	rdfs:subClassOf	local:time	.
-local:influence	vn.role:Cause	local:also_performance_of_recommendation_engine	.
-local:known	vn.role:Theme	local:encyclopedic_collections_of_data	.
-local:exploiting	vn.role:Predicate	local:freebase_in_music_domain	.
-local:same	rdfs:member	local:same_time	.
-local:dataintensive	rdfs:member	local:dataintensive_applications	.
-local:performance_of_recommendation_engine	local:performance_of	local:recommendation_engine	.
-local:different_recommendation_approaches	rdfs:subClassOf	local:approaches	.
-local:may_only_influence	rdfs:subClassOf	local:only_influence	.
-local:semantic_datasets_suchas_freebase	local:semanticdatasets_such_as	local:freebase	.
-local:available_knowledge	rdfs:subClassOf	local:knowledge	.
-local:not_only_in_terms	local:notonly_in	local:terms	.
-local:seamlessly_processable_by_machines_at_same_time	local:seamlesslyprocessablebymachines_at	local:same_time	.
-local:approaches	vn.role:object	local:four_different_recommendation	.
-local:also_terms	rdfs:subClassOf	local:terms	.
-local:exploiting	vn.role:Predicate	local:dbpedia_in_music_domain	.
-local:contentbased_recommender	rdfs:subClassOf	local:recommender	.
-local:exploiting_in_music_domain	local:in_musicdomain	local:exploiting	.
-local:human_beings	rdfs:subClassOf	local:beings	.
-local:recent_boom_in_linked_data	local:recentboom_in	local:linked_data	.
-local:may_influence_in_also_terms	local:in_alsoterms	local:may_influence	.
-local:imposing_on_web	local:on_web	local:imposing	.
-local:introduced	vn.role:Patient1	local:novel_scheme	.
-local:influence	local:AM-LOC	local:paper	.
-local:semantic_datasets	rdfs:subClassOf	local:datasets	.
-local:contentbased_recommender_system	rdfs:subClassOf	local:recommender_system	.
-local:novel_scheme	rdfs:subClassOf	local:scheme	.
-local:also_terms_of_latter_diversity	local:alsoterms_of	local:latter_diversity	.
-local:renders	vn.role:Source	local:human_beings_by_machines_at_same_time	.
-local:also_performance_of_recommendation_engine	local:of_recommendationengine	local:also_performance	.
-local:seamlessly_processable	rdfs:subClassOf	local:processable	.
-local:human_beings_by_machines_at_same_time	local:at_sametime	local:human_beings_by_machines	.
-local:four_different_recommendation	rdfs:subClassOf	local:different_recommendation	.
-local:influence	local:AM-MOD	local:may	.
-local:human_beings_by_machines_at_same_time	local:humanbeingsbymachines_at	local:same_time	.
-local:imposing_on_web	local:imposing_on	local:web	.
-local:only_also_in_terms	local:onlyalso_in	local:terms	.
-local:recent_boom_in_linked_data	local:in_linkeddata	local:recent_boom	.
-local:semantic_datasets_suchas_freebase	local:such_as_freebase	local:semantic_datasets	.
-local:novel	rdfs:member	local:novel_scheme	.
-local:leverage	vn.role:Agent	local:new_stream	.
-local:investigate	vn.role:Location	local:may_influence_in_also_terms	.
-local:introduced	local:AM-PNC	local:imposing_on_web	.
-local:recommendation_approaches	rdfs:subClassOf	local:approaches	.
-local:used	local:AM-MOD	local:can	.
-local:four_different_recommendation_approaches	rdfs:subClassOf	local:different_recommendation_approaches	.
-local:influence	vn.role:Experiencer	local:datasets_choice	.
-local:imposing	vn.role:Theme	local:structured_data_on_web	.
-local:contentbased	rdfs:member	local:contentbased_recommender	.
-local:different_recommendation	rdfs:subClassOf	local:recommendation	.
-local:renders	local:AM-MNR	local:easily_understandable	.
-local:feed	vn.role:Asset	local:contentbased_recommender_system	.
-local:human_beings_by_machines	local:humanbeings_by	local:machines	.
-local:datasets_choice	rdfs:subClassOf	local:choice	.
-local:structured_data	rdfs:subClassOf	local:data	.
-local:available_in_semantic_datasets	local:available_in	local:semantic_datasets	.
-local:dbpedia_in_music_domain	local:in_musicdomain	local:dbpedia	.
-local:latter_diversity	rdfs:subClassOf	local:diversity	.
-local:encyclopedic_collections_of_data	local:encyclopediccollections_of	local:data	.
-local:contentbased_recommender_system	rdfs:subClassOf	local:system	.
-local:approaches	vn.role:indirect_object	local:exploiting_in_music_domain	.
-local:also_performance_of_recommendation_engine	local:alsoperformance_of	local:recommendation_engine	.
-local:easily_understandable	rdfs:subClassOf	local:understandable	.
-local:semantic_datasets_suchas_dbpedia	local:such_as_dbpedia	local:semantic_datasets	.
-local:renders	vn.role:Agent	local:this	.
-local:recent_boom	rdfs:subClassOf	local:boom	.
-local:investigate	vn.role:Location	local:may_only_influence	.
-local:music	rdfs:member	local:music_domain	.
-local:dbpedia_in_music_domain	local:dbpedia_in	local:music_domain	.
-local:latter	rdfs:member	local:latter_diversity	.
-local:encyclopedic	rdfs:member	local:encyclopedic_collections	.
-local:also_terms_of_latter_diversity	local:of_latterdiversity	local:also_terms	.
-local:different_recommendation_approaches	rdfs:subClassOf	local:recommendation_approaches	.
-local:used	vn.role:Theme	local:data	.
-local:feed	vn.role:Asset	local:data	.
-local:human_beings_by_machines	local:by_machines	local:human_beings	.
-local:tested	vn.role:Agent	local:we	.
-local:terms_of_latter_diversity_of_novelty	local:of_novelty	local:terms_of_latter_diversity	.
-local:seamlessly_processable_by_machines	local:seamlesslyprocessable_by	local:machines	.
-local:only_also_in_terms	local:in_terms	local:only_also	.
-local:facilitates	vn.role:Beneficiary	local:new_stream_of_dataintensive_applications	.
-local:may_influence_in_also_terms	local:mayinfluence_in	local:also_terms	.
-local:semantic	rdfs:member	local:semantic_datasets	.
 local:not_only	rdfs:subClassOf	local:only	.
-local:not_only_in_terms	local:in_terms	local:not_only	.
-local:terms_of_latter_diversity	local:terms_of	local:latter_diversity	.
-local:used	vn.role:Recipient	local:feed	.
-local:new_stream_of_dataintensive_applications	local:of_data-intensiveapplications	local:new_stream	.
-local:web_of_data	local:of_data	local:web	.
-local:recent	rdfs:member	local:recent_boom	.
-local:encyclopedic_collections	rdfs:subClassOf	local:collections	.
-local:also_terms_of_latter_diversity_of_novelty	local:alsotermsoflatterdiversity_of	local:novelty	.
-local:contentbased_recommender	rdfs:member	local:contentbased_recommender_system	.
-local:one_two_datasets	rdfs:subClassOf	local:two_datasets	.
-local:encyclopedic_collections_of_data	local:of_data	local:encyclopedic_collections	.
-local:available_in_semantic_datasets	local:in_semanticdatasets	local:available	.
-local:investigate	vn.role:Agent	local:we	.
-local:influence	vn.role:Cause	local:performance_of_recommendation_engine_in_terms	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:choice	.
+local:s0	rdf:subject	local:web_of_data	.
+local:s10	rdf:subject	local:four_different_recommendation	.
+local:data_human_beings_by_machines_at_the_same_time	rdfs:member	local:machines	.
+local:terms_of_latter_diversity_of_novelty	rdfs:member	local:novelty	.
+local:s8	local:AM-LOC	local:paper	.
+local:s0.1	rdf:predicate	local:impose	.
+local:imposing_on_web	rdfs:member	local:web	.
+local:available_in_semantic_datasets	rdfs:member	local:semantic_datasets	.
+local:s11	rdf:predicate	local:approach	.
 local:music_domain	rdfs:subClassOf	local:domain	.
+local:semantic_datasets	rdfs:member	local:semantic	.
+local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:recommendation_engine	.
+local:s7.1	rdf:predicate	local:influence	.
+local:semantic_datasets_such_as_freebase	rdfs:member	local:semantic_datasets	.
+local:may_influence_in_also_terms	rdfs:member	local:also_terms	.
+local:latter_diversity	rdfs:member	local:latter	.
+local:s7.1	rdf:object	local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	.
+local:recommendation_engine	rdfs:subClassOf	local:engine	.
+local:recommendation_approaches	rdfs:subClassOf	local:approaches	.
+local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:recommendation_engine	.
+local:s5	rdf:subject	local:encyclopedic_collections_of_data	.
+local:human_beings	rdfs:member	local:human	.
+local:s6.1	rdf:predicate	local:fee	.
+local:data_seamlessly_processable_by_machines_at_the_same_time	rdfs:member	local:same_time	.
+local:data_human_beings_by_machines_at_same_time	rdfs:member	local:data_human_beings_by_machines	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:results	.
+local:s11	rdf:subject	local:four_different_recommendation	.
+local:encyclopedic_collections_of_data	rdfs:member	local:data	.
+local:also_terms_of_latter_diversity_of_novelty	rdfs:member	local:also_terms_of_latter_diversity	.
+local:precision_of_results	rdfs:member	local:results	.
+local:only_also_in_terms	rdfs:member	local:terms	.
+local:knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:knowledge	.
+local:recommendation_approaches	rdfs:member	local:recommendation	.
+local:s2	rdf:subject	local:this	.
+local:knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:semantic_datasets	.
+local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:performance	.
+local:freebase_in_music_domain	rdfs:member	local:music_domain	.
+local:not_only_in_terms	rdfs:member	local:not_only	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:precision	.
+local:seamlessly_processable_by_machines	rdfs:member	local:seamlessly_processable	.
+local:encyclopedic_collections	rdfs:subClassOf	local:collections	.
+local:web_of_data	rdfs:member	local:web	.
+local:easily_understandable	rdfs:subClassOf	local:understandable	.
+local:may_influence	rdfs:subClassOf	local:influence	.
+local:s0	rdf:object	local:novel_scheme	.
+local:s4	rdf:predicate	local:facilitate	.
+local:s0	rdf:predicate	local:introduce	.
+local:s8.1	rdf:predicate	local:influence	.
+local:s11.1	rdfs:member	local:freebase	.
+local:freebase_in_the_music_domain	rdfs:member	local:freebase	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:recommendation_engine	.
+local:different_recommendation_approaches	rdfs:subClassOf	local:approaches	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:dbpedia	.
+local:s0.1	rdfs:member	local:web	.
+local:contentbased_recommender_system	rdfs:subClassOf	local:recommender_system	.
+local:s2	rdf:predicate	local:render	.
+local:data_human_beings_by_machines	rdfs:member	local:machines	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:dbpedia_in_the_music_domain	rdfs:member	local:dbpedia	.
+local:recent_boom	rdfs:member	local:recent	.
+local:s1	rdf:object	local:data_seamlessly_processable_by_machines_at_the_same_time	.
+local:new_stream	rdfs:subClassOf	local:stream	.
+local:data_seamlessly_processable_by_machines_at_the_same_time	rdfs:member	local:machines	.
+local:seamlessly_processable_by_machines	rdfs:member	local:machines	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:latter_diversity	.
+local:terms_of_precision	rdfs:member	local:precision	.
+local:s7.1	local:AM-LOC	local:paper	.
+local:structured_data_on_the_web_of_data	rdfs:member	local:data	.
+local:terms_of_latter_diversity_of_novelty	rdfs:member	local:terms_of_latter_diversity	.
+local:recommender_system	rdfs:subClassOf	local:system	.
+local:encyclopedic_collections	rdfs:member	local:encyclopedic	.
+local:s0	local:AM-PNC	local:imposing_structured_data_on_the_web_of_data	.
+local:different_recommendation	rdfs:member	local:different	.
+local:performance_of_recommendation_engine	rdfs:member	local:recommendation_engine	.
+local:s8.1	rdf:object	local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	.
+local:semantic_datasets	rdfs:subClassOf	local:datasets	.
+local:s4.1	rdf:object	local:knowledge_available_in_semantic_datasets_such_as_freebase	.
+local:data_human_beings_by_machines_at_the_same_time	rdfs:member	local:data	.
+local:s6	rdf:predicate	local:use	.
+local:available_in_semantic_datasets	rdfs:member	local:available	.
+local:s8.1	local:AM-LOC	local:paper	.
+local:precision_of_results	rdfs:member	local:precision	.
+local:s6	local:AM-MOD	local:can	.
+local:data_human_beings_by_machines_at_same_time	rdfs:member	local:same_time	.
+local:s6.1	rdf:subject	local:data	.
+local:dataintensive_applications	rdfs:member	local:dataintensive	.
+local:performance_of_recommendation_engine	rdfs:member	local:performance	.
+local:seamlessly_processable_by_machines_at_same_time	rdfs:member	local:same_time	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:performance	.
+local:s3.1	rdf:predicate	local:leverage	.
+local:same_time	rdfs:member	local:same	.
+local:structured_data_on_the_web_of_data	rdfs:member	local:web	.
+local:novel_scheme	rdfs:member	local:novel	.
+local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:precision	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:performance	.
+local:seamlessly_processable	rdfs:subClassOf	local:processable	.
+local:s10	rdf:predicate	local:approach	.
+local:s10.1	rdf:predicate	local:exploit	.
+local:s10.1	rdfs:member	local:dbpedia	.
+local:s3	rdf:subject	local:recent_boom_in_linked_data	.
+local:s11.1	rdf:subject	local:freebase_in_the_music_domain	.
+local:recent_boom_in_linked_data	rdfs:member	local:recent_boom	.
+local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:terms	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:new_stream	.
+local:s8.1	rdf:subject	local:choice_of_one_of_the_two_datasets	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:knowledge	.
+local:dbpedia_in_music_domain	rdfs:member	local:music_domain	.
+local:s2	rdf:object	local:data_human_beings_by_machines_at_the_same_time	.
+local:datasets_choice	rdfs:subClassOf	local:choice	.
+local:performance_of_recommendation_engine_in_terms	rdfs:member	local:performance_of_recommendation_engine	.
+local:data_human_beings_by_machines	rdfs:member	local:data_human_beings	.
+local:recommendation_engine	rdfs:member	local:recommendation	.
+local:new_stream_of_dataintensive_applications	rdfs:member	local:dataintensive_applications	.
+local:different_recommendation_approaches	rdfs:subClassOf	local:recommendation_approaches	.
+local:may_influence_in_also_terms	rdfs:member	local:may_influence	.
+local:s11.1	rdfs:member	local:music_domain	.
+local:s9	rdf:subject	local:we	.
+local:different_recommendation	rdfs:subClassOf	local:recommendation	.
+local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:performance	.
+local:s0.1	rdf:subject	local:structured_data_on_the_web_of_data	.
+local:s8	rdf:predicate	local:investigate	.
+local:s11.1	rdf:predicate	local:exploit	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:terms	.
+local:s7.1	local:AM-MOD	local:may	.
+local:s6	rdf:subject	local:data	.
+local:imposing_on_web	rdfs:member	local:imposing	.
+local:dataintensive_applications	rdfs:subClassOf	local:applications	.
+local:one_two_datasets	rdfs:subClassOf	local:two_datasets	.
+local:dbpedia_in_the_music_domain	rdfs:member	local:music_domain	.
+local:s7	rdf:subject	local:we	.
+local:available_knowledge	rdfs:subClassOf	local:knowledge	.
+local:exploiting_in_music_domain	rdfs:member	local:exploiting	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:semantic_datasets	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:datasets	.
+local:recent_boom	rdfs:subClassOf	local:boom	.
+local:also_terms_of_latter_diversity	rdfs:member	local:also_terms	.
+local:s3.1	rdf:subject	local:dataintensive_applications	.
+local:s4.1	rdf:subject	local:dataintensive_applications	.
+local:s5	local:AM-ADV	local:well	.
+local:s7	local:AM-LOC	local:paper	.
+local:linked_data	rdfs:member	local:linked	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:choice	.
+local:s1	rdf:subject	local:this	.
+local:data_human_beings_by_machines_at_the_same_time	rdfs:member	local:same_time	.
+local:s1	rdf:predicate	local:render	.
+local:s10.1	rdfs:member	local:music_domain	.
+local:choice_of_one_of_the_two_datasets	rdfs:member	local:choice	.
+local:semantic_datasets_such_as_dbpedia	rdfs:member	local:dbpedia	.
+local:same_time	rdfs:subClassOf	local:time	.
+local:new_stream	rdfs:member	local:new	.
+local:s9	rdf:predicate	local:test	.
+local:s3.1	rdf:object	local:knowledge_available_in_semantic_datasets_such_as_dbpedia	.
+local:s7	rdf:predicate	local:investigate	.
+local:also_terms	rdfs:subClassOf	local:terms	.
+local:novel_scheme	rdfs:subClassOf	local:scheme	.
+local:s4	rdf:subject	local:recent_boom_in_linked_data	.
+local:knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:knowledge	.
+local:s11	rdf:object	local:exploiting_both_freebase_in_the_music_domain	.
+local:semantic_datasets_such_as_dbpedia	rdfs:member	local:semantic_datasets	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:dataintensive_applications	.
+local:web_of_data	rdfs:member	local:data	.
+local:s10	rdf:object	local:exploiting_both_dbpedia_in_the_music_domain	.
+local:exploiting_in_music_domain	rdfs:member	local:music_domain	.
+local:not_only_in_terms	rdfs:member	local:terms	.
+local:data_human_beings_by_machines_at_the_same_time	rdfs:member	local:human_beings	.
+local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:terms	.
+local:terms_of_latter_diversity	rdfs:member	local:terms	.
+local:s5	rdf:predicate	local:know	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:terms	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:freebase	.
+local:processable_data	rdfs:subClassOf	local:data	.
+local:four_different_recommendation_approaches	rdfs:subClassOf	local:different_recommendation_approaches	.
+local:s9	rdf:object	local:four_different_recommendation_approaches	.
+local:s10.1	rdf:subject	local:dbpedia_in_the_music_domain	.
+local:recommender_system	rdfs:member	local:recommender	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:new_stream	.
+local:performance_of_recommendation_engine_in_terms	rdfs:member	local:terms	.
+local:s3	rdf:object	local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:novelty	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:datasets	.
+local:two_datasets	rdfs:subClassOf	local:datasets	.
+local:structured_data	rdfs:subClassOf	local:data	.
+local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:latter_diversity	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:knowledge	.
+local:also_terms_of_latter_diversity_of_novelty	rdfs:member	local:novelty	.
+local:knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:dbpedia	.
+local:recent_boom_in_linked_data	rdfs:member	local:linked_data	.
+local:data_human_beings	rdfs:subClassOf	local:human_beings	.
+local:also_terms_of_latter_diversity	rdfs:member	local:latter_diversity	.
+local:s6	rdf:object	local:feed_a_contentbased_recommender_system	.
+local:choice_of_one_of_the_two_datasets	rdfs:member	local:datasets	.
+local:human_beings	rdfs:subClassOf	local:beings	.
+local:s0.1	rdfs:member	local:data	.
+local:music_domain	rdfs:member	local:music	.
+local:new_stream_of_dataintensive_applications	rdfs:member	local:new_stream	.
+local:s8	rdf:subject	local:we	.
+local:s4	rdf:object	local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_freebase	.
+local:only_also	rdfs:subClassOf	local:also	.
+local:semantic_datasets_such_as_freebase	rdfs:member	local:freebase	.
+local:only_influence	rdfs:subClassOf	local:influence	.
+local:freebase_in_the_music_domain	rdfs:member	local:music_domain	.
+local:s7	rdf:object	local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:semantic_datasets	.
+local:new_stream_of_dataintensive_applications_that_leverage_the_knowledge_available_in_semantic_datasets_such_as_dbpedia	rdfs:member	local:dataintensive_applications	.
+local:terms_of_precision	rdfs:member	local:terms	.
+local:performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:results	.
+local:s8	rdf:object	local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	.
+local:knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:semantic_datasets	.
+local:choice_of_one_of_the_two_datasets_may_influence_the_performance_of_a_recommendation_engine_not_only_in_terms_of_precision_of_the_results	rdfs:member	local:recommendation_engine	.
+local:different_recommendation_approaches	rdfs:member	local:different_recommendation	.
+local:only_also_in_terms	rdfs:member	local:only_also	.
+local:may_only_influence	rdfs:subClassOf	local:only_influence	.
+local:s2	local:AM-MNR	local:easily_understandable	.
+local:s4.1	rdf:predicate	local:leverage	.
+local:structured_data_on_web	rdfs:member	local:web	.
+local:dbpedia_in_music_domain	rdfs:member	local:dbpedia	.
+local:s8.1	local:AM-MOD	local:may	.
+local:freebase_in_music_domain	rdfs:member	local:freebase	.
+local:structured_data_on_web	rdfs:member	local:structured_data	.
+local:four_different_recommendation	rdfs:subClassOf	local:different_recommendation	.
+local:s7.1	rdf:subject	local:choice_of_one_of_the_two_datasets	.
+local:encyclopedic_collections_of_data	rdfs:member	local:encyclopedic_collections	.
+local:terms_of_latter_diversity	rdfs:member	local:latter_diversity	.
+local:knowledge_available_in_semantic_datasets_such_as_freebase	rdfs:member	local:freebase	.
+local:s3	rdf:predicate	local:facilitate	.
+local:latter_diversity	rdfs:subClassOf	local:diversity	.
+local:performance_of_a_recommendation_engine_not_only_also_in_terms_of_these_latter_diversity_and_novelty	rdfs:member	local:novelty	.
+local:seamlessly_processable_by_machines_at_same_time	rdfs:member	local:seamlessly_processable_by_machines	.
+local:data_seamlessly_processable_by_machines_at_the_same_time	rdfs:member	local:data	.
+local:s6.1	rdf:object	local:contentbased_recommender_system	.

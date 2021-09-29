@@ -1,531 +1,737 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"our experiments using the fedbench benchmark"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"our experiments show execution time gains of at least 25 times on average"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"odyssey produces query execution plans"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"our experimental results show that odyssey produces query execution plans"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"in this paper we present an approach"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"odyssey produce better query execution plans"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"statistics that therefore enables odyssey to produce better query execution plans"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"in this paper we present odyssey"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"an approach that uses statistics"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"statistics that allow for a more accurate cost estimation for federated queries"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"nevertheless optimal plans may still exhibit a high number of intermediate results because of heuristics"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"nevertheless optimal plans may still exhibit a high number of intermediate results because of inaccurate cost estimations"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"nevertheless optimal plans may still exhibit a high number of high execution times because of heuristics"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"nevertheless optimal plans may still exhibit a high number of high execution times because of inaccurate cost estimations"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"most federated query engines produce optimal plans"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"to overcome these challenges most federated query engines rely on dynamic programming strategies to produce optimal plans"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"overcome these challenges most federated query engines rely on dynamic programming strategies to produce optimal plans"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"most federated query engines heuristics reduce the space of possible query execution plans"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"to overcome these challenges most federated query engines rely on heuristics to reduce the space of possible query execution plans"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"overcome these challenges most federated query engines"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"optimizing queries in such scenarios"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"the large variety possible query execution plans that correctly answer the query"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"optimizing queries in such scenarios"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"optimizing queries in such scenarios"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"queries over a federation of sparql endpoints combining data from more than one data source"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"answering queries over a federation of sparql endpoints requires combining data from more than one data source"	.
+
+
 #### Classes ####
 
-local:sparql_endpoints	rdfs:label	"sparql endpoints"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:endpoints	rdfs:label	"endpoints"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:fedbench_benchmark	a	rdf:Class	;
+	rdfs:label	"fedbench benchmark"	.
 
-local:queries_over_federation	rdfs:label	"queries over federation"	.
+local:fedbench	a	rdf:Class	;
+	rdfs:label	"fedbench"	.
 
-local:queries	rdfs:label	"queries"	.
+local:benchmark	a	rdf:Class	;
+	rdfs:label	"benchmark"	.
 
-local:federation	rdfs:label	"federation"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:federation_of_sparql_endpoints	rdfs:label	"federation of sparql endpoints"	.
+local:execution_time_gains_of_at_least_25_times_on_average	a	rdf:Class	;
+	rdfs:label	"execution time gains of at least 25 times on average"	.
 
-local:requires	rdfs:label	"requires"	.
+local:times	a	rdf:Class	;
+	rdfs:label	"times"	.
 
-local:answering	rdfs:label	"answering"	.
+local:execution_time_gains	a	rdf:Class	;
+	rdfs:label	"execution time gains"	.
 
-local:data_source	rdfs:label	"data source"	.
+local:average	a	rdf:Class	;
+	rdfs:label	"average"	.
 
-local:source	rdfs:label	"source"	.
+local:gains	a	rdf:Class	;
+	rdfs:label	"gains"	.
 
-local:data	rdfs:label	"data"	.
+local:time_gains	a	rdf:Class	;
+	rdfs:label	"time gains"	.
 
-local:one_data_source	rdfs:label	"one data source"	.
+local:execution_time	a	rdf:Class	;
+	rdfs:label	"execution time"	.
 
-local:more_one	rdfs:label	"more one"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:one	rdfs:label	"one"	.
+local:time	a	rdf:Class	;
+	rdfs:label	"time"	.
 
-local:combining_from_one_data_source	rdfs:label	"combining from one data source"	.
+local:25_times	a	rdf:Class	;
+	rdfs:label	"25 times"	.
 
-local:combining	rdfs:label	"combining"	.
+local:least_25	a	rdf:Class	;
+	rdfs:label	"least 25"	.
 
-local:optimizing	rdfs:label	"optimizing"	.
+local:25	a	rdf:Class	;
+	rdfs:label	"25"	.
 
-local:scenarios	rdfs:label	"scenarios"	.
+local:execution_time_gains_of_25_times	a	rdf:Class	;
+	rdfs:label	"execution time gains of 25 times"	.
 
-local:large_variety	rdfs:label	"large variety"	.
+local:execution_time_gains_of_25_times_on_average	a	rdf:Class	;
+	rdfs:label	"execution time gains of 25 times on average"	.
 
-local:variety	rdfs:label	"variety"	.
+local:odyssey	a	rdf:Class	;
+	rdfs:label	"odyssey"	.
 
-local:large	rdfs:label	"large"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:answer	rdfs:label	"answer"	.
+local:query_execution_plans	a	rdf:Class	;
+	rdfs:label	"query execution plans"	.
 
-local:possible	rdfs:label	"possible"	.
+local:execution_plans	a	rdf:Class	;
+	rdfs:label	"execution plans"	.
 
-local:possible_query	rdfs:label	"possible query"	.
+local:plans	a	rdf:Class	;
+	rdfs:label	"plans"	.
 
-local:query_execution_plans	rdfs:label	"query execution plans"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:plans	rdfs:label	"plans"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:query	rdfs:label	"query"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:query_execution	rdfs:label	"query execution"	.
+local:odyssey_produces_query_execution_plans	a	rdf:Class	;
+	rdfs:label	"odyssey produces query execution plans"	.
 
-local:execution	rdfs:label	"execution"	.
+local:query_execution	a	rdf:Class	;
+	rdfs:label	"query execution"	.
 
-local:execution_plans	rdfs:label	"execution plans"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:possible_query_execution_plans	rdfs:label	"possible query execution plans"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:possible_query_execution	rdfs:label	"possible query execution"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:correctly	rdfs:label	"correctly"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:overcome	rdfs:label	"overcome"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:challenges	rdfs:label	"challenges"	.
+local:better_query_execution_plans	a	rdf:Class	;
+	rdfs:label	"better query execution plans"	.
 
-local:query_engines	rdfs:label	"query engines"	.
+local:better_query	a	rdf:Class	;
+	rdfs:label	"better query"	.
 
-local:engines	rdfs:label	"engines"	.
+local:statistics	a	rdf:Class	;
+	rdfs:label	"statistics"	.
 
-local:federated_query_engines	rdfs:label	"federated query engines"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:most_federated_query	rdfs:label	"most federated query"	.
+local:odyssey_to_produce_better_query_execution_plans	a	rdf:Class	;
+	rdfs:label	"odyssey to produce better query execution plans"	.
 
-local:most_federated_query_engines	rdfs:label	"most federated query engines"	.
+local:better_query_execution	a	rdf:Class	;
+	rdfs:label	"better query execution"	.
 
-local:most_federated	rdfs:label	"most federated"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:federated	rdfs:label	"federated"	.
+local:therefore	a	rdf:Class	;
+	rdfs:label	"therefore"	.
 
-local:federated_query	rdfs:label	"federated query"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:most	rdfs:label	"most"	.
+local:accurate_cost_estimation_for_federated_queries	a	rdf:Class	;
+	rdfs:label	"accurate cost estimation for federated queries"	.
 
-local:challenges_most_federated_query_engines	rdfs:label	"challenges most federated query engines"	.
+local:federated_queries	a	rdf:Class	;
+	rdfs:label	"federated queries"	.
 
-local:rely	rdfs:label	"rely"	.
+local:accurate_cost_estimation	a	rdf:Class	;
+	rdfs:label	"accurate cost estimation"	.
 
-local:dynamic_programming	rdfs:label	"dynamic programming"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:programming	rdfs:label	"programming"	.
+local:cost_estimation	a	rdf:Class	;
+	rdfs:label	"cost estimation"	.
 
-local:dynamic_programming_strategies	rdfs:label	"dynamic programming strategies"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:federated	a	rdf:Class	;
+	rdfs:label	"federated"	.
 
-local:dynamic	rdfs:label	"dynamic"	.
+local:estimation	a	rdf:Class	;
+	rdfs:label	"estimation"	.
 
-local:optimal	rdfs:label	"optimal"	.
+local:accurate_cost	a	rdf:Class	;
+	rdfs:label	"accurate cost"	.
 
-local:optimal_plans	rdfs:label	"optimal plans"	.
+local:accurate	a	rdf:Class	;
+	rdfs:label	"accurate"	.
 
-local:programming_strategies	rdfs:label	"programming strategies"	.
+local:optimal_plans	a	rdf:Class	;
+	rdfs:label	"optimal plans"	.
 
-local:space_of_possible_query_execution_plans	rdfs:label	"space of possible query execution plans"	.
+local:optimal	a	rdf:Class	;
+	rdfs:label	"optimal"	.
 
-local:space	rdfs:label	"space"	.
+local:exhibit	a	rdf:Class	;
+	rdfs:label	"exhibit"	.
 
-local:heuristics	rdfs:label	"heuristics"	.
+local:high_number_of_intermediate_results	a	rdf:Class	;
+	rdfs:label	"high number of intermediate results"	.
 
-local:reduce	rdfs:label	"reduce"	.
+local:intermediate_results	a	rdf:Class	;
+	rdfs:label	"intermediate results"	.
 
-local:produce	rdfs:label	"produce"	.
+local:high_number	a	rdf:Class	;
+	rdfs:label	"high number"	.
 
-local:nevertheless_optimal_plans	rdfs:label	"nevertheless optimal plans"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:exhibit	rdfs:label	"exhibit"	.
+local:intermediate	a	rdf:Class	;
+	rdfs:label	"intermediate"	.
 
-local:may	rdfs:label	"may"	.
+local:high	a	rdf:Class	;
+	rdfs:label	"high"	.
 
-local:still	rdfs:label	"still"	.
+local:heuristics	a	rdf:Class	;
+	rdfs:label	"heuristics"	.
 
-local:execution_times	rdfs:label	"execution times"	.
+local:nevertheless	a	rdf:Class	;
+	rdfs:label	"nevertheless"	.
 
-local:times	rdfs:label	"times"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:high	rdfs:label	"high"	.
+local:still	a	rdf:Class	;
+	rdfs:label	"still"	.
 
-local:high_execution	rdfs:label	"high execution"	.
+local:inaccurate_cost_estimations	a	rdf:Class	;
+	rdfs:label	"inaccurate cost estimations"	.
 
-local:high_execution_times	rdfs:label	"high execution times"	.
+local:inaccurate_cost	a	rdf:Class	;
+	rdfs:label	"inaccurate cost"	.
 
-local:high_number	rdfs:label	"high number"	.
+local:cost_estimations	a	rdf:Class	;
+	rdfs:label	"cost estimations"	.
 
-local:number	rdfs:label	"number"	.
+local:estimations	a	rdf:Class	;
+	rdfs:label	"estimations"	.
 
-local:high_number_of_high_execution_times	rdfs:label	"high number of high execution times"	.
+local:inaccurate	a	rdf:Class	;
+	rdfs:label	"inaccurate"	.
 
-local:cost_estimations	rdfs:label	"cost estimations"	.
+local:high_number_of_high_execution_times	a	rdf:Class	;
+	rdfs:label	"high number of high execution times"	.
 
-local:estimations	rdfs:label	"estimations"	.
+local:high_execution_times	a	rdf:Class	;
+	rdfs:label	"high execution times"	.
 
-local:inaccurate_cost	rdfs:label	"inaccurate cost"	.
+local:high_execution	a	rdf:Class	;
+	rdfs:label	"high execution"	.
 
-local:inaccurate_cost_estimations	rdfs:label	"inaccurate cost estimations"	.
+local:execution_times	a	rdf:Class	;
+	rdfs:label	"execution times"	.
 
-local:inaccurate	rdfs:label	"inaccurate"	.
+local:federated_query_engines	a	rdf:Class	;
+	rdfs:label	"federated query engines"	.
 
-local:cost	rdfs:label	"cost"	.
+local:query_engines	a	rdf:Class	;
+	rdfs:label	"query engines"	.
 
-local:intermediate_results	rdfs:label	"intermediate results"	.
+local:engines	a	rdf:Class	;
+	rdfs:label	"engines"	.
 
-local:results	rdfs:label	"results"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:intermediate	rdfs:label	"intermediate"	.
+local:dynamic_programming_strategies_produce_optimal_plans	a	rdf:Class	;
+	rdfs:label	"dynamic programming strategies produce optimal plans"	.
 
-local:high_number_of_intermediate_results	rdfs:label	"high number of intermediate results"	.
+local:dynamic_programming_strategies	a	rdf:Class	;
+	rdfs:label	"dynamic programming strategies"	.
 
-local:high_number_of_intermediate_results_becauseof_inaccurate_cost_estimations	rdfs:label	"high number of intermediate results because_of inaccurate cost estimations"	.
+local:dynamic_programming	a	rdf:Class	;
+	rdfs:label	"dynamic programming"	.
 
-local:present	rdfs:label	"present"	.
+local:programming	a	rdf:Class	;
+	rdfs:label	"programming"	.
 
-local:paper	rdfs:label	"paper"	.
+local:programming_strategies	a	rdf:Class	;
+	rdfs:label	"programming strategies"	.
 
-local:we	rdfs:label	"we"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:accurate	rdfs:label	"accurate"	.
+local:dynamic	a	rdf:Class	;
+	rdfs:label	"dynamic"	.
 
-local:accurate_cost	rdfs:label	"accurate cost"	.
+local:overcome_these_challenges	a	rdf:Class	;
+	rdfs:label	"overcome these challenges"	.
 
-local:accurate_cost_estimation	rdfs:label	"accurate cost estimation"	.
+local:challenges_most_federated_query_engines_rely_on_dynamic_programming_strategies_to_produce_optimal_plans	a	rdf:Class	;
+	rdfs:label	"challenges most federated query engines rely on dynamic programming strategies to produce optimal plans"	.
 
-local:more_accurate_cost	rdfs:label	"more accurate cost"	.
+local:most_federated_query_engines	a	rdf:Class	;
+	rdfs:label	"most federated query engines"	.
 
-local:more_accurate_cost_estimation	rdfs:label	"more accurate cost estimation"	.
+local:challenges	a	rdf:Class	;
+	rdfs:label	"challenges"	.
 
-local:more	rdfs:label	"more"	.
+local:federated_query	a	rdf:Class	;
+	rdfs:label	"federated query"	.
 
-local:more_accurate	rdfs:label	"more accurate"	.
+local:most_federated	a	rdf:Class	;
+	rdfs:label	"most federated"	.
 
-local:federated_queries	rdfs:label	"federated queries"	.
+local:most_federated_query	a	rdf:Class	;
+	rdfs:label	"most federated query"	.
 
-local:cost_estimation	rdfs:label	"cost estimation"	.
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
-local:estimation	rdfs:label	"estimation"	.
+local:rely_on_dynamic_programming_strategies	a	rdf:Class	;
+	rdfs:label	"rely on dynamic programming strategies"	.
 
-local:odyssey_approach	rdfs:label	"odyssey approach"	.
+local:overcome	a	rdf:Class	;
+	rdfs:label	"overcome"	.
 
-local:odyssey	rdfs:label	"odyssey"	.
+local:reduce	a	rdf:Class	;
+	rdfs:label	"reduce"	.
 
-local:approach	rdfs:label	"approach"	.
+local:space_of_possible_query_execution_plans	a	rdf:Class	;
+	rdfs:label	"space of possible query execution plans"	.
 
-local:allow_for_accurate_cost_estimation	rdfs:label	"allow for accurate cost estimation"	.
+local:possible_query_execution_plans	a	rdf:Class	;
+	rdfs:label	"possible query execution plans"	.
 
-local:allow	rdfs:label	"allow"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:accurate_cost_estimation_for_federated_queries	rdfs:label	"accurate cost estimation for federated queries"	.
+local:possible_query_execution	a	rdf:Class	;
+	rdfs:label	"possible query execution"	.
 
-local:uses	rdfs:label	"uses"	.
+local:possible_query	a	rdf:Class	;
+	rdfs:label	"possible query"	.
 
-local:better_query_execution	rdfs:label	"better query execution"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:better_query_execution_plans	rdfs:label	"better query execution plans"	.
+local:heuristics_to_reduce_the_space_of_possible_query_execution_plans	a	rdf:Class	;
+	rdfs:label	"heuristics to reduce the space of possible query execution plans"	.
 
-local:better_query	rdfs:label	"better query"	.
+local:optimizing	a	rdf:Class	;
+	rdfs:label	"optimizing"	.
 
-local:therefore	rdfs:label	"therefore"	.
+local:scenarios	a	rdf:Class	;
+	rdfs:label	"scenarios"	.
 
-local:therefore_enables	rdfs:label	"therefore enables"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:enables	rdfs:label	"enables"	.
+local:correctly	a	rdf:Class	;
+	rdfs:label	"correctly"	.
 
-local:better	rdfs:label	"better"	.
+local:queries_over_a_federation_of_sparql_endpoints	a	rdf:Class	;
+	rdfs:label	"queries over a federation of sparql endpoints"	.
 
-local:statistics	rdfs:label	"statistics"	.
+local:federation	a	rdf:Class	;
+	rdfs:label	"federation"	.
 
-local:experimental_results	rdfs:label	"experimental results"	.
+local:sparql_endpoints	a	rdf:Class	;
+	rdfs:label	"sparql endpoints"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:show	rdfs:label	"show"	.
+local:endpoints	a	rdf:Class	;
+	rdfs:label	"endpoints"	.
 
-local:data_transfer	rdfs:label	"data transfer"	.
+local:queries_over_federation	a	rdf:Class	;
+	rdfs:label	"queries over federation"	.
 
-local:transfer	rdfs:label	"transfer"	.
+local:federation_of_sparql_endpoints	a	rdf:Class	;
+	rdfs:label	"federation of sparql endpoints"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:combine	a	rdf:Class	;
+	rdfs:label	"combine"	.
 
-local:stateoftheart_optimizers	rdfs:label	"state-of-the-art optimizers"	.
+local:data_one_data_source	a	rdf:Class	;
+	rdfs:label	"data one data source"	.
 
-local:execution_time	rdfs:label	"execution time"	.
+local:data_source	a	rdf:Class	;
+	rdfs:label	"data source"	.
 
-local:time	rdfs:label	"time"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:optimizers	rdfs:label	"optimizers"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:better_terms	rdfs:label	"better terms"	.
+local:one_data_source	a	rdf:Class	;
+	rdfs:label	"one data source"	.
 
-local:terms	rdfs:label	"terms"	.
+local:answering_queries_over_a_federation_of_sparql_endpoints	a	rdf:Class	;
+	rdfs:label	"answering queries over a federation of sparql endpoints"	.
 
-local:better_terms_of_data_transfer	rdfs:label	"better terms of data transfer"	.
+local:answering_queries	a	rdf:Class	;
+	rdfs:label	"answering queries"	.
 
-local:better_terms_of_data_transfer_of_execution_time	rdfs:label	"better terms of data transfer of execution time"	.
+local:answering_queries_over_federation	a	rdf:Class	;
+	rdfs:label	"answering queries over federation"	.
 
-local:better_terms_of_data_transfer_of_execution_time_than_stateoftheart_optimizers	rdfs:label	"better terms of data transfer of execution time than state-of-the-art optimizers"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:produces	rdfs:label	"produces"	.
+local:combining_data_from_more_than_one_data_source	a	rdf:Class	;
+	rdfs:label	"combining data from more than one data source"	.
 
-local:query_execution_plans_than_stateoftheart_optimizers	rdfs:label	"query execution plans than state-of-the-art optimizers"	.
+local:one_data	a	rdf:Class	;
+	rdfs:label	"one data"	.
 
-local:execution_time_gains	rdfs:label	"execution time gains"	.
+local:more_one	a	rdf:Class	;
+	rdfs:label	"more one"	.
 
-local:fedbench_benchmark_show	rdfs:label	"fedbench benchmark show"	.
+local:one	a	rdf:Class	;
+	rdfs:label	"one"	.
 
-local:fedbench_benchmark	rdfs:label	"fedbench benchmark"	.
+local:combining_from_one_data	a	rdf:Class	;
+	rdfs:label	"combining from one data"	.
 
-local:benchmark	rdfs:label	"benchmark"	.
-
-local:show_execution_time_gains	rdfs:label	"show execution time gains"	.
-
-local:gains	rdfs:label	"gains"	.
-
-local:fedbench_benchmark_show_execution_time_gains	rdfs:label	"fedbench benchmark show execution time gains"	.
-
-local:benchmark_show_execution_time_gains	rdfs:label	"benchmark show execution time gains"	.
-
-local:show_execution	rdfs:label	"show execution"	.
-
-local:benchmark_show	rdfs:label	"benchmark show"	.
-
-local:show_execution_time	rdfs:label	"show execution time"	.
-
-local:fedbench_benchmark_show_execution	rdfs:label	"fedbench benchmark show execution"	.
-
-local:fedbench_benchmark_show_execution_time	rdfs:label	"fedbench benchmark show execution time"	.
-
-local:benchmark_show_execution_time	rdfs:label	"benchmark show execution time"	.
-
-local:time_gains	rdfs:label	"time gains"	.
-
-local:fedbench	rdfs:label	"fedbench"	.
-
-local:benchmark_show_execution	rdfs:label	"benchmark show execution"	.
-
-local:25_times	rdfs:label	"25 times"	.
-
-local:least_25	rdfs:label	"least 25"	.
-
-local:25	rdfs:label	"25"	.
-
-local:execution_time_gains_of_25_times	rdfs:label	"execution time gains of 25 times"	.
-
-local:using	rdfs:label	"using"	.
-
-local:average	rdfs:label	"average"	.
-
-#### Properties ####
+local:combining	a	rdf:Class	;
+	rdfs:label	"combining"	.
 
 #### Mapped Relations ####
 
+cso:answering_queries	rdfs:label	"answering queries"	.
+local:answering_queries	owl:sameAs	cso:answering_queries	.
 cso:sparql	rdfs:label	"sparql"	.
+cso:statistics	rdfs:label	"statistics"	.
 local:statistics	owl:sameAs	cso:statistics	.
 local:query_execution	owl:sameAs	cso:query_execution	.
-local:sparql	owl:sameAs	cso:sparql	.
 cso:query_execution	rdfs:label	"query execution"	.
-cso:statistics	rdfs:label	"statistics"	.
+local:sparql	owl:sameAs	cso:sparql	.
 
 #### Relations ####
 
-local:high	rdfs:member	local:high_execution	.
-local:execution	rdfs:member	local:execution_time	.
-local:execution_time_gains_of_25_times	local:of_25times	local:execution_time_gains	.
-local:present	vn.role:Agent	local:we	.
-local:exhibit	vn.role:Agent	local:high_number_of_intermediate_results_becauseof_inaccurate_cost_estimations	.
-local:federated_query_engines	rdfs:subClassOf	local:engines	.
-local:query_execution_plans	rdfs:subClassOf	local:plans	.
-local:most	rdfs:member	local:most_federated	.
-local:enables	vn.role:Agent	local:odyssey_approach	.
-local:sparql	rdfs:member	local:sparql_endpoints	.
-local:space_of_possible_query_execution_plans	local:of_possiblequeryexecutionplans	local:space	.
-local:answer	vn.role:Agent	local:large_variety	.
-local:fedbench_benchmark_show	rdfs:subClassOf	local:show	.
-local:using	vn.role:Theme	local:show	.
-local:show	rdfs:member	local:show_execution	.
-local:federation_of_sparql_endpoints	local:federation_of	local:sparql_endpoints	.
-local:query_execution	rdfs:subClassOf	local:execution	.
-local:most_federated_query_engines	rdfs:subClassOf	local:federated_query_engines	.
-local:odyssey_approach	local:odyssey_	local:approach	.
-local:query_engines	rdfs:subClassOf	local:engines	.
-local:benchmark_show_execution_time	rdfs:subClassOf	local:time	.
-local:using	vn.role:Recipient	local:average	.
-local:fedbench_benchmark_show_execution	rdfs:member	local:fedbench_benchmark_show_execution_time	.
-local:high	rdfs:member	local:high_number	.
-local:combining	vn.role:Patient1	local:one_data_source	.
-local:uses	vn.role:Theme	local:statistics	.
-local:exhibit	vn.role:Theme	local:nevertheless_optimal_plans	.
-local:data_transfer	rdfs:subClassOf	local:transfer	.
-local:inaccurate_cost	rdfs:subClassOf	local:cost	.
-local:better_terms_of_data_transfer	local:of_datatransfer	local:better_terms	.
-local:queries_over_federation	local:queries_over	local:federation	.
-local:high_number_of_intermediate_results	local:of_intermediateresults	local:high_number	.
-local:most_federated_query	rdfs:subClassOf	local:query	.
-local:high_execution	rdfs:subClassOf	local:execution	.
-local:accurate_cost	rdfs:subClassOf	local:cost	.
-local:better_terms_of_data_transfer_of_execution_time_than_stateoftheart_optimizers	local:bettertermsofdatatransferofexecutiontime_than	local:stateoftheart_optimizers	.
-local:fedbench_benchmark_show	rdfs:member	local:fedbench_benchmark_show_execution	.
-local:high_number_of_high_execution_times	local:of_highexecutiontimes	local:high_number	.
-local:answer	local:AM-MNR	local:correctly	.
-local:accurate_cost_estimation	rdfs:subClassOf	local:cost_estimation	.
-local:stateoftheart	rdfs:member	local:stateoftheart_optimizers	.
-local:dynamic_programming_strategies	rdfs:subClassOf	local:strategies	.
-local:query	rdfs:member	local:query_execution	.
-local:more_accurate	rdfs:subClassOf	local:accurate	.
-local:produce	vn.role:Product	local:query_execution_plans	.
-local:cost	rdfs:member	local:cost_estimation	.
-local:dynamic_programming	rdfs:subClassOf	local:programming	.
-local:more_accurate_cost_estimation	rdfs:subClassOf	local:estimation	.
-local:challenges_most_federated_query_engines	local:_mostfederatedqueryengines	local:challenges	.
-local:space_of_possible_query_execution_plans	local:space_of	local:possible_query_execution_plans	.
-local:uses	vn.role:Agent	local:odyssey_approach	.
-local:dynamic_programming	rdfs:member	local:dynamic_programming_strategies	.
-local:federated_queries	rdfs:subClassOf	local:queries	.
-local:better_query_execution_plans	rdfs:subClassOf	local:query_execution_plans	.
-local:better_terms_of_data_transfer_of_execution_time	local:of_executiontime	local:better_terms_of_data_transfer	.
-local:high_number	rdfs:subClassOf	local:number	.
-local:optimal	rdfs:member	local:optimal_plans	.
-local:possible_query_execution	rdfs:subClassOf	local:execution	.
-local:benchmark_show	rdfs:subClassOf	local:show	.
-local:better_query_execution	rdfs:member	local:better_query_execution_plans	.
-local:fedbench_benchmark	rdfs:subClassOf	local:benchmark	.
-local:combining_from_one_data_source	local:from_onedatasource	local:combining	.
-local:cost_estimation	rdfs:subClassOf	local:estimation	.
-local:better_terms_of_data_transfer_of_execution_time_than_stateoftheart_optimizers	local:than_state-of-the-artoptimizers	local:better_terms_of_data_transfer_of_execution_time	.
-local:rely	vn.role:Agent	local:challenges_most_federated_query_engines	.
-local:programming_strategies	rdfs:subClassOf	local:strategies	.
-local:inaccurate_cost_estimations	rdfs:subClassOf	local:cost_estimations	.
-local:most_federated_query_engines	rdfs:subClassOf	local:engines	.
-local:produce	vn.role:Product	local:optimal_plans	.
-local:exhibit	local:AM-TMP	local:still	.
-local:time	rdfs:member	local:time_gains	.
-local:federated_query	rdfs:subClassOf	local:query	.
-local:dynamic	rdfs:member	local:dynamic_programming	.
-local:query_execution_plans	rdfs:subClassOf	local:execution_plans	.
-local:produce	vn.role:Agent	local:odyssey	.
-local:more_accurate_cost	rdfs:subClassOf	local:cost	.
-local:high_execution_times	rdfs:subClassOf	local:execution_times	.
-local:cost	rdfs:member	local:cost_estimations	.
-local:possible	rdfs:member	local:possible_query	.
-local:possible_query	rdfs:member	local:possible_query_execution	.
-local:federated_query	rdfs:member	local:federated_query_engines	.
-local:exhibit	local:AM-PNC	local:heuristics	.
-local:possible_query_execution_plans	rdfs:subClassOf	local:plans	.
-local:allow_for_accurate_cost_estimation	local:allow_for	local:accurate_cost_estimation	.
-local:high_number_of_intermediate_results_becauseof_inaccurate_cost_estimations	local:highnumberofintermediateresults_because_of	local:inaccurate_cost_estimations	.
-local:present	vn.role:Theme	local:odyssey_approach	.
-local:better_query	rdfs:member	local:better_query_execution	.
-local:fedbench_benchmark_show_execution_time_gains	rdfs:subClassOf	local:gains	.
-local:requires	vn.role:Patient	local:combining_from_one_data_source	.
-local:federation_of_sparql_endpoints	local:of_sparqlendpoints	local:federation	.
-local:query_execution	rdfs:member	local:query_execution_plans	.
-local:fedbench	rdfs:member	local:fedbench_benchmark	.
-local:execution_time_gains	rdfs:subClassOf	local:time_gains	.
-local:produces	vn.role:Agent	local:odyssey	.
-local:more_accurate_cost	rdfs:member	local:more_accurate_cost_estimation	.
-local:execution_time	rdfs:subClassOf	local:time	.
-local:possible_query	rdfs:subClassOf	local:query	.
-local:allow	vn.role:Theme	local:accurate_cost_estimation_for_federated_queries	.
-local:programming	rdfs:member	local:programming_strategies	.
-local:optimizing	vn.role:Patient	local:queries	.
-local:combining	vn.role:Patient	local:data	.
-local:overcome	vn.role:Theme1	local:challenges	.
-local:show_execution_time	rdfs:member	local:show_execution_time_gains	.
-local:show_execution_time_gains	rdfs:subClassOf	local:gains	.
-local:intermediate_results	rdfs:subClassOf	local:results	.
-local:more_one	rdfs:subClassOf	local:one	.
-local:high_execution	rdfs:member	local:high_execution_times	.
 local:most_federated	rdfs:subClassOf	local:federated	.
-local:produces	vn.role:Product	local:query_execution_plans_than_stateoftheart_optimizers	.
-local:federated	rdfs:member	local:federated_queries	.
-local:execution_time	rdfs:member	local:execution_time_gains	.
-local:benchmark_show_execution	rdfs:subClassOf	local:execution	.
-local:exhibit	local:AM-CAU	local:inaccurate_cost_estimations	.
-local:25_times	rdfs:subClassOf	local:times	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:enables	local:AM-LOC	local:paper	.
-local:therefore_enables	rdfs:subClassOf	local:enables	.
-local:large_variety	rdfs:subClassOf	local:variety	.
-local:therefore	rdfs:member	local:therefore_enables	.
-local:data	rdfs:member	local:data_source	.
-local:enables	vn.role:Patient	local:odyssey	.
-local:execution_plans	rdfs:subClassOf	local:plans	.
-local:inaccurate_cost_estimations	rdfs:subClassOf	local:estimations	.
-local:benchmark	rdfs:member	local:benchmark_show	.
-local:fedbench_benchmark_show_execution_time	rdfs:member	local:fedbench_benchmark_show_execution_time_gains	.
-local:better_terms_of_data_transfer	local:betterterms_of	local:data_transfer	.
-local:show_execution	rdfs:member	local:show_execution_time	.
-local:most_federated_query	rdfs:member	local:most_federated_query_engines	.
-local:better_terms_of_data_transfer_of_execution_time	local:bettertermsofdatatransfer_of	local:execution_time	.
-local:intermediate	rdfs:member	local:intermediate_results	.
-local:accurate_cost_estimation_for_federated_queries	local:for_federatedqueries	local:accurate_cost_estimation	.
-local:requires	vn.role:Agent	local:answering	.
-local:accurate_cost_estimation	rdfs:subClassOf	local:estimation	.
-local:queries_over_federation	local:over_federation	local:queries	.
-local:stateoftheart_optimizers	rdfs:subClassOf	local:optimizers	.
-local:fedbench_benchmark_show_execution_time	rdfs:subClassOf	local:time	.
-local:enables	vn.role:Agent	local:we	.
-local:show	vn.role:Theme	local:produces	.
-local:reduce	vn.role:Cause	local:heuristics	.
-local:accurate_cost	rdfs:member	local:accurate_cost_estimation	.
-local:most_federated	rdfs:member	local:most_federated_query	.
-local:execution	rdfs:member	local:execution_times	.
-local:dynamic_programming_strategies	rdfs:subClassOf	local:programming_strategies	.
-local:least_25	rdfs:subClassOf	local:25	.
-local:better_query	rdfs:subClassOf	local:query	.
-local:cost_estimations	rdfs:subClassOf	local:estimations	.
-local:federated	rdfs:member	local:federated_query	.
-local:more	rdfs:member	local:more_accurate	.
-local:allow	vn.role:Agent	local:statistics	.
-local:query	rdfs:member	local:query_engines	.
-local:more_accurate	rdfs:member	local:more_accurate_cost	.
-local:query_execution_plans_than_stateoftheart_optimizers	local:queryexecutionplans_than	local:stateoftheart_optimizers	.
-local:benchmark_show_execution_time	rdfs:member	local:benchmark_show_execution_time_gains	.
-local:optimizing	local:AM-LOC	local:scenarios	.
-local:better_terms	rdfs:subClassOf	local:terms	.
-local:rely	vn.role:Theme	local:heuristics	.
-local:better_query_execution	rdfs:subClassOf	local:execution	.
-local:query_execution_plans_than_stateoftheart_optimizers	local:than_state-of-the-artoptimizers	local:query_execution_plans	.
-local:fedbench_benchmark_show_execution	rdfs:subClassOf	local:execution	.
-local:fedbench_benchmark	rdfs:member	local:fedbench_benchmark_show	.
-local:accurate_cost_estimation_for_federated_queries	local:accuratecostestimation_for	local:federated_queries	.
-local:high_number_of_high_execution_times	local:highnumber_of	local:high_execution_times	.
-local:high_number_of_intermediate_results	local:highnumber_of	local:intermediate_results	.
-local:execution_times	rdfs:subClassOf	local:times	.
+local:queries_over_federation	rdfs:member	local:federation	.
+local:s4	rdf:subject	local:federated_query_engines	.
+local:s3	rdf:subject	local:queries	.
+local:possible_query	rdfs:member	local:possible	.
+local:s0	rdf:subject	local:answering_queries_over_a_federation_of_sparql_endpoints	.
+local:s8	rdf:predicate	local:exhibit	.
+local:possible_query	rdfs:subClassOf	local:query	.
+local:dynamic_programming	rdfs:member	local:dynamic	.
+local:dynamic_programming_strategies_produce_optimal_plans	rdfs:member	local:dynamic_programming_strategies	.
+local:s3	rdf:predicate	local:optimizing	.
+local:possible_query_execution	rdfs:subClassOf	local:execution	.
+local:possible_query_execution	rdfs:member	local:possible_query	.
+local:federated_query	rdfs:member	local:federated	.
+local:data_one_data_source	rdfs:member	local:data_source	.
+local:s4.1	local:AM-PNC	local:overcome_these_challenges	.
+local:s0.1	rdf:subject	local:queries_over_a_federation_of_sparql_endpoints	.
+local:s17	rdf:subject	local:experimental_results	.
+local:intermediate_results	rdfs:member	local:intermediate	.
+local:s2.1	rdf:predicate	local:answer	.
+local:s4.2	rdf:subject	local:heuristics	.
+local:space_of_possible_query_execution_plans	rdfs:member	local:space	.
+local:s1	rdf:predicate	local:optimizing	.
 local:sparql_endpoints	rdfs:subClassOf	local:endpoints	.
-local:show_execution	rdfs:subClassOf	local:execution	.
-local:execution	rdfs:member	local:execution_plans	.
-local:combining	vn.role:Agent	local:queries_over_federation	.
-local:answer	vn.role:Predicate	local:query	.
-local:better	rdfs:member	local:better_query	.
-local:enables	local:AM-DIS	local:therefore	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:present	local:AM-LOC	local:paper	.
-local:inaccurate	rdfs:member	local:inaccurate_cost	.
-local:inaccurate_cost	rdfs:member	local:inaccurate_cost_estimations	.
-local:allow_for_accurate_cost_estimation	local:for_accuratecostestimation	local:allow	.
-local:federated_query_engines	rdfs:subClassOf	local:query_engines	.
-local:benchmark_show_execution_time_gains	rdfs:subClassOf	local:gains	.
-local:execution_time_gains	rdfs:subClassOf	local:gains	.
-local:exhibit	vn.role:Agent	local:high_number_of_intermediate_results	.
-local:show_execution_time	rdfs:subClassOf	local:time	.
-local:large	rdfs:member	local:large_variety	.
-local:data_source	rdfs:subClassOf	local:source	.
-local:overcome	vn.role:Theme2	local:federated_query_engines	.
-local:data	rdfs:member	local:data_transfer	.
-local:nevertheless_optimal_plans	rdfs:subClassOf	local:optimal_plans	.
-local:possible_query_execution	rdfs:member	local:possible_query_execution_plans	.
-local:better_query_execution_plans	rdfs:subClassOf	local:plans	.
-local:exhibit	local:AM-CAU	local:heuristics	.
-local:execution_time_gains_of_25_times	local:executiontimegains_of	local:25_times	.
-local:possible_query_execution_plans	rdfs:subClassOf	local:query_execution_plans	.
-local:benchmark_show	rdfs:member	local:benchmark_show_execution	.
-local:combining_from_one_data_source	local:combining_from	local:one_data_source	.
-local:reduce	vn.role:Patient	local:space_of_possible_query_execution_plans	.
-local:benchmark_show_execution	rdfs:member	local:benchmark_show_execution_time	.
-local:answer	vn.role:Agent	local:possible_query_execution_plans	.
-local:accurate	rdfs:member	local:accurate_cost	.
-local:time_gains	rdfs:subClassOf	local:gains	.
+local:s2	rdf:subject	local:queries	.
+local:execution_plans	rdfs:subClassOf	local:plans	.
+local:s6	rdf:object	local:high_number_of_high_execution_times	.
+local:most_federated_query_engines	rdfs:subClassOf	local:engines	.
+local:heuristics_to_reduce_the_space_of_possible_query_execution_plans	rdfs:member	local:possible_query_execution_plans	.
+local:federation_of_sparql_endpoints	rdfs:member	local:federation	.
+local:combining_from_one_data	rdfs:member	local:combining	.
+local:accurate_cost	rdfs:member	local:accurate	.
+local:execution_times	rdfs:subClassOf	local:times	.
+local:s13.1	rdf:object	local:better_query_execution_plans	.
+local:s18	rdf:object	local:execution_time_gains_of_at_least_25_times_on_average	.
+local:s18	rdf:subject	local:experiments	.
+local:s0	rdf:object	local:combining_data_from_more_than_one_data_source	.
+local:s5.1	rdf:object	local:dynamic_programming_strategies_produce_optimal_plans	.
+local:s12	rdf:predicate	local:present	.
+local:execution_time	rdfs:subClassOf	local:time	.
+local:better_query_execution_plans	rdfs:member	local:better_query_execution	.
+local:dynamic_programming	rdfs:subClassOf	local:programming	.
+local:s11	rdf:subject	local:approach	.
+local:answering_queries_over_federation	rdfs:member	local:answering_queries	.
+local:s8	local:AM-MOD	local:may	.
+local:high_execution	rdfs:subClassOf	local:execution	.
+local:queries_over_a_federation_of_sparql_endpoints	rdfs:member	local:sparql_endpoints	.
+local:s0.1	rdf:predicate	local:combine	.
+local:s6	local:AM-MOD	local:may	.
+local:s17.1	rdf:object	local:query_execution_plans	.
+local:s4	rdf:object	local:challenges	.
+local:s1	rdf:subject	local:queries	.
+local:s19	rdf:subject	local:experiments	.
+local:s0	rdf:predicate	local:require	.
+local:s17.1	rdfs:member	local:odyssey	.
+local:s5	rdf:subject	local:challenges_most_federated_query_engines_rely_on_dynamic_programming_strategies_to_produce_optimal_plans	.
+local:s4.2	rdf:predicate	local:reduce	.
+local:execution_time_gains	rdfs:subClassOf	local:time_gains	.
+local:s7	local:AM-MOD	local:may	.
+local:s0.1	rdf:object	local:data_one_data_source	.
+local:query_execution	rdfs:member	local:query	.
+local:s6	local:AM-DIS	local:nevertheless	.
+local:s9	local:AM-MOD	local:may	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:s9	rdf:object	local:high_number_of_intermediate_results	.
+local:most_federated_query	rdfs:subClassOf	local:query	.
+local:sparql_endpoints	rdfs:member	local:sparql	.
+local:inaccurate_cost	rdfs:subClassOf	local:cost	.
+local:s7	rdf:object	local:high_number_of_high_execution_times	.
+local:programming_strategies	rdfs:subClassOf	local:strategies	.
+local:s3	local:AM-LOC	local:scenarios	.
+local:s13	rdf:object	local:odyssey_to_produce_better_query_execution_plans	.
+local:inaccurate_cost	rdfs:member	local:inaccurate	.
+local:accurate_cost_estimation	rdfs:subClassOf	local:estimation	.
+local:combining_data_from_more_than_one_data_source	rdfs:member	local:data_source	.
+local:most_federated_query	rdfs:member	local:most_federated	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:data_one_data_source	rdfs:subClassOf	local:one_data_source	.
+local:s13.1	rdf:subject	local:odyssey	.
+local:s7	local:AM-DIS	local:nevertheless	.
+local:answering_queries_over_a_federation_of_sparql_endpoints	rdfs:member	local:federation	.
+local:dynamic_programming_strategies	rdfs:subClassOf	local:programming_strategies	.
+local:federated_query_engines	rdfs:subClassOf	local:engines	.
+local:dynamic_programming_strategies_produce_optimal_plans	rdfs:member	local:optimal_plans	.
+local:s5.2	rdf:object	local:optimal_plans	.
+local:odyssey_to_produce_better_query_execution_plans	rdfs:member	local:better_query_execution_plans	.
+local:high_number_of_intermediate_results	rdfs:member	local:intermediate_results	.
+local:high_number_of_high_execution_times	rdfs:member	local:high_execution_times	.
+local:more_one	rdfs:subClassOf	local:one	.
+local:query_engines	rdfs:subClassOf	local:engines	.
+local:accurate_cost	rdfs:subClassOf	local:cost	.
+local:s5.2	rdf:subject	local:federated_query_engines	.
+local:accurate_cost_estimation	rdfs:member	local:accurate_cost	.
+local:execution_time_gains_of_at_least_25_times_on_average	rdfs:member	local:times	.
+local:s11	rdf:object	local:statistics	.
+local:s4.1	rdf:object	local:heuristics_to_reduce_the_space_of_possible_query_execution_plans	.
+local:execution_time_gains_of_25_times	rdfs:member	local:execution_time_gains	.
+local:high_number_of_intermediate_results	rdfs:member	local:high_number	.
+local:s2	rdf:predicate	local:optimizing	.
+local:high_execution_times	rdfs:subClassOf	local:execution_times	.
+local:challenges_most_federated_query_engines_rely_on_dynamic_programming_strategies_to_produce_optimal_plans	rdfs:member	local:most_federated_query_engines	.
+local:s9	local:AM-DIS	local:nevertheless	.
+local:rely_on_dynamic_programming_strategies	rdfs:member	local:rely	.
+local:s14	rdf:object	local:approach	.
 local:high_execution_times	rdfs:subClassOf	local:times	.
-local:challenges_most_federated_query_engines	local:challenges_	local:most_federated_query_engines	.
-local:show	vn.role:Agent	local:experimental_results	.
-local:exhibit	local:AM-MOD	local:may	.
-local:odyssey_approach	local:_approach	local:odyssey	.
+local:s6	rdf:predicate	local:exhibit	.
+local:s2.1	rdf:object	local:query	.
+local:s12	local:AM-LOC	local:paper	.
+local:cost_estimations	rdfs:member	local:cost	.
+local:query_execution_plans	rdfs:member	local:query_execution	.
+local:high_number	rdfs:subClassOf	local:number	.
+local:s4	rdf:predicate	local:overcome	.
+local:cost_estimation	rdfs:member	local:cost	.
+local:execution_time_gains	rdfs:subClassOf	local:gains	.
+local:space_of_possible_query_execution_plans	rdfs:member	local:possible_query_execution_plans	.
+local:query_execution_plans	rdfs:subClassOf	local:execution_plans	.
+local:fedbench_benchmark	rdfs:subClassOf	local:benchmark	.
+local:s4.1	rdf:subject	local:federated_query_engines	.
+local:s14	local:AM-LOC	local:paper	.
+local:most_federated_query_engines	rdfs:member	local:most_federated_query	.
+local:s7	rdf:subject	local:optimal_plans	.
+local:federated_query_engines	rdfs:member	local:federated_query	.
+local:s17.1	rdfs:member	local:query_execution_plans	.
+local:federated_query	rdfs:subClassOf	local:query	.
+local:s8	local:AM-CAU	local:inaccurate_cost_estimations	.
+local:s6	local:AM-CAU	local:inaccurate_cost_estimations	.
+local:s10	rdf:predicate	local:allow	.
+local:s6	rdf:subject	local:optimal_plans	.
+local:s2	local:AM-LOC	local:scenarios	.
+local:combining_from_one_data	rdfs:member	local:one_data	.
+local:s17	rdf:object	local:odyssey_produces_query_execution_plans	.
+local:s11	rdf:predicate	local:use	.
+local:s10	rdf:subject	local:statistics	.
+local:execution_time_gains_of_25_times_on_average	rdfs:member	local:average	.
+local:accurate_cost_estimation_for_federated_queries	rdfs:member	local:federated_queries	.
+local:odyssey_to_produce_better_query_execution_plans	rdfs:member	local:odyssey	.
+local:cost_estimation	rdfs:subClassOf	local:estimation	.
+local:answering_queries_over_federation	rdfs:member	local:federation	.
+local:s18	rdf:predicate	local:show	.
+local:challenges_most_federated_query_engines_rely_on_dynamic_programming_strategies_to_produce_optimal_plans	rdfs:member	local:dynamic_programming_strategies	.
+local:federated_queries	rdfs:subClassOf	local:queries	.
+local:rely_on_dynamic_programming_strategies	rdfs:member	local:dynamic_programming_strategies	.
+local:combining_data_from_more_than_one_data_source	rdfs:member	local:data	.
+local:high_execution	rdfs:member	local:high	.
+local:s17	rdf:predicate	local:show	.
+local:s13	rdf:predicate	local:enable	.
+local:s7	local:AM-TMP	local:still	.
+local:possible_query_execution_plans	rdfs:subClassOf	local:plans	.
+local:answering_queries_over_a_federation_of_sparql_endpoints	rdfs:member	local:queries	.
+local:25_times	rdfs:subClassOf	local:times	.
+local:s9	local:AM-CAU	local:heuristics	.
+local:queries_over_federation	rdfs:member	local:queries	.
+local:s2.1	local:AM-MNR	local:correctly	.
+local:answering_queries	rdfs:subClassOf	local:queries	.
+local:execution_time_gains	rdfs:member	local:execution_time	.
 local:optimal_plans	rdfs:subClassOf	local:plans	.
+local:s7	rdf:predicate	local:exhibit	.
+local:s7	local:AM-CAU	local:heuristics	.
+local:s5.2	rdf:predicate	local:produce	.
+local:accurate_cost_estimation_for_federated_queries	rdfs:member	local:accurate_cost_estimation	.
+local:queries_over_a_federation_of_sparql_endpoints	rdfs:member	local:federation	.
+local:most_federated	rdfs:member	local:most	.
+local:execution_time_gains_of_25_times_on_average	rdfs:member	local:execution_time_gains_of_25_times	.
+local:s2.1	rdf:subject	local:possible_query_execution_plans	.
+local:execution_time_gains_of_at_least_25_times_on_average	rdfs:member	local:execution_time_gains	.
+local:s12	rdf:object	local:odyssey	.
+local:data_one_data_source	rdfs:member	local:data	.
+local:s4.2	rdf:object	local:space_of_possible_query_execution_plans	.
+local:s17.1	rdf:subject	local:odyssey	.
+local:s8	local:AM-TMP	local:still	.
+local:execution_time_gains_of_25_times	rdfs:member	local:25_times	.
+local:s10	rdf:object	local:accurate_cost_estimation_for_federated_queries	.
+local:s12	rdf:subject	local:we	.
+local:s5	rdf:predicate	local:overcome	.
+local:heuristics_to_reduce_the_space_of_possible_query_execution_plans	rdfs:member	local:space	.
+local:s5.1	rdf:subject	local:federated_query_engines	.
+local:s5.1	rdf:predicate	local:rely	.
+local:s8	rdf:subject	local:optimal_plans	.
+local:dynamic_programming_strategies	rdfs:member	local:dynamic_programming	.
+local:intermediate_results	rdfs:subClassOf	local:results	.
+local:s5.1	local:AM-PNC	local:overcome_these_challenges	.
+local:challenges_most_federated_query_engines_rely_on_dynamic_programming_strategies_to_produce_optimal_plans	rdfs:member	local:challenges	.
+local:s19	rdf:predicate	local:use	.
+local:s17.1	rdf:predicate	local:produce	.
+local:s14	rdf:predicate	local:present	.
+local:optimal_plans	rdfs:member	local:optimal	.
+local:execution_plans	rdfs:member	local:execution	.
+local:better_query_execution	rdfs:member	local:better_query	.
+local:better_query	rdfs:member	local:better	.
+local:execution_time	rdfs:member	local:execution	.
+local:heuristics_to_reduce_the_space_of_possible_query_execution_plans	rdfs:member	local:heuristics	.
+local:s6	local:AM-TMP	local:still	.
 local:one_data_source	rdfs:subClassOf	local:data_source	.
-local:high_number_of_intermediate_results_becauseof_inaccurate_cost_estimations	local:because_of_inaccuratecostestimations	local:high_number_of_intermediate_results	.
-local:exhibit	vn.role:Agent	local:high_number_of_high_execution_times	.
+local:s4.1	rdf:predicate	local:rely	.
+local:inaccurate_cost_estimations	rdfs:member	local:inaccurate_cost	.
+local:query_execution	rdfs:subClassOf	local:execution	.
+local:challenges_most_federated_query_engines_rely_on_dynamic_programming_strategies_to_produce_optimal_plans	rdfs:member	local:optimal_plans	.
+local:cost_estimations	rdfs:subClassOf	local:estimations	.
+local:possible_query_execution_plans	rdfs:subClassOf	local:query_execution_plans	.
+local:execution_time_gains_of_at_least_25_times_on_average	rdfs:member	local:average	.
+local:query_engines	rdfs:member	local:query	.
+local:query_execution_plans	rdfs:subClassOf	local:plans	.
+local:possible_query_execution_plans	rdfs:member	local:possible_query_execution	.
+local:s8	rdf:object	local:high_number_of_intermediate_results	.
+local:programming_strategies	rdfs:member	local:programming	.
+local:s19	rdf:object	local:fedbench_benchmark	.
+local:s9	local:AM-TMP	local:still	.
+local:queries_over_a_federation_of_sparql_endpoints	rdfs:member	local:queries	.
+local:data_source	rdfs:member	local:data	.
+local:s1	local:AM-LOC	local:scenarios	.
+local:data_source	rdfs:subClassOf	local:source	.
+local:time_gains	rdfs:member	local:time	.
+local:better_query_execution	rdfs:subClassOf	local:execution	.
+local:answering_queries_over_a_federation_of_sparql_endpoints	rdfs:member	local:sparql_endpoints	.
+local:s13	rdf:subject	local:statistics	.
+local:better_query_execution_plans	rdfs:subClassOf	local:query_execution_plans	.
+local:better_query	rdfs:subClassOf	local:query	.
+local:execution_times	rdfs:member	local:execution	.
+local:high_number_of_high_execution_times	rdfs:member	local:high_number	.
+local:s13	local:AM-DIS	local:therefore	.
+local:dynamic_programming_strategies	rdfs:subClassOf	local:strategies	.
+local:high_execution_times	rdfs:member	local:high_execution	.
+local:federated_queries	rdfs:member	local:federated	.
+local:inaccurate_cost_estimations	rdfs:subClassOf	local:estimations	.
+local:s9	rdf:predicate	local:exhibit	.
+local:one_data	rdfs:subClassOf	local:data	.
+local:high_number	rdfs:member	local:high	.
+local:inaccurate_cost_estimations	rdfs:subClassOf	local:cost_estimations	.
+local:federated_query_engines	rdfs:subClassOf	local:query_engines	.
+local:better_query_execution_plans	rdfs:subClassOf	local:plans	.
+local:s14	rdf:subject	local:we	.
+local:s8	local:AM-DIS	local:nevertheless	.
+local:time_gains	rdfs:subClassOf	local:gains	.
+local:s9	rdf:subject	local:optimal_plans	.
+local:federation_of_sparql_endpoints	rdfs:member	local:sparql_endpoints	.
+local:s13.1	rdf:predicate	local:produce	.
+local:fedbench_benchmark	rdfs:member	local:fedbench	.
+local:accurate_cost_estimation	rdfs:subClassOf	local:cost_estimation	.
+local:least_25	rdfs:subClassOf	local:25	.

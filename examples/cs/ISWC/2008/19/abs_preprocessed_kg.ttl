@@ -1,273 +1,491 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we implement certain basic operations for string datatypes"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we show how to implement certain basic operations for string datatypes"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"we implement certain basic operations for number datatypes"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we show how to implement certain basic operations for number datatypes"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"any datatype that supports certain basic operations"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"an algorithm for datatype reasoning can handle any datatype"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"finally we present an algorithm for datatype reasoning"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we also argue that certain datatypes from the list of normative datatypes in the current owl 2 are inappropriate"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"certain datatypes from the list of normative datatypes in the current owl 2 should replaced with different ones"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we also argue that certain datatypes from the list of normative datatypes in the current owl 2 should be replaced with different ones"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"supported datatypes and complexity of reasoning"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we discuss certain nontrivial consequences of the datatype system of owl such as the extensibility of the set of supported datatypes and complexity of reasoning"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we analyze the datatype system of owl"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we analyze the datatype system of owl 2"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"supported datatypes and complexity of reasoning"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"we discuss certain nontrivial consequences of the datatype system of owl 2 definition such as the extensibility of the set of supported datatypes and complexity of reasoning"	.
+
+
 #### Classes ####
 
-local:analyze	rdfs:label	"analyze"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:we	rdfs:label	"we"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:datatype	rdfs:label	"datatype"	.
+local:certain_basic_operations	a	rdf:Class	;
+	rdfs:label	"certain basic operations"	.
 
-local:datatype_system	rdfs:label	"datatype system"	.
+local:certain_basic	a	rdf:Class	;
+	rdfs:label	"certain basic"	.
 
-local:system	rdfs:label	"system"	.
+local:certain	a	rdf:Class	;
+	rdfs:label	"certain"	.
 
-local:datatype_system_of_owl	rdfs:label	"datatype system of owl"	.
+local:basic_operations	a	rdf:Class	;
+	rdfs:label	"basic operations"	.
 
-local:owl	rdfs:label	"owl"	.
+local:basic	a	rdf:Class	;
+	rdfs:label	"basic"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:operations	a	rdf:Class	;
+	rdfs:label	"operations"	.
 
-local:supported_datatypes	rdfs:label	"supported datatypes"	.
+local:string_datatypes	a	rdf:Class	;
+	rdfs:label	"string datatypes"	.
 
-local:datatypes	rdfs:label	"datatypes"	.
+local:datatypes	a	rdf:Class	;
+	rdfs:label	"datatypes"	.
 
-local:certain	rdfs:label	"certain"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:certain_nontrivial	rdfs:label	"certain nontrivial"	.
+local:implement_certain_basic_operations_for_string_datatypes	a	rdf:Class	;
+	rdfs:label	"implement certain basic operations for string datatypes"	.
 
-local:nontrivial_consequences	rdfs:label	"nontrivial consequences"	.
+local:string	a	rdf:Class	;
+	rdfs:label	"string"	.
 
-local:consequences	rdfs:label	"consequences"	.
+local:implement_for_string_datatypes	a	rdf:Class	;
+	rdfs:label	"implement for string datatypes"	.
 
-local:nontrivial	rdfs:label	"nontrivial"	.
+local:number_datatypes	a	rdf:Class	;
+	rdfs:label	"number datatypes"	.
 
-local:certain_nontrivial_consequences	rdfs:label	"certain nontrivial consequences"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:supported	rdfs:label	"supported"	.
+local:implement_certain_basic_operations_for_number_datatypes	a	rdf:Class	;
+	rdfs:label	"implement certain basic operations for number datatypes"	.
 
-local:certain_nontrivial_consequences_of_datatype_system	rdfs:label	"certain nontrivial consequences of datatype system"	.
+local:implement_for_number_datatypes	a	rdf:Class	;
+	rdfs:label	"implement for number datatypes"	.
 
-local:owl_suchas_extensibility	rdfs:label	"owl such_as extensibility"	.
+local:datatype	a	rdf:Class	;
+	rdfs:label	"datatype"	.
 
-local:extensibility	rdfs:label	"extensibility"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:extensibility_of_set	rdfs:label	"extensibility of set"	.
+local:algorithm_for_datatype_reasoning	a	rdf:Class	;
+	rdfs:label	"algorithm for datatype reasoning"	.
 
-local:set	rdfs:label	"set"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:set_of_supported_datatypes	rdfs:label	"set of supported datatypes"	.
+local:datatype_reasoning	a	rdf:Class	;
+	rdfs:label	"datatype reasoning"	.
 
-local:set_of_supported_datatypes_of_complexity	rdfs:label	"set of supported datatypes of complexity"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:complexity	rdfs:label	"complexity"	.
+local:handle	a	rdf:Class	;
+	rdfs:label	"handle"	.
 
-local:supported_datatypes_of_reasoning	rdfs:label	"supported datatypes of reasoning"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:datatypes_of_reasoning	rdfs:label	"datatypes of reasoning"	.
+local:finally	a	rdf:Class	;
+	rdfs:label	"finally"	.
 
-local:2_definition	rdfs:label	"2 definition"	.
+local:argue	a	rdf:Class	;
+	rdfs:label	"argue"	.
 
-local:definition	rdfs:label	"definition"	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_are_inappropriate	a	rdf:Class	;
+	rdfs:label	"certain datatypes from the list of normative datatypes in the current owl 2 are inappropriate"	.
 
-local:owl_2_definition	rdfs:label	"owl 2 definition"	.
+local:normative_datatypes	a	rdf:Class	;
+	rdfs:label	"normative datatypes"	.
 
-local:datatype_system_of_owl_2_definition	rdfs:label	"datatype system of owl 2 definition"	.
+local:current_owl	a	rdf:Class	;
+	rdfs:label	"current owl"	.
 
-local:owl_2_definition_suchas_extensibility	rdfs:label	"owl 2 definition such_as extensibility"	.
+local:list	a	rdf:Class	;
+	rdfs:label	"list"	.
 
-local:2_owl	rdfs:label	"2 owl"	.
+local:certain_datatypes	a	rdf:Class	;
+	rdfs:label	"certain datatypes"	.
 
-local:datatype_system_of_2_owl	rdfs:label	"datatype system of 2 owl"	.
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
 
-local:argue	rdfs:label	"argue"	.
+local:normative	a	rdf:Class	;
+	rdfs:label	"normative"	.
 
-local:also	rdfs:label	"also"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:certain_datatypes	rdfs:label	"certain datatypes"	.
+local:2_owl	a	rdf:Class	;
+	rdfs:label	"2 owl"	.
 
-local:current_owl	rdfs:label	"current owl"	.
+local:current_2_owl	a	rdf:Class	;
+	rdfs:label	"current 2 owl"	.
 
-local:normative_datatypes	rdfs:label	"normative datatypes"	.
+local:certain_normative_datatypes	a	rdf:Class	;
+	rdfs:label	"certain normative datatypes"	.
 
-local:different	rdfs:label	"different"	.
+local:certain_normative_datatypes_from_list	a	rdf:Class	;
+	rdfs:label	"certain normative datatypes from list"	.
 
-local:different_ones	rdfs:label	"different ones"	.
+local:list_of_normative_datatypes	a	rdf:Class	;
+	rdfs:label	"list of normative datatypes"	.
 
-local:current	rdfs:label	"current"	.
+local:normative_datatypes_in_current_2_owl	a	rdf:Class	;
+	rdfs:label	"normative datatypes in current 2 owl"	.
 
-local:ones	rdfs:label	"ones"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:normative	rdfs:label	"normative"	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2	a	rdf:Class	;
+	rdfs:label	"certain datatypes from the list of normative datatypes in the current owl 2"	.
 
-local:should_replaced	rdfs:label	"should replaced"	.
+local:replace	a	rdf:Class	;
+	rdfs:label	"replace"	.
 
-local:replaced	rdfs:label	"replaced"	.
+local:different_ones	a	rdf:Class	;
+	rdfs:label	"different ones"	.
 
-local:current_2_owl	rdfs:label	"current 2 owl"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:certain_normative_datatypes	rdfs:label	"certain normative datatypes"	.
+local:ones	a	rdf:Class	;
+	rdfs:label	"ones"	.
 
-local:certain_normative_datatypes_from_list	rdfs:label	"certain normative datatypes from list"	.
+local:should	a	rdf:Class	;
+	rdfs:label	"should"	.
 
-local:list	rdfs:label	"list"	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	a	rdf:Class	;
+	rdfs:label	"certain datatypes from the list of normative datatypes in the current owl 2 should be replaced with different ones"	.
 
-local:list_of_normative_datatypes	rdfs:label	"list of normative datatypes"	.
+local:should_replaced	a	rdf:Class	;
+	rdfs:label	"should replaced"	.
 
-local:normative_datatypes_in_current_2_owl	rdfs:label	"normative datatypes in current 2 owl"	.
+local:replaced	a	rdf:Class	;
+	rdfs:label	"replaced"	.
 
-local:should_replaced_with_different_ones	rdfs:label	"should replaced with different ones"	.
+local:should_replaced_with_different_ones	a	rdf:Class	;
+	rdfs:label	"should replaced with different ones"	.
 
-local:should	rdfs:label	"should"	.
+local:datatypes_and_complexity_of_reasoning	a	rdf:Class	;
+	rdfs:label	"datatypes and complexity of reasoning"	.
 
-local:inappropriate	rdfs:label	"inappropriate"	.
+local:complexity	a	rdf:Class	;
+	rdfs:label	"complexity"	.
 
-local:present	rdfs:label	"present"	.
+local:datatypes_of_reasoning	a	rdf:Class	;
+	rdfs:label	"datatypes of reasoning"	.
 
-local:finally	rdfs:label	"finally"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:datatype_reasoning	rdfs:label	"datatype reasoning"	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	a	rdf:Class	;
+	rdfs:label	"certain nontrivial consequences of the datatype system of owl such as the extensibility of the set of supported datatypes and complexity of reasoning"	.
 
-local:algorithm_for_datatype_reasoning	rdfs:label	"algorithm for datatype reasoning"	.
+local:supported_datatypes	a	rdf:Class	;
+	rdfs:label	"supported datatypes"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:datatype_system	a	rdf:Class	;
+	rdfs:label	"datatype system"	.
 
-local:supports	rdfs:label	"supports"	.
+local:certain_nontrivial_consequences	a	rdf:Class	;
+	rdfs:label	"certain nontrivial consequences"	.
 
-local:certain_basic_operations	rdfs:label	"certain basic operations"	.
+local:extensibility	a	rdf:Class	;
+	rdfs:label	"extensibility"	.
 
-local:operations	rdfs:label	"operations"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:certain_basic	rdfs:label	"certain basic"	.
+local:certain_nontrivial	a	rdf:Class	;
+	rdfs:label	"certain nontrivial"	.
 
-local:basic	rdfs:label	"basic"	.
+local:nontrivial	a	rdf:Class	;
+	rdfs:label	"nontrivial"	.
 
-local:basic_operations	rdfs:label	"basic operations"	.
+local:nontrivial_consequences	a	rdf:Class	;
+	rdfs:label	"nontrivial consequences"	.
 
-local:handle	rdfs:label	"handle"	.
+local:consequences	a	rdf:Class	;
+	rdfs:label	"consequences"	.
 
-local:can	rdfs:label	"can"	.
+local:supported	a	rdf:Class	;
+	rdfs:label	"supported"	.
 
-local:show	rdfs:label	"show"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:string_datatypes	rdfs:label	"string datatypes"	.
+local:certain_nontrivial_consequences_of_datatype_system	a	rdf:Class	;
+	rdfs:label	"certain nontrivial consequences of datatype system"	.
 
-local:implement_for_string_datatypes	rdfs:label	"implement for string datatypes"	.
+local:datatype_system_of_owl	a	rdf:Class	;
+	rdfs:label	"datatype system of owl"	.
 
-local:implement	rdfs:label	"implement"	.
+local:owl_such_as_extensibility	a	rdf:Class	;
+	rdfs:label	"owl such_as extensibility"	.
 
-local:number	rdfs:label	"number"	.
+local:extensibility_of_set	a	rdf:Class	;
+	rdfs:label	"extensibility of set"	.
 
-local:number_datatypes	rdfs:label	"number datatypes"	.
+local:set_of_supported_datatypes	a	rdf:Class	;
+	rdfs:label	"set of supported datatypes"	.
 
-local:implement_for_number_datatypes	rdfs:label	"implement for number datatypes"	.
+local:set_of_supported_datatypes_of_complexity	a	rdf:Class	;
+	rdfs:label	"set of supported datatypes of complexity"	.
 
-#### Properties ####
+local:supported_datatypes_of_reasoning	a	rdf:Class	;
+	rdfs:label	"supported datatypes of reasoning"	.
+
+local:analyze	a	rdf:Class	;
+	rdfs:label	"analyze"	.
+
+local:datatype_system_of_owl_2	a	rdf:Class	;
+	rdfs:label	"datatype system of owl 2"	.
+
+local:datatype_system_of_2_owl	a	rdf:Class	;
+	rdfs:label	"datatype system of 2 owl"	.
+
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	a	rdf:Class	;
+	rdfs:label	"certain nontrivial consequences of the datatype system of owl 2 definition such as the extensibility of the set of supported datatypes and complexity of reasoning"	.
+
+local:definition	a	rdf:Class	;
+	rdfs:label	"definition"	.
+
+local:2_definition	a	rdf:Class	;
+	rdfs:label	"2 definition"	.
+
+local:owl_2_definition	a	rdf:Class	;
+	rdfs:label	"owl 2 definition"	.
+
+local:datatype_system_of_owl_2_definition	a	rdf:Class	;
+	rdfs:label	"datatype system of owl 2 definition"	.
+
+local:certain_nontrivial_consequences_of_datatype_system_such_as_extensibility	a	rdf:Class	;
+	rdfs:label	"certain nontrivial consequences of datatype system such_as extensibility"	.
 
 #### Mapped Relations ####
 
+cso:reasoning	rdfs:label	"reasoning"	.
 local:reasoning	owl:sameAs	cso:reasoning	.
 cso:owl	rdfs:label	"owl"	.
-cso:reasoning	rdfs:label	"reasoning"	.
 local:owl	owl:sameAs	cso:owl	.
 
 #### Relations ####
 
-local:present	vn.role:Theme	local:algorithm_for_datatype_reasoning	.
-local:set_of_supported_datatypes_of_complexity	local:setofsupporteddatatypes_of	local:complexity	.
-local:certain	rdfs:member	local:certain_nontrivial	.
-local:datatype_reasoning	rdfs:subClassOf	local:reasoning	.
-local:discuss	vn.role:Patient1	local:we	.
-local:show	vn.role:Theme	local:implement_for_number_datatypes	.
-local:datatype_system_of_owl	local:datatypesystem_of	local:owl	.
-local:string_datatypes	rdfs:subClassOf	local:datatypes	.
-local:different	rdfs:member	local:different_ones	.
-local:certain_nontrivial_consequences_of_datatype_system	local:of_datatypesystem	local:certain_nontrivial_consequences	.
-local:supported_datatypes	rdfs:subClassOf	local:datatypes	.
-local:list_of_normative_datatypes	local:list_of	local:normative_datatypes	.
-local:supported_datatypes_of_reasoning	local:supporteddatatypes_of	local:reasoning	.
-local:certain	rdfs:member	local:certain_basic	.
-local:present	vn.role:Recipient	local:finally	.
-local:should_replaced	rdfs:subClassOf	local:replaced	.
-local:nontrivial	rdfs:member	local:nontrivial_consequences	.
-local:2_owl	rdfs:subClassOf	local:owl	.
-local:datatype	rdfs:member	local:datatype_reasoning	.
-local:certain_normative_datatypes	rdfs:subClassOf	local:normative_datatypes	.
-local:algorithm_for_datatype_reasoning	local:algorithm_for	local:datatype_reasoning	.
-local:show	vn.role:Agent	local:we	.
-local:certain_nontrivial	rdfs:member	local:certain_nontrivial_consequences	.
-local:certain_normative_datatypes_from_list	local:certainnormativedatatypes_from	local:list	.
-local:analyze	vn.role:Theme	local:datatype_system_of_2_owl	.
-local:datatypes_of_reasoning	local:datatypes_of	local:reasoning	.
-local:owl_2_definition	rdfs:subClassOf	local:2_definition	.
-local:implement_for_number_datatypes	local:implement_for	local:number_datatypes	.
-local:certain_normative_datatypes_from_list	local:from_list	local:certain_normative_datatypes	.
-local:list_of_normative_datatypes	local:of_normativedatatypes	local:list	.
-local:extensibility_of_set	local:of_set	local:extensibility	.
-local:certain_basic	rdfs:subClassOf	local:basic	.
-local:implement_for_number_datatypes	local:for_numberdatatypes	local:implement	.
-local:different_ones	rdfs:subClassOf	local:ones	.
-local:datatype_system_of_owl_2_definition	local:datatypesystem_of	local:owl_2_definition	.
-local:replaced	vn.role:Theme1	local:certain_normative_datatypes_from_list	.
-local:set_of_supported_datatypes_of_complexity	local:of_complexity	local:set_of_supported_datatypes	.
-local:datatype_system_of_owl_2_definition	local:of_owl2definition	local:datatype_system	.
-local:replaced	local:AM-MOD	local:should	.
-local:show	vn.role:Theme	local:implement_for_string_datatypes	.
-local:basic	rdfs:member	local:basic_operations	.
-local:normative	rdfs:member	local:normative_datatypes	.
-local:certain_nontrivial_consequences	rdfs:subClassOf	local:nontrivial_consequences	.
-local:owl_suchas_extensibility	local:owl_such_as	local:extensibility	.
-local:basic_operations	rdfs:subClassOf	local:operations	.
-local:discuss	vn.role:Patient2	local:certain_nontrivial_consequences_of_datatype_system	.
-local:current	rdfs:member	local:current_owl	.
-local:current_2_owl	rdfs:subClassOf	local:2_owl	.
-local:handle	local:AM-MOD	local:can	.
-local:set_of_supported_datatypes	local:of_supporteddatatypes	local:set	.
-local:nontrivial_consequences	rdfs:subClassOf	local:consequences	.
-local:replaced	vn.role:Theme2	local:different_ones	.
-local:owl_suchas_extensibility	local:such_as_extensibility	local:owl	.
-local:argue	vn.role:Actor1	local:should_replaced_with_different_ones	.
-local:extensibility_of_set	local:extensibility_of	local:set	.
-local:number	rdfs:member	local:number_datatypes	.
-local:handle	vn.role:object	local:datatype	.
-local:datatype	rdfs:member	local:datatype_system	.
-local:current_owl	rdfs:subClassOf	local:owl	.
-local:certain_basic	rdfs:member	local:certain_basic_operations	.
-local:implement_for_string_datatypes	local:implement_for	local:string_datatypes	.
-local:normative_datatypes	rdfs:subClassOf	local:datatypes	.
-local:datatype_system	rdfs:subClassOf	local:system	.
-local:should_replaced_with_different_ones	local:shouldreplaced_with	local:different_ones	.
-local:argue	vn.role:Actor	local:we	.
-local:2_definition	rdfs:subClassOf	local:definition	.
-local:implement	local:AM-PNC	local:number_datatypes	.
-local:argue	local:AM-DIS	local:also	.
-local:certain_nontrivial_consequences	rdfs:subClassOf	local:consequences	.
-local:certain_basic_operations	rdfs:subClassOf	local:operations	.
-local:implement	local:AM-PNC	local:string_datatypes	.
-local:should_replaced_with_different_ones	local:with_differentones	local:should_replaced	.
-local:certain	rdfs:member	local:certain_datatypes	.
-local:normative_datatypes_in_current_2_owl	local:in_current2owl	local:normative_datatypes	.
-local:handle	vn.role:Theme	local:algorithm_for_datatype_reasoning	.
-local:implement	vn.role:Theme	local:certain_basic_operations	.
-local:supported	rdfs:member	local:supported_datatypes	.
-local:certain_nontrivial_consequences_of_datatype_system	local:certainnontrivialconsequences_of	local:datatype_system	.
-local:owl_2_definition_suchas_extensibility	local:such_as_extensibility	local:owl_2_definition	.
-local:certain_datatypes	rdfs:subClassOf	local:datatypes	.
-local:supports	vn.role:Experiencer	local:certain_basic_operations	.
-local:analyze	vn.role:Theme	local:datatype_system_of_owl	.
-local:datatypes_of_reasoning	local:of_reasoning	local:datatypes	.
-local:supports	vn.role:Theme	local:datatype	.
-local:normative_datatypes_in_current_2_owl	local:normativedatatypes_in	local:current_2_owl	.
-local:algorithm_for_datatype_reasoning	local:for_datatypereasoning	local:algorithm	.
-local:argue	vn.role:Actor1	local:inappropriate	.
-local:supported_datatypes_of_reasoning	local:of_reasoning	local:supported_datatypes	.
-local:analyze	vn.role:Agent	local:we	.
-local:certain_nontrivial	rdfs:subClassOf	local:nontrivial	.
-local:present	vn.role:Agent	local:we	.
 local:number_datatypes	rdfs:subClassOf	local:datatypes	.
-local:supported	vn.role:Experiencer	local:datatypes_of_reasoning	.
-local:owl_2_definition_suchas_extensibility	local:owl2definition_such_as	local:extensibility	.
+local:implement_for_number_datatypes	rdfs:member	local:implement	.
+local:supported_datatypes_of_reasoning	rdfs:member	local:supported_datatypes	.
+local:s7	rdf:predicate	local:present	.
+local:s2	rdf:predicate	local:analyze	.
+local:s8	rdf:object	local:datatype	.
+local:certain_normative_datatypes_from_list	rdfs:member	local:list	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:complexity	.
+local:datatype_system_of_owl_2_definition	rdfs:member	local:owl_2_definition	.
+local:set_of_supported_datatypes_of_complexity	rdfs:member	local:set_of_supported_datatypes	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:extensibility	.
+local:s9	rdf:subject	local:datatype	.
+local:number_datatypes	rdfs:member	local:number	.
+local:implement_for_string_datatypes	rdfs:member	local:implement	.
+local:nontrivial_consequences	rdfs:subClassOf	local:consequences	.
+local:s0	rdf:subject	local:we	.
+local:datatypes_and_complexity_of_reasoning	rdfs:member	local:complexity	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:complexity	.
+local:s10.1	rdf:object	local:certain_basic_operations	.
+local:datatype_system_of_2_owl	rdfs:member	local:2_owl	.
+local:supported_datatypes	rdfs:subClassOf	local:datatypes	.
+local:s3	rdf:object	local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_are_inappropriate	rdfs:member	local:normative_datatypes	.
+local:basic_operations	rdfs:member	local:basic	.
+local:certain_datatypes	rdfs:member	local:certain	.
+local:s11.1	local:AM-PNC	local:string_datatypes	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2	rdfs:member	local:certain_datatypes	.
+local:datatype_system_of_owl_2	rdfs:member	local:datatype_system	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:owl	.
+local:owl_such_as_extensibility	rdfs:member	local:owl	.
+local:s8	rdf:subject	local:algorithm_for_datatype_reasoning	.
+local:datatype_system_of_owl	rdfs:member	local:owl	.
+local:certain_nontrivial_consequences	rdfs:member	local:certain_nontrivial	.
 local:certain_basic_operations	rdfs:subClassOf	local:basic_operations	.
-local:implement_for_string_datatypes	local:for_stringdatatypes	local:implement	.
-local:datatype_system_of_owl	local:of_owl	local:datatype_system	.
-local:datatype_system_of_2_owl	local:datatypesystem_of	local:2_owl	.
-local:datatype_system_of_2_owl	local:of_2owl	local:datatype_system	.
-local:implement	vn.role:Agent	local:we	.
-local:set_of_supported_datatypes	local:set_of	local:supported_datatypes	.
+local:should_replaced_with_different_ones	rdfs:member	local:should_replaced	.
+local:s11	rdf:object	local:implement_certain_basic_operations_for_string_datatypes	.
+local:set_of_supported_datatypes	rdfs:member	local:set	.
+local:current_2_owl	rdfs:subClassOf	local:2_owl	.
+local:s0.1	rdf:subject	local:datatypes_and_complexity_of_reasoning	.
+local:certain_basic	rdfs:member	local:certain	.
+local:datatype_system	rdfs:member	local:datatype	.
+local:s10.1	rdf:subject	local:we	.
+local:datatypes_of_reasoning	rdfs:member	local:datatypes	.
+local:s4	local:AM-DIS	local:also	.
+local:datatypes_and_complexity_of_reasoning	rdfs:member	local:datatypes	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	rdfs:member	local:certain_datatypes	.
+local:certain_nontrivial_consequences_of_datatype_system_such_as_extensibility	rdfs:member	local:certain_nontrivial_consequences_of_datatype_system	.
+local:normative_datatypes_in_current_2_owl	rdfs:member	local:normative_datatypes	.
+local:s11.1	rdf:object	local:certain_basic_operations	.
+local:normative_datatypes	rdfs:member	local:normative	.
+local:datatype_system_of_owl_2_definition	rdfs:member	local:datatype_system	.
+local:string_datatypes	rdfs:member	local:string	.
+local:different_ones	rdfs:member	local:different	.
+local:s0	rdf:object	local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	.
+local:string_datatypes	rdfs:subClassOf	local:datatypes	.
+local:certain_nontrivial_consequences_of_datatype_system	rdfs:member	local:datatype_system	.
+local:extensibility_of_set	rdfs:member	local:extensibility	.
+local:s11.1	rdf:subject	local:we	.
+local:datatype_system	rdfs:subClassOf	local:system	.
+local:s5	rdf:subject	local:we	.
+local:s10	rdf:object	local:implement_certain_basic_operations_for_number_datatypes	.
+local:should_replaced_with_different_ones	rdfs:member	local:different_ones	.
+local:2_definition	rdfs:subClassOf	local:definition	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:set	.
+local:s7	local:AM-TMP	local:finally	.
+local:s3	rdf:subject	local:we	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:owl	.
+local:datatype_reasoning	rdfs:subClassOf	local:reasoning	.
+local:s3.1	rdf:predicate	local:support	.
+local:s10.1	local:AM-PNC	local:number_datatypes	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2	rdfs:member	local:normative_datatypes	.
+local:implement_certain_basic_operations_for_string_datatypes	rdfs:member	local:string_datatypes	.
+local:s1	rdf:object	local:datatype_system_of_owl_2	.
+local:current_owl	rdfs:member	local:current	.
+local:certain_normative_datatypes	rdfs:subClassOf	local:normative_datatypes	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	rdfs:member	local:current_owl	.
+local:certain_basic	rdfs:subClassOf	local:basic	.
+local:list_of_normative_datatypes	rdfs:member	local:normative_datatypes	.
+local:implement_certain_basic_operations_for_string_datatypes	rdfs:member	local:implement	.
+local:certain_nontrivial_consequences	rdfs:subClassOf	local:consequences	.
+local:s11	rdf:subject	local:we	.
+local:s8	local:AM-MOD	local:can	.
+local:implement_certain_basic_operations_for_string_datatypes	rdfs:member	local:certain_basic_operations	.
+local:s1	rdf:subject	local:we	.
+local:nontrivial_consequences	rdfs:member	local:nontrivial	.
+local:s10	rdf:predicate	local:show	.
+local:s9	rdf:object	local:certain_basic_operations	.
+local:s7	rdf:object	local:algorithm_for_datatype_reasoning	.
+local:s5	rdf:predicate	local:argue	.
+local:basic_operations	rdfs:subClassOf	local:operations	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	rdfs:member	local:normative_datatypes	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:supported_datatypes	.
+local:s3	rdf:predicate	local:discuss	.
+local:set_of_supported_datatypes_of_complexity	rdfs:member	local:complexity	.
+local:s4.1	rdf:object	local:different_ones	.
+local:s5	rdf:object	local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_are_inappropriate	.
+local:s2	rdf:object	local:datatype_system_of_owl	.
+local:implement_for_number_datatypes	rdfs:member	local:number_datatypes	.
+local:supported_datatypes_of_reasoning	rdfs:member	local:reasoning	.
+local:should_replaced	rdfs:subClassOf	local:replaced	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	rdfs:member	local:list	.
+local:certain_nontrivial_consequences_of_datatype_system	rdfs:member	local:certain_nontrivial_consequences	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:supported_datatypes	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2	rdfs:member	local:current_owl	.
+local:s9	rdf:predicate	local:support	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:set	.
+local:s10.1	rdf:predicate	local:implement	.
+local:s11.1	rdf:predicate	local:implement	.
+local:s4.1	local:AM-MOD	local:should	.
+local:algorithm_for_datatype_reasoning	rdfs:member	local:algorithm	.
+local:s0.1	rdf:predicate	local:support	.
+local:certain_basic_operations	rdfs:member	local:certain_basic	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:certain_nontrivial_consequences	.
+local:algorithm_for_datatype_reasoning	rdfs:member	local:datatype_reasoning	.
+local:certain_datatypes	rdfs:subClassOf	local:datatypes	.
+local:set_of_supported_datatypes	rdfs:member	local:supported_datatypes	.
+local:s4	rdf:predicate	local:argue	.
+local:s10	rdf:subject	local:we	.
+local:s4	rdf:object	local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	.
+local:s1	rdf:predicate	local:analyze	.
+local:datatype_system_of_owl_2	rdfs:member	local:owl	.
+local:certain_nontrivial	rdfs:member	local:certain	.
+local:implement_certain_basic_operations_for_number_datatypes	rdfs:member	local:implement	.
+local:s8	rdf:predicate	local:handle	.
+local:s2	rdf:subject	local:we	.
+local:implement_certain_basic_operations_for_number_datatypes	rdfs:member	local:number_datatypes	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_are_inappropriate	rdfs:member	local:certain_datatypes	.
+local:list_of_normative_datatypes	rdfs:member	local:list	.
+local:datatype_reasoning	rdfs:member	local:datatype	.
+local:certain_nontrivial_consequences	rdfs:subClassOf	local:nontrivial_consequences	.
+local:s4.1	rdf:predicate	local:replace	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:extensibility	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:certain_nontrivial_consequences	.
+local:implement_certain_basic_operations_for_number_datatypes	rdfs:member	local:certain_basic_operations	.
+local:owl_such_as_extensibility	rdfs:member	local:extensibility	.
+local:datatype_system_of_owl	rdfs:member	local:datatype_system	.
+local:datatypes_of_reasoning	rdfs:member	local:reasoning	.
+local:implement_for_string_datatypes	rdfs:member	local:string_datatypes	.
+local:2_owl	rdfs:subClassOf	local:owl	.
+local:s5	local:AM-DIS	local:also	.
+local:certain_nontrivial	rdfs:subClassOf	local:nontrivial	.
+local:supported_datatypes	rdfs:member	local:supported	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_should_be_replaced_with_different_ones	rdfs:member	local:different_ones	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:definition	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2	rdfs:member	local:list	.
+local:normative_datatypes_in_current_2_owl	rdfs:member	local:current_2_owl	.
+local:s4	rdf:subject	local:we	.
+local:s3.1	rdf:subject	local:datatypes_and_complexity_of_reasoning	.
+local:different_ones	rdfs:subClassOf	local:ones	.
+local:s0	rdf:predicate	local:discuss	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_are_inappropriate	rdfs:member	local:list	.
+local:s11	rdf:predicate	local:show	.
+local:current_owl	rdfs:subClassOf	local:owl	.
+local:certain_normative_datatypes_from_list	rdfs:member	local:certain_normative_datatypes	.
+local:certain_nontrivial_consequences_of_datatype_system_such_as_extensibility	rdfs:member	local:extensibility	.
+local:certain_basic_operations	rdfs:subClassOf	local:operations	.
+local:datatype_system_of_2_owl	rdfs:member	local:datatype_system	.
+local:s7	rdf:subject	local:we	.
+local:s4.1	rdf:subject	local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2	.
+local:normative_datatypes	rdfs:subClassOf	local:datatypes	.
+local:owl_2_definition	rdfs:subClassOf	local:2_definition	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_2_definition_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:datatype_system	.
+local:certain_nontrivial_consequences_of_the_datatype_system_of_owl_such_as_the_extensibility_of_the_set_of_supported_datatypes_and_complexity_of_reasoning	rdfs:member	local:datatype_system	.
+local:extensibility_of_set	rdfs:member	local:set	.
+local:certain_datatypes_from_the_list_of_normative_datatypes_in_the_current_owl_2_are_inappropriate	rdfs:member	local:current_owl	.

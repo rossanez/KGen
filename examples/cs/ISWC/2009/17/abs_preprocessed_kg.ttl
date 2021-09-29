@@ -1,509 +1,972 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s25	a	rdf:Statement	;
+	rdfs:label	"the method on a large web dataset requires no manual input"	.
+
+local:s23.1	a	rdf:Statement	;
+	rdfs:label	"processing reasoning over integrated datasets"	.
+
+local:s23	a	rdf:Statement	;
+	rdfs:label	"the method on a large web dataset has applications in search query processing reasoning over integrated datasets"	.
+
+local:s22	a	rdf:Statement	;
+	rdfs:label	"the method on a large web dataset has applications in user interfaces over integrated datasets"	.
+
+local:s21	a	rdf:Statement	;
+	rdfs:label	"we conduct quality evaluations of the method on a large web dataset"	.
+
+local:s20	a	rdf:Statement	;
+	rdfs:label	"we conduct performance evaluations of the method on a large web dataset"	.
+
+local:s19.3	a	rdf:Statement	;
+	rdfs:label	"naming authority graph"	.
+
+local:s19.2	a	rdf:Statement	;
+	rdfs:label	"based on a naming authority graph"	.
+
+local:s19.1	a	rdf:Statement	;
+	rdfs:label	"we assign authority values to data sources based on a naming authority graph"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"we uses the original pagerank method to assign authority values to data sources based on a naming authority graph"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"identifiers referenced in the sources"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"the authority values to identifiers"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"we then propagates the authority values to identifiers"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"these identifiers which can speak authoritatively for these identifiers"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"authority which provides a correspondence between the sources"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"we naming authority"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"we introduce the notion of naming authority"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"authority which provides a correspondence between these identifiers"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"the sources which can speak authoritatively"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"prioritising data returned by queries over web datasets"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"web datasets expressed in rdf"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"this paper presents algorithms for prioritising data"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the ranking algorithm has take into account"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the ranking algorithm has to take into account"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"data integrated from a large number of sources"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"existing ranking algorithms for structured data on the other hand"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"existing ranking algorithms for structured data on the other hand require manual input of a domain expert"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"existing ranking algorithms for structured data on the other hand"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"cases where data exhibits enormous variance in vocabularies"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"vocabularies used"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"linkbased ranking algorithms which however targeted towards hypertext documents"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"user queries"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"returning structured data as results to user queries"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the focus of web search moving away from returning relevant documents towards returning structured data as results to user queries"	.
+
+
 #### Classes ####
 
-local:web_search	rdfs:label	"web search"	.
+local:method_on_a_large_web_dataset	a	rdf:Class	;
+	rdfs:label	"method on a large web dataset"	.
 
-local:search	rdfs:label	"search"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:web	rdfs:label	"web"	.
+local:large_web_dataset	a	rdf:Class	;
+	rdfs:label	"large web dataset"	.
 
-local:focus_of_web_search	rdfs:label	"focus of web search"	.
+local:web_dataset	a	rdf:Class	;
+	rdfs:label	"web dataset"	.
 
-local:focus	rdfs:label	"focus"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:moving	rdfs:label	"moving"	.
+local:large_web	a	rdf:Class	;
+	rdfs:label	"large web"	.
 
-local:relevant_documents	rdfs:label	"relevant documents"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:documents	rdfs:label	"documents"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:user	rdfs:label	"user"	.
+local:method_on_large_web_dataset	a	rdf:Class	;
+	rdfs:label	"method on large web dataset"	.
 
-local:user_queries	rdfs:label	"user queries"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:relevant	rdfs:label	"relevant"	.
+local:manual_input	a	rdf:Class	;
+	rdfs:label	"manual input"	.
 
-local:queries	rdfs:label	"queries"	.
+local:manual	a	rdf:Class	;
+	rdfs:label	"manual"	.
 
-local:structured_data	rdfs:label	"structured data"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:data	rdfs:label	"data"	.
+local:reasoning_over_integrated_datasets	a	rdf:Class	;
+	rdfs:label	"reasoning over integrated datasets"	.
 
-local:returning_as_results	rdfs:label	"returning as results"	.
+local:over_integrated_datasets	a	rdf:Class	;
+	rdfs:label	"over integrated datasets"	.
 
-local:returning	rdfs:label	"returning"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:results	rdfs:label	"results"	.
+local:over_integrated	a	rdf:Class	;
+	rdfs:label	"over integrated"	.
 
-local:results_to_user_queries	rdfs:label	"results to user queries"	.
+local:integrated	a	rdf:Class	;
+	rdfs:label	"integrated"	.
 
-local:away	rdfs:label	"away"	.
+local:integrated_datasets	a	rdf:Class	;
+	rdfs:label	"integrated datasets"	.
 
-local:data_data	rdfs:label	"data data"	.
+local:over	a	rdf:Class	;
+	rdfs:label	"over"	.
 
-local:structured_data_data	rdfs:label	"structured data data"	.
+local:reasoning	a	rdf:Class	;
+	rdfs:label	"reasoning"	.
 
-local:results_results	rdfs:label	"results results"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:user_user_queries	rdfs:label	"user user queries"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:ranking_algorithms	rdfs:label	"ranking algorithms"	.
+local:applications_in_search_query_processing_reasoning_over_integrated_datasets	a	rdf:Class	;
+	rdfs:label	"applications in search query processing reasoning over integrated datasets"	.
 
-local:algorithms	rdfs:label	"algorithms"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:linkbased	rdfs:label	"link-based"	.
+local:search_query_processing_reasoning	a	rdf:Class	;
+	rdfs:label	"search query processing reasoning"	.
 
-local:linkbased_ranking	rdfs:label	"link-based ranking"	.
+local:search_query_processing	a	rdf:Class	;
+	rdfs:label	"search query processing"	.
 
-local:linkbased_ranking_algorithms	rdfs:label	"link-based ranking algorithms"	.
+local:processing_reasoning	a	rdf:Class	;
+	rdfs:label	"processing reasoning"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:search_query	a	rdf:Class	;
+	rdfs:label	"search query"	.
 
-local:targeted	rdfs:label	"targeted"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:however	rdfs:label	"however"	.
+local:processing	a	rdf:Class	;
+	rdfs:label	"processing"	.
 
-local:hypertext_documents	rdfs:label	"hypertext documents"	.
+local:query_processing	a	rdf:Class	;
+	rdfs:label	"query processing"	.
 
-local:hypertext	rdfs:label	"hypertext"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:exhibits	rdfs:label	"exhibits"	.
+local:query_processing_reasoning	a	rdf:Class	;
+	rdfs:label	"query processing reasoning"	.
 
-local:cases	rdfs:label	"cases"	.
+local:applications_in_search_query_processing_reasoning	a	rdf:Class	;
+	rdfs:label	"applications in search query processing reasoning"	.
 
-local:enormous	rdfs:label	"enormous"	.
+local:search_query_processing_reasoning_over_integrated_datasets	a	rdf:Class	;
+	rdfs:label	"search query processing reasoning over integrated datasets"	.
 
-local:enormous_variance	rdfs:label	"enormous variance"	.
+local:applications_in_user_interfaces_over_integrated_datasets	a	rdf:Class	;
+	rdfs:label	"applications in user interfaces over integrated datasets"	.
 
-local:variance	rdfs:label	"variance"	.
+local:user_interfaces	a	rdf:Class	;
+	rdfs:label	"user interfaces"	.
 
-local:vocabularies	rdfs:label	"vocabularies"	.
+local:interfaces	a	rdf:Class	;
+	rdfs:label	"interfaces"	.
 
-local:other	rdfs:label	"other"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:other_hand	rdfs:label	"other hand"	.
+local:applications_in_user_interfaces	a	rdf:Class	;
+	rdfs:label	"applications in user interfaces"	.
 
-local:hand	rdfs:label	"hand"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:ranking_algorithms_for_structured_data	rdfs:label	"ranking algorithms for structured data"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:existing	rdfs:label	"existing"	.
+local:quality_evaluations_of_the_method_on_a_large_web_dataset	a	rdf:Class	;
+	rdfs:label	"quality evaluations of the method on a large web dataset"	.
 
-local:integrated	rdfs:label	"integrated"	.
+local:quality_evaluations	a	rdf:Class	;
+	rdfs:label	"quality evaluations"	.
 
-local:large_number	rdfs:label	"large number"	.
+local:evaluations	a	rdf:Class	;
+	rdfs:label	"evaluations"	.
 
-local:number	rdfs:label	"number"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:large	rdfs:label	"large"	.
+local:quality_evaluations_of_method	a	rdf:Class	;
+	rdfs:label	"quality evaluations of method"	.
 
-local:large_number_of_sources	rdfs:label	"large number of sources"	.
+local:performance_evaluations_of_the_method_on_a_large_web_dataset	a	rdf:Class	;
+	rdfs:label	"performance evaluations of the method on a large web dataset"	.
 
-local:sources	rdfs:label	"sources"	.
+local:performance_evaluations	a	rdf:Class	;
+	rdfs:label	"performance evaluations"	.
 
-local:existing_ranking_algorithms	rdfs:label	"existing ranking algorithms"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:existing_ranking_algorithms_for_structured_data	rdfs:label	"existing ranking algorithms for structured data"	.
+local:performance_evaluations_of_method	a	rdf:Class	;
+	rdfs:label	"performance evaluations of method"	.
 
-local:require	rdfs:label	"require"	.
+local:authority_graph	a	rdf:Class	;
+	rdfs:label	"authority graph"	.
 
-local:domain_expert	rdfs:label	"domain expert"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:expert	rdfs:label	"expert"	.
+local:authority	a	rdf:Class	;
+	rdfs:label	"authority"	.
 
-local:manual_input	rdfs:label	"manual input"	.
+local:name	a	rdf:Class	;
+	rdfs:label	"name"	.
 
-local:input	rdfs:label	"input"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:manual	rdfs:label	"manual"	.
+local:assign	a	rdf:Class	;
+	rdfs:label	"assign"	.
 
-local:domain	rdfs:label	"domain"	.
+local:authority_values_data_sources_based_on_a_naming_authority_graph	a	rdf:Class	;
+	rdfs:label	"authority values data sources based on a naming authority graph"	.
 
-local:manual_input_of_domain_expert	rdfs:label	"manual input of domain expert"	.
+local:authority_values_data_sources	a	rdf:Class	;
+	rdfs:label	"authority values data sources"	.
 
-local:ranking_algorithm	rdfs:label	"ranking algorithm"	.
+local:naming_authority	a	rdf:Class	;
+	rdfs:label	"naming authority"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:has	rdfs:label	"has"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:take	rdfs:label	"take"	.
+local:authority_values	a	rdf:Class	;
+	rdfs:label	"authority values"	.
 
-local:account	rdfs:label	"account"	.
+local:values	a	rdf:Class	;
+	rdfs:label	"values"	.
 
-local:web_datasets	rdfs:label	"web datasets"	.
+local:values_data	a	rdf:Class	;
+	rdfs:label	"values data"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:naming	a	rdf:Class	;
+	rdfs:label	"naming"	.
 
-local:expressed	rdfs:label	"expressed"	.
+local:authority_values_data	a	rdf:Class	;
+	rdfs:label	"authority values data"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:values_data_sources	a	rdf:Class	;
+	rdfs:label	"values data sources"	.
 
-local:returned	rdfs:label	"returned"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:prioritising	rdfs:label	"prioritising"	.
+local:authority_values_data_sources_based_on_naming_authority_graph	a	rdf:Class	;
+	rdfs:label	"authority values data sources based_on naming authority graph"	.
 
-local:queries_over_web_datasets	rdfs:label	"queries over web datasets"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:presents	rdfs:label	"presents"	.
+local:original_pagerank_method_assign_authority_values_to_data_sources_based_on_a_naming_authority_graph	a	rdf:Class	;
+	rdfs:label	"original pagerank method assign authority values to data sources based on a naming authority graph"	.
 
-local:paper	rdfs:label	"paper"	.
+local:original_pagerank_method_assign_authority_values	a	rdf:Class	;
+	rdfs:label	"original pagerank method assign authority values"	.
 
-local:prioritising_data	rdfs:label	"prioritising data"	.
+local:assign_authority_values	a	rdf:Class	;
+	rdfs:label	"assign authority values"	.
 
-local:algorithms_for_prioritising_data	rdfs:label	"algorithms for prioritising data"	.
+local:assign_authority	a	rdf:Class	;
+	rdfs:label	"assign authority"	.
 
-local:provides	rdfs:label	"provides"	.
+local:original_pagerank	a	rdf:Class	;
+	rdfs:label	"original pagerank"	.
 
-local:authority	rdfs:label	"authority"	.
+local:original	a	rdf:Class	;
+	rdfs:label	"original"	.
 
-local:correspondence_between_identifiers	rdfs:label	"correspondence between identifiers"	.
+local:pagerank_method_assign	a	rdf:Class	;
+	rdfs:label	"pagerank method assign"	.
 
-local:correspondence	rdfs:label	"correspondence"	.
+local:pagerank_method	a	rdf:Class	;
+	rdfs:label	"pagerank method"	.
 
-local:identifiers	rdfs:label	"identifiers"	.
+local:method_assign	a	rdf:Class	;
+	rdfs:label	"method assign"	.
 
-local:speak	rdfs:label	"speak"	.
+local:original_pagerank_method	a	rdf:Class	;
+	rdfs:label	"original pagerank method"	.
 
-local:can	rdfs:label	"can"	.
+local:original_pagerank_method_assign	a	rdf:Class	;
+	rdfs:label	"original pagerank method assign"	.
 
-local:authoritatively	rdfs:label	"authoritatively"	.
+local:pagerank	a	rdf:Class	;
+	rdfs:label	"pagerank"	.
 
-local:correspondence_between_sources	rdfs:label	"correspondence between sources"	.
+local:original_pagerank_method_assign_authority	a	rdf:Class	;
+	rdfs:label	"original pagerank method assign authority"	.
 
-local:introduce	rdfs:label	"introduce"	.
+local:pagerank_method_assign_authority_values	a	rdf:Class	;
+	rdfs:label	"pagerank method assign authority values"	.
 
-local:we	rdfs:label	"we"	.
+local:pagerank_method_assign_authority	a	rdf:Class	;
+	rdfs:label	"pagerank method assign authority"	.
 
-local:notion	rdfs:label	"notion"	.
+local:method_assign_authority	a	rdf:Class	;
+	rdfs:label	"method assign authority"	.
 
-local:naming	rdfs:label	"naming"	.
+local:method_assign_authority_values	a	rdf:Class	;
+	rdfs:label	"method assign authority values"	.
 
-local:referenced	rdfs:label	"referenced"	.
+local:assign_to_data_sources	a	rdf:Class	;
+	rdfs:label	"assign to data sources"	.
 
-local:uses	rdfs:label	"uses"	.
+local:data_sources_based_on_naming_authority_graph	a	rdf:Class	;
+	rdfs:label	"data sources based_on naming authority graph"	.
 
-local:pagerank	rdfs:label	"pagerank"	.
+local:identifiers	a	rdf:Class	;
+	rdfs:label	"identifiers"	.
 
-local:pagerank_method	rdfs:label	"pagerank method"	.
+local:reference	a	rdf:Class	;
+	rdfs:label	"reference"	.
 
-local:original_pagerank_method	rdfs:label	"original pagerank method"	.
+local:value	a	rdf:Class	;
+	rdfs:label	"value"	.
 
-local:method	rdfs:label	"method"	.
+local:propagate	a	rdf:Class	;
+	rdfs:label	"propagate"	.
 
-local:original	rdfs:label	"original"	.
+local:authority_values_to_identifiers	a	rdf:Class	;
+	rdfs:label	"authority values to identifiers"	.
 
-local:original_pagerank	rdfs:label	"original pagerank"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:assign	rdfs:label	"assign"	.
+local:speak	a	rdf:Class	;
+	rdfs:label	"speak"	.
 
-local:assign_authority	rdfs:label	"assign authority"	.
+local:authoritatively	a	rdf:Class	;
+	rdfs:label	"authoritatively"	.
 
-local:naming_authority_graph	rdfs:label	"naming authority graph"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:graph	rdfs:label	"graph"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:authority_graph	rdfs:label	"authority graph"	.
+local:correspondence_between_the_sources	a	rdf:Class	;
+	rdfs:label	"correspondence between the sources"	.
 
-local:naming_authority	rdfs:label	"naming authority"	.
+local:correspondence	a	rdf:Class	;
+	rdfs:label	"correspondence"	.
 
-local:assign_authority_values	rdfs:label	"assign authority values"	.
+local:correspondence_between_sources	a	rdf:Class	;
+	rdfs:label	"correspondence between sources"	.
 
-local:values	rdfs:label	"values"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:notion_of_naming_authority	a	rdf:Class	;
+	rdfs:label	"notion of naming authority"	.
 
-local:authority_values	rdfs:label	"authority values"	.
+local:notion	a	rdf:Class	;
+	rdfs:label	"notion"	.
 
-local:assign_to_data_sources	rdfs:label	"assign to data sources"	.
+local:correspondence_between_these_identifiers	a	rdf:Class	;
+	rdfs:label	"correspondence between these identifiers"	.
 
-local:data_sources_based	rdfs:label	"data sources based"	.
+local:correspondence_between_identifiers	a	rdf:Class	;
+	rdfs:label	"correspondence between identifiers"	.
 
-local:based	rdfs:label	"based"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:based_on_naming_authority_graph	rdfs:label	"based on naming authority graph"	.
+local:return	a	rdf:Class	;
+	rdfs:label	"return"	.
 
-local:propagates	rdfs:label	"propagates"	.
+local:prioritising_data	a	rdf:Class	;
+	rdfs:label	"prioritising data"	.
 
-local:then	rdfs:label	"then"	.
+local:web_datasets	a	rdf:Class	;
+	rdfs:label	"web datasets"	.
 
-local:authority_values_to_identifiers	rdfs:label	"authority values to identifiers"	.
+local:express	a	rdf:Class	;
+	rdfs:label	"express"	.
 
-local:conduct	rdfs:label	"conduct"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:web_dataset	rdfs:label	"web dataset"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:dataset	rdfs:label	"dataset"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:large_web	rdfs:label	"large web"	.
+local:algorithms_for_prioritising_data	a	rdf:Class	;
+	rdfs:label	"algorithms for prioritising data"	.
 
-local:large_web_dataset	rdfs:label	"large web dataset"	.
+local:algorithms	a	rdf:Class	;
+	rdfs:label	"algorithms"	.
 
-local:performance	rdfs:label	"performance"	.
+local:ranking_algorithm	a	rdf:Class	;
+	rdfs:label	"ranking algorithm"	.
 
-local:performance_evaluations	rdfs:label	"performance evaluations"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:evaluations	rdfs:label	"evaluations"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:performance_evaluations_of_method	rdfs:label	"performance evaluations of method"	.
+local:account	a	rdf:Class	;
+	rdfs:label	"account"	.
 
-local:method_on_large_web_dataset	rdfs:label	"method on large web dataset"	.
+local:has	a	rdf:Class	;
+	rdfs:label	"has"	.
 
-local:quality	rdfs:label	"quality"	.
+local:integrate	a	rdf:Class	;
+	rdfs:label	"integrate"	.
 
-local:quality_evaluations	rdfs:label	"quality evaluations"	.
+local:large_number_of_sources	a	rdf:Class	;
+	rdfs:label	"large number of sources"	.
 
-local:quality_evaluations_of_method	rdfs:label	"quality evaluations of method"	.
+local:large_number	a	rdf:Class	;
+	rdfs:label	"large number"	.
 
-local:over_integrated_datasets	rdfs:label	"over integrated datasets"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:integrated_datasets	rdfs:label	"integrated datasets"	.
+local:ranking_algorithms_for_structured_data_on_the_other_hand	a	rdf:Class	;
+	rdfs:label	"ranking algorithms for structured data on the other hand"	.
 
-local:query_processing	rdfs:label	"query processing"	.
+local:other_hand	a	rdf:Class	;
+	rdfs:label	"other hand"	.
 
-local:processing	rdfs:label	"processing"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:query	rdfs:label	"query"	.
+local:hand	a	rdf:Class	;
+	rdfs:label	"hand"	.
 
-local:over_integrated	rdfs:label	"over integrated"	.
+local:structured_data	a	rdf:Class	;
+	rdfs:label	"structured data"	.
 
-local:over	rdfs:label	"over"	.
+local:ranking_algorithms	a	rdf:Class	;
+	rdfs:label	"ranking algorithms"	.
 
-local:applications_in_search	rdfs:label	"applications in search"	.
+local:ranking_algorithms_for_structured_data	a	rdf:Class	;
+	rdfs:label	"ranking algorithms for structured data"	.
 
-local:applications	rdfs:label	"applications"	.
+local:structured_data_on_other_hand	a	rdf:Class	;
+	rdfs:label	"structured data on other hand"	.
 
-local:search_reasoning	rdfs:label	"search reasoning"	.
+local:existing	a	rdf:Class	;
+	rdfs:label	"existing"	.
 
-local:reasoning	rdfs:label	"reasoning"	.
+local:existing_ranking_algorithms_for_structured_data_on_the_other_hand	a	rdf:Class	;
+	rdfs:label	"existing ranking algorithms for structured data on the other hand"	.
 
-local:reasoning_over_integrated_datasets	rdfs:label	"reasoning over integrated datasets"	.
+local:manual_input_of_a_domain_expert	a	rdf:Class	;
+	rdfs:label	"manual input of a domain expert"	.
 
-local:user_interfaces	rdfs:label	"user interfaces"	.
+local:domain_expert	a	rdf:Class	;
+	rdfs:label	"domain expert"	.
 
-local:interfaces	rdfs:label	"interfaces"	.
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
 
-local:applications_in_user_interfaces	rdfs:label	"applications in user interfaces"	.
+local:expert	a	rdf:Class	;
+	rdfs:label	"expert"	.
 
-local:applications_in_user_interfaces_over_integrated_datasets	rdfs:label	"applications in user interfaces over integrated datasets"	.
+local:manual_input_of_domain_expert	a	rdf:Class	;
+	rdfs:label	"manual input of domain expert"	.
 
-local:requires	rdfs:label	"requires"	.
+local:exhibit	a	rdf:Class	;
+	rdfs:label	"exhibit"	.
 
-#### Properties ####
+local:enormous_variance	a	rdf:Class	;
+	rdfs:label	"enormous variance"	.
+
+local:enormous	a	rdf:Class	;
+	rdfs:label	"enormous"	.
+
+local:variance	a	rdf:Class	;
+	rdfs:label	"variance"	.
+
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
+
+local:vocabularies	a	rdf:Class	;
+	rdfs:label	"vocabularies"	.
+
+local:towards_hypertext_documents	a	rdf:Class	;
+	rdfs:label	"towards hypertext documents"	.
+
+local:hypertext_documents	a	rdf:Class	;
+	rdfs:label	"hypertext documents"	.
+
+local:towards	a	rdf:Class	;
+	rdfs:label	"towards"	.
+
+local:hypertext	a	rdf:Class	;
+	rdfs:label	"hypertext"	.
+
+local:documents	a	rdf:Class	;
+	rdfs:label	"documents"	.
+
+local:target	a	rdf:Class	;
+	rdfs:label	"target"	.
+
+local:linkbased_ranking_algorithms	a	rdf:Class	;
+	rdfs:label	"linkbased ranking algorithms"	.
+
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
+
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
+
+local:relevant_documents	a	rdf:Class	;
+	rdfs:label	"relevant documents"	.
+
+local:relevant	a	rdf:Class	;
+	rdfs:label	"relevant"	.
+
+local:towards_returning_structured	a	rdf:Class	;
+	rdfs:label	"towards returning structured"	.
+
+local:structured_data_data_as	a	rdf:Class	;
+	rdfs:label	"structured data data as"	.
+
+local:data_data	a	rdf:Class	;
+	rdfs:label	"data data"	.
+
+local:structured_data_data	a	rdf:Class	;
+	rdfs:label	"structured data data"	.
+
+local:results_results_to_to_user_user_queries_queries	a	rdf:Class	;
+	rdfs:label	"results results to to user user queries queries"	.
+
+local:user_queries_queries	a	rdf:Class	;
+	rdfs:label	"user queries queries"	.
+
+local:results_results	a	rdf:Class	;
+	rdfs:label	"results results"	.
+
+local:queries_queries	a	rdf:Class	;
+	rdfs:label	"queries queries"	.
+
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
+
+local:user_user_queries_queries	a	rdf:Class	;
+	rdfs:label	"user user queries queries"	.
+
+local:focus_of_web_search	a	rdf:Class	;
+	rdfs:label	"focus of web search"	.
+
+local:web_search	a	rdf:Class	;
+	rdfs:label	"web search"	.
+
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
+
+local:move	a	rdf:Class	;
+	rdfs:label	"move"	.
+
+local:away_from_returning_relevant_documents_towards_returning_structured_data_as_results_to_user_queries	a	rdf:Class	;
+	rdfs:label	"away from returning relevant documents towards returning structured data as results to user queries"	.
+
+local:returning_as_results	a	rdf:Class	;
+	rdfs:label	"returning as results"	.
+
+local:returning	a	rdf:Class	;
+	rdfs:label	"returning"	.
+
+local:results_to_user_queries	a	rdf:Class	;
+	rdfs:label	"results to user queries"	.
 
 #### Mapped Relations ####
 
-cso:user_interfaces	rdfs:label	"user interfaces"	.
 cso:reasoning	rdfs:label	"reasoning"	.
 local:web_search	owl:sameAs	cso:web_search	.
-cso:hypertext	rdfs:label	"hypertext"	.
-cso:query_processing	rdfs:label	"query processing"	.
-local:rdf	owl:sameAs	cso:rdf	.
-cso:web_search	rdfs:label	"web search"	.
-local:user_interfaces	owl:sameAs	cso:user_interfaces	.
-cso:rdf	rdfs:label	"rdf"	.
-local:query_processing	owl:sameAs	cso:query_processing	.
 local:domain_expert	owl:sameAs	cso:domain_experts	.
-local:reasoning	owl:sameAs	cso:reasoning	.
-local:hypertext	owl:sameAs	cso:hypertext	.
 cso:domain_experts	rdfs:label	"domain expert"	.
+local:query_processing	owl:sameAs	cso:query_processing	.
+cso:web_search	rdfs:label	"web search"	.
+local:reasoning	owl:sameAs	cso:reasoning	.
+cso:query_processing	rdfs:label	"query processing"	.
+local:user_interfaces	owl:sameAs	cso:user_interfaces	.
+cso:user_interfaces	rdfs:label	"user interfaces"	.
+local:hypertext	owl:sameAs	cso:hypertext	.
+cso:hypertext	rdfs:label	"hypertext"	.
 
 #### Relations ####
 
-local:user	rdfs:member	local:user_queries	.
-local:over_integrated	rdfs:member	local:over_integrated_datasets	.
-local:authority	rdfs:member	local:authority_values	.
-local:correspondence_between_sources	local:between_sources	local:correspondence	.
-local:correspondence_between_sources	local:correspondence_between	local:sources	.
-local:applications_in_user_interfaces_over_integrated_datasets	local:over_integrateddatasets	local:applications_in_user_interfaces	.
-local:correspondence_between_identifiers	local:correspondence_between	local:identifiers	.
-local:propagates	local:AM-TMP	local:then	.
-local:data	rdfs:member	local:data_sources	.
-local:provides	vn.role:Recipient	local:authority	.
-local:large_web_dataset	rdfs:subClassOf	local:dataset	.
-local:search_reasoning	local:search_	local:reasoning	.
-local:exhibits	vn.role:Theme	local:data	.
-local:results_to_user_queries	local:results_to	local:user_queries	.
-local:web	rdfs:member	local:web_datasets	.
-local:web	rdfs:member	local:web_dataset	.
-local:manual	rdfs:member	local:manual_input	.
-local:enormous_variance	rdfs:subClassOf	local:variance	.
-local:original_pagerank_method	rdfs:subClassOf	local:method	.
-local:quality_evaluations_of_method	local:qualityevaluations_of	local:method	.
-local:uses	vn.role:Recipient	local:assign_to_data_sources	.
-local:assign	vn.role:Agent	local:we	.
-local:existing	vn.role:Location	local:ranking_algorithms_for_structured_data	.
-local:referenced	vn.role:Topic	local:identifiers	.
-local:ranking_algorithm	rdfs:subClassOf	local:algorithm	.
-local:pagerank	rdfs:member	local:pagerank_method	.
-local:authority	rdfs:member	local:authority_graph	.
-local:performance_evaluations_of_method	local:of_method	local:performance_evaluations	.
-local:web_datasets	rdfs:subClassOf	local:datasets	.
-local:over_integrated_datasets	rdfs:subClassOf	local:datasets	.
-local:moving	local:AM-DIR	local:away	.
-local:large_web	rdfs:member	local:large_web_dataset	.
-local:assign	rdfs:member	local:assign_authority	.
-local:conduct	vn.role:Agent	local:we	.
-local:conduct	vn.role:Theme	local:performance_evaluations_of_method	.
-local:manual_input	rdfs:subClassOf	local:input	.
-local:assign_authority_values	rdfs:subClassOf	local:values	.
-local:large_number_of_sources	local:largenumber_of	local:sources	.
-local:exhibits	local:AM-LOC	local:vocabularies	.
-local:pagerank_method	rdfs:subClassOf	local:method	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:requires	vn.role:Agent	local:method_on_large_web_dataset	.
-local:referenced	local:AM-LOC	local:sources	.
-local:hypertext_documents	rdfs:subClassOf	local:documents	.
-local:exhibits	vn.role:Agent	local:enormous_variance	.
-local:linkbased_ranking	rdfs:member	local:linkbased_ranking_algorithms	.
-local:targeted	local:AM-DIS	local:however	.
-local:naming_authority	rdfs:subClassOf	local:authority	.
-local:prioritising_data	rdfs:subClassOf	local:data	.
-local:manual_input_of_domain_expert	local:of_domainexpert	local:manual_input	.
-local:structured_data	rdfs:subClassOf	local:data	.
-local:propagates	vn.role:Theme	local:we	.
-local:structured_data_data	rdfs:subClassOf	local:data_data	.
-local:speak	vn.role:Agent	local:sources	.
-local:other_hand	rdfs:subClassOf	local:hand	.
-local:based_on_naming_authority_graph	local:based_on	local:naming_authority_graph	.
-local:requires	vn.role:Patient	local:manual_input	.
-local:user_queries	rdfs:subClassOf	local:queries	.
-local:returned	vn.role:Theme	local:prioritising	.
-local:has	vn.role:Stimulus	local:applications_in_user_interfaces_over_integrated_datasets	.
-local:quality_evaluations	rdfs:subClassOf	local:evaluations	.
-local:returning	vn.role:Theme	local:relevant_documents	.
-local:naming_authority	rdfs:member	local:naming_authority_graph	.
-local:reasoning_over_integrated_datasets	local:reasoning_over	local:integrated_datasets	.
-local:original_pagerank	rdfs:member	local:original_pagerank_method	.
-local:applications_in_user_interfaces	local:applications_in	local:user_interfaces	.
-local:domain	rdfs:member	local:domain_expert	.
-local:uses	vn.role:Agent	local:we	.
-local:provides	vn.role:Agent	local:correspondence_between_identifiers	.
-local:quality_evaluations_of_method	local:of_method	local:quality_evaluations	.
-local:applications_in_search	local:in_search	local:applications	.
-local:provides	vn.role:Agent	local:correspondence_between_sources	.
-local:authority_graph	rdfs:subClassOf	local:graph	.
-local:existing_ranking_algorithms_for_structured_data	local:existingrankingalgorithms_for	local:structured_data	.
-local:integrated	rdfs:member	local:integrated_datasets	.
-local:existing_ranking_algorithms	rdfs:subClassOf	local:ranking_algorithms	.
-local:over_integrated	rdfs:subClassOf	local:integrated	.
-local:large_number	rdfs:subClassOf	local:number	.
-local:method_on_large_web_dataset	local:on_largewebdataset	local:method	.
-local:assign	vn.role:Theme	local:authority_values	.
-local:hypertext	rdfs:member	local:hypertext_documents	.
-local:naming	vn.role:Agent	local:authority	.
-local:returning	local:AM-TMP	local:results_results	.
-local:ranking_algorithms	rdfs:subClassOf	local:algorithms	.
-local:applications_in_search	local:applications_in	local:search	.
-local:algorithms_for_prioritising_data	local:for_prioritisingdata	local:algorithms	.
-local:method_on_large_web_dataset	local:method_on	local:large_web_dataset	.
-local:authority_values_to_identifiers	local:authorityvalues_to	local:identifiers	.
-local:naming	rdfs:member	local:naming_authority	.
-local:require	vn.role:Agent	local:existing_ranking_algorithms_for_structured_data	.
-local:web_search	rdfs:subClassOf	local:search	.
-local:integrated	vn.role:Patient2	local:data	.
-local:data_sources_based	local:_based	local:data_sources	.
-local:reasoning_over_integrated_datasets	local:over_integrateddatasets	local:reasoning	.
-local:web_dataset	rdfs:subClassOf	local:dataset	.
-local:presents	vn.role:Theme	local:algorithms_for_prioritising_data	.
-local:over	rdfs:member	local:over_integrated	.
-local:expressed	vn.role:Theme	local:web_datasets	.
-local:user_interfaces	rdfs:subClassOf	local:interfaces	.
-local:require	vn.role:Patient	local:manual_input_of_domain_expert	.
-local:focus_of_web_search	local:focus_of	local:web_search	.
-local:linkbased_ranking_algorithms	rdfs:subClassOf	local:ranking_algorithms	.
-local:naming	vn.role:Agent	local:we	.
-local:algorithms_for_prioritising_data	local:algorithms_for	local:prioritising_data	.
-local:returning_as_results	local:as_results	local:returning	.
-local:original_pagerank	rdfs:subClassOf	local:pagerank	.
-local:take	local:AM-MOD	local:has	.
-local:focus_of_web_search	local:of_websearch	local:focus	.
-local:original_pagerank_method	rdfs:subClassOf	local:pagerank_method	.
-local:values	vn.role:Theme	local:authority	.
-local:values	vn.role:Predicate	local:identifiers	.
-local:based	vn.role:indirect_object	local:naming	.
-local:introduce	vn.role:Patient	local:notion	.
-local:based_on_naming_authority_graph	local:on_namingauthoritygraph	local:based	.
-local:performance	rdfs:member	local:performance_evaluations	.
-local:introduce	vn.role:Agent	local:we	.
-local:relevant	rdfs:member	local:relevant_documents	.
-local:data_data	rdfs:subClassOf	local:data	.
-local:assign	vn.role:Recipient	local:data_sources_based	.
-local:returned	vn.role:Agent	local:queries_over_web_datasets	.
-local:returning_as_results	local:returning_as	local:results	.
-local:query	rdfs:member	local:query_processing	.
-local:search_reasoning	local:_reasoning	local:search	.
-local:assign_authority	rdfs:member	local:assign_authority_values	.
-local:has	vn.role:Experiencer	local:ranking_algorithm	.
-local:exhibits	local:AM-LOC	local:cases	.
-local:has	vn.role:Experiencer	local:method_on_large_web_dataset	.
-local:ranking	rdfs:member	local:ranking_algorithms	.
-local:speak	vn.role:Agent	local:identifiers	.
-local:uses	vn.role:Theme	local:original_pagerank_method	.
-local:results_results	rdfs:subClassOf	local:results	.
-local:performance_evaluations	rdfs:subClassOf	local:evaluations	.
-local:prioritising	vn.role:Agent	local:data	.
-local:ranking_algorithms_for_structured_data	local:rankingalgorithms_for	local:structured_data	.
-local:large	rdfs:member	local:large_number	.
-local:manual_input_of_domain_expert	local:manualinput_of	local:domain_expert	.
-local:correspondence_between_identifiers	local:between_identifiers	local:correspondence	.
-local:returning	local:AM-MNR	local:structured_data_data	.
-local:has	vn.role:Stimulus	local:applications_in_search	.
-local:naming_authority_graph	rdfs:subClassOf	local:graph	.
-local:assign_to_data_sources	local:to_datasources	local:assign	.
-local:large_web	rdfs:subClassOf	local:web	.
-local:integrated_datasets	rdfs:subClassOf	local:datasets	.
-local:large	rdfs:member	local:large_web	.
+local:pagerank_method_assign_authority	rdfs:subClassOf	local:authority	.
+local:pagerank_method_assign_authority	rdfs:member	local:pagerank_method_assign	.
+local:s19.2	rdf:predicate	local:base	.
+local:results_results_to_to_user_user_queries_queries	rdfs:member	local:results_results	.
+local:s17	rdf:predicate	local:propagate	.
+local:original_pagerank_method_assign_authority_values	rdfs:member	local:original_pagerank_method_assign_authority	.
+local:applications_in_user_interfaces_over_integrated_datasets	rdfs:member	local:user_interfaces	.
+local:correspondence_between_identifiers	rdfs:member	local:identifiers	.
+local:s12	local:AM-MOD	local:can	.
+local:relevant_documents	rdfs:member	local:relevant	.
+local:s17.1	rdf:object	local:identifiers	.
+local:s14.1	rdf:subject	local:we	.
+local:s13	rdf:subject	local:authority	.
+local:performance_evaluations	rdfs:member	local:performance	.
+local:applications_in_search_query_processing_reasoning	rdfs:member	local:search_query_processing_reasoning	.
+local:original_pagerank_method_assign	rdfs:subClassOf	local:assign	.
+local:queries_queries	rdfs:subClassOf	local:queries	.
+local:performance_evaluations_of_the_method_on_a_large_web_dataset	rdfs:member	local:large_web_dataset	.
+local:results_results	rdfs:member	local:results	.
+local:focus_of_web_search	rdfs:member	local:web_search	.
+local:s23	rdf:object	local:applications_in_search_query_processing_reasoning_over_integrated_datasets	.
+local:s4	rdf:subject	local:data	.
+local:method_assign	rdfs:member	local:method	.
+local:web_dataset	rdfs:member	local:web	.
 local:authority_values	rdfs:subClassOf	local:values	.
-local:quality	rdfs:member	local:quality_evaluations	.
-local:returning	local:AM-MNR	local:returning	.
-local:authority_values_to_identifiers	local:to_identifiers	local:authority_values	.
-local:enormous	rdfs:member	local:enormous_variance	.
-local:data	rdfs:member	local:data_data	.
-local:returning	local:AM-TMP	local:queries	.
-local:relevant_documents	rdfs:subClassOf	local:documents	.
-local:speak	local:AM-PNC	local:identifiers	.
-local:naming_authority_graph	rdfs:subClassOf	local:authority_graph	.
-local:conduct	vn.role:Theme	local:quality_evaluations_of_method	.
-local:queries_over_web_datasets	local:queries_over	local:web_datasets	.
-local:user	rdfs:member	local:user_interfaces	.
-local:ranking_algorithms_for_structured_data	local:for_structureddata	local:ranking_algorithms	.
-local:linkbased_ranking_algorithms	rdfs:subClassOf	local:algorithms	.
-local:large_web_dataset	rdfs:subClassOf	local:web_dataset	.
-local:performance_evaluations_of_method	local:performanceevaluations_of	local:method	.
-local:targeted	vn.role:Theme	local:hypertext_documents	.
-local:existing_ranking_algorithms_for_structured_data	local:for_structureddata	local:existing_ranking_algorithms	.
-local:moving	vn.role:Cause	local:focus_of_web_search	.
-local:large_number_of_sources	local:of_sources	local:large_number	.
-local:integrated	vn.role:indirect_object	local:large_number_of_sources	.
-local:data_sources_based	local:datasources_	local:based	.
-local:results_to_user_queries	local:to_userqueries	local:results	.
-local:linkbased	rdfs:member	local:linkbased_ranking	.
-local:results	rdfs:member	local:results_results	.
-local:take	vn.role:Agent	local:ranking_algorithm	.
-local:applications_in_user_interfaces_over_integrated_datasets	local:applicationsinuserinterfaces_over	local:integrated_datasets	.
-local:expressed	local:AM-LOC	local:rdf	.
-local:query_processing	rdfs:subClassOf	local:processing	.
-local:naming	vn.role:Theme	local:authority	.
-local:linkbased_ranking	rdfs:subClassOf	local:ranking	.
-local:applications_in_user_interfaces	local:in_userinterfaces	local:applications	.
+local:performance_evaluations_of_method	rdfs:member	local:performance_evaluations	.
+local:web_search	rdfs:member	local:web	.
+local:s16	local:AM-PNC	local:identifiers	.
+local:s21	rdf:object	local:quality_evaluations_of_the_method_on_a_large_web_dataset	.
+local:quality_evaluations	rdfs:subClassOf	local:evaluations	.
+local:web_dataset	rdfs:subClassOf	local:dataset	.
+local:s0.2	rdf:predicate	local:query	.
+local:s6	rdfs:member	local:algorithms	.
+local:authority_values_data_sources_based_on_a_naming_authority_graph	rdfs:member	local:authority_values_data_sources	.
+local:quality_evaluations_of_the_method_on_a_large_web_dataset	rdfs:member	local:quality_evaluations	.
+local:search_query_processing	rdfs:subClassOf	local:processing	.
+local:authority_values_data	rdfs:member	local:authority_values	.
+local:original_pagerank_method	rdfs:subClassOf	local:method	.
+local:s11	rdf:object	local:prioritising_data	.
+local:authority_values	rdfs:member	local:authority	.
+local:s7	rdf:object	local:large_number_of_sources	.
+local:s19.1	rdf:subject	local:we	.
+local:s1	local:AM-DIS	local:however	.
+local:performance_evaluations	rdfs:subClassOf	local:evaluations	.
+local:notion_of_naming_authority	rdfs:member	local:authority	.
+local:manual_input_of_a_domain_expert	rdfs:member	local:domain_expert	.
+local:large_web	rdfs:subClassOf	local:web	.
+local:s12	rdf:subject	local:sources	.
+local:s4	local:AM-LOC	local:cases	.
+local:away_from_returning_relevant_documents_towards_returning_structured_data_as_results_to_user_queries	rdfs:member	local:queries	.
+local:s5.1	rdf:subject	local:existing_ranking_algorithms_for_structured_data_on_the_other_hand	.
+local:s25	rdf:object	local:manual_input	.
+local:s17	rdf:object	local:authority_values_to_identifiers	.
+local:results_to_user_queries	rdfs:member	local:s0.2	.
+local:quality_evaluations_of_method	rdfs:member	local:quality_evaluations	.
+local:other_hand	rdfs:subClassOf	local:hand	.
+local:correspondence_between_these_identifiers	rdfs:member	local:correspondence	.
+local:manual_input	rdfs:member	local:manual	.
+local:linkbased_ranking_algorithms	rdfs:subClassOf	local:ranking_algorithms	.
+local:pagerank_method	rdfs:member	local:pagerank	.
+local:performance_evaluations_of_method	rdfs:member	local:method	.
+local:pagerank_method	rdfs:subClassOf	local:method	.
+local:values_data_sources	rdfs:member	local:values_data	.
+local:results_results_to_to_user_user_queries_queries	rdfs:member	local:user_queries_queries	.
+local:s4	local:AM-LOC	local:vocabularies	.
+local:applications_in_user_interfaces	rdfs:member	local:user_interfaces	.
+local:s0.1	local:AM-MNR	local:towards_returning_structured	.
+local:query_processing	rdfs:member	local:query	.
+local:ranking_algorithms	rdfs:subClassOf	local:algorithms	.
+local:away_from_returning_relevant_documents_towards_returning_structured_data_as_results_to_user_queries	rdfs:member	local:results	.
+local:assign_authority_values	rdfs:subClassOf	local:values	.
+local:authority_values_to_identifiers	rdfs:member	local:authority_values	.
+local:s8	rdf:subject	local:ranking_algorithm	.
+local:quality_evaluations_of_the_method_on_a_large_web_dataset	rdfs:member	local:large_web_dataset	.
+local:structured_data	rdfs:subClassOf	local:data	.
+local:s17.1	rdf:predicate	local:value	.
+local:authority_values_data_sources_based_on_naming_authority_graph	rdfs:member	local:s19.3	.
+local:correspondence_between_the_sources	rdfs:member	local:sources	.
+local:original_pagerank_method	rdfs:member	local:original_pagerank	.
+local:s6	rdf:subject	local:ranking_algorithms_for_structured_data_on_the_other_hand	.
+local:s20	rdf:object	local:performance_evaluations_of_the_method_on_a_large_web_dataset	.
+local:s21	rdf:subject	local:we	.
+local:algorithms_for_prioritising_data	rdfs:member	local:data	.
+local:quality_evaluations	rdfs:member	local:quality	.
+local:assign_to_data_sources	rdfs:member	local:assign	.
+local:s19.3	rdfs:subClassOf	local:authority_graph	.
+local:authority_values_data_sources_based_on_naming_authority_graph	rdfs:member	local:authority_values_data_sources	.
+local:s17	rdf:subject	local:we	.
+local:s3	rdf:predicate	local:use	.
+local:structured_data_data	rdfs:subClassOf	local:data_data	.
+local:user_interfaces	rdfs:member	local:user	.
+local:assign_authority	rdfs:member	local:assign	.
+local:data_data	rdfs:subClassOf	local:data	.
+local:manual_input_of_domain_expert	rdfs:member	local:manual_input	.
+local:data_data	rdfs:member	local:data	.
+local:manual_input	rdfs:subClassOf	local:input	.
+local:s22	rdf:object	local:applications_in_user_interfaces_over_integrated_datasets	.
+local:authority_values_data_sources_based_on_a_naming_authority_graph	rdfs:member	local:s19.3	.
+local:search_query_processing_reasoning_over_integrated_datasets	rdfs:member	local:search_query_processing_reasoning	.
+local:large_web_dataset	rdfs:subClassOf	local:dataset	.
+local:naming_authority	rdfs:subClassOf	local:authority	.
+local:original_pagerank_method	rdfs:subClassOf	local:pagerank_method	.
+local:search_query_processing_reasoning_over_integrated_datasets	rdfs:member	local:integrated_datasets	.
+local:s6	rdfs:member	local:data	.
+local:focus_of_web_search	rdfs:member	local:focus	.
+local:s16	local:AM-MOD	local:can	.
+local:s16	local:AM-MNR	local:authoritatively	.
+local:ranking_algorithms_for_structured_data	rdfs:member	local:ranking_algorithms	.
+local:applications_in_user_interfaces_over_integrated_datasets	rdfs:member	local:integrated_datasets	.
+local:s4	rdf:object	local:enormous_variance	.
+local:integrated_datasets	rdfs:subClassOf	local:datasets	.
+local:s10	rdf:subject	local:web_datasets	.
+local:other_hand	rdfs:member	local:other	.
+local:s23.1	rdf:subject	local:reasoning_over_integrated_datasets	.
+local:quality_evaluations_of_method	rdfs:member	local:method	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:query_processing_reasoning	rdfs:subClassOf	local:processing_reasoning	.
+local:s19.1	rdf:predicate	local:assign	.
+local:user_queries_queries	rdfs:member	local:s0.2	.
+local:s25	rdf:predicate	local:require	.
+local:authority_values_data_sources	rdfs:subClassOf	local:values_data_sources	.
+local:method_on_large_web_dataset	rdfs:member	local:method	.
+local:s0.2	rdfs:member	local:user	.
+local:over_integrated_datasets	rdfs:member	local:over_integrated	.
+local:hypertext_documents	rdfs:subClassOf	local:documents	.
+local:s8.1	local:AM-MOD	local:has	.
+local:ranking_algorithms_for_structured_data_on_the_other_hand	rdfs:member	local:data	.
 local:assign_authority	rdfs:subClassOf	local:authority	.
-local:presents	vn.role:Agent	local:paper	.
-local:assign_to_data_sources	local:assign_to	local:data_sources	.
-local:web	rdfs:member	local:web_search	.
-local:other	rdfs:member	local:other_hand	.
-local:propagates	vn.role:Location	local:authority_values_to_identifiers	.
-local:queries_over_web_datasets	local:over_webdatasets	local:queries	.
-local:original	rdfs:member	local:original_pagerank	.
-local:user_user_queries	rdfs:subClassOf	local:user_queries	.
+local:s22	rdf:subject	local:method_on_a_large_web_dataset	.
+local:original_pagerank_method_assign_authority	rdfs:subClassOf	local:authority	.
+local:s3	rdf:subject	local:vocabularies	.
+local:s25	rdf:subject	local:method_on_a_large_web_dataset	.
+local:s14.1	rdf:object	local:authority	.
+local:reasoning_over_integrated_datasets	rdfs:member	local:integrated_datasets	.
+local:s18	rdf:subject	local:identifiers	.
+local:user_user_queries_queries	rdfs:subClassOf	local:user_queries_queries	.
+local:ranking_algorithms_for_structured_data	rdfs:member	local:structured_data	.
+local:s7	rdf:predicate	local:integrate	.
+local:ranking_algorithms_for_structured_data_on_the_other_hand	rdfs:member	local:other_hand	.
+local:query_processing	rdfs:subClassOf	local:processing	.
+local:enormous_variance	rdfs:subClassOf	local:variance	.
+local:original_pagerank_method_assign	rdfs:member	local:original_pagerank_method	.
+local:correspondence_between_sources	rdfs:member	local:sources	.
+local:s17	local:AM-TMP	local:then	.
+local:pagerank_method_assign	rdfs:member	local:pagerank_method	.
+local:s0.1	local:AM-MNR	local:structured_data_data_as	.
+local:s19.3	rdf:predicate	local:name	.
+local:applications_in_search_query_processing_reasoning_over_integrated_datasets	rdfs:member	local:integrated_datasets	.
+local:towards_hypertext_documents	rdfs:member	local:towards	.
+local:s14	rdf:subject	local:we	.
+local:s5	rdf:predicate	local:existing	.
+local:s13	rdf:object	local:correspondence_between_these_identifiers	.
+local:correspondence_between_sources	rdfs:member	local:correspondence	.
+local:pagerank_method_assign	rdfs:subClassOf	local:assign	.
+local:s22	rdf:predicate	local:have	.
+local:s11	local:AM-LOC	local:web_datasets	.
+local:algorithms_for_prioritising_data	rdfs:member	local:algorithms	.
+local:s14	rdf:object	local:notion_of_naming_authority	.
+local:s15	rdf:predicate	local:provide	.
+local:s7	rdf:subject	local:data	.
+local:results_to_user_queries	rdfs:member	local:results	.
+local:values_data	rdfs:subClassOf	local:data	.
+local:authority_values_data	rdfs:subClassOf	local:data	.
+local:s19.3	rdfs:subClassOf	local:graph	.
+local:s19	rdf:object	local:original_pagerank_method_assign_authority_values_to_data_sources_based_on_a_naming_authority_graph	.
+local:web_search	rdfs:subClassOf	local:search	.
+local:method_assign_authority_values	rdfs:member	local:method_assign_authority	.
+local:s0.1	local:AM-TMP	local:results_results_to_to_user_user_queries_queries	.
+local:s12	local:AM-MNR	local:authoritatively	.
+local:assign_authority_values	rdfs:member	local:assign_authority	.
+local:away_from_returning_relevant_documents_towards_returning_structured_data_as_results_to_user_queries	rdfs:member	local:relevant_documents	.
+local:s8	rdf:predicate	local:have	.
+local:reasoning_over_integrated_datasets	rdfs:member	local:reasoning	.
+local:s23.1	rdf:predicate	local:process	.
+local:s19	rdf:subject	local:we	.
+local:over_integrated	rdfs:subClassOf	local:integrated	.
+local:s0	rdf:subject	local:focus_of_web_search	.
+local:s11	rdf:subject	local:queries	.
+local:pagerank_method_assign_authority_values	rdfs:member	local:pagerank_method_assign_authority	.
+local:integrated_datasets	rdfs:member	local:integrated	.
+local:s13	rdf:predicate	local:provide	.
+local:user_queries_queries	rdfs:subClassOf	local:queries	.
+local:authority_values_data_sources	rdfs:subClassOf	local:sources	.
+local:results_results	rdfs:subClassOf	local:results	.
+local:pagerank_method_assign_authority_values	rdfs:subClassOf	local:values	.
+local:s0	rdf:predicate	local:move	.
+local:search_query_processing_reasoning	rdfs:subClassOf	local:reasoning	.
+local:user_interfaces	rdfs:subClassOf	local:interfaces	.
+local:enormous_variance	rdfs:member	local:enormous	.
 local:domain_expert	rdfs:subClassOf	local:expert	.
-local:speak	local:AM-MNR	local:authoritatively	.
-local:take	vn.role:Source	local:account	.
-local:speak	local:AM-MOD	local:can	.
-local:targeted	vn.role:indirect_object	local:linkbased_ranking_algorithms	.
+local:query_processing_reasoning	rdfs:member	local:query_processing	.
+local:structured_data_on_other_hand	rdfs:member	local:structured_data	.
+local:search_query	rdfs:subClassOf	local:query	.
+local:performance_evaluations_of_the_method_on_a_large_web_dataset	rdfs:member	local:performance_evaluations	.
+local:large_number	rdfs:member	local:large	.
+local:s21	rdf:predicate	local:conduct	.
+local:s9	rdf:object	local:algorithms_for_prioritising_data	.
+local:domain_expert	rdfs:member	local:domain	.
+local:away_from_returning_relevant_documents_towards_returning_structured_data_as_results_to_user_queries	rdfs:member	local:data	.
+local:s19.2	rdf:object	local:s19.3	.
+local:method_assign	rdfs:subClassOf	local:assign	.
+local:s18	local:AM-LOC	local:sources	.
+local:s19.3	rdfs:member	local:naming_authority	.
+local:s0	local:AM-DIR	local:away_from_returning_relevant_documents_towards_returning_structured_data_as_results_to_user_queries	.
+local:applications_in_user_interfaces_over_integrated_datasets	rdfs:member	local:applications	.
+local:naming_authority	rdfs:member	local:naming	.
+local:data_sources_based_on_naming_authority_graph	rdfs:member	local:s19.3	.
+local:ranking_algorithms	rdfs:member	local:ranking	.
+local:original_pagerank	rdfs:member	local:original	.
+local:queries_queries	rdfs:member	local:queries	.
+local:s6	rdfs:member	local:other_hand	.
+local:towards_hypertext_documents	rdfs:member	local:hypertext_documents	.
+local:s6	rdf:predicate	local:existing	.
+local:method_assign_authority	rdfs:subClassOf	local:authority	.
+local:data_sources	rdfs:member	local:data	.
+local:s8.1	rdf:object	local:account	.
+local:returning_as_results	rdfs:member	local:returning	.
+local:s15	rdf:object	local:correspondence_between_the_sources	.
+local:search_query_processing_reasoning	rdfs:member	local:search_query_processing	.
+local:s1	rdf:object	local:linkbased_ranking_algorithms	.
+local:user_queries_queries	rdfs:subClassOf	local:queries_queries	.
+local:s10	rdf:predicate	local:express	.
+local:s16	rdf:predicate	local:speak	.
+local:authority_values_to_identifiers	rdfs:member	local:identifiers	.
+local:s20	rdf:subject	local:we	.
+local:web_datasets	rdfs:subClassOf	local:datasets	.
+local:manual_input_of_a_domain_expert	rdfs:member	local:manual_input	.
+local:original_pagerank_method_assign_authority_values_to_data_sources_based_on_a_naming_authority_graph	rdfs:member	local:original_pagerank_method_assign_authority_values	.
+local:s12	rdf:predicate	local:speak	.
+local:query_processing_reasoning	rdfs:subClassOf	local:reasoning	.
+local:s11	rdf:predicate	local:return	.
+local:original_pagerank_method_assign_authority_values_to_data_sources_based_on_a_naming_authority_graph	rdfs:member	local:s19.3	.
+local:applications_in_user_interfaces	rdfs:member	local:applications	.
+local:large_number	rdfs:subClassOf	local:number	.
+local:authority_values_data_sources	rdfs:member	local:authority_values_data	.
+local:s1	rdf:predicate	local:target	.
+local:quality_evaluations_of_the_method_on_a_large_web_dataset	rdfs:member	local:method	.
+local:method_on_a_large_web_dataset	rdfs:member	local:large_web_dataset	.
+local:s14.1	rdf:predicate	local:name	.
+local:assign_to_data_sources	rdfs:member	local:data_sources	.
+local:large_number_of_sources	rdfs:member	local:sources	.
+local:original_pagerank_method_assign_authority_values	rdfs:subClassOf	local:values	.
+local:s20	rdf:predicate	local:conduct	.
+local:applications_in_search_query_processing_reasoning_over_integrated_datasets	rdfs:member	local:search_query_processing_reasoning	.
+local:s9	rdf:predicate	local:present	.
+local:s14	rdf:predicate	local:introduce	.
+local:method_assign_authority	rdfs:member	local:method_assign	.
+local:s0.1	rdf:subject	local:relevant_documents	.
+local:notion_of_naming_authority	rdfs:member	local:notion	.
+local:applications_in_search_query_processing_reasoning	rdfs:member	local:applications	.
+local:large_web	rdfs:member	local:large	.
+local:s19.3	rdf:subject	local:authority_graph	.
+local:authority_graph	rdfs:member	local:authority	.
+local:relevant_documents	rdfs:subClassOf	local:documents	.
+local:s5.1	rdf:object	local:manual_input_of_a_domain_expert	.
+local:s10	local:AM-LOC	local:rdf	.
+local:s0.2	rdfs:subClassOf	local:queries	.
+local:s18	rdf:predicate	local:reference	.
+local:returning_as_results	rdfs:member	local:results	.
+local:s23	rdf:predicate	local:have	.
+local:s0.2	rdf:subject	local:user	.
+local:applications_in_user_interfaces_over_integrated_datasets	rdfs:member	local:applications_in_user_interfaces	.
+local:values_data_sources	rdfs:subClassOf	local:sources	.
+local:large_number_of_sources	rdfs:member	local:large_number	.
+local:correspondence_between_the_sources	rdfs:member	local:correspondence	.
+local:ranking_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s5	rdf:subject	local:ranking_algorithms_for_structured_data_on_the_other_hand	.
+local:correspondence_between_these_identifiers	rdfs:member	local:identifiers	.
+local:over_integrated_datasets	rdfs:subClassOf	local:datasets	.
+local:s23	rdf:subject	local:method_on_a_large_web_dataset	.
+local:processing_reasoning	rdfs:subClassOf	local:reasoning	.
+local:processing_reasoning	rdfs:member	local:processing	.
+local:manual_input_of_domain_expert	rdfs:member	local:domain_expert	.
+local:large_web_dataset	rdfs:subClassOf	local:web_dataset	.
+local:search_query	rdfs:member	local:search	.
+local:s17.1	rdf:subject	local:authority	.
+local:s4	rdf:predicate	local:exhibit	.
+local:over_integrated	rdfs:member	local:over	.
+local:applications_in_search_query_processing_reasoning_over_integrated_datasets	rdfs:member	local:applications	.
+local:search_query_processing_reasoning	rdfs:subClassOf	local:query_processing_reasoning	.
+local:method_on_large_web_dataset	rdfs:member	local:large_web_dataset	.
+local:performance_evaluations_of_the_method_on_a_large_web_dataset	rdfs:member	local:method	.
+local:search_query_processing	rdfs:member	local:search_query	.
+local:large_web_dataset	rdfs:member	local:large_web	.
+local:original_pagerank_method_assign_authority_values_to_data_sources_based_on_a_naming_authority_graph	rdfs:member	local:data_sources	.
+local:data_sources_based_on_naming_authority_graph	rdfs:member	local:data_sources	.
+local:s1	rdf:subject	local:towards_hypertext_documents	.
+local:values_data_sources	rdfs:subClassOf	local:data_sources	.
+local:method_assign_authority_values	rdfs:subClassOf	local:values	.
+local:s8.1	rdf:predicate	local:take	.
+local:authority_graph	rdfs:subClassOf	local:graph	.
+local:original_pagerank	rdfs:subClassOf	local:pagerank	.
+local:s8.1	rdf:subject	local:ranking_algorithm	.
+local:method_on_a_large_web_dataset	rdfs:member	local:method	.
+local:s19	rdf:predicate	local:use	.
+local:s0.1	rdf:predicate	local:return	.
+local:original_pagerank_method_assign_authority	rdfs:member	local:original_pagerank_method_assign	.
+local:ranking_algorithms_for_structured_data_on_the_other_hand	rdfs:member	local:algorithms	.
+local:s19.1	rdf:object	local:authority_values_data_sources_based_on_a_naming_authority_graph	.
+local:web_datasets	rdfs:member	local:web	.
+local:s15	rdf:subject	local:authority	.
+local:s16	rdf:subject	local:identifiers	.
+local:correspondence_between_identifiers	rdfs:member	local:correspondence	.
+local:structured_data_on_other_hand	rdfs:member	local:other_hand	.
+local:s5.1	rdf:predicate	local:require	.
+local:values_data	rdfs:member	local:values	.
+local:s9	rdf:subject	local:paper	.
+local:hypertext_documents	rdfs:member	local:hypertext	.

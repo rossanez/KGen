@@ -1,379 +1,646 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.3	a	rdf:Statement	;
+	rdfs:label	"our algorithm scale easily to large numbers of peers"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"dynamically collected query statistics only no continuous index update processes are necessary allowing our algorithm to scale easily to large numbers of peers"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"dynamically collected query statistics"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"our algorithm based on dynamically collected query statistics only no continuous index update processes are necessary allowing our algorithm to scale easily to large numbers of peers"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"peertopeer networks which makes use of local rankings rank merging"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"peertopeer networks which makes use of local rankings"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"peertopeer networks which minimizes both answer"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"based on peer ranks"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"peertopeer networks which makes use of local rankings rank optimized routing based on peer ranks"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"peertopeer networks which makes use of local rankings"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"we propose a decentralized topk query evaluation algorithm for peertopeer networks"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"inspired by the success of ranking algorithms in web search engine in databases we propose a decentralized topk query evaluation algorithm"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"inspired by the success of ranking algorithms in topk query evaluation algorithms in databases we propose a decentralized topk query evaluation algorithm for peertopeer networks"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"inspired by the success of ranking algorithms in topk query evaluation algorithms in databases we propose a decentralized topk query evaluation algorithm"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"both answer set network traffic among peers"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"having more answers users"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"having more answers users"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"having more answers users"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"given query"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"increasing the number of peers in a peertopeer network usually increases the number of answers to a given query as well"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"increasing the number of peers in a peertopeer network usually increases the number of answers to a given query as well"	.
+
+
 #### Classes ####
 
-local:peertopeer	rdfs:label	"peer-to-peer"	.
+local:algorithm	a	rdf:Class	;
+	rdfs:label	"algorithm"	.
 
-local:peertopeer_network	rdfs:label	"peer-to-peer network"	.
+local:scale	a	rdf:Class	;
+	rdfs:label	"scale"	.
 
-local:network	rdfs:label	"network"	.
+local:large_numbers_of_peers	a	rdf:Class	;
+	rdfs:label	"large numbers of peers"	.
 
-local:number_of_peers	rdfs:label	"number of peers"	.
+local:large_numbers	a	rdf:Class	;
+	rdfs:label	"large numbers"	.
 
-local:number	rdfs:label	"number"	.
+local:peers	a	rdf:Class	;
+	rdfs:label	"peers"	.
 
-local:peers	rdfs:label	"peers"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:number_of_peers_in_peertopeer_network	rdfs:label	"number of peers in peer-to-peer network"	.
+local:numbers	a	rdf:Class	;
+	rdfs:label	"numbers"	.
 
-local:increasing	rdfs:label	"increasing"	.
+local:easily	a	rdf:Class	;
+	rdfs:label	"easily"	.
 
-local:increasing_in_peertopeer_network	rdfs:label	"increasing in peer-to-peer network"	.
+local:dynamically_collected_query_statistics_only_no_continuous_index_update_processes_are_necessary	a	rdf:Class	;
+	rdfs:label	"dynamically collected query statistics only no continuous index update processes are necessary"	.
 
-local:increases	rdfs:label	"increases"	.
+local:query_statistics	a	rdf:Class	;
+	rdfs:label	"query statistics"	.
 
-local:usually	rdfs:label	"usually"	.
+local:only_no_continuous_index	a	rdf:Class	;
+	rdfs:label	"only no continuous index"	.
 
-local:as_number	rdfs:label	"as number"	.
+local:update_processes	a	rdf:Class	;
+	rdfs:label	"update processes"	.
 
-local:given_query	rdfs:label	"given query"	.
+local:continuous_index	a	rdf:Class	;
+	rdfs:label	"continuous index"	.
 
-local:query	rdfs:label	"query"	.
+local:continuous	a	rdf:Class	;
+	rdfs:label	"continuous"	.
 
-local:as_number_of_answers	rdfs:label	"as number of answers"	.
+local:processes	a	rdf:Class	;
+	rdfs:label	"processes"	.
 
-local:answers	rdfs:label	"answers"	.
+local:index	a	rdf:Class	;
+	rdfs:label	"index"	.
 
-local:answers_to_given_query	rdfs:label	"answers to given query"	.
+local:only_no_continuous	a	rdf:Class	;
+	rdfs:label	"only no continuous"	.
 
-local:given	rdfs:label	"given"	.
+local:no_continuous_index	a	rdf:Class	;
+	rdfs:label	"no continuous index"	.
 
-local:having	rdfs:label	"having"	.
+local:only_no	a	rdf:Class	;
+	rdfs:label	"only no"	.
 
-local:peertopeer_networks	rdfs:label	"peer-to-peer networks"	.
+local:no_continuous	a	rdf:Class	;
+	rdfs:label	"no continuous"	.
 
-local:networks	rdfs:label	"networks"	.
+local:statistics	a	rdf:Class	;
+	rdfs:label	"statistics"	.
 
-local:makes	rdfs:label	"makes"	.
+local:no	a	rdf:Class	;
+	rdfs:label	"no"	.
 
-local:use	rdfs:label	"use"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:rank	rdfs:label	"rank"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:rank_merging	rdfs:label	"rank merging"	.
+local:update	a	rdf:Class	;
+	rdfs:label	"update"	.
 
-local:local_rankings	rdfs:label	"local rankings"	.
+local:index_update_processes	a	rdf:Class	;
+	rdfs:label	"index update processes"	.
 
-local:rankings	rdfs:label	"rankings"	.
+local:collected_query_statistics	a	rdf:Class	;
+	rdfs:label	"collected query statistics"	.
 
-local:merging	rdfs:label	"merging"	.
+local:dynamically_collected	a	rdf:Class	;
+	rdfs:label	"dynamically collected"	.
 
-local:local	rdfs:label	"local"	.
+local:collected	a	rdf:Class	;
+	rdfs:label	"collected"	.
 
-local:local_rankings_rank_merging	rdfs:label	"local rankings rank merging"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:query_evaluation_algorithms	rdfs:label	"query evaluation algorithms"	.
+local:algorithm_to_scale_easily_to_large_numbers_of_peers	a	rdf:Class	;
+	rdfs:label	"algorithm to scale easily to large numbers of peers"	.
 
-local:algorithms	rdfs:label	"algorithms"	.
+local:easily_large_numbers	a	rdf:Class	;
+	rdfs:label	"easily large numbers"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:algorithm_to_scale	a	rdf:Class	;
+	rdfs:label	"algorithm to scale"	.
 
-local:evaluation_algorithms	rdfs:label	"evaluation algorithms"	.
+local:algorithm_to_scale_to_easily_large_numbers	a	rdf:Class	;
+	rdfs:label	"algorithm to scale to easily large numbers"	.
 
-local:query_evaluation	rdfs:label	"query evaluation"	.
+local:easily_large_numbers_of_peers	a	rdf:Class	;
+	rdfs:label	"easily large numbers of peers"	.
 
-local:topk_query	rdfs:label	"top-k query"	.
+local:collect	a	rdf:Class	;
+	rdfs:label	"collect"	.
 
-local:topk_query_evaluation	rdfs:label	"top-k query evaluation"	.
+local:dynamically	a	rdf:Class	;
+	rdfs:label	"dynamically"	.
 
-local:topk_query_evaluation_algorithms	rdfs:label	"top-k query evaluation algorithms"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:topk_query_evaluation_algorithm	rdfs:label	"top-k query evaluation algorithm"	.
+local:merge	a	rdf:Class	;
+	rdfs:label	"merge"	.
 
-local:evaluation_algorithm	rdfs:label	"evaluation algorithm"	.
+local:peertopeer_networks_which_makes_use_of_local_rankings	a	rdf:Class	;
+	rdfs:label	"peertopeer networks which makes use of local rankings"	.
 
-local:algorithm	rdfs:label	"algorithm"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:query_evaluation_algorithm	rdfs:label	"query evaluation algorithm"	.
+local:local_rankings	a	rdf:Class	;
+	rdfs:label	"local rankings"	.
 
-local:topk	rdfs:label	"top-k"	.
+local:peertopeer_networks	a	rdf:Class	;
+	rdfs:label	"peertopeer networks"	.
 
-local:decentralized_topk_query_evaluation_algorithm	rdfs:label	"decentralized top-k query evaluation algorithm"	.
+local:networks	a	rdf:Class	;
+	rdfs:label	"networks"	.
 
-local:ranking_algorithms	rdfs:label	"ranking algorithms"	.
+local:rankings	a	rdf:Class	;
+	rdfs:label	"rankings"	.
 
-local:success_of_ranking_algorithms	rdfs:label	"success of ranking algorithms"	.
+local:local	a	rdf:Class	;
+	rdfs:label	"local"	.
 
-local:success	rdfs:label	"success"	.
+local:peertopeer	a	rdf:Class	;
+	rdfs:label	"peertopeer"	.
 
-local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms	rdfs:label	"success of ranking algorithms in top-k query evaluation algorithms"	.
+local:use_of_local_rankings	a	rdf:Class	;
+	rdfs:label	"use of local rankings"	.
 
-local:topk_query_evaluation_algorithms_in_databases	rdfs:label	"top-k query evaluation algorithms in databases"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:databases	rdfs:label	"databases"	.
+local:merging	a	rdf:Class	;
+	rdfs:label	"merging"	.
 
-local:inspired	rdfs:label	"inspired"	.
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
 
-local:propose	rdfs:label	"propose"	.
+local:minimize	a	rdf:Class	;
+	rdfs:label	"minimize"	.
 
-local:inspired_by_success	rdfs:label	"inspired by success"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:we	rdfs:label	"we"	.
+local:peer_ranks	a	rdf:Class	;
+	rdfs:label	"peer ranks"	.
 
-local:web_search_engine	rdfs:label	"web search engine"	.
+local:peer	a	rdf:Class	;
+	rdfs:label	"peer"	.
 
-local:engine	rdfs:label	"engine"	.
+local:ranks	a	rdf:Class	;
+	rdfs:label	"ranks"	.
 
-local:web_search	rdfs:label	"web search"	.
+local:optimized_routing_based_on_peer_ranks	a	rdf:Class	;
+	rdfs:label	"optimized routing based on peer ranks"	.
 
-local:search	rdfs:label	"search"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:search_engine	rdfs:label	"search engine"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:web	rdfs:label	"web"	.
+local:decentralized_topk_query_evaluation_algorithm	a	rdf:Class	;
+	rdfs:label	"decentralized topk query evaluation algorithm"	.
 
-local:success_of_ranking_algorithms_in_web_search_engine	rdfs:label	"success of ranking algorithms in web search engine"	.
+local:topk_query_evaluation	a	rdf:Class	;
+	rdfs:label	"topk query evaluation"	.
 
-local:web_search_engine_in_databases	rdfs:label	"web search engine in databases"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:set	rdfs:label	"set"	.
+local:query_evaluation	a	rdf:Class	;
+	rdfs:label	"query evaluation"	.
 
-local:answer	rdfs:label	"answer"	.
+local:query_evaluation_algorithm	a	rdf:Class	;
+	rdfs:label	"query evaluation algorithm"	.
 
-local:network_traffic	rdfs:label	"network traffic"	.
+local:topk_query	a	rdf:Class	;
+	rdfs:label	"topk query"	.
 
-local:traffic	rdfs:label	"traffic"	.
+local:topk	a	rdf:Class	;
+	rdfs:label	"topk"	.
 
-local:minimizes	rdfs:label	"minimizes"	.
+local:evaluation_algorithm	a	rdf:Class	;
+	rdfs:label	"evaluation algorithm"	.
 
-local:rankings_optimized	rdfs:label	"rankings optimized"	.
+local:topk_query_evaluation_algorithm	a	rdf:Class	;
+	rdfs:label	"topk query evaluation algorithm"	.
 
-local:optimized	rdfs:label	"optimized"	.
+local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	a	rdf:Class	;
+	rdfs:label	"success of ranking algorithms in web search engine in databases we propose a decentralized topk query evaluation algorithm"	.
 
-local:peer	rdfs:label	"peer"	.
+local:success	a	rdf:Class	;
+	rdfs:label	"success"	.
 
-local:peer_ranks	rdfs:label	"peer ranks"	.
+local:algorithms	a	rdf:Class	;
+	rdfs:label	"algorithms"	.
 
-local:ranks	rdfs:label	"ranks"	.
+local:databases	a	rdf:Class	;
+	rdfs:label	"databases"	.
 
-local:based	rdfs:label	"based"	.
+local:web_search_engine	a	rdf:Class	;
+	rdfs:label	"web search engine"	.
 
-local:query_statistics	rdfs:label	"query statistics"	.
+local:web_search	a	rdf:Class	;
+	rdfs:label	"web search"	.
 
-local:statistics	rdfs:label	"statistics"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:collected_query_statistics	rdfs:label	"collected query statistics"	.
+local:search_engine	a	rdf:Class	;
+	rdfs:label	"search engine"	.
 
-local:dynamically_collected	rdfs:label	"dynamically collected"	.
+local:engine	a	rdf:Class	;
+	rdfs:label	"engine"	.
 
-local:collected	rdfs:label	"collected"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:dynamically	rdfs:label	"dynamically"	.
+local:ranking_algorithms	a	rdf:Class	;
+	rdfs:label	"ranking algorithms"	.
 
-local:only	rdfs:label	"only,"	.
+local:success_of_ranking_algorithms	a	rdf:Class	;
+	rdfs:label	"success of ranking algorithms"	.
 
-local:continuous_index_update	rdfs:label	"continuous index update"	.
+local:success_of_ranking_algorithms_in_web_search_engine	a	rdf:Class	;
+	rdfs:label	"success of ranking algorithms in web search engine"	.
 
-local:update	rdfs:label	"update"	.
+local:propose_in_databases	a	rdf:Class	;
+	rdfs:label	"propose in databases"	.
 
-local:continuous_index_update_processes	rdfs:label	"continuous index update processes"	.
+local:inspired	a	rdf:Class	;
+	rdfs:label	"inspired"	.
 
-local:processes	rdfs:label	"processes"	.
+local:inspired_by_the_success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases	a	rdf:Class	;
+	rdfs:label	"inspired by the success of ranking algorithms in topk query evaluation algorithms in databases"	.
 
-local:update_processes	rdfs:label	"update processes"	.
+local:topk_query_evaluation_algorithms	a	rdf:Class	;
+	rdfs:label	"topk query evaluation algorithms"	.
 
-local:index_update_processes	rdfs:label	"index update processes"	.
+local:evaluation_algorithms	a	rdf:Class	;
+	rdfs:label	"evaluation algorithms"	.
 
-local:index_update	rdfs:label	"index update"	.
+local:query_evaluation_algorithms	a	rdf:Class	;
+	rdfs:label	"query evaluation algorithms"	.
 
-local:index	rdfs:label	"index"	.
+local:inspired_by_success	a	rdf:Class	;
+	rdfs:label	"inspired by success"	.
 
-local:continuous	rdfs:label	"continuous"	.
+local:ranking_algorithms_in_topk_query_evaluation_algorithms	a	rdf:Class	;
+	rdfs:label	"ranking algorithms in topk query evaluation algorithms"	.
 
-local:continuous_index	rdfs:label	"continuous index"	.
+local:topk_query_evaluation_algorithms_in_databases	a	rdf:Class	;
+	rdfs:label	"topk query evaluation algorithms in databases"	.
 
-local:large_numbers	rdfs:label	"large numbers"	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	a	rdf:Class	;
+	rdfs:label	"success of ranking algorithms in topk query evaluation algorithms in databases we propose a decentralized topk query evaluation algorithm"	.
 
-local:numbers	rdfs:label	"numbers"	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms	a	rdf:Class	;
+	rdfs:label	"success of ranking algorithms in topk query evaluation algorithms"	.
 
-local:large	rdfs:label	"large"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:easily_large_numbers	rdfs:label	"easily large numbers"	.
+local:network_traffic_among_peers	a	rdf:Class	;
+	rdfs:label	"network traffic among peers"	.
 
-local:scale_to_easily_large_numbers	rdfs:label	"scale to easily large numbers"	.
+local:network_traffic	a	rdf:Class	;
+	rdfs:label	"network traffic"	.
 
-local:scale	rdfs:label	"scale"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:easily_large_numbers_of_peers	rdfs:label	"easily large numbers of peers"	.
+local:traffic	a	rdf:Class	;
+	rdfs:label	"traffic"	.
 
-local:no_continuous_index	rdfs:label	"no continuous index"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:only_update	rdfs:label	"only update"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:based_on_collected_query_statistics	rdfs:label	"based on collected query statistics"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:allowing	rdfs:label	"allowing"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:algorithm_to_scale	rdfs:label	"algorithm to scale"	.
+local:increasing_the_number_of_peers_in_a_peertopeer_network	a	rdf:Class	;
+	rdfs:label	"increasing the number of peers in a peertopeer network"	.
 
-local:algorithm_to_scale_to_easily_large_numbers	rdfs:label	"algorithm to scale to easily large numbers"	.
+local:peertopeer_network	a	rdf:Class	;
+	rdfs:label	"peertopeer network"	.
 
-local:easily	rdfs:label	"easily"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:large_numbers_of_peers	rdfs:label	"large numbers of peers"	.
+local:number_of_peers	a	rdf:Class	;
+	rdfs:label	"number of peers"	.
 
-#### Properties ####
+local:increasing_in_peertopeer_network	a	rdf:Class	;
+	rdfs:label	"increasing in peertopeer network"	.
+
+local:increasing	a	rdf:Class	;
+	rdfs:label	"increasing"	.
+
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
+
+local:number_of_answers_given_query_as_well	a	rdf:Class	;
+	rdfs:label	"number of answers given query as well"	.
+
+local:as_query	a	rdf:Class	;
+	rdfs:label	"as query"	.
+
+local:given_as_query	a	rdf:Class	;
+	rdfs:label	"given as query"	.
+
+local:number_of_answers	a	rdf:Class	;
+	rdfs:label	"number of answers"	.
+
+local:usually	a	rdf:Class	;
+	rdfs:label	"usually"	.
+
+local:peertopeer_network_usually_increases_the_number_of_answers_to_a_given_query_as_well	a	rdf:Class	;
+	rdfs:label	"peertopeer network usually increases the number of answers to a given query as well"	.
+
+local:usually_increases	a	rdf:Class	;
+	rdfs:label	"usually increases"	.
+
+local:increases	a	rdf:Class	;
+	rdfs:label	"increases"	.
+
+local:usually_increases_to_given_as_query	a	rdf:Class	;
+	rdfs:label	"usually increases to given as query"	.
 
 #### Mapped Relations ####
 
-local:databases	owl:sameAs	cso:database	.
 cso:network_traffic	rdfs:label	"network traffic"	.
-local:peertopeer	owl:sameAs	cso:peer-to-peer	.
-local:peertopeer_networks	owl:sameAs	cso:peer-to-peer_networks	.
-local:statistics	owl:sameAs	cso:statistics	.
-cso:peer-to-peer	rdfs:label	"peer-to-peer"	.
-cso:peer-to-peer_networks	rdfs:label	"peer-to-peer networks"	.
-cso:web_search_engines	rdfs:label	"web search engine"	.
-cso:statistics	rdfs:label	"statistics"	.
-local:network_traffic	owl:sameAs	cso:network_traffic	.
-local:web_search_engine	owl:sameAs	cso:web_search_engines	.
-cso:query_evaluation	rdfs:label	"query evaluation"	.
 local:peertopeer_network	owl:sameAs	cso:peer-to-peer_network	.
-local:query_evaluation	owl:sameAs	cso:query_evaluation	.
-cso:peer-to-peer_network	rdfs:label	"peer-to-peer network"	.
+cso:peer-to-peer_networks	rdfs:label	"peertopeer networks"	.
 cso:database	rdfs:label	"databases"	.
+local:query_evaluation	owl:sameAs	cso:query_evaluation	.
+cso:web_search_engines	rdfs:label	"web search engine"	.
+local:peertopeer_networks	owl:sameAs	cso:peer-to-peer_networks	.
+local:network_traffic	owl:sameAs	cso:network_traffic	.
+cso:peer-to-peer_network	rdfs:label	"peertopeer network"	.
+cso:statistics	rdfs:label	"statistics"	.
+local:statistics	owl:sameAs	cso:statistics	.
+local:web_search_engine	owl:sameAs	cso:web_search_engines	.
+local:databases	owl:sameAs	cso:database	.
+cso:query_evaluation	rdfs:label	"query evaluation"	.
 
 #### Relations ####
 
-local:web_search_engine	rdfs:subClassOf	local:search_engine	.
-local:query_evaluation_algorithm	rdfs:subClassOf	local:evaluation_algorithm	.
-local:evaluation_algorithm	rdfs:subClassOf	local:algorithm	.
-local:evaluation_algorithms	rdfs:subClassOf	local:algorithms	.
-local:large_numbers_of_peers	local:of_peers	local:large_numbers	.
-local:no_continuous_index	rdfs:subClassOf	local:continuous_index	.
-local:peer_ranks	rdfs:subClassOf	local:ranks	.
-local:scale	vn.role:Source	local:large_numbers_of_peers	.
-local:evaluation	rdfs:member	local:evaluation_algorithm	.
-local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms	local:successofrankingalgorithms_in	local:topk_query_evaluation_algorithms	.
-local:easily_large_numbers_of_peers	local:of_peers	local:easily_large_numbers	.
-local:based	vn.role:Cause	local:algorithm	.
-local:propose	vn.role:Agent	local:we	.
-local:update	rdfs:member	local:update_processes	.
-local:inspired_by_success	local:by_success	local:inspired	.
-local:set	vn.role:Agent	local:answer	.
-local:query_evaluation_algorithm	rdfs:subClassOf	local:algorithm	.
-local:continuous_index_update	rdfs:subClassOf	local:update	.
-local:as_number_of_answers	local:asnumber_of	local:answers	.
-local:peer	rdfs:member	local:peer_ranks	.
-local:algorithm_to_scale_to_easily_large_numbers	local:algorithmtoscale_to	local:easily_large_numbers	.
-local:minimizes	vn.role:Patient	local:peertopeer_networks	.
-local:query	rdfs:member	local:query_evaluation	.
-local:topk_query_evaluation_algorithms	rdfs:subClassOf	local:algorithms	.
-local:topk_query	rdfs:subClassOf	local:query	.
-local:scale	local:AM-MNR	local:easily	.
-local:web_search_engine_in_databases	local:in_databases	local:web_search_engine	.
-local:scale	vn.role:Agent	local:algorithm	.
-local:as_number_of_answers	local:of_answers	local:as_number	.
-local:success_of_ranking_algorithms	local:success_of	local:ranking_algorithms	.
-local:web_search	rdfs:member	local:web_search_engine	.
-local:query_evaluation	rdfs:subClassOf	local:evaluation	.
-local:peertopeer_network	rdfs:subClassOf	local:network	.
-local:based	local:AM-LOC	local:peer	.
-local:topk_query_evaluation_algorithm	rdfs:subClassOf	local:query_evaluation_algorithm	.
-local:success_of_ranking_algorithms_in_web_search_engine	local:in_websearchengine	local:success_of_ranking_algorithms	.
-local:large_numbers_of_peers	local:largenumbers_of	local:peers	.
-local:increases	local:AM-TMP	local:usually	.
-local:scale_to_easily_large_numbers	local:to_easilylargenumbers	local:scale	.
-local:index_update_processes	rdfs:subClassOf	local:processes	.
-local:topk	rdfs:member	local:topk_query	.
-local:topk_query	rdfs:member	local:topk_query_evaluation	.
-local:number_of_peers_in_peertopeer_network	local:in_peer-to-peernetwork	local:number_of_peers	.
-local:based	vn.role:indirect_object	local:collected_query_statistics	.
-local:algorithm_to_scale_to_easily_large_numbers	local:to_easilylargenumbers	local:algorithm_to_scale	.
-local:easily_large_numbers	rdfs:subClassOf	local:large_numbers	.
-local:answers_to_given_query	local:answers_to	local:given_query	.
-local:query_statistics	rdfs:subClassOf	local:statistics	.
-local:makes	vn.role:Product	local:rankings_optimized	.
-local:topk_query_evaluation_algorithm	rdfs:subClassOf	local:algorithm	.
-local:increases	vn.role:Attribute	local:as_number_of_answers	.
-local:answers_to_given_query	local:to_givenquery	local:answers	.
-local:number_of_peers_in_peertopeer_network	local:numberofpeers_in	local:peertopeer_network	.
-local:propose	local:AM-ADV	local:inspired_by_success	.
-local:continuous_index	rdfs:member	local:continuous_index_update	.
-local:easily_large_numbers_of_peers	local:easilylargenumbers_of	local:peers	.
-local:increasing	vn.role:Attribute	local:number_of_peers_in_peertopeer_network	.
-local:makes	vn.role:Product	local:local_rankings_rank_merging	.
-local:large_numbers	rdfs:subClassOf	local:numbers	.
-local:set	vn.role:indirect_object	local:peers	.
-local:dynamically_collected	rdfs:subClassOf	local:collected	.
-local:having	vn.role:Stimulus	local:answers	.
-local:web_search_engine	rdfs:subClassOf	local:engine	.
-local:inspired_by_success	local:inspired_by	local:success	.
-local:network	rdfs:member	local:network_traffic	.
-local:propose	local:AM-PNC	local:peertopeer_networks	.
-local:makes	vn.role:Material	local:use	.
-local:algorithm_to_scale	local:to_scale	local:algorithm	.
-local:inspired	vn.role:Experiencer	local:propose	.
-local:increases	vn.role:Patient	local:increasing_in_peertopeer_network	.
-local:allowing	vn.role:Agent	local:based_on_collected_query_statistics	.
-local:scale_to_easily_large_numbers	local:scale_to	local:easily_large_numbers	.
-local:rank_merging	rdfs:subClassOf	local:merging	.
-local:based_on_collected_query_statistics	local:on_collectedquerystatistics	local:based	.
-local:set	vn.role:Patient	local:network_traffic	.
-local:makes	vn.role:Agent	local:peertopeer_networks	.
-local:number_of_peers	local:number_of	local:peers	.
-local:web_search_engine_in_databases	local:websearchengine_in	local:databases	.
-local:makes	local:AM-LOC	local:peer	.
-local:rankings_optimized	rdfs:subClassOf	local:optimized	.
-local:success_of_ranking_algorithms	local:of_rankingalgorithms	local:success	.
-local:search_engine	rdfs:subClassOf	local:engine	.
-local:index_update	rdfs:member	local:index_update_processes	.
-local:increasing_in_peertopeer_network	local:in_peer-to-peernetwork	local:increasing	.
-local:given	vn.role:object	local:query	.
-local:topk_query_evaluation_algorithms_in_databases	local:in_databases	local:topk_query_evaluation_algorithms	.
-local:query_evaluation_algorithms	rdfs:subClassOf	local:evaluation_algorithms	.
-local:only	vn.role:object	local:update	.
-local:query_evaluation	rdfs:member	local:query_evaluation_algorithm	.
-local:peertopeer_networks	rdfs:subClassOf	local:networks	.
-local:continuous_index_update_processes	rdfs:subClassOf	local:processes	.
-local:topk_query_evaluation	rdfs:member	local:topk_query_evaluation_algorithms	.
-local:ranking_algorithms	rdfs:subClassOf	local:algorithms	.
-local:web_search	rdfs:subClassOf	local:search	.
-local:only_update	rdfs:subClassOf	local:update	.
-local:based_on_collected_query_statistics	local:based_on	local:collected_query_statistics	.
 local:continuous_index	rdfs:subClassOf	local:index	.
-local:continuous_index_update	rdfs:member	local:continuous_index_update_processes	.
-local:index	rdfs:member	local:index_update	.
-local:query	rdfs:member	local:query_statistics	.
-local:collected_query_statistics	rdfs:subClassOf	local:query_statistics	.
-local:rank	rdfs:member	local:rank_merging	.
-local:query_evaluation_algorithms	rdfs:subClassOf	local:algorithms	.
-local:web	rdfs:member	local:web_search	.
-local:only	vn.role:subject	local:collected_query_statistics	.
-local:peertopeer	rdfs:member	local:peertopeer_network	.
-local:large	rdfs:member	local:large_numbers	.
-local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms	local:in_top-kqueryevaluationalgorithms	local:success_of_ranking_algorithms	.
-local:local_rankings_rank_merging	local:_rankmerging	local:local_rankings	.
-local:given_query	rdfs:subClassOf	local:query	.
-local:index_update	rdfs:subClassOf	local:update	.
+local:algorithm_to_scale	rdfs:member	local:scale	.
+local:topk_query_evaluation_algorithm	rdfs:subClassOf	local:query_evaluation_algorithm	.
+local:s11.1	rdf:subject	local:query_statistics	.
+local:topk_query_evaluation_algorithms	rdfs:member	local:topk_query_evaluation	.
+local:number_of_peers	rdfs:member	local:number	.
+local:dynamically_collected	rdfs:subClassOf	local:collected	.
+local:network_traffic	rdfs:member	local:network	.
+local:search_engine	rdfs:subClassOf	local:engine	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:topk_query_evaluation_algorithm	.
+local:s8.1	rdf:subject	local:s10	.
+local:s11	rdf:object	local:s11.2	.
+local:number_of_peers	rdfs:member	local:peers	.
+local:topk_query_evaluation_algorithm	rdfs:member	local:topk_query_evaluation	.
+local:s11	rdf:subject	local:algorithm	.
+local:topk_query_evaluation_algorithms_in_databases	rdfs:member	local:topk_query_evaluation_algorithms	.
+local:peertopeer_networks	rdfs:subClassOf	local:networks	.
+local:query_statistics	rdfs:member	local:query	.
+local:easily_large_numbers_of_peers	rdfs:member	local:easily_large_numbers	.
+local:topk_query	rdfs:subClassOf	local:query	.
+local:topk_query_evaluation_algorithms	rdfs:subClassOf	local:algorithms	.
+local:evaluation_algorithms	rdfs:member	local:evaluation	.
+local:evaluation_algorithm	rdfs:subClassOf	local:algorithm	.
+local:algorithm_to_scale_to_easily_large_numbers	rdfs:member	local:algorithm_to_scale	.
+local:no_continuous_index	rdfs:subClassOf	local:index	.
+local:success_of_ranking_algorithms	rdfs:member	local:success	.
+local:s7	rdf:subject	local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	.
+local:query_evaluation_algorithm	rdfs:member	local:query_evaluation	.
+local:s2	rdf:object	local:answers	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:algorithms	.
+local:increasing_in_peertopeer_network	rdfs:member	local:peertopeer_network	.
+local:query_evaluation_algorithms	rdfs:subClassOf	local:evaluation_algorithms	.
+local:web_search	rdfs:subClassOf	local:search	.
+local:s11.1	local:AM-MNR	local:dynamically	.
+local:s5	rdf:object	local:network_traffic_among_peers	.
+local:web_search	rdfs:member	local:web	.
+local:peertopeer_networks_which_makes_use_of_local_rankings	rdfs:member	local:local_rankings	.
 local:update_processes	rdfs:subClassOf	local:processes	.
-local:search	rdfs:member	local:search_engine	.
-local:minimizes	vn.role:Attribute	local:answer	.
-local:collected	vn.role:Theme	local:query_statistics	.
-local:number_of_peers	local:of_peers	local:number	.
-local:only	local:AM-PNC	local:scale_to_easily_large_numbers	.
-local:allowing	vn.role:Theme	local:algorithm_to_scale_to_easily_large_numbers	.
-local:topk_query_evaluation_algorithms_in_databases	local:top-kqueryevaluationalgorithms_in	local:databases	.
-local:topk_query_evaluation	rdfs:subClassOf	local:evaluation	.
-local:collected	local:AM-MNR	local:dynamically	.
-local:local	rdfs:member	local:local_rankings	.
-local:local_rankings_rank_merging	local:localrankings_	local:rank_merging	.
-local:continuous	rdfs:member	local:continuous_index	.
-local:local_rankings	rdfs:subClassOf	local:rankings	.
-local:evaluation	rdfs:member	local:evaluation_algorithms	.
-local:query_evaluation	rdfs:member	local:query_evaluation_algorithms	.
-local:network_traffic	rdfs:subClassOf	local:traffic	.
-local:success_of_ranking_algorithms_in_web_search_engine	local:successofrankingalgorithms_in	local:web_search_engine	.
-local:topk_query_evaluation	rdfs:member	local:topk_query_evaluation_algorithm	.
-local:propose	vn.role:Topic	local:decentralized_topk_query_evaluation_algorithm	.
-local:algorithm_to_scale	local:algorithm_to	local:scale	.
-local:topk_query_evaluation_algorithms	rdfs:subClassOf	local:query_evaluation_algorithms	.
-local:increasing_in_peertopeer_network	local:increasing_in	local:peertopeer_network	.
-local:as_number	rdfs:subClassOf	local:number	.
+local:s8.2	rdf:predicate	local:base	.
+local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:databases	.
+local:s0.1	rdf:subject	local:increasing_the_number_of_peers_in_a_peertopeer_network	.
+local:no_continuous	rdfs:member	local:no	.
+local:dynamically_collected_query_statistics_only_no_continuous_index_update_processes_are_necessary	rdfs:member	local:update_processes	.
+local:only_no	rdfs:subClassOf	local:no	.
+local:only_no	rdfs:member	local:only	.
 local:decentralized_topk_query_evaluation_algorithm	rdfs:subClassOf	local:topk_query_evaluation_algorithm	.
-local:peertopeer	rdfs:member	local:peertopeer_networks	.
+local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:web_search_engine	.
+local:s7.1	rdf:predicate	local:propose	.
+local:s11.3	rdf:predicate	local:scale	.
+local:query_evaluation_algorithms	rdfs:subClassOf	local:algorithms	.
+local:s0	rdf:subject	local:number_of_peers	.
+local:only_no_continuous	rdfs:member	local:only_no	.
+local:evaluation_algorithm	rdfs:member	local:evaluation	.
+local:usually_increases_to_given_as_query	rdfs:member	local:given_as_query	.
+local:ranking_algorithms_in_topk_query_evaluation_algorithms	rdfs:member	local:topk_query_evaluation_algorithms	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms	rdfs:member	local:success_of_ranking_algorithms	.
+local:network_traffic_among_peers	rdfs:member	local:network_traffic	.
+local:s1	rdf:object	local:answers	.
+local:only_no_continuous_index	rdfs:member	local:only_no_continuous	.
+local:propose_in_databases	rdfs:member	local:propose	.
+local:s6	rdf:predicate	local:inspired	.
+local:easily_large_numbers_of_peers	rdfs:member	local:peers	.
+local:s11	rdf:predicate	local:base	.
+local:s1	rdf:predicate	local:have	.
+local:no_continuous_index	rdfs:member	local:no_continuous	.
+local:peer_ranks	rdfs:member	local:peer	.
+local:peertopeer_networks_which_makes_use_of_local_rankings	rdfs:member	local:peertopeer_networks	.
+local:s10.2	rdf:predicate	local:merge	.
+local:peertopeer_network_usually_increases_the_number_of_answers_to_a_given_query_as_well	rdfs:member	local:query	.
+local:inspired_by_the_success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases	rdfs:member	local:algorithms	.
+local:ranking_algorithms	rdfs:subClassOf	local:algorithms	.
+local:continuous_index	rdfs:member	local:continuous	.
+local:index_update_processes	rdfs:subClassOf	local:update_processes	.
+local:peertopeer_network_usually_increases_the_number_of_answers_to_a_given_query_as_well	rdfs:member	local:peertopeer_network	.
+local:s7.1	rdf:subject	local:we	.
+local:topk_query	rdfs:member	local:topk	.
+local:s8	rdf:subject	local:peertopeer_networks	.
+local:peertopeer_networks_which_makes_use_of_local_rankings	rdfs:member	local:use	.
+local:number_of_answers_given_query_as_well	rdfs:member	local:answers	.
+local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:success	.
+local:peertopeer_network_usually_increases_the_number_of_answers_to_a_given_query_as_well	rdfs:member	local:answers	.
+local:s11.3	local:AM-MNR	local:easily	.
+local:update_processes	rdfs:member	local:update	.
+local:s10	rdf:subject	local:peertopeer_networks	.
+local:s7	rdf:predicate	local:inspired	.
+local:s0.2	rdf:subject	local:query	.
+local:number_of_answers	rdfs:member	local:answers	.
+local:local_rankings	rdfs:member	local:local	.
+local:increasing_the_number_of_peers_in_a_peertopeer_network	rdfs:member	local:peertopeer_network	.
+local:s3	rdf:object	local:answers	.
+local:query_evaluation_algorithms	rdfs:member	local:query_evaluation	.
+local:only_no_continuous_index	rdfs:subClassOf	local:no_continuous_index	.
+local:use_of_local_rankings	rdfs:member	local:use	.
+local:topk_query_evaluation	rdfs:member	local:topk_query	.
+local:algorithm_to_scale_to_easily_large_numbers	rdfs:member	local:easily_large_numbers	.
+local:as_query	rdfs:subClassOf	local:query	.
+local:easily_large_numbers	rdfs:subClassOf	local:large_numbers	.
+local:s6.1	local:AM-ADV	local:inspired_by_the_success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases	.
+local:query_evaluation_algorithm	rdfs:subClassOf	local:algorithm	.
+local:topk_query_evaluation_algorithms_in_databases	rdfs:member	local:databases	.
+local:s5	rdf:predicate	local:set	.
+local:s6	rdf:subject	local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	.
+local:usually_increases_to_given_as_query	rdfs:member	local:usually_increases	.
+local:peer_ranks	rdfs:subClassOf	local:ranks	.
+local:algorithm_to_scale_easily_to_large_numbers_of_peers	rdfs:member	local:peers	.
+local:s6.1	rdf:predicate	local:propose	.
+local:s10	rdf:object	local:use_of_local_rankings	.
+local:inspired_by_the_success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases	rdfs:member	local:databases	.
+local:s0.1	rdf:predicate	local:increase	.
+local:large_numbers_of_peers	rdfs:member	local:peers	.
+local:local_rankings	rdfs:subClassOf	local:rankings	.
+local:s8.1	rdf:object	local:optimized_routing_based_on_peer_ranks	.
+local:ranking_algorithms_in_topk_query_evaluation_algorithms	rdfs:member	local:ranking_algorithms	.
+local:increasing_the_number_of_peers_in_a_peertopeer_network	rdfs:member	local:number	.
+local:given_as_query	rdfs:subClassOf	local:as_query	.
+local:success_of_ranking_algorithms_in_web_search_engine	rdfs:member	local:success_of_ranking_algorithms	.
+local:s3	rdf:subject	local:users	.
+local:increasing_the_number_of_peers_in_a_peertopeer_network	rdfs:member	local:peers	.
+local:s10.1	rdf:predicate	local:rank	.
+local:query_evaluation_algorithm	rdfs:subClassOf	local:evaluation_algorithm	.
+local:only_no_continuous	rdfs:subClassOf	local:continuous	.
+local:inspired_by_success	rdfs:member	local:success	.
+local:s11.2	rdf:predicate	local:allow	.
+local:s11.2	rdf:object	local:algorithm_to_scale_easily_to_large_numbers_of_peers	.
+local:s5	rdf:subject	local:answer	.
+local:s9	rdf:subject	local:peertopeer_networks	.
+local:s9	rdf:predicate	local:minimize	.
+local:propose_in_databases	rdfs:member	local:databases	.
+local:s0.2	rdf:predicate	local:give	.
+local:s11.2	rdf:subject	local:dynamically_collected_query_statistics_only_no_continuous_index_update_processes_are_necessary	.
+local:peertopeer_networks	rdfs:member	local:peertopeer	.
+local:query_statistics	rdfs:subClassOf	local:statistics	.
+local:peertopeer_network	rdfs:subClassOf	local:network	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms	rdfs:member	local:topk_query_evaluation_algorithms	.
+local:s11.1	rdf:predicate	local:collect	.
+local:inspired_by_success	rdfs:member	local:inspired	.
+local:peertopeer_network_usually_increases_the_number_of_answers_to_a_given_query_as_well	rdfs:member	local:number	.
+local:web_search_engine	rdfs:subClassOf	local:search_engine	.
+local:query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:s8	rdf:predicate	local:make	.
+local:peertopeer_network	rdfs:member	local:peertopeer	.
+local:s0	local:AM-LOC	local:peertopeer_network_usually_increases_the_number_of_answers_to_a_given_query_as_well	.
+local:large_numbers	rdfs:member	local:large	.
+local:web_search_engine	rdfs:member	local:web_search	.
+local:success_of_ranking_algorithms	rdfs:member	local:ranking_algorithms	.
+local:dynamically_collected_query_statistics_only_no_continuous_index_update_processes_are_necessary	rdfs:member	local:only_no_continuous_index	.
+local:no_continuous_index	rdfs:subClassOf	local:continuous_index	.
+local:s10	rdf:predicate	local:make	.
+local:inspired_by_the_success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases	rdfs:member	local:success	.
+local:s7.1	local:AM-PNC	local:peertopeer_networks	.
+local:network_traffic	rdfs:subClassOf	local:traffic	.
+local:s0.1	local:AM-TMP	local:usually	.
+local:inspired_by_the_success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases	rdfs:member	local:topk_query_evaluation_algorithms	.
+local:topk_query_evaluation_algorithm	rdfs:subClassOf	local:algorithm	.
+local:s8	rdf:object	local:use_of_local_rankings	.
+local:increasing_in_peertopeer_network	rdfs:member	local:increasing	.
+local:s10.1	rdf:object	local:merging	.
+local:s7.1	rdf:object	local:decentralized_topk_query_evaluation_algorithm	.
+local:s8.2	local:AM-LOC	local:peer_ranks	.
+local:s1	rdf:subject	local:users	.
+local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:algorithms	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:success	.
+local:s0.1	rdf:object	local:number_of_answers_given_query_as_well	.
+local:web_search_engine	rdfs:subClassOf	local:engine	.
+local:algorithm_to_scale_easily_to_large_numbers_of_peers	rdfs:member	local:algorithm	.
+local:s10.1	rdf:subject	local:peertopeer_networks_which_makes_use_of_local_rankings	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:topk_query_evaluation_algorithms	.
+local:s11.3	rdf:subject	local:algorithm	.
+local:s11.3	rdf:object	local:large_numbers_of_peers	.
+local:s6.1	rdf:object	local:decentralized_topk_query_evaluation_algorithm	.
+local:topk_query_evaluation	rdfs:subClassOf	local:evaluation	.
+local:large_numbers	rdfs:subClassOf	local:numbers	.
+local:search_engine	rdfs:member	local:search	.
+local:s6.1	rdf:subject	local:we	.
+local:success_of_ranking_algorithms_in_web_search_engine	rdfs:member	local:web_search_engine	.
+local:number_of_answers	rdfs:member	local:number	.
+local:s8.1	rdf:predicate	local:rank	.
+local:only_no_continuous_index	rdfs:subClassOf	local:index	.
+local:collected_query_statistics	rdfs:subClassOf	local:query_statistics	.
+local:s6.1	local:AM-PNC	local:peertopeer_networks	.
+local:s3	rdf:predicate	local:have	.
+local:success_of_ranking_algorithms_in_topk_query_evaluation_algorithms_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:databases	.
+local:s2	rdf:subject	local:users	.
+local:query_evaluation	rdfs:member	local:query	.
+local:s9	rdf:object	local:answer	.
+local:success_of_ranking_algorithms_in_web_search_engine_in_databases_we_propose_a_decentralized_topk_query_evaluation_algorithm	rdfs:member	local:topk_query_evaluation_algorithm	.
+local:use_of_local_rankings	rdfs:member	local:local_rankings	.
+local:s0	rdf:predicate	local:increasing	.
+local:topk_query_evaluation_algorithms	rdfs:subClassOf	local:query_evaluation_algorithms	.
+local:evaluation_algorithms	rdfs:subClassOf	local:algorithms	.
+local:algorithm_to_scale	rdfs:member	local:algorithm	.
+local:number_of_answers_given_query_as_well	rdfs:member	local:number	.
+local:usually_increases	rdfs:subClassOf	local:increases	.
+local:no_continuous	rdfs:subClassOf	local:continuous	.
+local:s2	rdf:predicate	local:have	.
+local:network_traffic_among_peers	rdfs:member	local:peers	.
+local:large_numbers_of_peers	rdfs:member	local:large_numbers	.
+local:dynamically_collected_query_statistics_only_no_continuous_index_update_processes_are_necessary	rdfs:member	local:query_statistics	.
+local:algorithm_to_scale_easily_to_large_numbers_of_peers	rdfs:member	local:large_numbers	.

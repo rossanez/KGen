@@ -1,242 +1,464 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the evaluations show that some of our approaches have over 080 f1scores"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the kaggles getting some true articles from main stream media"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"our approaches evaluated with the kaggles getting some true articles from main stream media"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"our approaches evaluated with the kaggles getting real about fake news dataset"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"extracted triples"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"it validate the correctness of the extracted triples from news articles"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"all the relations needed for fake news detection"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"cover all the relations"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"our address a few technical challenges"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"fake news based on news content"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"detecting fake news"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"some novel approaches including the btranse model to detecting fake news based on news content"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose some novel approaches including the btranse model to detecting fake news based on news content"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"news content using knowledge graphs"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the decision making"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"most of many works using news content for the decision"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"this paper addresses the problem of fake news detection"	.
+
+
 #### Classes ####
 
-local:addresses	rdfs:label	"addresses"	.
+local:evaluations	a	rdf:Class	;
+	rdfs:label	"evaluations"	.
 
-local:paper	rdfs:label	"paper"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:fake	rdfs:label	"fake"	.
+local:approaches_have_over_080_f1scores	a	rdf:Class	;
+	rdfs:label	"approaches have over 080 f1scores"	.
 
-local:fake_news	rdfs:label	"fake news"	.
+local:f1scores	a	rdf:Class	;
+	rdfs:label	"f1scores"	.
 
-local:news	rdfs:label	"news"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:fake_news_detection	rdfs:label	"fake news detection"	.
+local:080_f1scores	a	rdf:Class	;
+	rdfs:label	"080 f1scores"	.
 
-local:detection	rdfs:label	"detection"	.
+local:over_080	a	rdf:Class	;
+	rdfs:label	"over 080"	.
 
-local:news_detection	rdfs:label	"news detection"	.
+local:080	a	rdf:Class	;
+	rdfs:label	"080"	.
 
-local:problem_of_fake_news_detection	rdfs:label	"problem of fake news detection"	.
+local:kaggles	a	rdf:Class	;
+	rdfs:label	"kaggles"	.
 
-local:problem	rdfs:label	"problem"	.
+local:getting	a	rdf:Class	;
+	rdfs:label	"getting"	.
 
-local:using	rdfs:label	"using"	.
+local:true_articles_main_stream_media	a	rdf:Class	;
+	rdfs:label	"true articles main stream media"	.
 
-local:not	rdfs:label	"not"	.
+local:true_articles	a	rdf:Class	;
+	rdfs:label	"true articles"	.
 
-local:news_content	rdfs:label	"news content"	.
+local:main_stream_media	a	rdf:Class	;
+	rdfs:label	"main stream media"	.
 
-local:content	rdfs:label	"content"	.
+local:stream_media	a	rdf:Class	;
+	rdfs:label	"stream media"	.
 
-local:news_content_for_decision	rdfs:label	"news content for decision"	.
+local:media	a	rdf:Class	;
+	rdfs:label	"media"	.
 
-local:decision	rdfs:label	"decision"	.
+local:main_stream	a	rdf:Class	;
+	rdfs:label	"main stream"	.
 
-local:propose	rdfs:label	"propose"	.
+local:true	a	rdf:Class	;
+	rdfs:label	"true"	.
 
-local:we	rdfs:label	"we"	.
+local:articles	a	rdf:Class	;
+	rdfs:label	"articles"	.
 
-local:novel	rdfs:label	"novel"	.
+local:main	a	rdf:Class	;
+	rdfs:label	"main"	.
 
-local:novel_approaches	rdfs:label	"novel approaches"	.
+local:stream	a	rdf:Class	;
+	rdfs:label	"stream"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:btranse_model	rdfs:label	"b-transe model"	.
+local:getting_some_true_articles_from_main_stream_media	a	rdf:Class	;
+	rdfs:label	"getting some true articles from main stream media"	.
 
-local:model	rdfs:label	"model"	.
+local:true_articles_from_main_stream_media	a	rdf:Class	;
+	rdfs:label	"true articles from main stream media"	.
 
-local:btranse	rdfs:label	"b-transe"	.
+local:kaggles_getting_real_about_fake_news_dataset	a	rdf:Class	;
+	rdfs:label	"kaggles getting real about fake news dataset"	.
 
-local:novel_approaches_including_btranse_model	rdfs:label	"novel approaches including b-transe model"	.
+local:fake_news_dataset	a	rdf:Class	;
+	rdfs:label	"fake news dataset"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:news_dataset	a	rdf:Class	;
+	rdfs:label	"news dataset"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:fake_news	a	rdf:Class	;
+	rdfs:label	"fake news"	.
 
-local:detecting	rdfs:label	"detecting"	.
+local:news	a	rdf:Class	;
+	rdfs:label	"news"	.
 
-local:including	rdfs:label	"including"	.
+local:fake	a	rdf:Class	;
+	rdfs:label	"fake"	.
 
-local:based	rdfs:label	"based"	.
+local:kaggles_getting	a	rdf:Class	;
+	rdfs:label	"kaggles getting"	.
 
-local:technical	rdfs:label	"technical"	.
+local:real_about_fake_news_dataset	a	rdf:Class	;
+	rdfs:label	"real about fake news dataset"	.
 
-local:technical_challenges	rdfs:label	"technical challenges"	.
+local:real	a	rdf:Class	;
+	rdfs:label	"real"	.
 
-local:challenges	rdfs:label	"challenges"	.
+local:triples	a	rdf:Class	;
+	rdfs:label	"triples"	.
 
-local:address	rdfs:label	"address"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:computationaloriented_fact	rdfs:label	"computational-oriented fact"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
 
-local:fact	rdfs:label	"fact"	.
+local:validate	a	rdf:Class	;
+	rdfs:label	"validate"	.
 
-local:computationaloriented	rdfs:label	"computational-oriented"	.
+local:correctness_of_the_extracted_triples_news_articles	a	rdf:Class	;
+	rdfs:label	"correctness of the extracted triples news articles"	.
 
-local:firstly_computationaloriented_fact	rdfs:label	"firstly computational-oriented fact"	.
+local:correctness	a	rdf:Class	;
+	rdfs:label	"correctness"	.
 
-local:cover	rdfs:label	"cover"	.
+local:extracted_triples_news_articles	a	rdf:Class	;
+	rdfs:label	"extracted triples news articles"	.
 
-local:needed_for_fake_news_detection	rdfs:label	"needed for fake news detection"	.
+local:news_articles	a	rdf:Class	;
+	rdfs:label	"news articles"	.
 
-local:needed	rdfs:label	"needed"	.
+local:triples_news_articles	a	rdf:Class	;
+	rdfs:label	"triples news articles"	.
 
-local:validate	rdfs:label	"validate"	.
+local:triples_news	a	rdf:Class	;
+	rdfs:label	"triples news"	.
 
-local:secondly	rdfs:label	"secondly"	.
+local:extracted_triples_news	a	rdf:Class	;
+	rdfs:label	"extracted triples news"	.
 
-local:extracted_triples	rdfs:label	"extracted triples"	.
+local:extracted	a	rdf:Class	;
+	rdfs:label	"extracted"	.
 
-local:triples	rdfs:label	"triples"	.
+local:correctness_of_extracted_triples_news_articles	a	rdf:Class	;
+	rdfs:label	"correctness of extracted triples news articles"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:relations	a	rdf:Class	;
+	rdfs:label	"relations"	.
 
-local:correctness_of_extracted_triples	rdfs:label	"correctness of extracted triples"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:correctness	rdfs:label	"correctness"	.
+local:fake_news_detection	a	rdf:Class	;
+	rdfs:label	"fake news detection"	.
 
-local:news_articles	rdfs:label	"news articles"	.
+local:detection	a	rdf:Class	;
+	rdfs:label	"detection"	.
 
-local:articles	rdfs:label	"articles"	.
+local:news_detection	a	rdf:Class	;
+	rdfs:label	"news detection"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:cover	a	rdf:Class	;
+	rdfs:label	"cover"	.
 
-local:real_about_fake_news	rdfs:label	"real about fake news"	.
+local:our	a	rdf:Class	;
+	rdfs:label	"our"	.
 
-local:real	rdfs:label	"real"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:kaggle	rdfs:label	"kaggle"	.
+local:technical_challenges	a	rdf:Class	;
+	rdfs:label	"technical challenges"	.
 
-local:getting	rdfs:label	"getting"	.
+local:challenges	a	rdf:Class	;
+	rdfs:label	"challenges"	.
 
-local:main_stream	rdfs:label	"main stream"	.
+local:technical	a	rdf:Class	;
+	rdfs:label	"technical"	.
 
-local:main_stream_media	rdfs:label	"main stream media"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:main	rdfs:label	"main"	.
+local:news_content	a	rdf:Class	;
+	rdfs:label	"news content"	.
 
-local:media	rdfs:label	"media"	.
+local:content	a	rdf:Class	;
+	rdfs:label	"content"	.
 
-local:stream	rdfs:label	"stream"	.
+local:detect	a	rdf:Class	;
+	rdfs:label	"detect"	.
 
-local:stream_media	rdfs:label	"stream media"	.
+local:btranse_model_to_detecting_fake_news_based_on_news_content	a	rdf:Class	;
+	rdfs:label	"btranse model to detecting fake news based on news content"	.
 
-local:true_articles	rdfs:label	"true articles"	.
+local:btranse_model	a	rdf:Class	;
+	rdfs:label	"btranse model"	.
 
-local:true	rdfs:label	"true"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:real_about_true_articles	rdfs:label	"real about true articles"	.
+local:btranse	a	rdf:Class	;
+	rdfs:label	"btranse"	.
 
-local:true_articles_from_main_stream_media	rdfs:label	"true articles from main stream media"	.
+local:btranse_model_based_on_news_content	a	rdf:Class	;
+	rdfs:label	"btranse model based_on news content"	.
 
-local:show	rdfs:label	"show"	.
+local:include	a	rdf:Class	;
+	rdfs:label	"include"	.
 
-local:evaluations	rdfs:label	"evaluations"	.
+local:novel_approaches	a	rdf:Class	;
+	rdfs:label	"novel approaches"	.
 
-local:080_f1scores	rdfs:label	"0.80 f1-scores"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:f1scores	rdfs:label	"f1-scores"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:over_080	rdfs:label	"over 0.80"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:080	rdfs:label	"0.80"	.
+local:novel_approaches_including_the_btranse_model	a	rdf:Class	;
+	rdfs:label	"novel approaches including the btranse model"	.
 
-local:have	rdfs:label	"have"	.
+local:novel_approaches_including_btranse_model	a	rdf:Class	;
+	rdfs:label	"novel approaches including btranse model"	.
 
-#### Properties ####
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-#### Mapped Relations ####
+local:detecting_fake_news_based_on_news_content	a	rdf:Class	;
+	rdfs:label	"detecting fake news based on news content"	.
+
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
+
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
+
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
+
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
+
+local:decision	a	rdf:Class	;
+	rdfs:label	"decision"	.
+
+local:make	a	rdf:Class	;
+	rdfs:label	"make"	.
+
+local:many_works	a	rdf:Class	;
+	rdfs:label	"many works"	.
+
+local:works	a	rdf:Class	;
+	rdfs:label	"works"	.
+
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
+
+local:news_content_decision	a	rdf:Class	;
+	rdfs:label	"news content decision"	.
+
+local:content_decision	a	rdf:Class	;
+	rdfs:label	"content decision"	.
+
+local:problem_of_fake_news_detection	a	rdf:Class	;
+	rdfs:label	"problem of fake news detection"	.
+
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
 
 #### Relations ####
 
-local:news_detection	rdfs:subClassOf	local:detection	.
-local:news_content	rdfs:subClassOf	local:content	.
-local:show	vn.role:Theme	local:have	.
-local:news_articles	rdfs:subClassOf	local:articles	.
-local:getting	vn.role:Source	local:real_about_fake_news	.
-local:over_080	rdfs:subClassOf	local:080	.
-local:novel_approaches	rdfs:subClassOf	local:approaches	.
-local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:correctness_of_extracted_triples	local:correctness_of	local:extracted_triples	.
-local:needed_for_fake_news_detection	local:for_fakenewsdetection	local:needed	.
+local:kaggles_getting	rdfs:member	local:kaggles	.
+local:novel_approaches_including_btranse_model	rdfs:member	local:novel_approaches	.
 local:fake_news_detection	rdfs:subClassOf	local:news_detection	.
-local:extracted_triples	rdfs:subClassOf	local:triples	.
-local:firstly_computationaloriented_fact	rdfs:subClassOf	local:computationaloriented_fact	.
-local:validate	vn.role:Theme	local:correctness_of_extracted_triples	.
-local:propose	local:AM-LOC	local:paper	.
-local:problem_of_fake_news_detection	local:of_fakenewsdetection	local:problem	.
-local:including	vn.role:Location	local:novel_approaches	.
-local:fake_news_detection	rdfs:subClassOf	local:detection	.
-local:correctness_of_extracted_triples	local:of_extractedtriples	local:correctness	.
-local:using	vn.role:Theme	local:knowledge	.
-local:validate	vn.role:Agent	local:secondly	.
-local:stream	rdfs:member	local:stream_media	.
-local:stream_media	rdfs:subClassOf	local:media	.
-local:news	rdfs:member	local:news_articles	.
-local:main_stream	rdfs:subClassOf	local:stream	.
-local:propose	local:AM-PNC	local:detecting	.
-local:novel	rdfs:member	local:novel_approaches	.
-local:addresses	vn.role:Agent	local:paper	.
-local:btranse_model	rdfs:subClassOf	local:model	.
-local:main	rdfs:member	local:main_stream	.
-local:real_about_true_articles	local:about_truearticles	local:real	.
-local:news_content_for_decision	local:for_decision	local:news_content	.
-local:main_stream	rdfs:member	local:main_stream_media	.
-local:computationaloriented	rdfs:member	local:computationaloriented_fact	.
-local:getting	vn.role:Source	local:real	.
-local:address	vn.role:Theme	local:technical_challenges	.
-local:080_f1scores	rdfs:subClassOf	local:f1scores	.
-local:true_articles_from_main_stream_media	local:from_mainstreammedia	local:true_articles	.
-local:fake	rdfs:member	local:fake_news	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:cover	vn.role:indirect_object	local:firstly_computationaloriented_fact	.
+local:content_decision	rdfs:member	local:content	.
+local:main_stream_media	rdfs:member	local:main_stream	.
+local:btranse_model_based_on_news_content	rdfs:member	local:btranse_model	.
+local:s4.2	rdf:predicate	local:detect	.
+local:news_articles	rdfs:member	local:news	.
+local:true_articles_from_main_stream_media	rdfs:member	local:true_articles	.
+local:s4	rdf:predicate	local:propose	.
+local:detecting_fake_news_based_on_news_content	rdfs:member	local:news_content	.
+local:true_articles_from_main_stream_media	rdfs:member	local:main_stream_media	.
+local:detecting_fake_news_based_on_news_content	rdfs:member	local:fake_news	.
+local:extracted_triples_news_articles	rdfs:member	local:extracted_triples_news	.
+local:s1	rdf:subject	local:many_works	.
+local:extracted_triples_news	rdfs:subClassOf	local:news	.
+local:s4.2	rdf:subject	local:fake_news	.
+local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
+local:true_articles	rdfs:member	local:true	.
+local:s1	rdf:predicate	local:use	.
+local:fake_news_detection	rdfs:member	local:fake_news	.
+local:novel_approaches	rdfs:subClassOf	local:approaches	.
+local:novel_approaches	rdfs:member	local:novel	.
+local:s10	rdf:predicate	local:evaluate	.
+local:s9	rdf:predicate	local:evaluate	.
+local:triples_news_articles	rdfs:subClassOf	local:news_articles	.
+local:kaggles_getting	rdfs:member	local:getting	.
+local:real_about_fake_news_dataset	rdfs:member	local:fake_news_dataset	.
+local:s1	rdf:object	local:news_content_decision	.
 local:true_articles	rdfs:subClassOf	local:articles	.
-local:extracted	vn.role:Theme	local:triples	.
-local:news_content_for_decision	local:newscontent_for	local:decision	.
-local:detecting	vn.role:Stimulus	local:fake_news	.
-local:real_about_fake_news	local:about_fakenews	local:real	.
-local:news	rdfs:member	local:news_detection	.
-local:problem_of_fake_news_detection	local:problem_of	local:fake_news_detection	.
-local:technical	rdfs:member	local:technical_challenges	.
-local:getting	vn.role:Source	local:main_stream_media	.
-local:fake_news	rdfs:member	local:fake_news_detection	.
-local:extracted	rdfs:member	local:extracted_triples	.
-local:novel_approaches_including_btranse_model	local:novelapproaches_including	local:btranse_model	.
+local:s8	rdf:subject	local:it	.
+local:s4.3	rdf:subject	local:fake_news	.
+local:s3	rdf:predicate	local:use	.
+local:btranse_model_to_detecting_fake_news_based_on_news_content	rdfs:member	local:fake_news	.
+local:novel_approaches_including_btranse_model	rdfs:member	local:btranse_model	.
+local:correctness_of_the_extracted_triples_news_articles	rdfs:member	local:extracted_triples_news_articles	.
+local:s4.3	rdf:predicate	local:base	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:fake_news_detection	rdfs:subClassOf	local:detection	.
+local:s3	rdf:subject	local:news_content	.
+local:many_works	rdfs:member	local:many	.
+local:true_articles_main_stream_media	rdfs:member	local:true_articles	.
+local:news_detection	rdfs:member	local:news	.
+local:extracted_triples_news_articles	rdfs:subClassOf	local:triples_news_articles	.
+local:s10	rdf:subject	local:approaches	.
+local:s4.1	rdf:predicate	local:include	.
+local:s0	rdf:predicate	local:address	.
+local:s4.3	rdf:object	local:news_content	.
+local:news_articles	rdfs:subClassOf	local:articles	.
+local:approaches_have_over_080_f1scores	rdfs:member	local:f1scores	.
+local:s10.1	rdf:subject	local:kaggles	.
+local:stream_media	rdfs:member	local:stream	.
+local:correctness_of_the_extracted_triples_news_articles	rdfs:member	local:correctness	.
+local:fake_news	rdfs:member	local:fake	.
+local:s4.1	rdf:object	local:novel_approaches	.
+local:news_content_decision	rdfs:member	local:news_content	.
+local:s10	local:AM-ADV	local:getting_some_true_articles_from_main_stream_media	.
+local:fake_news_dataset	rdfs:subClassOf	local:news_dataset	.
+local:triples_news	rdfs:subClassOf	local:news	.
+local:kaggles_getting_real_about_fake_news_dataset	rdfs:member	local:fake_news_dataset	.
+local:s4	local:AM-PNC	local:detecting_fake_news_based_on_news_content	.
+local:s8.1	rdfs:member	local:extracted	.
+local:problem_of_fake_news_detection	rdfs:member	local:fake_news_detection	.
+local:s11	rdf:object	local:approaches_have_over_080_f1scores	.
+local:s1.1	rdf:subject	local:decision	.
 local:technical_challenges	rdfs:subClassOf	local:challenges	.
-local:needed	local:AM-PNC	local:fake_news_detection	.
-local:true	rdfs:member	local:true_articles	.
-local:getting	vn.role:Patient	local:true_articles	.
-local:propose	vn.role:Agent	local:we	.
-local:news	rdfs:member	local:news_content	.
-local:main_stream_media	rdfs:subClassOf	local:media	.
+local:s4	local:AM-LOC	local:paper	.
+local:approaches_have_over_080_f1scores	rdfs:member	local:approaches	.
+local:s8.1	rdf:subject	local:triples	.
+local:btranse_model_to_detecting_fake_news_based_on_news_content	rdfs:member	local:btranse_model	.
+local:s0	rdf:object	local:problem_of_fake_news_detection	.
+local:news_detection	rdfs:subClassOf	local:detection	.
+local:news_content_decision	rdfs:subClassOf	local:decision	.
+local:s7	rdf:predicate	local:need	.
+local:news_content	rdfs:member	local:news	.
+local:many_works	rdfs:subClassOf	local:works	.
+local:getting_some_true_articles_from_main_stream_media	rdfs:member	local:true_articles	.
+local:extracted_triples_news	rdfs:member	local:s8.1	.
+local:s7	rdf:subject	local:relations	.
+local:s6	rdf:predicate	local:cover	.
+local:triples_news_articles	rdfs:subClassOf	local:articles	.
+local:s3	rdf:object	local:knowledge_graphs	.
+local:s11	rdf:subject	local:evaluations	.
+local:getting_some_true_articles_from_main_stream_media	rdfs:member	local:main_stream_media	.
+local:news_content	rdfs:subClassOf	local:content	.
+local:fake_news_dataset	rdfs:member	local:fake_news	.
+local:extracted_triples_news_articles	rdfs:subClassOf	local:articles	.
+local:s5	rdf:object	local:technical_challenges	.
+local:s4	rdf:subject	local:we	.
+local:s8	rdf:predicate	local:validate	.
+local:s11	rdf:predicate	local:show	.
+local:novel_approaches_including_the_btranse_model	rdfs:member	local:btranse_model	.
+local:s7	local:AM-PNC	local:fake_news_detection	.
+local:btranse_model_to_detecting_fake_news_based_on_news_content	rdfs:member	local:news_content	.
+local:btranse_model	rdfs:member	local:btranse	.
+local:novel_approaches_including_the_btranse_model	rdfs:member	local:novel_approaches	.
+local:news_dataset	rdfs:subClassOf	local:dataset	.
+local:s1.1	rdf:predicate	local:make	.
 local:main_stream_media	rdfs:subClassOf	local:stream_media	.
-local:cover	vn.role:Theme2	local:needed_for_fake_news_detection	.
-local:based	vn.role:indirect_object	local:using	.
-local:addresses	vn.role:Theme	local:problem_of_fake_news_detection	.
-local:using	local:AM-NEG	local:not	.
-local:btranse	rdfs:member	local:btranse_model	.
-local:real_about_true_articles	local:real_about	local:true_articles	.
-local:including	vn.role:Theme	local:btranse_model	.
+local:problem_of_fake_news_detection	rdfs:member	local:problem	.
+local:s6	rdf:subject	local:relations	.
+local:main_stream	rdfs:subClassOf	local:stream	.
+local:s4	rdf:object	local:novel_approaches_including_the_btranse_model	.
+local:stream_media	rdfs:subClassOf	local:media	.
+local:correctness_of_extracted_triples_news_articles	rdfs:member	local:extracted_triples_news_articles	.
+local:true_articles_main_stream_media	rdfs:member	local:main_stream_media	.
+local:s10.1	rdf:object	local:true_articles_main_stream_media	.
+local:news_dataset	rdfs:member	local:news	.
+local:correctness_of_extracted_triples_news_articles	rdfs:member	local:correctness	.
+local:s8	rdf:object	local:correctness_of_the_extracted_triples_news_articles	.
+local:s8.1	rdfs:subClassOf	local:triples	.
+local:news_content_decision	rdfs:subClassOf	local:content_decision	.
+local:btranse_model_based_on_news_content	rdfs:member	local:news_content	.
+local:s5	rdf:subject	local:our	.
+local:080_f1scores	rdfs:subClassOf	local:f1scores	.
+local:s9	rdf:subject	local:approaches	.
+local:s10	rdf:object	local:kaggles	.
+local:triples_news_articles	rdfs:member	local:triples_news	.
+local:over_080	rdfs:subClassOf	local:080	.
+local:technical_challenges	rdfs:member	local:technical	.
+local:kaggles_getting_real_about_fake_news_dataset	rdfs:member	local:kaggles	.
+local:s4.1	rdf:subject	local:btranse_model_to_detecting_fake_news_based_on_news_content	.
+local:main_stream	rdfs:member	local:main	.
+local:fake_news_dataset	rdfs:subClassOf	local:dataset	.
+local:s10.1	rdf:predicate	local:getting	.
+local:s0	rdf:subject	local:paper	.
 local:fake_news	rdfs:subClassOf	local:news	.
-local:evaluated	vn.role:Theme	local:kaggle	.
-local:novel_approaches_including_btranse_model	local:including_b-transemodel	local:novel_approaches	.
-local:computationaloriented_fact	rdfs:subClassOf	local:fact	.
-local:true_articles_from_main_stream_media	local:truearticles_from	local:main_stream_media	.
-local:validate	vn.role:Location	local:news_articles	.
-local:evaluated	vn.role:Theme	local:approaches	.
-local:needed_for_fake_news_detection	local:needed_for	local:fake_news_detection	.
-local:propose	vn.role:Topic	local:novel_approaches_including_btranse_model	.
-local:using	vn.role:Theme	local:news_content_for_decision	.
-local:show	vn.role:Agent	local:evaluations	.
-local:real_about_fake_news	local:real_about	local:fake_news	.
+local:btranse_model	rdfs:subClassOf	local:model	.
+local:content_decision	rdfs:subClassOf	local:decision	.
+local:s5	rdf:predicate	local:address	.
+local:triples_news	rdfs:member	local:triples	.
+local:real_about_fake_news_dataset	rdfs:member	local:real	.
+local:s8.1	rdf:predicate	local:extract	.
+local:s9	rdf:object	local:kaggles_getting_real_about_fake_news_dataset	.
+local:main_stream_media	rdfs:subClassOf	local:media	.

@@ -1,273 +1,491 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s9.3	a	rdf:Statement	;
+	rdfs:label	"extending owldl"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"creating modular ontologies by extending owldl"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we also describe the realworld design and implementation of the proposed framework for creating modular ontologies by extending owldl"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"the realworld design and implementation modifying the swoop interfaces and reasoners"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we also describe the realworld design and implementation of the proposed framework for modifying the swoop interfaces and reasoners"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the interfacebased modular ontology formalism which theoretically present the proposed framework"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"exiting modular ontology formalisms"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we describe the interfacebased modular ontology formalism distinctive features compared to the exiting modular ontology formalisms"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"the interfacebased modular ontology formalism which theoretically supports the proposed framework"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"such modules only utilize the required knowledge segments of the others"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"ontology modules can developed completely independent of each others signature and language"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"within the context of the proposed framework an ontology can developed as a set of ontology modules welldefined interfaces"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"within the context of the proposed framework an ontology can defined as a set of ontology modules welldefined interfaces"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"ontology modules that can access the knowledge bases of the others through the knowledge bases of the others"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"proposed framework"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in this paper we present the proposed framework"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:owldl	a	rdf:Class	;
+	rdfs:label	"owldl"	.
 
-local:paper	rdfs:label	"paper"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:we	rdfs:label	"we"	.
+local:modular_ontologies	a	rdf:Class	;
+	rdfs:label	"modular ontologies"	.
 
-local:proposed_framework	rdfs:label	"proposed framework"	.
+local:modular	a	rdf:Class	;
+	rdfs:label	"modular"	.
 
-local:framework	rdfs:label	"framework"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:extending_owldl	a	rdf:Class	;
+	rdfs:label	"extending owldl"	.
 
-local:ontology_modules	rdfs:label	"ontology modules"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:modules	rdfs:label	"modules"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:access	rdfs:label	"access"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:can	rdfs:label	"can"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	a	rdf:Class	;
+	rdfs:label	"realworld design and implementation of the proposed framework for creating modular ontologies by extending owldl"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:implementation	a	rdf:Class	;
+	rdfs:label	"implementation"	.
 
-local:bases	rdfs:label	"bases"	.
+local:realworld_design	a	rdf:Class	;
+	rdfs:label	"realworld design"	.
 
-local:knowledge_bases_of_others	rdfs:label	"knowledge bases of others"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:others	rdfs:label	"others"	.
+local:design	a	rdf:Class	;
+	rdfs:label	"design"	.
 
-local:context_of_proposed_framework	rdfs:label	"context of proposed framework"	.
+local:realworld_design_of_proposed_framework	a	rdf:Class	;
+	rdfs:label	"realworld design of proposed framework"	.
 
-local:context	rdfs:label	"context"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:defined	rdfs:label	"defined"	.
+local:realworld_design_and_implementation	a	rdf:Class	;
+	rdfs:label	"realworld design and implementation"	.
 
-local:welldefined_interfaces	rdfs:label	"well-defined interfaces"	.
+local:modify	a	rdf:Class	;
+	rdfs:label	"modify"	.
 
-local:interfaces	rdfs:label	"interfaces"	.
+local:swoop_interfaces_and_reasoners	a	rdf:Class	;
+	rdfs:label	"swoop interfaces and reasoners"	.
 
-local:welldefined	rdfs:label	"well-defined"	.
+local:swoop_interfaces	a	rdf:Class	;
+	rdfs:label	"swoop interfaces"	.
 
-local:set_of_ontology_modules	rdfs:label	"set of ontology modules"	.
+local:reasoners	a	rdf:Class	;
+	rdfs:label	"reasoners"	.
 
-local:set	rdfs:label	"set"	.
+local:swoop	a	rdf:Class	;
+	rdfs:label	"swoop"	.
 
-local:ontology_within_context	rdfs:label	"ontology within context"	.
+local:interfaces	a	rdf:Class	;
+	rdfs:label	"interfaces"	.
 
-local:developed	rdfs:label	"developed"	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	a	rdf:Class	;
+	rdfs:label	"realworld design and implementation of the proposed framework for modifying the swoop interfaces and reasoners"	.
 
-local:others_signature	rdfs:label	"others signature"	.
+local:interfacebased_modular_ontology_formalism	a	rdf:Class	;
+	rdfs:label	"interfacebased modular ontology formalism"	.
 
-local:signature	rdfs:label	"signature"	.
+local:ontology_formalism	a	rdf:Class	;
+	rdfs:label	"ontology formalism"	.
 
-local:completely_independent	rdfs:label	"completely independent"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:independent	rdfs:label	"independent"	.
+local:interfacebased_modular_ontology	a	rdf:Class	;
+	rdfs:label	"interfacebased modular ontology"	.
 
-local:completely_independent_of_others_signature	rdfs:label	"completely independent of others signature"	.
+local:interfacebased_modular	a	rdf:Class	;
+	rdfs:label	"interfacebased modular"	.
 
-local:completely_independent_of_others_signature_of_language	rdfs:label	"completely independent of others signature of language"	.
+local:formalism	a	rdf:Class	;
+	rdfs:label	"formalism"	.
 
-local:language	rdfs:label	"language"	.
+local:modular_ontology_formalism	a	rdf:Class	;
+	rdfs:label	"modular ontology formalism"	.
 
-local:utilize	rdfs:label	"utilize"	.
+local:modular_ontology	a	rdf:Class	;
+	rdfs:label	"modular ontology"	.
 
-local:only	rdfs:label	"only"	.
+local:interfacebased	a	rdf:Class	;
+	rdfs:label	"interfacebased"	.
 
-local:knowledge_segments	rdfs:label	"knowledge segments"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:segments	rdfs:label	"segments"	.
+local:theoretically	a	rdf:Class	;
+	rdfs:label	"theoretically"	.
 
-local:required_knowledge_segments	rdfs:label	"required knowledge segments"	.
+local:modular_ontology_formalisms	a	rdf:Class	;
+	rdfs:label	"modular ontology formalisms"	.
 
-local:required_knowledge_segments_of_others	rdfs:label	"required knowledge segments of others"	.
+local:ontology_formalisms	a	rdf:Class	;
+	rdfs:label	"ontology formalisms"	.
 
-local:interfacebased	rdfs:label	"interface-based"	.
+local:formalisms	a	rdf:Class	;
+	rdfs:label	"formalisms"	.
 
-local:interfacebased_modular	rdfs:label	"interface-based modular"	.
+local:exit	a	rdf:Class	;
+	rdfs:label	"exit"	.
 
-local:ontology_formalism	rdfs:label	"ontology formalism"	.
+local:interfacebased_modular_ontology_formalism_distinctive_features	a	rdf:Class	;
+	rdfs:label	"interfacebased modular ontology formalism distinctive features"	.
 
-local:modular_ontology	rdfs:label	"modular ontology"	.
+local:distinctive_features	a	rdf:Class	;
+	rdfs:label	"distinctive features"	.
 
-local:modular_ontology_formalism	rdfs:label	"modular ontology formalism"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:interfacebased_modular_ontology_formalism	rdfs:label	"interface-based modular ontology formalism"	.
+local:distinctive	a	rdf:Class	;
+	rdfs:label	"distinctive"	.
 
-local:formalism	rdfs:label	"formalism"	.
+local:formalism_distinctive_features	a	rdf:Class	;
+	rdfs:label	"formalism distinctive features"	.
 
-local:interfacebased_modular_ontology	rdfs:label	"interface-based modular ontology"	.
+local:ontology_formalism_distinctive_features	a	rdf:Class	;
+	rdfs:label	"ontology formalism distinctive features"	.
 
-local:modular	rdfs:label	"modular"	.
+local:modular_ontology_formalism_distinctive_features	a	rdf:Class	;
+	rdfs:label	"modular ontology formalism distinctive features"	.
 
-local:theoretically	rdfs:label	"theoretically"	.
+local:compared_to_the_exiting_modular_ontology_formalisms	a	rdf:Class	;
+	rdfs:label	"compared to the exiting modular ontology formalisms"	.
 
-local:supports	rdfs:label	"supports"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:describe	rdfs:label	"describe"	.
+local:modules	a	rdf:Class	;
+	rdfs:label	"modules"	.
 
-local:distinctive_features	rdfs:label	"distinctive features"	.
+local:utilize	a	rdf:Class	;
+	rdfs:label	"utilize"	.
 
-local:features	rdfs:label	"features"	.
+local:required_knowledge_segments_of_the_others	a	rdf:Class	;
+	rdfs:label	"required knowledge segments of the others"	.
 
-local:distinctive	rdfs:label	"distinctive"	.
+local:others	a	rdf:Class	;
+	rdfs:label	"others"	.
 
-local:formalism_distinctive_features	rdfs:label	"formalism distinctive features"	.
+local:knowledge_segments	a	rdf:Class	;
+	rdfs:label	"knowledge segments"	.
 
-local:ontology_formalism_distinctive_features	rdfs:label	"ontology formalism distinctive features"	.
+local:segments	a	rdf:Class	;
+	rdfs:label	"segments"	.
 
-local:modular_ontology_formalism_distinctive_features	rdfs:label	"modular ontology formalism distinctive features"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:interfacebased_modular_ontology_formalism_distinctive_features	rdfs:label	"interface-based modular ontology formalism distinctive features"	.
+local:required_knowledge_segments	a	rdf:Class	;
+	rdfs:label	"required knowledge segments"	.
 
-local:modular_ontology_formalisms	rdfs:label	"modular ontology formalisms"	.
+local:required_knowledge_segments_of_others	a	rdf:Class	;
+	rdfs:label	"required knowledge segments of others"	.
 
-local:formalisms	rdfs:label	"formalisms"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:ontology_formalisms	rdfs:label	"ontology formalisms"	.
+local:ontology_modules	a	rdf:Class	;
+	rdfs:label	"ontology modules"	.
 
-local:exiting_modular_ontology_formalisms	rdfs:label	"exiting modular ontology formalisms"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:exiting	rdfs:label	"exiting"	.
+local:completely_independent_of_each_others_signature_and_language	a	rdf:Class	;
+	rdfs:label	"completely independent of each others signature and language"	.
 
-local:also	rdfs:label	"also"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:realworld_design	rdfs:label	"real-world design"	.
+local:completely_independent	a	rdf:Class	;
+	rdfs:label	"completely independent"	.
 
-local:design	rdfs:label	"design"	.
+local:independent	a	rdf:Class	;
+	rdfs:label	"independent"	.
 
-local:swoop	rdfs:label	"swoop"	.
+local:completely_independent_of_others	a	rdf:Class	;
+	rdfs:label	"completely independent of others"	.
 
-local:swoop_interfaces	rdfs:label	"swoop interfaces"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:within_the_context_of_the_proposed_framework	a	rdf:Class	;
+	rdfs:label	"within the context of the proposed framework"	.
 
-local:realworld_design_of_proposed_framework	rdfs:label	"real-world design of proposed framework"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:modifying	rdfs:label	"modifying"	.
+local:context_of_proposed_framework	a	rdf:Class	;
+	rdfs:label	"context of proposed framework"	.
 
-local:modular_ontologies	rdfs:label	"modular ontologies"	.
+local:set_of_ontology_modules_welldefined_interfaces	a	rdf:Class	;
+	rdfs:label	"set of ontology modules welldefined interfaces"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:creating	rdfs:label	"creating"	.
+local:welldefined_interfaces	a	rdf:Class	;
+	rdfs:label	"welldefined interfaces"	.
 
-local:extending	rdfs:label	"extending"	.
+local:set_of_ontology_modules	a	rdf:Class	;
+	rdfs:label	"set of ontology modules"	.
 
-local:owldl	rdfs:label	"owl-dl"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-#### Properties ####
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
+
+local:knowledge_bases_of_the_others	a	rdf:Class	;
+	rdfs:label	"knowledge bases of the others"	.
+
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
+
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
+
+local:knowledge_bases_of_others	a	rdf:Class	;
+	rdfs:label	"knowledge bases of others"	.
+
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
 #### Mapped Relations ####
 
-local:ontology	owl:sameAs	cso:ontology	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
-cso:ontologies	rdfs:label	"ontologies"	.
-cso:ontology	rdfs:label	"ontology"	.
 cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:ontology	owl:sameAs	cso:ontology	.
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
+cso:ontology	rdfs:label	"ontology"	.
+local:reasoners	owl:sameAs	cso:reasoner	.
+cso:reasoner	rdfs:label	"reasoners"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
 
 #### Relations ####
 
-local:required_knowledge_segments_of_others	local:requiredknowledgesegments_of	local:others	.
-local:ontology	rdfs:member	local:ontology_formalism	.
-local:realworld	rdfs:member	local:realworld_design	.
-local:knowledge_segments	rdfs:subClassOf	local:segments	.
-local:ontology_modules	rdfs:subClassOf	local:modules	.
-local:proposed	vn.role:Agent	local:framework	.
-local:access	local:AM-MNR	local:knowledge_bases_of_others	.
-local:developed	vn.role:other	local:set_of_ontology_modules	.
-local:modular_ontology_formalisms	rdfs:subClassOf	local:ontology_formalisms	.
-local:realworld_design_of_proposed_framework	local:real-worlddesign_of	local:proposed_framework	.
-local:modular_ontology_formalism_distinctive_features	rdfs:subClassOf	local:ontology_formalism_distinctive_features	.
-local:developed	vn.role:Location	local:ontology_modules	.
-local:describe	vn.role:Theme	local:interfacebased_modular_ontology_formalism_distinctive_features	.
-local:developed	vn.role:Location	local:welldefined_interfaces	.
-local:interfacebased_modular_ontology_formalism	rdfs:subClassOf	local:formalism	.
-local:utilize	vn.role:Agent	local:modules	.
-local:completely_independent_of_others_signature_of_language	local:of_language	local:completely_independent_of_others_signature	.
-local:defined	local:AM-MNR	local:set_of_ontology_modules	.
-local:completely_independent	rdfs:subClassOf	local:independent	.
-local:interfacebased_modular_ontology	rdfs:member	local:interfacebased_modular_ontology_formalism	.
-local:describe	vn.role:Agent	local:we	.
-local:ontology	rdfs:member	local:ontology_formalisms	.
-local:modular_ontology	rdfs:subClassOf	local:ontology	.
-local:welldefined_interfaces	rdfs:subClassOf	local:interfaces	.
-local:utilize	local:AM-ADV	local:only	.
-local:developed	vn.role:Location	local:ontology_within_context	.
-local:knowledge_bases_of_others	local:knowledgebases_of	local:others	.
-local:completely_independent_of_others_signature	local:completelyindependent_of	local:others_signature	.
-local:access	local:AM-MOD	local:can	.
-local:realworld_design	rdfs:subClassOf	local:design	.
-local:modular_ontologies	rdfs:subClassOf	local:ontologies	.
-local:utilize	vn.role:Theme	local:required_knowledge_segments_of_others	.
-local:present	local:AM-ADV	local:theoretically	.
-local:context_of_proposed_framework	local:of_proposedframework	local:context	.
-local:ontology_formalism	rdfs:subClassOf	local:formalism	.
-local:exiting_modular_ontology_formalisms	rdfs:subClassOf	local:modular_ontology_formalisms	.
-local:modular_ontology_formalisms	rdfs:subClassOf	local:formalisms	.
-local:describe	vn.role:Theme	local:realworld_design_of_proposed_framework	.
-local:welldefined	rdfs:member	local:welldefined_interfaces	.
-local:present	vn.role:Agent	local:interfacebased_modular_ontology_formalism	.
-local:distinctive_features	rdfs:subClassOf	local:features	.
-local:modular_ontology_formalism	rdfs:subClassOf	local:formalism	.
-local:modular_ontology	rdfs:member	local:modular_ontology_formalisms	.
-local:access	vn.role:Patient	local:knowledge_bases_of_others	.
-local:ontology	rdfs:member	local:ontology_modules	.
-local:ontology_within_context	local:ontology_within	local:context	.
+local:s6.1	rdfs:subClassOf	local:modular_ontology_formalisms	.
+local:knowledge_bases_of_the_others	rdfs:member	local:knowledge_bases	.
+local:s8	rdf:predicate	local:describe	.
+local:s5	local:AM-ADV	local:theoretically	.
+local:completely_independent_of_others	rdfs:member	local:others	.
+local:modular_ontology	rdfs:member	local:modular	.
 local:ontology_formalisms	rdfs:subClassOf	local:formalisms	.
-local:extending	vn.role:Theme	local:owldl	.
-local:modifying	vn.role:Agent	local:realworld_design	.
-local:others_signature	rdfs:subClassOf	local:signature	.
-local:formalism_distinctive_features	rdfs:subClassOf	local:distinctive_features	.
-local:describe	local:AM-DIS	local:also	.
-local:describe	local:AM-MNR	local:exiting_modular_ontology_formalisms	.
-local:supports	vn.role:Experiencer	local:proposed_framework	.
-local:present	vn.role:Agent	local:we	.
-local:modular	rdfs:member	local:modular_ontology	.
+local:s2	rdf:subject	local:framework	.
+local:set_of_ontology_modules	rdfs:member	local:set	.
+local:s9.1	rdf:subject	local:framework	.
+local:s9.1	rdf:predicate	local:propose	.
+local:s9	rdf:object	local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	.
+local:s8.2	rdf:subject	local:realworld_design_and_implementation	.
+local:s7	rdf:subject	local:interfacebased_modular_ontology_formalism	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	rdfs:member	local:framework	.
+local:s9.3	rdf:subject	local:owldl	.
+local:required_knowledge_segments_of_the_others	rdfs:member	local:others	.
+local:context_of_proposed_framework	rdfs:member	local:s3	.
+local:within_the_context_of_the_proposed_framework	rdfs:member	local:context	.
+local:s2.1	local:AM-MNR	local:set_of_ontology_modules_welldefined_interfaces	.
 local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:s3	rdfs:subClassOf	local:framework	.
+local:ontology_modules	rdfs:subClassOf	local:modules	.
+local:realworld_design_and_implementation	rdfs:member	local:realworld_design	.
+local:completely_independent	rdfs:subClassOf	local:independent	.
+local:distinctive_features	rdfs:subClassOf	local:features	.
+local:s8	local:AM-DIS	local:also	.
+local:s3.1	rdf:predicate	local:develop	.
+local:interfacebased_modular_ontology_formalism_distinctive_features	rdfs:member	local:distinctive_features	.
+local:s4	rdf:object	local:required_knowledge_segments_of_the_others	.
+local:s7.1	rdf:subject	local:framework	.
+local:s4	rdf:predicate	local:utilize	.
+local:s3.1	rdf:subject	local:ontology_modules	.
+local:interfacebased_modular_ontology_formalism_distinctive_features	rdfs:member	local:interfacebased_modular_ontology_formalism	.
+local:set_of_ontology_modules_welldefined_interfaces	rdfs:member	local:interfaces	.
+local:modular_ontology_formalisms	rdfs:subClassOf	local:formalisms	.
+local:s8	rdf:subject	local:we	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	rdfs:member	local:owldl	.
+local:s2.1	local:AM-MOD	local:can	.
+local:set_of_ontology_modules	rdfs:member	local:ontology_modules	.
+local:modular_ontology_formalisms	rdfs:member	local:modular_ontology	.
+local:swoop_interfaces_and_reasoners	rdfs:member	local:reasoners	.
+local:swoop_interfaces_and_reasoners	rdfs:member	local:swoop_interfaces	.
+local:s0	local:AM-LOC	local:paper	.
+local:s8.1	rdf:subject	local:framework	.
+local:interfacebased_modular_ontology_formalism	rdfs:subClassOf	local:formalism	.
+local:s8.2	rdf:predicate	local:modify	.
+local:s4	rdf:subject	local:modules	.
+local:s2	rdf:predicate	local:propose	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	rdfs:member	local:implementation	.
+local:ontology_formalism	rdfs:subClassOf	local:formalism	.
+local:swoop_interfaces	rdfs:member	local:swoop	.
+local:formalism_distinctive_features	rdfs:subClassOf	local:distinctive_features	.
+local:ontology_modules	rdfs:member	local:ontology	.
+local:knowledge_segments	rdfs:subClassOf	local:segments	.
+local:interfacebased_modular_ontology	rdfs:member	local:interfacebased_modular	.
+local:s6	rdf:object	local:interfacebased_modular_ontology_formalism_distinctive_features	.
+local:modular_ontology_formalism	rdfs:subClassOf	local:formalism	.
+local:within_the_context_of_the_proposed_framework	rdfs:member	local:framework	.
+local:s0	rdf:subject	local:we	.
+local:s2.1	rdf:predicate	local:define	.
+local:s9.3	rdf:predicate	local:extend	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	rdfs:member	local:implementation	.
+local:s9	rdf:predicate	local:describe	.
+local:s6.1	rdf:predicate	local:exit	.
+local:s0.1	rdf:subject	local:framework	.
+local:s6.1	rdf:subject	local:modular_ontology_formalisms	.
+local:completely_independent_of_each_others_signature_and_language	rdfs:member	local:others	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	rdfs:member	local:modular_ontologies	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	rdfs:member	local:swoop_interfaces	.
+local:s5.1	rdf:predicate	local:propose	.
+local:s7	rdf:predicate	local:present	.
+local:s9	local:AM-DIS	local:also	.
+local:ontology_formalisms	rdfs:member	local:ontology	.
+local:s1	local:AM-MOD	local:can	.
+local:s3	rdf:predicate	local:propose	.
+local:s3.1	local:AM-MOD	local:can	.
+local:set_of_ontology_modules_welldefined_interfaces	rdfs:member	local:set	.
+local:knowledge_bases	rdfs:member	local:knowledge	.
+local:required_knowledge_segments_of_others	rdfs:member	local:others	.
+local:completely_independent_of_each_others_signature_and_language	rdfs:member	local:language	.
+local:modular_ontology_formalisms	rdfs:subClassOf	local:ontology_formalisms	.
+local:realworld_design	rdfs:member	local:realworld	.
+local:s7	rdf:object	local:s7.1	.
+local:s2.2	rdf:subject	local:ontology	.
+local:s9.2	local:AM-MNR	local:extending_owldl	.
 local:interfacebased_modular_ontology_formalism	rdfs:subClassOf	local:modular_ontology_formalism	.
-local:defined	vn.role:Theme	local:ontology	.
-local:required_knowledge_segments	rdfs:subClassOf	local:knowledge_segments	.
-local:interfacebased_modular	rdfs:subClassOf	local:modular	.
-local:completely_independent_of_others_signature_of_language	local:completelyindependentofotherssignature_of	local:language	.
-local:present	local:AM-LOC	local:paper	.
-local:knowledge	rdfs:member	local:knowledge_segments	.
-local:set_of_ontology_modules	local:set_of	local:ontology_modules	.
-local:defined	local:AM-MOD	local:can	.
-local:proposed_framework	rdfs:subClassOf	local:framework	.
-local:supports	vn.role:Theme	local:interfacebased_modular_ontology_formalism	.
-local:completely_independent_of_others_signature	local:of_otherssignature	local:completely_independent	.
-local:modular_ontology	rdfs:member	local:modular_ontology_formalism	.
-local:set_of_ontology_modules	local:of_ontologymodules	local:set	.
-local:modifying	vn.role:Patient	local:swoop_interfaces	.
-local:supports	local:AM-ADV	local:theoretically	.
-local:defined	local:AM-LOC	local:context_of_proposed_framework	.
-local:modular_ontology_formalism	rdfs:subClassOf	local:ontology_formalism	.
-local:swoop	rdfs:member	local:swoop_interfaces	.
-local:required_knowledge_segments_of_others	local:of_others	local:required_knowledge_segments	.
-local:interfacebased	rdfs:member	local:interfacebased_modular	.
-local:developed	local:AM-MNR	local:completely_independent_of_others_signature_of_language	.
-local:context_of_proposed_framework	local:context_of	local:proposed_framework	.
-local:interfacebased_modular_ontology_formalism_distinctive_features	rdfs:subClassOf	local:modular_ontology_formalism_distinctive_features	.
-local:ontology_formalism_distinctive_features	rdfs:subClassOf	local:formalism_distinctive_features	.
-local:distinctive	rdfs:member	local:distinctive_features	.
-local:interfacebased_modular	rdfs:member	local:interfacebased_modular_ontology	.
-local:developed	local:AM-MOD	local:can	.
-local:access	vn.role:Agent	local:ontology_modules	.
-local:creating	vn.role:Product	local:modular_ontologies	.
-local:present	vn.role:Theme	local:proposed_framework	.
-local:modular	rdfs:member	local:modular_ontologies	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:knowledge_bases_of_others	local:of_others	local:knowledge_bases	.
-local:ontology_within_context	local:within_context	local:ontology	.
-local:proposed	vn.role:Topic	local:ontology	.
-local:swoop_interfaces	rdfs:subClassOf	local:interfaces	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	rdfs:member	local:reasoners	.
+local:s6	rdf:subject	local:we	.
+local:s3	rdf:subject	local:framework	.
+local:realworld_design	rdfs:subClassOf	local:design	.
+local:welldefined_interfaces	rdfs:subClassOf	local:interfaces	.
+local:s9.2	rdf:predicate	local:create	.
+local:realworld_design_of_proposed_framework	rdfs:member	local:realworld_design	.
+local:s4	local:AM-ADV	local:only	.
+local:s8.1	rdf:predicate	local:propose	.
+local:context_of_proposed_framework	rdfs:member	local:context	.
+local:s1	rdf:object	local:knowledge_bases_of_the_others	.
+local:knowledge_bases_of_others	rdfs:member	local:others	.
+local:s9.1	rdfs:subClassOf	local:framework	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	rdfs:member	local:realworld_design	.
+local:modular_ontology_formalism	rdfs:member	local:modular_ontology	.
+local:distinctive_features	rdfs:member	local:distinctive	.
+local:realworld_design_and_implementation	rdfs:member	local:implementation	.
+local:set_of_ontology_modules_welldefined_interfaces	rdfs:member	local:ontology_modules	.
+local:s0.1	rdf:predicate	local:propose	.
+local:modular_ontologies	rdfs:member	local:modular	.
+local:realworld_design_of_proposed_framework	rdfs:member	local:s8.1	.
 local:interfacebased_modular_ontology	rdfs:subClassOf	local:ontology	.
-local:creating	local:AM-MNR	local:extending	.
-local:exiting	vn.role:object	local:modular_ontology_formalisms	.
-local:proposed	vn.role:Topic	local:framework	.
-local:realworld_design_of_proposed_framework	local:of_proposedframework	local:realworld_design	.
+local:interfacebased_modular	rdfs:member	local:interfacebased	.
+local:s2.2	local:AM-LOC	local:within_the_context_of_the_proposed_framework	.
+local:interfacebased_modular_ontology_formalism	rdfs:member	local:interfacebased_modular_ontology	.
+local:modular_ontology	rdfs:subClassOf	local:ontology	.
+local:s5.1	rdf:subject	local:framework	.
+local:s5	rdf:predicate	local:support	.
+local:s1	rdf:predicate	local:access	.
+local:s6	local:AM-MNR	local:compared_to_the_exiting_modular_ontology_formalisms	.
+local:s8	rdf:object	local:realworld_design_and_implementation_of_the_proposed_framework_for_modifying_the_swoop_interfaces_and_reasoners	.
+local:knowledge_bases_of_the_others	rdfs:member	local:others	.
+local:required_knowledge_segments_of_the_others	rdfs:member	local:knowledge_segments	.
+local:modular_ontology_formalism	rdfs:subClassOf	local:ontology_formalism	.
+local:completely_independent_of_others	rdfs:member	local:completely_independent	.
+local:s5	rdf:subject	local:interfacebased_modular_ontology_formalism	.
+local:s2.2	rdf:predicate	local:develop	.
+local:s8.2	rdf:object	local:swoop_interfaces_and_reasoners	.
+local:s1	local:AM-MNR	local:knowledge_bases_of_the_others	.
+local:s1	rdf:subject	local:ontology_modules	.
+local:s2.2	local:AM-MOD	local:can	.
+local:modular_ontology_formalism_distinctive_features	rdfs:subClassOf	local:ontology_formalism_distinctive_features	.
+local:required_knowledge_segments_of_others	rdfs:member	local:required_knowledge_segments	.
+local:knowledge_segments	rdfs:member	local:knowledge	.
+local:s0	rdf:object	local:s0.1	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	rdfs:member	local:framework	.
+local:ontology_formalism_distinctive_features	rdfs:subClassOf	local:formalism_distinctive_features	.
+local:s3.1	local:AM-MNR	local:completely_independent_of_each_others_signature_and_language	.
+local:s9	rdf:subject	local:we	.
+local:realworld_design_and_implementation_of_the_proposed_framework_for_creating_modular_ontologies_by_extending_owldl	rdfs:member	local:realworld_design	.
+local:s5	rdf:object	local:s5.1	.
+local:s2.1	rdf:subject	local:ontology	.
+local:s0	rdf:predicate	local:present	.
+local:interfacebased_modular	rdfs:subClassOf	local:modular	.
+local:modular_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s2.2	local:AM-MNR	local:set_of_ontology_modules_welldefined_interfaces	.
+local:realworld_design_of_proposed_framework	rdfs:member	local:s9.1	.
+local:interfacebased_modular_ontology_formalism_distinctive_features	rdfs:subClassOf	local:modular_ontology_formalism_distinctive_features	.
+local:required_knowledge_segments	rdfs:subClassOf	local:knowledge_segments	.
+local:s9.2	rdf:subject	local:modular_ontologies	.
+local:knowledge_bases_of_others	rdfs:member	local:knowledge_bases	.
+local:s7.1	rdf:predicate	local:propose	.
+local:s2.1	local:AM-LOC	local:within_the_context_of_the_proposed_framework	.
+local:s8.1	rdfs:subClassOf	local:framework	.
+local:s7	local:AM-ADV	local:theoretically	.
+local:ontology_formalism	rdfs:member	local:ontology	.
+local:s6	rdf:predicate	local:describe	.
+local:swoop_interfaces	rdfs:subClassOf	local:interfaces	.

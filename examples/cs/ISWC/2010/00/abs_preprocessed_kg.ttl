@@ -1,453 +1,902 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s19.2	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s19.1	a	rdf:Statement	;
+	rdfs:label	"existing linked data with additional data"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"the mapping process architecture allows the creation of new applications through the extension of existing linked data with additional data"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"a visual user interface that integrates the exploratory process"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"a visual user interface that integrates the mapping process"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"fusion providing a visual user interface"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"fusion simplifies the definition of mappings by providing a visual user interface"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"closing the gap"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"this paper describes fusion a framework for closing the gap between the application model"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"underlying ontologies"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"closing the underlying ontologies in the linked data cloud"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"this paper describes fusion a framework for closing the underlying ontologies in the linked data cloud"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"integrating the process of schema exploration into the mapping process"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"this task can supported by integrating the process of schema exploration into the mapping process"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"the application designer"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"the application designer wants to map"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"the application designer finding the implicit relationships that the application designer wants to map"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"this task can help the application designer with finding the implicit relationships that the application designer wants to map"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"these mappings demands a comprehensive understanding of rdf ontologies of the source datasets"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"explicitly formulating these mappings demands a comprehensive understanding of rdf ontologies of the source datasets"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"underlying schemas"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"these mappings demands a comprehensive understanding of the underlying schemas of the source datasets"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"explicitly formulating these mappings demands a comprehensive understanding of the underlying schemas of the source datasets"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"these mappings demands a comprehensive understanding of rdf ontologies of the target datasets"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"explicitly formulating these mappings demands a comprehensive understanding of rdf ontologies of the target datasets"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"underlying schemas"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"these mappings demands a comprehensive understanding of the underlying schemas of the target datasets"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"explicitly formulating these mappings demands a comprehensive understanding of the underlying schemas of the target datasets"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"inference rules that infer the application model from the source dataset"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"the two datasets that infer the application model from the source dataset"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"giving mappings in the form of dependencies between the two datasets that infer the application model from the source dataset"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"describing the application model as a view over the source dataset by giving mappings in the form of dependencies between the two datasets"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a mapping between the ontology can defined in many ways"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a mapping between the application model can defined in many ways"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the ontology underlying the source dataset in the linked data cloud"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"building applications over linked data often requires the ontology"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"building applications"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"building applications over linked data often requires a mapping between the application model"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"building applications"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the ontology underlying the source dataset in the linked data cloud"	.
+
+
 #### Classes ####
 
-local:underlying	rdfs:label	"underlying"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:source_dataset	rdfs:label	"source dataset"	.
+local:linked_data_with_additional_data	a	rdf:Class	;
+	rdfs:label	"linked data with additional data"	.
 
-local:dataset	rdfs:label	"dataset"	.
+local:additional_data	a	rdf:Class	;
+	rdfs:label	"additional data"	.
 
-local:data_cloud	rdfs:label	"data cloud"	.
+local:additional	a	rdf:Class	;
+	rdfs:label	"additional"	.
 
-local:cloud	rdfs:label	"cloud"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:data	rdfs:label	"data"	.
+local:mapping_process_architecture	a	rdf:Class	;
+	rdfs:label	"mapping process architecture"	.
 
-local:source	rdfs:label	"source"	.
+local:process_architecture	a	rdf:Class	;
+	rdfs:label	"process architecture"	.
 
-local:linked_data_cloud	rdfs:label	"linked data cloud"	.
+local:architecture	a	rdf:Class	;
+	rdfs:label	"architecture"	.
 
-local:source_dataset_in_linked_data_cloud	rdfs:label	"source dataset in linked data cloud"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:building	rdfs:label	"building"	.
+local:allow	a	rdf:Class	;
+	rdfs:label	"allow"	.
 
-local:applications	rdfs:label	"applications"	.
+local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	a	rdf:Class	;
+	rdfs:label	"creation of new applications through the extension of existing linked data with additional data"	.
 
-local:building_applications	rdfs:label	"building applications"	.
+local:extension	a	rdf:Class	;
+	rdfs:label	"extension"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:new_applications	a	rdf:Class	;
+	rdfs:label	"new applications"	.
 
-local:applications_over_linked_data	rdfs:label	"applications over linked data"	.
+local:creation	a	rdf:Class	;
+	rdfs:label	"creation"	.
 
-local:requires	rdfs:label	"requires"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:often	rdfs:label	"often"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:application	rdfs:label	"application"	.
+local:existing_linked_data	a	rdf:Class	;
+	rdfs:label	"existing linked data"	.
 
-local:application_model	rdfs:label	"application model"	.
+local:creation_of_new_applications	a	rdf:Class	;
+	rdfs:label	"creation of new applications"	.
 
-local:model	rdfs:label	"model"	.
+local:creation_of_new_applications_through_extension	a	rdf:Class	;
+	rdfs:label	"creation of new applications through extension"	.
 
-local:mapping_between_application_model	rdfs:label	"mapping between application model"	.
+local:extension_of_existing_linked_data	a	rdf:Class	;
+	rdfs:label	"extension of existing linked data"	.
 
-local:mapping	rdfs:label	"mapping"	.
+local:extension_of_existing_linked_data_with_additional_data	a	rdf:Class	;
+	rdfs:label	"extension of existing linked data with additional data"	.
 
-local:mapping_between_ontology	rdfs:label	"mapping between ontology"	.
+local:visual_user_interface	a	rdf:Class	;
+	rdfs:label	"visual user interface"	.
 
-local:defined	rdfs:label	"defined"	.
+local:visual_user	a	rdf:Class	;
+	rdfs:label	"visual user"	.
 
-local:can	rdfs:label	"can"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:many_ways	rdfs:label	"many ways"	.
+local:interface	a	rdf:Class	;
+	rdfs:label	"interface"	.
 
-local:ways	rdfs:label	"ways"	.
+local:user_interface	a	rdf:Class	;
+	rdfs:label	"user interface"	.
 
-local:many	rdfs:label	"many"	.
+local:visual	a	rdf:Class	;
+	rdfs:label	"visual"	.
 
-local:describing	rdfs:label	"describing"	.
+local:integrate	a	rdf:Class	;
+	rdfs:label	"integrate"	.
 
-local:two_datasets	rdfs:label	"two datasets"	.
+local:exploratory_process	a	rdf:Class	;
+	rdfs:label	"exploratory process"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:exploratory	a	rdf:Class	;
+	rdfs:label	"exploratory"	.
 
-local:view_over_source_dataset	rdfs:label	"view over source dataset"	.
+local:mapping_process	a	rdf:Class	;
+	rdfs:label	"mapping process"	.
 
-local:view	rdfs:label	"view"	.
+local:mapping	a	rdf:Class	;
+	rdfs:label	"mapping"	.
 
-local:giving_in_form	rdfs:label	"giving in form"	.
+local:fusion	a	rdf:Class	;
+	rdfs:label	"fusion"	.
 
-local:giving	rdfs:label	"giving"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:form	rdfs:label	"form"	.
+local:definition_of_mappings	a	rdf:Class	;
+	rdfs:label	"definition of mappings"	.
 
-local:form_of_dependencies	rdfs:label	"form of dependencies"	.
+local:definition	a	rdf:Class	;
+	rdfs:label	"definition"	.
 
-local:dependencies	rdfs:label	"dependencies"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:giving_in_form_between_two_datasets	rdfs:label	"giving in form between two datasets"	.
+local:simplify	a	rdf:Class	;
+	rdfs:label	"simplify"	.
 
-local:application_model_from_source_dataset	rdfs:label	"application model from source dataset"	.
+local:providing_a_visual_user_interface	a	rdf:Class	;
+	rdfs:label	"providing a visual user interface"	.
 
-local:mappings_in_form	rdfs:label	"mappings in form"	.
+local:gap	a	rdf:Class	;
+	rdfs:label	"gap"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:close	a	rdf:Class	;
+	rdfs:label	"close"	.
 
-local:dependencies_between_two_datasets	rdfs:label	"dependencies between two datasets"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:infer	rdfs:label	"infer"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:instance	rdfs:label	"instance"	.
+local:framework_for_closing_the_gap_between_the_application_model_fusion	a	rdf:Class	;
+	rdfs:label	"framework for closing the gap between the application model fusion"	.
 
-local:inference_rules	rdfs:label	"inference rules"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:rules	rdfs:label	"rules"	.
+local:application_model_fusion	a	rdf:Class	;
+	rdfs:label	"application model fusion"	.
 
-local:inference	rdfs:label	"inference"	.
+local:application_model	a	rdf:Class	;
+	rdfs:label	"application model"	.
 
-local:formulating	rdfs:label	"formulating"	.
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
 
-local:explicitly	rdfs:label	"explicitly"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:mappings_demands	rdfs:label	"mappings demands"	.
+local:model_fusion	a	rdf:Class	;
+	rdfs:label	"model fusion"	.
 
-local:demands	rdfs:label	"demands"	.
+local:gap_between_application_model_fusion	a	rdf:Class	;
+	rdfs:label	"gap between application model fusion"	.
 
-local:comprehensive	rdfs:label	"comprehensive"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:comprehensive_understanding	rdfs:label	"comprehensive understanding"	.
+local:underlie	a	rdf:Class	;
+	rdfs:label	"underlie"	.
 
-local:target_datasets	rdfs:label	"target datasets"	.
+local:linked_data_cloud	a	rdf:Class	;
+	rdfs:label	"linked data cloud"	.
 
-local:underlying_schemas	rdfs:label	"underlying schemas"	.
+local:data_cloud	a	rdf:Class	;
+	rdfs:label	"data cloud"	.
 
-local:target	rdfs:label	"target"	.
+local:cloud	a	rdf:Class	;
+	rdfs:label	"cloud"	.
 
-local:understanding	rdfs:label	"understanding"	.
+local:framework_for_closing_the_underlying_ontologies_in_the_linked_data_cloud_fusion	a	rdf:Class	;
+	rdfs:label	"framework for closing the underlying ontologies in the linked data cloud fusion"	.
 
-local:schemas	rdfs:label	"schemas"	.
+local:linked_data_cloud_fusion	a	rdf:Class	;
+	rdfs:label	"linked data cloud fusion"	.
 
-local:comprehensive_understanding_of_underlying_schemas	rdfs:label	"comprehensive understanding of underlying schemas"	.
+local:data_cloud_fusion	a	rdf:Class	;
+	rdfs:label	"data cloud fusion"	.
 
-local:underlying_schemas_of_target_datasets	rdfs:label	"underlying schemas of target datasets"	.
+local:cloud_fusion	a	rdf:Class	;
+	rdfs:label	"cloud fusion"	.
 
-local:source_datasets	rdfs:label	"source datasets"	.
+local:underlying_ontologies_in_linked_data_cloud_fusion	a	rdf:Class	;
+	rdfs:label	"underlying ontologies in linked data cloud fusion"	.
 
-local:underlying_schemas_of_source_datasets	rdfs:label	"underlying schemas of source datasets"	.
+local:process_of_schema_exploration_into_the_mapping_process	a	rdf:Class	;
+	rdfs:label	"process of schema exploration into the mapping process"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:schema_exploration	a	rdf:Class	;
+	rdfs:label	"schema exploration"	.
 
-local:rdf_ontologies	rdfs:label	"rdf ontologies"	.
+local:exploration	a	rdf:Class	;
+	rdfs:label	"exploration"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
 
-local:comprehensive_understanding_of_rdf_ontologies	rdfs:label	"comprehensive understanding of rdf ontologies"	.
+local:process_of_schema_exploration	a	rdf:Class	;
+	rdfs:label	"process of schema exploration"	.
 
-local:rdf_ontologies_of_target_datasets	rdfs:label	"rdf ontologies of target datasets"	.
+local:process_of_schema_exploration_into_mapping_process	a	rdf:Class	;
+	rdfs:label	"process of schema exploration into mapping process"	.
 
-local:rdf_ontologies_of_source_datasets	rdfs:label	"rdf ontologies of source datasets"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:help	rdfs:label	"help"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:task	rdfs:label	"task"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:application_designer	rdfs:label	"application designer"	.
+local:application_designer	a	rdf:Class	;
+	rdfs:label	"application designer"	.
 
-local:implicit_relationships	rdfs:label	"implicit relationships"	.
+local:designer	a	rdf:Class	;
+	rdfs:label	"designer"	.
 
-local:relationships	rdfs:label	"relationships"	.
+local:map	a	rdf:Class	;
+	rdfs:label	"map"	.
 
-local:designer	rdfs:label	"designer"	.
+local:want	a	rdf:Class	;
+	rdfs:label	"want"	.
 
-local:implicit	rdfs:label	"implicit"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:finding	rdfs:label	"finding"	.
+local:implicit_relationships_that_the_application_designer_wants_to_map	a	rdf:Class	;
+	rdfs:label	"implicit relationships that the application designer wants to map"	.
 
-local:wants	rdfs:label	"wants"	.
+local:implicit_relationships	a	rdf:Class	;
+	rdfs:label	"implicit relationships"	.
 
-local:map	rdfs:label	"map."	.
+local:relationships	a	rdf:Class	;
+	rdfs:label	"relationships"	.
 
-local:supported	rdfs:label	"supported"	.
+local:implicit	a	rdf:Class	;
+	rdfs:label	"implicit"	.
 
-local:schema	rdfs:label	"schema"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:schema_exploration	rdfs:label	"schema exploration"	.
+local:application_designer_with_finding_the_implicit_relationships_that_the_application_designer_wants_to_map	a	rdf:Class	;
+	rdfs:label	"application designer with finding the implicit relationships that the application designer wants to map"	.
 
-local:exploration	rdfs:label	"exploration"	.
+local:demand	a	rdf:Class	;
+	rdfs:label	"demand"	.
 
-local:mapping_process	rdfs:label	"mapping process"	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_source_datasets	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding of rdf ontologies of the source datasets"	.
 
-local:process	rdfs:label	"process"	.
+local:rdf_ontologies	a	rdf:Class	;
+	rdfs:label	"rdf ontologies"	.
 
-local:process_of_schema_exploration	rdfs:label	"process of schema exploration"	.
+local:source_datasets	a	rdf:Class	;
+	rdfs:label	"source datasets"	.
 
-local:integrating_into_mapping_process	rdfs:label	"integrating into mapping process"	.
+local:comprehensive_understanding	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding"	.
 
-local:integrating	rdfs:label	"integrating"	.
+local:comprehensive	a	rdf:Class	;
+	rdfs:label	"comprehensive"	.
 
-local:process_of_schema_exploration_into_mapping_process	rdfs:label	"process of schema exploration into mapping process"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:describes	rdfs:label	"describes"	.
+local:understanding	a	rdf:Class	;
+	rdfs:label	"understanding"	.
 
-local:paper	rdfs:label	"paper"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:fusion	rdfs:label	"fusion"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:gap_between_application_model	rdfs:label	"gap between application model"	.
+local:comprehensive_understanding_of_rdf_ontologies	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding of rdf ontologies"	.
 
-local:gap	rdfs:label	"gap"	.
+local:rdf_ontologies_of_source	a	rdf:Class	;
+	rdfs:label	"rdf ontologies of source"	.
 
-local:framework	rdfs:label	"framework"	.
+local:formulate	a	rdf:Class	;
+	rdfs:label	"formulate"	.
 
-local:closing	rdfs:label	"closing"	.
+local:mappings_demands	a	rdf:Class	;
+	rdfs:label	"mappings demands"	.
 
-local:underlying_ontologies	rdfs:label	"underlying ontologies"	.
+local:demands	a	rdf:Class	;
+	rdfs:label	"demands"	.
 
-local:underlying_ontologies_in_linked_data_cloud	rdfs:label	"underlying ontologies in linked data cloud"	.
+local:explicitly	a	rdf:Class	;
+	rdfs:label	"explicitly"	.
 
-local:simplifies	rdfs:label	"simplifies"	.
+local:schemas	a	rdf:Class	;
+	rdfs:label	"schemas"	.
 
-local:definition_of_mappings	rdfs:label	"definition of mappings"	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_source_datasets	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding of the underlying schemas of the source datasets"	.
 
-local:definition	rdfs:label	"definition"	.
+local:comprehensive_understanding_of_underlying_schemas	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding of underlying schemas"	.
 
-local:visual_user	rdfs:label	"visual user"	.
+local:underlying_schemas_of_source	a	rdf:Class	;
+	rdfs:label	"underlying schemas of source"	.
 
-local:visual_user_interface	rdfs:label	"visual user interface"	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_target_datasets	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding of rdf ontologies of the target datasets"	.
 
-local:user	rdfs:label	"user"	.
+local:target_datasets	a	rdf:Class	;
+	rdfs:label	"target datasets"	.
 
-local:visual	rdfs:label	"visual"	.
+local:target	a	rdf:Class	;
+	rdfs:label	"target"	.
 
-local:user_interface	rdfs:label	"user interface"	.
+local:rdf_ontologies_of_target	a	rdf:Class	;
+	rdfs:label	"rdf ontologies of target"	.
 
-local:interface	rdfs:label	"interface"	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_target_datasets	a	rdf:Class	;
+	rdfs:label	"comprehensive understanding of the underlying schemas of the target datasets"	.
 
-local:providing	rdfs:label	"providing"	.
+local:underlying_schemas_of_target	a	rdf:Class	;
+	rdfs:label	"underlying schemas of target"	.
 
-local:integrates	rdfs:label	"integrates"	.
+local:inference_rules	a	rdf:Class	;
+	rdfs:label	"inference rules"	.
 
-local:exploratory	rdfs:label	"exploratory"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:exploratory_process	rdfs:label	"exploratory process"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:process_architecture	rdfs:label	"process architecture"	.
+local:infer	a	rdf:Class	;
+	rdfs:label	"infer"	.
 
-local:architecture	rdfs:label	"architecture"	.
+local:application_model_source_dataset	a	rdf:Class	;
+	rdfs:label	"application model source dataset"	.
 
-local:allows	rdfs:label	"allows"	.
+local:source_dataset	a	rdf:Class	;
+	rdfs:label	"source dataset"	.
 
-local:additional_data	rdfs:label	"additional data"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:new_applications	rdfs:label	"new applications"	.
+local:application_model_source	a	rdf:Class	;
+	rdfs:label	"application model source"	.
 
-local:new	rdfs:label	"new"	.
+local:model_source_dataset	a	rdf:Class	;
+	rdfs:label	"model source dataset"	.
 
-local:additional	rdfs:label	"additional"	.
+local:model_source	a	rdf:Class	;
+	rdfs:label	"model source"	.
 
-local:linked_additional_data	rdfs:label	"linked additional data"	.
+local:two_datasets	a	rdf:Class	;
+	rdfs:label	"two datasets"	.
 
-local:existing_linked_additional_data	rdfs:label	"existing linked additional data"	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	a	rdf:Class	;
+	rdfs:label	"mappings in the form of dependencies between the two datasets that infer the application model from the source dataset"	.
 
-local:creation_of_new_applications	rdfs:label	"creation of new applications"	.
+local:dependencies	a	rdf:Class	;
+	rdfs:label	"dependencies"	.
 
-local:creation	rdfs:label	"creation"	.
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
 
-local:creation_of_new_applications_through_extension	rdfs:label	"creation of new applications through extension"	.
+local:mappings_in_form	a	rdf:Class	;
+	rdfs:label	"mappings in form"	.
 
-local:extension	rdfs:label	"extension"	.
+local:form_of_dependencies	a	rdf:Class	;
+	rdfs:label	"form of dependencies"	.
 
-local:extension_of_existing_linked_additional_data	rdfs:label	"extension of existing linked additional data"	.
+local:dependencies_between_two_datasets	a	rdf:Class	;
+	rdfs:label	"dependencies between two datasets"	.
 
-local:extension_of_existing_linked_additional_data_with_additional_data	rdfs:label	"extension of existing linked additional data with additional data"	.
+local:application_model_from_source_dataset	a	rdf:Class	;
+	rdfs:label	"application model from source dataset"	.
 
-local:linked_additional_data_with_additional_data	rdfs:label	"linked additional data with additional data"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:existing	rdfs:label	"existing"	.
+local:view_over_the_source_dataset	a	rdf:Class	;
+	rdfs:label	"view over the source dataset"	.
 
-local:linked	rdfs:label	"linked"	.
+local:view	a	rdf:Class	;
+	rdfs:label	"view"	.
 
-#### Properties ####
+local:view_over_source_dataset	a	rdf:Class	;
+	rdfs:label	"view over source dataset"	.
+
+local:giving_mappings_in_the_form_of_dependencies_between_the_two_datasets	a	rdf:Class	;
+	rdfs:label	"giving mappings in the form of dependencies between the two datasets"	.
+
+local:giving_in_form	a	rdf:Class	;
+	rdfs:label	"giving in form"	.
+
+local:giving	a	rdf:Class	;
+	rdfs:label	"giving"	.
+
+local:giving_in_form_between_two_datasets	a	rdf:Class	;
+	rdfs:label	"giving in form between two datasets"	.
+
+local:mapping_between_the_ontology	a	rdf:Class	;
+	rdfs:label	"mapping between the ontology"	.
+
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
+
+local:mapping_between_ontology	a	rdf:Class	;
+	rdfs:label	"mapping between ontology"	.
+
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
+
+local:many_ways	a	rdf:Class	;
+	rdfs:label	"many ways"	.
+
+local:ways	a	rdf:Class	;
+	rdfs:label	"ways"	.
+
+local:many	a	rdf:Class	;
+	rdfs:label	"many"	.
+
+local:mapping_between_the_application_model	a	rdf:Class	;
+	rdfs:label	"mapping between the application model"	.
+
+local:mapping_between_application_model	a	rdf:Class	;
+	rdfs:label	"mapping between application model"	.
+
+local:source_dataset_in_the_linked_data_cloud	a	rdf:Class	;
+	rdfs:label	"source dataset in the linked data cloud"	.
+
+local:source_dataset_in_linked_data_cloud	a	rdf:Class	;
+	rdfs:label	"source dataset in linked data cloud"	.
+
+local:building_applications_over_linked_data	a	rdf:Class	;
+	rdfs:label	"building applications over linked data"	.
+
+local:building_applications	a	rdf:Class	;
+	rdfs:label	"building applications"	.
+
+local:building	a	rdf:Class	;
+	rdfs:label	"building"	.
+
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
+
+local:often	a	rdf:Class	;
+	rdfs:label	"often"	.
 
 #### Mapped Relations ####
 
-cso:linked_data	rdfs:label	"linked data"	.
+local:user_interface	owl:sameAs	cso:user_interface	.
+cso:rdf	rdfs:label	"rdf"	.
+cso:inference	rdfs:label	"inference"	.
+cso:user_interface	rdfs:label	"user interface"	.
 local:ontologies	owl:sameAs	cso:ontologies	.
 local:rdf	owl:sameAs	cso:rdf	.
-cso:rdf	rdfs:label	"rdf"	.
-local:inference	owl:sameAs	cso:inference	.
-cso:user_interface	rdfs:label	"user interface"	.
 cso:ontologies	rdfs:label	"ontologies"	.
-cso:inference	rdfs:label	"inference"	.
-local:user_interface	owl:sameAs	cso:user_interface	.
-local:linked_data	owl:sameAs	cso:linked_data	.
-cso:ontology	rdfs:label	"ontology"	.
 local:ontology	owl:sameAs	cso:ontology	.
+local:inference	owl:sameAs	cso:inference	.
+cso:ontology	rdfs:label	"ontology"	.
 
 #### Relations ####
 
-local:source_datasets	rdfs:subClassOf	local:datasets	.
-local:schema	rdfs:member	local:schema_exploration	.
-local:mapping_between_ontology	local:between_ontology	local:mapping	.
-local:source	rdfs:member	local:source_datasets	.
-local:infer	vn.role:Theme	local:application_model_from_source_dataset	.
-local:giving_in_form_between_two_datasets	local:between_twodatasets	local:giving_in_form	.
-local:underlying_schemas_of_target_datasets	local:of_targetdatasets	local:underlying_schemas	.
-local:underlying_schemas_of_target_datasets	local:underlyingschemas_of	local:target_datasets	.
-local:allows	vn.role:Theme	local:creation_of_new_applications_through_extension	.
-local:linked	vn.role:Patient	local:data	.
-local:process_of_schema_exploration	local:process_of	local:schema_exploration	.
-local:comprehensive	rdfs:member	local:comprehensive_understanding	.
-local:gap_between_application_model	local:gap_between	local:application_model	.
-local:schema_exploration	rdfs:subClassOf	local:exploration	.
-local:defined	local:AM-LOC	local:many_ways	.
-local:target_datasets	rdfs:subClassOf	local:datasets	.
-local:rdf	rdfs:member	local:rdf_ontologies	.
-local:exploratory_process	rdfs:subClassOf	local:process	.
-local:source_dataset	rdfs:subClassOf	local:dataset	.
-local:existing	vn.role:Location	local:linked_additional_data_with_additional_data	.
-local:target	rdfs:member	local:target_datasets	.
-local:integrates	vn.role:Patient1	local:visual_user_interface	.
-local:infer	vn.role:Agent	local:two_datasets	.
-local:help	vn.role:Agent	local:task	.
-local:formulating	vn.role:Agent	local:comprehensive_understanding_of_rdf_ontologies	.
-local:mapping_between_application_model	local:mapping_between	local:application_model	.
-local:simplifies	local:AM-MNR	local:providing	.
-local:visual_user_interface	rdfs:subClassOf	local:user_interface	.
-local:extension_of_existing_linked_additional_data_with_additional_data	local:extensionofexistinglinkedadditionaldata_with	local:additional_data	.
-local:describing	vn.role:Theme	local:application_model	.
-local:application_model_from_source_dataset	local:from_sourcedataset	local:application_model	.
-local:process_of_schema_exploration_into_mapping_process	local:into_mappingprocess	local:process_of_schema_exploration	.
-local:describes	vn.role:Agent	local:paper	.
-local:process_of_schema_exploration	local:of_schemaexploration	local:process	.
-local:underlying_schemas_of_source_datasets	local:underlyingschemas_of	local:source_datasets	.
-local:definition_of_mappings	local:of_mappings	local:definition	.
-local:finding	vn.role:Agent	local:application_designer	.
-local:additional_data	rdfs:subClassOf	local:data	.
-local:closing	vn.role:Patient	local:gap_between_application_model	.
-local:exploratory	rdfs:member	local:exploratory_process	.
-local:comprehensive_understanding_of_underlying_schemas	local:comprehensiveunderstanding_of	local:underlying_schemas	.
-local:demands	vn.role:Agent	local:mappings	.
-local:new_applications	rdfs:subClassOf	local:applications	.
-local:requires	local:AM-TMP	local:often	.
-local:demands	vn.role:Patient	local:comprehensive_understanding_of_underlying_schemas	.
-local:source_dataset_in_linked_data_cloud	local:in_linkeddatacloud	local:source_dataset	.
-local:application	rdfs:member	local:application_designer	.
-local:underlying	vn.role:Theme2	local:source_dataset_in_linked_data_cloud	.
-local:inference_rules	rdfs:subClassOf	local:rules	.
-local:building_applications	rdfs:subClassOf	local:applications	.
-local:underlying	rdfs:member	local:underlying_schemas	.
-local:describes	vn.role:Theme	local:framework	.
-local:rdf_ontologies	rdfs:subClassOf	local:ontologies	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_source_datasets	rdfs:member	local:rdf_ontologies	.
 local:mappings_demands	rdfs:subClassOf	local:demands	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:underlying_ontologies	rdfs:subClassOf	local:ontologies	.
-local:many	rdfs:member	local:many_ways	.
-local:data_cloud	rdfs:subClassOf	local:cloud	.
-local:applications_over_linked_data	local:applications_over	local:linked_data	.
-local:data	rdfs:member	local:data_cloud	.
-local:extension_of_existing_linked_additional_data	local:of_existinglinkedadditionaldata	local:extension	.
-local:comprehensive_understanding_of_rdf_ontologies	local:comprehensiveunderstanding_of	local:rdf_ontologies	.
-local:integrating_into_mapping_process	local:integrating_into	local:mapping_process	.
-local:rdf_ontologies_of_source_datasets	local:of_sourcedatasets	local:rdf_ontologies	.
-local:integrates	vn.role:Patient2	local:mapping	.
-local:process_architecture	rdfs:subClassOf	local:architecture	.
-local:requires	vn.role:Patient	local:mapping_between_application_model	.
-local:new	rdfs:member	local:new_applications	.
-local:closing	vn.role:Patient	local:underlying	.
-local:creation_of_new_applications	local:of_newapplications	local:creation	.
-local:giving	vn.role:object	local:mappings_in_form	.
-local:underlying	vn.role:Theme1	local:ontology	.
-local:underlying_schemas_of_source_datasets	local:of_sourcedatasets	local:underlying_schemas	.
-local:underlying	vn.role:Theme1	local:ontologies	.
-local:many_ways	rdfs:subClassOf	local:ways	.
-local:comprehensive_understanding_of_underlying_schemas	local:of_underlyingschemas	local:comprehensive_understanding	.
-local:simplifies	vn.role:indirect_object	local:fusion	.
-local:application_designer	rdfs:subClassOf	local:designer	.
-local:integrating_into_mapping_process	local:into_mappingprocess	local:integrating	.
-local:describing	vn.role:Predicate	local:view_over_source_dataset	.
-local:underlying_schemas	rdfs:subClassOf	local:schemas	.
-local:rdf_ontologies_of_source_datasets	local:rdfontologies_of	local:source_datasets	.
-local:process_of_schema_exploration_into_mapping_process	local:processofschemaexploration_into	local:mapping_process	.
-local:additional	rdfs:member	local:additional_data	.
-local:existing_linked_additional_data	rdfs:subClassOf	local:linked_additional_data	.
-local:providing	vn.role:Recipient	local:fusion	.
-local:process	rdfs:member	local:process_architecture	.
-local:view_over_source_dataset	local:view_over	local:source_dataset	.
-local:giving_in_form	local:giving_in	local:form	.
-local:form_of_dependencies	local:form_of	local:dependencies	.
-local:implicit	rdfs:member	local:implicit_relationships	.
-local:visual_user	rdfs:member	local:visual_user_interface	.
-local:allows	vn.role:Agent	local:mapping	.
-local:dependencies_between_two_datasets	local:dependencies_between	local:two_datasets	.
-local:definition_of_mappings	local:definition_of	local:mappings	.
-local:supported	local:AM-MOD	local:can	.
-local:map	vn.role:subject	local:application_designer	.
-local:building	rdfs:member	local:building_applications	.
-local:underlying	vn.role:Theme1	local:schemas	.
-local:infer	vn.role:Agent	local:instance	.
-local:giving_in_form_between_two_datasets	local:givinginform_between	local:two_datasets	.
-local:underlying_ontologies_in_linked_data_cloud	local:in_linkeddatacloud	local:underlying_ontologies	.
+local:s14.1	local:AM-LOC	local:linked_data_cloud	.
+local:building_applications	rdfs:member	local:building	.
+local:s1.1	rdf:subject	local:building_applications_over_linked_data	.
+local:underlying_schemas_of_source	rdfs:member	local:source	.
+local:creation_of_new_applications	rdfs:member	local:creation	.
 local:mapping_process	rdfs:subClassOf	local:process	.
-local:linked_additional_data_with_additional_data	local:with_additionaldata	local:linked_additional_data	.
-local:mapping_between_ontology	local:mapping_between	local:ontology	.
-local:infer	vn.role:Agent	local:inference_rules	.
-local:rdf_ontologies_of_target_datasets	local:of_targetdatasets	local:rdf_ontologies	.
-local:help	local:AM-MOD	local:can	.
-local:application_model	rdfs:subClassOf	local:model	.
-local:form_of_dependencies	local:of_dependencies	local:form	.
-local:applications_over_linked_data	local:over_linkeddata	local:applications	.
-local:supported	vn.role:Experiencer	local:task	.
-local:linked_data_cloud	rdfs:subClassOf	local:data_cloud	.
-local:closing	local:AM-LOC	local:linked_data_cloud	.
-local:closing	vn.role:Agent	local:fusion	.
-local:providing	vn.role:Agent	local:visual_user_interface	.
-local:requires	vn.role:Agent	local:building	.
-local:formulating	vn.role:Material	local:mappings_demands	.
-local:integrating	vn.role:Patient2	local:process_of_schema_exploration_into_mapping_process	.
-local:application_model_from_source_dataset	local:applicationmodel_from	local:source_dataset	.
-local:requires	vn.role:Patient	local:ontology	.
-local:help	vn.role:Beneficiary	local:application_designer	.
-local:two_datasets	rdfs:subClassOf	local:datasets	.
-local:comprehensive_understanding_of_rdf_ontologies	local:of_rdfontologies	local:comprehensive_understanding	.
-local:linked_additional_data	rdfs:subClassOf	local:additional_data	.
-local:linked_additional_data_with_additional_data	local:linkedadditionaldata_with	local:additional_data	.
-local:source_dataset_in_linked_data_cloud	local:sourcedataset_in	local:linked_data_cloud	.
-local:creation_of_new_applications_through_extension	local:through_extension	local:creation_of_new_applications	.
-local:mapping_between_application_model	local:between_applicationmodel	local:mapping	.
-local:dependencies_between_two_datasets	local:between_twodatasets	local:dependencies	.
-local:visual	rdfs:member	local:visual_user	.
-local:mapping	rdfs:member	local:mapping_process	.
-local:visual_user	rdfs:subClassOf	local:user	.
-local:view_over_source_dataset	local:over_sourcedataset	local:view	.
-local:finding	vn.role:Theme	local:implicit_relationships	.
-local:supported	vn.role:Theme	local:integrating_into_mapping_process	.
-local:user_interface	rdfs:subClassOf	local:interface	.
-local:application	rdfs:member	local:application_model	.
-local:extension_of_existing_linked_additional_data_with_additional_data	local:with_additionaldata	local:extension_of_existing_linked_additional_data	.
-local:mappings_in_form	local:in_form	local:mappings	.
-local:simplifies	vn.role:Patient	local:definition_of_mappings	.
-local:formulating	local:AM-MNR	local:explicitly	.
-local:mappings	rdfs:member	local:mappings_demands	.
-local:defined	local:AM-MOD	local:can	.
-local:user	rdfs:member	local:user_interface	.
-local:defined	vn.role:Theme	local:mapping_between_ontology	.
+local:definition_of_mappings	rdfs:member	local:mappings	.
+local:exploratory_process	rdfs:subClassOf	local:process	.
+local:source_datasets	rdfs:subClassOf	local:datasets	.
+local:model_source	rdfs:subClassOf	local:source	.
+local:s8.2	rdf:subject	local:schemas	.
+local:many_ways	rdfs:subClassOf	local:ways	.
+local:s0	rdf:subject	local:ontology	.
+local:s8.2	rdfs:subClassOf	local:schemas	.
+local:extension_of_existing_linked_data_with_additional_data	rdfs:member	local:additional_data	.
+local:application_model	rdfs:member	local:application	.
+local:model_source	rdfs:member	local:model	.
+local:giving_in_form	rdfs:member	local:giving	.
+local:mappings_demands	rdfs:member	local:mappings	.
+local:s12.1	rdf:predicate	local:find	.
+local:underlying_schemas_of_source	rdfs:member	local:s10.2	.
+local:giving_in_form_between_two_datasets	rdfs:member	local:giving_in_form	.
+local:mapping_between_the_ontology	rdfs:member	local:ontology	.
+local:s19	rdf:object	local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	.
+local:s16	rdf:predicate	local:simplify	.
+local:process_of_schema_exploration_into_the_mapping_process	rdfs:member	local:mapping_process	.
+local:s3	rdf:subject	local:ontology	.
+local:building_applications_over_linked_data	rdfs:member	local:building_applications	.
+local:s12	rdf:object	local:application_designer_with_finding_the_implicit_relationships_that_the_application_designer_wants_to_map	.
+local:s8.1	rdf:predicate	local:demand	.
+local:s10	rdf:predicate	local:formulate	.
+local:comprehensive_understanding_of_underlying_schemas	rdfs:member	local:s10.2	.
+local:s15	rdf:object	local:framework_for_closing_the_gap_between_the_application_model_fusion	.
+local:s8	rdf:subject	local:comprehensive_understanding_of_the_underlying_schemas_of_the_target_datasets	.
+local:s10.2	rdf:predicate	local:underlie	.
+local:s15	rdf:predicate	local:describe	.
+local:s19	rdf:predicate	local:allow	.
+local:s14.2	rdf:subject	local:ontologies	.
+local:mapping_between_the_application_model	rdfs:member	local:mapping	.
+local:source_dataset_in_linked_data_cloud	rdfs:member	local:source_dataset	.
+local:view_over_the_source_dataset	rdfs:member	local:source_dataset	.
+local:linked_data_cloud_fusion	rdfs:subClassOf	local:data_cloud_fusion	.
+local:s13	rdf:predicate	local:support	.
+local:s10	local:AM-MNR	local:explicitly	.
+local:s10	rdf:subject	local:comprehensive_understanding_of_the_underlying_schemas_of_the_source_datasets	.
+local:s7	rdf:predicate	local:infer	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_target_datasets	rdfs:member	local:comprehensive_understanding	.
 local:visual_user_interface	rdfs:subClassOf	local:interface	.
-local:mappings_in_form	local:mappings_in	local:form	.
-local:building	vn.role:Material	local:applications	.
-local:source	rdfs:member	local:source_dataset	.
-local:formulating	vn.role:Agent	local:comprehensive_understanding_of_underlying_schemas	.
-local:creation_of_new_applications	local:creation_of	local:new_applications	.
-local:integrates	vn.role:Patient2	local:exploratory_process	.
-local:wants	vn.role:Agent	local:application_designer	.
-local:giving_in_form	local:in_form	local:giving	.
-local:describes	vn.role:Predicate	local:fusion	.
-local:implicit_relationships	rdfs:subClassOf	local:relationships	.
-local:defined	vn.role:Theme	local:mapping_between_application_model	.
+local:s16	rdf:subject	local:definition_of_mappings	.
+local:application_model_source_dataset	rdfs:subClassOf	local:model_source_dataset	.
+local:s1	rdf:subject	local:applications	.
+local:source_dataset_in_the_linked_data_cloud	rdfs:member	local:source_dataset	.
+local:s1.1	local:AM-TMP	local:often	.
+local:process_architecture	rdfs:member	local:process	.
+local:s19	rdf:subject	local:mapping_process_architecture	.
+local:s6	local:AM-MNR	local:giving_mappings_in_the_form_of_dependencies_between_the_two_datasets	.
+local:additional_data	rdfs:subClassOf	local:data	.
+local:s19.2	rdfs:member	local:linked	.
+local:s18	rdf:object	local:exploratory_process	.
+local:s2	rdfs:subClassOf	local:applications	.
+local:process_of_schema_exploration_into_mapping_process	rdfs:member	local:process_of_schema_exploration	.
+local:source_dataset_in_linked_data_cloud	rdfs:member	local:linked_data_cloud	.
+local:target_datasets	rdfs:member	local:target	.
+local:s6.1	rdf:subject	local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	.
+local:new_applications	rdfs:member	local:new	.
+local:comprehensive_understanding_of_rdf_ontologies	rdfs:member	local:rdf_ontologies	.
+local:linked_data_cloud	rdfs:subClassOf	local:cloud	.
+local:s2	rdf:predicate	local:building	.
+local:application_model_fusion	rdfs:member	local:application_model	.
+local:s11.1	rdf:predicate	local:demand	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_source_datasets	rdfs:member	local:source_datasets	.
+local:s9.1	rdf:predicate	local:demand	.
+local:s9	rdf:object	local:mappings_demands	.
+local:s8	rdf:predicate	local:formulate	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	rdfs:member	local:datasets	.
+local:s6.1	rdf:predicate	local:give	.
+local:s19.2	rdf:predicate	local:linked	.
+local:s4	rdf:subject	local:mapping_between_the_application_model	.
+local:giving_mappings_in_the_form_of_dependencies_between_the_two_datasets	rdfs:member	local:mappings	.
+local:schema_exploration	rdfs:member	local:schema	.
+local:s9	local:AM-MNR	local:explicitly	.
+local:s12.3	rdf:subject	local:application_designer	.
+local:s11.1	rdf:object	local:comprehensive_understanding_of_rdf_ontologies_of_the_source_datasets	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_source_datasets	rdfs:member	local:source_datasets	.
+local:extension_of_existing_linked_data	rdfs:member	local:existing_linked_data	.
+local:dependencies_between_two_datasets	rdfs:member	local:dependencies	.
+local:s2.1	local:AM-TMP	local:often	.
+local:mappings_in_form	rdfs:member	local:form	.
+local:application_model_source	rdfs:subClassOf	local:source	.
+local:comprehensive_understanding	rdfs:member	local:comprehensive	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_target_datasets	rdfs:member	local:comprehensive_understanding	.
+local:application_model_source_dataset	rdfs:member	local:application_model_source	.
+local:inference_rules	rdfs:member	local:inference	.
+local:model_fusion	rdfs:subClassOf	local:fusion	.
+local:s6.2	rdf:subject	local:two_datasets	.
+local:application_model_source	rdfs:member	local:application_model	.
+local:visual_user	rdfs:member	local:visual	.
+local:application_model_from_source_dataset	rdfs:member	local:source_dataset	.
+local:linked_data_cloud	rdfs:member	local:s19.2	.
+local:s16	local:AM-MNR	local:providing_a_visual_user_interface	.
+local:gap_between_application_model_fusion	rdfs:member	local:application_model_fusion	.
+local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	rdfs:member	local:additional_data	.
+local:source_datasets	rdfs:member	local:source	.
+local:data_cloud_fusion	rdfs:subClassOf	local:cloud_fusion	.
+local:s8	rdf:object	local:mappings_demands	.
+local:s19.2	rdf:subject	local:data	.
+local:s2.1	rdf:object	local:ontology	.
+local:s10	rdf:object	local:mappings_demands	.
+local:underlying_schemas_of_target	rdfs:member	local:s8.2	.
+local:exploratory_process	rdfs:member	local:exploratory	.
+local:inference_rules	rdfs:subClassOf	local:rules	.
+local:linked_data_cloud_fusion	rdfs:member	local:linked_data_cloud	.
+local:s15.1	rdf:subject	local:gap	.
+local:s16.1	rdf:subject	local:fusion	.
+local:s16.1	rdf:object	local:visual_user_interface	.
+local:linked_data_cloud	rdfs:subClassOf	local:data_cloud	.
+local:cloud_fusion	rdfs:subClassOf	local:fusion	.
+local:process_of_schema_exploration	rdfs:member	local:process	.
+local:s11	rdf:predicate	local:formulate	.
+local:implicit_relationships	rdfs:member	local:implicit	.
+local:s8.1	rdf:subject	local:mappings	.
+local:process_of_schema_exploration_into_the_mapping_process	rdfs:member	local:schema_exploration	.
+local:s7	rdf:subject	local:inference_rules	.
+local:extension_of_existing_linked_data	rdfs:member	local:extension	.
+local:s12	rdf:subject	local:task	.
+local:giving_mappings_in_the_form_of_dependencies_between_the_two_datasets	rdfs:member	local:datasets	.
+local:s3	rdf:predicate	local:underlie	.
+local:s19.2	rdfs:subClassOf	local:data	.
+local:application_designer_with_finding_the_implicit_relationships_that_the_application_designer_wants_to_map	rdfs:member	local:application_designer	.
+local:s10.2	rdfs:subClassOf	local:schemas	.
+local:source_dataset	rdfs:member	local:source	.
+local:mappings_in_form	rdfs:member	local:mappings	.
+local:form_of_dependencies	rdfs:member	local:dependencies	.
+local:s18	rdf:subject	local:visual_user_interface	.
+local:framework_for_closing_the_gap_between_the_application_model_fusion	rdfs:member	local:application_model_fusion	.
+local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	rdfs:member	local:data	.
+local:s14.2	rdfs:subClassOf	local:ontologies	.
+local:s13	rdf:object	local:task	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_source_datasets	rdfs:member	local:comprehensive_understanding	.
+local:linked_data_with_additional_data	rdfs:member	local:s19.2	.
+local:s15.1	rdf:predicate	local:close	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	rdfs:member	local:form	.
+local:building_applications_over_linked_data	rdfs:member	local:s19.2	.
+local:process_of_schema_exploration_into_mapping_process	rdfs:member	local:mapping_process	.
+local:s7	rdf:object	local:application_model_source_dataset	.
+local:s17	rdf:predicate	local:integrate	.
+local:s4	local:AM-MNR	local:many_ways	.
+local:framework_for_closing_the_gap_between_the_application_model_fusion	rdfs:member	local:gap	.
+local:s14	rdf:subject	local:paper	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	rdfs:member	local:mappings	.
+local:form_of_dependencies	rdfs:member	local:form	.
+local:mapping_between_application_model	rdfs:member	local:application_model	.
+local:visual_user_interface	rdfs:member	local:visual_user	.
+local:underlying_ontologies_in_linked_data_cloud_fusion	rdfs:member	local:s14.2	.
+local:s12	local:AM-MOD	local:can	.
+local:s10.1	rdf:subject	local:mappings	.
+local:s8.1	rdf:object	local:comprehensive_understanding_of_the_underlying_schemas_of_the_target_datasets	.
+local:s8	local:AM-MNR	local:explicitly	.
+local:application_designer	rdfs:member	local:application	.
+local:two_datasets	rdfs:subClassOf	local:datasets	.
+local:giving_mappings_in_the_form_of_dependencies_between_the_two_datasets	rdfs:member	local:dependencies	.
+local:building_applications	rdfs:subClassOf	local:applications	.
+local:s1	rdf:predicate	local:building	.
+local:model_source_dataset	rdfs:subClassOf	local:dataset	.
+local:comprehensive_understanding_of_underlying_schemas	rdfs:member	local:comprehensive_understanding	.
+local:s11	rdf:object	local:mappings_demands	.
+local:s5	rdf:predicate	local:define	.
+local:gap_between_application_model_fusion	rdfs:member	local:gap	.
+local:extension_of_existing_linked_data_with_additional_data	rdfs:member	local:extension_of_existing_linked_data	.
+local:s5	rdf:subject	local:mapping_between_the_ontology	.
+local:s16.1	rdf:predicate	local:provide	.
+local:s2.1	rdf:subject	local:building_applications_over_linked_data	.
+local:implicit_relationships_that_the_application_designer_wants_to_map	rdfs:member	local:application_designer	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_target_datasets	rdfs:member	local:rdf_ontologies	.
+local:underlying_schemas_of_target	rdfs:member	local:target	.
+local:s13.1	rdf:predicate	local:integrate	.
+local:mapping_between_ontology	rdfs:member	local:mapping	.
+local:framework_for_closing_the_gap_between_the_application_model_fusion	rdfs:member	local:framework	.
+local:rdf_ontologies	rdfs:member	local:rdf	.
+local:mapping_between_the_ontology	rdfs:member	local:mapping	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	rdfs:member	local:dependencies	.
+local:s11	rdf:subject	local:comprehensive_understanding_of_rdf_ontologies_of_the_source_datasets	.
+local:mapping_between_the_application_model	rdfs:member	local:application_model	.
+local:mapping_between_ontology	rdfs:member	local:ontology	.
+local:s17	rdf:subject	local:visual_user_interface	.
+local:user_interface	rdfs:member	local:user	.
+local:cloud_fusion	rdfs:member	local:cloud	.
 local:comprehensive_understanding	rdfs:subClassOf	local:understanding	.
-local:demands	vn.role:Patient	local:comprehensive_understanding_of_rdf_ontologies	.
-local:wants	vn.role:Theme	local:map	.
-local:underlying_ontologies_in_linked_data_cloud	local:underlyingontologies_in	local:linked_data_cloud	.
-local:creation_of_new_applications_through_extension	local:creationofnewapplications_through	local:extension	.
-local:gap_between_application_model	local:between_applicationmodel	local:gap	.
-local:rdf_ontologies_of_target_datasets	local:rdfontologies_of	local:target_datasets	.
-local:extension_of_existing_linked_additional_data	local:extension_of	local:existing_linked_additional_data	.
-local:inference	rdfs:member	local:inference_rules	.
+local:comprehensive_understanding_of_rdf_ontologies	rdfs:member	local:comprehensive_understanding	.
+local:creation_of_new_applications_through_extension	rdfs:member	local:creation_of_new_applications	.
+local:s10.1	rdf:predicate	local:demand	.
+local:s9.1	rdf:object	local:comprehensive_understanding_of_rdf_ontologies_of_the_target_datasets	.
+local:s8.2	rdf:predicate	local:underlie	.
+local:s1.1	rdf:object	local:mapping_between_the_application_model	.
+local:s19.1	rdf:predicate	local:exist	.
+local:implicit_relationships_that_the_application_designer_wants_to_map	rdfs:member	local:implicit_relationships	.
+local:data_cloud_fusion	rdfs:subClassOf	local:fusion	.
+local:s14.1	rdf:subject	local:s14.2	.
+local:s12	rdf:predicate	local:help	.
+local:dependencies_between_two_datasets	rdfs:member	local:two_datasets	.
+local:user_interface	rdfs:subClassOf	local:interface	.
+local:s18	rdf:predicate	local:integrate	.
+local:s4	rdf:predicate	local:define	.
+local:s13	local:AM-MOD	local:can	.
+local:rdf_ontologies	rdfs:subClassOf	local:ontologies	.
+local:visual_user	rdfs:subClassOf	local:user	.
+local:linked_data_with_additional_data	rdfs:member	local:data	.
+local:s11.1	rdf:subject	local:mappings	.
+local:data_cloud_fusion	rdfs:member	local:data_cloud	.
+local:building_applications_over_linked_data	rdfs:member	local:s2	.
+local:s14	rdf:object	local:framework_for_closing_the_underlying_ontologies_in_the_linked_data_cloud_fusion	.
+local:framework_for_closing_the_underlying_ontologies_in_the_linked_data_cloud_fusion	rdfs:member	local:linked_data_cloud_fusion	.
+local:linked_data_with_additional_data	rdfs:member	local:additional_data	.
+local:s12.2	rdf:object	local:map	.
+local:s10.1	rdf:object	local:comprehensive_understanding_of_the_underlying_schemas_of_the_source_datasets	.
+local:source_dataset	rdfs:subClassOf	local:dataset	.
+local:s6	rdf:predicate	local:describe	.
+local:rdf_ontologies_of_source	rdfs:member	local:source	.
+local:s12.1	rdf:object	local:implicit_relationships_that_the_application_designer_wants_to_map	.
+local:model_source_dataset	rdfs:member	local:model_source	.
+local:process_of_schema_exploration_into_the_mapping_process	rdfs:member	local:process	.
+local:s4	local:AM-MOD	local:can	.
+local:s0	rdf:predicate	local:underlie	.
+local:framework_for_closing_the_underlying_ontologies_in_the_linked_data_cloud_fusion	rdfs:member	local:framework	.
+local:linked_data_cloud_fusion	rdfs:subClassOf	local:fusion	.
+local:s12.3	rdf:predicate	local:map	.
+local:s6	rdf:subject	local:application_model	.
+local:s14	rdf:predicate	local:describe	.
+local:s9	rdf:predicate	local:formulate	.
+local:data_cloud	rdfs:subClassOf	local:cloud	.
+local:data_cloud	rdfs:member	local:data	.
+local:s0	rdf:object	local:source_dataset_in_the_linked_data_cloud	.
+local:many_ways	rdfs:member	local:many	.
+local:s19.1	rdf:subject	local:linked_data_with_additional_data	.
+local:implicit_relationships	rdfs:subClassOf	local:relationships	.
+local:creation_of_new_applications_through_extension	rdfs:member	local:extension	.
+local:application_designer_with_finding_the_implicit_relationships_that_the_application_designer_wants_to_map	rdfs:member	local:implicit_relationships	.
+local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	rdfs:member	local:new_applications	.
+local:mapping_between_application_model	rdfs:member	local:mapping	.
+local:model_fusion	rdfs:member	local:model	.
+local:source_dataset_in_the_linked_data_cloud	rdfs:member	local:linked_data_cloud	.
+local:application_model_fusion	rdfs:subClassOf	local:model_fusion	.
+local:s2	rdfs:member	local:building	.
+local:s13	rdf:subject	local:s13.1	.
+local:process_architecture	rdfs:subClassOf	local:architecture	.
+local:s12.2	rdf:predicate	local:want	.
+local:s12.1	rdf:subject	local:application_designer	.
+local:s11	local:AM-MNR	local:explicitly	.
+local:underlying_ontologies_in_linked_data_cloud_fusion	rdfs:member	local:linked_data_cloud_fusion	.
+local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	rdfs:member	local:creation	.
+local:s14.2	rdf:predicate	local:underlie	.
+local:process_of_schema_exploration	rdfs:member	local:schema_exploration	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_target_datasets	rdfs:member	local:target_datasets	.
+local:s14.1	rdf:predicate	local:close	.
+local:s1.1	rdf:predicate	local:require	.
+local:s17	rdf:object	local:mapping_process	.
+local:s13.1	rdf:subject	local:process_of_schema_exploration_into_the_mapping_process	.
+local:s5	local:AM-MOD	local:can	.
+local:s9	rdf:subject	local:comprehensive_understanding_of_rdf_ontologies_of_the_target_datasets	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_target_datasets	rdfs:member	local:target_datasets	.
+local:rdf_ontologies_of_target	rdfs:member	local:rdf_ontologies	.
+local:s3	rdf:object	local:source_dataset_in_the_linked_data_cloud	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	rdfs:member	local:source_dataset	.
+local:creation_of_new_applications	rdfs:member	local:new_applications	.
+local:application_model_fusion	rdfs:subClassOf	local:fusion	.
+local:application_designer	rdfs:subClassOf	local:designer	.
+local:view_over_the_source_dataset	rdfs:member	local:view	.
+local:schema_exploration	rdfs:subClassOf	local:exploration	.
+local:application_model_from_source_dataset	rdfs:member	local:application_model	.
+local:mappings_in_the_form_of_dependencies_between_the_two_datasets_that_infer_the_application_model_from_the_source_dataset	rdfs:member	local:application_model	.
+local:s2	rdf:subject	local:applications	.
+local:giving_in_form	rdfs:member	local:form	.
+local:s2.1	rdf:predicate	local:require	.
+local:additional_data	rdfs:member	local:additional	.
+local:rdf_ontologies_of_source	rdfs:member	local:rdf_ontologies	.
+local:application_model	rdfs:subClassOf	local:model	.
+local:framework_for_closing_the_underlying_ontologies_in_the_linked_data_cloud_fusion	rdfs:member	local:ontologies	.
+local:s10.2	rdf:subject	local:schemas	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_source_datasets	rdfs:member	local:schemas	.
+local:s6.2	rdf:predicate	local:infer	.
+local:visual_user_interface	rdfs:subClassOf	local:user_interface	.
+local:view_over_source_dataset	rdfs:member	local:view	.
+local:giving_in_form_between_two_datasets	rdfs:member	local:two_datasets	.
+local:model_source_dataset	rdfs:subClassOf	local:source_dataset	.
+local:s6.2	rdf:object	local:application_model_source_dataset	.
+local:view_over_source_dataset	rdfs:member	local:source_dataset	.
+local:s9.1	rdf:subject	local:mappings	.
+local:giving_mappings_in_the_form_of_dependencies_between_the_two_datasets	rdfs:member	local:form	.
+local:s5	local:AM-MNR	local:many_ways	.
+local:application_model_source_dataset	rdfs:subClassOf	local:dataset	.
+local:new_applications	rdfs:subClassOf	local:applications	.
+local:s12.2	rdf:subject	local:application_designer	.
+local:definition_of_mappings	rdfs:member	local:definition	.
+local:rdf_ontologies_of_target	rdfs:member	local:target	.
+local:existing_linked_data	rdfs:subClassOf	local:s19.2	.
+local:s15	rdf:subject	local:paper	.
+local:comprehensive_understanding_of_rdf_ontologies_of_the_source_datasets	rdfs:member	local:comprehensive_understanding	.
+local:s6	rdf:object	local:view_over_the_source_dataset	.
+local:s16	rdf:object	local:fusion	.
+local:target_datasets	rdfs:subClassOf	local:datasets	.
+local:creation_of_new_applications_through_the_extension_of_existing_linked_data_with_additional_data	rdfs:member	local:extension	.
+local:comprehensive_understanding_of_underlying_schemas	rdfs:member	local:s8.2	.
+local:comprehensive_understanding_of_the_underlying_schemas_of_the_target_datasets	rdfs:member	local:schemas	.
+local:mapping_process	rdfs:member	local:mapping	.

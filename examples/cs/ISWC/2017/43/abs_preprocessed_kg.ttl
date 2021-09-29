@@ -1,267 +1,568 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"existing crosslingual links"	.
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"attribute mappings"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"our proposed approach finds 23923 new infobox attribute mappings between english wikipedia"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"attribute mappings"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"our proposed approach finds 23923 new infobox attribute mappings between chinese wikipedia"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"matched infobox attributes"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"no more than six thousand existing matched infobox attributes"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"based on no more than six thousand existing matched infobox attributes"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"matched infobox attributes"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"no more than six thousand existing matched infobox attributes"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"based on no more than six thousand existing matched infobox attributes"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach can achieve high f1measure 854 percent respectively on the two data sets"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach can achieve high f1measure 854 percent respectively on the two data sets"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach can achieve high f1measure 855 percent"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"proposed approach can achieve high f1measure 855 percent"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"proposed approach"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"entityattribute factor graph consider not only the correlations among attribute pairs"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we propose entityattribute factor graph to consider not only the correlations among attribute pairs"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"entityattribute factor graph consider not only individual features"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we propose entityattribute factor graph to consider not only individual features"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"8 effective features for cross lingual infobox containing categories templates attribute values"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"8 effective features for cross lingual infobox attribute matching containing categories templates attribute values"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose 8 effective features for cross lingual infobox attribute matching"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"8 effective features for cross lingual infobox containing categories templates attribute labels"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"templates attribute labels"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"find correspondences between infobox attributes in different language editions"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the different language versions of wikipedia evolve independently"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"find correspondences between infobox attributes in different language editions"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the different language versions of wikipedia evolve independently"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"wikipedia infoboxes contain information about article entities in the form of attributevalue pairs"	.
+
+
 #### Classes ####
 
-local:wikipedia_infoboxes	rdfs:label	"wikipedia infoboxes"	.
+local:crosslingual_links	a	rdf:Class	;
+	rdfs:label	"crosslingual links"	.
 
-local:infoboxes	rdfs:label	"infoboxes"	.
+local:links	a	rdf:Class	;
+	rdfs:label	"links"	.
 
-local:wikipedia	rdfs:label	"wikipedia"	.
+local:crosslingual	a	rdf:Class	;
+	rdfs:label	"crosslingual"	.
 
-local:contain	rdfs:label	"contain"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:article_entities	rdfs:label	"article entities"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:entities	rdfs:label	"entities"	.
+local:attribute	a	rdf:Class	;
+	rdfs:label	"attribute"	.
 
-local:attributevalue	rdfs:label	"attribute-value"	.
+local:proposed_approach	a	rdf:Class	;
+	rdfs:label	"proposed approach"	.
 
-local:attributevalue_pairs	rdfs:label	"attribute-value pairs"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:article	rdfs:label	"article"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:pairs	rdfs:label	"pairs"	.
+local:23923_new_infobox_attribute_mappings_between_english_wikipedia	a	rdf:Class	;
+	rdfs:label	"23923 new infobox attribute mappings between english wikipedia"	.
 
-local:information_about_article_entities	rdfs:label	"information about article entities"	.
+local:new_infobox	a	rdf:Class	;
+	rdfs:label	"new infobox"	.
 
-local:information	rdfs:label	"information"	.
+local:english_wikipedia	a	rdf:Class	;
+	rdfs:label	"english wikipedia"	.
 
-local:article_entities_in_form	rdfs:label	"article entities in form"	.
+local:english	a	rdf:Class	;
+	rdfs:label	"english"	.
 
-local:form	rdfs:label	"form"	.
+local:infobox	a	rdf:Class	;
+	rdfs:label	"infobox"	.
 
-local:form_of_attributevalue_pairs	rdfs:label	"form of attribute-value pairs"	.
+local:wikipedia	a	rdf:Class	;
+	rdfs:label	"wikipedia"	.
 
-local:language	rdfs:label	"language"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:language_versions	rdfs:label	"language versions"	.
+local:infobox_attribute_mappings	a	rdf:Class	;
+	rdfs:label	"infobox attribute mappings"	.
 
-local:versions	rdfs:label	"versions"	.
+local:new_infobox_attribute_mappings	a	rdf:Class	;
+	rdfs:label	"new infobox attribute mappings"	.
 
-local:different_language	rdfs:label	"different language"	.
+local:23923_new_infobox_attribute_mappings	a	rdf:Class	;
+	rdfs:label	"23923 new infobox attribute mappings"	.
 
-local:different_language_versions	rdfs:label	"different language versions"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:different	rdfs:label	"different"	.
+local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	a	rdf:Class	;
+	rdfs:label	"23923 new infobox attribute mappings between chinese wikipedia"	.
 
-local:different_language_versions_of_wikipedia	rdfs:label	"different language versions of wikipedia"	.
+local:chinese_wikipedia	a	rdf:Class	;
+	rdfs:label	"chinese wikipedia"	.
 
-local:evolve	rdfs:label	"evolve"	.
+local:chinese	a	rdf:Class	;
+	rdfs:label	"chinese"	.
 
-local:language_editions	rdfs:label	"language editions"	.
+local:infobox_attributes	a	rdf:Class	;
+	rdfs:label	"infobox attributes"	.
 
-local:editions	rdfs:label	"editions"	.
+local:attributes	a	rdf:Class	;
+	rdfs:label	"attributes"	.
 
-local:different_language_editions	rdfs:label	"different language editions"	.
+local:match	a	rdf:Class	;
+	rdfs:label	"match"	.
 
-local:infobox_attributes	rdfs:label	"infobox attributes"	.
+local:six_thousand	a	rdf:Class	;
+	rdfs:label	"six thousand"	.
 
-local:attributes	rdfs:label	"attributes"	.
+local:thousand	a	rdf:Class	;
+	rdfs:label	"thousand"	.
 
-local:infobox	rdfs:label	"infobox"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:challenging_problem	rdfs:label	"challenging problem"	.
+local:six_thousand_existing_matched_infobox_attributes	a	rdf:Class	;
+	rdfs:label	"six thousand existing matched infobox attributes"	.
 
-local:problem	rdfs:label	"problem"	.
+local:existing_matched_infobox_attributes	a	rdf:Class	;
+	rdfs:label	"existing matched infobox attributes"	.
 
-local:independently_challenging_problem	rdfs:label	"independently challenging problem"	.
+local:thousand_existing_matched_infobox_attributes	a	rdf:Class	;
+	rdfs:label	"thousand existing matched infobox attributes"	.
 
-local:correspondences_between_infobox_attributes	rdfs:label	"correspondences between infobox attributes"	.
+local:achieve	a	rdf:Class	;
+	rdfs:label	"achieve"	.
 
-local:correspondences	rdfs:label	"correspondences"	.
+local:high_f1measure_854_percent_respectively	a	rdf:Class	;
+	rdfs:label	"high f1measure 854 percent respectively"	.
 
-local:find_in_different_language_editions	rdfs:label	"find in different language editions"	.
+local:high_f1measure	a	rdf:Class	;
+	rdfs:label	"high f1measure"	.
 
-local:find	rdfs:label	"find"	.
+local:percent	a	rdf:Class	;
+	rdfs:label	"percent"	.
 
-local:infobox_attributes_in_different_language_editions	rdfs:label	"infobox attributes in different language editions"	.
+local:high	a	rdf:Class	;
+	rdfs:label	"high"	.
 
-local:promising_problem	rdfs:label	"promising problem"	.
+local:f1measure	a	rdf:Class	;
+	rdfs:label	"f1measure"	.
 
-local:promising	rdfs:label	"promising"	.
+local:respectively_percent	a	rdf:Class	;
+	rdfs:label	"respectively percent"	.
 
-local:independently_promising_problem	rdfs:label	"independently promising problem"	.
+local:854_respectively_percent	a	rdf:Class	;
+	rdfs:label	"854 respectively percent"	.
 
-local:propose	rdfs:label	"propose"	.
+local:f1measure_854_respectively_percent	a	rdf:Class	;
+	rdfs:label	"f1measure 854 respectively percent"	.
 
-local:paper	rdfs:label	"paper"	.
+local:high_f1measure_854_respectively_percent	a	rdf:Class	;
+	rdfs:label	"high f1measure 854 respectively percent"	.
 
-local:we	rdfs:label	"we"	.
+local:two_data_sets	a	rdf:Class	;
+	rdfs:label	"two data sets"	.
 
-local:attribute_labels	rdfs:label	"attribute labels"	.
+local:data_sets	a	rdf:Class	;
+	rdfs:label	"data sets"	.
 
-local:labels	rdfs:label	"labels"	.
+local:sets	a	rdf:Class	;
+	rdfs:label	"sets"	.
 
-local:attribute	rdfs:label	"attribute"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:containing	rdfs:label	"containing"	.
+local:two_data	a	rdf:Class	;
+	rdfs:label	"two data"	.
 
-local:attribute_values	rdfs:label	"attribute values"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:values	rdfs:label	"values"	.
+local:high_f1measure_855_percent	a	rdf:Class	;
+	rdfs:label	"high f1measure 855 percent"	.
 
-local:categories	rdfs:label	"categories"	.
+local:855_percent	a	rdf:Class	;
+	rdfs:label	"855 percent"	.
 
-local:attribute_pairs	rdfs:label	"attribute pairs"	.
+local:f1measure_855_percent	a	rdf:Class	;
+	rdfs:label	"f1measure 855 percent"	.
 
-local:factor	rdfs:label	"factor"	.
+local:entityattribute_factor_graph	a	rdf:Class	;
+	rdfs:label	"entityattribute factor graph"	.
 
-local:factor_graph	rdfs:label	"factor graph"	.
+local:entityattribute_factor	a	rdf:Class	;
+	rdfs:label	"entityattribute factor"	.
 
-local:graph	rdfs:label	"graph"	.
+local:factor	a	rdf:Class	;
+	rdfs:label	"factor"	.
 
-local:entityattribute_factor	rdfs:label	"entity-attribute factor"	.
+local:entityattribute	a	rdf:Class	;
+	rdfs:label	"entityattribute"	.
 
-local:entityattribute	rdfs:label	"entity-attribute"	.
+local:factor_graph	a	rdf:Class	;
+	rdfs:label	"factor graph"	.
 
-local:entityattribute_factor_graph	rdfs:label	"entity-attribute factor graph"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:not_only	rdfs:label	"not only"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:only	rdfs:label	"only"	.
+local:correlations_among_attribute_pairs	a	rdf:Class	;
+	rdfs:label	"correlations among attribute pairs"	.
 
-local:correlations_among_attribute_pairs	rdfs:label	"correlations among attribute pairs"	.
+local:correlations	a	rdf:Class	;
+	rdfs:label	"correlations"	.
 
-local:correlations	rdfs:label	"correlations"	.
+local:attribute_pairs	a	rdf:Class	;
+	rdfs:label	"attribute pairs"	.
 
-local:consider	rdfs:label	"consider"	.
+local:pairs	a	rdf:Class	;
+	rdfs:label	"pairs"	.
 
-local:not_only_individual	rdfs:label	"not only individual"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:not_only_individual_features	rdfs:label	"not only individual features"	.
+local:entityattribute_factor_graph_to_consider_not_only_the_correlations_among_attribute_pairs	a	rdf:Class	;
+	rdfs:label	"entityattribute factor graph to consider not only the correlations among attribute pairs"	.
 
-local:individual	rdfs:label	"individual"	.
+local:not_only	a	rdf:Class	;
+	rdfs:label	"not only"	.
 
-local:individual_features	rdfs:label	"individual features"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:only_individual	rdfs:label	"only individual"	.
+local:individual_features	a	rdf:Class	;
+	rdfs:label	"individual features"	.
 
-local:features	rdfs:label	"features"	.
+local:individual	a	rdf:Class	;
+	rdfs:label	"individual"	.
 
-local:only_individual_features	rdfs:label	"only individual features"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:not	rdfs:label	"not"	.
+local:consider_not_only_individual_features	a	rdf:Class	;
+	rdfs:label	"consider not only individual features"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:only_individual	a	rdf:Class	;
+	rdfs:label	"only individual"	.
 
-local:approach	rdfs:label	"approach"	.
+local:not_only_individual_features	a	rdf:Class	;
+	rdfs:label	"not only individual features"	.
 
-local:proposed_approach	rdfs:label	"proposed approach"	.
+local:not_only_individual	a	rdf:Class	;
+	rdfs:label	"not only individual"	.
 
-local:achieve	rdfs:label	"achieve"	.
+local:only_individual_features	a	rdf:Class	;
+	rdfs:label	"only individual features"	.
 
-local:can	rdfs:label	"can"	.
+local:not	a	rdf:Class	;
+	rdfs:label	"not"	.
 
-local:data_sets	rdfs:label	"data sets"	.
+local:8_effective_features_for_cross_lingual_infobox	a	rdf:Class	;
+	rdfs:label	"8 effective features for cross lingual infobox"	.
 
-local:sets	rdfs:label	"sets"	.
+local:cross	a	rdf:Class	;
+	rdfs:label	"cross"	.
 
-local:high_f1measure	rdfs:label	"high f1-measure"	.
+local:effective_features	a	rdf:Class	;
+	rdfs:label	"effective features"	.
 
-local:f1measure	rdfs:label	"f1-measure"	.
+local:lingual_infobox	a	rdf:Class	;
+	rdfs:label	"lingual infobox"	.
 
-local:high	rdfs:label	"high"	.
+local:effective	a	rdf:Class	;
+	rdfs:label	"effective"	.
 
-local:data	rdfs:label	"data"	.
+local:lingual	a	rdf:Class	;
+	rdfs:label	"lingual"	.
 
-local:two_data_sets	rdfs:label	"two data sets"	.
+local:cross_lingual_infobox	a	rdf:Class	;
+	rdfs:label	"cross lingual infobox"	.
 
-local:respectively_	rdfs:label	"respectively %"	.
+local:8_effective_features	a	rdf:Class	;
+	rdfs:label	"8 effective features"	.
 
-local:	rdfs:label	"%"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:854_respectively_	rdfs:label	"85.4 respectively %"	.
+local:categories_templates_attribute_values	a	rdf:Class	;
+	rdfs:label	"categories templates attribute values"	.
 
-local:855_respectively_	rdfs:label	"85.5 respectively %"	.
+local:attribute_values	a	rdf:Class	;
+	rdfs:label	"attribute values"	.
 
-local:855_respectively__on_two_data_sets	rdfs:label	"85.5 respectively % on two data sets"	.
+local:categories	a	rdf:Class	;
+	rdfs:label	"categories"	.
 
-local:finds	rdfs:label	"finds"	.
+local:values	a	rdf:Class	;
+	rdfs:label	"values"	.
 
-local:chinese_wikipedia	rdfs:label	"chinese wikipedia"	.
+local:categories_templates	a	rdf:Class	;
+	rdfs:label	"categories templates"	.
 
-local:new	rdfs:label	"new"	.
+local:templates	a	rdf:Class	;
+	rdfs:label	"templates"	.
 
-local:new_infobox	rdfs:label	"new infobox"	.
+local:8_effective_effective_features_features_for_for_cross_cross_lingual_lingual_infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"8 effective effective features features for for cross cross lingual lingual infobox infobox attribute"	.
 
-local:chinese	rdfs:label	"chinese"	.
+local:lingual_lingual_infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"lingual lingual infobox infobox attribute"	.
 
-local:attribute_mappings	rdfs:label	"attribute mappings"	.
+local:effective_effective_features_features	a	rdf:Class	;
+	rdfs:label	"effective effective features features"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:cross_cross	a	rdf:Class	;
+	rdfs:label	"cross cross"	.
 
-local:matched_infobox_attributes	rdfs:label	"matched infobox attributes"	.
+local:infobox_infobox	a	rdf:Class	;
+	rdfs:label	"infobox infobox"	.
 
-local:existing_matched_infobox_attributes	rdfs:label	"existing matched infobox attributes"	.
+local:effective_effective_features	a	rdf:Class	;
+	rdfs:label	"effective effective features"	.
 
-local:thousand_existing_matched_infobox_attributes	rdfs:label	"thousand existing matched infobox attributes"	.
+local:lingual_infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"lingual infobox infobox attribute"	.
 
-local:six_thousand	rdfs:label	"six thousand"	.
+local:lingual_lingual_infobox_infobox	a	rdf:Class	;
+	rdfs:label	"lingual lingual infobox infobox"	.
 
-local:thousand	rdfs:label	"thousand"	.
+local:lingual_lingual_infobox	a	rdf:Class	;
+	rdfs:label	"lingual lingual infobox"	.
 
-local:more_six	rdfs:label	"more six"	.
+local:effective_features_features	a	rdf:Class	;
+	rdfs:label	"effective features features"	.
 
-local:six	rdfs:label	"six"	.
+local:lingual_infobox_infobox	a	rdf:Class	;
+	rdfs:label	"lingual infobox infobox"	.
 
-local:no_six_thousand	rdfs:label	"no six thousand"	.
+local:infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"infobox infobox attribute"	.
 
-local:infobox_attribute_mappings	rdfs:label	"infobox attribute mappings"	.
+local:infobox_attribute	a	rdf:Class	;
+	rdfs:label	"infobox attribute"	.
 
-local:new_infobox_attribute_mappings	rdfs:label	"new infobox attribute mappings"	.
+local:lingual_lingual	a	rdf:Class	;
+	rdfs:label	"lingual lingual"	.
 
-local:23923_new_infobox_attribute_mappings	rdfs:label	"23,923 new infobox attribute mappings"	.
+local:features_features	a	rdf:Class	;
+	rdfs:label	"features features"	.
 
-local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	rdfs:label	"23,923 new infobox attribute mappings between chinese wikipedia"	.
+local:effective_effective	a	rdf:Class	;
+	rdfs:label	"effective effective"	.
 
-local:31576_between_french	rdfs:label	"31,576 between french"	.
+local:cross_lingual_lingual_infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"cross lingual lingual infobox infobox attribute"	.
 
-local:31576	rdfs:label	"31,576"	.
+local:cross_cross_lingual_lingual_infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"cross cross lingual lingual infobox infobox attribute"	.
 
-local:french	rdfs:label	"french"	.
+local:8_effective_effective_features_features	a	rdf:Class	;
+	rdfs:label	"8 effective effective features features"	.
 
-local:31576_between_french_based	rdfs:label	"31,576 between french based"	.
+local:8_effective_effective_features_features_for_cross_cross_lingual_lingual_infobox_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"8 effective effective features features for cross cross lingual lingual infobox infobox attribute"	.
 
-local:based	rdfs:label	"based"	.
+local:8_effective_features_for_cross_lingual_infobox_attribute_matching	a	rdf:Class	;
+	rdfs:label	"8 effective features for cross lingual infobox attribute matching"	.
 
-local:based_on_thousand_existing_matched_infobox_attributes	rdfs:label	"based on thousand existing matched infobox attributes"	.
+local:lingual_infobox_attribute	a	rdf:Class	;
+	rdfs:label	"lingual infobox attribute"	.
 
-local:existing	rdfs:label	"existing"	.
+local:attribute_matching	a	rdf:Class	;
+	rdfs:label	"attribute matching"	.
 
-local:no_more_six	rdfs:label	"no more six"	.
+local:matching	a	rdf:Class	;
+	rdfs:label	"matching"	.
 
-local:31576_between_french_basedon_six_thousand	rdfs:label	"31,576 between french based_on six thousand"	.
+local:infobox_attribute_matching	a	rdf:Class	;
+	rdfs:label	"infobox attribute matching"	.
 
-local:matched	rdfs:label	"matched"	.
+local:lingual_infobox_attribute_matching	a	rdf:Class	;
+	rdfs:label	"lingual infobox attribute matching"	.
 
-local:31576_between_english	rdfs:label	"31,576 between english"	.
+local:cross_lingual_infobox_attribute_matching	a	rdf:Class	;
+	rdfs:label	"cross lingual infobox attribute matching"	.
 
-local:english	rdfs:label	"english"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:english_basedon_thousand_existing_matched_infobox_attributes	rdfs:label	"english based_on thousand existing matched infobox attributes"	.
+local:categories_templates_attribute_labels	a	rdf:Class	;
+	rdfs:label	"categories templates attribute labels"	.
 
-local:english_basedon_six_thousand	rdfs:label	"english based_on six thousand"	.
+local:attribute_labels	a	rdf:Class	;
+	rdfs:label	"attribute labels"	.
 
-local:six_thousand_existing	rdfs:label	"six thousand existing"	.
+local:labels	a	rdf:Class	;
+	rdfs:label	"labels"	.
 
-local:english_wikipedia	rdfs:label	"english wikipedia"	.
+local:correspondences_between_infobox_attributes_in_different_language_editions	a	rdf:Class	;
+	rdfs:label	"correspondences between infobox attributes in different language editions"	.
 
-local:23923_new_infobox_attribute_mappings_between_english_wikipedia	rdfs:label	"23,923 new infobox attribute mappings between english wikipedia"	.
+local:correspondences	a	rdf:Class	;
+	rdfs:label	"correspondences"	.
 
-local:crosslingual	rdfs:label	"cross-lingual"	.
+local:different_language_editions	a	rdf:Class	;
+	rdfs:label	"different language editions"	.
 
-local:crosslingual_links	rdfs:label	"cross-lingual links"	.
+local:language_editions	a	rdf:Class	;
+	rdfs:label	"language editions"	.
 
-local:links	rdfs:label	"links"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:rrb_pairs	rdfs:label	"-rrb- pairs"	.
+local:different_language	a	rdf:Class	;
+	rdfs:label	"different language"	.
 
-#### Properties ####
+local:editions	a	rdf:Class	;
+	rdfs:label	"editions"	.
+
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
+
+local:correspondences_between_infobox_attributes	a	rdf:Class	;
+	rdfs:label	"correspondences between infobox attributes"	.
+
+local:infobox_attributes_in_different_language_editions	a	rdf:Class	;
+	rdfs:label	"infobox attributes in different language editions"	.
+
+local:different_language_versions_of_wikipedia	a	rdf:Class	;
+	rdfs:label	"different language versions of wikipedia"	.
+
+local:different_language_versions	a	rdf:Class	;
+	rdfs:label	"different language versions"	.
+
+local:language_versions	a	rdf:Class	;
+	rdfs:label	"language versions"	.
+
+local:versions	a	rdf:Class	;
+	rdfs:label	"versions"	.
+
+local:evolve	a	rdf:Class	;
+	rdfs:label	"evolve"	.
+
+local:independently	a	rdf:Class	;
+	rdfs:label	"independently"	.
+
+local:wikipedia_infoboxes	a	rdf:Class	;
+	rdfs:label	"wikipedia infoboxes"	.
+
+local:infoboxes	a	rdf:Class	;
+	rdfs:label	"infoboxes"	.
+
+local:information_about_article_entities_in_the_form_of_attributevalue_pairs	a	rdf:Class	;
+	rdfs:label	"information about article entities in the form of attributevalue pairs"	.
+
+local:attributevalue_pairs	a	rdf:Class	;
+	rdfs:label	"attributevalue pairs"	.
+
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
+
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
+
+local:article_entities	a	rdf:Class	;
+	rdfs:label	"article entities"	.
+
+local:article	a	rdf:Class	;
+	rdfs:label	"article"	.
+
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
+
+local:attributevalue	a	rdf:Class	;
+	rdfs:label	"attributevalue"	.
+
+local:information_about_article_entities	a	rdf:Class	;
+	rdfs:label	"information about article entities"	.
+
+local:article_entities_in_form	a	rdf:Class	;
+	rdfs:label	"article entities in form"	.
+
+local:form_of_attributevalue_pairs	a	rdf:Class	;
+	rdfs:label	"form of attributevalue pairs"	.
 
 #### Mapped Relations ####
 
@@ -270,157 +571,287 @@ cso:factor_graph	rdfs:label	"factor graph"	.
 
 #### Relations ####
 
-local:information_about_article_entities	local:about_articleentities	local:information	.
-local:entityattribute_factor_graph	rdfs:subClassOf	local:graph	.
-local:form_of_attributevalue_pairs	local:of_attribute-valuepairs	local:form	.
-local:31576_between_french_based	local:_based	local:31576_between_french	.
-local:based_on_thousand_existing_matched_infobox_attributes	local:based_on	local:thousand_existing_matched_infobox_attributes	.
-local:different_language_versions_of_wikipedia	local:differentlanguageversions_of	local:wikipedia	.
-local:matched_infobox_attributes	rdfs:subClassOf	local:infobox_attributes	.
-local:language_versions	rdfs:subClassOf	local:versions	.
-local:wikipedia	rdfs:member	local:wikipedia_infoboxes	.
-local:31576_between_french	local:between_french	local:31576	.
-local:855_respectively_	rdfs:subClassOf	local:respectively_	.
-local:not_only_individual_features	rdfs:subClassOf	local:features	.
-local:independently_promising_problem	rdfs:subClassOf	local:promising_problem	.
-local:propose	vn.role:Topic	local:containing	.
-local:consider	vn.role:Theme	local:individual_features	.
-local:thousand_existing_matched_infobox_attributes	rdfs:subClassOf	local:existing_matched_infobox_attributes	.
-local:31576_between_french_based	local:31,576betweenfrench_	local:based	.
-local:individual	rdfs:member	local:individual_features	.
-local:respectively_	rdfs:subClassOf	local:	.
-local:different_language	rdfs:member	local:different_language_editions	.
-local:crosslingual_links	rdfs:subClassOf	local:links	.
-local:existing	vn.role:Location	local:matched_infobox_attributes	.
-local:high_f1measure	rdfs:subClassOf	local:f1measure	.
-local:information_about_article_entities	local:information_about	local:article_entities	.
-local:not_only_individual	rdfs:subClassOf	local:individual	.
-local:find	vn.role:Theme	local:correspondences_between_infobox_attributes	.
-local:not_only	rdfs:subClassOf	local:only	.
-local:new	rdfs:member	local:new_infobox	.
-local:different_language_versions_of_wikipedia	local:of_wikipedia	local:different_language_versions	.
-local:not_only	rdfs:member	local:not_only_individual	.
-local:evolve	vn.role:Location	local:independently_challenging_problem	.
-local:evolve	vn.role:Location	local:independently_promising_problem	.
-local:no_six_thousand	rdfs:subClassOf	local:six_thousand	.
-local:six_thousand_existing	local:_existing	local:six_thousand	.
-local:data_sets	rdfs:subClassOf	local:sets	.
-local:only_individual_features	rdfs:subClassOf	local:features	.
-local:entityattribute_factor	rdfs:member	local:entityattribute_factor_graph	.
-local:propose	vn.role:Topic	local:entityattribute_factor_graph	.
-local:only	rdfs:member	local:only_individual	.
-local:more_six	rdfs:subClassOf	local:six	.
-local:article_entities	rdfs:subClassOf	local:entities	.
-local:wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
-local:consider	vn.role:Theme	local:correlations_among_attribute_pairs	.
-local:attribute	rdfs:member	local:attribute_pairs	.
-local:propose	vn.role:Agent	local:we	.
-local:different_language_versions	rdfs:subClassOf	local:language_versions	.
-local:854_respectively_	rdfs:subClassOf	local:respectively_	.
-local:31576_between_english	local:31,576_between	local:english	.
-local:article_entities_in_form	local:in_form	local:article_entities	.
-local:infobox	rdfs:member	local:infobox_attributes	.
-local:chinese	rdfs:member	local:chinese_wikipedia	.
-local:proposed_approach	rdfs:subClassOf	local:approach	.
-local:achieve	vn.role:Agent	local:proposed_approach	.
-local:23923_new_infobox_attribute_mappings_between_english_wikipedia	local:23,923newinfoboxattributemappings_between	local:english_wikipedia	.
-local:existing	vn.role:Location	local:crosslingual_links	.
-local:rrb_pairs	rdfs:subClassOf	local:pairs	.
-local:individual_features	rdfs:subClassOf	local:features	.
-local:attribute_values	rdfs:subClassOf	local:values	.
-local:correlations_among_attribute_pairs	local:correlations_among	local:attribute_pairs	.
-local:attribute_mappings	rdfs:subClassOf	local:mappings	.
-local:english_basedon_thousand_existing_matched_infobox_attributes	local:based_on_thousandexistingmatchedinfoboxattributes	local:english	.
-local:not_only_individual	rdfs:member	local:not_only_individual_features	.
-local:new_infobox_attribute_mappings	rdfs:subClassOf	local:infobox_attribute_mappings	.
-local:different_language_versions	rdfs:subClassOf	local:versions	.
-local:based	vn.role:indirect_object	local:thousand_existing_matched_infobox_attributes	.
-local:based_on_thousand_existing_matched_infobox_attributes	local:on_thousandexistingmatchedinfoboxattributes	local:based	.
-local:855_respectively__on_two_data_sets	local:85.5respectively%_on	local:two_data_sets	.
-local:based	vn.role:Cause	local:23923_new_infobox_attribute_mappings_between_english_wikipedia	.
-local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	local:between_chinesewikipedia	local:23923_new_infobox_attribute_mappings	.
-local:containing	vn.role:Theme2	local:attribute	.
-local:correlations_among_attribute_pairs	local:among_attributepairs	local:correlations	.
-local:finds	vn.role:Theme	local:23923_new_infobox_attribute_mappings_between_english_wikipedia	.
-local:matched	vn.role:Patient2	local:23923_new_infobox_attribute_mappings_between_english_wikipedia	.
-local:correspondences_between_infobox_attributes	local:between_infoboxattributes	local:correspondences	.
-local:factor	rdfs:member	local:factor_graph	.
-local:data	rdfs:member	local:data_sets	.
-local:855_respectively__on_two_data_sets	local:on_twodatasets	local:855_respectively_	.
-local:challenging_problem	rdfs:subClassOf	local:problem	.
-local:english_basedon_six_thousand	local:english_based_on	local:six_thousand	.
-local:no_more_six	rdfs:subClassOf	local:more_six	.
-local:different_language	rdfs:subClassOf	local:language	.
-local:language	rdfs:member	local:language_editions	.
-local:article	rdfs:member	local:article_entities	.
-local:only_individual	rdfs:subClassOf	local:individual	.
-local:six_thousand	rdfs:subClassOf	local:thousand	.
-local:matched	vn.role:Patient2	local:infobox_attributes	.
-local:english_basedon_thousand_existing_matched_infobox_attributes	local:english_based_on	local:thousand_existing_matched_infobox_attributes	.
-local:31576_between_french	local:31,576_between	local:french	.
-local:chinese_wikipedia	rdfs:subClassOf	local:wikipedia	.
-local:new_infobox	rdfs:subClassOf	local:infobox	.
-local:language_editions	rdfs:subClassOf	local:editions	.
-local:crosslingual	rdfs:member	local:crosslingual_links	.
-local:23923_new_infobox_attribute_mappings	rdfs:subClassOf	local:new_infobox_attribute_mappings	.
-local:find_in_different_language_editions	local:in_differentlanguageeditions	local:find	.
-local:matched	vn.role:Patient2	local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	.
-local:31576_between_french_basedon_six_thousand	local:based_on_sixthousand	local:31576_between_french	.
-local:attribute	rdfs:member	local:attribute_mappings	.
-local:attribute	vn.role:Theme	local:mappings	.
-local:contain	vn.role:Theme1	local:wikipedia_infoboxes	.
-local:entityattribute	rdfs:member	local:entityattribute_factor	.
-local:article_entities_in_form	local:articleentities_in	local:form	.
-local:attribute	vn.role:Recipient	local:chinese_wikipedia	.
-local:infobox_attributes	rdfs:subClassOf	local:attributes	.
-local:finds	vn.role:Agent	local:proposed_approach	.
-local:existing_matched_infobox_attributes	rdfs:subClassOf	local:matched_infobox_attributes	.
-local:evolve	vn.role:Location	local:different_language_versions_of_wikipedia	.
-local:achieve	vn.role:Theme	local:high_f1measure	.
-local:based	vn.role:Cause	local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	.
-local:different_language	rdfs:member	local:different_language_versions	.
-local:containing	local:AM-LOC	local:paper	.
-local:consider	vn.role:Agent	local:entityattribute_factor_graph	.
-local:contain	vn.role:Theme2	local:information_about_article_entities	.
-local:independently_challenging_problem	rdfs:subClassOf	local:challenging_problem	.
-local:english_basedon_six_thousand	local:based_on_sixthousand	local:english	.
-local:english_wikipedia	rdfs:subClassOf	local:wikipedia	.
-local:attribute	rdfs:member	local:attribute_labels	.
-local:31576_between_french_basedon_six_thousand	local:31,576betweenfrench_based_on	local:six_thousand	.
-local:english	rdfs:member	local:english_wikipedia	.
-local:promising	rdfs:member	local:promising_problem	.
-local:containing	vn.role:Theme1	local:we	.
-local:31576_between_english	local:between_english	local:31576	.
-local:six_thousand_existing	local:sixthousand_	local:existing	.
-local:attribute_labels	rdfs:subClassOf	local:labels	.
-local:two_data_sets	rdfs:subClassOf	local:data_sets	.
-local:containing	vn.role:Theme2	local:categories	.
-local:attributevalue_pairs	rdfs:subClassOf	local:pairs	.
-local:form_of_attributevalue_pairs	local:form_of	local:attributevalue_pairs	.
+local:information_about_article_entities_in_the_form_of_attributevalue_pairs	rdfs:member	local:form	.
+local:s11	rdf:subject	local:approach	.
+local:features_features	rdfs:member	local:features	.
+local:information_about_article_entities_in_the_form_of_attributevalue_pairs	rdfs:member	local:attributevalue_pairs	.
+local:s16.1	rdf:object	local:23923_new_infobox_attribute_mappings_between_english_wikipedia	.
+local:s15	rdf:predicate	local:propose	.
+local:8_effective_features_for_cross_lingual_infobox	rdfs:member	local:8_effective_features	.
+local:lingual_infobox_attribute_matching	rdfs:subClassOf	local:infobox_attribute_matching	.
+local:8_effective_features_for_cross_lingual_infobox	rdfs:member	local:lingual_infobox	.
+local:factor_graph	rdfs:member	local:factor	.
 local:attribute_pairs	rdfs:subClassOf	local:pairs	.
-local:proposed	vn.role:Topic	local:approach	.
-local:promising_problem	rdfs:subClassOf	local:problem	.
-local:infobox_attributes_in_different_language_editions	local:in_differentlanguageeditions	local:infobox_attributes	.
-local:correspondences_between_infobox_attributes	local:correspondences_between	local:infobox_attributes	.
-local:attributevalue	rdfs:member	local:attributevalue_pairs	.
-local:23923_new_infobox_attribute_mappings_between_english_wikipedia	local:between_englishwikipedia	local:23923_new_infobox_attribute_mappings	.
-local:finds	vn.role:Theme	local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	.
-local:only_individual	rdfs:member	local:only_individual_features	.
-local:different_language_editions	rdfs:subClassOf	local:editions	.
-local:propose	local:AM-LOC	local:paper	.
-local:entityattribute_factor_graph	rdfs:subClassOf	local:factor_graph	.
-local:achieve	local:AM-MOD	local:can	.
-local:existing	vn.role:Location	local:six_thousand	.
-local:infobox_attributes_in_different_language_editions	local:infoboxattributes_in	local:different_language_editions	.
-local:entityattribute_factor	rdfs:subClassOf	local:factor	.
+local:not_only	rdfs:member	local:not	.
+local:8_effective_features_for_cross_lingual_infobox_attribute_matching	rdfs:member	local:cross_lingual_infobox_attribute_matching	.
+local:infobox_attributes	rdfs:subClassOf	local:attributes	.
+local:different_language_versions_of_wikipedia	rdfs:member	local:wikipedia	.
+local:infobox_attribute_mappings	rdfs:subClassOf	local:s16.2	.
+local:not_only_individual	rdfs:member	local:not_only	.
+local:23923_new_infobox_attribute_mappings	rdfs:subClassOf	local:new_infobox_attribute_mappings	.
+local:s6	rdf:predicate	local:attribute	.
+local:correlations_among_attribute_pairs	rdfs:member	local:attribute_pairs	.
+local:existing_matched_infobox_attributes	rdfs:subClassOf	local:s14.2	.
+local:8_effective_effective_features_features_for_for_cross_cross_lingual_lingual_infobox_infobox_attribute	rdfs:member	local:lingual_lingual_infobox_infobox_attribute	.
+local:8_effective_effective_features_features_for_for_cross_cross_lingual_lingual_infobox_infobox_attribute	rdfs:member	local:effective_effective_features_features	.
+local:proposed_approach	rdfs:subClassOf	local:approach	.
+local:8_effective_features_for_cross_lingual_infobox	rdfs:member	local:cross_lingual_infobox	.
+local:s16	rdf:subject	local:approach	.
+local:s16.1	rdf:subject	local:proposed_approach	.
+local:s7.1	rdf:subject	local:entityattribute_factor_graph	.
+local:language_editions	rdfs:subClassOf	local:editions	.
+local:s6.1	rdf:object	local:categories_templates_attribute_values	.
+local:s3	local:AM-MNR	local:independently	.
+local:attribute_pairs	rdfs:member	local:attribute	.
+local:s2	rdf:subject	local:different_language_versions_of_wikipedia	.
+local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	rdfs:member	local:new_infobox	.
+local:s14.2	rdfs:subClassOf	local:infobox_attributes	.
+local:effective_effective	rdfs:member	local:effective	.
+local:s13.2	rdf:subject	local:infobox_attributes	.
+local:s14.1	rdf:object	local:s14.2	.
+local:s13.2	rdfs:subClassOf	local:infobox_attributes	.
+local:s16.1	rdf:predicate	local:find	.
+local:categories_templates	rdfs:subClassOf	local:templates	.
+local:s8.1	rdf:object	local:correlations_among_attribute_pairs	.
+local:lingual_infobox_infobox_attribute	rdfs:member	local:lingual_infobox_infobox	.
+local:cross_lingual_infobox_attribute_matching	rdfs:subClassOf	local:lingual_infobox_attribute_matching	.
+local:s9.1	rdf:predicate	local:achieve	.
+local:different_language	rdfs:member	local:different	.
+local:s4.1	rdf:subject	local:8_effective_features_for_cross_lingual_infobox	.
+local:s18	rdf:predicate	local:exist	.
+local:crosslingual_links	rdfs:subClassOf	local:links	.
+local:s14	rdf:predicate	local:base	.
+local:cross_cross_lingual_lingual_infobox_infobox_attribute	rdfs:subClassOf	local:cross_lingual_lingual_infobox_infobox_attribute	.
+local:wikipedia_infoboxes	rdfs:member	local:wikipedia	.
+local:s15.1	rdf:object	local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	.
+local:s12	rdf:subject	local:approach	.
+local:effective_effective_features_features	rdfs:subClassOf	local:features	.
+local:categories_templates_attribute_labels	rdfs:member	local:attribute_labels	.
+local:s14.1	rdf:predicate	local:exist	.
+local:s12.1	rdf:predicate	local:achieve	.
+local:cross_lingual_infobox	rdfs:subClassOf	local:lingual_infobox	.
+local:entityattribute_factor_graph	rdfs:member	local:entityattribute_factor	.
+local:s15	rdf:subject	local:approach	.
+local:infobox_attribute	rdfs:subClassOf	local:attribute	.
 local:different_language_editions	rdfs:subClassOf	local:language_editions	.
-local:different	rdfs:member	local:different_language	.
-local:not	rdfs:member	local:not_only	.
-local:infobox_attribute_mappings	rdfs:subClassOf	local:attribute_mappings	.
-local:high	rdfs:member	local:high_f1measure	.
-local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	local:23,923newinfoboxattributemappings_between	local:chinese_wikipedia	.
-local:propose	vn.role:Topic	local:attribute	.
-local:language	rdfs:member	local:language_versions	.
-local:attribute	rdfs:member	local:attribute_values	.
-local:find_in_different_language_editions	local:find_in	local:different_language_editions	.
+local:s14	rdf:object	local:six_thousand_existing_matched_infobox_attributes	.
+local:s10.1	rdf:object	local:high_f1measure_855_percent	.
+local:s7.1	rdf:predicate	local:consider	.
+local:english_wikipedia	rdfs:member	local:english	.
+local:data_sets	rdfs:member	local:data	.
+local:existing_matched_infobox_attributes	rdfs:subClassOf	local:s13.2	.
+local:entityattribute_factor_graph_to_consider_not_only_the_correlations_among_attribute_pairs	rdfs:member	local:correlations	.
+local:lingual_infobox_infobox	rdfs:member	local:lingual_infobox	.
+local:cross_cross	rdfs:subClassOf	local:cross	.
+local:8_effective_features_for_cross_lingual_infobox_attribute_matching	rdfs:member	local:cross	.
+local:lingual_lingual	rdfs:subClassOf	local:lingual	.
+local:s11.1	local:AM-MOD	local:can	.
+local:high_f1measure_854_percent_respectively	rdfs:member	local:high_f1measure	.
+local:8_effective_features_for_cross_lingual_infobox_attribute_matching	rdfs:member	local:lingual_infobox_attribute	.
+local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	rdfs:member	local:s15.2	.
+local:attribute_matching	rdfs:subClassOf	local:matching	.
+local:s16.2	rdfs:member	local:attribute	.
+local:s5	rdf:subject	local:we	.
+local:infobox_attribute_mappings	rdfs:subClassOf	local:s15.2	.
+local:s11.1	rdf:object	local:high_f1measure_854_percent_respectively	.
+local:8_effective_features	rdfs:subClassOf	local:effective_features	.
+local:information_about_article_entities	rdfs:member	local:article_entities	.
+local:lingual_lingual_infobox	rdfs:subClassOf	local:infobox	.
+local:form_of_attributevalue_pairs	rdfs:member	local:attributevalue_pairs	.
+local:s15.1	rdf:subject	local:s16	.
+local:s16	rdf:predicate	local:propose	.
 local:factor_graph	rdfs:subClassOf	local:graph	.
+local:23923_new_infobox_attribute_mappings_between_english_wikipedia	rdfs:member	local:s16.2	.
+local:effective_effective_features	rdfs:subClassOf	local:features	.
+local:8_effective_effective_features_features	rdfs:subClassOf	local:effective_effective_features_features	.
+local:effective_effective_features_features	rdfs:member	local:effective_effective_features	.
+local:not_only_individual_features	rdfs:subClassOf	local:features	.
+local:english_wikipedia	rdfs:subClassOf	local:wikipedia	.
+local:different_language_versions	rdfs:subClassOf	local:versions	.
+local:s11	rdf:predicate	local:propose	.
+local:s8	rdf:object	local:entityattribute_factor_graph_to_consider_not_only_the_correlations_among_attribute_pairs	.
+local:s7	local:AM-PNC	local:consider_not_only_individual_features	.
+local:cross_cross	rdfs:member	local:cross	.
+local:s12.1	local:AM-MOD	local:can	.
+local:s5	rdf:predicate	local:propose	.
+local:individual_features	rdfs:subClassOf	local:features	.
+local:high_f1measure_854_percent_respectively	rdfs:member	local:percent	.
+local:lingual_infobox	rdfs:subClassOf	local:infobox	.
+local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	rdfs:member	local:23923_new_infobox_attribute_mappings	.
+local:effective_effective_features	rdfs:member	local:effective_effective	.
+local:s4	rdf:subject	local:8_effective_features_for_cross_lingual_infobox	.
+local:s10.1	rdf:predicate	local:achieve	.
+local:f1measure_854_respectively_percent	rdfs:subClassOf	local:854_respectively_percent	.
+local:s13	rdf:predicate	local:base	.
+local:s14.2	rdf:predicate	local:match	.
+local:high_f1measure_854_respectively_percent	rdfs:subClassOf	local:f1measure_854_respectively_percent	.
+local:s8	rdf:predicate	local:propose	.
+local:infobox_infobox	rdfs:subClassOf	local:infobox	.
+local:s5	rdf:object	local:8_effective_features_for_cross_lingual_infobox_attribute_matching	.
+local:s3	rdf:predicate	local:evolve	.
+local:s16.2	rdf:predicate	local:attribute	.
+local:s12.1	rdf:subject	local:s15	.
+local:effective_features_features	rdfs:member	local:effective_features	.
+local:s14.2	rdf:subject	local:infobox_attributes	.
+local:not_only_individual_features	rdfs:member	local:not_only_individual	.
+local:23923_new_infobox_attribute_mappings_between_english_wikipedia	rdfs:member	local:new_infobox	.
+local:s18	rdf:subject	local:crosslingual_links	.
+local:language_editions	rdfs:member	local:language	.
+local:correspondences_between_infobox_attributes	rdfs:member	local:infobox_attributes	.
+local:article_entities_in_form	rdfs:member	local:article_entities	.
+local:new_infobox_attribute_mappings	rdfs:subClassOf	local:infobox_attribute_mappings	.
+local:effective_effective	rdfs:subClassOf	local:effective	.
+local:high_f1measure_855_percent	rdfs:member	local:percent	.
+local:high_f1measure_855_percent	rdfs:member	local:high_f1measure	.
+local:individual_features	rdfs:member	local:individual	.
+local:lingual_infobox_attribute	rdfs:member	local:lingual_infobox	.
+local:8_effective_features_for_cross_lingual_infobox_attribute_matching	rdfs:member	local:8_effective_features	.
+local:8_effective_features_for_cross_lingual_infobox	rdfs:member	local:cross	.
+local:s9.1	rdf:object	local:high_f1measure_855_percent	.
+local:s5	local:AM-LOC	local:paper	.
+local:s9	rdf:subject	local:approach	.
+local:attribute_labels	rdfs:subClassOf	local:labels	.
+local:article_entities_in_form	rdfs:member	local:form	.
+local:s9.1	rdf:subject	local:s10	.
+local:s16.2	rdf:subject	local:mappings	.
+local:different_language_versions	rdfs:member	local:different_language	.
+local:correlations_among_attribute_pairs	rdfs:member	local:correlations	.
+local:s4	rdf:object	local:labels	.
+local:s3.1	rdf:subject	local:correspondences_between_infobox_attributes_in_different_language_editions	.
+local:categories_templates_attribute_values	rdfs:member	local:categories	.
+local:crosslingual_links	rdfs:member	local:crosslingual	.
+local:not_only_individual	rdfs:subClassOf	local:individual	.
+local:information_about_article_entities	rdfs:member	local:information	.
+local:different_language_editions	rdfs:member	local:different_language	.
+local:s1	rdf:predicate	local:contain	.
+local:features_features	rdfs:subClassOf	local:features	.
+local:s7	rdf:object	local:entityattribute_factor_graph	.
+local:lingual_lingual_infobox_infobox_attribute	rdfs:subClassOf	local:attribute	.
+local:s4.1	rdf:object	local:categories_templates_attribute_labels	.
+local:lingual_lingual_infobox_infobox_attribute	rdfs:member	local:lingual_lingual_infobox_infobox	.
+local:infobox_attribute_matching	rdfs:subClassOf	local:attribute_matching	.
+local:not_only	rdfs:subClassOf	local:only	.
+local:attribute_labels	rdfs:member	local:attribute	.
+local:s10.1	local:AM-MOD	local:can	.
+local:s13.1	rdf:object	local:s13.2	.
+local:high_f1measure	rdfs:subClassOf	local:f1measure	.
+local:attributevalue_pairs	rdfs:member	local:attributevalue	.
+local:23923_new_infobox_attribute_mappings_between_chinese_wikipedia	rdfs:member	local:chinese_wikipedia	.
+local:s10.1	rdf:subject	local:s11	.
+local:article_entities	rdfs:member	local:article	.
+local:data_sets	rdfs:subClassOf	local:sets	.
+local:s13.1	rdf:subject	local:six_thousand	.
+local:infobox_infobox	rdfs:member	local:infobox	.
+local:lingual_lingual	rdfs:member	local:lingual	.
+local:infobox_attributes_in_different_language_editions	rdfs:member	local:infobox_attributes	.
+local:cross_lingual_lingual_infobox_infobox_attribute	rdfs:subClassOf	local:lingual_lingual_infobox_infobox_attribute	.
+local:s10	rdf:predicate	local:propose	.
+local:wikipedia_infoboxes	rdfs:subClassOf	local:infoboxes	.
+local:s2	rdf:predicate	local:evolve	.
+local:attributevalue_pairs	rdfs:subClassOf	local:pairs	.
+local:855_percent	rdfs:subClassOf	local:percent	.
+local:six_thousand	rdfs:subClassOf	local:thousand	.
+local:new_infobox	rdfs:subClassOf	local:infobox	.
+local:new_infobox	rdfs:member	local:new	.
+local:s1	rdf:object	local:information_about_article_entities_in_the_form_of_attributevalue_pairs	.
+local:s4	rdf:predicate	local:attribute	.
+local:effective_features_features	rdfs:subClassOf	local:features	.
+local:different_language	rdfs:subClassOf	local:language	.
+local:s8.1	rdf:predicate	local:consider	.
+local:s7	rdf:predicate	local:propose	.
+local:language_versions	rdfs:subClassOf	local:versions	.
+local:information_about_article_entities_in_the_form_of_attributevalue_pairs	rdfs:member	local:article_entities	.
+local:lingual_infobox	rdfs:member	local:lingual	.
+local:entityattribute_factor_graph	rdfs:subClassOf	local:graph	.
+local:only_individual	rdfs:subClassOf	local:individual	.
+local:s6	rdf:subject	local:8_effective_effective_features_features_for_for_cross_cross_lingual_lingual_infobox_infobox_attribute	.
+local:lingual_lingual_infobox_infobox_attribute	rdfs:subClassOf	local:lingual_infobox_infobox_attribute	.
+local:infobox_infobox_attribute	rdfs:subClassOf	local:infobox_attribute	.
+local:s15.2	rdfs:member	local:attribute	.
+local:s2.1	rdf:predicate	local:find	.
+local:chinese_wikipedia	rdfs:member	local:chinese	.
+local:only_individual_features	rdfs:member	local:only_individual	.
+local:lingual_lingual_infobox	rdfs:member	local:lingual_lingual	.
+local:s8.1	rdf:subject	local:entityattribute_factor_graph	.
+local:effective_features_features	rdfs:subClassOf	local:features_features	.
+local:attribute_values	rdfs:member	local:attribute	.
+local:lingual_infobox_attribute	rdfs:subClassOf	local:attribute	.
+local:s3	rdf:subject	local:different_language_versions_of_wikipedia	.
+local:thousand_existing_matched_infobox_attributes	rdfs:subClassOf	local:existing_matched_infobox_attributes	.
+local:s11.1	rdf:predicate	local:achieve	.
+local:23923_new_infobox_attribute_mappings_between_english_wikipedia	rdfs:member	local:23923_new_infobox_attribute_mappings	.
+local:entityattribute_factor	rdfs:subClassOf	local:factor	.
+local:s4.1	rdf:predicate	local:contain	.
+local:s15.2	rdf:subject	local:mappings	.
+local:s14.1	rdf:subject	local:six_thousand	.
+local:s11.1	rdf:subject	local:s12	.
+local:lingual_infobox_infobox_attribute	rdfs:subClassOf	local:attribute	.
+local:8_effective_features_for_cross_lingual_infobox_attribute_matching	rdfs:member	local:effective_features	.
+local:attribute_values	rdfs:subClassOf	local:values	.
+local:two_data	rdfs:subClassOf	local:data	.
+local:s13.1	rdf:predicate	local:exist	.
+local:8_effective_effective_features_features_for_cross_cross_lingual_lingual_infobox_infobox_attribute	rdfs:member	local:cross_cross_lingual_lingual_infobox_infobox_attribute	.
+local:f1measure_855_percent	rdfs:subClassOf	local:855_percent	.
+local:s15.2	rdfs:subClassOf	local:mappings	.
+local:respectively_percent	rdfs:subClassOf	local:percent	.
+local:high_f1measure_855_percent	rdfs:subClassOf	local:f1measure_855_percent	.
+local:chinese_wikipedia	rdfs:subClassOf	local:wikipedia	.
+local:854_respectively_percent	rdfs:subClassOf	local:respectively_percent	.
+local:s7.1	rdf:object	local:individual_features	.
+local:infobox_attributes	rdfs:member	local:infobox	.
+local:lingual_infobox_infobox_attribute	rdfs:subClassOf	local:infobox_infobox_attribute	.
+local:s6	rdf:object	local:values	.
+local:s12.1	local:AM-LOC	local:two_data_sets	.
+local:categories_templates_attribute_values	rdfs:member	local:attribute_values	.
+local:s8	rdf:subject	local:we	.
+local:s1	rdf:subject	local:wikipedia_infoboxes	.
+local:correspondences_between_infobox_attributes_in_different_language_editions	rdfs:member	local:correspondences	.
+local:s12	rdf:predicate	local:propose	.
+local:effective_features	rdfs:member	local:effective	.
+local:infobox_infobox_attribute	rdfs:member	local:infobox_infobox	.
+local:infobox_attribute	rdfs:member	local:infobox	.
+local:infobox_infobox_attribute	rdfs:subClassOf	local:attribute	.
+local:form_of_attributevalue_pairs	rdfs:member	local:form	.
+local:s13	rdf:object	local:six_thousand_existing_matched_infobox_attributes	.
+local:s3.1	rdf:predicate	local:find	.
+local:lingual_lingual_infobox_infobox	rdfs:subClassOf	local:infobox	.
+local:s2	local:AM-MNR	local:independently	.
+local:8_effective_effective_features_features_for_for_cross_cross_lingual_lingual_infobox_infobox_attribute	rdfs:member	local:cross_cross	.
+local:s11.1	local:AM-LOC	local:two_data_sets	.
+local:different_language_editions	rdfs:subClassOf	local:editions	.
+local:entityattribute_factor_graph	rdfs:subClassOf	local:factor_graph	.
+local:language_versions	rdfs:member	local:language	.
+local:s6.1	rdf:predicate	local:contain	.
+local:lingual_infobox_infobox	rdfs:subClassOf	local:infobox	.
+local:correspondences_between_infobox_attributes_in_different_language_editions	rdfs:member	local:infobox_attributes	.
+local:different_language_versions	rdfs:subClassOf	local:language_versions	.
+local:s9.1	local:AM-MOD	local:can	.
+local:entityattribute_factor	rdfs:member	local:entityattribute	.
+local:only_individual	rdfs:member	local:only	.
+local:entityattribute_factor_graph_to_consider_not_only_the_correlations_among_attribute_pairs	rdfs:member	local:entityattribute_factor_graph	.
+local:categories_templates_attribute_labels	rdfs:member	local:categories	.
+local:infobox_attributes_in_different_language_editions	rdfs:member	local:different_language_editions	.
+local:8_effective_effective_features_features_for_cross_cross_lingual_lingual_infobox_infobox_attribute	rdfs:member	local:8_effective_effective_features_features	.
+local:information_about_article_entities_in_the_form_of_attributevalue_pairs	rdfs:member	local:information	.
+local:s13.2	rdf:predicate	local:match	.
+local:s16.2	rdfs:subClassOf	local:mappings	.
+local:different_language_versions_of_wikipedia	rdfs:member	local:different_language_versions	.
+local:s12.1	rdf:object	local:high_f1measure_854_percent_respectively	.
+local:entityattribute_factor_graph_to_consider_not_only_the_correlations_among_attribute_pairs	rdfs:member	local:attribute_pairs	.
+local:effective_features	rdfs:subClassOf	local:features	.
+local:23923_new_infobox_attribute_mappings_between_english_wikipedia	rdfs:member	local:english_wikipedia	.
+local:s2.1	rdf:subject	local:correspondences_between_infobox_attributes_in_different_language_editions	.
+local:high_f1measure	rdfs:member	local:high	.
+local:article_entities	rdfs:subClassOf	local:entities	.
+local:only_individual_features	rdfs:subClassOf	local:features	.
+local:correspondences_between_infobox_attributes	rdfs:member	local:correspondences	.
+local:s7	rdf:subject	local:we	.
+local:s10	rdf:subject	local:approach	.
+local:8_effective_features_for_cross_lingual_infobox	rdfs:member	local:effective_features	.
+local:s6.1	rdf:subject	local:8_effective_features_for_cross_lingual_infobox	.
+local:s9	rdf:predicate	local:propose	.
+local:s15.1	rdf:predicate	local:find	.
+local:lingual_lingual_infobox_infobox	rdfs:member	local:lingual_lingual_infobox	.
+local:effective_effective_features_features	rdfs:subClassOf	local:effective_features_features	.
+local:correspondences_between_infobox_attributes_in_different_language_editions	rdfs:member	local:different_language_editions	.
+local:s15.2	rdf:predicate	local:attribute	.

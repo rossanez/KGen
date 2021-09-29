@@ -1,391 +1,784 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"in this context our measure outperforms the classical semantic measures"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we show that in this context our measure outperforms the classical semantic measures"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"an evaluation of we measure on the lexical base wordnet"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we propose an evaluation of we measure on the lexical base wordnet"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the lexical base wordnet using partof relation with two different benchmarks"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"given edge"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"a weight which depends on a given edge in isa partof"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"a cost represented as a weight which depends on a given edge in isa partof"	.
+
+local:s8.3	a	rdf:Statement	;
+	rdfs:label	"a cost represented as a weight"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"secondly following a given edge in a path has a cost represented as a weight"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"given edge"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"following a given edge in a path"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"given edge"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"a weight which depends on a given edge in a path context in the ontology"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"a cost represented as a weight which depends on a given edge in a path context in the ontology"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"given edge"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"a weight which depends on a given edge in a path type"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a cost represented as a weight which depends on a given edge in a path type"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"given edge"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"a weight which depends on a given edge in a path position in a path"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"a cost represented as a weight which depends on a given edge in a path position in a path"	.
+
+local:s4.4	a	rdf:Statement	;
+	rdfs:label	"given set of rules"	.
+
+local:s4.3	a	rdf:Statement	;
+	rdfs:label	"these paths obey to a given set of rules"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"semantically corrects to a given set of rules"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"firstly using only concept hierarchy only a few paths can considered as semantically to a given set of rules"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"using only concept hierarchy only a few paths"	.
+
+local:s3.4	a	rdf:Statement	;
+	rdfs:label	"given set of rules"	.
+
+local:s3.3	a	rdf:Statement	;
+	rdfs:label	"these paths obey to a given set of rules"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"firstly using only object properties only a few paths semantically corrects to a given set of rules"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"firstly using only object properties only a few paths can considered as semantically to a given set of rules"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"using only object properties only a few paths"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"our approach relies on two hypotheses"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"this paper presents a new semantic relatedness measure on ontologies"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"ontologies which considers especially the object properties between the concepts"	.
+
+
 #### Classes ####
 
-local:considers	rdfs:label	"considers"	.
+local:measure	a	rdf:Class	;
+	rdfs:label	"measure"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:outperform	a	rdf:Class	;
+	rdfs:label	"outperform"	.
 
-local:especially	rdfs:label	"especially"	.
+local:classical_semantic_measures	a	rdf:Class	;
+	rdfs:label	"classical semantic measures"	.
 
-local:object	rdfs:label	"object"	.
+local:semantic_measures	a	rdf:Class	;
+	rdfs:label	"semantic measures"	.
 
-local:object_properties	rdfs:label	"object properties"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:properties	rdfs:label	"properties"	.
+local:classical_semantic	a	rdf:Class	;
+	rdfs:label	"classical semantic"	.
 
-local:object_properties_between_concepts	rdfs:label	"object properties between concepts"	.
+local:classical	a	rdf:Class	;
+	rdfs:label	"classical"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:measures	a	rdf:Class	;
+	rdfs:label	"measures"	.
 
-local:presents	rdfs:label	"presents"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:paper	rdfs:label	"paper"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:new_semantic_relatedness_measure	rdfs:label	"new semantic relatedness measure"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:measure	rdfs:label	"measure"	.
+local:context_our_measure_outperforms_the_classical_semantic_measures	a	rdf:Class	;
+	rdfs:label	"context our measure outperforms the classical semantic measures"	.
 
-local:relatedness	rdfs:label	"relatedness"	.
+local:our_measure	a	rdf:Class	;
+	rdfs:label	"our measure"	.
 
-local:relatedness_measure	rdfs:label	"relatedness measure"	.
+local:evaluation_of_we	a	rdf:Class	;
+	rdfs:label	"evaluation of we"	.
 
-local:new_semantic_relatedness	rdfs:label	"new semantic relatedness"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:lexical_base_wordnet	a	rdf:Class	;
+	rdfs:label	"lexical base wordnet"	.
 
-local:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+local:wordnet	a	rdf:Class	;
+	rdfs:label	"wordnet"	.
 
-local:new	rdfs:label	"new"	.
+local:lexical_base	a	rdf:Class	;
+	rdfs:label	"lexical base"	.
 
-local:new_semantic	rdfs:label	"new semantic"	.
+local:base_wordnet	a	rdf:Class	;
+	rdfs:label	"base wordnet"	.
 
-local:semantic_relatedness_measure	rdfs:label	"semantic relatedness measure"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:new_semantic_relatedness_measure_on_ontologies	rdfs:label	"new semantic relatedness measure on ontologies"	.
+local:lexical	a	rdf:Class	;
+	rdfs:label	"lexical"	.
 
-local:relies	rdfs:label	"relies"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:approach	rdfs:label	"approach"	.
+local:evaluation_of_we_measure_on_the_lexical_base_wordnet	a	rdf:Class	;
+	rdfs:label	"evaluation of we measure on the lexical base wordnet"	.
 
-local:two_hypotheses	rdfs:label	"two hypotheses"	.
+local:measure_on_lexical_base_wordnet	a	rdf:Class	;
+	rdfs:label	"measure on lexical base wordnet"	.
 
-local:hypotheses	rdfs:label	"hypotheses"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:using	rdfs:label	"using"	.
+local:partof_relation_with_two_different_benchmarks	a	rdf:Class	;
+	rdfs:label	"partof relation with two different benchmarks"	.
 
-local:firstly	rdfs:label	"firstly"	.
+local:partof_relation	a	rdf:Class	;
+	rdfs:label	"partof relation"	.
 
-local:paths	rdfs:label	"paths"	.
+local:different_benchmarks	a	rdf:Class	;
+	rdfs:label	"different benchmarks"	.
 
-local:considered	rdfs:label	"considered"	.
+local:benchmarks	a	rdf:Class	;
+	rdfs:label	"benchmarks"	.
 
-local:only_object	rdfs:label	"only object"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:only_object_properties	rdfs:label	"only object properties"	.
+local:relation	a	rdf:Class	;
+	rdfs:label	"relation"	.
 
-local:only	rdfs:label	"only"	.
+local:partof	a	rdf:Class	;
+	rdfs:label	"partof"	.
 
-local:can	rdfs:label	"can"	.
+local:two_different_benchmarks	a	rdf:Class	;
+	rdfs:label	"two different benchmarks"	.
 
-local:given_set	rdfs:label	"given set"	.
+local:edge	a	rdf:Class	;
+	rdfs:label	"edge"	.
 
-local:set	rdfs:label	"set"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:semantically_corrects	rdfs:label	"semantically corrects"	.
+local:weight	a	rdf:Class	;
+	rdfs:label	"weight"	.
 
-local:corrects	rdfs:label	"corrects"	.
+local:depend	a	rdf:Class	;
+	rdfs:label	"depend"	.
 
-local:obey_to_given_set	rdfs:label	"obey to given set"	.
+local:given_edge_in_isa_partof	a	rdf:Class	;
+	rdfs:label	"given edge in isa partof"	.
 
-local:obey	rdfs:label	"obey"	.
+local:isa_partof	a	rdf:Class	;
+	rdfs:label	"isa partof"	.
 
-local:given_set_of_rules	rdfs:label	"given set of rules"	.
+local:isa	a	rdf:Class	;
+	rdfs:label	"isa"	.
 
-local:rules	rdfs:label	"rules"	.
+local:edge_in_isa_partof	a	rdf:Class	;
+	rdfs:label	"edge in isa partof"	.
 
-local:few_paths	rdfs:label	"few paths"	.
+local:cost	a	rdf:Class	;
+	rdfs:label	"cost"	.
 
-local:few	rdfs:label	"few"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:can_considered	rdfs:label	"can considered"	.
+local:weight_which_depends_on_a_given_edge_in_isa_partof	a	rdf:Class	;
+	rdfs:label	"weight which depends on a given edge in isa partof"	.
 
-local:only_few_paths	rdfs:label	"only few paths"	.
+local:depends_on_given_edge	a	rdf:Class	;
+	rdfs:label	"depends on given edge"	.
 
-local:can_considered_as_	rdfs:label	"can considered as ``"	.
+local:depends	a	rdf:Class	;
+	rdfs:label	"depends"	.
 
-local:	rdfs:label	"``"	.
+local:given_edge_in_a_path	a	rdf:Class	;
+	rdfs:label	"given edge in a path"	.
 
-local:set_of_rules	rdfs:label	"set of rules"	.
+local:path	a	rdf:Class	;
+	rdfs:label	"path"	.
 
-local:given	rdfs:label	"given"	.
+local:edge_in_path	a	rdf:Class	;
+	rdfs:label	"edge in path"	.
 
-local:a_few	rdfs:label	"a few"	.
+local:have	a	rdf:Class	;
+	rdfs:label	"have"	.
 
-local:only_a_few	rdfs:label	"only a few"	.
+local:cost_represented_as_a_weight	a	rdf:Class	;
+	rdfs:label	"cost represented as a weight"	.
 
-local:concept_hierarchy	rdfs:label	"concept hierarchy"	.
+local:represented_as_weight	a	rdf:Class	;
+	rdfs:label	"represented as weight"	.
 
-local:hierarchy	rdfs:label	"hierarchy"	.
+local:represented	a	rdf:Class	;
+	rdfs:label	"represented"	.
 
-local:paths_using	rdfs:label	"paths using"	.
+local:secondly_following	a	rdf:Class	;
+	rdfs:label	"secondly following"	.
 
-local:only_concept_hierarchy	rdfs:label	"only concept hierarchy"	.
+local:following	a	rdf:Class	;
+	rdfs:label	"following"	.
 
-local:following	rdfs:label	"following"	.
+local:follow	a	rdf:Class	;
+	rdfs:label	"follow"	.
 
-local:secondly	rdfs:label	"secondly"	.
+local:given_edge_in_a_path_context_in_the_ontology	a	rdf:Class	;
+	rdfs:label	"given edge in a path context in the ontology"	.
 
-local:edge	rdfs:label	"edge"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:given_edge	rdfs:label	"given edge"	.
+local:path_context	a	rdf:Class	;
+	rdfs:label	"path context"	.
 
-local:given_edge_in_path	rdfs:label	"given edge in path"	.
+local:edge_in_path_context	a	rdf:Class	;
+	rdfs:label	"edge in path context"	.
 
-local:path	rdfs:label	"path"	.
+local:path_context_in_ontology	a	rdf:Class	;
+	rdfs:label	"path context in ontology"	.
 
-local:has	rdfs:label	"has"	.
+local:weight_which_depends_on_a_given_edge_in_a_path_context_in_the_ontology	a	rdf:Class	;
+	rdfs:label	"weight which depends on a given edge in a path context in the ontology"	.
 
-local:represented_as_weight	rdfs:label	"represented as weight"	.
+local:given_edge_in_path_context	a	rdf:Class	;
+	rdfs:label	"given edge in path context"	.
 
-local:represented	rdfs:label	"represented"	.
+local:given_edge_in_a_path_type	a	rdf:Class	;
+	rdfs:label	"given edge in a path type"	.
 
-local:weight	rdfs:label	"weight"	.
+local:path_type	a	rdf:Class	;
+	rdfs:label	"path type"	.
 
-local:cost	rdfs:label	"cost"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:depends	rdfs:label	"depends"	.
+local:edge_in_path_type	a	rdf:Class	;
+	rdfs:label	"edge in path type"	.
 
-local:path_type	rdfs:label	"path type"	.
+local:weight_which_depends_on_a_given_edge_in_a_path_type	a	rdf:Class	;
+	rdfs:label	"weight which depends on a given edge in a path type"	.
 
-local:type	rdfs:label	"type"	.
+local:given_edge_in_path_type	a	rdf:Class	;
+	rdfs:label	"given edge in path type"	.
 
-local:edge_in_path_type	rdfs:label	"edge in path type"	.
+local:given_edge_in_a_path_position_in_a_path	a	rdf:Class	;
+	rdfs:label	"given edge in a path position in a path"	.
 
-local:partof_isa	rdfs:label	"part-of is-a"	.
+local:path_position	a	rdf:Class	;
+	rdfs:label	"path position"	.
 
-local:isa	rdfs:label	"is-a"	.
+local:position	a	rdf:Class	;
+	rdfs:label	"position"	.
 
-local:edge_in_partof_isa	rdfs:label	"edge in part-of is-a"	.
+local:edge_in_path_position	a	rdf:Class	;
+	rdfs:label	"edge in path position"	.
 
-local:path_position	rdfs:label	"path position"	.
+local:path_position_in_path	a	rdf:Class	;
+	rdfs:label	"path position in path"	.
 
-local:position	rdfs:label	"position"	.
+local:weight_which_depends_on_a_given_edge_in_a_path_position_in_a_path	a	rdf:Class	;
+	rdfs:label	"weight which depends on a given edge in a path position in a path"	.
 
-local:edge_in_path_position	rdfs:label	"edge in path position"	.
+local:given_edge_in_path_position	a	rdf:Class	;
+	rdfs:label	"given edge in path position"	.
 
-local:path_position_in_path	rdfs:label	"path position in path"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:path_context	rdfs:label	"path context"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:context	rdfs:label	"context"	.
+local:paths	a	rdf:Class	;
+	rdfs:label	"paths"	.
 
-local:edge_in_path_context	rdfs:label	"edge in path context"	.
+local:obey	a	rdf:Class	;
+	rdfs:label	"obey"	.
 
-local:path_context_in_ontology	rdfs:label	"path context in ontology"	.
+local:correct	a	rdf:Class	;
+	rdfs:label	"correct"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:semantically	a	rdf:Class	;
+	rdfs:label	"semantically"	.
 
-local:propose	rdfs:label	"propose"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:we	rdfs:label	"we"	.
+local:semantically_given_set_of_rules	a	rdf:Class	;
+	rdfs:label	"semantically given set of rules"	.
 
-local:lexical_base	rdfs:label	"lexical base"	.
+local:given_set	a	rdf:Class	;
+	rdfs:label	"given set"	.
 
-local:base	rdfs:label	"base"	.
+local:semantically_given	a	rdf:Class	;
+	rdfs:label	"semantically given"	.
 
-local:lexical_base_wordnet	rdfs:label	"lexical base wordnet"	.
+local:given	a	rdf:Class	;
+	rdfs:label	"given"	.
 
-local:wordnet	rdfs:label	"wordnet"	.
+local:firstly_using_only_concept_hierarchy	a	rdf:Class	;
+	rdfs:label	"firstly using only concept hierarchy"	.
 
-local:base_wordnet	rdfs:label	"base wordnet"	.
+local:only_concept	a	rdf:Class	;
+	rdfs:label	"only concept"	.
 
-local:lexical	rdfs:label	"lexical"	.
+local:concept	a	rdf:Class	;
+	rdfs:label	"concept"	.
 
-local:measure_on_lexical_base_wordnet	rdfs:label	"measure on lexical base wordnet"	.
+local:only_concept_hierarchy	a	rdf:Class	;
+	rdfs:label	"only concept hierarchy"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:hierarchy	a	rdf:Class	;
+	rdfs:label	"hierarchy"	.
 
-local:evaluation_of_we	rdfs:label	"evaluation of we"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:different_benchmarks	rdfs:label	"different benchmarks"	.
+local:concept_hierarchy	a	rdf:Class	;
+	rdfs:label	"concept hierarchy"	.
 
-local:benchmarks	rdfs:label	"benchmarks"	.
+local:firstly_using	a	rdf:Class	;
+	rdfs:label	"firstly using"	.
 
-local:partof_relation	rdfs:label	"part-of relation"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:relation	rdfs:label	"relation"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:partof	rdfs:label	"part-of"	.
+local:firstly_using_only_object_properties_only_a_few_paths	a	rdf:Class	;
+	rdfs:label	"firstly using only object properties only a few paths"	.
 
-local:different	rdfs:label	"different"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:two_different_benchmarks	rdfs:label	"two different benchmarks"	.
+local:few_paths	a	rdf:Class	;
+	rdfs:label	"few paths"	.
 
-local:partof_relation_with_two_different_benchmarks	rdfs:label	"part-of relation with two different benchmarks"	.
+local:few	a	rdf:Class	;
+	rdfs:label	"few"	.
 
-local:show	rdfs:label	"show"	.
+local:paths_object	a	rdf:Class	;
+	rdfs:label	"paths object"	.
 
-local:classical	rdfs:label	"classical"	.
+local:object	a	rdf:Class	;
+	rdfs:label	"object"	.
 
-local:classical_semantic	rdfs:label	"classical semantic"	.
+local:a_few	a	rdf:Class	;
+	rdfs:label	"a few"	.
 
-local:semantic_measures	rdfs:label	"semantic measures"	.
+local:only_a_few	a	rdf:Class	;
+	rdfs:label	"only a few"	.
 
-local:measures	rdfs:label	"measures"	.
+local:only_paths_object	a	rdf:Class	;
+	rdfs:label	"only paths object"	.
 
-local:classical_semantic_measures	rdfs:label	"classical semantic measures"	.
+local:firstly_using_only_object_properties	a	rdf:Class	;
+	rdfs:label	"firstly using only object properties"	.
 
-local:our_measure	rdfs:label	"our measure"	.
+local:object_properties	a	rdf:Class	;
+	rdfs:label	"object properties"	.
 
-local:outperforms_in_context	rdfs:label	"outperforms in context"	.
+local:only_object_properties	a	rdf:Class	;
+	rdfs:label	"only object properties"	.
 
-local:outperforms	rdfs:label	"outperforms"	.
+local:only_object	a	rdf:Class	;
+	rdfs:label	"only object"	.
 
-local:our_measure_in_context	rdfs:label	"our measure in context"	.
+local:only_using	a	rdf:Class	;
+	rdfs:label	"only using"	.
 
-#### Properties ####
+local:firstly_only_using	a	rdf:Class	;
+	rdfs:label	"firstly only using"	.
+
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
+
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
+
+local:two_hypotheses	a	rdf:Class	;
+	rdfs:label	"two hypotheses"	.
+
+local:hypotheses	a	rdf:Class	;
+	rdfs:label	"hypotheses"	.
+
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
+
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
+
+local:new_semantic_relatedness_measure_on_ontologies	a	rdf:Class	;
+	rdfs:label	"new semantic relatedness measure on ontologies"	.
+
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
+
+local:new_semantic_relatedness_measure	a	rdf:Class	;
+	rdfs:label	"new semantic relatedness measure"	.
+
+local:new_semantic_relatedness	a	rdf:Class	;
+	rdfs:label	"new semantic relatedness"	.
+
+local:relatedness	a	rdf:Class	;
+	rdfs:label	"relatedness"	.
+
+local:semantic_relatedness_measure	a	rdf:Class	;
+	rdfs:label	"semantic relatedness measure"	.
+
+local:semantic_relatedness	a	rdf:Class	;
+	rdfs:label	"semantic relatedness"	.
+
+local:new_semantic	a	rdf:Class	;
+	rdfs:label	"new semantic"	.
+
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
+
+local:relatedness_measure	a	rdf:Class	;
+	rdfs:label	"relatedness measure"	.
+
+local:object_properties_between_the_concepts	a	rdf:Class	;
+	rdfs:label	"object properties between the concepts"	.
+
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
+
+local:object_properties_between_concepts	a	rdf:Class	;
+	rdfs:label	"object properties between concepts"	.
+
+local:ontologies_especially	a	rdf:Class	;
+	rdfs:label	"ontologies especially"	.
+
+local:especially_ontologies	a	rdf:Class	;
+	rdfs:label	"especially ontologies"	.
 
 #### Mapped Relations ####
 
-local:ontology	owl:sameAs	cso:ontology	.
-cso:semantics	rdfs:label	"semantic"	.
-cso:semantic_relatedness	rdfs:label	"semantic relatedness"	.
-local:semantic	owl:sameAs	cso:semantics	.
-cso:ontologies	rdfs:label	"ontologies"	.
-cso:wordnet	rdfs:label	"wordnet"	.
-cso:ontology	rdfs:label	"ontology"	.
-local:semantic_relatedness	owl:sameAs	cso:semantic_relatedness	.
-local:wordnet	owl:sameAs	cso:wordnet	.
 local:ontologies	owl:sameAs	cso:ontologies	.
+cso:semantics	rdfs:label	"semantic"	.
+local:wordnet	owl:sameAs	cso:wordnet	.
+local:semantic	owl:sameAs	cso:semantics	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:wordnet	rdfs:label	"wordnet"	.
+cso:semantic_relatedness	rdfs:label	"semantic relatedness"	.
+cso:ontology	rdfs:label	"ontology"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:semantic_relatedness	owl:sameAs	cso:semantic_relatedness	.
 
 #### Relations ####
 
-local:can_considered_as_	local:canconsidered_as	local:	.
-local:lexical_base	rdfs:subClassOf	local:base	.
-local:using	vn.role:Theme	local:concept_hierarchy	.
-local:edge_in_path_position	local:in_pathposition	local:edge	.
-local:depends	vn.role:Location	local:edge_in_path_type	.
-local:new_semantic_relatedness_measure	rdfs:subClassOf	local:measure	.
-local:partof_isa	rdfs:subClassOf	local:isa	.
-local:partof_relation_with_two_different_benchmarks	local:part-ofrelation_with	local:two_different_benchmarks	.
-local:new	rdfs:member	local:new_semantic	.
-local:measure	vn.role:Theme	local:evaluation_of_we	.
-local:show	vn.role:Theme	local:outperforms_in_context	.
-local:edge_in_path_position	local:edge_in	local:path_position	.
-local:presents	vn.role:Theme	local:new_semantic_relatedness_measure_on_ontologies	.
-local:depends	vn.role:Location	local:edge_in_partof_isa	.
-local:partof_relation	rdfs:subClassOf	local:relation	.
-local:concept_hierarchy	rdfs:subClassOf	local:hierarchy	.
-local:represented	local:AM-MNR	local:weight	.
-local:partof_relation_with_two_different_benchmarks	local:with_twodifferentbenchmarks	local:partof_relation	.
-local:obey_to_given_set	local:obey_to	local:given_set	.
-local:classical	rdfs:member	local:classical_semantic	.
-local:semantically_corrects	rdfs:subClassOf	local:corrects	.
-local:new_semantic_relatedness_measure_on_ontologies	local:newsemanticrelatednessmeasure_on	local:ontologies	.
-local:following	vn.role:Agent	local:secondly	.
-local:relatedness_measure	rdfs:subClassOf	local:measure	.
-local:represented_as_weight	local:represented_as	local:weight	.
-local:given	vn.role:object	local:set	.
-local:only_object	rdfs:member	local:only_object_properties	.
-local:new_semantic	rdfs:member	local:new_semantic_relatedness	.
-local:show	vn.role:Agent	local:we	.
-local:path_position	rdfs:subClassOf	local:position	.
-local:semantic	rdfs:member	local:semantic_relatedness	.
-local:given_edge_in_path	local:givenedge_in	local:path	.
-local:considered	vn.role:Theme	local:paths	.
-local:two_different_benchmarks	rdfs:subClassOf	local:different_benchmarks	.
-local:path_type	rdfs:subClassOf	local:type	.
-local:semantic_measures	rdfs:subClassOf	local:measures	.
-local:object	rdfs:member	local:object_properties	.
-local:semantic_relatedness	rdfs:member	local:semantic_relatedness_measure	.
-local:corrects	local:AM-ADV	local:can_considered_as_	.
-local:path_position_in_path	local:in_path	local:path_position	.
-local:presents	vn.role:Agent	local:paper	.
-local:new_semantic_relatedness	rdfs:member	local:new_semantic_relatedness_measure	.
-local:given_edge	rdfs:subClassOf	local:edge	.
-local:corrects	vn.role:Agent	local:firstly	.
-local:edge_in_path_context	local:edge_in	local:path_context	.
-local:using	vn.role:Theme	local:partof_relation_with_two_different_benchmarks	.
-local:new_semantic_relatedness	rdfs:subClassOf	local:relatedness	.
-local:set_of_rules	local:of_rules	local:set	.
-local:obey	vn.role:Patient	local:set_of_rules	.
-local:considers	vn.role:Theme	local:object_properties_between_concepts	.
-local:depends	vn.role:Location	local:edge_in_path_position	.
-local:evaluation_of_we	local:of_we	local:evaluation	.
-local:edge_in_path_type	local:edge_in	local:path_type	.
-local:propose	vn.role:Topic	local:evaluation	.
-local:new_semantic_relatedness_measure_on_ontologies	local:on_ontologies	local:new_semantic_relatedness_measure	.
-local:considers	vn.role:Predicate	local:ontologies	.
-local:given_set	rdfs:subClassOf	local:set	.
-local:using	vn.role:Agent	local:lexical_base_wordnet	.
-local:partof	rdfs:member	local:partof_relation	.
-local:corrects	local:AM-ADV	local:using	.
-local:represented_as_weight	local:as_weight	local:represented	.
-local:obey_to_given_set	local:to_givenset	local:obey	.
-local:edge_in_partof_isa	local:edge_in	local:partof_isa	.
-local:classical_semantic	rdfs:member	local:classical_semantic_measures	.
-local:lexical_base_wordnet	rdfs:subClassOf	local:wordnet	.
-local:different_benchmarks	rdfs:subClassOf	local:benchmarks	.
-local:measure	vn.role:Value	local:lexical_base_wordnet	.
-local:relatedness	rdfs:member	local:relatedness_measure	.
-local:considered	local:AM-MNR	local:using	.
-local:path_position_in_path	local:pathposition_in	local:path	.
-local:can_considered_as_	local:as_``	local:can_considered	.
-local:outperforms_in_context	local:outperforms_in	local:context	.
-local:considered	local:AM-MOD	local:can	.
-local:can_considered	rdfs:subClassOf	local:considered	.
-local:edge_in_path_context	local:in_pathcontext	local:edge	.
-local:depends	vn.role:Location	local:edge_in_path_context	.
-local:edge_in_partof_isa	local:in_part-ofis-a	local:edge	.
-local:given_set_of_rules	local:of_rules	local:given_set	.
-local:our_measure_in_context	local:ourmeasure_in	local:context	.
-local:semantic_relatedness_measure	rdfs:subClassOf	local:relatedness_measure	.
-local:two_hypotheses	rdfs:subClassOf	local:hypotheses	.
-local:different	rdfs:member	local:different_benchmarks	.
-local:a_few	rdfs:subClassOf	local:few	.
-local:classical_semantic_measures	rdfs:subClassOf	local:semantic_measures	.
-local:path_context_in_ontology	local:pathcontext_in	local:ontology	.
-local:relies	vn.role:Agent	local:approach	.
-local:lexical_base_wordnet	rdfs:subClassOf	local:base_wordnet	.
-local:using	vn.role:Agent	local:firstly	.
-local:considers	vn.role:Predicate	local:especially	.
-local:obey	vn.role:Agent	local:paths	.
-local:only	rdfs:member	local:only_object	.
-local:path	rdfs:member	local:path_position	.
-local:object_properties_between_concepts	local:objectproperties_between	local:concepts	.
-local:corrects	vn.role:Patient	local:obey_to_given_set	.
-local:few	rdfs:member	local:few_paths	.
-local:using	vn.role:Recipient	local:paths	.
-local:has	vn.role:Experiencer	local:secondly	.
-local:lexical_base	rdfs:member	local:lexical_base_wordnet	.
-local:outperforms	vn.role:Theme2	local:classical_semantic_measures	.
-local:our_measure_in_context	local:in_context	local:our_measure	.
-local:classical_semantic_measures	rdfs:subClassOf	local:measures	.
-local:propose	vn.role:Agent	local:we	.
+local:given_edge_in_path_type	rdfs:member	local:s6.2	.
+local:measure_on_lexical_base_wordnet	rdfs:member	local:measure	.
+local:given_edge_in_path_context	rdfs:member	local:path_context	.
+local:weight_which_depends_on_a_given_edge_in_a_path_position_in_a_path	rdfs:member	local:edge	.
+local:s3	rdf:predicate	local:use	.
+local:weight_which_depends_on_a_given_edge_in_a_path_type	rdfs:member	local:weight	.
+local:isa_partof	rdfs:subClassOf	local:partof	.
+local:depends_on_given_edge	rdfs:member	local:s9.2	.
+local:given_edge_in_a_path_type	rdfs:member	local:edge	.
+local:depends_on_given_edge	rdfs:member	local:s7.2	.
+local:s6	rdf:object	local:weight_which_depends_on_a_given_edge_in_a_path_type	.
+local:edge_in_path	rdfs:member	local:path	.
+local:s11	rdf:predicate	local:propose	.
+local:evaluation_of_we_measure_on_the_lexical_base_wordnet	rdfs:member	local:lexical_base_wordnet	.
+local:lexical_base_wordnet	rdfs:member	local:lexical_base	.
+local:given_edge_in_path_type	rdfs:member	local:path_type	.
+local:s4.4	rdf:subject	local:set	.
+local:s4.3	rdf:subject	local:paths	.
 local:semantic_relatedness_measure	rdfs:subClassOf	local:measure	.
-local:only_a_few	rdfs:subClassOf	local:a_few	.
-local:considered	local:AM-TMP	local:semantically_corrects	.
-local:only_few_paths	rdfs:subClassOf	local:few_paths	.
-local:only_object_properties	rdfs:subClassOf	local:properties	.
-local:object_properties_between_concepts	local:between_concepts	local:object_properties	.
-local:base	rdfs:member	local:base_wordnet	.
-local:relies	vn.role:Theme	local:two_hypotheses	.
-local:path	rdfs:member	local:path_type	.
-local:given_edge_in_path	local:in_path	local:given_edge	.
-local:classical_semantic	rdfs:subClassOf	local:semantic	.
-local:new_semantic_relatedness_measure	rdfs:subClassOf	local:semantic_relatedness_measure	.
-local:path_context	rdfs:subClassOf	local:context	.
-local:paths_using	rdfs:subClassOf	local:using	.
-local:outperforms_in_context	local:in_context	local:outperforms	.
-local:path_context_in_ontology	local:in_ontology	local:path_context	.
-local:given_set_of_rules	local:givenset_of	local:rules	.
-local:using	vn.role:Theme	local:object_properties	.
-local:given	vn.role:object	local:edge	.
-local:object_properties	rdfs:subClassOf	local:properties	.
-local:new_semantic	rdfs:subClassOf	local:semantic	.
-local:only_object	rdfs:subClassOf	local:object	.
-local:following	vn.role:Location	local:edge	.
-local:path	rdfs:member	local:path_context	.
-local:evaluation_of_we	local:evaluation_of	local:we	.
-local:only_concept_hierarchy	rdfs:subClassOf	local:concept_hierarchy	.
-local:represented	vn.role:Theme	local:cost	.
-local:considered	vn.role:Theme	local:firstly	.
-local:semantic	rdfs:member	local:semantic_measures	.
-local:depends	vn.role:Theme	local:cost	.
-local:our_measure	rdfs:subClassOf	local:measure	.
-local:measure_on_lexical_base_wordnet	local:measure_on	local:lexical_base_wordnet	.
-local:measure_on_lexical_base_wordnet	local:on_lexicalbasewordnet	local:measure	.
-local:edge_in_path_type	local:in_pathtype	local:edge	.
+local:evaluation_of_we	rdfs:member	local:we	.
+local:object_properties_between_the_concepts	rdfs:member	local:concepts	.
+local:s11.1	rdf:object	local:lexical_base_wordnet	.
+local:weight_which_depends_on_a_given_edge_in_isa_partof	rdfs:member	local:isa_partof	.
+local:weight_which_depends_on_a_given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:ontology	.
+local:s6.2	rdf:subject	local:edge	.
+local:s8.1	rdf:subject	local:edge	.
+local:s4.4	rdf:predicate	local:give	.
+local:semantically_given_set_of_rules	rdfs:member	local:rules	.
+local:evaluation_of_we	rdfs:member	local:evaluation	.
+local:s3.4	rdf:predicate	local:give	.
+local:firstly_only_using	rdfs:subClassOf	local:only_using	.
+local:path_context_in_ontology	rdfs:member	local:path_context	.
+local:path_position	rdfs:subClassOf	local:position	.
 local:few_paths	rdfs:subClassOf	local:paths	.
-local:outperforms	vn.role:Theme1	local:show	.
+local:s2	rdf:subject	local:approach	.
+local:s3.3	rdf:object	local:s3.4	.
+local:s4.4	rdf:object	local:rules	.
+local:edge_in_isa_partof	rdfs:member	local:isa_partof	.
+local:s6	rdf:subject	local:cost	.
+local:s3.1	local:AM-MOD	local:can	.
+local:new_semantic_relatedness_measure	rdfs:subClassOf	local:measure	.
+local:s9	rdf:predicate	local:represent	.
+local:weight_which_depends_on_a_given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:path_context	.
+local:given_edge_in_isa_partof	rdfs:member	local:edge	.
+local:classical_semantic	rdfs:member	local:classical	.
+local:s5	rdf:object	local:weight_which_depends_on_a_given_edge_in_a_path_position_in_a_path	.
+local:only_concept_hierarchy	rdfs:member	local:only_concept	.
 local:base_wordnet	rdfs:subClassOf	local:wordnet	.
+local:given_edge_in_a_path	rdfs:member	local:path	.
+local:given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:ontology	.
+local:s3.4	rdfs:member	local:rules	.
+local:edge_in_path_position	rdfs:member	local:path_position	.
+local:s11.1	rdf:subject	local:evaluation_of_we	.
+local:s3	rdf:object	local:paths	.
+local:s8.2	local:AM-TMP	local:secondly_following	.
+local:s4.2	local:AM-MNR	local:semantically	.
+local:s10	rdf:predicate	local:use	.
+local:path_context	rdfs:member	local:path	.
+local:weight_which_depends_on_a_given_edge_in_isa_partof	rdfs:member	local:weight	.
+local:given_edge_in_a_path_position_in_a_path	rdfs:member	local:path	.
+local:only_concept	rdfs:subClassOf	local:concept	.
+local:s6.2	rdfs:subClassOf	local:edge	.
+local:s10	rdf:object	local:partof_relation_with_two_different_benchmarks	.
+local:cost_represented_as_a_weight	rdfs:member	local:weight	.
+local:firstly_using	rdfs:subClassOf	local:using	.
+local:only_concept_hierarchy	rdfs:subClassOf	local:concept_hierarchy	.
+local:only_using	rdfs:subClassOf	local:using	.
+local:only_a_few	rdfs:subClassOf	local:a_few	.
+local:s12.1	local:AM-MNR	local:context	.
+local:s9.1	rdf:object	local:given_edge_in_isa_partof	.
+local:semantic_relatedness	rdfs:member	local:semantic	.
+local:s7	rdf:object	local:weight_which_depends_on_a_given_edge_in_a_path_context_in_the_ontology	.
+local:s8.2	rdf:subject	local:given_edge_in_a_path	.
+local:evaluation_of_we_measure_on_the_lexical_base_wordnet	rdfs:member	local:evaluation	.
+local:given_edge_in_a_path	rdfs:member	local:edge	.
+local:s3.4	rdfs:member	local:given_set	.
+local:lexical_base	rdfs:subClassOf	local:base	.
+local:s11	rdf:object	local:evaluation_of_we_measure_on_the_lexical_base_wordnet	.
+local:two_different_benchmarks	rdfs:subClassOf	local:different_benchmarks	.
+local:s1	rdf:object	local:new_semantic_relatedness_measure_on_ontologies	.
+local:classical_semantic_measures	rdfs:subClassOf	local:semantic_measures	.
+local:s4	rdf:object	local:paths	.
+local:given_edge_in_path_position	rdfs:member	local:s5.2	.
+local:s2	rdf:object	local:two_hypotheses	.
+local:new_semantic_relatedness_measure_on_ontologies	rdfs:member	local:ontologies	.
+local:object_properties	rdfs:subClassOf	local:properties	.
+local:s9.2	rdf:predicate	local:give	.
+local:different_benchmarks	rdfs:subClassOf	local:benchmarks	.
+local:only_object	rdfs:member	local:only	.
+local:context_our_measure_outperforms_the_classical_semantic_measures	rdfs:member	local:classical_semantic_measures	.
+local:s8.3	local:AM-MNR	local:weight	.
+local:path_position_in_path	rdfs:member	local:path_position	.
+local:s5.1	rdf:predicate	local:depend	.
+local:path_position	rdfs:member	local:path	.
+local:base_wordnet	rdfs:member	local:base	.
+local:weight_which_depends_on_a_given_edge_in_a_path_type	rdfs:member	local:path_type	.
+local:s2	rdf:predicate	local:rely	.
+local:semantic_relatedness_measure	rdfs:subClassOf	local:relatedness_measure	.
+local:s1	rdf:subject	local:paper	.
+local:edge_in_path_position	rdfs:member	local:edge	.
+local:s1	rdf:predicate	local:present	.
+local:s0	rdf:predicate	local:consider	.
+local:given_edge_in_path_context	rdfs:member	local:s7.2	.
+local:s5	rdf:subject	local:cost	.
+local:s7	rdf:predicate	local:represent	.
+local:weight_which_depends_on_a_given_edge_in_a_path_position_in_a_path	rdfs:member	local:path	.
+local:new_semantic_relatedness_measure	rdfs:member	local:new_semantic_relatedness	.
+local:s12.1	rdf:object	local:classical_semantic_measures	.
+local:s6.2	rdf:predicate	local:give	.
+local:path_context_in_ontology	rdfs:member	local:ontology	.
+local:s3.2	rdf:object	local:s3.4	.
+local:given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:path_context	.
+local:few_paths	rdfs:member	local:few	.
+local:s4.4	rdfs:member	local:given_set	.
+local:depends_on_given_edge	rdfs:member	local:s5.2	.
+local:path_type	rdfs:subClassOf	local:type	.
+local:given_edge_in_a_path_type	rdfs:member	local:path_type	.
+local:s7.1	rdf:subject	local:weight	.
+local:s5	rdf:predicate	local:represent	.
+local:only_concept	rdfs:member	local:only	.
+local:only_object_properties	rdfs:subClassOf	local:properties	.
+local:new_semantic	rdfs:subClassOf	local:semantic	.
+local:s4.2	rdf:object	local:s4.4	.
+local:object_properties	rdfs:member	local:object	.
+local:edge_in_path_type	rdfs:member	local:path_type	.
+local:especially_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s7.2	rdf:predicate	local:give	.
+local:weight_which_depends_on_a_given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:edge	.
+local:given_set	rdfs:subClassOf	local:set	.
+local:s4	rdf:predicate	local:use	.
+local:s3.2	rdf:predicate	local:correct	.
+local:s3.2	local:AM-ADV	local:firstly_using_only_object_properties_only_a_few_paths	.
+local:s12	rdf:predicate	local:show	.
+local:s10	rdf:subject	local:lexical_base_wordnet	.
+local:s7	rdf:subject	local:cost	.
+local:new_semantic_relatedness	rdfs:subClassOf	local:relatedness	.
+local:represented_as_weight	rdfs:member	local:weight	.
+local:s11.1	rdf:predicate	local:measure	.
+local:relatedness_measure	rdfs:subClassOf	local:measure	.
+local:partof_relation	rdfs:member	local:partof	.
+local:s3.1	local:AM-ADV	local:firstly_using_only_object_properties	.
+local:s5.1	rdf:subject	local:weight	.
+local:given_edge_in_isa_partof	rdfs:member	local:s9.2	.
+local:secondly_following	rdfs:subClassOf	local:following	.
+local:semantic_relatedness_measure	rdfs:member	local:semantic_relatedness	.
+local:relatedness_measure	rdfs:member	local:relatedness	.
+local:s0	rdf:subject	local:object_properties_between_the_concepts	.
+local:object_properties_between_concepts	rdfs:member	local:concepts	.
+local:semantically_given_set_of_rules	rdfs:member	local:set	.
+local:given_edge_in_a_path_position_in_a_path	rdfs:member	local:path_position	.
+local:context_our_measure_outperforms_the_classical_semantic_measures	rdfs:member	local:measure	.
+local:s7.1	rdf:predicate	local:depend	.
+local:our_measure	rdfs:subClassOf	local:measure	.
+local:represented_as_weight	rdfs:member	local:represented	.
+local:given_edge_in_isa_partof	rdfs:member	local:isa_partof	.
+local:path_context	rdfs:subClassOf	local:context	.
+local:path_position_in_path	rdfs:member	local:path	.
+local:measure_on_lexical_base_wordnet	rdfs:member	local:lexical_base_wordnet	.
+local:semantically_given	rdfs:subClassOf	local:given	.
+local:new_semantic_relatedness	rdfs:member	local:new_semantic	.
+local:s0	rdf:object	local:ontologies_especially	.
+local:isa_partof	rdfs:member	local:isa	.
+local:s8	rdf:object	local:given_edge_in_a_path	.
+local:s4.1	local:AM-MOD	local:can	.
+local:s9	rdf:subject	local:cost	.
+local:only_concept_hierarchy	rdfs:subClassOf	local:hierarchy	.
+local:s8.3	rdf:subject	local:cost	.
+local:given_edge_in_a_path_position_in_a_path	rdfs:member	local:edge	.
+local:s7.2	rdfs:subClassOf	local:edge	.
+local:s8.3	rdf:predicate	local:represent	.
+local:s3.4	rdf:subject	local:set	.
+local:s3.1	rdf:predicate	local:consider	.
+local:object_properties_between_the_concepts	rdfs:member	local:object_properties	.
+local:lexical_base_wordnet	rdfs:subClassOf	local:wordnet	.
+local:new_semantic	rdfs:member	local:new	.
+local:edge_in_path_context	rdfs:member	local:path_context	.
+local:s8	rdf:predicate	local:follow	.
+local:s9	rdf:object	local:weight_which_depends_on_a_given_edge_in_isa_partof	.
+local:weight_which_depends_on_a_given_edge_in_isa_partof	rdfs:member	local:edge	.
+local:concept_hierarchy	rdfs:subClassOf	local:hierarchy	.
+local:semantic_measures	rdfs:member	local:semantic	.
+local:s12	rdf:subject	local:we	.
+local:classical_semantic	rdfs:subClassOf	local:semantic	.
+local:firstly_using_only_object_properties_only_a_few_paths	rdfs:member	local:properties	.
+local:s3.1	rdf:subject	local:paths	.
+local:different_benchmarks	rdfs:member	local:different	.
+local:partof_relation_with_two_different_benchmarks	rdfs:member	local:different_benchmarks	.
 local:semantic_relatedness	rdfs:subClassOf	local:relatedness	.
-local:set_of_rules	local:set_of	local:rules	.
-local:has	vn.role:Stimulus	local:cost	.
-local:lexical	rdfs:member	local:lexical_base	.
+local:s9.2	rdfs:subClassOf	local:edge	.
+local:paths_object	rdfs:subClassOf	local:object	.
+local:edge_in_isa_partof	rdfs:member	local:edge	.
+local:s3.2	local:AM-MNR	local:semantically	.
+local:s3	rdf:subject	local:object_properties	.
+local:s6.1	rdf:object	local:given_edge_in_a_path_type	.
+local:s3.3	rdf:subject	local:paths	.
+local:s4.1	rdf:object	local:semantically_given_set_of_rules	.
+local:semantic_measures	rdfs:subClassOf	local:measures	.
+local:s11	rdf:subject	local:we	.
+local:depends_on_given_edge	rdfs:member	local:depends	.
+local:s9.1	rdf:predicate	local:depend	.
+local:s5.2	rdf:subject	local:edge	.
+local:s4.4	rdfs:member	local:rules	.
+local:s3.3	rdf:predicate	local:obey	.
+local:new_semantic_relatedness_measure	rdfs:subClassOf	local:semantic_relatedness_measure	.
+local:s12.1	rdf:subject	local:measure	.
+local:edge_in_path_context	rdfs:member	local:edge	.
+local:weight_which_depends_on_a_given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:weight	.
+local:s8.2	rdf:predicate	local:have	.
+local:cost_represented_as_a_weight	rdfs:member	local:cost	.
+local:given_edge_in_path_position	rdfs:member	local:path_position	.
+local:s5.2	rdf:predicate	local:give	.
+local:path_type	rdfs:member	local:path	.
+local:weight_which_depends_on_a_given_edge_in_a_path_position_in_a_path	rdfs:member	local:weight	.
+local:depends_on_given_edge	rdfs:member	local:s6.2	.
+local:two_hypotheses	rdfs:subClassOf	local:hypotheses	.
+local:partof_relation	rdfs:subClassOf	local:relation	.
+local:s7.2	rdf:subject	local:edge	.
+local:s4	rdf:subject	local:concept_hierarchy	.
+local:object_properties_between_concepts	rdfs:member	local:object_properties	.
+local:s8.2	rdf:object	local:cost_represented_as_a_weight	.
+local:s4.2	rdf:predicate	local:correct	.
+local:s4.1	rdf:subject	local:paths	.
+local:s9.2	rdf:subject	local:edge	.
+local:s9.1	rdf:subject	local:weight	.
+local:s6.1	rdf:subject	local:weight	.
+local:classical_semantic_measures	rdfs:subClassOf	local:measures	.
+local:s8.1	rdf:predicate	local:give	.
+local:s4.1	local:AM-ADV	local:firstly_using_only_concept_hierarchy	.
+local:lexical_base	rdfs:member	local:lexical	.
+local:new_semantic_relatedness_measure_on_ontologies	rdfs:member	local:new_semantic_relatedness_measure	.
+local:a_few	rdfs:subClassOf	local:few	.
+local:classical_semantic_measures	rdfs:member	local:classical_semantic	.
+local:s3.4	rdf:object	local:rules	.
+local:s7.1	rdf:object	local:given_edge_in_a_path_context_in_the_ontology	.
+local:s4.3	rdf:object	local:s4.4	.
+local:s4.1	rdf:predicate	local:consider	.
+local:s3.1	rdf:object	local:semantically_given_set_of_rules	.
+local:edge_in_path_type	rdfs:member	local:edge	.
+local:edge_in_path	rdfs:member	local:edge	.
+local:s12	rdf:object	local:context_our_measure_outperforms_the_classical_semantic_measures	.
+local:lexical_base_wordnet	rdfs:subClassOf	local:base_wordnet	.
+local:s4.3	rdf:predicate	local:obey	.
+local:s6	rdf:predicate	local:represent	.
+local:s12.1	rdf:predicate	local:outperform	.
+local:s5.2	rdfs:subClassOf	local:edge	.
+local:firstly_using_only_object_properties_only_a_few_paths	rdfs:member	local:few_paths	.
+local:only_object	rdfs:subClassOf	local:object	.
+local:weight_which_depends_on_a_given_edge_in_a_path_type	rdfs:member	local:edge	.
+local:s6.1	rdf:predicate	local:depend	.
+local:weight_which_depends_on_a_given_edge_in_a_path_position_in_a_path	rdfs:member	local:path_position	.
+local:only_object_properties	rdfs:member	local:only_object	.
+local:given_edge_in_a_path_context_in_the_ontology	rdfs:member	local:edge	.
+local:partof_relation_with_two_different_benchmarks	rdfs:member	local:partof_relation	.
+local:partof_relation_with_two_different_benchmarks	rdfs:member	local:two_different_benchmarks	.
+local:concept_hierarchy	rdfs:member	local:concept	.
+local:s5.1	rdf:object	local:given_edge_in_a_path_position_in_a_path	.
+local:only_paths_object	rdfs:subClassOf	local:paths_object	.

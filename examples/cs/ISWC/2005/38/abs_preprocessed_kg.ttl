@@ -1,266 +1,473 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"existing ontology mappings"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"omen enhances existing ontology mappings in our test cases"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"preliminary experiments demonstrate that omen enhances existing ontology mappings in our test cases"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"a protype ontology matcher that can enhance existing matches between ontology concepts"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we implemented a protype ontology matcher"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"match nodes"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"existing matches"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"metarules that captures the influence of the existing matches to match nodes"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the ontology structure match nodes"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"metarules that captures the influence of the ontology structure"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"an ontology mapping enhancer based on a set of metarules"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"omen based on a set of metarules"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"nodes that are neighbours matched nodes in the two ontologies"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"using a bayesian network"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"existing ontology mappings"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"existing ontology mappings"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"probabilistically improve existing ontology mappings"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we describe a framework to probabilistically improve existing ontology mappings"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"the applications that use inexact ontology mapping rules not rectified"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the applications that use inexact ontology mapping rules"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"not rectified result"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"most existing ontology mapping tools"	.
+
+
 #### Classes ####
 
-local:existing	rdfs:label	"existing"	.
+local:ontology_mappings	a	rdf:Class	;
+	rdfs:label	"ontology mappings"	.
 
-local:most	rdfs:label	"most"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:ontology_mapping	rdfs:label	"ontology mapping"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:mapping	rdfs:label	"mapping"	.
+local:omen	a	rdf:Class	;
+	rdfs:label	"omen"	.
 
-local:mapping_tools	rdfs:label	"mapping tools"	.
+local:enhance	a	rdf:Class	;
+	rdfs:label	"enhance"	.
 
-local:tools	rdfs:label	"tools"	.
+local:existing_ontology_mappings_in_our_test_cases	a	rdf:Class	;
+	rdfs:label	"existing ontology mappings in our test cases"	.
 
-local:ontology_mapping_tools	rdfs:label	"ontology mapping tools"	.
+local:test_cases	a	rdf:Class	;
+	rdfs:label	"test cases"	.
 
-local:use	rdfs:label	"use"	.
+local:test	a	rdf:Class	;
+	rdfs:label	"test"	.
 
-local:applications	rdfs:label	"applications"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:inexact_ontology	rdfs:label	"inexact ontology"	.
+local:our_test_cases	a	rdf:Class	;
+	rdfs:label	"our test cases"	.
 
-local:ontology_mapping_rules	rdfs:label	"ontology mapping rules"	.
+local:preliminary_experiments	a	rdf:Class	;
+	rdfs:label	"preliminary experiments"	.
 
-local:rules	rdfs:label	"rules"	.
+local:preliminary	a	rdf:Class	;
+	rdfs:label	"preliminary"	.
 
-local:inexact_ontology_mapping	rdfs:label	"inexact ontology mapping"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:inexact_ontology_mapping_rules	rdfs:label	"inexact ontology mapping rules"	.
+local:demonstrate	a	rdf:Class	;
+	rdfs:label	"demonstrate"	.
 
-local:mapping_rules	rdfs:label	"mapping rules"	.
+local:omen_enhances_existing_ontology_mappings_in_our_test_cases	a	rdf:Class	;
+	rdfs:label	"omen enhances existing ontology mappings in our test cases"	.
 
-local:inexact	rdfs:label	"inexact"	.
+local:existing_matches_between_ontology_concepts	a	rdf:Class	;
+	rdfs:label	"existing matches between ontology concepts"	.
 
-local:rectified	rdfs:label	"rectified"	.
+local:ontology_concepts	a	rdf:Class	;
+	rdfs:label	"ontology concepts"	.
 
-local:ontology_mappings	rdfs:label	"ontology mappings"	.
+local:matches	a	rdf:Class	;
+	rdfs:label	"matches"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:existing_ontology_mappings	rdfs:label	"existing ontology mappings"	.
+local:existing_matches	a	rdf:Class	;
+	rdfs:label	"existing matches"	.
 
-local:using	rdfs:label	"using"	.
+local:protype_ontology_matcher	a	rdf:Class	;
+	rdfs:label	"protype ontology matcher"	.
 
-local:bayesian_network	rdfs:label	"bayesian network"	.
+local:matcher	a	rdf:Class	;
+	rdfs:label	"matcher"	.
 
-local:network	rdfs:label	"network"	.
+local:ontology_matcher	a	rdf:Class	;
+	rdfs:label	"ontology matcher"	.
 
-local:bayesian	rdfs:label	"bayesian"	.
+local:protype_ontology	a	rdf:Class	;
+	rdfs:label	"protype ontology"	.
 
-local:describe	rdfs:label	"describe"	.
+local:protype	a	rdf:Class	;
+	rdfs:label	"protype"	.
 
-local:we	rdfs:label	"we"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:probabilistically_improve	rdfs:label	"probabilistically improve"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:improve	rdfs:label	"improve"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:framework	rdfs:label	"framework"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:probabilistically	rdfs:label	"probabilistically"	.
+local:match	a	rdf:Class	;
+	rdfs:label	"match"	.
 
-local:captures	rdfs:label	"captures"	.
+local:metarules	a	rdf:Class	;
+	rdfs:label	"metarules"	.
 
-local:metarules	rdfs:label	"meta-rules"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-local:existing_matches	rdfs:label	"existing matches"	.
+local:influence_of_the_existing_matches_to_match_nodes	a	rdf:Class	;
+	rdfs:label	"influence of the existing matches to match nodes"	.
 
-local:matches	rdfs:label	"matches"	.
+local:influence	a	rdf:Class	;
+	rdfs:label	"influence"	.
 
-local:influence_of_existing_matches	rdfs:label	"influence of existing matches"	.
+local:influence_of_existing_matches	a	rdf:Class	;
+	rdfs:label	"influence of existing matches"	.
 
-local:influence	rdfs:label	"influence"	.
+local:ontology_structure	a	rdf:Class	;
+	rdfs:label	"ontology structure"	.
 
-local:match	rdfs:label	"match"	.
+local:structure	a	rdf:Class	;
+	rdfs:label	"structure"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:influence_of_the_ontology_structure	a	rdf:Class	;
+	rdfs:label	"influence of the ontology structure"	.
 
-local:ontology_structure	rdfs:label	"ontology structure"	.
+local:influence_of_ontology_structure	a	rdf:Class	;
+	rdfs:label	"influence of ontology structure"	.
 
-local:structure	rdfs:label	"structure"	.
+local:ontology_mapping_enhancer	a	rdf:Class	;
+	rdfs:label	"ontology mapping enhancer"	.
 
-local:influence_of_ontology_structure	rdfs:label	"influence of ontology structure"	.
+local:mapping_enhancer	a	rdf:Class	;
+	rdfs:label	"mapping enhancer"	.
 
-local:mapping_enhancer	rdfs:label	"mapping enhancer"	.
+local:mapping	a	rdf:Class	;
+	rdfs:label	"mapping"	.
 
-local:enhancer	rdfs:label	"enhancer"	.
+local:ontology_mapping	a	rdf:Class	;
+	rdfs:label	"ontology mapping"	.
 
-local:ontology_mapping_enhancer	rdfs:label	"ontology mapping enhancer"	.
+local:enhancer	a	rdf:Class	;
+	rdfs:label	"enhancer"	.
 
-local:based	rdfs:label	"based"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:set_of_metarules	rdfs:label	"set of meta-rules"	.
+local:set_of_metarules	a	rdf:Class	;
+	rdfs:label	"set of metarules"	.
 
-local:set	rdfs:label	"set"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:matched	rdfs:label	"matched"	.
+local:nodes_that_are_neighbours	a	rdf:Class	;
+	rdfs:label	"nodes that are neighbours"	.
 
-local:two_ontologies	rdfs:label	"two ontologies"	.
+local:neighbours	a	rdf:Class	;
+	rdfs:label	"neighbours"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:nodes_in_the_two_ontologies	a	rdf:Class	;
+	rdfs:label	"nodes in the two ontologies"	.
 
-local:nodes_in_two_ontologies	rdfs:label	"nodes in two ontologies"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:omen	rdfs:label	"omen"	.
+local:two_ontologies	a	rdf:Class	;
+	rdfs:label	"two ontologies"	.
 
-local:ontology_matcher	rdfs:label	"ontology matcher"	.
+local:nodes_in_two_ontologies	a	rdf:Class	;
+	rdfs:label	"nodes in two ontologies"	.
 
-local:matcher	rdfs:label	"matcher"	.
+local:bayesian_network	a	rdf:Class	;
+	rdfs:label	"bayesian network"	.
 
-local:protype	rdfs:label	"protype"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:protype_ontology	rdfs:label	"protype ontology"	.
+local:bayesian	a	rdf:Class	;
+	rdfs:label	"bayesian"	.
 
-local:protype_ontology_matcher	rdfs:label	"protype ontology matcher"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:enhance	rdfs:label	"enhance"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:can	rdfs:label	"can"	.
+local:probabilistically	a	rdf:Class	;
+	rdfs:label	"probabilistically"	.
 
-local:ontology_concepts	rdfs:label	"ontology concepts"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:framework_to_probabilistically_improve_existing_ontology_mappings	a	rdf:Class	;
+	rdfs:label	"framework to probabilistically improve existing ontology mappings"	.
 
-local:existing_matches_between_ontology_concepts	rdfs:label	"existing matches between ontology concepts"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:probabilistically_improve	a	rdf:Class	;
+	rdfs:label	"probabilistically improve"	.
 
-local:preliminary	rdfs:label	"preliminary"	.
+local:applications_that_use_inexact_ontology_mapping_rules	a	rdf:Class	;
+	rdfs:label	"applications that use inexact ontology mapping rules"	.
 
-local:preliminary_experiments	rdfs:label	"preliminary experiments"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:inexact_ontology_mapping_rules	a	rdf:Class	;
+	rdfs:label	"inexact ontology mapping rules"	.
 
-local:demonstrate	rdfs:label	"demonstrate"	.
+local:rules	a	rdf:Class	;
+	rdfs:label	"rules"	.
 
-local:test	rdfs:label	"test"	.
+local:inexact_ontology	a	rdf:Class	;
+	rdfs:label	"inexact ontology"	.
 
-local:test_cases	rdfs:label	"test cases"	.
+local:inexact	a	rdf:Class	;
+	rdfs:label	"inexact"	.
 
-local:cases	rdfs:label	"cases"	.
+local:inexact_ontology_mapping	a	rdf:Class	;
+	rdfs:label	"inexact ontology mapping"	.
 
-local:our_test_cases	rdfs:label	"our test cases"	.
+local:mapping_rules	a	rdf:Class	;
+	rdfs:label	"mapping rules"	.
 
-local:existing_ontology_mappings_in_our_test_cases	rdfs:label	"existing ontology mappings in our test cases"	.
+local:ontology_mapping_rules	a	rdf:Class	;
+	rdfs:label	"ontology mapping rules"	.
 
-local:enhances	rdfs:label	"enhances"	.
+local:not_rectify	a	rdf:Class	;
+	rdfs:label	"not rectify"	.
 
-#### Properties ####
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
+
+local:ontology_mapping_tools	a	rdf:Class	;
+	rdfs:label	"ontology mapping tools"	.
+
+local:tools	a	rdf:Class	;
+	rdfs:label	"tools"	.
+
+local:mapping_tools	a	rdf:Class	;
+	rdfs:label	"mapping tools"	.
+
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
 #### Mapped Relations ####
 
-local:ontology_mapping	owl:sameAs	cso:ontology_mapping	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontology_concepts	owl:sameAs	cso:ontology_concepts	.
-cso:ontology_mapping	rdfs:label	"ontology mapping"	.
-cso:bayesian_network	rdfs:label	"bayesian network"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-cso:ontology_mapping	rdfs:label	"ontology mappings"	.
-cso:ontology	rdfs:label	"ontology"	.
-local:bayesian_network	owl:sameAs	cso:bayesian_network	.
-cso:ontology_concepts	rdfs:label	"ontology concepts"	.
-local:ontology_mappings	owl:sameAs	cso:ontology_mapping	.
 local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology_concepts	rdfs:label	"ontology concepts"	.
+local:ontology_concepts	owl:sameAs	cso:ontology_concepts	.
+cso:ontologies	rdfs:label	"ontologies"	.
+cso:bayesian_network	rdfs:label	"bayesian network"	.
+local:bayesian_network	owl:sameAs	cso:bayesian_network	.
+cso:ontology_mapping	rdfs:label	"ontology mappings"	.
+cso:ontology_mapping	rdfs:label	"ontology mapping"	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:ontology	rdfs:label	"ontology"	.
+local:ontology_mapping	owl:sameAs	cso:ontology_mapping	.
+local:ontology_mappings	owl:sameAs	cso:ontology_mapping	.
 
 #### Relations ####
 
-local:inexact_ontology_mapping	rdfs:member	local:inexact_ontology_mapping_rules	.
-local:ontology_matcher	rdfs:subClassOf	local:matcher	.
-local:bayesian_network	rdfs:subClassOf	local:network	.
-local:ontology	rdfs:member	local:ontology_structure	.
-local:ontology	rdfs:member	local:ontology_matcher	.
-local:preliminary_experiments	rdfs:subClassOf	local:experiments	.
-local:preliminary	rdfs:member	local:preliminary_experiments	.
-local:ontology_structure	rdfs:subClassOf	local:structure	.
-local:use	local:AM-ADV	local:rectified	.
-local:mapping	rdfs:member	local:mapping_rules	.
-local:matched	vn.role:Patient2	local:nodes_in_two_ontologies	.
-local:captures	vn.role:Agent	local:metarules	.
-local:describe	vn.role:Agent	local:we	.
-local:matched	vn.role:Patient1	local:nodes	.
-local:ontology_mapping_tools	rdfs:subClassOf	local:mapping_tools	.
-local:enhances	vn.role:Patient	local:existing_ontology_mappings_in_our_test_cases	.
-local:improve	local:AM-MNR	local:probabilistically	.
-local:based	vn.role:Cause	local:ontology_mapping_enhancer	.
-local:set_of_metarules	local:of_meta-rules	local:set	.
-local:existing_matches_between_ontology_concepts	local:existingmatches_between	local:ontology_concepts	.
-local:nodes_in_two_ontologies	local:nodes_in	local:two_ontologies	.
-local:implemented	vn.role:Agent	local:we	.
-local:inexact_ontology	rdfs:member	local:inexact_ontology_mapping	.
-local:inexact_ontology_mapping_rules	rdfs:subClassOf	local:rules	.
-local:enhance	vn.role:Instrument	local:protype_ontology_matcher	.
-local:influence_of_ontology_structure	local:influence_of	local:ontology_structure	.
-local:ontology_concepts	rdfs:subClassOf	local:concepts	.
-local:match	vn.role:Patient2	local:nodes	.
-local:existing_matches_between_ontology_concepts	local:between_ontologyconcepts	local:existing_matches	.
-local:existing	vn.role:Location	local:matches	.
-local:ontology_mappings	rdfs:subClassOf	local:mappings	.
-local:enhance	local:AM-MOD	local:can	.
-local:based	vn.role:Cause	local:omen	.
-local:inexact_ontology_mapping_rules	rdfs:subClassOf	local:ontology_mapping_rules	.
-local:mapping_tools	rdfs:subClassOf	local:tools	.
+local:nodes_in_the_two_ontologies	rdfs:member	local:ontologies	.
+local:applications_that_use_inexact_ontology_mapping_rules	rdfs:member	local:inexact_ontology_mapping_rules	.
+local:mapping_rules	rdfs:member	local:mapping	.
+local:influence_of_the_ontology_structure	rdfs:member	local:influence	.
 local:ontology_mapping_enhancer	rdfs:subClassOf	local:mapping_enhancer	.
-local:captures	vn.role:Theme	local:influence_of_existing_matches	.
-local:demonstrate	vn.role:Recipient	local:preliminary_experiments	.
-local:bayesian	rdfs:member	local:bayesian_network	.
-local:protype_ontology_matcher	rdfs:subClassOf	local:ontology_matcher	.
-local:using	vn.role:Agent	local:existing_ontology_mappings	.
-local:protype_ontology	rdfs:subClassOf	local:ontology	.
-local:use	vn.role:Agent	local:applications	.
-local:inexact_ontology_mapping	rdfs:subClassOf	local:mapping	.
-local:ontology_mapping_rules	rdfs:subClassOf	local:mapping_rules	.
-local:describe	vn.role:Theme	local:framework	.
-local:protype_ontology_matcher	rdfs:subClassOf	local:matcher	.
-local:demonstrate	vn.role:Cause	local:enhances	.
-local:improve	vn.role:Patient	local:existing_ontology_mappings	.
-local:influence_of_ontology_structure	local:of_ontologystructure	local:influence	.
-local:existing_ontology_mappings_in_our_test_cases	local:in_ourtestcases	local:existing_ontology_mappings	.
-local:ontology_mapping	rdfs:member	local:ontology_mapping_rules	.
-local:use	vn.role:Theme	local:inexact_ontology_mapping_rules	.
-local:ontology_mapping_rules	rdfs:subClassOf	local:rules	.
-local:two_ontologies	rdfs:subClassOf	local:ontologies	.
-local:using	vn.role:Theme	local:bayesian_network	.
-local:influence_of_existing_matches	local:of_existingmatches	local:influence	.
-local:ontology_mapping_tools	rdfs:subClassOf	local:tools	.
-local:protype	rdfs:member	local:protype_ontology	.
-local:inexact_ontology	rdfs:subClassOf	local:ontology	.
-local:our_test_cases	rdfs:subClassOf	local:test_cases	.
-local:based	vn.role:indirect_object	local:set_of_metarules	.
-local:existing_matches	rdfs:subClassOf	local:matches	.
-local:protype_ontology	rdfs:member	local:protype_ontology_matcher	.
-local:existing	vn.role:Location	local:ontology_mapping_tools	.
-local:existing_ontology_mappings_in_our_test_cases	local:existingontologymappings_in	local:our_test_cases	.
-local:ontology	rdfs:member	local:ontology_concepts	.
-local:match	vn.role:Patient2	local:influence_of_ontology_structure	.
-local:mapping_rules	rdfs:subClassOf	local:rules	.
-local:existing_ontology_mappings	rdfs:subClassOf	local:ontology_mappings	.
-local:influence_of_existing_matches	local:influence_of	local:existing_matches	.
-local:mapping	rdfs:member	local:mapping_tools	.
+local:influence_of_the_ontology_structure	rdfs:member	local:ontology_structure	.
 local:ontology_mapping	rdfs:subClassOf	local:mapping	.
-local:nodes_in_two_ontologies	local:in_twoontologies	local:nodes	.
-local:existing	vn.role:Location	local:ontology_mappings	.
-local:match	vn.role:Patient2	local:influence_of_existing_matches	.
+local:s12	rdf:object	local:protype_ontology_matcher	.
+local:s3	rdf:predicate	local:use	.
+local:framework_to_probabilistically_improve_existing_ontology_mappings	rdfs:member	local:ontology_mappings	.
+local:s14.2	rdf:predicate	local:exist	.
+local:two_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s8	rdf:predicate	local:base	.
+local:s11	rdf:object	local:protype_ontology_matcher	.
+local:s9.1	local:AM-MNR	local:ontology_structure	.
+local:bayesian_network	rdfs:subClassOf	local:network	.
+local:s14.1	rdf:subject	local:omen	.
+local:preliminary_experiments	rdfs:member	local:preliminary	.
+local:influence_of_the_existing_matches_to_match_nodes	rdfs:member	local:nodes	.
+local:influence_of_the_existing_matches_to_match_nodes	rdfs:member	local:matches	.
+local:s8	rdf:subject	local:ontology_mapping_enhancer	.
+local:s4.1	rdf:predicate	local:improve	.
+local:ontology_mapping_tools	rdfs:member	local:ontology_mapping	.
+local:ontology_mapping_enhancer	rdfs:subClassOf	local:enhancer	.
+local:s4	rdf:subject	local:we	.
+local:inexact_ontology_mapping_rules	rdfs:member	local:inexact	.
+local:existing_ontology_mappings_in_our_test_cases	rdfs:member	local:s14.2	.
+local:nodes_in_two_ontologies	rdfs:member	local:nodes	.
+local:mapping_tools	rdfs:subClassOf	local:tools	.
+local:inexact_ontology_mapping_rules	rdfs:subClassOf	local:ontology_mapping_rules	.
+local:existing_matches	rdfs:subClassOf	local:matches	.
+local:existing_ontology_mappings_in_our_test_cases	rdfs:member	local:test_cases	.
+local:s10	rdf:predicate	local:capture	.
+local:s10	rdf:object	local:influence_of_the_existing_matches_to_match_nodes	.
+local:s3	rdf:object	local:inexact_ontology_mapping_rules	.
+local:protype_ontology_matcher	rdfs:subClassOf	local:matcher	.
+local:s10.2	rdf:subject	local:nodes	.
+local:s7	rdf:object	local:set_of_metarules	.
+local:s4	rdf:predicate	local:describe	.
+local:test_cases	rdfs:member	local:test	.
+local:s14.2	rdf:subject	local:ontology_mappings	.
+local:ontology_mapping_tools	rdfs:subClassOf	local:mapping_tools	.
+local:ontology_mapping_rules	rdfs:subClassOf	local:mapping_rules	.
+local:s4.2	rdfs:subClassOf	local:ontology_mappings	.
+local:s14.2	rdfs:subClassOf	local:ontology_mappings	.
+local:s7	rdf:predicate	local:base	.
+local:s6	rdf:subject	local:nodes_that_are_neighbours	.
+local:s1	local:AM-ADV	local:most	.
+local:inexact_ontology_mapping	rdfs:subClassOf	local:mapping	.
+local:s14	rdf:predicate	local:demonstrate	.
+local:inexact_ontology	rdfs:subClassOf	local:ontology	.
+local:s12	local:AM-MOD	local:can	.
+local:s6	rdf:object	local:nodes_in_the_two_ontologies	.
+local:s9.1	rdf:subject	local:nodes	.
+local:nodes_in_two_ontologies	rdfs:member	local:two_ontologies	.
+local:s12	rdf:subject	local:existing_matches_between_ontology_concepts	.
+local:applications_that_use_inexact_ontology_mapping_rules	rdfs:member	local:applications	.
+local:framework_to_probabilistically_improve_existing_ontology_mappings	rdfs:member	local:framework	.
+local:ontology_structure	rdfs:subClassOf	local:structure	.
+local:nodes_that_are_neighbours	rdfs:member	local:nodes	.
+local:s4	rdf:object	local:framework_to_probabilistically_improve_existing_ontology_mappings	.
+local:our_test_cases	rdfs:subClassOf	local:test_cases	.
+local:s9	rdf:object	local:influence_of_the_ontology_structure	.
+local:s2	rdf:predicate	local:not_rectify	.
+local:protype_ontology	rdfs:subClassOf	local:ontology	.
+local:ontology_mappings	rdfs:member	local:ontology	.
+local:s3	rdf:subject	local:applications	.
+local:s11	rdf:subject	local:we	.
+local:s4.1	local:AM-MNR	local:probabilistically	.
 local:probabilistically_improve	rdfs:subClassOf	local:improve	.
-local:enhance	vn.role:Patient	local:existing_matches_between_ontology_concepts	.
-local:ontology	rdfs:member	local:ontology_mapping	.
-local:inexact	rdfs:member	local:inexact_ontology	.
-local:existing	local:AM-ADV	local:most	.
-local:test	rdfs:member	local:test_cases	.
+local:s14.1	rdf:object	local:existing_ontology_mappings_in_our_test_cases	.
+local:s14.1	rdfs:member	local:ontology_mappings	.
+local:s9.1	rdf:predicate	local:match	.
+local:s1	rdf:subject	local:ontology_mapping_tools	.
+local:influence_of_ontology_structure	rdfs:member	local:influence	.
+local:s3.1	rdf:predicate	local:not_rectify	.
+local:s1	rdf:predicate	local:exist	.
+local:influence_of_the_existing_matches_to_match_nodes	rdfs:member	local:influence	.
+local:ontology_structure	rdfs:member	local:ontology	.
+local:s6	rdf:predicate	local:match	.
+local:s4.2	rdf:predicate	local:exist	.
+local:ontology_mapping_tools	rdfs:subClassOf	local:tools	.
+local:ontology_mappings	rdfs:subClassOf	local:mappings	.
+local:ontology_matcher	rdfs:member	local:ontology	.
+local:ontology_mapping_enhancer	rdfs:member	local:ontology_mapping	.
+local:s7	rdf:subject	local:omen	.
+local:s5.1	rdf:subject	local:bayesian_network	.
+local:s4.1	rdf:subject	local:s4.2	.
+local:set_of_metarules	rdfs:member	local:metarules	.
+local:inexact_ontology_mapping	rdfs:member	local:inexact_ontology	.
+local:s14.1	rdf:predicate	local:enhance	.
+local:s14.1	rdfs:member	local:omen	.
 local:mapping_enhancer	rdfs:subClassOf	local:enhancer	.
-local:captures	vn.role:Theme	local:influence_of_ontology_structure	.
-local:ontology_mapping	rdfs:member	local:ontology_mapping_tools	.
+local:nodes_in_the_two_ontologies	rdfs:member	local:nodes	.
+local:s2	rdf:subject	local:result	.
+local:ontology_concepts	rdfs:subClassOf	local:concepts	.
+local:existing_ontology_mappings_in_our_test_cases	rdfs:member	local:our_test_cases	.
+local:set_of_metarules	rdfs:member	local:set	.
+local:s10.2	rdf:predicate	local:match	.
+local:ontology_concepts	rdfs:member	local:ontology	.
+local:bayesian_network	rdfs:member	local:bayesian	.
+local:influence_of_existing_matches	rdfs:member	local:influence	.
+local:mapping_enhancer	rdfs:member	local:mapping	.
+local:s5.1	rdf:predicate	local:use	.
+local:ontology_matcher	rdfs:subClassOf	local:matcher	.
+local:s4.2	rdf:subject	local:ontology_mappings	.
+local:ontology_mapping_rules	rdfs:member	local:ontology_mapping	.
+local:ontology_mapping	rdfs:member	local:ontology	.
+local:existing_ontology_mappings_in_our_test_cases	rdfs:member	local:ontology_mappings	.
+local:s10	rdf:subject	local:metarules	.
+local:s9	rdf:subject	local:metarules	.
+local:s9	rdf:predicate	local:capture	.
+local:ontology_mapping_rules	rdfs:subClassOf	local:rules	.
+local:s14.1	rdfs:member	local:test_cases	.
+local:s11	rdf:predicate	local:implement	.
+local:existing_matches_between_ontology_concepts	rdfs:member	local:ontology_concepts	.
+local:protype_ontology_matcher	rdfs:subClassOf	local:ontology_matcher	.
+local:s3.1	rdf:subject	local:applications_that_use_inexact_ontology_mapping_rules	.
+local:s10.1	rdf:predicate	local:exist	.
+local:protype_ontology	rdfs:member	local:protype	.
+local:s10.1	rdfs:subClassOf	local:matches	.
+local:influence_of_ontology_structure	rdfs:member	local:ontology_structure	.
+local:inexact_ontology	rdfs:member	local:inexact	.
+local:s5	rdf:predicate	local:exist	.
+local:influence_of_existing_matches	rdfs:member	local:s10.1	.
+local:s5	rdf:subject	local:ontology_mappings	.
+local:inexact_ontology_mapping_rules	rdfs:subClassOf	local:rules	.
+local:protype_ontology_matcher	rdfs:member	local:protype_ontology	.
+local:inexact_ontology_mapping_rules	rdfs:member	local:inexact_ontology_mapping	.
+local:s12	rdf:predicate	local:enhance	.
+local:inexact_ontology_mapping_rules	rdfs:member	local:rules	.
+local:existing_matches_between_ontology_concepts	rdfs:member	local:matches	.
 local:test_cases	rdfs:subClassOf	local:cases	.
-local:set_of_metarules	local:set_of	local:metarules	.
-local:ontology	rdfs:member	local:ontology_mappings	.
-local:implemented	vn.role:Theme	local:protype_ontology_matcher	.
-local:enhances	vn.role:Agent	local:omen	.
+local:nodes_that_are_neighbours	rdfs:member	local:neighbours	.
+local:existing_matches_between_ontology_concepts	rdfs:member	local:existing_matches	.
+local:s10.1	rdf:subject	local:matches	.
+local:s8	rdf:object	local:set_of_metarules	.
+local:preliminary_experiments	rdfs:subClassOf	local:experiments	.
+local:mapping_tools	rdfs:member	local:mapping	.
+local:mapping_rules	rdfs:subClassOf	local:rules	.
+local:s14	rdf:subject	local:preliminary_experiments	.
+local:s14	rdf:object	local:omen_enhances_existing_ontology_mappings_in_our_test_cases	.

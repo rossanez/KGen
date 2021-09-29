@@ -1,682 +1,1043 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"narrow down the search space of possible labels"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"the data which could potentially used in combination with other approaches to narrow down the search space of possible labels"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"in other cases our approach can nevertheless assign high level contexts to the data"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"our approach can assign finegrained semantic labels"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"our evaluation shows that our approach can assign finegrained semantic labels"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"supporting evidence in the background knowledge graph"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"to this end we apply a hierarchical clustering over information"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"we rank the most likely candidates"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"we perform a nearest neighbour search to rank the most likely candidates"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"build a background knowledge graph of possible semantic contexts for bags of numerical values over which we perform a nearest neighbour search to rank the most likely candidates"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"information taken from dbpedia to build a background knowledge graph of possible semantic contexts for bags of numerical values over which we perform a nearest neighbour search to rank the most likely candidates"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"given bag"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"we find candidates of context descriptions for a given bag of numerical values"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"we propose an approach to find candidates of context descriptions for a given bag of numerical values"	.
+
+local:s10.2	a	rdf:Statement	;
+	rdfs:label	"given bag"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"rank candidates of context descriptions for a given bag of numerical values"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we propose an approach to rank candidates of context descriptions for a given bag of numerical values"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"given bag"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"we find candidates of semantic labels for a given bag of numerical values"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we propose an approach to find candidates of semantic labels for a given bag of numerical values"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"given bag"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"rank candidates of semantic labels for a given bag of numerical values"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"we propose an approach to rank candidates of semantic labels for a given bag of numerical values"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"solutions that solely focus on textual cues"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"a large portion of numerical columns andor nontextual headers"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"open data tables typically contain a large portion of numerical columns andor nontextual headers therefore solutions"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we will illustrate open data tables typically contain a large portion of numerical columns andor nontextual headers therefore solutions"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"most existing approaches semantically label such tabular data"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"most rely on mappings of textual information to instances in rdf knowledge bases in order to link"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"most transform tabular data into rdf"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"most rely on mappings of textual information to classes properties"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"the success of open data a huge amount of tabular data sources became available that could potentially mapped into the web of linked data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"the success of open data a huge amount of tabular data sources became available that could potentially be mapped into the web of linked data"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"a huge amount of tabular data sources became available that could potentially linked into the web of linked data"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the success of open data a huge amount of tabular data sources became available that could potentially be linked into the web of linked data"	.
+
+
 #### Classes ####
 
-local:open_data	rdfs:label	"open data"	.
+local:search_space_of_possible_labels	a	rdf:Class	;
+	rdfs:label	"search space of possible labels"	.
 
-local:data	rdfs:label	"data"	.
+local:possible_labels	a	rdf:Class	;
+	rdfs:label	"possible labels"	.
 
-local:open	rdfs:label	"open"	.
+local:search_space	a	rdf:Class	;
+	rdfs:label	"search space"	.
 
-local:huge_amount	rdfs:label	"huge amount"	.
+local:labels	a	rdf:Class	;
+	rdfs:label	"labels"	.
 
-local:amount	rdfs:label	"amount"	.
+local:search	a	rdf:Class	;
+	rdfs:label	"search"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:possible	a	rdf:Class	;
+	rdfs:label	"possible"	.
 
-local:sources	rdfs:label	"sources"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:huge	rdfs:label	"huge"	.
+local:narrow	a	rdf:Class	;
+	rdfs:label	"narrow"	.
 
-local:tabular_data_sources	rdfs:label	"tabular data sources"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:tabular_data	rdfs:label	"tabular data"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:tabular	rdfs:label	"tabular"	.
+local:potentially	a	rdf:Class	;
+	rdfs:label	"potentially"	.
 
-local:success_of_open_data	rdfs:label	"success of open data"	.
+local:combination_with_other_approaches_to_narrow_down_the_search_space_of_possible_labels	a	rdf:Class	;
+	rdfs:label	"combination with other approaches to narrow down the search space of possible labels"	.
 
-local:success	rdfs:label	"success"	.
+local:other_approaches	a	rdf:Class	;
+	rdfs:label	"other approaches"	.
 
-local:huge_amount_of_tabular_data_sources	rdfs:label	"huge amount of tabular data sources"	.
+local:combination	a	rdf:Class	;
+	rdfs:label	"combination"	.
 
-local:became	rdfs:label	"became"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:potentially_mapped	rdfs:label	"potentially mapped"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:mapped	rdfs:label	"mapped"	.
+local:combination_with_other_approaches	a	rdf:Class	;
+	rdfs:label	"combination with other approaches"	.
 
-local:could_potentially_mapped	rdfs:label	"could potentially mapped"	.
+local:could	a	rdf:Class	;
+	rdfs:label	"could"	.
 
-local:could_potentially_mapped_into_web	rdfs:label	"could potentially mapped into web"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:web	rdfs:label	"web"	.
+local:assign	a	rdf:Class	;
+	rdfs:label	"assign"	.
 
-local:web_of_data	rdfs:label	"web of data"	.
+local:high_level_contexts_data	a	rdf:Class	;
+	rdfs:label	"high level contexts data"	.
 
-local:available	rdfs:label	"available"	.
+local:contexts_data	a	rdf:Class	;
+	rdfs:label	"contexts data"	.
 
-local:could	rdfs:label	"could"	.
+local:level_contexts	a	rdf:Class	;
+	rdfs:label	"level contexts"	.
 
-local:potentially	rdfs:label	"potentially"	.
+local:contexts	a	rdf:Class	;
+	rdfs:label	"contexts"	.
 
-local:potentially_linked	rdfs:label	"potentially linked"	.
+local:level	a	rdf:Class	;
+	rdfs:label	"level"	.
 
-local:linked	rdfs:label	"linked"	.
+local:high_level_contexts	a	rdf:Class	;
+	rdfs:label	"high level contexts"	.
 
-local:could_potentially_linked	rdfs:label	"could potentially linked"	.
+local:high_level	a	rdf:Class	;
+	rdfs:label	"high level"	.
 
-local:could_potentially_linked_into_web	rdfs:label	"could potentially linked into web"	.
+local:level_contexts_data	a	rdf:Class	;
+	rdfs:label	"level contexts data"	.
 
-local:label	rdfs:label	"label"	.
+local:high	a	rdf:Class	;
+	rdfs:label	"high"	.
 
-local:label_”	rdfs:label	"label ”"	.
+local:nevertheless	a	rdf:Class	;
+	rdfs:label	"nevertheless"	.
 
-local:such	rdfs:label	"such"	.
+local:cases	a	rdf:Class	;
+	rdfs:label	"cases"	.
 
-local:such_tabular	rdfs:label	"such tabular"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:semantically_label	rdfs:label	"semantically label"	.
+local:finegrained_semantic_labels	a	rdf:Class	;
+	rdfs:label	"finegrained semantic labels"	.
 
-local:semantically_label_”	rdfs:label	"semantically label ”"	.
+local:semantic_labels	a	rdf:Class	;
+	rdfs:label	"semantic labels"	.
 
-local:semantically	rdfs:label	"semantically"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:such_tabular_data	rdfs:label	"such tabular data"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:”	rdfs:label	"”"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:label_such_tabular_data	rdfs:label	"label such tabular data"	.
+local:approach_can_assign_finegrained_semantic_labels	a	rdf:Class	;
+	rdfs:label	"approach can assign finegrained semantic labels"	.
 
-local:semantically_label_such_tabular_data	rdfs:label	"semantically label such tabular data"	.
+local:can_assign	a	rdf:Class	;
+	rdfs:label	"can assign"	.
 
-local:existing_approaches	rdfs:label	"existing approaches"	.
+local:evidence	a	rdf:Class	;
+	rdfs:label	"evidence"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:support	a	rdf:Class	;
+	rdfs:label	"support"	.
 
-local:existing_approaches_to_semantically_label_such_tabular_data	rdfs:label	"existing approaches to semantically label such tabular data"	.
+local:background_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"background knowledge graph"	.
 
-local:rely	rdfs:label	"rely"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:textual	rdfs:label	"textual"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:textual_information	rdfs:label	"textual information"	.
+local:background_knowledge	a	rdf:Class	;
+	rdfs:label	"background knowledge"	.
 
-local:rdf_knowledge	rdfs:label	"rdf knowledge"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:rdf_knowledge_bases	rdfs:label	"rdf knowledge bases"	.
+local:background	a	rdf:Class	;
+	rdfs:label	"background"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:apply	a	rdf:Class	;
+	rdfs:label	"apply"	.
 
-local:information	rdfs:label	"information"	.
+local:hierarchical_clustering_over_information	a	rdf:Class	;
+	rdfs:label	"hierarchical clustering over information"	.
 
-local:bases	rdfs:label	"bases"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:hierarchical_clustering	a	rdf:Class	;
+	rdfs:label	"hierarchical clustering"	.
 
-local:mappings_of_textual_information	rdfs:label	"mappings of textual information"	.
+local:clustering	a	rdf:Class	;
+	rdfs:label	"clustering"	.
 
-local:mappings	rdfs:label	"mappings"	.
+local:hierarchical	a	rdf:Class	;
+	rdfs:label	"hierarchical"	.
 
-local:mappings_of_textual_information_to_instances	rdfs:label	"mappings of textual information to instances"	.
+local:end	a	rdf:Class	;
+	rdfs:label	"end"	.
 
-local:instances	rdfs:label	"instances"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:instances_in_rdf_knowledge_bases	rdfs:label	"instances in rdf knowledge bases"	.
+local:likely_candidates	a	rdf:Class	;
+	rdfs:label	"likely candidates"	.
 
-local:order_to_link	rdfs:label	"order to link"	.
+local:candidates	a	rdf:Class	;
+	rdfs:label	"candidates"	.
 
-local:order	rdfs:label	"order"	.
+local:likely	a	rdf:Class	;
+	rdfs:label	"likely"	.
 
-local:link	rdfs:label	"link"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:link–	rdfs:label	"link–."	.
+local:nearest_neighbour_search	a	rdf:Class	;
+	rdfs:label	"nearest neighbour search"	.
 
-local:tabular_data_into_rdf	rdfs:label	"tabular data into rdf"	.
+local:neighbour_search	a	rdf:Class	;
+	rdfs:label	"neighbour search"	.
 
-local:transform–	rdfs:label	"transform–"	.
+local:nearest_neighbour	a	rdf:Class	;
+	rdfs:label	"nearest neighbour"	.
 
-local:mappings_of_textual_information_to_properties	rdfs:label	"mappings of textual information to properties"	.
+local:nearest	a	rdf:Class	;
+	rdfs:label	"nearest"	.
 
-local:properties	rdfs:label	"properties"	.
+local:neighbour	a	rdf:Class	;
+	rdfs:label	"neighbour"	.
 
-local:properties_in_rdf_knowledge_bases	rdfs:label	"properties in rdf knowledge bases"	.
+local:rank_the_most_likely_candidates	a	rdf:Class	;
+	rdfs:label	"rank the most likely candidates"	.
 
-local:mappings_of_textual_information_to_classes	rdfs:label	"mappings of textual information to classes"	.
+local:most_likely_candidates	a	rdf:Class	;
+	rdfs:label	"most likely candidates"	.
 
-local:classes	rdfs:label	"classes"	.
+local:most_likely	a	rdf:Class	;
+	rdfs:label	"most likely"	.
 
-local:classes_in_rdf_knowledge_bases	rdfs:label	"classes in rdf knowledge bases"	.
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
-local:focus	rdfs:label	"focus"	.
+local:background_knowledge_graph_of_possible_semantic_contexts	a	rdf:Class	;
+	rdfs:label	"background knowledge graph of possible semantic contexts"	.
 
-local:solutions	rdfs:label	"solutions"	.
+local:possible_semantic_contexts	a	rdf:Class	;
+	rdfs:label	"possible semantic contexts"	.
 
-local:solely	rdfs:label	"solely"	.
+local:semantic_contexts	a	rdf:Class	;
+	rdfs:label	"semantic contexts"	.
 
-local:cues	rdfs:label	"cues"	.
+local:possible_semantic	a	rdf:Class	;
+	rdfs:label	"possible semantic"	.
 
-local:cues_”	rdfs:label	"cues ”"	.
+local:build	a	rdf:Class	;
+	rdfs:label	"build"	.
 
-local:“_cues	rdfs:label	"“ cues"	.
+local:bags_of_numerical_values_over_which_we_perform_a_nearest_neighbour_search_to_rank_the_most_likely_candidates	a	rdf:Class	;
+	rdfs:label	"bags of numerical values over which we perform a nearest neighbour search to rank the most likely candidates"	.
 
-local:textual_“_cues	rdfs:label	"textual “ cues"	.
+local:bags	a	rdf:Class	;
+	rdfs:label	"bags"	.
 
-local:textual_“_cues_”	rdfs:label	"textual “ cues ”"	.
+local:numerical_values	a	rdf:Class	;
+	rdfs:label	"numerical values"	.
 
-local:“_cues_”	rdfs:label	"“ cues ”"	.
+local:values	a	rdf:Class	;
+	rdfs:label	"values"	.
 
-local:textual_“	rdfs:label	"textual “"	.
+local:numerical	a	rdf:Class	;
+	rdfs:label	"numerical"	.
 
-local:“	rdfs:label	"“"	.
+local:perform_over_bags	a	rdf:Class	;
+	rdfs:label	"perform over bags"	.
 
-local:textual_cues	rdfs:label	"textual cues"	.
+local:bags_of_numerical_values	a	rdf:Class	;
+	rdfs:label	"bags of numerical values"	.
 
-local:illustrate	rdfs:label	"illustrate"	.
+local:take	a	rdf:Class	;
+	rdfs:label	"take"	.
 
-local:we	rdfs:label	"we"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:will	rdfs:label	"will"	.
+local:bag	a	rdf:Class	;
+	rdfs:label	"bag"	.
 
-local:open_data_tables	rdfs:label	"open data tables"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:tables	rdfs:label	"tables"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:data_tables	rdfs:label	"data tables"	.
+local:candidates_of_context_descriptions_for_a_given_bag_of_numerical_values	a	rdf:Class	;
+	rdfs:label	"candidates of context descriptions for a given bag of numerical values"	.
 
-local:will_illustrate	rdfs:label	"will illustrate"	.
+local:context_descriptions	a	rdf:Class	;
+	rdfs:label	"context descriptions"	.
 
-local:however_open_data_tables	rdfs:label	"however open data tables"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:contain	rdfs:label	"contain"	.
+local:descriptions	a	rdf:Class	;
+	rdfs:label	"descriptions"	.
 
-local:typically	rdfs:label	"typically"	.
+local:candidates_of_context_descriptions	a	rdf:Class	;
+	rdfs:label	"candidates of context descriptions"	.
 
-local:nontextual	rdfs:label	"non-textual"	.
+local:candidates_of_context_descriptions_for_given_bag	a	rdf:Class	;
+	rdfs:label	"candidates of context descriptions for given bag"	.
 
-local:nontextual_headers	rdfs:label	"non-textual headers"	.
+local:given_bag_of_numerical_values	a	rdf:Class	;
+	rdfs:label	"given bag of numerical values"	.
 
-local:such_data_sources	rdfs:label	"such data sources"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:numerical_columns	rdfs:label	"numerical columns"	.
+local:approach_to_find_candidates_of_context_descriptions	a	rdf:Class	;
+	rdfs:label	"approach to find candidates of context descriptions"	.
 
-local:columns	rdfs:label	"columns"	.
+local:bag_of_numerical_values	a	rdf:Class	;
+	rdfs:label	"bag of numerical values"	.
 
-local:such_data	rdfs:label	"such data"	.
+local:approach_to_rank_candidates_of_context_descriptions	a	rdf:Class	;
+	rdfs:label	"approach to rank candidates of context descriptions"	.
 
-local:large	rdfs:label	"large"	.
+local:candidates_of_semantic_labels	a	rdf:Class	;
+	rdfs:label	"candidates of semantic labels"	.
 
-local:large_portion	rdfs:label	"large portion"	.
+local:approach_to_find_candidates_of_semantic_labels	a	rdf:Class	;
+	rdfs:label	"approach to find candidates of semantic labels"	.
 
-local:headers	rdfs:label	"headers"	.
+local:approach_to_rank_candidates_of_semantic_labels	a	rdf:Class	;
+	rdfs:label	"approach to rank candidates of semantic labels"	.
 
-local:portion	rdfs:label	"portion"	.
+local:solutions	a	rdf:Class	;
+	rdfs:label	"solutions"	.
 
-local:numerical	rdfs:label	"numerical"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:partially_applicable	rdfs:label	"partially applicable"	.
+local:textual_cues	a	rdf:Class	;
+	rdfs:label	"textual cues"	.
 
-local:applicable	rdfs:label	"applicable"	.
+local:textual	a	rdf:Class	;
+	rdfs:label	"textual"	.
 
-local:only_partially	rdfs:label	"only partially"	.
+local:cues	a	rdf:Class	;
+	rdfs:label	"cues"	.
 
-local:partially	rdfs:label	"partially"	.
+local:solely	a	rdf:Class	;
+	rdfs:label	"solely"	.
 
-local:therefore_partially_applicable	rdfs:label	"therefore partially applicable"	.
+local:large_portion_of_numerical_columns	a	rdf:Class	;
+	rdfs:label	"large portion of numerical columns"	.
 
-local:large_portion_of_numerical_columns	rdfs:label	"large portion of numerical columns"	.
+local:large_portion	a	rdf:Class	;
+	rdfs:label	"large portion"	.
 
-local:andor	rdfs:label	"andor"	.
+local:numerical_columns	a	rdf:Class	;
+	rdfs:label	"numerical columns"	.
 
-local:propose	rdfs:label	"propose"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:semantic_labels	rdfs:label	"semantic labels"	.
+local:columns	a	rdf:Class	;
+	rdfs:label	"columns"	.
 
-local:labels	rdfs:label	"labels"	.
+local:portion	a	rdf:Class	;
+	rdfs:label	"portion"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:andor	a	rdf:Class	;
+	rdfs:label	"andor"	.
 
-local:candidates_of_semantic_labels	rdfs:label	"candidates of semantic labels"	.
+local:nontextual_headers	a	rdf:Class	;
+	rdfs:label	"nontextual headers"	.
 
-local:candidates	rdfs:label	"candidates"	.
+local:headers	a	rdf:Class	;
+	rdfs:label	"headers"	.
 
-local:approach	rdfs:label	"approach"	.
+local:nontextual	a	rdf:Class	;
+	rdfs:label	"nontextual"	.
 
-local:numerical_values	rdfs:label	"numerical values"	.
+local:open_data_tables	a	rdf:Class	;
+	rdfs:label	"open data tables"	.
 
-local:values	rdfs:label	"values"	.
+local:data_tables	a	rdf:Class	;
+	rdfs:label	"data tables"	.
 
-local:bag_of_numerical_values	rdfs:label	"bag of numerical values"	.
+local:tables	a	rdf:Class	;
+	rdfs:label	"tables"	.
 
-local:bag	rdfs:label	"bag"	.
+local:open_data	a	rdf:Class	;
+	rdfs:label	"open data"	.
 
-local:rank	rdfs:label	"rank"	.
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
 
-local:given	rdfs:label	"given"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:context	rdfs:label	"context"	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	a	rdf:Class	;
+	rdfs:label	"large portion of numerical columns andor nontextual headers therefore solutions"	.
 
-local:context_descriptions	rdfs:label	"context descriptions"	.
+local:therefore_solutions	a	rdf:Class	;
+	rdfs:label	"therefore solutions"	.
 
-local:descriptions	rdfs:label	"descriptions"	.
+local:andor_nontextual_headers	a	rdf:Class	;
+	rdfs:label	"andor nontextual headers"	.
 
-local:candidates_of_context_descriptions	rdfs:label	"candidates of context descriptions"	.
+local:columns_andor_nontextual_headers	a	rdf:Class	;
+	rdfs:label	"columns andor nontextual headers"	.
 
-local:find	rdfs:label	"find"	.
+local:numerical_columns_andor_nontextual_headers	a	rdf:Class	;
+	rdfs:label	"numerical columns andor nontextual headers"	.
 
-local:given_bag	rdfs:label	"given bag"	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers	a	rdf:Class	;
+	rdfs:label	"large portion of numerical columns andor nontextual headers"	.
 
-local:candidates_of_context_descriptions_for_given_bag	rdfs:label	"candidates of context descriptions for given bag"	.
+local:typically	a	rdf:Class	;
+	rdfs:label	"typically"	.
 
-local:given_bag_of_numerical_values	rdfs:label	"given bag of numerical values"	.
+local:illustrate	a	rdf:Class	;
+	rdfs:label	"illustrate"	.
 
-local:perform	rdfs:label	"perform"	.
+local:open_data_tables_typically_contain_a_large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	a	rdf:Class	;
+	rdfs:label	"open data tables typically contain a large portion of numerical columns andor nontextual headers therefore solutions"	.
 
-local:nearest_neighbour_search	rdfs:label	"nearest neighbour search"	.
+local:typically_contain	a	rdf:Class	;
+	rdfs:label	"typically contain"	.
 
-local:search	rdfs:label	"search"	.
+local:will	a	rdf:Class	;
+	rdfs:label	"will"	.
 
-local:neighbour	rdfs:label	"neighbour"	.
+local:existing_approaches	a	rdf:Class	;
+	rdfs:label	"existing approaches"	.
 
-local:neighbour_search	rdfs:label	"neighbour search"	.
+local:label	a	rdf:Class	;
+	rdfs:label	"label"	.
 
-local:nearest_neighbour	rdfs:label	"nearest neighbour"	.
+local:tabular_data	a	rdf:Class	;
+	rdfs:label	"tabular data"	.
 
-local:nearest	rdfs:label	"nearest"	.
+local:tabular	a	rdf:Class	;
+	rdfs:label	"tabular"	.
 
-local:likely	rdfs:label	"likely"	.
+local:semantically	a	rdf:Class	;
+	rdfs:label	"semantically"	.
 
-local:likely_candidates	rdfs:label	"likely candidates"	.
+local:link	a	rdf:Class	;
+	rdfs:label	"link"	.
 
-local:most_likely_candidates	rdfs:label	"most likely candidates"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:most_likely	rdfs:label	"most likely"	.
+local:mappings_of_textual_information_to_instances_in_rdf_knowledge_bases	a	rdf:Class	;
+	rdfs:label	"mappings of textual information to instances in rdf knowledge bases"	.
 
-local:most	rdfs:label	"most"	.
+local:mappings	a	rdf:Class	;
+	rdfs:label	"mappings"	.
 
-local:apply	rdfs:label	"apply"	.
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
 
-local:end	rdfs:label	"end"	.
+local:rdf_knowledge_bases	a	rdf:Class	;
+	rdfs:label	"rdf knowledge bases"	.
 
-local:hierarchical_clustering	rdfs:label	"hierarchical clustering"	.
+local:textual_information	a	rdf:Class	;
+	rdfs:label	"textual information"	.
 
-local:clustering	rdfs:label	"clustering"	.
+local:rdf_knowledge	a	rdf:Class	;
+	rdfs:label	"rdf knowledge"	.
 
-local:hierarchical	rdfs:label	"hierarchical"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:hierarchical_clustering_over_information	rdfs:label	"hierarchical clustering over information"	.
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
 
-local:taken	rdfs:label	"taken"	.
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:mappings_of_textual_information	a	rdf:Class	;
+	rdfs:label	"mappings of textual information"	.
 
-local:background	rdfs:label	"background"	.
+local:mappings_of_textual_information_to_instances	a	rdf:Class	;
+	rdfs:label	"mappings of textual information to instances"	.
 
-local:background_knowledge	rdfs:label	"background knowledge"	.
+local:instances_in_rdf_knowledge_bases	a	rdf:Class	;
+	rdfs:label	"instances in rdf knowledge bases"	.
 
-local:background_knowledge_graph	rdfs:label	"background knowledge graph"	.
+local:order_to_link	a	rdf:Class	;
+	rdfs:label	"order to link"	.
 
-local:graph	rdfs:label	"graph"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:contexts_”	rdfs:label	"contexts ”"	.
+local:transform	a	rdf:Class	;
+	rdfs:label	"transform"	.
 
-local:possible	rdfs:label	"possible"	.
+local:tabular_data_rdf	a	rdf:Class	;
+	rdfs:label	"tabular data rdf"	.
 
-local:possible_“	rdfs:label	"possible “"	.
+local:data_rdf	a	rdf:Class	;
+	rdfs:label	"data rdf"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:mappings_of_textual_information_to_classes_properties	a	rdf:Class	;
+	rdfs:label	"mappings of textual information to classes properties"	.
 
-local:semantic_contexts	rdfs:label	"semantic contexts"	.
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
 
-local:contexts	rdfs:label	"contexts"	.
+local:classes_properties	a	rdf:Class	;
+	rdfs:label	"classes properties"	.
 
-local:semantic_contexts_”	rdfs:label	"semantic contexts ”"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:possible_semantic_contexts	rdfs:label	"possible semantic contexts"	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources_became_available	a	rdf:Class	;
+	rdfs:label	"success of open data a huge amount of tabular data sources became available"	.
 
-local:background_knowledge_graph_of_possible_semantic_contexts	rdfs:label	"background knowledge graph of possible semantic contexts"	.
+local:huge_amount	a	rdf:Class	;
+	rdfs:label	"huge amount"	.
 
-local:possible_semantic_contexts_for_bags	rdfs:label	"possible semantic contexts for bags"	.
+local:success	a	rdf:Class	;
+	rdfs:label	"success"	.
 
-local:bags	rdfs:label	"bags"	.
+local:tabular_data_sources	a	rdf:Class	;
+	rdfs:label	"tabular data sources"	.
 
-local:bags_of_numerical_values	rdfs:label	"bags of numerical values"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:build	rdfs:label	"build"	.
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
 
-local:	rdfs:label	"''"	.
+local:huge	a	rdf:Class	;
+	rdfs:label	"huge"	.
 
-local:information_taken	rdfs:label	"information taken"	.
+local:amount	a	rdf:Class	;
+	rdfs:label	"amount"	.
 
-local:taken_from_dbpedia	rdfs:label	"taken from dbpedia"	.
+local:success_of_open_data	a	rdf:Class	;
+	rdfs:label	"success of open data"	.
 
-local:supporting	rdfs:label	"supporting"	.
+local:huge_amount_of_tabular_data_sources	a	rdf:Class	;
+	rdfs:label	"huge amount of tabular data sources"	.
 
-local:evidence	rdfs:label	"evidence"	.
+local:map	a	rdf:Class	;
+	rdfs:label	"map"	.
 
-local:shows	rdfs:label	"shows"	.
+local:web_of_linked_data	a	rdf:Class	;
+	rdfs:label	"web of linked data"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:finegrained_semantic	rdfs:label	"fine-grained semantic"	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources	a	rdf:Class	;
+	rdfs:label	"success of open data a huge amount of tabular data sources"	.
 
-local:finegrained	rdfs:label	"fine-grained"	.
+local:become	a	rdf:Class	;
+	rdfs:label	"become"	.
 
-local:finegrained_semantic_labels	rdfs:label	"fine-grained semantic labels"	.
+local:available_that_could_potentially_be_mapped_into_the_web_of_linked_data	a	rdf:Class	;
+	rdfs:label	"available that could potentially be mapped into the web of linked data"	.
 
-local:can_assign	rdfs:label	"can assign"	.
+local:potentially_mapped	a	rdf:Class	;
+	rdfs:label	"potentially mapped"	.
 
-local:assign	rdfs:label	"assign"	.
+local:mapped	a	rdf:Class	;
+	rdfs:label	"mapped"	.
 
-local:can	rdfs:label	"can"	.
+local:could_potentially_mapped	a	rdf:Class	;
+	rdfs:label	"could potentially mapped"	.
 
-local:used	rdfs:label	"used"	.
+local:could_potentially_mapped_into_web	a	rdf:Class	;
+	rdfs:label	"could potentially mapped into web"	.
 
-local:other	rdfs:label	"other"	.
+local:huge_amount_of_tabular_data_sources_became_available	a	rdf:Class	;
+	rdfs:label	"huge amount of tabular data sources became available"	.
 
-local:other_approaches	rdfs:label	"other approaches"	.
+local:available_that_could_potentially_be_linked_into_the_web_of_linked_data	a	rdf:Class	;
+	rdfs:label	"available that could potentially be linked into the web of linked data"	.
 
-local:possible_labels	rdfs:label	"possible labels"	.
+local:potentially_linked	a	rdf:Class	;
+	rdfs:label	"potentially linked"	.
 
-local:search_space	rdfs:label	"search space"	.
+local:could_potentially_linked	a	rdf:Class	;
+	rdfs:label	"could potentially linked"	.
 
-local:space	rdfs:label	"space"	.
-
-local:combination_with_other_approaches	rdfs:label	"combination with other approaches"	.
-
-local:combination	rdfs:label	"combination"	.
-
-local:search_space_of_possible_labels	rdfs:label	"search space of possible labels"	.
-
-local:narrow	rdfs:label	"narrow"	.
-
-local:cases	rdfs:label	"cases"	.
-
-local:nevertheless	rdfs:label	"nevertheless"	.
-
-local:level_contexts	rdfs:label	"level contexts"	.
-
-local:high_level_contexts	rdfs:label	"high level contexts"	.
-
-local:high	rdfs:label	"high"	.
-
-local:high_level	rdfs:label	"high level"	.
-
-local:level	rdfs:label	"level"	.
-
-#### Properties ####
+local:could_potentially_linked_into_web	a	rdf:Class	;
+	rdfs:label	"could potentially linked into web"	.
 
 #### Mapped Relations ####
 
+local:rdf	owl:sameAs	cso:rdf	.
+local:background_knowledge	owl:sameAs	cso:background_knowledge	.
 local:semantic	owl:sameAs	cso:semantics	.
 cso:rdf	rdfs:label	"rdf"	.
+cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+cso:hierarchical_clustering	rdfs:label	"hierarchical clustering"	.
 cso:background_knowledge	rdfs:label	"background knowledge"	.
-cso:nearest_neighbor_search	rdfs:label	"nearest neighbour search"	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
+local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
 local:nearest_neighbour_search	owl:sameAs	cso:nearest_neighbor_search	.
 local:hierarchical_clustering	owl:sameAs	cso:hierarchical_clustering	.
-cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+cso:nearest_neighbor_search	rdfs:label	"nearest neighbour search"	.
 cso:semantics	rdfs:label	"semantic"	.
-local:background_knowledge	owl:sameAs	cso:background_knowledge	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-cso:hierarchical_clustering	rdfs:label	"hierarchical clustering"	.
-local:rdf	owl:sameAs	cso:rdf	.
-local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
 
 #### Relations ####
 
-local:possible_semantic_contexts_for_bags	local:for_bags	local:possible_semantic_contexts	.
-local:illustrate	vn.role:subject	local:we	.
-local:“_cues	rdfs:member	local:“_cues_”	.
-local:such_data_sources	rdfs:subClassOf	local:sources	.
-local:nearest_neighbour	rdfs:subClassOf	local:neighbour	.
-local:finegrained_semantic_labels	rdfs:subClassOf	local:semantic_labels	.
-local:textual_“_cues	rdfs:subClassOf	local:cues	.
-local:became	vn.role:Patient	local:success_of_open_data	.
-local:nearest_neighbour_search	rdfs:subClassOf	local:search	.
-local:background	rdfs:member	local:background_knowledge	.
-local:possible_“	rdfs:subClassOf	local:“	.
-local:mapped	local:AM-ADV	local:potentially	.
-local:taken_from_dbpedia	local:from_dbpedia	local:taken	.
-local:assign	vn.role:Theme	local:high_level_contexts	.
-local:such_tabular	rdfs:subClassOf	local:tabular	.
-local:semantic_contexts_”	rdfs:subClassOf	local:”	.
-local:neighbour_search	rdfs:subClassOf	local:search	.
-local:textual	rdfs:member	local:textual_information	.
-local:mappings_of_textual_information_to_instances	local:mappingsoftextualinformation_to	local:instances	.
-local:textual_“_cues	rdfs:member	local:textual_“_cues_”	.
-local:bags_of_numerical_values	local:bags_of	local:numerical_values	.
-local:large_portion_of_numerical_columns	local:largeportion_of	local:numerical_columns	.
-local:given_bag_of_numerical_values	local:of_numericalvalues	local:given_bag	.
-local:tabular_data	rdfs:member	local:tabular_data_sources	.
-local:rank	vn.role:Theme	local:likely_candidates	.
-local:rank	vn.role:Predicate	local:bag_of_numerical_values	.
-local:could_potentially_mapped_into_web	local:couldpotentiallymapped_into	local:web	.
-local:rdf_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
-local:linked	vn.role:Patient	local:became	.
-local:large_portion_of_numerical_columns	local:of_numericalcolumns	local:large_portion	.
-local:numerical	rdfs:member	local:numerical_values	.
-local:find	vn.role:Theme	local:candidates_of_semantic_labels	.
-local:candidates_of_context_descriptions	local:of_contextdescriptions	local:candidates	.
-local:background_knowledge_graph_of_possible_semantic_contexts	local:of_possiblesemanticcontexts	local:background_knowledge_graph	.
-local:rdf	rdfs:member	local:rdf_knowledge	.
-local:propose	vn.role:Topic	local:approach	.
-local:such_data	rdfs:subClassOf	local:data	.
-local:therefore_partially_applicable	rdfs:subClassOf	local:partially_applicable	.
-local:tabular	rdfs:member	local:tabular_data	.
-local:tabular_data	rdfs:subClassOf	local:data	.
-local:label_such_tabular_data	rdfs:subClassOf	local:such_tabular_data	.
-local:assign	vn.role:Theme	local:finegrained_semantic_labels	.
-local:semantically_label_such_tabular_data	rdfs:subClassOf	local:label_such_tabular_data	.
-local:find	vn.role:Theme	local:candidates_of_context_descriptions_for_given_bag	.
-local:taken_from_dbpedia	local:taken_from	local:dbpedia	.
-local:finegrained_semantic	rdfs:member	local:finegrained_semantic_labels	.
-local:web_of_data	local:of_data	local:web	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:contain	vn.role:Theme1	local:however_open_data_tables	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:rely	vn.role:Theme	local:mappings_of_textual_information_to_instances	.
-local:data_tables	rdfs:subClassOf	local:tables	.
-local:semantically_label	rdfs:member	local:semantically_label_”	.
-local:mappings_of_textual_information_to_classes	local:to_classes	local:mappings_of_textual_information	.
-local:huge_amount_of_tabular_data_sources	local:of_tabulardatasources	local:huge_amount	.
-local:assign	local:AM-LOC	local:cases	.
-local:illustrate	local:AM-MOD	local:will	.
-local:combination_with_other_approaches	local:with_otherapproaches	local:combination	.
-local:order_to_link	local:order_to	local:link	.
-local:rely	vn.role:Theme	local:mappings_of_textual_information_to_classes	.
-local:find	local:AM-PNC	local:bag_of_numerical_values	.
-local:supporting	local:AM-LOC	local:background_knowledge_graph	.
-local:rdf_knowledge	rdfs:member	local:rdf_knowledge_bases	.
-local:textual_“	rdfs:member	local:textual_“_cues	.
-local:semantic_labels	rdfs:subClassOf	local:labels	.
-local:search_space_of_possible_labels	local:searchspace_of	local:possible_labels	.
-local:possible	rdfs:member	local:possible_“	.
-local:likely	rdfs:member	local:likely_candidates	.
-local:mappings_of_textual_information_to_instances	local:to_instances	local:mappings_of_textual_information	.
-local:assign	vn.role:Agent	local:approach	.
-local:taken	vn.role:Theme	local:information	.
-local:textual_information	rdfs:subClassOf	local:information	.
-local:rdf_knowledge_bases	rdfs:subClassOf	local:bases	.
-local:focus	local:AM-ADV	local:solely	.
-local:properties_in_rdf_knowledge_bases	local:in_rdfknowledgebases	local:properties	.
-local:most_likely	rdfs:member	local:most_likely_candidates	.
-local:linked	vn.role:Patient	local:web_of_data	.
-local:build	vn.role:Material	local:background_knowledge_graph_of_possible_semantic_contexts	.
-local:tabular_data_sources	rdfs:subClassOf	local:data_sources	.
-local:nearest_neighbour_search	rdfs:subClassOf	local:neighbour_search	.
-local:semantically_label	rdfs:subClassOf	local:label	.
-local:taken	local:AM-PNC	local:build	.
-local:existing_approaches_to_semantically_label_such_tabular_data	local:existingapproaches_to	local:semantically_label_such_tabular_data	.
-local:search	rdfs:member	local:search_space	.
-local:nontextual_headers	rdfs:subClassOf	local:headers	.
-local:given_bag_of_numerical_values	local:givenbag_of	local:numerical_values	.
-local:shows	vn.role:Agent	local:evaluation	.
-local:semantic_contexts	rdfs:member	local:semantic_contexts_”	.
-local:could_potentially_linked	rdfs:subClassOf	local:potentially_linked	.
-local:context	rdfs:member	local:context_descriptions	.
-local:most_likely	rdfs:subClassOf	local:likely	.
-local:tabular_data_into_rdf	local:into_rdf	local:tabular_data	.
-local:taken	local:AM-DIR	local:dbpedia	.
-local:candidates_of_semantic_labels	local:candidates_of	local:semantic_labels	.
-local:open_data_tables	rdfs:subClassOf	local:data_tables	.
-local:mappings_of_textual_information_to_classes	local:mappingsoftextualinformation_to	local:classes	.
-local:perform	vn.role:Agent	local:we	.
-local:semantically	rdfs:member	local:semantically_label	.
-local:instances_in_rdf_knowledge_bases	local:in_rdfknowledgebases	local:instances	.
-local:bag_of_numerical_values	local:bag_of	local:numerical_values	.
-local:used	local:AM-MOD	local:could	.
-local:nearest_neighbour	rdfs:member	local:nearest_neighbour_search	.
-local:background_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
-local:tabular_data_into_rdf	local:tabulardata_into	local:rdf	.
-local:such_tabular_data	rdfs:subClassOf	local:tabular_data	.
-local:apply	vn.role:Theme	local:hierarchical_clustering_over_information	.
-local:huge_amount	rdfs:subClassOf	local:amount	.
-local:candidates_of_context_descriptions_for_given_bag	local:candidatesofcontextdescriptions_for	local:given_bag	.
-local:semantically_label_”	rdfs:subClassOf	local:”	.
-local:properties_in_rdf_knowledge_bases	local:properties_in	local:rdf_knowledge_bases	.
-local:such	rdfs:member	local:such_data	.
-local:nontextual	rdfs:member	local:nontextual_headers	.
-local:assign	local:AM-DIS	local:nevertheless	.
-local:such_tabular_data	rdfs:subClassOf	local:data	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:contain	vn.role:Theme2	local:andor	.
-local:could_potentially_linked_into_web	local:into_web	local:could_potentially_linked	.
-local:hierarchical_clustering_over_information	local:hierarchicalclustering_over	local:information	.
-local:perform	local:AM-PNC	local:rank	.
-local:“_cues	rdfs:subClassOf	local:cues	.
-local:finegrained	rdfs:member	local:finegrained_semantic	.
-local:focus	vn.role:indirect_object	local:textual_cues	.
-local:level	rdfs:member	local:level_contexts	.
-local:high_level_contexts	rdfs:subClassOf	local:contexts	.
-local:open_data	rdfs:subClassOf	local:data	.
-local:partially_applicable	rdfs:subClassOf	local:applicable	.
-local:hierarchical_clustering	rdfs:subClassOf	local:clustering	.
-local:became	vn.role:indirect_object	local:available	.
-local:only_partially	rdfs:subClassOf	local:partially	.
-local:rely	local:AM-PNC	local:order_to_link	.
-local:semantic_contexts	rdfs:subClassOf	local:contexts	.
-local:assign	vn.role:Recipient	local:data	.
-local:possible_semantic_contexts_for_bags	local:possiblesemanticcontexts_for	local:bags	.
-local:possible_semantic_contexts	rdfs:subClassOf	local:semantic_contexts	.
-local:context_descriptions	rdfs:subClassOf	local:descriptions	.
-local:supporting	vn.role:Theme	local:evidence	.
-local:background_knowledge_graph_of_possible_semantic_contexts	local:backgroundknowledgegraph_of	local:possible_semantic_contexts	.
-local:narrow	vn.role:Patient	local:search_space_of_possible_labels	.
-local:candidates_of_context_descriptions_for_given_bag	local:for_givenbag	local:candidates_of_context_descriptions	.
-local:assign	local:AM-MOD	local:can	.
-local:contain	local:AM-TMP	local:typically	.
-local:apply	vn.role:Agent	local:we	.
-local:given	vn.role:object	local:bag	.
-local:such_tabular	rdfs:member	local:such_tabular_data	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:bag_of_numerical_values	local:of_numericalvalues	local:bag	.
-local:background_knowledge	rdfs:subClassOf	local:knowledge	.
-local:finegrained_semantic_labels	rdfs:subClassOf	local:labels	.
-local:semantic	rdfs:member	local:semantic_labels	.
-local:classes_in_rdf_knowledge_bases	local:in_rdfknowledgebases	local:classes	.
-local:likely_candidates	rdfs:subClassOf	local:candidates	.
-local:existing_approaches	rdfs:subClassOf	local:approaches	.
-local:instances_in_rdf_knowledge_bases	local:instances_in	local:rdf_knowledge_bases	.
-local:transform–	vn.role:object	local:tabular_data	.
-local:find	vn.role:Agent	local:we	.
-local:textual_cues	rdfs:subClassOf	local:cues	.
-local:”	local:AM-PNC	local:bags_of_numerical_values	.
-local:potentially_mapped	rdfs:subClassOf	local:mapped	.
-local:rdf_knowledge	rdfs:subClassOf	local:knowledge	.
-local:other	rdfs:member	local:other_approaches	.
-local:perform	vn.role:Theme	local:nearest_neighbour_search	.
-local:cues_”	rdfs:subClassOf	local:”	.
-local:mappings_of_textual_information_to_properties	local:mappingsoftextualinformation_to	local:properties	.
-local:mappings_of_textual_information_to_properties	local:to_properties	local:mappings_of_textual_information	.
-local:hierarchical	rdfs:member	local:hierarchical_clustering	.
-local:propose	vn.role:Agent	local:we	.
-local:rank	vn.role:Theme	local:candidates_of_semantic_labels	.
-local:open	rdfs:member	local:open_data	.
-local:possible_labels	rdfs:subClassOf	local:labels	.
-local:numerical_values	rdfs:subClassOf	local:values	.
-local:huge_amount_of_tabular_data_sources	local:hugeamount_of	local:tabular_data_sources	.
-local:rely	vn.role:Theme	local:mappings_of_textual_information_to_properties	.
-local:success_of_open_data	local:success_of	local:open_data	.
-local:semantic	rdfs:member	local:semantic_contexts	.
-local:label	rdfs:member	local:label_”	.
-local:apply	local:AM-ADV	local:end	.
-local:build	local:AM-PNC	local:	.
-local:combination_with_other_approaches	local:combination_with	local:other_approaches	.
-local:mapped	vn.role:indirect_object	local:web_of_data	.
-local:used	local:AM-MNR	local:combination_with_other_approaches	.
-local:order_to_link	local:to_link	local:order	.
-local:background_knowledge_graph	rdfs:subClassOf	local:graph	.
-local:open_data_tables	rdfs:subClassOf	local:tables	.
-local:information_taken	local:information_	local:taken	.
-local:success_of_open_data	local:of_opendata	local:success	.
-local:andor	vn.role:object	local:nontextual_headers	.
-local:classes_in_rdf_knowledge_bases	local:classes_in	local:rdf_knowledge_bases	.
-local:huge	rdfs:member	local:huge_amount	.
-local:background_knowledge	rdfs:member	local:background_knowledge_graph	.
-local:rely	local:AM-PNC	local:order	.
-local:“_cues_”	rdfs:subClassOf	local:”	.
-local:can_assign	rdfs:subClassOf	local:assign	.
-local:link–	vn.role:subject	local:existing_approaches_to_semantically_label_such_tabular_data	.
-local:search_space_of_possible_labels	local:of_possiblelabels	local:search_space	.
-local:search_space	rdfs:subClassOf	local:space	.
-local:such	rdfs:member	local:such_tabular	.
-local:nearest	rdfs:member	local:nearest_neighbour	.
-local:”	vn.role:subject	local:information_taken	.
-local:possible	rdfs:member	local:possible_labels	.
-local:illustrate	vn.role:object	local:open_data_tables	.
-local:mapped	vn.role:Predicate	local:became	.
-local:however_open_data_tables	rdfs:subClassOf	local:open_data_tables	.
-local:candidates_of_context_descriptions	local:candidates_of	local:context_descriptions	.
-local:high_level	rdfs:subClassOf	local:level	.
-local:mapped	local:AM-MOD	local:could	.
-local:rank	vn.role:Agent	local:we	.
-local:tabular_data_sources	rdfs:subClassOf	local:sources	.
-local:label_”	rdfs:subClassOf	local:”	.
-local:candidates_of_semantic_labels	local:of_semanticlabels	local:candidates	.
-local:bags_of_numerical_values	local:of_numericalvalues	local:bags	.
-local:textual	rdfs:member	local:textual_“	.
-local:focus	vn.role:Experiencer	local:solutions	.
-local:most_likely_candidates	rdfs:subClassOf	local:candidates	.
-local:high	rdfs:member	local:high_level	.
-local:will_illustrate	rdfs:subClassOf	local:illustrate	.
-local:textual_“_cues_”	rdfs:subClassOf	local:”	.
-local:data	rdfs:member	local:data_sources	.
-local:could_potentially_linked_into_web	local:couldpotentiallylinked_into	local:web	.
-local:such_data_sources	rdfs:subClassOf	local:data_sources	.
-local:used	vn.role:Theme	local:data	.
-local:could_potentially_mapped	rdfs:subClassOf	local:potentially_mapped	.
-local:“	rdfs:member	local:“_cues	.
-local:mappings_of_textual_information	local:of_textualinformation	local:mappings	.
-local:other_approaches	rdfs:subClassOf	local:approaches	.
-local:transform–	vn.role:indirect_object	local:rdf	.
-local:data	rdfs:member	local:data_tables	.
-local:could_potentially_mapped_into_web	local:into_web	local:could_potentially_mapped	.
-local:finegrained_semantic	rdfs:subClassOf	local:semantic	.
-local:potentially_linked	rdfs:subClassOf	local:linked	.
-local:shows	vn.role:Theme	local:can_assign	.
-local:high_level	rdfs:member	local:high_level_contexts	.
-local:hierarchical_clustering_over_information	local:over_information	local:hierarchical_clustering	.
-local:web_of_data	local:web_of	local:data	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:numerical_columns	rdfs:subClassOf	local:columns	.
-local:high_level_contexts	rdfs:subClassOf	local:level_contexts	.
-local:large	rdfs:member	local:large_portion	.
-local:rank	vn.role:Theme	local:candidates_of_context_descriptions	.
-local:linked	local:AM-ADV	local:potentially	.
-local:large_portion	rdfs:subClassOf	local:portion	.
-local:rely	vn.role:Agent	local:existing_approaches_to_semantically_label_such_tabular_data	.
-local:information_taken	local:_taken	local:information	.
-local:neighbour	rdfs:member	local:neighbour_search	.
+local:huge_amount	rdfs:member	local:huge	.
+local:s16	rdf:subject	local:approach	.
+local:s6.2	rdf:object	local:nontextual_headers	.
+local:open_data	rdfs:member	local:open	.
+local:nearest_neighbour	rdfs:member	local:nearest	.
+local:s8.1	rdf:object	local:given_bag_of_numerical_values	.
+local:s1.1	rdf:subject	local:success_of_open_data_a_huge_amount_of_tabular_data_sources_became_available	.
+local:possible_semantic_contexts	rdfs:subClassOf	local:contexts	.
+local:bags_of_numerical_values_over_which_we_perform_a_nearest_neighbour_search_to_rank_the_most_likely_candidates	rdfs:member	local:most_likely_candidates	.
+local:background_knowledge	rdfs:member	local:background	.
+local:approach_to_find_candidates_of_context_descriptions	rdfs:member	local:candidates	.
+local:mappings_of_textual_information_to_instances_in_rdf_knowledge_bases	rdfs:member	local:textual_information	.
+local:s6	rdf:subject	local:we	.
 local:level_contexts	rdfs:subClassOf	local:contexts	.
-local:contexts_”	rdfs:subClassOf	local:”	.
-local:such_data	rdfs:member	local:such_data_sources	.
-local:given_bag	rdfs:subClassOf	local:bag	.
-local:mappings_of_textual_information	local:mappings_of	local:textual_information	.
-local:existing_approaches_to_semantically_label_such_tabular_data	local:to_semanticallylabelsuchtabulardata	local:existing_approaches	.
-local:propose	local:AM-PNC	local:bag_of_numerical_values	.
-local:used	local:AM-ADV	local:potentially	.
-local:cues	rdfs:member	local:cues_”	.
-local:open_data	rdfs:member	local:open_data_tables	.
-local:linked	local:AM-MOD	local:could	.
-local:contexts	rdfs:member	local:contexts_”	.
-local:textual_“	rdfs:subClassOf	local:“	.
-local:numerical	rdfs:member	local:numerical_columns	.
-local:most	rdfs:member	local:most_likely	.
+local:s16	local:AM-MOD	local:can	.
+local:potentially_linked	rdfs:subClassOf	local:linked	.
+local:s4	local:AM-PNC	local:order_to_link	.
+local:s0.1	local:AM-MOD	local:could	.
+local:candidates_of_context_descriptions_for_given_bag	rdfs:member	local:s11.2	.
+local:combination_with_other_approaches	rdfs:member	local:combination	.
+local:candidates_of_context_descriptions_for_a_given_bag_of_numerical_values	rdfs:member	local:numerical_values	.
+local:s10.2	rdf:predicate	local:give	.
+local:s13	rdf:object	local:hierarchical_clustering_over_information	.
+local:s7	rdf:predicate	local:focus	.
+local:s11	rdf:predicate	local:propose	.
+local:s12.1	rdf:subject	local:background_knowledge_graph_of_possible_semantic_contexts	.
+local:approach_to_find_candidates_of_context_descriptions	rdfs:member	local:context_descriptions	.
+local:s1	rdf:subject	local:success_of_open_data_a_huge_amount_of_tabular_data_sources	.
+local:neighbour_search	rdfs:subClassOf	local:search	.
+local:mappings_of_textual_information_to_instances_in_rdf_knowledge_bases	rdfs:member	local:mappings	.
+local:therefore_solutions	rdfs:subClassOf	local:solutions	.
+local:s13	local:AM-TMP	local:end	.
+local:search_space	rdfs:subClassOf	local:space	.
+local:high_level	rdfs:subClassOf	local:level	.
+local:s12.3	rdf:subject	local:we	.
+local:numerical_columns_andor_nontextual_headers	rdfs:subClassOf	local:columns_andor_nontextual_headers	.
+local:s0	rdf:object	local:available_that_could_potentially_be_linked_into_the_web_of_linked_data	.
+local:search_space_of_possible_labels	rdfs:member	local:possible_labels	.
+local:possible_semantic_contexts	rdfs:member	local:possible_semantic	.
+local:hierarchical_clustering	rdfs:subClassOf	local:clustering	.
+local:approach_to_find_candidates_of_semantic_labels	rdfs:member	local:semantic_labels	.
+local:s10	rdf:predicate	local:propose	.
+local:s8	rdf:predicate	local:propose	.
+local:contexts_data	rdfs:member	local:contexts	.
+local:bags_of_numerical_values	rdfs:member	local:numerical_values	.
+local:s5	rdf:object	local:tabular_data	.
+local:s0.1	local:AM-ADV	local:potentially	.
+local:s9.1	rdf:predicate	local:find	.
+local:s7	rdf:subject	local:solutions	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources_became_available	rdfs:member	local:open_data	.
+local:web_of_linked_data	rdfs:member	local:s0.2	.
+local:s0.1	rdf:predicate	local:link	.
+local:s0.2	rdfs:subClassOf	local:data	.
+local:s9.1	rdf:object	local:candidates_of_semantic_labels	.
+local:s17	local:AM-ADV	local:potentially	.
+local:most_likely_candidates	rdfs:member	local:most_likely	.
+local:most_likely	rdfs:subClassOf	local:likely	.
+local:s0.2	rdfs:member	local:linked	.
+local:nearest_neighbour_search	rdfs:subClassOf	local:neighbour_search	.
+local:s6.1	rdf:object	local:large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	.
+local:s8	local:AM-PNC	local:given_bag_of_numerical_values	.
+local:s4	rdf:object	local:mappings_of_textual_information_to_instances_in_rdf_knowledge_bases	.
+local:s15	rdf:predicate	local:show	.
+local:s6.1	rdf:subject	local:open_data_tables	.
+local:high_level	rdfs:member	local:high	.
+local:s12.2	rdf:subject	local:we	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources	rdfs:member	local:tabular_data_sources	.
+local:mappings_of_textual_information_to_instances_in_rdf_knowledge_bases	rdfs:member	local:instances	.
+local:s11	rdf:subject	local:we	.
+local:s17	local:AM-MOD	local:could	.
+local:s10.2	rdf:subject	local:bag	.
+local:candidates_of_semantic_labels	rdfs:member	local:candidates	.
+local:textual_cues	rdfs:member	local:textual	.
+local:s9.2	rdf:subject	local:bag	.
+local:s6	local:AM-MOD	local:will	.
+local:s10.1	rdf:subject	local:candidates_of_context_descriptions	.
+local:s6.1	rdfs:member	local:large_portion	.
+local:rdf_knowledge_bases	rdfs:member	local:rdf_knowledge	.
+local:nearest_neighbour_search	rdfs:member	local:nearest_neighbour	.
+local:combination_with_other_approaches_to_narrow_down_the_search_space_of_possible_labels	rdfs:member	local:other_approaches	.
+local:high_level_contexts_data	rdfs:subClassOf	local:level_contexts_data	.
+local:instances_in_rdf_knowledge_bases	rdfs:member	local:rdf_knowledge_bases	.
+local:can_assign	rdfs:subClassOf	local:assign	.
+local:instances_in_rdf_knowledge_bases	rdfs:member	local:instances	.
+local:s15	rdf:subject	local:evaluation	.
+local:available_that_could_potentially_be_linked_into_the_web_of_linked_data	rdfs:member	local:s0.2	.
+local:high_level_contexts_data	rdfs:member	local:high_level_contexts	.
+local:huge_amount_of_tabular_data_sources	rdfs:member	local:tabular_data_sources	.
+local:s12	local:AM-DIR	local:dbpedia	.
+local:s17	rdf:subject	local:data	.
+local:s14	rdf:predicate	local:support	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:s9.2	rdf:predicate	local:give	.
+local:combination_with_other_approaches	rdfs:member	local:other_approaches	.
+local:data_tables	rdfs:member	local:data	.
+local:context_descriptions	rdfs:member	local:context	.
+local:bag_of_numerical_values	rdfs:member	local:numerical_values	.
+local:s12.1	rdf:predicate	local:build	.
+local:mappings_of_textual_information_to_instances	rdfs:member	local:mappings_of_textual_information	.
+local:numerical_columns	rdfs:subClassOf	local:columns	.
+local:level_contexts	rdfs:member	local:level	.
+local:mappings_of_textual_information_to_instances_in_rdf_knowledge_bases	rdfs:member	local:rdf_knowledge_bases	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	rdfs:member	local:solutions	.
+local:candidates_of_context_descriptions	rdfs:member	local:candidates	.
+local:mappings_of_textual_information_to_classes_properties	rdfs:member	local:mappings	.
+local:available_that_could_potentially_be_mapped_into_the_web_of_linked_data	rdfs:member	local:web	.
+local:s6.1	rdfs:member	local:open_data_tables	.
+local:most_likely_candidates	rdfs:subClassOf	local:candidates	.
+local:s1	rdf:predicate	local:become	.
+local:approach_can_assign_finegrained_semantic_labels	rdfs:member	local:approach	.
+local:neighbour_search	rdfs:member	local:neighbour	.
+local:s9.1	rdf:subject	local:we	.
+local:s8.2	rdf:predicate	local:give	.
+local:existing_approaches	rdfs:subClassOf	local:approaches	.
+local:s0.2	rdf:predicate	local:linked	.
+local:could_potentially_linked_into_web	rdfs:member	local:could_potentially_linked	.
+local:huge_amount_of_tabular_data_sources	rdfs:member	local:huge_amount	.
+local:candidates_of_context_descriptions_for_a_given_bag_of_numerical_values	rdfs:member	local:candidates	.
+local:s0	rdf:subject	local:success_of_open_data_a_huge_amount_of_tabular_data_sources	.
+local:s0.1	rdf:subject	local:huge_amount_of_tabular_data_sources_became_available	.
+local:success_of_open_data	rdfs:member	local:open_data	.
+local:mappings_of_textual_information_to_classes_properties	rdfs:member	local:classes_properties	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:open_data_tables	rdfs:member	local:open_data	.
+local:level_contexts_data	rdfs:member	local:level_contexts	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	rdfs:member	local:large_portion	.
+local:s11	local:AM-PNC	local:given_bag_of_numerical_values	.
+local:semantic_contexts	rdfs:subClassOf	local:contexts	.
+local:high_level_contexts_data	rdfs:subClassOf	local:data	.
+local:andor_nontextual_headers	rdfs:subClassOf	local:nontextual_headers	.
+local:s12	rdf:predicate	local:take	.
+local:available_that_could_potentially_be_linked_into_the_web_of_linked_data	rdfs:member	local:web	.
+local:s11.1	rdf:predicate	local:find	.
+local:background_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s1.2	rdfs:subClassOf	local:data	.
+local:s9	rdf:object	local:approach_to_find_candidates_of_semantic_labels	.
+local:open_data_tables	rdfs:subClassOf	local:data_tables	.
+local:s11.1	rdf:subject	local:we	.
+local:open_data	rdfs:subClassOf	local:data	.
+local:s17.1	rdf:predicate	local:narrow	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources_became_available	rdfs:member	local:huge_amount	.
+local:s14	rdf:subject	local:evidence	.
+local:likely_candidates	rdfs:member	local:likely	.
+local:s1.1	local:AM-MOD	local:could	.
+local:s3	rdf:subject	local:most	.
+local:candidates_of_context_descriptions_for_given_bag	rdfs:member	local:candidates_of_context_descriptions	.
+local:tabular_data_rdf	rdfs:member	local:tabular_data	.
+local:large_portion	rdfs:member	local:large	.
+local:order_to_link	rdfs:member	local:link	.
+local:semantic_labels	rdfs:member	local:semantic	.
+local:hierarchical_clustering_over_information	rdfs:member	local:information	.
+local:approach_to_rank_candidates_of_semantic_labels	rdfs:member	local:candidates	.
+local:given_bag_of_numerical_values	rdfs:member	local:bag	.
+local:mappings_of_textual_information_to_classes_properties	rdfs:member	local:mappings_of_textual_information	.
+local:search_space	rdfs:member	local:search	.
+local:possible_semantic	rdfs:subClassOf	local:semantic	.
+local:large_portion_of_numerical_columns	rdfs:member	local:numerical_columns	.
+local:s0.1	rdf:object	local:web_of_linked_data	.
+local:s13	rdf:predicate	local:apply	.
+local:s12.3	rdf:predicate	local:rank	.
+local:bags_of_numerical_values_over_which_we_perform_a_nearest_neighbour_search_to_rank_the_most_likely_candidates	rdfs:member	local:nearest_neighbour_search	.
+local:s10.1	rdf:object	local:given_bag_of_numerical_values	.
+local:candidates_of_semantic_labels	rdfs:member	local:semantic_labels	.
+local:s12.3	rdf:object	local:likely_candidates	.
+local:search_space_of_possible_labels	rdfs:member	local:search_space	.
+local:data_rdf	rdfs:member	local:data	.
+local:s11.2	rdfs:subClassOf	local:bag	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources	rdfs:member	local:success	.
+local:background_knowledge_graph	rdfs:member	local:background_knowledge	.
+local:s16	local:AM-LOC	local:cases	.
+local:numerical_values	rdfs:subClassOf	local:values	.
+local:s1.1	rdf:object	local:web_of_linked_data	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	rdfs:member	local:numerical_columns	.
+local:tabular_data_sources	rdfs:subClassOf	local:data_sources	.
+local:s10	rdf:subject	local:we	.
+local:candidates_of_context_descriptions	rdfs:member	local:context_descriptions	.
+local:web_of_linked_data	rdfs:member	local:web	.
+local:s5	local:AM-MNR	local:semantically	.
+local:approach_to_rank_candidates_of_semantic_labels	rdfs:member	local:approach	.
+local:nearest_neighbour	rdfs:subClassOf	local:neighbour	.
+local:possible_labels	rdfs:subClassOf	local:labels	.
+local:s9.1	local:AM-PNC	local:given_bag_of_numerical_values	.
+local:tabular_data	rdfs:subClassOf	local:data	.
+local:other_approaches	rdfs:member	local:other	.
+local:s2	rdf:predicate	local:rely	.
+local:s10	rdf:object	local:approach_to_rank_candidates_of_context_descriptions	.
+local:background_knowledge_graph_of_possible_semantic_contexts	rdfs:member	local:background_knowledge_graph	.
+local:possible_labels	rdfs:member	local:possible	.
+local:candidates_of_context_descriptions_for_a_given_bag_of_numerical_values	rdfs:member	local:bag	.
+local:s15.1	local:AM-MOD	local:can	.
+local:rdf_knowledge	rdfs:subClassOf	local:knowledge	.
+local:typically_contain	rdfs:subClassOf	local:contain	.
+local:data_tables	rdfs:subClassOf	local:tables	.
+local:semantic_labels	rdfs:subClassOf	local:labels	.
+local:other_approaches	rdfs:subClassOf	local:approaches	.
+local:textual_cues	rdfs:subClassOf	local:cues	.
+local:approach_to_rank_candidates_of_context_descriptions	rdfs:member	local:approach	.
+local:tabular_data_rdf	rdfs:subClassOf	local:rdf	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources_became_available	rdfs:member	local:success	.
+local:web_of_linked_data	rdfs:member	local:s1.2	.
+local:open_data_tables	rdfs:subClassOf	local:tables	.
+local:s15.1	rdf:object	local:finegrained_semantic_labels	.
+local:approach_to_rank_candidates_of_context_descriptions	rdfs:member	local:candidates	.
+local:s17	rdf:predicate	local:use	.
+local:s10	local:AM-PNC	local:given_bag_of_numerical_values	.
+local:rdf_knowledge_bases	rdfs:subClassOf	local:knowledge_bases	.
+local:s1.2	rdf:predicate	local:linked	.
+local:huge_amount	rdfs:subClassOf	local:amount	.
+local:s9	local:AM-PNC	local:given_bag_of_numerical_values	.
+local:numerical_columns	rdfs:member	local:numerical	.
+local:likely_candidates	rdfs:subClassOf	local:candidates	.
+local:bags_of_numerical_values_over_which_we_perform_a_nearest_neighbour_search_to_rank_the_most_likely_candidates	rdfs:member	local:bags	.
+local:s12	local:AM-PNC	local:s12.1	.
+local:could_potentially_mapped	rdfs:subClassOf	local:potentially_mapped	.
+local:s8.1	rdf:subject	local:candidates_of_semantic_labels	.
+local:s1	rdf:object	local:available_that_could_potentially_be_mapped_into_the_web_of_linked_data	.
+local:tabular_data_sources	rdfs:member	local:tabular_data	.
+local:mappings_of_textual_information_to_instances	rdfs:member	local:instances	.
+local:could_potentially_linked	rdfs:subClassOf	local:potentially_linked	.
+local:nontextual_headers	rdfs:member	local:nontextual	.
+local:could_potentially_mapped_into_web	rdfs:member	local:could_potentially_mapped	.
+local:classes_properties	rdfs:subClassOf	local:properties	.
+local:approach_to_rank_candidates_of_context_descriptions	rdfs:member	local:context_descriptions	.
+local:s16	rdf:object	local:high_level_contexts_data	.
+local:mappings_of_textual_information	rdfs:member	local:mappings	.
+local:approach_to_rank_candidates_of_semantic_labels	rdfs:member	local:semantic_labels	.
+local:possible_semantic	rdfs:member	local:possible	.
+local:approach_to_find_candidates_of_semantic_labels	rdfs:member	local:candidates	.
+local:s12.2	rdf:object	local:nearest_neighbour_search	.
+local:s4	rdf:predicate	local:rely	.
+local:s6.1	rdfs:member	local:numerical_columns	.
+local:level_contexts_data	rdfs:subClassOf	local:data	.
+local:s6.1	rdfs:member	local:solutions	.
+local:s16	local:AM-DIS	local:nevertheless	.
+local:s6.2	rdf:subject	local:large_portion_of_numerical_columns	.
+local:s6.1	rdfs:member	local:nontextual_headers	.
+local:given_bag_of_numerical_values	rdfs:member	local:numerical_values	.
+local:s13	rdf:subject	local:we	.
+local:bag_of_numerical_values	rdfs:member	local:bag	.
+local:s15	rdf:object	local:approach_can_assign_finegrained_semantic_labels	.
+local:data_rdf	rdfs:subClassOf	local:rdf	.
+local:perform_over_bags	rdfs:member	local:perform	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers	rdfs:member	local:numerical_columns_andor_nontextual_headers	.
+local:s8.2	rdf:subject	local:bag	.
+local:textual_information	rdfs:subClassOf	local:information	.
+local:background_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
+local:s8.1	rdf:predicate	local:rank	.
+local:s5	rdf:predicate	local:label	.
+local:could_potentially_linked_into_web	rdfs:member	local:web	.
+local:s6	rdf:object	local:open_data_tables_typically_contain_a_large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	.
+local:contexts_data	rdfs:subClassOf	local:data	.
+local:candidates_of_context_descriptions_for_a_given_bag_of_numerical_values	rdfs:member	local:context_descriptions	.
+local:s4	rdf:subject	local:most	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources	rdfs:member	local:huge_amount	.
+local:s3	rdf:object	local:tabular_data_rdf	.
+local:s7	local:AM-ADV	local:solely	.
+local:semantic_contexts	rdfs:member	local:semantic	.
+local:s6	rdf:predicate	local:illustrate	.
+local:s12.1	local:AM-PNC	local:bags_of_numerical_values_over_which_we_perform_a_nearest_neighbour_search_to_rank_the_most_likely_candidates	.
+local:s2	rdf:object	local:mappings_of_textual_information_to_classes_properties	.
+local:possible_semantic_contexts	rdfs:subClassOf	local:semantic_contexts	.
+local:s1.2	rdfs:member	local:linked	.
+local:numerical_values	rdfs:member	local:numerical	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources	rdfs:member	local:open_data	.
+local:bags_of_numerical_values	rdfs:member	local:bags	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:s6.1	rdf:predicate	local:contain	.
+local:background_knowledge_graph	rdfs:subClassOf	local:graph	.
+local:s12	rdf:subject	local:information	.
+local:perform_over_bags	rdfs:member	local:bags	.
+local:approach_to_find_candidates_of_context_descriptions	rdfs:member	local:approach	.
+local:bags_of_numerical_values_over_which_we_perform_a_nearest_neighbour_search_to_rank_the_most_likely_candidates	rdfs:member	local:numerical_values	.
+local:hierarchical_clustering_over_information	rdfs:member	local:hierarchical_clustering	.
+local:most_likely	rdfs:member	local:most	.
+local:nearest_neighbour_search	rdfs:subClassOf	local:search	.
+local:combination_with_other_approaches_to_narrow_down_the_search_space_of_possible_labels	rdfs:member	local:possible_labels	.
+local:s7	rdf:object	local:textual_cues	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers_therefore_solutions	rdfs:member	local:nontextual_headers	.
+local:textual_information	rdfs:member	local:textual	.
+local:tabular_data_sources	rdfs:subClassOf	local:sources	.
+local:tabular_data	rdfs:member	local:tabular	.
+local:approach_to_find_candidates_of_semantic_labels	rdfs:member	local:approach	.
+local:rdf_knowledge_bases	rdfs:subClassOf	local:bases	.
+local:s9	rdf:predicate	local:propose	.
+local:huge_amount_of_tabular_data_sources_became_available	rdfs:member	local:huge_amount	.
+local:combination_with_other_approaches_to_narrow_down_the_search_space_of_possible_labels	rdfs:member	local:search_space	.
+local:s11	rdf:object	local:approach_to_find_candidates_of_context_descriptions	.
+local:s5	rdf:subject	local:existing_approaches	.
+local:s15.1	rdf:predicate	local:assign	.
+local:s8	rdf:object	local:approach_to_rank_candidates_of_semantic_labels	.
+local:success_of_open_data_a_huge_amount_of_tabular_data_sources_became_available	rdfs:member	local:tabular_data_sources	.
+local:large_portion_of_numerical_columns_andor_nontextual_headers	rdfs:member	local:large_portion	.
+local:s17	local:AM-LOC	local:combination_with_other_approaches_to_narrow_down_the_search_space_of_possible_labels	.
+local:mappings_of_textual_information	rdfs:member	local:textual_information	.
+local:s15.1	rdf:subject	local:approach	.
+local:s3	rdf:predicate	local:transform	.
+local:mappings_of_textual_information_to_classes_properties	rdfs:member	local:properties	.
+local:level_contexts_data	rdfs:subClassOf	local:contexts_data	.
+local:s0.2	rdf:subject	local:data	.
+local:s0	rdf:predicate	local:become	.
+local:s12.2	local:AM-PNC	local:rank_the_most_likely_candidates	.
+local:s17.1	rdf:subject	local:search_space_of_possible_labels	.
+local:data_sources	rdfs:member	local:data	.
+local:high_level_contexts	rdfs:member	local:high_level	.
+local:context_descriptions	rdfs:subClassOf	local:descriptions	.
+local:finegrained_semantic_labels	rdfs:subClassOf	local:semantic_labels	.
+local:success_of_open_data	rdfs:member	local:success	.
+local:background_knowledge_graph_of_possible_semantic_contexts	rdfs:member	local:possible_semantic_contexts	.
+local:s12.2	rdf:predicate	local:perform	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:s8	rdf:subject	local:we	.
+local:s1.1	local:AM-ADV	local:potentially	.
+local:combination_with_other_approaches_to_narrow_down_the_search_space_of_possible_labels	rdfs:member	local:combination	.
+local:s14	local:AM-LOC	local:background_knowledge_graph	.
+local:s1.1	rdf:predicate	local:map	.
+local:given_bag_of_numerical_values	rdfs:member	local:s11.2	.
+local:huge_amount_of_tabular_data_sources_became_available	rdfs:member	local:tabular_data_sources	.
+local:knowledge_bases	rdfs:member	local:knowledge	.
+local:s11.2	rdf:subject	local:bag	.
+local:available_that_could_potentially_be_mapped_into_the_web_of_linked_data	rdfs:member	local:s1.2	.
+local:s4.1	rdf:predicate	local:link	.
+local:could_potentially_mapped_into_web	rdfs:member	local:web	.
+local:tabular_data_rdf	rdfs:subClassOf	local:data_rdf	.
+local:order_to_link	rdfs:member	local:order	.
+local:large_portion_of_numerical_columns	rdfs:member	local:large_portion	.
+local:columns_andor_nontextual_headers	rdfs:subClassOf	local:andor_nontextual_headers	.
+local:mappings_of_textual_information_to_classes_properties	rdfs:member	local:textual_information	.
+local:s10.1	rdf:predicate	local:rank	.
+local:s1.2	rdf:subject	local:data	.
+local:s16	rdf:predicate	local:assign	.
+local:large_portion	rdfs:subClassOf	local:portion	.
+local:hierarchical_clustering	rdfs:member	local:hierarchical	.
+local:approach_can_assign_finegrained_semantic_labels	rdfs:member	local:semantic_labels	.
+local:s6.1	local:AM-TMP	local:typically	.
+local:s9	rdf:subject	local:we	.
+local:rdf_knowledge	rdfs:member	local:rdf	.
+local:s11.2	rdf:predicate	local:give	.
+local:potentially_mapped	rdfs:subClassOf	local:mapped	.
+local:high_level_contexts	rdfs:subClassOf	local:contexts	.
+local:s6.2	rdf:predicate	local:andor	.
+local:s11.1	rdf:object	local:candidates_of_context_descriptions_for_a_given_bag_of_numerical_values	.
+local:nontextual_headers	rdfs:subClassOf	local:headers	.
+local:s2	rdf:subject	local:most	.

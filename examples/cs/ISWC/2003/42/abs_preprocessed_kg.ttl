@@ -1,480 +1,797 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"automatically align the related data with users own"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"the resulting web of equivalency statements then mined by webscripter to automatically align the related data with users own"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"resulting"	.
+
+local:s13.4	a	rdf:Statement	;
+	rdfs:label	"related ontologies and data"	.
+
+local:s13.3	a	rdf:Statement	;
+	rdfs:label	"users find related ontologies and data"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"help users find related ontologies and data"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"the resulting web of equivalency statements then mined by webscripter to help users find related ontologies and data"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"resulting"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"know anything about ontologies"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"in our approach ordinary users graphically align data from multiple sources in a simple spreadsheetlike view without having to know anything about ontologies"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"this paper describes webscripter"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"translating between the countless miniontologies that the semantic web approach yields"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"this paper describes a tool for translating between the countless miniontologies that the semantic web approach yields"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"users data may some day integrate with others data"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"scratch that addresses ordinary users immediate needs without worrying how ordinary users data"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"in the ordinary users may not look at anyones ontology before creating theirs instead ordinary users may simply define a new local schema from scratch"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"the ordinary users creating theirs ordinary users"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"the ordinary users may not look at anyones ontology before creating theirs instead ordinary users may"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"emerging semantic web"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"ordinary users data may some day integrate with others data"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"ordinary users worrying"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"scratch that addresses ordinary users immediate needs without worrying if ordinary users data"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"existing hierarchy"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"engineering experts carefully analyzing fitting others new concepts into the existing hierarchy"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in the traditional approach to ontology engineering experts add new data by carefully analyzing fitting others new concepts into the existing hierarchy"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"existing hierarchy"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"engineering experts carefully analyzing others ontologies into the existing hierarchy"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in the traditional approach to ontology engineering experts add new data by carefully analyzing others ontologies into the existing hierarchy"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"ontologies define hierarchies of classes ontologies are metadata"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"ontologies define hierarchies of attributes ontologies are data about data"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"ontologies define hierarchies of attributes ontologies are metadata"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"ontologies define hierarchies of classes ontologies are data about data"	.
+
+
 #### Classes ####
 
-local:define	rdfs:label	"define"	.
+local:related_data_with_users_own	a	rdf:Class	;
+	rdfs:label	"related data with users own"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:attributes_ontologies	rdfs:label	"attributes ontologies"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:attributes	rdfs:label	"attributes"	.
+local:related_data	a	rdf:Class	;
+	rdfs:label	"related data"	.
 
-local:hierarchies_of_attributes_ontologies	rdfs:label	"hierarchies of attributes ontologies"	.
+local:related_data_with_users	a	rdf:Class	;
+	rdfs:label	"related data with users"	.
 
-local:hierarchies	rdfs:label	"hierarchies"	.
+local:align	a	rdf:Class	;
+	rdfs:label	"align"	.
 
-local:metadata	rdfs:label	"meta-data"	.
+local:automatically	a	rdf:Class	;
+	rdfs:label	"automatically"	.
 
-local:classes_ontologies	rdfs:label	"classes ontologies"	.
+local:webscripter	a	rdf:Class	;
+	rdfs:label	"webscripter"	.
 
-local:classes	rdfs:label	"classes"	.
+local:mine	a	rdf:Class	;
+	rdfs:label	"mine"	.
 
-local:hierarchies_of_classes_ontologies	rdfs:label	"hierarchies of classes ontologies"	.
+local:resulting_web_of_equivalency_statements	a	rdf:Class	;
+	rdfs:label	"resulting web of equivalency statements"	.
 
-local:data_about_data	rdfs:label	"data about data"	.
+local:equivalency_statements	a	rdf:Class	;
+	rdfs:label	"equivalency statements"	.
 
-local:data	rdfs:label	"data"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:“_traditional_approach_”	rdfs:label	"“ traditional approach ”"	.
+local:equivalency	a	rdf:Class	;
+	rdfs:label	"equivalency"	.
 
-local:”	rdfs:label	"”"	.
+local:statements	a	rdf:Class	;
+	rdfs:label	"statements"	.
 
-local:“	rdfs:label	"“"	.
+local:resulting_web	a	rdf:Class	;
+	rdfs:label	"resulting web"	.
 
-local:“_traditional	rdfs:label	"“ traditional"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:“_traditional_approach	rdfs:label	"“ traditional approach"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:traditional_approach_”	rdfs:label	"traditional approach ”"	.
+local:ontologies_and_data	a	rdf:Class	;
+	rdfs:label	"ontologies and data"	.
 
-local:approach_”	rdfs:label	"approach ”"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:traditional_approach	rdfs:label	"traditional approach"	.
+local:relate	a	rdf:Class	;
+	rdfs:label	"relate"	.
 
-local:approach	rdfs:label	"approach"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:traditional	rdfs:label	"traditional"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:anything	a	rdf:Class	;
+	rdfs:label	"anything"	.
 
-local:new_data	rdfs:label	"new data"	.
+local:know	a	rdf:Class	;
+	rdfs:label	"know"	.
 
-local:’	rdfs:label	"’"	.
+local:ordinary_users	a	rdf:Class	;
+	rdfs:label	"ordinary users"	.
 
-local:’_ontologies	rdfs:label	"’ ontologies"	.
+local:ordinary	a	rdf:Class	;
+	rdfs:label	"ordinary"	.
 
-local:new	rdfs:label	"new"	.
+local:data_from_multiple_sources_in_a_simple_spreadsheetlike_view	a	rdf:Class	;
+	rdfs:label	"data from multiple sources in a simple spreadsheetlike view"	.
 
-local:existing_hierarchy	rdfs:label	"existing hierarchy"	.
+local:multiple_sources	a	rdf:Class	;
+	rdfs:label	"multiple sources"	.
 
-local:hierarchy	rdfs:label	"hierarchy"	.
+local:simple_spreadsheetlike_view	a	rdf:Class	;
+	rdfs:label	"simple spreadsheetlike view"	.
 
-local:others_ontologies	rdfs:label	"others ontologies"	.
+local:spreadsheetlike_view	a	rdf:Class	;
+	rdfs:label	"spreadsheetlike view"	.
 
-local:carefully_analyzing	rdfs:label	"carefully analyzing"	.
+local:spreadsheetlike	a	rdf:Class	;
+	rdfs:label	"spreadsheetlike"	.
 
-local:analyzing	rdfs:label	"analyzing"	.
+local:simple_spreadsheetlike	a	rdf:Class	;
+	rdfs:label	"simple spreadsheetlike"	.
 
-local:engineering_add	rdfs:label	"engineering add"	.
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
 
-local:add	rdfs:label	"add"	.
+local:multiple	a	rdf:Class	;
+	rdfs:label	"multiple"	.
 
-local:carefully_analyzing_into_existing_hierarchy	rdfs:label	"carefully analyzing into existing hierarchy"	.
+local:view	a	rdf:Class	;
+	rdfs:label	"view"	.
 
-local:traditional_approach_to_ontology	rdfs:label	"traditional approach to ontology"	.
+local:simple	a	rdf:Class	;
+	rdfs:label	"simple"	.
 
-local:engineering_experts	rdfs:label	"engineering experts"	.
+local:data_from_multiple_sources	a	rdf:Class	;
+	rdfs:label	"data from multiple sources"	.
 
-local:experts	rdfs:label	"experts"	.
+local:multiple_sources_in_simple_spreadsheetlike_view	a	rdf:Class	;
+	rdfs:label	"multiple sources in simple spreadsheetlike view"	.
 
-local:carefully	rdfs:label	"carefully"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:existing	rdfs:label	"existing"	.
+local:graphically	a	rdf:Class	;
+	rdfs:label	"graphically"	.
 
-local:new_concepts	rdfs:label	"new concepts"	.
+local:without_having_to_know_anything_about_ontologies	a	rdf:Class	;
+	rdfs:label	"without having to know anything about ontologies"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:anything_about_ontologies	a	rdf:Class	;
+	rdfs:label	"anything about ontologies"	.
 
-local:others_new_concepts	rdfs:label	"others new concepts"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:fitting_others	rdfs:label	"fitting others"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:others	rdfs:label	"others"	.
+local:translate	a	rdf:Class	;
+	rdfs:label	"translate"	.
 
-local:others_new_concepts_into_existing_hierarchy	rdfs:label	"others new concepts into existing hierarchy"	.
+local:countless_miniontologies_that_the_semantic_web_approach_yields	a	rdf:Class	;
+	rdfs:label	"countless miniontologies that the semantic web approach yields"	.
 
-local:addresses	rdfs:label	"addresses"	.
+local:countless_miniontologies	a	rdf:Class	;
+	rdfs:label	"countless miniontologies"	.
 
-local:scratch	rdfs:label	"scratch"	.
+local:semantic_web_approach_yields	a	rdf:Class	;
+	rdfs:label	"semantic web approach yields"	.
 
-local:ordinary_users	rdfs:label	"ordinary users"	.
+local:miniontologies	a	rdf:Class	;
+	rdfs:label	"miniontologies"	.
 
-local:users	rdfs:label	"users"	.
+local:countless	a	rdf:Class	;
+	rdfs:label	"countless"	.
 
-local:ordinary	rdfs:label	"ordinary"	.
+local:web_approach_yields	a	rdf:Class	;
+	rdfs:label	"web approach yields"	.
 
-local:immediate	rdfs:label	"immediate"	.
+local:web_approach	a	rdf:Class	;
+	rdfs:label	"web approach"	.
 
-local:immediate_needs	rdfs:label	"immediate needs"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-local:needs	rdfs:label	"needs"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:ordinary_users_data	rdfs:label	"ordinary users data"	.
+local:yields	a	rdf:Class	;
+	rdfs:label	"yields"	.
 
-local:users_data	rdfs:label	"users data"	.
+local:semantic_web_approach	a	rdf:Class	;
+	rdfs:label	"semantic web approach"	.
 
-local:how_ordinary	rdfs:label	"how ordinary"	.
+local:approach_yields	a	rdf:Class	;
+	rdfs:label	"approach yields"	.
 
-local:worrying	rdfs:label	"worrying"	.
+local:countless_miniontologies_that_semantic_web_approach_yields	a	rdf:Class	;
+	rdfs:label	"countless miniontologies that semantic web approach yields"	.
 
-local:integrate	rdfs:label	"integrate"	.
+local:tool_translating_between_the_countless_miniontologies_that_the_semantic_web_approach_yields	a	rdf:Class	;
+	rdfs:label	"tool translating between the countless miniontologies that the semantic web approach yields"	.
 
-local:may	rdfs:label	"may"	.
+local:tool	a	rdf:Class	;
+	rdfs:label	"tool"	.
 
-local:day	rdfs:label	"day"	.
+local:tool_translating	a	rdf:Class	;
+	rdfs:label	"tool translating"	.
 
-local:others_data	rdfs:label	"others data"	.
+local:translating	a	rdf:Class	;
+	rdfs:label	"translating"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:translating_between_countless_miniontologies	a	rdf:Class	;
+	rdfs:label	"translating between countless miniontologies"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:users_data	a	rdf:Class	;
+	rdfs:label	"users data"	.
 
-local:web	rdfs:label	"web"	.
+local:integrate	a	rdf:Class	;
+	rdfs:label	"integrate"	.
 
-local:web_approach	rdfs:label	"web approach"	.
+local:others_data	a	rdf:Class	;
+	rdfs:label	"others data"	.
 
-local:“_semantic_web_approach	rdfs:label	"“ semantic web approach"	.
+local:others	a	rdf:Class	;
+	rdfs:label	"others"	.
 
-local:“_semantic	rdfs:label	"“ semantic"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:semantic_web_approach	rdfs:label	"semantic web approach"	.
+local:day	a	rdf:Class	;
+	rdfs:label	"day"	.
 
-local:“_semantic_web	rdfs:label	"“ semantic web"	.
+local:immediate_needs	a	rdf:Class	;
+	rdfs:label	"immediate needs"	.
 
-local:emerging	rdfs:label	"emerging"	.
+local:immediate	a	rdf:Class	;
+	rdfs:label	"immediate"	.
 
-local:	rdfs:label	"``"	.
+local:needs	a	rdf:Class	;
+	rdfs:label	"needs"	.
 
-local:emerging_semantic_web_approach	rdfs:label	"emerging semantic web approach"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:look	rdfs:label	"look"	.
+local:without_worrying_how_ordinary_users_data	a	rdf:Class	;
+	rdfs:label	"without worrying how ordinary users data"	.
 
-local:not	rdfs:label	"not"	.
+local:ordinary_users_data	a	rdf:Class	;
+	rdfs:label	"ordinary users data"	.
 
-local:anyone	rdfs:label	"anyone"	.
+local:how_ordinary	a	rdf:Class	;
+	rdfs:label	"how ordinary"	.
 
-local:anyone_’	rdfs:label	"anyone ’"	.
+local:define	a	rdf:Class	;
+	rdfs:label	"define"	.
 
-local:anyone_ontology	rdfs:label	"anyone ontology"	.
+local:new_local_schema_from_scratch	a	rdf:Class	;
+	rdfs:label	"new local schema from scratch"	.
 
-local:instead_may	rdfs:label	"instead may"	.
+local:scratch	a	rdf:Class	;
+	rdfs:label	"scratch"	.
 
-local:creating	rdfs:label	"creating"	.
+local:new_local_schema	a	rdf:Class	;
+	rdfs:label	"new local schema"	.
 
-local:ordinary_users–	rdfs:label	"ordinary users–"	.
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
 
-local:users–	rdfs:label	"users–"	.
+local:new_local	a	rdf:Class	;
+	rdfs:label	"new local"	.
 
-local:instead_ordinary_users	rdfs:label	"instead ordinary users"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:simply	rdfs:label	"simply"	.
+local:local_schema	a	rdf:Class	;
+	rdfs:label	"local schema"	.
 
-local:local	rdfs:label	"local"	.
+local:local	a	rdf:Class	;
+	rdfs:label	"local"	.
 
-local:local_schema	rdfs:label	"local schema"	.
+local:ordinary_users_may_not_look_at_anyones_ontology_before_creating_theirs_instead	a	rdf:Class	;
+	rdfs:label	"ordinary users may not look at anyones ontology before creating theirs instead"	.
 
-local:schema	rdfs:label	"schema"	.
+local:theirs	a	rdf:Class	;
+	rdfs:label	"theirs"	.
 
-local:new_local	rdfs:label	"new local"	.
+local:anyones_ontology	a	rdf:Class	;
+	rdfs:label	"anyones ontology"	.
 
-local:new_local_schema	rdfs:label	"new local schema"	.
+local:anyones	a	rdf:Class	;
+	rdfs:label	"anyones"	.
 
-local:new_local_schema_from_scratch	rdfs:label	"new local schema from scratch"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:describes	rdfs:label	"describes"	.
+local:instead_look	a	rdf:Class	;
+	rdfs:label	"instead look"	.
 
-local:paper	rdfs:label	"paper"	.
+local:look	a	rdf:Class	;
+	rdfs:label	"look"	.
 
-local:webscripter	rdfs:label	"webscripter"	.
+local:not_instead_look	a	rdf:Class	;
+	rdfs:label	"not instead look"	.
 
-local:tool	rdfs:label	"tool"	.
+local:may_not_instead_look	a	rdf:Class	;
+	rdfs:label	"may not instead look"	.
 
-local:”_yields	rdfs:label	"” yields"	.
+local:may_not_instead_look_at_anyones_ontology	a	rdf:Class	;
+	rdfs:label	"may not instead look at anyones ontology"	.
 
-local:yields	rdfs:label	"yields"	.
+local:simply	a	rdf:Class	;
+	rdfs:label	"simply"	.
 
-local:countless	rdfs:label	"countless"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:countless_miniontologies	rdfs:label	"countless mini-ontologies"	.
+local:not_look	a	rdf:Class	;
+	rdfs:label	"not look"	.
 
-local:miniontologies	rdfs:label	"mini-ontologies"	.
+local:creating_theirs_instead_ordinary_users_may	a	rdf:Class	;
+	rdfs:label	"creating theirs instead ordinary users may"	.
 
-local:translating_between_countless_miniontologies	rdfs:label	"translating between countless mini-ontologies"	.
+local:instead_ordinary_users	a	rdf:Class	;
+	rdfs:label	"instead ordinary users"	.
 
-local:translating	rdfs:label	"translating"	.
+local:instead_ordinary	a	rdf:Class	;
+	rdfs:label	"instead ordinary"	.
 
-local:approach_ordinary_users	rdfs:label	"approach ordinary users"	.
+local:instead	a	rdf:Class	;
+	rdfs:label	"instead"	.
 
-local:align	rdfs:label	"align"	.
+local:instead_may	a	rdf:Class	;
+	rdfs:label	"instead may"	.
 
-local:graphically	rdfs:label	"graphically"	.
+local:emerge	a	rdf:Class	;
+	rdfs:label	"emerge"	.
 
-local:simple_spreadsheetlike_view	rdfs:label	"simple spreadsheet-like view"	.
+local:worry	a	rdf:Class	;
+	rdfs:label	"worry"	.
 
-local:view	rdfs:label	"view"	.
+local:ordinary_users_immediate_needs	a	rdf:Class	;
+	rdfs:label	"ordinary users immediate needs"	.
 
-local:multiple	rdfs:label	"multiple"	.
+local:without_worrying_if_ordinary_users_data	a	rdf:Class	;
+	rdfs:label	"without worrying if ordinary users data"	.
 
-local:multiple_sources	rdfs:label	"multiple sources"	.
+local:hierarchy	a	rdf:Class	;
+	rdfs:label	"hierarchy"	.
 
-local:simple	rdfs:label	"simple"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:simple_spreadsheetlike	rdfs:label	"simple spreadsheet-like"	.
+local:new_concepts	a	rdf:Class	;
+	rdfs:label	"new concepts"	.
 
-local:sources	rdfs:label	"sources"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:spreadsheetlike	rdfs:label	"spreadsheet-like"	.
+local:analyze	a	rdf:Class	;
+	rdfs:label	"analyze"	.
 
-local:spreadsheetlike_view	rdfs:label	"spreadsheet-like view"	.
+local:carefully	a	rdf:Class	;
+	rdfs:label	"carefully"	.
 
-local:data_from_multiple_sources	rdfs:label	"data from multiple sources"	.
+local:engineering_experts	a	rdf:Class	;
+	rdfs:label	"engineering experts"	.
 
-local:multiple_sources_in_simple_spreadsheetlike_view	rdfs:label	"multiple sources in simple spreadsheet-like view"	.
+local:engineering	a	rdf:Class	;
+	rdfs:label	"engineering"	.
 
-local:anything_about_ontologies	rdfs:label	"anything about ontologies"	.
+local:experts	a	rdf:Class	;
+	rdfs:label	"experts"	.
 
-local:anything	rdfs:label	"anything"	.
+local:add	a	rdf:Class	;
+	rdfs:label	"add"	.
 
-local:having	rdfs:label	"having"	.
+local:new_data	a	rdf:Class	;
+	rdfs:label	"new data"	.
 
-local:know	rdfs:label	"know"	.
+local:traditional_approach_to_ontology	a	rdf:Class	;
+	rdfs:label	"traditional approach to ontology"	.
 
-local:equivalency_statements	rdfs:label	"equivalency statements"	.
+local:traditional_approach	a	rdf:Class	;
+	rdfs:label	"traditional approach"	.
 
-local:statements	rdfs:label	"statements"	.
+local:traditional	a	rdf:Class	;
+	rdfs:label	"traditional"	.
 
-local:equivalency	rdfs:label	"equivalency"	.
+local:carefully_analyzing_fitting_others_new_concepts_into_the_existing_hierarchy	a	rdf:Class	;
+	rdfs:label	"carefully analyzing fitting others new concepts into the existing hierarchy"	.
 
-local:resulting_web	rdfs:label	"resulting web"	.
+local:fitting_others	a	rdf:Class	;
+	rdfs:label	"fitting others"	.
 
-local:resulting_web_of_equivalency_statements	rdfs:label	"resulting web of equivalency statements"	.
+local:carefully_analyzing	a	rdf:Class	;
+	rdfs:label	"carefully analyzing"	.
 
-local:mined	rdfs:label	"mined"	.
+local:analyzing	a	rdf:Class	;
+	rdfs:label	"analyzing"	.
 
-local:then	rdfs:label	"then"	.
+local:new_concepts_into_existing_hierarchy	a	rdf:Class	;
+	rdfs:label	"new concepts into existing hierarchy"	.
 
-local:help_users	rdfs:label	"help users"	.
+local:carefully_analyzing_others_ontologies_into_the_existing_hierarchy	a	rdf:Class	;
+	rdfs:label	"carefully analyzing others ontologies into the existing hierarchy"	.
 
-local:related	rdfs:label	"related"	.
+local:others_ontologies	a	rdf:Class	;
+	rdfs:label	"others ontologies"	.
 
-local:related_ontologies	rdfs:label	"related ontologies"	.
+local:carefully_analyzing_into_existing_hierarchy	a	rdf:Class	;
+	rdfs:label	"carefully analyzing into existing hierarchy"	.
 
-local:help	rdfs:label	"help"	.
+local:hierarchies_of_classes_ontologies_are_metadata	a	rdf:Class	;
+	rdfs:label	"hierarchies of classes ontologies are metadata"	.
 
-local:find	rdfs:label	"find"	.
+local:classes_ontologies	a	rdf:Class	;
+	rdfs:label	"classes ontologies"	.
 
-local:related_data	rdfs:label	"related data"	.
+local:metadata	a	rdf:Class	;
+	rdfs:label	"metadata"	.
 
-local:automatically_align	rdfs:label	"automatically align"	.
+local:hierarchies	a	rdf:Class	;
+	rdfs:label	"hierarchies"	.
 
-local:automatically_align_with_users	rdfs:label	"automatically align with users"	.
+local:classes	a	rdf:Class	;
+	rdfs:label	"classes"	.
 
-local:own	rdfs:label	"own"	.
+local:hierarchies_of_classes_ontologies	a	rdf:Class	;
+	rdfs:label	"hierarchies of classes ontologies"	.
 
-local:automatically	rdfs:label	"automatically"	.
+local:hierarchies_of_attributes_ontologies_are_data_about_data	a	rdf:Class	;
+	rdfs:label	"hierarchies of attributes ontologies are data about data"	.
 
-local:related_data_with_users	rdfs:label	"related data with users"	.
+local:attributes_ontologies	a	rdf:Class	;
+	rdfs:label	"attributes ontologies"	.
 
-#### Properties ####
+local:attributes	a	rdf:Class	;
+	rdfs:label	"attributes"	.
+
+local:hierarchies_of_attributes_ontologies	a	rdf:Class	;
+	rdfs:label	"hierarchies of attributes ontologies"	.
+
+local:data_about_data	a	rdf:Class	;
+	rdfs:label	"data about data"	.
+
+local:hierarchies_of_attributes_ontologies_are_metadata	a	rdf:Class	;
+	rdfs:label	"hierarchies of attributes ontologies are metadata"	.
+
+local:hierarchies_of_classes_ontologies_are_data_about_data	a	rdf:Class	;
+	rdfs:label	"hierarchies of classes ontologies are data about data"	.
 
 #### Mapped Relations ####
 
-local:semantic	owl:sameAs	cso:semantics	.
+cso:ontology	rdfs:label	"ontology"	.
 cso:semantic_web	rdfs:label	"semantic web"	.
-cso:semantics	rdfs:label	"semantic"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
+local:ontology	owl:sameAs	cso:ontology	.
 local:semantic_web	owl:sameAs	cso:semantic_web	.
+cso:semantics	rdfs:label	"semantic"	.
+local:semantic	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:”	local:AM-LOC	local:emerging_semantic_web_approach	.
-local:anything_about_ontologies	local:about_ontologies	local:anything	.
-local:integrate	vn.role:Patient1	local:ordinary_users_data	.
-local:traditional_approach_to_ontology	local:to_ontology	local:traditional_approach	.
-local:look	local:AM-TMP	local:creating	.
-local:“_traditional_approach_”	rdfs:subClassOf	local:”	.
-local:new_local	rdfs:member	local:new_local_schema	.
-local:hierarchies_of_classes_ontologies	local:of_classesontologies	local:hierarchies	.
-local:new_concepts	rdfs:subClassOf	local:concepts	.
-local:approach_”	rdfs:subClassOf	local:”	.
-local:others_data	rdfs:subClassOf	local:data	.
-local:carefully_analyzing_into_existing_hierarchy	local:carefullyanalyzing_into	local:existing_hierarchy	.
-local:“_traditional	rdfs:member	local:“_traditional_approach	.
-local:integrate	vn.role:Patient1	local:users_data	.
-local:describes	vn.role:Agent	local:paper	.
-local:equivalency	rdfs:member	local:equivalency_statements	.
-local:know	vn.role:Theme	local:anything_about_ontologies	.
-local:approach_ordinary_users	local:approach_	local:ordinary_users	.
-local:new_local_schema	rdfs:subClassOf	local:local_schema	.
-local:web_approach	rdfs:subClassOf	local:approach	.
-local:define	local:AM-MOD	local:may	.
-local:addresses	local:AM-MNR	local:worrying	.
-local:integrate	local:AM-TMP	local:day	.
-local:ordinary_users	rdfs:subClassOf	local:users	.
-local:“_traditional	rdfs:subClassOf	local:traditional	.
-local:others_new_concepts	rdfs:subClassOf	local:new_concepts	.
-local:data_from_multiple_sources	local:data_from	local:multiple_sources	.
-local:add	local:AM-MNR	local:carefully_analyzing_into_existing_hierarchy	.
-local:align	vn.role:Theme	local:data_from_multiple_sources	.
-local:hierarchies_of_attributes_ontologies	local:hierarchies_of	local:attributes_ontologies	.
-local:data_from_multiple_sources	local:from_multiplesources	local:data	.
-local:how_ordinary	rdfs:subClassOf	local:ordinary	.
-local:analyzing	vn.role:Agent	local:engineering_experts	.
-local:analyzing	local:AM-MNR	local:carefully	.
-local:countless_miniontologies	rdfs:subClassOf	local:miniontologies	.
-local:instead_may	rdfs:subClassOf	local:may	.
-local:new_local_schema_from_scratch	local:newlocalschema_from	local:scratch	.
-local:“_semantic_web	rdfs:member	local:“_semantic_web_approach	.
-local:spreadsheetlike	rdfs:member	local:spreadsheetlike_view	.
-local:add	vn.role:Agent	local:engineering_experts	.
-local:approach_ordinary_users	local:_ordinaryusers	local:approach	.
-local:semantic_web_approach	rdfs:subClassOf	local:web_approach	.
-local:local_schema	rdfs:subClassOf	local:schema	.
-local:related	rdfs:member	local:related_ontologies	.
-local:mined	vn.role:Location	local:resulting_web_of_equivalency_statements	.
-local:simple	rdfs:member	local:simple_spreadsheetlike	.
-local:”	rdfs:member	local:”_yields	.
-local:classes	rdfs:member	local:classes_ontologies	.
-local:semantic_web	rdfs:member	local:semantic_web_approach	.
-local:traditional_approach_to_ontology	local:traditionalapproach_to	local:ontology	.
-local:help_users	rdfs:subClassOf	local:users	.
-local:new	rdfs:member	local:new_local	.
-local:new_data	rdfs:subClassOf	local:data	.
-local:”	vn.role:object	local:ordinary_users	.
-local:translating	vn.role:Agent	local:tool	.
-local:existing_hierarchy	rdfs:subClassOf	local:hierarchy	.
-local:look	local:AM-LOC	local:emerging_semantic_web_approach	.
-local:ordinary_users_data	rdfs:subClassOf	local:data	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:emerging_semantic_web_approach	rdfs:subClassOf	local:semantic_web_approach	.
-local:hierarchies_of_classes_ontologies	local:hierarchies_of	local:classes_ontologies	.
-local:“	rdfs:member	local:“_semantic	.
-local:ordinary_users–	rdfs:subClassOf	local:users–	.
-local:align	vn.role:Theme	local:own	.
+local:s9.1	local:AM-MOD	local:may	.
+local:s8.2	rdf:predicate	local:define	.
+local:s4	rdf:object	local:new_data	.
 local:new_local	rdfs:subClassOf	local:local	.
-local:translating_between_countless_miniontologies	local:between_countlessmini-ontologies	local:translating	.
-local:semantic_web	rdfs:subClassOf	local:web	.
-local:define	vn.role:Agent	local:creating	.
-local:find	vn.role:Theme	local:related_ontologies	.
-local:analyzing	vn.role:Theme	local:others_new_concepts_into_existing_hierarchy	.
-local:define	vn.role:Theme	local:metadata	.
-local:anything_about_ontologies	local:anything_about	local:ontologies	.
-local:help	rdfs:member	local:help_users	.
-local:traditional_approach	rdfs:member	local:traditional_approach_”	.
-local:simple_spreadsheetlike_view	rdfs:subClassOf	local:view	.
-local:mined	local:AM-PNC	local:find	.
-local:related	vn.role:Topic	local:ontologies	.
-local:ordinary_users_data	rdfs:subClassOf	local:users_data	.
-local:analyzing	vn.role:Theme	local:existing_hierarchy	.
-local:resulting_web_of_equivalency_statements	local:of_equivalencystatements	local:resulting_web	.
-local:users_data	rdfs:subClassOf	local:data	.
-local:simple_spreadsheetlike_view	rdfs:subClassOf	local:spreadsheetlike_view	.
-local:related_ontologies	rdfs:subClassOf	local:ontologies	.
-local:define	local:AM-LOC	local:emerging_semantic_web_approach	.
-local:“_traditional_approach	rdfs:subClassOf	local:approach	.
-local:local	rdfs:member	local:local_schema	.
-local:automatically_align_with_users	local:automaticallyalign_with	local:users	.
-local:simple_spreadsheetlike	rdfs:member	local:simple_spreadsheetlike_view	.
-local:countless	rdfs:member	local:countless_miniontologies	.
-local:data_about_data	local:about_data	local:data	.
-local:multiple	rdfs:member	local:multiple_sources	.
-local:fitting_others	rdfs:subClassOf	local:others	.
-local:define	local:AM-ADV	local:simply	.
-local:others_ontologies	rdfs:subClassOf	local:ontologies	.
-local:data_about_data	local:data_about	local:data	.
-local:engineering_experts	rdfs:subClassOf	local:experts	.
-local:instead_ordinary_users	rdfs:subClassOf	local:ordinary_users	.
-local:ordinary	rdfs:member	local:ordinary_users–	.
-local:hierarchies_of_attributes_ontologies	local:of_attributesontologies	local:hierarchies	.
-local:addresses	vn.role:Agent	local:scratch	.
-local:describes	vn.role:Theme	local:tool	.
-local:describes	vn.role:Theme	local:webscripter	.
-local:others_new_concepts_into_existing_hierarchy	local:othersnewconcepts_into	local:existing_hierarchy	.
-local:“_traditional_approach	rdfs:member	local:“_traditional_approach_”	.
-local:creating	vn.role:Product	local:ordinary_users	.
-local:ordinary	rdfs:member	local:ordinary_users	.
-local:add	vn.role:Patient	local:new_data	.
-local:mined	local:AM-PNC	local:own	.
-local:“_semantic	rdfs:subClassOf	local:semantic	.
-local:integrate	vn.role:indirect_object	local:others_data	.
-local:“	rdfs:member	local:“_traditional	.
-local:multiple_sources_in_simple_spreadsheetlike_view	local:in_simplespreadsheet-likeview	local:multiple_sources	.
-local:look	local:AM-NEG	local:not	.
-local:immediate_needs	rdfs:subClassOf	local:needs	.
-local:carefully_analyzing	rdfs:subClassOf	local:analyzing	.
-local:existing	vn.role:Location	local:hierarchy	.
-local:users	rdfs:member	local:users_data	.
-local:analyzing	vn.role:Theme	local:others_ontologies	.
-local:mined	vn.role:Agent	local:webscripter	.
-local:classes_ontologies	rdfs:subClassOf	local:ontologies	.
-local:approach	rdfs:member	local:approach_”	.
-local:addresses	vn.role:Destination	local:immediate_needs	.
-local:describes	vn.role:Predicate	local:translating_between_countless_miniontologies	.
-local:align	local:AM-MNR	local:automatically	.
-local:integrate	local:AM-MNR	local:others_data	.
-local:anyone	rdfs:member	local:anyone_’	.
-local:align	local:AM-MNR	local:having	.
-local:creating	vn.role:Agent	local:ordinary_users	.
-local:align	local:AM-MNR	local:graphically	.
-local:ontology	vn.role:Experiencer	local:traditional_approach	.
-local:“_semantic	rdfs:member	local:“_semantic_web	.
-local:anyone_’	rdfs:subClassOf	local:’	.
-local:define	vn.role:Agent	local:ontologies	.
-local:new_local_schema	rdfs:subClassOf	local:schema	.
-local:ontology	vn.role:Theme	local:engineering_add	.
-local:web	rdfs:member	local:web_approach	.
-local:multiple_sources	rdfs:subClassOf	local:sources	.
-local:resulting_web	rdfs:subClassOf	local:web	.
-local:automatically_align_with_users	local:with_users	local:automatically_align	.
-local:mined	local:AM-TMP	local:then	.
-local:related	rdfs:member	local:related_data	.
-local:new	rdfs:member	local:new_data	.
-local:equivalency_statements	rdfs:subClassOf	local:statements	.
+local:new_data	rdfs:subClassOf	local:data	.
+local:hierarchies_of_classes_ontologies_are_data_about_data	rdfs:member	local:data	.
+local:countless_miniontologies_that_semantic_web_approach_yields	rdfs:member	local:countless_miniontologies	.
+local:s8.1	rdf:subject	local:ordinary_users	.
+local:without_having_to_know_anything_about_ontologies	rdfs:member	local:anything	.
+local:countless_miniontologies	rdfs:member	local:countless	.
 local:semantic_web_approach	rdfs:subClassOf	local:approach	.
-local:help	vn.role:Beneficiary	local:find	.
-local:ordinary_users	rdfs:member	local:ordinary_users_data	.
-local:engineering_add	rdfs:subClassOf	local:add	.
-local:related_data_with_users	local:with_users	local:related_data	.
-local:automatically_align	rdfs:subClassOf	local:align	.
-local:traditional	rdfs:member	local:traditional_approach	.
-local:look	vn.role:Stimulus	local:anyone_ontology	.
-local:look	local:AM-MOD	local:may	.
-local:spreadsheetlike_view	rdfs:subClassOf	local:view	.
-local:add	local:AM-LOC	local:traditional_approach_to_ontology	.
-local:’	rdfs:member	local:’_ontologies	.
-local:’_ontologies	rdfs:subClassOf	local:ontologies	.
-local:”_yields	rdfs:subClassOf	local:yields	.
-local:translating_between_countless_miniontologies	local:translating_between	local:countless_miniontologies	.
-local:others_new_concepts_into_existing_hierarchy	local:into_existinghierarchy	local:others_new_concepts	.
-local:“_semantic_web	rdfs:subClassOf	local:web	.
-local:integrate	local:AM-MOD	local:may	.
-local:related_data_with_users	local:relateddata_with	local:users	.
-local:attributes_ontologies	rdfs:subClassOf	local:ontologies	.
-local:multiple_sources_in_simple_spreadsheetlike_view	local:multiplesources_in	local:simple_spreadsheetlike_view	.
-local:align	vn.role:Agent	local:approach_ordinary_users	.
-local:emerging	vn.role:Theme	local:	.
-local:anyone_ontology	rdfs:subClassOf	local:ontology	.
+local:tool_translating	rdfs:member	local:tool	.
+local:s10	rdf:subject	local:paper	.
+local:new_local_schema_from_scratch	rdfs:member	local:new_local_schema	.
+local:s5	rdf:subject	local:engineering_experts	.
+local:others_data	rdfs:subClassOf	local:data	.
+local:simple_spreadsheetlike	rdfs:member	local:simple	.
 local:simple_spreadsheetlike	rdfs:subClassOf	local:spreadsheetlike	.
-local:resulting_web_of_equivalency_statements	local:resultingweb_of	local:equivalency_statements	.
-local:find	vn.role:Agent	local:users	.
-local:related_data	rdfs:subClassOf	local:data	.
+local:semantic_web_approach_yields	rdfs:subClassOf	local:yields	.
+local:approach_yields	rdfs:subClassOf	local:yields	.
+local:web_approach	rdfs:subClassOf	local:approach	.
+local:s8	rdf:object	local:anyones_ontology	.
+local:equivalency_statements	rdfs:subClassOf	local:statements	.
+local:s12	rdf:object	local:data_from_multiple_sources_in_a_simple_spreadsheetlike_view	.
+local:new_local_schema_from_scratch	rdfs:member	local:scratch	.
+local:ordinary_users_immediate_needs	rdfs:member	local:needs	.
+local:ordinary_users_data	rdfs:subClassOf	local:data	.
+local:data_from_multiple_sources	rdfs:member	local:data	.
+local:s9.1	rdf:subject	local:users_data	.
+local:s8	rdf:subject	local:ordinary_users	.
+local:s4	rdf:predicate	local:add	.
+local:data_from_multiple_sources_in_a_simple_spreadsheetlike_view	rdfs:member	local:multiple_sources	.
+local:ordinary_users_may_not_look_at_anyones_ontology_before_creating_theirs_instead	rdfs:member	local:anyones_ontology	.
+local:hierarchies_of_attributes_ontologies_are_data_about_data	rdfs:member	local:hierarchies	.
+local:s4.2	rdf:subject	local:hierarchy	.
+local:semantic_web_approach_yields	rdfs:subClassOf	local:web_approach_yields	.
+local:tool_translating_between_the_countless_miniontologies_that_the_semantic_web_approach_yields	rdfs:member	local:semantic_web_approach_yields	.
+local:s14.1	rdf:object	local:resulting_web_of_equivalency_statements	.
+local:resulting_web_of_equivalency_statements	rdfs:member	local:resulting_web	.
+local:s9	local:AM-MNR	local:without_worrying_how_ordinary_users_data	.
+local:s8.1	rdf:predicate	local:create	.
+local:s6	rdf:object	local:ordinary_users_immediate_needs	.
+local:new_local_schema	rdfs:member	local:new_local	.
+local:carefully_analyzing_others_ontologies_into_the_existing_hierarchy	rdfs:member	local:others_ontologies	.
+local:carefully_analyzing_fitting_others_new_concepts_into_the_existing_hierarchy	rdfs:member	local:new_concepts	.
+local:hierarchies_of_classes_ontologies	rdfs:member	local:classes_ontologies	.
+local:data_from_multiple_sources	rdfs:member	local:multiple_sources	.
+local:hierarchies_of_attributes_ontologies_are_data_about_data	rdfs:member	local:data	.
+local:hierarchies_of_attributes_ontologies_are_metadata	rdfs:member	local:attributes_ontologies	.
+local:multiple_sources_in_simple_spreadsheetlike_view	rdfs:member	local:simple_spreadsheetlike_view	.
+local:s8.2	rdf:object	local:new_local_schema_from_scratch	.
+local:s14.2	rdf:subject	local:related_data_with_users_own	.
+local:s5	local:AM-MNR	local:carefully_analyzing_fitting_others_new_concepts_into_the_existing_hierarchy	.
+local:s6.2	rdf:subject	local:ordinary_users_data	.
+local:new_data	rdfs:member	local:new	.
+local:semantic_web_approach	rdfs:member	local:semantic_web	.
+local:multiple_sources	rdfs:subClassOf	local:sources	.
+local:attributes_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s6.2	local:AM-TMP	local:day	.
+local:s5	rdf:predicate	local:add	.
+local:s2	rdf:predicate	local:define	.
+local:carefully_analyzing_fitting_others_new_concepts_into_the_existing_hierarchy	rdfs:member	local:others	.
+local:s2	rdf:subject	local:ontologies	.
+local:hierarchies_of_classes_ontologies	rdfs:member	local:hierarchies	.
+local:translating_between_countless_miniontologies	rdfs:member	local:translating	.
+local:instead_ordinary	rdfs:member	local:instead	.
+local:engineering_experts	rdfs:subClassOf	local:experts	.
+local:tool_translating_between_the_countless_miniontologies_that_the_semantic_web_approach_yields	rdfs:member	local:countless_miniontologies	.
+local:ordinary_users_may_not_look_at_anyones_ontology_before_creating_theirs_instead	rdfs:member	local:theirs	.
+local:web_approach	rdfs:member	local:web	.
+local:s1	rdf:predicate	local:define	.
+local:related_data_with_users_own	rdfs:member	local:users	.
+local:s13.1	rdf:subject	local:webscripter	.
+local:classes_ontologies	rdfs:member	local:classes	.
+local:spreadsheetlike_view	rdfs:subClassOf	local:view	.
+local:ordinary_users	rdfs:member	local:ordinary	.
+local:s13.3	rdf:object	local:s13.4	.
+local:s13.4	rdf:predicate	local:relate	.
+local:s13.2	rdf:subject	local:s13.3	.
+local:s4.2	rdf:predicate	local:exist	.
+local:engineering_experts	rdfs:member	local:engineering	.
+local:s12	local:AM-MNR	local:graphically	.
+local:anything_about_ontologies	rdfs:member	local:ontologies	.
+local:s10.1	rdf:predicate	local:translate	.
+local:s9	rdf:predicate	local:address	.
+local:s14.2	local:AM-MNR	local:automatically	.
+local:ordinary_users_data	rdfs:member	local:ordinary_users	.
+local:s4.1	rdf:object	local:s4.2	.
+local:others_ontologies	rdfs:subClassOf	local:ontologies	.
+local:anyones_ontology	rdfs:member	local:anyones	.
+local:s7	rdf:predicate	local:emerge	.
+local:ontologies_and_data	rdfs:member	local:data	.
 local:traditional_approach	rdfs:subClassOf	local:approach	.
-local:look	vn.role:Experiencer	local:ordinary_users	.
-local:define	vn.role:Theme	local:data_about_data	.
-local:new	rdfs:member	local:new_concepts	.
-local:immediate	rdfs:member	local:immediate_needs	.
-local:attributes	rdfs:member	local:attributes_ontologies	.
-local:“_semantic_web_approach	rdfs:subClassOf	local:approach	.
-local:traditional_approach_”	rdfs:subClassOf	local:”	.
-local:carefully_analyzing_into_existing_hierarchy	local:into_existinghierarchy	local:carefully_analyzing	.
-local:translating	local:AM-LOC	local:countless_miniontologies	.
-local:define	vn.role:Theme	local:new_local_schema_from_scratch	.
-local:addresses	vn.role:Theme	local:ordinary_users	.
-local:new_local_schema_from_scratch	local:from_scratch	local:new_local_schema	.
+local:equivalency_statements	rdfs:member	local:equivalency	.
+local:s0	rdf:predicate	local:define	.
+local:hierarchies_of_attributes_ontologies_are_data_about_data	rdfs:member	local:attributes_ontologies	.
+local:s13.1	local:AM-TMP	local:then	.
+local:how_ordinary	rdfs:subClassOf	local:ordinary	.
+local:hierarchies_of_attributes_ontologies_are_metadata	rdfs:member	local:metadata	.
+local:immediate_needs	rdfs:member	local:immediate	.
+local:countless_miniontologies	rdfs:subClassOf	local:miniontologies	.
+local:s13.1	rdf:predicate	local:mine	.
+local:tool_translating	rdfs:member	local:translating	.
+local:s8	rdf:predicate	local:not_look	.
+local:carefully_analyzing_into_existing_hierarchy	rdfs:member	local:s4.2	.
+local:classes_ontologies	rdfs:subClassOf	local:ontologies	.
+local:s10	rdf:predicate	local:describe	.
+local:s8	local:AM-TMP	local:creating_theirs_instead_ordinary_users_may	.
+local:s3	rdf:subject	local:ontologies	.
+local:s12	rdf:predicate	local:align	.
+local:may_not_instead_look_at_anyones_ontology	rdfs:member	local:anyones_ontology	.
+local:s5.1	rdf:object	local:s5.2	.
+local:hierarchies_of_attributes_ontologies_are_metadata	rdfs:member	local:hierarchies	.
+local:s14.1	rdf:predicate	local:mine	.
+local:hierarchies_of_classes_ontologies_are_metadata	rdfs:member	local:metadata	.
+local:s4.2	rdfs:subClassOf	local:hierarchy	.
+local:new_concepts	rdfs:member	local:new	.
+local:resulting_web_of_equivalency_statements	rdfs:member	local:equivalency_statements	.
+local:s6.2	rdf:predicate	local:integrate	.
+local:s10.1	rdf:object	local:countless_miniontologies_that_the_semantic_web_approach_yields	.
+local:s13.1	local:AM-PNC	local:s13.2	.
+local:s4.1	rdf:subject	local:engineering_experts	.
+local:attributes_ontologies	rdfs:member	local:attributes	.
+local:hierarchies_of_classes_ontologies_are_data_about_data	rdfs:member	local:classes_ontologies	.
+local:s6.1	rdf:subject	local:ordinary_users	.
+local:s8.2	rdf:subject	local:ordinary_users	.
+local:resulting_web	rdfs:subClassOf	local:web	.
+local:s14.2	rdf:predicate	local:align	.
+local:semantic_web	rdfs:subClassOf	local:web	.
+local:may_not_instead_look_at_anyones_ontology	rdfs:member	local:may_not_instead_look	.
+local:s10	rdf:object	local:tool_translating_between_the_countless_miniontologies_that_the_semantic_web_approach_yields	.
+local:new_local_schema	rdfs:subClassOf	local:schema	.
+local:new_local_schema	rdfs:subClassOf	local:local_schema	.
+local:tool_translating_between_the_countless_miniontologies_that_the_semantic_web_approach_yields	rdfs:member	local:tool	.
+local:ordinary_users_data	rdfs:subClassOf	local:users_data	.
+local:local_schema	rdfs:member	local:local	.
+local:s12	rdf:subject	local:ordinary_users	.
+local:new_concepts_into_existing_hierarchy	rdfs:member	local:s5.2	.
+local:countless_miniontologies_that_the_semantic_web_approach_yields	rdfs:member	local:countless_miniontologies	.
+local:s13.2	rdf:predicate	local:help	.
+local:s14	rdf:predicate	local:result	.
+local:s8	local:AM-MOD	local:may	.
+local:instead_ordinary_users	rdfs:member	local:instead_ordinary	.
+local:s8.1	rdf:object	local:theirs	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:s13	rdf:predicate	local:result	.
+local:web_approach_yields	rdfs:member	local:web_approach	.
+local:related_data_with_users	rdfs:member	local:related_data	.
+local:s12	local:AM-MNR	local:without_having_to_know_anything_about_ontologies	.
+local:anything_about_ontologies	rdfs:member	local:anything	.
+local:s3	rdf:object	local:hierarchies_of_classes_ontologies_are_metadata	.
+local:related_data_with_users	rdfs:member	local:users	.
+local:spreadsheetlike_view	rdfs:member	local:spreadsheetlike	.
+local:s9	rdf:object	local:ordinary_users	.
+local:s5.2	rdfs:subClassOf	local:hierarchy	.
+local:s4.1	local:AM-MNR	local:carefully	.
+local:s9.1	local:AM-TMP	local:day	.
+local:s6.1	rdf:predicate	local:worry	.
+local:s6	rdf:subject	local:scratch	.
+local:s5.1	rdf:predicate	local:analyze	.
+local:s13.1	rdf:object	local:resulting_web_of_equivalency_statements	.
+local:data_from_multiple_sources_in_a_simple_spreadsheetlike_view	rdfs:member	local:data	.
+local:web_approach_yields	rdfs:subClassOf	local:yields	.
+local:related_data	rdfs:subClassOf	local:data	.
+local:anyones_ontology	rdfs:subClassOf	local:ontology	.
+local:new_concepts	rdfs:subClassOf	local:concepts	.
+local:fitting_others	rdfs:subClassOf	local:others	.
+local:others_ontologies	rdfs:member	local:others	.
+local:hierarchies_of_classes_ontologies_are_metadata	rdfs:member	local:classes_ontologies	.
+local:s9	rdf:subject	local:immediate_needs	.
+local:instead_ordinary_users	rdfs:subClassOf	local:users	.
+local:ontologies_and_data	rdfs:member	local:ontologies	.
+local:s1	rdf:object	local:hierarchies_of_attributes_ontologies_are_metadata	.
+local:related_data_with_users_own	rdfs:member	local:data	.
+local:simple_spreadsheetlike_view	rdfs:subClassOf	local:spreadsheetlike_view	.
+local:s6.2	local:AM-MNR	local:others_data	.
+local:users_data	rdfs:member	local:users	.
+local:multiple_sources_in_simple_spreadsheetlike_view	rdfs:member	local:multiple_sources	.
+local:local_schema	rdfs:subClassOf	local:schema	.
+local:not_instead_look	rdfs:subClassOf	local:instead_look	.
+local:carefully_analyzing_fitting_others_new_concepts_into_the_existing_hierarchy	rdfs:member	local:hierarchy	.
+local:hierarchies_of_classes_ontologies_are_data_about_data	rdfs:member	local:hierarchies	.
+local:s5	rdf:object	local:new_data	.
+local:s12.1	rdf:subject	local:anything	.
+local:countless_miniontologies_that_semantic_web_approach_yields	rdfs:member	local:semantic_web_approach_yields	.
+local:s8.2	local:AM-ADV	local:simply	.
+local:multiple_sources	rdfs:member	local:multiple	.
+local:s13.4	rdf:subject	local:ontologies_and_data	.
+local:immediate_needs	rdfs:subClassOf	local:needs	.
+local:ordinary_users	rdfs:subClassOf	local:users	.
+local:s14.1	local:AM-PNC	local:s14.2	.
+local:s12.1	rdf:object	local:ontologies	.
+local:s14.1	local:AM-TMP	local:then	.
+local:s5.1	local:AM-MNR	local:carefully	.
+local:s11	rdf:subject	local:paper	.
+local:traditional_approach_to_ontology	rdfs:member	local:ontology	.
+local:s6.2	local:AM-MOD	local:may	.
+local:s11	rdf:object	local:webscripter	.
+local:s3	rdf:predicate	local:define	.
+local:data_about_data	rdfs:member	local:data	.
+local:s13.3	rdf:subject	local:users	.
+local:s9.1	local:AM-MNR	local:others_data	.
+local:instead_may	rdfs:subClassOf	local:may	.
+local:hierarchies_of_attributes_ontologies	rdfs:member	local:hierarchies	.
+local:s4	local:AM-MNR	local:carefully_analyzing_others_ontologies_into_the_existing_hierarchy	.
+local:hierarchies_of_classes_ontologies_are_metadata	rdfs:member	local:hierarchies	.
+local:s11	rdf:predicate	local:describe	.
+local:s4	rdf:subject	local:engineering_experts	.
+local:s14.1	rdf:subject	local:webscripter	.
+local:carefully_analyzing_into_existing_hierarchy	rdfs:member	local:carefully_analyzing	.
+local:others_data	rdfs:member	local:others	.
+local:hierarchies_of_attributes_ontologies	rdfs:member	local:attributes_ontologies	.
+local:s5.1	rdf:subject	local:new_concepts	.
+local:data_from_multiple_sources_in_a_simple_spreadsheetlike_view	rdfs:member	local:simple_spreadsheetlike_view	.
+local:ordinary_users_immediate_needs	rdfs:member	local:ordinary_users	.
+local:s5.2	rdf:subject	local:hierarchy	.
+local:s13.3	rdf:predicate	local:find	.
+local:s7	rdf:subject	local:semantic_web	.
+local:carefully_analyzing_others_ontologies_into_the_existing_hierarchy	rdfs:member	local:hierarchy	.
+local:ordinary_users_may_not_look_at_anyones_ontology_before_creating_theirs_instead	rdfs:member	local:ordinary_users	.
+local:s8.2	local:AM-MOD	local:may	.
+local:s12	local:AM-LOC	local:approach	.
+local:simple_spreadsheetlike_view	rdfs:member	local:simple_spreadsheetlike	.
+local:instead_look	rdfs:subClassOf	local:look	.
+local:s6	rdf:predicate	local:address	.
+local:s12.1	rdf:predicate	local:know	.
+local:approach_yields	rdfs:member	local:approach	.
+local:web_approach_yields	rdfs:subClassOf	local:approach_yields	.
+local:s5.2	rdf:predicate	local:exist	.
+local:without_having_to_know_anything_about_ontologies	rdfs:member	local:ontologies	.
+local:s1	rdf:subject	local:ontologies	.
+local:s0	rdf:subject	local:ontologies	.
+local:may_not_instead_look	rdfs:subClassOf	local:not_instead_look	.
+local:users_data	rdfs:subClassOf	local:data	.
+local:s2	rdf:object	local:hierarchies_of_attributes_ontologies_are_data_about_data	.
+local:s4	local:AM-LOC	local:traditional_approach_to_ontology	.
+local:traditional_approach_to_ontology	rdfs:member	local:traditional_approach	.
+local:new_local	rdfs:member	local:new	.
+local:s5	local:AM-LOC	local:traditional_approach_to_ontology	.
+local:semantic_web_approach_yields	rdfs:member	local:semantic_web_approach	.
+local:new_concepts_into_existing_hierarchy	rdfs:member	local:new_concepts	.
+local:translating_between_countless_miniontologies	rdfs:member	local:countless_miniontologies	.
+local:s6	local:AM-MNR	local:without_worrying_if_ordinary_users_data	.
+local:s9.1	rdf:predicate	local:integrate	.
+local:s0	rdf:object	local:hierarchies_of_classes_ontologies_are_data_about_data	.
+local:traditional_approach	rdfs:member	local:traditional	.
+local:s8.2	local:AM-ADV	local:ordinary_users_may_not_look_at_anyones_ontology_before_creating_theirs_instead	.
+local:carefully_analyzing	rdfs:subClassOf	local:analyzing	.
+local:instead_ordinary	rdfs:subClassOf	local:ordinary	.
+local:resulting_web_of_equivalency_statements	rdfs:member	local:web	.
+local:countless_miniontologies_that_the_semantic_web_approach_yields	rdfs:member	local:semantic_web_approach_yields	.
+local:simple_spreadsheetlike_view	rdfs:subClassOf	local:view	.
+local:s4.1	rdf:predicate	local:analyze	.

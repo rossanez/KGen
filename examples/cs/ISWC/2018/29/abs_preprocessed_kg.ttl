@@ -1,518 +1,891 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"our framework can significantly improve the quality of approximate answers"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"the results show that our framework can significantly improve the quality of approximate answers"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"our framework can significantly speed up the generation of alternative queries"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"the results show that our framework can significantly speed up the generation of alternative queries"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"validate the effectiveness and efficiency of our framework our conduct extensive experiments on the realworld rdf dataset"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"users recognize users expectations"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"answers which helps users recognize users expectations"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"returned answers which helps users recognize users expectations"	.
+
+local:s13.2	a	rdf:Statement	;
+	rdfs:label	"users refine the original query"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"answers which helps users refine the original query finally"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"returned answers which helps users refine the original query"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"we also generate alternative queries for returned answers"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"then given a sparql query"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"a sparql query that leveraging the translation mechanism"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a sparql query that compute approximate answers by leveraging the translation mechanism"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"a sparql query that returns an empty set we partition an empty set into several parts"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"a sparql query that returns an empty set we partition an empty set into several parts"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"a sparql query that leveraging rdf embeddings"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"a sparql query that compute approximate answers by leveraging rdf embeddings"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"translational embedding model which specially designed for sparql queries"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"an entity context preserving translational embedding model"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"we first project the rdf graph into a continuous vector space by an entity context"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose an rdf graph embedding"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"an rdf graph embedding based framework solve the sparql emptyanswer problem in terms of a continuous vector space"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"based framework"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"empty answers given a sparql query"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"a common query problem for users face with empty answers given a sparql query"	.
+
+local:s1.2	a	rdf:Statement	;
+	rdfs:label	"a sparql query that obtain a nonempty set"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"a sparql query that refine the query to obtain a nonempty set"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"a sparql query that returns nothing how to refine the query to obtain a nonempty set"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"users issuing sparql queries"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"rdf data sources where users discover items of interest by issuing sparql queries"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the lod cloud offers a plethora of rdf data sources where users discover items of interest by issuing sparql queries"	.
+
+
 #### Classes ####
 
-local:lod_cloud	rdfs:label	"lod cloud"	.
+local:framework	a	rdf:Class	;
+	rdfs:label	"framework"	.
 
-local:cloud	rdfs:label	"cloud"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:lod	rdfs:label	"lod"	.
+local:quality_of_approximate_answers	a	rdf:Class	;
+	rdfs:label	"quality of approximate answers"	.
 
-local:offers	rdfs:label	"offers"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:rdf_data_sources	rdfs:label	"rdf data sources"	.
+local:approximate_answers	a	rdf:Class	;
+	rdfs:label	"approximate answers"	.
 
-local:sources	rdfs:label	"sources"	.
+local:answers	a	rdf:Class	;
+	rdfs:label	"answers"	.
 
-local:data	rdfs:label	"data"	.
+local:approximate	a	rdf:Class	;
+	rdfs:label	"approximate"	.
 
-local:data_sources	rdfs:label	"data sources"	.
+local:significantly	a	rdf:Class	;
+	rdfs:label	"significantly"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:sparql_queries	rdfs:label	"sparql queries"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:rdf_data	rdfs:label	"rdf data"	.
+local:framework_can_significantly_improve_the_quality_of_approximate_answers	a	rdf:Class	;
+	rdfs:label	"framework can significantly improve the quality of approximate answers"	.
 
-local:queries	rdfs:label	"queries"	.
+local:significantly_improve	a	rdf:Class	;
+	rdfs:label	"significantly improve"	.
 
-local:where_discover	rdfs:label	"where discover"	.
+local:can_significantly_improve	a	rdf:Class	;
+	rdfs:label	"can significantly improve"	.
 
-local:discover	rdfs:label	"discover"	.
+local:speed	a	rdf:Class	;
+	rdfs:label	"speed"	.
 
-local:plethora_of_rdf_data_sources	rdfs:label	"plethora of rdf data sources"	.
+local:generation_of_alternative_queries	a	rdf:Class	;
+	rdfs:label	"generation of alternative queries"	.
 
-local:plethora	rdfs:label	"plethora"	.
+local:alternative_queries	a	rdf:Class	;
+	rdfs:label	"alternative queries"	.
 
-local:items_of_interest	rdfs:label	"items of interest"	.
+local:generation	a	rdf:Class	;
+	rdfs:label	"generation"	.
 
-local:items	rdfs:label	"items"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:interest	rdfs:label	"interest"	.
+local:alternative	a	rdf:Class	;
+	rdfs:label	"alternative"	.
 
-local:users	rdfs:label	"users"	.
+local:framework_can_significantly_speed_up_the_generation_of_alternative_queries	a	rdf:Class	;
+	rdfs:label	"framework can significantly speed up the generation of alternative queries"	.
 
-local:issuing	rdfs:label	"issuing"	.
+local:significantly_speed	a	rdf:Class	;
+	rdfs:label	"significantly speed"	.
 
-local:common_query	rdfs:label	"common query"	.
+local:can_significantly_speed	a	rdf:Class	;
+	rdfs:label	"can significantly speed"	.
 
-local:query	rdfs:label	"query"	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	a	rdf:Class	;
+	rdfs:label	"effectiveness and efficiency of our framework our conduct extensive experiments on the realworld rdf dataset"	.
 
-local:common_query_problem	rdfs:label	"common query problem"	.
+local:realworld_rdf_dataset	a	rdf:Class	;
+	rdfs:label	"realworld rdf dataset"	.
 
-local:query_problem	rdfs:label	"query problem"	.
+local:extensive_experiments	a	rdf:Class	;
+	rdfs:label	"extensive experiments"	.
 
-local:problem	rdfs:label	"problem"	.
+local:effectiveness	a	rdf:Class	;
+	rdfs:label	"effectiveness"	.
 
-local:common	rdfs:label	"common"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:common_query_problem_for_users	rdfs:label	"common query problem for users"	.
+local:efficiency	a	rdf:Class	;
+	rdfs:label	"efficiency"	.
 
-local:face	rdfs:label	"face"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:empty	rdfs:label	"empty"	.
+local:rdf_dataset	a	rdf:Class	;
+	rdfs:label	"rdf dataset"	.
 
-local:empty_answers	rdfs:label	"empty answers"	.
+local:extensive	a	rdf:Class	;
+	rdfs:label	"extensive"	.
 
-local:answers	rdfs:label	"answers"	.
+local:realworld_rdf	a	rdf:Class	;
+	rdfs:label	"realworld rdf"	.
 
-local:nonempty_set	rdfs:label	"non-empty set"	.
+local:realworld	a	rdf:Class	;
+	rdfs:label	"realworld"	.
 
-local:set	rdfs:label	"set"	.
+local:experiments	a	rdf:Class	;
+	rdfs:label	"experiments"	.
 
-local:nonempty	rdfs:label	"non-empty"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:our_conduct	a	rdf:Class	;
+	rdfs:label	"our conduct"	.
 
-local:how_refine	rdfs:label	"how refine"	.
+local:our_framework	a	rdf:Class	;
+	rdfs:label	"our framework"	.
 
-local:refine	rdfs:label	"refine"	.
+local:effectiveness_of_our_framework	a	rdf:Class	;
+	rdfs:label	"effectiveness of our framework"	.
 
-local:given	rdfs:label	"given"	.
+local:our_conduct_on_realworld_rdf_dataset	a	rdf:Class	;
+	rdfs:label	"our conduct on realworld rdf dataset"	.
 
-local:returns	rdfs:label	"returns"	.
+local:validate	a	rdf:Class	;
+	rdfs:label	"validate"	.
 
-local:nothing	rdfs:label	"nothing"	.
+local:users	a	rdf:Class	;
+	rdfs:label	"users"	.
 
-local:obtain	rdfs:label	"obtain"	.
+local:recognize	a	rdf:Class	;
+	rdfs:label	"recognize"	.
 
-local:based	rdfs:label	"based"	.
+local:users_expectations	a	rdf:Class	;
+	rdfs:label	"users expectations"	.
 
-local:paper	rdfs:label	"paper"	.
+local:expectations	a	rdf:Class	;
+	rdfs:label	"expectations"	.
 
-local:we	rdfs:label	"we"	.
+local:help	a	rdf:Class	;
+	rdfs:label	"help"	.
 
-local:framework	rdfs:label	"framework"	.
+local:return	a	rdf:Class	;
+	rdfs:label	"return"	.
 
-local:vector	rdfs:label	"vector"	.
+local:refine	a	rdf:Class	;
+	rdfs:label	"refine"	.
 
-local:vector_space	rdfs:label	"vector space"	.
+local:original_query	a	rdf:Class	;
+	rdfs:label	"original query"	.
 
-local:emptyanswer_problem	rdfs:label	"empty-answer problem"	.
+local:original	a	rdf:Class	;
+	rdfs:label	"original"	.
 
-local:sparql_emptyanswer_problem	rdfs:label	"sparql empty-answer problem"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:sparql_emptyanswer	rdfs:label	"sparql empty-answer"	.
+local:users_refine_the_original_query_finally	a	rdf:Class	;
+	rdfs:label	"users refine the original query finally"	.
 
-local:continuous_vector	rdfs:label	"continuous vector"	.
+local:finally_refine	a	rdf:Class	;
+	rdfs:label	"finally refine"	.
 
-local:continuous_vector_space	rdfs:label	"continuous vector space"	.
+local:answers_which_helps_users_refine_the_original_query	a	rdf:Class	;
+	rdfs:label	"answers which helps users refine the original query"	.
 
-local:emptyanswer	rdfs:label	"empty-answer"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:space	rdfs:label	"space"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:continuous	rdfs:label	"continuous"	.
+local:alternative_queries_for_returned_answers	a	rdf:Class	;
+	rdfs:label	"alternative queries for returned answers"	.
 
-local:solve_in_terms	rdfs:label	"solve in terms"	.
+local:returned_answers	a	rdf:Class	;
+	rdfs:label	"returned answers"	.
 
-local:solve	rdfs:label	"solve"	.
+local:returned	a	rdf:Class	;
+	rdfs:label	"returned"	.
 
-local:terms	rdfs:label	"terms"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:terms_of_continuous_vector_space	rdfs:label	"terms of continuous vector space"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:project	rdfs:label	"project"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:first	rdfs:label	"first"	.
+local:give	a	rdf:Class	;
+	rdfs:label	"give"	.
 
-local:rdf_graph	rdfs:label	"rdf graph"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:graph	rdfs:label	"graph"	.
+local:leverage	a	rdf:Class	;
+	rdfs:label	"leverage"	.
 
-local:entity	rdfs:label	"entity"	.
+local:translation_mechanism	a	rdf:Class	;
+	rdfs:label	"translation mechanism"	.
 
-local:entity_context	rdfs:label	"entity context"	.
+local:translation	a	rdf:Class	;
+	rdfs:label	"translation"	.
 
-local:translational_embedding_model	rdfs:label	"translational embedding model"	.
+local:mechanism	a	rdf:Class	;
+	rdfs:label	"mechanism"	.
 
-local:model	rdfs:label	"model"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:context	rdfs:label	"context"	.
+local:leveraging_the_translation_mechanism	a	rdf:Class	;
+	rdfs:label	"leveraging the translation mechanism"	.
 
-local:embedding_model	rdfs:label	"embedding model"	.
+local:partition	a	rdf:Class	;
+	rdfs:label	"partition"	.
 
-local:embedding	rdfs:label	"embedding"	.
+local:empty_set_into_several_parts	a	rdf:Class	;
+	rdfs:label	"empty set into several parts"	.
 
-local:translational_embedding	rdfs:label	"translational embedding"	.
+local:several_parts	a	rdf:Class	;
+	rdfs:label	"several parts"	.
 
-local:translational	rdfs:label	"translational"	.
+local:parts	a	rdf:Class	;
+	rdfs:label	"parts"	.
 
-local:specially_designed	rdfs:label	"specially designed"	.
+local:several	a	rdf:Class	;
+	rdfs:label	"several"	.
 
-local:designed	rdfs:label	"designed"	.
+local:empty_set	a	rdf:Class	;
+	rdfs:label	"empty set"	.
 
-local:continuous_vector_space_by_entity_context	rdfs:label	"continuous vector space by entity context"	.
+local:empty	a	rdf:Class	;
+	rdfs:label	"empty"	.
 
-local:entity_context_preserving	rdfs:label	"entity context preserving"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:preserving	rdfs:label	"preserving"	.
+local:set_into_several_parts	a	rdf:Class	;
+	rdfs:label	"set into several parts"	.
 
-local:specially_designed_for_sparql_queries	rdfs:label	"specially designed for sparql queries"	.
+local:empty_set_partition_an_empty_set_into_several_parts	a	rdf:Class	;
+	rdfs:label	"empty set partition an empty set into several parts"	.
 
-local:specially	rdfs:label	"specially"	.
+local:set_partition	a	rdf:Class	;
+	rdfs:label	"set partition"	.
 
-local:then	rdfs:label	"then"	.
+local:empty_set_partition	a	rdf:Class	;
+	rdfs:label	"empty set partition"	.
 
-local:empty_set	rdfs:label	"empty set"	.
+local:rdf_embeddings	a	rdf:Class	;
+	rdfs:label	"rdf embeddings"	.
 
-local:compute_approximate_answers	rdfs:label	"compute approximate answers"	.
+local:embeddings	a	rdf:Class	;
+	rdfs:label	"embeddings"	.
 
-local:several	rdfs:label	"several"	.
+local:leveraging_rdf_embeddings	a	rdf:Class	;
+	rdfs:label	"leveraging rdf embeddings"	.
 
-local:several_parts	rdfs:label	"several parts"	.
+local:translational_embedding_model	a	rdf:Class	;
+	rdfs:label	"translational embedding model"	.
 
-local:translation	rdfs:label	"translation"	.
+local:translational_embedding	a	rdf:Class	;
+	rdfs:label	"translational embedding"	.
 
-local:translation_mechanism	rdfs:label	"translation mechanism"	.
+local:embedding	a	rdf:Class	;
+	rdfs:label	"embedding"	.
 
-local:compute_approximate	rdfs:label	"compute approximate"	.
+local:translational	a	rdf:Class	;
+	rdfs:label	"translational"	.
 
-local:approximate	rdfs:label	"approximate"	.
+local:embedding_model	a	rdf:Class	;
+	rdfs:label	"embedding model"	.
 
-local:rdf_embeddings	rdfs:label	"rdf embeddings"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:embeddings	rdfs:label	"embeddings"	.
+local:design	a	rdf:Class	;
+	rdfs:label	"design"	.
 
-local:parts	rdfs:label	"parts"	.
+local:sparql_queries	a	rdf:Class	;
+	rdfs:label	"sparql queries"	.
 
-local:approximate_answers	rdfs:label	"approximate answers"	.
+local:specially	a	rdf:Class	;
+	rdfs:label	"specially"	.
 
-local:mechanism	rdfs:label	"mechanism"	.
+local:entity_context	a	rdf:Class	;
+	rdfs:label	"entity context"	.
 
-local:compute	rdfs:label	"compute"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:empty_empty_set	rdfs:label	"empty empty set"	.
+local:context	a	rdf:Class	;
+	rdfs:label	"context"	.
 
-local:query_partition	rdfs:label	"query partition"	.
+local:preserve	a	rdf:Class	;
+	rdfs:label	"preserve"	.
 
-local:partition	rdfs:label	"partition"	.
+local:project	a	rdf:Class	;
+	rdfs:label	"project"	.
 
-local:empty_set_into_several_parts	rdfs:label	"empty set into several parts"	.
+local:rdf_graph_continuous_vector_space_by_an_entity_context	a	rdf:Class	;
+	rdfs:label	"rdf graph continuous vector space by an entity context"	.
 
-local:set_into_several_parts	rdfs:label	"set into several parts"	.
+local:continuous_vector_space	a	rdf:Class	;
+	rdfs:label	"continuous vector space"	.
 
-local:leveraging	rdfs:label	"leveraging"	.
+local:vector_space	a	rdf:Class	;
+	rdfs:label	"vector space"	.
 
-local:generate	rdfs:label	"generate"	.
+local:vector	a	rdf:Class	;
+	rdfs:label	"vector"	.
 
-local:also	rdfs:label	"also"	.
+local:continuous_vector	a	rdf:Class	;
+	rdfs:label	"continuous vector"	.
 
-local:returned	rdfs:label	"returned"	.
+local:continuous	a	rdf:Class	;
+	rdfs:label	"continuous"	.
 
-local:returned_answers	rdfs:label	"returned answers"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:alternative_queries	rdfs:label	"alternative queries"	.
+local:graph_continuous_vector_space	a	rdf:Class	;
+	rdfs:label	"graph continuous vector space"	.
 
-local:users_expectations	rdfs:label	"users expectations"	.
+local:rdf_graph_continuous_vector_space	a	rdf:Class	;
+	rdfs:label	"rdf graph continuous vector space"	.
 
-local:expectations	rdfs:label	"expectations"	.
+local:rdf_graph_continuous_vector_space_by_entity_context	a	rdf:Class	;
+	rdfs:label	"rdf graph continuous vector space by entity context"	.
 
-local:alternative	rdfs:label	"alternative"	.
+local:first	a	rdf:Class	;
+	rdfs:label	"first"	.
 
-local:original_query	rdfs:label	"original query"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:original	rdfs:label	"original"	.
+local:rdf_graph_embedding	a	rdf:Class	;
+	rdfs:label	"rdf graph embedding"	.
 
-local:finally_refine	rdfs:label	"finally refine"	.
+local:rdf_graph	a	rdf:Class	;
+	rdfs:label	"rdf graph"	.
 
-local:alternative_queries_for_returned_answers	rdfs:label	"alternative queries for returned answers"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:helps	rdfs:label	"helps"	.
+local:graph_embedding	a	rdf:Class	;
+	rdfs:label	"graph embedding"	.
 
-local:recognize	rdfs:label	"recognize"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:finally_query	rdfs:label	"finally query"	.
+local:rdf_graph_embedding_based_framework	a	rdf:Class	;
+	rdfs:label	"rdf graph embedding based framework"	.
 
-local:original_finally_query	rdfs:label	"original finally query"	.
+local:based_framework	a	rdf:Class	;
+	rdfs:label	"based framework"	.
 
-local:realworld_rdf_dataset	rdfs:label	"real-world rdf dataset"	.
+local:embedding_based_framework	a	rdf:Class	;
+	rdfs:label	"embedding based framework"	.
 
-local:dataset	rdfs:label	"dataset"	.
+local:solve	a	rdf:Class	;
+	rdfs:label	"solve"	.
 
-local:rdf_dataset	rdfs:label	"rdf dataset"	.
+local:sparql_emptyanswer_problem_in_terms_of_a_continuous_vector_space	a	rdf:Class	;
+	rdfs:label	"sparql emptyanswer problem in terms of a continuous vector space"	.
 
-local:realworld	rdfs:label	"real-world"	.
+local:sparql_emptyanswer_problem	a	rdf:Class	;
+	rdfs:label	"sparql emptyanswer problem"	.
 
-local:realworld_rdf	rdfs:label	"real-world rdf"	.
+local:terms	a	rdf:Class	;
+	rdfs:label	"terms"	.
 
-local:extensive_experiments	rdfs:label	"extensive experiments"	.
+local:emptyanswer_problem	a	rdf:Class	;
+	rdfs:label	"emptyanswer problem"	.
 
-local:experiments	rdfs:label	"experiments"	.
+local:emptyanswer	a	rdf:Class	;
+	rdfs:label	"emptyanswer"	.
 
-local:extensive	rdfs:label	"extensive"	.
+local:problem	a	rdf:Class	;
+	rdfs:label	"problem"	.
 
-local:our_conduct	rdfs:label	"our conduct"	.
+local:sparql_emptyanswer	a	rdf:Class	;
+	rdfs:label	"sparql emptyanswer"	.
 
-local:conduct	rdfs:label	"conduct"	.
+local:sparql_emptyanswer_problem_in_terms	a	rdf:Class	;
+	rdfs:label	"sparql emptyanswer problem in terms"	.
 
-local:our_framework	rdfs:label	"our framework"	.
+local:terms_of_continuous_vector_space	a	rdf:Class	;
+	rdfs:label	"terms of continuous vector space"	.
 
-local:effectiveness_of_our_framework	rdfs:label	"effectiveness of our framework"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:effectiveness	rdfs:label	"effectiveness"	.
+local:empty_answers	a	rdf:Class	;
+	rdfs:label	"empty answers"	.
 
-local:extensive_experiments_on_realworld_rdf_dataset	rdfs:label	"extensive experiments on real-world rdf dataset"	.
+local:common_query_problem_for_users	a	rdf:Class	;
+	rdfs:label	"common query problem for users"	.
 
-local:validate	rdfs:label	"validate"	.
+local:common_query_problem	a	rdf:Class	;
+	rdfs:label	"common query problem"	.
 
-local:show	rdfs:label	"show"	.
+local:common_query	a	rdf:Class	;
+	rdfs:label	"common query"	.
 
-local:results	rdfs:label	"results"	.
+local:common	a	rdf:Class	;
+	rdfs:label	"common"	.
 
-local:significantly_improve	rdfs:label	"significantly improve"	.
+local:query_problem	a	rdf:Class	;
+	rdfs:label	"query problem"	.
 
-local:improve	rdfs:label	"improve"	.
+local:face	a	rdf:Class	;
+	rdfs:label	"face"	.
 
-local:can_significantly_improve	rdfs:label	"can significantly improve"	.
+local:empty_answers_given_a_sparql_query	a	rdf:Class	;
+	rdfs:label	"empty answers given a sparql query"	.
 
-local:quality_of_approximate_answers	rdfs:label	"quality of approximate answers"	.
+local:empty_answers_given_sparql_query	a	rdf:Class	;
+	rdfs:label	"empty answers given sparql query"	.
 
-local:quality	rdfs:label	"quality"	.
+local:obtain	a	rdf:Class	;
+	rdfs:label	"obtain"	.
 
-local:can	rdfs:label	"can"	.
+local:nonempty_set	a	rdf:Class	;
+	rdfs:label	"nonempty set"	.
 
-local:significantly	rdfs:label	"significantly"	.
+local:nonempty	a	rdf:Class	;
+	rdfs:label	"nonempty"	.
 
-local:significantly_speed	rdfs:label	"significantly speed"	.
+local:obtain_a_nonempty_set	a	rdf:Class	;
+	rdfs:label	"obtain a nonempty set"	.
 
-local:speed	rdfs:label	"speed"	.
+local:nothing_how_to_refine_the_query_to_obtain_a_nonempty_set	a	rdf:Class	;
+	rdfs:label	"nothing how to refine the query to obtain a nonempty set"	.
 
-local:can_significantly_speed	rdfs:label	"can significantly speed"	.
+local:nothing	a	rdf:Class	;
+	rdfs:label	"nothing"	.
 
-local:generation_of_alternative_queries	rdfs:label	"generation of alternative queries"	.
+local:how_refine	a	rdf:Class	;
+	rdfs:label	"how refine"	.
 
-local:generation	rdfs:label	"generation"	.
+local:issue	a	rdf:Class	;
+	rdfs:label	"issue"	.
 
-#### Properties ####
+local:discover	a	rdf:Class	;
+	rdfs:label	"discover"	.
+
+local:items_of_interest	a	rdf:Class	;
+	rdfs:label	"items of interest"	.
+
+local:interest	a	rdf:Class	;
+	rdfs:label	"interest"	.
+
+local:items	a	rdf:Class	;
+	rdfs:label	"items"	.
+
+local:rdf_data_sources	a	rdf:Class	;
+	rdfs:label	"rdf data sources"	.
+
+local:rdf_data	a	rdf:Class	;
+	rdfs:label	"rdf data"	.
+
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
+
+local:sources	a	rdf:Class	;
+	rdfs:label	"sources"	.
+
+local:data_sources	a	rdf:Class	;
+	rdfs:label	"data sources"	.
+
+local:issuing_sparql_queries	a	rdf:Class	;
+	rdfs:label	"issuing sparql queries"	.
+
+local:lod_cloud	a	rdf:Class	;
+	rdfs:label	"lod cloud"	.
+
+local:lod	a	rdf:Class	;
+	rdfs:label	"lod"	.
+
+local:cloud	a	rdf:Class	;
+	rdfs:label	"cloud"	.
+
+local:offer	a	rdf:Class	;
+	rdfs:label	"offer"	.
+
+local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	a	rdf:Class	;
+	rdfs:label	"plethora of rdf data sources where users discover items of interest"	.
+
+local:plethora	a	rdf:Class	;
+	rdfs:label	"plethora"	.
+
+local:where_discover	a	rdf:Class	;
+	rdfs:label	"where discover"	.
+
+local:plethora_of_rdf_data_sources	a	rdf:Class	;
+	rdfs:label	"plethora of rdf data sources"	.
 
 #### Mapped Relations ####
 
-local:rdf_graph	owl:sameAs	cso:rdf_graph	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:rdf_data	rdfs:label	"rdf data"	.
-local:sparql	owl:sameAs	cso:sparql	.
+local:sparql_queries	owl:sameAs	cso:sparql_queries	.
+local:rdf	owl:sameAs	cso:rdf	.
+local:rdf_data	owl:sameAs	cso:rdf_data	.
 cso:sparql_queries	rdfs:label	"sparql queries"	.
 cso:rdf	rdfs:label	"rdf"	.
-local:rdf	owl:sameAs	cso:rdf	.
-local:sparql_queries	owl:sameAs	cso:sparql_queries	.
-local:rdf_data	owl:sameAs	cso:rdf_data	.
+local:graph_embedding	owl:sameAs	cso:graph_embedding	.
+cso:rdf_data	rdfs:label	"rdf data"	.
+cso:sparql	rdfs:label	"sparql"	.
+local:rdf_graph	owl:sameAs	cso:rdf_graph	.
+local:sparql	owl:sameAs	cso:sparql	.
 cso:rdf_graph	rdfs:label	"rdf graph"	.
+cso:graph_embedding	rdfs:label	"graph embedding"	.
 
 #### Relations ####
 
-local:recognize	vn.role:Theme	local:users_expectations	.
-local:generate	local:AM-DIS	local:also	.
-local:finally_query	rdfs:subClassOf	local:query	.
-local:translational_embedding_model	rdfs:subClassOf	local:model	.
-local:vector_space	rdfs:subClassOf	local:space	.
-local:translational_embedding	rdfs:subClassOf	local:embedding	.
-local:based	vn.role:Experiencer	local:we	.
-local:rdf_dataset	rdfs:subClassOf	local:dataset	.
-local:empty_answers	rdfs:subClassOf	local:answers	.
-local:continuous_vector_space_by_entity_context	local:by_entitycontext	local:continuous_vector_space	.
-local:terms_of_continuous_vector_space	local:of_continuousvectorspace	local:terms	.
-local:project	vn.role:Agent	local:we	.
-local:returns	vn.role:Agent	local:sparql_query	.
-local:designed	local:AM-MNR	local:specially	.
-local:empty	rdfs:member	local:empty_set	.
-local:where_discover	rdfs:subClassOf	local:discover	.
+local:s11	rdf:subject	local:sparql_query	.
+local:quality_of_approximate_answers	rdfs:member	local:quality	.
+local:generation_of_alternative_queries	rdfs:member	local:generation	.
+local:s16.1	rdf:predicate	local:speed	.
 local:continuous_vector	rdfs:subClassOf	local:vector	.
-local:empty_set_into_several_parts	local:into_severalparts	local:empty_set	.
-local:helps	vn.role:Beneficiary	local:recognize	.
-local:lod_cloud	rdfs:subClassOf	local:cloud	.
-local:items_of_interest	local:items_of	local:interest	.
-local:common_query	rdfs:member	local:common_query_problem	.
-local:quality_of_approximate_answers	local:of_approximateanswers	local:quality	.
-local:improve	vn.role:Agent	local:framework	.
-local:sparql_emptyanswer_problem	rdfs:subClassOf	local:emptyanswer_problem	.
-local:preserving	vn.role:Agent	local:we	.
-local:designed	vn.role:Product	local:translational_embedding_model	.
-local:designed	vn.role:Beneficiary	local:sparql_queries	.
-local:issuing	vn.role:Theme	local:users	.
-local:common_query_problem	rdfs:subClassOf	local:query_problem	.
-local:continuous	rdfs:member	local:continuous_vector	.
-local:compute_approximate_answers	rdfs:subClassOf	local:answers	.
-local:extensive_experiments	rdfs:subClassOf	local:experiments	.
-local:data	rdfs:member	local:data_sources	.
-local:preserving	vn.role:Theme	local:translational_embedding_model	.
-local:query_partition	rdfs:subClassOf	local:partition	.
-local:entity	rdfs:member	local:entity_context	.
-local:obtain	vn.role:object	local:set	.
-local:query_problem	rdfs:subClassOf	local:problem	.
-local:returns	vn.role:Theme	local:refine	.
-local:several	rdfs:member	local:several_parts	.
-local:compute	rdfs:member	local:compute_approximate	.
-local:returned	rdfs:member	local:returned_answers	.
-local:can_significantly_speed	rdfs:subClassOf	local:significantly_speed	.
-local:sparql	rdfs:member	local:sparql_queries	.
-local:refine	local:AM-PNC	local:obtain	.
-local:empty	rdfs:member	local:empty_answers	.
-local:emptyanswer	rdfs:member	local:emptyanswer_problem	.
-local:embedding	rdfs:member	local:embedding_model	.
-local:leveraging	vn.role:Theme	local:rdf_embeddings	.
-local:face	vn.role:Theme	local:sparql_query	.
-local:specially_designed	rdfs:subClassOf	local:designed	.
-local:rdf_embeddings	rdfs:subClassOf	local:embeddings	.
-local:translation_mechanism	rdfs:subClassOf	local:mechanism	.
-local:our_conduct	rdfs:subClassOf	local:conduct	.
-local:lod	rdfs:member	local:lod_cloud	.
-local:refine	local:AM-DIS	local:also	.
-local:refine	vn.role:Agent	local:sparql_query	.
-local:validate	vn.role:Theme	local:extensive_experiments_on_realworld_rdf_dataset	.
-local:refine	vn.role:Agent	local:we	.
-local:solve	local:AM-MNR	local:terms_of_continuous_vector_space	.
-local:project	vn.role:Theme	local:rdf_graph	.
-local:discover	vn.role:Agent	local:users	.
-local:solve	vn.role:object	local:sparql_emptyanswer_problem	.
-local:common_query	rdfs:subClassOf	local:query	.
-local:rdf_data_sources	rdfs:subClassOf	local:data_sources	.
-local:speed	vn.role:Agent	local:framework	.
-local:common_query_problem_for_users	local:commonqueryproblem_for	local:users	.
-local:offers	vn.role:Agent	local:lod_cloud	.
-local:solve_in_terms	local:in_terms	local:solve	.
-local:speed	vn.role:Theme	local:generation_of_alternative_queries	.
-local:nonempty	rdfs:member	local:nonempty_set	.
-local:entity_context	rdfs:subClassOf	local:context	.
-local:set_into_several_parts	local:set_into	local:several_parts	.
-local:query	rdfs:member	local:query_problem	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:show	vn.role:Theme	local:can_significantly_speed	.
-local:returned_answers	rdfs:subClassOf	local:answers	.
-local:rdf	rdfs:member	local:rdf_dataset	.
-local:significantly_speed	rdfs:subClassOf	local:speed	.
-local:face	vn.role:Theme	local:common_query_problem_for_users	.
-local:translational_embedding_model	rdfs:subClassOf	local:embedding_model	.
-local:partition	vn.role:Agent	local:we	.
-local:effectiveness_of_our_framework	local:of_ourframework	local:effectiveness	.
-local:compute	vn.role:Product	local:approximate_answers	.
-local:preserving	vn.role:Agent	local:entity_context	.
-local:continuous_vector	rdfs:member	local:continuous_vector_space	.
-local:users_expectations	rdfs:subClassOf	local:expectations	.
-local:can_significantly_improve	rdfs:subClassOf	local:significantly_improve	.
-local:speed	local:AM-MOD	local:can	.
-local:partition	vn.role:Patient	local:empty_set	.
-local:specially_designed_for_sparql_queries	local:for_sparqlqueries	local:specially_designed	.
-local:sparql	rdfs:member	local:sparql_query	.
-local:empty_set	rdfs:subClassOf	local:set	.
-local:our_framework	rdfs:subClassOf	local:framework	.
-local:users	rdfs:member	local:users_expectations	.
-local:generate	vn.role:Theme2	local:alternative_queries_for_returned_answers	.
-local:how_refine	rdfs:subClassOf	local:refine	.
-local:quality_of_approximate_answers	local:quality_of	local:approximate_answers	.
-local:rdf_graph	rdfs:subClassOf	local:graph	.
-local:refine	vn.role:Theme	local:original_finally_query	.
-local:plethora_of_rdf_data_sources	local:of_rdfdatasources	local:plethora	.
-local:original_finally_query	rdfs:subClassOf	local:finally_query	.
-local:sparql_emptyanswer	rdfs:subClassOf	local:emptyanswer	.
-local:issuing	vn.role:Theme	local:sparql_queries	.
-local:rdf	rdfs:member	local:rdf_graph	.
-local:realworld	rdfs:member	local:realworld_rdf	.
-local:translational_embedding	rdfs:member	local:translational_embedding_model	.
-local:refine	vn.role:Theme	local:query	.
-local:common	rdfs:member	local:common_query	.
-local:sparql	rdfs:member	local:sparql_emptyanswer	.
-local:compute_approximate	rdfs:member	local:compute_approximate_answers	.
-local:discover	local:AM-LOC	local:rdf_data_sources	.
-local:sparql_queries	rdfs:subClassOf	local:queries	.
-local:common_query_problem_for_users	local:for_users	local:common_query_problem	.
-local:show	vn.role:Theme	local:can_significantly_improve	.
-local:returns	vn.role:other	local:partition	.
-local:alternative	rdfs:member	local:alternative_queries	.
-local:alternative_queries_for_returned_answers	local:for_returnedanswers	local:alternative_queries	.
-local:based	vn.role:Cause	local:framework	.
-local:compute	vn.role:Agent	local:we	.
-local:rdf_data	rdfs:subClassOf	local:data	.
-local:generation_of_alternative_queries	local:of_alternativequeries	local:generation	.
-local:rdf_data_sources	rdfs:subClassOf	local:sources	.
-local:sparql_emptyanswer_problem	rdfs:subClassOf	local:problem	.
-local:several_parts	rdfs:subClassOf	local:parts	.
-local:common_query_problem	rdfs:subClassOf	local:problem	.
-local:solve_in_terms	local:solve_in	local:terms	.
-local:effectiveness_of_our_framework	local:effectiveness_of	local:our_framework	.
-local:refine	vn.role:Agent	local:users	.
-local:empty_set_into_several_parts	local:emptyset_into	local:several_parts	.
-local:given	vn.role:object	local:sparql_query	.
-local:project	vn.role:Location	local:continuous_vector_space_by_entity_context	.
-local:offers	vn.role:Theme	local:plethora_of_rdf_data_sources	.
-local:obtain	vn.role:Asset	local:sparql_query	.
-local:solve	vn.role:Location	local:we	.
-local:returned	vn.role:Theme	local:answers	.
-local:entity_context_preserving	local:_preserving	local:entity_context	.
-local:generate	vn.role:Theme1	local:we	.
-local:rdf_data	rdfs:member	local:rdf_data_sources	.
-local:given	vn.role:Asset	local:then	.
-local:speed	local:AM-MNR	local:significantly	.
-local:based	vn.role:indirect_object	local:solve_in_terms	.
-local:items_of_interest	local:of_interest	local:items	.
-local:recognize	vn.role:Agent	local:users	.
-local:original	rdfs:member	local:original_query	.
-local:face	local:AM-MNR	local:empty_answers	.
-local:realworld_rdf_dataset	rdfs:subClassOf	local:rdf_dataset	.
-local:set_into_several_parts	local:into_severalparts	local:set	.
-local:alternative_queries_for_returned_answers	local:alternativequeries_for	local:returned_answers	.
-local:rdf	rdfs:member	local:rdf_data	.
-local:specially_designed_for_sparql_queries	local:speciallydesigned_for	local:sparql_queries	.
-local:realworld_rdf	rdfs:member	local:realworld_rdf_dataset	.
-local:terms_of_continuous_vector_space	local:terms_of	local:continuous_vector_space	.
-local:empty_set	local:_set	local:empty	.
-local:returns	vn.role:Recipient	local:nothing	.
-local:finally_refine	rdfs:subClassOf	local:refine	.
-local:translational	rdfs:member	local:translational_embedding	.
-local:continuous_vector_space_by_entity_context	local:continuousvectorspace_by	local:entity_context	.
-local:show	vn.role:Agent	local:results	.
-local:empty_empty_set	rdfs:subClassOf	local:empty_set	.
-local:translation	rdfs:member	local:translation_mechanism	.
-local:nonempty_set	rdfs:subClassOf	local:set	.
-local:discover	vn.role:Theme	local:items_of_interest	.
-local:data_sources	rdfs:subClassOf	local:sources	.
-local:extensive	rdfs:member	local:extensive_experiments	.
-local:significantly_improve	rdfs:subClassOf	local:improve	.
-local:improve	vn.role:Patient	local:quality_of_approximate_answers	.
-local:generation_of_alternative_queries	local:generation_of	local:alternative_queries	.
-local:based	local:AM-LOC	local:paper	.
-local:original_query	rdfs:subClassOf	local:query	.
-local:extensive_experiments_on_realworld_rdf_dataset	local:extensiveexperiments_on	local:realworld_rdf_dataset	.
-local:discover	local:AM-MNR	local:issuing	.
-local:realworld_rdf	rdfs:subClassOf	local:rdf	.
-local:returns	vn.role:Theme	local:empty_set	.
-local:plethora_of_rdf_data_sources	local:plethora_of	local:rdf_data_sources	.
-local:sparql_emptyanswer	rdfs:member	local:sparql_emptyanswer_problem	.
-local:embedding_model	rdfs:subClassOf	local:model	.
+local:returned_answers	rdfs:member	local:returned	.
+local:terms_of_continuous_vector_space	rdfs:member	local:terms	.
+local:translational_embedding_model	rdfs:member	local:translational_embedding	.
+local:s2	rdf:predicate	local:face	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:sparql_emptyanswer_problem_in_terms	rdfs:member	local:sparql_emptyanswer_problem	.
+local:framework_can_significantly_improve_the_quality_of_approximate_answers	rdfs:member	local:quality	.
+local:rdf_graph	rdfs:member	local:rdf	.
+local:s14.2	rdf:predicate	local:recognize	.
+local:where_discover	rdfs:subClassOf	local:discover	.
+local:rdf_dataset	rdfs:subClassOf	local:dataset	.
+local:s5	rdf:predicate	local:project	.
+local:s5	rdf:object	local:rdf_graph_continuous_vector_space_by_an_entity_context	.
+local:s3.1	rdf:object	local:sparql_emptyanswer_problem_in_terms_of_a_continuous_vector_space	.
+local:s15	rdf:predicate	local:validate	.
 local:realworld_rdf_dataset	rdfs:subClassOf	local:dataset	.
-local:project	local:AM-TMP	local:first	.
-local:given	vn.role:object	local:query_partition	.
-local:continuous_vector_space	rdfs:subClassOf	local:vector_space	.
-local:given	vn.role:indirect_object	local:empty_answers	.
+local:s17.1	rdf:subject	local:framework	.
+local:our_conduct_on_realworld_rdf_dataset	rdfs:member	local:realworld_rdf_dataset	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:rdf_embeddings	rdfs:member	local:rdf	.
+local:s11	rdf:predicate	local:give	.
+local:translational_embedding_model	rdfs:subClassOf	local:model	.
+local:rdf_graph_continuous_vector_space_by_an_entity_context	rdfs:member	local:rdf	.
+local:sparql_emptyanswer_problem_in_terms	rdfs:member	local:terms	.
+local:common_query	rdfs:member	local:common	.
+local:lod_cloud	rdfs:subClassOf	local:cloud	.
 local:emptyanswer_problem	rdfs:subClassOf	local:problem	.
+local:s13.1	rdf:object	local:users_refine_the_original_query_finally	.
+local:s0.2	rdf:subject	local:users	.
+local:continuous_vector_space	rdfs:member	local:continuous_vector	.
+local:s8.1	rdf:subject	local:sparql_query	.
+local:s11	local:AM-TMP	local:then	.
+local:translation_mechanism	rdfs:subClassOf	local:mechanism	.
+local:s6	rdf:predicate	local:preserve	.
+local:lod_cloud	rdfs:member	local:lod	.
+local:s0.1	rdf:subject	local:users	.
+local:plethora_of_rdf_data_sources	rdfs:member	local:plethora	.
+local:emptyanswer_problem	rdfs:member	local:emptyanswer	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	rdfs:member	local:conduct	.
+local:rdf_graph_embedding_based_framework	rdfs:member	local:rdf_graph	.
+local:rdf_data_sources	rdfs:subClassOf	local:data_sources	.
+local:s1.1	rdf:subject	local:sparql_query	.
+local:s10	rdf:predicate	local:compute	.
+local:s1.1	local:AM-PNC	local:obtain_a_nonempty_set	.
+local:vector_space	rdfs:member	local:vector	.
+local:graph_continuous_vector_space	rdfs:subClassOf	local:continuous_vector_space	.
+local:sparql_emptyanswer_problem_in_terms_of_a_continuous_vector_space	rdfs:member	local:continuous_vector_space	.
+local:common_query_problem	rdfs:member	local:common_query	.
+local:empty_answers_given_sparql_query	rdfs:member	local:sparql_query	.
+local:s1.2	rdf:predicate	local:obtain	.
+local:rdf_embeddings	rdfs:subClassOf	local:embeddings	.
+local:rdf_data_sources	rdfs:subClassOf	local:sources	.
+local:s7	rdf:object	local:sparql_queries	.
+local:s16	rdf:predicate	local:show	.
+local:s16	rdf:object	local:framework_can_significantly_speed_up_the_generation_of_alternative_queries	.
+local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	rdfs:member	local:interest	.
+local:our_framework	rdfs:subClassOf	local:framework	.
+local:empty_set_into_several_parts	rdfs:member	local:empty_set	.
+local:s17.1	rdf:predicate	local:improve	.
+local:s14.1	rdf:predicate	local:help	.
+local:translational_embedding	rdfs:subClassOf	local:embedding	.
+local:s17	rdf:predicate	local:show	.
+local:users_refine_the_original_query_finally	rdfs:member	local:original_query	.
+local:rdf_graph_continuous_vector_space_by_entity_context	rdfs:member	local:rdf_graph_continuous_vector_space	.
+local:s8	local:AM-MNR	local:leveraging_rdf_embeddings	.
+local:nonempty_set	rdfs:subClassOf	local:set	.
+local:framework_can_significantly_improve_the_quality_of_approximate_answers	rdfs:member	local:approximate_answers	.
+local:s8.1	rdf:object	local:rdf_embeddings	.
+local:rdf_graph_embedding	rdfs:subClassOf	local:graph_embedding	.
+local:s9	rdf:object	local:empty_set_partition_an_empty_set_into_several_parts	.
+local:rdf_data	rdfs:subClassOf	local:data	.
+local:query_problem	rdfs:subClassOf	local:problem	.
+local:framework_can_significantly_speed_up_the_generation_of_alternative_queries	rdfs:member	local:framework	.
+local:empty_set_partition_an_empty_set_into_several_parts	rdfs:member	local:empty_set	.
+local:our_conduct_on_realworld_rdf_dataset	rdfs:member	local:our_conduct	.
+local:empty_set	rdfs:subClassOf	local:set	.
+local:sparql_emptyanswer	rdfs:subClassOf	local:emptyanswer	.
+local:vector_space	rdfs:subClassOf	local:space	.
+local:embedding_based_framework	rdfs:subClassOf	local:based_framework	.
+local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	rdfs:member	local:plethora	.
+local:common_query_problem_for_users	rdfs:member	local:users	.
+local:s14.2	rdf:object	local:users_expectations	.
+local:significantly_speed	rdfs:subClassOf	local:speed	.
+local:sparql_emptyanswer_problem_in_terms_of_a_continuous_vector_space	rdfs:member	local:terms	.
+local:translation_mechanism	rdfs:member	local:translation	.
+local:empty_set_into_several_parts	rdfs:member	local:several_parts	.
+local:users_expectations	rdfs:member	local:users	.
+local:s12	rdf:predicate	local:generate	.
+local:graph_embedding	rdfs:subClassOf	local:embedding	.
+local:common_query_problem_for_users	rdfs:member	local:common_query_problem	.
+local:s14.1	rdf:subject	local:answers	.
+local:nothing_how_to_refine_the_query_to_obtain_a_nonempty_set	rdfs:member	local:nothing	.
+local:s10	local:AM-MNR	local:leveraging_the_translation_mechanism	.
+local:s9.1	rdf:object	local:empty_set_into_several_parts	.
+local:sparql_emptyanswer_problem	rdfs:subClassOf	local:problem	.
+local:s4	rdf:object	local:rdf_graph_embedding	.
+local:s2.1	rdfs:member	local:empty_answers	.
+local:how_refine	rdfs:subClassOf	local:refine	.
+local:s1.1	rdf:predicate	local:refine	.
+local:s6	rdf:object	local:translational_embedding_model	.
+local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:s0.2	rdf:predicate	local:issue	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	rdfs:member	local:efficiency	.
+local:s14	rdf:subject	local:s14.1	.
+local:sparql_emptyanswer	rdfs:member	local:sparql	.
+local:several_parts	rdfs:subClassOf	local:parts	.
+local:s8	rdf:object	local:approximate_answers	.
+local:s7	local:AM-MNR	local:specially	.
+local:s2.1	rdf:predicate	local:give	.
+local:realworld_rdf_dataset	rdfs:subClassOf	local:rdf_dataset	.
+local:s16.1	local:AM-MNR	local:significantly	.
+local:s0	rdf:object	local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	.
+local:alternative_queries	rdfs:member	local:alternative	.
+local:s0.1	local:AM-MNR	local:issuing_sparql_queries	.
+local:s17.1	rdf:object	local:quality_of_approximate_answers	.
+local:generation_of_alternative_queries	rdfs:member	local:alternative_queries	.
+local:s5	rdf:subject	local:we	.
+local:can_significantly_speed	rdfs:subClassOf	local:significantly_speed	.
+local:s12	rdf:subject	local:we	.
+local:s0.1	local:AM-LOC	local:rdf_data_sources	.
+local:s0.1	rdf:predicate	local:discover	.
+local:data_sources	rdfs:subClassOf	local:sources	.
+local:s15	rdf:subject	local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	.
+local:s5	local:AM-TMP	local:first	.
+local:translational_embedding_model	rdfs:subClassOf	local:embedding_model	.
+local:answers_which_helps_users_refine_the_original_query	rdfs:member	local:answers	.
+local:items_of_interest	rdfs:member	local:items	.
+local:s9.1	rdf:predicate	local:partition	.
+local:s3	rdf:predicate	local:base	.
+local:s0.1	rdf:object	local:items_of_interest	.
+local:rdf_dataset	rdfs:member	local:rdf	.
+local:rdf_data	rdfs:member	local:rdf	.
+local:data_sources	rdfs:member	local:data	.
+local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	rdfs:member	local:users	.
+local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	rdfs:member	local:rdf_data_sources	.
+local:approximate_answers	rdfs:member	local:approximate	.
+local:returned_answers	rdfs:subClassOf	local:answers	.
+local:s9	rdf:predicate	local:return	.
+local:s1	rdf:subject	local:sparql_query	.
+local:common_query	rdfs:subClassOf	local:query	.
+local:nothing_how_to_refine_the_query_to_obtain_a_nonempty_set	rdfs:member	local:query	.
+local:s1.2	rdf:object	local:nonempty_set	.
+local:s9	rdf:subject	local:sparql_query	.
+local:s17	rdf:object	local:framework_can_significantly_improve_the_quality_of_approximate_answers	.
+local:s16.1	rdf:object	local:generation_of_alternative_queries	.
+local:s16	rdf:subject	local:results	.
+local:realworld_rdf_dataset	rdfs:member	local:realworld_rdf	.
+local:s14.2	rdf:subject	local:users	.
+local:s10	rdf:object	local:approximate_answers	.
+local:set_into_several_parts	rdfs:member	local:several_parts	.
+local:set_partition	rdfs:subClassOf	local:partition	.
+local:s8	rdf:subject	local:sparql_query	.
+local:continuous_vector	rdfs:member	local:continuous	.
+local:answers_which_helps_users_refine_the_original_query	rdfs:member	local:original_query	.
+local:rdf_graph_continuous_vector_space_by_entity_context	rdfs:member	local:entity_context	.
+local:s1	rdf:predicate	local:return	.
+local:s17.1	local:AM-MOD	local:can	.
+local:s16.1	local:AM-MOD	local:can	.
+local:s2	local:AM-MNR	local:empty_answers_given_a_sparql_query	.
+local:entity_context	rdfs:member	local:entity	.
+local:based_framework	rdfs:subClassOf	local:framework	.
+local:terms_of_continuous_vector_space	rdfs:member	local:continuous_vector_space	.
+local:empty_set_partition_an_empty_set_into_several_parts	rdfs:member	local:partition	.
+local:common_query_problem	rdfs:subClassOf	local:problem	.
+local:rdf_graph_embedding_based_framework	rdfs:member	local:framework	.
+local:s1	rdf:object	local:nothing_how_to_refine_the_query_to_obtain_a_nonempty_set	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	rdfs:member	local:extensive_experiments	.
 local:continuous_vector_space	rdfs:subClassOf	local:space	.
-local:rdf	rdfs:member	local:rdf_embeddings	.
-local:compute	local:AM-MNR	local:leveraging	.
-local:approximate	rdfs:member	local:approximate_answers	.
-local:extensive_experiments_on_realworld_rdf_dataset	local:on_real-worldrdfdataset	local:extensive_experiments	.
+local:users_refine_the_original_query_finally	rdfs:member	local:users	.
+local:s13.1	rdf:predicate	local:help	.
+local:several_parts	rdfs:member	local:several	.
+local:s8.1	rdf:predicate	local:leverage	.
+local:empty_set	rdfs:member	local:empty	.
+local:s3.1	rdf:predicate	local:solve	.
+local:query_problem	rdfs:member	local:query	.
+local:s14	rdf:predicate	local:return	.
+local:s13.2	rdf:object	local:original_query	.
 local:approximate_answers	rdfs:subClassOf	local:answers	.
-local:improve	local:AM-MOD	local:can	.
-local:empty_set	local:empty_	local:set	.
+local:s10.1	rdf:subject	local:sparql_query	.
+local:common_query_problem	rdfs:subClassOf	local:query_problem	.
+local:s17.1	local:AM-MNR	local:significantly	.
+local:s7	rdf:subject	local:translational_embedding_model	.
+local:s13.2	rdf:subject	local:users	.
+local:sparql_queries	rdfs:subClassOf	local:queries	.
+local:framework_can_significantly_speed_up_the_generation_of_alternative_queries	rdfs:member	local:alternative_queries	.
+local:s13	rdf:predicate	local:return	.
+local:s10.1	rdf:predicate	local:leverage	.
 local:alternative_queries	rdfs:subClassOf	local:queries	.
-local:compute_approximate	rdfs:subClassOf	local:approximate	.
-local:entity_context_preserving	local:entitycontext_	local:preserving	.
-local:vector	rdfs:member	local:vector_space	.
-local:improve	local:AM-MNR	local:significantly	.
-local:helps	vn.role:Agent	local:returned	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	rdfs:member	local:effectiveness	.
+local:original_query	rdfs:member	local:original	.
+local:sparql_queries	rdfs:member	local:sparql	.
+local:s17	rdf:subject	local:results	.
+local:s4	rdf:subject	local:we	.
+local:sparql_emptyanswer_problem	rdfs:subClassOf	local:emptyanswer_problem	.
+local:items_of_interest	rdfs:member	local:interest	.
+local:s3	rdf:subject	local:framework	.
+local:alternative_queries_for_returned_answers	rdfs:member	local:returned_answers	.
+local:nonempty_set	rdfs:member	local:nonempty	.
+local:s7	rdf:predicate	local:design	.
+local:alternative_queries_for_returned_answers	rdfs:member	local:alternative_queries	.
+local:sparql_emptyanswer_problem_in_terms_of_a_continuous_vector_space	rdfs:member	local:sparql_emptyanswer_problem	.
+local:quality_of_approximate_answers	rdfs:member	local:approximate_answers	.
+local:effectiveness_of_our_framework	rdfs:member	local:effectiveness	.
+local:s10.1	rdf:object	local:translation_mechanism	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	rdfs:member	local:framework	.
+local:s2.1	rdf:object	local:empty_answers	.
+local:s2.1	rdfs:member	local:sparql_query	.
+local:sparql_emptyanswer_problem	rdfs:member	local:sparql_emptyanswer	.
+local:s0	rdf:subject	local:lod_cloud	.
+local:plethora_of_rdf_data_sources_where_users_discover_items_of_interest	rdfs:member	local:items	.
+local:can_significantly_improve	rdfs:subClassOf	local:significantly_improve	.
+local:effectiveness_and_efficiency_of_our_framework_our_conduct_extensive_experiments_on_the_realworld_rdf_dataset	rdfs:member	local:realworld_rdf_dataset	.
+local:s12	local:AM-DIS	local:also	.
+local:continuous_vector_space	rdfs:subClassOf	local:vector_space	.
+local:s4	local:AM-LOC	local:paper	.
+local:s0.2	rdf:object	local:sparql_queries	.
+local:original_query	rdfs:subClassOf	local:query	.
+local:realworld_rdf	rdfs:member	local:realworld	.
+local:empty_answers	rdfs:member	local:empty	.
+local:s0	local:AM-MNR	local:issuing_sparql_queries	.
+local:significantly_improve	rdfs:subClassOf	local:improve	.
+local:rdf_data_sources	rdfs:member	local:rdf_data	.
+local:rdf_graph_continuous_vector_space_by_an_entity_context	rdfs:member	local:continuous_vector_space	.
+local:s13.1	rdf:subject	local:answers	.
+local:plethora_of_rdf_data_sources	rdfs:member	local:rdf_data_sources	.
+local:s8	rdf:predicate	local:compute	.
+local:s3.1	rdf:subject	local:rdf_graph_embedding_based_framework	.
+local:users_expectations	rdfs:subClassOf	local:expectations	.
+local:s1.1	rdf:object	local:query	.
+local:s13	rdf:subject	local:answers_which_helps_users_refine_the_original_query	.
+local:empty_answers	rdfs:subClassOf	local:answers	.
+local:s12	rdf:object	local:alternative_queries_for_returned_answers	.
+local:s2	rdf:subject	local:common_query_problem_for_users	.
+local:empty_answers_given_sparql_query	rdfs:member	local:empty_answers	.
+local:s0	rdf:predicate	local:offer	.
+local:s10	rdf:subject	local:sparql_query	.
+local:framework_can_significantly_speed_up_the_generation_of_alternative_queries	rdfs:member	local:generation	.
+local:effectiveness_of_our_framework	rdfs:member	local:our_framework	.
+local:s9.1	rdf:subject	local:we	.
+local:extensive_experiments	rdfs:member	local:extensive	.
+local:entity_context	rdfs:subClassOf	local:context	.
+local:rdf_graph_continuous_vector_space_by_an_entity_context	rdfs:member	local:entity_context	.
+local:s2.1	rdf:subject	local:sparql_query	.
+local:embedding_model	rdfs:subClassOf	local:model	.
+local:extensive_experiments	rdfs:subClassOf	local:experiments	.
+local:embedding_model	rdfs:member	local:embedding	.
+local:empty_set_partition_an_empty_set_into_several_parts	rdfs:member	local:several_parts	.
+local:s16.1	rdf:subject	local:framework	.
+local:rdf_graph_continuous_vector_space	rdfs:subClassOf	local:graph_continuous_vector_space	.
+local:s1.2	rdf:subject	local:sparql_query	.
+local:framework_can_significantly_improve_the_quality_of_approximate_answers	rdfs:member	local:framework	.
+local:s6	rdf:subject	local:entity_context	.
+local:finally_refine	rdfs:subClassOf	local:refine	.
+local:our_conduct	rdfs:subClassOf	local:conduct	.
+local:s14.1	rdf:object	local:s14.2	.
+local:realworld_rdf	rdfs:subClassOf	local:rdf	.
+local:empty_set_partition	rdfs:subClassOf	local:set_partition	.
+local:s4	rdf:predicate	local:propose	.
+local:translational_embedding	rdfs:member	local:translational	.
+local:empty_set	rdfs:member	local:set	.
+local:set_into_several_parts	rdfs:member	local:set	.
+local:nothing_how_to_refine_the_query_to_obtain_a_nonempty_set	rdfs:member	local:nonempty_set	.
+local:answers_which_helps_users_refine_the_original_query	rdfs:member	local:users	.
+local:s13.2	rdf:predicate	local:refine	.

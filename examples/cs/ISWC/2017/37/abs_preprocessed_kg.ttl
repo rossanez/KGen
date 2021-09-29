@@ -1,305 +1,509 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s6.3	a	rdf:Statement	;
+	rdfs:label	"linked data privacy audit log model"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"existing linked data privacy audit log model"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"using an existing linked data privacy audit log model"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we also provide experimental validation of the scalability of we solution using an existing linked data privacy audit log model"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"a linked data based method of utilizing blockchain technology create tamperproof audit logs"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"utilizing blockchain technology to create tamperproof audit logs"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"linked data"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"in this paper we propose a linked data"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"tamperproof audit logs that provide proof of log manipulation and nonrepudiation"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"actions that should recorded in privacy audit logs"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"obfuscate actions"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"however collusion may occur between the auditors and participants to obfuscate actions"	.
+
+local:s0.3	a	rdf:Statement	;
+	rdfs:label	"auditors check compliance with privacy policies"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"a data sharing environment in order for auditors to check compliance with privacy policies"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"privacy audit logs capture the actions of participants in a data sharing environment in order for auditors to check compliance with privacy policies"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"privacy audit logs used to capture the actions of participants in a data sharing environment in order for auditors to check compliance with privacy policies"	.
+
+
 #### Classes ####
 
-local:audit	rdfs:label	"audit"	.
+local:data_privacy_audit_log_model	a	rdf:Class	;
+	rdfs:label	"data privacy audit log model"	.
 
-local:audit_logs	rdfs:label	"audit logs"	.
+local:audit_log	a	rdf:Class	;
+	rdfs:label	"audit log"	.
 
-local:privacy	rdfs:label	"privacy"	.
+local:audit	a	rdf:Class	;
+	rdfs:label	"audit"	.
 
-local:privacy_audit	rdfs:label	"privacy audit"	.
+local:data_privacy_audit	a	rdf:Class	;
+	rdfs:label	"data privacy audit"	.
 
-local:privacy_audit_logs	rdfs:label	"privacy audit logs"	.
+local:data_privacy	a	rdf:Class	;
+	rdfs:label	"data privacy"	.
 
-local:logs	rdfs:label	"logs"	.
+local:privacy_audit	a	rdf:Class	;
+	rdfs:label	"privacy audit"	.
 
-local:used	rdfs:label	"used"	.
+local:privacy	a	rdf:Class	;
+	rdfs:label	"privacy"	.
 
-local:data_sharing_environment	rdfs:label	"data sharing environment"	.
+local:data_privacy_audit_log	a	rdf:Class	;
+	rdfs:label	"data privacy audit log"	.
 
-local:environment	rdfs:label	"environment"	.
+local:log	a	rdf:Class	;
+	rdfs:label	"log"	.
 
-local:sharing_environment	rdfs:label	"sharing environment"	.
+local:privacy_audit_log	a	rdf:Class	;
+	rdfs:label	"privacy audit log"	.
 
-local:data_sharing	rdfs:label	"data sharing"	.
+local:log_model	a	rdf:Class	;
+	rdfs:label	"log model"	.
 
-local:sharing	rdfs:label	"sharing"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:data	rdfs:label	"data"	.
+local:privacy_audit_log_model	a	rdf:Class	;
+	rdfs:label	"privacy audit log model"	.
 
-local:privacy_policies	rdfs:label	"privacy policies"	.
+local:audit_log_model	a	rdf:Class	;
+	rdfs:label	"audit log model"	.
 
-local:policies	rdfs:label	"policies"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:actions_of_participants	rdfs:label	"actions of participants"	.
+local:linked	a	rdf:Class	;
+	rdfs:label	"linked"	.
 
-local:actions	rdfs:label	"actions"	.
+local:linked_data_privacy_audit_log_model	a	rdf:Class	;
+	rdfs:label	"linked data privacy audit log model"	.
 
-local:participants	rdfs:label	"participants"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:actions_of_participants_in_data_sharing_environment	rdfs:label	"actions of participants in data sharing environment"	.
+local:existing_linked_data_privacy_audit_log_model	a	rdf:Class	;
+	rdfs:label	"existing linked data privacy audit log model"	.
 
-local:compliance_with_privacy_policies	rdfs:label	"compliance with privacy policies"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:compliance	rdfs:label	"compliance"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:capture	rdfs:label	"capture"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:check_with_privacy_policies	rdfs:label	"check with privacy policies"	.
+local:experimental_validation_of_the_scalability_of_we_solution_using_an_existing_linked_data_privacy_audit_log_model	a	rdf:Class	;
+	rdfs:label	"experimental validation of the scalability of we solution using an existing linked data privacy audit log model"	.
 
-local:check	rdfs:label	"check"	.
+local:scalability	a	rdf:Class	;
+	rdfs:label	"scalability"	.
 
-local:order	rdfs:label	"order"	.
+local:experimental_validation	a	rdf:Class	;
+	rdfs:label	"experimental validation"	.
 
-local:auditors	rdfs:label	"auditors"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:however_collusion	rdfs:label	"however collusion"	.
+local:validation	a	rdf:Class	;
+	rdfs:label	"validation"	.
 
-local:collusion	rdfs:label	"collusion"	.
+local:experimental_validation_of_scalability	a	rdf:Class	;
+	rdfs:label	"experimental validation of scalability"	.
 
-local:occur	rdfs:label	"occur"	.
+local:scalability_of_solution	a	rdf:Class	;
+	rdfs:label	"scalability of solution"	.
 
-local:may	rdfs:label	"may"	.
+local:solution	a	rdf:Class	;
+	rdfs:label	"solution"	.
 
-local:obfuscate	rdfs:label	"obfuscate"	.
+local:experimental_validation_of_scalability_using	a	rdf:Class	;
+	rdfs:label	"experimental validation of scalability using"	.
 
-local:should_recorded	rdfs:label	"should recorded"	.
+local:using	a	rdf:Class	;
+	rdfs:label	"using"	.
 
-local:recorded	rdfs:label	"recorded"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:should_recorded_in_privacy_audit_logs	rdfs:label	"should recorded in privacy audit logs"	.
+local:linked_data_based_method_of_utilizing_blockchain_technology	a	rdf:Class	;
+	rdfs:label	"linked data based method of utilizing blockchain technology"	.
 
-local:should	rdfs:label	"should"	.
+local:method	a	rdf:Class	;
+	rdfs:label	"method"	.
 
-local:propose	rdfs:label	"propose"	.
+local:blockchain_technology	a	rdf:Class	;
+	rdfs:label	"blockchain technology"	.
 
-local:paper	rdfs:label	"paper"	.
+local:blockchain	a	rdf:Class	;
+	rdfs:label	"blockchain"	.
 
-local:we	rdfs:label	"we"	.
+local:technology	a	rdf:Class	;
+	rdfs:label	"technology"	.
 
-local:log_manipulation	rdfs:label	"log manipulation"	.
+local:based_method	a	rdf:Class	;
+	rdfs:label	"based method"	.
 
-local:manipulation	rdfs:label	"manipulation"	.
+local:linked_data	a	rdf:Class	;
+	rdfs:label	"linked data"	.
 
-local:blockchain_technology	rdfs:label	"blockchain technology"	.
+local:create	a	rdf:Class	;
+	rdfs:label	"create"	.
 
-local:technology	rdfs:label	"technology"	.
+local:tamperproof_audit_logs	a	rdf:Class	;
+	rdfs:label	"tamperproof audit logs"	.
 
-local:blockchain	rdfs:label	"blockchain"	.
+local:logs	a	rdf:Class	;
+	rdfs:label	"logs"	.
 
-local:tamperproof_audit_logs	rdfs:label	"tamper-proof audit logs"	.
+local:audit_logs	a	rdf:Class	;
+	rdfs:label	"audit logs"	.
 
-local:log	rdfs:label	"log"	.
+local:tamperproof_audit	a	rdf:Class	;
+	rdfs:label	"tamperproof audit"	.
 
-local:tamperproof_audit	rdfs:label	"tamper-proof audit"	.
+local:tamperproof	a	rdf:Class	;
+	rdfs:label	"tamperproof"	.
 
-local:tamperproof	rdfs:label	"tamper-proof"	.
+local:utilize	a	rdf:Class	;
+	rdfs:label	"utilize"	.
 
-local:based_method	rdfs:label	"based method"	.
+local:create_tamperproof_audit_logs	a	rdf:Class	;
+	rdfs:label	"create tamperproof audit logs"	.
 
-local:method	rdfs:label	"method"	.
+local:create_tamperproof_audit	a	rdf:Class	;
+	rdfs:label	"create tamperproof audit"	.
 
-local:linked_data	rdfs:label	"linked data"	.
+local:create_tamperproof	a	rdf:Class	;
+	rdfs:label	"create tamperproof"	.
 
-local:proof_of_log_manipulation	rdfs:label	"proof of log manipulation"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:proof	rdfs:label	"proof"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:proof_of_log_manipulation_of_nonrepudiation	rdfs:label	"proof of log manipulation of non-repudiation"	.
+local:proof_of_log_manipulation_and_nonrepudiation	a	rdf:Class	;
+	rdfs:label	"proof of log manipulation and nonrepudiation"	.
 
-local:nonrepudiation	rdfs:label	"non-repudiation"	.
+local:proof	a	rdf:Class	;
+	rdfs:label	"proof"	.
 
-local:linked	rdfs:label	"linked"	.
+local:log_manipulation	a	rdf:Class	;
+	rdfs:label	"log manipulation"	.
 
-local:utilizing	rdfs:label	"utilizing"	.
+local:nonrepudiation	a	rdf:Class	;
+	rdfs:label	"nonrepudiation"	.
 
-local:create	rdfs:label	"create"	.
+local:manipulation	a	rdf:Class	;
+	rdfs:label	"manipulation"	.
 
-local:data_based_method	rdfs:label	"data based method"	.
+local:proof_of_log_manipulation	a	rdf:Class	;
+	rdfs:label	"proof of log manipulation"	.
 
-local:provide	rdfs:label	"provide"	.
+local:proof_of_log_manipulation_of_nonrepudiation	a	rdf:Class	;
+	rdfs:label	"proof of log manipulation of nonrepudiation"	.
 
-local:also	rdfs:label	"also"	.
+local:actions	a	rdf:Class	;
+	rdfs:label	"actions"	.
 
-local:experimental_validation	rdfs:label	"experimental validation"	.
+local:record	a	rdf:Class	;
+	rdfs:label	"record"	.
 
-local:validation	rdfs:label	"validation"	.
+local:privacy_audit_logs	a	rdf:Class	;
+	rdfs:label	"privacy audit logs"	.
 
-local:privacy_audit_log	rdfs:label	"privacy audit log"	.
+local:should	a	rdf:Class	;
+	rdfs:label	"should"	.
 
-local:audit_log	rdfs:label	"audit log"	.
+local:obfuscate	a	rdf:Class	;
+	rdfs:label	"obfuscate"	.
 
-local:data_privacy	rdfs:label	"data privacy"	.
+local:collusion	a	rdf:Class	;
+	rdfs:label	"collusion"	.
 
-local:audit_log_model	rdfs:label	"audit log model"	.
+local:occur	a	rdf:Class	;
+	rdfs:label	"occur"	.
 
-local:data_privacy_audit_log	rdfs:label	"data privacy audit log"	.
+local:auditors_and_participants_to_obfuscate_actions	a	rdf:Class	;
+	rdfs:label	"auditors and participants to obfuscate actions"	.
 
-local:data_privacy_audit_log_model	rdfs:label	"data privacy audit log model"	.
+local:auditors	a	rdf:Class	;
+	rdfs:label	"auditors"	.
 
-local:log_model	rdfs:label	"log model"	.
+local:participants	a	rdf:Class	;
+	rdfs:label	"participants"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:data_privacy_audit	rdfs:label	"data privacy audit"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:model	rdfs:label	"model"	.
+local:check	a	rdf:Class	;
+	rdfs:label	"check"	.
 
-local:privacy_audit_log_model	rdfs:label	"privacy audit log model"	.
+local:compliance_with_privacy_policies	a	rdf:Class	;
+	rdfs:label	"compliance with privacy policies"	.
 
-local:linked_data_privacy_audit_log_model	rdfs:label	"linked data privacy audit log model"	.
+local:privacy_policies	a	rdf:Class	;
+	rdfs:label	"privacy policies"	.
 
-local:existing_linked_data_privacy_audit_log_model	rdfs:label	"existing linked data privacy audit log model"	.
+local:compliance	a	rdf:Class	;
+	rdfs:label	"compliance"	.
 
-local:experimental_validation_of_scalability	rdfs:label	"experimental validation of scalability"	.
+local:policies	a	rdf:Class	;
+	rdfs:label	"policies"	.
 
-local:scalability	rdfs:label	"scalability"	.
+local:share	a	rdf:Class	;
+	rdfs:label	"share"	.
 
-local:scalability_of_solution	rdfs:label	"scalability of solution"	.
+local:environment	a	rdf:Class	;
+	rdfs:label	"environment"	.
 
-local:solution	rdfs:label	"solution"	.
+local:order_for_auditors_to_check_compliance_with_privacy_policies	a	rdf:Class	;
+	rdfs:label	"order for auditors to check compliance with privacy policies"	.
 
-local:experimental_validation_of_scalability_using	rdfs:label	"experimental validation of scalability using"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:using	rdfs:label	"using"	.
+local:check_with_privacy_policies	a	rdf:Class	;
+	rdfs:label	"check with privacy policies"	.
 
-local:existing	rdfs:label	"existing"	.
+local:capture	a	rdf:Class	;
+	rdfs:label	"capture"	.
 
-#### Properties ####
+local:actions_of_participants	a	rdf:Class	;
+	rdfs:label	"actions of participants"	.
+
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	a	rdf:Class	;
+	rdfs:label	"data sharing environment in order for auditors to check compliance with privacy policies"	.
+
+local:data_sharing	a	rdf:Class	;
+	rdfs:label	"data sharing"	.
+
+local:sharing	a	rdf:Class	;
+	rdfs:label	"sharing"	.
+
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	a	rdf:Class	;
+	rdfs:label	"capture the actions of participants in a data sharing environment in order for auditors to check compliance with privacy policies"	.
+
+local:data_sharing_environment	a	rdf:Class	;
+	rdfs:label	"data sharing environment"	.
+
+local:sharing_environment	a	rdf:Class	;
+	rdfs:label	"sharing environment"	.
+
+local:actions_of_participants_in_data_sharing_environment	a	rdf:Class	;
+	rdfs:label	"actions of participants in data sharing environment"	.
 
 #### Mapped Relations ####
 
-cso:privacy	rdfs:label	"privacy"	.
 local:privacy_policies	owl:sameAs	cso:privacy_policies	.
-local:data_privacy	owl:sameAs	cso:data_privacy	.
-local:nonrepudiation	owl:sameAs	cso:non-repudiation	.
-local:validation	owl:sameAs	cso:validation	.
-local:blockchain	owl:sameAs	cso:blockchain	.
-cso:non-repudiation	rdfs:label	"non-repudiation"	.
-cso:linked_data	rdfs:label	"linked data"	.
-local:linked_data	owl:sameAs	cso:linked_data	.
 cso:privacy_policies	rdfs:label	"privacy policies"	.
-cso:data_privacy	rdfs:label	"data privacy"	.
+cso:privacy	rdfs:label	"privacy"	.
+local:validation	owl:sameAs	cso:validation	.
 cso:validation	rdfs:label	"validation"	.
-cso:blockchain	rdfs:label	"blockchain"	.
+local:blockchain	owl:sameAs	cso:blockchain	.
+cso:data_privacy	rdfs:label	"data privacy"	.
+cso:linked_data	rdfs:label	"linked data"	.
 local:privacy	owl:sameAs	cso:privacy	.
+local:data_privacy	owl:sameAs	cso:data_privacy	.
+local:linked_data	owl:sameAs	cso:linked_data	.
+cso:blockchain	rdfs:label	"blockchain"	.
 
 #### Relations ####
 
-local:privacy_audit_log_model	rdfs:subClassOf	local:model	.
-local:proof_of_log_manipulation_of_nonrepudiation	local:of_non-repudiation	local:proof_of_log_manipulation	.
-local:data_sharing_environment	rdfs:subClassOf	local:sharing_environment	.
-local:linked_data	rdfs:subClassOf	local:data	.
-local:however_collusion	rdfs:subClassOf	local:collusion	.
-local:privacy_audit_logs	rdfs:subClassOf	local:audit_logs	.
-local:actions_of_participants	local:of_participants	local:actions	.
-local:privacy_audit_logs	rdfs:subClassOf	local:logs	.
-local:provide	vn.role:Agent	local:proof_of_log_manipulation_of_nonrepudiation	.
-local:compliance_with_privacy_policies	local:with_privacypolicies	local:compliance	.
-local:sharing	local:AM-PNC	local:order	.
-local:audit_log_model	rdfs:subClassOf	local:model	.
-local:recorded	vn.role:Theme	local:actions	.
-local:actions_of_participants	local:actions_of	local:participants	.
-local:log	rdfs:member	local:log_model	.
-local:create	vn.role:Agent	local:blockchain_technology	.
-local:based_method	rdfs:subClassOf	local:method	.
-local:proof_of_log_manipulation_of_nonrepudiation	local:proofoflogmanipulation_of	local:nonrepudiation	.
-local:privacy_audit	rdfs:member	local:privacy_audit_logs	.
-local:occur	vn.role:Location	local:however_collusion	.
-local:should_recorded_in_privacy_audit_logs	local:shouldrecorded_in	local:privacy_audit_logs	.
-local:check	vn.role:Experiencer	local:auditors	.
-local:propose	vn.role:Topic	local:linked_data	.
-local:recorded	local:AM-MOD	local:should	.
-local:experimental_validation_of_scalability_using	local:_using	local:experimental_validation_of_scalability	.
-local:data_privacy_audit_log_model	rdfs:subClassOf	local:privacy_audit_log_model	.
-local:utilizing	local:AM-PNC	local:create	.
-local:tamperproof_audit	rdfs:subClassOf	local:audit	.
-local:audit	rdfs:member	local:audit_logs	.
-local:obfuscate	vn.role:Agent	local:however_collusion	.
-local:data_privacy_audit_log	rdfs:subClassOf	local:log	.
-local:capture	vn.role:Agent	local:privacy_audit_logs	.
-local:data_based_method	rdfs:subClassOf	local:based_method	.
-local:log_manipulation	rdfs:subClassOf	local:manipulation	.
-local:capture	vn.role:Theme	local:actions_of_participants	.
-local:provide	local:AM-DIS	local:also	.
-local:sharing	rdfs:member	local:sharing_environment	.
-local:provide	vn.role:Recipient	local:we	.
-local:experimental_validation_of_scalability_using	local:experimentalvalidationofscalability_	local:using	.
-local:experimental	rdfs:member	local:experimental_validation	.
-local:privacy_audit_log_model	rdfs:subClassOf	local:audit_log_model	.
-local:proof_of_log_manipulation	local:proof_of	local:log_manipulation	.
-local:linked	vn.role:Patient	local:data	.
-local:actions_of_participants_in_data_sharing_environment	local:actionsofparticipants_in	local:data_sharing_environment	.
-local:check	vn.role:Stimulus	local:compliance_with_privacy_policies	.
-local:existing_linked_data_privacy_audit_log_model	rdfs:subClassOf	local:linked_data_privacy_audit_log_model	.
-local:occur	local:AM-MOD	local:may	.
-local:used	vn.role:Recipient	local:capture	.
-local:check_with_privacy_policies	local:check_with	local:privacy_policies	.
-local:actions_of_participants_in_data_sharing_environment	local:in_datasharingenvironment	local:actions_of_participants	.
-local:utilizing	vn.role:Theme	local:blockchain_technology	.
-local:data_privacy_audit	rdfs:subClassOf	local:audit	.
-local:data_privacy	rdfs:member	local:data_privacy_audit	.
-local:privacy_audit	rdfs:subClassOf	local:audit	.
-local:data_sharing	local:_sharing	local:data	.
-local:provide	vn.role:Agent	local:experimental_validation_of_scalability_using	.
-local:sharing	vn.role:Agent	local:data	.
-local:using	vn.role:Theme	local:existing_linked_data_privacy_audit_log_model	.
-local:should_recorded_in_privacy_audit_logs	local:in_privacyauditlogs	local:should_recorded	.
-local:audit	rdfs:member	local:audit_log	.
-local:privacy_policies	rdfs:subClassOf	local:policies	.
-local:propose	local:AM-LOC	local:paper	.
-local:log	rdfs:member	local:log_manipulation	.
-local:tamperproof_audit_logs	rdfs:subClassOf	local:audit_logs	.
-local:data	rdfs:member	local:data_privacy	.
-local:tamperproof_audit_logs	rdfs:subClassOf	local:logs	.
-local:sharing	vn.role:Patient	local:environment	.
-local:create	vn.role:Agent	local:data_based_method	.
-local:used	vn.role:Theme	local:privacy_audit_logs	.
-local:audit_log	rdfs:subClassOf	local:log	.
-local:propose	vn.role:Agent	local:we	.
-local:audit_logs	rdfs:subClassOf	local:logs	.
-local:blockchain_technology	rdfs:subClassOf	local:technology	.
-local:data_privacy_audit_log_model	rdfs:subClassOf	local:model	.
-local:tamperproof	rdfs:member	local:tamperproof_audit	.
-local:audit_log_model	rdfs:subClassOf	local:log_model	.
-local:check_with_privacy_policies	local:with_privacypolicies	local:check	.
-local:privacy	rdfs:member	local:privacy_audit	.
-local:provide	vn.role:Recipient	local:tamperproof_audit_logs	.
-local:compliance_with_privacy_policies	local:compliance_with	local:privacy_policies	.
-local:data_sharing	rdfs:subClassOf	local:sharing	.
-local:recorded	local:AM-LOC	local:privacy_audit_logs	.
-local:experimental_validation	rdfs:subClassOf	local:validation	.
-local:linked_data_privacy_audit_log_model	rdfs:subClassOf	local:data_privacy_audit_log_model	.
-local:data_sharing_environment	rdfs:subClassOf	local:environment	.
-local:audit_log	rdfs:member	local:audit_log_model	.
-local:capture	local:AM-PNC	local:data_sharing	.
-local:experimental_validation_of_scalability	local:of_scalability	local:experimental_validation	.
-local:sharing_environment	rdfs:subClassOf	local:environment	.
-local:blockchain	rdfs:member	local:blockchain_technology	.
-local:create	vn.role:Product	local:tamperproof_audit_logs	.
-local:tamperproof_audit	rdfs:member	local:tamperproof_audit_logs	.
-local:data_privacy	rdfs:subClassOf	local:privacy	.
-local:privacy_audit	rdfs:member	local:privacy_audit_log	.
 local:log_model	rdfs:subClassOf	local:model	.
-local:existing	vn.role:Location	local:linked_data_privacy_audit_log_model	.
-local:data	rdfs:member	local:data_sharing	.
-local:data_sharing	local:data_	local:sharing	.
-local:proof_of_log_manipulation	local:of_logmanipulation	local:proof	.
-local:privacy	rdfs:member	local:privacy_policies	.
-local:data_privacy_audit_log	rdfs:member	local:data_privacy_audit_log_model	.
-local:scalability_of_solution	local:of_solution	local:scalability	.
-local:should_recorded	rdfs:subClassOf	local:recorded	.
-local:privacy_audit_log	rdfs:member	local:privacy_audit_log_model	.
-local:obfuscate	vn.role:Patient	local:actions	.
-local:data_sharing	rdfs:member	local:data_sharing_environment	.
-local:linked	vn.role:Patient	local:data_privacy_audit_log_model	.
-local:experimental_validation_of_scalability	local:experimentalvalidation_of	local:scalability	.
-local:scalability_of_solution	local:scalability_of	local:solution	.
-local:data_privacy_audit	rdfs:member	local:data_privacy_audit_log	.
+local:order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:privacy_policies	.
+local:actions_of_participants_in_data_sharing_environment	rdfs:member	local:data_sharing_environment	.
+local:linked_data_based_method_of_utilizing_blockchain_technology	rdfs:member	local:method	.
+local:auditors_and_participants_to_obfuscate_actions	rdfs:member	local:participants	.
+local:s0.2	rdf:subject	local:data	.
+local:s0.1	rdf:object	local:actions_of_participants	.
+local:order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:compliance	.
+local:s1.1	rdf:predicate	local:obfuscate	.
+local:s0	rdf:subject	local:privacy_audit_logs	.
+local:s6	rdf:predicate	local:provide	.
+local:privacy_audit_log	rdfs:member	local:privacy_audit	.
+local:s1	rdf:predicate	local:occur	.
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:compliance	.
+local:data_privacy_audit_log	rdfs:member	local:data_privacy_audit	.
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:data	.
+local:s4	rdf:subject	local:we	.
+local:order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:auditors	.
+local:privacy_audit_log_model	rdfs:subClassOf	local:audit_log_model	.
+local:create_tamperproof_audit	rdfs:member	local:create_tamperproof	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:data_sharing_environment	.
+local:privacy_audit	rdfs:member	local:privacy	.
+local:s4	rdf:predicate	local:propose	.
+local:data_privacy_audit	rdfs:member	local:data_privacy	.
+local:auditors_and_participants_to_obfuscate_actions	rdfs:member	local:actions	.
+local:data_sharing	rdfs:member	local:data	.
+local:s5.1	rdf:subject	local:blockchain_technology	.
+local:audit_log_model	rdfs:subClassOf	local:model	.
+local:blockchain_technology	rdfs:member	local:blockchain	.
+local:privacy_audit_log_model	rdfs:member	local:privacy_audit_log	.
+local:audit_log	rdfs:member	local:audit	.
+local:data_privacy_audit_log_model	rdfs:subClassOf	local:privacy_audit_log_model	.
+local:s3	rdf:subject	local:tamperproof_audit_logs	.
+local:privacy_audit_logs	rdfs:member	local:privacy_audit	.
+local:data_privacy	rdfs:member	local:data	.
+local:proof_of_log_manipulation	rdfs:member	local:proof	.
+local:s0.1	local:AM-PNC	local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	.
+local:s3	rdf:predicate	local:provide	.
+local:s4.1	rdf:subject	local:data	.
+local:data_privacy	rdfs:subClassOf	local:privacy	.
+local:s6.1	rdf:predicate	local:use	.
+local:s2	local:AM-LOC	local:privacy_audit_logs	.
+local:compliance_with_privacy_policies	rdfs:member	local:compliance	.
+local:s5.2	rdf:subject	local:linked_data_based_method_of_utilizing_blockchain_technology	.
+local:s4.1	rdfs:subClassOf	local:data	.
+local:data_privacy_audit	rdfs:subClassOf	local:audit	.
+local:auditors_and_participants_to_obfuscate_actions	rdfs:member	local:auditors	.
+local:s6.1	rdf:subject	local:existing_linked_data_privacy_audit_log_model	.
+local:data_privacy_audit_log_model	rdfs:member	local:data_privacy_audit_log	.
+local:proof_of_log_manipulation_and_nonrepudiation	rdfs:member	local:nonrepudiation	.
+local:proof_of_log_manipulation_and_nonrepudiation	rdfs:member	local:log_manipulation	.
+local:check_with_privacy_policies	rdfs:member	local:privacy_policies	.
+local:s5	rdf:subject	local:data	.
+local:audit_log_model	rdfs:member	local:audit_log	.
+local:s6	local:AM-DIS	local:also	.
+local:actions_of_participants	rdfs:member	local:participants	.
+local:s4	local:AM-LOC	local:paper	.
+local:s1	local:AM-DIS	local:however	.
+local:linked_data	rdfs:subClassOf	local:data	.
+local:audit_log_model	rdfs:subClassOf	local:log_model	.
+local:s0.2	rdf:object	local:environment	.
+local:privacy_audit_logs	rdfs:subClassOf	local:logs	.
+local:create_tamperproof	rdfs:member	local:create	.
+local:experimental_validation_of_scalability	rdfs:member	local:experimental_validation	.
+local:audit_log	rdfs:subClassOf	local:log	.
+local:tamperproof_audit	rdfs:subClassOf	local:audit	.
+local:data_sharing_environment	rdfs:subClassOf	local:environment	.
+local:proof_of_log_manipulation_and_nonrepudiation	rdfs:member	local:proof	.
+local:s6.2	rdf:subject	local:linked_data_privacy_audit_log_model	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:order	.
+local:experimental_validation_of_scalability_using	rdfs:member	local:experimental_validation_of_scalability	.
+local:experimental_validation_of_the_scalability_of_we_solution_using_an_existing_linked_data_privacy_audit_log_model	rdfs:member	local:experimental_validation	.
+local:log_manipulation	rdfs:subClassOf	local:manipulation	.
+local:blockchain_technology	rdfs:subClassOf	local:technology	.
+local:experimental_validation_of_scalability	rdfs:member	local:scalability	.
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:environment	.
+local:s5.2	rdf:predicate	local:create	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:capture	.
+local:tamperproof_audit_logs	rdfs:subClassOf	local:logs	.
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:order	.
+local:s5.1	local:AM-PNC	local:create_tamperproof_audit_logs	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:auditors	.
+local:data_sharing	rdfs:subClassOf	local:sharing	.
+local:privacy_audit_logs	rdfs:subClassOf	local:audit_logs	.
+local:create_tamperproof	rdfs:subClassOf	local:tamperproof	.
+local:s1	rdf:subject	local:collusion	.
+local:data_sharing_environment	rdfs:member	local:data_sharing	.
+local:s2	rdf:predicate	local:record	.
+local:experimental_validation_of_the_scalability_of_we_solution_using_an_existing_linked_data_privacy_audit_log_model	rdfs:member	local:scalability	.
+local:privacy_audit	rdfs:subClassOf	local:audit	.
+local:s3	rdf:object	local:proof_of_log_manipulation_and_nonrepudiation	.
+local:compliance_with_privacy_policies	rdfs:member	local:privacy_policies	.
+local:s2	rdf:subject	local:actions	.
 local:privacy_audit_log	rdfs:subClassOf	local:log	.
+local:based_method	rdfs:subClassOf	local:method	.
+local:s1.1	rdf:subject	local:actions	.
+local:experimental_validation	rdfs:member	local:experimental	.
+local:s0.1	rdf:subject	local:privacy_audit_logs	.
+local:privacy_audit_log_model	rdfs:subClassOf	local:model	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:participants	.
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:auditors	.
+local:create_tamperproof_audit_logs	rdfs:subClassOf	local:logs	.
+local:privacy_policies	rdfs:subClassOf	local:policies	.
+local:sharing_environment	rdfs:subClassOf	local:environment	.
+local:sharing_environment	rdfs:member	local:sharing	.
+local:s6.2	rdfs:subClassOf	local:s6.3	.
+local:scalability_of_solution	rdfs:member	local:scalability	.
+local:s0.3	rdf:predicate	local:check	.
+local:privacy_policies	rdfs:member	local:privacy	.
+local:s0.2	local:AM-PNC	local:order_for_auditors_to_check_compliance_with_privacy_policies	.
+local:check_with_privacy_policies	rdfs:member	local:check	.
+local:actions_of_participants_in_data_sharing_environment	rdfs:member	local:actions_of_participants	.
+local:data_privacy_audit_log_model	rdfs:subClassOf	local:model	.
+local:log_manipulation	rdfs:member	local:log	.
+local:create_tamperproof_audit	rdfs:subClassOf	local:audit	.
+local:s1	local:AM-MOD	local:may	.
+local:proof_of_log_manipulation	rdfs:member	local:log_manipulation	.
+local:s0.3	rdf:object	local:compliance_with_privacy_policies	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:privacy_policies	.
+local:s0	rdf:predicate	local:use	.
+local:proof_of_log_manipulation_of_nonrepudiation	rdfs:member	local:nonrepudiation	.
+local:tamperproof_audit_logs	rdfs:member	local:tamperproof_audit	.
+local:linked_data_based_method_of_utilizing_blockchain_technology	rdfs:member	local:blockchain_technology	.
+local:tamperproof_audit	rdfs:member	local:tamperproof	.
+local:s2	local:AM-MOD	local:should	.
+local:s6.3	rdf:subject	local:data_privacy_audit_log_model	.
+local:experimental_validation	rdfs:subClassOf	local:validation	.
+local:s6.3	rdfs:subClassOf	local:data_privacy_audit_log_model	.
+local:experimental_validation_of_scalability_using	rdfs:member	local:using	.
+local:log_model	rdfs:member	local:log	.
+local:data_sharing_environment	rdfs:subClassOf	local:sharing_environment	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:actions	.
+local:experimental_validation_of_the_scalability_of_we_solution_using_an_existing_linked_data_privacy_audit_log_model	rdfs:member	local:data_privacy_audit_log_model	.
+local:s4.1	rdf:predicate	local:linked	.
+local:audit_logs	rdfs:subClassOf	local:logs	.
+local:tamperproof_audit_logs	rdfs:subClassOf	local:audit_logs	.
+local:audit_logs	rdfs:member	local:audit	.
+local:actions_of_participants	rdfs:member	local:actions	.
+local:s0	rdf:object	local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	.
+local:s1	rdf:object	local:auditors_and_participants_to_obfuscate_actions	.
+local:capture_the_actions_of_participants_in_a_data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:compliance	.
+local:s5	rdf:predicate	local:linked	.
+local:order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:order	.
+local:s5.2	rdf:object	local:tamperproof_audit_logs	.
+local:s0.1	rdf:predicate	local:capture	.
+local:create_tamperproof_audit_logs	rdfs:member	local:create_tamperproof_audit	.
+local:data_sharing	rdfs:member	local:sharing	.
+local:s6	rdf:object	local:experimental_validation_of_the_scalability_of_we_solution_using_an_existing_linked_data_privacy_audit_log_model	.
+local:data_privacy_audit_log	rdfs:subClassOf	local:log	.
+local:s0.2	rdf:predicate	local:share	.
+local:s6	rdf:subject	local:we	.
+local:data_sharing_environment_in_order_for_auditors_to_check_compliance_with_privacy_policies	rdfs:member	local:privacy_policies	.
+local:s4	rdf:object	local:linked_data	.
+local:s5.1	rdf:predicate	local:utilize	.
+local:proof_of_log_manipulation_of_nonrepudiation	rdfs:member	local:proof_of_log_manipulation	.
+local:s0.3	rdf:subject	local:auditors	.
+local:linked_data_based_method_of_utilizing_blockchain_technology	rdfs:member	local:data	.
+local:scalability_of_solution	rdfs:member	local:solution	.
+local:s6.2	rdf:predicate	local:exist	.
+local:s6.3	rdf:predicate	local:linked	.

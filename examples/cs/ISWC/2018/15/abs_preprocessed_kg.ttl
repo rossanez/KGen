@@ -1,484 +1,755 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"the algorithms employed"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"the algorithms can efficiently approximate both operators"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"finally we show that the algorithms can efficiently approximate both operators"	.
+
+local:s12.3	a	rdf:Statement	;
+	rdfs:label	"we can answer more queries"	.
+
+local:s12.2	a	rdf:Statement	;
+	rdfs:label	"extend"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"using"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"then we show that using extend we can answer more queries"	.
+
+local:s11.2	a	rdf:Statement	;
+	rdfs:label	"more queries focusing on specific nodes whereas using global zoom we can answer overall more queries"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"using global zoom we"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"more queries focusing on specific nodes whereas using global zoom we can answer overall more queries"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"calculating these operators"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we show that calculating these operators is npcomplete"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"we provide approximations for these operators calculation"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"extend focuses on a specific subgraph of the initial summary whereas zoom on the whole graph"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"providing granular information access to the enduser"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"extend providing granular information access to the enduser"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"the dynamic exploration of summaries through two novel operations"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a new approach enabling the dynamic exploration of summaries through two novel operations"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a new approach"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a new approach enabling the dynamic exploration of summaries through two novel operations"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"detailed information"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"the data source requesting more detailed information for a particular part of more detailed information"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"she further explore the data source"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"starting from the summary she should be able to further explore the data source"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"however in an ideal scenario the user should not limited only to static summaries"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"an abridged version the original data source highlighting ontology summarization most important concepts"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"ontology summarization produce an abridged version of the original data source highlighting ontology summarization most important concepts"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"ontology summarization aspires to produce an abridged version of the original data source highlighting ontology summarization most important concepts"	.
+
+
 #### Classes ####
 
-local:ontology	rdfs:label	"ontology"	.
+local:algorithms	a	rdf:Class	;
+	rdfs:label	"algorithms"	.
 
-local:ontology_summarization	rdfs:label	"ontology summarization"	.
+local:employ	a	rdf:Class	;
+	rdfs:label	"employ"	.
 
-local:summarization	rdfs:label	"summarization"	.
+local:approximate	a	rdf:Class	;
+	rdfs:label	"approximate"	.
 
-local:aspires	rdfs:label	"aspires"	.
+local:operators	a	rdf:Class	;
+	rdfs:label	"operators"	.
 
-local:most	rdfs:label	"most"	.
+local:efficiently	a	rdf:Class	;
+	rdfs:label	"efficiently"	.
 
-local:most_important	rdfs:label	"most important"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:original_data_source	rdfs:label	"original data source"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:source	rdfs:label	"source"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:original_data	rdfs:label	"original data"	.
+local:algorithms_can_efficiently_approximate_both_operators	a	rdf:Class	;
+	rdfs:label	"algorithms can efficiently approximate both operators"	.
 
-local:data	rdfs:label	"data"	.
+local:efficiently_approximate	a	rdf:Class	;
+	rdfs:label	"efficiently approximate"	.
 
-local:data_source	rdfs:label	"data source"	.
+local:can_efficiently_approximate	a	rdf:Class	;
+	rdfs:label	"can efficiently approximate"	.
 
-local:most_important_concepts	rdfs:label	"most important concepts"	.
+local:finally	a	rdf:Class	;
+	rdfs:label	"finally"	.
 
-local:concepts	rdfs:label	"concepts"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:abridged	rdfs:label	"abridged"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:abridged_version	rdfs:label	"abridged version"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:important	rdfs:label	"important"	.
+local:using_extend_we_can_answer_more_queries	a	rdf:Class	;
+	rdfs:label	"using extend we can answer more queries"	.
 
-local:important_concepts	rdfs:label	"important concepts"	.
+local:more_queries	a	rdf:Class	;
+	rdfs:label	"more queries"	.
 
-local:version	rdfs:label	"version"	.
+local:more	a	rdf:Class	;
+	rdfs:label	"more"	.
 
-local:original	rdfs:label	"original"	.
+local:can_answer	a	rdf:Class	;
+	rdfs:label	"can answer"	.
 
-local:concepts_highlighting	rdfs:label	"concepts highlighting"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:highlighting	rdfs:label	"highlighting"	.
+local:overall_more_queries	a	rdf:Class	;
+	rdfs:label	"overall more queries"	.
 
-local:abridged_version_of_original_data_source	rdfs:label	"abridged version of original data source"	.
+local:overall_more	a	rdf:Class	;
+	rdfs:label	"overall more"	.
 
-local:original_data_source_concepts_highlighting	rdfs:label	"original data source concepts highlighting"	.
+local:overall	a	rdf:Class	;
+	rdfs:label	"overall"	.
 
-local:produce	rdfs:label	"produce"	.
+local:queries_focusing_on_specific_nodes_whereas_using_global_zoom	a	rdf:Class	;
+	rdfs:label	"queries focusing on specific nodes whereas using global zoom"	.
 
-local:ideal_scenario	rdfs:label	"ideal scenario"	.
+local:global_zoom	a	rdf:Class	;
+	rdfs:label	"global zoom"	.
 
-local:scenario	rdfs:label	"scenario"	.
+local:specific_nodes	a	rdf:Class	;
+	rdfs:label	"specific nodes"	.
 
-local:ideal	rdfs:label	"ideal"	.
+local:nodes	a	rdf:Class	;
+	rdfs:label	"nodes"	.
 
-local:however_user	rdfs:label	"however user"	.
+local:zoom	a	rdf:Class	;
+	rdfs:label	"zoom"	.
 
-local:user	rdfs:label	"user"	.
+local:global	a	rdf:Class	;
+	rdfs:label	"global"	.
 
-local:however_user_in_ideal_scenario	rdfs:label	"however user in ideal scenario"	.
+local:specific	a	rdf:Class	;
+	rdfs:label	"specific"	.
 
-local:limited	rdfs:label	"limited"	.
+local:queries_focusing	a	rdf:Class	;
+	rdfs:label	"queries focusing"	.
 
-local:should	rdfs:label	"should"	.
+local:focusing	a	rdf:Class	;
+	rdfs:label	"focusing"	.
 
-local:not	rdfs:label	"not"	.
+local:focusing_on_specific_nodes	a	rdf:Class	;
+	rdfs:label	"focusing on specific nodes"	.
 
-local:only	rdfs:label	"only"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:static_summaries	rdfs:label	"static summaries"	.
+local:specific_nodes_whereas_using_global_zoom_we_can_answer_overall_more_queries	a	rdf:Class	;
+	rdfs:label	"specific nodes whereas using global zoom we can answer overall more queries"	.
 
-local:summaries	rdfs:label	"summaries"	.
+local:calculate	a	rdf:Class	;
+	rdfs:label	"calculate"	.
 
-local:static	rdfs:label	"static"	.
+local:calculating_these_operators_is_npcomplete	a	rdf:Class	;
+	rdfs:label	"calculating these operators is npcomplete"	.
 
-local:starting	rdfs:label	"starting"	.
+local:is_calculating	a	rdf:Class	;
+	rdfs:label	"is calculating"	.
 
-local:summary	rdfs:label	"summary"	.
+local:calculating	a	rdf:Class	;
+	rdfs:label	"calculating"	.
 
-local:detailed_information	rdfs:label	"detailed information"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:information	rdfs:label	"information"	.
+local:approximations_for_these_operators_calculation	a	rdf:Class	;
+	rdfs:label	"approximations for these operators calculation"	.
 
-local:detailed	rdfs:label	"detailed"	.
+local:operators_calculation	a	rdf:Class	;
+	rdfs:label	"operators calculation"	.
 
-local:more_detailed	rdfs:label	"more detailed"	.
+local:approximations	a	rdf:Class	;
+	rdfs:label	"approximations"	.
 
-local:particular_part	rdfs:label	"particular part"	.
+local:calculation	a	rdf:Class	;
+	rdfs:label	"calculation"	.
 
-local:part	rdfs:label	"part"	.
+local:approximations_for_operators	a	rdf:Class	;
+	rdfs:label	"approximations for operators"	.
 
-local:more_detailed_information	rdfs:label	"more detailed information"	.
+local:extend_specific_subgraph_of_the_initial_summary_whereas_zoom_on_the_whole_graph	a	rdf:Class	;
+	rdfs:label	"extend specific subgraph of the initial summary whereas zoom on the whole graph"	.
 
-local:particular	rdfs:label	"particular"	.
+local:specific_subgraph	a	rdf:Class	;
+	rdfs:label	"specific subgraph"	.
 
-local:more	rdfs:label	"more"	.
+local:initial_summary_whereas_zoom	a	rdf:Class	;
+	rdfs:label	"initial summary whereas zoom"	.
 
-local:further_explore	rdfs:label	"further explore"	.
+local:whole_graph	a	rdf:Class	;
+	rdfs:label	"whole graph"	.
 
-local:explore	rdfs:label	"explore"	.
+local:whereas_zoom	a	rdf:Class	;
+	rdfs:label	"whereas zoom"	.
 
-local:should_able	rdfs:label	"should able"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:able	rdfs:label	"able"	.
+local:subgraph	a	rdf:Class	;
+	rdfs:label	"subgraph"	.
 
-local:more_detailed_information_for_particular_part	rdfs:label	"more detailed information for particular part"	.
+local:summary_whereas_zoom	a	rdf:Class	;
+	rdfs:label	"summary whereas zoom"	.
 
-local:particular_part_of_more_detailed_information	rdfs:label	"particular part of more detailed information"	.
+local:summary_whereas	a	rdf:Class	;
+	rdfs:label	"summary whereas"	.
 
-local:further	rdfs:label	"further"	.
+local:whereas	a	rdf:Class	;
+	rdfs:label	"whereas"	.
 
-local:requesting	rdfs:label	"requesting"	.
+local:initial_summary_whereas	a	rdf:Class	;
+	rdfs:label	"initial summary whereas"	.
 
-local:detailed_information_for_particular_part	rdfs:label	"detailed information for particular part"	.
+local:initial_summary	a	rdf:Class	;
+	rdfs:label	"initial summary"	.
 
-local:present	rdfs:label	"present"	.
+local:summary	a	rdf:Class	;
+	rdfs:label	"summary"	.
 
-local:paper	rdfs:label	"paper"	.
+local:whole	a	rdf:Class	;
+	rdfs:label	"whole"	.
 
-local:we	rdfs:label	"we"	.
+local:initial	a	rdf:Class	;
+	rdfs:label	"initial"	.
 
-local:novel	rdfs:label	"novel"	.
+local:specific_subgraph_of_initial_summary	a	rdf:Class	;
+	rdfs:label	"specific subgraph of initial summary"	.
 
-local:novel_operations	rdfs:label	"novel operations"	.
+local:zoom_on_whole_graph	a	rdf:Class	;
+	rdfs:label	"zoom on whole graph"	.
 
-local:dynamic_exploration	rdfs:label	"dynamic exploration"	.
+local:granular_information_access_to_the_enduser	a	rdf:Class	;
+	rdfs:label	"granular information access to the enduser"	.
 
-local:exploration	rdfs:label	"exploration"	.
+local:granular_information_access	a	rdf:Class	;
+	rdfs:label	"granular information access"	.
 
-local:novel_operations_zoom	rdfs:label	"novel operations zoom"	.
+local:enduser	a	rdf:Class	;
+	rdfs:label	"enduser"	.
 
-local:operations_zoom	rdfs:label	"operations zoom"	.
+local:granular_information	a	rdf:Class	;
+	rdfs:label	"granular information"	.
 
-local:zoom	rdfs:label	"zoom"	.
+local:granular	a	rdf:Class	;
+	rdfs:label	"granular"	.
 
-local:dynamic	rdfs:label	"dynamic"	.
+local:information_access	a	rdf:Class	;
+	rdfs:label	"information access"	.
 
-local:operations	rdfs:label	"operations"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:two_novel_operations_zoom	rdfs:label	"two novel operations zoom"	.
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
-local:dynamic_exploration_of_summaries	rdfs:label	"dynamic exploration of summaries"	.
+local:access_to_enduser	a	rdf:Class	;
+	rdfs:label	"access to enduser"	.
 
-local:enabling_through_two_novel_operations_zoom	rdfs:label	"enabling through two novel operations zoom"	.
+local:extend	a	rdf:Class	;
+	rdfs:label	"extend"	.
 
-local:enabling	rdfs:label	"enabling"	.
+local:dynamic_exploration_of_summaries_through_two_novel_operations	a	rdf:Class	;
+	rdfs:label	"dynamic exploration of summaries through two novel operations"	.
 
-local:enabling_through_two_novel_operations_zoom_through_extend	rdfs:label	"enabling through two novel operations zoom through extend"	.
+local:summaries	a	rdf:Class	;
+	rdfs:label	"summaries"	.
 
-local:extend	rdfs:label	"extend"	.
+local:dynamic_exploration	a	rdf:Class	;
+	rdfs:label	"dynamic exploration"	.
 
-local:dynamic_exploration_of_summaries_through_two_novel_operations_zoom	rdfs:label	"dynamic exploration of summaries through two novel operations zoom"	.
+local:novel_operations	a	rdf:Class	;
+	rdfs:label	"novel operations"	.
 
-local:focuses	rdfs:label	"focuses"	.
+local:exploration	a	rdf:Class	;
+	rdfs:label	"exploration"	.
 
-local:initial_summary	rdfs:label	"initial summary"	.
+local:operations	a	rdf:Class	;
+	rdfs:label	"operations"	.
 
-local:granular_information_access	rdfs:label	"granular information access"	.
+local:dynamic	a	rdf:Class	;
+	rdfs:label	"dynamic"	.
 
-local:access	rdfs:label	"access"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:information_access	rdfs:label	"information access"	.
+local:two_novel_operations	a	rdf:Class	;
+	rdfs:label	"two novel operations"	.
 
-local:whole_graph	rdfs:label	"whole graph"	.
+local:dynamic_exploration_of_summaries	a	rdf:Class	;
+	rdfs:label	"dynamic exploration of summaries"	.
 
-local:graph	rdfs:label	"graph"	.
+local:new_approach	a	rdf:Class	;
+	rdfs:label	"new approach"	.
 
-local:whole	rdfs:label	"whole"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:initial	rdfs:label	"initial"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:granular_information	rdfs:label	"granular information"	.
+local:enable	a	rdf:Class	;
+	rdfs:label	"enable"	.
 
-local:whereas	rdfs:label	"whereas"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:whereas_zoom	rdfs:label	"whereas zoom"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:specific_subgraph	rdfs:label	"specific subgraph"	.
+local:detail	a	rdf:Class	;
+	rdfs:label	"detail"	.
 
-local:subgraph	rdfs:label	"subgraph"	.
+local:data_source	a	rdf:Class	;
+	rdfs:label	"data source"	.
 
-local:specific	rdfs:label	"specific"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:granular	rdfs:label	"granular"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:specific_subgraph_of_initial_summary	rdfs:label	"specific subgraph of initial summary"	.
+local:request	a	rdf:Class	;
+	rdfs:label	"request"	.
 
-local:zoom_on_whole_graph	rdfs:label	"zoom on whole graph"	.
+local:detailed_information_for_a_particular_part_of_more_detailed_information	a	rdf:Class	;
+	rdfs:label	"detailed information for a particular part of more detailed information"	.
 
-local:zoom_on_whole_graph_providing	rdfs:label	"zoom on whole graph providing"	.
+local:more_detailed_information	a	rdf:Class	;
+	rdfs:label	"more detailed information"	.
 
-local:providing	rdfs:label	"providing"	.
+local:particular_part	a	rdf:Class	;
+	rdfs:label	"particular part"	.
 
-local:granular_information_access_to_enduser	rdfs:label	"granular information access to end-user"	.
+local:detailed	a	rdf:Class	;
+	rdfs:label	"detailed"	.
 
-local:enduser	rdfs:label	"end-user"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:both	rdfs:label	"both"	.
+local:more_detailed	a	rdf:Class	;
+	rdfs:label	"more detailed"	.
 
-local:access_to_enduser	rdfs:label	"access to end-user"	.
+local:part	a	rdf:Class	;
+	rdfs:label	"part"	.
 
-local:provide	rdfs:label	"provide"	.
+local:detailed_information_for_particular_part	a	rdf:Class	;
+	rdfs:label	"detailed information for particular part"	.
 
-local:operators	rdfs:label	"operators"	.
+local:particular_part_of_detailed_information	a	rdf:Class	;
+	rdfs:label	"particular part of detailed information"	.
 
-local:operators_calculation	rdfs:label	"operators calculation"	.
+local:she	a	rdf:Class	;
+	rdfs:label	"she"	.
 
-local:calculation	rdfs:label	"calculation"	.
+local:explore	a	rdf:Class	;
+	rdfs:label	"explore"	.
 
-local:approximations_for_operators_calculation	rdfs:label	"approximations for operators calculation"	.
+local:further	a	rdf:Class	;
+	rdfs:label	"further"	.
 
-local:approximations	rdfs:label	"approximations"	.
+local:starting	a	rdf:Class	;
+	rdfs:label	"starting"	.
 
-local:show	rdfs:label	"show"	.
+local:summary_she_should_be_able_to_further_explore_the_data_source	a	rdf:Class	;
+	rdfs:label	"summary she should be able to further explore the data source"	.
 
-local:npcomplete	rdfs:label	"np-complete"	.
+local:further_explore	a	rdf:Class	;
+	rdfs:label	"further explore"	.
 
-local:calculating	rdfs:label	"calculating"	.
+local:should_able	a	rdf:Class	;
+	rdfs:label	"should able"	.
 
-local:global	rdfs:label	"global"	.
+local:able	a	rdf:Class	;
+	rdfs:label	"able"	.
 
-local:global_zoom	rdfs:label	"global zoom"	.
+local:user	a	rdf:Class	;
+	rdfs:label	"user"	.
 
-local:overall_more_queries	rdfs:label	"overall more queries"	.
+local:not_limit	a	rdf:Class	;
+	rdfs:label	"not limit"	.
 
-local:queries	rdfs:label	"queries"	.
+local:static_summaries	a	rdf:Class	;
+	rdfs:label	"static summaries"	.
 
-local:more_queries	rdfs:label	"more queries"	.
+local:static	a	rdf:Class	;
+	rdfs:label	"static"	.
 
-local:specific_nodes	rdfs:label	"specific nodes"	.
+local:only	a	rdf:Class	;
+	rdfs:label	"only"	.
 
-local:nodes	rdfs:label	"nodes"	.
+local:however	a	rdf:Class	;
+	rdfs:label	"however"	.
 
-local:overall_more	rdfs:label	"overall more"	.
+local:ideal_scenario	a	rdf:Class	;
+	rdfs:label	"ideal scenario"	.
 
-local:overall	rdfs:label	"overall"	.
+local:scenario	a	rdf:Class	;
+	rdfs:label	"scenario"	.
 
-local:can_answer	rdfs:label	"can answer"	.
+local:ideal	a	rdf:Class	;
+	rdfs:label	"ideal"	.
 
-local:answer	rdfs:label	"answer"	.
+local:should	a	rdf:Class	;
+	rdfs:label	"should"	.
 
-local:focusing_on_specific_nodes	rdfs:label	"focusing on specific nodes"	.
+local:original_data_source	a	rdf:Class	;
+	rdfs:label	"original data source"	.
 
-local:focusing	rdfs:label	"focusing"	.
+local:original_data	a	rdf:Class	;
+	rdfs:label	"original data"	.
 
-local:using	rdfs:label	"using"	.
+local:original	a	rdf:Class	;
+	rdfs:label	"original"	.
 
-local:specific_specific	rdfs:label	"specific specific"	.
+local:highlight	a	rdf:Class	;
+	rdfs:label	"highlight"	.
 
-local:specific_specific_nodes	rdfs:label	"specific specific nodes"	.
+local:ontology_summarization_most_important_concepts	a	rdf:Class	;
+	rdfs:label	"ontology summarization most important concepts"	.
 
-local:focusing_on_specific_specific_nodes	rdfs:label	"focusing on specific specific nodes"	.
+local:ontology_summarization	a	rdf:Class	;
+	rdfs:label	"ontology summarization"	.
 
-local:specific_specific_nodes_nodes	rdfs:label	"specific specific nodes nodes"	.
+local:most_important_concepts	a	rdf:Class	;
+	rdfs:label	"most important concepts"	.
 
-local:global_global	rdfs:label	"global global"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:global_global_zoom	rdfs:label	"global global zoom"	.
+local:summarization	a	rdf:Class	;
+	rdfs:label	"summarization"	.
 
-local:global_global_zoom_zoom	rdfs:label	"global global zoom zoom"	.
+local:important_concepts	a	rdf:Class	;
+	rdfs:label	"important concepts"	.
 
-local:can	rdfs:label	"can"	.
+local:important	a	rdf:Class	;
+	rdfs:label	"important"	.
 
-local:answer_overall	rdfs:label	"answer overall"	.
+local:most_important	a	rdf:Class	;
+	rdfs:label	"most important"	.
 
-local:overall_more_more	rdfs:label	"overall more more"	.
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
 
-local:overall_more_more_queries	rdfs:label	"overall more more queries"	.
+local:concepts	a	rdf:Class	;
+	rdfs:label	"concepts"	.
 
-local:more_more	rdfs:label	"more more"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:more_more_queries	rdfs:label	"more more queries"	.
+local:abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	a	rdf:Class	;
+	rdfs:label	"abridged version of the original data source highlighting ontology summarization most important concepts"	.
 
-local:efficiently_approximate	rdfs:label	"efficiently approximate"	.
+local:version	a	rdf:Class	;
+	rdfs:label	"version"	.
 
-local:approximate	rdfs:label	"approximate"	.
+local:concepts_highlighting	a	rdf:Class	;
+	rdfs:label	"concepts highlighting"	.
 
-local:can_efficiently_approximate	rdfs:label	"can efficiently approximate"	.
+local:highlighting	a	rdf:Class	;
+	rdfs:label	"highlighting"	.
 
-local:efficiently	rdfs:label	"efficiently"	.
+local:abridged_version	a	rdf:Class	;
+	rdfs:label	"abridged version"	.
 
-#### Properties ####
+local:abridged_version_of_original_data_source	a	rdf:Class	;
+	rdfs:label	"abridged version of original data source"	.
+
+local:original_data_source_concepts_highlighting	a	rdf:Class	;
+	rdfs:label	"original data source concepts highlighting"	.
+
+local:aspire	a	rdf:Class	;
+	rdfs:label	"aspire"	.
+
+local:produce_an_abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	a	rdf:Class	;
+	rdfs:label	"produce an abridged version of the original data source highlighting ontology summarization most important concepts"	.
+
+local:abridged	a	rdf:Class	;
+	rdfs:label	"abridged"	.
 
 #### Mapped Relations ####
 
-local:ontology	owl:sameAs	cso:ontology	.
 cso:ontology	rdfs:label	"ontology"	.
+local:ontology	owl:sameAs	cso:ontology	.
 
 #### Relations ####
 
-local:answer	vn.role:Predicate	local:queries	.
-local:starting	vn.role:Theme	local:should_able	.
-local:whole_graph	rdfs:subClassOf	local:graph	.
-local:starting	vn.role:Instrument	local:summary	.
-local:limited	vn.role:Patient	local:however_user_in_ideal_scenario	.
-local:access_to_enduser	local:access_to	local:enduser	.
-local:should_able	rdfs:subClassOf	local:able	.
-local:enabling	vn.role:Patient	local:dynamic_exploration_of_summaries_through_two_novel_operations_zoom	.
-local:show	vn.role:Theme	local:can_efficiently_approximate	.
-local:aspires	vn.role:indirect_object	local:produce	.
-local:overall_more	rdfs:member	local:overall_more_more	.
-local:specific_specific	rdfs:member	local:specific_specific_nodes	.
-local:zoom_on_whole_graph_providing	local:zoomonwholegraph_	local:providing	.
-local:more_more	rdfs:member	local:more_more_queries	.
-local:show	vn.role:Theme	local:can_answer	.
-local:original_data_source	rdfs:subClassOf	local:data_source	.
-local:answer	local:AM-ADV	local:answer_overall	.
-local:can_efficiently_approximate	rdfs:subClassOf	local:efficiently_approximate	.
-local:highlighting	vn.role:Agent	local:original_data_source	.
-local:global_global_zoom_zoom	local:globalglobalzoom_	local:zoom	.
-local:dynamic	rdfs:member	local:dynamic_exploration	.
-local:further_explore	rdfs:subClassOf	local:explore	.
-local:overall_more_more_queries	rdfs:subClassOf	local:queries	.
-local:focuses	vn.role:indirect_object	local:extend	.
-local:more_detailed	rdfs:member	local:more_detailed_information	.
-local:however_user	rdfs:subClassOf	local:user	.
-local:focusing	vn.role:indirect_object	local:can_answer	.
-local:produce	vn.role:Agent	local:ontology_summarization	.
-local:two_novel_operations_zoom	rdfs:subClassOf	local:novel_operations_zoom	.
-local:operations	rdfs:member	local:operations_zoom	.
-local:zoom_on_whole_graph_providing	local:_providing	local:zoom_on_whole_graph	.
-local:static_summaries	rdfs:subClassOf	local:summaries	.
-local:global_global_zoom	rdfs:subClassOf	local:zoom	.
-local:detailed	rdfs:member	local:detailed_information	.
-local:operations_zoom	rdfs:subClassOf	local:zoom	.
-local:specific	rdfs:member	local:specific_specific	.
-local:enabling_through_two_novel_operations_zoom	local:through_twonoveloperationszoom	local:enabling	.
-local:specific_subgraph_of_initial_summary	local:of_initialsummary	local:specific_subgraph	.
-local:answer	local:AM-ADV	local:whereas	.
-local:whole	rdfs:member	local:whole_graph	.
-local:requesting	vn.role:Predicate	local:detailed_information_for_particular_part	.
-local:original_data_source_concepts_highlighting	local:originaldatasource_	local:concepts_highlighting	.
-local:overall_more	rdfs:subClassOf	local:more	.
-local:operators_calculation	rdfs:subClassOf	local:calculation	.
-local:global	rdfs:member	local:global_global	.
-local:overall_more_more	rdfs:member	local:overall_more_more_queries	.
-local:granular_information_access_to_enduser	local:to_end-user	local:granular_information_access	.
-local:global_zoom	rdfs:subClassOf	local:zoom	.
-local:limited	local:AM-MOD	local:should	.
-local:zoom_on_whole_graph	local:on_wholegraph	local:zoom	.
-local:operators	rdfs:member	local:operators_calculation	.
-local:explore	vn.role:Location	local:requesting	.
-local:answer	vn.role:Predicate	local:more_queries	.
-local:abridged_version_of_original_data_source	local:of_originaldatasource	local:abridged_version	.
-local:information	rdfs:member	local:information_access	.
-local:specific_subgraph	rdfs:subClassOf	local:subgraph	.
-local:access_to_enduser	local:to_end-user	local:access	.
-local:ontology	rdfs:member	local:ontology_summarization	.
-local:however_user_in_ideal_scenario	local:in_idealscenario	local:however_user	.
-local:answer	local:AM-ADV	local:using	.
-local:granular_information	rdfs:member	local:granular_information_access	.
-local:most_important_concepts	rdfs:subClassOf	local:concepts	.
-local:present	local:AM-LOC	local:paper	.
-local:enabling	vn.role:Agent	local:we	.
-local:present	vn.role:Agent	local:we	.
-local:dynamic_exploration_of_summaries	local:of_summaries	local:dynamic_exploration	.
-local:enabling_through_two_novel_operations_zoom_through_extend	local:enablingthroughtwonoveloperationszoom_through	local:extend	.
-local:approximations_for_operators_calculation	local:approximations_for	local:operators_calculation	.
-local:important	rdfs:member	local:important_concepts	.
-local:detailed_information_for_particular_part	local:for_particularpart	local:detailed_information	.
-local:enabling_through_two_novel_operations_zoom_through_extend	local:through_extend	local:enabling_through_two_novel_operations_zoom	.
-local:providing	vn.role:Agent	local:access_to_enduser	.
-local:answer	local:AM-ADV	local:we	.
-local:using	vn.role:Agent	local:we	.
-local:global_global	rdfs:subClassOf	local:global	.
-local:granular_information_access	rdfs:subClassOf	local:information_access	.
-local:global_global	rdfs:member	local:global_global_zoom	.
-local:highlighting	vn.role:Theme	local:ontology_summarization	.
-local:most	rdfs:member	local:most_important	.
-local:granular_information_access_to_enduser	local:granularinformationaccess_to	local:enduser	.
-local:specific_specific	rdfs:subClassOf	local:specific	.
-local:specific_specific_nodes	rdfs:subClassOf	local:specific_nodes	.
-local:novel_operations_zoom	rdfs:subClassOf	local:operations_zoom	.
-local:particular_part_of_more_detailed_information	local:of_moredetailedinformation	local:particular_part	.
-local:answer	local:AM-ADV	local:focusing	.
-local:original_data	rdfs:subClassOf	local:data	.
-local:can_answer	rdfs:subClassOf	local:answer	.
-local:focusing_on_specific_specific_nodes	local:on_specificspecificnodes	local:focusing	.
-local:data	rdfs:member	local:data_source	.
-local:initial_summary	rdfs:subClassOf	local:summary	.
-local:initial	rdfs:member	local:initial_summary	.
-local:more	rdfs:member	local:more_more	.
-local:approximate	vn.role:Theme	local:operators	.
-local:particular	rdfs:member	local:particular_part	.
-local:show	vn.role:Theme	local:npcomplete	.
-local:dynamic_exploration_of_summaries_through_two_novel_operations_zoom	local:through_twonoveloperationszoom	local:dynamic_exploration_of_summaries	.
-local:dynamic_exploration	rdfs:subClassOf	local:exploration	.
-local:limited	vn.role:Proposition	local:static_summaries	.
-local:particular_part_of_more_detailed_information	local:particularpart_of	local:more_detailed_information	.
-local:more_queries	rdfs:subClassOf	local:queries	.
-local:specific_nodes	rdfs:subClassOf	local:nodes	.
-local:focusing_on_specific_nodes	local:focusing_on	local:specific_nodes	.
-local:abridged	rdfs:member	local:abridged_version	.
-local:present	vn.role:Theme	local:enabling_through_two_novel_operations_zoom_through_extend	.
-local:ontology_summarization	rdfs:subClassOf	local:summarization	.
-local:efficiently_approximate	rdfs:subClassOf	local:approximate	.
-local:enabling_through_two_novel_operations_zoom	local:enabling_through	local:two_novel_operations_zoom	.
-local:calculating	vn.role:Predicate	local:operators	.
-local:however_user_in_ideal_scenario	local:howeveruser_in	local:ideal_scenario	.
-local:more_detailed	rdfs:subClassOf	local:detailed	.
-local:produce	vn.role:Product	local:abridged_version_of_original_data_source	.
-local:answer	local:AM-ADV	local:can	.
-local:aspires	vn.role:Experiencer	local:ontology_summarization	.
-local:ideal	rdfs:member	local:ideal_scenario	.
-local:show	vn.role:Agent	local:we	.
-local:original	rdfs:member	local:original_data	.
-local:highlighting	vn.role:Agent	local:abridged_version	.
-local:particular_part	rdfs:subClassOf	local:part	.
-local:answer	local:AM-ADV	local:answer	.
-local:specific_specific_nodes_nodes	local:_nodes	local:specific_specific_nodes	.
-local:more_detailed_information	rdfs:subClassOf	local:information	.
-local:limited	local:AM-ADV	local:only	.
-local:static	rdfs:member	local:static_summaries	.
-local:specific_subgraph_of_initial_summary	local:specificsubgraph_of	local:initial_summary	.
-local:explore	local:AM-MNR	local:further	.
-local:more	rdfs:member	local:more_detailed	.
-local:focusing_on_specific_nodes	local:on_specificnodes	local:focusing	.
-local:dynamic_exploration_of_summaries	local:dynamicexploration_of	local:summaries	.
-local:ideal_scenario	rdfs:subClassOf	local:scenario	.
-local:most_important	rdfs:member	local:most_important_concepts	.
-local:global_global_zoom	rdfs:subClassOf	local:global_zoom	.
-local:global_global_zoom_zoom	local:_zoom	local:global_global_zoom	.
-local:granular_information	rdfs:subClassOf	local:information	.
-local:overall_more_more	rdfs:subClassOf	local:more	.
-local:overall_more	rdfs:member	local:overall_more_queries	.
-local:whereas	rdfs:member	local:whereas_zoom	.
-local:focusing	vn.role:Experiencer	local:we	.
-local:more_detailed_information	rdfs:subClassOf	local:detailed_information	.
-local:using	vn.role:Theme	local:extend	.
-local:more_detailed_information_for_particular_part	local:moredetailedinformation_for	local:particular_part	.
-local:specific	rdfs:member	local:specific_subgraph	.
-local:original_data_source_concepts_highlighting	local:_conceptshighlighting	local:original_data_source	.
-local:concepts_highlighting	rdfs:subClassOf	local:highlighting	.
-local:zoom_on_whole_graph	local:zoom_on	local:whole_graph	.
-local:granular_information_access	rdfs:subClassOf	local:access	.
-local:overall_more_queries	rdfs:subClassOf	local:queries	.
-local:limited	local:AM-NEG	local:not	.
-local:focusing_on_specific_specific_nodes	local:focusing_on	local:specific_specific_nodes	.
-local:abridged_version_of_original_data_source	local:abridgedversion_of	local:original_data_source	.
-local:information_access	rdfs:subClassOf	local:access	.
-local:global	rdfs:member	local:global_zoom	.
-local:more	rdfs:member	local:more_queries	.
-local:focuses	vn.role:indirect_object	local:specific_subgraph_of_initial_summary	.
-local:original_data	rdfs:member	local:original_data_source	.
-local:novel_operations_zoom	rdfs:subClassOf	local:zoom	.
-local:specific_specific_nodes	rdfs:subClassOf	local:nodes	.
+local:whole_graph	rdfs:member	local:whole	.
+local:overall_more	rdfs:member	local:overall	.
 local:most_important	rdfs:subClassOf	local:important	.
-local:abridged_version	rdfs:subClassOf	local:version	.
-local:approximations_for_operators_calculation	local:for_operatorscalculation	local:approximations	.
-local:overall	rdfs:member	local:overall_more	.
-local:whereas_zoom	rdfs:subClassOf	local:zoom	.
-local:more_more	rdfs:subClassOf	local:more	.
-local:novel	rdfs:member	local:novel_operations	.
+local:whereas_zoom	rdfs:member	local:whereas	.
+local:queries_focusing	rdfs:member	local:focusing	.
+local:s3	rdf:subject	local:data_source	.
+local:s3	rdf:predicate	local:request	.
+local:static_summaries	rdfs:subClassOf	local:summaries	.
+local:s1	local:AM-LOC	local:ideal_scenario	.
+local:focusing_on_specific_nodes	rdfs:member	local:specific_nodes	.
+local:ontology_summarization_most_important_concepts	rdfs:member	local:ontology_summarization	.
+local:extend_specific_subgraph_of_the_initial_summary_whereas_zoom_on_the_whole_graph	rdfs:member	local:initial_summary_whereas_zoom	.
+local:s13.1	rdf:object	local:operators	.
+local:s12	rdf:predicate	local:show	.
+local:more_queries	rdfs:member	local:more	.
+local:data_source	rdfs:member	local:data	.
+local:s0.2	rdf:subject	local:original_data_source	.
+local:s5	rdf:subject	local:we	.
+local:s2.1	rdf:predicate	local:explore	.
+local:s0.1	rdf:object	local:abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	.
+local:dynamic_exploration_of_summaries_through_two_novel_operations	rdfs:member	local:dynamic_exploration	.
+local:detailed_information_for_a_particular_part_of_more_detailed_information	rdfs:member	local:more_detailed_information	.
+local:s1	local:AM-MOD	local:should	.
+local:extend_specific_subgraph_of_the_initial_summary_whereas_zoom_on_the_whole_graph	rdfs:member	local:specific_subgraph	.
+local:produce_an_abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:most_important_concepts	.
+local:global_zoom	rdfs:member	local:global	.
+local:summary_whereas_zoom	rdfs:member	local:summary_whereas	.
 local:original_data_source	rdfs:subClassOf	local:source	.
-local:approximate	local:AM-MOD	local:can	.
-local:specific	rdfs:member	local:specific_nodes	.
-local:more_detailed_information_for_particular_part	local:for_particularpart	local:more_detailed_information	.
-local:important_concepts	rdfs:subClassOf	local:concepts	.
-local:focusing	local:AM-MNR	local:using	.
-local:detailed_information	rdfs:subClassOf	local:information	.
-local:using	vn.role:Theme	local:global_zoom	.
-local:providing	vn.role:Recipient	local:both	.
-local:provide	vn.role:Agent	local:approximations_for_operators_calculation	.
-local:data_source	rdfs:subClassOf	local:source	.
+local:s3.1	rdf:subject	local:information	.
+local:s0	rdf:predicate	local:aspire	.
+local:dynamic_exploration_of_summaries	rdfs:member	local:dynamic_exploration	.
+local:overall_more	rdfs:subClassOf	local:more	.
+local:detailed_information_for_particular_part	rdfs:member	local:particular_part	.
+local:s7.1	rdf:predicate	local:provide	.
+local:s6	rdf:predicate	local:enable	.
+local:abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:ontology_summarization	.
+local:abridged_version	rdfs:subClassOf	local:version	.
+local:s11.2	local:AM-MOD	local:can	.
+local:specific_subgraph_of_initial_summary	rdfs:member	local:specific_subgraph	.
+local:specific_nodes_whereas_using_global_zoom_we_can_answer_overall_more_queries	rdfs:member	local:overall_more_queries	.
+local:efficiently_approximate	rdfs:subClassOf	local:approximate	.
+local:s11	rdf:predicate	local:focus	.
+local:is_calculating	rdfs:subClassOf	local:calculating	.
+local:initial_summary_whereas_zoom	rdfs:member	local:initial_summary_whereas	.
+local:dynamic_exploration_of_summaries_through_two_novel_operations	rdfs:member	local:dynamic_exploration_of_summaries	.
+local:s12.3	rdf:predicate	local:answer	.
+local:original_data_source_concepts_highlighting	rdfs:member	local:concepts_highlighting	.
+local:s11.2	rdf:object	local:overall_more_queries	.
+local:s9	rdf:object	local:approximations_for_these_operators_calculation	.
+local:should_able	rdfs:subClassOf	local:able	.
+local:s11.1	rdf:subject	local:we	.
+local:s0.2	rdf:object	local:ontology_summarization_most_important_concepts	.
+local:s7	rdf:subject	local:s7.1	.
+local:ideal_scenario	rdfs:member	local:ideal	.
+local:s8	rdf:object	local:extend_specific_subgraph_of_the_initial_summary_whereas_zoom_on_the_whole_graph	.
+local:initial_summary_whereas_zoom	rdfs:subClassOf	local:zoom	.
+local:s6.1	rdf:subject	local:dynamic_exploration_of_summaries_through_two_novel_operations	.
+local:specific_nodes	rdfs:subClassOf	local:nodes	.
+local:s12.2	rdf:predicate	local:s12.2	.
+local:abridged_version_of_original_data_source	rdfs:member	local:original_data_source	.
+local:s1	rdf:object	local:static_summaries	.
+local:more_detailed	rdfs:subClassOf	local:detailed	.
+local:can_answer	rdfs:subClassOf	local:answer	.
+local:summary_whereas	rdfs:subClassOf	local:whereas	.
+local:s7	rdf:predicate	local:extend	.
+local:new_approach	rdfs:member	local:new	.
+local:initial_summary	rdfs:subClassOf	local:summary	.
+local:ontology_summarization	rdfs:member	local:ontology	.
+local:initial_summary_whereas	rdfs:member	local:initial_summary	.
+local:s12	rdf:object	local:using_extend_we_can_answer_more_queries	.
+local:abridged_version	rdfs:member	local:abridged	.
+local:ontology_summarization	rdfs:subClassOf	local:summarization	.
+local:s12	local:AM-DIS	local:then	.
+local:specific_subgraph	rdfs:member	local:specific	.
+local:access_to_enduser	rdfs:member	local:access	.
+local:s6	rdf:object	local:dynamic_exploration_of_summaries_through_two_novel_operations	.
+local:s4	rdf:object	local:dynamic_exploration_of_summaries_through_two_novel_operations	.
+local:specific_nodes_whereas_using_global_zoom_we_can_answer_overall_more_queries	rdfs:member	local:specific_nodes	.
+local:access_to_enduser	rdfs:member	local:enduser	.
+local:detailed_information_for_a_particular_part_of_more_detailed_information	rdfs:member	local:particular_part	.
+local:s11.1	rdf:object	local:global_zoom	.
+local:s12.3	local:AM-MOD	local:can	.
+local:granular_information_access	rdfs:subClassOf	local:access	.
+local:focusing_on_specific_nodes	rdfs:member	local:focusing	.
+local:summary_whereas	rdfs:member	local:summary	.
+local:operators_calculation	rdfs:subClassOf	local:calculation	.
+local:s7.1	rdf:subject	local:granular_information_access_to_the_enduser	.
+local:detailed_information_for_a_particular_part_of_more_detailed_information	rdfs:member	local:s3.1	.
+local:s13.1	local:AM-MNR	local:efficiently	.
+local:s4	rdf:subject	local:new_approach	.
+local:s11.2	local:AM-ADV	local:queries_focusing_on_specific_nodes_whereas_using_global_zoom	.
+local:s10.1	rdf:subject	local:operators	.
+local:s3	rdf:object	local:detailed_information_for_a_particular_part_of_more_detailed_information	.
+local:original_data_source	rdfs:subClassOf	local:data_source	.
+local:zoom_on_whole_graph	rdfs:member	local:whole_graph	.
+local:ontology_summarization_most_important_concepts	rdfs:member	local:most_important_concepts	.
+local:s10	rdf:object	local:calculating_these_operators_is_npcomplete	.
+local:s5	local:AM-LOC	local:paper	.
+local:s10.1	rdf:predicate	local:calculate	.
+local:more_detailed	rdfs:member	local:more	.
+local:s8	rdf:predicate	local:focus	.
+local:s4	rdf:predicate	local:enable	.
+local:s2.1	rdf:subject	local:she	.
+local:s9	rdf:subject	local:we	.
+local:algorithms_can_efficiently_approximate_both_operators	rdfs:member	local:algorithms	.
+local:s13	rdf:subject	local:we	.
+local:summary_whereas_zoom	rdfs:subClassOf	local:zoom	.
+local:original_data	rdfs:subClassOf	local:data	.
+local:algorithms_can_efficiently_approximate_both_operators	rdfs:member	local:operators	.
+local:s1	local:AM-DIS	local:however	.
+local:important_concepts	rdfs:member	local:important	.
+local:granular_information_access	rdfs:member	local:granular_information	.
+local:s11	rdf:object	local:specific_nodes_whereas_using_global_zoom_we_can_answer_overall_more_queries	.
+local:information_access	rdfs:member	local:information	.
+local:original_data_source	rdfs:member	local:original_data	.
+local:s0	rdf:subject	local:ontology_summarization	.
+local:abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:version	.
+local:s1	rdf:predicate	local:not_limit	.
+local:particular_part_of_detailed_information	rdfs:member	local:s3.1	.
+local:whereas_zoom	rdfs:subClassOf	local:zoom	.
+local:s13.1	rdf:subject	local:algorithms	.
+local:dynamic_exploration_of_summaries_through_two_novel_operations	rdfs:member	local:two_novel_operations	.
+local:most_important_concepts	rdfs:member	local:most_important	.
+local:abridged_version_of_original_data_source	rdfs:member	local:abridged_version	.
+local:produce_an_abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:ontology_summarization	.
+local:s12	rdf:subject	local:we	.
+local:initial_summary	rdfs:member	local:initial	.
+local:approximations_for_operators	rdfs:member	local:approximations	.
+local:s3.1	rdfs:subClassOf	local:information	.
+local:s11.2	rdf:predicate	local:answer	.
+local:s9	rdf:predicate	local:provide	.
+local:s0.1	rdf:predicate	local:produce	.
+local:concepts_highlighting	rdfs:subClassOf	local:highlighting	.
+local:granular_information	rdfs:subClassOf	local:information	.
+local:granular_information_access_to_the_enduser	rdfs:member	local:granular_information_access	.
+local:information_access	rdfs:subClassOf	local:access	.
+local:more_queries	rdfs:subClassOf	local:queries	.
+local:abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:most_important_concepts	.
+local:s13	rdf:predicate	local:show	.
+local:static_summaries	rdfs:member	local:static	.
+local:original_data_source_concepts_highlighting	rdfs:member	local:original_data_source	.
+local:s2.1	local:AM-MNR	local:further	.
+local:new_approach	rdfs:subClassOf	local:approach	.
+local:s5	rdf:object	local:new_approach	.
+local:particular_part	rdfs:member	local:particular	.
+local:s13.1	local:AM-MOD	local:can	.
+local:extend_specific_subgraph_of_the_initial_summary_whereas_zoom_on_the_whole_graph	rdfs:member	local:whole_graph	.
+local:s1	local:AM-ADV	local:only	.
+local:zoom_on_whole_graph	rdfs:member	local:zoom	.
+local:particular_part_of_detailed_information	rdfs:member	local:particular_part	.
+local:approximations_for_these_operators_calculation	rdfs:member	local:operators_calculation	.
+local:s2.1	rdf:object	local:data_source	.
+local:produce_an_abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:original_data_source	.
+local:s13	rdf:object	local:algorithms_can_efficiently_approximate_both_operators	.
+local:dynamic_exploration_of_summaries_through_two_novel_operations	rdfs:member	local:summaries	.
+local:s2	rdf:object	local:summary_she_should_be_able_to_further_explore_the_data_source	.
+local:s12.1	rdf:predicate	local:use	.
+local:queries_focusing_on_specific_nodes_whereas_using_global_zoom	rdfs:member	local:specific_nodes	.
+local:dynamic_exploration_of_summaries_through_two_novel_operations	rdfs:member	local:novel_operations	.
+local:s14	rdf:predicate	local:employ	.
+local:queries_focusing_on_specific_nodes_whereas_using_global_zoom	rdfs:member	local:queries	.
+local:specific_nodes	rdfs:member	local:specific	.
+local:s0.2	rdf:predicate	local:highlight	.
+local:whole_graph	rdfs:subClassOf	local:graph	.
+local:novel_operations	rdfs:member	local:novel	.
+local:most_important_concepts	rdfs:subClassOf	local:concepts	.
+local:s11.2	rdf:subject	local:we	.
+local:s3.1	rdfs:member	local:detailed	.
+local:overall_more_queries	rdfs:subClassOf	local:queries	.
+local:s2	rdf:predicate	local:starting	.
+local:queries_focusing	rdfs:member	local:queries	.
+local:s11.1	rdf:predicate	local:use	.
+local:s11	rdf:subject	local:queries	.
+local:detailed_information_for_particular_part	rdfs:member	local:s3.1	.
+local:s12.3	rdf:object	local:queries	.
+local:s1	rdf:subject	local:user	.
+local:granular_information_access_to_the_enduser	rdfs:member	local:enduser	.
+local:abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:original_data_source	.
+local:approximations_for_these_operators_calculation	rdfs:member	local:approximations	.
+local:more_detailed_information	rdfs:subClassOf	local:information	.
+local:s0.1	rdf:subject	local:ontology_summarization	.
+local:particular_part	rdfs:subClassOf	local:part	.
+local:s14	rdf:subject	local:algorithms	.
+local:s5	rdf:predicate	local:present	.
+local:most_important	rdfs:member	local:most	.
+local:dynamic_exploration_of_summaries	rdfs:member	local:summaries	.
+local:produce_an_abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	rdfs:member	local:abridged_version	.
+local:specific_subgraph	rdfs:subClassOf	local:subgraph	.
+local:global_zoom	rdfs:subClassOf	local:zoom	.
+local:specific_nodes_whereas_using_global_zoom_we_can_answer_overall_more_queries	rdfs:member	local:global_zoom	.
+local:operators_calculation	rdfs:member	local:operators	.
+local:can_efficiently_approximate	rdfs:subClassOf	local:efficiently_approximate	.
+local:further_explore	rdfs:subClassOf	local:explore	.
+local:s13.1	rdf:predicate	local:approximate	.
+local:dynamic_exploration	rdfs:member	local:dynamic	.
 local:novel_operations	rdfs:subClassOf	local:operations	.
-local:more_more_queries	rdfs:subClassOf	local:queries	.
-local:overall_more_more	rdfs:subClassOf	local:more_more	.
-local:novel_operations	rdfs:member	local:novel_operations_zoom	.
-local:granular	rdfs:member	local:granular_information	.
-local:approximate	local:AM-MNR	local:efficiently	.
-local:answer_overall	rdfs:subClassOf	local:overall	.
-local:provide	vn.role:Recipient	local:we	.
-local:dynamic_exploration_of_summaries_through_two_novel_operations_zoom	local:dynamicexplorationofsummaries_through	local:two_novel_operations_zoom	.
-local:detailed	vn.role:Theme	local:information	.
-local:specific_specific_nodes_nodes	local:specificspecificnodes_	local:nodes	.
-local:detailed_information_for_particular_part	local:detailedinformation_for	local:particular_part	.
+local:initial_summary_whereas	rdfs:subClassOf	local:whereas	.
+local:s3.1	rdf:predicate	local:detail	.
+local:extend_specific_subgraph_of_the_initial_summary_whereas_zoom_on_the_whole_graph	rdfs:member	local:s12.2	.
+local:s0	rdf:object	local:produce_an_abridged_version_of_the_original_data_source_highlighting_ontology_summarization_most_important_concepts	.
+local:ideal_scenario	rdfs:subClassOf	local:scenario	.
+local:granular_information	rdfs:member	local:granular	.
+local:important_concepts	rdfs:subClassOf	local:concepts	.
+local:s10	rdf:predicate	local:show	.
+local:two_novel_operations	rdfs:subClassOf	local:novel_operations	.
+local:s6	rdf:subject	local:new_approach	.
+local:s12.3	rdf:subject	local:we	.
+local:dynamic_exploration	rdfs:subClassOf	local:exploration	.
+local:s6.1	rdf:predicate	local:s12.2	.
+local:more_detailed_information	rdfs:member	local:more_detailed	.
+local:queries_focusing_on_specific_nodes_whereas_using_global_zoom	rdfs:member	local:global_zoom	.
+local:specific_subgraph_of_initial_summary	rdfs:member	local:initial_summary	.
+local:overall_more_queries	rdfs:member	local:overall_more	.
+local:approximations_for_operators	rdfs:member	local:operators	.
+local:original_data	rdfs:member	local:original	.
+local:data_source	rdfs:subClassOf	local:source	.
+local:s10	rdf:subject	local:we	.
+local:s13	local:AM-TMP	local:finally	.

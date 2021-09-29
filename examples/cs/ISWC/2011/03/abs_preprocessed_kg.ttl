@@ -1,328 +1,605 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s20	a	rdf:Statement	;
+	rdfs:label	"furthermore the use of trust improves both recall"	.
+
+local:s19	a	rdf:Statement	;
+	rdfs:label	"furthermore the use of trust improves both precision"	.
+
+local:s18.2	a	rdf:Statement	;
+	rdfs:label	"more queries"	.
+
+local:s18.1	a	rdf:Statement	;
+	rdfs:label	"trust values converge as more queries"	.
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"experimental results showed"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"answers"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"we conducted an evaluation"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we implemented we technique"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"we exploit both alignments"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"compute trust we"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"in order to compute trust we perform bayesian inference"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"compute trust we"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"we exploit peers direct experience"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"compute trust we"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"the trust that a peer has towards another peer depends on a specific query"	.
+
+local:s10.1	a	rdf:Statement	;
+	rdfs:label	"the latter peer will provide a satisfactory answer"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the trust that a peer has towards another peer represents the probability that the latter peer will provide a satisfactory answer"	.
+
+local:s9.2	a	rdf:Statement	;
+	rdfs:label	"the network that are better suited to answer their queries queries"	.
+
+local:s9.1	a	rdf:Statement	;
+	rdfs:label	"the network that answer their queries queries"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"the network that better suited to answer their queries queries"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a trust mechanism"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"the network that answer those in the network"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"the network that better suited to answer those in the network"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"select those in the network"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a trust mechanism that can assist peers to select those in the network"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"nonetheless alignments may limited unsound"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"generate flawed translations"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"translations leading to unsatisfactory answers"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"nonetheless alignments may limited incomplete"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"in a semantic p2p network peers use separate ontologies"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"ontologies translating queries"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in a semantic p2p network peers rely on alignments between peers ontologies for translating queries"	.
+
+
 #### Classes ####
 
-local:semantic_p2p	rdfs:label	"semantic p2p"	.
+local:use_of_trust	a	rdf:Class	;
+	rdfs:label	"use of trust"	.
 
-local:p2p	rdfs:label	"p2p"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:semantic_p2p_network	rdfs:label	"semantic p2p network"	.
+local:trust	a	rdf:Class	;
+	rdfs:label	"trust"	.
 
-local:p2p_network	rdfs:label	"p2p network"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:recall	a	rdf:Class	;
+	rdfs:label	"recall"	.
 
-local:network	rdfs:label	"network"	.
+local:furthermore	a	rdf:Class	;
+	rdfs:label	"furthermore"	.
 
-local:semantic_p2p_network_peers	rdfs:label	"semantic p2p network peers"	.
+local:precision	a	rdf:Class	;
+	rdfs:label	"precision"	.
 
-local:peers	rdfs:label	"peers"	.
+local:queries	a	rdf:Class	;
+	rdfs:label	"queries"	.
 
-local:rely	rdfs:label	"rely"	.
+local:send	a	rdf:Class	;
+	rdfs:label	"send"	.
 
-local:peers_ontologies	rdfs:label	"peers ontologies"	.
+local:trust_values	a	rdf:Class	;
+	rdfs:label	"trust values"	.
 
-local:ontologies	rdfs:label	"ontologies"	.
+local:values	a	rdf:Class	;
+	rdfs:label	"values"	.
 
-local:alignments_between_peers_ontologies	rdfs:label	"alignments between peers ontologies"	.
+local:converge	a	rdf:Class	;
+	rdfs:label	"converge"	.
 
-local:alignments	rdfs:label	"alignments"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:translating	rdfs:label	"translating"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:queries	rdfs:label	"queries"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:use	rdfs:label	"use"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:separate	rdfs:label	"separate"	.
+local:receive	a	rdf:Class	;
+	rdfs:label	"receive"	.
 
-local:separate_ontologies	rdfs:label	"separate ontologies"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:nonetheless_alignments	rdfs:label	"nonetheless alignments"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:generate	rdfs:label	"generate"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:may	rdfs:label	"may"	.
+local:implement	a	rdf:Class	;
+	rdfs:label	"implement"	.
 
-local:unsatisfactory_answers	rdfs:label	"unsatisfactory answers"	.
+local:technique	a	rdf:Class	;
+	rdfs:label	"technique"	.
 
-local:answers	rdfs:label	"answers"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:unsatisfactory	rdfs:label	"unsatisfactory"	.
+local:alignments	a	rdf:Class	;
+	rdfs:label	"alignments"	.
 
-local:flawed_translations	rdfs:label	"flawed translations"	.
+local:compute	a	rdf:Class	;
+	rdfs:label	"compute"	.
 
-local:translations	rdfs:label	"translations"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:flawed_translations_leading	rdfs:label	"flawed translations leading"	.
+local:bayesian_inference	a	rdf:Class	;
+	rdfs:label	"bayesian inference"	.
 
-local:leading	rdfs:label	"leading"	.
+local:bayesian	a	rdf:Class	;
+	rdfs:label	"bayesian"	.
 
-local:leading_to_unsatisfactory_answers	rdfs:label	"leading to unsatisfactory answers"	.
+local:inference	a	rdf:Class	;
+	rdfs:label	"inference"	.
 
-local:trust_mechanism	rdfs:label	"trust mechanism"	.
+local:order_to_compute_trust	a	rdf:Class	;
+	rdfs:label	"order to compute trust"	.
 
-local:mechanism	rdfs:label	"mechanism"	.
+local:order	a	rdf:Class	;
+	rdfs:label	"order"	.
 
-local:trust	rdfs:label	"trust"	.
+local:peers_direct_experience	a	rdf:Class	;
+	rdfs:label	"peers direct experience"	.
 
-local:assist	rdfs:label	"assist"	.
+local:peers	a	rdf:Class	;
+	rdfs:label	"peers"	.
 
-local:can	rdfs:label	"can"	.
+local:direct_experience	a	rdf:Class	;
+	rdfs:label	"direct experience"	.
 
-local:select_those	rdfs:label	"select those"	.
+local:direct	a	rdf:Class	;
+	rdfs:label	"direct"	.
 
-local:those	rdfs:label	"those"	.
+local:experience	a	rdf:Class	;
+	rdfs:label	"experience"	.
 
-local:select_those_in_network	rdfs:label	"select those in network"	.
+local:trust_that_a_peer_has_towards_another_peer	a	rdf:Class	;
+	rdfs:label	"trust that a peer has towards another peer"	.
 
-local:select	rdfs:label	"select"	.
+local:peer	a	rdf:Class	;
+	rdfs:label	"peer"	.
 
-local:suited	rdfs:label	"suited"	.
+local:has_peer	a	rdf:Class	;
+	rdfs:label	"has peer"	.
 
-local:better	rdfs:label	"better"	.
+local:has_towards_another	a	rdf:Class	;
+	rdfs:label	"has towards another"	.
 
-local:those_in_network	rdfs:label	"those in network"	.
+local:has	a	rdf:Class	;
+	rdfs:label	"has"	.
 
-local:answer	rdfs:label	"answer"	.
+local:another	a	rdf:Class	;
+	rdfs:label	"another"	.
 
-local:queries_queries	rdfs:label	"queries queries"	.
+local:depend	a	rdf:Class	;
+	rdfs:label	"depend"	.
 
-local:their_queries_queries	rdfs:label	"their queries queries"	.
+local:specific_query	a	rdf:Class	;
+	rdfs:label	"specific query"	.
 
-local:present	rdfs:label	"present"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:paper	rdfs:label	"paper"	.
+local:specific	a	rdf:Class	;
+	rdfs:label	"specific"	.
 
-local:we	rdfs:label	"we"	.
+local:latter_peer	a	rdf:Class	;
+	rdfs:label	"latter peer"	.
 
-local:has_peer	rdfs:label	"has peer"	.
+local:latter	a	rdf:Class	;
+	rdfs:label	"latter"	.
 
-local:peer	rdfs:label	"peer"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:has_towards_another	rdfs:label	"has towards another"	.
+local:satisfactory_answer	a	rdf:Class	;
+	rdfs:label	"satisfactory answer"	.
 
-local:has	rdfs:label	"has"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:another	rdfs:label	"another"	.
+local:satisfactory	a	rdf:Class	;
+	rdfs:label	"satisfactory"	.
 
-local:represents	rdfs:label	"represents"	.
+local:will	a	rdf:Class	;
+	rdfs:label	"will"	.
 
-local:latter_peer	rdfs:label	"latter peer"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:latter	rdfs:label	"latter"	.
+local:probability_that_the_latter_peer_will_provide_a_satisfactory_answer	a	rdf:Class	;
+	rdfs:label	"probability that the latter peer will provide a satisfactory answer"	.
 
-local:satisfactory	rdfs:label	"satisfactory"	.
+local:probability	a	rdf:Class	;
+	rdfs:label	"probability"	.
 
-local:satisfactory_answer	rdfs:label	"satisfactory answer"	.
+local:will_provide	a	rdf:Class	;
+	rdfs:label	"will provide"	.
 
-local:will_provide	rdfs:label	"will provide"	.
+local:network_that_are_better_suited_to_answer_their_queries_queries	a	rdf:Class	;
+	rdfs:label	"network that are better suited to answer their queries queries"	.
 
-local:provide	rdfs:label	"provide"	.
+local:queries_queries	a	rdf:Class	;
+	rdfs:label	"queries queries"	.
 
-local:probability	rdfs:label	"probability"	.
+local:network	a	rdf:Class	;
+	rdfs:label	"network"	.
 
-local:will	rdfs:label	"will"	.
+local:their_queries	a	rdf:Class	;
+	rdfs:label	"their queries"	.
 
-local:depends	rdfs:label	"depends"	.
+local:better_suited	a	rdf:Class	;
+	rdfs:label	"better suited"	.
 
-local:specific	rdfs:label	"specific"	.
+local:suited	a	rdf:Class	;
+	rdfs:label	"suited"	.
 
-local:specific_query	rdfs:label	"specific query"	.
+local:suit	a	rdf:Class	;
+	rdfs:label	"suit"	.
 
-local:query	rdfs:label	"query"	.
+local:better	a	rdf:Class	;
+	rdfs:label	"better"	.
 
-local:compute	rdfs:label	"compute"	.
+local:answer_their_queries_queries	a	rdf:Class	;
+	rdfs:label	"answer their queries queries"	.
 
-local:exploit	rdfs:label	"exploit"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:order	rdfs:label	"order"	.
+local:trust_mechanism	a	rdf:Class	;
+	rdfs:label	"trust mechanism"	.
 
-local:direct_experience	rdfs:label	"direct experience"	.
+local:mechanism	a	rdf:Class	;
+	rdfs:label	"mechanism"	.
 
-local:experience	rdfs:label	"experience"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:direct	rdfs:label	"direct"	.
+local:answer_those_in_the_network	a	rdf:Class	;
+	rdfs:label	"answer those in the network"	.
 
-local:peers_direct_experience	rdfs:label	"peers direct experience"	.
+local:those_in_network	a	rdf:Class	;
+	rdfs:label	"those in network"	.
 
-local:perform	rdfs:label	"perform"	.
+local:those	a	rdf:Class	;
+	rdfs:label	"those"	.
 
-local:bayesian	rdfs:label	"bayesian"	.
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
 
-local:bayesian_inference	rdfs:label	"bayesian inference"	.
+local:assist	a	rdf:Class	;
+	rdfs:label	"assist"	.
 
-local:inference	rdfs:label	"inference"	.
+local:peers_select_those_in_the_network	a	rdf:Class	;
+	rdfs:label	"peers select those in the network"	.
 
-local:implemented	rdfs:label	"implemented"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:technique	rdfs:label	"technique"	.
+local:limit	a	rdf:Class	;
+	rdfs:label	"limit"	.
 
-local:conducted	rdfs:label	"conducted"	.
+local:unsound	a	rdf:Class	;
+	rdfs:label	"unsound"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:nonetheless	a	rdf:Class	;
+	rdfs:label	"nonetheless"	.
 
-local:experimental_results	rdfs:label	"experimental results"	.
+local:may	a	rdf:Class	;
+	rdfs:label	"may"	.
 
-local:results	rdfs:label	"results"	.
+local:flawed_translations	a	rdf:Class	;
+	rdfs:label	"flawed translations"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:translations	a	rdf:Class	;
+	rdfs:label	"translations"	.
 
-local:showed	rdfs:label	"showed"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:more	rdfs:label	"more"	.
+local:lead	a	rdf:Class	;
+	rdfs:label	"lead"	.
 
-local:more_queries	rdfs:label	"more queries"	.
+local:unsatisfactory_answers	a	rdf:Class	;
+	rdfs:label	"unsatisfactory answers"	.
 
-local:trust_values	rdfs:label	"trust values"	.
+local:unsatisfactory	a	rdf:Class	;
+	rdfs:label	"unsatisfactory"	.
 
-local:values	rdfs:label	"values"	.
+local:incomplete	a	rdf:Class	;
+	rdfs:label	"incomplete"	.
 
-local:converge	rdfs:label	"converge"	.
+local:separate_ontologies	a	rdf:Class	;
+	rdfs:label	"separate ontologies"	.
 
-local:sent	rdfs:label	"sent"	.
+local:ontologies	a	rdf:Class	;
+	rdfs:label	"ontologies"	.
 
-local:use_of_trust	rdfs:label	"use of trust"	.
+local:separate	a	rdf:Class	;
+	rdfs:label	"separate"	.
 
-local:improves	rdfs:label	"improves"	.
+local:semantic_p2p_network_peers	a	rdf:Class	;
+	rdfs:label	"semantic p2p network peers"	.
 
-local:furthermore	rdfs:label	"furthermore"	.
+local:network_peers	a	rdf:Class	;
+	rdfs:label	"network peers"	.
 
-local:recall	rdfs:label	"recall"	.
+local:p2p_network	a	rdf:Class	;
+	rdfs:label	"p2p network"	.
 
-local:precision	rdfs:label	"precision"	.
+local:semantic_p2p	a	rdf:Class	;
+	rdfs:label	"semantic p2p"	.
 
-#### Properties ####
+local:p2p	a	rdf:Class	;
+	rdfs:label	"p2p"	.
+
+local:semantic_p2p_network	a	rdf:Class	;
+	rdfs:label	"semantic p2p network"	.
+
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
+
+local:p2p_network_peers	a	rdf:Class	;
+	rdfs:label	"p2p network peers"	.
+
+local:translate	a	rdf:Class	;
+	rdfs:label	"translate"	.
+
+local:alignments_between_peers_ontologies	a	rdf:Class	;
+	rdfs:label	"alignments between peers ontologies"	.
+
+local:peers_ontologies	a	rdf:Class	;
+	rdfs:label	"peers ontologies"	.
+
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
+
+local:translating_queries	a	rdf:Class	;
+	rdfs:label	"translating queries"	.
 
 #### Mapped Relations ####
 
-local:bayesian_inference	owl:sameAs	cso:bayesian_inference	.
-local:probability	owl:sameAs	cso:probability	.
-cso:semantics	rdfs:label	"semantic"	.
-local:semantic	owl:sameAs	cso:semantics	.
-cso:p2p_network	rdfs:label	"p2p network"	.
-cso:bayesian_inference	rdfs:label	"bayesian inference"	.
-cso:ontologies	rdfs:label	"ontologies"	.
-local:ontologies	owl:sameAs	cso:ontologies	.
-local:p2p	owl:sameAs	cso:p2p	.
 cso:probability	rdfs:label	"probability"	.
-cso:p2p	rdfs:label	"p2p"	.
+local:bayesian_inference	owl:sameAs	cso:bayesian_inference	.
+local:ontologies	owl:sameAs	cso:ontologies	.
+cso:bayesian_inference	rdfs:label	"bayesian inference"	.
+cso:p2p_network	rdfs:label	"p2p network"	.
+cso:semantics	rdfs:label	"semantic"	.
 local:p2p_network	owl:sameAs	cso:p2p_network	.
+local:p2p	owl:sameAs	cso:p2p	.
+cso:p2p	rdfs:label	"p2p"	.
+cso:ontologies	rdfs:label	"ontologies"	.
+local:probability	owl:sameAs	cso:probability	.
+local:semantic	owl:sameAs	cso:semantics	.
 
 #### Relations ####
 
-local:assist	vn.role:Beneficiary	local:peers	.
-local:queries	rdfs:member	local:queries_queries	.
-local:satisfactory	rdfs:member	local:satisfactory_answer	.
-local:trust	rdfs:member	local:trust_mechanism	.
-local:direct_experience	rdfs:subClassOf	local:experience	.
-local:semantic_p2p_network	rdfs:subClassOf	local:network	.
-local:trust_mechanism	rdfs:subClassOf	local:mechanism	.
-local:specific_query	rdfs:subClassOf	local:query	.
-local:perform	local:AM-PNC	local:order	.
-local:nonetheless_alignments	rdfs:subClassOf	local:alignments	.
-local:alignments_between_peers_ontologies	local:between_peersontologies	local:alignments	.
-local:latter_peer	rdfs:subClassOf	local:peer	.
-local:generate	vn.role:Theme1	local:nonetheless_alignments	.
-local:exploit	vn.role:Agent	local:we	.
-local:provide	vn.role:Agent	local:satisfactory_answer	.
-local:select_those_in_network	local:selectthose_in	local:network	.
-local:queries_queries	rdfs:subClassOf	local:queries	.
-local:represents	vn.role:Theme	local:probability	.
-local:provide	vn.role:Recipient	local:latter_peer	.
-local:flawed_translations_leading	local:_leading	local:flawed_translations	.
-local:exploit	local:AM-PNC	local:order	.
-local:converge	local:AM-TMP	local:sent	.
-local:conducted	vn.role:Agent	local:we	.
-local:satisfactory_answer	rdfs:subClassOf	local:answer	.
-local:depends	vn.role:Location	local:specific_query	.
-local:leading	vn.role:Destination	local:unsatisfactory_answers	.
-local:suited	vn.role:indirect_object	local:answer	.
-local:select_those_in_network	local:in_network	local:select_those	.
-local:translating	vn.role:Patient	local:queries	.
-local:separate	rdfs:member	local:separate_ontologies	.
-local:alignments_between_peers_ontologies	local:alignments_between	local:peers_ontologies	.
-local:those_in_network	local:those_in	local:network	.
-local:compute	vn.role:Agent	local:we	.
-local:leading	vn.role:Agent	local:flawed_translations	.
-local:exploit	vn.role:Predicate	local:peers_direct_experience	.
-local:select	vn.role:Theme	local:network	.
-local:present	local:AM-LOC	local:paper	.
-local:more	rdfs:member	local:more_queries	.
-local:peers_direct_experience	rdfs:subClassOf	local:direct_experience	.
-local:showed	vn.role:Agent	local:experimental_results	.
-local:converge	vn.role:Theme	local:trust_values	.
-local:peers_ontologies	rdfs:subClassOf	local:ontologies	.
-local:rely	vn.role:Theme	local:alignments_between_peers_ontologies	.
-local:separate_ontologies	rdfs:subClassOf	local:ontologies	.
-local:assist	vn.role:Agent	local:trust_mechanism	.
-local:perform	vn.role:Theme	local:bayesian_inference	.
-local:showed	vn.role:Theme	local:converge	.
-local:semantic_p2p_network	rdfs:subClassOf	local:p2p_network	.
-local:compute	vn.role:Product	local:trust	.
-local:their_queries_queries	rdfs:subClassOf	local:queries_queries	.
-local:semantic_p2p_network_peers	local:semanticp2pnetwork_	local:peers	.
-local:leading_to_unsatisfactory_answers	local:to_unsatisfactoryanswers	local:leading	.
-local:improves	vn.role:Patient	local:precision	.
-local:use	vn.role:Theme	local:separate_ontologies	.
-local:rely	vn.role:indirect_object	local:translating	.
-local:assist	local:AM-MOD	local:can	.
-local:use_of_trust	local:of_trust	local:use	.
-local:more_queries	rdfs:subClassOf	local:queries	.
-local:semantic_p2p	rdfs:subClassOf	local:p2p	.
-local:translating	vn.role:Agent	local:ontologies	.
-local:unsatisfactory_answers	rdfs:subClassOf	local:answers	.
-local:bayesian_inference	rdfs:subClassOf	local:inference	.
-local:generate	vn.role:Theme2	local:flawed_translations_leading	.
-local:those_in_network	local:in_network	local:those	.
-local:specific	rdfs:member	local:specific_query	.
-local:semantic_p2p_network_peers	local:_peers	local:semantic_p2p_network	.
-local:suited	vn.role:Patient	local:network	.
-local:will_provide	rdfs:subClassOf	local:provide	.
-local:assist	vn.role:Theme	local:select_those_in_network	.
-local:latter	rdfs:member	local:latter_peer	.
-local:implemented	vn.role:Theme	local:technique	.
-local:improves	vn.role:Patient	local:recall	.
-local:depends	vn.role:Theme	local:trust	.
-local:has_towards_another	local:towards_another	local:has	.
-local:unsatisfactory	rdfs:member	local:unsatisfactory_answers	.
-local:use	vn.role:Agent	local:semantic_p2p_network_peers	.
-local:answer	vn.role:Predicate	local:network	.
-local:semantic	rdfs:member	local:semantic_p2p	.
-local:conducted	vn.role:Theme	local:evaluation	.
-local:generate	local:AM-MOD	local:may	.
-local:suited	local:AM-PNC	local:answer	.
-local:flawed_translations	rdfs:subClassOf	local:translations	.
-local:suited	local:AM-MNR	local:better	.
-local:bayesian	rdfs:member	local:bayesian_inference	.
-local:present	vn.role:Agent	local:we	.
-local:semantic_p2p	rdfs:member	local:semantic_p2p_network	.
-local:p2p_network	rdfs:subClassOf	local:network	.
-local:present	vn.role:Theme	local:trust_mechanism	.
-local:peers	rdfs:member	local:peers_ontologies	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:answer	vn.role:Predicate	local:queries_queries	.
-local:rely	local:AM-LOC	local:semantic_p2p_network_peers	.
-local:flawed_translations_leading	local:flawedtranslations_	local:leading	.
-local:select_those	rdfs:subClassOf	local:those	.
-local:exploit	vn.role:Predicate	local:alignments	.
-local:answer	vn.role:Agent	local:network	.
-local:use_of_trust	local:use_of	local:trust	.
-local:p2p	rdfs:member	local:p2p_network	.
-local:perform	vn.role:Agent	local:we	.
-local:trust	rdfs:member	local:trust_values	.
-local:improves	vn.role:Agent	local:furthermore	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:provide	local:AM-MOD	local:will	.
-local:has_towards_another	local:has_towards	local:another	.
-local:leading_to_unsatisfactory_answers	local:leading_to	local:unsatisfactory_answers	.
+local:s19	rdf:predicate	local:improve	.
+local:s13.1	rdf:predicate	local:perform	.
+local:s7	rdf:predicate	local:suit	.
+local:answer_those_in_the_network	rdfs:member	local:network	.
+local:s5	local:AM-DIS	local:nonetheless	.
 local:trust_values	rdfs:subClassOf	local:values	.
-local:direct	rdfs:member	local:direct_experience	.
-local:represents	vn.role:Agent	local:trust	.
-local:implemented	vn.role:Agent	local:we	.
+local:network_that_are_better_suited_to_answer_their_queries_queries	rdfs:member	local:network	.
+local:s15	rdf:predicate	local:implement	.
+local:network_peers	rdfs:member	local:network	.
+local:s5	rdf:object	local:unsound	.
+local:satisfactory_answer	rdfs:subClassOf	local:answer	.
+local:s6	rdf:subject	local:trust_mechanism	.
+local:queries_queries	rdfs:member	local:queries	.
+local:s6.1	rdf:subject	local:network	.
+local:network_that_are_better_suited_to_answer_their_queries_queries	rdfs:member	local:queries_queries	.
+local:peers_select_those_in_the_network	rdfs:member	local:peers	.
+local:separate_ontologies	rdfs:subClassOf	local:ontologies	.
+local:alignments_between_peers_ontologies	rdfs:member	local:alignments	.
+local:those_in_network	rdfs:member	local:network	.
+local:s18.2	rdf:predicate	local:send	.
+local:s13.1	rdf:object	local:bayesian_inference	.
+local:s10	rdf:subject	local:trust_that_a_peer_has_towards_another_peer	.
+local:s13.1	local:AM-PNC	local:order_to_compute_trust	.
+local:s5	rdf:subject	local:alignments	.
+local:network_peers	rdfs:subClassOf	local:peers	.
+local:s20	rdf:object	local:recall	.
+local:s7.1	rdf:predicate	local:answer	.
+local:flawed_translations	rdfs:subClassOf	local:translations	.
+local:s14.1	rdf:subject	local:we	.
+local:trust_that_a_peer_has_towards_another_peer	rdfs:member	local:trust	.
+local:s19	local:AM-DIS	local:furthermore	.
+local:s16	rdf:predicate	local:conduct	.
+local:semantic_p2p_network_peers	rdfs:subClassOf	local:peers	.
+local:s4	rdf:subject	local:flawed_translations	.
+local:s11	rdf:predicate	local:depend	.
+local:direct_experience	rdfs:subClassOf	local:experience	.
 local:has_peer	rdfs:subClassOf	local:peer	.
+local:s9	rdf:subject	local:network	.
+local:s7	local:AM-MNR	local:better	.
+local:direct_experience	rdfs:member	local:direct	.
+local:s12.1	rdf:predicate	local:exploit	.
+local:bayesian_inference	rdfs:subClassOf	local:inference	.
+local:s20	rdf:predicate	local:improve	.
+local:s10	rdf:predicate	local:represent	.
+local:s0.1	rdf:object	local:queries	.
+local:p2p_network_peers	rdfs:subClassOf	local:network_peers	.
+local:s6.1	rdf:predicate	local:select	.
+local:s5	local:AM-MOD	local:may	.
+local:s15	rdf:object	local:technique	.
+local:semantic_p2p_network	rdfs:member	local:semantic_p2p	.
+local:s11	rdf:subject	local:trust_that_a_peer_has_towards_another_peer	.
+local:s13	rdf:object	local:trust	.
+local:s20	rdf:subject	local:use_of_trust	.
+local:answer_those_in_the_network	rdfs:member	local:answer	.
+local:s9.2	rdf:predicate	local:query	.
+local:s18.1	local:AM-MNR	local:queries	.
+local:semantic_p2p	rdfs:member	local:semantic	.
+local:s12	rdf:subject	local:we	.
+local:s10.1	rdf:subject	local:latter_peer	.
+local:has_towards_another	rdfs:member	local:another	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:s7	rdf:object	local:answer_those_in_the_network	.
+local:better_suited	rdfs:subClassOf	local:suited	.
+local:s8	rdf:predicate	local:present	.
+local:s2	rdf:subject	local:alignments	.
+local:s12.1	rdf:object	local:peers_direct_experience	.
+local:peers_ontologies	rdfs:subClassOf	local:ontologies	.
+local:latter_peer	rdfs:subClassOf	local:peer	.
+local:specific_query	rdfs:member	local:specific	.
+local:s0.1	rdf:predicate	local:translate	.
+local:p2p_network_peers	rdfs:subClassOf	local:peers	.
+local:p2p_network_peers	rdfs:member	local:p2p_network	.
+local:s2	local:AM-DIS	local:nonetheless	.
+local:s17	rdf:predicate	local:receive	.
+local:s15	rdf:subject	local:we	.
+local:semantic_p2p_network_peers	rdfs:member	local:semantic_p2p_network	.
+local:s9.1	rdf:subject	local:network	.
+local:s9.2	rdf:subject	local:network_that_are_better_suited_to_answer_their_queries_queries	.
+local:s19	rdf:object	local:precision	.
+local:s6	rdf:predicate	local:assist	.
+local:s9	local:AM-PNC	local:answer_their_queries_queries	.
+local:s7	rdf:subject	local:network	.
+local:s13	rdf:subject	local:we	.
+local:trust_mechanism	rdfs:member	local:trust	.
+local:s9.1	rdf:predicate	local:answer	.
+local:s12	rdf:object	local:trust	.
+local:separate_ontologies	rdfs:member	local:separate	.
+local:s14	rdf:subject	local:we	.
+local:queries_queries	rdfs:subClassOf	local:queries	.
+local:s12	rdf:predicate	local:compute	.
+local:s9	rdf:predicate	local:suit	.
+local:s14	rdf:predicate	local:compute	.
+local:s16	rdf:subject	local:we	.
+local:s14.1	rdf:predicate	local:exploit	.
+local:semantic_p2p	rdfs:subClassOf	local:p2p	.
+local:s9	local:AM-MNR	local:better	.
+local:alignments_between_peers_ontologies	rdfs:member	local:peers_ontologies	.
+local:s16	rdf:object	local:evaluation	.
+local:s20	local:AM-DIS	local:furthermore	.
+local:s8	local:AM-LOC	local:paper	.
+local:s2	rdf:object	local:incomplete	.
+local:s19	rdf:subject	local:use_of_trust	.
+local:s10.1	rdf:object	local:satisfactory_answer	.
+local:s18.1	rdf:subject	local:trust_values	.
+local:s18	rdf:predicate	local:show	.
+local:s1	rdf:predicate	local:use	.
+local:s0	rdf:object	local:translating_queries	.
+local:s13	rdf:predicate	local:compute	.
+local:specific_query	rdfs:subClassOf	local:query	.
+local:will_provide	rdfs:subClassOf	local:provide	.
+local:s6	local:AM-MOD	local:can	.
+local:s10.1	local:AM-MOD	local:will	.
+local:s18.2	rdf:subject	local:queries	.
+local:s18	rdf:subject	local:experimental_results	.
+local:p2p_network	rdfs:member	local:p2p	.
+local:order_to_compute_trust	rdfs:member	local:order	.
+local:peers_direct_experience	rdfs:member	local:direct_experience	.
+local:s12.1	rdf:subject	local:we	.
+local:s17	rdf:subject	local:s17	.
+local:s0	rdf:predicate	local:rely	.
+local:unsatisfactory_answers	rdfs:subClassOf	local:s17	.
+local:s10	rdf:object	local:probability_that_the_latter_peer_will_provide_a_satisfactory_answer	.
+local:s6	rdf:object	local:peers_select_those_in_the_network	.
+local:peers_direct_experience	rdfs:member	local:peers	.
+local:s9.1	rdf:object	local:queries_queries	.
+local:s3	rdf:subject	local:translations	.
+local:satisfactory_answer	rdfs:member	local:satisfactory	.
+local:probability_that_the_latter_peer_will_provide_a_satisfactory_answer	rdfs:member	local:satisfactory_answer	.
+local:use_of_trust	rdfs:member	local:trust	.
+local:probability_that_the_latter_peer_will_provide_a_satisfactory_answer	rdfs:member	local:probability	.
+local:s3	rdf:predicate	local:lead	.
+local:semantic_p2p_network	rdfs:subClassOf	local:network	.
+local:peers_ontologies	rdfs:member	local:peers	.
+local:trust_that_a_peer_has_towards_another_peer	rdfs:member	local:peer	.
+local:s11	rdf:object	local:specific_query	.
+local:probability_that_the_latter_peer_will_provide_a_satisfactory_answer	rdfs:member	local:latter_peer	.
+local:order_to_compute_trust	rdfs:member	local:trust	.
+local:s7.1	rdf:object	local:network	.
+local:s2	local:AM-MOD	local:may	.
+local:s7.1	rdf:subject	local:network	.
+local:trust_mechanism	rdfs:subClassOf	local:mechanism	.
+local:s14	rdf:object	local:trust	.
+local:has_towards_another	rdfs:member	local:has	.
+local:s5	rdf:predicate	local:limit	.
+local:s2	rdf:predicate	local:limit	.
+local:peers_select_those_in_the_network	rdfs:member	local:network	.
+local:their_queries	rdfs:subClassOf	local:queries	.
+local:semantic_p2p_network_peers	rdfs:subClassOf	local:p2p_network_peers	.
+local:unsatisfactory_answers	rdfs:member	local:unsatisfactory	.
+local:s8	rdf:object	local:trust_mechanism	.
+local:s10.1	rdf:predicate	local:provide	.
+local:s3	rdf:object	local:unsatisfactory_answers	.
+local:s1	local:AM-MNR	local:semantic_p2p_network_peers	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:s4	rdf:predicate	local:generate	.
+local:those_in_network	rdfs:member	local:those	.
+local:p2p_network	rdfs:subClassOf	local:network	.
+local:s1	rdf:subject	local:separate_ontologies	.
+local:s18.1	rdf:predicate	local:converge	.
+local:s0	rdf:subject	local:alignments_between_peers_ontologies	.
+local:s8	rdf:subject	local:we	.
+local:s14.1	rdf:object	local:alignments	.
+local:use_of_trust	rdfs:member	local:use	.
+local:s0	local:AM-LOC	local:semantic_p2p_network_peers	.
+local:trust_values	rdfs:member	local:trust	.
+local:latter_peer	rdfs:member	local:latter	.
+local:s13.1	rdf:subject	local:we	.
+local:bayesian_inference	rdfs:member	local:bayesian	.
+local:s0.1	rdf:subject	local:ontologies	.

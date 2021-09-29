@@ -1,557 +1,896 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s18	a	rdf:Statement	;
+	rdfs:label	"a dataset extracted from stackoverflow"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"experimental results show that our approach is comparable with other stateoftheart proprietary systems such as the closedsource wolframalpha computational knowledge engine"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"the evaluation of our system based on a dataset"	.
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"semantic features find the best candidate"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"a number of java source code snippets and methods ranked by open image in new window on semantic features to find the best candidate"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"a sparql query retrieves a number of java source code snippets and methods ranked by open image in new window on semantic features to find the best candidate"	.
+
+local:s14.2	a	rdf:Statement	;
+	rdfs:label	"both syntactic find the best candidate"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	"a number of java source code snippets and methods ranked by open image in new window on both syntactic to find the best candidate"	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"a sparql query retrieves a number of java source code snippets and methods ranked by open image in new window on both syntactic to find the best candidate"	.
+
+local:s13.1	a	rdf:Statement	;
+	rdfs:label	"the best candidate that get the correct answer"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"the best candidate that then executed"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"triples representing java code constructs"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"a large rdf repository containing millions of triples"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"a sparql query that run against codeontology"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"a sparql query that run against a large rdf repository"	.
+
+local:s8.2	a	rdf:Statement	;
+	rdfs:label	"interpreting the natural language question"	.
+
+local:s8.1	a	rdf:Statement	;
+	rdfs:label	"to address this challenging task our system open image in new window performs languagetocode translation"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"address this challenging task our system open image in new window"	.
+
+local:s7.2	a	rdf:Statement	;
+	rdfs:label	"generating a sparql query"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"to address this challenging task our system open image in new window performs languagetocode translation by generating a sparql query"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"address this challenging task our system open image in new window"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"a large rdf repository containing millions of triples"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"triples representing java code constructs"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"a sparql query that run against codeontology"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"a sparql query that run against a large rdf repository"	.
+
+local:s2.3	a	rdf:Statement	;
+	rdfs:label	"requiring instead adhoc code generation and execution"	.
+
+local:s2.2	a	rdf:Statement	;
+	rdfs:label	"advanced data querying requiring instead adhoc code generation and execution"	.
+
+local:s2.1	a	rdf:Statement	;
+	rdfs:label	"advanced data"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"process natural language questions that can not answered by advanced data querying requiring instead adhoc code generation and execution"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"we process natural language questions"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we present an unsupervised approach to process natural language questions"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"requiring instead adhoc code generation and execution"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"answering querying requiring instead adhoc code generation and execution"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"process natural language questions that can not answered by factual question answering querying requiring instead adhoc code generation and execution"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:we	rdfs:label	"we"	.
+local:extract	a	rdf:Class	;
+	rdfs:label	"extract"	.
 
-local:unsupervised_approach	rdfs:label	"unsupervised approach"	.
+local:stackoverflow	a	rdf:Class	;
+	rdfs:label	"stackoverflow"	.
 
-local:approach	rdfs:label	"approach"	.
+local:experimental_results	a	rdf:Class	;
+	rdfs:label	"experimental results"	.
 
-local:language	rdfs:label	"language"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:language_questions	rdfs:label	"language questions"	.
+local:results	a	rdf:Class	;
+	rdfs:label	"results"	.
 
-local:adhoc_code	rdfs:label	"ad-hoc code"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:code	rdfs:label	"code"	.
+local:approach_is_comparable_with_other_stateoftheart_proprietary_systems_such_as_the_closedsource_wolframalpha_computational_knowledge_engine	a	rdf:Class	;
+	rdfs:label	"approach is comparable with other stateoftheart proprietary systems such as the closedsource wolframalpha computational knowledge engine"	.
 
-local:unsupervised	rdfs:label	"unsupervised"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:instead_adhoc	rdfs:label	"instead ad-hoc"	.
+local:closedsource_wolframalpha	a	rdf:Class	;
+	rdfs:label	"closedsource wolframalpha"	.
 
-local:adhoc	rdfs:label	"ad-hoc"	.
+local:other_stateoftheart_proprietary_systems	a	rdf:Class	;
+	rdfs:label	"other stateoftheart proprietary systems"	.
 
-local:advanced_data_querying	rdfs:label	"advanced data querying"	.
+local:computational_knowledge_engine	a	rdf:Class	;
+	rdfs:label	"computational knowledge engine"	.
 
-local:querying	rdfs:label	"querying"	.
+local:closedsource	a	rdf:Class	;
+	rdfs:label	"closedsource"	.
 
-local:advanced_data	rdfs:label	"advanced data"	.
+local:engine	a	rdf:Class	;
+	rdfs:label	"engine"	.
 
-local:data	rdfs:label	"data"	.
+local:knowledge_engine	a	rdf:Class	;
+	rdfs:label	"knowledge engine"	.
 
-local:factual	rdfs:label	"factual"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:factual_question	rdfs:label	"factual question"	.
+local:computational_knowledge	a	rdf:Class	;
+	rdfs:label	"computational knowledge"	.
 
-local:instead_adhoc_code_generation	rdfs:label	"instead ad-hoc code generation"	.
+local:stateoftheart_proprietary	a	rdf:Class	;
+	rdfs:label	"stateoftheart proprietary"	.
 
-local:generation	rdfs:label	"generation"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:natural_language_questions	rdfs:label	"natural language questions"	.
+local:other_stateoftheart	a	rdf:Class	;
+	rdfs:label	"other stateoftheart"	.
 
-local:questions	rdfs:label	"questions"	.
+local:proprietary_systems	a	rdf:Class	;
+	rdfs:label	"proprietary systems"	.
 
-local:instead_adhoc_code	rdfs:label	"instead ad-hoc code"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:code_generation	rdfs:label	"code generation"	.
+local:stateoftheart_proprietary_systems	a	rdf:Class	;
+	rdfs:label	"stateoftheart proprietary systems"	.
 
-local:advanced	rdfs:label	"advanced"	.
+local:wolframalpha	a	rdf:Class	;
+	rdfs:label	"wolframalpha"	.
 
-local:natural_language	rdfs:label	"natural language"	.
+local:other_stateoftheart_proprietary	a	rdf:Class	;
+	rdfs:label	"other stateoftheart proprietary"	.
 
-local:instead	rdfs:label	"instead"	.
+local:computational	a	rdf:Class	;
+	rdfs:label	"computational"	.
 
-local:adhoc_code_generation	rdfs:label	"ad-hoc code generation"	.
+local:other	a	rdf:Class	;
+	rdfs:label	"other"	.
 
-local:natural	rdfs:label	"natural"	.
+local:proprietary	a	rdf:Class	;
+	rdfs:label	"proprietary"	.
 
-local:question	rdfs:label	"question"	.
+local:wolframalpha_computational_knowledge_engine	a	rdf:Class	;
+	rdfs:label	"wolframalpha computational knowledge engine"	.
 
-local:data_querying	rdfs:label	"data querying"	.
+local:closedsource_wolframalpha_computational_knowledge_engine	a	rdf:Class	;
+	rdfs:label	"closedsource wolframalpha computational knowledge engine"	.
 
-local:not_answered	rdfs:label	"not answered"	.
+local:comparable_with_other_stateoftheart_proprietary_systems	a	rdf:Class	;
+	rdfs:label	"comparable with other stateoftheart proprietary systems"	.
 
-local:answered	rdfs:label	"answered"	.
+local:comparable	a	rdf:Class	;
+	rdfs:label	"comparable"	.
 
-local:can_not_answered	rdfs:label	"can not answered"	.
+local:other_stateoftheart_proprietary_systems_such_as_closedsource_wolframalpha_computational_knowledge_engine	a	rdf:Class	;
+	rdfs:label	"other stateoftheart proprietary systems such_as closedsource wolframalpha computational knowledge engine"	.
 
-local:can_not_answered_agent_factual_question	rdfs:label	"can not answered agent factual question"	.
+local:evaluation_of_our_system	a	rdf:Class	;
+	rdfs:label	"evaluation of our system"	.
 
-local:factual_question_answering	rdfs:label	"factual question answering"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:answering	rdfs:label	"answering"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:factual_question_answering_advanced	rdfs:label	"factual question answering advanced"	.
+local:our_system	a	rdf:Class	;
+	rdfs:label	"our system"	.
 
-local:process	rdfs:label	"process"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:can	rdfs:label	"can"	.
+local:semantic_features	a	rdf:Class	;
+	rdfs:label	"semantic features"	.
 
-local:not	rdfs:label	"not"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:answering_advanced_data_querying	rdfs:label	"answering advanced data querying"	.
+local:features	a	rdf:Class	;
+	rdfs:label	"features"	.
 
-local:requiring	rdfs:label	"requiring"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:open	rdfs:label	"open"	.
+local:best_candidate	a	rdf:Class	;
+	rdfs:label	"best candidate"	.
 
-local:open_image	rdfs:label	"open image"	.
+local:best	a	rdf:Class	;
+	rdfs:label	"best"	.
 
-local:image	rdfs:label	"image"	.
+local:candidate	a	rdf:Class	;
+	rdfs:label	"candidate"	.
 
-local:our_system	rdfs:label	"our system"	.
+local:open_image	a	rdf:Class	;
+	rdfs:label	"open image"	.
 
-local:system	rdfs:label	"system"	.
+local:open	a	rdf:Class	;
+	rdfs:label	"open"	.
 
-local:our_system_open_image	rdfs:label	"our system open image"	.
+local:image	a	rdf:Class	;
+	rdfs:label	"image"	.
 
-local:address	rdfs:label	"address"	.
+local:rank	a	rdf:Class	;
+	rdfs:label	"rank"	.
 
-local:challenging	rdfs:label	"challenging"	.
+local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets and methods semantic features to find the best candidate"	.
 
-local:new	rdfs:label	"new"	.
+local:java_source_code_snippets	a	rdf:Class	;
+	rdfs:label	"java source code snippets"	.
 
-local:new_window	rdfs:label	"new window"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:window	rdfs:label	"window"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:challenging_task	rdfs:label	"challenging task"	.
+local:code_snippets	a	rdf:Class	;
+	rdfs:label	"code snippets"	.
 
-local:task	rdfs:label	"task"	.
+local:code	a	rdf:Class	;
+	rdfs:label	"code"	.
 
-local:open_image_in_new_window	rdfs:label	"open image in new window"	.
+local:source_code_snippets	a	rdf:Class	;
+	rdfs:label	"source code snippets"	.
 
-local:performs	rdfs:label	"performs"	.
+local:snippets	a	rdf:Class	;
+	rdfs:label	"snippets"	.
 
-local:languagetocode_translation	rdfs:label	"language-to-code translation"	.
+local:java_source_code	a	rdf:Class	;
+	rdfs:label	"java source code"	.
 
-local:translation	rdfs:label	"translation"	.
+local:java_source	a	rdf:Class	;
+	rdfs:label	"java source"	.
 
-local:languagetocode	rdfs:label	"language-to-code"	.
+local:source	a	rdf:Class	;
+	rdfs:label	"source"	.
 
-local:language_question	rdfs:label	"language question"	.
+local:source_code	a	rdf:Class	;
+	rdfs:label	"source code"	.
 
-local:natural_language_question	rdfs:label	"natural language question"	.
+local:java	a	rdf:Class	;
+	rdfs:label	"java"	.
 
-local:interpreting	rdfs:label	"interpreting"	.
+local:methods_semantic_features	a	rdf:Class	;
+	rdfs:label	"methods semantic features"	.
 
-local:sparql_query	rdfs:label	"sparql query"	.
+local:number_of_java_source_code_snippets	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets"	.
 
-local:query	rdfs:label	"query"	.
+local:number_of_java_source_code_snippets_of_methods_semantic_features	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets of methods semantic features"	.
 
-local:code_constructs	rdfs:label	"code constructs"	.
+local:new_window	a	rdf:Class	;
+	rdfs:label	"new window"	.
 
-local:rdf_repository	rdfs:label	"rdf repository"	.
+local:window	a	rdf:Class	;
+	rdfs:label	"window"	.
 
-local:repository	rdfs:label	"repository"	.
+local:new	a	rdf:Class	;
+	rdfs:label	"new"	.
 
-local:java_code	rdfs:label	"java code"	.
+local:sparql_query	a	rdf:Class	;
+	rdfs:label	"sparql query"	.
 
-local:java_code_constructs	rdfs:label	"java code constructs"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:large_rdf_repository	rdfs:label	"large rdf repository"	.
+local:sparql	a	rdf:Class	;
+	rdfs:label	"sparql"	.
 
-local:constructs	rdfs:label	"constructs"	.
+local:retrieve	a	rdf:Class	;
+	rdfs:label	"retrieve"	.
 
-local:sparql	rdfs:label	"sparql"	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets and methods ranked by open image in new window on semantic features"	.
 
-local:large_rdf	rdfs:label	"large rdf"	.
+local:number_of_java_source_code_snippets_of_methods	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets of methods"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:ranked_by_open_image	a	rdf:Class	;
+	rdfs:label	"ranked by open image"	.
 
-local:large	rdfs:label	"large"	.
+local:ranked	a	rdf:Class	;
+	rdfs:label	"ranked"	.
 
-local:java	rdfs:label	"java"	.
+local:ranked_by_open_image_in_new_window	a	rdf:Class	;
+	rdfs:label	"ranked by open image in new window"	.
 
-local:millions_triples	rdfs:label	"millions triples"	.
+local:new_window_on_semantic_features	a	rdf:Class	;
+	rdfs:label	"new window on semantic features"	.
 
-local:triples	rdfs:label	"triples"	.
+local:find_the_best_candidate	a	rdf:Class	;
+	rdfs:label	"find the best candidate"	.
 
-local:run_against_codeontology	rdfs:label	"run against codeontology"	.
+local:syntactic	a	rdf:Class	;
+	rdfs:label	"syntactic"	.
 
-local:run	rdfs:label	"run"	.
+local:number_of_java_source_code_snippets_and_methods_syntactic_to_find_the_best_candidate	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets and methods syntactic to find the best candidate"	.
 
-local:codeontology	rdfs:label	"codeontology"	.
+local:methods_syntactic	a	rdf:Class	;
+	rdfs:label	"methods syntactic"	.
 
-local:codeontology_large_rdf_repository	rdfs:label	"codeontology large rdf repository"	.
+local:number_of_java_source_code_snippets_of_methods_syntactic	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets of methods syntactic"	.
 
-local:large_rdf_repository_containing	rdfs:label	"large rdf repository containing"	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	a	rdf:Class	;
+	rdfs:label	"number of java source code snippets and methods ranked by open image in new window on both syntactic to find the best candidate"	.
 
-local:containing	rdfs:label	"containing"	.
+local:ranked_by_open_image_in_new_window_on_syntactic	a	rdf:Class	;
+	rdfs:label	"ranked by open image in new window on syntactic"	.
 
-local:millions_triples_representing	rdfs:label	"millions triples representing"	.
+local:get	a	rdf:Class	;
+	rdfs:label	"get"	.
 
-local:representing	rdfs:label	"representing"	.
+local:correct_answer	a	rdf:Class	;
+	rdfs:label	"correct answer"	.
 
-local:generating	rdfs:label	"generating"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:retrieves	rdfs:label	"retrieves"	.
+local:correct	a	rdf:Class	;
+	rdfs:label	"correct"	.
 
-local:source_code	rdfs:label	"source code"	.
+local:execute	a	rdf:Class	;
+	rdfs:label	"execute"	.
 
-local:best_candidate	rdfs:label	"best candidate"	.
+local:then	a	rdf:Class	;
+	rdfs:label	"then"	.
 
-local:candidate	rdfs:label	"candidate"	.
+local:triples	a	rdf:Class	;
+	rdfs:label	"triples"	.
 
-local:semantic_features	rdfs:label	"semantic features"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:features	rdfs:label	"features"	.
+local:java_code_constructs	a	rdf:Class	;
+	rdfs:label	"java code constructs"	.
 
-local:correct_answer	rdfs:label	"correct answer"	.
+local:constructs	a	rdf:Class	;
+	rdfs:label	"constructs"	.
 
-local:answer	rdfs:label	"answer"	.
+local:code_constructs	a	rdf:Class	;
+	rdfs:label	"code constructs"	.
 
-local:java_source_code_snippets	rdfs:label	"java source code snippets"	.
+local:java_code	a	rdf:Class	;
+	rdfs:label	"java code"	.
 
-local:snippets	rdfs:label	"snippets"	.
+local:large_rdf_repository	a	rdf:Class	;
+	rdfs:label	"large rdf repository"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:repository	a	rdf:Class	;
+	rdfs:label	"repository"	.
 
-local:best	rdfs:label	"best"	.
+local:large_rdf	a	rdf:Class	;
+	rdfs:label	"large rdf"	.
 
-local:source_code_snippets	rdfs:label	"source code snippets"	.
+local:rdf_repository	a	rdf:Class	;
+	rdfs:label	"rdf repository"	.
 
-local:java_source_code	rdfs:label	"java source code"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:source	rdfs:label	"source"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:code_snippets	rdfs:label	"code snippets"	.
+local:contain	a	rdf:Class	;
+	rdfs:label	"contain"	.
 
-local:java_source	rdfs:label	"java source"	.
+local:millions_of_triples	a	rdf:Class	;
+	rdfs:label	"millions of triples"	.
 
-local:correct	rdfs:label	"correct"	.
+local:millions	a	rdf:Class	;
+	rdfs:label	"millions"	.
 
-local:then_executed	rdfs:label	"then executed"	.
+local:millions_triples	a	rdf:Class	;
+	rdfs:label	"millions triples"	.
 
-local:executed	rdfs:label	"executed"	.
+local:run	a	rdf:Class	;
+	rdfs:label	"run"	.
 
-local:number_of_java_source_code_snippets	rdfs:label	"number of java source code snippets"	.
+local:codeontology	a	rdf:Class	;
+	rdfs:label	"codeontology"	.
 
-local:number	rdfs:label	"number"	.
+local:natural_language_question	a	rdf:Class	;
+	rdfs:label	"natural language question"	.
 
-local:number_of_java_source_code_snippets_of_methods	rdfs:label	"number of java source code snippets of methods"	.
+local:natural_language	a	rdf:Class	;
+	rdfs:label	"natural language"	.
 
-local:methods	rdfs:label	"methods"	.
+local:natural	a	rdf:Class	;
+	rdfs:label	"natural"	.
 
-local:number_of_java_source_code_snippets_of_methods_ranked	rdfs:label	"number of java source code snippets of methods ranked"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:ranked	rdfs:label	"ranked"	.
+local:language_question	a	rdf:Class	;
+	rdfs:label	"language question"	.
 
-local:ranked_by_open_image	rdfs:label	"ranked by open image"	.
+local:question	a	rdf:Class	;
+	rdfs:label	"question"	.
 
-local:ranked_by_open_image_in_new_window	rdfs:label	"ranked by open image in new window"	.
+local:interpret	a	rdf:Class	;
+	rdfs:label	"interpret"	.
 
-local:ranked_by_open_image_in_new_window_on_syntactic	rdfs:label	"ranked by open image in new window on syntactic"	.
+local:address_this_challenging_task_our_system_open_image_in_new_window	a	rdf:Class	;
+	rdfs:label	"address this challenging task our system open image in new window"	.
 
-local:syntactic	rdfs:label	"syntactic"	.
+local:address	a	rdf:Class	;
+	rdfs:label	"address"	.
 
-local:ranked_by_open_image_in_new_window_on_syntactic_on_semantic_features	rdfs:label	"ranked by open image in new window on syntactic on semantic features"	.
+local:challenging_task	a	rdf:Class	;
+	rdfs:label	"challenging task"	.
 
-local:syntactic_semantic_features	rdfs:label	"syntactic semantic features"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:find	rdfs:label	"find"	.
+local:open_in_new_window	a	rdf:Class	;
+	rdfs:label	"open in new window"	.
 
-local:then	rdfs:label	"then"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:get	rdfs:label	"get"	.
+local:languagetocode_translation	a	rdf:Class	;
+	rdfs:label	"languagetocode translation"	.
 
-local:evaluation_of_our_system	rdfs:label	"evaluation of our system"	.
+local:translation	a	rdf:Class	;
+	rdfs:label	"translation"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:languagetocode	a	rdf:Class	;
+	rdfs:label	"languagetocode"	.
 
-local:based	rdfs:label	"based"	.
+local:system_open_image	a	rdf:Class	;
+	rdfs:label	"system open image"	.
 
-local:wolframalpha_computational_knowledge	rdfs:label	"wolframalpha computational knowledge"	.
+local:generate	a	rdf:Class	;
+	rdfs:label	"generate"	.
 
-local:wolframalpha_computational_knowledge_engine	rdfs:label	"wolframalpha computational knowledge engine"	.
+local:generating_a_sparql_query	a	rdf:Class	;
+	rdfs:label	"generating a sparql query"	.
 
-local:experimental_results	rdfs:label	"experimental results"	.
+local:instead_adhoc_code_generation_and_execution	a	rdf:Class	;
+	rdfs:label	"instead adhoc code generation and execution"	.
 
-local:results	rdfs:label	"results"	.
+local:execution	a	rdf:Class	;
+	rdfs:label	"execution"	.
 
-local:engine	rdfs:label	"engine"	.
+local:instead_adhoc_code_generation	a	rdf:Class	;
+	rdfs:label	"instead adhoc code generation"	.
 
-local:wolframalpha_computational	rdfs:label	"wolframalpha computational"	.
+local:adhoc_code	a	rdf:Class	;
+	rdfs:label	"adhoc code"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:adhoc	a	rdf:Class	;
+	rdfs:label	"adhoc"	.
 
-local:knowledge_engine	rdfs:label	"knowledge engine"	.
+local:adhoc_code_generation	a	rdf:Class	;
+	rdfs:label	"adhoc code generation"	.
 
-local:other_stateoftheart_proprietary	rdfs:label	"other state-of-the-art proprietary"	.
+local:instead_adhoc_code	a	rdf:Class	;
+	rdfs:label	"instead adhoc code"	.
 
-local:other_stateoftheart_proprietary_systems	rdfs:label	"other state-of-the-art proprietary systems"	.
+local:instead_adhoc	a	rdf:Class	;
+	rdfs:label	"instead adhoc"	.
 
-local:stateoftheart_proprietary	rdfs:label	"state-of-the-art proprietary"	.
+local:generation	a	rdf:Class	;
+	rdfs:label	"generation"	.
 
-local:stateoftheart_proprietary_systems	rdfs:label	"state-of-the-art proprietary systems"	.
+local:code_generation	a	rdf:Class	;
+	rdfs:label	"code generation"	.
 
-local:proprietary	rdfs:label	"proprietary"	.
+local:instead	a	rdf:Class	;
+	rdfs:label	"instead"	.
 
-local:proprietary_systems	rdfs:label	"proprietary systems"	.
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
-local:computational_knowledge	rdfs:label	"computational knowledge"	.
+local:advanced_data	a	rdf:Class	;
+	rdfs:label	"advanced data"	.
 
-local:wolframalpha	rdfs:label	"wolframalpha"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:computational_knowledge_engine	rdfs:label	"computational knowledge engine"	.
+local:advance	a	rdf:Class	;
+	rdfs:label	"advance"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:not_answer	a	rdf:Class	;
+	rdfs:label	"not answer"	.
 
-local:systems	rdfs:label	"systems"	.
+local:process_natural_language_questions	a	rdf:Class	;
+	rdfs:label	"process natural language questions"	.
 
-local:computational	rdfs:label	"computational"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:other	rdfs:label	"other"	.
+local:natural_language_questions	a	rdf:Class	;
+	rdfs:label	"natural language questions"	.
 
-local:other_stateoftheart	rdfs:label	"other state-of-the-art"	.
+local:language_questions	a	rdf:Class	;
+	rdfs:label	"language questions"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:questions	a	rdf:Class	;
+	rdfs:label	"questions"	.
 
-local:closedsource_wolframalpha_computational_knowledge_engine	rdfs:label	"closed-source wolframalpha computational knowledge engine"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:our_approach	rdfs:label	"our approach"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:extracted_from_stackoverflow	rdfs:label	"extracted from stackoverflow"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:extracted	rdfs:label	"extracted"	.
+local:unsupervised_approach	a	rdf:Class	;
+	rdfs:label	"unsupervised approach"	.
 
-local:stackoverflow	rdfs:label	"stackoverflow"	.
+local:unsupervised	a	rdf:Class	;
+	rdfs:label	"unsupervised"	.
 
-local:extracted_from_stackoverflow_from_experimental	rdfs:label	"extracted from stackoverflow from experimental"	.
+local:querying_requiring_instead_adhoc_code_generation_and_execution	a	rdf:Class	;
+	rdfs:label	"querying requiring instead adhoc code generation and execution"	.
 
-local:comparable_with_other_stateoftheart_proprietary_systems	rdfs:label	"comparable with other state-of-the-art proprietary systems"	.
+local:instead_requiring	a	rdf:Class	;
+	rdfs:label	"instead requiring"	.
 
-local:comparable	rdfs:label	"comparable"	.
+local:requiring	a	rdf:Class	;
+	rdfs:label	"requiring"	.
 
-local:other_stateoftheart_proprietary_systems_suchas_closedsource_wolframalpha_computational_knowledge_engine	rdfs:label	"other state-of-the-art proprietary systems such_as closed-source wolframalpha computational knowledge engine"	.
+local:factual_question	a	rdf:Class	;
+	rdfs:label	"factual question"	.
 
-local:show	rdfs:label	"show"	.
-
-#### Properties ####
+local:factual	a	rdf:Class	;
+	rdfs:label	"factual"	.
 
 #### Mapped Relations ####
 
-cso:natural_language_questions	rdfs:label	"natural language question"	.
-cso:rdf	rdfs:label	"rdf"	.
-local:rdf	owl:sameAs	cso:rdf	.
-cso:natural_language_questions	rdfs:member	local:natural_language_questions	.
-local:sparql	owl:sameAs	cso:sparql	.
-local:syntactic	owl:sameAs	cso:syntactics	.
-cso:sparql	rdfs:label	"sparql"	.
-cso:source_code	rdfs:label	"source code"	.
-local:java	owl:sameAs	cso:java	.
-local:code_generation	owl:sameAs	cso:code_generation	.
-local:semantic_features	owl:sameAs	cso:semantic_features	.
 cso:semantic_features	rdfs:label	"semantic features"	.
+local:sparql	owl:sameAs	cso:sparql	.
 cso:natural_language_questions	rdfs:label	"natural language questions"	.
-cso:syntactics	rdfs:label	"syntactic"	.
 local:engine	owl:sameAs	cso:engine	.
-cso:code_generation	rdfs:label	"code generation"	.
-cso:natural_language_questions	rdfs:member	local:natural_language_question	.
 cso:engine	rdfs:label	"engine"	.
 cso:java	rdfs:label	"java"	.
+cso:syntactics	rdfs:label	"syntactic"	.
+local:natural_language	owl:sameAs	cso:natural_language	.
+cso:natural_language	rdfs:label	"natural language"	.
+local:semantic_features	owl:sameAs	cso:semantic_features	.
+cso:source_code	rdfs:label	"source code"	.
+cso:code_generation	rdfs:label	"code generation"	.
+local:rdf	owl:sameAs	cso:rdf	.
+cso:sparql	rdfs:label	"sparql"	.
 local:source_code	owl:sameAs	cso:source_code	.
+cso:rdf	rdfs:label	"rdf"	.
+local:natural_language_question	owl:sameAs	cso:natural_language_questions	.
+local:natural_language_questions	owl:sameAs	cso:natural_language_questions	.
+local:java	owl:sameAs	cso:java	.
+cso:natural_language_questions	rdfs:label	"natural language question"	.
+local:code_generation	owl:sameAs	cso:code_generation	.
+local:syntactic	owl:sameAs	cso:syntactics	.
 
 #### Relations ####
 
-local:knowledge	rdfs:member	local:knowledge_engine	.
-local:find	vn.role:Theme	local:best_candidate	.
-local:extracted_from_stackoverflow_from_experimental	local:extractedfromstackoverflow_from	local:experimental	.
+local:s15.1	local:AM-LOC	local:new_window	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	rdfs:member	local:java_source_code_snippets	.
+local:s13	local:AM-TMP	local:then	.
+local:s15.1	rdf:subject	local:open_image	.
+local:s15.2	rdf:predicate	local:find	.
+local:s15.2	rdf:object	local:best_candidate	.
+local:s13.1	rdf:subject	local:best_candidate	.
+local:correct_answer	rdfs:member	local:correct	.
+local:java_code_constructs	rdfs:member	local:java_code	.
+local:millions_triples	rdfs:subClassOf	local:triples	.
+local:s7.1	rdf:object	local:languagetocode_translation	.
+local:source_code	rdfs:subClassOf	local:code	.
+local:instead_adhoc	rdfs:member	local:instead	.
+local:s2.1	rdf:subject	local:data	.
+local:s2.1	rdf:predicate	local:advance	.
+local:s2.2	rdf:subject	local:advanced_data	.
+local:natural_language	rdfs:member	local:natural	.
+local:best_candidate	rdfs:subClassOf	local:candidate	.
+local:s3	rdf:subject	local:sparql_query	.
+local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	rdfs:member	local:java_source_code_snippets	.
+local:sparql_query	rdfs:subClassOf	local:query	.
+local:instead_adhoc_code_generation_and_execution	rdfs:member	local:execution	.
+local:language_questions	rdfs:member	local:language	.
+local:methods_semantic_features	rdfs:subClassOf	local:semantic_features	.
+local:ranked_by_open_image	rdfs:member	local:ranked	.
+local:s14.1	rdf:object	local:number_of_java_source_code_snippets_and_methods_syntactic_to_find_the_best_candidate	.
+local:stateoftheart_proprietary_systems	rdfs:subClassOf	local:proprietary_systems	.
+local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	rdfs:member	local:best_candidate	.
+local:s0.1	rdf:predicate	local:answer	.
+local:s18	rdf:object	local:stackoverflow	.
+local:comparable_with_other_stateoftheart_proprietary_systems	rdfs:member	local:comparable	.
+local:s2	rdf:predicate	local:not_answer	.
+local:new_window_on_semantic_features	rdfs:member	local:new_window	.
+local:s10	local:AM-MNR	local:codeontology	.
+local:s8	rdfs:member	local:new_window	.
+local:s14	rdf:predicate	local:retrieve	.
+local:instead_adhoc_code_generation	rdfs:member	local:instead_adhoc_code	.
+local:experimental_results	rdfs:subClassOf	local:results	.
+local:instead_adhoc_code_generation	rdfs:subClassOf	local:generation	.
+local:sparql_query	rdfs:member	local:sparql	.
+local:address_this_challenging_task_our_system_open_image_in_new_window	rdfs:member	local:open_image	.
+local:system_open_image	rdfs:member	local:open_image	.
+local:stateoftheart_proprietary_systems	rdfs:subClassOf	local:systems	.
+local:s14.1	local:AM-LOC	local:new_window	.
+local:s11	rdf:predicate	local:contain	.
+local:process_natural_language_questions	rdfs:subClassOf	local:natural_language_questions	.
+local:s16	rdf:predicate	local:base	.
+local:millions_of_triples	rdfs:member	local:triples	.
+local:s7	local:AM-LOC	local:new_window	.
+local:java_code_constructs	rdfs:subClassOf	local:constructs	.
+local:s14.1	rdf:subject	local:open_image	.
+local:s12	rdf:object	local:java_code_constructs	.
+local:s8.1	rdf:object	local:languagetocode_translation	.
+local:s7.1	local:AM-MNR	local:generating_a_sparql_query	.
+local:unsupervised_approach	rdfs:subClassOf	local:approach	.
+local:other_stateoftheart	rdfs:subClassOf	local:stateoftheart	.
+local:s0.2	rdf:subject	local:instead_adhoc_code_generation_and_execution	.
+local:java_source	rdfs:member	local:java	.
+local:large_rdf_repository	rdfs:subClassOf	local:rdf_repository	.
+local:source_code_snippets	rdfs:subClassOf	local:snippets	.
+local:source_code	rdfs:member	local:source	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	rdfs:member	local:best_candidate	.
+local:java_code_constructs	rdfs:subClassOf	local:code_constructs	.
+local:java_source_code_snippets	rdfs:subClassOf	local:snippets	.
+local:s8	rdf:predicate	local:address	.
+local:instead_adhoc_code	rdfs:subClassOf	local:code	.
+local:s4	local:AM-MNR	local:codeontology	.
+local:s15.2	rdf:subject	local:semantic_features	.
+local:s13.1	rdf:predicate	local:get	.
+local:rdf_repository	rdfs:subClassOf	local:repository	.
+local:s0	rdf:object	local:process_natural_language_questions	.
+local:other_stateoftheart_proprietary_systems	rdfs:subClassOf	local:systems	.
+local:s14.2	rdf:object	local:best_candidate	.
+local:address_this_challenging_task_our_system_open_image_in_new_window	rdfs:member	local:new_window	.
+local:number_of_java_source_code_snippets_of_methods	rdfs:member	local:number_of_java_source_code_snippets	.
+local:instead_adhoc	rdfs:subClassOf	local:adhoc	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	rdfs:member	local:methods	.
+local:factual_question	rdfs:member	local:factual	.
+local:unsupervised_approach	rdfs:member	local:unsupervised	.
+local:computational_knowledge_engine	rdfs:subClassOf	local:engine	.
+local:stateoftheart_proprietary	rdfs:member	local:stateoftheart	.
+local:other_stateoftheart	rdfs:member	local:other	.
+local:s7.2	rdf:predicate	local:generate	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	rdfs:member	local:semantic_features	.
+local:approach_is_comparable_with_other_stateoftheart_proprietary_systems_such_as_the_closedsource_wolframalpha_computational_knowledge_engine	rdfs:member	local:approach	.
+local:s2	rdf:object	local:process_natural_language_questions	.
+local:number_of_java_source_code_snippets_and_methods_syntactic_to_find_the_best_candidate	rdfs:member	local:best_candidate	.
+local:approach_is_comparable_with_other_stateoftheart_proprietary_systems_such_as_the_closedsource_wolframalpha_computational_knowledge_engine	rdfs:member	local:closedsource_wolframalpha	.
+local:semantic_features	rdfs:member	local:semantic	.
+local:s8	local:AM-MNR	local:challenging_task	.
+local:s7	rdf:predicate	local:address	.
+local:large_rdf	rdfs:subClassOf	local:rdf	.
+local:s14.2	rdf:subject	local:syntactic	.
+local:s14.2	rdf:predicate	local:find	.
+local:ranked_by_open_image_in_new_window_on_syntactic	rdfs:member	local:ranked_by_open_image_in_new_window	.
+local:s0	rdf:predicate	local:not_answer	.
+local:s14.1	rdf:predicate	local:rank	.
 local:adhoc_code_generation	rdfs:subClassOf	local:code_generation	.
 local:advanced_data	rdfs:subClassOf	local:data	.
-local:find	vn.role:Agent	local:large_rdf_repository_containing	.
-local:factual_question	rdfs:subClassOf	local:question	.
-local:language_questions	rdfs:subClassOf	local:questions	.
-local:stateoftheart_proprietary	rdfs:member	local:stateoftheart_proprietary_systems	.
-local:natural_language	rdfs:member	local:natural_language_question	.
-local:ranked	local:AM-LOC	local:new_window	.
-local:stateoftheart_proprietary_systems	rdfs:subClassOf	local:proprietary_systems	.
-local:data	rdfs:member	local:data_querying	.
-local:then_executed	rdfs:subClassOf	local:executed	.
-local:languagetocode	rdfs:member	local:languagetocode_translation	.
-local:number_of_java_source_code_snippets	local:of_javasourcecodesnippets	local:number	.
-local:process	vn.role:Agent	local:we	.
-local:large_rdf_repository_containing	local:largerdfrepository_	local:containing	.
-local:ranked_by_open_image	local:ranked_by	local:open_image	.
-local:ranked_by_open_image_in_new_window_on_syntactic_on_semantic_features	local:on_semanticfeatures	local:ranked_by_open_image_in_new_window_on_syntactic	.
-local:java_source	rdfs:member	local:java_source_code	.
-local:source	rdfs:member	local:source_code	.
-local:language_question	rdfs:subClassOf	local:question	.
-local:process	vn.role:Agent	local:unsupervised_approach	.
-local:based	vn.role:indirect_object	local:show	.
-local:language	rdfs:member	local:language_question	.
-local:present	vn.role:Theme	local:unsupervised_approach	.
-local:number_of_java_source_code_snippets_of_methods_ranked	local:numberofjavasourcecodesnippetsofmethods_	local:ranked	.
-local:data_querying	local:_querying	local:data	.
-local:other_stateoftheart_proprietary_systems_suchas_closedsource_wolframalpha_computational_knowledge_engine	local:such_as_closed-sourcewolframalphacomputationalknowledgeengine	local:other_stateoftheart_proprietary_systems	.
-local:instead_adhoc	rdfs:member	local:instead_adhoc_code	.
-local:requiring	vn.role:Agent	local:factual_question	.
-local:can_not_answered_agent_factual_question	local:cannotanswered_agent	local:factual_question	.
-local:java_source_code	rdfs:member	local:java_source_code_snippets	.
-local:executed	local:AM-PNC	local:get	.
-local:code	rdfs:member	local:code_generation	.
-local:codeontology_large_rdf_repository	local:codeontology_	local:large_rdf_repository	.
-local:large_rdf	rdfs:subClassOf	local:rdf	.
-local:other_stateoftheart_proprietary_systems_suchas_closedsource_wolframalpha_computational_knowledge_engine	local:otherstate-of-the-artproprietarysystems_such_as	local:closedsource_wolframalpha_computational_knowledge_engine	.
-local:factual	rdfs:member	local:factual_question	.
-local:extracted	vn.role:Theme	local:evaluation_of_our_system	.
-local:java_code_constructs	rdfs:subClassOf	local:constructs	.
-local:source_code_snippets	rdfs:subClassOf	local:snippets	.
-local:wolframalpha_computational_knowledge_engine	rdfs:subClassOf	local:computational_knowledge_engine	.
-local:can_not_answered	rdfs:subClassOf	local:not_answered	.
-local:computational_knowledge	rdfs:member	local:computational_knowledge_engine	.
-local:java	rdfs:member	local:java_code	.
-local:generating	vn.role:Theme2	local:sparql_query	.
-local:advanced_data	rdfs:member	local:advanced_data_querying	.
-local:wolframalpha_computational_knowledge	rdfs:member	local:wolframalpha_computational_knowledge_engine	.
-local:closedsource_wolframalpha_computational_knowledge_engine	rdfs:subClassOf	local:wolframalpha_computational_knowledge_engine	.
-local:number_of_java_source_code_snippets_of_methods_ranked	local:_ranked	local:number_of_java_source_code_snippets_of_methods	.
-local:java_source_code_snippets	rdfs:subClassOf	local:source_code_snippets	.
-local:show	vn.role:Agent	local:experimental_results	.
-local:our_system_open_image	local:oursystem_	local:open_image	.
-local:ranked_by_open_image_in_new_window_on_syntactic	local:rankedbyopenimageinnewwindow_on	local:syntactic	.
-local:stateoftheart_proprietary	rdfs:subClassOf	local:proprietary	.
-local:performs	vn.role:Agent	local:address	.
-local:run_against_codeontology	local:run_against	local:codeontology	.
-local:run	vn.role:Theme	local:sparql_query	.
-local:java_source_code_snippets	rdfs:subClassOf	local:snippets	.
-local:natural	rdfs:member	local:natural_language	.
-local:instead_adhoc	rdfs:subClassOf	local:adhoc	.
-local:code	rdfs:member	local:code_constructs	.
-local:best	rdfs:member	local:best_candidate	.
-local:requiring	vn.role:Patient	local:instead	.
-local:natural_language	rdfs:member	local:natural_language_questions	.
-local:experimental	rdfs:member	local:experimental_results	.
-local:answering_advanced_data_querying	rdfs:subClassOf	local:advanced_data_querying	.
-local:ranked_by_open_image	local:by_openimage	local:ranked	.
-local:comparable_with_other_stateoftheart_proprietary_systems	local:comparable_with	local:other_stateoftheart_proprietary_systems	.
-local:number_of_java_source_code_snippets	local:number_of	local:java_source_code_snippets	.
-local:open_image_in_new_window	local:in_newwindow	local:open_image	.
-local:wolframalpha_computational	rdfs:member	local:wolframalpha_computational_knowledge	.
-local:run	local:AM-MNR	local:codeontology_large_rdf_repository	.
-local:executed	local:AM-TMP	local:then	.
-local:data_querying	local:data_	local:querying	.
-local:ranked_by_open_image_in_new_window	local:rankedbyopenimage_in	local:new_window	.
-local:adhoc_code	rdfs:subClassOf	local:code	.
-local:can_not_answered_agent_factual_question	local:agent_factualquestion	local:can_not_answered	.
-local:rdf	rdfs:member	local:rdf_repository	.
-local:adhoc	rdfs:member	local:adhoc_code	.
-local:java	rdfs:member	local:java_source	.
-local:wolframalpha_computational	rdfs:subClassOf	local:computational	.
-local:comparable_with_other_stateoftheart_proprietary_systems	local:with_otherstate-of-the-artproprietarysystems	local:comparable	.
-local:answered	local:AM-MOD	local:can	.
-local:ranked_by_open_image_in_new_window_on_syntactic_on_semantic_features	local:rankedbyopenimageinnewwindowonsyntactic_on	local:semantic_features	.
-local:best_candidate	rdfs:subClassOf	local:candidate	.
-local:new_window	rdfs:subClassOf	local:window	.
-local:instead_adhoc_code	rdfs:subClassOf	local:code	.
-local:languagetocode_translation	rdfs:subClassOf	local:translation	.
-local:experimental_results	rdfs:subClassOf	local:results	.
-local:instead_adhoc_code	rdfs:member	local:instead_adhoc_code_generation	.
-local:advanced_data_querying	rdfs:subClassOf	local:data_querying	.
-local:correct	rdfs:member	local:correct_answer	.
-local:present	vn.role:Agent	local:we	.
-local:sparql	rdfs:member	local:sparql_query	.
-local:instead_adhoc_code_generation	rdfs:subClassOf	local:generation	.
-local:retrieves	vn.role:Agent	local:large_rdf_repository_containing	.
-local:extracted_from_stackoverflow_from_experimental	local:from_experimental	local:extracted_from_stackoverflow	.
-local:other_stateoftheart_proprietary	rdfs:subClassOf	local:proprietary	.
-local:interpreting	vn.role:Theme	local:question	.
-local:java_source	rdfs:subClassOf	local:source	.
-local:computational_knowledge_engine	rdfs:subClassOf	local:engine	.
-local:correct_answer	rdfs:subClassOf	local:answer	.
-local:code_constructs	rdfs:subClassOf	local:constructs	.
-local:syntactic_semantic_features	rdfs:subClassOf	local:semantic_features	.
+local:number_of_java_source_code_snippets	rdfs:member	local:number	.
+local:querying_requiring_instead_adhoc_code_generation_and_execution	rdfs:member	local:instead_adhoc_code_generation	.
+local:s2.3	rdf:subject	local:instead_adhoc_code_generation_and_execution	.
+local:s7.1	rdf:predicate	local:perform	.
+local:ranked_by_open_image	rdfs:member	local:open_image	.
+local:s15.1	rdf:predicate	local:rank	.
+local:s12	rdf:predicate	local:represent	.
+local:number_of_java_source_code_snippets	rdfs:member	local:java_source_code_snippets	.
+local:s5	rdf:predicate	local:represent	.
+local:s1	local:AM-PNC	local:process_natural_language_questions	.
+local:new_window_on_semantic_features	rdfs:member	local:semantic_features	.
 local:natural_language_questions	rdfs:subClassOf	local:questions	.
-local:factual_question_answering	local:_answering	local:factual_question	.
-local:semantic_features	rdfs:subClassOf	local:features	.
-local:containing	vn.role:Theme2	local:millions_triples_representing	.
-local:natural_language_questions	rdfs:subClassOf	local:language_questions	.
-local:other_stateoftheart_proprietary_systems	rdfs:subClassOf	local:systems	.
-local:number_of_java_source_code_snippets_of_methods	local:numberofjavasourcecodesnippets_of	local:methods	.
-local:extracted_from_stackoverflow	local:from_stackoverflow	local:extracted	.
-local:find	vn.role:Agent	local:syntactic_semantic_features	.
-local:factual_question_answering_advanced	local:_advanced	local:factual_question_answering	.
-local:computational	rdfs:member	local:computational_knowledge	.
-local:millions_triples	rdfs:subClassOf	local:triples	.
-local:number_of_java_source_code_snippets_of_methods	local:of_methods	local:number_of_java_source_code_snippets	.
-local:data_querying	rdfs:subClassOf	local:querying	.
-local:other_stateoftheart	rdfs:member	local:other_stateoftheart_proprietary	.
-local:adhoc_code_generation	rdfs:subClassOf	local:generation	.
-local:ranked	vn.role:Theme	local:number_of_java_source_code_snippets_of_methods	.
-local:code_snippets	rdfs:subClassOf	local:snippets	.
-local:language	rdfs:member	local:language_questions	.
-local:knowledge_engine	rdfs:subClassOf	local:engine	.
-local:based	vn.role:Cause	local:evaluation_of_our_system	.
-local:rdf_repository	rdfs:subClassOf	local:repository	.
-local:large_rdf	rdfs:member	local:large_rdf_repository	.
-local:factual_question_answering_advanced	local:factualquestionanswering_	local:advanced	.
-local:answered	vn.role:Predicate	local:natural_language_questions	.
-local:proprietary_systems	rdfs:subClassOf	local:systems	.
-local:our_system	rdfs:subClassOf	local:system	.
-local:source_code	rdfs:subClassOf	local:code	.
-local:answered	local:AM-NEG	local:not	.
-local:evaluation_of_our_system	local:evaluation_of	local:our_system	.
-local:unsupervised_approach	rdfs:subClassOf	local:approach	.
-local:wolframalpha_computational_knowledge	rdfs:subClassOf	local:knowledge	.
-local:challenging_task	rdfs:subClassOf	local:task	.
-local:get	vn.role:Agent	local:best_candidate	.
-local:natural_language	rdfs:subClassOf	local:language	.
-local:large_rdf_repository_containing	local:_containing	local:large_rdf_repository	.
-local:performs	vn.role:Theme	local:languagetocode_translation	.
-local:source_code_snippets	rdfs:subClassOf	local:code_snippets	.
-local:large_rdf_repository	rdfs:subClassOf	local:repository	.
-local:code	rdfs:member	local:code_snippets	.
-local:evaluation_of_our_system	local:of_oursystem	local:evaluation	.
-local:other_stateoftheart_proprietary_systems	rdfs:subClassOf	local:stateoftheart_proprietary_systems	.
-local:source_code	rdfs:member	local:source_code_snippets	.
-local:factual_question_answering	local:factualquestion_	local:answering	.
-local:advanced	rdfs:member	local:advanced_data	.
-local:not_answered	rdfs:subClassOf	local:answered	.
-local:ranked	vn.role:Agent	local:open_image	.
-local:new	rdfs:member	local:new_window	.
-local:java_code_constructs	rdfs:subClassOf	local:code_constructs	.
-local:adhoc_code	rdfs:member	local:adhoc_code_generation	.
-local:java_code	rdfs:member	local:java_code_constructs	.
-local:large_rdf_repository	rdfs:subClassOf	local:rdf_repository	.
-local:computational_knowledge	rdfs:subClassOf	local:knowledge	.
-local:other	rdfs:member	local:other_stateoftheart	.
-local:run_against_codeontology	local:against_codeontology	local:run	.
-local:advanced_data_querying	rdfs:subClassOf	local:querying	.
-local:representing	vn.role:Theme	local:java_code_constructs	.
-local:ranked_by_open_image_in_new_window	local:in_newwindow	local:ranked_by_open_image	.
-local:natural_language_question	rdfs:subClassOf	local:question	.
-local:wolframalpha_computational_knowledge_engine	rdfs:subClassOf	local:engine	.
-local:instead_adhoc_code_generation	rdfs:subClassOf	local:adhoc_code_generation	.
-local:java_code	rdfs:subClassOf	local:code	.
-local:large	rdfs:member	local:large_rdf	.
-local:extracted	vn.role:Source	local:stackoverflow	.
-local:other_stateoftheart_proprietary	rdfs:member	local:other_stateoftheart_proprietary_systems	.
-local:millions_triples_representing	local:millionstriples_	local:representing	.
+local:open_image	rdfs:member	local:open	.
+local:number_of_java_source_code_snippets_of_methods_syntactic	rdfs:member	local:number_of_java_source_code_snippets	.
+local:stateoftheart_proprietary_systems	rdfs:member	local:stateoftheart_proprietary	.
+local:s9	rdf:subject	local:sparql_query	.
+local:number_of_java_source_code_snippets_and_methods_syntactic_to_find_the_best_candidate	rdfs:member	local:java_source_code_snippets	.
+local:number_of_java_source_code_snippets_of_methods_semantic_features	rdfs:member	local:methods_semantic_features	.
+local:ranked_by_open_image_in_new_window	rdfs:member	local:ranked_by_open_image	.
+local:s1.1	rdf:subject	local:we	.
+local:java_source_code	rdfs:member	local:java_source	.
+local:s6	rdf:object	local:millions_of_triples	.
+local:s12	rdf:subject	local:triples	.
+local:adhoc_code	rdfs:subClassOf	local:code	.
+local:s15	rdf:object	local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	.
+local:s13	rdf:predicate	local:execute	.
+local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	rdfs:member	local:semantic_features	.
+local:s13	rdf:subject	local:best_candidate	.
 local:computational_knowledge_engine	rdfs:subClassOf	local:knowledge_engine	.
-local:containing	vn.role:Theme1	local:large_rdf_repository	.
-local:other_stateoftheart	rdfs:subClassOf	local:stateoftheart	.
-local:get	vn.role:Patient	local:correct_answer	.
-local:wolframalpha	rdfs:member	local:wolframalpha_computational	.
-local:open	rdfs:member	local:open_image	.
-local:our_system_open_image	local:_openimage	local:our_system	.
-local:retrieves	vn.role:Theme	local:number_of_java_source_code_snippets_of_methods_ranked	.
-local:stateoftheart	rdfs:member	local:stateoftheart_proprietary	.
-local:millions_triples_representing	local:_representing	local:millions_triples	.
-local:sparql_query	rdfs:subClassOf	local:query	.
-local:extracted_from_stackoverflow	local:extracted_from	local:stackoverflow	.
-local:executed	vn.role:Patient	local:best_candidate	.
-local:stateoftheart_proprietary_systems	rdfs:subClassOf	local:systems	.
-local:show	vn.role:Theme	local:comparable_with_other_stateoftheart_proprietary_systems	.
-local:answered	vn.role:Agent	local:factual_question_answering_advanced	.
-local:instead	rdfs:member	local:instead_adhoc	.
-local:open_image_in_new_window	local:openimage_in	local:new_window	.
-local:process	vn.role:Theme	local:natural_language_questions	.
-local:address	vn.role:Theme	local:challenging	.
-local:ranked_by_open_image_in_new_window_on_syntactic	local:on_syntactic	local:ranked_by_open_image_in_new_window	.
-local:our_approach	rdfs:subClassOf	local:approach	.
+local:large_rdf_repository	rdfs:subClassOf	local:repository	.
+local:s0	rdf:subject	local:factual_question	.
+local:code_snippets	rdfs:subClassOf	local:snippets	.
+local:s2.2	rdf:predicate	local:query	.
+local:natural_language_questions	rdfs:subClassOf	local:language_questions	.
+local:s5	rdf:subject	local:triples	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	rdfs:member	local:number	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	rdfs:member	local:open_image	.
+local:s10	rdf:subject	local:sparql_query	.
+local:s8.1	rdf:predicate	local:perform	.
+local:language_questions	rdfs:subClassOf	local:questions	.
+local:s7.1	rdf:subject	local:address_this_challenging_task_our_system_open_image_in_new_window	.
+local:system_open_image	rdfs:member	local:system	.
+local:s17	rdf:object	local:approach_is_comparable_with_other_stateoftheart_proprietary_systems_such_as_the_closedsource_wolframalpha_computational_knowledge_engine	.
+local:java_source_code_snippets	rdfs:subClassOf	local:source_code_snippets	.
+local:other_stateoftheart_proprietary	rdfs:member	local:other_stateoftheart	.
+local:language_question	rdfs:member	local:language	.
+local:new_window	rdfs:subClassOf	local:window	.
+local:best_candidate	rdfs:member	local:best	.
+local:number_of_java_source_code_snippets_of_methods	rdfs:member	local:methods	.
+local:s9	local:AM-MNR	local:large_rdf_repository	.
+local:languagetocode_translation	rdfs:subClassOf	local:translation	.
+local:s2	rdf:subject	local:s2.2	.
+local:s6	rdf:predicate	local:contain	.
+local:adhoc_code_generation	rdfs:member	local:adhoc_code	.
+local:s0	local:AM-MOD	local:can	.
+local:s0.1	rdf:subject	local:querying_requiring_instead_adhoc_code_generation_and_execution	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	rdfs:member	local:methods	.
+local:large_rdf_repository	rdfs:member	local:large_rdf	.
+local:languagetocode_translation	rdfs:member	local:languagetocode	.
+local:computational_knowledge_engine	rdfs:member	local:computational_knowledge	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	rdfs:member	local:java_source_code_snippets	.
+local:s3	local:AM-MNR	local:large_rdf_repository	.
+local:s2	local:AM-MOD	local:can	.
+local:s9	rdf:predicate	local:run	.
+local:s1	rdf:subject	local:we	.
+local:process_natural_language_questions	rdfs:member	local:process	.
+local:s8	rdfs:member	local:address	.
+local:other_stateoftheart_proprietary	rdfs:subClassOf	local:proprietary	.
+local:closedsource_wolframalpha	rdfs:member	local:closedsource	.
+local:s8	rdfs:member	local:system	.
+local:s13.1	rdf:object	local:correct_answer	.
+local:computational_knowledge	rdfs:member	local:computational	.
+local:other_stateoftheart_proprietary_systems	rdfs:member	local:other_stateoftheart_proprietary	.
+local:s15	local:AM-PNC	local:find_the_best_candidate	.
+local:source_code_snippets	rdfs:subClassOf	local:code_snippets	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	rdfs:member	local:new_window	.
+local:evaluation_of_our_system	rdfs:member	local:system	.
+local:wolframalpha_computational_knowledge_engine	rdfs:subClassOf	local:computational_knowledge_engine	.
+local:s11	rdf:object	local:millions_of_triples	.
+local:address_this_challenging_task_our_system_open_image_in_new_window	rdfs:member	local:system	.
+local:s7.2	rdf:subject	local:sparql_query	.
+local:natural_language_question	rdfs:member	local:natural_language	.
+local:s2.2	rdf:object	local:s2.3	.
+local:approach_is_comparable_with_other_stateoftheart_proprietary_systems_such_as_the_closedsource_wolframalpha_computational_knowledge_engine	rdfs:member	local:other_stateoftheart_proprietary_systems	.
+local:s16	rdf:object	local:dataset	.
+local:s7	local:AM-MNR	local:challenging_task	.
+local:semantic_features	rdfs:subClassOf	local:features	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	rdfs:member	local:new_window	.
+local:methods_syntactic	rdfs:subClassOf	local:syntactic	.
+local:instead_adhoc_code_generation_and_execution	rdfs:member	local:instead_adhoc_code_generation	.
+local:s1	rdf:predicate	local:present	.
+local:code_snippets	rdfs:member	local:code	.
+local:number_of_java_source_code_snippets_and_methods_syntactic_to_find_the_best_candidate	rdfs:member	local:methods	.
+local:language_question	rdfs:subClassOf	local:question	.
 local:open_image	rdfs:subClassOf	local:image	.
-local:ranked	vn.role:Predicate	local:find	.
-local:unsupervised	rdfs:member	local:unsupervised_approach	.
-local:codeontology_large_rdf_repository	local:_largerdfrepository	local:codeontology	.
-local:code_generation	rdfs:subClassOf	local:generation	.
+local:number_of_java_source_code_snippets_of_methods_syntactic	rdfs:member	local:methods_syntactic	.
+local:process_natural_language_questions	rdfs:member	local:natural_language_questions	.
+local:s8.2	rdf:subject	local:natural_language_question	.
+local:code_constructs	rdfs:subClassOf	local:constructs	.
+local:java_code	rdfs:member	local:java	.
+local:number_of_java_source_code_snippets_of_methods_semantic_features	rdfs:member	local:number_of_java_source_code_snippets	.
+local:s14	rdf:subject	local:sparql_query	.
+local:adhoc_code	rdfs:member	local:adhoc	.
+local:instead_adhoc_code	rdfs:member	local:instead_adhoc	.
+local:s5	rdf:object	local:java_code_constructs	.
+local:java_code	rdfs:subClassOf	local:code	.
+local:adhoc_code_generation	rdfs:subClassOf	local:generation	.
+local:s0.2	rdf:predicate	local:require	.
+local:evaluation_of_our_system	rdfs:member	local:evaluation	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_semantic_features	rdfs:member	local:number	.
+local:s11	rdf:subject	local:large_rdf_repository	.
+local:s4	rdf:subject	local:sparql_query	.
+local:s7	rdf:subject	local:system_open_image	.
+local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	rdfs:member	local:open_image	.
+local:proprietary_systems	rdfs:member	local:proprietary	.
+local:new_window	rdfs:member	local:new	.
+local:natural_language_question	rdfs:subClassOf	local:question	.
+local:java_source_code_snippets	rdfs:member	local:java_source_code	.
+local:factual_question	rdfs:subClassOf	local:question	.
+local:querying_requiring_instead_adhoc_code_generation_and_execution	rdfs:member	local:execution	.
+local:source_code_snippets	rdfs:member	local:source_code	.
+local:rdf_repository	rdfs:member	local:rdf	.
+local:s18	rdf:subject	local:dataset	.
+local:open_in_new_window	rdfs:member	local:new_window	.
+local:s0	local:AM-ADV	local:s0.1	.
+local:s1.1	rdf:predicate	local:process	.
+local:experimental_results	rdfs:member	local:experimental	.
+local:computational_knowledge	rdfs:subClassOf	local:knowledge	.
+local:stateoftheart_proprietary	rdfs:subClassOf	local:proprietary	.
+local:our_system	rdfs:subClassOf	local:system	.
+local:natural_language	rdfs:subClassOf	local:language	.
+local:code_generation	rdfs:member	local:code	.
+local:s2.3	rdf:predicate	local:require	.
+local:java_source	rdfs:subClassOf	local:source	.
+local:s6	rdf:subject	local:large_rdf_repository	.
+local:instead_requiring	rdfs:subClassOf	local:requiring	.
+local:ranked_by_open_image_in_new_window_on_syntactic	rdfs:member	local:syntactic	.
+local:number_of_java_source_code_snippets_and_methods_syntactic_to_find_the_best_candidate	rdfs:member	local:number	.
+local:challenging_task	rdfs:subClassOf	local:task	.
+local:s17	rdf:subject	local:experimental_results	.
+local:comparable_with_other_stateoftheart_proprietary_systems	rdfs:member	local:other_stateoftheart_proprietary_systems	.
+local:proprietary_systems	rdfs:subClassOf	local:systems	.
 local:java_source_code	rdfs:subClassOf	local:code	.
-local:semantic	rdfs:member	local:semantic_features	.
-local:proprietary	rdfs:member	local:proprietary_systems	.
+local:s14	rdf:object	local:number_of_java_source_code_snippets_and_methods_ranked_by_open_image_in_new_window_on_both_syntactic_to_find_the_best_candidate	.
+local:s15	rdf:subject	local:sparql_query	.
+local:open_in_new_window	rdfs:member	local:open	.
+local:s8	rdf:subject	local:system_open_image	.
+local:knowledge_engine	rdfs:member	local:knowledge	.
+local:s18	rdf:predicate	local:extract	.
+local:s4	rdf:predicate	local:run	.
+local:s3	rdf:predicate	local:run	.
+local:s8	rdfs:member	local:open_image	.
+local:other_stateoftheart_proprietary_systems_such_as_closedsource_wolframalpha_computational_knowledge_engine	rdfs:member	local:closedsource_wolframalpha_computational_knowledge_engine	.
+local:s15.1	rdf:object	local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	.
+local:correct_answer	rdfs:subClassOf	local:answer	.
+local:s1	rdf:object	local:unsupervised_approach	.
+local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	rdfs:member	local:number	.
+local:s8.2	rdf:predicate	local:interpret	.
+local:closedsource_wolframalpha_computational_knowledge_engine	rdfs:subClassOf	local:wolframalpha_computational_knowledge_engine	.
+local:millions_of_triples	rdfs:member	local:millions	.
+local:other_stateoftheart_proprietary_systems_such_as_closedsource_wolframalpha_computational_knowledge_engine	rdfs:member	local:other_stateoftheart_proprietary_systems	.
+local:address_this_challenging_task_our_system_open_image_in_new_window	rdfs:member	local:address	.
+local:s8	local:AM-LOC	local:new_window	.
+local:closedsource_wolframalpha	rdfs:subClassOf	local:wolframalpha	.
+local:ranked_by_open_image_in_new_window	rdfs:member	local:new_window	.
+local:approach_is_comparable_with_other_stateoftheart_proprietary_systems_such_as_the_closedsource_wolframalpha_computational_knowledge_engine	rdfs:member	local:computational_knowledge_engine	.
+local:s8.1	rdf:subject	local:address_this_challenging_task_our_system_open_image_in_new_window	.
+local:natural_language_questions	rdfs:member	local:natural_language	.
+local:other_stateoftheart_proprietary_systems	rdfs:subClassOf	local:stateoftheart_proprietary_systems	.
+local:large_rdf	rdfs:member	local:large	.
+local:s1.1	rdf:object	local:natural_language_questions	.
+local:s16	rdf:subject	local:evaluation_of_our_system	.
+local:s15	rdf:predicate	local:retrieve	.
+local:number_of_java_source_code_snippets_and_methods_semantic_features_to_find_the_best_candidate	rdfs:member	local:methods	.
+local:s10	rdf:predicate	local:run	.
+local:s17	rdf:predicate	local:show	.
+local:knowledge_engine	rdfs:subClassOf	local:engine	.
+local:evaluation_of_our_system	rdfs:member	local:our_system	.
+local:code_generation	rdfs:subClassOf	local:generation	.
+local:code_constructs	rdfs:member	local:code	.

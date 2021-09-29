@@ -1,407 +1,569 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"pretrained language model based transfer"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we also show that pretrained language model based transfer"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"improvements effectively offsetting the general lack of training data"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"learning yield improvements effectively offsetting the general lack of training data"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"transfer learning yield improvements effectively offsetting the general lack of training data"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"based transfer"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we also show that domain adaption based transfer"	.
+
+local:s3.2	a	rdf:Statement	;
+	rdfs:label	"the dbpedia knowledge graph evaluated in different settings"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"we generally outperforms other ranking models on two qa datasets over the dbpedia knowledge graph evaluated in different settings"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"we proposed model generally outperforms other ranking models on two qa datasets over the dbpedia knowledge graph evaluated in different settings"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"slot matching model which exploits the inherent structure of query graphs our logical form of choice"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"a novel selfattention based slot matching model"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"we propose a novel selfattention based slot matching model"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"we an empirical investigation of neural query graph ranking approaches answering over knowledge graphs"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in this paper we conduct an empirical investigation of neural query graph ranking approaches for the task of complex question answering over knowledge graphs"	.
+
+
 #### Classes ####
 
-local:conduct	rdfs:label	"conduct"	.
+local:pretrained_language_model	a	rdf:Class	;
+	rdfs:label	"pretrained language model"	.
 
-local:paper	rdfs:label	"paper"	.
+local:language_model	a	rdf:Class	;
+	rdfs:label	"language model"	.
 
-local:we	rdfs:label	"we"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:query_graph	rdfs:label	"query graph"	.
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
 
-local:graph	rdfs:label	"graph"	.
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
 
-local:neural	rdfs:label	"neural"	.
+local:transfer	a	rdf:Class	;
+	rdfs:label	"transfer"	.
 
-local:neural_query	rdfs:label	"neural query"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:query_graph_ranking	rdfs:label	"query graph ranking"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:graph_ranking	rdfs:label	"graph ranking"	.
+local:also	a	rdf:Class	;
+	rdfs:label	"also"	.
 
-local:query_graph_ranking_approaches	rdfs:label	"query graph ranking approaches"	.
+local:improvements	a	rdf:Class	;
+	rdfs:label	"improvements"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:offset	a	rdf:Class	;
+	rdfs:label	"offset"	.
 
-local:neural_query_graph_ranking	rdfs:label	"neural query graph ranking"	.
+local:general_lack_of_training_data	a	rdf:Class	;
+	rdfs:label	"general lack of training data"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:training_data	a	rdf:Class	;
+	rdfs:label	"training data"	.
 
-local:neural_query_graph_ranking_approaches	rdfs:label	"neural query graph ranking approaches"	.
+local:general_lack	a	rdf:Class	;
+	rdfs:label	"general lack"	.
 
-local:neural_query_graph	rdfs:label	"neural query graph"	.
+local:general	a	rdf:Class	;
+	rdfs:label	"general"	.
 
-local:ranking_approaches	rdfs:label	"ranking approaches"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:graph_ranking_approaches	rdfs:label	"graph ranking approaches"	.
+local:lack	a	rdf:Class	;
+	rdfs:label	"lack"	.
 
-local:empirical	rdfs:label	"empirical"	.
+local:training	a	rdf:Class	;
+	rdfs:label	"training"	.
 
-local:empirical_investigation	rdfs:label	"empirical investigation"	.
+local:effectively	a	rdf:Class	;
+	rdfs:label	"effectively"	.
 
-local:query	rdfs:label	"query"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:investigation	rdfs:label	"investigation"	.
+local:yield_improvements_effectively_offsetting	a	rdf:Class	;
+	rdfs:label	"yield improvements effectively offsetting"	.
 
-local:empirical_investigation_of_neural_query_graph_ranking_approaches	rdfs:label	"empirical investigation of neural query graph ranking approaches"	.
+local:yield_improvements	a	rdf:Class	;
+	rdfs:label	"yield improvements"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:yield	a	rdf:Class	;
+	rdfs:label	"yield"	.
 
-local:knowledge_graphs	rdfs:label	"knowledge graphs"	.
+local:effectively_offsetting	a	rdf:Class	;
+	rdfs:label	"effectively offsetting"	.
 
-local:complex	rdfs:label	"complex"	.
+local:offsetting	a	rdf:Class	;
+	rdfs:label	"offsetting"	.
 
-local:complex_question	rdfs:label	"complex question"	.
+local:domain_adaption_based_transfer	a	rdf:Class	;
+	rdfs:label	"domain adaption based transfer"	.
 
-local:question	rdfs:label	"question"	.
+local:domain_adaption	a	rdf:Class	;
+	rdfs:label	"domain adaption"	.
 
-local:graphs	rdfs:label	"graphs"	.
+local:adaption	a	rdf:Class	;
+	rdfs:label	"adaption"	.
 
-local:question_answering	rdfs:label	"question answering"	.
+local:domain	a	rdf:Class	;
+	rdfs:label	"domain"	.
 
-local:answering	rdfs:label	"answering"	.
+local:domain_adaption_based	a	rdf:Class	;
+	rdfs:label	"domain adaption based"	.
 
-local:complex_question_answering	rdfs:label	"complex question answering"	.
+local:based	a	rdf:Class	;
+	rdfs:label	"based"	.
 
-local:task_of_complex_question_answering	rdfs:label	"task of complex question answering"	.
+local:dbpedia_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"dbpedia knowledge graph"	.
 
-local:task	rdfs:label	"task"	.
+local:dbpedia_knowledge	a	rdf:Class	;
+	rdfs:label	"dbpedia knowledge"	.
 
-local:task_of_complex_question_answering_over_knowledge_graphs	rdfs:label	"task of complex question answering over knowledge graphs"	.
+local:dbpedia	a	rdf:Class	;
+	rdfs:label	"dbpedia"	.
 
-local:neural_query_graph_ranking_approaches_for_task	rdfs:label	"neural query graph ranking approaches for task"	.
+local:graph	a	rdf:Class	;
+	rdfs:label	"graph"	.
 
-local:task_of_complex_question	rdfs:label	"task of complex question"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:propose	rdfs:label	"propose"	.
+local:knowledge_graph	a	rdf:Class	;
+	rdfs:label	"knowledge graph"	.
 
-local:inherent_structure	rdfs:label	"inherent structure"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:structure	rdfs:label	"structure"	.
+local:different_settings	a	rdf:Class	;
+	rdfs:label	"different settings"	.
 
-local:novel	rdfs:label	"novel"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:novel_selfattention	rdfs:label	"novel self-attention"	.
+local:settings	a	rdf:Class	;
+	rdfs:label	"settings"	.
 
-local:query_graphs	rdfs:label	"query graphs"	.
+local:outperform	a	rdf:Class	;
+	rdfs:label	"outperform"	.
 
-local:inherent	rdfs:label	"inherent"	.
+local:ranking_models_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	a	rdf:Class	;
+	rdfs:label	"ranking models two qa datasets over the dbpedia knowledge graph evaluated in different settings"	.
 
-local:logical_form	rdfs:label	"logical form"	.
+local:qa_datasets	a	rdf:Class	;
+	rdfs:label	"qa datasets"	.
 
-local:form	rdfs:label	"form"	.
+local:models	a	rdf:Class	;
+	rdfs:label	"models"	.
 
-local:selfattention	rdfs:label	"self-attention"	.
+local:qa	a	rdf:Class	;
+	rdfs:label	"qa"	.
 
-local:logical	rdfs:label	"logical"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:our_logical_form	rdfs:label	"our logical form"	.
+local:two_qa	a	rdf:Class	;
+	rdfs:label	"two qa"	.
 
-local:matching_model	rdfs:label	"matching model"	.
+local:ranking_models	a	rdf:Class	;
+	rdfs:label	"ranking models"	.
 
-local:model	rdfs:label	"model"	.
+local:datasets_over_dbpedia_knowledge_graph	a	rdf:Class	;
+	rdfs:label	"datasets over dbpedia knowledge graph"	.
 
-local:slot_matching_model	rdfs:label	"slot matching model"	.
+local:dbpedia_knowledge_graph_evaluated	a	rdf:Class	;
+	rdfs:label	"dbpedia knowledge graph evaluated"	.
 
-local:based_slot_matching_model	rdfs:label	"based slot matching model"	.
+local:evaluated	a	rdf:Class	;
+	rdfs:label	"evaluated"	.
 
-local:selfattention_based_slot_matching_model	rdfs:label	"self-attention based slot matching model"	.
+local:evaluated_in_different_settings	a	rdf:Class	;
+	rdfs:label	"evaluated in different settings"	.
 
-local:inherent_structure_of_query_graphs	rdfs:label	"inherent structure of query graphs"	.
+local:generally	a	rdf:Class	;
+	rdfs:label	"generally"	.
 
-local:selfattention_based_slot_matching_model_our_logical_form	rdfs:label	"self-attention based slot matching model our logical form"	.
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
 
-local:our_logical_form_of_choice	rdfs:label	"our logical form of choice"	.
+local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	a	rdf:Class	;
+	rdfs:label	"model generally outperforms other ranking models on two qa datasets over the dbpedia knowledge graph evaluated in different settings"	.
 
-local:choice	rdfs:label	"choice"	.
+local:other_ranking_models	a	rdf:Class	;
+	rdfs:label	"other ranking models"	.
 
-local:based	rdfs:label	"based"	.
+local:generally_outperforms	a	rdf:Class	;
+	rdfs:label	"generally outperforms"	.
 
-local:slot_matching_model_our_logical_form	rdfs:label	"slot matching model our logical form"	.
+local:outperforms	a	rdf:Class	;
+	rdfs:label	"outperforms"	.
 
-local:exploits	rdfs:label	"exploits"	.
+local:generally_outperforms_on_two_qa	a	rdf:Class	;
+	rdfs:label	"generally outperforms on two qa"	.
 
-local:inherent_structure_of_query_graphs_our_logical_form	rdfs:label	"inherent structure of query graphs our logical form"	.
+local:slot_matching_model	a	rdf:Class	;
+	rdfs:label	"slot matching model"	.
 
-local:proposed	rdfs:label	"proposed"	.
+local:slot	a	rdf:Class	;
+	rdfs:label	"slot"	.
 
-local:knowledge_graph	rdfs:label	"knowledge graph"	.
+local:matching_model	a	rdf:Class	;
+	rdfs:label	"matching model"	.
 
-local:qa	rdfs:label	"qa"	.
+local:exploit	a	rdf:Class	;
+	rdfs:label	"exploit"	.
 
-local:qa_datasets	rdfs:label	"qa datasets"	.
+local:inherent_structure_of_query_graphs_our_logical_form_of_choice	a	rdf:Class	;
+	rdfs:label	"inherent structure of query graphs our logical form of choice"	.
 
-local:different_settings	rdfs:label	"different settings"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:settings	rdfs:label	"settings"	.
+local:inherent_structure	a	rdf:Class	;
+	rdfs:label	"inherent structure"	.
 
-local:dbpedia	rdfs:label	"dbpedia"	.
+local:choice	a	rdf:Class	;
+	rdfs:label	"choice"	.
 
-local:dbpedia_knowledge	rdfs:label	"dbpedia knowledge"	.
+local:logical_form	a	rdf:Class	;
+	rdfs:label	"logical form"	.
 
-local:different	rdfs:label	"different"	.
+local:structure	a	rdf:Class	;
+	rdfs:label	"structure"	.
 
-local:dbpedia_knowledge_graph	rdfs:label	"dbpedia knowledge graph"	.
+local:inherent	a	rdf:Class	;
+	rdfs:label	"inherent"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:logical	a	rdf:Class	;
+	rdfs:label	"logical"	.
 
-local:two_qa_datasets	rdfs:label	"two qa datasets"	.
+local:form	a	rdf:Class	;
+	rdfs:label	"form"	.
 
-local:ranking_models	rdfs:label	"ranking models"	.
+local:our_logical_form	a	rdf:Class	;
+	rdfs:label	"our logical form"	.
 
-local:models	rdfs:label	"models"	.
+local:query_graphs	a	rdf:Class	;
+	rdfs:label	"query graphs"	.
 
-local:other_ranking_models	rdfs:label	"other ranking models"	.
+local:graphs	a	rdf:Class	;
+	rdfs:label	"graphs"	.
 
-local:generally_outperforms	rdfs:label	"generally outperforms"	.
+local:inherent_structure_of_query_graphs	a	rdf:Class	;
+	rdfs:label	"inherent structure of query graphs"	.
 
-local:outperforms	rdfs:label	"outperforms"	.
+local:our_logical_form_of_choice	a	rdf:Class	;
+	rdfs:label	"our logical form of choice"	.
 
-local:generally_outperforms_on_two_qa_datasets	rdfs:label	"generally outperforms on two qa datasets"	.
+local:novel_selfattention	a	rdf:Class	;
+	rdfs:label	"novel selfattention"	.
 
-local:two_qa_datasets_over_dbpedia_knowledge_graph	rdfs:label	"two qa datasets over dbpedia knowledge graph"	.
+local:novel	a	rdf:Class	;
+	rdfs:label	"novel"	.
 
-local:evaluated_in_different_settings	rdfs:label	"evaluated in different settings"	.
+local:selfattention	a	rdf:Class	;
+	rdfs:label	"selfattention"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:based_slot_matching_model	a	rdf:Class	;
+	rdfs:label	"based slot matching model"	.
 
-local:generally	rdfs:label	"generally"	.
+local:empirical_investigation_of_neural_query_graph_ranking_approaches	a	rdf:Class	;
+	rdfs:label	"empirical investigation of neural query graph ranking approaches"	.
 
-local:two_qa_datasets_over_dbpedia_knowledge_graph_evaluated	rdfs:label	"two qa datasets over dbpedia knowledge graph evaluated"	.
+local:empirical_investigation	a	rdf:Class	;
+	rdfs:label	"empirical investigation"	.
 
-local:ranking_models_on_two_qa_datasets	rdfs:label	"ranking models on two qa datasets"	.
+local:neural_query_graph_ranking_approaches	a	rdf:Class	;
+	rdfs:label	"neural query graph ranking approaches"	.
 
-local:show	rdfs:label	"show"	.
+local:query_graph	a	rdf:Class	;
+	rdfs:label	"query graph"	.
 
-local:also	rdfs:label	"also"	.
+local:ranking_approaches	a	rdf:Class	;
+	rdfs:label	"ranking approaches"	.
 
-local:training	rdfs:label	"training"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:training_data	rdfs:label	"training data"	.
+local:neural_query_graph_ranking	a	rdf:Class	;
+	rdfs:label	"neural query graph ranking"	.
 
-local:learning_yield_improvements	rdfs:label	"learning yield improvements"	.
+local:graph_ranking	a	rdf:Class	;
+	rdfs:label	"graph ranking"	.
 
-local:improvements	rdfs:label	"improvements"	.
+local:graph_ranking_approaches	a	rdf:Class	;
+	rdfs:label	"graph ranking approaches"	.
 
-local:general_lack	rdfs:label	"general lack"	.
+local:neural_query_graph	a	rdf:Class	;
+	rdfs:label	"neural query graph"	.
 
-local:lack	rdfs:label	"lack"	.
+local:neural_query	a	rdf:Class	;
+	rdfs:label	"neural query"	.
 
-local:learning_yield	rdfs:label	"learning yield"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:yield	rdfs:label	"yield"	.
+local:investigation	a	rdf:Class	;
+	rdfs:label	"investigation"	.
 
-local:pretrained	rdfs:label	"pre-trained"	.
+local:query_graph_ranking	a	rdf:Class	;
+	rdfs:label	"query graph ranking"	.
 
-local:pretrained_language	rdfs:label	"pre-trained language"	.
+local:empirical	a	rdf:Class	;
+	rdfs:label	"empirical"	.
 
-local:pretrained_language_model	rdfs:label	"pre-trained language model"	.
+local:query_graph_ranking_approaches	a	rdf:Class	;
+	rdfs:label	"query graph ranking approaches"	.
 
-local:language	rdfs:label	"language"	.
+local:neural	a	rdf:Class	;
+	rdfs:label	"neural"	.
 
-local:language_model	rdfs:label	"language model"	.
+local:answer	a	rdf:Class	;
+	rdfs:label	"answer"	.
 
-local:general	rdfs:label	"general"	.
+local:knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"knowledge graphs"	.
 
-local:yield_improvements	rdfs:label	"yield improvements"	.
+local:conduct	a	rdf:Class	;
+	rdfs:label	"conduct"	.
 
-local:learning	rdfs:label	"learning"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:data	rdfs:label	"data"	.
+local:task_of_complex_question_answering_over_knowledge_graphs	a	rdf:Class	;
+	rdfs:label	"task of complex question answering over knowledge graphs"	.
 
-local:effectively_offsetting	rdfs:label	"effectively offsetting"	.
+local:complex_question	a	rdf:Class	;
+	rdfs:label	"complex question"	.
 
-local:offsetting	rdfs:label	"offsetting"	.
+local:task	a	rdf:Class	;
+	rdfs:label	"task"	.
 
-local:pretrained_language_model_based	rdfs:label	"pre-trained language model based"	.
+local:complex	a	rdf:Class	;
+	rdfs:label	"complex"	.
 
-local:general_lack_of_training_data	rdfs:label	"general lack of training data"	.
+local:question	a	rdf:Class	;
+	rdfs:label	"question"	.
 
-local:effectively	rdfs:label	"effectively"	.
+local:question_answering	a	rdf:Class	;
+	rdfs:label	"question answering"	.
 
-local:domain	rdfs:label	"domain"	.
+local:answering	a	rdf:Class	;
+	rdfs:label	"answering"	.
 
-local:domain_adaption	rdfs:label	"domain adaption"	.
+local:complex_question_answering	a	rdf:Class	;
+	rdfs:label	"complex question answering"	.
 
-local:adaption	rdfs:label	"adaption"	.
-
-local:domain_adaption_based	rdfs:label	"domain adaption based"	.
-
-local:domain_adaption_based_effectively_offsetting	rdfs:label	"domain adaption based effectively offsetting"	.
-
-local:yield_improvements_effectively_offsetting	rdfs:label	"yield improvements effectively offsetting"	.
-
-#### Properties ####
+local:task_of_complex_question_answering	a	rdf:Class	;
+	rdfs:label	"task of complex question answering"	.
 
 #### Mapped Relations ####
 
-cso:question_answering	rdfs:label	"question answering"	.
-cso:language_model	rdfs:label	"language model"	.
-local:language_model	owl:sameAs	cso:language_model	.
-cso:dbpedia	rdfs:label	"dbpedia"	.
-local:question_answering	owl:sameAs	cso:question_answering	.
 local:complex_question	owl:sameAs	cso:complex_questions	.
-local:dbpedia	owl:sameAs	cso:dbpedia	.
+cso:dbpedia	rdfs:label	"dbpedia"	.
+cso:question_answering	rdfs:label	"question answering"	.
+local:language_model	owl:sameAs	cso:language_model	.
+cso:language_model	rdfs:label	"language model"	.
+local:question_answering	owl:sameAs	cso:question_answering	.
 cso:complex_questions	rdfs:label	"complex question"	.
+local:dbpedia	owl:sameAs	cso:dbpedia	.
 
 #### Relations ####
 
-local:complex_question	rdfs:subClassOf	local:question	.
-local:generally_outperforms	rdfs:subClassOf	local:outperforms	.
-local:neural	rdfs:member	local:neural_query	.
-local:outperforms	vn.role:Theme2	local:ranking_models	.
-local:neural_query_graph_ranking_approaches_for_task	local:neuralquerygraphrankingapproaches_for	local:task	.
-local:inherent_structure_of_query_graphs_our_logical_form	local:inherentstructureofquerygraphs_	local:our_logical_form	.
-local:query_graphs	rdfs:subClassOf	local:graphs	.
-local:conduct	vn.role:Agent	local:we	.
-local:our_logical_form_of_choice	local:of_choice	local:our_logical_form	.
-local:generally_outperforms_on_two_qa_datasets	local:generallyoutperforms_on	local:two_qa_datasets	.
-local:two_qa_datasets	rdfs:subClassOf	local:qa_datasets	.
-local:inherent_structure_of_query_graphs_our_logical_form	local:_ourlogicalform	local:inherent_structure_of_query_graphs	.
-local:graph_ranking	rdfs:member	local:graph_ranking_approaches	.
-local:exploits	vn.role:Predicate	local:inherent_structure_of_query_graphs_our_logical_form	.
-local:selfattention_based_slot_matching_model_our_logical_form	local:self-attentionbasedslotmatchingmodel_	local:our_logical_form	.
-local:empirical_investigation	rdfs:subClassOf	local:investigation	.
-local:ranking_models_on_two_qa_datasets	local:on_twoqadatasets	local:ranking_models	.
-local:pretrained_language_model	rdfs:subClassOf	local:language_model	.
-local:dbpedia_knowledge	rdfs:subClassOf	local:knowledge	.
-local:yield_improvements_effectively_offsetting	local:yieldimprovements_	local:effectively_offsetting	.
-local:neural_query_graph_ranking_approaches	rdfs:subClassOf	local:query_graph_ranking_approaches	.
-local:outperforms	vn.role:Attribute	local:two_qa_datasets_over_dbpedia_knowledge_graph_evaluated	.
-local:exploits	vn.role:Agent	local:novel_selfattention	.
-local:knowledge	rdfs:member	local:knowledge_graph	.
-local:empirical_investigation_of_neural_query_graph_ranking_approaches	local:empiricalinvestigation_of	local:neural_query_graph_ranking_approaches	.
-local:training_data	rdfs:subClassOf	local:data	.
-local:evaluated_in_different_settings	local:in_differentsettings	local:evaluated	.
-local:dbpedia	rdfs:member	local:dbpedia_knowledge	.
-local:empirical	rdfs:member	local:empirical_investigation	.
-local:knowledge_graph	rdfs:subClassOf	local:graph	.
-local:answering	vn.role:Agent	local:empirical_investigation_of_neural_query_graph_ranking_approaches	.
-local:pretrained_language	rdfs:subClassOf	local:language	.
-local:offsetting	vn.role:Theme	local:general_lack_of_training_data	.
-local:qa_datasets	rdfs:subClassOf	local:datasets	.
-local:qa	rdfs:member	local:qa_datasets	.
-local:two_qa_datasets_over_dbpedia_knowledge_graph_evaluated	local:twoqadatasetsoverdbpediaknowledgegraph_	local:evaluated	.
-local:different_settings	rdfs:subClassOf	local:settings	.
-local:task_of_complex_question_answering	local:of_complexquestionanswering	local:task	.
-local:outperforms	local:AM-ADV	local:generally	.
-local:offsetting	local:AM-MNR	local:effectively	.
-local:show	vn.role:Theme	local:domain_adaption_based_effectively_offsetting	.
-local:matching_model	rdfs:subClassOf	local:model	.
-local:evaluated	local:AM-LOC	local:different_settings	.
-local:yield_improvements_effectively_offsetting	local:_effectivelyoffsetting	local:yield_improvements	.
-local:task_of_complex_question_answering_over_knowledge_graphs	local:over_knowledgegraphs	local:task_of_complex_question_answering	.
-local:inherent_structure	rdfs:subClassOf	local:structure	.
-local:query	rdfs:member	local:query_graph	.
-local:learning	rdfs:member	local:learning_yield	.
-local:learning_yield	rdfs:subClassOf	local:yield	.
-local:dbpedia_knowledge_graph	rdfs:subClassOf	local:graph	.
-local:general_lack_of_training_data	local:of_trainingdata	local:general_lack	.
-local:effectively_offsetting	rdfs:subClassOf	local:offsetting	.
-local:conduct	local:AM-LOC	local:paper	.
-local:query_graph	rdfs:member	local:query_graph_ranking	.
-local:question_answering	rdfs:subClassOf	local:answering	.
-local:domain_adaption_based	local:domainadaption_	local:based	.
-local:learning	vn.role:Agent	local:pretrained_language_model	.
-local:query_graph_ranking_approaches	rdfs:subClassOf	local:graph_ranking_approaches	.
-local:ranking_models	rdfs:subClassOf	local:models	.
-local:neural_query_graph_ranking	rdfs:member	local:neural_query_graph_ranking_approaches	.
-local:slot_matching_model_our_logical_form	local:slotmatchingmodel_	local:our_logical_form	.
-local:neural_query_graph	rdfs:subClassOf	local:graph	.
-local:proposed	vn.role:Topic	local:generally_outperforms_on_two_qa_datasets	.
-local:novel_selfattention	rdfs:subClassOf	local:selfattention	.
-local:two_qa_datasets_over_dbpedia_knowledge_graph	local:twoqadatasets_over	local:dbpedia_knowledge_graph	.
-local:pretrained_language_model_based	local:pre-trainedlanguagemodel_	local:based	.
-local:different	rdfs:member	local:different_settings	.
-local:graph_ranking_approaches	rdfs:subClassOf	local:ranking_approaches	.
-local:ranking	rdfs:member	local:ranking_models	.
-local:pretrained_language_model_based	local:_based	local:pretrained_language_model	.
-local:exploits	vn.role:Agent	local:slot_matching_model	.
-local:ranking_approaches	rdfs:subClassOf	local:approaches	.
-local:inherent_structure_of_query_graphs	local:inherentstructure_of	local:query_graphs	.
-local:propose	vn.role:Topic	local:selfattention_based_slot_matching_model_our_logical_form	.
-local:selfattention_based_slot_matching_model	rdfs:subClassOf	local:based_slot_matching_model	.
-local:domain_adaption_based	local:_based	local:domain_adaption	.
-local:conduct	local:AM-PNC	local:task_of_complex_question_answering_over_knowledge_graphs	.
-local:graph	rdfs:member	local:graph_ranking	.
-local:neural_query	rdfs:member	local:neural_query_graph	.
-local:two_qa_datasets_over_dbpedia_knowledge_graph	local:over_dbpediaknowledgegraph	local:two_qa_datasets	.
-local:novel	rdfs:member	local:novel_selfattention	.
-local:empirical_investigation_of_neural_query_graph_ranking_approaches	local:of_neuralquerygraphrankingapproaches	local:empirical_investigation	.
-local:inherent_structure_of_query_graphs	local:of_querygraphs	local:inherent_structure	.
-local:show	vn.role:Theme	local:effectively_offsetting	.
-local:show	vn.role:Agent	local:we	.
-local:domain_adaption	rdfs:subClassOf	local:adaption	.
-local:neural_query	rdfs:subClassOf	local:query	.
-local:pretrained_language_model	rdfs:subClassOf	local:model	.
-local:task_of_complex_question_answering_over_knowledge_graphs	local:taskofcomplexquestionanswering_over	local:knowledge_graphs	.
-local:neural_query_graph_ranking_approaches_for_task	local:for_task	local:neural_query_graph_ranking_approaches	.
-local:conduct	vn.role:Theme	local:empirical_investigation_of_neural_query_graph_ranking_approaches	.
-local:ranking	rdfs:member	local:ranking_approaches	.
-local:pretrained	rdfs:member	local:pretrained_language	.
-local:yield_improvements	rdfs:subClassOf	local:improvements	.
-local:inherent	rdfs:member	local:inherent_structure	.
-local:language	rdfs:member	local:language_model	.
-local:evaluated_in_different_settings	local:evaluated_in	local:different_settings	.
-local:logical	rdfs:member	local:logical_form	.
-local:ranking_models_on_two_qa_datasets	local:rankingmodels_on	local:two_qa_datasets	.
-local:general_lack_of_training_data	local:generallack_of	local:training_data	.
-local:dbpedia_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
-local:slot_matching_model	rdfs:subClassOf	local:matching_model	.
-local:language_model	rdfs:subClassOf	local:model	.
-local:query_graph_ranking	rdfs:member	local:query_graph_ranking_approaches	.
-local:our_logical_form_of_choice	local:ourlogicalform_of	local:choice	.
-local:query_graph_ranking	rdfs:subClassOf	local:ranking	.
-local:based	vn.role:indirect_object	local:slot_matching_model_our_logical_form	.
-local:pretrained_language	rdfs:member	local:pretrained_language_model	.
-local:domain_adaption_based_effectively_offsetting	local:domainadaptionbased_	local:effectively_offsetting	.
-local:neural_query_graph	rdfs:member	local:neural_query_graph_ranking	.
-local:answering	vn.role:Agent	local:graphs	.
-local:answering	vn.role:Agent	local:we	.
-local:answering	vn.role:Predicate	local:knowledge	.
-local:based	vn.role:Experiencer	local:pretrained_language_model	.
-local:complex	rdfs:member	local:complex_question	.
-local:task_of_complex_question	local:of_complexquestion	local:task	.
-local:evaluated	vn.role:Theme	local:ranking_models_on_two_qa_datasets	.
-local:learning_yield	rdfs:member	local:learning_yield_improvements	.
-local:slot_matching_model_our_logical_form	local:_ourlogicalform	local:slot_matching_model	.
-local:learning_yield_improvements	rdfs:subClassOf	local:improvements	.
-local:based_slot_matching_model	rdfs:subClassOf	local:slot_matching_model	.
-local:general	rdfs:member	local:general_lack	.
-local:proposed	vn.role:Agent	local:we	.
-local:based	vn.role:indirect_object	local:learning	.
-local:yield	rdfs:member	local:yield_improvements	.
-local:show	local:AM-DIS	local:also	.
-local:query_graph_ranking_approaches	rdfs:subClassOf	local:approaches	.
-local:task_of_complex_question_answering	local:task_of	local:complex_question_answering	.
-local:knowledge	rdfs:member	local:knowledge_graphs	.
-local:learning	vn.role:Theme	local:yield_improvements_effectively_offsetting	.
-local:two_qa_datasets_over_dbpedia_knowledge_graph_evaluated	local:_evaluated	local:two_qa_datasets_over_dbpedia_knowledge_graph	.
-local:neural_query_graph_ranking_approaches	rdfs:subClassOf	local:approaches	.
-local:selfattention_based_slot_matching_model_our_logical_form	local:_ourlogicalform	local:selfattention_based_slot_matching_model	.
-local:our_logical_form	rdfs:subClassOf	local:logical_form	.
-local:general_lack	rdfs:subClassOf	local:lack	.
-local:logical_form	rdfs:subClassOf	local:form	.
-local:domain_adaption_based_effectively_offsetting	local:_effectivelyoffsetting	local:domain_adaption_based	.
-local:propose	vn.role:Agent	local:we	.
-local:dbpedia_knowledge	rdfs:member	local:dbpedia_knowledge_graph	.
-local:training	rdfs:member	local:training_data	.
-local:query	rdfs:member	local:query_graphs	.
 local:graph_ranking	rdfs:subClassOf	local:ranking	.
-local:outperforms	vn.role:Theme1	local:we	.
+local:ranking_approaches	rdfs:subClassOf	local:approaches	.
+local:domain_adaption_based	rdfs:member	local:domain_adaption	.
+local:domain_adaption_based	rdfs:member	local:based	.
+local:datasets_over_dbpedia_knowledge_graph	rdfs:member	local:datasets	.
+local:neural_query_graph_ranking_approaches	rdfs:subClassOf	local:query_graph_ranking_approaches	.
 local:query_graph	rdfs:subClassOf	local:graph	.
-local:neural_query_graph_ranking	rdfs:subClassOf	local:ranking	.
-local:domain	rdfs:member	local:domain_adaption	.
-local:based	vn.role:Experiencer	local:novel_selfattention	.
-local:other_ranking_models	rdfs:subClassOf	local:ranking_models	.
+local:query_graph_ranking_approaches	rdfs:subClassOf	local:graph_ranking_approaches	.
+local:inherent_structure_of_query_graphs	rdfs:member	local:query_graphs	.
+local:generally_outperforms_on_two_qa	rdfs:member	local:generally_outperforms	.
+local:neural_query	rdfs:member	local:neural	.
+local:dbpedia_knowledge	rdfs:member	local:dbpedia	.
+local:novel_selfattention	rdfs:member	local:novel	.
+local:inherent_structure_of_query_graphs	rdfs:member	local:inherent_structure	.
+local:query_graph_ranking_approaches	rdfs:member	local:query_graph_ranking	.
+local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:model	.
+local:domain_adaption_based_transfer	rdfs:member	local:domain_adaption	.
+local:graph_ranking	rdfs:member	local:graph	.
+local:s4	rdf:subject	local:we	.
+local:task_of_complex_question_answering	rdfs:member	local:complex_question_answering	.
 local:graph_ranking_approaches	rdfs:subClassOf	local:approaches	.
-local:task_of_complex_question	local:task_of	local:complex_question	.
+local:s6.1	rdf:predicate	local:base	.
+local:training_data	rdfs:member	local:training	.
+local:neural_query	rdfs:subClassOf	local:query	.
 local:complex_question_answering	rdfs:subClassOf	local:question_answering	.
+local:generally_outperforms	rdfs:subClassOf	local:outperforms	.
+local:inherent_structure_of_query_graphs_our_logical_form_of_choice	rdfs:member	local:inherent_structure	.
+local:s3.1	local:AM-ADV	local:generally	.
+local:s3	rdf:object	local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	.
+local:s5.2	rdf:predicate	local:offset	.
+local:training_data	rdfs:subClassOf	local:data	.
+local:inherent_structure_of_query_graphs_our_logical_form_of_choice	rdfs:member	local:choice	.
+local:s4	local:AM-DIS	local:also	.
+local:ranking_models_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:models	.
+local:general_lack	rdfs:member	local:general	.
+local:novel_selfattention	rdfs:subClassOf	local:selfattention	.
+local:s4	rdf:predicate	local:show	.
+local:s1.1	rdf:object	local:slot_matching_model	.
+local:datasets_over_dbpedia_knowledge_graph	rdfs:member	local:dbpedia_knowledge_graph	.
+local:s3.1	rdf:predicate	local:outperform	.
+local:query_graph	rdfs:member	local:query	.
+local:generally_outperforms_on_two_qa	rdfs:member	local:two_qa	.
+local:general_lack	rdfs:subClassOf	local:lack	.
+local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:different_settings	.
+local:s1	rdf:subject	local:we	.
+local:task_of_complex_question_answering_over_knowledge_graphs	rdfs:member	local:knowledge_graphs	.
+local:dbpedia_knowledge	rdfs:subClassOf	local:knowledge	.
+local:graph_ranking_approaches	rdfs:member	local:graph_ranking	.
+local:s6	rdf:predicate	local:show	.
+local:neural_query_graph_ranking_approaches	rdfs:member	local:neural_query_graph_ranking	.
+local:empirical_investigation	rdfs:subClassOf	local:investigation	.
+local:s4	rdf:object	local:domain_adaption_based_transfer	.
+local:logical_form	rdfs:subClassOf	local:form	.
+local:domain_adaption_based_transfer	rdfs:member	local:transfer	.
+local:our_logical_form_of_choice	rdfs:member	local:our_logical_form	.
+local:query_graphs	rdfs:subClassOf	local:graphs	.
+local:s1	rdf:object	local:novel_selfattention	.
+local:s5.2	rdf:object	local:general_lack_of_training_data	.
+local:ranking_models	rdfs:subClassOf	local:models	.
+local:inherent_structure_of_query_graphs_our_logical_form_of_choice	rdfs:member	local:query	.
+local:task_of_complex_question_answering_over_knowledge_graphs	rdfs:member	local:task	.
+local:complex_question	rdfs:member	local:complex	.
+local:query_graph_ranking_approaches	rdfs:subClassOf	local:approaches	.
+local:s3.2	local:AM-LOC	local:different_settings	.
+local:yield_improvements	rdfs:member	local:yield	.
+local:our_logical_form	rdfs:subClassOf	local:logical_form	.
+local:evaluated_in_different_settings	rdfs:member	local:different_settings	.
+local:neural_query_graph_ranking	rdfs:subClassOf	local:ranking	.
+local:dbpedia_knowledge_graph_evaluated	rdfs:member	local:evaluated	.
+local:our_logical_form_of_choice	rdfs:member	local:choice	.
+local:dbpedia_knowledge_graph	rdfs:subClassOf	local:knowledge_graph	.
+local:s0.1	rdf:predicate	local:answer	.
+local:s0	local:AM-PNC	local:task_of_complex_question_answering_over_knowledge_graphs	.
+local:dbpedia_knowledge_graph	rdfs:member	local:dbpedia_knowledge	.
+local:knowledge_graphs	rdfs:member	local:knowledge	.
+local:empirical_investigation_of_neural_query_graph_ranking_approaches	rdfs:member	local:neural_query_graph_ranking_approaches	.
+local:inherent_structure	rdfs:member	local:inherent	.
+local:s6	rdf:subject	local:we	.
+local:domain_adaption	rdfs:member	local:domain	.
+local:empirical_investigation_of_neural_query_graph_ranking_approaches	rdfs:member	local:empirical_investigation	.
+local:s5.1	rdf:subject	local:general_lack_of_training_data	.
+local:yield_improvements	rdfs:subClassOf	local:improvements	.
+local:s1.1	rdf:subject	local:novel_selfattention	.
+local:pretrained_language_model	rdfs:subClassOf	local:language_model	.
+local:s5.1	rdf:predicate	local:learn	.
+local:query_graph_ranking	rdfs:member	local:query_graph	.
+local:slot_matching_model	rdfs:member	local:model	.
 local:knowledge_graphs	rdfs:subClassOf	local:graphs	.
-local:generally_outperforms_on_two_qa_datasets	local:on_twoqadatasets	local:generally_outperforms	.
+local:knowledge_graph	rdfs:member	local:knowledge	.
+local:other_ranking_models	rdfs:subClassOf	local:ranking_models	.
+local:dbpedia_knowledge_graph_evaluated	rdfs:member	local:dbpedia_knowledge_graph	.
+local:s6	rdf:object	local:s6.1	.
+local:s0	local:AM-LOC	local:paper	.
+local:s4.1	rdf:subject	local:transfer	.
+local:s3.1	rdf:subject	local:we	.
+local:s3.2	rdf:predicate	local:evaluate	.
+local:complex_question	rdfs:subClassOf	local:question	.
+local:ranking_models_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:dbpedia_knowledge_graph	.
+local:task_of_complex_question_answering	rdfs:member	local:task	.
+local:s3.1	rdf:object	local:ranking_models_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	.
+local:slot_matching_model	rdfs:member	local:slot	.
+local:query_graph_ranking	rdfs:subClassOf	local:ranking	.
+local:s1.1	rdf:predicate	local:base	.
+local:effectively_offsetting	rdfs:subClassOf	local:offsetting	.
+local:s0	rdf:predicate	local:conduct	.
+local:task_of_complex_question_answering_over_knowledge_graphs	rdfs:member	local:complex_question	.
+local:based_slot_matching_model	rdfs:member	local:slot	.
+local:dbpedia_knowledge_graph	rdfs:subClassOf	local:graph	.
+local:s5	rdf:predicate	local:transfer	.
+local:logical_form	rdfs:member	local:logical	.
+local:general_lack_of_training_data	rdfs:member	local:general_lack	.
+local:s5.2	rdf:subject	local:improvements	.
+local:ranking_approaches	rdfs:member	local:ranking	.
+local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:dbpedia_knowledge_graph	.
+local:s3	rdf:subject	local:we	.
+local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:models	.
+local:based_slot_matching_model	rdfs:subClassOf	local:slot_matching_model	.
+local:s2	rdf:predicate	local:exploit	.
+local:inherent_structure_of_query_graphs_our_logical_form_of_choice	rdfs:member	local:logical_form	.
+local:general_lack_of_training_data	rdfs:member	local:training_data	.
+local:graph_ranking_approaches	rdfs:subClassOf	local:ranking_approaches	.
+local:s4.1	rdf:predicate	local:base	.
+local:ranking_models_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:different_settings	.
+local:language_model	rdfs:subClassOf	local:model	.
+local:s2	rdf:subject	local:slot_matching_model	.
+local:neural_query_graph_ranking	rdfs:member	local:neural_query_graph	.
+local:s5	rdf:object	local:s5.1	.
+local:empirical_investigation	rdfs:member	local:empirical	.
+local:task_of_complex_question_answering_over_knowledge_graphs	rdfs:member	local:task_of_complex_question_answering	.
+local:two_qa	rdfs:subClassOf	local:qa	.
+local:different_settings	rdfs:member	local:different	.
+local:model_generally_outperforms_other_ranking_models_on_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:qa_datasets	.
+local:s1	rdf:predicate	local:propose	.
+local:language_model	rdfs:member	local:language	.
+local:s6.1	rdf:object	local:transfer	.
+local:domain_adaption	rdfs:subClassOf	local:adaption	.
+local:knowledge_graph	rdfs:subClassOf	local:graph	.
+local:s1	local:AM-MNR	local:based_slot_matching_model	.
+local:yield_improvements_effectively_offsetting	rdfs:member	local:yield_improvements	.
+local:neural_query_graph	rdfs:member	local:neural_query	.
+local:based_slot_matching_model	rdfs:member	local:model	.
+local:qa_datasets	rdfs:member	local:qa	.
+local:ranking_models_two_qa_datasets_over_the_dbpedia_knowledge_graph_evaluated_in_different_settings	rdfs:member	local:qa_datasets	.
+local:s0	rdf:object	local:empirical_investigation_of_neural_query_graph_ranking_approaches	.
+local:evaluated_in_different_settings	rdfs:member	local:evaluated	.
+local:s0.1	rdf:subject	local:empirical_investigation_of_neural_query_graph_ranking_approaches	.
+local:question_answering	rdfs:subClassOf	local:answering	.
+local:s5.2	local:AM-MNR	local:effectively	.
+local:s3	rdf:predicate	local:propose	.
+local:s2	rdf:object	local:inherent_structure_of_query_graphs_our_logical_form_of_choice	.
+local:inherent_structure	rdfs:subClassOf	local:structure	.
+local:neural_query_graph_ranking_approaches	rdfs:subClassOf	local:approaches	.
+local:s6.1	rdf:subject	local:pretrained_language_model	.
+local:s5.1	rdf:object	local:yield_improvements_effectively_offsetting	.
+local:s6	local:AM-DIS	local:also	.
+local:s0.1	local:AM-MNR	local:knowledge_graphs	.
+local:neural_query_graph	rdfs:subClassOf	local:graph	.
+local:yield_improvements_effectively_offsetting	rdfs:member	local:effectively_offsetting	.
+local:different_settings	rdfs:subClassOf	local:settings	.
+local:matching_model	rdfs:subClassOf	local:model	.
+local:slot_matching_model	rdfs:subClassOf	local:matching_model	.
+local:s3.2	rdf:subject	local:dbpedia_knowledge_graph	.
+local:s0	rdf:subject	local:we	.
+local:qa_datasets	rdfs:subClassOf	local:datasets	.

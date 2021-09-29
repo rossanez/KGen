@@ -1,275 +1,504 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"this paper focuses on the grounding"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"the grounding which connects our ontology with lowlevel xmlbased descriptions of web services"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"in this paper we describe the service profile the process model"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"in this paper we describe the service grounding"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"in this paper we describe three aspects of our ontology"	.
+
+local:s6.3	a	rdf:Statement	;
+	rdfs:label	"what a service can"	.
+
+local:s6.2	a	rdf:Statement	;
+	rdfs:label	"the application layer describing what a service can do"	.
+
+local:s6.1	a	rdf:Statement	;
+	rdfs:label	"damls providing web service descriptions at the application layer describing what a service can do"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"damls complements this effort by providing web service descriptions at the application layer describing what a service can do"	.
+
+local:s5.2	a	rdf:Statement	;
+	rdfs:label	"the application layer describing how a service does a service"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"damls providing web service descriptions at the application layer"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"damls complements this effort by providing web service descriptions at the application layer describing how a service does a service"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"standards emerging for lowlevel descriptions of web services"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"web services devices garnering a great deal of interest from industry"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"web services webaccessible programs garnering a great deal of interest from industry"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"describing the properties and capabilities of web services"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"in this paper we present a damloil ontology for describing the properties and capabilities of web services"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in this paper we present damls"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:paper	rdfs:label	"paper"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:we	rdfs:label	"we"	.
+local:grounding	a	rdf:Class	;
+	rdfs:label	"grounding"	.
 
-local:damloil_ontology	rdfs:label	"damloil ontology"	.
+local:connect	a	rdf:Class	;
+	rdfs:label	"connect"	.
 
-local:ontology	rdfs:label	"ontology"	.
+local:ontology_with_lowlevel_xmlbased_descriptions_of_web_services	a	rdf:Class	;
+	rdfs:label	"ontology with lowlevel xmlbased descriptions of web services"	.
 
-local:web	rdfs:label	"web"	.
+local:lowlevel	a	rdf:Class	;
+	rdfs:label	"lowlevel"	.
 
-local:web_services	rdfs:label	"web services"	.
+local:descriptions	a	rdf:Class	;
+	rdfs:label	"descriptions"	.
 
-local:damloil	rdfs:label	"damloil"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:services	rdfs:label	"services"	.
+local:web_services	a	rdf:Class	;
+	rdfs:label	"web services"	.
 
-local:properties_of_web_services	rdfs:label	"properties of web services"	.
+local:services	a	rdf:Class	;
+	rdfs:label	"services"	.
 
-local:properties	rdfs:label	"properties"	.
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
 
-local:describing	rdfs:label	"describing"	.
+local:xmlbased_descriptions	a	rdf:Class	;
+	rdfs:label	"xmlbased descriptions"	.
 
-local:damls	rdfs:label	"daml-s"	.
+local:lowlevel_xmlbased_descriptions	a	rdf:Class	;
+	rdfs:label	"lowlevel xmlbased descriptions"	.
 
-local:web_services_webaccessible	rdfs:label	"web services- web-accessible"	.
+local:ontology_with_lowlevel_xmlbased_descriptions	a	rdf:Class	;
+	rdfs:label	"ontology with lowlevel xmlbased descriptions"	.
 
-local:webaccessible	rdfs:label	"web-accessible"	.
+local:lowlevel_xmlbased_descriptions_of_web_services	a	rdf:Class	;
+	rdfs:label	"lowlevel xmlbased descriptions of web services"	.
 
-local:services_webaccessible_programs	rdfs:label	"services- web-accessible programs"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:programs	rdfs:label	"programs"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:services_webaccessible	rdfs:label	"services- web-accessible"	.
+local:service_profile_the_process_model	a	rdf:Class	;
+	rdfs:label	"service profile the process model"	.
 
-local:web_services_webaccessible_programs	rdfs:label	"web services- web-accessible programs"	.
+local:service	a	rdf:Class	;
+	rdfs:label	"service"	.
 
-local:webaccessible_programs	rdfs:label	"web-accessible programs"	.
+local:process_model	a	rdf:Class	;
+	rdfs:label	"process model"	.
 
-local:garnering	rdfs:label	"garnering"	.
+local:model	a	rdf:Class	;
+	rdfs:label	"model"	.
 
-local:great_deal	rdfs:label	"great deal"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
-local:deal	rdfs:label	"deal"	.
+local:service_grounding	a	rdf:Class	;
+	rdfs:label	"service grounding"	.
 
-local:great	rdfs:label	"great"	.
+local:three_aspects_of_our_ontology	a	rdf:Class	;
+	rdfs:label	"three aspects of our ontology"	.
 
-local:great_deal_of_interest	rdfs:label	"great deal of interest"	.
+local:aspects	a	rdf:Class	;
+	rdfs:label	"aspects"	.
 
-local:interest	rdfs:label	"interest"	.
+local:our_ontology	a	rdf:Class	;
+	rdfs:label	"our ontology"	.
 
-local:interest_from_industry	rdfs:label	"interest from industry"	.
+local:three_aspects	a	rdf:Class	;
+	rdfs:label	"three aspects"	.
 
-local:industry	rdfs:label	"industry"	.
+local:do	a	rdf:Class	;
+	rdfs:label	"do"	.
 
-local:emerging	rdfs:label	"emerging"	.
+local:can	a	rdf:Class	;
+	rdfs:label	"can"	.
 
-local:standards	rdfs:label	"standards"	.
+local:application_layer	a	rdf:Class	;
+	rdfs:label	"application layer"	.
 
-local:lowlevel	rdfs:label	"low-level"	.
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
 
-local:lowlevel_descriptions	rdfs:label	"low-level descriptions"	.
+local:layer	a	rdf:Class	;
+	rdfs:label	"layer"	.
 
-local:descriptions	rdfs:label	"descriptions"	.
+local:service_can_do	a	rdf:Class	;
+	rdfs:label	"service can do"	.
 
-local:lowlevel_descriptions_of_web_services	rdfs:label	"low-level descriptions of web services"	.
+local:can_do	a	rdf:Class	;
+	rdfs:label	"can do"	.
 
-local:services_devices	rdfs:label	"services- devices"	.
+local:damls	a	rdf:Class	;
+	rdfs:label	"damls"	.
 
-local:devices	rdfs:label	"devices"	.
+local:provide	a	rdf:Class	;
+	rdfs:label	"provide"	.
 
-local:web_services_devices	rdfs:label	"web services- devices"	.
+local:web_service_descriptions_application_layer_describing_what_a_service_can_do	a	rdf:Class	;
+	rdfs:label	"web service descriptions application layer describing what a service can do"	.
 
-local:complements	rdfs:label	"complements"	.
+local:web_service_descriptions	a	rdf:Class	;
+	rdfs:label	"web service descriptions"	.
 
-local:effort	rdfs:label	"effort"	.
+local:service_descriptions	a	rdf:Class	;
+	rdfs:label	"service descriptions"	.
 
-local:web_service	rdfs:label	"web service"	.
+local:web_service	a	rdf:Class	;
+	rdfs:label	"web service"	.
 
-local:web_service_descriptions	rdfs:label	"web service descriptions"	.
+local:descriptions_application_layer	a	rdf:Class	;
+	rdfs:label	"descriptions application layer"	.
 
-local:application	rdfs:label	"application"	.
+local:service_descriptions_application_layer	a	rdf:Class	;
+	rdfs:label	"service descriptions application layer"	.
 
-local:application_layer	rdfs:label	"application layer"	.
+local:web_service_descriptions_application_layer	a	rdf:Class	;
+	rdfs:label	"web service descriptions application layer"	.
 
-local:layer	rdfs:label	"layer"	.
+local:web_service_descriptions_application_layer_describing	a	rdf:Class	;
+	rdfs:label	"web service descriptions application layer describing"	.
 
-local:service	rdfs:label	"service"	.
+local:describing	a	rdf:Class	;
+	rdfs:label	"describing"	.
 
-local:service_descriptions	rdfs:label	"service descriptions"	.
+local:complement	a	rdf:Class	;
+	rdfs:label	"complement"	.
 
-local:how_does	rdfs:label	"how does"	.
+local:effort_providing_web_service_descriptions_at_the_application_layer_describing_what_a_service_can_do	a	rdf:Class	;
+	rdfs:label	"effort providing web service descriptions at the application layer describing what a service can do"	.
 
-local:does	rdfs:label	"does"	.
+local:effort	a	rdf:Class	;
+	rdfs:label	"effort"	.
 
-local:providing_at_application_layer	rdfs:label	"providing at application layer"	.
+local:effort_providing	a	rdf:Class	;
+	rdfs:label	"effort providing"	.
 
-local:providing	rdfs:label	"providing"	.
+local:providing	a	rdf:Class	;
+	rdfs:label	"providing"	.
 
-local:can_do	rdfs:label	"can do"	.
+local:providing_at_application_layer	a	rdf:Class	;
+	rdfs:label	"providing at application layer"	.
 
-local:do	rdfs:label	"do."	.
+local:application_layer_describing	a	rdf:Class	;
+	rdfs:label	"application layer describing"	.
 
-local:application_layer_describing	rdfs:label	"application layer describing"	.
+local:service_does_a_service	a	rdf:Class	;
+	rdfs:label	"service does a service"	.
 
-local:can	rdfs:label	"can"	.
+local:service_does	a	rdf:Class	;
+	rdfs:label	"service does"	.
 
-local:describe	rdfs:label	"describe"	.
+local:does	a	rdf:Class	;
+	rdfs:label	"does"	.
 
-local:our_ontology	rdfs:label	"our ontology"	.
+local:service_descriptions_application	a	rdf:Class	;
+	rdfs:label	"service descriptions application"	.
 
-local:three_aspects	rdfs:label	"three aspects"	.
+local:web_service_descriptions_application	a	rdf:Class	;
+	rdfs:label	"web service descriptions application"	.
 
-local:aspects	rdfs:label	"aspects"	.
+local:descriptions_application	a	rdf:Class	;
+	rdfs:label	"descriptions application"	.
 
-local:three_aspects_of_our_ontology	rdfs:label	"three aspects of our ontology"	.
+local:providing_web_service_descriptions_at_the_application_layer_describing_how_a_service_does_a_service	a	rdf:Class	;
+	rdfs:label	"providing web service descriptions at the application layer describing how a service does a service"	.
 
-local:service_grounding	rdfs:label	"service grounding"	.
+local:how_does	a	rdf:Class	;
+	rdfs:label	"how does"	.
 
-local:grounding	rdfs:label	"grounding"	.
+local:lowlevel_descriptions_of_web_services	a	rdf:Class	;
+	rdfs:label	"lowlevel descriptions of web services"	.
 
-local:service_profile	rdfs:label	"service profile"	.
+local:lowlevel_descriptions	a	rdf:Class	;
+	rdfs:label	"lowlevel descriptions"	.
 
-local:process_model	rdfs:label	"process model"	.
+local:emerge	a	rdf:Class	;
+	rdfs:label	"emerge"	.
 
-local:model	rdfs:label	"model"	.
+local:web_services_devices	a	rdf:Class	;
+	rdfs:label	"web services devices"	.
 
-local:profile	rdfs:label	"profile"	.
+local:devices	a	rdf:Class	;
+	rdfs:label	"devices"	.
 
-local:process	rdfs:label	"process"	.
+local:services_devices	a	rdf:Class	;
+	rdfs:label	"services devices"	.
 
-local:service_profile_process_model	rdfs:label	"service profile process model"	.
+local:garner	a	rdf:Class	;
+	rdfs:label	"garner"	.
 
-local:connects	rdfs:label	"connects"	.
+local:great_deal_of_interest_from_industry	a	rdf:Class	;
+	rdfs:label	"great deal of interest from industry"	.
 
-local:xmlbased_descriptions	rdfs:label	"xml-based descriptions"	.
+local:great_deal	a	rdf:Class	;
+	rdfs:label	"great deal"	.
 
-local:lowlevel_xmlbased_descriptions	rdfs:label	"low-level xml-based descriptions"	.
+local:industry	a	rdf:Class	;
+	rdfs:label	"industry"	.
 
-local:lowlevel_xmlbased	rdfs:label	"low-level xml-based"	.
+local:interest	a	rdf:Class	;
+	rdfs:label	"interest"	.
 
-local:xmlbased	rdfs:label	"xml-based"	.
+local:deal	a	rdf:Class	;
+	rdfs:label	"deal"	.
 
-local:ontology_with_lowlevel_xmlbased_descriptions	rdfs:label	"ontology with low-level xml-based descriptions"	.
+local:great	a	rdf:Class	;
+	rdfs:label	"great"	.
 
-local:lowlevel_xmlbased_descriptions_of_web_services	rdfs:label	"low-level xml-based descriptions of web services"	.
+local:great_deal_of_interest	a	rdf:Class	;
+	rdfs:label	"great deal of interest"	.
 
-local:focuses	rdfs:label	"focuses"	.
+local:interest_from_industry	a	rdf:Class	;
+	rdfs:label	"interest from industry"	.
 
-#### Properties ####
+local:web_services_webaccessible_programs	a	rdf:Class	;
+	rdfs:label	"web services webaccessible programs"	.
+
+local:webaccessible_programs	a	rdf:Class	;
+	rdfs:label	"webaccessible programs"	.
+
+local:webaccessible	a	rdf:Class	;
+	rdfs:label	"webaccessible"	.
+
+local:programs	a	rdf:Class	;
+	rdfs:label	"programs"	.
+
+local:services_webaccessible_programs	a	rdf:Class	;
+	rdfs:label	"services webaccessible programs"	.
+
+local:properties_and_capabilities_of_web_services	a	rdf:Class	;
+	rdfs:label	"properties and capabilities of web services"	.
+
+local:capabilities	a	rdf:Class	;
+	rdfs:label	"capabilities"	.
+
+local:properties	a	rdf:Class	;
+	rdfs:label	"properties"	.
+
+local:properties_of_web_services	a	rdf:Class	;
+	rdfs:label	"properties of web services"	.
+
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
+
+local:damloil_ontology	a	rdf:Class	;
+	rdfs:label	"damloil ontology"	.
+
+local:damloil	a	rdf:Class	;
+	rdfs:label	"damloil"	.
+
+local:describing_the_properties_and_capabilities_of_web_services	a	rdf:Class	;
+	rdfs:label	"describing the properties and capabilities of web services"	.
 
 #### Mapped Relations ####
 
-local:ontology	owl:sameAs	cso:ontology	.
-local:process_model	owl:sameAs	cso:process_models	.
-local:web_service_descriptions	owl:sameAs	cso:web_service_description	.
-cso:application_layer	rdfs:label	"application layer"	.
-cso:ontology	rdfs:label	"ontology"	.
-cso:web_service_description	rdfs:label	"web service descriptions"	.
 local:application_layer	owl:sameAs	cso:application_layer	.
+cso:web_service_description	rdfs:label	"web service descriptions"	.
 cso:process_models	rdfs:label	"process model"	.
+local:web_service_descriptions	owl:sameAs	cso:web_service_description	.
+local:ontology	owl:sameAs	cso:ontology	.
+cso:ontology	rdfs:label	"ontology"	.
+local:process_model	owl:sameAs	cso:process_models	.
+cso:application_layer	rdfs:label	"application layer"	.
 
 #### Relations ####
 
-local:lowlevel_xmlbased_descriptions	rdfs:subClassOf	local:xmlbased_descriptions	.
-local:web_service_descriptions	rdfs:subClassOf	local:descriptions	.
-local:lowlevel_xmlbased_descriptions	rdfs:subClassOf	local:descriptions	.
-local:three_aspects_of_our_ontology	local:of_ourontology	local:three_aspects	.
-local:present	local:AM-LOC	local:paper	.
-local:web	rdfs:member	local:web_service	.
-local:our_ontology	rdfs:subClassOf	local:ontology	.
-local:how_does	rdfs:subClassOf	local:does	.
-local:webaccessible_programs	rdfs:subClassOf	local:programs	.
+local:s9	rdf:predicate	local:describe	.
+local:s8	rdf:subject	local:we	.
+local:web_service_descriptions_application	rdfs:subClassOf	local:application	.
 local:damloil_ontology	rdfs:subClassOf	local:ontology	.
-local:service	rdfs:member	local:service_grounding	.
-local:service	rdfs:member	local:service_profile	.
-local:lowlevel_xmlbased_descriptions_of_web_services	local:low-levelxml-baseddescriptions_of	local:web_services	.
-local:application_layer	rdfs:subClassOf	local:layer	.
-local:ontology_with_lowlevel_xmlbased_descriptions	local:with_low-levelxml-baseddescriptions	local:ontology	.
-local:services	rdfs:member	local:services_webaccessible	.
-local:describe	vn.role:Agent	local:we	.
-local:complements	vn.role:indirect_object	local:providing_at_application_layer	.
-local:webaccessible	rdfs:member	local:webaccessible_programs	.
-local:web_services_devices	rdfs:subClassOf	local:devices	.
-local:great_deal	rdfs:subClassOf	local:deal	.
-local:lowlevel_descriptions	rdfs:subClassOf	local:descriptions	.
-local:application_layer_describing	local:applicationlayer_	local:describing	.
-local:providing_at_application_layer	local:providing_at	local:application_layer	.
-local:service_profile	rdfs:subClassOf	local:profile	.
-local:do	vn.role:subject	local:service	.
-local:services	rdfs:member	local:services_devices	.
-local:garnering	vn.role:indirect_object	local:industry	.
-local:web_services_webaccessible	rdfs:subClassOf	local:webaccessible	.
-local:service_descriptions	rdfs:subClassOf	local:descriptions	.
-local:web_services	rdfs:member	local:web_services_webaccessible	.
-local:lowlevel_descriptions_of_web_services	local:low-leveldescriptions_of	local:web_services	.
-local:service_profile_process_model	local:serviceprofile_	local:process_model	.
-local:services_webaccessible	rdfs:member	local:services_webaccessible_programs	.
-local:web_services_webaccessible_programs	rdfs:subClassOf	local:programs	.
-local:lowlevel_xmlbased_descriptions_of_web_services	local:of_webservices	local:lowlevel_xmlbased_descriptions	.
+local:web_service_descriptions	rdfs:member	local:web_service	.
 local:web_service	rdfs:subClassOf	local:service	.
-local:providing	vn.role:Recipient	local:damls	.
-local:can_do	rdfs:subClassOf	local:do	.
-local:lowlevel_xmlbased	rdfs:member	local:lowlevel_xmlbased_descriptions	.
-local:lowlevel_descriptions_of_web_services	local:of_webservices	local:lowlevel_descriptions	.
-local:describing	vn.role:Agent	local:damls	.
-local:three_aspects	rdfs:subClassOf	local:aspects	.
-local:great_deal_of_interest	local:of_interest	local:great_deal	.
-local:present	vn.role:Theme	local:damloil_ontology	.
-local:present	vn.role:Theme	local:damls	.
-local:properties_of_web_services	local:properties_of	local:web_services	.
-local:garnering	vn.role:object	local:great_deal_of_interest	.
-local:focuses	vn.role:indirect_object	local:grounding	.
-local:providing_at_application_layer	local:at_applicationlayer	local:providing	.
-local:present	vn.role:Agent	local:we	.
-local:emerging	vn.role:Theme	local:lowlevel_descriptions_of_web_services	.
-local:describe	vn.role:Theme	local:service_grounding	.
-local:describing	vn.role:Theme	local:can_do	.
-local:describe	vn.role:Theme	local:three_aspects_of_our_ontology	.
-local:web_service	rdfs:member	local:web_service_descriptions	.
+local:s5.2	rdf:subject	local:application_layer	.
+local:descriptions_application_layer	rdfs:subClassOf	local:layer	.
+local:web_service_descriptions_application_layer_describing_what_a_service_can_do	rdfs:member	local:service	.
+local:web_services_devices	rdfs:subClassOf	local:devices	.
+local:webaccessible_programs	rdfs:subClassOf	local:programs	.
+local:three_aspects_of_our_ontology	rdfs:member	local:three_aspects	.
+local:properties_of_web_services	rdfs:member	local:web_services	.
+local:s2	rdf:subject	local:web_services_webaccessible_programs	.
+local:ontology_with_lowlevel_xmlbased_descriptions	rdfs:member	local:ontology	.
+local:s1.1	rdfs:member	local:capabilities	.
+local:our_ontology	rdfs:subClassOf	local:ontology	.
+local:interest_from_industry	rdfs:member	local:industry	.
+local:s2	rdf:object	local:great_deal_of_interest_from_industry	.
+local:effort_providing_web_service_descriptions_at_the_application_layer_describing_what_a_service_can_do	rdfs:member	local:application_layer	.
+local:s5	rdf:subject	local:damls	.
+local:web_services_devices	rdfs:member	local:web_services	.
+local:great_deal_of_interest_from_industry	rdfs:member	local:industry	.
+local:properties_and_capabilities_of_web_services	rdfs:member	local:properties	.
+local:effort_providing_web_service_descriptions_at_the_application_layer_describing_what_a_service_can_do	rdfs:member	local:web_service_descriptions	.
+local:s0	rdf:predicate	local:present	.
+local:webaccessible_programs	rdfs:member	local:webaccessible	.
+local:ontology_with_lowlevel_xmlbased_descriptions_of_web_services	rdfs:member	local:lowlevel	.
+local:descriptions_application_layer	rdfs:subClassOf	local:application_layer	.
+local:s9	rdf:object	local:service_profile_the_process_model	.
+local:great_deal_of_interest_from_industry	rdfs:member	local:interest	.
+local:web_service_descriptions_application_layer	rdfs:subClassOf	local:service_descriptions_application_layer	.
+local:s8	rdf:predicate	local:describe	.
+local:s5	local:AM-MNR	local:providing_web_service_descriptions_at_the_application_layer_describing_how_a_service_does_a_service	.
+local:web_service_descriptions_application_layer	rdfs:subClassOf	local:layer	.
+local:web_service_descriptions	rdfs:subClassOf	local:descriptions	.
+local:three_aspects_of_our_ontology	rdfs:member	local:ontology	.
+local:service_does	rdfs:member	local:does	.
+local:service_descriptions_application_layer	rdfs:subClassOf	local:descriptions_application_layer	.
+local:s1.1	rdfs:member	local:web_services	.
+local:s7	rdf:object	local:three_aspects_of_our_ontology	.
+local:great_deal_of_interest_from_industry	rdfs:member	local:great_deal	.
+local:s1	rdf:predicate	local:present	.
+local:s6.1	rdf:object	local:web_service_descriptions_application_layer_describing_what_a_service_can_do	.
+local:providing_at_application_layer	rdfs:member	local:application_layer	.
+local:s5.1	rdf:subject	local:damls	.
+local:web_service_descriptions_application_layer	rdfs:member	local:web_service_descriptions_application	.
+local:lowlevel_descriptions	rdfs:member	local:lowlevel	.
 local:xmlbased_descriptions	rdfs:subClassOf	local:descriptions	.
-local:connects	vn.role:Patient	local:ontology_with_lowlevel_xmlbased_descriptions	.
-local:providing	vn.role:indirect_object	local:application	.
-local:process_model	rdfs:subClassOf	local:model	.
-local:three_aspects_of_our_ontology	local:threeaspects_of	local:our_ontology	.
-local:describing	vn.role:Theme	local:properties_of_web_services	.
-local:great	rdfs:member	local:great_deal	.
-local:ontology_with_lowlevel_xmlbased_descriptions	local:ontology_with	local:lowlevel_xmlbased_descriptions	.
-local:application_layer_describing	local:_describing	local:application_layer	.
+local:s5.2	rdf:object	local:service_does_a_service	.
 local:services_devices	rdfs:subClassOf	local:devices	.
-local:interest_from_industry	local:interest_from	local:industry	.
-local:lowlevel_xmlbased	rdfs:subClassOf	local:xmlbased	.
-local:great_deal_of_interest	local:greatdeal_of	local:interest	.
-local:process	rdfs:member	local:process_model	.
-local:web	rdfs:member	local:web_services	.
-local:services_webaccessible_programs	rdfs:subClassOf	local:programs	.
-local:describe	local:AM-LOC	local:paper	.
-local:lowlevel	rdfs:member	local:lowlevel_xmlbased	.
-local:complements	vn.role:indirect_object	local:effort	.
-local:garnering	vn.role:Source	local:web_services	.
-local:providing	vn.role:indirect_object	local:application_layer_describing	.
-local:describing	vn.role:Theme	local:does	.
-local:lowlevel	rdfs:member	local:lowlevel_descriptions	.
-local:complements	vn.role:Predicate	local:effort	.
-local:properties_of_web_services	local:of_webservices	local:properties	.
-local:service_profile_process_model	local:_processmodel	local:service_profile	.
-local:web_services	rdfs:subClassOf	local:services	.
-local:do	local:AM-MOD	local:can	.
-local:web_service_descriptions	rdfs:subClassOf	local:service_descriptions	.
-local:damloil	rdfs:member	local:damloil_ontology	.
+local:services_devices	rdfs:member	local:services	.
+local:service_descriptions	rdfs:subClassOf	local:descriptions	.
+local:s6.2	rdf:subject	local:application_layer	.
+local:s3	rdf:subject	local:web_services_devices	.
+local:effort_providing_web_service_descriptions_at_the_application_layer_describing_what_a_service_can_do	rdfs:member	local:service	.
+local:how_does	rdfs:subClassOf	local:does	.
+local:s5	rdf:object	local:effort	.
+local:great_deal	rdfs:subClassOf	local:deal	.
+local:properties_of_web_services	rdfs:member	local:properties	.
+local:s11	rdf:predicate	local:focus	.
+local:s10	rdf:object	local:ontology_with_lowlevel_xmlbased_descriptions_of_web_services	.
+local:s6	rdf:subject	local:damls	.
+local:s0	local:AM-LOC	local:paper	.
+local:s8	local:AM-LOC	local:paper	.
+local:providing_web_service_descriptions_at_the_application_layer_describing_how_a_service_does_a_service	rdfs:member	local:application_layer	.
+local:web_service_descriptions_application	rdfs:member	local:web_service_descriptions	.
+local:s3	rdf:predicate	local:garner	.
+local:great_deal	rdfs:member	local:great	.
+local:service_profile_the_process_model	rdfs:member	local:service	.
+local:lowlevel_descriptions_of_web_services	rdfs:member	local:lowlevel_descriptions	.
+local:s9	local:AM-LOC	local:paper	.
+local:s11	rdf:object	local:grounding	.
+local:web_service_descriptions_application_layer_describing_what_a_service_can_do	rdfs:member	local:web_service_descriptions	.
+local:damloil_ontology	rdfs:member	local:damloil	.
+local:service_profile_the_process_model	rdfs:member	local:process_model	.
+local:s5	rdf:predicate	local:complement	.
+local:ontology_with_lowlevel_xmlbased_descriptions_of_web_services	rdfs:member	local:descriptions	.
+local:s1.1	rdf:predicate	local:describe	.
+local:s1	local:AM-PNC	local:describing_the_properties_and_capabilities_of_web_services	.
+local:effort_providing	rdfs:member	local:providing	.
+local:effort_providing_web_service_descriptions_at_the_application_layer_describing_what_a_service_can_do	rdfs:member	local:effort	.
+local:providing_at_application_layer	rdfs:member	local:providing	.
+local:web_service	rdfs:member	local:web	.
+local:great_deal_of_interest	rdfs:member	local:great_deal	.
+local:s9	rdf:subject	local:we	.
+local:web_services_devices	rdfs:subClassOf	local:services_devices	.
+local:application_layer_describing	rdfs:member	local:describing	.
+local:ontology_with_lowlevel_xmlbased_descriptions_of_web_services	rdfs:member	local:ontology	.
+local:web_services_webaccessible_programs	rdfs:member	local:web_services	.
+local:s6.3	rdf:predicate	local:do	.
+local:descriptions_application	rdfs:subClassOf	local:application	.
+local:interest_from_industry	rdfs:member	local:interest	.
+local:web_service_descriptions_application_layer_describing_what_a_service_can_do	rdfs:member	local:layer	.
+local:s7	rdf:predicate	local:describe	.
+local:lowlevel_descriptions_of_web_services	rdfs:member	local:web_services	.
+local:web_services	rdfs:member	local:web	.
+local:s10	rdf:subject	local:grounding	.
+local:s0	rdf:object	local:damls	.
+local:service_does	rdfs:member	local:service	.
+local:web_services_webaccessible_programs	rdfs:subClassOf	local:services_webaccessible_programs	.
+local:web_services_webaccessible_programs	rdfs:member	local:webaccessible_programs	.
+local:three_aspects_of_our_ontology	rdfs:member	local:our_ontology	.
+local:web_service_descriptions_application_layer_describing	rdfs:member	local:describing	.
+local:s8	rdf:object	local:service_grounding	.
 local:service_grounding	rdfs:subClassOf	local:grounding	.
-local:web_services	rdfs:member	local:web_services_devices	.
-local:complements	local:AM-MNR	local:providing_at_application_layer	.
-local:xmlbased	rdfs:member	local:xmlbased_descriptions	.
-local:web_services_webaccessible	rdfs:member	local:web_services_webaccessible_programs	.
-local:interest_from_industry	local:from_industry	local:interest	.
-local:service	rdfs:member	local:service_descriptions	.
-local:connects	vn.role:Agent	local:grounding	.
-local:providing	vn.role:Agent	local:web_service_descriptions	.
-local:application	rdfs:member	local:application_layer	.
-local:focuses	vn.role:Experiencer	local:paper	.
-local:emerging	vn.role:Theme	local:standards	.
-local:services_webaccessible	rdfs:subClassOf	local:webaccessible	.
-local:complements	vn.role:Predicate	local:damls	.
-local:describe	vn.role:Theme	local:service_profile_process_model	.
+local:s6	rdf:predicate	local:complement	.
+local:application_layer_describing	rdfs:member	local:application_layer	.
+local:s6.2	rdf:object	local:service_can_do	.
+local:descriptions_application	rdfs:member	local:descriptions	.
+local:s0	rdf:subject	local:we	.
+local:s4	rdf:predicate	local:emerge	.
+local:service_descriptions_application	rdfs:member	local:service_descriptions	.
+local:service_descriptions_application	rdfs:subClassOf	local:application	.
+local:s1.1	rdfs:member	local:properties	.
+local:s11	rdf:subject	local:paper	.
+local:s1	local:AM-LOC	local:paper	.
+local:great_deal_of_interest	rdfs:member	local:interest	.
+local:s4	rdf:subject	local:lowlevel_descriptions_of_web_services	.
+local:three_aspects_of_our_ontology	rdfs:member	local:aspects	.
+local:lowlevel_descriptions	rdfs:subClassOf	local:descriptions	.
+local:process_model	rdfs:member	local:process	.
+local:s10	rdf:predicate	local:connect	.
+local:s6.1	rdf:subject	local:damls	.
+local:s3	rdf:object	local:great_deal_of_interest_from_industry	.
+local:s7	rdf:subject	local:we	.
+local:application_layer	rdfs:member	local:application	.
+local:can_do	rdfs:subClassOf	local:do	.
+local:descriptions_application_layer	rdfs:member	local:descriptions_application	.
+local:s6.3	local:AM-MOD	local:can	.
+local:s6.2	rdf:predicate	local:describe	.
+local:providing_web_service_descriptions_at_the_application_layer_describing_how_a_service_does_a_service	rdfs:member	local:web_service_descriptions	.
+local:providing_web_service_descriptions_at_the_application_layer_describing_how_a_service_does_a_service	rdfs:member	local:service	.
+local:lowlevel_xmlbased_descriptions_of_web_services	rdfs:member	local:web_services	.
+local:s2	rdf:predicate	local:garner	.
+local:s7	local:AM-LOC	local:paper	.
+local:process_model	rdfs:subClassOf	local:model	.
+local:s6.1	rdf:predicate	local:provide	.
+local:service_descriptions_application_layer	rdfs:subClassOf	local:layer	.
+local:service_descriptions	rdfs:member	local:service	.
+local:web_service_descriptions	rdfs:subClassOf	local:service_descriptions	.
+local:s1	rdf:object	local:damloil_ontology	.
+local:s5.2	rdf:predicate	local:describe	.
+local:s1	rdf:subject	local:we	.
+local:s5.1	rdf:predicate	local:provide	.
+local:s6.3	rdf:subject	local:service	.
+local:service_descriptions_application_layer	rdfs:member	local:service_descriptions_application	.
+local:ontology_with_lowlevel_xmlbased_descriptions_of_web_services	rdfs:member	local:web_services	.
+local:ontology_with_lowlevel_xmlbased_descriptions	rdfs:member	local:lowlevel_xmlbased_descriptions	.
+local:s1.1	rdf:subject	local:properties_and_capabilities_of_web_services	.
+local:properties_and_capabilities_of_web_services	rdfs:member	local:web_services	.
+local:three_aspects	rdfs:subClassOf	local:aspects	.
+local:s6	rdf:object	local:effort_providing_web_service_descriptions_at_the_application_layer_describing_what_a_service_can_do	.
+local:services_webaccessible_programs	rdfs:subClassOf	local:webaccessible_programs	.
+local:properties_and_capabilities_of_web_services	rdfs:member	local:capabilities	.
+local:lowlevel_xmlbased_descriptions	rdfs:subClassOf	local:xmlbased_descriptions	.
+local:application_layer	rdfs:subClassOf	local:layer	.
+local:s5.1	rdf:object	local:web_service_descriptions_application_layer	.
+local:web_services	rdfs:subClassOf	local:services	.
+local:web_service_descriptions_application_layer_describing	rdfs:member	local:web_service_descriptions_application_layer	.
+local:lowlevel_xmlbased_descriptions_of_web_services	rdfs:member	local:lowlevel_xmlbased_descriptions	.
+local:effort_providing	rdfs:member	local:effort	.

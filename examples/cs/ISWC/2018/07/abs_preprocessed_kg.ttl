@@ -1,488 +1,753 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s17.2	a	rdf:Statement	;
+	rdfs:label	"focusing on proteins in biomedical publications"	.
+
+local:s17.1	a	rdf:Statement	;
+	rdfs:label	"we approach on scientific publications focusing on proteins in biomedical publications"	.
+
+local:s17	a	rdf:Statement	;
+	rdfs:label	"we evaluate we approach on scientific publications focusing on proteins in biomedical publications"	.
+
+local:s16.2	a	rdf:Statement	;
+	rdfs:label	"scientific publications focusing on the longtail entities types datasets"	.
+
+local:s16.1	a	rdf:Statement	;
+	rdfs:label	"we approach on scientific publications focusing on the longtail entities types datasets"	.
+
+local:s16	a	rdf:Statement	;
+	rdfs:label	"we evaluate we approach on scientific publications focusing on the longtail entities types datasets"	.
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"focusing on methods in computer science publications"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"we approach on scientific publications focusing on methods in computer science publications"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"we evaluate we approach on scientific publications focusing on methods in computer science publications"	.
+
+local:s14.1	a	rdf:Statement	;
+	rdfs:label	""	.
+
+local:s14	a	rdf:Statement	;
+	rdfs:label	"we result entity filtering"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"we introduce different strategies for training data extraction semantic expansion"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"a small seed set of instances for the targeted entity type"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"scientific publications that relies on minimal human input namely a small seed set of instances for the targeted entity type"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"this paper presents an iterative approach for net classifiers in scientific publications"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"this paper presents an iterative approach for training ner in scientific publications"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"longtail entity types that are by definition scarcely represented in kbs"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"labeled training data from knowledge bases this approach"	.
+
+local:s7.1	a	rdf:Statement	;
+	rdfs:label	"models expensive typelabeled data laboriously produced by human annotators"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"models trained on expensive typelabeled data laboriously produced by human annotators"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"stateoftheart ner approaches employ supervised machine"	.
+
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"machine learning models"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"supervised machine learning models"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the ones found in scientific publications"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"named entity recognition and typing"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"the ones found in scientific publications"	.
+
+
 #### Classes ####
 
-local:entity_recognition	rdfs:label	"entity recognition"	.
+local:focus	a	rdf:Class	;
+	rdfs:label	"focus"	.
 
-local:recognition	rdfs:label	"recognition"	.
+local:proteins	a	rdf:Class	;
+	rdfs:label	"proteins"	.
 
-local:entity	rdfs:label	"entity"	.
+local:biomedical_publications	a	rdf:Class	;
+	rdfs:label	"biomedical publications"	.
 
-local:named	rdfs:label	"named"	.
+local:publications	a	rdf:Class	;
+	rdfs:label	"publications"	.
 
-local:scientific_publications	rdfs:label	"scientific publications"	.
+local:biomedical	a	rdf:Class	;
+	rdfs:label	"biomedical"	.
 
-local:publications	rdfs:label	"publications"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:scientific	rdfs:label	"scientific"	.
+local:approach	a	rdf:Class	;
+	rdfs:label	"approach"	.
 
-local:found	rdfs:label	"found"	.
+local:scientific_publications_focusing_on_proteins_in_biomedical_publications	a	rdf:Class	;
+	rdfs:label	"scientific publications focusing on proteins in biomedical publications"	.
 
-local:entity_typing	rdfs:label	"entity typing"	.
+local:scientific_publications	a	rdf:Class	;
+	rdfs:label	"scientific publications"	.
 
-local:typing	rdfs:label	"typing"	.
+local:scientific	a	rdf:Class	;
+	rdfs:label	"scientific"	.
 
-local:longtail	rdfs:label	"long-tail"	.
+local:scientific_biomedical_publications	a	rdf:Class	;
+	rdfs:label	"scientific biomedical publications"	.
 
-local:longtail_entities	rdfs:label	"long-tail entities"	.
+local:scientific_biomedical_publications_focusing	a	rdf:Class	;
+	rdfs:label	"scientific biomedical publications focusing"	.
 
-local:entities	rdfs:label	"entities"	.
+local:focusing	a	rdf:Class	;
+	rdfs:label	"focusing"	.
 
-local:stateoftheart_entity	rdfs:label	"state-of-the-art entity"	.
+local:focusing_on_proteins	a	rdf:Class	;
+	rdfs:label	"focusing on proteins"	.
 
-local:stateoftheart_entity_recognition	rdfs:label	"state-of-the-art entity recognition"	.
+local:proteins_in_biomedical_publications	a	rdf:Class	;
+	rdfs:label	"proteins in biomedical publications"	.
 
-local:stateoftheart_entity_recognition_approaches	rdfs:label	"state-of-the-art entity recognition approaches"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:recognition_approaches	rdfs:label	"recognition approaches"	.
+local:approach_on_scientific_publications_focusing_on_proteins_in_biomedical_publications	a	rdf:Class	;
+	rdfs:label	"approach on scientific publications focusing on proteins in biomedical publications"	.
 
-local:entity_recognition_approaches	rdfs:label	"entity recognition approaches"	.
+local:approach_on_scientific_biomedical_publications	a	rdf:Class	;
+	rdfs:label	"approach on scientific biomedical publications"	.
 
-local:approaches	rdfs:label	"approaches"	.
+local:longtail_entities_types_datasets	a	rdf:Class	;
+	rdfs:label	"longtail entities types datasets"	.
 
-local:stateoftheart	rdfs:label	"state-of-the-art"	.
+local:longtail_entities	a	rdf:Class	;
+	rdfs:label	"longtail entities"	.
 
-local:employ	rdfs:label	"employ"	.
+local:datasets	a	rdf:Class	;
+	rdfs:label	"datasets"	.
 
-local:human	rdfs:label	"human"	.
+local:entities	a	rdf:Class	;
+	rdfs:label	"entities"	.
 
-local:human_annotators	rdfs:label	"human annotators"	.
+local:longtail	a	rdf:Class	;
+	rdfs:label	"longtail"	.
 
-local:expensive_typelabeled_data	rdfs:label	"expensive type-labeled data"	.
+local:entities_types	a	rdf:Class	;
+	rdfs:label	"entities types"	.
 
-local:data	rdfs:label	"data"	.
+local:types	a	rdf:Class	;
+	rdfs:label	"types"	.
 
-local:expensive	rdfs:label	"expensive"	.
+local:longtail_entities_types	a	rdf:Class	;
+	rdfs:label	"longtail entities types"	.
 
-local:expensive_typelabeled	rdfs:label	"expensive type-labeled"	.
+local:scientific_publications_focusing_on_the_longtail_entities_types_datasets	a	rdf:Class	;
+	rdfs:label	"scientific publications focusing on the longtail entities types datasets"	.
 
-local:typelabeled	rdfs:label	"type-labeled"	.
+local:scientific_publications_focusing	a	rdf:Class	;
+	rdfs:label	"scientific publications focusing"	.
 
-local:typelabeled_data	rdfs:label	"type-labeled data"	.
+local:focusing_on_longtail_entities_types	a	rdf:Class	;
+	rdfs:label	"focusing on longtail entities types"	.
 
-local:annotators	rdfs:label	"annotators"	.
+local:approach_on_scientific_publications_focusing_on_the_longtail_entities_types_datasets	a	rdf:Class	;
+	rdfs:label	"approach on scientific publications focusing on the longtail entities types datasets"	.
 
-local:laboriously_produced	rdfs:label	"laboriously produced"	.
+local:approach_on_scientific_publications	a	rdf:Class	;
+	rdfs:label	"approach on scientific publications"	.
 
-local:produced	rdfs:label	"produced"	.
+local:methods	a	rdf:Class	;
+	rdfs:label	"methods"	.
 
-local:trained_on_expensive_typelabeled_data	rdfs:label	"trained on expensive type-labeled data"	.
+local:computer_science_publications	a	rdf:Class	;
+	rdfs:label	"computer science publications"	.
 
-local:trained	rdfs:label	"trained"	.
+local:science_publications	a	rdf:Class	;
+	rdfs:label	"science publications"	.
 
-local:expensive_typelabeled_data_laboriously_produced	rdfs:label	"expensive type-labeled data laboriously produced"	.
+local:science	a	rdf:Class	;
+	rdfs:label	"science"	.
 
-local:laboriously_produced_by_human_annotators	rdfs:label	"laboriously produced by human annotators"	.
+local:computer_science	a	rdf:Class	;
+	rdfs:label	"computer science"	.
 
-local:learning	rdfs:label	"learning"	.
+local:computer	a	rdf:Class	;
+	rdfs:label	"computer"	.
 
-local:laboriously	rdfs:label	"laboriously"	.
+local:scientific_publications_focusing_on_methods_in_computer_science_publications	a	rdf:Class	;
+	rdfs:label	"scientific publications focusing on methods in computer science publications"	.
 
-local:training_data	rdfs:label	"training data"	.
+local:focusing_on_methods	a	rdf:Class	;
+	rdfs:label	"focusing on methods"	.
 
-local:training	rdfs:label	"training"	.
+local:methods_in_computer_science_publications	a	rdf:Class	;
+	rdfs:label	"methods in computer science publications"	.
 
-local:labeled	rdfs:label	"labeled"	.
+local:approach_on_scientific_publications_focusing_on_methods_in_computer_science_publications	a	rdf:Class	;
+	rdfs:label	"approach on scientific publications focusing on methods in computer science publications"	.
 
-local:longtail_entity	rdfs:label	"long-tail entity"	.
+local:filter	a	rdf:Class	;
+	rdfs:label	"filter"	.
 
-local:entity_types	rdfs:label	"entity types"	.
+local:result	a	rdf:Class	;
+	rdfs:label	"result"	.
 
-local:types	rdfs:label	"types"	.
+local:entity_filtering	a	rdf:Class	;
+	rdfs:label	"entity filtering"	.
 
-local:longtail_entity_types	rdfs:label	"long-tail entity types"	.
+local:introduce	a	rdf:Class	;
+	rdfs:label	"introduce"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:different_strategies_training_data_extraction_semantic_expansion	a	rdf:Class	;
+	rdfs:label	"different strategies training data extraction semantic expansion"	.
 
-local:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:semantic_expansion	a	rdf:Class	;
+	rdfs:label	"semantic expansion"	.
 
-local:bases	rdfs:label	"bases"	.
+local:different_strategies	a	rdf:Class	;
+	rdfs:label	"different strategies"	.
 
-local:scarcely_represented	rdfs:label	"scarcely represented"	.
+local:data_extraction	a	rdf:Class	;
+	rdfs:label	"data extraction"	.
 
-local:represented	rdfs:label	"represented"	.
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
 
-local:not_suitable	rdfs:label	"not suitable"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:suitable	rdfs:label	"suitable"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:not_suitable_for_longtail_entity_types	rdfs:label	"not suitable for long-tail entity types"	.
+local:strategies	a	rdf:Class	;
+	rdfs:label	"strategies"	.
 
-local:scarcely_represented_agent_definition	rdfs:label	"scarcely represented agent definition"	.
+local:expansion	a	rdf:Class	;
+	rdfs:label	"expansion"	.
 
-local:definition	rdfs:label	"definition"	.
+local:extraction	a	rdf:Class	;
+	rdfs:label	"extraction"	.
 
-local:scarcely_represented_agent_definition_in_kbs	rdfs:label	"scarcely represented agent definition in kbs"	.
+local:extraction_semantic_expansion	a	rdf:Class	;
+	rdfs:label	"extraction semantic expansion"	.
 
-local:kbs	rdfs:label	"kbs"	.
+local:data_extraction_semantic_expansion	a	rdf:Class	;
+	rdfs:label	"data extraction semantic expansion"	.
 
-local:are	rdfs:label	"are,"	.
+local:different_strategies_training	a	rdf:Class	;
+	rdfs:label	"different strategies training"	.
 
-local:scarcely	rdfs:label	"scarcely"	.
+local:training	a	rdf:Class	;
+	rdfs:label	"training"	.
 
-local:presents	rdfs:label	"presents"	.
+local:small_seed	a	rdf:Class	;
+	rdfs:label	"small seed"	.
 
-local:paper	rdfs:label	"paper"	.
+local:seed	a	rdf:Class	;
+	rdfs:label	"seed"	.
 
-local:human_input	rdfs:label	"human input"	.
+local:small	a	rdf:Class	;
+	rdfs:label	"small"	.
 
-local:minimal_human	rdfs:label	"minimal human"	.
+local:set	a	rdf:Class	;
+	rdfs:label	"set"	.
 
-local:minimal_human_input	rdfs:label	"minimal human input"	.
+local:instances_for_the_targeted_entity_type	a	rdf:Class	;
+	rdfs:label	"instances for the targeted entity type"	.
 
-local:input	rdfs:label	"input"	.
+local:targeted_entity_type	a	rdf:Class	;
+	rdfs:label	"targeted entity type"	.
 
-local:targeted	rdfs:label	"targeted"	.
+local:instances	a	rdf:Class	;
+	rdfs:label	"instances"	.
 
-local:targeted_entity	rdfs:label	"targeted entity"	.
+local:targeted_entity	a	rdf:Class	;
+	rdfs:label	"targeted entity"	.
 
-local:small	rdfs:label	"small"	.
+local:targeted	a	rdf:Class	;
+	rdfs:label	"targeted"	.
 
-local:small_seed	rdfs:label	"small seed"	.
+local:entity_type	a	rdf:Class	;
+	rdfs:label	"entity type"	.
 
-local:iterative	rdfs:label	"iterative"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
 
-local:iterative_approach	rdfs:label	"iterative approach"	.
+local:entity	a	rdf:Class	;
+	rdfs:label	"entity"	.
 
-local:targeted_entity_type	rdfs:label	"targeted entity type"	.
+local:instances_for_targeted_entity_type	a	rdf:Class	;
+	rdfs:label	"instances for targeted entity type"	.
 
-local:type	rdfs:label	"type"	.
+local:rely	a	rdf:Class	;
+	rdfs:label	"rely"	.
 
-local:entity_type	rdfs:label	"entity type"	.
+local:minimal_human_input_namely_a_small_seed_set_of_instances	a	rdf:Class	;
+	rdfs:label	"minimal human input namely a small seed set of instances"	.
 
-local:seed	rdfs:label	"seed"	.
+local:minimal_human_input	a	rdf:Class	;
+	rdfs:label	"minimal human input"	.
 
-local:approach	rdfs:label	"approach"	.
+local:input	a	rdf:Class	;
+	rdfs:label	"input"	.
 
-local:minimal	rdfs:label	"minimal"	.
+local:human_input	a	rdf:Class	;
+	rdfs:label	"human input"	.
 
-local:seed_set	rdfs:label	"seed set"	.
+local:human	a	rdf:Class	;
+	rdfs:label	"human"	.
 
-local:set	rdfs:label	"set"	.
+local:minimal_human	a	rdf:Class	;
+	rdfs:label	"minimal human"	.
 
-local:small_seed_set	rdfs:label	"small seed set"	.
+local:minimal	a	rdf:Class	;
+	rdfs:label	"minimal"	.
 
-local:namely_small_seed_set	rdfs:label	"namely small seed set"	.
+local:seed_set	a	rdf:Class	;
+	rdfs:label	"seed set"	.
 
-local:typing_classifiers	rdfs:label	"typing classifiers"	.
+local:small_seed_set	a	rdf:Class	;
+	rdfs:label	"small seed set"	.
 
-local:classifiers	rdfs:label	"classifiers"	.
+local:namely_small_seed_set	a	rdf:Class	;
+	rdfs:label	"namely small seed set"	.
 
-local:entity_typing_classifiers	rdfs:label	"entity typing classifiers"	.
+local:namely_small_seed_set_of_instances	a	rdf:Class	;
+	rdfs:label	"namely small seed set of instances"	.
 
-local:training_entity_recognition	rdfs:label	"training entity recognition"	.
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
 
-local:iterative_approach_for_training_entity_recognition	rdfs:label	"iterative approach for training entity recognition"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers	rdfs:label	"iterative approach for training entity recognition for entity typing classifiers"	.
+local:iterative_approach_for_net_classifiers_in_scientific_publications	a	rdf:Class	;
+	rdfs:label	"iterative approach for net classifiers in scientific publications"	.
 
-local:training_entity_recognition_in_scientific_publications	rdfs:label	"training entity recognition in scientific publications"	.
+local:net_classifiers	a	rdf:Class	;
+	rdfs:label	"net classifiers"	.
 
-local:relies_on_minimal_human_input	rdfs:label	"relies on minimal human input"	.
+local:iterative_approach	a	rdf:Class	;
+	rdfs:label	"iterative approach"	.
 
-local:relies	rdfs:label	"relies"	.
+local:iterative	a	rdf:Class	;
+	rdfs:label	"iterative"	.
 
-local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers_namely_small_seed_set	rdfs:label	"iterative approach for training entity recognition for entity typing classifiers namely small seed set"	.
+local:classifiers	a	rdf:Class	;
+	rdfs:label	"classifiers"	.
 
-local:namely_small_seed_set_of_instances	rdfs:label	"namely small seed set of instances"	.
+local:net	a	rdf:Class	;
+	rdfs:label	"net"	.
 
-local:instances	rdfs:label	"instances"	.
+local:iterative_approach_for_net_classifiers	a	rdf:Class	;
+	rdfs:label	"iterative approach for net classifiers"	.
 
-local:namely_small_seed_set_of_instances_for_targeted_entity_type	rdfs:label	"namely small seed set of instances for targeted entity type"	.
+local:iterative_approach_for_training_ner	a	rdf:Class	;
+	rdfs:label	"iterative approach for training ner"	.
 
-local:minimal_human_input_namely_small_seed_set	rdfs:label	"minimal human input namely small seed set"	.
+local:training_ner	a	rdf:Class	;
+	rdfs:label	"training ner"	.
 
-local:introduce	rdfs:label	"introduce"	.
+local:ner	a	rdf:Class	;
+	rdfs:label	"ner"	.
 
-local:we	rdfs:label	"we"	.
+local:iterative_approach_for_training	a	rdf:Class	;
+	rdfs:label	"iterative approach for training"	.
 
-local:different	rdfs:label	"different"	.
+local:longtail_entity_types_that_are_by_definition	a	rdf:Class	;
+	rdfs:label	"longtail entity types that are by definition"	.
 
-local:different_strategies	rdfs:label	"different strategies"	.
+local:longtail_entity_types	a	rdf:Class	;
+	rdfs:label	"longtail entity types"	.
 
-local:strategies	rdfs:label	"strategies"	.
+local:definition	a	rdf:Class	;
+	rdfs:label	"definition"	.
 
-local:data_extraction	rdfs:label	"data extraction"	.
+local:entity_types	a	rdf:Class	;
+	rdfs:label	"entity types"	.
 
-local:semantic	rdfs:label	"semantic"	.
+local:longtail_entity	a	rdf:Class	;
+	rdfs:label	"longtail entity"	.
 
-local:semantic_expansion	rdfs:label	"semantic expansion"	.
+local:represent	a	rdf:Class	;
+	rdfs:label	"represent"	.
 
-local:extraction	rdfs:label	"extraction"	.
+local:scarcely	a	rdf:Class	;
+	rdfs:label	"scarcely"	.
 
-local:expansion	rdfs:label	"expansion"	.
+local:kbs	a	rdf:Class	;
+	rdfs:label	"kbs"	.
 
-local:training_data_extraction	rdfs:label	"training data extraction"	.
+local:training_data	a	rdf:Class	;
+	rdfs:label	"training data"	.
 
-local:training_data_extraction_semantic_expansion	rdfs:label	"training data extraction semantic expansion"	.
+local:label	a	rdf:Class	;
+	rdfs:label	"label"	.
 
-local:result	rdfs:label	"result"	.
+local:knowledge_bases_this_approach	a	rdf:Class	;
+	rdfs:label	"knowledge bases this approach"	.
 
-local:entity_filtering	rdfs:label	"entity filtering"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:filtering	rdfs:label	"filtering"	.
+local:knowledge_bases	a	rdf:Class	;
+	rdfs:label	"knowledge bases"	.
 
-local:evaluate	rdfs:label	"evaluate"	.
+local:bases	a	rdf:Class	;
+	rdfs:label	"bases"	.
 
-local:types_datasets	rdfs:label	"types datasets"	.
+local:human_annotators	a	rdf:Class	;
+	rdfs:label	"human annotators"	.
 
-local:longtail_entities_types	rdfs:label	"long-tail entities types"	.
+local:annotators	a	rdf:Class	;
+	rdfs:label	"annotators"	.
 
-local:longtail_entities_types_datasets	rdfs:label	"long-tail entities types datasets"	.
+local:produce	a	rdf:Class	;
+	rdfs:label	"produce"	.
 
-local:entities_types	rdfs:label	"entities types"	.
+local:expensive_typelabeled_data	a	rdf:Class	;
+	rdfs:label	"expensive typelabeled data"	.
 
-local:entities_types_datasets	rdfs:label	"entities types datasets"	.
+local:typelabeled_data	a	rdf:Class	;
+	rdfs:label	"typelabeled data"	.
 
-local:datasets	rdfs:label	"datasets"	.
+local:laboriously	a	rdf:Class	;
+	rdfs:label	"laboriously"	.
 
-local:approach_on_scientific_publications	rdfs:label	"approach on scientific publications"	.
+local:models	a	rdf:Class	;
+	rdfs:label	"models"	.
 
-local:approach_on_scientific_publications_focusing	rdfs:label	"approach on scientific publications focusing"	.
+local:train	a	rdf:Class	;
+	rdfs:label	"train"	.
 
-local:focusing	rdfs:label	"focusing"	.
+local:expensive_typelabeled_data_laboriously_produced_by_human_annotators	a	rdf:Class	;
+	rdfs:label	"expensive typelabeled data laboriously produced by human annotators"	.
 
-local:focusing_on_longtail_entities_types	rdfs:label	"focusing on long-tail entities types"	.
+local:laboriously_produced	a	rdf:Class	;
+	rdfs:label	"laboriously produced"	.
 
-local:science_publications	rdfs:label	"science publications"	.
+local:produced	a	rdf:Class	;
+	rdfs:label	"produced"	.
 
-local:computer_science	rdfs:label	"computer science"	.
+local:expensive_typelabeled_data_laboriously_produced	a	rdf:Class	;
+	rdfs:label	"expensive typelabeled data laboriously produced"	.
 
-local:computer_science_publications	rdfs:label	"computer science publications"	.
+local:laboriously_produced_by_human_annotators	a	rdf:Class	;
+	rdfs:label	"laboriously produced by human annotators"	.
 
-local:science	rdfs:label	"science"	.
+local:stateoftheart_ner_approaches	a	rdf:Class	;
+	rdfs:label	"stateoftheart ner approaches"	.
 
-local:computer	rdfs:label	"computer"	.
+local:ner_approaches	a	rdf:Class	;
+	rdfs:label	"ner approaches"	.
 
-local:focusing_on_methods	rdfs:label	"focusing on methods"	.
+local:stateoftheart_ner	a	rdf:Class	;
+	rdfs:label	"stateoftheart ner"	.
 
-local:methods	rdfs:label	"methods"	.
+local:stateoftheart	a	rdf:Class	;
+	rdfs:label	"stateoftheart"	.
 
-local:methods_in_computer_science_publications	rdfs:label	"methods in computer science publications"	.
+local:approaches	a	rdf:Class	;
+	rdfs:label	"approaches"	.
 
-local:biomedical_publications	rdfs:label	"biomedical publications"	.
+local:employ	a	rdf:Class	;
+	rdfs:label	"employ"	.
 
-local:biomedical	rdfs:label	"biomedical"	.
+local:supervised_machine	a	rdf:Class	;
+	rdfs:label	"supervised machine"	.
 
-local:scientific_biomedical_publications	rdfs:label	"scientific biomedical publications"	.
+local:machine	a	rdf:Class	;
+	rdfs:label	"machine"	.
 
-local:approach_on_scientific_biomedical_publications	rdfs:label	"approach on scientific biomedical publications"	.
+local:learn	a	rdf:Class	;
+	rdfs:label	"learn"	.
 
-local:approach_on_scientific_biomedical_publications_focusing	rdfs:label	"approach on scientific biomedical publications focusing"	.
+local:supervise	a	rdf:Class	;
+	rdfs:label	"supervise"	.
 
-local:focusing_on_proteins	rdfs:label	"focusing on proteins"	.
+local:ones	a	rdf:Class	;
+	rdfs:label	"ones"	.
 
-local:proteins	rdfs:label	"proteins"	.
+local:find	a	rdf:Class	;
+	rdfs:label	"find"	.
 
-local:proteins_in_biomedical_publications	rdfs:label	"proteins in biomedical publications"	.
+local:entity_recognition_and_typing	a	rdf:Class	;
+	rdfs:label	"entity recognition and typing"	.
 
-local:scientific_biomedical_publications_focusing	rdfs:label	"scientific biomedical publications focusing"	.
+local:entity_recognition	a	rdf:Class	;
+	rdfs:label	"entity recognition"	.
 
-#### Properties ####
+local:typing	a	rdf:Class	;
+	rdfs:label	"typing"	.
+
+local:recognition	a	rdf:Class	;
+	rdfs:label	"recognition"	.
+
+local:named	a	rdf:Class	;
+	rdfs:label	"named"	.
 
 #### Mapped Relations ####
 
-local:computer_science	owl:sameAs	cso:computer_science	.
-cso:semantics	rdfs:label	"semantic"	.
 local:knowledge_bases	owl:sameAs	cso:knowledge_bases	.
-cso:classifiers	rdfs:label	"classifiers"	.
-local:semantic	owl:sameAs	cso:semantics	.
-local:classifiers	owl:sameAs	cso:classifiers	.
 cso:computer_science	rdfs:label	"computer science"	.
+local:semantic	owl:sameAs	cso:semantics	.
+cso:semantics	rdfs:label	"semantic"	.
+local:computer_science	owl:sameAs	cso:computer_science	.
+cso:classifiers	rdfs:label	"classifiers"	.
 cso:knowledge_bases	rdfs:label	"knowledge bases"	.
+local:classifiers	owl:sameAs	cso:classifiers	.
 
 #### Relations ####
 
-local:focusing	vn.role:Theme	local:methods	.
-local:small_seed_set	rdfs:subClassOf	local:seed_set	.
-local:training_data_extraction	rdfs:subClassOf	local:data_extraction	.
-local:minimal	rdfs:member	local:minimal_human	.
-local:entity_typing_classifiers	rdfs:subClassOf	local:typing_classifiers	.
-local:laboriously_produced	rdfs:subClassOf	local:produced	.
-local:presents	vn.role:Agent	local:paper	.
-local:entity	rdfs:member	local:entity_type	.
-local:stateoftheart_entity	rdfs:subClassOf	local:entity	.
-local:learning	vn.role:Agent	local:stateoftheart_entity_recognition_approaches	.
-local:human	rdfs:member	local:human_input	.
-local:approach_on_scientific_publications	local:approach_on	local:scientific_publications	.
-local:proteins_in_biomedical_publications	local:proteins_in	local:biomedical_publications	.
-local:longtail_entity	rdfs:member	local:longtail_entity_types	.
-local:entity	rdfs:member	local:entity_types	.
-local:targeted_entity_type	rdfs:subClassOf	local:type	.
-local:relies_on_minimal_human_input	local:on_minimalhumaninput	local:relies	.
-local:introduce	vn.role:Patient1	local:training_data_extraction_semantic_expansion	.
-local:minimal_human_input	rdfs:subClassOf	local:input	.
-local:longtail_entities_types_datasets	rdfs:subClassOf	local:datasets	.
-local:methods_in_computer_science_publications	local:in_computersciencepublications	local:methods	.
-local:introduce	vn.role:Agent	local:we	.
-local:expensive_typelabeled_data	rdfs:subClassOf	local:typelabeled_data	.
-local:relies_on_minimal_human_input	local:relies_on	local:minimal_human_input	.
-local:expensive_typelabeled_data	rdfs:subClassOf	local:data	.
-local:focusing	local:AM-LOC	local:biomedical_publications	.
-local:scarcely_represented_agent_definition	local:agent_definition	local:scarcely_represented	.
-local:set	vn.role:indirect_object	local:instances	.
-local:result	vn.role:indirect_object	local:we	.
-local:evaluate	vn.role:Agent	local:we	.
-local:iterative_approach_for_training_entity_recognition	local:for_trainingentityrecognition	local:iterative_approach	.
-local:longtail_entities	rdfs:subClassOf	local:entities	.
-local:trained_on_expensive_typelabeled_data	local:on_expensivetype-labeleddata	local:trained	.
-local:longtail	rdfs:member	local:longtail_entities	.
-local:namely_small_seed_set_of_instances_for_targeted_entity_type	local:for_targetedentitytype	local:namely_small_seed_set_of_instances	.
-local:approach_on_scientific_biomedical_publications	local:approach_on	local:scientific_biomedical_publications	.
-local:entity	rdfs:member	local:entity_filtering	.
-local:iterative_approach	rdfs:subClassOf	local:approach	.
-local:training_entity_recognition_in_scientific_publications	local:in_scientificpublications	local:training_entity_recognition	.
-local:expensive_typelabeled	rdfs:subClassOf	local:typelabeled	.
-local:types_datasets	rdfs:subClassOf	local:datasets	.
-local:computer_science_publications	rdfs:subClassOf	local:publications	.
-local:focusing_on_longtail_entities_types	local:on_long-tailentitiestypes	local:focusing	.
-local:entities_types_datasets	rdfs:subClassOf	local:datasets	.
-local:approach_on_scientific_publications_focusing	local:_focusing	local:approach_on_scientific_publications	.
-local:entity_recognition_approaches	rdfs:subClassOf	local:approaches	.
-local:scarcely_represented_agent_definition	local:scarcelyrepresented_agent	local:definition	.
-local:expensive_typelabeled_data_laboriously_produced	local:_laboriouslyproduced	local:expensive_typelabeled_data	.
-local:different_strategies	rdfs:subClassOf	local:strategies	.
-local:entity_recognition	rdfs:member	local:entity_recognition_approaches	.
-local:entities_types	rdfs:member	local:entities_types_datasets	.
-local:focusing_on_methods	local:on_methods	local:focusing	.
-local:data_extraction	rdfs:subClassOf	local:extraction	.
-local:employ	vn.role:Theme	local:learning	.
-local:not_suitable_for_longtail_entity_types	local:for_long-tailentitytypes	local:not_suitable	.
-local:human	rdfs:member	local:human_annotators	.
-local:scientific	rdfs:member	local:scientific_publications	.
-local:focusing	vn.role:indirect_object	local:proteins	.
-local:computer_science	rdfs:subClassOf	local:science	.
-local:not_suitable_for_longtail_entity_types	local:notsuitable_for	local:longtail_entity_types	.
-local:represented	vn.role:Theme	local:longtail_entity_types	.
-local:stateoftheart_entity_recognition_approaches	rdfs:subClassOf	local:entity_recognition_approaches	.
-local:set	vn.role:Patient	local:small_seed	.
-local:recognition_approaches	rdfs:subClassOf	local:approaches	.
-local:laboriously_produced_by_human_annotators	local:laboriouslyproduced_by	local:human_annotators	.
-local:expensive_typelabeled_data_laboriously_produced	local:expensivetype-labeleddata_	local:laboriously_produced	.
-local:represented	local:AM-LOC	local:kbs	.
-local:namely_small_seed_set	rdfs:subClassOf	local:small_seed_set	.
-local:approach	vn.role:indirect_object	local:scientific_publications	.
-local:longtail	rdfs:member	local:longtail_entity	.
-local:typelabeled	rdfs:member	local:typelabeled_data	.
-local:entity_filtering	rdfs:subClassOf	local:filtering	.
-local:scientific_publications	rdfs:subClassOf	local:publications	.
-local:entity_recognition_approaches	rdfs:subClassOf	local:recognition_approaches	.
-local:stateoftheart_entity_recognition_approaches	rdfs:subClassOf	local:approaches	.
-local:small_seed	rdfs:subClassOf	local:seed	.
-local:targeted_entity	rdfs:member	local:targeted_entity_type	.
-local:found	local:AM-LOC	local:scientific_publications	.
-local:training_data_extraction_semantic_expansion	local:_semanticexpansion	local:training_data_extraction	.
-local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers	local:iterativeapproachfortrainingentityrecognition_for	local:entity_typing_classifiers	.
-local:entity_typing	rdfs:subClassOf	local:typing	.
-local:longtail_entities_types	rdfs:subClassOf	local:entities_types	.
-local:approach_on_scientific_biomedical_publications	local:on_scientificbiomedicalpublications	local:approach	.
-local:typelabeled_data	rdfs:subClassOf	local:data	.
-local:scarcely_represented_agent_definition_in_kbs	local:scarcelyrepresentedagentdefinition_in	local:kbs	.
-local:minimal_human_input	rdfs:subClassOf	local:human_input	.
-local:trained_on_expensive_typelabeled_data	local:trained_on	local:expensive_typelabeled_data	.
-local:small	rdfs:member	local:small_seed	.
-local:computer	rdfs:member	local:computer_science	.
-local:science	rdfs:member	local:science_publications	.
-local:employ	vn.role:Agent	local:stateoftheart_entity_recognition_approaches	.
-local:approach_on_scientific_biomedical_publications_focusing	local:approachonscientificbiomedicalpublications_	local:focusing	.
-local:labeled	vn.role:Theme	local:training_data	.
-local:training_entity_recognition_in_scientific_publications	local:trainingentityrecognition_in	local:scientific_publications	.
-local:expensive	rdfs:member	local:expensive_typelabeled	.
-local:represented	vn.role:Agent	local:definition	.
-local:result	vn.role:indirect_object	local:filtering	.
-local:human_annotators	rdfs:subClassOf	local:annotators	.
-local:scarcely_represented	rdfs:subClassOf	local:represented	.
-local:expensive_typelabeled	rdfs:member	local:expensive_typelabeled_data	.
-local:are	vn.role:object	local:longtail_entity_types	.
-local:entities_types	rdfs:subClassOf	local:types	.
-local:minimal_human_input_namely_small_seed_set	local:_namelysmallseedset	local:minimal_human_input	.
-local:are	vn.role:subject	local:definition	.
-local:training_data_extraction_semantic_expansion	local:trainingdataextraction_	local:semantic_expansion	.
-local:focusing_on_longtail_entities_types	local:focusing_on	local:longtail_entities_types	.
-local:seed_set	rdfs:subClassOf	local:set	.
-local:produced	vn.role:Product	local:expensive_typelabeled_data	.
-local:approach_on_scientific_publications	local:on_scientificpublications	local:approach	.
-local:approach_on_scientific_biomedical_publications_focusing	local:_focusing	local:approach_on_scientific_biomedical_publications	.
-local:stateoftheart	rdfs:member	local:stateoftheart_entity	.
-local:produced	vn.role:Agent	local:human_annotators	.
-local:approach_on_scientific_publications_focusing	local:approachonscientificpublications_	local:focusing	.
-local:longtail_entity_types	rdfs:subClassOf	local:types	.
-local:computer_science	rdfs:member	local:computer_science_publications	.
-local:semantic	rdfs:member	local:semantic_expansion	.
-local:scientific_biomedical_publications_focusing	local:_focusing	local:scientific_biomedical_publications	.
-local:entities	rdfs:member	local:entities_types	.
-local:focusing	vn.role:indirect_object	local:datasets	.
-local:namely_small_seed_set_of_instances_for_targeted_entity_type	local:namelysmallseedsetofinstances_for	local:targeted_entity_type	.
-local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers_namely_small_seed_set	local:_namelysmallseedset	local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers	.
-local:semantic_expansion	rdfs:subClassOf	local:expansion	.
-local:namely_small_seed_set_of_instances	local:namelysmallseedset_of	local:instances	.
-local:minimal_human_input_namely_small_seed_set	local:minimalhumaninput_	local:namely_small_seed_set	.
-local:named	vn.role:Theme	local:entity_recognition	.
-local:namely_small_seed_set_of_instances	local:of_instances	local:namely_small_seed_set	.
-local:training_entity_recognition	rdfs:subClassOf	local:entity_recognition	.
-local:laboriously_produced_by_human_annotators	local:by_humanannotators	local:laboriously_produced	.
-local:knowledge	rdfs:member	local:knowledge_bases	.
-local:longtail_entities	rdfs:member	local:longtail_entities_types	.
-local:focusing_on_methods	local:focusing_on	local:methods	.
-local:longtail_entities_types	rdfs:member	local:longtail_entities_types_datasets	.
-local:focusing	vn.role:Experiencer	local:scientific_publications	.
-local:entity	rdfs:member	local:entity_recognition	.
-local:introduce	vn.role:Patient	local:different_strategies	.
-local:focusing_on_proteins	local:on_proteins	local:focusing	.
-local:minimal_human	rdfs:member	local:minimal_human_input	.
-local:stateoftheart_entity	rdfs:member	local:stateoftheart_entity_recognition	.
-local:produced	local:AM-MNR	local:laboriously	.
-local:longtail_entities_types	rdfs:subClassOf	local:types	.
-local:targeted_entity	rdfs:subClassOf	local:entity	.
-local:entity_type	rdfs:subClassOf	local:type	.
-local:typing_classifiers	rdfs:subClassOf	local:classifiers	.
-local:named	vn.role:Theme	local:entity_typing	.
-local:relies	vn.role:Theme	local:minimal_human_input_namely_small_seed_set	.
-local:stateoftheart_entity_recognition	rdfs:member	local:stateoftheart_entity_recognition_approaches	.
-local:targeted	rdfs:member	local:targeted_entity	.
-local:approach	vn.role:object	local:we	.
-local:entity_recognition	rdfs:subClassOf	local:recognition	.
-local:human_input	rdfs:subClassOf	local:input	.
-local:biomedical	rdfs:member	local:biomedical_publications	.
-local:training	rdfs:member	local:training_data	.
-local:stateoftheart_entity_recognition	rdfs:subClassOf	local:recognition	.
-local:presents	vn.role:Theme	local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers_namely_small_seed_set	.
-local:methods_in_computer_science_publications	local:methods_in	local:computer_science_publications	.
-local:biomedical_publications	rdfs:subClassOf	local:publications	.
-local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers	local:for_entitytypingclassifiers	local:iterative_approach_for_training_entity_recognition	.
-local:computer_science_publications	rdfs:subClassOf	local:science_publications	.
-local:scientific_biomedical_publications	rdfs:subClassOf	local:biomedical_publications	.
-local:scientific_biomedical_publications_focusing	local:scientificbiomedicalpublications_	local:focusing	.
-local:focusing_on_proteins	local:focusing_on	local:proteins	.
-local:labeled	vn.role:Destination	local:knowledge_bases	.
-local:data	rdfs:member	local:data_extraction	.
-local:science_publications	rdfs:subClassOf	local:publications	.
-local:training_data	rdfs:subClassOf	local:data	.
-local:longtail_entity	rdfs:subClassOf	local:entity	.
-local:longtail_entity_types	rdfs:subClassOf	local:entity_types	.
-local:different	rdfs:member	local:different_strategies	.
-local:focusing	local:AM-LOC	local:computer_science_publications	.
-local:iterative	rdfs:member	local:iterative_approach	.
-local:recognition	rdfs:member	local:recognition_approaches	.
-local:not_suitable	rdfs:subClassOf	local:suitable	.
-local:proteins_in_biomedical_publications	local:in_biomedicalpublications	local:proteins	.
-local:evaluate	vn.role:Theme	local:approach_on_scientific_publications_focusing	.
-local:approach	vn.role:indirect_object	local:scientific_biomedical_publications_focusing	.
-local:knowledge_bases	rdfs:subClassOf	local:bases	.
-local:found	vn.role:Agent	local:longtail_entities	.
-local:learning	vn.role:Theme	local:trained_on_expensive_typelabeled_data	.
-local:represented	local:AM-ADV	local:scarcely	.
-local:types	rdfs:member	local:types_datasets	.
-local:minimal_human	rdfs:subClassOf	local:human	.
-local:targeted_entity_type	rdfs:subClassOf	local:entity_type	.
-local:iterative_approach_for_training_entity_recognition_for_entity_typing_classifiers_namely_small_seed_set	local:iterativeapproachfortrainingentityrecognitionforentitytypingclassifiers_	local:namely_small_seed_set	.
-local:evaluate	vn.role:Theme	local:approach_on_scientific_biomedical_publications_focusing	.
-local:scarcely_represented_agent_definition_in_kbs	local:in_kbs	local:scarcely_represented_agent_definition	.
-local:iterative_approach_for_training_entity_recognition	local:iterativeapproach_for	local:training_entity_recognition	.
-local:set	local:AM-PNC	local:targeted_entity_type	.
+local:focusing_on_methods	rdfs:member	local:focusing	.
+local:focusing_on_proteins	rdfs:member	local:proteins	.
+local:s14	rdf:predicate	local:result	.
+local:methods_in_computer_science_publications	rdfs:member	local:methods	.
+local:s11	rdf:subject	local:paper	.
+local:different_strategies_training	rdfs:member	local:training	.
 local:entity_types	rdfs:subClassOf	local:types	.
+local:human_annotators	rdfs:subClassOf	local:annotators	.
+local:s6	rdf:subject	local:stateoftheart_ner_approaches	.
+local:iterative_approach	rdfs:member	local:iterative	.
+local:expensive_typelabeled_data	rdfs:subClassOf	local:typelabeled_data	.
+local:s7.1	rdf:subject	local:human_annotators	.
+local:approach_on_scientific_publications_focusing_on_the_longtail_entities_types_datasets	rdfs:member	local:approach	.
+local:different_strategies	rdfs:subClassOf	local:strategies	.
+local:longtail_entities_types_datasets	rdfs:member	local:longtail_entities	.
+local:targeted_entity_type	rdfs:subClassOf	local:type	.
+local:namely_small_seed_set_of_instances	rdfs:member	local:namely_small_seed_set	.
+local:s12	rdf:object	local:minimal_human_input_namely_a_small_seed_set_of_instances	.
+local:s10	rdf:predicate	local:present	.
+local:iterative_approach_for_training_ner	rdfs:member	local:training_ner	.
+local:laboriously_produced_by_human_annotators	rdfs:member	local:human_annotators	.
+local:different_strategies_training_data_extraction_semantic_expansion	rdfs:member	local:data_extraction	.
+local:supervised_machine	rdfs:subClassOf	local:machine	.
+local:s7.1	rdf:object	local:expensive_typelabeled_data	.
+local:s16.2	rdf:predicate	local:focus	.
+local:small_seed	rdfs:subClassOf	local:seed	.
+local:s14	rdf:subject	local:we	.
+local:s7	rdf:predicate	local:train	.
+local:entity_recognition_and_typing	rdfs:member	local:typing	.
+local:instances_for_targeted_entity_type	rdfs:member	local:instances	.
+local:training_data	rdfs:subClassOf	local:data	.
+local:biomedical_publications	rdfs:member	local:biomedical	.
+local:scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:proteins	.
+local:approach_on_scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:biomedical_publications	.
+local:targeted_entity_type	rdfs:subClassOf	local:entity_type	.
+local:approach_on_scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:approach	.
+local:approach_on_scientific_publications	rdfs:member	local:approach	.
+local:s15	rdf:subject	local:we	.
+local:s11	rdf:object	local:iterative_approach_for_net_classifiers_in_scientific_publications	.
+local:s5.1	rdf:subject	local:models	.
+local:s12	rdf:subject	local:scientific_publications	.
+local:minimal_human_input_namely_a_small_seed_set_of_instances	rdfs:member	local:small_seed	.
+local:laboriously_produced_by_human_annotators	rdfs:member	local:laboriously_produced	.
+local:s13	rdf:predicate	local:introduce	.
+local:longtail_entity_types	rdfs:subClassOf	local:types	.
+local:s17.2	local:AM-LOC	local:biomedical_publications	.
+local:computer_science_publications	rdfs:member	local:computer_science	.
+local:iterative_approach_for_training	rdfs:member	local:iterative_approach	.
+local:s17.1	rdf:object	local:scientific_publications_focusing_on_proteins_in_biomedical_publications	.
+local:s9	local:AM-ADV	local:scarcely	.
+local:minimal_human	rdfs:subClassOf	local:human	.
+local:focusing_on_longtail_entities_types	rdfs:member	local:longtail_entities_types	.
+local:methods_in_computer_science_publications	rdfs:member	local:computer_science_publications	.
+local:approach_on_scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:computer_science_publications	.
+local:focusing_on_methods	rdfs:member	local:methods	.
+local:entities_types	rdfs:subClassOf	local:types	.
+local:expensive_typelabeled_data_laboriously_produced	rdfs:member	local:laboriously_produced	.
+local:s8	rdf:predicate	local:label	.
+local:human_annotators	rdfs:member	local:human	.
+local:ner_approaches	rdfs:subClassOf	local:approaches	.
+local:longtail_entity_types	rdfs:subClassOf	local:entity_types	.
+local:minimal_human_input_namely_a_small_seed_set_of_instances	rdfs:member	local:minimal_human_input	.
+local:s16.2	rdf:object	local:longtail_entities_types_datasets	.
+local:instances_for_the_targeted_entity_type	rdfs:member	local:targeted_entity_type	.
+local:computer_science_publications	rdfs:subClassOf	local:science_publications	.
+local:s13	rdf:subject	local:we	.
+local:scientific_publications	rdfs:subClassOf	local:publications	.
+local:s5.1	rdf:predicate	local:learn	.
+local:s1	rdf:predicate	local:named	.
+local:s8	rdf:subject	local:training_data	.
+local:approach_on_scientific_biomedical_publications	rdfs:member	local:approach	.
+local:s17.2	rdf:predicate	local:focus	.
+local:scientific_biomedical_publications	rdfs:subClassOf	local:biomedical_publications	.
+local:iterative_approach_for_training	rdfs:member	local:training	.
+local:stateoftheart_ner	rdfs:subClassOf	local:ner	.
+local:iterative_approach_for_net_classifiers_in_scientific_publications	rdfs:member	local:iterative_approach_for_net_classifiers	.
+local:s0	rdf:subject	local:ones	.
+local:s2	local:AM-LOC	local:scientific_publications	.
+local:s6	rdf:object	local:supervised_machine	.
+local:targeted_entity	rdfs:member	local:targeted	.
+local:s2	rdf:predicate	local:find	.
+local:data_extraction	rdfs:member	local:data	.
+local:entity_type	rdfs:subClassOf	local:type	.
+local:entity_types	rdfs:member	local:entity	.
+local:s7.1	local:AM-MNR	local:laboriously	.
+local:s14.1	rdf:predicate	local:filter	.
+local:net_classifiers	rdfs:member	local:net	.
+local:approach_on_scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:approach	.
+local:s16.2	rdf:subject	local:scientific_publications	.
+local:proteins_in_biomedical_publications	rdfs:member	local:biomedical_publications	.
+local:s16.2	rdfs:member	local:longtail_entities	.
+local:s15.2	rdf:predicate	local:focus	.
+local:s11	rdf:predicate	local:present	.
+local:iterative_approach	rdfs:subClassOf	local:approach	.
+local:longtail_entity	rdfs:member	local:longtail	.
+local:entity_recognition	rdfs:subClassOf	local:recognition	.
+local:s10	rdf:object	local:iterative_approach_for_training_ner	.
+local:s15.2	local:AM-LOC	local:computer_science_publications	.
+local:s5	rdf:subject	local:s5.1	.
+local:extraction_semantic_expansion	rdfs:subClassOf	local:semantic_expansion	.
+local:s16	rdf:subject	local:we	.
+local:s15.1	rdf:object	local:scientific_publications_focusing_on_methods_in_computer_science_publications	.
+local:iterative_approach_for_net_classifiers_in_scientific_publications	rdfs:member	local:net_classifiers	.
+local:minimal_human	rdfs:member	local:minimal	.
+local:s17	rdf:object	local:approach_on_scientific_publications_focusing_on_proteins_in_biomedical_publications	.
+local:science_publications	rdfs:member	local:science	.
+local:s14	rdf:object	local:entity_filtering	.
+local:seed_set	rdfs:subClassOf	local:set	.
+local:s8	rdf:object	local:knowledge_bases_this_approach	.
+local:iterative_approach_for_net_classifiers	rdfs:member	local:iterative_approach	.
+local:s15.1	rdf:predicate	local:approach	.
+local:scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:scientific_publications	.
+local:small_seed	rdfs:member	local:small	.
+local:scientific_publications	rdfs:member	local:scientific	.
+local:biomedical_publications	rdfs:subClassOf	local:publications	.
+local:s0	local:AM-LOC	local:scientific_publications	.
+local:approach_on_scientific_biomedical_publications	rdfs:member	local:scientific_biomedical_publications	.
+local:human_input	rdfs:member	local:human	.
+local:minimal_human_input_namely_a_small_seed_set_of_instances	rdfs:member	local:instances	.
+local:data_extraction	rdfs:subClassOf	local:extraction	.
+local:iterative_approach_for_training_ner	rdfs:member	local:iterative_approach	.
+local:approach_on_scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:scientific_publications	.
+local:entity_recognition	rdfs:member	local:entity	.
+local:s13	rdf:object	local:different_strategies_training_data_extraction_semantic_expansion	.
+local:s12.1	rdf:subject	local:small_seed	.
+local:s17.2	rdf:object	local:proteins	.
+local:minimal_human_input	rdfs:subClassOf	local:input	.
+local:scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:scientific_publications	.
+local:minimal_human_input	rdfs:member	local:minimal_human	.
+local:s2	rdf:subject	local:ones	.
+local:knowledge_bases_this_approach	rdfs:member	local:approach	.
+local:expensive_typelabeled_data_laboriously_produced_by_human_annotators	rdfs:member	local:human_annotators	.
+local:longtail_entities	rdfs:subClassOf	local:entities	.
+local:longtail_entity_types	rdfs:member	local:longtail_entity	.
+local:scientific_biomedical_publications_focusing	rdfs:member	local:focusing	.
+local:focusing_on_proteins	rdfs:member	local:focusing	.
+local:training_ner	rdfs:member	local:training	.
+local:approach_on_scientific_publications_focusing_on_the_longtail_entities_types_datasets	rdfs:member	local:datasets	.
+local:proteins_in_biomedical_publications	rdfs:member	local:proteins	.
+local:s12.1	rdf:object	local:instances_for_the_targeted_entity_type	.
+local:science_publications	rdfs:subClassOf	local:publications	.
+local:human_input	rdfs:subClassOf	local:input	.
+local:namely_small_seed_set	rdfs:subClassOf	local:small_seed_set	.
+local:entity_type	rdfs:member	local:entity	.
+local:targeted_entity	rdfs:subClassOf	local:entity	.
+local:s16.2	rdfs:member	local:datasets	.
+local:knowledge_bases_this_approach	rdfs:member	local:knowledge	.
+local:s6	rdf:predicate	local:employ	.
+local:s7	rdf:object	local:expensive_typelabeled_data_laboriously_produced_by_human_annotators	.
+local:longtail_entity_types_that_are_by_definition	rdfs:member	local:definition	.
+local:s16.1	rdf:predicate	local:approach	.
+local:iterative_approach_for_net_classifiers	rdfs:member	local:net_classifiers	.
+local:s15.2	rdf:object	local:methods	.
+local:s17.1	rdf:predicate	local:approach	.
+local:semantic_expansion	rdfs:member	local:semantic	.
+local:s7.1	rdf:predicate	local:produce	.
+local:approach_on_scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:methods	.
+local:instances_for_targeted_entity_type	rdfs:member	local:targeted_entity_type	.
+local:entity_recognition_and_typing	rdfs:member	local:entity_recognition	.
+local:s16.1	rdf:subject	local:we	.
+local:s17.1	rdf:subject	local:we	.
+local:s0	rdf:predicate	local:find	.
+local:s15	rdf:predicate	local:evaluate	.
+local:approach_on_scientific_publications	rdfs:member	local:scientific_publications	.
+local:data_extraction_semantic_expansion	rdfs:subClassOf	local:extraction_semantic_expansion	.
+local:longtail_entity	rdfs:subClassOf	local:entity	.
+local:scientific_publications_focusing	rdfs:member	local:scientific_publications	.
+local:scientific_publications_focusing	rdfs:member	local:focusing	.
+local:different_strategies_training_data_extraction_semantic_expansion	rdfs:member	local:semantic_expansion	.
+local:different_strategies	rdfs:member	local:different	.
+local:laboriously_produced	rdfs:subClassOf	local:produced	.
+local:scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:biomedical_publications	.
+local:stateoftheart_ner	rdfs:member	local:stateoftheart	.
+local:stateoftheart_ner_approaches	rdfs:subClassOf	local:ner_approaches	.
+local:focusing_on_longtail_entities_types	rdfs:member	local:focusing	.
+local:semantic_expansion	rdfs:subClassOf	local:expansion	.
+local:s12	local:AM-PNC	local:targeted_entity_type	.
+local:s9	rdf:subject	local:longtail_entity_types_that_are_by_definition	.
+local:s17	rdf:predicate	local:evaluate	.
+local:training_ner	rdfs:subClassOf	local:ner	.
+local:scientific_biomedical_publications_focusing	rdfs:member	local:scientific_biomedical_publications	.
+local:expensive_typelabeled_data_laboriously_produced_by_human_annotators	rdfs:member	local:data	.
+local:s16	rdf:predicate	local:evaluate	.
+local:instances_for_the_targeted_entity_type	rdfs:member	local:instances	.
+local:small_seed_set	rdfs:subClassOf	local:seed_set	.
+local:iterative_approach_for_net_classifiers_in_scientific_publications	rdfs:member	local:scientific_publications	.
+local:longtail_entities	rdfs:member	local:longtail	.
+local:s16.1	rdf:object	local:scientific_publications_focusing_on_the_longtail_entities_types_datasets	.
+local:ner_approaches	rdfs:member	local:ner	.
+local:s17	rdf:subject	local:we	.
+local:net_classifiers	rdfs:subClassOf	local:classifiers	.
+local:s9	rdf:predicate	local:represent	.
+local:different_strategies_training	rdfs:member	local:different_strategies	.
+local:s15.1	rdf:subject	local:we	.
+local:knowledge_bases	rdfs:subClassOf	local:bases	.
+local:iterative_approach_for_net_classifiers_in_scientific_publications	rdfs:member	local:iterative_approach	.
+local:scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:computer_science_publications	.
+local:stateoftheart_ner_approaches	rdfs:subClassOf	local:approaches	.
+local:s1	rdf:subject	local:entity_recognition_and_typing	.
+local:s10	rdf:subject	local:paper	.
+local:s12	rdf:predicate	local:rely	.
+local:s5	rdf:predicate	local:supervise	.
+local:s12.1	rdf:predicate	local:set	.
+local:approach_on_scientific_publications_focusing_on_the_longtail_entities_types_datasets	rdfs:member	local:longtail_entities	.
+local:minimal_human_input	rdfs:subClassOf	local:human_input	.
+local:approach_on_scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:scientific_publications	.
+local:s15	rdf:object	local:approach_on_scientific_publications_focusing_on_methods_in_computer_science_publications	.
+local:computer_science	rdfs:member	local:computer	.
+local:training_data	rdfs:member	local:training	.
+local:s9	local:AM-LOC	local:kbs	.
+local:s7	rdf:subject	local:models	.
+local:longtail_entity_types_that_are_by_definition	rdfs:member	local:longtail_entity_types	.
+local:computer_science_publications	rdfs:subClassOf	local:publications	.
+local:computer_science	rdfs:subClassOf	local:science	.
+local:longtail_entities_types_datasets	rdfs:member	local:datasets	.
+local:scientific_publications_focusing_on_methods_in_computer_science_publications	rdfs:member	local:methods	.
+local:typelabeled_data	rdfs:subClassOf	local:data	.
+local:s10	local:AM-LOC	local:scientific_publications	.
+local:stateoftheart_ner_approaches	rdfs:member	local:stateoftheart_ner	.
+local:s16.2	rdfs:member	local:scientific_publications	.
+local:expensive_typelabeled_data_laboriously_produced	rdfs:member	local:expensive_typelabeled_data	.
+local:approach_on_scientific_publications_focusing_on_the_longtail_entities_types_datasets	rdfs:member	local:scientific_publications	.
+local:approach_on_scientific_publications_focusing_on_proteins_in_biomedical_publications	rdfs:member	local:proteins	.
+local:targeted_entity_type	rdfs:member	local:targeted_entity	.
+local:s16	rdf:object	local:approach_on_scientific_publications_focusing_on_the_longtail_entities_types_datasets	.
+local:longtail_entities_types	rdfs:subClassOf	local:entities_types	.
+local:different_strategies_training_data_extraction_semantic_expansion	rdfs:member	local:different_strategies	.
+local:namely_small_seed_set_of_instances	rdfs:member	local:instances	.

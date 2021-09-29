@@ -1,294 +1,513 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s15.3	a	rdf:Statement	;
+	rdfs:label	"existing systems place a greater emphasis on scalability"	.
+
+local:s15.2	a	rdf:Statement	;
+	rdfs:label	"existing systems need to place a greater emphasis on scalability"	.
+
+local:s15.1	a	rdf:Statement	;
+	rdfs:label	"existing systems"	.
+
+local:s15	a	rdf:Statement	;
+	rdfs:label	"in particular our concluded that existing systems need to place a greater emphasis on scalability"	.
+
+local:s13	a	rdf:Statement	;
+	rdfs:label	"our discuss the performance of each system"	.
+
+local:s12.1	a	rdf:Statement	;
+	rdfs:label	"how our performed the evaluation"	.
+
+local:s12	a	rdf:Statement	;
+	rdfs:label	"our describe how our have performed the evaluation"	.
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"what factors our considered in the evaluation"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"our describe what factors our have considered in the evaluation"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"our evaluated owljesskb"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"our evaluated two systems with databasebased sesame"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"our evaluated two systems with dldbowl"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"evaluated memorybased sesame"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"our evaluated two memorybased systems"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"our evaluated two systems with persistent storage"	.
+
+local:s4.2	a	rdf:Statement	;
+	rdfs:label	"the smallest dataset consists of 999 files"	.
+
+local:s4.1	a	rdf:Statement	;
+	rdfs:label	"the smallest dataset used consists of 15 owl files totaling 8 mb while the smallest dataset consists of 999 files"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"the smallest dataset used consists of 15 owl files totaling 8 mb while the smallest dataset consists of 999 files"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"999 files totaling 583 mb"	.
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"data used here"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"to our knowledge no experiment done with the scale of data"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"use in large owl applications"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"in this paper we present an evaluation of four knowledge base systems with respect to use in large owl applications"	.
+
+
 #### Classes ####
 
-local:present	rdfs:label	"present"	.
+local:existing_systems	a	rdf:Class	;
+	rdfs:label	"existing systems"	.
 
-local:paper	rdfs:label	"paper"	.
+local:systems	a	rdf:Class	;
+	rdfs:label	"systems"	.
 
-local:we	rdfs:label	"we"	.
+local:place	a	rdf:Class	;
+	rdfs:label	"place"	.
 
-local:knowledge_base_systems	rdfs:label	"knowledge base systems"	.
+local:greater_emphasis_scalability	a	rdf:Class	;
+	rdfs:label	"greater emphasis scalability"	.
 
-local:systems	rdfs:label	"systems"	.
+local:scalability	a	rdf:Class	;
+	rdfs:label	"scalability"	.
 
-local:knowledge	rdfs:label	"knowledge"	.
+local:emphasis_scalability	a	rdf:Class	;
+	rdfs:label	"emphasis scalability"	.
 
-local:knowledge_base	rdfs:label	"knowledge base"	.
+local:emphasis	a	rdf:Class	;
+	rdfs:label	"emphasis"	.
 
-local:base_systems	rdfs:label	"base systems"	.
+local:greater_emphasis	a	rdf:Class	;
+	rdfs:label	"greater emphasis"	.
 
-local:base	rdfs:label	"base"	.
+local:greater	a	rdf:Class	;
+	rdfs:label	"greater"	.
 
-local:four_knowledge_base_systems	rdfs:label	"four knowledge base systems"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:evaluation_of_four_knowledge_base_systems	rdfs:label	"evaluation of four knowledge base systems"	.
+local:place_a_greater_emphasis_on_scalability	a	rdf:Class	;
+	rdfs:label	"place a greater emphasis on scalability"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:greater_emphasis_on_scalability	a	rdf:Class	;
+	rdfs:label	"greater emphasis on scalability"	.
 
-local:large	rdfs:label	"large"	.
+local:exist	a	rdf:Class	;
+	rdfs:label	"exist"	.
 
-local:large_owl	rdfs:label	"large owl"	.
+local:our	a	rdf:Class	;
+	rdfs:label	"our"	.
 
-local:large_owl_applications	rdfs:label	"large owl applications"	.
+local:conclude	a	rdf:Class	;
+	rdfs:label	"conclude"	.
 
-local:applications	rdfs:label	"applications"	.
+local:particular	a	rdf:Class	;
+	rdfs:label	"particular"	.
 
-local:owl	rdfs:label	"owl"	.
+local:discuss	a	rdf:Class	;
+	rdfs:label	"discuss"	.
 
-local:owl_applications	rdfs:label	"owl applications"	.
+local:performance_of_each_system	a	rdf:Class	;
+	rdfs:label	"performance of each system"	.
 
-local:use_in_large_owl_applications	rdfs:label	"use in large owl applications"	.
+local:performance	a	rdf:Class	;
+	rdfs:label	"performance"	.
 
-local:use	rdfs:label	"use"	.
+local:system	a	rdf:Class	;
+	rdfs:label	"system"	.
 
-local:respect	rdfs:label	"respect"	.
+local:performance_of_system	a	rdf:Class	;
+	rdfs:label	"performance of system"	.
 
-local:done	rdfs:label	"done"	.
+local:perform	a	rdf:Class	;
+	rdfs:label	"perform"	.
 
-local:experiment	rdfs:label	"experiment"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:scale_of_data	rdfs:label	"scale of data"	.
+local:describe	a	rdf:Class	;
+	rdfs:label	"describe"	.
 
-local:scale	rdfs:label	"scale"	.
+local:performed_the_evaluation	a	rdf:Class	;
+	rdfs:label	"performed the evaluation"	.
 
-local:data	rdfs:label	"data"	.
+local:consider	a	rdf:Class	;
+	rdfs:label	"consider"	.
 
-local:used	rdfs:label	"used"	.
+local:factors	a	rdf:Class	;
+	rdfs:label	"factors"	.
 
-local:here	rdfs:label	"here"	.
+local:factors_our_have_considered_in_the_evaluation	a	rdf:Class	;
+	rdfs:label	"factors our have considered in the evaluation"	.
 
-local:999_files	rdfs:label	"999 files"	.
+local:have_considered	a	rdf:Class	;
+	rdfs:label	"have considered"	.
 
-local:files	rdfs:label	"files"	.
+local:considered	a	rdf:Class	;
+	rdfs:label	"considered"	.
 
-local:totaling	rdfs:label	"totaling"	.
+local:have_considered_in_evaluation	a	rdf:Class	;
+	rdfs:label	"have considered in evaluation"	.
 
-local:583_mb	rdfs:label	"583 mb"	.
+local:evaluate	a	rdf:Class	;
+	rdfs:label	"evaluate"	.
 
-local:mb	rdfs:label	"mb"	.
+local:owljesskb	a	rdf:Class	;
+	rdfs:label	"owljesskb"	.
 
-local:smallest_dataset	rdfs:label	"smallest dataset"	.
+local:two_systems_with_databasebased_sesame	a	rdf:Class	;
+	rdfs:label	"two systems with databasebased sesame"	.
 
-local:dataset	rdfs:label	"dataset"	.
+local:databasebased_sesame	a	rdf:Class	;
+	rdfs:label	"databasebased sesame"	.
 
-local:smallest	rdfs:label	"smallest"	.
+local:databasebased	a	rdf:Class	;
+	rdfs:label	"databasebased"	.
 
-local:consists	rdfs:label	"consists"	.
+local:sesame	a	rdf:Class	;
+	rdfs:label	"sesame"	.
 
-local:owl_files	rdfs:label	"owl files"	.
+local:two_systems	a	rdf:Class	;
+	rdfs:label	"two systems"	.
 
-local:8_mb	rdfs:label	"8 mb"	.
+local:dldbowl	a	rdf:Class	;
+	rdfs:label	"dldbowl"	.
 
-local:15_owl_files	rdfs:label	"15 owl files"	.
+local:memorybased_sesame	a	rdf:Class	;
+	rdfs:label	"memorybased sesame"	.
 
-local:15_owl_files_totaling	rdfs:label	"15 owl files totaling"	.
+local:two_memorybased_systems	a	rdf:Class	;
+	rdfs:label	"two memorybased systems"	.
 
-local:consists_of_999_files	rdfs:label	"consists of 999 files"	.
+local:memorybased_systems	a	rdf:Class	;
+	rdfs:label	"memorybased systems"	.
 
-local:consists_of_15_owl_files	rdfs:label	"consists of 15 owl files"	.
+local:persistent_storage	a	rdf:Class	;
+	rdfs:label	"persistent storage"	.
 
-local:memorybased	rdfs:label	"memory-based"	.
+local:persistent	a	rdf:Class	;
+	rdfs:label	"persistent"	.
 
-local:memorybased_sesame	rdfs:label	"memory-based sesame"	.
+local:storage	a	rdf:Class	;
+	rdfs:label	"storage"	.
 
-local:sesame	rdfs:label	"sesame"	.
+local:smallest_dataset	a	rdf:Class	;
+	rdfs:label	"smallest dataset"	.
 
-local:evaluated	rdfs:label	"evaluated"	.
+local:smallest	a	rdf:Class	;
+	rdfs:label	"smallest"	.
 
-local:our	rdfs:label	"our"	.
+local:dataset	a	rdf:Class	;
+	rdfs:label	"dataset"	.
 
-local:owljesskb	rdfs:label	"owljesskb"	.
+local:consist	a	rdf:Class	;
+	rdfs:label	"consist"	.
 
-local:persistent_storage	rdfs:label	"persistent storage"	.
+local:999_files	a	rdf:Class	;
+	rdfs:label	"999 files"	.
 
-local:storage	rdfs:label	"storage"	.
+local:files	a	rdf:Class	;
+	rdfs:label	"files"	.
 
-local:persistent	rdfs:label	"persistent"	.
+local:smallest_dataset_used_consists_of_15_owl_files	a	rdf:Class	;
+	rdfs:label	"smallest dataset used consists of 15 owl files"	.
 
-local:two_systems	rdfs:label	"two systems"	.
+local:owl_files	a	rdf:Class	;
+	rdfs:label	"owl files"	.
 
-local:two_systems_with_persistent_storage	rdfs:label	"two systems with persistent storage"	.
+local:consists	a	rdf:Class	;
+	rdfs:label	"consists"	.
 
-local:two_systems_with_dldbowl	rdfs:label	"two systems with dldb-owl"	.
+local:owl	a	rdf:Class	;
+	rdfs:label	"owl"	.
 
-local:dldbowl	rdfs:label	"dldb-owl"	.
+local:15_owl_files	a	rdf:Class	;
+	rdfs:label	"15 owl files"	.
 
-local:memorybased_systems	rdfs:label	"memory-based systems"	.
+local:consists_of_15_owl_files	a	rdf:Class	;
+	rdfs:label	"consists of 15 owl files"	.
 
-local:two_memorybased_systems	rdfs:label	"two memory-based systems"	.
+local:total	a	rdf:Class	;
+	rdfs:label	"total"	.
 
-local:rrb	rdfs:label	"-rrb-"	.
+local:8_mb	a	rdf:Class	;
+	rdfs:label	"8 mb"	.
 
-local:databasebased	rdfs:label	"database-based"	.
+local:mb	a	rdf:Class	;
+	rdfs:label	"mb"	.
 
-local:databasebased_sesame	rdfs:label	"database-based sesame"	.
+local:smallest_dataset_consists_of_999_files	a	rdf:Class	;
+	rdfs:label	"smallest dataset consists of 999 files"	.
 
-local:two_systems_with_databasebased_sesame	rdfs:label	"two systems with database-based sesame"	.
+local:consists_of_999_files	a	rdf:Class	;
+	rdfs:label	"consists of 999 files"	.
 
-local:describe	rdfs:label	"describe"	.
+local:use	a	rdf:Class	;
+	rdfs:label	"use"	.
 
-local:performed	rdfs:label	"performed"	.
+local:consists_15_owl_files_totaling_8_mb_while_the_smallest_dataset_consists_of_999_files	a	rdf:Class	;
+	rdfs:label	"consists 15 owl files totaling 8 mb while the smallest dataset consists of 999 files"	.
 
-local:have_considered	rdfs:label	"have considered"	.
+local:15_owl_files_totaling	a	rdf:Class	;
+	rdfs:label	"15 owl files totaling"	.
 
-local:considered	rdfs:label	"considered"	.
+local:totaling	a	rdf:Class	;
+	rdfs:label	"totaling"	.
 
-local:have_considered_in_evaluation	rdfs:label	"have considered in evaluation"	.
+local:583_mb	a	rdf:Class	;
+	rdfs:label	"583 mb"	.
 
-local:factors	rdfs:label	"factors"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:discuss	rdfs:label	"discuss"	.
+local:here	a	rdf:Class	;
+	rdfs:label	"here"	.
 
-local:performance_of_system	rdfs:label	"performance of system"	.
+local:experiment	a	rdf:Class	;
+	rdfs:label	"experiment"	.
 
-local:performance	rdfs:label	"performance"	.
+local:do	a	rdf:Class	;
+	rdfs:label	"do"	.
 
-local:system	rdfs:label	"system"	.
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
 
-local:particular_our	rdfs:label	"particular our"	.
+local:scale_of_data	a	rdf:Class	;
+	rdfs:label	"scale of data"	.
 
-local:concluded	rdfs:label	"concluded"	.
+local:scale	a	rdf:Class	;
+	rdfs:label	"scale"	.
 
-local:greater_emphasis	rdfs:label	"greater emphasis"	.
+local:large_owl_applications	a	rdf:Class	;
+	rdfs:label	"large owl applications"	.
 
-local:emphasis	rdfs:label	"emphasis"	.
+local:large_owl	a	rdf:Class	;
+	rdfs:label	"large owl"	.
 
-local:greater	rdfs:label	"greater"	.
+local:applications	a	rdf:Class	;
+	rdfs:label	"applications"	.
 
-local:existing_systems	rdfs:label	"existing systems"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:greater_emphasis_on_scalability	rdfs:label	"greater emphasis on scalability"	.
+local:owl_applications	a	rdf:Class	;
+	rdfs:label	"owl applications"	.
 
-local:scalability	rdfs:label	"scalability"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:need	rdfs:label	"need"	.
+local:present	a	rdf:Class	;
+	rdfs:label	"present"	.
 
-local:existing	rdfs:label	"existing"	.
+local:evaluation_of_four_knowledge_base_systems	a	rdf:Class	;
+	rdfs:label	"evaluation of four knowledge base systems"	.
 
-local:place	rdfs:label	"place"	.
+local:knowledge_base_systems	a	rdf:Class	;
+	rdfs:label	"knowledge base systems"	.
 
-#### Properties ####
+local:knowledge_base	a	rdf:Class	;
+	rdfs:label	"knowledge base"	.
+
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
+
+local:base_systems	a	rdf:Class	;
+	rdfs:label	"base systems"	.
+
+local:four_knowledge_base_systems	a	rdf:Class	;
+	rdfs:label	"four knowledge base systems"	.
+
+local:paper	a	rdf:Class	;
+	rdfs:label	"paper"	.
+
+local:respect_to_use_in_large_owl_applications	a	rdf:Class	;
+	rdfs:label	"respect to use in large owl applications"	.
+
+local:respect	a	rdf:Class	;
+	rdfs:label	"respect"	.
 
 #### Mapped Relations ####
 
-cso:owl	rdfs:label	"owl"	.
 local:owl	owl:sameAs	cso:owl	.
-local:knowledge_base_systems	owl:sameAs	cso:knowledge_based_systems	.
 cso:knowledge_based_systems	rdfs:label	"knowledge base systems"	.
+local:knowledge_base_systems	owl:sameAs	cso:knowledge_based_systems	.
+cso:owl	rdfs:label	"owl"	.
 
 #### Relations ####
 
-local:large_owl_applications	rdfs:subClassOf	local:owl_applications	.
-local:done	vn.role:object	local:experiment	.
-local:consists	vn.role:indirect_object	local:999_files	.
-local:two_systems	rdfs:subClassOf	local:systems	.
-local:describe	vn.role:Theme	local:factors	.
-local:greater_emphasis_on_scalability	local:on_scalability	local:greater_emphasis	.
-local:done	local:AM-MNR	local:scale_of_data	.
-local:evaluated	vn.role:Theme	local:memorybased_sesame	.
-local:memorybased_systems	rdfs:subClassOf	local:systems	.
-local:evaluated	vn.role:Agent	local:rrb	.
-local:greater_emphasis_on_scalability	local:greateremphasis_on	local:scalability	.
-local:place	vn.role:Theme	local:existing_systems	.
-local:smallest_dataset	rdfs:subClassOf	local:dataset	.
-local:used	vn.role:Agent	local:smallest_dataset	.
-local:four_knowledge_base_systems	rdfs:subClassOf	local:knowledge_base_systems	.
-local:used	vn.role:Recipient	local:here	.
-local:two_memorybased_systems	rdfs:subClassOf	local:memorybased_systems	.
-local:583_mb	rdfs:subClassOf	local:mb	.
-local:two_systems_with_dldbowl	local:with_dldb-owl	local:two_systems	.
-local:smallest	rdfs:member	local:smallest_dataset	.
-local:persistent	rdfs:member	local:persistent_storage	.
-local:memorybased	rdfs:member	local:memorybased_sesame	.
-local:describe	vn.role:Theme	local:performed	.
-local:have_considered	rdfs:subClassOf	local:considered	.
-local:greater	rdfs:member	local:greater_emphasis	.
-local:use_in_large_owl_applications	local:use_in	local:large_owl_applications	.
-local:consists_of_15_owl_files	local:of_15owlfiles	local:consists	.
-local:two_systems_with_databasebased_sesame	local:with_database-basedsesame	local:two_systems	.
-local:owl_files	rdfs:subClassOf	local:files	.
-local:totaling	vn.role:Agent	local:8_mb	.
-local:considered	vn.role:Theme	local:factors	.
-local:considered	vn.role:Agent	local:our	.
-local:performance_of_system	local:of_system	local:performance	.
-local:existing_systems	rdfs:subClassOf	local:systems	.
-local:two_systems_with_databasebased_sesame	local:twosystems_with	local:databasebased_sesame	.
-local:used	vn.role:Theme	local:consists	.
-local:knowledge_base	rdfs:member	local:knowledge_base_systems	.
-local:memorybased_sesame	rdfs:subClassOf	local:sesame	.
-local:owl	rdfs:member	local:owl_files	.
-local:knowledge_base_systems	rdfs:subClassOf	local:systems	.
-local:scale_of_data	local:of_data	local:scale	.
-local:memorybased	rdfs:member	local:memorybased_systems	.
-local:15_owl_files_totaling	local:15owlfiles_	local:totaling	.
-local:totaling	vn.role:Agent	local:583_mb	.
-local:large_owl	rdfs:subClassOf	local:owl	.
-local:evaluated	vn.role:Theme	local:two_systems_with_dldbowl	.
-local:evaluated	vn.role:Theme	local:two_memorybased_systems	.
-local:describe	vn.role:Agent	local:our	.
-local:evaluation_of_four_knowledge_base_systems	local:of_fourknowledgebasesystems	local:evaluation	.
-local:knowledge_base	rdfs:subClassOf	local:base	.
-local:use_in_large_owl_applications	local:in_largeowlapplications	local:use	.
-local:place	vn.role:object	local:greater_emphasis	.
-local:particular_our	rdfs:subClassOf	local:our	.
-local:evaluated	vn.role:Agent	local:our	.
-local:databasebased_sesame	rdfs:subClassOf	local:sesame	.
-local:two_systems_with_persistent_storage	local:with_persistentstorage	local:two_systems	.
-local:present	vn.role:Theme	local:evaluation_of_four_knowledge_base_systems	.
-local:evaluated	vn.role:Theme	local:two_systems_with_databasebased_sesame	.
-local:scale_of_data	local:scale_of	local:data	.
-local:owl_applications	rdfs:subClassOf	local:applications	.
-local:databasebased	rdfs:member	local:databasebased_sesame	.
-local:totaling	vn.role:Patient2	local:used	.
-local:large_owl	rdfs:member	local:large_owl_applications	.
-local:performed	vn.role:Theme	local:evaluation	.
-local:consists_of_999_files	local:of_999files	local:consists	.
-local:two_systems_with_persistent_storage	local:twosystems_with	local:persistent_storage	.
+local:factors_our_have_considered_in_the_evaluation	rdfs:member	local:factors	.
+local:owl_files	rdfs:member	local:owl	.
+local:greater_emphasis_scalability	rdfs:subClassOf	local:scalability	.
+local:s11	rdf:object	local:factors_our_have_considered_in_the_evaluation	.
+local:s15.3	rdf:predicate	local:place	.
+local:s15.3	rdf:object	local:greater_emphasis_scalability	.
 local:greater_emphasis	rdfs:subClassOf	local:emphasis	.
-local:considered	local:AM-LOC	local:evaluation	.
-local:base	rdfs:member	local:base_systems	.
-local:knowledge	rdfs:member	local:knowledge_base	.
-local:base_systems	rdfs:subClassOf	local:systems	.
-local:large_owl_applications	rdfs:subClassOf	local:applications	.
-local:concluded	vn.role:Theme	local:need	.
-local:large	rdfs:member	local:large_owl	.
-local:existing	vn.role:Location	local:systems	.
-local:evaluated	vn.role:Theme	local:two_systems_with_persistent_storage	.
-local:consists	vn.role:Location	local:smallest_dataset	.
-local:need	vn.role:Patient	local:place	.
-local:done	vn.role:other	local:knowledge	.
-local:8_mb	rdfs:subClassOf	local:mb	.
-local:evaluated	vn.role:Theme	local:owljesskb	.
-local:have_considered_in_evaluation	local:in_evaluation	local:have_considered	.
-local:need	vn.role:Agent	local:existing_systems	.
-local:consists_of_999_files	local:consists_of	local:999_files	.
-local:evaluation_of_four_knowledge_base_systems	local:evaluation_of	local:four_knowledge_base_systems	.
-local:used	vn.role:Recipient	local:15_owl_files_totaling	.
-local:performance_of_system	local:performance_of	local:system	.
-local:have_considered_in_evaluation	local:haveconsidered_in	local:evaluation	.
-local:15_owl_files_totaling	local:_totaling	local:15_owl_files	.
-local:present	local:AM-PNC	local:respect	.
-local:use	vn.role:Recipient	local:large_owl_applications	.
-local:two_systems_with_dldbowl	local:twosystems_with	local:dldbowl	.
-local:totaling	local:AM-TMP	local:consists_of_999_files	.
-local:999_files	rdfs:subClassOf	local:files	.
-local:place	vn.role:indirect_object	local:scalability	.
-local:concluded	local:AM-LOC	local:particular_our	.
-local:discuss	vn.role:Patient2	local:performance_of_system	.
-local:present	vn.role:Agent	local:we	.
-local:performed	vn.role:Agent	local:our	.
-local:knowledge_base_systems	rdfs:subClassOf	local:base_systems	.
-local:owl	rdfs:member	local:owl_applications	.
 local:persistent_storage	rdfs:subClassOf	local:storage	.
-local:present	local:AM-LOC	local:paper	.
-local:used	vn.role:Theme	local:data	.
-local:consists_of_15_owl_files	local:consists_of	local:15_owl_files	.
-local:totaling	vn.role:Patient2	local:999_files	.
-local:discuss	vn.role:Patient1	local:our	.
+local:s1	rdf:predicate	local:do	.
+local:existing_systems	rdfs:subClassOf	local:systems	.
+local:s5	rdf:object	local:two_systems	.
+local:large_owl_applications	rdfs:member	local:large_owl	.
+local:place_a_greater_emphasis_on_scalability	rdfs:member	local:place	.
+local:s1	local:AM-MNR	local:scale_of_data	.
+local:s4.2	rdf:object	local:999_files	.
+local:scale_of_data	rdfs:member	local:data	.
+local:s6	rdf:subject	local:our	.
+local:s2	rdf:predicate	local:use	.
+local:s15.2	rdf:subject	local:existing_systems	.
+local:s4.1	rdf:subject	local:smallest_dataset_used_consists_of_15_owl_files	.
+local:s11.1	rdf:subject	local:our	.
+local:s6	rdf:object	local:two_memorybased_systems	.
+local:large_owl	rdfs:member	local:large	.
+local:emphasis_scalability	rdfs:member	local:emphasis	.
+local:have_considered	rdfs:subClassOf	local:considered	.
+local:s9	rdf:object	local:two_systems_with_databasebased_sesame	.
+local:s6	rdf:predicate	local:evaluate	.
+local:s0.1	rdfs:member	local:large_owl_applications	.
+local:s15	rdf:subject	local:our	.
+local:s9	rdf:subject	local:our	.
+local:consists_15_owl_files_totaling_8_mb_while_the_smallest_dataset_consists_of_999_files	rdfs:member	local:mb	.
+local:s13	rdf:object	local:performance_of_each_system	.
+local:s3	rdf:predicate	local:total	.
+local:s13	rdf:predicate	local:discuss	.
+local:owl_applications	rdfs:member	local:owl	.
+local:memorybased_systems	rdfs:subClassOf	local:systems	.
+local:smallest_dataset_used_consists_of_15_owl_files	rdfs:member	local:owl_files	.
+local:base_systems	rdfs:member	local:base	.
+local:knowledge_base_systems	rdfs:subClassOf	local:base_systems	.
+local:smallest_dataset	rdfs:member	local:smallest	.
+local:s0.1	rdfs:member	local:use	.
+local:consists_15_owl_files_totaling_8_mb_while_the_smallest_dataset_consists_of_999_files	rdfs:member	local:files	.
+local:s4	rdf:object	local:consists_15_owl_files_totaling_8_mb_while_the_smallest_dataset_consists_of_999_files	.
+local:s1	rdf:subject	local:experiment	.
+local:s15.3	rdf:subject	local:existing_systems	.
+local:performance_of_system	rdfs:member	local:system	.
+local:s11.1	local:AM-LOC	local:evaluation	.
+local:greater_emphasis_scalability	rdfs:member	local:greater_emphasis	.
+local:smallest_dataset_used_consists_of_15_owl_files	rdfs:member	local:smallest_dataset	.
+local:scale_of_data	rdfs:member	local:scale	.
+local:evaluation_of_four_knowledge_base_systems	rdfs:member	local:knowledge_base_systems	.
+local:smallest_dataset_used_consists_of_15_owl_files	rdfs:member	local:consists	.
+local:large_owl_applications	rdfs:subClassOf	local:owl_applications	.
+local:s4.1	rdf:predicate	local:total	.
+local:999_files	rdfs:subClassOf	local:files	.
+local:databasebased_sesame	rdfs:member	local:databasebased	.
+local:consists_of_15_owl_files	rdfs:member	local:consists	.
+local:two_systems_with_databasebased_sesame	rdfs:member	local:databasebased_sesame	.
+local:performance_of_system	rdfs:member	local:performance	.
+local:s11	rdf:subject	local:our	.
+local:owl_files	rdfs:subClassOf	local:files	.
+local:consists_of_999_files	rdfs:member	local:consists	.
+local:knowledge_base	rdfs:member	local:knowledge	.
+local:15_owl_files_totaling	rdfs:member	local:totaling	.
+local:consists_of_999_files	rdfs:member	local:999_files	.
+local:greater_emphasis_scalability	rdfs:subClassOf	local:emphasis_scalability	.
+local:15_owl_files_totaling	rdfs:member	local:15_owl_files	.
+local:evaluation_of_four_knowledge_base_systems	rdfs:member	local:evaluation	.
+local:place_a_greater_emphasis_on_scalability	rdfs:member	local:greater_emphasis	.
+local:s4.2	rdf:predicate	local:consist	.
+local:s0	rdf:object	local:evaluation_of_four_knowledge_base_systems	.
+local:s11.1	rdf:predicate	local:consider	.
+local:owl_applications	rdfs:subClassOf	local:applications	.
+local:s12	rdf:subject	local:our	.
+local:s15	rdf:object	local:s15.2	.
+local:s12.1	rdf:object	local:evaluation	.
+local:databasebased_sesame	rdfs:subClassOf	local:sesame	.
+local:s1	local:AM-ADV	local:knowledge	.
+local:smallest_dataset_consists_of_999_files	rdfs:member	local:files	.
+local:s0	local:AM-LOC	local:paper	.
+local:s2	rdf:subject	local:data	.
+local:greater_emphasis_on_scalability	rdfs:member	local:scalability	.
+local:s13	rdf:subject	local:our	.
+local:two_systems_with_databasebased_sesame	rdfs:member	local:two_systems	.
+local:s0.1	rdf:predicate	local:use	.
+local:evaluation_of_four_knowledge_base_systems	rdfs:member	local:four_knowledge_base_systems	.
+local:s10	rdf:object	local:owljesskb	.
+local:s12	rdf:object	local:performed_the_evaluation	.
+local:persistent_storage	rdfs:member	local:persistent	.
+local:large_owl_applications	rdfs:subClassOf	local:applications	.
+local:respect_to_use_in_large_owl_applications	rdfs:member	local:respect	.
+local:s0	rdf:predicate	local:present	.
+local:emphasis_scalability	rdfs:subClassOf	local:scalability	.
+local:factors_our_have_considered_in_the_evaluation	rdfs:member	local:evaluation	.
+local:s8	rdf:predicate	local:evaluate	.
+local:have_considered_in_evaluation	rdfs:member	local:have_considered	.
+local:memorybased_sesame	rdfs:subClassOf	local:sesame	.
+local:s4	rdf:subject	local:smallest_dataset	.
+local:s12.1	rdf:subject	local:our	.
+local:s9	rdf:predicate	local:evaluate	.
+local:s8	rdf:subject	local:our	.
+local:base_systems	rdfs:subClassOf	local:systems	.
+local:s0	local:AM-PNC	local:respect_to_use_in_large_owl_applications	.
 local:15_owl_files	rdfs:subClassOf	local:owl_files	.
+local:8_mb	rdfs:subClassOf	local:mb	.
+local:s8	rdf:object	local:two_systems	.
+local:smallest_dataset_consists_of_999_files	rdfs:member	local:smallest_dataset	.
+local:s10	rdf:predicate	local:evaluate	.
+local:smallest_dataset	rdfs:subClassOf	local:dataset	.
+local:consists_15_owl_files_totaling_8_mb_while_the_smallest_dataset_consists_of_999_files	rdfs:member	local:owl_files	.
+local:performance_of_each_system	rdfs:member	local:system	.
+local:place_a_greater_emphasis_on_scalability	rdfs:member	local:scalability	.
+local:s12	rdf:predicate	local:describe	.
+local:s3	rdf:object	local:583_mb	.
+local:two_systems_with_databasebased_sesame	rdfs:member	local:systems	.
+local:s5	rdf:predicate	local:evaluate	.
+local:s10	rdf:subject	local:our	.
+local:s5	rdf:subject	local:our	.
+local:two_memorybased_systems	rdfs:subClassOf	local:memorybased_systems	.
+local:s15	local:AM-DIS	local:particular	.
+local:s15	rdf:predicate	local:conclude	.
+local:s5	local:AM-MNR	local:persistent_storage	.
+local:583_mb	rdfs:subClassOf	local:mb	.
+local:knowledge_base_systems	rdfs:subClassOf	local:systems	.
+local:s7	rdf:subject	local:memorybased_sesame	.
+local:s15.1	rdf:predicate	local:exist	.
+local:consists_15_owl_files_totaling_8_mb_while_the_smallest_dataset_consists_of_999_files	rdfs:member	local:smallest_dataset	.
+local:s15.2	rdf:predicate	local:need	.
+local:s2	local:AM-LOC	local:here	.
+local:respect_to_use_in_large_owl_applications	rdfs:member	local:large_owl_applications	.
+local:s11	rdf:predicate	local:describe	.
+local:s4.1	rdf:object	local:8_mb	.
+local:s0.1	rdf:object	local:large_owl_applications	.
+local:s4	rdf:predicate	local:use	.
+local:s7	rdf:predicate	local:evaluate	.
+local:s4.1	local:AM-TMP	local:smallest_dataset_consists_of_999_files	.
+local:greater_emphasis_on_scalability	rdfs:member	local:greater_emphasis	.
+local:s12.1	rdf:predicate	local:perform	.
+local:s15.1	rdf:subject	local:systems	.
+local:knowledge_base	rdfs:subClassOf	local:base	.
+local:s4.2	rdf:subject	local:smallest_dataset	.
+local:four_knowledge_base_systems	rdfs:subClassOf	local:knowledge_base_systems	.
+local:s15.2	rdf:object	local:place_a_greater_emphasis_on_scalability	.
+local:knowledge_base_systems	rdfs:member	local:knowledge_base	.
+local:greater_emphasis	rdfs:member	local:greater	.
+local:s8	local:AM-MNR	local:dldbowl	.
+local:large_owl	rdfs:subClassOf	local:owl	.
+local:s3	rdf:subject	local:999_files	.
+local:performance_of_each_system	rdfs:member	local:performance	.
+local:s0	rdf:subject	local:we	.
+local:s11.1	rdf:object	local:factors	.
+local:two_systems	rdfs:subClassOf	local:systems	.
+local:consists_of_15_owl_files	rdfs:member	local:15_owl_files	.
+local:have_considered_in_evaluation	rdfs:member	local:evaluation	.

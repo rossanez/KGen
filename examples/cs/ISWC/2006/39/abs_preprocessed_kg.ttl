@@ -1,236 +1,391 @@
 @prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
 @prefix	local:	<http://local/local.owl#>	.
-@prefix	vn.role:	<http://local/verbnet_roles.owl#>	.
 @prefix	cso:	<https://cso.kmi.open.ac.uk/topics/>	.
 @prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
 @prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
 
+#### Statements ####
+
+local:s11.1	a	rdf:Statement	;
+	rdfs:label	"improved usability"	.
+
+local:s11	a	rdf:Statement	;
+	rdfs:label	"experimental evaluation shows improved usability over current interfaces"	.
+
+local:s10	a	rdf:Statement	;
+	rdfs:label	"we develop rdf"	.
+
+local:s9	a	rdf:Statement	;
+	rdfs:label	"metrics for automatic ranking of facet quality bypassing the need for manual construction of the interface"	.
+
+local:s8	a	rdf:Statement	;
+	rdfs:label	"secondly we develop metrics for automatic ranking of facet quality"	.
+
+local:s7	a	rdf:Statement	;
+	rdfs:label	"we develop an expressive faceted interface for semistructured data"	.
+
+local:s6	a	rdf:Statement	;
+	rdfs:label	"we formally show the improvement over existing interfaces"	.
+
+local:s5	a	rdf:Statement	;
+	rdfs:label	"current faceted interfaces limited query expressiveness"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"current faceted interfaces manually constructed"	.
+
+local:s3.1	a	rdf:Statement	;
+	rdfs:label	"such data partitioning the information space into orthogonal conceptual dimensions"	.
+
+local:s3	a	rdf:Statement	;
+	rdfs:label	"faceted browsing navigating such data partitioning the information space into orthogonal conceptual dimensions"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"fixed schema"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"data on the semantic web not follow one"	.
+
+
 #### Classes ####
 
-local:semantic	rdfs:label	"semantic"	.
+local:usability	a	rdf:Class	;
+	rdfs:label	"usability"	.
 
-local:semantic_web	rdfs:label	"semantic web"	.
+local:improve	a	rdf:Class	;
+	rdfs:label	"improve"	.
 
-local:web	rdfs:label	"web"	.
+local:experimental_evaluation	a	rdf:Class	;
+	rdfs:label	"experimental evaluation"	.
 
-local:data_on_semantic_web	rdfs:label	"data on semantic web"	.
+local:evaluation	a	rdf:Class	;
+	rdfs:label	"evaluation"	.
 
-local:data	rdfs:label	"data"	.
+local:experimental	a	rdf:Class	;
+	rdfs:label	"experimental"	.
 
-local:follow	rdfs:label	"follow"	.
+local:show	a	rdf:Class	;
+	rdfs:label	"show"	.
 
-local:not	rdfs:label	"not"	.
+local:improved_usability_over_current_interfaces	a	rdf:Class	;
+	rdfs:label	"improved usability over current interfaces"	.
 
-local:one	rdfs:label	"one"	.
+local:current_interfaces	a	rdf:Class	;
+	rdfs:label	"current interfaces"	.
 
-local:fixed	rdfs:label	"fixed"	.
+local:current	a	rdf:Class	;
+	rdfs:label	"current"	.
 
-local:schema	rdfs:label	"schema"	.
+local:interfaces	a	rdf:Class	;
+	rdfs:label	"interfaces"	.
 
-local:orthogonal	rdfs:label	"orthogonal"	.
+local:we	a	rdf:Class	;
+	rdfs:label	"we"	.
 
-local:orthogonal_conceptual	rdfs:label	"orthogonal conceptual"	.
+local:develop	a	rdf:Class	;
+	rdfs:label	"develop"	.
 
-local:conceptual_dimensions	rdfs:label	"conceptual dimensions"	.
+local:rdf	a	rdf:Class	;
+	rdfs:label	"rdf"	.
 
-local:dimensions	rdfs:label	"dimensions"	.
+local:metrics_for_automatic_ranking_of_facet_quality	a	rdf:Class	;
+	rdfs:label	"metrics for automatic ranking of facet quality"	.
 
-local:information_space	rdfs:label	"information space"	.
+local:facet_quality	a	rdf:Class	;
+	rdfs:label	"facet quality"	.
 
-local:space	rdfs:label	"space"	.
+local:automatic_ranking	a	rdf:Class	;
+	rdfs:label	"automatic ranking"	.
 
-local:information	rdfs:label	"information"	.
+local:metrics	a	rdf:Class	;
+	rdfs:label	"metrics"	.
 
-local:orthogonal_conceptual_dimensions	rdfs:label	"orthogonal conceptual dimensions"	.
+local:ranking	a	rdf:Class	;
+	rdfs:label	"ranking"	.
 
-local:conceptual	rdfs:label	"conceptual"	.
+local:facet	a	rdf:Class	;
+	rdfs:label	"facet"	.
 
-local:partitioning_into_orthogonal_conceptual_dimensions	rdfs:label	"partitioning into orthogonal conceptual dimensions"	.
+local:quality	a	rdf:Class	;
+	rdfs:label	"quality"	.
 
-local:partitioning	rdfs:label	"partitioning"	.
+local:automatic	a	rdf:Class	;
+	rdfs:label	"automatic"	.
 
-local:navigating	rdfs:label	"navigating"	.
+local:metrics_for_automatic_ranking	a	rdf:Class	;
+	rdfs:label	"metrics for automatic ranking"	.
 
-local:information_space_into_orthogonal_conceptual_dimensions	rdfs:label	"information space into orthogonal conceptual dimensions"	.
+local:automatic_ranking_of_facet_quality	a	rdf:Class	;
+	rdfs:label	"automatic ranking of facet quality"	.
 
-local:faceted_interfaces	rdfs:label	"faceted interfaces"	.
+local:bypass	a	rdf:Class	;
+	rdfs:label	"bypass"	.
 
-local:interfaces	rdfs:label	"interfaces"	.
+local:need_for_manual_construction_of_the_interface	a	rdf:Class	;
+	rdfs:label	"need for manual construction of the interface"	.
 
-local:current_faceted_interfaces	rdfs:label	"current faceted interfaces"	.
+local:manual_construction	a	rdf:Class	;
+	rdfs:label	"manual construction"	.
 
-local:limited	rdfs:label	"limited"	.
+local:need	a	rdf:Class	;
+	rdfs:label	"need"	.
 
-local:query_expressiveness	rdfs:label	"query expressiveness"	.
+local:interface	a	rdf:Class	;
+	rdfs:label	"interface"	.
 
-local:expressiveness	rdfs:label	"expressiveness"	.
+local:construction	a	rdf:Class	;
+	rdfs:label	"construction"	.
 
-local:query	rdfs:label	"query"	.
+local:manual	a	rdf:Class	;
+	rdfs:label	"manual"	.
 
-local:develop	rdfs:label	"develop"	.
+local:need_for_manual_construction	a	rdf:Class	;
+	rdfs:label	"need for manual construction"	.
 
-local:we	rdfs:label	"we"	.
+local:manual_construction_of_interface	a	rdf:Class	;
+	rdfs:label	"manual construction of interface"	.
 
-local:semistructured_data	rdfs:label	"semi-structured data"	.
+local:secondly	a	rdf:Class	;
+	rdfs:label	"secondly"	.
 
-local:semistructured	rdfs:label	"semi-structured"	.
+local:expressive_faceted_interface	a	rdf:Class	;
+	rdfs:label	"expressive faceted interface"	.
 
-local:faceted_interface	rdfs:label	"faceted interface"	.
+local:faceted_interface	a	rdf:Class	;
+	rdfs:label	"faceted interface"	.
 
-local:interface	rdfs:label	"interface"	.
+local:semistructured_data	a	rdf:Class	;
+	rdfs:label	"semistructured data"	.
 
-local:expressive_faceted_interface	rdfs:label	"expressive faceted interface"	.
+local:data	a	rdf:Class	;
+	rdfs:label	"data"	.
 
-local:expressive_faceted_interface_for_semistructured_data	rdfs:label	"expressive faceted interface for semi-structured data"	.
+local:improvement_over_existing_interfaces	a	rdf:Class	;
+	rdfs:label	"improvement over existing interfaces"	.
 
-local:show	rdfs:label	"show"	.
+local:improvement	a	rdf:Class	;
+	rdfs:label	"improvement"	.
 
-local:formally	rdfs:label	"formally"	.
+local:existing_interfaces	a	rdf:Class	;
+	rdfs:label	"existing interfaces"	.
 
-local:existing_interfaces	rdfs:label	"existing interfaces"	.
+local:formally	a	rdf:Class	;
+	rdfs:label	"formally"	.
 
-local:improvement_over_existing_interfaces	rdfs:label	"improvement over existing interfaces"	.
+local:current_faceted_interfaces	a	rdf:Class	;
+	rdfs:label	"current faceted interfaces"	.
 
-local:improvement	rdfs:label	"improvement"	.
+local:faceted_interfaces	a	rdf:Class	;
+	rdfs:label	"faceted interfaces"	.
 
-local:existing	rdfs:label	"existing"	.
+local:limit	a	rdf:Class	;
+	rdfs:label	"limit"	.
 
-local:facet	rdfs:label	"facet"	.
+local:query_expressiveness	a	rdf:Class	;
+	rdfs:label	"query expressiveness"	.
 
-local:facet_quality	rdfs:label	"facet quality"	.
+local:query	a	rdf:Class	;
+	rdfs:label	"query"	.
 
-local:quality	rdfs:label	"quality"	.
+local:expressiveness	a	rdf:Class	;
+	rdfs:label	"expressiveness"	.
 
-local:automatic	rdfs:label	"automatic"	.
+local:construct	a	rdf:Class	;
+	rdfs:label	"construct"	.
 
-local:automatic_ranking	rdfs:label	"automatic ranking"	.
+local:manually	a	rdf:Class	;
+	rdfs:label	"manually"	.
 
-local:ranking	rdfs:label	"ranking"	.
+local:partition	a	rdf:Class	;
+	rdfs:label	"partition"	.
 
-local:metrics_for_automatic_ranking	rdfs:label	"metrics for automatic ranking"	.
+local:information_space_into_orthogonal_conceptual_dimensions	a	rdf:Class	;
+	rdfs:label	"information space into orthogonal conceptual dimensions"	.
 
-local:metrics	rdfs:label	"metrics"	.
+local:information_space	a	rdf:Class	;
+	rdfs:label	"information space"	.
 
-local:automatic_ranking_of_facet_quality	rdfs:label	"automatic ranking of facet quality"	.
+local:orthogonal_conceptual_dimensions	a	rdf:Class	;
+	rdfs:label	"orthogonal conceptual dimensions"	.
 
-local:bypassing	rdfs:label	"bypassing"	.
+local:dimensions	a	rdf:Class	;
+	rdfs:label	"dimensions"	.
 
-local:manual	rdfs:label	"manual"	.
+local:information	a	rdf:Class	;
+	rdfs:label	"information"	.
 
-local:manual_construction	rdfs:label	"manual construction"	.
+local:space	a	rdf:Class	;
+	rdfs:label	"space"	.
 
-local:construction	rdfs:label	"construction"	.
+local:conceptual_dimensions	a	rdf:Class	;
+	rdfs:label	"conceptual dimensions"	.
 
-local:need_for_manual_construction	rdfs:label	"need for manual construction"	.
+local:conceptual	a	rdf:Class	;
+	rdfs:label	"conceptual"	.
 
-local:need	rdfs:label	"need"	.
+local:orthogonal_conceptual	a	rdf:Class	;
+	rdfs:label	"orthogonal conceptual"	.
 
-local:manual_construction_of_interface	rdfs:label	"manual construction of interface"	.
+local:orthogonal	a	rdf:Class	;
+	rdfs:label	"orthogonal"	.
 
-local:rdf	rdfs:label	"rdf"	.
+local:faceted_browsing	a	rdf:Class	;
+	rdfs:label	"faceted browsing"	.
 
-local:experimental_evaluation	rdfs:label	"experimental evaluation"	.
+local:browsing	a	rdf:Class	;
+	rdfs:label	"browsing"	.
 
-local:evaluation	rdfs:label	"evaluation"	.
+local:navigate	a	rdf:Class	;
+	rdfs:label	"navigate"	.
 
-local:experimental	rdfs:label	"experimental"	.
+local:data_partitioning_the_information_space_into_orthogonal_conceptual_dimensions	a	rdf:Class	;
+	rdfs:label	"data partitioning the information space into orthogonal conceptual dimensions"	.
 
-local:shows	rdfs:label	"shows"	.
+local:data_partitioning	a	rdf:Class	;
+	rdfs:label	"data partitioning"	.
 
-local:current	rdfs:label	"current"	.
+local:partitioning	a	rdf:Class	;
+	rdfs:label	"partitioning"	.
 
-local:current_interfaces	rdfs:label	"current interfaces"	.
+local:partitioning_into_orthogonal_conceptual_dimensions	a	rdf:Class	;
+	rdfs:label	"partitioning into orthogonal conceptual dimensions"	.
 
-local:improved_usability	rdfs:label	"improved usability"	.
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
 
-local:usability	rdfs:label	"usability"	.
+local:fix	a	rdf:Class	;
+	rdfs:label	"fix"	.
 
-local:improved_usability_over_current_interfaces	rdfs:label	"improved usability over current interfaces"	.
+local:data_on_the_semantic_web	a	rdf:Class	;
+	rdfs:label	"data on the semantic web"	.
 
-local:improved	rdfs:label	"improved"	.
+local:semantic_web	a	rdf:Class	;
+	rdfs:label	"semantic web"	.
 
-#### Properties ####
+local:semantic	a	rdf:Class	;
+	rdfs:label	"semantic"	.
+
+local:web	a	rdf:Class	;
+	rdfs:label	"web"	.
+
+local:data_on_semantic_web	a	rdf:Class	;
+	rdfs:label	"data on semantic web"	.
+
+local:not_follow	a	rdf:Class	;
+	rdfs:label	"not follow"	.
+
+local:one	a	rdf:Class	;
+	rdfs:label	"one"	.
 
 #### Mapped Relations ####
 
-local:semantic_web	owl:sameAs	cso:semantic_web	.
 cso:semantic_web	rdfs:label	"semantic web"	.
-cso:rdf	rdfs:label	"rdf"	.
-local:rdf	owl:sameAs	cso:rdf	.
+local:semantic_web	owl:sameAs	cso:semantic_web	.
 
 #### Relations ####
 
-local:need_for_manual_construction	local:need_for	local:manual_construction	.
-local:fixed	vn.role:Agent	local:one	.
-local:partitioning_into_orthogonal_conceptual_dimensions	local:into_orthogonalconceptualdimensions	local:partitioning	.
-local:conceptual	rdfs:member	local:conceptual_dimensions	.
-local:orthogonal_conceptual	rdfs:member	local:orthogonal_conceptual_dimensions	.
-local:develop	vn.role:Location	local:expressive_faceted_interface_for_semistructured_data	.
-local:expressive_faceted_interface_for_semistructured_data	local:for_semi-structureddata	local:expressive_faceted_interface	.
-local:conceptual_dimensions	rdfs:subClassOf	local:dimensions	.
-local:improvement_over_existing_interfaces	local:improvement_over	local:existing_interfaces	.
-local:develop	vn.role:Location	local:rdf	.
-local:information_space_into_orthogonal_conceptual_dimensions	local:into_orthogonalconceptualdimensions	local:information_space	.
-local:manual_construction_of_interface	local:manualconstruction_of	local:interface	.
-local:metrics_for_automatic_ranking	local:for_automaticranking	local:metrics	.
-local:automatic_ranking_of_facet_quality	local:of_facetquality	local:automatic_ranking	.
-local:navigating	vn.role:Theme	local:data	.
-local:query	rdfs:member	local:query_expressiveness	.
-local:semantic	rdfs:member	local:semantic_web	.
-local:existing_interfaces	rdfs:subClassOf	local:interfaces	.
-local:metrics_for_automatic_ranking	local:metrics_for	local:automatic_ranking	.
-local:follow	local:AM-NEG	local:not	.
-local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
-local:improved_usability_over_current_interfaces	local:over_currentinterfaces	local:improved_usability	.
-local:information	rdfs:member	local:information_space	.
-local:show	local:AM-MNR	local:formally	.
-local:bypassing	vn.role:Theme	local:need_for_manual_construction	.
-local:develop	vn.role:Theme	local:we	.
-local:automatic	rdfs:member	local:automatic_ranking	.
-local:show	vn.role:Agent	local:we	.
-local:semistructured	rdfs:member	local:semistructured_data	.
-local:data_on_semantic_web	local:on_semanticweb	local:data	.
-local:partitioning	vn.role:Agent	local:data	.
-local:partitioning	vn.role:Patient	local:information_space_into_orthogonal_conceptual_dimensions	.
-local:manual	rdfs:member	local:manual_construction	.
-local:automatic_ranking_of_facet_quality	local:automaticranking_of	local:facet_quality	.
-local:faceted_interface	rdfs:subClassOf	local:interface	.
-local:develop	vn.role:Location	local:metrics_for_automatic_ranking	.
-local:improved	vn.role:Patient	local:usability	.
-local:data_on_semantic_web	local:data_on	local:semantic_web	.
-local:follow	vn.role:Location	local:one	.
-local:faceted_interfaces	rdfs:subClassOf	local:interfaces	.
-local:automatic_ranking	rdfs:subClassOf	local:ranking	.
-local:orthogonal_conceptual_dimensions	rdfs:subClassOf	local:dimensions	.
+local:data_partitioning	rdfs:member	local:data	.
 local:orthogonal_conceptual_dimensions	rdfs:subClassOf	local:conceptual_dimensions	.
-local:current	rdfs:member	local:current_interfaces	.
-local:improved_usability	rdfs:subClassOf	local:usability	.
-local:expressive_faceted_interface_for_semistructured_data	local:expressivefacetedinterface_for	local:semistructured_data	.
-local:information_space_into_orthogonal_conceptual_dimensions	local:informationspace_into	local:orthogonal_conceptual_dimensions	.
-local:follow	vn.role:Theme	local:data_on_semantic_web	.
-local:manual_construction	rdfs:subClassOf	local:construction	.
-local:semistructured_data	rdfs:subClassOf	local:data	.
-local:fixed	vn.role:Product	local:schema	.
-local:facet_quality	rdfs:subClassOf	local:quality	.
-local:bypassing	vn.role:Agent	local:metrics_for_automatic_ranking	.
-local:partitioning_into_orthogonal_conceptual_dimensions	local:partitioning_into	local:orthogonal_conceptual_dimensions	.
-local:shows	vn.role:Agent	local:experimental_evaluation	.
-local:current_faceted_interfaces	rdfs:subClassOf	local:faceted_interfaces	.
-local:orthogonal	rdfs:member	local:orthogonal_conceptual	.
-local:limited	vn.role:Patient	local:query_expressiveness	.
-local:limited	vn.role:Cause	local:current_faceted_interfaces	.
-local:query_expressiveness	rdfs:subClassOf	local:expressiveness	.
-local:facet	rdfs:member	local:facet_quality	.
-local:need_for_manual_construction	local:for_manualconstruction	local:need	.
-local:improved_usability_over_current_interfaces	local:improvedusability_over	local:current_interfaces	.
-local:shows	vn.role:Theme	local:improved_usability_over_current_interfaces	.
-local:show	vn.role:Theme	local:improvement_over_existing_interfaces	.
-local:expressive_faceted_interface	rdfs:subClassOf	local:faceted_interface	.
-local:experimental	rdfs:member	local:experimental_evaluation	.
-local:existing	vn.role:Location	local:interfaces	.
+local:automatic_ranking_of_facet_quality	rdfs:member	local:automatic_ranking	.
+local:s3.1	rdf:object	local:information_space_into_orthogonal_conceptual_dimensions	.
+local:s3.1	rdf:subject	local:data	.
+local:conceptual_dimensions	rdfs:subClassOf	local:dimensions	.
+local:partitioning_into_orthogonal_conceptual_dimensions	rdfs:member	local:orthogonal_conceptual_dimensions	.
+local:faceted_interface	rdfs:subClassOf	local:interface	.
+local:s0	rdf:subject	local:data_on_the_semantic_web	.
+local:s8	rdf:predicate	local:develop	.
+local:metrics_for_automatic_ranking	rdfs:member	local:metrics	.
+local:improvement_over_existing_interfaces	rdfs:member	local:improvement	.
 local:information_space	rdfs:subClassOf	local:space	.
-local:orthogonal_conceptual	rdfs:subClassOf	local:conceptual	.
+local:semantic_web	rdfs:member	local:semantic	.
+local:faceted_browsing	rdfs:subClassOf	local:browsing	.
+local:s5	rdf:object	local:query_expressiveness	.
+local:improvement_over_existing_interfaces	rdfs:member	local:existing_interfaces	.
+local:s7	rdf:subject	local:we	.
+local:s0	rdf:object	local:one	.
+local:need_for_manual_construction	rdfs:member	local:manual_construction	.
+local:current_faceted_interfaces	rdfs:member	local:current	.
+local:query_expressiveness	rdfs:member	local:query	.
+local:s3	rdf:predicate	local:navigate	.
+local:s5	rdf:subject	local:current_faceted_interfaces	.
+local:s3	rdf:subject	local:faceted_browsing	.
+local:s6	rdf:predicate	local:show	.
+local:s11	rdf:object	local:improved_usability_over_current_interfaces	.
+local:improved_usability_over_current_interfaces	rdfs:member	local:current_interfaces	.
+local:automatic_ranking_of_facet_quality	rdfs:member	local:facet_quality	.
+local:manual_construction	rdfs:subClassOf	local:construction	.
 local:current_interfaces	rdfs:subClassOf	local:interfaces	.
+local:information_space_into_orthogonal_conceptual_dimensions	rdfs:member	local:orthogonal_conceptual_dimensions	.
+local:manual_construction_of_interface	rdfs:member	local:manual_construction	.
+local:s11.1	rdfs:subClassOf	local:usability	.
+local:orthogonal_conceptual_dimensions	rdfs:member	local:orthogonal_conceptual	.
+local:current_interfaces	rdfs:member	local:current	.
+local:facet_quality	rdfs:member	local:facet	.
+local:automatic_ranking	rdfs:member	local:automatic	.
+local:data_on_semantic_web	rdfs:member	local:semantic_web	.
+local:improved_usability_over_current_interfaces	rdfs:member	local:s11.1	.
+local:need_for_manual_construction_of_the_interface	rdfs:member	local:interface	.
+local:improved_usability_over_current_interfaces	rdfs:member	local:usability	.
+local:experimental_evaluation	rdfs:subClassOf	local:evaluation	.
+local:information_space	rdfs:member	local:information	.
+local:s6	rdf:object	local:improvement_over_existing_interfaces	.
+local:s1	rdf:subject	local:schema	.
+local:s8	rdf:object	local:metrics_for_automatic_ranking_of_facet_quality	.
+local:orthogonal_conceptual_dimensions	rdfs:subClassOf	local:dimensions	.
+local:current_faceted_interfaces	rdfs:subClassOf	local:faceted_interfaces	.
+local:manual_construction_of_interface	rdfs:member	local:interface	.
+local:metrics_for_automatic_ranking	rdfs:member	local:automatic_ranking	.
+local:metrics_for_automatic_ranking_of_facet_quality	rdfs:member	local:automatic_ranking	.
+local:s1	rdf:predicate	local:fix	.
+local:manual_construction	rdfs:member	local:manual	.
+local:existing_interfaces	rdfs:subClassOf	local:interfaces	.
+local:query_expressiveness	rdfs:subClassOf	local:expressiveness	.
+local:data_partitioning	rdfs:member	local:partitioning	.
+local:metrics_for_automatic_ranking_of_facet_quality	rdfs:member	local:metrics	.
+local:s7	local:AM-PNC	local:semistructured_data	.
+local:facet_quality	rdfs:subClassOf	local:quality	.
+local:partitioning_into_orthogonal_conceptual_dimensions	rdfs:member	local:partitioning	.
+local:s7	rdf:object	local:expressive_faceted_interface	.
+local:expressive_faceted_interface	rdfs:subClassOf	local:faceted_interface	.
+local:data_on_semantic_web	rdfs:member	local:data	.
+local:s7	rdf:predicate	local:develop	.
+local:s10	rdf:object	local:rdf	.
+local:s5	rdf:predicate	local:limit	.
+local:metrics_for_automatic_ranking_of_facet_quality	rdfs:member	local:facet_quality	.
+local:s10	rdf:subject	local:we	.
+local:data_on_the_semantic_web	rdfs:member	local:semantic_web	.
+local:s6	local:AM-MNR	local:formally	.
+local:s11.1	rdf:subject	local:usability	.
+local:s9	rdf:object	local:need_for_manual_construction_of_the_interface	.
+local:need_for_manual_construction	rdfs:member	local:need	.
+local:s3	rdf:object	local:data_partitioning_the_information_space_into_orthogonal_conceptual_dimensions	.
 local:semantic_web	rdfs:subClassOf	local:web	.
-local:improvement_over_existing_interfaces	local:over_existinginterfaces	local:improvement	.
-local:manual_construction_of_interface	local:of_interface	local:manual_construction	.
+local:s8	rdf:subject	local:we	.
+local:current_faceted_interfaces	rdfs:member	local:interfaces	.
+local:need_for_manual_construction_of_the_interface	rdfs:member	local:need	.
+local:data_partitioning_the_information_space_into_orthogonal_conceptual_dimensions	rdfs:member	local:information_space	.
+local:orthogonal_conceptual	rdfs:subClassOf	local:conceptual	.
+local:data_partitioning_the_information_space_into_orthogonal_conceptual_dimensions	rdfs:member	local:orthogonal_conceptual_dimensions	.
+local:information_space_into_orthogonal_conceptual_dimensions	rdfs:member	local:information_space	.
+local:experimental_evaluation	rdfs:member	local:experimental	.
+local:s8	local:AM-TMP	local:secondly	.
+local:improvement_over_existing_interfaces	rdfs:member	local:interfaces	.
+local:data_partitioning_the_information_space_into_orthogonal_conceptual_dimensions	rdfs:member	local:data	.
+local:conceptual_dimensions	rdfs:member	local:conceptual	.
+local:s11.1	rdf:predicate	local:improve	.
+local:s11	rdf:predicate	local:show	.
+local:s11	rdf:subject	local:experimental_evaluation	.
+local:need_for_manual_construction_of_the_interface	rdfs:member	local:manual_construction	.
+local:s9	rdf:subject	local:metrics_for_automatic_ranking_of_facet_quality	.
+local:s0	rdf:predicate	local:not_follow	.
+local:s4	local:AM-MNR	local:manually	.
+local:s10	rdf:predicate	local:develop	.
+local:s4	rdf:subject	local:current_faceted_interfaces	.
+local:s4	rdf:predicate	local:construct	.
+local:automatic_ranking	rdfs:subClassOf	local:ranking	.
+local:s9	rdf:predicate	local:bypass	.
+local:orthogonal_conceptual	rdfs:member	local:orthogonal	.
+local:semistructured_data	rdfs:subClassOf	local:data	.
+local:data_on_the_semantic_web	rdfs:member	local:data	.
+local:faceted_interfaces	rdfs:subClassOf	local:interfaces	.
+local:s6	rdf:subject	local:we	.
+local:s3.1	rdf:predicate	local:partition	.
