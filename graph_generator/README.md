@@ -2,6 +2,9 @@
 
 Generates a PNG file from a Turtle RDF file.
 
--- usage: python3 generator.py -h
+## Running:
 
-( ex: python3 generator.py text_kg.ttl -v )
+```bash
+$ python3 generator.py text_preprocessed_kg.ttl
+```
+(syntax: python3 generator.py -h)

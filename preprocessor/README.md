@@ -7,6 +7,9 @@ Unstructured text preprocessing.
 - Abbreviation resolution
 - Sentence simplification
 
--- usage: python3 preprocessor.py -h
+## Running:
 
-( ex: python3 preprocessor.py text.txt -v )
+```bash
+$ python3 preprocessor.py text.txt
+```
+(syntax: python3 preprocessor.py -h)

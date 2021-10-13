@@ -6,6 +6,9 @@ Facts identification and extraction, in form of subject, predicate, and object t
   systems, or through Semantic Role Labeling.
 - Secondary facts (related to noun phrases), through dependency parsing.
 
--- usage: python3 extractor.py -h
+## Running:
 
-( ex: python3 extractor.py text.txt -p senna -s -v )
+```bash
+$ python3 extractor.py text_preprocessed.txt -p senna -s
+```
+(syntax: python3 extractor.py -h)
