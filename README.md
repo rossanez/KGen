@@ -24,7 +24,7 @@ $ python3 pipeline.py text.txt -p senna -s -k cso -ng
 
 ```bash
 $ cd preprocessor
-$ python3 preprocessor.py
+$ python3 preprocessor.py text.txt
 ```
 (syntax: python3 preprocessor.py -h)
 
