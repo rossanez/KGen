@@ -20,8 +20,10 @@ class Linker:
 
         with open(input_filename, 'r') as input_file:
             contents = input_file.read()
-
             input_file.close()
+        # Some preprocessing
+        contents = NLPUtils.infinitize(contents)
+        contents = NLPUtils.lemmatize(contents)
 
         if umls:
             prefixes, entities, relations, links = KnowledgeBases(k_base).query(contents, verbose)

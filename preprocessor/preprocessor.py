@@ -56,7 +56,7 @@ class Preprocessor:
 
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:
-            output_file.write(contents)
+            output_file.write(contents.lower())
             output_file.close()
 
         print('Preprocessed text stored at {}'.format(output_filename))

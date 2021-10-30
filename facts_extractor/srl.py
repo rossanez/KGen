@@ -57,6 +57,8 @@ class SemanticRoleLabeler:
                             while NLPUtils.is_stopword(split[0]) and len(split) > 1:
                                 s = s.split(' ', 1)[1]
                                 split = s.split(' ')
+                            s = NLPUtils.infinitize(s)
+                            s = NLPUtils.lemmatize(s)
 
                             statement.add_other('local:{}'.format(pred_arg[0]), s)
 
@@ -74,6 +76,8 @@ class SemanticRoleLabeler:
                             while NLPUtils.is_stopword(split[0]) and len(split) > 1:
                                 s = s.split(' ', 1)[1]
                                 split = s.split(' ')
+                            s = NLPUtils.infinitize(s)
+                            s = NLPUtils.lemmatize(s)
 
                             role_index = int(pred_arg[0][-1])
                             if role_index == 0:
