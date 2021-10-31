@@ -19,7 +19,7 @@ local:s13.1	a	rdf:Statement	;
 	rdfs:label	"allowed occurrences of a property"	.
 
 local:s13	a	rdf:Statement	;
-	rdfs:label	"the language includes cardinality constraints for the number of allowed occurrences of a property"	.
+	rdfs:label	"the language includes a choice operator for the number of allowed occurrences of a property"	.
 
 local:s12.1	a	rdf:Statement	;
 	rdfs:label	"an algebraic grouping operator allowed occurrences of a property"	.
@@ -31,7 +31,7 @@ local:s11.1	a	rdf:Statement	;
 	rdfs:label	"allowed occurrences of a property"	.
 
 local:s11	a	rdf:Statement	;
-	rdfs:label	"the language includes a choice operator for the number of allowed occurrences of a property"	.
+	rdfs:label	"the language includes cardinality constraints for the number of allowed occurrences of a property"	.
 
 local:s10	a	rdf:Statement	;
 	rdfs:label	"the language defines a typing mechanism"	.
@@ -43,10 +43,10 @@ local:s9	a	rdf:Statement	;
 	rdfs:label	"a typing mechanism called shapes against which nodes of the graph can be checked"	.
 
 local:s8.1	a	rdf:Statement	;
-	rdfs:label	"constrain the admissible properties for nodes in that graph"	.
+	rdfs:label	"describe the structure of an rdf graph"	.
 
 local:s8	a	rdf:Statement	;
-	rdfs:label	"it can used to constrain the admissible properties for nodes in that graph"	.
+	rdfs:label	"it can used to describe the structure of an rdf graph"	.
 
 local:s7.1	a	rdf:Statement	;
 	rdfs:label	"constrain the admissible values for nodes in that graph"	.
@@ -55,25 +55,25 @@ local:s7	a	rdf:Statement	;
 	rdfs:label	"it can used to constrain the admissible values for nodes in that graph"	.
 
 local:s6.1	a	rdf:Statement	;
-	rdfs:label	"describe the structure of an rdf graph"	.
-
-local:s6	a	rdf:Statement	;
-	rdfs:label	"it can used to describe the structure of an rdf graph"	.
-
-local:s5.1	a	rdf:Statement	;
 	rdfs:label	"describe the vocabulary"	.
 
-local:s5	a	rdf:Statement	;
+local:s6	a	rdf:Statement	;
 	rdfs:label	"it can used to describe the vocabulary"	.
 
-local:s3	a	rdf:Statement	;
-	rdfs:label	"we present a formal semantics for an expressive schema language for rdf graphs"	.
+local:s5.1	a	rdf:Statement	;
+	rdfs:label	"constrain the admissible properties for nodes in that graph"	.
 
-local:s2	a	rdf:Statement	;
+local:s5	a	rdf:Statement	;
+	rdfs:label	"it can used to constrain the admissible properties for nodes in that graph"	.
+
+local:s4	a	rdf:Statement	;
+	rdfs:label	"we present proof of soundness for shapes schemas"	.
+
+local:s3	a	rdf:Statement	;
 	rdfs:label	"we present a formal semantics for shapes schemas"	.
 
-local:s1	a	rdf:Statement	;
-	rdfs:label	"we present proof of soundness for shapes schemas"	.
+local:s2	a	rdf:Statement	;
+	rdfs:label	"we present a formal semantics for an expressive schema language for rdf graphs"	.
 
 local:s0	a	rdf:Statement	;
 	rdfs:label	"we present proof of soundness for an expressive schema language for rdf graphs"	.
@@ -81,29 +81,29 @@ local:s0	a	rdf:Statement	;
 
 #### Classes ####
 
-local:shapes	a	rdf:Class	;
-	rdfs:label	"shapes"	.
+local:shape	a	rdf:Class	;
+	rdfs:label	"shape"	.
 
 local:use	a	rdf:Class	;
 	rdfs:label	"use"	.
 
-local:possibly_recursive_references_to_other_shapes	a	rdf:Class	;
-	rdfs:label	"possibly recursive references to other shapes"	.
+local:possibly_recursive_reference_to_other_shape	a	rdf:Class	;
+	rdfs:label	"possibly recursive reference to other shape"	.
 
-local:other_shapes	a	rdf:Class	;
-	rdfs:label	"other shapes"	.
+local:other_shape	a	rdf:Class	;
+	rdfs:label	"other shape"	.
 
-local:possibly_recursive_references	a	rdf:Class	;
-	rdfs:label	"possibly recursive references"	.
-
-local:recursive_references	a	rdf:Class	;
-	rdfs:label	"recursive references"	.
-
-local:references	a	rdf:Class	;
-	rdfs:label	"references"	.
+local:possibly_recursive_reference	a	rdf:Class	;
+	rdfs:label	"possibly recursive reference"	.
 
 local:other	a	rdf:Class	;
 	rdfs:label	"other"	.
+
+local:recursive_reference	a	rdf:Class	;
+	rdfs:label	"recursive reference"	.
+
+local:reference	a	rdf:Class	;
+	rdfs:label	"reference"	.
 
 local:possibly_recursive	a	rdf:Class	;
 	rdfs:label	"possibly recursive"	.
@@ -114,95 +114,53 @@ local:possibly	a	rdf:Class	;
 local:recursive	a	rdf:Class	;
 	rdfs:label	"recursive"	.
 
-local:recursive_references_to_other_shapes	a	rdf:Class	;
-	rdfs:label	"recursive references to other shapes"	.
+local:recursive_reference_to_other_shape	a	rdf:Class	;
+	rdfs:label	"recursive reference to other shape"	.
 
 local:can	a	rdf:Class	;
 	rdfs:label	"can"	.
 
-local:boolean_operators	a	rdf:Class	;
-	rdfs:label	"boolean operators"	.
+local:boolean_operator	a	rdf:Class	;
+	rdfs:label	"boolean operator"	.
 
 local:boolean	a	rdf:Class	;
 	rdfs:label	"boolean"	.
 
-local:operators	a	rdf:Class	;
-	rdfs:label	"operators"	.
+local:operator	a	rdf:Class	;
+	rdfs:label	"operator"	.
 
 local:combine	a	rdf:Class	;
 	rdfs:label	"combine"	.
 
-local:using_boolean_operators	a	rdf:Class	;
-	rdfs:label	"using boolean operators"	.
+local:use_boolean_operator	a	rdf:Class	;
+	rdfs:label	"use boolean operator"	.
 
-local:occurrences_of_a_property	a	rdf:Class	;
-	rdfs:label	"occurrences of a property"	.
+local:use_boolean	a	rdf:Class	;
+	rdfs:label	"use boolean"	.
 
-local:occurrences	a	rdf:Class	;
-	rdfs:label	"occurrences"	.
+local:occurrence_of_a_property	a	rdf:Class	;
+	rdfs:label	"occurrence of a property"	.
 
 local:property	a	rdf:Class	;
 	rdfs:label	"property"	.
 
-local:occurrences_of_property	a	rdf:Class	;
-	rdfs:label	"occurrences of property"	.
+local:occurrence	a	rdf:Class	;
+	rdfs:label	"occurrence"	.
+
+local:occurrence_of_property	a	rdf:Class	;
+	rdfs:label	"occurrence of property"	.
 
 local:allow	a	rdf:Class	;
 	rdfs:label	"allow"	.
 
-local:cardinality_constraints_for_the_number_of_allowed_occurrences_of_a_property	a	rdf:Class	;
-	rdfs:label	"cardinality constraints for the number of allowed occurrences of a property"	.
-
-local:allowed_occurrences	a	rdf:Class	;
-	rdfs:label	"allowed occurrences"	.
+local:choice_operator_for_the_number_of_allow_occurrence_of_a_property	a	rdf:Class	;
+	rdfs:label	"choice operator for the number of allow occurrence of a property"	.
 
 local:number	a	rdf:Class	;
 	rdfs:label	"number"	.
 
-local:cardinality_constraints	a	rdf:Class	;
-	rdfs:label	"cardinality constraints"	.
-
-local:cardinality	a	rdf:Class	;
-	rdfs:label	"cardinality"	.
-
-local:constraints	a	rdf:Class	;
-	rdfs:label	"constraints"	.
-
-local:allowed	a	rdf:Class	;
-	rdfs:label	"allowed"	.
-
-local:cardinality_constraints_for_number	a	rdf:Class	;
-	rdfs:label	"cardinality constraints for number"	.
-
-local:number_of_allowed_occurrences	a	rdf:Class	;
-	rdfs:label	"number of allowed occurrences"	.
-
-local:allowed_occurrences_of_property	a	rdf:Class	;
-	rdfs:label	"allowed occurrences of property"	.
-
-local:include	a	rdf:Class	;
-	rdfs:label	"include"	.
-
-local:language	a	rdf:Class	;
-	rdfs:label	"language"	.
-
-local:algebraic_grouping_operator	a	rdf:Class	;
-	rdfs:label	"algebraic grouping operator"	.
-
-local:grouping_operator	a	rdf:Class	;
-	rdfs:label	"grouping operator"	.
-
-local:operator	a	rdf:Class	;
-	rdfs:label	"operator"	.
-
-local:algebraic_grouping_operator_for_the_number_of_allowed_occurrences_of_a_property	a	rdf:Class	;
-	rdfs:label	"algebraic grouping operator for the number of allowed occurrences of a property"	.
-
-local:algebraic_grouping_operator_for_number	a	rdf:Class	;
-	rdfs:label	"algebraic grouping operator for number"	.
-
-local:choice_operator_for_the_number_of_allowed_occurrences_of_a_property	a	rdf:Class	;
-	rdfs:label	"choice operator for the number of allowed occurrences of a property"	.
+local:allow_occurrence	a	rdf:Class	;
+	rdfs:label	"allow occurrence"	.
 
 local:choice_operator	a	rdf:Class	;
 	rdfs:label	"choice operator"	.
@@ -213,92 +171,107 @@ local:choice	a	rdf:Class	;
 local:choice_operator_for_number	a	rdf:Class	;
 	rdfs:label	"choice operator for number"	.
 
+local:include	a	rdf:Class	;
+	rdfs:label	"include"	.
+
+local:language	a	rdf:Class	;
+	rdfs:label	"language"	.
+
+local:algebraic_group_operator	a	rdf:Class	;
+	rdfs:label	"algebraic group operator"	.
+
+local:group_operator	a	rdf:Class	;
+	rdfs:label	"group operator"	.
+
+local:algebraic_group	a	rdf:Class	;
+	rdfs:label	"algebraic group"	.
+
+local:group	a	rdf:Class	;
+	rdfs:label	"group"	.
+
+local:algebraic	a	rdf:Class	;
+	rdfs:label	"algebraic"	.
+
+local:algebraic_group_operator_for_the_number_of_allow_occurrence_of_a_property	a	rdf:Class	;
+	rdfs:label	"algebraic group operator for the number of allow occurrence of a property"	.
+
+local:algebraic_group_operator_for_number	a	rdf:Class	;
+	rdfs:label	"algebraic group operator for number"	.
+
+local:cardinality_constraint_for_the_number_of_allow_occurrence_of_a_property	a	rdf:Class	;
+	rdfs:label	"cardinality constraint for the number of allow occurrence of a property"	.
+
+local:cardinality_constraint	a	rdf:Class	;
+	rdfs:label	"cardinality constraint"	.
+
+local:constraint	a	rdf:Class	;
+	rdfs:label	"constraint"	.
+
+local:cardinality	a	rdf:Class	;
+	rdfs:label	"cardinality"	.
+
+local:cardinality_constraint_for_number	a	rdf:Class	;
+	rdfs:label	"cardinality constraint for number"	.
+
 local:define	a	rdf:Class	;
 	rdfs:label	"define"	.
 
-local:typing_mechanism	a	rdf:Class	;
-	rdfs:label	"typing mechanism"	.
+local:type_mechanism	a	rdf:Class	;
+	rdfs:label	"type mechanism"	.
 
 local:mechanism	a	rdf:Class	;
 	rdfs:label	"mechanism"	.
 
-local:typing_mechanism_called_shapes_against_which_nodes_of_the_graph	a	rdf:Class	;
-	rdfs:label	"typing mechanism called shapes against which nodes of the graph"	.
+local:type	a	rdf:Class	;
+	rdfs:label	"type"	.
+
+local:type_mechanism_call_shape_against_which_nod_of_the_graph	a	rdf:Class	;
+	rdfs:label	"type mechanism call shape against which nod of the graph"	.
+
+local:nod	a	rdf:Class	;
+	rdfs:label	"nod"	.
 
 local:graph	a	rdf:Class	;
 	rdfs:label	"graph"	.
 
-local:nodes	a	rdf:Class	;
-	rdfs:label	"nodes"	.
+local:type_mechanism_call_shape	a	rdf:Class	;
+	rdfs:label	"type mechanism call shape"	.
 
-local:typing_mechanism_called	a	rdf:Class	;
-	rdfs:label	"typing mechanism called"	.
-
-local:called	a	rdf:Class	;
-	rdfs:label	"called"	.
-
-local:typing_mechanism_called_against_which	a	rdf:Class	;
-	rdfs:label	"typing mechanism called against which"	.
-
-local:which	a	rdf:Class	;
-	rdfs:label	"which"	.
-
-local:nodes_of_graph	a	rdf:Class	;
-	rdfs:label	"nodes of graph"	.
-
-local:check	a	rdf:Class	;
-	rdfs:label	"check"	.
+local:call_shape	a	rdf:Class	;
+	rdfs:label	"call shape"	.
 
 local:call	a	rdf:Class	;
 	rdfs:label	"call"	.
 
-local:shapes_against_which_nodes_of_the_graph_can_be_checked	a	rdf:Class	;
-	rdfs:label	"shapes against which nodes of the graph can be checked"	.
+local:type_mechanism_call	a	rdf:Class	;
+	rdfs:label	"type mechanism call"	.
 
-local:can_checked	a	rdf:Class	;
-	rdfs:label	"can checked"	.
+local:mechanism_call	a	rdf:Class	;
+	rdfs:label	"mechanism call"	.
 
-local:checked	a	rdf:Class	;
-	rdfs:label	"checked"	.
+local:mechanism_call_shape	a	rdf:Class	;
+	rdfs:label	"mechanism call shape"	.
 
-local:can_checked_against_shapes	a	rdf:Class	;
-	rdfs:label	"can checked against shapes"	.
+local:type_mechanism_call_shape_against_which	a	rdf:Class	;
+	rdfs:label	"type mechanism call shape against which"	.
 
-local:admissible_properties_for_nodes_in_that_graph	a	rdf:Class	;
-	rdfs:label	"admissible properties for nodes in that graph"	.
+local:which	a	rdf:Class	;
+	rdfs:label	"which"	.
 
-local:admissible_properties	a	rdf:Class	;
-	rdfs:label	"admissible properties"	.
+local:nod_of_graph	a	rdf:Class	;
+	rdfs:label	"nod of graph"	.
 
-local:properties	a	rdf:Class	;
-	rdfs:label	"properties"	.
+local:check	a	rdf:Class	;
+	rdfs:label	"check"	.
 
-local:admissible	a	rdf:Class	;
-	rdfs:label	"admissible"	.
+local:shape_against_which_nod_of_the_graph_can_be_check	a	rdf:Class	;
+	rdfs:label	"shape against which nod of the graph can be check"	.
 
-local:admissible_properties_for_nodes	a	rdf:Class	;
-	rdfs:label	"admissible properties for nodes"	.
+local:can_check	a	rdf:Class	;
+	rdfs:label	"can check"	.
 
-local:nodes_in_graph	a	rdf:Class	;
-	rdfs:label	"nodes in graph"	.
-
-local:constrain	a	rdf:Class	;
-	rdfs:label	"constrain"	.
-
-local:it	a	rdf:Class	;
-	rdfs:label	"it"	.
-
-local:admissible_values_for_nodes_in_that_graph	a	rdf:Class	;
-	rdfs:label	"admissible values for nodes in that graph"	.
-
-local:admissible_values	a	rdf:Class	;
-	rdfs:label	"admissible values"	.
-
-local:values	a	rdf:Class	;
-	rdfs:label	"values"	.
-
-local:admissible_values_for_nodes	a	rdf:Class	;
-	rdfs:label	"admissible values for nodes"	.
+local:can_check_against_shape	a	rdf:Class	;
+	rdfs:label	"can check against shape"	.
 
 local:structure_of_an_rdf_graph	a	rdf:Class	;
 	rdfs:label	"structure of an rdf graph"	.
@@ -318,17 +291,80 @@ local:structure_of_rdf_graph	a	rdf:Class	;
 local:describe	a	rdf:Class	;
 	rdfs:label	"describe"	.
 
-local:describe_the_structure_of_an_rdf_graph	a	rdf:Class	;
-	rdfs:label	"describe the structure of an rdf graph"	.
+local:it	a	rdf:Class	;
+	rdfs:label	"it"	.
+
+local:admissible_value_for_nod_in_that_graph	a	rdf:Class	;
+	rdfs:label	"admissible value for nod in that graph"	.
+
+local:admissible_value	a	rdf:Class	;
+	rdfs:label	"admissible value"	.
+
+local:value	a	rdf:Class	;
+	rdfs:label	"value"	.
+
+local:admissible	a	rdf:Class	;
+	rdfs:label	"admissible"	.
+
+local:admissible_value_for_nod	a	rdf:Class	;
+	rdfs:label	"admissible value for nod"	.
+
+local:admissible_value_for_nod_in_graph	a	rdf:Class	;
+	rdfs:label	"admissible value for nod in graph"	.
+
+local:constrain	a	rdf:Class	;
+	rdfs:label	"constrain"	.
+
+local:constrain_the_admissible_value_for_nod_in_that_graph	a	rdf:Class	;
+	rdfs:label	"constrain the admissible value for nod in that graph"	.
 
 local:vocabulary	a	rdf:Class	;
 	rdfs:label	"vocabulary"	.
+
+local:admissible_property	a	rdf:Class	;
+	rdfs:label	"admissible property"	.
+
+local:nod_in_that_graph	a	rdf:Class	;
+	rdfs:label	"nod in that graph"	.
+
+local:nod_in_graph	a	rdf:Class	;
+	rdfs:label	"nod in graph"	.
+
+local:constrain_the_admissible_property_for_nod_in_that_graph	a	rdf:Class	;
+	rdfs:label	"constrain the admissible property for nod in that graph"	.
+
+local:admissible_property_for_nod	a	rdf:Class	;
+	rdfs:label	"admissible property for nod"	.
+
+local:admissible_property_for_nod_in_graph	a	rdf:Class	;
+	rdfs:label	"admissible property for nod in graph"	.
 
 local:we	a	rdf:Class	;
 	rdfs:label	"we"	.
 
 local:present	a	rdf:Class	;
 	rdfs:label	"present"	.
+
+local:proof_of_soundness_for_shape_schema	a	rdf:Class	;
+	rdfs:label	"proof of soundness for shape schema"	.
+
+local:proof	a	rdf:Class	;
+	rdfs:label	"proof"	.
+
+local:soundness	a	rdf:Class	;
+	rdfs:label	"soundness"	.
+
+local:shape_schema	a	rdf:Class	;
+	rdfs:label	"shape schema"	.
+
+local:schema	a	rdf:Class	;
+	rdfs:label	"schema"	.
+
+local:proof_of_soundness	a	rdf:Class	;
+	rdfs:label	"proof of soundness"	.
+
+local:formal_semantics_for_shape_schema	a	rdf:Class	;
+	rdfs:label	"formal semantics for shape schema"	.
 
 local:formal_semantics	a	rdf:Class	;
 	rdfs:label	"formal semantics"	.
@@ -339,11 +375,8 @@ local:formal	a	rdf:Class	;
 local:semantics	a	rdf:Class	;
 	rdfs:label	"semantics"	.
 
-local:expressive_schema_language_for_rdf_graphs	a	rdf:Class	;
-	rdfs:label	"expressive schema language for rdf graphs"	.
-
-local:rdf_graphs	a	rdf:Class	;
-	rdfs:label	"rdf graphs"	.
+local:formal_semantics_for_an_expressive_schema_language_for_rdf_graph	a	rdf:Class	;
+	rdfs:label	"formal semantics for an expressive schema language for rdf graph"	.
 
 local:expressive_schema_language	a	rdf:Class	;
 	rdfs:label	"expressive schema language"	.
@@ -351,41 +384,20 @@ local:expressive_schema_language	a	rdf:Class	;
 local:expressive_schema	a	rdf:Class	;
 	rdfs:label	"expressive schema"	.
 
-local:expressive	a	rdf:Class	;
-	rdfs:label	"expressive"	.
-
-local:graphs	a	rdf:Class	;
-	rdfs:label	"graphs"	.
-
 local:schema_language	a	rdf:Class	;
 	rdfs:label	"schema language"	.
 
-local:schema	a	rdf:Class	;
-	rdfs:label	"schema"	.
+local:expressive	a	rdf:Class	;
+	rdfs:label	"expressive"	.
 
-local:formal_semantics_for_shapes_schemas	a	rdf:Class	;
-	rdfs:label	"formal semantics for shapes schemas"	.
+local:formal_semantics_for_expressive_schema_language	a	rdf:Class	;
+	rdfs:label	"formal semantics for expressive schema language"	.
 
-local:shapes_schemas	a	rdf:Class	;
-	rdfs:label	"shapes schemas"	.
+local:expressive_schema_language_for_rdf_graph	a	rdf:Class	;
+	rdfs:label	"expressive schema language for rdf graph"	.
 
-local:schemas	a	rdf:Class	;
-	rdfs:label	"schemas"	.
-
-local:proof_of_soundness_for_shapes_schemas	a	rdf:Class	;
-	rdfs:label	"proof of soundness for shapes schemas"	.
-
-local:soundness	a	rdf:Class	;
-	rdfs:label	"soundness"	.
-
-local:proof	a	rdf:Class	;
-	rdfs:label	"proof"	.
-
-local:proof_of_soundness	a	rdf:Class	;
-	rdfs:label	"proof of soundness"	.
-
-local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graphs	a	rdf:Class	;
-	rdfs:label	"proof of soundness for an expressive schema language for rdf graphs"	.
+local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graph	a	rdf:Class	;
+	rdfs:label	"proof of soundness for an expressive schema language for rdf graph"	.
 
 local:proof_of_soundness_for_expressive_schema_language	a	rdf:Class	;
 	rdfs:label	"proof of soundness for expressive schema language"	.
@@ -393,205 +405,229 @@ local:proof_of_soundness_for_expressive_schema_language	a	rdf:Class	;
 #### Mapped Relations ####
 
 local:rdf_graph	owl:sameAs	cso:rdf_graph	.
-cso:rdf_graph	rdfs:label	"rdf graphs"	.
-local:formal_semantics	owl:sameAs	cso:formal_semantics	.
-local:vocabulary	owl:sameAs	cso:vocabulary	.
-cso:vocabulary	rdfs:label	"vocabulary"	.
-local:rdf_graphs	owl:sameAs	cso:rdf_graph	.
-cso:rdf	rdfs:label	"rdf"	.
 cso:rdf_graph	rdfs:label	"rdf graph"	.
-cso:formal_semantics	rdfs:label	"formal semantics"	.
 local:rdf	owl:sameAs	cso:rdf	.
+cso:formal_semantics	rdfs:label	"formal semantics"	.
+local:formal_semantics	owl:sameAs	cso:formal_semantics	.
+cso:vocabulary	rdfs:label	"vocabulary"	.
+local:vocabulary	owl:sameAs	cso:vocabulary	.
+cso:rdf	rdfs:label	"rdf"	.
 
 #### Relations ####
 
-local:typing_mechanism_called_shapes_against_which_nodes_of_the_graph	rdfs:member	local:mechanism	.
-local:s15	local:AM-MOD	local:can	.
-local:s1	rdf:subject	local:we	.
-local:cardinality_constraints_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:property	.
-local:s6.1	rdfs:member	local:structure	.
-local:s12.1	rdf:object	local:occurrences_of_a_property	.
-local:structure_of_rdf_graph	rdfs:member	local:rdf_graph	.
-local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graphs	rdfs:member	local:proof	.
-local:allowed_occurrences	rdfs:member	local:allowed	.
-local:admissible_properties_for_nodes_in_that_graph	rdfs:member	local:admissible_properties	.
-local:recursive_references_to_other_shapes	rdfs:member	local:recursive_references	.
-local:s6.1	rdf:predicate	local:describe	.
-local:grouping_operator	rdfs:subClassOf	local:operator	.
-local:allowed_occurrences_of_property	rdfs:member	local:property	.
-local:choice_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:number	.
-local:formal_semantics_for_shapes_schemas	rdfs:member	local:shapes_schemas	.
-local:other_shapes	rdfs:subClassOf	local:shapes	.
-local:possibly_recursive	rdfs:subClassOf	local:recursive	.
-local:other_shapes	rdfs:member	local:other	.
-local:typing_mechanism_called	rdfs:member	local:typing_mechanism	.
-local:s15	rdf:object	local:possibly_recursive_references_to_other_shapes	.
-local:typing_mechanism_called_shapes_against_which_nodes_of_the_graph	rdfs:member	local:shapes	.
-local:admissible_values	rdfs:subClassOf	local:values	.
-local:rdf_graph	rdfs:member	local:rdf	.
-local:s1	rdf:predicate	local:present	.
-local:s6	rdf:predicate	local:use	.
-local:s6	rdf:object	local:describe_the_structure_of_an_rdf_graph	.
-local:cardinality_constraints	rdfs:member	local:cardinality	.
-local:boolean_operators	rdfs:subClassOf	local:operators	.
-local:admissible_properties	rdfs:member	local:admissible	.
-local:s5	rdf:subject	local:it	.
-local:algebraic_grouping_operator_for_number	rdfs:member	local:number	.
-local:proof_of_soundness_for_shapes_schemas	rdfs:member	local:shapes_schemas	.
-local:s11.1	rdf:subject	local:occurrences_of_a_property	.
-local:s14.1	rdf:predicate	local:use	.
-local:typing_mechanism_called_against_which	rdfs:member	local:typing_mechanism_called	.
-local:s14	rdf:subject	local:shapes	.
-local:s2	rdf:subject	local:we	.
-local:s7.1	rdf:predicate	local:constrain	.
-local:s11	rdf:subject	local:choice_operator_for_the_number_of_allowed_occurrences_of_a_property	.
-local:s3	rdf:subject	local:we	.
-local:s2	rdf:predicate	local:present	.
-local:proof_of_soundness	rdfs:member	local:proof	.
-local:cardinality_constraints_for_number	rdfs:member	local:cardinality_constraints	.
-local:s5.1	rdf:subject	local:vocabulary	.
-local:s6.1	rdfs:member	local:rdf_graph	.
-local:algebraic_grouping_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:number	.
-local:admissible_properties_for_nodes_in_that_graph	rdfs:member	local:graph	.
-local:algebraic_grouping_operator_for_number	rdfs:member	local:algebraic_grouping_operator	.
-local:s6	local:AM-MOD	local:can	.
-local:occurrences_of_a_property	rdfs:member	local:property	.
-local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graphs	rdfs:member	local:expressive_schema_language	.
-local:s7	local:AM-MOD	local:can	.
-local:s8.1	rdf:predicate	local:constrain	.
-local:s8	rdf:object	local:s8.1	.
-local:s6	rdf:subject	local:it	.
-local:expressive_schema_language_for_rdf_graphs	rdfs:member	local:rdf_graphs	.
-local:s2	rdf:object	local:formal_semantics_for_shapes_schemas	.
-local:s11.1	rdf:predicate	local:allow	.
-local:s5	rdf:object	local:s5.1	.
-local:can_checked_against_shapes	rdfs:member	local:can_checked	.
-local:s14	rdf:predicate	local:combine	.
-local:possibly_recursive_references_to_other_shapes	rdfs:member	local:possibly_recursive_references	.
-local:s13	rdf:predicate	local:include	.
-local:admissible_values	rdfs:member	local:admissible	.
-local:admissible_properties	rdfs:subClassOf	local:properties	.
-local:s7.1	rdf:subject	local:admissible_values_for_nodes_in_that_graph	.
-local:shapes_schemas	rdfs:subClassOf	local:schemas	.
-local:s0	rdf:predicate	local:present	.
-local:rdf_graph	rdfs:subClassOf	local:graph	.
-local:admissible_properties_for_nodes_in_that_graph	rdfs:member	local:nodes	.
-local:possibly_recursive_references	rdfs:subClassOf	local:references	.
-local:proof_of_soundness_for_shapes_schemas	rdfs:member	local:proof	.
-local:s12.1	rdf:predicate	local:allow	.
-local:s8	rdf:subject	local:it	.
-local:choice_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:choice_operator	.
-local:possibly_recursive	rdfs:member	local:possibly	.
-local:allowed_occurrences	rdfs:subClassOf	local:occurrences	.
-local:s13	rdf:object	local:language	.
-local:expressive_schema_language_for_rdf_graphs	rdfs:member	local:expressive_schema_language	.
-local:s9	rdf:predicate	local:call	.
-local:boolean_operators	rdfs:member	local:boolean	.
-local:s13.1	rdf:predicate	local:allow	.
-local:formal_semantics	rdfs:member	local:formal	.
-local:proof_of_soundness	rdfs:member	local:soundness	.
-local:proof_of_soundness_for_shapes_schemas	rdfs:member	local:soundness	.
-local:possibly_recursive_references_to_other_shapes	rdfs:member	local:other_shapes	.
-local:number_of_allowed_occurrences	rdfs:member	local:allowed_occurrences	.
-local:typing_mechanism_called_against_which	rdfs:member	local:which	.
-local:expressive_schema_language	rdfs:member	local:expressive_schema	.
-local:admissible_values_for_nodes_in_that_graph	rdfs:member	local:nodes	.
+local:use_boolean	rdfs:subClassOf	local:boolean	.
+local:cardinality_constraint_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:number	.
+local:s2	rdf:object	local:formal_semantics_for_an_expressive_schema_language_for_rdf_graph	.
+local:type_mechanism	rdfs:member	local:type	.
 local:structure_of_an_rdf_graph	rdfs:member	local:structure	.
-local:structure_of_an_rdf_graph	rdfs:member	local:rdf_graph	.
-local:s9	rdf:subject	local:typing_mechanism	.
-local:recursive_references_to_other_shapes	rdfs:member	local:other_shapes	.
-local:s10	rdf:predicate	local:define	.
-local:shapes_against_which_nodes_of_the_graph_can_be_checked	rdfs:member	local:nodes	.
-local:can_checked	rdfs:subClassOf	local:checked	.
-local:s8	local:AM-MOD	local:can	.
-local:recursive_references	rdfs:member	local:recursive	.
-local:typing_mechanism_called_shapes_against_which_nodes_of_the_graph	rdfs:member	local:nodes	.
-local:choice_operator	rdfs:subClassOf	local:operator	.
-local:s9.1	rdf:subject	local:typing_mechanism_called_shapes_against_which_nodes_of_the_graph	.
-local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graphs	rdfs:member	local:rdf_graphs	.
-local:typing_mechanism_called	rdfs:member	local:called	.
-local:schema_language	rdfs:member	local:schema	.
-local:structure_of_rdf_graph	rdfs:member	local:structure	.
-local:expressive_schema	rdfs:subClassOf	local:schema	.
-local:admissible_values_for_nodes_in_that_graph	rdfs:member	local:graph	.
-local:s12	rdf:object	local:language	.
-local:nodes_of_graph	rdfs:member	local:graph	.
-local:s3	rdf:predicate	local:present	.
-local:s14.1	rdf:subject	local:boolean_operators	.
-local:number_of_allowed_occurrences	rdfs:member	local:number	.
-local:s14	local:AM-MNR	local:using_boolean_operators	.
-local:s12	rdf:subject	local:algebraic_grouping_operator_for_the_number_of_allowed_occurrences_of_a_property	.
-local:choice_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:allowed_occurrences	.
-local:s10	rdf:object	local:typing_mechanism	.
-local:choice_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:property	.
-local:choice_operator_for_number	rdfs:member	local:number	.
-local:nodes_of_graph	rdfs:member	local:nodes	.
-local:rdf_graphs	rdfs:subClassOf	local:graphs	.
-local:proof_of_soundness_for_expressive_schema_language	rdfs:member	local:expressive_schema_language	.
-local:s14	local:AM-MOD	local:can	.
-local:occurrences_of_property	rdfs:member	local:property	.
-local:admissible_values_for_nodes_in_that_graph	rdfs:member	local:admissible_values	.
-local:choice_operator_for_number	rdfs:member	local:choice_operator	.
-local:s15	rdf:predicate	local:use	.
-local:s10	rdf:subject	local:language	.
-local:typing_mechanism_called_shapes_against_which_nodes_of_the_graph	rdfs:member	local:graph	.
-local:shapes_against_which_nodes_of_the_graph_can_be_checked	rdfs:member	local:shapes	.
-local:formal_semantics_for_shapes_schemas	rdfs:member	local:formal_semantics	.
-local:occurrences_of_a_property	rdfs:member	local:occurrences	.
-local:s12.1	rdf:subject	local:algebraic_grouping_operator	.
-local:s9.1	local:AM-MOD	local:can	.
-local:shapes_schemas	rdfs:member	local:shapes	.
-local:expressive_schema_language	rdfs:subClassOf	local:schema_language	.
-local:s0	rdf:subject	local:we	.
-local:nodes_in_graph	rdfs:member	local:graph	.
-local:s9	rdf:object	local:shapes_against_which_nodes_of_the_graph_can_be_checked	.
-local:algebraic_grouping_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:operator	.
-local:choice_operator	rdfs:member	local:choice	.
-local:cardinality_constraints_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:number	.
-local:formal_semantics	rdfs:subClassOf	local:semantics	.
-local:recursive_references	rdfs:subClassOf	local:references	.
-local:expressive_schema	rdfs:member	local:expressive	.
-local:s7	rdf:subject	local:it	.
-local:s11	rdf:object	local:language	.
-local:s7	rdf:object	local:s7.1	.
-local:s5	local:AM-MOD	local:can	.
-local:typing_mechanism	rdfs:subClassOf	local:mechanism	.
-local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graphs	rdfs:member	local:soundness	.
-local:possibly_recursive_references	rdfs:member	local:possibly_recursive	.
-local:admissible_properties_for_nodes	rdfs:member	local:nodes	.
-local:s7	rdf:predicate	local:use	.
-local:s1	rdf:object	local:proof_of_soundness_for_shapes_schemas	.
-local:s12	rdf:predicate	local:include	.
-local:occurrences_of_property	rdfs:member	local:occurrences	.
-local:algebraic_grouping_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:property	.
-local:rdf_graphs	rdfs:member	local:rdf	.
-local:s5.1	rdf:predicate	local:describe	.
-local:proof_of_soundness_for_shapes_schemas	rdfs:member	local:proof_of_soundness	.
+local:formal_semantics_for_expressive_schema_language	rdfs:member	local:expressive_schema_language	.
 local:s9.1	rdf:predicate	local:check	.
-local:schema_language	rdfs:subClassOf	local:language	.
-local:s13	rdf:subject	local:cardinality_constraints_for_the_number_of_allowed_occurrences_of_a_property	.
-local:cardinality_constraints	rdfs:subClassOf	local:constraints	.
-local:s5	rdf:predicate	local:use	.
-local:s3	local:AM-PNC	local:expressive_schema_language_for_rdf_graphs	.
-local:s13.1	rdf:subject	local:occurrences_of_a_property	.
-local:allowed_occurrences_of_property	rdfs:member	local:allowed_occurrences	.
-local:can_checked_against_shapes	rdfs:member	local:shapes	.
-local:admissible_properties_for_nodes	rdfs:member	local:admissible_properties	.
-local:s8.1	rdf:subject	local:admissible_properties_for_nodes_in_that_graph	.
-local:proof_of_soundness_for_expressive_schema_language	rdfs:member	local:proof_of_soundness	.
 local:s8	rdf:predicate	local:use	.
-local:admissible_values_for_nodes	rdfs:member	local:admissible_values	.
-local:shapes_against_which_nodes_of_the_graph_can_be_checked	rdfs:member	local:graph	.
+local:s2	rdf:subject	local:we	.
+local:constrain_the_admissible_property_for_nod_in_that_graph	rdfs:member	local:nod	.
+local:boolean_operator	rdfs:member	local:boolean	.
+local:admissible_value_for_nod	rdfs:member	local:admissible_value	.
+local:cardinality_constraint_for_number	rdfs:member	local:number	.
+local:possibly_recursive_reference_to_other_shape	rdfs:member	local:other_shape	.
+local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:proof	.
+local:call_shape	rdfs:member	local:call	.
+local:s4	rdf:predicate	local:present	.
+local:type_mechanism_call_shape	rdfs:subClassOf	local:shape	.
+local:s12.1	rdf:object	local:occurrence_of_a_property	.
+local:algebraic_group	rdfs:member	local:algebraic	.
+local:s11.1	rdf:subject	local:occurrence_of_a_property	.
+local:s4	rdf:subject	local:we	.
+local:s7.1	rdf:predicate	local:constrain	.
+local:choice_operator_for_number	rdfs:member	local:number	.
+local:s7.1	rdf:subject	local:admissible_value_for_nod_in_that_graph	.
+local:cardinality_constraint_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:property	.
+local:use_boolean	rdfs:member	local:use	.
+local:s11	rdf:subject	local:cardinality_constraint_for_the_number_of_allow_occurrence_of_a_property	.
+local:mechanism_call	rdfs:member	local:mechanism	.
+local:recursive_reference_to_other_shape	rdfs:member	local:recursive_reference	.
+local:occurrence_of_property	rdfs:member	local:property	.
+local:allow_occurrence	rdfs:subClassOf	local:occurrence	.
+local:s12.1	rdf:subject	local:algebraic_group_operator	.
+local:s14	local:AM-MOD	local:can	.
+local:algebraic_group_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:number	.
+local:algebraic_group_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:algebraic_group_operator	.
+local:s13	rdf:predicate	local:include	.
+local:nod_of_graph	rdfs:member	local:graph	.
+local:shape_against_which_nod_of_the_graph_can_be_check	rdfs:member	local:graph	.
+local:cardinality_constraint_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:cardinality_constraint	.
+local:admissible_value	rdfs:subClassOf	local:value	.
+local:rdf_graph	rdfs:subClassOf	local:graph	.
+local:type_mechanism_call_shape_against_which_nod_of_the_graph	rdfs:member	local:type_mechanism_call_shape	.
+local:expressive_schema_language_for_rdf_graph	rdfs:member	local:expressive_schema_language	.
+local:can_check_against_shape	rdfs:member	local:can_check	.
+local:formal_semantics	rdfs:subClassOf	local:semantics	.
+local:type_mechanism_call	rdfs:member	local:type_mechanism	.
+local:s11	rdf:object	local:language	.
+local:formal_semantics_for_expressive_schema_language	rdfs:member	local:formal_semantics	.
+local:proof_of_soundness_for_expressive_schema_language	rdfs:member	local:expressive_schema_language	.
+local:algebraic_group_operator_for_number	rdfs:member	local:number	.
+local:s5	rdf:subject	local:it	.
+local:s13	rdf:object	local:language	.
+local:s5.1	rdf:subject	local:admissible_property	.
+local:expressive_schema	rdfs:member	local:expressive	.
+local:s15	local:AM-MOD	local:can	.
+local:s7	rdf:predicate	local:use	.
+local:nod_in_graph	rdfs:member	local:graph	.
+local:s12	rdf:subject	local:algebraic_group_operator_for_the_number_of_allow_occurrence_of_a_property	.
+local:s0	rdf:subject	local:we	.
+local:type_mechanism_call_shape_against_which	rdfs:member	local:type_mechanism_call_shape	.
+local:group_operator	rdfs:member	local:group	.
+local:constrain_the_admissible_property_for_nod_in_that_graph	rdfs:member	local:admissible_property	.
+local:s0	rdf:object	local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graph	.
+local:s6	rdf:subject	local:it	.
+local:admissible_value_for_nod_in_graph	rdfs:member	local:graph	.
+local:nod_in_that_graph	rdfs:member	local:nod	.
+local:s9	rdf:object	local:shape_against_which_nod_of_the_graph_can_be_check	.
+local:type_mechanism_call_shape_against_which_nod_of_the_graph	rdfs:member	local:nod	.
+local:s7	rdf:subject	local:it	.
+local:structure_of_rdf_graph	rdfs:member	local:structure	.
+local:algebraic_group_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:allow_occurrence	.
+local:algebraic_group_operator_for_number	rdfs:member	local:algebraic_group_operator	.
+local:choice_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:property	.
+local:constrain_the_admissible_property_for_nod_in_that_graph	rdfs:member	local:graph	.
+local:s0	rdf:predicate	local:present	.
+local:s14.1	rdf:predicate	local:use	.
+local:nod_in_that_graph	rdfs:member	local:graph	.
+local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:expressive_schema_language	.
+local:s10	rdf:object	local:type_mechanism	.
+local:admissible_value_for_nod_in_graph	rdfs:member	local:admissible_value_for_nod	.
+local:s8	local:AM-MOD	local:can	.
+local:s13	rdf:subject	local:choice_operator_for_the_number_of_allow_occurrence_of_a_property	.
+local:s7	local:AM-MOD	local:can	.
+local:formal_semantics_for_shape_schema	rdfs:member	local:shape_schema	.
+local:s6.1	rdf:predicate	local:describe	.
+local:admissible_value_for_nod	rdfs:member	local:nod	.
+local:s6	local:AM-MOD	local:can	.
+local:s5.1	rdf:object	local:nod_in_that_graph	.
+local:s8	rdf:subject	local:it	.
+local:recursive_reference_to_other_shape	rdfs:member	local:other_shape	.
+local:s6.1	rdf:subject	local:vocabulary	.
+local:proof_of_soundness	rdfs:member	local:proof	.
+local:s9.1	rdf:subject	local:type_mechanism_call_shape_against_which_nod_of_the_graph	.
+local:s10	rdf:predicate	local:define	.
+local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:rdf_graph	.
+local:expressive_schema	rdfs:subClassOf	local:schema	.
+local:s12	rdf:predicate	local:include	.
+local:can_check_against_shape	rdfs:member	local:shape	.
 local:expressive_schema_language	rdfs:subClassOf	local:language	.
-local:nodes_in_graph	rdfs:member	local:nodes	.
-local:s6.1	rdf:subject	local:structure_of_an_rdf_graph	.
-local:s15	rdf:subject	local:shapes	.
-local:algebraic_grouping_operator	rdfs:subClassOf	local:grouping_operator	.
-local:cardinality_constraints_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:cardinality_constraints	.
-local:cardinality_constraints_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:allowed_occurrences	.
-local:s0	rdf:object	local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graphs	.
+local:algebraic_group_operator	rdfs:subClassOf	local:group_operator	.
+local:boolean_operator	rdfs:subClassOf	local:operator	.
+local:possibly_recursive_reference	rdfs:subClassOf	local:reference	.
+local:type_mechanism_call_shape_against_which_nod_of_the_graph	rdfs:member	local:graph	.
+local:s11.1	rdf:predicate	local:allow	.
+local:proof_of_soundness_for_shape_schema	rdfs:member	local:proof	.
+local:type_mechanism_call_shape_against_which	rdfs:member	local:which	.
+local:proof_of_soundness_for_shape_schema	rdfs:member	local:shape_schema	.
+local:recursive_reference	rdfs:member	local:recursive	.
+local:s14	rdf:predicate	local:combine	.
+local:s2	rdf:predicate	local:present	.
+local:expressive_schema_language_for_rdf_graph	rdfs:member	local:rdf_graph	.
+local:structure_of_an_rdf_graph	rdfs:member	local:rdf_graph	.
+local:type_mechanism_call_shape	rdfs:member	local:type_mechanism_call	.
+local:choice_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:allow_occurrence	.
+local:proof_of_soundness_for_shape_schema	rdfs:member	local:soundness	.
+local:formal_semantics	rdfs:member	local:formal	.
+local:s6	rdf:object	local:s6.1	.
+local:algebraic_group_operator	rdfs:member	local:algebraic_group	.
+local:group_operator	rdfs:subClassOf	local:operator	.
+local:admissible_value_for_nod_in_that_graph	rdfs:member	local:admissible_value	.
+local:schema_language	rdfs:subClassOf	local:language	.
+local:s14.1	rdf:subject	local:boolean_operator	.
+local:cardinality_constraint	rdfs:member	local:cardinality	.
+local:s4	rdf:object	local:proof_of_soundness_for_shape_schema	.
+local:possibly_recursive_reference_to_other_shape	rdfs:member	local:possibly_recursive_reference	.
+local:s15	rdf:object	local:possibly_recursive_reference_to_other_shape	.
+local:shape_schema	rdfs:member	local:shape	.
+local:nod_in_graph	rdfs:member	local:nod	.
+local:admissible_value_for_nod_in_that_graph	rdfs:member	local:graph	.
+local:shape_against_which_nod_of_the_graph_can_be_check	rdfs:member	local:shape	.
+local:formal_semantics_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:rdf_graph	.
+local:structure_of_rdf_graph	rdfs:member	local:rdf_graph	.
+local:admissible_property_for_nod	rdfs:member	local:nod	.
+local:s3	rdf:predicate	local:present	.
+local:choice_operator	rdfs:member	local:choice	.
+local:algebraic_group_operator	rdfs:subClassOf	local:operator	.
+local:mechanism_call	rdfs:subClassOf	local:call	.
+local:expressive_schema_language	rdfs:subClassOf	local:schema_language	.
+local:admissible_property	rdfs:subClassOf	local:property	.
+local:s3	rdf:subject	local:we	.
+local:s8.1	rdf:subject	local:structure_of_an_rdf_graph	.
+local:proof_of_soundness_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:soundness	.
+local:choice_operator_for_number	rdfs:member	local:choice_operator	.
+local:use_boolean_operator	rdfs:subClassOf	local:operator	.
+local:type_mechanism_call	rdfs:subClassOf	local:call	.
+local:s13.1	rdf:subject	local:occurrence_of_a_property	.
+local:nod_of_graph	rdfs:member	local:nod	.
+local:s13.1	rdf:predicate	local:allow	.
+local:recursive_reference	rdfs:subClassOf	local:reference	.
+local:s6	rdf:predicate	local:use	.
+local:expressive_schema_language	rdfs:member	local:expressive_schema	.
+local:s12.1	rdf:predicate	local:allow	.
+local:admissible_property	rdfs:member	local:admissible	.
+local:proof_of_soundness	rdfs:member	local:soundness	.
+local:admissible_property_for_nod_in_graph	rdfs:member	local:graph	.
+local:rdf_graph	rdfs:member	local:rdf	.
+local:s5	local:AM-MOD	local:can	.
+local:s14	local:AM-MNR	local:use_boolean_operator	.
+local:type_mechanism	rdfs:subClassOf	local:mechanism	.
+local:type_mechanism_call_shape	rdfs:subClassOf	local:mechanism_call_shape	.
+local:s14	rdf:subject	local:shape	.
+local:constrain_the_admissible_value_for_nod_in_that_graph	rdfs:member	local:graph	.
+local:admissible_value	rdfs:member	local:admissible	.
+local:s9.1	local:AM-MOD	local:can	.
+local:s5	rdf:object	local:constrain_the_admissible_property_for_nod_in_that_graph	.
+local:formal_semantics_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:formal_semantics	.
+local:admissible_property_for_nod_in_graph	rdfs:member	local:admissible_property_for_nod	.
+local:mechanism_call_shape	rdfs:subClassOf	local:call_shape	.
+local:possibly_recursive	rdfs:subClassOf	local:recursive	.
+local:constrain_the_admissible_value_for_nod_in_that_graph	rdfs:member	local:nod	.
+local:allow_occurrence	rdfs:member	local:allow	.
+local:cardinality_constraint_for_number	rdfs:member	local:cardinality_constraint	.
+local:occurrence_of_property	rdfs:member	local:occurrence	.
+local:mechanism_call_shape	rdfs:subClassOf	local:shape	.
+local:s8	rdf:object	local:s8.1	.
+local:occurrence_of_a_property	rdfs:member	local:property	.
+local:s5	rdf:predicate	local:use	.
+local:occurrence_of_a_property	rdfs:member	local:occurrence	.
+local:s5.1	rdf:predicate	local:constrain	.
+local:s15	rdf:subject	local:shape	.
+local:admissible_value_for_nod_in_that_graph	rdfs:member	local:nod	.
+local:algebraic_group_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:property	.
 local:s11	rdf:predicate	local:include	.
-local:cardinality_constraints_for_number	rdfs:member	local:number	.
-local:admissible_values_for_nodes	rdfs:member	local:nodes	.
-local:s3	rdf:object	local:formal_semantics	.
-local:algebraic_grouping_operator_for_the_number_of_allowed_occurrences_of_a_property	rdfs:member	local:allowed_occurrences	.
+local:s9	rdf:predicate	local:call	.
+local:s3	rdf:object	local:formal_semantics_for_shape_schema	.
+local:schema_language	rdfs:member	local:schema	.
+local:s10	rdf:subject	local:language	.
+local:choice_operator	rdfs:subClassOf	local:operator	.
+local:possibly_recursive	rdfs:member	local:possibly	.
+local:algebraic_group	rdfs:subClassOf	local:group	.
+local:cardinality_constraint_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:allow_occurrence	.
+local:shape_against_which_nod_of_the_graph_can_be_check	rdfs:member	local:nod	.
+local:choice_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:number	.
+local:can_check	rdfs:subClassOf	local:check	.
+local:s8.1	rdf:predicate	local:describe	.
+local:other_shape	rdfs:subClassOf	local:shape	.
+local:formal_semantics_for_shape_schema	rdfs:member	local:formal_semantics	.
+local:call_shape	rdfs:subClassOf	local:shape	.
+local:cardinality_constraint	rdfs:subClassOf	local:constraint	.
+local:proof_of_soundness_for_shape_schema	rdfs:member	local:proof_of_soundness	.
+local:mechanism_call_shape	rdfs:member	local:mechanism_call	.
+local:other_shape	rdfs:member	local:other	.
+local:s15	rdf:predicate	local:use	.
+local:shape_schema	rdfs:subClassOf	local:schema	.
+local:s12	rdf:object	local:language	.
+local:possibly_recursive_reference	rdfs:member	local:possibly_recursive	.
+local:use_boolean_operator	rdfs:subClassOf	local:boolean_operator	.
+local:admissible_property_for_nod	rdfs:member	local:admissible_property	.
+local:choice_operator_for_the_number_of_allow_occurrence_of_a_property	rdfs:member	local:choice_operator	.
+local:constrain_the_admissible_value_for_nod_in_that_graph	rdfs:member	local:admissible_value	.
+local:proof_of_soundness_for_expressive_schema_language	rdfs:member	local:proof_of_soundness	.
+local:s9	rdf:subject	local:type_mechanism	.
+local:formal_semantics_for_an_expressive_schema_language_for_rdf_graph	rdfs:member	local:expressive_schema_language	.
+local:use_boolean_operator	rdfs:member	local:use_boolean	.
+local:s7	rdf:object	local:constrain_the_admissible_value_for_nod_in_that_graph	.

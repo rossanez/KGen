@@ -34,49 +34,49 @@ local:s9	a	rdf:Statement	;
 	rdfs:label	"the corresponding subontology determined by comparing the consequence label with the axiom labels"	.
 
 local:s8.2	a	rdf:Statement	;
-	rdfs:label	"different subontologies keep just one ontology"	.
+	rdfs:label	"we equip each axiom with the consequence label"	.
 
 local:s8.1	a	rdf:Statement	;
-	rdfs:label	"we propose to keep just one ontology"	.
+	rdfs:label	"instead of materializing a large number of different subontologies we propose to equip each axiom with the consequence label"	.
 
 local:s8	a	rdf:Statement	;
 	rdfs:label	"materializing a large number of different subontologies we"	.
 
 local:s7.2	a	rdf:Statement	;
-	rdfs:label	"we equip each axiom with the consequence label"	.
+	rdfs:label	"different subontologies keep just one ontology"	.
 
 local:s7.1	a	rdf:Statement	;
-	rdfs:label	"instead of materializing a large number of different subontologies we propose to equip each axiom with the consequence label"	.
+	rdfs:label	"we propose to keep just one ontology"	.
 
 local:s7	a	rdf:Statement	;
 	rdfs:label	"materializing a large number of different subontologies we"	.
 
 local:s6	a	rdf:Statement	;
-	rdfs:label	"detail requested by the users"	.
-
-local:s5.2	a	rdf:Statement	;
-	rdfs:label	"the users access right"	.
-
-local:s5.1	a	rdf:Statement	;
-	rdfs:label	"based on criteria like the users access right"	.
-
-local:s5	a	rdf:Statement	;
-	rdfs:label	"scenarios where selected subontologies of a large ontology offered as views to users based on criteria like the users access right"	.
-
-local:s4	a	rdf:Statement	;
 	rdfs:label	"the framework developed in this paper"	.
 
-local:s3	a	rdf:Statement	;
-	rdfs:label	"the trust level required by the application"	.
-
-local:s2	a	rdf:Statement	;
+local:s5	a	rdf:Statement	;
 	rdfs:label	"the framework can deal with the trust level"	.
 
-local:s1	a	rdf:Statement	;
+local:s4	a	rdf:Statement	;
+	rdfs:label	"detail requested by the users"	.
+
+local:s3	a	rdf:Statement	;
 	rdfs:label	"the framework can deal with the level of detail"	.
 
-local:s0	a	rdf:Statement	;
+local:s2	a	rdf:Statement	;
+	rdfs:label	"the trust level required by the application"	.
+
+local:s1	a	rdf:Statement	;
 	rdfs:label	"the framework can deal with scenarios"	.
+
+local:s0.2	a	rdf:Statement	;
+	rdfs:label	"the users access right"	.
+
+local:s0.1	a	rdf:Statement	;
+	rdfs:label	"based on criteria like the users access right"	.
+
+local:s0	a	rdf:Statement	;
+	rdfs:label	"scenarios where selected subontologies of a large ontology offered as views to users based on criteria like the users access right"	.
 
 
 #### Classes ####
@@ -87,11 +87,14 @@ local:consequence	a	rdf:Class	;
 local:follow	a	rdf:Class	;
 	rdfs:label	"follow"	.
 
-local:corresponding_subontology_or_not	a	rdf:Class	;
-	rdfs:label	"corresponding subontology or not"	.
+local:correspond_subontology_or_not	a	rdf:Class	;
+	rdfs:label	"correspond subontology or not"	.
 
-local:corresponding_subontology	a	rdf:Class	;
-	rdfs:label	"corresponding subontology"	.
+local:correspond_subontology	a	rdf:Class	;
+	rdfs:label	"correspond subontology"	.
+
+local:correspond	a	rdf:Class	;
+	rdfs:label	"correspond"	.
 
 local:subontology	a	rdf:Class	;
 	rdfs:label	"subontology"	.
@@ -102,11 +105,11 @@ local:comparison_of_the_user_label_with_the_consequence_label	a	rdf:Class	;
 local:user_label	a	rdf:Class	;
 	rdfs:label	"user label"	.
 
-local:comparison	a	rdf:Class	;
-	rdfs:label	"comparison"	.
-
 local:consequence_label	a	rdf:Class	;
 	rdfs:label	"consequence label"	.
+
+local:comparison	a	rdf:Class	;
+	rdfs:label	"comparison"	.
 
 local:label	a	rdf:Class	;
 	rdfs:label	"label"	.
@@ -126,26 +129,29 @@ local:comparison_of_user_consequence_label_with_consequence_label	a	rdf:Class	;
 local:determine	a	rdf:Class	;
 	rdfs:label	"determine"	.
 
-local:whether_the_consequence_follows_from_the_corresponding_subontology_or_not	a	rdf:Class	;
-	rdfs:label	"whether the consequence follows from the corresponding subontology or not"	.
+local:whether_the_consequence_follow_from_the_correspond_subontology_or_not	a	rdf:Class	;
+	rdfs:label	"whether the consequence follow from the correspond subontology or not"	.
 
-local:corresponding	a	rdf:Class	;
-	rdfs:label	"corresponding"	.
+local:consequence_follow	a	rdf:Class	;
+	rdfs:label	"consequence follow"	.
 
-local:follows_from_corresponding_subontology	a	rdf:Class	;
-	rdfs:label	"follows from corresponding subontology"	.
+local:follow_from_correspond_subontology	a	rdf:Class	;
+	rdfs:label	"follow from correspond subontology"	.
 
-local:follows	a	rdf:Class	;
-	rdfs:label	"follows"	.
-
-local:follows_from_corresponding_subontology_from_not	a	rdf:Class	;
-	rdfs:label	"follows from corresponding subontology from not"	.
+local:follow_from_correspond_subontology_from_not	a	rdf:Class	;
+	rdfs:label	"follow from correspond subontology from not"	.
 
 local:not	a	rdf:Class	;
 	rdfs:label	"not"	.
 
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	a	rdf:Class	;
-	rdfs:label	"one label for each consequence such that a comparison of the user label with the consequence label determines whether the consequence follows from the corresponding subontology or not"	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	a	rdf:Class	;
+	rdfs:label	"one label for each consequence such that a comparison of the user label with the consequence label determine whether the consequence follow from the correspond subontology or not"	.
+
+local:consequence_label_determine	a	rdf:Class	;
+	rdfs:label	"consequence label determine"	.
+
+local:label_determine	a	rdf:Class	;
+	rdfs:label	"label determine"	.
 
 local:one_user_consequence_label	a	rdf:Class	;
 	rdfs:label	"one user consequence label"	.
@@ -156,17 +162,14 @@ local:one_user_consequence_label_for_consequence	a	rdf:Class	;
 local:compute	a	rdf:Class	;
 	rdfs:label	"compute"	.
 
-local:consequences_for_every_possible_subontology_our_approach	a	rdf:Class	;
-	rdfs:label	"consequences for every possible subontology our approach"	.
-
-local:possible_subontology	a	rdf:Class	;
-	rdfs:label	"possible subontology"	.
-
-local:consequences	a	rdf:Class	;
-	rdfs:label	"consequences"	.
+local:instead_of_precomputing_these_consequence_for_every_possible_subontology_our_approach	a	rdf:Class	;
+	rdfs:label	"instead of precomputing these consequence for every possible subontology our approach"	.
 
 local:approach	a	rdf:Class	;
 	rdfs:label	"approach"	.
+
+local:possible_subontology	a	rdf:Class	;
+	rdfs:label	"possible subontology"	.
 
 local:possible	a	rdf:Class	;
 	rdfs:label	"possible"	.
@@ -174,14 +177,17 @@ local:possible	a	rdf:Class	;
 local:our_approach	a	rdf:Class	;
 	rdfs:label	"our approach"	.
 
-local:consequences_for_possible_subontology	a	rdf:Class	;
-	rdfs:label	"consequences for possible subontology"	.
-
-local:instead_of_precomputing	a	rdf:Class	;
-	rdfs:label	"instead of precomputing"	.
+local:precomputing_for_possible_subontology	a	rdf:Class	;
+	rdfs:label	"precomputing for possible subontology"	.
 
 local:precomputing	a	rdf:Class	;
 	rdfs:label	"precomputing"	.
+
+local:consequence_for_every_possible_subontology_our_approach	a	rdf:Class	;
+	rdfs:label	"consequence for every possible subontology our approach"	.
+
+local:consequence_for_possible_subontology	a	rdf:Class	;
+	rdfs:label	"consequence for possible subontology"	.
 
 local:lattice	a	rdf:Class	;
 	rdfs:label	"lattice"	.
@@ -189,62 +195,92 @@ local:lattice	a	rdf:Class	;
 local:call	a	rdf:Class	;
 	rdfs:label	"call"	.
 
-local:user_label_appropriate_labeling_lattice	a	rdf:Class	;
-	rdfs:label	"user label appropriate labeling lattice"	.
+local:user_label_appropriate_label_lattice	a	rdf:Class	;
+	rdfs:label	"user label appropriate label lattice"	.
 
-local:appropriate_labeling_lattice	a	rdf:Class	;
-	rdfs:label	"appropriate labeling lattice"	.
+local:appropriate_label_lattice	a	rdf:Class	;
+	rdfs:label	"appropriate label lattice"	.
 
-local:labeling	a	rdf:Class	;
-	rdfs:label	"labeling"	.
+local:label_lattice	a	rdf:Class	;
+	rdfs:label	"label lattice"	.
 
-local:appropriate_labeling	a	rdf:Class	;
-	rdfs:label	"appropriate labeling"	.
+local:appropriate_label	a	rdf:Class	;
+	rdfs:label	"appropriate label"	.
 
 local:appropriate	a	rdf:Class	;
 	rdfs:label	"appropriate"	.
 
-local:label_appropriate_labeling_lattice	a	rdf:Class	;
-	rdfs:label	"label appropriate labeling lattice"	.
+local:label_appropriate_label_lattice	a	rdf:Class	;
+	rdfs:label	"label appropriate label lattice"	.
 
-local:label_called_user_label_from_an_appropriate_labeling_lattice	a	rdf:Class	;
-	rdfs:label	"label called user label from an appropriate labeling lattice"	.
+local:label_call_user_label_from_an_appropriate_label_lattice	a	rdf:Class	;
+	rdfs:label	"label call user label from an appropriate label lattice"	.
 
-local:called_from_appropriate_labeling_lattice	a	rdf:Class	;
-	rdfs:label	"called from appropriate labeling lattice"	.
+local:label_call_user_label	a	rdf:Class	;
+	rdfs:label	"label call user label"	.
 
-local:called	a	rdf:Class	;
-	rdfs:label	"called"	.
+local:label_call	a	rdf:Class	;
+	rdfs:label	"label call"	.
+
+local:call_user_label	a	rdf:Class	;
+	rdfs:label	"call user label"	.
+
+local:label_call_user	a	rdf:Class	;
+	rdfs:label	"label call user"	.
+
+local:call_user	a	rdf:Class	;
+	rdfs:label	"call user"	.
+
+local:label_call_user_label_from_appropriate_label_lattice	a	rdf:Class	;
+	rdfs:label	"label call user label from appropriate label lattice"	.
 
 local:represent	a	rdf:Class	;
 	rdfs:label	"represent"	.
 
-local:access_right_required_trust_level	a	rdf:Class	;
-	rdfs:label	"access right required trust level"	.
+local:access_right_require_trust_level	a	rdf:Class	;
+	rdfs:label	"access right require trust level"	.
 
-local:trust_level	a	rdf:Class	;
-	rdfs:label	"trust level"	.
+local:access_right_require	a	rdf:Class	;
+	rdfs:label	"access right require"	.
+
+local:require	a	rdf:Class	;
+	rdfs:label	"require"	.
 
 local:access_right	a	rdf:Class	;
 	rdfs:label	"access right"	.
 
-local:access	a	rdf:Class	;
-	rdfs:label	"access"	.
+local:right	a	rdf:Class	;
+	rdfs:label	"right"	.
+
+local:right_require_trust	a	rdf:Class	;
+	rdfs:label	"right require trust"	.
 
 local:trust	a	rdf:Class	;
 	rdfs:label	"trust"	.
 
+local:access_right_require_trust	a	rdf:Class	;
+	rdfs:label	"access right require trust"	.
+
+local:require_trust_level	a	rdf:Class	;
+	rdfs:label	"require trust level"	.
+
 local:level	a	rdf:Class	;
 	rdfs:label	"level"	.
 
-local:right	a	rdf:Class	;
-	rdfs:label	"right"	.
+local:trust_level	a	rdf:Class	;
+	rdfs:label	"trust level"	.
 
-local:access_right_required	a	rdf:Class	;
-	rdfs:label	"access right required"	.
+local:right_require_trust_level	a	rdf:Class	;
+	rdfs:label	"right require trust level"	.
 
-local:required	a	rdf:Class	;
-	rdfs:label	"required"	.
+local:right_require	a	rdf:Class	;
+	rdfs:label	"right require"	.
+
+local:require_trust	a	rdf:Class	;
+	rdfs:label	"require trust"	.
+
+local:access	a	rdf:Class	;
+	rdfs:label	"access"	.
 
 local:also	a	rdf:Class	;
 	rdfs:label	"also"	.
@@ -255,8 +291,8 @@ local:then	a	rdf:Class	;
 local:compare	a	rdf:Class	;
 	rdfs:label	"compare"	.
 
-local:consequence_label_axiom_labels	a	rdf:Class	;
-	rdfs:label	"consequence label axiom labels"	.
+local:consequence_label_axiom_label	a	rdf:Class	;
+	rdfs:label	"consequence label axiom label"	.
 
 local:consequence_label_axiom	a	rdf:Class	;
 	rdfs:label	"consequence label axiom"	.
@@ -264,74 +300,26 @@ local:consequence_label_axiom	a	rdf:Class	;
 local:axiom	a	rdf:Class	;
 	rdfs:label	"axiom"	.
 
-local:axiom_labels	a	rdf:Class	;
-	rdfs:label	"axiom labels"	.
-
-local:labels	a	rdf:Class	;
-	rdfs:label	"labels"	.
-
-local:label_axiom_labels	a	rdf:Class	;
-	rdfs:label	"label axiom labels"	.
+local:label_axiom_label	a	rdf:Class	;
+	rdfs:label	"label axiom label"	.
 
 local:label_axiom	a	rdf:Class	;
 	rdfs:label	"label axiom"	.
 
-local:comparing_the_consequence_label_with_the_axiom_labels	a	rdf:Class	;
-	rdfs:label	"comparing the consequence label with the axiom labels"	.
+local:axiom_label	a	rdf:Class	;
+	rdfs:label	"axiom label"	.
 
-local:comparing_with_axiom_labels	a	rdf:Class	;
-	rdfs:label	"comparing with axiom labels"	.
+local:compare_the_consequence_label_with_the_axiom_label	a	rdf:Class	;
+	rdfs:label	"compare the consequence label with the axiom label"	.
 
-local:comparing	a	rdf:Class	;
-	rdfs:label	"comparing"	.
+local:consequence_axiom_label	a	rdf:Class	;
+	rdfs:label	"consequence axiom label"	.
 
-local:different_subontologies	a	rdf:Class	;
-	rdfs:label	"different subontologies"	.
-
-local:different	a	rdf:Class	;
-	rdfs:label	"different"	.
-
-local:subontologies	a	rdf:Class	;
-	rdfs:label	"subontologies"	.
-
-local:keep	a	rdf:Class	;
-	rdfs:label	"keep"	.
-
-local:one_ontology	a	rdf:Class	;
-	rdfs:label	"one ontology"	.
-
-local:ontology	a	rdf:Class	;
-	rdfs:label	"ontology"	.
+local:compare_with_axiom_label	a	rdf:Class	;
+	rdfs:label	"compare with axiom label"	.
 
 local:we	a	rdf:Class	;
 	rdfs:label	"we"	.
-
-local:propose	a	rdf:Class	;
-	rdfs:label	"propose"	.
-
-local:keep_just_one_ontology	a	rdf:Class	;
-	rdfs:label	"keep just one ontology"	.
-
-local:just_one	a	rdf:Class	;
-	rdfs:label	"just one"	.
-
-local:one	a	rdf:Class	;
-	rdfs:label	"one"	.
-
-local:materialize	a	rdf:Class	;
-	rdfs:label	"materialize"	.
-
-local:large_number_of_different_subontologies	a	rdf:Class	;
-	rdfs:label	"large number of different subontologies"	.
-
-local:large_number	a	rdf:Class	;
-	rdfs:label	"large number"	.
-
-local:number	a	rdf:Class	;
-	rdfs:label	"number"	.
-
-local:large	a	rdf:Class	;
-	rdfs:label	"large"	.
 
 local:equip	a	rdf:Class	;
 	rdfs:label	"equip"	.
@@ -342,68 +330,59 @@ local:axiom_consequence_label	a	rdf:Class	;
 local:axiom_consequence	a	rdf:Class	;
 	rdfs:label	"axiom consequence"	.
 
+local:propose	a	rdf:Class	;
+	rdfs:label	"propose"	.
+
 local:equip_each_axiom_with_the_consequence_label	a	rdf:Class	;
 	rdfs:label	"equip each axiom with the consequence label"	.
 
 local:equip_with_consequence_label	a	rdf:Class	;
 	rdfs:label	"equip with consequence label"	.
 
-local:instead_of_materializing_a_large_number_of_different_subontologies	a	rdf:Class	;
-	rdfs:label	"instead of materializing a large number of different subontologies"	.
+local:instead_of_materialize_a_large_number_of_different_subontologies	a	rdf:Class	;
+	rdfs:label	"instead of materialize a large number of different subontologies"	.
 
-local:users	a	rdf:Class	;
-	rdfs:label	"users"	.
+local:large_number	a	rdf:Class	;
+	rdfs:label	"large number"	.
 
-local:request	a	rdf:Class	;
-	rdfs:label	"request"	.
+local:different_subontologies	a	rdf:Class	;
+	rdfs:label	"different subontologies"	.
 
-local:detail	a	rdf:Class	;
-	rdfs:label	"detail"	.
+local:different	a	rdf:Class	;
+	rdfs:label	"different"	.
 
-local:base	a	rdf:Class	;
-	rdfs:label	"base"	.
+local:large	a	rdf:Class	;
+	rdfs:label	"large"	.
 
-local:criteria_like_the_users_access_right	a	rdf:Class	;
-	rdfs:label	"criteria like the users access right"	.
+local:subontologies	a	rdf:Class	;
+	rdfs:label	"subontologies"	.
 
-local:users_access	a	rdf:Class	;
-	rdfs:label	"users access"	.
+local:number	a	rdf:Class	;
+	rdfs:label	"number"	.
 
-local:criteria	a	rdf:Class	;
-	rdfs:label	"criteria"	.
+local:large_number_of_different_subontologies	a	rdf:Class	;
+	rdfs:label	"large number of different subontologies"	.
 
-local:criteria_like_users	a	rdf:Class	;
-	rdfs:label	"criteria like users"	.
+local:materialize	a	rdf:Class	;
+	rdfs:label	"materialize"	.
 
-local:scenarios_where_selected_subontologies_of_a_large_ontology	a	rdf:Class	;
-	rdfs:label	"scenarios where selected subontologies of a large ontology"	.
+local:keep	a	rdf:Class	;
+	rdfs:label	"keep"	.
 
-local:large_ontology	a	rdf:Class	;
-	rdfs:label	"large ontology"	.
+local:one_ontology	a	rdf:Class	;
+	rdfs:label	"one ontology"	.
 
-local:scenarios	a	rdf:Class	;
-	rdfs:label	"scenarios"	.
+local:ontology	a	rdf:Class	;
+	rdfs:label	"ontology"	.
 
-local:selected_subontologies	a	rdf:Class	;
-	rdfs:label	"selected subontologies"	.
+local:keep_just_one_ontology	a	rdf:Class	;
+	rdfs:label	"keep just one ontology"	.
 
-local:selected_subontologies_of_large_ontology	a	rdf:Class	;
-	rdfs:label	"selected subontologies of large ontology"	.
+local:just_one	a	rdf:Class	;
+	rdfs:label	"just one"	.
 
-local:offer	a	rdf:Class	;
-	rdfs:label	"offer"	.
-
-local:views_to_users_based_on_criteria_like_the_users_access_right	a	rdf:Class	;
-	rdfs:label	"views to users based on criteria like the users access right"	.
-
-local:views	a	rdf:Class	;
-	rdfs:label	"views"	.
-
-local:views_to_users	a	rdf:Class	;
-	rdfs:label	"views to users"	.
-
-local:views_to_users_based_on_criteria	a	rdf:Class	;
-	rdfs:label	"views to users based_on criteria"	.
+local:one	a	rdf:Class	;
+	rdfs:label	"one"	.
 
 local:framework	a	rdf:Class	;
 	rdfs:label	"framework"	.
@@ -414,225 +393,327 @@ local:develop	a	rdf:Class	;
 local:paper	a	rdf:Class	;
 	rdfs:label	"paper"	.
 
-local:application	a	rdf:Class	;
-	rdfs:label	"application"	.
-
-local:require	a	rdf:Class	;
-	rdfs:label	"require"	.
-
 local:deal	a	rdf:Class	;
 	rdfs:label	"deal"	.
 
 local:can	a	rdf:Class	;
 	rdfs:label	"can"	.
 
+local:request	a	rdf:Class	;
+	rdfs:label	"request"	.
+
+local:detail	a	rdf:Class	;
+	rdfs:label	"detail"	.
+
 local:level_of_detail	a	rdf:Class	;
 	rdfs:label	"level of detail"	.
+
+local:application	a	rdf:Class	;
+	rdfs:label	"application"	.
+
+local:scenario	a	rdf:Class	;
+	rdfs:label	"scenario"	.
+
+local:base	a	rdf:Class	;
+	rdfs:label	"base"	.
+
+local:criterion_like_the_user_access_right	a	rdf:Class	;
+	rdfs:label	"criterion like the user access right"	.
+
+local:criterion	a	rdf:Class	;
+	rdfs:label	"criterion"	.
+
+local:user_access_right	a	rdf:Class	;
+	rdfs:label	"user access right"	.
+
+local:user_access	a	rdf:Class	;
+	rdfs:label	"user access"	.
+
+local:criterion_like_user_access_right	a	rdf:Class	;
+	rdfs:label	"criterion like user access right"	.
+
+local:scenario_where_select_subontologies_of_a_large_ontology	a	rdf:Class	;
+	rdfs:label	"scenario where select subontologies of a large ontology"	.
+
+local:select_subontologies	a	rdf:Class	;
+	rdfs:label	"select subontologies"	.
+
+local:large_ontology	a	rdf:Class	;
+	rdfs:label	"large ontology"	.
+
+local:select	a	rdf:Class	;
+	rdfs:label	"select"	.
+
+local:select_subontologies_of_large_ontology	a	rdf:Class	;
+	rdfs:label	"select subontologies of large ontology"	.
+
+local:offer	a	rdf:Class	;
+	rdfs:label	"offer"	.
+
+local:view_to_user_base_on_criterion_like_the_user_access_right	a	rdf:Class	;
+	rdfs:label	"view to user base on criterion like the user access right"	.
+
+local:view	a	rdf:Class	;
+	rdfs:label	"view"	.
+
+local:user_base	a	rdf:Class	;
+	rdfs:label	"user base"	.
+
+local:view_to_user_base	a	rdf:Class	;
+	rdfs:label	"view to user base"	.
+
+local:user_base_on_criterion	a	rdf:Class	;
+	rdfs:label	"user base on criterion"	.
+
+local:user_base_on_criterion_like_user_access_right	a	rdf:Class	;
+	rdfs:label	"user base on criterion like user access right"	.
 
 #### Mapped Relations ####
 
 local:ontology	owl:sameAs	cso:ontology	.
-cso:trust_level	rdfs:label	"trust level"	.
 local:access_right	owl:sameAs	cso:access_rights	.
-local:trust_level	owl:sameAs	cso:trust_level	.
-cso:access_rights	rdfs:label	"access right"	.
 cso:ontology	rdfs:label	"ontology"	.
+cso:trust_level	rdfs:label	"trust level"	.
+cso:access_rights	rdfs:label	"access right"	.
+local:trust_level	owl:sameAs	cso:trust_level	.
 
 #### Relations ####
 
-local:axiom_consequence_label	rdfs:subClassOf	local:consequence_label	.
-local:s8	rdf:predicate	local:materialize	.
-local:label_appropriate_labeling_lattice	rdfs:subClassOf	local:appropriate_labeling_lattice	.
-local:access_right_required_trust_level	rdfs:member	local:trust_level	.
-local:s7.1	rdf:subject	local:we	.
-local:s8.2	rdf:subject	local:different_subontologies	.
-local:s0	rdf:predicate	local:deal	.
-local:s12.3	rdf:subject	local:consequence	.
-local:s5.2	rdf:object	local:right	.
-local:users_access	rdfs:subClassOf	local:access	.
-local:s10.2	rdfs:subClassOf	local:lattice	.
-local:axiom_consequence	rdfs:subClassOf	local:consequence	.
-local:s12.1	rdf:object	local:consequences_for_every_possible_subontology_our_approach	.
-local:corresponding_subontology	rdfs:member	local:corresponding	.
-local:one_user_consequence_label_for_consequence	rdfs:member	local:one_user_consequence_label	.
-local:s1	local:AM-MOD	local:can	.
-local:s5	local:AM-MNR	local:views_to_users_based_on_criteria_like_the_users_access_right	.
-local:consequences_for_possible_subontology	rdfs:member	local:consequences	.
-local:instead_of_materializing_a_large_number_of_different_subontologies	rdfs:member	local:large_number	.
-local:label_axiom	rdfs:subClassOf	local:axiom	.
-local:possible_subontology	rdfs:member	local:possible	.
-local:follows_from_corresponding_subontology	rdfs:member	local:follows	.
-local:label_axiom_labels	rdfs:member	local:label_axiom	.
-local:label_called_user_label_from_an_appropriate_labeling_lattice	rdfs:member	local:label	.
-local:label_axiom_labels	rdfs:subClassOf	local:axiom_labels	.
-local:s7.1	rdf:object	local:equip_each_axiom_with_the_consequence_label	.
-local:s4	rdf:predicate	local:develop	.
-local:label_axiom_labels	rdfs:subClassOf	local:labels	.
-local:different_subontologies	rdfs:member	local:different	.
-local:consequence_label_axiom	rdfs:member	local:consequence_label	.
-local:user_consequence_label	rdfs:subClassOf	local:consequence_label	.
-local:appropriate_labeling_lattice	rdfs:subClassOf	local:s10.2	.
-local:views_to_users_based_on_criteria_like_the_users_access_right	rdfs:member	local:views	.
-local:s12.1	local:AM-ADV	local:instead_of_precomputing	.
-local:s6	rdf:predicate	local:request	.
-local:consequences_for_every_possible_subontology_our_approach	rdfs:member	local:possible_subontology	.
-local:follows_from_corresponding_subontology_from_not	rdfs:member	local:not	.
-local:comparing_the_consequence_label_with_the_axiom_labels	rdfs:member	local:consequence_label	.
-local:s0	rdf:object	local:scenarios	.
-local:s8	rdf:object	local:large_number_of_different_subontologies	.
 local:large_ontology	rdfs:subClassOf	local:ontology	.
-local:access_right_required_trust_level	rdfs:member	local:access_right	.
-local:user_label_appropriate_labeling_lattice	rdfs:member	local:user_label	.
-local:appropriate_labeling	rdfs:subClassOf	local:labeling	.
-local:one_user_consequence_label_for_consequence	rdfs:member	local:consequence	.
-local:one_user_consequence_label	rdfs:subClassOf	local:user_consequence_label	.
-local:possible_subontology	rdfs:subClassOf	local:subontology	.
-local:s8	rdf:subject	local:we	.
-local:large_number_of_different_subontologies	rdfs:member	local:different_subontologies	.
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:comparison	.
-local:s7.1	local:AM-ADV	local:instead_of_materializing_a_large_number_of_different_subontologies	.
-local:criteria_like_users	rdfs:member	local:users	.
-local:user_label	rdfs:subClassOf	local:label	.
-local:access_right_required	rdfs:member	local:required	.
-local:consequence_label_axiom_labels	rdfs:subClassOf	local:labels	.
-local:criteria_like_users	rdfs:member	local:criteria	.
-local:s12.2	rdf:object	local:whether_the_consequence_follows_from_the_corresponding_subontology_or_not	.
-local:views_to_users_based_on_criteria	rdfs:member	local:views_to_users	.
-local:s5.2	rdf:subject	local:users	.
-local:users_access	rdfs:member	local:users	.
-local:s7	rdf:predicate	local:materialize	.
-local:s3	rdf:predicate	local:require	.
-local:comparing_with_axiom_labels	rdfs:member	local:axiom_labels	.
-local:s10.2	rdfs:member	local:labeling	.
-local:s10	rdf:predicate	local:represent	.
-local:one_ontology	rdfs:subClassOf	local:ontology	.
-local:s8.1	rdf:subject	local:we	.
+local:call_user_label	rdfs:subClassOf	local:user_label	.
 local:axiom_consequence	rdfs:member	local:axiom	.
-local:views_to_users_based_on_criteria	rdfs:member	local:criteria	.
-local:views_to_users_based_on_criteria_like_the_users_access_right	rdfs:member	local:criteria	.
-local:instead_of_materializing_a_large_number_of_different_subontologies	rdfs:member	local:different_subontologies	.
-local:corresponding_subontology	rdfs:subClassOf	local:subontology	.
-local:s10	rdf:object	local:access_right_required_trust_level	.
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:user_label	.
-local:criteria_like_the_users_access_right	rdfs:member	local:users_access	.
-local:comparison_of_user_consequence_label_with_consequence_label	rdfs:member	local:consequence_label	.
-local:s10	local:AM-DIS	local:also	.
-local:s9	rdf:object	local:corresponding_subontology	.
-local:consequence_label_axiom_labels	rdfs:subClassOf	local:label_axiom_labels	.
-local:s12.2	rdf:subject	local:comparison_of_the_user_label_with_the_consequence_label	.
-local:s1	rdf:predicate	local:deal	.
-local:axiom_labels	rdfs:member	local:axiom	.
-local:s9.1	rdf:subject	local:corresponding_subontology	.
-local:s2	rdf:subject	local:framework	.
-local:called_from_appropriate_labeling_lattice	rdfs:member	local:called	.
-local:large_number	rdfs:subClassOf	local:number	.
-local:consequence_label	rdfs:member	local:consequence	.
-local:label_axiom	rdfs:member	local:label	.
-local:access_right	rdfs:member	local:access	.
-local:s8.2	rdf:object	local:one_ontology	.
-local:s10.1	rdf:predicate	local:call	.
-local:consequence_label_axiom	rdfs:subClassOf	local:axiom	.
-local:s2	rdf:object	local:trust_level	.
-local:views_to_users	rdfs:member	local:users	.
-local:s12	rdf:subject	local:consequences_for_every_possible_subontology_our_approach	.
-local:s12.1	rdf:predicate	local:compute	.
-local:consequence_label	rdfs:subClassOf	local:label	.
-local:comparison_of_user_consequence_label_with_consequence_label	rdfs:member	local:comparison_of_user_consequence_label	.
-local:s5.1	rdf:predicate	local:base	.
-local:our_approach	rdfs:subClassOf	local:approach	.
-local:s7.2	rdf:subject	local:we	.
-local:consequences_for_possible_subontology	rdfs:member	local:possible_subontology	.
-local:s2	rdf:predicate	local:deal	.
-local:follows_from_corresponding_subontology_from_not	rdfs:member	local:follows_from_corresponding_subontology	.
-local:label_called_user_label_from_an_appropriate_labeling_lattice	rdfs:member	local:appropriate_labeling_lattice	.
-local:s7	rdf:object	local:large_number_of_different_subontologies	.
-local:s12.3	rdf:object	local:corresponding_subontology_or_not	.
-local:axiom_labels	rdfs:subClassOf	local:labels	.
-local:axiom_consequence_label	rdfs:subClassOf	local:label	.
-local:whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:corresponding_subontology	.
-local:s5.2	rdf:predicate	local:access	.
-local:s9	rdf:predicate	local:determine	.
-local:comparison_of_the_user_label_with_the_consequence_label	rdfs:member	local:comparison	.
-local:s10.2	rdf:subject	local:lattice	.
-local:views_to_users_based_on_criteria_like_the_users_access_right	rdfs:member	local:users_access	.
-local:s7.2	rdf:predicate	local:equip	.
-local:appropriate_labeling	rdfs:member	local:appropriate	.
-local:views_to_users	rdfs:member	local:views	.
-local:comparing_with_axiom_labels	rdfs:member	local:comparing	.
-local:s9	rdf:subject	local:comparing_the_consequence_label_with_the_axiom_labels	.
-local:s5.1	rdf:object	local:criteria_like_the_users_access_right	.
-local:user_label	rdfs:member	local:user	.
-local:selected_subontologies_of_large_ontology	rdfs:member	local:large_ontology	.
-local:s4	local:AM-LOC	local:paper	.
-local:level_of_detail	rdfs:member	local:level	.
-local:s1	rdf:subject	local:framework	.
-local:called_from_appropriate_labeling_lattice	rdfs:member	local:appropriate_labeling_lattice	.
-local:access_right_required	rdfs:member	local:access_right	.
-local:user_label_appropriate_labeling_lattice	rdfs:subClassOf	local:label_appropriate_labeling_lattice	.
-local:s9.1	rdf:object	local:consequence_label_axiom_labels	.
-local:s10	rdf:subject	local:label_called_user_label_from_an_appropriate_labeling_lattice	.
-local:s12.1	rdf:subject	local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	.
-local:s10.2	rdf:predicate	local:label	.
-local:s2	local:AM-MOD	local:can	.
-local:whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:consequence	.
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:label	.
-local:s8.1	local:AM-PNC	local:keep_just_one_ontology	.
-local:s5	rdf:subject	local:scenarios_where_selected_subontologies_of_a_large_ontology	.
-local:s12	rdf:predicate	local:precomputing	.
-local:scenarios_where_selected_subontologies_of_a_large_ontology	rdfs:member	local:subontologies	.
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:corresponding_subontology	.
-local:axiom_consequence_label	rdfs:member	local:axiom_consequence	.
-local:s5	rdf:predicate	local:offer	.
-local:comparison_of_user_consequence_label	rdfs:member	local:comparison	.
-local:comparison_of_the_user_label_with_the_consequence_label	rdfs:member	local:user_label	.
-local:different_subontologies	rdfs:subClassOf	local:subontologies	.
-local:large_number	rdfs:member	local:large	.
-local:selected_subontologies	rdfs:subClassOf	local:subontologies	.
-local:s0	local:AM-MOD	local:can	.
-local:appropriate_labeling_lattice	rdfs:member	local:appropriate_labeling	.
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:consequence_label	.
-local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determines_whether_the_consequence_follows_from_the_corresponding_subontology_or_not	rdfs:member	local:consequence	.
-local:s10.1	rdf:subject	local:label	.
-local:equip_with_consequence_label	rdfs:member	local:consequence_label	.
-local:s7	rdf:subject	local:we	.
-local:s10.1	rdf:object	local:user_label_appropriate_labeling_lattice	.
-local:consequences_for_every_possible_subontology_our_approach	rdfs:member	local:consequences	.
-local:s6	rdf:subject	local:users	.
-local:s8.1	rdf:predicate	local:propose	.
-local:equip_with_consequence_label	rdfs:member	local:equip	.
-local:s4	rdf:subject	local:framework	.
-local:appropriate_labeling_lattice	rdfs:subClassOf	local:lattice	.
-local:consequences_for_every_possible_subontology_our_approach	rdfs:member	local:approach	.
-local:large_number_of_different_subontologies	rdfs:member	local:large_number	.
-local:s3	rdf:object	local:trust_level	.
-local:selected_subontologies_of_large_ontology	rdfs:member	local:selected_subontologies	.
-local:s9.1	rdf:predicate	local:compare	.
-local:trust_level	rdfs:subClassOf	local:level	.
-local:s7.2	rdf:object	local:axiom_consequence_label	.
-local:s12.2	rdf:predicate	local:determine	.
-local:s7.1	rdf:predicate	local:propose	.
-local:criteria_like_the_users_access_right	rdfs:member	local:criteria	.
-local:comparison_of_user_consequence_label	rdfs:member	local:user_consequence_label	.
-local:scenarios_where_selected_subontologies_of_a_large_ontology	rdfs:member	local:scenarios	.
-local:access_right	rdfs:subClassOf	local:right	.
-local:consequence_label_axiom_labels	rdfs:member	local:consequence_label_axiom	.
-local:just_one	rdfs:subClassOf	local:one	.
-local:follows_from_corresponding_subontology	rdfs:member	local:corresponding_subontology	.
-local:scenarios_where_selected_subontologies_of_a_large_ontology	rdfs:member	local:large_ontology	.
-local:comparing_the_consequence_label_with_the_axiom_labels	rdfs:member	local:axiom_labels	.
-local:large_ontology	rdfs:member	local:large	.
-local:user_label_appropriate_labeling_lattice	rdfs:member	local:appropriate_labeling_lattice	.
-local:trust_level	rdfs:member	local:trust	.
-local:equip_each_axiom_with_the_consequence_label	rdfs:member	local:consequence_label	.
-local:label_called_user_label_from_an_appropriate_labeling_lattice	rdfs:member	local:user_label	.
+local:s3	rdf:object	local:level_of_detail	.
+local:appropriate_label	rdfs:subClassOf	local:label	.
+local:access_right_require_trust	rdfs:subClassOf	local:trust	.
+local:access_right_require_trust	rdfs:member	local:access_right_require	.
+local:s8.1	rdf:object	local:equip_each_axiom_with_the_consequence_label	.
+local:s3	rdf:subject	local:framework	.
 local:s12.3	rdf:predicate	local:follow	.
+local:consequence_label	rdfs:subClassOf	local:label	.
+local:user_base_on_criterion	rdfs:member	local:criterion	.
+local:trust_level	rdfs:subClassOf	local:level	.
+local:consequence_follow	rdfs:member	local:consequence	.
+local:consequence_for_possible_subontology	rdfs:member	local:possible_subontology	.
+local:s2	rdf:predicate	local:require	.
+local:call_user	rdfs:member	local:call	.
+local:right_require_trust	rdfs:subClassOf	local:trust	.
+local:label_lattice	rdfs:member	local:label	.
+local:consequence_label_axiom	rdfs:member	local:consequence_label	.
+local:right_require_trust	rdfs:member	local:right_require	.
+local:s1	rdf:object	local:scenario	.
+local:appropriate_label_lattice	rdfs:subClassOf	local:label_lattice	.
+local:consequence_follow	rdfs:subClassOf	local:follow	.
+local:view_to_user_base_on_criterion_like_the_user_access_right	rdfs:member	local:base	.
+local:s4	rdf:object	local:detail	.
+local:consequence_label_determine	rdfs:subClassOf	local:determine	.
+local:call_user	rdfs:subClassOf	local:user	.
+local:axiom_consequence_label	rdfs:subClassOf	local:consequence_label	.
+local:user_access	rdfs:subClassOf	local:access	.
+local:s7	rdf:object	local:large_number_of_different_subontologies	.
+local:label_determine	rdfs:member	local:label	.
+local:level_of_detail	rdfs:member	local:level	.
+local:axiom_consequence_label	rdfs:subClassOf	local:label	.
+local:select_subontologies	rdfs:subClassOf	local:subontologies	.
+local:s0.2	rdf:object	local:right	.
+local:label_appropriate_label_lattice	rdfs:subClassOf	local:appropriate_label_lattice	.
+local:compare_the_consequence_label_with_the_axiom_label	rdfs:member	local:axiom_label	.
+local:consequence_label_axiom_label	rdfs:member	local:consequence_label_axiom	.
+local:user_base_on_criterion_like_user_access_right	rdfs:member	local:user_access_right	.
+local:consequence_label_axiom_label	rdfs:subClassOf	local:label_axiom_label	.
+local:criterion_like_user_access_right	rdfs:member	local:criterion	.
+local:user_base	rdfs:subClassOf	local:base	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:consequence_label_determine	.
+local:comparison_of_user_consequence_label	rdfs:member	local:comparison	.
+local:s7.2	rdf:object	local:one_ontology	.
+local:comparison_of_user_consequence_label_with_consequence_label	rdfs:member	local:comparison_of_user_consequence_label	.
+local:one_ontology	rdfs:subClassOf	local:ontology	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:correspond_subontology	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:label	.
+local:appropriate_label_lattice	rdfs:member	local:appropriate_label	.
 local:equip_each_axiom_with_the_consequence_label	rdfs:member	local:axiom	.
-local:s1	rdf:object	local:level_of_detail	.
-local:s3	rdf:subject	local:application	.
-local:s0	rdf:subject	local:framework	.
-local:s8.2	rdf:predicate	local:keep	.
+local:label_call_user_label_from_an_appropriate_label_lattice	rdfs:member	local:appropriate_label_lattice	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:comparison	.
+local:s9.1	rdf:subject	local:correspond_subontology	.
+local:criterion_like_the_user_access_right	rdfs:member	local:criterion	.
+local:s6	rdf:predicate	local:develop	.
+local:different_subontologies	rdfs:subClassOf	local:subontologies	.
+local:label_call_user_label	rdfs:member	local:label_call_user	.
+local:right_require_trust_level	rdfs:member	local:right_require_trust	.
+local:s2	rdf:object	local:trust_level	.
 local:level_of_detail	rdfs:member	local:detail	.
-local:views_to_users_based_on_criteria_like_the_users_access_right	rdfs:member	local:users	.
+local:s10.2	rdf:predicate	local:label	.
+local:consequence_for_possible_subontology	rdfs:member	local:consequence	.
+local:s10.1	rdf:object	local:user_label_appropriate_label_lattice	.
+local:consequence_label_axiom_label	rdfs:subClassOf	local:label	.
+local:equip_each_axiom_with_the_consequence_label	rdfs:member	local:consequence_label	.
+local:call_user_label	rdfs:member	local:call_user	.
+local:select_subontologies_of_large_ontology	rdfs:member	local:select_subontologies	.
+local:s8.1	local:AM-ADV	local:instead_of_materialize_a_large_number_of_different_subontologies	.
+local:s6	rdf:subject	local:framework	.
+local:label_call_user_label	rdfs:subClassOf	local:call_user_label	.
+local:s10.1	rdf:predicate	local:call	.
+local:select_subontologies_of_large_ontology	rdfs:member	local:large_ontology	.
+local:right_require	rdfs:subClassOf	local:require	.
+local:user_access	rdfs:member	local:user	.
+local:compare_with_axiom_label	rdfs:member	local:axiom_label	.
+local:label_call_user	rdfs:member	local:label_call	.
+local:view_to_user_base_on_criterion_like_the_user_access_right	rdfs:member	local:criterion	.
+local:s12.3	rdf:object	local:correspond_subontology_or_not	.
+local:s5	rdf:object	local:trust_level	.
 local:comparison_of_the_user_label_with_the_consequence_label	rdfs:member	local:consequence_label	.
+local:user_base_on_criterion_like_user_access_right	rdfs:member	local:user_base_on_criterion	.
+local:s5	rdf:subject	local:framework	.
+local:s3	local:AM-MOD	local:can	.
+local:label_call	rdfs:subClassOf	local:call	.
+local:right_require_trust_level	rdfs:subClassOf	local:level	.
+local:access_right_require	rdfs:member	local:access_right	.
+local:consequence_axiom_label	rdfs:subClassOf	local:axiom_label	.
+local:s9	rdf:predicate	local:determine	.
+local:call_user_label	rdfs:subClassOf	local:label	.
+local:s8.2	rdf:predicate	local:equip	.
+local:instead_of_materialize_a_large_number_of_different_subontologies	rdfs:member	local:different_subontologies	.
+local:one_user_consequence_label_for_consequence	rdfs:member	local:consequence	.
 local:s10	local:AM-TMP	local:then	.
-local:s6	rdf:object	local:detail	.
+local:label_axiom_label	rdfs:member	local:label_axiom	.
+local:s5	rdf:predicate	local:deal	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:user_label	.
+local:label_axiom_label	rdfs:subClassOf	local:label	.
+local:label_call_user_label_from_appropriate_label_lattice	rdfs:member	local:appropriate_label_lattice	.
+local:compare_the_consequence_label_with_the_axiom_label	rdfs:member	local:consequence_label	.
+local:s4	rdf:predicate	local:request	.
+local:right_require	rdfs:member	local:right	.
+local:user_label_appropriate_label_lattice	rdfs:member	local:appropriate_label_lattice	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:consequence	.
+local:compare_with_axiom_label	rdfs:member	local:compare	.
+local:consequence_for_every_possible_subontology_our_approach	rdfs:member	local:approach	.
+local:user_label	rdfs:subClassOf	local:label	.
+local:large_ontology	rdfs:member	local:large	.
+local:s8	rdf:predicate	local:materialize	.
+local:s2	rdf:subject	local:application	.
+local:s8.2	rdf:object	local:axiom_consequence_label	.
+local:comparison_of_user_consequence_label_with_consequence_label	rdfs:member	local:consequence_label	.
+local:s8	rdf:subject	local:we	.
+local:view_to_user_base_on_criterion_like_the_user_access_right	rdfs:member	local:view	.
+local:s12.2	rdf:subject	local:comparison_of_the_user_label_with_the_consequence_label	.
+local:s1	rdf:subject	local:framework	.
+local:instead_of_precomputing_these_consequence_for_every_possible_subontology_our_approach	rdfs:member	local:approach	.
+local:trust_level	rdfs:member	local:trust	.
+local:view_to_user_base	rdfs:member	local:user_base	.
+local:s0.2	rdf:subject	local:user	.
+local:s12.1	rdf:subject	local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	.
+local:label_call_user_label	rdfs:subClassOf	local:label	.
+local:s12.1	local:AM-ADV	local:instead_of_precomputing_these_consequence_for_every_possible_subontology_our_approach	.
+local:s12.2	rdf:predicate	local:determine	.
+local:s10.1	rdf:subject	local:label	.
+local:access_right_require	rdfs:subClassOf	local:require	.
+local:s9	rdf:subject	local:compare_the_consequence_label_with_the_axiom_label	.
+local:consequence_label_determine	rdfs:member	local:consequence_label	.
+local:appropriate_label	rdfs:member	local:appropriate	.
+local:follow_from_correspond_subontology	rdfs:member	local:correspond_subontology	.
+local:precomputing_for_possible_subontology	rdfs:member	local:possible_subontology	.
+local:large_number	rdfs:member	local:large	.
+local:user_access_right	rdfs:subClassOf	local:access_right	.
+local:s0	local:AM-MNR	local:view_to_user_base_on_criterion_like_the_user_access_right	.
+local:access_right	rdfs:subClassOf	local:right	.
+local:one_label_for_each_consequence_such_that_a_comparison_of_the_user_label_with_the_consequence_label_determine_whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:consequence_follow	.
+local:s10	rdf:object	local:access_right_require_trust_level	.
+local:follow_from_correspond_subontology	rdfs:member	local:follow	.
+local:s4	rdf:subject	local:user	.
+local:s12.3	rdf:subject	local:consequence	.
+local:s8.1	rdf:subject	local:we	.
+local:whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:correspond_subontology	.
+local:user_label	rdfs:member	local:user	.
+local:s12.1	rdf:predicate	local:compute	.
+local:consequence_for_every_possible_subontology_our_approach	rdfs:member	local:possible_subontology	.
+local:s7.1	rdf:predicate	local:propose	.
+local:s0.2	rdf:predicate	local:access	.
+local:label_call_user_label_from_an_appropriate_label_lattice	rdfs:member	local:label_call_user_label	.
+local:require_trust	rdfs:member	local:require	.
+local:label_axiom	rdfs:member	local:label	.
+local:correspond_subontology	rdfs:member	local:correspond	.
+local:label_lattice	rdfs:subClassOf	local:lattice	.
+local:criterion_like_the_user_access_right	rdfs:member	local:user_access_right	.
+local:follow_from_correspond_subontology_from_not	rdfs:member	local:follow_from_correspond_subontology	.
+local:access_right_require_trust_level	rdfs:member	local:access_right_require_trust	.
+local:just_one	rdfs:subClassOf	local:one	.
+local:consequence_label_axiom	rdfs:subClassOf	local:axiom	.
+local:access_right	rdfs:member	local:access	.
+local:equip_with_consequence_label	rdfs:member	local:consequence_label	.
+local:whether_the_consequence_follow_from_the_correspond_subontology_or_not	rdfs:member	local:consequence_follow	.
+local:s7	rdf:subject	local:we	.
+local:large_number_of_different_subontologies	rdfs:member	local:large_number	.
+local:instead_of_precomputing_these_consequence_for_every_possible_subontology_our_approach	rdfs:member	local:consequence	.
+local:criterion_like_user_access_right	rdfs:member	local:user_access_right	.
+local:user_consequence_label	rdfs:subClassOf	local:consequence_label	.
+local:s8	rdf:object	local:large_number_of_different_subontologies	.
+local:s10.2	rdf:subject	local:lattice	.
+local:axiom_consequence_label	rdfs:member	local:axiom_consequence	.
+local:label_call_user	rdfs:subClassOf	local:user	.
+local:s8.2	rdf:subject	local:we	.
+local:access_right_require_trust_level	rdfs:subClassOf	local:level	.
+local:s0	rdf:subject	local:scenario_where_select_subontologies_of_a_large_ontology	.
+local:user_base_on_criterion	rdfs:member	local:user_base	.
+local:different_subontologies	rdfs:member	local:different	.
+local:s12	rdf:subject	local:consequence_for_every_possible_subontology_our_approach	.
+local:consequence_for_every_possible_subontology_our_approach	rdfs:member	local:consequence	.
+local:s9.1	rdf:object	local:consequence_label_axiom_label	.
+local:s7.2	rdf:subject	local:different_subontologies	.
+local:comparison_of_user_consequence_label	rdfs:member	local:user_consequence_label	.
+local:user_label_appropriate_label_lattice	rdfs:subClassOf	local:label_appropriate_label_lattice	.
+local:label_determine	rdfs:subClassOf	local:determine	.
+local:large_number	rdfs:subClassOf	local:number	.
+local:s12	rdf:predicate	local:precomputing	.
+local:correspond_subontology	rdfs:subClassOf	local:subontology	.
+local:label_call	rdfs:member	local:label	.
+local:s7.2	rdf:predicate	local:keep	.
+local:s7.1	local:AM-PNC	local:keep_just_one_ontology	.
+local:user_label_appropriate_label_lattice	rdfs:member	local:user_label	.
+local:scenario_where_select_subontologies_of_a_large_ontology	rdfs:member	local:large_ontology	.
+local:s3	rdf:predicate	local:deal	.
+local:scenario_where_select_subontologies_of_a_large_ontology	rdfs:member	local:scenario	.
+local:s7	rdf:predicate	local:materialize	.
+local:s9	rdf:object	local:correspond_subontology	.
+local:s0.1	rdf:predicate	local:base	.
+local:possible_subontology	rdfs:member	local:possible	.
+local:one_user_consequence_label_for_consequence	rdfs:member	local:one_user_consequence_label	.
+local:s9.1	rdf:predicate	local:compare	.
+local:axiom_label	rdfs:subClassOf	local:label	.
+local:s12.2	rdf:object	local:whether_the_consequence_follow_from_the_correspond_subontology_or_not	.
+local:possible_subontology	rdfs:subClassOf	local:subontology	.
+local:s8.1	rdf:predicate	local:propose	.
+local:view_to_user_base_on_criterion_like_the_user_access_right	rdfs:member	local:user_access_right	.
+local:label_call_user_label_from_appropriate_label_lattice	rdfs:member	local:label_call_user_label	.
+local:one_user_consequence_label	rdfs:subClassOf	local:user_consequence_label	.
+local:large_number_of_different_subontologies	rdfs:member	local:different_subontologies	.
+local:instead_of_materialize_a_large_number_of_different_subontologies	rdfs:member	local:large_number	.
+local:user_access_right	rdfs:subClassOf	local:right	.
+local:s0	rdf:predicate	local:offer	.
+local:our_approach	rdfs:subClassOf	local:approach	.
+local:consequence_label	rdfs:member	local:consequence	.
+local:user_access_right	rdfs:member	local:user_access	.
+local:s10	rdf:subject	local:label_call_user_label_from_an_appropriate_label_lattice	.
+local:instead_of_precomputing_these_consequence_for_every_possible_subontology_our_approach	rdfs:member	local:possible_subontology	.
+local:s10	local:AM-DIS	local:also	.
+local:s7.1	rdf:subject	local:we	.
+local:s1	rdf:predicate	local:deal	.
+local:axiom_label	rdfs:member	local:axiom	.
+local:comparison_of_the_user_label_with_the_consequence_label	rdfs:member	local:comparison	.
+local:s6	local:AM-LOC	local:paper	.
+local:axiom_consequence	rdfs:subClassOf	local:consequence	.
+local:precomputing_for_possible_subontology	rdfs:member	local:precomputing	.
+local:s0.1	rdf:object	local:criterion_like_the_user_access_right	.
+local:scenario_where_select_subontologies_of_a_large_ontology	rdfs:member	local:select_subontologies	.
+local:view_to_user_base	rdfs:member	local:view	.
+local:require_trust_level	rdfs:subClassOf	local:level	.
+local:select_subontologies	rdfs:member	local:select	.
+local:s10	rdf:predicate	local:represent	.
+local:comparison_of_the_user_label_with_the_consequence_label	rdfs:member	local:user_label	.
+local:s1	local:AM-MOD	local:can	.
+local:equip_with_consequence_label	rdfs:member	local:equip	.
+local:require_trust	rdfs:subClassOf	local:trust	.
+local:require_trust_level	rdfs:member	local:require_trust	.
+local:label_axiom	rdfs:subClassOf	local:axiom	.
+local:s5	local:AM-MOD	local:can	.
+local:appropriate_label_lattice	rdfs:subClassOf	local:lattice	.
+local:follow_from_correspond_subontology_from_not	rdfs:member	local:not	.
+local:label_axiom_label	rdfs:subClassOf	local:axiom_label	.

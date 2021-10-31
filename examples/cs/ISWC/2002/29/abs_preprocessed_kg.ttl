@@ -7,16 +7,34 @@
 #### Statements ####
 
 local:s3	a	rdf:Statement	;
-	rdfs:label	"the damloil language which corresponds to a rich description logic"	.
+	rdfs:label	"most advanced layer"	.
 
 local:s2	a	rdf:Statement	;
 	rdfs:label	"the most advanced layer that reached maturity"	.
 
 local:s1	a	rdf:Statement	;
-	rdfs:label	"most advanced layer"	.
+	rdfs:label	"the damloil language which corresponds to a rich description logic"	.
 
 
 #### Classes ####
+
+local:layer	a	rdf:Class	;
+	rdfs:label	"layer"	.
+
+local:advance	a	rdf:Class	;
+	rdfs:label	"advance"	.
+
+local:most	a	rdf:Class	;
+	rdfs:label	"most"	.
+
+local:advance_layer	a	rdf:Class	;
+	rdfs:label	"advance layer"	.
+
+local:reach	a	rdf:Class	;
+	rdfs:label	"reach"	.
+
+local:maturity	a	rdf:Class	;
+	rdfs:label	"maturity"	.
 
 local:damloil_language	a	rdf:Class	;
 	rdfs:label	"damloil language"	.
@@ -36,8 +54,8 @@ local:rich_description_logic	a	rdf:Class	;
 local:rich_description	a	rdf:Class	;
 	rdfs:label	"rich description"	.
 
-local:rich	a	rdf:Class	;
-	rdfs:label	"rich"	.
+local:description	a	rdf:Class	;
+	rdfs:label	"description"	.
 
 local:description_logic	a	rdf:Class	;
 	rdfs:label	"description logic"	.
@@ -45,29 +63,8 @@ local:description_logic	a	rdf:Class	;
 local:logic	a	rdf:Class	;
 	rdfs:label	"logic"	.
 
-local:description	a	rdf:Class	;
-	rdfs:label	"description"	.
-
-local:advanced_layer	a	rdf:Class	;
-	rdfs:label	"advanced layer"	.
-
-local:advanced	a	rdf:Class	;
-	rdfs:label	"advanced"	.
-
-local:layer	a	rdf:Class	;
-	rdfs:label	"layer"	.
-
-local:reach	a	rdf:Class	;
-	rdfs:label	"reach"	.
-
-local:maturity	a	rdf:Class	;
-	rdfs:label	"maturity"	.
-
-local:advance	a	rdf:Class	;
-	rdfs:label	"advance"	.
-
-local:most	a	rdf:Class	;
-	rdfs:label	"most"	.
+local:rich	a	rdf:Class	;
+	rdfs:label	"rich"	.
 
 #### Mapped Relations ####
 
@@ -76,23 +73,23 @@ local:description_logic	owl:sameAs	cso:description_logic	.
 
 #### Relations ####
 
-local:s1	rdf:subject	local:layer	.
-local:damloil_language	rdfs:member	local:damloil	.
-local:s1	rdf:predicate	local:advance	.
-local:advanced_layer	rdfs:member	local:advanced	.
-local:rich_description_logic	rdfs:member	local:rich_description	.
-local:s3	rdf:subject	local:damloil_language	.
+local:s3	local:AM-EXT	local:most	.
+local:s2	rdf:subject	local:advance_layer	.
+local:s3	rdf:subject	local:layer	.
 local:description_logic	rdfs:subClassOf	local:logic	.
-local:s1	local:AM-EXT	local:most	.
-local:rich_description	rdfs:member	local:rich	.
+local:s1	rdf:subject	local:damloil_language	.
 local:s2	rdf:object	local:maturity	.
+local:s3	rdf:predicate	local:advance	.
 local:rich_description_logic	rdfs:subClassOf	local:logic	.
-local:advanced_layer	rdfs:subClassOf	local:layer	.
-local:s2	rdf:predicate	local:reach	.
+local:rich_description	rdfs:member	local:rich	.
 local:rich_description	rdfs:subClassOf	local:description	.
-local:s3	rdf:predicate	local:correspond	.
-local:s3	rdf:object	local:rich_description_logic	.
+local:s1	rdf:predicate	local:correspond	.
+local:s2	rdf:predicate	local:reach	.
+local:advance_layer	rdfs:member	local:advance	.
+local:rich_description_logic	rdfs:member	local:rich_description	.
+local:advance_layer	rdfs:subClassOf	local:layer	.
 local:rich_description_logic	rdfs:subClassOf	local:description_logic	.
-local:description_logic	rdfs:member	local:description	.
-local:s2	rdf:subject	local:advanced_layer	.
 local:damloil_language	rdfs:subClassOf	local:language	.
+local:s1	rdf:object	local:rich_description_logic	.
+local:description_logic	rdfs:member	local:description	.
+local:damloil_language	rdfs:member	local:damloil	.

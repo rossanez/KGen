@@ -30,32 +30,32 @@ local:s0	a	rdf:Statement	;
 
 #### Classes ####
 
-local:activities_of_the_individual_knowledge_work	a	rdf:Class	;
-	rdfs:label	"activities of the individual knowledge work"	.
-
-local:activities	a	rdf:Class	;
-	rdfs:label	"activities"	.
+local:activity_of_the_individual_knowledge_work	a	rdf:Class	;
+	rdfs:label	"activity of the individual knowledge work"	.
 
 local:individual_knowledge_work	a	rdf:Class	;
 	rdfs:label	"individual knowledge work"	.
 
-local:knowledge_work	a	rdf:Class	;
-	rdfs:label	"knowledge work"	.
-
-local:knowledge	a	rdf:Class	;
-	rdfs:label	"knowledge"	.
-
-local:work	a	rdf:Class	;
-	rdfs:label	"work"	.
+local:activity	a	rdf:Class	;
+	rdfs:label	"activity"	.
 
 local:individual_knowledge	a	rdf:Class	;
 	rdfs:label	"individual knowledge"	.
 
+local:knowledge	a	rdf:Class	;
+	rdfs:label	"knowledge"	.
+
+local:knowledge_work	a	rdf:Class	;
+	rdfs:label	"knowledge work"	.
+
+local:work	a	rdf:Class	;
+	rdfs:label	"work"	.
+
 local:individual	a	rdf:Class	;
 	rdfs:label	"individual"	.
 
-local:activities_of_individual_knowledge_work	a	rdf:Class	;
-	rdfs:label	"activities of individual knowledge work"	.
+local:activity_of_individual_knowledge_work	a	rdf:Class	;
+	rdfs:label	"activity of individual knowledge work"	.
 
 local:not_synchronize	a	rdf:Class	;
 	rdfs:label	"not synchronize"	.
@@ -75,8 +75,8 @@ local:organizational	a	rdf:Class	;
 local:can	a	rdf:Class	;
 	rdfs:label	"can"	.
 
-local:processes	a	rdf:Class	;
-	rdfs:label	"processes"	.
+local:process	a	rdf:Class	;
+	rdfs:label	"process"	.
 
 local:describe	a	rdf:Class	;
 	rdfs:label	"describe"	.
@@ -99,6 +99,9 @@ local:organization_explicit	a	rdf:Class	;
 local:implicit_procedural_knowledge	a	rdf:Class	;
 	rdfs:label	"implicit procedural knowledge"	.
 
+local:explicit	a	rdf:Class	;
+	rdfs:label	"explicit"	.
+
 local:implicit_procedural	a	rdf:Class	;
 	rdfs:label	"implicit procedural"	.
 
@@ -107,9 +110,6 @@ local:procedural	a	rdf:Class	;
 
 local:procedural_knowledge	a	rdf:Class	;
 	rdfs:label	"procedural knowledge"	.
-
-local:explicit	a	rdf:Class	;
-	rdfs:label	"explicit"	.
 
 local:implicit	a	rdf:Class	;
 	rdfs:label	"implicit"	.
@@ -120,6 +120,9 @@ local:organization	a	rdf:Class	;
 local:implicit_procedural_knowledge_in_organization	a	rdf:Class	;
 	rdfs:label	"implicit procedural knowledge in organization"	.
 
+local:define_process	a	rdf:Class	;
+	rdfs:label	"define process"	.
+
 local:efficiency_of_organizational_knowledge_work	a	rdf:Class	;
 	rdfs:label	"efficiency of organizational knowledge work"	.
 
@@ -129,65 +132,72 @@ local:efficiency	a	rdf:Class	;
 local:improve	a	rdf:Class	;
 	rdfs:label	"improve"	.
 
-local:means	a	rdf:Class	;
-	rdfs:label	"means"	.
+local:mean	a	rdf:Class	;
+	rdfs:label	"mean"	.
 
 local:establish	a	rdf:Class	;
 	rdfs:label	"establish"	.
 
+local:improve_efficiency_of_organizational_knowledge_work	a	rdf:Class	;
+	rdfs:label	"improve efficiency of organizational knowledge work"	.
+
 
 #### Relations ####
 
+local:s0	rdf:subject	local:mean	.
 local:s6	rdf:predicate	local:not_synchronize	.
-local:s6	local:AM-MOD	local:can	.
-local:implicit_procedural	rdfs:member	local:implicit	.
-local:activities_of_individual_knowledge_work	rdfs:member	local:activities	.
-local:s1.1	rdf:subject	local:processes	.
-local:individual_knowledge_work	rdfs:member	local:individual_knowledge	.
-local:activities_of_the_individual_knowledge_work	rdfs:member	local:individual_knowledge_work	.
-local:s5	local:AM-MNR	local:explicitly	.
-local:knowledge_work	rdfs:member	local:knowledge	.
-local:organizational_knowledge	rdfs:member	local:organizational	.
-local:individual_knowledge_work	rdfs:subClassOf	local:knowledge_work	.
-local:s6	local:AM-MNR	local:activities	.
-local:organizational_knowledge_work	rdfs:subClassOf	local:knowledge_work	.
-local:s1	rdf:object	local:implicit_procedural_knowledge_in_the_organization_explicit	.
-local:implicit_procedural_knowledge_in_the_organization_explicit	rdfs:member	local:implicit_procedural_knowledge	.
-local:organizational_knowledge_work	rdfs:subClassOf	local:work	.
-local:implicit_procedural_knowledge	rdfs:member	local:implicit_procedural	.
-local:s1	rdf:predicate	local:make	.
-local:s6	local:AM-DIS	local:addition	.
-local:s5	rdf:subject	local:processes	.
-local:organization_explicit	rdfs:subClassOf	local:explicit	.
-local:organization_explicit	rdfs:member	local:organization	.
-local:activities_of_individual_knowledge_work	rdfs:member	local:individual_knowledge_work	.
-local:implicit_procedural_knowledge	rdfs:subClassOf	local:knowledge	.
-local:procedural_knowledge	rdfs:member	local:procedural	.
-local:s6	rdf:subject	local:activities_of_the_individual_knowledge_work	.
-local:implicit_procedural_knowledge_in_organization	rdfs:member	local:organization	.
-local:individual_knowledge_work	rdfs:subClassOf	local:work	.
-local:s1	local:AM-MNR	local:s1.1	.
 local:organizational_knowledge_work	rdfs:member	local:organizational_knowledge	.
-local:implicit_procedural_knowledge_in_the_organization_explicit	rdfs:member	local:organization_explicit	.
-local:individual_knowledge	rdfs:member	local:individual	.
-local:knowledge_work	rdfs:subClassOf	local:work	.
-local:s4	rdf:predicate	local:describe	.
-local:s0	local:AM-PNC	local:s0.1	.
-local:s0.1	rdf:predicate	local:improve	.
-local:s6	local:AM-LOC	local:organizational_knowledge_work	.
-local:s1.1	rdf:predicate	local:define	.
-local:s0	rdf:predicate	local:establish	.
-local:efficiency_of_organizational_knowledge_work	rdfs:member	local:organizational_knowledge_work	.
-local:s0.1	rdf:subject	local:efficiency_of_organizational_knowledge_work	.
-local:s4	rdf:subject	local:processes	.
-local:activities_of_the_individual_knowledge_work	rdfs:member	local:activities	.
 local:s5	rdf:predicate	local:describe	.
-local:individual_knowledge	rdfs:subClassOf	local:knowledge	.
-local:procedural_knowledge	rdfs:subClassOf	local:knowledge	.
+local:implicit_procedural_knowledge_in_the_organization_explicit	rdfs:member	local:organization_explicit	.
+local:implicit_procedural_knowledge_in_the_organization_explicit	rdfs:member	local:implicit_procedural_knowledge	.
+local:s0.1	rdf:predicate	local:improve	.
+local:procedural_knowledge	rdfs:member	local:procedural	.
 local:s4	local:AM-MNR	local:explicitly	.
-local:implicit_procedural	rdfs:subClassOf	local:procedural	.
+local:individual_knowledge	rdfs:subClassOf	local:knowledge	.
+local:organizational_knowledge	rdfs:member	local:organizational	.
+local:knowledge_work	rdfs:member	local:knowledge	.
+local:implicit_procedural_knowledge	rdfs:member	local:implicit_procedural	.
+local:s6	rdf:subject	local:activity_of_the_individual_knowledge_work	.
+local:organization_explicit	rdfs:subClassOf	local:explicit	.
+local:activity_of_individual_knowledge_work	rdfs:member	local:individual_knowledge_work	.
+local:knowledge_work	rdfs:subClassOf	local:work	.
+local:activity_of_the_individual_knowledge_work	rdfs:member	local:activity	.
 local:organizational_knowledge	rdfs:subClassOf	local:knowledge	.
-local:s0	rdf:subject	local:means	.
-local:implicit_procedural_knowledge_in_organization	rdfs:member	local:implicit_procedural_knowledge	.
+local:implicit_procedural_knowledge	rdfs:subClassOf	local:knowledge	.
 local:efficiency_of_organizational_knowledge_work	rdfs:member	local:efficiency	.
+local:implicit_procedural	rdfs:member	local:implicit	.
+local:individual_knowledge_work	rdfs:subClassOf	local:work	.
+local:s6	local:AM-MOD	local:can	.
+local:define_process	rdfs:member	local:define	.
+local:individual_knowledge_work	rdfs:member	local:individual_knowledge	.
+local:individual_knowledge_work	rdfs:subClassOf	local:knowledge_work	.
+local:define_process	rdfs:subClassOf	local:process	.
+local:activity_of_individual_knowledge_work	rdfs:member	local:activity	.
+local:improve_efficiency_of_organizational_knowledge_work	rdfs:member	local:organizational_knowledge_work	.
+local:s6	local:AM-DIS	local:addition	.
+local:activity_of_the_individual_knowledge_work	rdfs:member	local:individual_knowledge_work	.
+local:s6	local:AM-MNR	local:activity	.
+local:s5	local:AM-MNR	local:explicitly	.
+local:s1.1	rdf:predicate	local:define	.
+local:improve_efficiency_of_organizational_knowledge_work	rdfs:member	local:efficiency	.
 local:implicit_procedural_knowledge	rdfs:subClassOf	local:procedural_knowledge	.
+local:s0	rdf:predicate	local:establish	.
+local:s5	rdf:subject	local:process	.
+local:s1.1	rdf:subject	local:process	.
+local:efficiency_of_organizational_knowledge_work	rdfs:member	local:organizational_knowledge_work	.
+local:individual_knowledge	rdfs:member	local:individual	.
+local:s1	rdf:object	local:implicit_procedural_knowledge_in_the_organization_explicit	.
+local:organizational_knowledge_work	rdfs:subClassOf	local:work	.
+local:organizational_knowledge_work	rdfs:subClassOf	local:knowledge_work	.
+local:s0.1	rdf:subject	local:efficiency_of_organizational_knowledge_work	.
+local:implicit_procedural_knowledge_in_organization	rdfs:member	local:implicit_procedural_knowledge	.
+local:organization_explicit	rdfs:member	local:organization	.
+local:implicit_procedural	rdfs:subClassOf	local:procedural	.
+local:s1	rdf:predicate	local:make	.
+local:s6	local:AM-LOC	local:organizational_knowledge_work	.
+local:implicit_procedural_knowledge_in_organization	rdfs:member	local:organization	.
+local:procedural_knowledge	rdfs:subClassOf	local:knowledge	.
+local:s0	local:AM-PNC	local:improve_efficiency_of_organizational_knowledge_work	.
+local:s1	local:AM-MNR	local:define_process	.
+local:s4	rdf:subject	local:process	.
+local:s4	rdf:predicate	local:describe	.
