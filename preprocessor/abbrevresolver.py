@@ -11,11 +11,11 @@ class AbbrevResolver:
     def __init__(self, contents):
         self.__contents = contents
 
-    def resolve(self, verbose=False):
+    def resolve(self, verbose=True):
         print('Looking for abbreviations and their occurences - please wait, as it may take a while ...')
         return self.__stanford_resolve_abbrevs(verbose)
 
-    def __stanford_resolve_abbrevs(self, verbose=False):
+    def __stanford_resolve_abbrevs(self, verbose=True):
         if verbose:
             print('Using Stanford parser')
 
