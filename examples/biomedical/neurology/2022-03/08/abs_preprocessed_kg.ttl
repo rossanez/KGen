@@ -1,0 +1,135 @@
+@prefix	rdfs:	<http://www.w3.org/2000/01/rdf-schema#>	.
+@prefix	local:	<http://local/local.owl#>	.
+@prefix	ncit:	<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>	.
+@prefix	rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>	.
+@prefix	owl:	<http://www.w3.org/2002/07/owl#>	.
+
+#### Statements ####
+
+local:s2	a	rdf:Statement	;
+	rdfs:label	"cerebral microbleeds modify the treatment effect of thrombolysis"	.
+
+local:s1.1	a	rdf:Statement	;
+	rdfs:label	"increased risk"	.
+
+local:s1	a	rdf:Statement	;
+	rdfs:label	"cerebral microbleeds associated with increased risk of intracerebral hemorrhage after intravenous thrombolysis"	.
+
+
+#### Classes ####
+
+local:cerebral_microbleeds	a	rdf:Class	;
+	rdfs:label	"cerebral microbleeds"	.
+
+local:microbleeds	a	rdf:Class	;
+	rdfs:label	"microbleeds"	.
+
+local:cerebral	a	rdf:Class	;
+	rdfs:label	"cerebral"	.
+
+local:modify	a	rdf:Class	;
+	rdfs:label	"modify"	.
+
+local:treatment_effect_of_thrombolysis	a	rdf:Class	;
+	rdfs:label	"treatment effect of thrombolysis"	.
+
+local:treatment_effect	a	rdf:Class	;
+	rdfs:label	"treatment effect"	.
+
+local:thrombolysis	a	rdf:Class	;
+	rdfs:label	"thrombolysis"	.
+
+local:effect	a	rdf:Class	;
+	rdfs:label	"effect"	.
+
+local:treatment	a	rdf:Class	;
+	rdfs:label	"treatment"	.
+
+local:risk	a	rdf:Class	;
+	rdfs:label	"risk"	.
+
+local:increase	a	rdf:Class	;
+	rdfs:label	"increase"	.
+
+local:associate	a	rdf:Class	;
+	rdfs:label	"associate"	.
+
+local:increase_risk_of_intracerebral_hemorrhage_after_intravenous_thrombolysis	a	rdf:Class	;
+	rdfs:label	"increase risk of intracerebral hemorrhage after intravenous thrombolysis"	.
+
+local:increase_risk	a	rdf:Class	;
+	rdfs:label	"increase risk"	.
+
+local:intracerebral_hemorrhage	a	rdf:Class	;
+	rdfs:label	"intracerebral hemorrhage"	.
+
+local:intravenous_thrombolysis	a	rdf:Class	;
+	rdfs:label	"intravenous thrombolysis"	.
+
+local:hemorrhage	a	rdf:Class	;
+	rdfs:label	"hemorrhage"	.
+
+local:intravenous	a	rdf:Class	;
+	rdfs:label	"intravenous"	.
+
+local:intracerebral	a	rdf:Class	;
+	rdfs:label	"intracerebral"	.
+
+local:increase_risk_of_intracerebral_hemorrhage	a	rdf:Class	;
+	rdfs:label	"increase risk of intracerebral hemorrhage"	.
+
+#### Mapped Relations ####
+
+local:risk	owl:sameAs	ncit:C17102	.
+local:increase	owl:sameAs	ncit:C25533	.
+local:thrombolysis	owl:sameAs	ncit:C61457	.
+local:intracerebral_hemorrhage	owl:sameAs	ncit:C50485	.
+ncit:C50485	rdfs:label	"Cerebral Hemorrhage"	.
+local:cerebral	owl:sameAs	ncit:C12351	.
+ncit:C13346	rdfs:label	"Intravenous"	.
+ncit:C25492	rdfs:label	"Effect"	.
+ncit:C25533	rdfs:label	"Increase"	.
+local:associate	owl:sameAs	ncit:C51802	.
+ncit:C26791	rdfs:label	"Hemorrhage"	.
+ncit:C49656	rdfs:label	"Treatment Study"	.
+local:intravenous	owl:sameAs	ncit:C13346	.
+local:intracerebral	owl:sameAs	ncit:C43302	.
+ncit:C12351	rdfs:label	"Cerebral Hemisphere"	.
+ncit:C61457	rdfs:label	"Thrombolysis"	.
+ncit:C43302	rdfs:label	"Intracerebral"	.
+local:treatment	owl:sameAs	ncit:C49656	.
+ncit:C18919	rdfs:label	"Outcome of Therapy"	.
+ncit:C17102	rdfs:label	"Risk"	.
+local:hemorrhage	owl:sameAs	ncit:C26791	.
+ncit:C51802	rdfs:label	"Associate"	.
+local:treatment_effect	owl:sameAs	ncit:C18919	.
+local:effect	owl:sameAs	ncit:C25492	.
+
+#### Relations ####
+
+local:increase_risk_of_intracerebral_hemorrhage_after_intravenous_thrombolysis	rdfs:member	local:intravenous_thrombolysis	.
+local:increase_risk	rdfs:member	local:increase	.
+local:s2	rdf:predicate	local:modify	.
+local:intravenous_thrombolysis	rdfs:member	local:intravenous	.
+local:treatment_effect	rdfs:subClassOf	local:effect	.
+local:cerebral_microbleeds	rdfs:subClassOf	local:microbleeds	.
+local:increase_risk_of_intracerebral_hemorrhage	rdfs:member	local:increase_risk	.
+local:s1.1	rdf:predicate	local:increase	.
+local:increase_risk_of_intracerebral_hemorrhage_after_intravenous_thrombolysis	rdfs:member	local:increase_risk	.
+local:intracerebral_hemorrhage	rdfs:member	local:intracerebral	.
+local:s1.1	rdf:subject	local:risk	.
+local:increase_risk	rdfs:subClassOf	local:risk	.
+local:s2	rdf:object	local:treatment_effect_of_thrombolysis	.
+local:increase_risk_of_intracerebral_hemorrhage	rdfs:member	local:intracerebral_hemorrhage	.
+local:treatment_effect_of_thrombolysis	rdfs:member	local:treatment_effect	.
+local:intravenous_thrombolysis	rdfs:subClassOf	local:thrombolysis	.
+local:s2	rdf:subject	local:cerebral_microbleeds	.
+local:intracerebral_hemorrhage	rdfs:subClassOf	local:hemorrhage	.
+local:treatment_effect	rdfs:member	local:treatment	.
+local:treatment_effect_of_thrombolysis	rdfs:member	local:thrombolysis	.
+local:increase_risk_of_intracerebral_hemorrhage_after_intravenous_thrombolysis	rdfs:member	local:increase_risk_of_intracerebral_hemorrhage	.
+local:increase_risk_of_intracerebral_hemorrhage_after_intravenous_thrombolysis	rdfs:member	local:intracerebral_hemorrhage	.
+local:s1	rdf:predicate	local:associate	.
+local:s1	rdf:object	local:increase_risk_of_intracerebral_hemorrhage_after_intravenous_thrombolysis	.
+local:cerebral_microbleeds	rdfs:member	local:cerebral	.
+local:s1	rdf:subject	local:cerebral_microbleeds	.
