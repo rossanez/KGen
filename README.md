@@ -75,4 +75,4 @@ $python3 common/stanfordcorenlp/server.py -k
 
 ## See also
 
-* [TempKG](https://gitlab.ic.unicamp.br/jreis/TempKG) Related tools to conduct analyses and generate visualizations on Temporal Knowledge Graphs.
+* [TempKG](https://gitlab.ic.unicamp.br/jreis/TempKG): Related tools to conduct analyses and generate visualizations on Temporal Knowledge Graphs.
