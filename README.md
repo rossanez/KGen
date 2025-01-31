@@ -72,3 +72,7 @@ $python3 common/stanfordcorenlp/server.py -k
 * Rossanez, A.; Dos Reis, J. C.; Torres, R. S.; De Ribaupierre, H. [KGen: A Knowledge Graph Generator from Biomedical Scientific Literature.](http://dx.doi.org/10.1186/s12911-020-01341-5) BMC Medical Informatics and Decision Making, v. 20, p. 314, 2020.
 
 * Rossanez, A.; Dos Reis, J. C. [Generating Knowledge Graphs from Scientific Literature of Degenerative Diseases.](http://ceur-ws.org/Vol-2427/SEPDA_2019_paper_8.pdf) In Proceedings of the 4th International Workshop on Semantics-Powered Data Mining and Analytics (SEPDA 2019), co-located with the 18th International Semantic Web Conference (ISWC 2019). Aachen: CEUR Workshop Proceedings, 2019. v. 2427. p. 12-23.
+
+## See also
+
+* [TempKG](https://gitlab.ic.unicamp.br/jreis/TempKG) Related tools to conduct analyses and generate visualizations on Temporal Knowledge Graphs.
